@@ -43,3 +43,4 @@ Due to the massive size of this knowledge base (3,300+ files), you MUST follow t
 1. **Strictly Declarative**: Always use the declarative UI paradigm syntax (`@Entry`, `@Component`, `build()`).
 2. **No Hallucinations**: Rely strictly on the documentation provided in the `references/` folder when unsure about an API signature in HarmonyOS 5+. Do not assume standard Web JS or Android APIs are available unless verified in the docs.
 3. **TypeScript/ArkTS Validation**: Ensure type safety and use standard ArkTS conventions.
+\n<!-- version: 1.0.1 -->
