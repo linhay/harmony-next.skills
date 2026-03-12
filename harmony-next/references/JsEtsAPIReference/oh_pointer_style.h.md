@@ -1,0 +1,55 @@
+# oh_pointer_style.h
+
+#### 概述
+
+鼠标光标的样式。
+
+**引用文件：** <multimodalinput/oh_pointer_style.h>
+
+**库：** libohinput.so
+
+**系统能力：** SystemCapability.MultimodalInput.Input.Core
+
+**起始版本：** 22
+
+**相关模块：**[input](input.md)
+
+#### 汇总
+
+#### 枚举
+
+名称typedef关键字描述[Input_PointerStyle](#ZH-CN_TOPIC_0000002497445596__input_pointerstyle)Input_PointerStyle鼠标光标样式。
+
+#### 枚举类型说明
+
+#### Input_PointerStyle
+
+```ets
+enum Input_PointerStyle
+```
+
+**描述**
+
+鼠标光标样式。
+
+**起始版本：** 22
+
+名称值说明图示DEFAULT0默认EAST1向东箭头WEST2向西箭头SOUTH3向南箭头NORTH4向北箭头WEST_EAST5向西东箭头NORTH_SOUTH6向北南箭头NORTH_EAST7向东北箭头NORTH_WEST8向西北箭头SOUTH_EAST9向东南箭头SOUTH_WEST10向西南箭头NORTH_EAST_SOUTH_WEST11东北西南调整NORTH_WEST_SOUTH_EAST12西北东南调整CROSS13准确选择CURSOR_COPY14拷贝CURSOR_FORBID15不可用COLOR_SUCKER16滴管HAND_GRABBING17并拢的手HAND_OPEN18张开的手HAND_POINTING19手形指针HELP20帮助选择MOVE21移动RESIZE_LEFT_RIGHT22内部左右调整RESIZE_UP_DOWN23内部上下调整SCREENSHOT_CHOOSE24截图十字准星SCREENSHOT_CURSOR25截图TEXT_CURSOR26文本选择ZOOM_IN27放大ZOOM_OUT28缩小MIDDLE_BTN_EAST29向东滚动MIDDLE_BTN_WEST30向西滚动MIDDLE_BTN_SOUTH31向南滚动MIDDLE_BTN_NORTH32向北滚动MIDDLE_BTN_NORTH_SOUTH33向南北滚动MIDDLE_BTN_NORTH_EAST34向东北滚动MIDDLE_BTN_NORTH_WEST35向西北滚动MIDDLE_BTN_SOUTH_EAST36向东南滚动MIDDLE_BTN_SOUTH_WEST37向西南滚动MIDDLE_BTN_NORTH_SOUTH_WEST_EAST38四向锥形移动HORIZONTAL_TEXT_CURSOR39垂直文本选择CURSOR_CROSS40十字光标CURSOR_CIRCLE41圆形光标LOADING42正在载入动画光标RUNNING43后台运行中动画光标MIDDLE_BTN_EAST_WEST44向东西滚动RUNNING_LEFT45后台运行中动画光标(拓展1)RUNNING_RIGHT46后台运行中动画光标(拓展2)AECH_DEVELOPER_DEFINED_ICON47圆形自定义光标SCREENRECORDER_CURSOR48录屏光标LASER_CURSOR49
+
+悬浮光标。手写笔进入空鼠模式时使用该光标，无法直接使用 。
+
+空鼠模式支持通过手写笔在空中转动来控制屏幕上虚拟光标的移动，并借助笔身按键实现上下翻页功能，用于演示PPT、隔空操作等场景。
+
+LASER_CURSOR_DOT50
+
+点击光标。手写笔进入空鼠模式时使用该光标，无法直接使用 。
+
+空鼠模式支持通过手写笔在空中转动来控制屏幕上虚拟光标的移动，并借助笔身按键实现上下翻页功能，用于演示PPT、隔空操作等场景。
+
+LASER_CURSOR_DOT_RED51
+
+激光笔光标。手写笔进入空鼠模式时使用该光标，无法直接使用 。
+
+空鼠模式支持通过手写笔在空中转动来控制屏幕上虚拟光标的移动，并借助笔身按键实现上下翻页功能，用于演示PPT、隔空操作等场景。
+
+DEVELOPER_DEFINED_ICON-100自定义光标，开发者可使用[OH_Input_SetCustomCursor](oh_input_manager.h.md#ZH-CN_TOPIC_0000002529445539__oh_input_setcustomcursor)设置自定义光标，不支持使用[OH_Input_SetPointerStyle](oh_input_manager.h.md#ZH-CN_TOPIC_0000002529445539__oh_input_setpointerstyle)直接设置。自定义光标样式，通过接口设置。

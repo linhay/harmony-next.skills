@@ -1,0 +1,994 @@
+# Interface (CameraManager)
+
+相机管理器类，使用前需要通过[getCameraManager](Functions.md#ZH-CN_TOPIC_0000002529445741__cameragetcameramanager)接口获取相机管理实例。
+
+本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+
+#### 导入模块
+
+```ets
+import { camera } from '@kit.CameraKit';
+```
+
+#### getSupportedCameras
+
+getSupportedCameras(): Array<CameraDevice>
+
+获取支持的相机设备对象，同步返回结果。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**返回值：**
+
+类型说明Array<[CameraDevice](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__cameradevice)>相机设备列表。
+
+**示例：**
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function getSupportedCameras(cameraManager: camera.CameraManager): Array<camera.CameraDevice> {
+  let cameras: Array<camera.CameraDevice> = [];
+  try {
+    cameras = cameraManager.getSupportedCameras();
+  } catch (error) {
+    let err = error as BusinessError;
+    console.error(`The getSupportedCameras call failed. error code: ${err.code}`);
+  }
+  return cameras;
+}
+```
+
+#### getSupportedSceneModes11+
+
+getSupportedSceneModes(camera: CameraDevice): Array<SceneMode>
+
+获取指定的相机设备对象支持的模式，同步返回结果。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明camera[CameraDevice](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__cameradevice)是相机设备，通过 [getSupportedCameras](#ZH-CN_TOPIC_0000002497445800__getsupportedcameras) 接口获取。传参异常时，会返回错误码。
+
+**返回值：**
+
+类型说明Array<[SceneMode](Enums.md#ZH-CN_TOPIC_0000002497445814__scenemode11)>相机支持的模式列表。
+
+**示例：**
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function getSupportedSceneModes(cameraManager: camera.CameraManager, camera: camera.CameraDevice): Array<camera.SceneMode> {
+  let modes: Array<camera.SceneMode> = [];
+  try {
+    modes = cameraManager.getSupportedSceneModes(camera);
+  } catch (error) {
+    let err = error as BusinessError;
+    console.error(`The getSupportedSceneModes call failed. error code: ${err.code}`);
+  }
+  return modes;
+}
+```
+
+#### getSupportedOutputCapability11+
+
+getSupportedOutputCapability(camera: CameraDevice, mode: SceneMode): CameraOutputCapability
+
+查询相机设备在指定模式下支持的输出能力，同步返回结果。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明camera[CameraDevice](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__cameradevice)是相机设备，通过 [getSupportedCameras](#ZH-CN_TOPIC_0000002497445800__getsupportedcameras) 接口获取。mode[SceneMode](zh-cn_topic_0000002497445814.html#ZH-CN_TOPIC_0000002497445814__scenemode11)是相机模式，通过 [getSupportedSceneModes](#ZH-CN_TOPIC_0000002497445800__getsupportedscenemodes11) 接口获取。
+
+**返回值：**
+
+类型说明[CameraOutputCapability](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__cameraoutputcapability)相机输出能力。
+
+**示例：**
+
+```ets
+function getSupportedOutputCapability(camera: camera.CameraDevice, cameraManager: camera.CameraManager, sceneMode: camera.SceneMode): camera.CameraOutputCapability {
+  let cameraOutputCapability: camera.CameraOutputCapability = cameraManager.getSupportedOutputCapability(camera, sceneMode);
+  return cameraOutputCapability;
+}
+```
+
+#### isCameraMuted
+
+isCameraMuted(): boolean
+
+查询当前相机是否禁用。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**返回值：**
+
+类型说明boolean返回true表示相机被禁用，返回false表示相机未被禁用。
+
+**示例：**
+
+```ets
+function isCameraMuted(cameraManager: camera.CameraManager): boolean {
+  let isMuted: boolean = cameraManager.isCameraMuted();
+  return isMuted;
+}
+```
+
+#### createCameraInput
+
+createCameraInput(camera: CameraDevice): CameraInput
+
+使用CameraDevice对象创建CameraInput实例，同步返回结果。
+
+该接口使用前首先通过[getSupportedCameras](#ZH-CN_TOPIC_0000002497445800__getsupportedcameras)接口查询当前设备支持的相机设备信息列表，开发者需要根据具体使用场景选择符合需求的相机设备，然后使用该接口创建CameraInput实例。
+
+**需要权限：** ohos.permission.CAMERA
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明camera[CameraDevice](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__cameradevice)是CameraDevice对象，通过 [getSupportedCameras](#ZH-CN_TOPIC_0000002497445800__getsupportedcameras) 接口获取。
+
+**返回值：**
+
+类型说明[CameraInput](Interface (CameraInput).md)返回CameraInput实例。接口调用失败会返回相应错误码，错误码类型为[CameraErrorCode](Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
+
+错误码ID错误信息7400101Parameter missing or parameter type incorrect.7400102Operation not allowed.7400201Camera service fatal error.
+
+**示例：**
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function createCameraInput(camera: camera.CameraDevice, cameraManager: camera.CameraManager): camera.CameraInput | undefined {
+  let cameraInput: camera.CameraInput | undefined = undefined;
+  try {
+    cameraInput = cameraManager.createCameraInput(camera);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The createCameraInput call failed. error code: ${err.code}`);
+  }
+  return cameraInput;
+}
+```
+
+#### createCameraInput
+
+createCameraInput(position: CameraPosition, type: CameraType): CameraInput
+
+根据相机位置和类型创建CameraInput实例，同步返回结果。
+
+该接口使用前需要开发者根据应用具体使用场景自行指定相机位置和类型，例如打开前置相机进入自拍功能。
+
+**需要权限：** ohos.permission.CAMERA
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明position[CameraPosition](Enums.md#ZH-CN_TOPIC_0000002497445814__cameraposition)是相机位置，首先通过 [getSupportedCameras](#ZH-CN_TOPIC_0000002497445800__getsupportedcameras) 接口获取支持的相机设备对象，然后根据返回的相机设备对象获取设备位置信息。type[CameraType](zh-cn_topic_0000002497445814.html#ZH-CN_TOPIC_0000002497445814__cameratype)是相机类型，首先通过 [getSupportedCameras](#ZH-CN_TOPIC_0000002497445800__getsupportedcameras) 接口获取支持的相机设备对象，然后根据返回的相机设备对象获取设备类型信息。
+
+**返回值：**
+
+类型说明[CameraInput](Interface (CameraInput).md)返回CameraInput实例。接口调用失败会返回相应错误码，错误码类型为[CameraErrorCode](Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
+
+错误码ID错误信息7400101Parameter missing or parameter type incorrect.7400102Operation not allowed.7400201Camera service fatal error.
+
+**示例：**
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function createCameraInput(camera: camera.CameraDevice, cameraManager: camera.CameraManager): camera.CameraInput | undefined {
+  let position: camera.CameraPosition = camera.cameraPosition;
+  let type: camera.CameraType = camera.cameraType;
+  let cameraInput: camera.CameraInput | undefined = undefined;
+  try {
+    cameraInput = cameraManager.createCameraInput(position, type);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The createCameraInput call failed. error code: ${err.code}`);
+  }
+  return cameraInput;
+}
+```
+
+#### createPreviewOutput
+
+createPreviewOutput(profile: Profile, surfaceId: string): PreviewOutput
+
+创建预览输出对象，同步返回结果。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明profile[Profile](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__profile)是支持的预览配置信息，通过[getSupportedOutputCapability](#ZH-CN_TOPIC_0000002497445800__getsupportedoutputcapability11)接口获取。surfaceIdstring是从[XComponent](zh-cn_topic_0000002529444889.html)或者[ImageReceiver](Interface (ImageReceiver).md)组件获取的surfaceId。
+
+**返回值：**
+
+类型说明[PreviewOutput](Interface (PreviewOutput).md)PreviewOutput实例。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
+
+错误码ID错误信息7400101Parameter missing or parameter type incorrect.7400201Camera service fatal error.
+
+**示例：**
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function createPreviewOutput(cameraOutputCapability: camera.CameraOutputCapability, cameraManager: camera.CameraManager, surfaceId: string): camera.PreviewOutput | undefined {
+  let profile: camera.Profile = cameraOutputCapability.previewProfiles[0];
+  let previewOutput: camera.PreviewOutput | undefined = undefined;
+  try {
+    previewOutput = cameraManager.createPreviewOutput(profile, surfaceId);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The createPreviewOutput call failed. error code: ${err.code}`);
+  }
+  return previewOutput;
+}
+```
+
+#### createPreviewOutput12+
+
+createPreviewOutput(surfaceId: string): PreviewOutput
+
+创建无配置信息的预览输出对象，同步返回结果。该接口需配合[preconfig](Interface (PhotoSession).md#ZH-CN_TOPIC_0000002497605788__preconfig12)一起使用。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明surfaceIdstring是从[XComponent](XComponent.md)或者[ImageReceiver](Interface (ImageReceiver).md)组件获取的surfaceId。
+
+**返回值：**
+
+类型说明[PreviewOutput](Interface (PreviewOutput).md)PreviewOutput实例。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
+
+错误码ID错误信息7400101Parameter missing or parameter type incorrect.7400201Camera service fatal error.
+
+**示例：**
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function createPreviewOutput(cameraManager: camera.CameraManager, surfaceId: string): camera.PreviewOutput | undefined {
+  let previewOutput: camera.PreviewOutput | undefined = undefined;
+  try {
+    previewOutput = cameraManager.createPreviewOutput(surfaceId);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The createPreviewOutput call failed. error code: ${err.code}`);
+  }
+  return previewOutput;
+}
+```
+
+#### createPhotoOutput11+
+
+createPhotoOutput(profile?: Profile): PhotoOutput
+
+创建拍照输出对象，同步返回结果。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明profile[Profile](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__profile)否
+
+支持的拍照配置信息，通过[getSupportedOutputCapability](#ZH-CN_TOPIC_0000002497445800__getsupportedoutputcapability11)接口获取。
+
+API version 11时，该参数必填；从API version 12开始，如果使用[preconfig](Interface (PhotoSession).md#ZH-CN_TOPIC_0000002497605788__preconfig12)进行预配置，传入profile参数会覆盖preconfig的预配置参数。
+
+**返回值：**
+
+类型说明[PhotoOutput](Interface (PhotoOutput).md)PhotoOutput实例。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
+
+错误码ID错误信息7400101Parameter missing or parameter type incorrect.7400201Camera service fatal error.
+
+**示例：**
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function createPhotoOutput(cameraOutputCapability: camera.CameraOutputCapability, cameraManager: camera.CameraManager): camera.PhotoOutput | undefined {
+  let profile: camera.Profile = cameraOutputCapability.photoProfiles[0];
+  let photoOutput: camera.PhotoOutput | undefined = undefined;
+  try {
+    photoOutput = cameraManager.createPhotoOutput(profile);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The createPhotoOutput call failed. error code: ${err.code}`);
+  }
+  return photoOutput;
+}
+```
+
+#### createVideoOutput
+
+createVideoOutput(profile: VideoProfile, surfaceId: string): VideoOutput
+
+创建录像输出对象，同步返回结果。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明profile[VideoProfile](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__videoprofile)是支持的录像配置信息，通过[getSupportedOutputCapability](#ZH-CN_TOPIC_0000002497445800__getsupportedoutputcapability11)接口获取。surfaceIdstring是从[AVRecorder](zh-cn_topic_0000002529445863.html)获取的surfaceId。
+
+**返回值：**
+
+类型说明[VideoOutput](Interface (VideoOutput).md)VideoOutput实例。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
+
+错误码ID错误信息7400101Parameter missing or parameter type incorrect.7400201Camera service fatal error.
+
+**示例：**
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function createVideoOutput(cameraOutputCapability: camera.CameraOutputCapability, cameraManager: camera.CameraManager, surfaceId: string): camera.VideoOutput | undefined {
+  let profile: camera.VideoProfile = cameraOutputCapability.videoProfiles[0];
+  let videoOutput: camera.VideoOutput | undefined = undefined;
+  try {
+    videoOutput = cameraManager.createVideoOutput(profile, surfaceId);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The createVideoOutput call failed. error code: ${err.code}`);
+  }
+  return videoOutput;
+}
+```
+
+#### createVideoOutput12+
+
+createVideoOutput(surfaceId: string): VideoOutput
+
+创建无配置信息的录像输出对象，同步返回结果。该接口需配合[preconfig](Interface (VideoSession).md#ZH-CN_TOPIC_0000002529445755__preconfig12)功能一起使用。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明surfaceIdstring是从[AVRecorder](Interface (AVRecorder).md)获取的surfaceId。
+
+**返回值：**
+
+类型说明[VideoOutput](Interface (VideoOutput).md)VideoOutput实例。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
+
+错误码ID错误信息7400101Parameter missing or parameter type incorrect.7400201Camera service fatal error.
+
+**示例：**
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function createVideoOutput(cameraManager: camera.CameraManager, surfaceId: string): camera.VideoOutput | undefined {
+  let videoOutput: camera.VideoOutput | undefined = undefined;
+  try {
+    videoOutput = cameraManager.createVideoOutput(surfaceId);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The createVideoOutput call failed. error code: ${err.code}`);
+  }
+  return videoOutput;
+}
+```
+
+#### createMetadataOutput
+
+createMetadataOutput(metadataObjectTypes: Array<MetadataObjectType>): MetadataOutput
+
+创建metadata流输出对象，同步返回结果。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明metadataObjectTypesArray<[MetadataObjectType](Enums.md#ZH-CN_TOPIC_0000002497445814__metadataobjecttype)>是metadata流类型信息，通过[getSupportedOutputCapability](#ZH-CN_TOPIC_0000002497445800__getsupportedoutputcapability11)接口获取。
+
+**返回值：**
+
+类型说明[MetadataOutput](Interface (MetadataOutput).md)MetadataOutput实例。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
+
+错误码ID错误信息7400101Parameter missing or parameter type incorrect.7400201Camera service fatal error.
+
+**示例：**
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function createMetadataOutput(cameraManager: camera.CameraManager, cameraOutputCapability: camera.CameraOutputCapability): void {
+  let metadataObjectTypes: Array<camera.MetadataObjectType> = cameraOutputCapability.supportedMetadataObjectTypes;
+  let metadataOutput: camera.MetadataOutput | undefined = undefined;
+  try {
+    metadataOutput = cameraManager.createMetadataOutput(metadataObjectTypes);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`createMetadataOutput error. error code: ${err.code}`);
+  }
+}
+```
+
+#### createSession11+
+
+createSession<T extends Session>(mode: SceneMode): T
+
+创建指定SceneMode的Session实例，同步返回结果。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明mode[SceneMode](Enums.md#ZH-CN_TOPIC_0000002497445814__scenemode11)是相机支持的模式。如果传入的参数异常（如超出范围、传入null或未定义等），实际接口不会生效。
+
+**返回值：**
+
+类型说明[T](Interface (Session).md)Session实例。接口调用失败会返回相应的错误码，错误码类型为[CameraErrorCode](Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
+
+错误码ID错误信息7400101Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3.Parameter verification failed.7400201Camera service fatal error.
+
+**示例：**
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function createSession(cameraManager: camera.CameraManager, mode: camera.SceneMode): camera.Session | undefined {
+  let photoSession: camera.PhotoSession | undefined = undefined;
+  try {
+    photoSession = cameraManager.createSession(mode) as camera.PhotoSession;
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`createCaptureSession error. error code: ${err.code}`);
+  }
+  return photoSession;
+}
+```
+
+#### on('cameraStatus')
+
+on(type: 'cameraStatus', callback: AsyncCallback<CameraStatusInfo>): void
+
+相机设备状态回调，通过注册回调函数获取相机的状态变化。使用callback异步回调。
+
+当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明typestring是监听事件，固定为'cameraStatus'。cameraManager对象获取成功后可监听。目前只支持对设备打开或者关闭会触发该事件并返回对应信息。callbackAsyncCallback<[CameraStatusInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__camerastatusinfo)>是回调函数，用于获取镜头状态变化信息。
+
+**示例：**
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function callback(err: BusinessError, cameraStatusInfo: camera.CameraStatusInfo): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error('cameraStatus with errorCode = ' + err.code);
+    return;
+  }
+  console.info(`camera : ${cameraStatusInfo.camera.cameraId}`);
+  console.info(`status: ${cameraStatusInfo.status}`);
+}
+
+function registerCameraStatus(cameraManager: camera.CameraManager): void {
+  cameraManager.on('cameraStatus', callback);
+}
+```
+
+#### off('cameraStatus')
+
+off(type: 'cameraStatus', callback?: AsyncCallback<CameraStatusInfo>): void
+
+相机设备状态注销回调，通过注销回调函数取消获取相机的状态变化。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明typestring是监听事件，固定为'cameraStatus'。cameraManager对象获取成功后可监听。callbackAsyncCallback<[CameraStatusInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__camerastatusinfo)>否回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。
+
+**示例：**
+
+```ets
+function unregisterCameraStatus(cameraManager: camera.CameraManager): void {
+  cameraManager.off('cameraStatus');
+}
+```
+
+#### on('foldStatusChange')12+
+
+on(type: 'foldStatusChange', callback: AsyncCallback<FoldStatusInfo>): void
+
+注册折叠设备折叠状态变化的监听。使用callback异步回调。
+
+当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明typestring是监听事件，固定为'foldStatusChange'。表示折叠设备折叠状态发生变化。callbackAsyncCallback<[FoldStatusInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__foldstatusinfo12)>是回调函数。返回折叠设备折叠信息。
+
+**示例：**
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function callback(err: BusinessError, foldStatusInfo: camera.FoldStatusInfo): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error('foldStatusChange with errorCode = ' + err.code);
+    return;
+  }
+  console.info(`camera length: ${foldStatusInfo.supportedCameras.length}`);
+  console.info(`foldStatus: ${foldStatusInfo.foldStatus}`);
+}
+
+function registerFoldStatusChange(cameraManager: camera.CameraManager): void {
+  cameraManager.on('foldStatusChange', callback);
+}
+```
+
+#### off('foldStatusChange')12+
+
+off(type: 'foldStatusChange', callback?: AsyncCallback<FoldStatusInfo>): void
+
+关闭折叠设备折叠状态变化的监听。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明typestring是监听事件，固定为'foldStatusChange'。表示折叠设备折叠状态发生变化。callbackAsyncCallback<[FoldStatusInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__foldstatusinfo12)>否回调函数，返回折叠设备折叠信息。如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。
+
+**示例：**
+
+```ets
+function unregisterFoldStatusChange(cameraManager: camera.CameraManager): void {
+  cameraManager.off('foldStatusChange');
+}
+```
+
+#### isTorchSupported11+
+
+isTorchSupported(): boolean
+
+检测设备是否支持手电筒。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**返回值：**
+
+类型说明boolean返回true表示设备支持手电筒，返回false表示设备不支持手电。若接口调用失败，返回undefined。
+
+**示例：**
+
+```ets
+function isTorchSupported(cameraManager: camera.CameraManager): boolean {
+  let isSupported = cameraManager.isTorchSupported();
+  return isSupported;
+}
+```
+
+#### isTorchModeSupported11+
+
+isTorchModeSupported(mode: TorchMode): boolean
+
+检测是否支持设置的手电筒模式。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明mode[TorchMode](Enums.md#ZH-CN_TOPIC_0000002497445814__torchmode11)是手电筒模式。传参为null或者undefined，作为0处理，手电筒关闭。
+
+**返回值：**
+
+类型说明boolean返回true表示设备支持设置的手电筒模式，返回false表示设备不支持的手电筒模式。若接口调用失败，返回undefined。
+
+**示例：**
+
+```ets
+function isTorchModeSupported(cameraManager: camera.CameraManager, torchMode: camera.TorchMode): boolean {
+  let isSupported = cameraManager.isTorchModeSupported(torchMode);
+  return isSupported;
+}
+```
+
+#### getTorchMode11+
+
+getTorchMode(): TorchMode
+
+获取当前设备手电筒模式。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**返回值：**
+
+类型说明[TorchMode](Enums.md#ZH-CN_TOPIC_0000002497445814__torchmode11)返回设备当前手电筒模式。
+
+**示例：**
+
+```ets
+function getTorchMode(cameraManager: camera.CameraManager): camera.TorchMode | undefined {
+  let torchMode: camera.TorchMode | undefined = undefined;
+  torchMode = cameraManager.getTorchMode();
+  return torchMode;
+}
+```
+
+#### setTorchMode11+
+
+setTorchMode(mode: TorchMode): void
+
+设置设备手电筒模式。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明mode[TorchMode](Enums.md#ZH-CN_TOPIC_0000002497445814__torchmode11)是手电筒模式。传参为null或者undefined，作为0处理，手电筒关闭。
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
+
+错误码ID错误信息7400102Operation not allowed.7400201Camera service fatal error.
+
+**示例：**
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function setTorchMode(cameraManager: camera.CameraManager, torchMode: camera.TorchMode): void {
+  try {
+    cameraManager.setTorchMode(torchMode);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The setTorchMode call failed. error code: ${err.code}`);
+  }
+}
+```
+
+#### on('torchStatusChange')11+
+
+on(type: 'torchStatusChange', callback: AsyncCallback<TorchStatusInfo>): void
+
+手电筒状态变化回调，通过注册回调函数获取手电筒状态变化。使用callback异步回调。
+
+当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明typestring是监听事件，固定为'torchStatusChange'。cameraManager对象获取成功后可监听。目前只支持手电筒打开，手电筒关闭，手电筒不可用，手电筒恢复可用会触发该事件并返回对应信息。callbackAsyncCallback<[TorchStatusInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__torchstatusinfo11)>是回调函数，用于获取手电筒状态变化信息。
+
+**示例：**
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function callback(err: BusinessError, torchStatusInfo: camera.TorchStatusInfo): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error(`Callback Error, errorCode: ${err.code}`);
+    return;
+  }
+  console.info(`onTorchStatusChange, isTorchAvailable: ${torchStatusInfo.isTorchAvailable}, isTorchActive: ${torchStatusInfo.isTorchActive}, level: ${torchStatusInfo.torchLevel}`);
+}
+
+function registerTorchStatusChange(cameraManager: camera.CameraManager): void {
+  cameraManager.on('torchStatusChange', callback);
+}
+```
+
+#### off('torchStatusChange')11+
+
+off(type: 'torchStatusChange', callback?: AsyncCallback<TorchStatusInfo>): void
+
+手电筒状态变化注销回调，通过注销回调函数取消获取手电筒状态变化。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明typestring是监听事件，固定为'torchStatusChange'。cameraManager对象获取成功后可监听。callbackAsyncCallback<[TorchStatusInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__torchstatusinfo11)>否回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。
+
+**示例：**
+
+```ets
+function unregisterTorchStatusChange(cameraManager: camera.CameraManager): void {
+  cameraManager.off('torchStatusChange');
+}
+```
+
+#### getCameraDevice18+
+
+getCameraDevice(position:CameraPosition, type: CameraType): CameraDevice
+
+根据相机位置和相机类型查询对应相机。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明position[CameraPosition](Enums.md#ZH-CN_TOPIC_0000002497445814__cameraposition)是需要得到的CameraDevice对象对应的CameraPosition条件。type[CameraType](Enums.md#ZH-CN_TOPIC_0000002497445814__cameratype)是需要得到的CameraDevice对象对应的CameraType条件。
+
+**返回值：**
+
+类型说明[CameraDevice](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__cameradevice)根据相机位置和相机类型查询的对应相机。
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
+
+错误码ID错误信息7400201Camera service fatal error.
+
+**示例：**
+
+```ets
+import { camera } from '@kit.CameraKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function getCameraDevice(cameraManager: camera.CameraManager, position: camera.CameraPosition, type: camera.CameraType): void {
+  try {
+    let curCameraDev: camera.CameraDevice | undefined = undefined;
+    curCameraDev = cameraManager.getCameraDevice(position, type);
+  } catch (error) {
+    // 失败返回错误码并处理。
+    let err = error as BusinessError;
+    console.error(`The getCameraDevice call failed. error code: ${err.code}`);
+  }
+}
+```
+
+#### getCameraConcurrentInfos18+
+
+getCameraConcurrentInfos(cameras: Array<CameraDevice>): Array<CameraConcurrentInfo>
+
+获取指定相机设备的并发信息。返回空数组表示不支持并发。
+
+**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明camerasArray<[CameraDevice](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__cameradevice)>是一组CameraDevice相机设备，并得到与这一组CamraDevice对应的并发信息，推荐设置为由[getCameraDevice](#ZH-CN_TOPIC_0000002497445800__getcameradevice18)获取的前置与后置两个用于并发的相机设备。
+
+**返回值：**
+
+类型说明Array<[CameraConcurrentInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__cameraconcurrentinfo18)>一组CameraDevice相机设备对象对应的并发信息，与CameraDevice相机设备一一对应。
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
+
+错误码ID错误信息7400201Camera service fatal error.
+
+**示例：**
+
+```ets
+import { camera } from '@kit.CameraKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function getCameraConcurrentInfos(cameraManager: camera.CameraManager,
+  cameraDeviceArray: Array<camera.CameraDevice>): Array<camera.CameraConcurrentInfo> {
+  let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = [];
+  try {
+    cameraConcurrentInfos = cameraManager.getCameraConcurrentInfos(cameraDeviceArray);
+  } catch (error) {
+    // 失败返回错误码并处理。
+    let err = error as BusinessError;
+    console.error(`The getCameraConcurrentInfos call failed. error code: ${err.code}`);
+  }
+  return cameraConcurrentInfos;
+}
+```
+
+#### getSupportedOutputCapability(deprecated)
+
+getSupportedOutputCapability(camera: CameraDevice): CameraOutputCapability
+
+查询相机设备支持的输出能力，同步返回结果。
+
+从 API version 10开始支持，从API version 11开始废弃。建议使用[getSupportedOutputCapability](#ZH-CN_TOPIC_0000002497445800__getsupportedoutputcapability11)替代。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明camera[CameraDevice](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__cameradevice)是相机设备，通过 [getSupportedCameras](#ZH-CN_TOPIC_0000002497445800__getsupportedcameras) 接口获取。传参异常时，会返回错误码。
+
+**返回值：**
+
+类型说明[CameraOutputCapability](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__cameraoutputcapability)相机输出能力。
+
+**示例：**
+
+```ets
+function getSupportedOutputCapability(camera: camera.CameraDevice, cameraManager: camera.CameraManager): camera.CameraOutputCapability {
+  let cameraOutputCapability: camera.CameraOutputCapability = cameraManager.getSupportedOutputCapability(camera);
+  return cameraOutputCapability;
+}
+```
+
+#### createPhotoOutput(deprecated)
+
+createPhotoOutput(profile: Profile, surfaceId: string): PhotoOutput
+
+创建拍照输出对象，同步返回结果。
+
+从 API version 10开始支持，从API version 11开始废弃。建议使用[createPhotoOutput](#ZH-CN_TOPIC_0000002497445800__createphotooutput11)替代。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+参数名类型必填说明profile[Profile](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__profile)是支持的拍照配置信息，通过[getSupportedOutputCapability](#ZH-CN_TOPIC_0000002497445800__getsupportedoutputcapability11)接口获取。surfaceIdstring是从[ImageReceiver](zh-cn_topic_0000002497605844.html)获取的surfaceId。
+
+**返回值：**
+
+类型说明[PhotoOutput](Interface (PhotoOutput).md)PhotoOutput实例。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
+
+错误码ID错误信息7400101Parameter missing or parameter type incorrect.
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function createPhotoOutput(cameraOutputCapability: camera.CameraOutputCapability, cameraManager: camera.CameraManager, surfaceId: string): camera.PhotoOutput | undefined {
+  let profile: camera.Profile = cameraOutputCapability.photoProfiles[0];
+  let photoOutput: camera.PhotoOutput | undefined = undefined;
+  try {
+    photoOutput = cameraManager.createPhotoOutput(profile, surfaceId);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The createPhotoOutput call failed. error code: ${err.code}`);
+  }
+  return photoOutput;
+}
+```
+
+#### createCaptureSession(deprecated)
+
+createCaptureSession(): CaptureSession
+
+创建CaptureSession实例，同步返回结果。
+
+从 API version 10开始支持，从API version 11开始废弃。建议使用[createSession](#ZH-CN_TOPIC_0000002497445800__createsession11)替代。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**返回值：**
+
+类型说明[CaptureSession](废弃的Interface (CaptureSession, deprecated).md)CaptureSession实例。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
+
+错误码ID错误信息7400201Camera service fatal error.
+
+**示例：**
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function createCaptureSession(cameraManager: camera.CameraManager): camera.CaptureSession | undefined {
+  let captureSession: camera.CaptureSession | undefined = undefined;
+  try {
+    captureSession = cameraManager.createCaptureSession();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`createCaptureSession error. error code: ${err.code}`);
+  }
+  return captureSession;
+}
+```

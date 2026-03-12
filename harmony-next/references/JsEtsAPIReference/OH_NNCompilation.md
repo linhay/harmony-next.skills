@@ -1,0 +1,15 @@
+# OH_NNCompilation
+
+```ets
+typedef struct OH_NNCompilation OH_NNCompilation
+```
+
+#### 概述
+
+编译器句柄。
+
+**起始版本：** 9
+
+**相关模块：**[NeuralNetworkRuntime](NeuralNetworkRuntime.md)
+
+**所在头文件：**[neural_network_runtime_type.h](neural_network_runtime_type.h.md)
