@@ -15,12 +15,12 @@ Expert guidance for **HarmonyOS NEXT (API 12+)** development. This repository co
 Make sure you have [Gemini CLI](https://github.com/google/gemini-cli) installed.
 
 ### 2. Download and Install
-Clone this repo and install the `.skill` file:
+1. Go to the [Releases](https://github.com/linhey/harmony-next.skills/releases) page.
+2. Download the `harmony-next.skill` file from the latest release.
+3. Install it using the following command:
 
 ```bash
-git clone https://github.com/linhey/harmony-next.skills.git
-cd harmony-next.skills
-gemini skills install harmony-next.skill --scope user
+gemini skills install path/to/harmony-next.skill --scope user
 ```
 
 ### 3. Reload
