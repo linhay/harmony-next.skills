@@ -1,110 +1,65 @@
-# HarmonyOS NEXT Reference Skill
+# HarmonyOS NEXT 开发者专家技能包 (Reference Skill)
 
-`harmony-next.skills` is a reference skill for coding agents.
-It provides a local source of truth for HarmonyOS NEXT (API 12+), with 3,403 Markdown references across ArkTS, ArkUI, and NDK topics.
+`harmony-next.skills` 是为 AI 编程助手（如 Gemini CLI, Claude Code, Codex）设计的参考技能库。
+它为 HarmonyOS NEXT (API 12+) 提供本地化的离线知识源，包含超过 3,403 份涵盖 ArkTS、ArkUI 和 NDK 的 Markdown 格式参考文档。
 
-## Key Features (v1.0.4+)
+[English Version](./README_en.md)
 
-Beyond API references, this skill now includes **expert guides** for:
-- 🛠 **IDE Operations**: Signing, Debugging, Emulator/Real Device setup.
-- 📈 **Performance Tuning**: CPU, Memory, Frame Rate, and Launch Analysis via DevEco Profiler.
-- 🏗 **Architecture**: Deep dive into HAP/HAR/HSP structures and Stage Model concurrency.
-- 🧪 **Automation Testing**: Unit and UI testing with Hypium, including CI/CD integration.
-- 🤖 **CLI Tools**: Full reference for `hdc`, `ohpm`, `hvigorw`, and `emulator` commands.
+## 核心特性 (v1.0.4+)
 
-## How It Works
+除了详尽的 API 参考外，本项目现已包含以下**专家级实战指南**：
+- 🛠 **IDE 实操**：应用签名、断点调试、模拟器与真机配置全流程。
+- 📈 **性能调优**：深入使用 DevEco Profiler 进行 CPU、内存、帧率及启动耗时分析。
+- 🏗 **架构设计**：HAP/HAR/HSP 包结构深度解析、Stage 模型并发机制与 Actor 模型。
+- 🧪 **自动化测试**：基于 Hypium 的单元测试与 UI 测试，以及 CI/CD 命令行集成。
+- 🤖 **命令行工具**：`hdc`、`ohpm`、`hvigorw` 及 `emulator` 完整命令手册。
 
-When your agent needs HarmonyOS knowledge, it should use this repository as a retrieval layer instead of guessing from model memory.
+## 工作原理
 
-Recommended lookup flow:
+当你的编程助手需要 HarmonyOS 相关知识时，应使用本仓库作为检索层，而非依赖大模型的训练记忆（避免幻觉）。
 
-1. Open [`KITS.md`](harmony-next/references/KITS.md) to locate the correct capability domain.
-2. Use [`TASK_MAP.md`](harmony-next/references/TASK_MAP.md) to map user intent to technical keywords.
-3. Resolve exact files from [`INDEX.md`](harmony-next/references/INDEX.md).
-4. Follow rules in [`SKILL.md`](harmony-next/SKILL.md) to answer with concrete API-level detail.
+**推荐查找流程：**
+1. 查看 [`KITS.md`](harmony-next/references/KITS.md) 确定所属能力集。
+2. 使用 [`TASK_MAP.md`](harmony-next/references/TASK_MAP.md) 将任务需求映射到技术关键词。
+3. 从 [`INDEX.md`](harmony-next/references/INDEX.md) 中定位具体文件。
+4. 遵循 [`SKILL.md`](harmony-next/SKILL.md) 中的规则，以获取精准的 API 级细节。
 
-This keeps responses precise, traceable, and stable.
+## 快速开始
 
-## Quickstart
-
-### User Integration Cheatsheet
+### 用户集成指南
 
 #### Gemini CLI
-
 ```bash
 gemini skills install https://github.com/linhay/harmony-next.skills --path harmony-next --scope user
 ```
 
 #### Claude Code
+1. 从本仓库下载技能文件夹。
+2. 根据需要进行压缩。
+3. 在 Claude.ai 的 `Settings > Capabilities > Skills` 中上传。
+4. 或者直接将其放置在你的 Claude Code 技能目录中。
 
-For actual skill installation, Anthropic's current distribution model is:
-
-1. Download the skill folder from this repository.
-2. Zip the skill folder if needed.
-3. Upload it in Claude.ai via `Settings > Capabilities > Skills`.
-4. Or place it in your Claude Code skills directory.
-
-If you only want to attach the repository as project context, use:
-
+如果你只想将其作为项目上下文添加：
 ```bash
 git clone https://github.com/linhay/harmony-next.skills.git
 claude --add-dir /path/to/harmony-next.skills/harmony-next
 ```
 
-Or in `CLAUDE.md`:
-
-```markdown
-## HarmonyOS NEXT Reference
-@/path/to/harmony-next.skills/harmony-next/SKILL.md
-```
-
-#### Codex / Custom Agents
-
-Use these two entry files:
-
+#### Codex / 自定义 Agent
+使用这两个入口文件进行索引：
 1. [`harmony-next/SKILL.md`](https://github.com/linhay/harmony-next.skills/blob/master/harmony-next/SKILL.md)
 2. [`harmony-next/references/INDEX.md`](https://github.com/linhay/harmony-next.skills/blob/master/harmony-next/references/INDEX.md)
 
-#### skills.sh
+## 包含内容
+- `harmony-next/references/`: 3,403 份 Markdown 文档 (约 50 MB)。
+- `harmony-next/SKILL.md`: 助手的检索规则与回答策略。
+- `harmony-next.skill`: 由 GitHub Actions 自动生成的打包发布产物。
 
-```bash
-# list skills in this repo
-npx skills add https://github.com/linhay/harmony-next.skills --list
+## 为什么需要它？
+- **消除幻觉**：提供 HarmonyOS 5.0+ 真实 API 实现指导。
+- **确定性回复**：为 Agent 工作流提供可寻址的文件参考。
+- **离线支持**：在无网或受限环境下依然可以使用完整的 API 手册。
 
-# install only harmony-next
-npx skills add https://github.com/linhay/harmony-next.skills --skill harmony-next
-
-# optional: install globally for all projects
-npx skills add https://github.com/linhay/harmony-next.skills --skill harmony-next -g
-```
-
-Use `--full-depth` only when the repository has deeply nested skill folders and default scanning misses them.
-
-## Provider Release
-
-`skills.sh` is the primary distribution channel for this repository.
-As the skill provider, you only need to keep this GitHub repository updated. Users install directly from the repo.
-
-Provider verification:
-
-```bash
-# run in this repository before release
-npx skills add . --list
-```
-
-## What Is Included
-
-- `harmony-next/references/`: 3,403 markdown reference files (about 50 MB).
-- `harmony-next/SKILL.md`: retrieval rules and answer policy for agents.
-- `harmony-next.skill`: packaged release artifact produced by GitHub Actions.
-
-## Why This Exists
-
-- Reduce hallucination in HarmonyOS implementation guidance.
-- Provide deterministic, file-addressable answers for agent workflows.
-- Keep API references usable in offline or constrained environments.
-
-## Source and License
-
-- Source: Huawei HarmonyOS official documentation.
-- This repository repackages those references for AI-assisted development workflows.
+## 来源与许可
+- 数据源：华为 HarmonyOS 官方文档。
+- 本仓库为 AI 辅助开发工作流重新封装了这些参考资料。
