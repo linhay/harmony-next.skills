@@ -23,11 +23,19 @@ This keeps responses precise, traceable, and stable.
 #### Gemini CLI
 
 ```bash
-gemini skills install https://github.com/linhay/harmony-next.skills/releases/latest/download/harmony-next.skill --scope user
-/skills reload
+gemini skills install https://github.com/linhay/harmony-next.skills --path harmony-next --scope user
 ```
 
 #### Claude Code
+
+For actual skill installation, Anthropic's current distribution model is:
+
+1. Download the skill folder from this repository.
+2. Zip the skill folder if needed.
+3. Upload it in Claude.ai via `Settings > Capabilities > Skills`.
+4. Or place it in your Claude Code skills directory.
+
+If you only want to attach the repository as project context, use:
 
 ```bash
 git clone https://github.com/linhay/harmony-next.skills.git
@@ -79,7 +87,7 @@ npx skills add . --list
 
 - `harmony-next/references/`: 3,394 markdown reference files (about 50 MB).
 - `harmony-next/SKILL.md`: retrieval rules and answer policy for agents.
-- `harmony-next.skill`: prebuilt skill package for Gemini CLI (about 8 MB).
+- `harmony-next.skill`: packaged release artifact produced by GitHub Actions.
 
 ## Why This Exists
 
