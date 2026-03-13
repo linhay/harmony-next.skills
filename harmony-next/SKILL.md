@@ -29,13 +29,21 @@ Due to the massive size of this knowledge base (3,300+ files), you MUST follow t
 
 - `JsEtsAPIReference/`: Detailed API signatures and C-API headers.
 - `quickStart/`: Step-by-step developer guides.
+- `ideGuides/`: Comprehensive IDE guides (Signing, Running, Debugging, CLI Tools).
+- `performanceAndStandards/`: Performance optimization and UX best practices (Profiler, Latency, Memory).
+- `appBasics/`: Core architecture guides (HAP/HAR/HSP, Stage Model, Concurrency).
+- `testing/`: Automation testing guides using Hypium.
 - `KITS.md`: The primary navigation hub organized by @kit.
-- `INDEX.md`: The full A-Z file list for surgical lookups.
+- `INDEX.md`: The full file list for surgical lookups.
 
 ### Directory Structure under `references/`
 
 - `JsEtsAPIReference/` : Contains the bulk of ArkTS and ArkUI component APIs, lifecycle methods, error codes, and C-API/NDK headers.
 - `quickStart/` : Beginner tutorials and fundamental concepts (e.g., page navigation, entry points).
+- `ideGuides/` : IDE operational guides, CLI references, and debugging methodologies.
+- `performanceAndStandards/` : Profiling tools (Insight) and app performance standards.
+- `appBasics/` : Fundamental application architecture, models, and package structures.
+- `testing/` : Testing frameworks and UI automation strategies.
 - `hos/` & `hos_en/` : Core concepts, system services, and framework overviews.
 
 ## Core Directives for HarmonyOS Generation

@@ -3390,3 +3390,12 @@ quickStart/ets/编写第一个页面.md
 quickStart/ets/创建一个新工程.md
 quickStart/ets/编写第二个页面.md
 quickStart/ets/使用真机运行应用.md
+ideGuides/应用签名指南.md
+ideGuides/运行与环境配置指南.md
+ideGuides/调试与日志分析.md
+ideGuides/命令行工具指南.md
+performanceAndStandards/性能调优与Profiler指南.md
+performanceAndStandards/应用体验与性能规范.md
+testing/应用测试与Hypium指南.md
+appBasics/应用基础与包结构.md
+appBasics/应用模型与并发.md
