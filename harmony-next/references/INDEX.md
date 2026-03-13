@@ -3399,3 +3399,8 @@ performanceAndStandards/应用体验与性能规范.md
 testing/应用测试与Hypium指南.md
 appBasics/应用基础与包结构.md
 appBasics/应用模型与并发.md
+multiDevice/一次开发多端部署指南.md
+continuation/自由流转与跨端协同指南.md
+ndkGuides/NDK开发与Node-API指南.md
+publishing/应用上架与发布指南.md
+ideGuides/AI辅助编程指南.md

@@ -49,8 +49,17 @@
 - Keywords: HAP, HAR, HSP, 包结构, 共享包
 - Keywords: Stage模型, FA模型, UIAbility, ExtensionAbility
 - Keywords: 并发模型, TaskPool, Worker, Event Loop
+- Keywords: 一次开发多端部署, 一多, 自适应布局, 响应式布局, 断点, 栅格
+- Keywords: 自由流转, 跨端迁移, 多端协同, Continuation
+
+## NDK & Native
+- Keywords: NDK, Node-API, napi, C++, CMake, 跨语言互调
+
+## Publishing
+- Keywords: 上架, 发布, AGC, AppGallery Connect, 审核, Profile
 
 ## Testing
 - Keywords: 测试, Hypium, 单元测试, UI测试
 - Keywords: 自动化测试, 断言, Mock, By定位
+- Keywords: AI辅助编程, CodeGenie, 代码生成
 

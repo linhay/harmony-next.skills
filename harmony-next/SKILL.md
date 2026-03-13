@@ -32,6 +32,10 @@ Due to the massive size of this knowledge base (3,300+ files), you MUST follow t
 - `ideGuides/`: Comprehensive IDE guides (Signing, Running, Debugging, CLI Tools).
 - `performanceAndStandards/`: Performance optimization and UX best practices (Profiler, Latency, Memory).
 - `appBasics/`: Core architecture guides (HAP/HAR/HSP, Stage Model, Concurrency).
+- `multiDevice/`: Multi-device adaptation strategies (Adaptive/Responsive Layout).
+- `continuation/`: Cross-device migration and multi-device collaboration.
+- `ndkGuides/`: Native development guides (Node-API, C++ integration).
+- `publishing/`: AppGallery Connect release and publishing process.
 - `testing/`: Automation testing guides using Hypium.
 - `KITS.md`: The primary navigation hub organized by @kit.
 - `INDEX.md`: The full file list for surgical lookups.

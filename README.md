@@ -1,18 +1,21 @@
 # HarmonyOS NEXT 开发者专家技能包 (Reference Skill)
 
 `harmony-next.skills` 是为 AI 编程助手（如 Gemini CLI, Claude Code, Codex）设计的参考技能库。
-它为 HarmonyOS NEXT (API 12+) 提供本地化的离线知识源，包含超过 3,403 份涵盖 ArkTS、ArkUI 和 NDK 的 Markdown 格式参考文档。
+它为 HarmonyOS NEXT (API 12+) 提供本地化的离线知识源，包含超过 3,408 份涵盖 ArkTS、ArkUI 和 NDK 的 Markdown 格式参考文档。
 
 [English Version](./README_en.md)
 
-## 核心特性 (v1.0.4+)
+## 核心特性 (v1.0.5+)
 
 除了详尽的 API 参考外，本项目现已包含以下**专家级实战指南**：
-- 🛠 **IDE 实操**：应用签名、断点调试、模拟器与真机配置全流程。
+- 🛠 **IDE 实操**：应用签名、断点调试、模拟器与真机配置、**AI 智能辅助编程 (CodeGenie)**。
+- 📱 **多端适配**：**一次开发多端部署**（自适应/响应式布局）、折叠屏与平板专项适配。
+- 🔄 **自由流转**：跨端迁移、多端协同的核心逻辑与开发步骤。
+- ⚙️ **NDK 开发**：**Node-API (napi)** 基础、C++ 与 ArkTS 跨语言互调。
+- 🚀 **应用发布**：AppGallery Connect 配置、发布证书申请、上架审核流程。
 - 📈 **性能调优**：深入使用 DevEco Profiler 进行 CPU、内存、帧率及启动耗时分析。
-- 🏗 **架构设计**：HAP/HAR/HSP 包结构深度解析、Stage 模型并发机制与 Actor 模型。
+- 🏗 **架构设计**：HAP/HAR/HSP 包结构深度解析、Stage 模型并发机制。
 - 🧪 **自动化测试**：基于 Hypium 的单元测试与 UI 测试，以及 CI/CD 命令行集成。
-- 🤖 **命令行工具**：`hdc`、`ohpm`、`hvigorw` 及 `emulator` 完整命令手册。
 
 ## 工作原理
 
