@@ -1,61 +1,93 @@
-# harmony-next.skills 🚀
+# HarmonyOS NEXT Superpowers
 
-Expert guidance for **HarmonyOS NEXT (API 12+)** development. 3,300+ precision-localized documentation files covering ArkTS, ArkUI, and NDK. 
+`harmony-next.skills` is a documentation pack for coding agents.
+It provides a local source of truth for HarmonyOS NEXT (API 12+), with 3,394 Markdown references across ArkTS, ArkUI, and NDK topics.
 
-This repository provides **"Superpowers"** for your AI agents (Gemini CLI, Claude Code, OpenAI Codex, etc.) by providing a reliable Source of Truth for HarmonyOS development.
+## How It Works
 
----
+When your agent needs HarmonyOS knowledge, it should use this repository as a retrieval layer instead of guessing from model memory.
 
-## 🛠️ Usage for AI Agents
+Recommended lookup flow:
 
-### ♊ Gemini CLI (Recommended)
-Install the pre-packaged skill for an optimized, offline-first experience.
+1. Open [`KITS.md`](harmony-next/references/KITS.md) to locate the correct capability domain.
+2. Use [`TASK_MAP.md`](harmony-next/references/TASK_MAP.md) to map user intent to technical keywords.
+3. Resolve exact files from [`INDEX.md`](harmony-next/references/INDEX.md).
+4. Follow rules in [`SKILL.md`](harmony-next/SKILL.md) to answer with concrete API-level detail.
+
+This keeps responses precise, traceable, and stable.
+
+## Quickstart
+
+### User Integration Cheatsheet
+
+#### Gemini CLI
 
 ```bash
-# One-line install from latest release
-gemini skills install https://github.com/linhey/harmony-next.skills/releases/latest/download/harmony-next.skill --scope user
-
-# Reload session
+gemini skills install https://github.com/linhay/harmony-next.skills/releases/latest/download/harmony-next.skill --scope user
 /skills reload
 ```
 
-### 🤖 Claude Code
-Add this repository as a "Superpower" context to your Claude Code session.
+#### Claude Code
 
-1. Clone the repo: `git clone https://github.com/linhey/harmony-next.skills.git`
-2. Add to context:
 ```bash
-# Launch Claude with the docs directory
+git clone https://github.com/linhay/harmony-next.skills.git
 claude --add-dir /path/to/harmony-next.skills/harmony-next
 ```
-3. Or reference the **SKILL.md** in your `CLAUDE.md`:
+
+Or in `CLAUDE.md`:
+
 ```markdown
 ## HarmonyOS NEXT Reference
 @/path/to/harmony-next.skills/harmony-next/SKILL.md
 ```
 
-### 🧠 OpenAI Codex / Custom Agents
-Point your agent to the [SKILL.md](https://github.com/linhey/harmony-next.skills/blob/master/harmony-next/SKILL.md) and the [INDEX.md](https://github.com/linhey/harmony-next.skills/blob/master/harmony-next/references/INDEX.md) to enable surgical documentation lookups.
+#### Codex / Custom Agents
 
----
+Use these two entry files:
 
-## ✨ Features
+1. [`harmony-next/SKILL.md`](https://github.com/linhay/harmony-next.skills/blob/master/harmony-next/SKILL.md)
+2. [`harmony-next/references/INDEX.md`](https://github.com/linhay/harmony-next.skills/blob/master/harmony-next/references/INDEX.md)
 
-- **3,300+ Docs**: Full API signatures, component lifecycles, and NDK headers.
-- **Three-Tier Search Architecture**:
-  1. [`KITS.md`](harmony-next/references/KITS.md) - Identify the module (AbilityKit, ArkUI, etc.).
-  2. [`TASK_MAP.md`](harmony-next/references/TASK_MAP.md) - Map common tasks to technical keywords.
-  3. [`INDEX.md`](harmony-next/references/INDEX.md) - Fast lookup for exact filenames.
-- **Refined Format**: Corrected ETS code block indentation and syntax highlighting.
-- **Zero Hallucination**: Rely on official docs, not outdated training data.
+#### skills.sh
 
----
+```bash
+# list skills in this repo
+npx skills add https://github.com/linhay/harmony-next.skills --list
 
-## 📂 Structure
+# install only harmony-next
+npx skills add https://github.com/linhay/harmony-next.skills --skill harmony-next
 
-- `harmony-next/SKILL.md`: The core instruction set for AI Agents.
-- `harmony-next/references/`: The massive Markdown knowledge base.
-- `harmony-next.skill`: The compiled package for Gemini CLI.
+# optional: install globally for all projects
+npx skills add https://github.com/linhay/harmony-next.skills --skill harmony-next -g
+```
 
-## License
-Documentation source: Huawei HarmonyOS Official Documentation.
+Use `--full-depth` only when the repository has deeply nested skill folders and default scanning misses them.
+
+## Provider Release
+
+`skills.sh` is the primary distribution channel for this repository.
+As the skill provider, you only need to keep this GitHub repository updated. Users install directly from the repo.
+
+Provider verification:
+
+```bash
+# run in this repository before release
+npx skills add . --list
+```
+
+## What Is Included
+
+- `harmony-next/references/`: 3,394 markdown reference files (about 50 MB).
+- `harmony-next/SKILL.md`: retrieval rules and answer policy for agents.
+- `harmony-next.skill`: prebuilt skill package for Gemini CLI (about 8 MB).
+
+## Why This Exists
+
+- Reduce hallucination in HarmonyOS implementation guidance.
+- Provide deterministic, file-addressable answers for agent workflows.
+- Keep API references usable in offline or constrained environments.
+
+## Source and License
+
+- Source: Huawei HarmonyOS official documentation.
+- This repository repackages those references for AI-assisted development workflows.
