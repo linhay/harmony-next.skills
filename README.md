@@ -1,6 +1,6 @@
 # harmony-next.skills
 
-Expert guidance for **HarmonyOS NEXT (API 12+)** development. This repository contains a pre-packaged skill with over 3,300 localized documentation files covering ArkTS, ArkUI, and NDK. Compatible with Gemini CLI, Claude Code, and OpenAI Codex.
+Expert guidance for **HarmonyOS NEXT (API 12+)** development. This repository contains a pre-packaged Gemini CLI skill with over 3,300 localized documentation files covering ArkTS, ArkUI, and NDK.
 
 ## Features
 
@@ -11,91 +11,37 @@ Expert guidance for **HarmonyOS NEXT (API 12+)** development. This repository co
 
 ## Installation
 
-### Gemini CLI
+### Gemini CLI (Recommended)
 
 #### 1. Prerequisite
 Make sure you have [Gemini CLI](https://github.com/google/gemini-cli) installed.
 
-#### 2. Download and Install
-1. Go to the [Releases](https://github.com/linhay/harmony-next.skills/releases) page.
-2. Download the `harmony-next.skill` file from the latest release.
-3. Install it using the following command:
+#### 2. One-Line Install
+Run the following command to install the skill directly from the latest release:
 
 ```bash
-gemini skills install path/to/harmony-next.skill --scope user
+gemini skills install https://github.com/linhey/harmony-next.skills/releases/latest/download/harmony-next.skill --scope user
 ```
 
 #### 3. Reload
-In your Gemini CLI session, run:
+In your interactive Gemini CLI session, run:
 ```bash
 /skills reload
 ```
 
----
-
-### Claude Code
-
-#### 1. Prerequisite
-Make sure you have [Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) installed.
-
-```bash
-npm install -g @anthropic-ai/claude-code
-```
-
-#### 2. Clone the Repository
-
-```bash
-git clone https://github.com/linhay/harmony-next.skills.git
-```
-
-#### 3. Add Context to Your Project
-
-In your project root, add the skill path to your `CLAUDE.md` file:
-
-```markdown
-## HarmonyOS NEXT Reference
-
-@/path/to/harmony-next.skills/harmony-next/SKILL.md
-```
-
-Or launch Claude Code with the skill directory added as context:
-
-```bash
-claude --add-dir /path/to/harmony-next.skills/harmony-next
-```
-
----
-
-### OpenAI Codex
-
-#### 1. Prerequisite
-Make sure you have [Codex CLI](https://github.com/openai/codex) installed.
-
-```bash
-npm install -g @openai/codex
-```
-
-#### 2. Clone the Repository
-
-```bash
-git clone https://github.com/linhay/harmony-next.skills.git
-```
-
-#### 3. Add Context to Your Project
-
-In your project root, add the skill path to your `AGENTS.md` file:
-
-```markdown
-## HarmonyOS NEXT Reference
-
-See /path/to/harmony-next.skills/harmony-next/SKILL.md for HarmonyOS NEXT (API 12+) expert guidance including ArkTS, ArkUI, and NDK documentation.
-```
+### Manual Installation (from Source)
+If you prefer to install from source or use other tools:
+1. Clone this repository: `git clone https://github.com/linhey/harmony-next.skills.git`
+2. Install the local folder: `gemini skills install ./harmony-next --scope workspace`
 
 ---
 
 ## How to Use
 
-After installation, the agent will automatically use this skill for HarmonyOS-related queries. It follows a specific search protocol to find exact APIs within the massive reference library.
+After installation, the agent will automatically use this skill for HarmonyOS-related queries. It follows a specific search protocol:
+1. **Identify Kit**: Check `KITS.md` to narrow down the scope.
+2. **Task Mapping**: Check `TASK_MAP.md` for common patterns.
+3. **Surgical Search**: Use `INDEX.md` to find exact filenames for `read_file`.
 
 ## License
 Documentation source: Huawei HarmonyOS Official Documentation.
