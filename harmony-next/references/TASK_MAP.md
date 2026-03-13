@@ -38,6 +38,7 @@
 - Keywords: 调试, Debug, 断点, LLDB
 - Keywords: 日志, Log, HiLog, 故障分析, FaultLog
 - Keywords: 命令行, CLI, hdc, ohpm, hvigor, 自动化
+- Keywords: 独立工具包, Standalone CLI, OHOS_BASE_SDK_HOME, 环境变量, CI/CD配置
 
 ## Performance & Optimization
 - Keywords: Profiler, 性能, 调优, 卡顿, 丢帧, Jank, FPS

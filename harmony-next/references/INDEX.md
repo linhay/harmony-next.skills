@@ -3404,3 +3404,4 @@ continuation/自由流转与跨端协同指南.md
 ndkGuides/NDK开发与Node-API指南.md
 publishing/应用上架与发布指南.md
 ideGuides/AI辅助编程指南.md
+ideGuides/独立命令行工具配置手册.md

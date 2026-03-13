@@ -29,7 +29,7 @@ Due to the massive size of this knowledge base (3,300+ files), you MUST follow t
 
 - `JsEtsAPIReference/`: Detailed API signatures and C-API headers.
 - `quickStart/`: Step-by-step developer guides.
-- `ideGuides/`: Comprehensive IDE guides (Signing, Running, Debugging, CLI Tools).
+- `ideGuides/`: Comprehensive IDE guides (Signing, Running, Debugging, CLI Tools, Standalone CLI Config).
 - `performanceAndStandards/`: Performance optimization and UX best practices (Profiler, Latency, Memory).
 - `appBasics/`: Core architecture guides (HAP/HAR/HSP, Stage Model, Concurrency).
 - `multiDevice/`: Multi-device adaptation strategies (Adaptive/Responsive Layout).

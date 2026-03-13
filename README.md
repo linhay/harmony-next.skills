@@ -1,15 +1,16 @@
 # HarmonyOS NEXT 开发者专家技能包 (Reference Skill)
 
 `harmony-next.skills` 是为 AI 编程助手（如 Gemini CLI, Claude Code, Codex）设计的参考技能库。
-它为 HarmonyOS NEXT (API 12+) 提供本地化的离线知识源，包含超过 3,408 份涵盖 ArkTS、ArkUI 和 NDK 的 Markdown 格式参考文档。
+它为 HarmonyOS NEXT (API 12+) 提供本地化的离线知识源，包含超过 3,409 份涵盖 ArkTS、ArkUI 和 NDK 的 Markdown 格式参考文档。
 
 [English Version](./README_en.md)
 
-## 核心特性 (v1.0.5+)
+## 核心特性 (v1.0.6+)
 
 除了详尽的 API 参考外，本项目现已包含以下**专家级实战指南**：
-- 🛠 **IDE 实操**：应用签名、断点调试、模拟器与真机配置、**AI 智能辅助编程 (CodeGenie)**。
-- 📱 **多端适配**：**一次开发多端部署**（自适应/响应式布局）、折叠屏与平板专项适配。
+- 🛠 **IDE 实操**：应用签名、断点调试、模拟器与真机配置、AI 智能辅助编程。
+- 🤖 **独立工具链**：**独立命令行工具包 (Standalone CLI)** 的下载、环境变量配置及 CI/CD 深度调优。
+- 📱 **多端适配**：一次开发多端部署（自适应/响应式布局）、折叠屏与平板专项适配。
 - 🔄 **自由流转**：跨端迁移、多端协同的核心逻辑与开发步骤。
 - ⚙️ **NDK 开发**：**Node-API (napi)** 基础、C++ 与 ArkTS 跨语言互调。
 - 🚀 **应用发布**：AppGallery Connect 配置、发布证书申请、上架审核流程。
