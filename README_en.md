@@ -1,7 +1,7 @@
 # HarmonyOS NEXT Reference Skill
 
 `harmony-next.skills` is a reference skill for coding agents.
-It provides a local source of truth for HarmonyOS NEXT (primarily API 12+, with extensive API 12-23 version notes/compatibility-change hints, and occasional references to earlier APIs for comparison), with 3,400+ Markdown references across ArkTS, ArkUI, and NDK topics.
+It provides a local source of truth for HarmonyOS NEXT (primarily API 12+, with extensive API 12-23 version notes/compatibility-change hints, and occasional references to earlier APIs for comparison), with 4,257 Markdown references across ArkTS, ArkUI, and NDK topics (4,232 under `JsEtsAPIReference/`).
 
 ## Key Features (v1.0.6+)
 
@@ -98,7 +98,7 @@ npx skills add . --list
 
 ## What Is Included
 
-- `harmony-next/references/`: 3,403 markdown reference files (about 50 MB).
+- `harmony-next/references/`: 4,257 markdown reference files (about 50 MB).
 - `harmony-next/SKILL.md`: retrieval rules and answer policy for agents.
 - `harmony-next.skill`: packaged release artifact produced by GitHub Actions.
 
