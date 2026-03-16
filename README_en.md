@@ -3,9 +3,10 @@
 `harmony-next.skills` is a reference skill for coding agents.
 It provides a local source of truth for HarmonyOS NEXT (primarily API 12+, with extensive API 12-23 version notes/compatibility-change hints, and occasional references to earlier APIs for comparison), with 4,257 Markdown references across ArkTS, ArkUI, and NDK topics (4,232 under `JsEtsAPIReference/`).
 
-## Key Features (v1.0.6+)
+## Key Features (v1.1.0+)
 
 Beyond API references, this skill now includes **expert guides** for:
+- **Progressive Disclosure Retrieval**: `SKILL.md -> KITS.md/TASK_MAP.md -> INDEX.md`, resolve paths first and open only a few target docs.
 - **IDE Operations**: Signing, Debugging, Emulator/Real Device setup, and AI assistance.
 - **Standalone Toolchain**: Standalone CLI download, env vars, and CI/CD configuration.
 - **Multi-device Adaptation**: Strategies for phone, foldable, and tablet (Adaptive/Responsive Layout).
