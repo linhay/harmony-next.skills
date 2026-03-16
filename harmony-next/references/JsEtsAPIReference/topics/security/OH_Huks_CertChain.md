@@ -1,0 +1,21 @@
+# OH_Huks_CertChain
+
+```ets
+struct OH_Huks_CertChain {...}
+```
+
+#### 概述
+
+定义证书链的结构体类型。
+
+**起始版本：** 9
+
+**相关模块：**[HuksTypeApi](../networking/HuksTypeApi.md)
+
+**所在头文件：**[native_huks_type.h](../../capi/headers/native_huks_type.h.md)
+
+#### 汇总
+
+#### 成员变量
+
+名称描述struct [OH_Huks_Blob](../misc/OH_Huks_Blob.md) *certs指向证书数据的指针。uint32_t certsCount证书本数。

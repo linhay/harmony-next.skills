@@ -1,0 +1,25 @@
+# OH_DecodingOptions
+
+```ets
+typedef struct OH_DecodingOptions OH_DecodingOptions
+```
+
+#### 概述
+
+OH_DecodingOptions是native层封装的解码选项参数结构体，用于设置解码选项参数，在创建Pixelmap时作为入参传入，详细信息见[OH_ImageSourceNative_CreatePixelmap](../../capi/headers/image_source_native.h.md#ZH-CN_TOPIC_0000002497445874__oh_imagesourcenative_createpixelmap)。
+
+OH_DecodingOptions结构体不可直接操作，而是采用函数调用方式创建、释放结构体以及操作具体字段。
+
+创建OH_DecodingOptions对象使用[OH_DecodingOptions_Create](../../capi/headers/image_source_native.h.md#ZH-CN_TOPIC_0000002497445874__oh_decodingoptions_create)函数。
+
+释放OH_DecodingOptions对象使用[OH_DecodingOptions_Release](../../capi/headers/image_source_native.h.md#ZH-CN_TOPIC_0000002497445874__oh_decodingoptions_release)函数。
+
+OH_DecodingOptions结构体内容和操作方式如下：
+
+字段类型字段名称字段描述操作函数函数描述int32_tpixelFormat像素格式[OH_DecodingOptions_GetPixelFormat](../../capi/headers/image_source_native.h.md#ZH-CN_TOPIC_0000002497445874__oh_decodingoptions_getpixelformat)获取pixel格式。int32_tpixelFormat像素格式[OH_DecodingOptions_SetPixelFormat](../../capi/headers/image_source_native.h.md#ZH-CN_TOPIC_0000002497445874__oh_decodingoptions_setpixelformat)设置像素格式。uint32_tindex解码图片序号[OH_DecodingOptions_GetIndex](../../capi/headers/image_source_native.h.md#ZH-CN_TOPIC_0000002497445874__oh_decodingoptions_getindex)获取解码图片序号。uint32_tindex解码图片序号[OH_DecodingOptions_SetIndex](../../capi/headers/image_source_native.h.md#ZH-CN_TOPIC_0000002497445874__oh_decodingoptions_setindex)设置解码图片序号。floatrotate旋转角度[OH_DecodingOptions_GetRotate](../../capi/headers/image_source_native.h.md#ZH-CN_TOPIC_0000002497445874__oh_decodingoptions_getrotate)获取旋转角度。floatrotate旋转角度[OH_DecodingOptions_SetRotate](../../capi/headers/image_source_native.h.md#ZH-CN_TOPIC_0000002497445874__oh_decodingoptions_setrotate)设置旋转角度。Image_SizedesiredSize期望输出大小[OH_DecodingOptions_GetDesiredSize](../../capi/headers/image_source_native.h.md#ZH-CN_TOPIC_0000002497445874__oh_decodingoptions_getdesiredsize)获取期望输出大小。Image_SizedesiredSize期望输出大小[OH_DecodingOptions_SetDesiredSize](../../capi/headers/image_source_native.h.md#ZH-CN_TOPIC_0000002497445874__oh_decodingoptions_setdesiredsize)设置期望输出大小。Image_RegiondesiredRegion解码区域[OH_DecodingOptions_GetDesiredRegion](../../capi/headers/image_source_native.h.md#ZH-CN_TOPIC_0000002497445874__oh_decodingoptions_getdesiredregion)获取解码区域。Image_RegiondesiredRegion解码区域[OH_DecodingOptions_SetDesiredRegion](../../capi/headers/image_source_native.h.md#ZH-CN_TOPIC_0000002497445874__oh_decodingoptions_setdesiredregion)设置解码区域。int32_tdesiredDynamicRange期望动态范围[OH_DecodingOptions_GetDesiredDynamicRange](../../capi/headers/image_source_native.h.md#ZH-CN_TOPIC_0000002497445874__oh_decodingoptions_getdesireddynamicrange)获取解码时设置的期望动态范围。int32_tdesiredDynamicRange期望动态范围[OH_DecodingOptions_SetDesiredDynamicRange](../../capi/headers/image_source_native.h.md#ZH-CN_TOPIC_0000002497445874__oh_decodingoptions_setdesireddynamicrange)设置解码时的期望动态范围。
+
+**起始版本：** 12
+
+**相关模块：**[Image_NativeModule](../graphics/Image_NativeModule.md)
+
+**所在头文件：**[image_source_native.h](../../capi/headers/image_source_native.h.md)

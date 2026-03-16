@@ -1,0 +1,1181 @@
+# inputmethod_text_editor_proxy_capi.h
+
+#### 概述
+
+提供一套方法支持应用开发的自绘输入框获取来自输入法应用的通知和请求。
+
+**引用文件：** <inputmethod/inputmethod_text_editor_proxy_capi.h>
+
+**库：** libohinputmethod.so
+
+**系统能力：** SystemCapability.MiscServices.InputMethodFramework
+
+**起始版本：** 12
+
+**相关模块：**[InputMethod](../../topics/input/InputMethod.md)
+
+#### 汇总
+
+#### 结构体
+
+名称typedef关键字描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)InputMethod_TextEditorProxy输入框代理。提供了获取来自输入法应用的通知和请求的方法。当输入法向编辑器发送请求或通知时，这些方法将被调用。
+
+#### 函数
+
+名称typedef关键字描述[typedef void (*OH_TextEditorProxy_GetTextConfigFunc)(InputMethod_TextEditorProxy *textEditorProxy, InputMethod_TextConfig *config)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextconfigfunc)OH_TextEditorProxy_GetTextConfigFunc输入法获取输入框配置时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetGetTextConfigFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setgettextconfigfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。[typedef void (*OH_TextEditorProxy_InsertTextFunc)(InputMethod_TextEditorProxy *textEditorProxy, const char16_t *text, size_t length)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_inserttextfunc)OH_TextEditorProxy_InsertTextFunc输入法应用插入文本时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetInsertTextFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setinserttextfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。[typedef void (*OH_TextEditorProxy_DeleteForwardFunc)(InputMethod_TextEditorProxy *textEditorProxy, int32_t length)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_deleteforwardfunc)OH_TextEditorProxy_DeleteForwardFunc输入法删除光标右侧文本时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetDeleteForwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setdeleteforwardfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。[typedef void (*OH_TextEditorProxy_DeleteBackwardFunc)(InputMethod_TextEditorProxy *textEditorProxy, int32_t length)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_deletebackwardfunc)OH_TextEditorProxy_DeleteBackwardFunc输入法删除光标左侧文本时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetDeleteForwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setdeleteforwardfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。[typedef void (*OH_TextEditorProxy_SendKeyboardStatusFunc)(InputMethod_TextEditorProxy *textEditorProxy, InputMethod_KeyboardStatus keyboardStatus)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sendkeyboardstatusfunc)OH_TextEditorProxy_SendKeyboardStatusFunc输入法通知键盘状态时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetSendKeyboardStatusFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setsendkeyboardstatusfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。[typedef void (*OH_TextEditorProxy_SendEnterKeyFunc)(InputMethod_TextEditorProxy *textEditorProxy, InputMethod_EnterKeyType enterKeyType)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sendenterkeyfunc)OH_TextEditorProxy_SendEnterKeyFunc输入法发送回车键时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetSendEnterKeyFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setsendenterkeyfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。[typedef void (*OH_TextEditorProxy_MoveCursorFunc)(InputMethod_TextEditorProxy *textEditorProxy, InputMethod_Direction direction)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_movecursorfunc)OH_TextEditorProxy_MoveCursorFunc输入法移动光标时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetMoveCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setmovecursorfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。[typedef void (*OH_TextEditorProxy_HandleSetSelectionFunc)(InputMethod_TextEditorProxy *textEditorProxy, int32_t start, int32_t end)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_handlesetselectionfunc)OH_TextEditorProxy_HandleSetSelectionFunc输入法请求选中文本时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetHandleSetSelectionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sethandlesetselectionfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。[typedef void (*OH_TextEditorProxy_HandleExtendActionFunc)(InputMethod_TextEditorProxy *textEditorProxy, InputMethod_ExtendAction action)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_handleextendactionfunc)OH_TextEditorProxy_HandleExtendActionFunc输入法发送扩展编辑操作时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetHandleExtendActionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sethandleextendactionfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。[typedef void (*OH_TextEditorProxy_GetLeftTextOfCursorFunc)(InputMethod_TextEditorProxy *textEditorProxy, int32_t number, char16_t text[], size_t *length)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getlefttextofcursorfunc)OH_TextEditorProxy_GetLeftTextOfCursorFunc输入法获取光标左侧文本时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetGetLeftTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setgetlefttextofcursorfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。[typedef void (*OH_TextEditorProxy_GetRightTextOfCursorFunc)(InputMethod_TextEditorProxy *textEditorProxy, int32_t number, char16_t text[], size_t *length)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getrighttextofcursorfunc)OH_TextEditorProxy_GetRightTextOfCursorFunc输入法获取光标右侧文本时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetGetRightTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setgetrighttextofcursorfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。[typedef int32_t (*OH_TextEditorProxy_GetTextIndexAtCursorFunc)(InputMethod_TextEditorProxy *textEditorProxy)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextindexatcursorfunc)OH_TextEditorProxy_GetTextIndexAtCursorFunc输入法获取光标所在输入框文本索引时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetGetTextIndexAtCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setgettextindexatcursorfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。[typedef int32_t (*OH_TextEditorProxy_ReceivePrivateCommandFunc)(InputMethod_TextEditorProxy *textEditorProxy, InputMethod_PrivateCommand *privateCommand[], size_t size)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_receiveprivatecommandfunc)OH_TextEditorProxy_ReceivePrivateCommandFunc输入法应用发送私有数据命令时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetReceivePrivateCommandFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setreceiveprivatecommandfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。[typedef int32_t (*OH_TextEditorProxy_SetPreviewTextFunc)(InputMethod_TextEditorProxy *textEditorProxy, const char16_t text[], size_t length, int32_t start, int32_t end)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setpreviewtextfunc)OH_TextEditorProxy_SetPreviewTextFunc输入法设置预上屏文本时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetReceivePrivateCommandFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setreceiveprivatecommandfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。[typedef void (*OH_TextEditorProxy_FinishTextPreviewFunc)(InputMethod_TextEditorProxy *textEditorProxy)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_finishtextpreviewfunc)OH_TextEditorProxy_FinishTextPreviewFunc输入法结束预上屏时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetReceivePrivateCommandFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setreceiveprivatecommandfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。[InputMethod_TextEditorProxy *OH_TextEditorProxy_Create(void)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_create)-创建一个新的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例。[void OH_TextEditorProxy_Destroy(InputMethod_TextEditorProxy *proxy)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_destroy)-销毁一个[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例。[InputMethod_ErrorCode OH_TextEditorProxy_SetGetTextConfigFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_GetTextConfigFunc getTextConfigFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setgettextconfigfunc)-将函数[OH_TextEditorProxy_GetTextConfigFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextconfigfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。[InputMethod_ErrorCode OH_TextEditorProxy_SetInsertTextFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_InsertTextFunc insertTextFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setinserttextfunc)-将函数[OH_TextEditorProxy_InsertTextFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_inserttextfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。[InputMethod_ErrorCode OH_TextEditorProxy_SetDeleteForwardFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_DeleteForwardFunc deleteForwardFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setdeleteforwardfunc)-将函数[OH_TextEditorProxy_DeleteForwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_deleteforwardfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。[InputMethod_ErrorCode OH_TextEditorProxy_SetDeleteBackwardFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_DeleteBackwardFunc deleteBackwardFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setdeletebackwardfunc)-将函数[OH_TextEditorProxy_DeleteBackwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_deletebackwardfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。[InputMethod_ErrorCode OH_TextEditorProxy_SetSendKeyboardStatusFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_SendKeyboardStatusFunc sendKeyboardStatusFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setsendkeyboardstatusfunc)-将函数[OH_TextEditorProxy_SendKeyboardStatusFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sendkeyboardstatusfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。[InputMethod_ErrorCode OH_TextEditorProxy_SetSendEnterKeyFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_SendEnterKeyFunc sendEnterKeyFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setsendenterkeyfunc)-将函数[OH_TextEditorProxy_SetSendEnterKeyFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setsendenterkeyfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。[InputMethod_ErrorCode OH_TextEditorProxy_SetMoveCursorFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_MoveCursorFunc moveCursorFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setmovecursorfunc)-将函数[OH_TextEditorProxy_SetMoveCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setmovecursorfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。[InputMethod_ErrorCode OH_TextEditorProxy_SetHandleSetSelectionFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_HandleSetSelectionFunc handleSetSelectionFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sethandlesetselectionfunc)-将函数[OH_TextEditorProxy_HandleSetSelectionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_handlesetselectionfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。[InputMethod_ErrorCode OH_TextEditorProxy_SetHandleExtendActionFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_HandleExtendActionFunc handleExtendActionFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sethandleextendactionfunc)-将函数[OH_TextEditorProxy_HandleExtendActionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_handleextendactionfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。[InputMethod_ErrorCode OH_TextEditorProxy_SetGetLeftTextOfCursorFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_GetLeftTextOfCursorFunc getLeftTextOfCursorFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setgetlefttextofcursorfunc)-将函数[OH_TextEditorProxy_GetLeftTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getlefttextofcursorfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。[InputMethod_ErrorCode OH_TextEditorProxy_SetGetRightTextOfCursorFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_GetRightTextOfCursorFunc getRightTextOfCursorFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setgetrighttextofcursorfunc)-将函数[OH_TextEditorProxy_GetRightTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getrighttextofcursorfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。[InputMethod_ErrorCode OH_TextEditorProxy_SetGetTextIndexAtCursorFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_GetTextIndexAtCursorFunc getTextIndexAtCursorFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setgettextindexatcursorfunc)-将函数[OH_TextEditorProxy_GetTextIndexAtCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextindexatcursorfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。[InputMethod_ErrorCode OH_TextEditorProxy_SetReceivePrivateCommandFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_ReceivePrivateCommandFunc receivePrivateCommandFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setreceiveprivatecommandfunc)-将函数[OH_TextEditorProxy_ReceivePrivateCommandFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_receiveprivatecommandfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。[InputMethod_ErrorCode OH_TextEditorProxy_SetSetPreviewTextFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_SetPreviewTextFunc setPreviewTextFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setsetpreviewtextfunc)-将函数[OH_TextEditorProxy_SetPreviewTextFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setpreviewtextfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。[InputMethod_ErrorCode OH_TextEditorProxy_SetFinishTextPreviewFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_FinishTextPreviewFunc finishTextPreviewFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setfinishtextpreviewfunc)-将函数[OH_TextEditorProxy_FinishTextPreviewFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_finishtextpreviewfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。[InputMethod_ErrorCode OH_TextEditorProxy_GetGetTextConfigFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_GetTextConfigFunc *getTextConfigFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getgettextconfigfunc)-从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_GetTextConfigFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextconfigfunc)函数。[InputMethod_ErrorCode OH_TextEditorProxy_GetInsertTextFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_InsertTextFunc *insertTextFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getinserttextfunc)-从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_InsertTextFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_inserttextfunc)函数。[InputMethod_ErrorCode OH_TextEditorProxy_GetDeleteForwardFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_DeleteForwardFunc *deleteForwardFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getdeleteforwardfunc)-从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_DeleteForwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_deleteforwardfunc)函数。[InputMethod_ErrorCode OH_TextEditorProxy_GetDeleteBackwardFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_DeleteBackwardFunc *deleteBackwardFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getdeletebackwardfunc)-从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_DeleteBackwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_deletebackwardfunc)函数。[InputMethod_ErrorCode OH_TextEditorProxy_GetSendKeyboardStatusFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_SendKeyboardStatusFunc *sendKeyboardStatusFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getsendkeyboardstatusfunc)-从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_SendKeyboardStatusFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sendkeyboardstatusfunc)函数。[InputMethod_ErrorCode OH_TextEditorProxy_GetSendEnterKeyFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_SendEnterKeyFunc *sendEnterKeyFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getsendenterkeyfunc)-从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_SendEnterKeyFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sendenterkeyfunc)函数。[InputMethod_ErrorCode OH_TextEditorProxy_GetMoveCursorFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_MoveCursorFunc *moveCursorFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getmovecursorfunc)-从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_MoveCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_movecursorfunc)函数。[InputMethod_ErrorCode OH_TextEditorProxy_GetHandleSetSelectionFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_HandleSetSelectionFunc *handleSetSelectionFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gethandlesetselectionfunc)-从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_HandleSetSelectionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_handlesetselectionfunc)函数。[InputMethod_ErrorCode OH_TextEditorProxy_GetHandleExtendActionFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_HandleExtendActionFunc *handleExtendActionFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gethandleextendactionfunc)-从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_HandleExtendActionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_handleextendactionfunc)函数。[InputMethod_ErrorCode OH_TextEditorProxy_GetGetLeftTextOfCursorFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_GetLeftTextOfCursorFunc *getLeftTextOfCursorFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getgetlefttextofcursorfunc)-从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_GetLeftTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getlefttextofcursorfunc)函数。[InputMethod_ErrorCode OH_TextEditorProxy_GetGetRightTextOfCursorFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_GetRightTextOfCursorFunc *getRightTextOfCursorFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getgetrighttextofcursorfunc)-从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_GetRightTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getrighttextofcursorfunc)函数。[InputMethod_ErrorCode OH_TextEditorProxy_GetGetTextIndexAtCursorFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_GetTextIndexAtCursorFunc *getTextIndexAtCursorFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getgettextindexatcursorfunc)-从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_GetTextIndexAtCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextindexatcursorfunc)函数。[InputMethod_ErrorCode OH_TextEditorProxy_GetReceivePrivateCommandFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_ReceivePrivateCommandFunc *receivePrivateCommandFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getreceiveprivatecommandfunc)-从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_ReceivePrivateCommandFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_receiveprivatecommandfunc)函数。[InputMethod_ErrorCode OH_TextEditorProxy_GetSetPreviewTextFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_SetPreviewTextFunc *setPreviewTextFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getsetpreviewtextfunc)-从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_SetPreviewTextFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setpreviewtextfunc)函数。[InputMethod_ErrorCode OH_TextEditorProxy_GetFinishTextPreviewFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_FinishTextPreviewFunc *finishTextPreviewFunc)](#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getfinishtextpreviewfunc)-从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_FinishTextPreviewFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_finishtextpreviewfunc)函数。
+
+#### 函数说明
+
+#### OH_TextEditorProxy_GetTextConfigFunc()
+
+```ets
+typedef void (*OH_TextEditorProxy_GetTextConfigFunc)(InputMethod_TextEditorProxy *textEditorProxy, InputMethod_TextConfig *config)
+```
+
+**描述**
+
+输入法获取输入框配置时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetGetTextConfigFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setgettextconfigfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *textEditorProxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[ InputMethod_TextConfig](../../topics/graphics/InputMethod_TextConfig.md) *config表示指向[InputMethod_TextConfig](../../topics/graphics/InputMethod_TextConfig.md)实例的指针。只能在此回调接口被调用时访问该指针指向的内存，当此回调接口返回后，该内存将会被释放，不能再访问。
+
+#### OH_TextEditorProxy_InsertTextFunc()
+
+```ets
+typedef void (*OH_TextEditorProxy_InsertTextFunc)(InputMethod_TextEditorProxy *textEditorProxy, const char16_t *text, size_t length)
+```
+
+**描述**
+
+输入法应用插入文本时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetInsertTextFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setinserttextfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *textEditorProxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。in.const char16_t *text插入的字符。只能在此回调接口被调用时访问该指针指向的内存，当此回调接口返回后，该内存将会被释放，不能再访问。size_t length插入字符的长度。
+
+#### OH_TextEditorProxy_DeleteForwardFunc()
+
+```ets
+typedef void (*OH_TextEditorProxy_DeleteForwardFunc)(InputMethod_TextEditorProxy *textEditorProxy, int32_t length)
+```
+
+**描述**
+
+输入法删除光标右侧文本时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetDeleteForwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setdeleteforwardfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *textEditorProxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。in.int32_t length要删除字符的长度。
+
+#### OH_TextEditorProxy_DeleteBackwardFunc()
+
+```ets
+typedef void (*OH_TextEditorProxy_DeleteBackwardFunc)(InputMethod_TextEditorProxy *textEditorProxy, int32_t length)
+```
+
+**描述**
+
+输入法删除光标左侧文本时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetDeleteForwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setdeleteforwardfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *textEditorProxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。in.int32_t length要删除字符的长度。
+
+#### OH_TextEditorProxy_SendKeyboardStatusFunc()
+
+```ets
+typedef void (*OH_TextEditorProxy_SendKeyboardStatusFunc)(InputMethod_TextEditorProxy *textEditorProxy, InputMethod_KeyboardStatus keyboardStatus)
+```
+
+**描述**
+
+输入法通知键盘状态时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetSendKeyboardStatusFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setsendkeyboardstatusfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *textEditorProxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[ InputMethod_KeyboardStatus](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_keyboardstatus) keyboardStatus键盘状态，具体定义详见[InputMethod_KeyboardStatus](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_keyboardstatus)。
+
+#### OH_TextEditorProxy_SendEnterKeyFunc()
+
+```ets
+typedef void (*OH_TextEditorProxy_SendEnterKeyFunc)(InputMethod_TextEditorProxy *textEditorProxy, InputMethod_EnterKeyType enterKeyType)
+```
+
+**描述**
+
+输入法发送回车键时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetSendEnterKeyFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setsendenterkeyfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *textEditorProxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[ InputMethod_EnterKeyType](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_enterkeytype) enterKeyType回车键类型，具体定义详见[InputMethod_EnterKeyType](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_enterkeytype).
+
+#### OH_TextEditorProxy_MoveCursorFunc()
+
+```ets
+typedef void (*OH_TextEditorProxy_MoveCursorFunc)(InputMethod_TextEditorProxy *textEditorProxy, InputMethod_Direction direction)
+```
+
+**描述**
+
+输入法移动光标时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetMoveCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setmovecursorfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *textEditorProxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[ InputMethod_Direction](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_direction) direction光标移动方向，具体定义详见[InputMethod_Direction](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_direction).
+
+#### OH_TextEditorProxy_HandleSetSelectionFunc()
+
+```ets
+typedef void (*OH_TextEditorProxy_HandleSetSelectionFunc)(InputMethod_TextEditorProxy *textEditorProxy, int32_t start, int32_t end)
+```
+
+**描述**
+
+输入法请求选中文本时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetHandleSetSelectionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sethandlesetselectionfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *textEditorProxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。int32_t start表示选中文本的起始位置。int32_t end表示选中文本的结束位置。
+
+#### OH_TextEditorProxy_HandleExtendActionFunc()
+
+```ets
+typedef void (*OH_TextEditorProxy_HandleExtendActionFunc)(InputMethod_TextEditorProxy *textEditorProxy, InputMethod_ExtendAction action)
+```
+
+**描述**
+
+输入法发送扩展编辑操作时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetHandleExtendActionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sethandleextendactionfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *textEditorProxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[ InputMethod_ExtendAction](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_extendaction) action扩展编辑操作，具体定义详见[InputMethod_ExtendAction](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_extendaction).
+
+#### OH_TextEditorProxy_GetLeftTextOfCursorFunc()
+
+```ets
+typedef void (*OH_TextEditorProxy_GetLeftTextOfCursorFunc)(InputMethod_TextEditorProxy *textEditorProxy, int32_t number, char16_t text[], size_t *length)
+```
+
+**描述**
+
+输入法获取光标左侧文本时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetGetLeftTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setgetlefttextofcursorfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *textEditorProxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。int32_t number目标获取文本的长度。char16_t text[]光标左侧指定长度的文本内容，需要在函数实现中对它赋值。只能在此回调接口被调用时访问该指针指向的内存，当此回调接口返回后，该内存将会被释放，不能再访问。size_t *length表示游标左侧文本的长度，您需要传递此参数。
+
+#### OH_TextEditorProxy_GetRightTextOfCursorFunc()
+
+```ets
+typedef void (*OH_TextEditorProxy_GetRightTextOfCursorFunc)(InputMethod_TextEditorProxy *textEditorProxy, int32_t number, char16_t text[], size_t *length)
+```
+
+**描述**
+
+输入法获取光标右侧文本时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetGetRightTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setgetrighttextofcursorfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *textEditorProxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。int32_t number目标获取文本的长度。char16_t text[]光标右侧指定长度的文本内容，需要在函数实现中对它赋值。只能在此回调接口被调用时访问该指针指向的内存，当此回调接口返回后，该内存将会被释放，不能再访问。size_t *length表示游标右侧文本的长度，您需要传递此参数。
+
+#### OH_TextEditorProxy_GetTextIndexAtCursorFunc()
+
+```ets
+typedef int32_t (*OH_TextEditorProxy_GetTextIndexAtCursorFunc)(InputMethod_TextEditorProxy *textEditorProxy)
+```
+
+**描述**
+
+输入法获取光标所在输入框文本索引时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetGetTextIndexAtCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setgettextindexatcursorfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *textEditorProxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。
+
+**返回：**
+
+类型说明int32_t返回光标所在输入框文本索引。
+
+#### OH_TextEditorProxy_ReceivePrivateCommandFunc()
+
+```ets
+typedef int32_t (*OH_TextEditorProxy_ReceivePrivateCommandFunc)(InputMethod_TextEditorProxy *textEditorProxy, InputMethod_PrivateCommand *privateCommand[], size_t size)
+```
+
+**描述**
+
+输入法应用发送私有数据命令时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetReceivePrivateCommandFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setreceiveprivatecommandfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *textEditorProxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[ InputMethod_PrivateCommand](../../topics/input/InputMethod_PrivateCommand.md) *privateCommand[]私有数据命令。只能在此回调接口被调用时访问该指针指向的内存，当此回调接口返回后，该内存将会被释放，不能再访问。size_t size私有数据的大小。
+
+**返回：**
+
+类型说明int32_t返回对私有数据命令处理的处理结果。
+
+#### OH_TextEditorProxy_SetPreviewTextFunc()
+
+```ets
+typedef int32_t (*OH_TextEditorProxy_SetPreviewTextFunc)(InputMethod_TextEditorProxy *textEditorProxy, const char16_t text[], size_t length, int32_t start, int32_t end)
+```
+
+**描述**
+
+输入法设置预上屏文本时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetReceivePrivateCommandFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setreceiveprivatecommandfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *textEditorProxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。const char16_t text[]请求设置为预上屏样式的文本内容。只能在此回调接口被调用时访问该指针指向的内存，当此回调接口返回后，该内存将会被释放，不能再访问。size_t length预上屏文本长度。int32_t start预上屏文本起始光标位置。int32_t end预上屏文本结束光标位置。
+
+**返回：**
+
+类型说明int32_t返回设置预上屏文本的处理结果。
+
+#### OH_TextEditorProxy_FinishTextPreviewFunc()
+
+```ets
+typedef void (*OH_TextEditorProxy_FinishTextPreviewFunc)(InputMethod_TextEditorProxy *textEditorProxy)
+```
+
+**描述**
+
+输入法结束预上屏时触发的函数。您需要实现此函数，通过 [OH_TextEditorProxy_SetReceivePrivateCommandFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setreceiveprivatecommandfunc) 将它设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中， 并通过[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)完成注册。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *textEditorProxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。
+
+#### OH_TextEditorProxy_Create()
+
+```ets
+InputMethod_TextEditorProxy *OH_TextEditorProxy_Create(void)
+```
+
+**描述**
+
+创建一个新的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例。
+
+**起始版本：** 12
+
+**返回：**
+
+类型说明[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *
+
+如果创建成功，返回一个指向新创建的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。
+
+ 如果创建失败，对象返回NULL，可能的失败原因有应用地址空间满。
+
+#### OH_TextEditorProxy_Destroy()
+
+```ets
+void OH_TextEditorProxy_Destroy(InputMethod_TextEditorProxy *proxy)
+```
+
+**描述**
+
+销毁一个[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy表示指向即将被销毁的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。
+
+#### OH_TextEditorProxy_SetGetTextConfigFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_SetGetTextConfigFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_GetTextConfigFunc getTextConfigFunc)
+```
+
+**描述**
+
+将函数[OH_TextEditorProxy_GetTextConfigFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextconfigfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_GetTextConfigFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextconfigfunc) getTextConfigFunc表示被设置到proxy的函数[OH_TextEditorProxy_GetTextConfigFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextconfigfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_SetInsertTextFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_SetInsertTextFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_InsertTextFunc insertTextFunc)
+```
+
+**描述**
+
+将函数[OH_TextEditorProxy_InsertTextFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_inserttextfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_InsertTextFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_inserttextfunc) insertTextFunc表示被设置到proxy的函数[OH_TextEditorProxy_InsertTextFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_inserttextfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_SetDeleteForwardFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_SetDeleteForwardFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_DeleteForwardFunc deleteForwardFunc)
+```
+
+**描述**
+
+将函数[OH_TextEditorProxy_DeleteForwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_deleteforwardfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_DeleteForwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_deleteforwardfunc) deleteForwardFunc表示被设置到proxy的函数[OH_TextEditorProxy_DeleteForwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_deleteforwardfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_SetDeleteBackwardFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_SetDeleteBackwardFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_DeleteBackwardFunc deleteBackwardFunc)
+```
+
+**描述**
+
+将函数[OH_TextEditorProxy_DeleteBackwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_deletebackwardfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_DeleteBackwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_deletebackwardfunc) deleteBackwardFunc表示被设置到proxy的函数[OH_TextEditorProxy_DeleteBackwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_deletebackwardfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_SetSendKeyboardStatusFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_SetSendKeyboardStatusFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_SendKeyboardStatusFunc sendKeyboardStatusFunc)
+```
+
+**描述**
+
+将函数[OH_TextEditorProxy_SendKeyboardStatusFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sendkeyboardstatusfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_SendKeyboardStatusFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sendkeyboardstatusfunc) sendKeyboardStatusFunc表示被设置到proxy的函数[OH_TextEditorProxy_SendKeyboardStatusFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sendkeyboardstatusfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_SetSendEnterKeyFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_SetSendEnterKeyFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_SendEnterKeyFunc sendEnterKeyFunc)
+```
+
+**描述**
+
+将函数[OH_TextEditorProxy_SetSendEnterKeyFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setsendenterkeyfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_SendEnterKeyFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sendenterkeyfunc) sendEnterKeyFunc表示被设置到proxy的函数[OH_TextEditorProxy_SendEnterKeyFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sendenterkeyfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_SetMoveCursorFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_SetMoveCursorFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_MoveCursorFunc moveCursorFunc)
+```
+
+**描述**
+
+将函数[OH_TextEditorProxy_SetMoveCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setmovecursorfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_MoveCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_movecursorfunc) moveCursorFunc表示被设置到proxy的函数[OH_TextEditorProxy_MoveCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_movecursorfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_SetHandleSetSelectionFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_SetHandleSetSelectionFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_HandleSetSelectionFunc handleSetSelectionFunc)
+```
+
+**描述**
+
+将函数[OH_TextEditorProxy_HandleSetSelectionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_handlesetselectionfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_HandleSetSelectionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_handlesetselectionfunc) handleSetSelectionFunc表示被设置到proxy的函数[OH_TextEditorProxy_HandleSetSelectionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_handlesetselectionfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_SetHandleExtendActionFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_SetHandleExtendActionFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_HandleExtendActionFunc handleExtendActionFunc)
+```
+
+**描述**
+
+将函数[OH_TextEditorProxy_HandleExtendActionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_handleextendactionfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_HandleExtendActionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_handleextendactionfunc) handleExtendActionFunc表示被设置到proxy的函数[OH_TextEditorProxy_HandleExtendActionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_handleextendactionfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_SetGetLeftTextOfCursorFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_SetGetLeftTextOfCursorFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_GetLeftTextOfCursorFunc getLeftTextOfCursorFunc)
+```
+
+**描述**
+
+将函数[OH_TextEditorProxy_GetLeftTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getlefttextofcursorfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_GetLeftTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getlefttextofcursorfunc) getLeftTextOfCursorFunc表示被设置到proxy的函数[OH_TextEditorProxy_GetLeftTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getlefttextofcursorfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_SetGetRightTextOfCursorFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_SetGetRightTextOfCursorFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_GetRightTextOfCursorFunc getRightTextOfCursorFunc)
+```
+
+**描述**
+
+将函数[OH_TextEditorProxy_GetRightTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getrighttextofcursorfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_GetRightTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getrighttextofcursorfunc) getRightTextOfCursorFunc表示被设置到proxy的函数[OH_TextEditorProxy_GetRightTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getrighttextofcursorfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_SetGetTextIndexAtCursorFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_SetGetTextIndexAtCursorFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_GetTextIndexAtCursorFunc getTextIndexAtCursorFunc)
+```
+
+**描述**
+
+将函数[OH_TextEditorProxy_GetTextIndexAtCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextindexatcursorfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_GetTextIndexAtCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextindexatcursorfunc) getTextIndexAtCursorFunc表示被设置到proxy的函数[OH_TextEditorProxy_GetTextIndexAtCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextindexatcursorfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_SetReceivePrivateCommandFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_SetReceivePrivateCommandFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_ReceivePrivateCommandFunc receivePrivateCommandFunc)
+```
+
+**描述**
+
+将函数[OH_TextEditorProxy_ReceivePrivateCommandFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_receiveprivatecommandfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_ReceivePrivateCommandFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_receiveprivatecommandfunc) receivePrivateCommandFunc表示被设置到proxy的函数[OH_TextEditorProxy_ReceivePrivateCommandFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_receiveprivatecommandfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_SetSetPreviewTextFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_SetSetPreviewTextFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_SetPreviewTextFunc setPreviewTextFunc)
+```
+
+**描述**
+
+将函数[OH_TextEditorProxy_SetPreviewTextFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setpreviewtextfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_SetPreviewTextFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setpreviewtextfunc) setPreviewTextFunc表示被设置到proxy的函数[OH_TextEditorProxy_SetPreviewTextFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setpreviewtextfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_SetFinishTextPreviewFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_SetFinishTextPreviewFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_FinishTextPreviewFunc finishTextPreviewFunc)
+```
+
+**描述**
+
+将函数[OH_TextEditorProxy_FinishTextPreviewFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_finishtextpreviewfunc)设置到[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向即将被设置的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_FinishTextPreviewFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_finishtextpreviewfunc) finishTextPreviewFunc表示被设置到proxy的函数[OH_TextEditorProxy_FinishTextPreviewFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_finishtextpreviewfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_GetGetTextConfigFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_GetGetTextConfigFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_GetTextConfigFunc *getTextConfigFunc)
+```
+
+**描述**
+
+从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_GetTextConfigFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextconfigfunc)函数。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向被读取的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_GetTextConfigFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextconfigfunc) *getTextConfigFunc表示从proxy获取到的函数[OH_TextEditorProxy_GetTextConfigFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextconfigfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_GetInsertTextFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_GetInsertTextFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_InsertTextFunc *insertTextFunc)
+```
+
+**描述**
+
+从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_InsertTextFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_inserttextfunc)函数。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向被读取的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_InsertTextFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_inserttextfunc) *insertTextFunc表示从proxy获取到的函数[OH_TextEditorProxy_InsertTextFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_inserttextfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_GetDeleteForwardFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_GetDeleteForwardFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_DeleteForwardFunc *deleteForwardFunc)
+```
+
+**描述**
+
+从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_DeleteForwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_deleteforwardfunc)函数。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向被读取的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_DeleteForwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_deleteforwardfunc) *deleteForwardFunc表示从proxy获取到的函数[OH_TextEditorProxy_DeleteForwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_deleteforwardfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_GetDeleteBackwardFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_GetDeleteBackwardFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_DeleteBackwardFunc *deleteBackwardFunc)
+```
+
+**描述**
+
+从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_DeleteBackwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_deletebackwardfunc)函数。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向被读取的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_DeleteBackwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_deletebackwardfunc) *deleteBackwardFunc表示从proxy获取到的函数[OH_TextEditorProxy_DeleteBackwardFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_deletebackwardfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_GetSendKeyboardStatusFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_GetSendKeyboardStatusFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_SendKeyboardStatusFunc *sendKeyboardStatusFunc)
+```
+
+**描述**
+
+从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_SendKeyboardStatusFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sendkeyboardstatusfunc)函数。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向被读取的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_SendKeyboardStatusFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sendkeyboardstatusfunc) *sendKeyboardStatusFunc表示从proxy获取到的函数[OH_TextEditorProxy_SendKeyboardStatusFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sendkeyboardstatusfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_GetSendEnterKeyFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_GetSendEnterKeyFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_SendEnterKeyFunc *sendEnterKeyFunc)
+```
+
+**描述**
+
+从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_SendEnterKeyFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sendenterkeyfunc)函数。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向被读取的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_SendEnterKeyFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sendenterkeyfunc) *sendEnterKeyFunc表示从proxy获取到的函数[OH_TextEditorProxy_SendEnterKeyFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_sendenterkeyfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_GetMoveCursorFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_GetMoveCursorFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_MoveCursorFunc *moveCursorFunc)
+```
+
+**描述**
+
+从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_MoveCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_movecursorfunc)函数。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向被读取的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_MoveCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_movecursorfunc) *moveCursorFunc表示从proxy获取到的函数[OH_TextEditorProxy_MoveCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_movecursorfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_GetHandleSetSelectionFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_GetHandleSetSelectionFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_HandleSetSelectionFunc *handleSetSelectionFunc)
+```
+
+**描述**
+
+从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_HandleSetSelectionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_handlesetselectionfunc)函数。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向被读取的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_HandleSetSelectionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_handlesetselectionfunc) *handleSetSelectionFunc表示从proxy获取到的函数[OH_TextEditorProxy_HandleSetSelectionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_handlesetselectionfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_GetHandleExtendActionFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_GetHandleExtendActionFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_HandleExtendActionFunc *handleExtendActionFunc)
+```
+
+**描述**
+
+从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_HandleExtendActionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_handleextendactionfunc)函数。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向被读取的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_HandleExtendActionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_handleextendactionfunc) *handleExtendActionFunc表示从proxy获取到的函数[OH_TextEditorProxy_HandleExtendActionFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_handleextendactionfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_GetGetLeftTextOfCursorFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_GetGetLeftTextOfCursorFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_GetLeftTextOfCursorFunc *getLeftTextOfCursorFunc)
+```
+
+**描述**
+
+从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_GetLeftTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getlefttextofcursorfunc)函数。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向被读取的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_GetLeftTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getlefttextofcursorfunc) *getLeftTextOfCursorFunc表示从proxy获取到的函数[OH_TextEditorProxy_GetLeftTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getlefttextofcursorfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_GetGetRightTextOfCursorFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_GetGetRightTextOfCursorFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_GetRightTextOfCursorFunc *getRightTextOfCursorFunc)
+```
+
+**描述**
+
+从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_GetRightTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getrighttextofcursorfunc)函数。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向被读取的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_GetRightTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getrighttextofcursorfunc) *getRightTextOfCursorFunc表示从proxy获取到的函数[OH_TextEditorProxy_GetRightTextOfCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_getrighttextofcursorfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_GetGetTextIndexAtCursorFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_GetGetTextIndexAtCursorFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_GetTextIndexAtCursorFunc *getTextIndexAtCursorFunc)
+```
+
+**描述**
+
+从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_GetTextIndexAtCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextindexatcursorfunc)函数。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向被读取的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_GetTextIndexAtCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextindexatcursorfunc) *getTextIndexAtCursorFunc表示从proxy获取到的函数[OH_TextEditorProxy_GetTextIndexAtCursorFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextindexatcursorfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_GetReceivePrivateCommandFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_GetReceivePrivateCommandFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_ReceivePrivateCommandFunc *receivePrivateCommandFunc)
+```
+
+**描述**
+
+从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_ReceivePrivateCommandFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_receiveprivatecommandfunc)函数。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向被读取的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_ReceivePrivateCommandFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_receiveprivatecommandfunc) *receivePrivateCommandFunc表示从proxy获取到的函数[OH_TextEditorProxy_ReceivePrivateCommandFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_receiveprivatecommandfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_GetSetPreviewTextFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_GetSetPreviewTextFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_SetPreviewTextFunc *setPreviewTextFunc)
+```
+
+**描述**
+
+从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_SetPreviewTextFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setpreviewtextfunc)函数。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向被读取的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_SetPreviewTextFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setpreviewtextfunc) *setPreviewTextFunc表示从proxy获取到的函数[OH_TextEditorProxy_SetPreviewTextFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_setpreviewtextfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_GetFinishTextPreviewFunc()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_GetFinishTextPreviewFunc(InputMethod_TextEditorProxy *proxy, OH_TextEditorProxy_FinishTextPreviewFunc *finishTextPreviewFunc)
+```
+
+**描述**
+
+从[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)中获取[OH_TextEditorProxy_FinishTextPreviewFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_finishtextpreviewfunc)函数。
+
+**起始版本：** 12
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向被读取的[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md)实例的指针。[OH_TextEditorProxy_FinishTextPreviewFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_finishtextpreviewfunc) *finishTextPreviewFunc表示从proxy获取到的函数[OH_TextEditorProxy_FinishTextPreviewFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_finishtextpreviewfunc)。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+返回一个特定的错误码。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 表示成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 非预期的空指针。
+
+ 具体错误码可以参考 [InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)。
+
+#### OH_TextEditorProxy_SetCallbackInMainThread()
+
+```ets
+InputMethod_ErrorCode OH_TextEditorProxy_SetCallbackInMainThread(InputMethod_TextEditorProxy *proxy, bool isCallbackInMainThread)
+```
+
+**描述**
+
+为InputMethod_TextEditorProxy的回调函数配置执行线程（主线程/IPC线程）。本接口仅控制InputMethod_TextEditorProxy中除[OH_TextEditorProxy_GetTextConfigFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextconfigfunc)之外的所有回调函数。[OH_TextEditorProxy_GetTextConfigFunc](inputmethod_text_editor_proxy_capi.h.md#ZH-CN_TOPIC_0000002497445318__oh_texteditorproxy_gettextconfigfunc)的执行线程由调用[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)的线程决定，不受本接口影响，若需该回调也在主线程执行，需确保[OH_InputMethodController_Attach](inputmethod_controller_capi.h.md#ZH-CN_TOPIC_0000002529445259__oh_inputmethodcontroller_attach)在主线程调用。
+
+**起始版本：** 22
+
+**参数：**
+
+参数项描述[InputMethod_TextEditorProxy](../../topics/graphics/InputMethod_TextEditorProxy.md) *proxy指向目标InputMethod_TextEditorProxy实例的指针。bool isCallbackInMainThread线程执行策略。- true：回调函数切换至主线程执行（用于避免多线程并发问题）。避免在回调内执行耗时操作，防止主线程阻塞。- false：回调函数在IPC线程执行（可能存在多线程并发情况）。
+
+**返回：**
+
+类型说明[InputMethod_ErrorCode](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode)
+
+执行结果。
+
+[IME_ERR_OK](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 配置成功。
+
+[IME_ERR_NULL_POINTER](inputmethod_types_capi.h.md#ZH-CN_TOPIC_0000002529285289__inputmethod_errorcode) - 当proxy为NULL时返回。

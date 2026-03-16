@@ -1,32 +1,32 @@
 # HarmonyOS NEXT 开发者专家技能包 (Reference Skill)
 
 `harmony-next.skills` 是为 AI 编程助手（如 Gemini CLI, Claude Code, Codex）设计的参考技能库。
-它为 HarmonyOS NEXT (API 12+) 提供本地化的离线知识源，包含超过 3,409 份涵盖 ArkTS、ArkUI 和 NDK 的 Markdown 格式参考文档。
+它为 HarmonyOS NEXT (API 12+) 提供本地化的离线知识源，包含 3,400+ 份涵盖 ArkTS、ArkUI 和 NDK 的 Markdown 格式参考文档。
 
 [English Version](./README_en.md)
 
 ## 核心特性 (v1.0.6+)
 
 除了详尽的 API 参考外，本项目现已包含以下**专家级实战指南**：
-- 🛠 **IDE 实操**：应用签名、断点调试、模拟器与真机配置、AI 智能辅助编程。
-- 🤖 **独立工具链**：**独立命令行工具包 (Standalone CLI)** 的下载、环境变量配置及 CI/CD 深度调优。
-- 📱 **多端适配**：一次开发多端部署（自适应/响应式布局）、折叠屏与平板专项适配。
-- 🔄 **自由流转**：跨端迁移、多端协同的核心逻辑与开发步骤。
-- ⚙️ **NDK 开发**：**Node-API (napi)** 基础、C++ 与 ArkTS 跨语言互调。
-- 🚀 **应用发布**：AppGallery Connect 配置、发布证书申请、上架审核流程。
-- 📈 **性能调优**：深入使用 DevEco Profiler 进行 CPU、内存、帧率及启动耗时分析。
-- 🏗 **架构设计**：HAP/HAR/HSP 包结构深度解析、Stage 模型并发机制。
-- 🧪 **自动化测试**：基于 Hypium 的单元测试与 UI 测试，以及 CI/CD 命令行集成。
+- **IDE 实操**：应用签名、断点调试、模拟器与真机配置、AI 辅助编程。
+- **独立工具链**：独立命令行工具包 (Standalone CLI) 的下载、环境变量配置及 CI/CD 调优。
+- **多端适配**：一次开发多端部署（自适应/响应式布局）、折叠屏与平板适配。
+- **自由流转**：跨端迁移、多端协同的核心逻辑与开发步骤。
+- **NDK 开发**：Node-API (napi) 基础、C++ 与 ArkTS 跨语言互调。
+- **应用发布**：AppGallery Connect 配置、证书申请、上架审核流程。
+- **性能调优**：使用 DevEco Profiler 进行 CPU、内存、帧率及启动耗时分析。
+- **架构设计**：HAP/HAR/HSP 包结构、Stage 模型并发机制。
+- **自动化测试**：基于 Hypium 的单元测试与 UI 测试，以及 CI 命令行集成。
 
 ## 工作原理
 
 当你的编程助手需要 HarmonyOS 相关知识时，应使用本仓库作为检索层，而非依赖大模型的训练记忆（避免幻觉）。
 
-**推荐查找流程：**
-1. 查看 [`KITS.md`](harmony-next/references/KITS.md) 确定所属能力集。
-2. 使用 [`TASK_MAP.md`](harmony-next/references/TASK_MAP.md) 将任务需求映射到技术关键词。
-3. 从 [`INDEX.md`](harmony-next/references/INDEX.md) 中定位具体文件。
-4. 遵循 [`SKILL.md`](harmony-next/SKILL.md) 中的规则，以获取精准的 API 级细节。
+**推荐查找流程（渐进式披露）：**
+1. 打开 [`SKILL.md`](harmony-next/SKILL.md) 了解检索规则与回答约束。
+2. 先缩小范围：[`KITS.md`](harmony-next/references/KITS.md)（Kit 识别 + 关键词/模块前缀）或 [`TASK_MAP.md`](harmony-next/references/TASK_MAP.md)（任务到关键词）。
+3. 再精确命中文件：[`INDEX.md`](harmony-next/references/INDEX.md)（全库路径）与 [`JsEtsAPIReference/INDEX.md`](harmony-next/references/JsEtsAPIReference/INDEX.md)（API 分桶路径）。
+4. 命中路径后，只打开那 1-3 个目标 Markdown 获取 API 级细节（不要盲读大库）。
 
 ## 快速开始
 

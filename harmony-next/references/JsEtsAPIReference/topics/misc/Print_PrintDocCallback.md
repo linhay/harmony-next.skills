@@ -1,0 +1,21 @@
+# Print_PrintDocCallback
+
+```ets
+typedef struct {...} Print_PrintDocCallback
+```
+
+#### 概述
+
+打印文档任务回调结构体。
+
+**起始版本：** 13
+
+**相关模块：**[OH_Print](OH_Print.md)
+
+**所在头文件：**[ohprint.h](../../capi/headers/ohprint.h.md)
+
+#### 汇总
+
+#### 成员变量
+
+名称描述[Print_OnStartLayoutWrite](../../capi/headers/ohprint.h.md#ZH-CN_TOPIC_0000002497445554__print_onstartlayoutwrite) startLayoutWriteCb文件开始回写回调函数。[Print_OnJobStateChanged](../../capi/headers/ohprint.h.md#ZH-CN_TOPIC_0000002497445554__print_onjobstatechanged) jobStateChangedCb打印任务状态回调。

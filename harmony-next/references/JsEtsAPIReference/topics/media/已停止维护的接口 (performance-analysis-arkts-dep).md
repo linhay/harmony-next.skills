@@ -1,0 +1,9 @@
+[]()[]()
+
+# 已停止维护的接口
+
+- **[@ohos.bytrace (性能打点)](../../modules/ohos/@ohos.bytrace (性能打点).md)**
+
+- **[@ohos.hiAppEvent (应用打点)](../../modules/ohos/@ohos.hiAppEvent (应用打点).md)**
+
+- **[@ohos.faultLogger (故障日志获取)](../../modules/ohos/@ohos.faultLogger (故障日志获取).md)**

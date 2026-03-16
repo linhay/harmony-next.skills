@@ -1,20 +1,20 @@
 # HarmonyOS NEXT Reference Skill
 
 `harmony-next.skills` is a reference skill for coding agents.
-It provides a local source of truth for HarmonyOS NEXT (API 12+), with 3,409 Markdown references across ArkTS, ArkUI, and NDK topics.
+It provides a local source of truth for HarmonyOS NEXT (API 12+), with 3,400+ Markdown references across ArkTS, ArkUI, and NDK topics.
 
 ## Key Features (v1.0.6+)
 
 Beyond API references, this skill now includes **expert guides** for:
-- 🛠 **IDE Operations**: Signing, Debugging, Emulator/Real Device setup, and AI Assistant.
-- 🤖 **Standalone Toolchain**: Deep dive into **Standalone Command Line Tools** download, env vars, and CI/CD config.
-- 📱 **Multi-device Adaptation**: Strategies for phone, foldable, and tablet (Adaptive/Responsive Layout).
-- 🔄 **Continuation**: Cross-device migration and multi-device collaboration logic.
-- ⚙️ **NDK Development**: Node-API (napi) basics and ArkTS/C++ interoperability.
-- 🚀 **App Publishing**: AGC configuration, certificates, and release process.
-- 📈 **Performance Tuning**: CPU, Memory, Frame Rate, and Launch Analysis via DevEco Profiler.
-- 🏗 **Architecture**: Deep dive into HAP/HAR/HSP structures and Stage Model concurrency.
-- 🧪 **Automation Testing**: Unit and UI testing with Hypium, including CI/CD integration.
+- **IDE Operations**: Signing, Debugging, Emulator/Real Device setup, and AI assistance.
+- **Standalone Toolchain**: Standalone CLI download, env vars, and CI/CD configuration.
+- **Multi-device Adaptation**: Strategies for phone, foldable, and tablet (Adaptive/Responsive Layout).
+- **Continuation**: Cross-device migration and multi-device collaboration logic.
+- **NDK Development**: Node-API (napi) basics and ArkTS/C++ interoperability.
+- **App Publishing**: AGC configuration, certificates, and release process.
+- **Performance Tuning**: CPU, Memory, Frame Rate, and Launch analysis via DevEco Profiler.
+- **Architecture**: HAP/HAR/HSP structures and Stage Model concurrency.
+- **Automation Testing**: Unit and UI testing with Hypium, including CI integration.
 
 ## How It Works
 
@@ -22,10 +22,10 @@ When your agent needs HarmonyOS knowledge, it should use this repository as a re
 
 Recommended lookup flow:
 
-1. Open [`KITS.md`](harmony-next/references/KITS.md) to locate the correct capability domain.
-2. Use [`TASK_MAP.md`](harmony-next/references/TASK_MAP.md) to map user intent to technical keywords.
-3. Resolve exact files from [`INDEX.md`](harmony-next/references/INDEX.md).
-4. Follow rules in [`SKILL.md`](harmony-next/SKILL.md) to answer with concrete API-level detail.
+1. Read [`SKILL.md`](harmony-next/SKILL.md) for retrieval rules and answer constraints.
+2. Narrow scope via [`KITS.md`](harmony-next/references/KITS.md) (kit identification + keywords/module prefixes) or [`TASK_MAP.md`](harmony-next/references/TASK_MAP.md) (intent to keywords).
+3. Resolve exact files from [`INDEX.md`](harmony-next/references/INDEX.md) (full paths) and [`JsEtsAPIReference/INDEX.md`](harmony-next/references/JsEtsAPIReference/INDEX.md) (bucketed API paths).
+4. Open only the 1-3 matched Markdown files for API-level detail (avoid blind reads).
 
 This keeps responses precise, traceable, and stable.
 

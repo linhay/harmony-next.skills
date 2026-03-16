@@ -1,0 +1,23 @@
+# OH_Pixelmap_InitializationOptions
+
+```ets
+struct OH_Pixelmap_InitializationOptions
+```
+
+#### 概述
+
+OH_Pixelmap_InitializationOptions是native层封装的初始化参数结构体，用于设置Pixelmap的初始化参数。
+
+创建OH_Pixelmap_InitializationOptions对象使用[OH_PixelmapInitializationOptions_Create](../../capi/headers/pixelmap_native.h.md#ZH-CN_TOPIC_0000002529445819__oh_pixelmapinitializationoptions_create)函数。
+
+释放OH_Pixelmap_InitializationOptions对象使用[OH_PixelmapInitializationOptions_Release](../../capi/headers/pixelmap_native.h.md#ZH-CN_TOPIC_0000002529445819__oh_pixelmapinitializationoptions_release)函数。
+
+OH_Pixelmap_InitializationOptions结构体内容和操作方式如下：
+
+字段类型字段名称字段描述操作函数函数描述uint32_twidth图片宽[OH_PixelmapInitializationOptions_GetWidth](../../capi/headers/pixelmap_native.h.md#ZH-CN_TOPIC_0000002529445819__oh_pixelmapinitializationoptions_getwidth)获取图片宽。uint32_twidth图片宽[OH_PixelmapInitializationOptions_SetWidth](../../capi/headers/pixelmap_native.h.md#ZH-CN_TOPIC_0000002529445819__oh_pixelmapinitializationoptions_setwidth)设置图片宽。uint32_theight图片高[OH_PixelmapInitializationOptions_GetHeight](../../capi/headers/pixelmap_native.h.md#ZH-CN_TOPIC_0000002529445819__oh_pixelmapinitializationoptions_getheight)获取图片高。uint32_theight图片高[OH_PixelmapInitializationOptions_SetHeight](../../capi/headers/pixelmap_native.h.md#ZH-CN_TOPIC_0000002529445819__oh_pixelmapinitializationoptions_setheight)设置图片高。int32_tpixelFormat像素格式[OH_PixelmapInitializationOptions_GetPixelFormat](../../capi/headers/pixelmap_native.h.md#ZH-CN_TOPIC_0000002529445819__oh_pixelmapinitializationoptions_getpixelformat)获取像素格式。int32_tpixelFormat像素格式[OH_PixelmapInitializationOptions_SetPixelFormat](../../capi/headers/pixelmap_native.h.md#ZH-CN_TOPIC_0000002529445819__oh_pixelmapinitializationoptions_setpixelformat)设置像素格式。int32_talphaType透明度类型[OH_PixelmapInitializationOptions_GetAlphaType](../../capi/headers/pixelmap_native.h.md#ZH-CN_TOPIC_0000002529445819__oh_pixelmapinitializationoptions_getalphatype)获取透明度类型。int32_talphaType透明度类型[OH_PixelmapInitializationOptions_SetAlphaType](../../capi/headers/pixelmap_native.h.md#ZH-CN_TOPIC_0000002529445819__oh_pixelmapinitializationoptions_setalphatype)设置透明度类型。
+
+**起始版本：** 12
+
+**相关模块：**[Image_NativeModule](Image_NativeModule.md)
+
+**所在头文件：**[pixelmap_native.h](../../capi/headers/pixelmap_native.h.md)

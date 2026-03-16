@@ -1,58 +1,35 @@
 ---
 name: harmony-next
-description: Expert guidance for HarmonyOS NEXT (API 12+) development. Use this skill for ArkTS, ArkUI, and NDK development using official offline documentation for 3,300+ APIs and components.
+description: HarmonyOS NEXT（API 12+）离线参考库导航：按 Kit/任务/索引渐进式定位文档（ArkTS/ArkUI/NDK）。
 ---
 
-# HarmonyOS NEXT Expert
+# HarmonyOS NEXT（离线文档导航）
 
-This skill equips you with comprehensive, offline knowledge of HarmonyOS 5+ (ArkTS, ArkUI, NDK, System Services, etc.). The `references/` directory contains thousands of localized Markdown files directly converted from official developer documentation.
+目标：在不盲读 `references/` 的前提下，快速定位到 1 个或少量目标 Markdown，然后只打开这些文件。
 
-## How to use this skill
+## 渐进式披露（按顺序走）
 
-Because the reference library is massive (~50MB, 3300+ files), **DO NOT attempt to read files blindly**. You MUST use the `grep_search` and `glob` tools to find the exact API or module you need before reading the specific Markdown file.
+1. **先缩小范围（选 Kit 或任务）**
+   - Kit 导航：`references/KITS.md`
+   - 任务导向：`references/TASK_MAP.md`
 
-### Recommended Workflow (Optimized Search Protocol)
+2. **再精确命中文件（搜路径清单）**
+   - 全库路径清单：`references/INDEX.md`
+   - JS/ETS API 分桶清单：`references/JsEtsAPIReference/INDEX.md`
 
-Due to the massive size of this knowledge base (3,300+ files), you MUST follow this **Three-Tier Search Protocol** to avoid being overwhelmed by irrelevant files:
+3. **仅在必要时浏览目录**
+   `references/JsEtsAPIReference/` 已按桶分层：`modules/`、`topics/`、`capi/headers/`、`types/`、`errors/`、`guides/`。
 
-1. **Tier 1: Identify the Kit (Read `references/KITS.md`)**
-   HarmonyOS 5+ is organized by Kits (e.g., `AbilityKit`, `ArkUI`, `MediaKit`). Read `references/KITS.md` first to identify which Kit contains the functionality you need. This drastically narrows down the search space.
+## 常用检索（直接复制用）
 
-2. **Tier 2: Task-to-File Mapping (Read `references/TASK_MAP.md`)**
-   For common tasks (Layout, Lifecycle, Network), check `references/TASK_MAP.md`. It links tasks to their most important keywords and Kits.
+- 先按关键词命中路径：`rg -n "UIAbility|AbilityStage|Want" references/INDEX.md | head`
+- 查某个 `@ohos.*` 模块：`rg -n "@ohos\\.app\\.ability\\.|@ohos\\.ability\\." references/JsEtsAPIReference/INDEX.md | head`
+- 查 NDK/C API 头文件：`rg -n "^capi/headers/.*(napi|arkui|window|ability).*\\.h\\.md$" references/JsEtsAPIReference/INDEX.md | head`
 
-3. **Tier 3: Surgical Grep (via `references/INDEX.md`)**
-   Once you have the Kit name or specific keywords, use `grep` on `references/INDEX.md` to find the exact filenames.
-   - *Example*: `grep "AbilityKit" references/INDEX.md | grep "Context"`
+## 生成约束（避免踩坑）
 
-### Core Content Structure
+- **不要全量读取**：先在 `INDEX.md` 命中路径，再打开对应 `.md`。
+- **不确定就查文档**：API 签名、入参、返回值以 `references/` 内文本为准，不凭经验补全。
+- **ArkUI 优先声明式**：示例优先使用 `@Entry` / `@Component` / `build()`（除非文档明确是 NDK 或系统服务）。
 
-- `JsEtsAPIReference/`: Detailed API signatures and C-API headers.
-- `quickStart/`: Step-by-step developer guides.
-- `ideGuides/`: Comprehensive IDE guides (Signing, Running, Debugging, CLI Tools, Standalone CLI Config).
-- `performanceAndStandards/`: Performance optimization and UX best practices (Profiler, Latency, Memory).
-- `appBasics/`: Core architecture guides (HAP/HAR/HSP, Stage Model, Concurrency).
-- `multiDevice/`: Multi-device adaptation strategies (Adaptive/Responsive Layout).
-- `continuation/`: Cross-device migration and multi-device collaboration.
-- `ndkGuides/`: Native development guides (Node-API, C++ integration).
-- `publishing/`: AppGallery Connect release and publishing process.
-- `testing/`: Automation testing guides using Hypium.
-- `KITS.md`: The primary navigation hub organized by @kit.
-- `INDEX.md`: The full file list for surgical lookups.
-
-### Directory Structure under `references/`
-
-- `JsEtsAPIReference/` : Contains the bulk of ArkTS and ArkUI component APIs, lifecycle methods, error codes, and C-API/NDK headers.
-- `quickStart/` : Beginner tutorials and fundamental concepts (e.g., page navigation, entry points).
-- `ideGuides/` : IDE operational guides, CLI references, and debugging methodologies.
-- `performanceAndStandards/` : Profiling tools (Insight) and app performance standards.
-- `appBasics/` : Fundamental application architecture, models, and package structures.
-- `testing/` : Testing frameworks and UI automation strategies.
-- `hos/` & `hos_en/` : Core concepts, system services, and framework overviews.
-
-## Core Directives for HarmonyOS Generation
-
-1. **Strictly Declarative**: Always use the declarative UI paradigm syntax (`@Entry`, `@Component`, `build()`).
-2. **No Hallucinations**: Rely strictly on the documentation provided in the `references/` folder when unsure about an API signature in HarmonyOS 5+. Do not assume standard Web JS or Android APIs are available unless verified in the docs.
-3. **TypeScript/ArkTS Validation**: Ensure type safety and use standard ArkTS conventions.
-\n<!-- version: 1.0.1 -->
+<!-- version: 1.1.0 -->
