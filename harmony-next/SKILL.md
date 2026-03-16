@@ -1,6 +1,6 @@
 ---
 name: harmony-next
-description: HarmonyOS NEXT（API 12+）离线参考库导航：按 Kit/任务/索引渐进式定位文档（ArkTS/ArkUI/NDK）。
+description: HarmonyOS NEXT（以 API 12+ 为主，含 API 10-18 版本标注）离线参考库导航：按 Kit/任务/索引渐进式定位文档（ArkTS/ArkUI/NDK）。
 ---
 
 # HarmonyOS NEXT（离线文档导航）
