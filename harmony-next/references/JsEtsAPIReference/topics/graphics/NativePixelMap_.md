@@ -1,15 +1,15 @@
 # NativePixelMap_
 
 ```ets
-typedef struct NativePixelMap_ NativePixelMap
+typedef struct NativePixelMap_ NativePixelMap_
 ```
 
 #### 概述
 
-定义native层PixelMap数据类型名称。
+声明由图像框架定义的像素图对象。
 
-**起始版本：** 10
+起始版本： 12
 
-**相关模块：**[Image](Image.md)
+相关模块： [Drawing](Drawing.md)
 
-**所在头文件：**[image_pixel_map_mdk.h](../../capi/headers/image_pixel_map_mdk.h.md)
+所在头文件： [drawing_pixel_map.h](drawing_pixel_map.h.md)

@@ -12,10 +12,13 @@ typedef const struct {...} JSVM_CompileProfile
 
 **相关模块：**[JSVM](JSVM.md)
 
-**所在头文件：**[jsvm_types.h](../../capi/headers/jsvm_types.h.md)
+所在头文件： [jsvm_types.h](jsvm_types.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述int *profile编译采样文件的指针。size_t length编译采样文件的大小。
+| 名称 | 描述 |
+| --- | --- |
+| int *profile | 编译采样文件的指针。 |
+| size_t length | 编译采样文件的大小。 |

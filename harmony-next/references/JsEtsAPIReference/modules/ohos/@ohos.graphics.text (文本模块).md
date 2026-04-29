@@ -4,15 +4,24 @@
 
 该模块提供以下创建复杂样式的文本段落的常用类：
 
-- [TextStyle](#ZH-CN_TOPIC_0000002497605988__textstyle)：文本样式，控制文本的字体类型、大小、间距等属性。
-- [FontCollection](#ZH-CN_TOPIC_0000002497605988__fontcollection)：字体集，控制各种不同的字体。
-- [FontDescriptor](#ZH-CN_TOPIC_0000002497605988__fontdescriptor14)：字体描述符信息。
-- [ParagraphStyle](#ZH-CN_TOPIC_0000002497605988__paragraphstyle)：段落样式，控制整个段落的断行策略、断词策略等属性。
-- [ParagraphBuilder](#ZH-CN_TOPIC_0000002497605988__paragraphbuilder)：段落生成器，控制生成不同的段落对象。
-- [Paragraph](#ZH-CN_TOPIC_0000002497605988__paragraph)：段落，由ParagraphBuilder类调用[build()](#ZH-CN_TOPIC_0000002497605988__build)接口构建而成。
-- [LineTypeset](#ZH-CN_TOPIC_0000002497605988__linetypeset18)：行排版器，由ParagraphBuilder类调用[buildLineTypeset()](#ZH-CN_TOPIC_0000002497605988__buildlinetypeset18)接口构建而成。
-- [TextLine](#ZH-CN_TOPIC_0000002497605988__textline)：以行为单位的段落文本的载体，由Paragraph类调用[getTextLines()](#ZH-CN_TOPIC_0000002497605988__gettextlines)接口获取。
-- [Run](#ZH-CN_TOPIC_0000002497605988__run)：文本排版单元，由TextLine类调用[getGlyphRuns()](#ZH-CN_TOPIC_0000002497605988__getglyphruns)接口获取。
+- [TextStyle](#ZH-CN_TOPIC_0000002553362061__textstyle)：文本样式，控制文本的字体类型、大小、间距等属性。
+
+- [FontCollection](#ZH-CN_TOPIC_0000002553362061__fontcollection)：字体集，控制各种不同的字体。
+
+- [FontDescriptor](#ZH-CN_TOPIC_0000002553362061__fontdescriptor14)：字体描述符信息。
+
+- [ParagraphStyle](#ZH-CN_TOPIC_0000002553362061__paragraphstyle)：段落样式，控制整个段落的断行策略、断词策略等属性。
+
+- [ParagraphBuilder](#ZH-CN_TOPIC_0000002553362061__paragraphbuilder)：段落生成器，控制生成不同的段落对象。
+
+- [Paragraph](#ZH-CN_TOPIC_0000002553362061__paragraph)：段落，由ParagraphBuilder类调用[build()](#ZH-CN_TOPIC_0000002553362061__build)接口构建而成。
+
+- [LineTypeset](#ZH-CN_TOPIC_0000002553362061__linetypeset18)：行排版器，由ParagraphBuilder类调用[buildLineTypeset()](#ZH-CN_TOPIC_0000002553362061__buildlinetypeset18)接口构建而成。
+
+- [TextLine](#ZH-CN_TOPIC_0000002553362061__textline)：以行为单位的段落文本的载体，由Paragraph类调用[getTextLines()](#ZH-CN_TOPIC_0000002553362061__gettextlines)接口获取。
+
+- [Run](#ZH-CN_TOPIC_0000002553362061__run)：文本排版单元，由TextLine类调用[getGlyphRuns()](#ZH-CN_TOPIC_0000002553362061__getglyphruns)接口获取。
+
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -40,7 +49,9 @@ setTextHighContrast(action: TextHighContrast): void
 
 **参数：**
 
-参数名类型必填说明action[TextHighContrast](#ZH-CN_TOPIC_0000002497605988__texthighcontrast20)是文字渲染高对比度模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| action | TextHighContrast | 是 | 文字渲染高对比度模式。 |
 
 **示例：**
 
@@ -67,7 +78,9 @@ setTextUndefinedGlyphDisplay(noGlyphShow: TextUndefinedGlyphDisplay): void
 
 **参数：**
 
-参数名类型必填说明noGlyphShow[TextUndefinedGlyphDisplay](#ZH-CN_TOPIC_0000002497605988__textundefinedglyphdisplay20)是无法塑形字符的显示方式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| noGlyphShow | TextUndefinedGlyphDisplay | 是 | 无法塑形字符的显示方式。 |
 
 **示例：**
 
@@ -87,17 +100,23 @@ matchFontDescriptors(desc: FontDescriptor): Promise<Array<FontDescriptor>>
 
 **参数：**
 
-参数名类型必填说明desc[FontDescriptor](#ZH-CN_TOPIC_0000002497605988__fontdescriptor14)是指定需要用来做匹配的字体描述符。如果不指定任何字段，则返回系统的所有字体描述符。如果填写了指定字段，则按照指定字段进行匹配。如果匹配失败，返回空数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| desc | FontDescriptor | 是 | 指定需要用来做匹配的字体描述符。如果不指定任何字段，则返回系统的所有字体描述符。如果填写了指定字段，则按照指定字段进行匹配。如果匹配失败，返回空数组。 |
 
 **返回值：**
 
-类型说明Promise<Array<[FontDescriptor](#ZH-CN_TOPIC_0000002497605988__fontdescriptor14)>>Promise对象，返回所有匹配到的系统字体描述符。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<FontDescriptor>> | Promise对象，返回所有匹配到的系统字体描述符。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例：**
 
@@ -133,7 +152,6 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```
 
 #### text.getSystemFontFullNamesByType14+
@@ -148,17 +166,23 @@ getSystemFontFullNamesByType(fontType: SystemFontType): Promise<Array<string>>
 
 **参数：**
 
-参数名类型必填说明fontType[SystemFontType](#ZH-CN_TOPIC_0000002497605988__systemfonttype14)是指定的字体类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fontType | SystemFontType | 是 | 指定的字体类型。 |
 
 **返回值：**
 
-类型说明Promise<Array<string>>Promise对象，返回相应字体类型的所有字体的fullName。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<string>> | Promise对象，返回相应字体类型的所有字体的fullName。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -194,7 +218,6 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```
 
 #### text.getFontDescriptorByFullName14+
@@ -211,17 +234,24 @@ getFontDescriptorByFullName(fullName: string, fontType: SystemFontType): Promise
 
 **参数：**
 
-参数名类型必填说明fullNamestring是指定的字体名称。可以使用[getSystemFontFullNamesByType](#ZH-CN_TOPIC_0000002497605988__textgetsystemfontfullnamesbytype14)获取。fontType[SystemFontType](#ZH-CN_TOPIC_0000002497605988__systemfonttype14)是指定的字体类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fullName | string | 是 | 指定的字体名称。可以使用getSystemFontFullNamesByType获取。 |
+| fontType | SystemFontType | 是 | 指定的字体类型。 |
 
 **返回值：**
 
-类型说明Promise<[FontDescriptor](#ZH-CN_TOPIC_0000002497605988__fontdescriptor14)>Promise对象，返回指定的字体描述符。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<FontDescriptor> | Promise对象，返回指定的字体描述符。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -254,12 +284,11 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```
 
 #### text.getFontDescriptorsFromPath22+
 
-getFontDescriptorsFromPath(path: string | Resource): Promise<Array<FontDescriptor>>
+getFontDescriptorsFromPath(path: string | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)): Promise<Array<FontDescriptor>>
 
 根据字体文件路径获取字体描述符数组。使用Promise异步回调。
 
@@ -269,7 +298,7 @@ getFontDescriptorsFromPath(path: string | Resource): Promise<Array<FontDescripto
 
 -
 
-[FontDescriptor](#ZH-CN_TOPIC_0000002497605988__fontdescriptor14)中的weight字段并不精准对应字体文件内部的字重数值，而是将字体文件中的实际字重四舍五入映射到[FontWeight](#ZH-CN_TOPIC_0000002497605988__fontweight)枚举值后的结果。例如，字体文件字重350会映射为400，对应枚举为W400。
+[FontDescriptor](#ZH-CN_TOPIC_0000002553362061__fontdescriptor14)中的weight字段并不精准对应字体文件内部的字重数值，而是将字体文件中的实际字重四舍五入映射到[FontWeight](#ZH-CN_TOPIC_0000002553362061__fontweight)枚举值后的结果。例如，字体文件字重350会映射为400，对应枚举为W400。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -277,11 +306,15 @@ getFontDescriptorsFromPath(path: string | Resource): Promise<Array<FontDescripto
 
 **参数：**
 
-参数名类型必填说明pathstring | [Resource](../../topics/misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)是需要查询的字体文件的路径，应为 "file:// + 字体文件绝对路径" 或 $rawfile("工程中resources/rawfile目录下的文件名称")。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 是 | 需要查询的字体文件的路径，应为 "file:// + 字体文件绝对路径" 或 $rawfile("工程中resources/rawfile目录下的文件名称")。 |
 
 **返回值：**
 
-类型说明Promise<Array<[FontDescriptor](#ZH-CN_TOPIC_0000002497605988__fontdescriptor14)>>Promise对象，返回所有的字体描述符。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<FontDescriptor>> | Promise对象，返回所有的字体描述符。 |
 
 **示例：**
 
@@ -310,11 +343,195 @@ struct GetFontDescriptorsFromPathTest {
                           "\nsymbolic:" + fontFullDescriptors[index].symbolic)
             }
           })
+    }.width("100%")
+    .height("100%")
+    .justifyContent(FlexAlign.Center)
+  }
+```
+
+**text.getFontUnicodeSet23+**
+
+getFontUnicodeSet(path: string | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource), index: number): Promise<Array<number>>
+
+根据字体文件路径获取字体unicode数组。使用Promise异步回调。
+
+如果字体文件未找到、字体文件路径无效、字体文件无权限或者文件非字体格式，返回空数组。
+
+系统能力：SystemCapability.Graphics.Drawing
+
+元服务API：从API version 23开始，该接口支持在元服务中使用。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 是 | 需要查询的字体文件的路径，应为 "file:// + 字体文件绝对路径" 或 $rawfile("工程中resources/rawfile目录下的文件名称")。 |
+| index | number | 是 | 字体文件格式为ttc/otc时，指定加载的字体索引。非ttc/otc格式文件索引值只能指定为0。如果该参数非法，将返回空数组。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<number>> | Promise对象，返回字体文件持有的unicode码。 |
+
+示例：
+
+```ets
+import { text } from '@kit.ArkGraphics2D'
+
+@Entry
+@Component
+struct GetFontUnicodeSetTest {
+  build() {
+    Column({ space: 10 }) {
+      Button("get fontUnicode")
+        .onClick(async () => {
+          let promise = text.getFontUnicodeSet("file:///system/fonts/HMSymbolVF.ttf", 0)
+          promise.then((unicodeSet) => {
+            for (let index = 0; index < unicodeSet.length; index++) {
+              console.info(unicodeSet[index].toString())
+            }
         })
     }.width("100%")
     .height("100%")
     .justifyContent(FlexAlign.Center)
   }
+```
+
+**text.getFontCount23+**
+
+getFontCount(path: string | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)): number
+
+根据字体文件路径获取包含的字体文件数。
+
+如果字体文件未找到、字体文件路径无效、字体文件无权限或者文件非字体格式，返回0。
+
+系统能力：SystemCapability.Graphics.Drawing
+
+元服务API：从API version 23开始，该接口支持在元服务中使用。
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 是 | 需要查询的字体文件的路径，应为 "file:// + 字体文件绝对路径" 或 $rawfile("工程中resources/rawfile目录下的文件名称")。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| number | 包含字体数量。 |
+
+示例：
+
+```ets
+import { text } from '@kit.ArkGraphics2D'
+
+@Entry
+@Component
+struct GetFontCountTest {
+  build() {
+    Column({ space: 10 }) {
+      Button("get fontCount")
+        .onClick(() => {
+          let fontCount = text.getFontCount("file:///system/fonts/NotoSansCJK-Regular.ttc")
+          console.info("file count: " + fontCount)
+        })
+    }.width("100%")
+    .height("100%")
+    .justifyContent(FlexAlign.Center)
+  }
+```
+
+**text.getFontPathsByType23+**
+
+getFontPathsByType(fontType: SystemFontType): Array<string>
+
+获取指定字体类型的所有字体文件路径。
+
+系统能力：SystemCapability.Graphics.Drawing
+
+元服务API：从API version 23开始，该接口支持在元服务中使用。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fontType | SystemFontType | 是 | 指定的字体类型。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| Array<string> | 字体文件路径列表。 |
+
+示例：
+
+```ets
+import { text } from '@kit.ArkGraphics2D'
+
+@Entry
+@Component
+struct GetFontPathsByTypeTest {
+  build() {
+    Column({ space: 10 }) {
+      Button("get font path")
+        .onClick(() => {
+          let fontList = text.getFontPathsByType(text.SystemFontType.ALL)
+          console.info("file count: " + fontList.length)
+          for (let index = 0; index < fontList.length; index++) {
+            console.info("file path: " + fontList[index])
+          }
+        })
+    }.width("100%")
+    .height("100%")
+    .justifyContent(FlexAlign.Center)
+  }
+```
+
+**text.isFontSupported23+**
+
+isFontSupported(fontURL: string | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)): boolean
+
+检查系统是否支持指定的字体文件。
+
+系统能力：SystemCapability.Graphics.Drawing
+
+元服务API：从API version 23开始，该接口支持在元服务中使用。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fontURL | string | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 是 | 需要检查的字体文件的路径，应为 "file:// + 字体文件绝对路径" 或 "rawfile/目录or文件名"。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 系统是否支持指定的字体文件。返回true表示支持，返回false表示不支持。 |
+
+示例：
+
+```ets
+import { text } from '@kit.ArkGraphics2D'
+
+@Entry
+@Component
+struct isFontSupportedTest {
+  build() {
+    Column({ space: 10 }) {
+      Button("is font supported")
+        .onClick(() => {
+          let filePath = "file:///system/fonts/NotoSansCJK-Regular.ttc"
+          let isSupported = text.isFontSupported(filePath)
+          console.info("is font supported: " + isSupported)
+        })
+    }.width("100%")
+    .height("100%")
+    .justifyContent(FlexAlign.Center)
 }
 ```
 
@@ -326,7 +543,11 @@ struct GetFontDescriptorsFromPathTest {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明TEXT_FOLLOW_SYSTEM_HIGH_CONTRAST0跟随系统设置中的高对比度文字配置。TEXT_APP_DISABLE_HIGH_CONTRAST1关闭APP的文字渲染高对比度配置，该模式的优先级要高于系统设置中的高对比度文字配置。TEXT_APP_ENABLE_HIGH_CONTRAST2开启APP的文字渲染高对比度配置，该模式的优先级要高于系统设置中的高对比度文字配置。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| TEXT_FOLLOW_SYSTEM_HIGH_CONTRAST | 0 | 跟随系统设置中的高对比度文字配置。 |
+| TEXT_APP_DISABLE_HIGH_CONTRAST | 1 | 关闭APP的文字渲染高对比度配置，该模式的优先级要高于系统设置中的高对比度文字配置。 |
+| TEXT_APP_ENABLE_HIGH_CONTRAST | 2 | 开启APP的文字渲染高对比度配置，该模式的优先级要高于系统设置中的高对比度文字配置。 |
 
 #### TextUndefinedGlyphDisplay20+
 
@@ -336,7 +557,10 @@ struct GetFontDescriptorsFromPathTest {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明USE_DEFAULT0使用字体的内部.notdef字形。遵循字体的内部.notdef字形设计，可以是空框、空格或自定义符号。USE_TOFU1总是用显式的豆腐块替换未定义的字形，覆盖字体的默认行为。用于调试缺失字符或强制一致的缺失符号显示。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| USE_DEFAULT | 0 | 使用字体的内部.notdef字形。遵循字体的内部.notdef字形设计，可以是空框、空格或自定义符号。 |
+| USE_TOFU | 1 | 总是用显式的豆腐块替换未定义的字形，覆盖字体的默认行为。用于调试缺失字符或强制一致的缺失符号显示。 |
 
 #### TextAlign
 
@@ -346,7 +570,14 @@ struct GetFontDescriptorsFromPathTest {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明LEFT0文本靠左对齐。RIGHT1文本靠右对齐。CENTER2文本居中对齐。JUSTIFY3文本两侧对齐，对最后一行无效。START4基于文本的方向[TextDirection](#ZH-CN_TOPIC_0000002497605988__textdirection)，文本靠开头方向对齐。END5基于文本的方向[TextDirection](#ZH-CN_TOPIC_0000002497605988__textdirection)，文本以结束方向对齐。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| LEFT | 0 | 文本靠左对齐。 |
+| RIGHT | 1 | 文本靠右对齐。 |
+| CENTER | 2 | 文本居中对齐。 |
+| JUSTIFY | 3 | 文本两侧对齐，对最后一行无效。 |
+| START | 4 | 基于文本的方向TextDirection，文本靠开头方向对齐。 |
+| END | 5 | 基于文本的方向TextDirection，文本以结束方向对齐。 |
 
 #### TextVerticalAlign20+
 
@@ -356,7 +587,12 @@ struct GetFontDescriptorsFromPathTest {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明BASELINE0文本基线对齐。BOTTOM1文本底部对齐。CENTER2文本居中对齐。TOP3文本顶部对齐。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| BASELINE | 0 | 文本基线对齐。 |
+| BOTTOM | 1 | 文本底部对齐。 |
+| CENTER | 2 | 文本居中对齐。 |
+| TOP | 3 | 文本顶部对齐。 |
 
 #### TextDirection
 
@@ -366,7 +602,10 @@ struct GetFontDescriptorsFromPathTest {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明RTL0文本从右到左排版。LTR1文本从左到右排版。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| RTL | 0 | 文本从右到左排版。 |
+| LTR | 1 | 文本从左到右排版。 |
 
 #### BreakStrategy
 
@@ -376,7 +615,11 @@ struct GetFontDescriptorsFromPathTest {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明GREEDY0尽可能将当前行填满，不会自动添加连词符。HIGH_QUALITY1布局优化，必要时会自动添加连词符。BALANCED2保证一个段落的每一行的宽度相同，必要时会添加连词符。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| GREEDY | 0 | 尽可能将当前行填满，不会自动添加连词符。 |
+| HIGH_QUALITY | 1 | 布局优化，必要时会自动添加连词符。 |
+| BALANCED | 2 | 保证一个段落的每一行的宽度相同，必要时会添加连词符。 |
 
 #### WordBreak
 
@@ -386,11 +629,12 @@ struct GetFontDescriptorsFromPathTest {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明NORMAL0默认的换行规则。依据各自语言的规则，允许在字间发生换行。BREAK_ALL1对于Non-CJK（非中文，日文，韩文）文本允许在任意字符内发生换行。该值适合包含一些非亚洲文本的亚洲文本，比如使连续的英文字符断行。BREAK_WORD2对于Non-CJK的文本可在任意2个字符间断行，一行文本中有断行破发点（如空白符）时，优先按破发点换行，保障单词优先完整显示。若整一行文本均无断行破发点时，则在任意2个字符间断行。对于CJK与NORMAL效果一致。BREAK_HYPHEN18+3
-
-每行末尾单词尝试通过连字符“-”进行断行，若无法添加连字符“-”，则跟BREAK_WORD保持一致。
-
-使用此断词策略时，需与[TextStyle](#ZH-CN_TOPIC_0000002497605988__textstyle)中locale属性配合使用，通过locale定义语言环境共同作用影响断词效果。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NORMAL | 0 | 默认的换行规则。依据各自语言的规则，允许在字间发生换行。 |
+| BREAK_ALL | 1 | 对于Non-CJK（非中文，日文，韩文）文本允许在任意字符内发生换行。该值适合包含一些非亚洲文本的亚洲文本，比如使连续的英文字符断行。 |
+| BREAK_WORD | 2 | 对于Non-CJK的文本可在任意2个字符间断行，一行文本中有断行破发点（如空白符）时，优先按破发点换行，保障单词优先完整显示。若整一行文本均无断行破发点时，则在任意2个字符间断行。对于CJK与NORMAL效果一致。 |
+| BREAK_HYPHEN18+ | 3 | 每行末尾单词尝试通过连字符“-”进行断行，若无法添加连字符“-”，则跟BREAK_WORD保持一致。 使用此断词策略时，需与TextStyle中locale属性配合使用，通过locale定义语言环境共同作用影响断词效果。 |
 
 #### Decoration
 
@@ -400,7 +644,12 @@ struct GetFontDescriptorsFromPathTest {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明textDecoration[TextDecorationType](#ZH-CN_TOPIC_0000002497605988__textdecorationtype)否是装饰线类型，默认为NONE。color[common2D.Color](@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__color)否是装饰线颜色，默认为跟随文本颜色。decorationStyle[TextDecorationStyle](#ZH-CN_TOPIC_0000002497605988__textdecorationstyle)否是装饰线样式，默认为SOLID。decorationThicknessScalenumber否是装饰线粗细系数，浮点数，默认为1.0。如果设置的值小于等于0，则不会绘制装饰线。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| textDecoration | TextDecorationType | 否 | 是 | 装饰线类型，默认为NONE。 |
+| color | common2D.Color | 否 | 是 | 装饰线颜色，默认为跟随文本颜色。 |
+| decorationStyle | TextDecorationStyle | 否 | 是 | 装饰线样式，默认为SOLID。 |
+| decorationThicknessScale | number | 否 | 是 | 装饰线粗细系数，浮点数，默认为1.0。如果设置的值小于等于0，则不会绘制装饰线。 |
 
 #### TextDecorationType
 
@@ -410,7 +659,12 @@ struct GetFontDescriptorsFromPathTest {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明NONE0无装饰线。UNDERLINE1下划线。OVERLINE2上划线。LINE_THROUGH4删除线。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NONE | 0 | 无装饰线。 |
+| UNDERLINE | 1 | 下划线。 |
+| OVERLINE | 2 | 上划线。 |
+| LINE_THROUGH | 4 | 删除线。 |
 
 #### TextDecorationStyle
 
@@ -420,7 +674,13 @@ struct GetFontDescriptorsFromPathTest {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明SOLID0实线。DOUBLE1双层线。DOTTED2点状线。DASHED3虚线。WAVY4波浪线。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SOLID | 0 | 实线。 |
+| DOUBLE | 1 | 双层线。 |
+| DOTTED | 2 | 点状线。 |
+| DASHED | 3 | 虚线。 |
+| WAVY | 4 | 波浪线。 |
 
 #### FontWeight
 
@@ -430,7 +690,17 @@ struct GetFontDescriptorsFromPathTest {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明W1000100字重。W2001200字重。W3002300字重。W4003400字重。W5004500字重。W6005600字重。W7006700字重。W8007800字重。W9008900字重。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| W100 | 0 | 100字重。 |
+| W200 | 1 | 200字重。 |
+| W300 | 2 | 300字重。 |
+| W400 | 3 | 400字重。 |
+| W500 | 4 | 500字重。 |
+| W600 | 5 | 600字重。 |
+| W700 | 6 | 700字重。 |
+| W800 | 7 | 800字重。 |
+| W900 | 8 | 900字重。 |
 
 #### FontWidth
 
@@ -440,7 +710,17 @@ struct GetFontDescriptorsFromPathTest {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明ULTRA_CONDENSED1超窄字宽。EXTRA_CONDENSED2特窄字宽。CONDENSED3窄的字宽。SEMI_CONDENSED4半窄字宽。NORMAL5常规字宽。SEMI_EXPANDED6半宽字宽。EXPANDED7宽的字宽。EXTRA_EXPANDED8特宽字宽。ULTRA_EXPANDED9超宽的字宽。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ULTRA_CONDENSED | 1 | 超窄字宽。 |
+| EXTRA_CONDENSED | 2 | 特窄字宽。 |
+| CONDENSED | 3 | 窄的字宽。 |
+| SEMI_CONDENSED | 4 | 半窄字宽。 |
+| NORMAL | 5 | 常规字宽。 |
+| SEMI_EXPANDED | 6 | 半宽字宽。 |
+| EXPANDED | 7 | 宽的字宽。 |
+| EXTRA_EXPANDED | 8 | 特宽字宽。 |
+| ULTRA_EXPANDED | 9 | 超宽的字宽。 |
 
 #### FontStyle
 
@@ -450,7 +730,11 @@ struct GetFontDescriptorsFromPathTest {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明NORMAL0常规样式。ITALIC1斜体。如果当前字体没有可用的斜体版本，会选用倾斜体替代。OBLIQUE2倾斜体。如果当前字体没有可用的倾斜体版本，会选用斜体替代。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NORMAL | 0 | 常规样式。 |
+| ITALIC | 1 | 斜体。如果当前字体没有可用的斜体版本，会选用倾斜体替代。 |
+| OBLIQUE | 2 | 倾斜体。如果当前字体没有可用的倾斜体版本，会选用斜体替代。 |
 
 #### TextHeightBehavior
 
@@ -460,7 +744,12 @@ struct GetFontDescriptorsFromPathTest {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明ALL0x0高度修饰符设置为段落中第一行上升、最后一行下降。DISABLE_FIRST_ASCENT0x1高度修饰符设置为禁止段落中第一行上升。DISABLE_LAST_ASCENT0x2高度修饰符设置为禁止段落中最后一行下降。DISABLE_ALL0x1 | 0x2高度修饰符设置为禁止段落中第一行上升、最后一行下降。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ALL | 0x0 | 高度修饰符设置为段落中第一行上升、最后一行下降。 |
+| DISABLE_FIRST_ASCENT | 0x1 | 高度修饰符设置为禁止段落中第一行上升。 |
+| DISABLE_LAST_ASCENT | 0x2 | 高度修饰符设置为禁止段落中最后一行下降。 |
+| DISABLE_ALL | 0x1 | 0x2 | 高度修饰符设置为禁止段落中第一行上升、最后一行下降。 |
 
 #### TextBaseline
 
@@ -470,7 +759,10 @@ struct GetFontDescriptorsFromPathTest {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明ALPHABETIC0用于拉丁字母的文本基线对齐。IDEOGRAPHIC1用于CJK（中文，日文，韩文）的文本基线对齐。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ALPHABETIC | 0 | 用于拉丁字母的文本基线对齐。 |
+| IDEOGRAPHIC | 1 | 用于CJK（中文，日文，韩文）的文本基线对齐。 |
 
 #### EllipsisMode
 
@@ -482,7 +774,11 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明START0开头省略号，只在[ParagraphStyle](#ZH-CN_TOPIC_0000002497605988__paragraphstyle)中设置maxLines为1时生效。MIDDLE1中间省略号，只在[ParagraphStyle](#ZH-CN_TOPIC_0000002497605988__paragraphstyle)中设置maxLines为1时生效。END2末尾省略号。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| START | 0 | 开头省略号，只在ParagraphStyle中设置maxLines为1时生效。 |
+| MIDDLE | 1 | 中间省略号，只在ParagraphStyle中设置maxLines为1时生效。 |
+| END | 2 | 末尾省略号。 |
 
 #### TextShadow
 
@@ -492,7 +788,11 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明color[common2D.Color](@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__color)否是字体阴影的颜色，默认为黑色Color(255, 0, 0, 0)。point[common2D.Point](@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__point12)否是字体阴影基于当前文本的偏移位置，横、纵坐标要大于等于零。blurRadiusnumber否是模糊半径，浮点数，默认为0.0px。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| color | common2D.Color | 否 | 是 | 字体阴影的颜色，默认为黑色Color(255, 0, 0, 0)。 |
+| point | common2D.Point | 否 | 是 | 字体阴影基于当前文本的偏移位置，横、纵坐标要大于等于零。 |
+| blurRadius | number | 否 | 是 | 模糊半径，浮点数，默认为0.0px。 |
 
 #### RectStyle
 
@@ -502,7 +802,13 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明color[common2D.Color](@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__color)否否矩形框的颜色。leftTopRadiusnumber否否矩形框的左上半径。rightTopRadiusnumber否否矩形框的右上半径。rightBottomRadiusnumber否否矩形框的右下半径。leftBottomRadiusnumber否否矩形框的左下半径。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| color | common2D.Color | 否 | 否 | 矩形框的颜色。 |
+| leftTopRadius | number | 否 | 否 | 矩形框的左上半径。 |
+| rightTopRadius | number | 否 | 否 | 矩形框的右上半径。 |
+| rightBottomRadius | number | 否 | 否 | 矩形框的右下半径。 |
+| leftBottomRadius | number | 否 | 否 | 矩形框的左下半径。 |
 
 #### FontFeature
 
@@ -512,7 +818,10 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明namestring否否字体特征键值对中的关键字标识的字符串。valuenumber否否字体特征键值对的值。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | string | 否 | 否 | 字体特征键值对中的关键字标识的字符串。 |
+| value | number | 否 | 否 | 字体特征键值对的值。 |
 
 #### FontVariation
 
@@ -522,7 +831,10 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明axisstring否否可变字体属性键值对中的关键字标识的字符串。valuenumber否否可变字体属性键值对的值。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| axis | string | 否 | 否 | 可变字体属性键值对中的关键字标识的字符串。 |
+| value | number | 否 | 否 | 可变字体属性键值对的值。 |
 
 #### TextBadgeType20+
 
@@ -532,7 +844,11 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明TEXT_BADGE_NONE0不使能上下标。TEXT_SUPERSCRIPT1使能上标。TEXT_SUBSCRIPT2使能下标。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| TEXT_BADGE_NONE | 0 | 不使能上下标。 |
+| TEXT_SUPERSCRIPT | 1 | 使能上标。 |
+| TEXT_SUBSCRIPT | 2 | 使能下标。 |
 
 #### LineHeightStyle21+
 
@@ -542,7 +858,10 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明FONT_SIZE0以字号大小作为缩放基数。最终行高为[TextStyle](#ZH-CN_TOPIC_0000002497605988__textstyle).fontSize * [TextStyle](#ZH-CN_TOPIC_0000002497605988__textstyle).heightScale。FONT_HEIGHT1以字形高度作为缩放基数。最终行高为塑形后字形高度 * [TextStyle](#ZH-CN_TOPIC_0000002497605988__textstyle).heightScale。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| FONT_SIZE | 0 | 以字号大小作为缩放基数。最终行高为TextStyle.fontSize * TextStyle.heightScale。 |
+| FONT_HEIGHT | 1 | 以字形高度作为缩放基数。最终行高为塑形后字形高度 * TextStyle.heightScale。 |
 
 #### TextStyle
 
@@ -552,7 +871,33 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明decoration[Decoration](#ZH-CN_TOPIC_0000002497605988__decoration)否是装饰线设置，默认不使用装饰线。color[common2D.Color](@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__color)否是文字颜色，默认为白色。fontWeight[FontWeight](#ZH-CN_TOPIC_0000002497605988__fontweight)否是字重，默认为W400。 目前只有系统默认字体支持字重的调节，其他字体设置字重值小于semi-bold（即W600）时字体粗细无变化，当设置字重值大于等于semi-bold（即W600）时可能会触发伪加粗效果。fontWidth21+[FontWidth](#ZH-CN_TOPIC_0000002497605988__fontwidth)否是字体宽度，默认为NORMAL。fontStyle[FontStyle](#ZH-CN_TOPIC_0000002497605988__fontstyle)否是字体样式，默认为常规样式。baseline[TextBaseline](#ZH-CN_TOPIC_0000002497605988__textbaseline)否是文本基线类型，默认为ALPHABETIC。fontFamiliesArray<string>否是字体家族名称列表，默认为空，匹配系统字体。fontSizenumber否是字体大小，浮点数，默认为14.0，单位为px。letterSpacingnumber否是字符间距，正数拉开字符距离，若是负数则拉近字符距离，浮点数，默认为0.0，单位为物理像素px。wordSpacingnumber否是单词间距，浮点数，默认为0.0，单位为px。heightScalenumber否是行高缩放倍数，浮点数，默认为1.0，heightOnly为true时生效。heightOnlyboolean否是true表示根据字体大小和heightScale设置文本框的高度，false表示根据行高和行距，默认为false。halfLeadingboolean否是true表示将行间距平分至行的顶部与底部，false则不平分，默认为false。ellipsisstring否是省略号文本，表示省略号生效后使用该字段值替换省略号部分。ellipsisMode[EllipsisMode](#ZH-CN_TOPIC_0000002497605988__ellipsismode)否是省略号类型，默认为END，行尾省略号。localestring否是语言类型，如字段为'en'代表英文，'zh-Hans'代表简体中文，'zh-Hant'代表繁体中文。具体请参照ISO 639-1规范，默认为空字符串。baselineShiftnumber否是文本下划线的偏移距离，浮点数，默认为0.0px。fontFeaturesArray<[FontFeature](#ZH-CN_TOPIC_0000002497605988__fontfeature)>否是文本字体特征数组。fontVariationsArray<[FontVariation](#ZH-CN_TOPIC_0000002497605988__fontvariation)>否是可变字体属性数组。textShadowsArray<[TextShadow](#ZH-CN_TOPIC_0000002497605988__textshadow)>否是文本阴影数组。backgroundRect[RectStyle](#ZH-CN_TOPIC_0000002497605988__rectstyle)否是文本矩形框样式。badgeType20+[TextBadgeType](#ZH-CN_TOPIC_0000002497605988__textbadgetype20)否是设置文本排版时是否使能上标或下标。TEXT_SUPERSCRIPT表示使能上标，TEXT_SUBSCRIPT表示使能下标，默认值为TEXT_BADGE_NONE表示不使能。lineHeightMaximum21+number否是行高上限。若同时应用行高缩放，行高上限在[TextStyle](#ZH-CN_TOPIC_0000002497605988__textstyle).heightScale大于0时生效。取值为正数浮点数，默认值为Number.MAX_VALUE。lineHeightMinimum21+number否是行高下限。若同时应用行高缩放，行高下限在[TextStyle](#ZH-CN_TOPIC_0000002497605988__textstyle).heightScale大于0时生效。取值范围为非负浮点数，默认值为0。lineHeightStyle21+[LineHeightStyle](#ZH-CN_TOPIC_0000002497605988__lineheightstyle21)否是行高缩放基数样式。默认为FONT_SIZE。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| decoration | Decoration | 否 | 是 | 装饰线设置，默认不使用装饰线。 |
+| color | common2D.Color | 否 | 是 | 文字颜色，默认为白色。 |
+| fontWeight | FontWeight | 否 | 是 | 字重，默认为W400。 目前只有系统默认字体支持字重的调节，其他字体设置字重值小于semi-bold（即W600）时字体粗细无变化，当设置字重值大于等于semi-bold（即W600）时可能会触发伪加粗效果。 |
+| fontWidth21+ | FontWidth | 否 | 是 | 字体宽度，默认为NORMAL。 |
+| fontStyle | FontStyle | 否 | 是 | 字体样式，默认为常规样式。 |
+| baseline | TextBaseline | 否 | 是 | 文本基线类型，默认为ALPHABETIC。 |
+| fontFamilies | Array<string> | 否 | 是 | 字体家族名称列表，默认为空，匹配系统字体。 |
+| fontSize | number | 否 | 是 | 字体大小，浮点数，默认为14.0，单位为px。 |
+| letterSpacing | number | 否 | 是 | 字符间距，正数拉开字符距离，若是负数则拉近字符距离，浮点数，默认为0.0，单位为物理像素px。 |
+| wordSpacing | number | 否 | 是 | 单词间距，浮点数，默认为0.0，单位为px。 |
+| heightScale | number | 否 | 是 | 行高缩放倍数，浮点数，默认为1.0，heightOnly为true时生效。 |
+| heightOnly | boolean | 否 | 是 | true表示根据字体大小和heightScale设置文本框的高度，false表示根据行高和行距，默认为false。 |
+| halfLeading | boolean | 否 | 是 | true表示将行间距平分至行的顶部与底部，false则不平分，默认为false。 |
+| ellipsis | string | 否 | 是 | 省略号文本，表示省略号生效后使用该字段值替换省略号部分。 |
+| ellipsisMode | EllipsisMode | 否 | 是 | 省略号类型，默认为END，行尾省略号。 |
+| locale | string | 否 | 是 | 语言类型，如字段为'en'代表英文，'zh-Hans'代表简体中文，'zh-Hant'代表繁体中文。具体请参照ISO 639-1规范，默认为空字符串。 |
+| baselineShift | number | 否 | 是 | 文本下划线的偏移距离，浮点数，默认为0.0px。 |
+| fontFeatures | Array<FontFeature> | 否 | 是 | 文本字体特征数组。 |
+| fontVariations | Array<FontVariation> | 否 | 是 | 可变字体属性数组。 |
+| textShadows | Array<TextShadow> | 否 | 是 | 文本阴影数组。 |
+| backgroundRect | RectStyle | 否 | 是 | 文本矩形框样式。 |
+| badgeType20+ | TextBadgeType | 否 | 是 | 设置文本排版时是否使能上标或下标。TEXT_SUPERSCRIPT表示使能上标，TEXT_SUBSCRIPT表示使能下标，默认值为TEXT_BADGE_NONE表示不使能。 |
+| lineHeightMaximum21+ | number | 否 | 是 | 行高上限。若同时应用行高缩放，行高上限在TextStyle.heightScale大于0时生效。取值为正数浮点数，默认值为Number.MAX_VALUE。 |
+| lineHeightMinimum21+ | number | 否 | 是 | 行高下限。若同时应用行高缩放，行高下限在TextStyle.heightScale大于0时生效。取值范围为非负浮点数，默认值为0。 |
+| lineHeightStyle21+ | LineHeightStyle | 否 | 是 | 行高缩放基数样式。默认为FONT_SIZE。 |
 
 #### StrutStyle
 
@@ -562,7 +907,19 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明fontFamiliesArray<string>否是字体家族名称列表，默认为空，匹配系统字体。fontStyle[FontStyle](#ZH-CN_TOPIC_0000002497605988__fontstyle)否是字体样式，默认为常规样式。fontWidth[FontWidth](#ZH-CN_TOPIC_0000002497605988__fontwidth)否是字体宽度，默认为NORMAL。fontWeight[FontWeight](#ZH-CN_TOPIC_0000002497605988__fontweight)否是字重，默认为W400。系统默认字体支持字重调节，其他字体设置字重值小于W600时无变化，大于等于W600时可能触发伪加粗效果。fontSizenumber否是字体大小，浮点数，默认14.0，单位物理像素px。heightnumber否是行高缩放倍数，浮点数，默认为1.0。leadingnumber否是以自定义行距应用于支柱的行距，浮点数，默认为-1.0。forceHeightboolean否是是否所有行都将使用支柱的高度，true表示使用，false表示不使用，默认为false。enabledboolean否是是否启用支柱样式，true表示使用，false表示不使用，默认为false。heightOverrideboolean否是是否覆盖高度，true表示覆盖，false表示不覆盖，默认为false。halfLeadingboolean否是true表示将行间距平分至行的顶部与底部，false则不平分，默认为false。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| fontFamilies | Array<string> | 否 | 是 | 字体家族名称列表，默认为空，匹配系统字体。 |
+| fontStyle | FontStyle | 否 | 是 | 字体样式，默认为常规样式。 |
+| fontWidth | FontWidth | 否 | 是 | 字体宽度，默认为NORMAL。 |
+| fontWeight | FontWeight | 否 | 是 | 字重，默认为W400。系统默认字体支持字重调节，其他字体设置字重值小于W600时无变化，大于等于W600时可能触发伪加粗效果。 |
+| fontSize | number | 否 | 是 | 字体大小，浮点数，默认14.0，单位物理像素px。 |
+| height | number | 否 | 是 | 行高缩放倍数，浮点数，默认为1.0。 |
+| leading | number | 否 | 是 | 以自定义行距应用于支柱的行距，浮点数，默认为-1.0。 |
+| forceHeight | boolean | 否 | 是 | 是否所有行都将使用支柱的高度，true表示使用，false表示不使用，默认为false。 |
+| enabled | boolean | 否 | 是 | 是否启用支柱样式，true表示使用，false表示不使用，默认为false。 |
+| heightOverride | boolean | 否 | 是 | 是否覆盖高度，true表示覆盖，false表示不覆盖，默认为false。 |
+| halfLeading | boolean | 否 | 是 | true表示将行间距平分至行的顶部与底部，false则不平分，默认为false。 |
 
 #### FontDescriptor14+
 
@@ -570,9 +927,28 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
-**元服务API**：从API version 22开始，该接口支持在元服务中使用。
-
-名称类型只读可选说明pathstring否是字体绝对路径，可取遵循系统限制的任意字符串，默认为空字符串。postScriptNamestring否是字体唯一标识名称，可取任意字符串，默认为空字符串。fullNamestring否是字体名称，可取任意字符串，默认为空字符串。fontFamilystring否是字体家族，可取任意字符串，默认为空字符串。fontSubfamilystring否是子字体家族，可取任意字符串，默认为空字符串。weight[FontWeight](#ZH-CN_TOPIC_0000002497605988__fontweight)否是字体字重，默认值为0。widthnumber否是字体宽度，取值范围1-9整数，默认值为0。italicnumber否是是否是斜体字体，0表示非斜体，1表示斜体，默认值为0。monoSpaceboolean否是是否是等宽字体，true表示等宽，false表示非等宽，默认值为false。symbolicboolean否是是否支持符号，true表示支持，false表示不支持，默认值为false。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| path | string | 否 | 是 | 字体绝对路径，可取遵循系统限制的任意字符串，默认为空字符串。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
+| postScriptName | string | 否 | 是 | 字体唯一标识名称，可取任意字符串，默认为空字符串。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
+| fullName | string | 否 | 是 | 字体名称，可取任意字符串，默认为空字符串。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
+| fontFamily | string | 否 | 是 | 字体家族，可取任意字符串，默认为空字符串。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
+| fontSubfamily | string | 否 | 是 | 子字体家族，可取任意字符串，默认为空字符串。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
+| weight | FontWeight | 否 | 是 | 字体字重，默认值为0。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
+| width | number | 否 | 是 | 字体宽度，取值范围1-9整数，默认值为0。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
+| italic | number | 否 | 是 | 是否是斜体字体，0表示非斜体，1表示斜体，默认值为0。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
+| monoSpace | boolean | 否 | 是 | 是否是等宽字体，true表示等宽，false表示非等宽，默认值为false。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
+| symbolic | boolean | 否 | 是 | 是否支持符号，true表示支持，false表示不支持，默认值为false。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
+| localPostscriptName23+ | string | 否 | 是 | 根据系统语言配置提取字体唯一标识，字体文件中若无当前语言对应配置则取“en”对应信息。 元服务API：从API version 23开始，该接口支持在元服务中使用。 |
+| localFullName23+ | string | 否 | 是 | 根据系统语言配置提取字体全名，字体文件中若无当前语言对应配置则取“en”对应信息。 元服务API：从API version 23开始，该接口支持在元服务中使用。 |
+| localFamilyName23+ | string | 否 | 是 | 根据系统语言配置提取字体家族名称，字体文件中若无当前语言对应配置则取“en”对应信息。 元服务API：从API version 23开始，该接口支持在元服务中使用。 |
+| localSubFamilyName23+ | string | 否 | 是 | 根据系统语言配置提取子字体家族名称，字体文件中若无当前语言对应配置则取“en”对应信息。 元服务API：从API version 23开始，该接口支持在元服务中使用。 |
+| version23+ | string | 否 | 是 | 字体版本，可取任意字符串，默认为空字符串。 元服务API：从API version 23开始，该接口支持在元服务中使用。 |
+| manufacture23+ | string | 否 | 是 | 字体制造商信息，可取任意字符串，默认为空字符串。 元服务API：从API version 23开始，该接口支持在元服务中使用。 |
+| copyright23+ | string | 否 | 是 | 字体版权信息，可取任意字符串，默认为空字符串。 元服务API：从API version 23开始，该接口支持在元服务中使用。 |
+| trademark23+ | string | 否 | 是 | 字体商标信息，可取任意字符串，默认为空字符串。 元服务API：从API version 23开始，该接口支持在元服务中使用。 |
+| license23+ | string | 否 | 是 | 字体许可证信息，可取任意字符串，默认为空字符串。 元服务API：从API version 23开始，该接口支持在元服务中使用。 |
+| index23+ | number | 否 | 是 | 字体索引，字体文件为ttc类型时有效，ttf类型统一为0。 元服务API：从API version 23开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 #### FontCollection
 
@@ -590,7 +966,9 @@ static getGlobalInstance(): FontCollection
 
 **返回值：**
 
-类型说明[FontCollection](#ZH-CN_TOPIC_0000002497605988__fontcollection)FontCollection对象。
+| 类型 | 说明 |
+| --- | --- |
+| FontCollection | FontCollection对象。 |
 
 **示例：**
 
@@ -611,8 +989,6 @@ struct Index {
         this.fun();
       })
     }
-  }
-}
 ```
 
 #### getLocalInstance22+
@@ -629,7 +1005,9 @@ static getLocalInstance(): FontCollection
 
 **返回值：**
 
-类型说明[FontCollection](#ZH-CN_TOPIC_0000002497605988__fontcollection)FontCollection对象。
+| 类型 | 说明 |
+| --- | --- |
+| FontCollection | FontCollection对象。 |
 
 **示例：**
 
@@ -640,9 +1018,9 @@ let fontCollection = text.FontCollection.getLocalInstance();
 
 #### loadFontSync
 
-loadFontSync(name: string, path: string | Resource): void
+loadFontSync(name: string, path: string | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)): void
 
-同步接口，加载自定义字体。其中参数name对应的值需要在[TextStyle](#ZH-CN_TOPIC_0000002497605988__textstyle)中的fontFamilies属性配置，才能显示自定义字体效果。支持的字体文件格式包含：ttf、otf。
+同步接口，加载自定义字体。其中参数name对应的值需要在[TextStyle](#ZH-CN_TOPIC_0000002553362061__textstyle)中的fontFamilies属性配置，才能显示自定义字体效果。支持的字体文件格式包含：ttf、otf。
 
 **卡片能力：** 从API version 22开始，该接口支持在ArkTS卡片中使用。
 
@@ -652,7 +1030,10 @@ loadFontSync(name: string, path: string | Resource): void
 
 **参数：**
 
-参数名类型必填说明namestring是加载成字体后，调用该字体所使用的名称。pathstring | [Resource](../../topics/misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)是需要导入的字体文件的路径，应为 "file:// + 字体文件绝对路径" 或 "rawfile/目录or文件名"。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 加载字体后，调用该字体所使用的名称。 |
+| path | string | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 是 | 需要导入的字体文件的路径，应为 "file:// + 字体文件绝对路径" 或 "rawfile/目录or文件名"。 |
 
 **示例：**
 
@@ -687,14 +1068,13 @@ struct RenderTest {
 
   build() {
   }
-}
 ```
 
 #### loadFont18+
 
-loadFont(name: string, path: string | Resource): Promise<void>
+loadFont(name: string, path: string | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)): Promise<void>
 
-异步接口，加载自定义字体。其中参数name对应的值需要在[TextStyle](#ZH-CN_TOPIC_0000002497605988__textstyle)中的fontFamilies属性配置，才能显示自定义字体效果，支持的字体文件格式包含：ttf、otf。
+异步接口，加载自定义字体。其中参数name对应的值需要在[TextStyle](#ZH-CN_TOPIC_0000002553362061__textstyle)中的fontFamilies属性配置，才能显示自定义字体效果，支持的字体文件格式包含：ttf、otf。
 
 **卡片能力：** 从API version 22开始，该接口支持在ArkTS卡片中使用。
 
@@ -704,17 +1084,24 @@ loadFont(name: string, path: string | Resource): Promise<void>
 
 **参数：**
 
-参数名类型必填说明namestring是加载字体后，调用该字体所使用的别名，可填写任意字符串，可使用该别名指定并使用该字体。pathstring | [Resource](../../topics/misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)是需要加载的字体文件的路径，支持两种格式： "file:// + 字体文件绝对路径" 或 "rawfile/目录or文件名"。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 加载字体后，调用该字体所使用的别名，可填写任意字符串，可使用该别名指定并使用该字体。 |
+| path | string | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 是 | 需要加载的字体文件的路径，支持两种格式： "file:// + 字体文件绝对路径" 或 "rawfile/目录or文件名"。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -740,6 +1127,159 @@ struct RenderTest {
 
   build() {
   }
+```
+
+**loadFontSyncWithCheck23+**
+
+loadFontSyncWithCheck(name: string, path: string | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource), index?: number): void
+
+同步接口，加载自定义字体。其中参数name对应的值需要在[TextStyle](#ZH-CN_TOPIC_0000002553362061__textstyle)中的fontFamilies属性配置，才能显示自定义字体效果。支持的字体文件格式包含：ttf、otf、ttc。
+
+卡片能力： 从API version 23开始，该接口支持在ArkTS卡片中使用。
+
+系统能力：SystemCapability.Graphics.Drawing
+
+元服务API：从API version 23开始，该接口支持在元服务中使用。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 加载字体成功后，该字体对应的名称，可填写任意字符串，可使用该名称指定并使用该字体。 |
+| path | string | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 是 | 需要加载的字体文件的路径，支持两种格式： "file:// + 字体文件绝对路径" 或 $rawfile("字体文件路径")。 |
+| index | number | 否 | 字体文件格式为ttc时，指定加载的字体索引。默认为0：表示加载ttc的第一个字体。 非ttc格式文件索引值无意义，若指定索引，只能为0。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[图形绘制与显示错误码](图形绘制与显示错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 25900001 | Parameter error. |
+| 25900002 | File not found. |
+| 25900003 | Failed to open the file. |
+| 25900004 | File seek failed. |
+| 25900005 | Failed to get the file size. |
+| 25900006 | Failed to read the file. |
+| 25900007 | Empty file. |
+| 25900008 | Corrupt file. |
+
+示例：
+
+```ets
+import { text } from '@kit.ArkGraphics2D'
+
+let fc: text.FontCollection = text.FontCollection.getGlobalInstance();
+
+@Entry
+@Component
+struct Index {
+  message: string = 'Hello World';
+  fontFamily: string = 'family';
+
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .fontFamily(this.fontFamily)
+        .fontSize(50)
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          fc.loadFontSyncWithCheck(this.fontFamily, 'file:///system/fonts/NotoSansCJK-Regular.ttc', 1);
+          try {
+            fc.loadFontSyncWithCheck(this.fontFamily, '/system/fonts/NotoSansCJK-Regular.ttc', 1);
+          } catch (e) {
+            console.error(`Failed to do loadFontWithCheck, error: ${JSON.stringify(e)} message: ${e.message}`);
+          }
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+```
+
+**loadFontWithCheck23+**
+
+loadFontWithCheck(name: string, path: string | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource), index?: number): Promise<void>
+
+加载自定义字体，使用Promise异步回调。其中参数name对应的值需要在[TextStyle](#ZH-CN_TOPIC_0000002553362061__textstyle)中的fontFamilies属性配置，才能显示自定义字体效果，支持的字体文件格式包含：ttf、otf、ttc。
+
+卡片能力： 从API version 23开始，该接口支持在ArkTS卡片中使用。
+
+系统能力：SystemCapability.Graphics.Drawing
+
+元服务API：从API version 23开始，该接口支持在元服务中使用。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 加载字体成功后，该字体对应的名称，可填写任意字符串，可使用该名称指定并使用该字体。 |
+| path | string | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 是 | 需要加载的字体文件的路径，支持两种格式： "file:// + 字体文件绝对路径" 或 $rawfile("字体文件路径")。 |
+| index | number | 否 | 字体文件格式为ttc时，指定加载的字体索引。默认为0：表示加载ttc的第一个字体。 非ttc格式文件索引值无意义，若指定索引，只能为0。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[图形绘制与显示错误码](图形绘制与显示错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 25900001 | Parameter error. |
+| 25900002 | File not found. |
+| 25900003 | Failed to open the file. |
+| 25900004 | File seek failed. |
+| 25900005 | Failed to get the file size. |
+| 25900006 | Failed to read the file. |
+| 25900007 | Empty file. |
+| 25900008 | Corrupt file. |
+
+示例：
+
+```ets
+import { text } from '@kit.ArkGraphics2D'
+
+let fc: text.FontCollection = text.FontCollection.getGlobalInstance();
+
+@Entry
+@Component
+struct Index {
+  message: string = 'Hello World';
+  fontFamily: string = 'family';
+
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .fontFamily(this.fontFamily)
+        .fontSize(50)
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          fc.loadFontWithCheck(this.fontFamily, 'file:///system/fonts/NotoSansCJK-Regular.ttc', 1).then((data) => {
+            console.info(`Succeeded in doing loadFontWithCheck ${JSON.stringify(data)} `);
+          }).catch((error: Error) => {
+            console.error(`Failed to do loadFontWithCheck, error: ${JSON.stringify(error)} message: ${error.message}`);
+          });
+          fc.loadFontWithCheck(this.fontFamily, '/system/fonts/NotoSansCJK-Regular.ttc', 1).then((data) => {
+            console.info(`Succeeded in doing loadFontWithCheck ${JSON.stringify(data)} `);
+          }).catch((error: Error) => {
+            console.error(`Failed to do loadFontWithCheck, error: ${JSON.stringify(error)} message: ${error.message}`);
+          });
+        })
+    }
+    .height('100%')
+    .width('100%')
 }
 ```
 
@@ -765,7 +1305,9 @@ unloadFontSync(name: string): void
 
 **参数：**
 
-参数名类型必填说明namestring是需要取消注册的字体别名，与加载字体时使用的别名相同。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 需要取消注册的字体别名，与加载字体时使用的别名相同。 |
 
 **示例：**
 
@@ -796,7 +1338,6 @@ struct UnloadFontSyncTest {
     .height("100%")
     .justifyContent(FlexAlign.Center)
   }
-}
 ```
 
 #### unloadFont20+
@@ -821,11 +1362,15 @@ unloadFont(name: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明namestring是需要卸载的字体的别名，与加载字体时使用的别名相同。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 需要卸载的字体的别名，与加载字体时使用的别名相同。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -856,7 +1401,6 @@ struct UnloadFontTest {
     .height("100%")
     .justifyContent(FlexAlign.Center)
   }
-}
 ```
 
 #### clearCaches
@@ -885,8 +1429,6 @@ struct Index {
         text.FontCollection.getGlobalInstance().clearCaches();
       })
     }
-  }
-}
 ```
 
 #### ParagraphStyle
@@ -895,9 +1437,41 @@ struct Index {
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
-**元服务API**：从API version 22开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| textStyle | TextStyle | 否 | 是 | 作用于整个段落的文本样式，默认为初始的文本样式。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
+| textDirection | TextDirection | 否 | 是 | 文本方向，默认为LTR。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
+| align | TextAlign | 否 | 是 | 文本对齐方式，默认为START。若同时配置tab属性，制表符对齐方式将失效。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
+| wordBreak | WordBreak | 否 | 是 | 断词类型，默认为BREAK_WORD。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
+| maxLines | number | 否 | 是 | 最大行数限制，整数，默认为1e9。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
+| breakStrategy | BreakStrategy | 否 | 是 | 断行策略，默认为GREEDY。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
+| strutStyle | StrutStyle | 否 | 是 | 支柱样式，默认为初始的StrutStyle。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
+| textHeightBehavior | TextHeightBehavior | 否 | 是 | 文本高度修饰符模式，默认为ALL。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
+| tab18+ | TextTab | 否 | 是 | 表示段落中文本制表符后的文本对齐方式及位置，默认将制表符替换为一个空格。此参数与文本对齐方式（align属性）或省略号样式（TextStyle中的ellipsis属性）共同配置时无效。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
+| trailingSpaceOptimized20+ | boolean | 否 | 是 | 表示文本排版时行尾空格是否参与对齐计算。true表示行尾空格不参与计算，false表示行尾空格参与计算，默认值为false。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
+| autoSpace20+ | boolean | 否 | 是 | 设置文本排版时是否使能自动间距。true表示使能自动间距，则会在文本排版时自动调整CJK（中文字符、日文字符、韩文字符）与西文（拉丁字母、西里尔字母、希腊字母）、CJK与数字、CJK与版权符号、版权符号与数字、版权符号与西文之间的间距。false表示不使能自动间距，默认值为false。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
+| verticalAlign20+ | TextVerticalAlign | 否 | 是 | 文本垂直对齐方式，开启行高缩放（即设置TextStyle的heightScale）或行内不同字号（即设置TextStyle的fontSize）文本混排时生效。若行内有上下标文本（即设置TextStyle的badgeType属性文本），上下标文本将与普通文本一样参与垂直对齐。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
+| lineSpacing21+ | number | 否 | 是 | 行间距，默认值为0。lineSpacing不受TextStyle中lineHeightMaximum和lineHeightMinimum限制。尾行默认添加行间距，可通过设置TextStyle.textHeightBehavior为DISABLE_ALL或DISABLE_LAST_ASCENT禁用尾行行间距。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
+| compressHeadPunctuation23+ | boolean | 否 | 是 | 设置文本排版时是否使能行首标点压缩。true表示使能行首标点压缩，false表示不使能行首标点压缩，默认值为false。 说明： 1. 需要字体文件支持FontFeature中的"ss08"特性，否则无法压缩。 2. 在行首标点压缩范围内的标点才在本特性作用范围内。 元服务API： 从API version 23开始，该接口支持在元服务中使用。 |
+| includeFontPadding23+ | boolean | 否 | 是 | 设置文本排版时是否使能首尾行padding。true表示使能首尾行padding，false表示不使能首尾行padding，默认值为false。 元服务API： 从API version 23开始，该接口支持在元服务中使用。 |
+| fallbackLineSpacing23+ | boolean | 否 | 是 | 设置文本排版时是否使能行高回退，当设置的行高小于实际行高时，将行高回退为实际行高。true表示使能行高回退，false表示不使能行高回退，默认值为false。 元服务API： 从API version 23开始，该接口支持在元服务中使用。 |
 
-名称类型只读可选说明textStyle[TextStyle](#ZH-CN_TOPIC_0000002497605988__textstyle)否是作用于整个段落的文本样式，默认为初始的文本样式。textDirection[TextDirection](#ZH-CN_TOPIC_0000002497605988__textdirection)否是文本方向，默认为LTR。align[TextAlign](#ZH-CN_TOPIC_0000002497605988__textalign)否是文本对齐方式，默认为START。若同时配置tab属性，制表符对齐方式将失效。wordBreak[WordBreak](#ZH-CN_TOPIC_0000002497605988__wordbreak)否是断词类型，默认为BREAK_WORD。maxLinesnumber否是最大行数限制，整数，默认为1e9。breakStrategy[BreakStrategy](#ZH-CN_TOPIC_0000002497605988__breakstrategy)否是断行策略，默认为GREEDY。strutStyle[StrutStyle](#ZH-CN_TOPIC_0000002497605988__strutstyle)否是支柱样式，默认为初始的StrutStyle。textHeightBehavior[TextHeightBehavior](#ZH-CN_TOPIC_0000002497605988__textheightbehavior)否是文本高度修饰符模式，默认为ALL。tab18+[TextTab](#ZH-CN_TOPIC_0000002497605988__texttab18)否是表示段落中文本制表符后的文本对齐方式及位置，默认将制表符替换为一个空格。此参数与文本对齐方式（align属性）或省略号样式（[TextStyle](#ZH-CN_TOPIC_0000002497605988__textstyle)中的ellipsis属性）共同配置时无效。trailingSpaceOptimized20+boolean否是表示文本排版时行尾空格是否参与对齐计算。true表示行尾空格不参与计算，false表示行尾空格参与计算，默认值为false。autoSpace20+boolean否是设置文本排版时是否使能自动间距。true表示使能自动间距，则会在文本排版时自动调整CJK（中文字符、日文字符、韩文字符）与西文（拉丁字母、西里尔字母、希腊字母）、CJK与数字、CJK与版权符号、版权符号与数字、版权符号与西文之间的间距。false表示不使能自动间距，默认值为false。verticalAlign20+[TextVerticalAlign](#ZH-CN_TOPIC_0000002497605988__textverticalalign20)否是文本垂直对齐方式，开启行高缩放（即设置[TextStyle](#ZH-CN_TOPIC_0000002497605988__textstyle)的heightScale）或行内不同字号（即设置[TextStyle](#ZH-CN_TOPIC_0000002497605988__textstyle)的fontSize）文本混排时生效。若行内有上下标文本（即设置[TextStyle](#ZH-CN_TOPIC_0000002497605988__textstyle)的badgeType属性文本），上下标文本将与普通文本一样参与垂直对齐。lineSpacing21+number否是行间距，默认值为0。lineSpacing不受[TextStyle](#ZH-CN_TOPIC_0000002497605988__textstyle)中lineHeightMaximum和lineHeightMinimum限制。尾行默认添加行间距，可通过设置[TextStyle](#ZH-CN_TOPIC_0000002497605988__textstyle).textHeightBehavior为DISABLE_ALL或DISABLE_LAST_ASCENT禁用尾行行间距。
+行首压缩的标点范围:
+
+| 标点 | Unicode码位 | Unicode名称 |
+| --- | --- | --- |
+| 「 | U+300C | LEFT CORNER BRACKET |
+| 『 | U+300E | LEFT WHITE CORNER BRACKET |
+| " | U+201C | LEFT DOUBLE QUOTATION MARK |
+| ' | U+2018 | LEFT SINGLE QUOTATION MARK |
+| （ | U+FF08 | FULLWIDTH LEFT PARENTHESIS |
+| 《 | U+300A | LEFT DOUBLE ANGLE BRACKET |
+| 〈 | U+3008 | LEFT ANGLE BRACKET |
+| 【 | U+3010 | LEFT BLACK LENTICULAR BRACKET |
+| 〖 | U+3016 | LEFT WHITE LENTICULAR BRACKET |
+| 〔 | U+3014 | LEFT TORTOISE SHELL BRACKET |
+| ［ | U+FF3B | FULLWIDTH LEFT SQUARE BRACKET |
+| ｛ | U+FF5B | FULLWIDTH LEFT CURLY BRACKET |
 
 #### PlaceholderAlignment
 
@@ -907,7 +1481,18 @@ struct Index {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明OFFSET_AT_BASELINE0基线与文本基线对齐。ABOVE_BASELINE1底部与文本基线对齐。BELOW_BASELINE2顶部与文本基线对齐。TOP_OF_ROW_BOX3顶部与文本顶部对齐。BOTTOM_OF_ROW_BOX4底部与文本底部对齐。CENTER_OF_ROW_BOX5居中对齐。FOLLOW_PARAGRAPH20+6跟随文本排版对齐。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| OFFSET_AT_BASELINE | 0 | 基线与文本基线对齐。 |
+| ABOVE_BASELINE | 1 | 底部与文本基线对齐。 |
+| BELOW_BASELINE | 2 | 顶部与文本基线对齐。 |
+| TOP_OF_ROW_BOX | 3 | 顶部与文本顶部对齐。 |
+| BOTTOM_OF_ROW_BOX | 4 | 底部与文本底部对齐。 |
+| CENTER_OF_ROW_BOX | 5 | 居中对齐。 |
+| FOLLOW_PARAGRAPH20+ | 6 | 跟随文本排版对齐。 |
+
+![image](public_sys-resources/zh-cn_image_0000002522086156.webp)
+
 
 示意图展示了后三种对齐方式，前三种对齐方式类似，比较位置是文本基线，即绿色线条部分。
 
@@ -919,7 +1504,13 @@ struct Index {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明widthnumber否否占位符的宽度，浮点数，单位为物理像素px。heightnumber否否占位符的高度，浮点数，单位为物理像素px。align[PlaceholderAlignment](#ZH-CN_TOPIC_0000002497605988__placeholderalignment)否否相对于周围文本的纵向对齐方式。baseline[TextBaseline](#ZH-CN_TOPIC_0000002497605988__textbaseline)否否基线类型。baselineOffsetnumber否否基线偏移量，浮点数，单位为物理像素px。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| width | number | 否 | 否 | 占位符的宽度，浮点数，单位为物理像素px。 |
+| height | number | 否 | 否 | 占位符的高度，浮点数，单位为物理像素px。 |
+| align | PlaceholderAlignment | 否 | 否 | 相对于周围文本的纵向对齐方式。 |
+| baseline | TextBaseline | 否 | 否 | 基线类型。 |
+| baselineOffset | number | 否 | 否 | 基线偏移量，浮点数，单位为物理像素px。 |
 
 #### Range
 
@@ -929,13 +1520,16 @@ struct Index {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明startnumber否否区间左侧端点索引，整数。endnumber否否区间右侧端点索引，整数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| start | number | 否 | 否 | 区间左侧端点索引，整数。 |
+| end | number | 否 | 否 | 区间右侧端点索引，整数。 |
 
 #### Paragraph
 
 保存文本内容及样式的载体，支持排版与绘制操作。
 
-下列API示例中都需先使用[ParagraphBuilder](#ZH-CN_TOPIC_0000002497605988__paragraphbuilder)类的[build()](#ZH-CN_TOPIC_0000002497605988__build)接口获取到Paragraph对象实例，再通过此实例调用对应方法。
+下列API示例中都需先使用[ParagraphBuilder](#ZH-CN_TOPIC_0000002553362061__paragraphbuilder)类的[build()](#ZH-CN_TOPIC_0000002553362061__build)接口获取到Paragraph对象实例，再通过此实例调用对应方法。
 
 #### layoutSync
 
@@ -949,7 +1543,9 @@ layoutSync(width: number): void
 
 **参数：**
 
-参数名类型必填说明widthnumber是单行的最大宽度，浮点数，单位为物理像素px。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| width | number | 是 | 单行的最大宽度，浮点数，单位为物理像素px。 |
 
 **示例：**
 
@@ -969,17 +1565,23 @@ layout(width: number): Promise<void>
 
 **参数：**
 
-参数名类型必填说明widthnumber是单行的最大宽度，浮点数，单位为物理像素px。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| width | number | 是 | 单行的最大宽度，浮点数，单位为物理像素px。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例：**
 
@@ -1049,8 +1651,6 @@ struct Index {
           this.fun(this.pixelmap);
         })
     }
-  }
-}
 ```
 
 示意图展示了点击按钮后layout接口示例代码的运行结果。
@@ -1067,7 +1667,11 @@ paint(canvas: drawing.Canvas, x: number, y: number): void
 
 **参数：**
 
-参数名类型必填说明canvas[drawing.Canvas](../../types/classes/Class (Canvas).md)是绘制的目标画布。xnumber是绘制的左上角位置的横坐标，浮点数。ynumber是绘制的左上角位置的纵坐标，浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| canvas | drawing.Canvas | 是 | 绘制的目标画布。 |
+| x | number | 是 | 绘制的左上角位置的横坐标，浮点数。 |
+| y | number | 是 | 绘制的左上角位置的纵坐标，浮点数。 |
 
 **示例：**
 
@@ -1091,7 +1695,12 @@ paintOnPath(canvas: drawing.Canvas, path: drawing.Path, hOffset: number, vOffset
 
 **参数：**
 
-参数名类型必填说明canvas[drawing.Canvas](../../types/classes/Class (Canvas).md)是绘制的目标画布。path[drawing.Path](../../types/classes/Class (Path).md)是确认文字位置的路径。hOffsetnumber是沿路径方向偏置，从路径起点向前为正，向后为负。vOffsetnumber是沿路径垂直方向偏置，沿路径方向左侧为负，右侧为正。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| canvas | drawing.Canvas | 是 | 绘制的目标画布。 |
+| path | drawing.Path | 是 | 确认文字位置的路径。 |
+| hOffset | number | 是 | 沿路径方向偏置，从路径起点向前为正，向后为负。 |
+| vOffset | number | 是 | 沿路径垂直方向偏置，沿路径方向左侧为负，右侧为正。 |
 
 **示例：**
 
@@ -1117,7 +1726,9 @@ getMaxWidth(): number
 
 **返回值：**
 
-类型说明number最大的行宽，浮点数，单位为物理像素px。
+| 类型 | 说明 |
+| --- | --- |
+| number | 最大的行宽，浮点数，单位为物理像素px。 |
 
 **示例：**
 
@@ -1137,7 +1748,9 @@ getHeight(): number
 
 **返回值：**
 
-类型说明number总高度，浮点数，单位为物理像素px。
+| 类型 | 说明 |
+| --- | --- |
+| number | 总高度，浮点数，单位为物理像素px。 |
 
 **示例：**
 
@@ -1157,7 +1770,9 @@ getLongestLine(): number
 
 **返回值：**
 
-类型说明number最长一行的宽度，浮点数，单位为物理像素px。
+| 类型 | 说明 |
+| --- | --- |
+| number | 最长一行的宽度，浮点数，单位为物理像素px。 |
 
 **示例：**
 
@@ -1177,7 +1792,9 @@ getLongestLineWithIndent(): number
 
 **返回值：**
 
-类型说明number最长一行的宽度（该宽度包含当前行缩进的宽度），浮点数，单位为物理像素px。
+| 类型 | 说明 |
+| --- | --- |
+| number | 最长一行的宽度（该宽度包含当前行缩进的宽度），浮点数，单位为物理像素px。 |
 
 **示例：**
 
@@ -1197,7 +1814,9 @@ getMinIntrinsicWidth(): number
 
 **返回值：**
 
-类型说明number该段落所占水平空间的最小固有宽度，浮点数，单位为物理像素px。
+| 类型 | 说明 |
+| --- | --- |
+| number | 该段落所占水平空间的最小固有宽度，浮点数，单位为物理像素px。 |
 
 **示例：**
 
@@ -1217,7 +1836,9 @@ getMaxIntrinsicWidth(): number
 
 **返回值：**
 
-类型说明number该段落所占水平空间的最大固有宽度，浮点数，单位为物理像素px。
+| 类型 | 说明 |
+| --- | --- |
+| number | 该段落所占水平空间的最大固有宽度，浮点数，单位为物理像素px。 |
 
 **示例：**
 
@@ -1237,7 +1858,9 @@ getAlphabeticBaseline(): number
 
 **返回值：**
 
-类型说明number拉丁字母下的基线位置，浮点数，单位为物理像素px。
+| 类型 | 说明 |
+| --- | --- |
+| number | 拉丁字母下的基线位置，浮点数，单位为物理像素px。 |
 
 **示例：**
 
@@ -1257,7 +1880,9 @@ getIdeographicBaseline(): number
 
 **返回值：**
 
-类型说明number获取表意字下的基线位置，浮点数，单位为物理像素px。
+| 类型 | 说明 |
+| --- | --- |
+| number | 获取表意字下的基线位置，浮点数，单位为物理像素px。 |
 
 **示例：**
 
@@ -1277,11 +1902,17 @@ getRectsForRange(range: Range, widthStyle: RectWidthStyle, heightStyle: RectHeig
 
 **参数：**
 
-参数名类型必填说明range[Range](#ZH-CN_TOPIC_0000002497605988__range)是需要获取的区域的文本区间。widthStyle[RectWidthStyle](#ZH-CN_TOPIC_0000002497605988__rectwidthstyle)是返回的矩形区域的宽度的规格。heightStyle[RectHeightStyle](#ZH-CN_TOPIC_0000002497605988__rectheightstyle)是返回的矩形区域的高度的规格。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| range | Range | 是 | 需要获取的区域的文本区间。 |
+| widthStyle | RectWidthStyle | 是 | 返回的矩形区域的宽度的规格。 |
+| heightStyle | RectHeightStyle | 是 | 返回的矩形区域的高度的规格。 |
 
 **返回值：**
 
-类型说明Array<[TextBox](#ZH-CN_TOPIC_0000002497605988__textbox)>矩形区域数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<TextBox> | 矩形区域数组。 |
 
 **示例：**
 
@@ -1302,7 +1933,9 @@ getRectsForPlaceholders(): Array<TextBox>
 
 **返回值：**
 
-类型说明Array<[TextBox](#ZH-CN_TOPIC_0000002497605988__textbox)>矩形区域数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<TextBox> | 矩形区域数组。 |
 
 **示例：**
 
@@ -1322,11 +1955,16 @@ getGlyphPositionAtCoordinate(x: number, y: number): PositionWithAffinity
 
 **参数：**
 
-参数名类型必填说明xnumber是横坐标，浮点数。ynumber是纵坐标，浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| x | number | 是 | 横坐标，浮点数。 |
+| y | number | 是 | 纵坐标，浮点数。 |
 
 **返回值：**
 
-类型说明[PositionWithAffinity](#ZH-CN_TOPIC_0000002497605988__positionwithaffinity)字形位置信息。
+| 类型 | 说明 |
+| --- | --- |
+| PositionWithAffinity | 字形位置信息。 |
 
 **示例：**
 
@@ -1346,11 +1984,15 @@ getWordBoundary(offset: number): Range
 
 **参数：**
 
-参数名类型必填说明offsetnumber是字形的偏移量，整数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 是 | 字形的偏移量，整数。 |
 
 **返回值：**
 
-类型说明[Range](#ZH-CN_TOPIC_0000002497605988__range)单词的索引区间。
+| 类型 | 说明 |
+| --- | --- |
+| Range | 单词的索引区间。 |
 
 **示例：**
 
@@ -1370,7 +2012,9 @@ getLineCount(): number
 
 **返回值：**
 
-类型说明number文本行数量，整数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 文本行数量，整数。 |
 
 **示例：**
 
@@ -1390,11 +2034,15 @@ getLineHeight(line: number): number
 
 **参数：**
 
-参数名类型必填说明linenumber是文本行索引，整数，范围为0~getLineCount()-1。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| line | number | 是 | 文本行索引，整数，范围为0~getLineCount()-1。 |
 
 **返回值：**
 
-类型说明number行高。
+| 类型 | 说明 |
+| --- | --- |
+| number | 行高。 |
 
 **示例：**
 
@@ -1414,11 +2062,15 @@ getLineWidth(line: number): number
 
 **参数：**
 
-参数名类型必填说明linenumber是文本行索引，整数，范围为0~getLineCount()-1。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| line | number | 是 | 文本行索引，整数，范围为0~getLineCount()-1。 |
 
 **返回值：**
 
-类型说明number行宽。
+| 类型 | 说明 |
+| --- | --- |
+| number | 行宽。 |
 
 **示例：**
 
@@ -1438,7 +2090,9 @@ didExceedMaxLines(): boolean
 
 **返回值：**
 
-类型说明booleantrue表示段落超出了最大行限制，false则表示没有超出最大行限制。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true表示段落超出了最大行限制，false则表示没有超出最大行限制。 |
 
 **示例：**
 
@@ -1458,7 +2112,9 @@ getTextLines(): Array<TextLine>
 
 **返回值：**
 
-类型说明Array<[TextLine](#ZH-CN_TOPIC_0000002497605988__textline)>文本行载体数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<TextLine> | 文本行载体数组。 |
 
 **示例：**
 
@@ -1478,11 +2134,16 @@ getActualTextRange(lineNumber: number, includeSpaces: boolean): Range
 
 **参数：**
 
-参数名类型必填说明lineNumbernumber是要获取文本范围的行索引，行索引从0开始。该接口只能获取已有行的边界，即输入行索引从0开始。最大行索引为文本行数量-1，文本行数量可通过[getLineCount](#ZH-CN_TOPIC_0000002497605988__getlinecount)接口获取。includeSpacesboolean是表示是否应包含空白字符。true表示包含空白字符，false表示不包含空白字符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| lineNumber | number | 是 | 要获取文本范围的行索引，行索引从0开始。该接口只能获取已有行的边界，即输入行索引从0开始。最大行索引为文本行数量-1，文本行数量可通过getLineCount接口获取。 |
+| includeSpaces | boolean | 是 | 表示是否应包含空白字符。true表示包含空白字符，false表示不包含空白字符。 |
 
 **返回值：**
 
-类型说明[Range](#ZH-CN_TOPIC_0000002497605988__range)返回对应行数的实际文本范围。如果行索引非法，返回的start和end均为0。
+| 类型 | 说明 |
+| --- | --- |
+| Range | 返回对应行数的实际文本范围。如果行索引非法，返回的start和end均为0。 |
 
 **示例：**
 
@@ -1502,7 +2163,9 @@ getLineMetrics(): Array<LineMetrics>
 
 **返回值：**
 
-类型说明Array<[LineMetrics](#ZH-CN_TOPIC_0000002497605988__linemetrics)>文本行的行度量数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<LineMetrics> | 文本行的行度量数组。 |
 
 **示例：**
 
@@ -1522,11 +2185,15 @@ getLineMetrics(lineNumber: number): LineMetrics | undefined
 
 **参数：**
 
-参数名类型必填说明lineNumbernumber是要查询度量信息的行的编号，行号从0开始。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| lineNumber | number | 是 | 要查询度量信息的行的编号，行号从0开始。 |
 
 **返回值：**
 
-类型说明[LineMetrics](#ZH-CN_TOPIC_0000002497605988__linemetrics) | undefined如果指定的行号有效且度量信息存在，则返回一个包含该行度量数据的LineMetrics对象；如果行号无效或无法获取度量信息，则返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| LineMetrics | undefined | 如果指定的行号有效且度量信息存在，则返回一个包含该行度量数据的LineMetrics对象；如果行号无效或无法获取度量信息，则返回undefined。 |
 
 **示例：**
 
@@ -1546,7 +2213,9 @@ updateColor(color: common2D.Color): void;
 
 **参数：**
 
-参数名类型必填说明color[common2D.Color](@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__color)是更新后的字体色。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| color | common2D.Color | 是 | 更新后的字体色。 |
 
 **示例：**
 
@@ -1566,7 +2235,9 @@ updateDecoration(decoration: Decoration): void;
 
 **参数：**
 
-参数名类型必填说明decoration[Decoration](#ZH-CN_TOPIC_0000002497605988__decoration)是更新后的装饰线。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| decoration | Decoration | 是 | 更新后的装饰线。 |
 
 **示例：**
 
@@ -1583,7 +2254,7 @@ paragraph.updateDecoration({
 
 保存着文本内容以及样式的载体，可以用于计算单行排版信息。
 
-下列API示例中都需先使用[ParagraphBuilder](#ZH-CN_TOPIC_0000002497605988__paragraphbuilder)类的[buildLineTypeset()](#ZH-CN_TOPIC_0000002497605988__buildlinetypeset18)接口获取到LineTypeset对象实例，再通过此实例调用对应方法。
+下列API示例中都需先使用[ParagraphBuilder](#ZH-CN_TOPIC_0000002553362061__paragraphbuilder)类的[buildLineTypeset()](#ZH-CN_TOPIC_0000002553362061__buildlinetypeset18)接口获取到LineTypeset对象实例，再通过此实例调用对应方法。
 
 #### getLineBreak18+
 
@@ -1597,17 +2268,24 @@ getLineBreak(startIndex: number, width: number): number
 
 **参数：**
 
-参数名类型必填说明startIndexnumber是开始计算排版的起始位置（包括起始位置）。取值范围需要为[0,文本字符总数）的整数，参数非法时抛出异常。widthnumber是可用于排版的宽度，大于0的浮点数，单位为物理像素px。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| startIndex | number | 是 | 开始计算排版的起始位置（包括起始位置）。取值范围需要为[0,文本字符总数）的整数，参数非法时抛出异常。 |
+| width | number | 是 | 可用于排版的宽度，大于0的浮点数，单位为物理像素px。 |
 
 **返回值：**
 
-类型说明number返回在限定排版宽度下，从指定位置开始可排版的字符总数，取值为整数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回在限定排版宽度下，从指定位置开始可排版的字符总数，取值为整数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3. Parameter verification failed. |
 
 **示例：**
 
@@ -1629,17 +2307,24 @@ createLine(startIndex: number, count: number): TextLine
 
 **参数：**
 
-参数名类型必填说明startIndexnumber是开始计算排版的起始位置，整数，取值范围为[0, 文本字符总数)。countnumber是从指定起始位置开始进行排版的字符个数，取值为[0,文本字符总数)的整数，startIndex和count之和不能大于文本字符总数。当count为0时，表示排版区间为[startIndex, 文本结尾]。可以先使用[getLineBreak](#ZH-CN_TOPIC_0000002497605988__getlinebreak18)获取合理的排版字符总数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| startIndex | number | 是 | 开始计算排版的起始位置，整数，取值范围为[0, 文本字符总数)。 |
+| count | number | 是 | 从指定起始位置开始进行排版的字符个数，取值为[0,文本字符总数)的整数，startIndex和count之和不能大于文本字符总数。当count为0时，表示排版区间为[startIndex, 文本结尾]。可以先使用getLineBreak获取合理的排版字符总数。 |
 
 **返回值：**
 
-类型说明[TextLine](#ZH-CN_TOPIC_0000002497605988__textline)根据文本区间字符生成的TextLine对象。
+| 类型 | 说明 |
+| --- | --- |
+| TextLine | 根据文本区间字符生成的TextLine对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3. Parameter verification failed. |
 
 **示例：**
 
@@ -1658,7 +2343,10 @@ let line : text.TextLine = lineTypeset.createLine(startIndex, count);
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明textStyle[TextStyle](#ZH-CN_TOPIC_0000002497605988__textstyle)否否字体的样式信息。fontMetrics[drawing.FontMetrics](../../types/interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002497446006__fontmetrics)否否字体度量信息。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| textStyle | TextStyle | 否 | 否 | 字体的样式信息。 |
+| fontMetrics | drawing.FontMetrics | 否 | 否 | 字体度量信息。 |
 
 #### LineMetrics
 
@@ -1668,7 +2356,19 @@ let line : text.TextLine = lineTypeset.createLine(startIndex, count);
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明startIndexnumber否否文本缓冲区中该行开始的索引位置。endIndexnumber否否文本缓冲区中该行结束的索引位置。ascentnumber否否文字上升高度，即从基线到字符顶部的距离。descentnumber否否文字下降高度，即从基线到字符底部的距离。heightnumber否否当前行的高度，计算方式为 Math.round(ascent + descent)widthnumber否否行的宽度。leftnumber否否行的左边缘位置。右边缘可通过 left+width 计算得出。baselinenumber否否该行基线相对于段落顶部的 Y 坐标位置。lineNumbernumber否否行号，从0开始计数。topHeightnumber否否从顶部到当前行的高度。runMetricsMap<number, [RunMetrics](#ZH-CN_TOPIC_0000002497605988__runmetrics)>否否文本索引范围与关联的字体度量信息之间的映射。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| startIndex | number | 否 | 否 | 文本缓冲区中该行开始的索引位置。 |
+| endIndex | number | 否 | 否 | 文本缓冲区中该行结束的索引位置。 |
+| ascent | number | 否 | 否 | 文字上升高度，即从基线到字符顶部的距离。 |
+| descent | number | 否 | 否 | 文字下降高度，即从基线到字符底部的距离。 |
+| height | number | 否 | 否 | 当前行的高度，计算方式为 Math.round(ascent + descent) |
+| width | number | 否 | 否 | 行的宽度。 |
+| left | number | 否 | 否 | 行的左边缘位置。右边缘可通过 left+width 计算得出。 |
+| baseline | number | 否 | 否 | 该行基线相对于段落顶部的 Y 坐标位置。 |
+| lineNumber | number | 否 | 否 | 行号，从0开始计数。 |
+| topHeight | number | 否 | 否 | 从顶部到当前行的高度。 |
+| runMetrics | Map<number, RunMetrics> | 否 | 否 | 文本索引范围与关联的字体度量信息之间的映射。 |
 
 #### TextBox
 
@@ -1678,7 +2378,10 @@ let line : text.TextLine = lineTypeset.createLine(startIndex, count);
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明rect[common2D.Rect](@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)否否矩形区域信息。direction[TextDirection](#ZH-CN_TOPIC_0000002497605988__textdirection)否否文本方向。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| rect | common2D.Rect | 否 | 否 | 矩形区域信息。 |
+| direction | TextDirection | 否 | 否 | 文本方向。 |
 
 #### PositionWithAffinity
 
@@ -1688,7 +2391,10 @@ let line : text.TextLine = lineTypeset.createLine(startIndex, count);
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明positionnumber否否字形相对于段落的索引，整数。affinity[Affinity](#ZH-CN_TOPIC_0000002497605988__affinity)否否位置亲和度。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| position | number | 否 | 否 | 字形相对于段落的索引，整数。 |
+| affinity | Affinity | 否 | 否 | 位置亲和度。 |
 
 #### RectWidthStyle
 
@@ -1698,7 +2404,10 @@ let line : text.TextLine = lineTypeset.createLine(startIndex, count);
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明TIGHT0不设置letterSpacing时，与字形紧贴，否则包含letterSpacing的宽度。MAX1扩展宽度，以匹配所有行上最宽矩形的位置。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| TIGHT | 0 | 不设置letterSpacing时，与字形紧贴，否则包含letterSpacing的宽度。 |
+| MAX | 1 | 扩展宽度，以匹配所有行上最宽矩形的位置。 |
 
 #### RectHeightStyle
 
@@ -1708,7 +2417,14 @@ let line : text.TextLine = lineTypeset.createLine(startIndex, count);
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明TIGHT0与字形紧贴。MAX1扩展高度，以匹配所有行上最高矩形的位置。INCLUDE_LINE_SPACE_MIDDLE2每个矩形的顶部和底部将覆盖行上方和行下方的一半空间。INCLUDE_LINE_SPACE_TOP3行间距将被添加到矩形的顶部。INCLUDE_LINE_SPACE_BOTTOM4行间距将被添加到矩形的底部。STRUT5高度按照文本的样式设置。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| TIGHT | 0 | 与字形紧贴。 |
+| MAX | 1 | 扩展高度，以匹配所有行上最高矩形的位置。 |
+| INCLUDE_LINE_SPACE_MIDDLE | 2 | 每个矩形的顶部和底部将覆盖行上方和行下方的一半空间。 |
+| INCLUDE_LINE_SPACE_TOP | 3 | 行间距将被添加到矩形的顶部。 |
+| INCLUDE_LINE_SPACE_BOTTOM | 4 | 行间距将被添加到矩形的底部。 |
+| STRUT | 5 | 高度按照文本的样式设置。 |
 
 #### Affinity
 
@@ -1718,7 +2434,10 @@ let line : text.TextLine = lineTypeset.createLine(startIndex, count);
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明UPSTREAM0该位置与文本位置的前一位有关联。DOWNSTREAM1该位置与文本位置的后一位有关联。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| UPSTREAM | 0 | 该位置与文本位置的前一位有关联。 |
+| DOWNSTREAM | 1 | 该位置与文本位置的后一位有关联。 |
 
 #### ParagraphBuilder
 
@@ -1736,7 +2455,10 @@ ParagraphBuilder对象的构造函数。
 
 **参数：**
 
-参数名类型必填说明paragraphStyle[ParagraphStyle](#ZH-CN_TOPIC_0000002497605988__paragraphstyle)是段落样式。fontCollection[FontCollection](#ZH-CN_TOPIC_0000002497605988__fontcollection)是字体集。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| paragraphStyle | ParagraphStyle | 是 | 段落样式。 |
+| fontCollection | FontCollection | 是 | 字体集。 |
 
 **示例：**
 
@@ -1766,8 +2488,6 @@ struct Index {
         this.fun();
       })
     }
-  }
-}
 ```
 
 #### pushStyle
@@ -1784,7 +2504,9 @@ struct Index {
 
 **参数：**
 
-参数名类型必填说明textStyle[TextStyle](#ZH-CN_TOPIC_0000002497605988__textstyle)是包含了对文本的各种视觉属性的定义，如字体、字号、颜色、字重、字间距、行距、装饰（如下划线、删除线）、文本阴影等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| textStyle | TextStyle | 是 | 包含了对文本的各种视觉属性的定义，如字体、字号、颜色、字重、字间距、行距、装饰（如下划线、删除线）、文本阴影等。 |
 
 **示例：**
 
@@ -1817,8 +2539,6 @@ struct Index {
       Button().onClick(() => {
         this.fun();
       })
-    }
-  }
 }
 ```
 
@@ -1865,8 +2585,6 @@ struct Index {
         this.fun();
       })
     }
-  }
-}
 ```
 
 #### addText
@@ -1881,7 +2599,9 @@ addText(text: string): void
 
 **参数：**
 
-参数名类型必填说明textstring是段落中插入的具体文本字符串，传入非法Unicode时会显示�。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 段落中插入的具体文本字符串，传入非法Unicode时会显示�。 |
 
 **示例：**
 
@@ -1915,8 +2635,6 @@ struct Index {
         this.fun();
       })
     }
-  }
-}
 ```
 
 #### addPlaceholder
@@ -1931,7 +2649,9 @@ addPlaceholder(placeholderSpan: PlaceholderSpan): void
 
 **参数：**
 
-参数名类型必填说明placeholderSpan[PlaceholderSpan](#ZH-CN_TOPIC_0000002497605988__placeholderspan)是定义了占位符的尺寸、对齐方式、基线类型以及基线偏移量。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| placeholderSpan | PlaceholderSpan | 是 | 定义了占位符的尺寸、对齐方式、基线类型以及基线偏移量。 |
 
 **示例：**
 
@@ -1967,8 +2687,6 @@ struct Index {
         this.fun();
       })
     }
-  }
-}
 ```
 
 #### build
@@ -1983,7 +2701,9 @@ build(): Paragraph
 
 **返回值：**
 
-类型说明[Paragraph](#ZH-CN_TOPIC_0000002497605988__paragraph)可用于后续渲染的 Paragraph 对象。
+| 类型 | 说明 |
+| --- | --- |
+| Paragraph | 可用于后续渲染的 Paragraph 对象。 |
 
 **示例：**
 
@@ -2016,8 +2736,6 @@ struct Index {
         this.fun();
       })
     }
-  }
-}
 ```
 
 #### buildLineTypeset18+
@@ -2032,7 +2750,9 @@ buildLineTypeset(): LineTypeset
 
 **返回值：**
 
-类型说明[LineTypeset](#ZH-CN_TOPIC_0000002497605988__linetypeset18)可用于后续渲染的LineTypeset对象。
+| 类型 | 说明 |
+| --- | --- |
+| LineTypeset | 可用于后续渲染的LineTypeset对象。 |
 
 **示例：**
 
@@ -2059,8 +2779,6 @@ struct Index {
         this.fun();
       })
     }
-  }
-}
 ```
 
 #### addSymbol
@@ -2075,7 +2793,9 @@ addSymbol(symbolId: number): void
 
 **参数：**
 
-参数名类型必填说明symbolIdnumber是要设置的symbol码位，十六进制，当前支持的取值范围为：0xF0000-0xF0C97。可设置的symbol码位（即列表视图下的unicode值）请见[主题图标库](https://developer.huawei.com/consumer/cn/design/harmonyos-symbol/)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| symbolId | number | 是 | 要设置的symbol码位，十六进制，当前支持的取值范围为：0xF0000-0xF0C97。可设置的symbol码位（即列表视图下的unicode值）请见主题图标库。 |
 
 **示例：**
 
@@ -2107,8 +2827,6 @@ struct Index {
         this.fun();
       })
     }
-  }
-}
 ```
 
 #### TypographicBounds18+
@@ -2119,7 +2837,13 @@ struct Index {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明ascentnumber否否文本行的上升高度，浮点数。descentnumber否否文本行的下降高度，浮点数。leadingnumber否否文本行的行间距，浮点数。widthnumber否否排版边界的总宽度，浮点数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| ascent | number | 否 | 否 | 文本行的上升高度，浮点数。 |
+| descent | number | 否 | 否 | 文本行的下降高度，浮点数。 |
+| leading | number | 否 | 否 | 文本行的行间距，浮点数。 |
+| width | number | 否 | 否 | 排版边界的总宽度，浮点数。 |
+
 
 示意图展示了ascent、descent、leading、top、baseline、bottom、next line top的含义。width为文本行排版包括左右空格的宽度。ascent为文本行上升高度最高点，descent为文本行下降高度最低点，leading为文本行间距，top为文本行的最高点，baseline为字符基线，bottom为文本行的最低点，next line top为下一个文本行的最高点。
 
@@ -2139,17 +2863,23 @@ type CaretOffsetsCallback = (offset: number, index: number, leadingEdge: boolean
 
 **参数：**
 
-参数名类型必填说明offsetnumber是文本行中每个字符的偏移量，浮点数。indexnumber是文本行中每个字符的索引值，整数。leadingEdgeboolean是光标是否位于字符的前缘，true表示位于字符前缘，即偏移量不包含该字符宽度，false表示位于字符后缘，即偏移量包含该字符宽度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 是 | 文本行中每个字符的偏移量，浮点数。 |
+| index | number | 是 | 文本行中每个字符的索引值，整数。 |
+| leadingEdge | boolean | 是 | 光标是否位于字符的前缘，true表示位于字符前缘，即偏移量不包含该字符宽度，false表示位于字符后缘，即偏移量包含该字符宽度。 |
 
 **返回值：**
 
-类型说明boolean表示是否停止调用该回调函数，true表示停止调用该回调函数，false表示继续调用该回调函数。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 表示是否停止调用该回调函数，true表示停止调用该回调函数，false表示继续调用该回调函数。 |
 
 #### TextLine
 
 描述段落基础文本行结构的载体。
 
-下列API示例中都需先使用[Paragraph](#ZH-CN_TOPIC_0000002497605988__paragraph)类的[getTextLines()](#ZH-CN_TOPIC_0000002497605988__gettextlines)接口或者[LineTypeset](#ZH-CN_TOPIC_0000002497605988__linetypeset18)类的[createLine()](#ZH-CN_TOPIC_0000002497605988__createline18)接口获取到TextLine对象实例，再通过此实例调用对应方法。
+下列API示例中都需先使用[Paragraph](#ZH-CN_TOPIC_0000002553362061__paragraph)类的[getTextLines()](#ZH-CN_TOPIC_0000002553362061__gettextlines)接口或者[LineTypeset](#ZH-CN_TOPIC_0000002553362061__linetypeset18)类的[createLine()](#ZH-CN_TOPIC_0000002553362061__createline18)接口获取到TextLine对象实例，再通过此实例调用对应方法。
 
 #### getGlyphCount
 
@@ -2163,7 +2893,9 @@ getGlyphCount(): number
 
 **返回值：**
 
-类型说明number该文本行中字形数量，整数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 该文本行中字形数量，整数。 |
 
 **示例：**
 
@@ -2183,7 +2915,9 @@ getTextRange(): Range
 
 **返回值：**
 
-类型说明[Range](#ZH-CN_TOPIC_0000002497605988__range)该行文本在整个段落文本中的索引区间。
+| 类型 | 说明 |
+| --- | --- |
+| Range | 该行文本在整个段落文本中的索引区间。 |
 
 **示例：**
 
@@ -2203,7 +2937,9 @@ getGlyphRuns(): Array<Run>
 
 **返回值：**
 
-类型说明Array<[Run](#ZH-CN_TOPIC_0000002497605988__run)>该文本行中的文本排版单元数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<Run> | 该文本行中的文本排版单元数组。 |
 
 **示例：**
 
@@ -2223,7 +2959,11 @@ paint(canvas: drawing.Canvas, x: number, y: number): void
 
 **参数：**
 
-参数名类型必填说明canvas[drawing.Canvas](../../types/classes/Class (Canvas).md)是绘制的目标canvas。xnumber是绘制的左上角位置的横坐标，浮点数。ynumber是绘制的左上角位置的纵坐标，浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| canvas | drawing.Canvas | 是 | 绘制的目标canvas。 |
+| x | number | 是 | 绘制的左上角位置的横坐标，浮点数。 |
+| y | number | 是 | 绘制的左上角位置的纵坐标，浮点数。 |
 
 **示例：**
 
@@ -2255,8 +2995,6 @@ struct Index {
         this.fun(this.pixelmap);
       })
     }
-  }
-}
 ```
 
 #### createTruncatedLine18+
@@ -2271,11 +3009,17 @@ createTruncatedLine(width: number, ellipsisMode: EllipsisMode, ellipsis: string)
 
 **参数：**
 
-参数名类型必填说明widthnumber是截断后的行宽度，浮点数。ellipsisMode[EllipsisMode](#ZH-CN_TOPIC_0000002497605988__ellipsismode)是截断的类型，当前仅支持头部截断START和尾部截断END。ellipsisstring是截断的标记字符串。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| width | number | 是 | 截断后的行宽度，浮点数。 |
+| ellipsisMode | EllipsisMode | 是 | 截断的类型，当前仅支持头部截断START和尾部截断END。 |
+| ellipsis | string | 是 | 截断的标记字符串。 |
 
 **返回值：**
 
-类型说明[TextLine](#ZH-CN_TOPIC_0000002497605988__textline)截断的文本行对象。
+| 类型 | 说明 |
+| --- | --- |
+| TextLine | 截断的文本行对象。 |
 
 **示例：**
 
@@ -2306,8 +3050,6 @@ struct Index {
         this.fun(this.pixelmap);
       })
     }
-  }
-}
 ```
 
 #### getTypographicBounds18+
@@ -2320,13 +3062,17 @@ getTypographicBounds(): TypographicBounds
 
 示意图展示了字符串为"j"或"E"的排版边界。
 
+![image](public_sys-resources/zh-cn_image_0000002553366073.webp)
+
 **系统能力**：SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
 
-类型说明[TypographicBounds](#ZH-CN_TOPIC_0000002497605988__typographicbounds18)文本行的排版边界。
+| 类型 | 说明 |
+| --- | --- |
+| TypographicBounds | 文本行的排版边界。 |
 
 **示例：**
 
@@ -2345,13 +3091,17 @@ getImageBounds(): common2D.Rect
 
 示意图展示了字符串为"j"或"E"的图像边界。
 
+![image](public_sys-resources/zh-cn_image_0000002553206115.webp)
+
 **系统能力**：SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
 
-类型说明[common2D.Rect](@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)文本行的图像边界。
+| 类型 | 说明 |
+| --- | --- |
+| common2D.Rect | 文本行的图像边界。 |
 
 **示例：**
 
@@ -2371,7 +3121,9 @@ getTrailingSpaceWidth(): number
 
 **返回值：**
 
-类型说明number文本行尾部空白字符的宽度，浮点数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 文本行尾部空白字符的宽度，浮点数。 |
 
 **示例：**
 
@@ -2391,11 +3143,15 @@ getStringIndexForPosition(point: common2D.Point): number
 
 **参数：**
 
-参数名类型必填说明point[common2D.Point](@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__point12)是要查找索引的位置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| point | common2D.Point | 是 | 要查找索引的位置。 |
 
 **返回值：**
 
-类型说明number给定位置在文本行中对应的字符串索引，整数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 给定位置在文本行中对应的字符串索引，整数。 |
 
 **示例：**
 
@@ -2416,11 +3172,15 @@ getOffsetForStringIndex(index: number): number
 
 **参数：**
 
-参数名类型必填说明indexnumber是要获取偏移量的字符串索引，整数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 要获取偏移量的字符串索引，整数。 |
 
 **返回值：**
 
-类型说明number给定字符串索引处的偏移量，浮点数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 给定字符串索引处的偏移量，浮点数。 |
 
 **示例：**
 
@@ -2440,7 +3200,9 @@ enumerateCaretOffsets(callback: CaretOffsetsCallback): void
 
 **参数：**
 
-参数名类型必填说明callback[CaretOffsetsCallback](#ZH-CN_TOPIC_0000002497605988__caretoffsetscallback18)是用户自定义函数。回调方法参数包括文本行中每个字符的偏移量和索引值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | CaretOffsetsCallback | 是 | 用户自定义函数。回调方法参数包括文本行中每个字符的偏移量和索引值。 |
 
 **示例：**
 
@@ -2464,11 +3226,16 @@ getAlignmentOffset(alignmentFactor: number, alignmentWidth: number): number
 
 **参数：**
 
-参数名类型必填说明alignmentFactornumber是对齐因子，即对齐的程度，浮点数。小于等于0.0表示左对齐，大于0.0小于0.5表示偏左对齐，0.5表示居中对齐，大于0.5小于1.0表示偏右对齐，大于等于1.0表示右对齐。alignmentWidthnumber是对齐宽度，即文本行的宽度，浮点数。小于文本行的实际宽度时，返回0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| alignmentFactor | number | 是 | 对齐因子，即对齐的程度，浮点数。小于等于0.0表示左对齐，大于0.0小于0.5表示偏左对齐，0.5表示居中对齐，大于0.5小于1.0表示偏右对齐，大于等于1.0表示右对齐。 |
+| alignmentWidth | number | 是 | 对齐宽度，即文本行的宽度，浮点数。小于文本行的实际宽度时，返回0。 |
 
 **返回值：**
 
-类型说明number计算得到的对齐所需偏移量，浮点数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 计算得到的对齐所需偏移量，浮点数。 |
 
 **示例：**
 
@@ -2480,7 +3247,7 @@ let alignmentOffset = lines[0].getAlignmentOffset(0.5, 500);
 
 文本排版单元。
 
-下列API示例中都需先使用[TextLine](#ZH-CN_TOPIC_0000002497605988__textline)类的[getGlyphRuns()](#ZH-CN_TOPIC_0000002497605988__getglyphruns)接口获取Run对象实例，再通过此实例调用对应方法。
+下列API示例中都需先使用[TextLine](#ZH-CN_TOPIC_0000002553362061__textline)类的[getGlyphRuns()](#ZH-CN_TOPIC_0000002553362061__getglyphruns)接口获取Run对象实例，再通过此实例调用对应方法。
 
 #### getGlyphCount
 
@@ -2494,7 +3261,9 @@ getGlyphCount(): number
 
 **返回值：**
 
-类型说明number该排版单元中字形数量，整数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 该排版单元中字形数量，整数。 |
 
 **示例：**
 
@@ -2514,7 +3283,9 @@ getGlyphs(): Array<number>
 
 **返回值：**
 
-类型说明Array<number>该排版单元中每个字符对应的字形序号。
+| 类型 | 说明 |
+| --- | --- |
+| Array<number> | 该排版单元中每个字符对应的字形序号。 |
 
 **示例：**
 
@@ -2534,11 +3305,15 @@ getGlyphs(range: Range): Array<number>
 
 **参数：**
 
-参数名类型必填说明range[Range](#ZH-CN_TOPIC_0000002497605988__range)是要获取的字形序号范围，range.start表示范围开始的位置，range.end表示范围的长度，如果长度是0表示从范围range.start开始获取到渲染块结束。当range.end、range.start为负数，或者传入null、undefined时，该方法将返回undefined。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| range | Range | 是 | 要获取的字形序号范围，range.start表示范围开始的位置，range.end表示范围的长度，如果长度是0表示从范围range.start开始获取到渲染块结束。当range.end、range.start为负数，或者传入null、undefined时，该方法将返回undefined。 |
 
 **返回值：**
 
-类型说明Array<number>该排版单元中每个字符对应的字形序号。
+| 类型 | 说明 |
+| --- | --- |
+| Array<number> | 该排版单元中每个字符对应的字形序号。 |
 
 **示例：**
 
@@ -2564,8 +3339,6 @@ struct Index {
         this.fun();
       })
     }
-  }
-}
 ```
 
 #### getPositions
@@ -2580,7 +3353,9 @@ getPositions(): Array<common2D.Point>
 
 **返回值：**
 
-类型说明Array<[common2D.Point](@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__point12)>该排版单元中每个字形相对于每行的字形位置。
+| 类型 | 说明 |
+| --- | --- |
+| Array<common2D.Point> | 该排版单元中每个字形相对于每行的字形位置。 |
 
 **示例：**
 
@@ -2600,11 +3375,15 @@ getPositions(range: Range): Array<common2D.Point>
 
 **参数：**
 
-参数名类型必填说明range[Range](#ZH-CN_TOPIC_0000002497605988__range)是要获取的字形位置范围，range.start表示范围开始的位置，range.end表示范围的长度，如果长度是0表示从范围range.start开始获取到渲染块结束。当range.end、range.start为负数，或者传入null、undefined时，该方法将返回undefined。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| range | Range | 是 | 要获取的字形位置范围，range.start表示范围开始的位置，range.end表示范围的长度，如果长度是0表示从范围range.start开始获取到渲染块结束。当range.end、range.start为负数，或者传入null、undefined时，该方法将返回undefined。 |
 
 **返回值：**
 
-类型说明Array<[common2D.Point](@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__point12)>该排版单元中每个字形相对于每行的字形位置。
+| 类型 | 说明 |
+| --- | --- |
+| Array<common2D.Point> | 该排版单元中每个字形相对于每行的字形位置。 |
 
 **示例：**
 
@@ -2630,8 +3409,6 @@ struct Index {
         this.fun();
       })
     }
-  }
-}
 ```
 
 #### getOffsets
@@ -2646,7 +3423,9 @@ getOffsets(): Array<common2D.Point>
 
 **返回值：**
 
-类型说明Array<[common2D.Point](@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__point12)>该排版单元中每个字形相对于其索引的偏移量。
+| 类型 | 说明 |
+| --- | --- |
+| Array<common2D.Point> | 该排版单元中每个字形相对于其索引的偏移量。 |
 
 **示例：**
 
@@ -2666,7 +3445,9 @@ getFont(): drawing.Font
 
 **返回值：**
 
-类型说明[drawing.Font](../../types/classes/Class (Font).md)该排版单元的字体属性对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| drawing.Font | 该排版单元的字体属性对象实例。 |
 
 **示例：**
 
@@ -2686,7 +3467,11 @@ paint(canvas: drawing.Canvas, x: number, y: number): void
 
 **参数：**
 
-参数名类型必填说明canvas[drawing.Canvas](../../types/classes/Class (Canvas).md)是绘制的目标 canvas。xnumber是绘制的左上角位置的横坐标，浮点数。ynumber是绘制的左上角位置的纵坐标。浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| canvas | drawing.Canvas | 是 | 绘制的目标 canvas。 |
+| x | number | 是 | 绘制的左上角位置的横坐标，浮点数。 |
+| y | number | 是 | 绘制的左上角位置的纵坐标。浮点数。 |
 
 **示例：**
 
@@ -2718,8 +3503,6 @@ struct Index {
         this.fun(this.pixelmap);
       })
     }
-  }
-}
 ```
 
 #### getStringRange18+
@@ -2734,7 +3517,9 @@ getStringRange(): Range
 
 **返回值：**
 
-类型说明[Range](#ZH-CN_TOPIC_0000002497605988__range)排版单元生成字形的字符范围，Range类型中的start表示字符范围的开始位置，该位置是相对于整个段落的索引，Range类型中的end表示字符范围的长度。
+| 类型 | 说明 |
+| --- | --- |
+| Range | 排版单元生成字形的字符范围，Range类型中的start表示字符范围的开始位置，该位置是相对于整个段落的索引，Range类型中的end表示字符范围的长度。 |
 
 **示例：**
 
@@ -2756,11 +3541,15 @@ getStringIndices(range?: Range): Array<number>
 
 **参数：**
 
-参数名类型必填说明range[Range](#ZH-CN_TOPIC_0000002497605988__range)否要获取的字符索引范围，range.start表示范围开始的位置，range.end表示范围的长度，如果长度是0表示从范围range.start开始获取到渲染块结束。当range.end、range.start为负数，或者传入null、undefined时，该方法将返回undefined。不传该参数时，默认获取整个渲染块。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| range | Range | 否 | 要获取的字符索引范围，range.start表示范围开始的位置，range.end表示范围的长度，如果长度是0表示从范围range.start开始获取到渲染块结束。当range.end、range.start为负数，或者传入null、undefined时，该方法将返回undefined。不传该参数时，默认获取整个渲染块。 |
 
 **返回值：**
 
-类型说明Array<number>返回每个字符的索引。
+| 类型 | 说明 |
+| --- | --- |
+| Array<number> | 返回每个字符的索引。 |
 
 **示例：**
 
@@ -2786,8 +3575,6 @@ struct Index {
         this.fun();
       })
     }
-  }
-}
 ```
 
 #### getImageBounds18+
@@ -2800,13 +3587,17 @@ getImageBounds(): common2D.Rect
 
 示意图展示了字符串为"j"或"E"的图像边界。
 
+![image](public_sys-resources/zh-cn_image_0000002553206115.webp)
+
 **系统能力**：SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
 
-类型说明[common2D.Rect](@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)该排版单元的图像边界。
+| 类型 | 说明 |
+| --- | --- |
+| common2D.Rect | 该排版单元的图像边界。 |
 
 **示例：**
 
@@ -2824,13 +3615,17 @@ getTypographicBounds(): TypographicBounds
 
 示意图展示了字符串为"j"或"E"的排版边界。
 
+![image](public_sys-resources/zh-cn_image_0000002553366073.webp)
+
 **系统能力**：SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
 
-类型说明[TypographicBounds](#ZH-CN_TOPIC_0000002497605988__typographicbounds18)该排版单元的排版边界。
+| 类型 | 说明 |
+| --- | --- |
+| TypographicBounds | 该排版单元的排版边界。 |
 
 **示例：**
 
@@ -2850,7 +3645,9 @@ getTextDirection(): TextDirection
 
 **返回值：**
 
-类型说明[TextDirection](#ZH-CN_TOPIC_0000002497605988__textdirection)返回该排版单元的文本方向。
+| 类型 | 说明 |
+| --- | --- |
+| TextDirection | 返回该排版单元的文本方向。 |
 
 **示例：**
 
@@ -2870,11 +3667,15 @@ getAdvances(range: Range): Array<common2D.Point>
 
 **参数：**
 
-参数名类型必填说明range[Range](#ZH-CN_TOPIC_0000002497605988__range)是要获取的字形位置范围。range.start表示范围开始的位置，range.end表示范围的长度。如果长度是0表示从range.start开始获取到渲染块结束。当range.end、range.start为负数，或者传入null、undefined时，该方法将返回undefined。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| range | Range | 是 | 要获取的字形位置范围。range.start表示范围开始的位置，range.end表示范围的长度。如果长度是0表示从range.start开始获取到渲染块结束。当range.end、range.start为负数，或者传入null、undefined时，该方法将返回undefined。 |
 
 **返回值：**
 
-类型说明Array<[common2D.Point](@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__point12)>返回该排版单元中每个字形相对于水平方向的字形宽度数组。其中，[common2D.Point](@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__point12)中的x值代表每个字形相对于水平方向的字形宽度，y值为保留字段，默认返回0。
+| 类型 | 说明 |
+| --- | --- |
+| Array<common2D.Point> | 返回该排版单元中每个字形相对于水平方向的字形宽度数组。其中，common2D.Point中的x值代表每个字形相对于水平方向的字形宽度，y值为保留字段，默认返回0。 |
 
 **示例：**
 
@@ -2893,7 +3694,10 @@ let advancesNull = runs[0].getAdvances(null); // null是非法参数，将返回
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明alignment[TextAlign](#ZH-CN_TOPIC_0000002497605988__textalign)否否段落中制表符之后的文本对齐方式，支持设置[TextAlign](#ZH-CN_TOPIC_0000002497605988__textalign)的LEFT左对齐、RIGHT右对齐和CENTER居中对齐方式，其他枚举值为左对齐，默认为左对齐。locationnumber否否制表符之后的文本对齐位置，浮点数，单位为物理像素px，最小值为1.0，当该值小于1.0时，该制表符会被替换为一个空格。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| alignment | TextAlign | 否 | 否 | 段落中制表符之后的文本对齐方式，支持设置TextAlign的LEFT左对齐、RIGHT右对齐和CENTER居中对齐方式，其他枚举值为左对齐，默认为左对齐。 |
+| location | number | 否 | 否 | 制表符之后的文本对齐位置，浮点数，单位为物理像素px，最小值为1.0，当该值小于1.0时，该制表符会被替换为一个空格。 |
 
 **示例：**
 
@@ -2911,4 +3715,10 @@ alignment为RIGHT，location为100，文本为"aabcdef/tg hi/tjkl/tmno/tp qr"：
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
-名称值说明ALL1 << 0所有字体类型，包括系统字体类型、风格字体类型和用户已安装字体类型。GENERIC1 << 1系统字体类型。STYLISH1 << 2风格字体类型。风格字体类型是专为2in1设备设计的字体类型。INSTALLED1 << 3用户已安装的字体类型。CUSTOMIZED18+1 << 4自定义字体类型。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ALL | 1 << 0 | 所有字体类型，包括系统字体类型、风格字体类型和用户已安装字体类型。 |
+| GENERIC | 1 << 1 | 系统字体类型。 |
+| STYLISH | 1 << 2 | 风格字体类型。风格字体类型是专为2in1设备设计的字体类型。 |
+| INSTALLED | 1 << 3 | 用户已安装的字体类型。 |
+| CUSTOMIZED18+ | 1 << 4 | 自定义字体类型。 |

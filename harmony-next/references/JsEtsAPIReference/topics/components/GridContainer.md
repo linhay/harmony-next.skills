@@ -18,39 +18,40 @@ GridContainer(value?: GridContainerOptions)
 
 **参数：**
 
-参数名类型必填说明valueGridContainerOptions否GridContainer参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | GridContainerOptions | 否 | GridContainer参数。 |
 
 #### GridContainerOptions对象说明
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明columnsnumber | 'auto'否是
-
-当前布局总列数。
-
-默认值：'auto'
-
-sizeTypeSizeType否是
-
-选用设备宽度类型。
-
-默认值：SizeType.Auto
-
-gutternumber | string否是栅格布局列间距，不支持百分比。marginnumber | string否是栅格布局两侧间距，不支持百分比。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| columns | number | 'auto' | 否 | 是 | 当前布局总列数。 默认值：'auto' |
+| sizeType | SizeType | 否 | 是 | 选用设备宽度类型。 默认值：SizeType.Auto |
+| gutter | number | string | 否 | 是 | 栅格布局列间距，不支持百分比。 |
+| margin | number | string | 否 | 是 | 栅格布局两侧间距，不支持百分比。 |
 
 #### SizeType枚举说明
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称说明XS最小宽度类型设备。SM小宽度类型设备。MD中等宽度类型设备。LG大宽度类型设备。Auto根据设备类型进行选择。
+| 名称 | 说明 |
+| --- | --- |
+| XS | 最小宽度类型设备。 |
+| SM | 小宽度类型设备。 |
+| MD | 中等宽度类型设备。 |
+| LG | 大宽度类型设备。 |
+| Auto | 根据设备类型进行选择。 |
 
 #### 属性
 
-支持[通用属性](../misc/通用属性.md)和Column组件的[属性方法](../misc/Column.md#ZH-CN_TOPIC_0000002529444831__属性)。
+支持[通用属性]([通用属性](../misc/通用属性.md).md)和Column组件的[属性方法](Column.md#ZH-CN_TOPIC_0000002553200779__属性)。
 
 #### 事件
 
-支持[通用事件](../misc/通用事件.md)。
+支持[通用事件]([通用事件](../misc/通用事件.md).md)。
 
 #### 示例
 
@@ -121,5 +122,6 @@ struct GridContainerExample {
       }
     }.width('100%').margin({ top: 5 })
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553205389.webp)

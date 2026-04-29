@@ -10,7 +10,7 @@
 
 #### 接口
 
-MenuItem(value?: MenuItemOptions | CustomBuilder)
+MenuItem(value?: MenuItemOptions | [CustomBuilder](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__custombuilder8))
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -18,7 +18,9 @@ MenuItem(value?: MenuItemOptions | CustomBuilder)
 
 **参数：**
 
-参数名类型必填说明value[MenuItemOptions](#ZH-CN_TOPIC_0000002497604926__menuitemoptions对象说明) | [CustomBuilder](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__custombuilder8)否包含设置MenuItem的各项信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | MenuItemOptions | [CustomBuilder](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__custombuilder8) | 否 | 包含设置MenuItem的各项信息。 |
 
 #### MenuItemOptions对象说明
 
@@ -26,51 +28,19 @@ Menu中具体item菜单项信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明startIcon[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)否是
-
-MenuItem的起始图标。不支持Symbol图标。使用Symbol图标时，须使用symbolStartIcon。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-content[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)否是
-
-MenuItem的内容。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-endIcon[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)否是
-
-MenuItem的末尾图标。不支持Symbol图标。使用Symbol图标时，须使用symbolEndIcon。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-labelInfo[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)否是
-
-MenuItem结束的标签信息，如快捷方式Ctrl+C等。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-builder[CustomBuilder](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__custombuilder8)否是
-
-用于构建二级菜单。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-symbolStartIcon12+[SymbolGlyphModifier](../misc/动态SymbolGlyphModifier属性设置.md)否是
-
-MenuItem起始的Symbol图标。配置该项时，原先startIcon图标不显示。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-symbolEndIcon12+[SymbolGlyphModifier](../misc/动态SymbolGlyphModifier属性设置.md)否是
-
-MenuItem末尾的Symbol图标。配置该项时，原先endIcon图标不显示。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| startIcon | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 否 | 是 | MenuItem的起始图标。不支持Symbol图标。使用Symbol图标时，须使用symbolStartIcon。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| content | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 否 | 是 | MenuItem的内容。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| endIcon | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 否 | 是 | MenuItem的末尾图标。不支持Symbol图标。使用Symbol图标时，须使用symbolEndIcon。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| labelInfo | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 否 | 是 | MenuItem结束的标签信息，如快捷方式Ctrl+C等。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| builder | [CustomBuilder](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__custombuilder8) | 否 | 是 | 用于构建二级菜单。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| symbolStartIcon12+ | [SymbolGlyphModifier](动态SymbolGlyphModifier属性设置.md) | 否 | 是 | MenuItem起始的Symbol图标。配置该项时，原先startIcon图标不显示。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| symbolEndIcon12+ | [SymbolGlyphModifier](动态SymbolGlyphModifier属性设置.md) | 否 | 是 | MenuItem末尾的Symbol图标。配置该项时，原先endIcon图标不显示。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 
 #### 属性
 
-除支持[通用属性](../misc/通用属性.md)外，还支持以下属性：
+除支持[通用属性]([通用属性](../misc/通用属性.md).md)外，还支持以下属性：
 
 #### selected
 
@@ -88,17 +58,13 @@ selected(value: boolean)
 
 **参数：**
 
-参数名类型必填说明valueboolean是
-
-菜单项是否选中。
-
-true：菜单项被选中；false：菜单项不被选中。
-
-默认值：false
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | boolean | 是 | 菜单项是否选中。 true：菜单项被选中；false：菜单项不被选中。 默认值：false |
 
 #### selectIcon
 
-selectIcon(value: boolean | ResourceStr | SymbolGlyphModifier)
+selectIcon(value: boolean | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | SymbolGlyphModifier)
 
 设置当菜单项被选中时，是否显示被选中的图标。
 
@@ -108,21 +74,13 @@ selectIcon(value: boolean | ResourceStr | SymbolGlyphModifier)
 
 **参数：**
 
-参数名类型必填说明valueboolean | [ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)10+| [SymbolGlyphModifier](../misc/动态SymbolGlyphModifier属性设置.md)12+是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | boolean | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)10+| [SymbolGlyphModifier](动态SymbolGlyphModifier属性设置.md)12+ | 是 | 菜单项被选中时，是否显示被选中的图标。 true：显示默认的对勾图标；false：不显示图标。 ResourceStr：显示指定的图标。 SymbolGlyphModifier：显示指定的HMSymbol图标。 默认值：false |
 
-菜单项被选中时，是否显示被选中的图标。
+#### content[Font](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font)10+
 
-true：显示默认的对勾图标；false：不显示图标。
-
-ResourceStr：显示指定的图标。
-
-SymbolGlyphModifier：显示指定的HMSymbol图标。
-
-默认值：false
-
-#### contentFont10+
-
-contentFont(value: Font)
+content[Font](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font)(value: Font)
 
 设置菜单项中内容信息的字体样式。
 
@@ -132,11 +90,13 @@ contentFont(value: Font)
 
 **参数：**
 
-参数名类型必填说明value[Font](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font)是菜单项中内容信息的字体样式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [Font](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font) | 是 | 菜单项中内容信息的字体样式。 |
 
-#### contentFontColor10+
+#### content[Font](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font)Color10+
 
-contentFontColor(value: ResourceColor)
+contentFontColor(value: [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor))
 
 设置菜单项中内容信息的字体颜色。
 
@@ -146,15 +106,13 @@ contentFontColor(value: ResourceColor)
 
 **参数：**
 
-参数名类型必填说明value[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 是 | 菜单项中内容信息的字体颜色。 默认值：'#E5000000' |
 
-菜单项中内容信息的字体颜色。
+#### label[Font](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font)10+
 
-默认值：'#E5000000'
-
-#### labelFont10+
-
-labelFont(value: Font)
+label[Font](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font)(value: Font)
 
 设置菜单项中标签信息的字体样式。
 
@@ -164,11 +122,13 @@ labelFont(value: Font)
 
 **参数：**
 
-参数名类型必填说明value[Font](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font)是菜单项中标签信息的字体样式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [Font](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font) | 是 | 菜单项中标签信息的字体样式。 |
 
-#### labelFontColor10+
+#### label[Font](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font)Color10+
 
-labelFontColor(value: ResourceColor)
+labelFontColor(value: [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor))
 
 设置菜单项中标签信息的字体颜色。
 
@@ -178,11 +138,9 @@ labelFontColor(value: ResourceColor)
 
 **参数：**
 
-参数名类型必填说明value[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)是
-
-菜单项中标签信息的字体颜色。
-
-默认值：'#99000000'
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 是 | 菜单项中标签信息的字体颜色。 默认值：'#99000000' |
 
 #### 事件
 
@@ -198,12 +156,10 @@ onChange(callback: (selected: boolean) => void)
 
 **参数：**
 
-参数名类型必填说明selectedboolean是
-
-选中状态发生变化时，触发该回调。
-
-true：未选中切换为选中；false：选中切换为未选中。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| selected | boolean | 是 | 选中状态发生变化时，触发该回调。 true：未选中切换为选中；false：选中切换为未选中。 |
 
 #### 示例
 
-详见[Menu组件示例](menu.md#ZH-CN_TOPIC_0000002529444891__示例)。
+详见[Menu组件示例](Menu.md#ZH-CN_TOPIC_0000002553200839__示例)。

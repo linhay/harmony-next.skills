@@ -12,4 +12,4 @@ typedef struct OH_Rdb_Transaction OH_Rdb_Transaction
 
 **相关模块：**[RDB](RDB.md)
 
-**所在头文件：**[oh_rdb_transaction.h](../../capi/headers/oh_rdb_transaction.h.md)
+**所在头文件：**[oh_rdb_transaction.h](../../topics/misc/[oh_rdb_transaction.h](oh_rdb_transaction.h.md).md)

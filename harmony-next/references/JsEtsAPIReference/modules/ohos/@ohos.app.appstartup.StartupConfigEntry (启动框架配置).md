@@ -18,7 +18,7 @@ import { StartupConfigEntry } from '@kit.AbilityKit';
 
 onConfig?(): StartupConfig
 
-在回调[AbilityStage.onCreate](@ohos.app.ability.AbilityStage (AbilityStage组件管理器).md#ZH-CN_TOPIC_0000002529284571__oncreate)前，若该AbilityStage对应的HAP中启动框架配置文件中[定义了启动框架配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup#定义启动参数配置)，则会触发该回调。
+在回调[AbilityStage.onCreate](@ohos.app.ability.AbilityStage (AbilityStage组件管理器).md#ZH-CN_TOPIC_0000002522080526__oncreate)前，若该AbilityStage对应的HAP中启动框架配置文件中[定义了启动框架配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup#定义启动参数配置)，则会触发该回调。
 
 开发者可以在该回调中设置启动框架配置信息，详细使用方法可参考[设置启动参数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup#设置启动参数)章节。
 
@@ -26,7 +26,9 @@ onConfig?(): StartupConfig
 
 **返回值：**
 
-类型说明[StartupConfig](@ohos.app.appstartup.StartupConfig (启动框架配置信息).md#ZH-CN_TOPIC_0000002529444561__startupconfig)启动框架配置信息。
+| 类型 | 说明 |
+| --- | --- |
+| StartupConfig | 启动框架配置信息。 |
 
 **示例：**
 
@@ -46,7 +48,6 @@ export default class MyStartupConfigEntry extends StartupConfigEntry {
       } else {
         hilog.info(0x0000, 'testTag', `onCompletedCallback: success.`);
       }
-    }
     let startupListener: StartupListener = {
       'onCompleted': onCompletedCallback
     }
@@ -56,14 +57,13 @@ export default class MyStartupConfigEntry extends StartupConfigEntry {
     }
     return config;
   }
-}
 ```
 
 #### onRequestCustomMatchRule20+
 
 onRequestCustomMatchRule(want: Want): string
 
-在回调[AbilityStage.onCreate](@ohos.app.ability.AbilityStage (AbilityStage组件管理器).md#ZH-CN_TOPIC_0000002529284571__oncreate)前，若该AbilityStage对应的HAP中启动框架配置文件中[定义了启动框架配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup#定义启动参数配置)，则会在[StartupConfigEntry.onConfig](#ZH-CN_TOPIC_0000002497604596__onconfig)后触发该回调。
+在回调[AbilityStage.onCreate](@ohos.app.ability.AbilityStage (AbilityStage组件管理器).md#ZH-CN_TOPIC_0000002522080526__oncreate)前，若该AbilityStage对应的HAP中启动框架配置文件中[定义了启动框架配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup#定义启动参数配置)，则会在[StartupConfigEntry.onConfig](#ZH-CN_TOPIC_0000002553200507__onconfig)后触发该回调。
 
 开发者可以在该回调中，可以根据调用方传入启动UIAbility的Want中的不同参数来返回不同的自定义匹配规则。启动框架会将其与启动任务配置的matchRules中customization字段进行匹配。若匹配成功，任务将在自动模式执行。详细匹配规则请参考[添加任务匹配规则](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup#添加任务匹配规则)章节。
 
@@ -73,11 +73,15 @@ onRequestCustomMatchRule(want: Want): string
 
 **参数：**
 
-参数名类型必填说明want[Want](@ohos.app.ability.Want (Want).md)是启动UIAbility的Want信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | Want | 是 | 启动UIAbility的Want信息。 |
 
 **返回值：**
 
-类型说明string返回自定义匹配规则值，用于匹配启动任务是否自动执行。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回自定义匹配规则值，用于匹配启动任务是否自动执行。 |
 
 **示例：**
 
@@ -93,5 +97,4 @@ export default class MyStartupConfigEntry extends StartupConfigEntry {
     }
     return '';
   }
-}
 ```

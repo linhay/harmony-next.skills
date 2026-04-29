@@ -30,7 +30,9 @@ import { PlainArray } from '@kit.ArkTS';
 
 **系统能力：** SystemCapability.Utils.Lang
 
-名称类型只读可选说明lengthnumber是否PlainArray的元素个数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| length | number | 是 | 否 | PlainArray的元素个数。 |
 
 #### constructor
 
@@ -44,9 +46,11 @@ PlainArray的构造函数。
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码]([语言基础类库错误码](../../errors/语言基础类库错误码.md).md)。
 
-错误码ID错误信息10200012The PlainArray's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200012 | The PlainArray's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -66,13 +70,17 @@ isEmpty(): boolean
 
 **返回值：**
 
-类型说明boolean为空返回true，不为空返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 为空返回true，不为空返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The isEmpty method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The isEmpty method cannot be bound. |
 
 **示例：**
 
@@ -94,17 +102,24 @@ has(key: number): boolean
 
 **参数：**
 
-参数名类型必填说明keynumber是指定key。需要小于等于int32_max即2147483647。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | number | 是 | 指定key。需要小于等于int32_max即2147483647。 |
 
 **返回值：**
 
-类型说明boolean包含指定key返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 包含指定key返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The has method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The has method cannot be bound. |
 
 **示例：**
 
@@ -127,17 +142,24 @@ get(key: number): T
 
 **参数：**
 
-参数名类型必填说明keynumber是查找的指定key。需要小于等于int32_max即2147483647。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | number | 是 | 查找的指定key。需要小于等于int32_max即2147483647。 |
 
 **返回值：**
 
-类型说明T返回key映射的value值。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回key映射的value值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The get method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The get method cannot be bound. |
 
 **示例：**
 
@@ -161,17 +183,24 @@ getIndexOfKey(key: number): number
 
 **参数：**
 
-参数名类型必填说明keynumber是指定key。需要小于等于int32_max即2147483647。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | number | 是 | 指定key。需要小于等于int32_max即2147483647。 |
 
 **返回值：**
 
-类型说明number返回指定key对应的下标值，查找失败返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回指定key对应的下标值，查找失败返回-1。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The getIndexOfKey method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The getIndexOfKey method cannot be bound. |
 
 **示例：**
 
@@ -195,17 +224,23 @@ getIndexOfValue(value: T): number
 
 **参数：**
 
-参数名类型必填说明valueT是指定value元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | T | 是 | 指定value元素。 |
 
 **返回值：**
 
-类型说明number返回指定value元素第一次出现时的下标值，查找失败返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回指定value元素第一次出现时的下标值，查找失败返回-1。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The getIndexOfValue method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The getIndexOfValue method cannot be bound. |
 
 **示例：**
 
@@ -229,17 +264,24 @@ getKeyAt(index: number): number
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定下标。需要小于等于int32_max即2147483647。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定下标。需要小于等于int32_max即2147483647。 |
 
 **返回值：**
 
-类型说明number返回该下标元素键值对中的key值，失败返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回该下标元素键值对中的key值，失败返回-1。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The getKeyAt method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The getKeyAt method cannot be bound. |
 
 **示例：**
 
@@ -263,17 +305,25 @@ getValueAt(index: number): T
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定下标。需要小于等于int32_max即2147483647。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定下标。需要小于等于int32_max即2147483647。 |
 
 **返回值：**
 
-类型说明T返回该下标元素键值对中的value值，失败返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回该下标元素键值对中的value值，失败返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200001The value of index is out of range.10200011The getValueAt method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200001 | The value of index is out of range. |
+| 10200011 | The getValueAt method cannot be bound. |
 
 **示例：**
 
@@ -297,13 +347,17 @@ clone(): PlainArray<T>
 
 **返回值：**
 
-类型说明PlainArray<T>返回新的对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| PlainArray<T> | 返回新的对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The clone method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The clone method cannot be bound. |
 
 **示例：**
 
@@ -327,13 +381,19 @@ add(key: number, value: T): void
 
 **参数：**
 
-参数名类型必填说明keynumber是添加成员数据的键名。需要小于等于int32_max即2147483647。valueT是添加成员数据的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | number | 是 | 添加成员数据的键名。需要小于等于int32_max即2147483647。 |
+| value | T | 是 | 添加成员数据的值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The add method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The add method cannot be bound. |
 
 **示例：**
 
@@ -355,17 +415,24 @@ remove(key: number): T
 
 **参数：**
 
-参数名类型必填说明keynumber是指定key。需要小于等于int32_max即2147483647。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | number | 是 | 指定key。需要小于等于int32_max即2147483647。 |
 
 **返回值：**
 
-类型说明T返回所删除的键值对中的Value值。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回所删除的键值对中的Value值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The remove method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The remove method cannot be bound. |
 
 **示例：**
 
@@ -389,17 +456,24 @@ removeAt(index: number): T
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定元素下标。需要小于等于int32_max即2147483647。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定元素下标。需要小于等于int32_max即2147483647。 |
 
 **返回值：**
 
-类型说明T返回删除的元素。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回删除的元素。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The removeAt method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The removeAt method cannot be bound. |
 
 **示例：**
 
@@ -423,17 +497,26 @@ removeRangeFrom(index: number, size: number): number
 
 **参数：**
 
-参数名类型必填说明indexnumber是删除元素的起始下标。需要小于等于int32_max即2147483647。sizenumber是期望删除元素个数。需要小于等于int32_max即2147483647。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 删除元素的起始下标。需要小于等于int32_max即2147483647。 |
+| size | number | 是 | 期望删除元素个数。需要小于等于int32_max即2147483647。 |
 
 **返回值：**
 
-类型说明number实际删除元素个数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 实际删除元素个数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200001The value of index is out of range.10200011The removeRangeFrom method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200001 | The value of index is out of range. |
+| 10200011 | The removeRangeFrom method cannot be bound. |
 
 **示例：**
 
@@ -457,13 +540,20 @@ setValueAt(index: number, value: T): void
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定替换数据下标。需要小于等于int32_max即2147483647。valueT是替换键值对中的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定替换数据下标。需要小于等于int32_max即2147483647。 |
+| value | T | 是 | 替换键值对中的值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200001The value of index is out of range.10200011The setValueAt method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200001 | The value of index is out of range. |
+| 10200011 | The setValueAt method cannot be bound. |
 
 **示例：**
 
@@ -488,13 +578,17 @@ toString(): String
 
 **返回值：**
 
-类型说明String返回对应字符串。
+| 类型 | 说明 |
+| --- | --- |
+| String | 返回对应字符串。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The toString method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The toString method cannot be bound. |
 
 **示例：**
 
@@ -518,9 +612,11 @@ clear(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The clear method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The clear method cannot be bound. |
 
 **示例：**
 
@@ -545,17 +641,27 @@ forEach(callbackFn: (value: T, index?: number, PlainArray?: PlainArray<T>) => vo
 
 **参数：**
 
-参数名类型必填说明callbackFnfunction是回调函数。thisArgObject否callbackFn被调用时用作this值，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | function | 是 | 回调函数。 |
+| thisArg | Object | 否 | callbackFn被调用时用作this值，默认值为当前实例对象。 |
 
 callbackFn的参数说明：
 
-参数名类型必填说明valueT是当前遍历到的元素。indexnumber否当前遍历到的下标值。PlainArrayPlainArray<T>否当前调用forEach方法的实例对象，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | T | 是 | 当前遍历到的元素。 |
+| index | number | 否 | 当前遍历到的下标值。 |
+| PlainArray | PlainArray<T> | 否 | 当前调用forEach方法的实例对象，默认值为当前实例对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The forEach method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The forEach method cannot be bound. |
 
 **示例：**
 
@@ -594,13 +700,17 @@ for(let i = 0; i < 10; i++) {
 
 **返回值：**
 
-类型说明IterableIterator<[number, T]>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<[number, T]> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The Symbol.iterator method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The Symbol.iterator method cannot be bound. |
 
 **示例：**
 

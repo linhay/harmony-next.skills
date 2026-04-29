@@ -1,16 +1,16 @@
-# NodeContainer
+# [NodeContainer](NodeContainer.md)
 
-基础组件，用于挂载自定义节点（如[FrameNode](FrameNode.md)或[BuilderNode](BuilderNode.md)），并通过[NodeController](NodeController.md)动态控制节点的上树和下树。组件不支持尾随添加子节点，接受一个[NodeController](NodeController.md)实例接口，需与NodeController组合使用。
+基础组件，用于挂载自定义节点（如[FrameNode]([FrameNode](../misc/FrameNode.md).md)或[BuilderNode]([BuilderNode](../misc/BuilderNode.md).md)），并通过[NodeController](NodeController.md)动态控制节点的上树和下树。组件不支持尾随添加子节点，接受一个[NodeController](NodeController.md)实例接口，需与NodeController组合使用。
 
 该组件从API version 11开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 该组件下仅支持挂载自定义节点[FrameNode](FrameNode.md)或者是[BuilderNode](BuilderNode.md)中获取的根节点FrameNode。
 
-不支持挂载查询获得的系统组件[代理节点](FrameNode.md#ZH-CN_TOPIC_0000002529284787__ismodifiable12)。
+不支持挂载查询获得的系统组件[代理节点](FrameNode.md#ZH-CN_TOPIC_0000002522240744__ismodifiable12)。
 
-当前不支持使用[动态属性设置](../misc/动态属性设置.md)。
+当前不支持使用[动态属性设置](动态属性设置.md)。
 
-该组件下的节点树构建中会使用UI实例[UIContext](../../types/classes/Class (UIContext).md)，当实例切换时可能会因为实例不匹配而出现问题，因此该组件当前不支持跨实例的节点复用。
+该组件下的节点树构建时会使用UI实例[UIContext](Class (UIContext).md)，实例切换时可能会因实例不匹配，导致所绑定[NodeController](NodeController.md)的[makeNode](NodeController.md#ZH-CN_TOPIC_0000002522080746__makenode)回调方法的入参为undefined，因此该组件当前不支持跨实例的节点复用。
 
 该组件未销毁时，不会主动触发挂载节点的下树。
 
@@ -20,9 +20,9 @@
 
 #### 接口
 
-#### NodeContainer
+#### [NodeContainer](NodeContainer.md)
 
-NodeContainer(controller: NodeController)
+NodeContainer(controller: [NodeController](../misc/NodeController.md))
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -30,19 +30,21 @@ NodeContainer(controller: NodeController)
 
 **参数：**
 
-参数名类型必填说明controller[NodeController](NodeController.md)是NodeController用于控制NodeContainer中的节点的上树和下树，反映NodeContainer容器的生命周期。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| controller | [NodeController](../misc/NodeController.md) | 是 | NodeController用于控制NodeContainer中的节点的上树和下树，反映NodeContainer容器的生命周期。 |
 
 #### 属性
 
-支持[通用属性](../misc/通用属性.md)。
+支持[通用属性]([通用属性](../misc/通用属性.md).md)。
 
 #### 事件
 
-支持[通用事件](../misc/通用事件.md)。
+支持[通用事件]([通用事件](../misc/通用事件.md).md)。
 
 #### 示例
 
-通过NodeController挂载BuilderNode节点。
+通过[NodeController](../misc/NodeController.md)挂载BuilderNode节点。
 
 ```ets
 import { NodeController, BuilderNode, FrameNode, UIContext } from '@kit.ArkUI';
@@ -76,7 +78,6 @@ class MyNodeController extends NodeController {
     }
     return this.rootNode.getFrameNode();
   }
-}
 
 @Entry
 @Component
@@ -98,5 +99,6 @@ struct Index {
     .height(200)
     .width(300)
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553365275.webp)

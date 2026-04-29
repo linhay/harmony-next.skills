@@ -20,7 +20,9 @@ import { WebNativeMessagingExtensionAbility } from '@kit.ArkWeb';
 
 **模型约束:** 此接口仅可在Stage模型下使用。
 
-名称类型只读可选说明context[WebNativeMessagingExtensionContext](@ohos.web.WebNativeMessagingExtensionContext (Web Native Messaging Extension Context).md)否否Web原生信息通信上下文。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| context | WebNativeMessagingExtensionContext | 否 | 否 | Web原生信息通信上下文。 |
 
 #### onConnectNative
 
@@ -34,7 +36,9 @@ Web原生信息连接建立时回调此方法。
 
 **参数:**
 
-参数名类型必填说明info[ConnectionInfo](#ZH-CN_TOPIC_0000002529285195__connectioninfo)是连接信息对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| info | ConnectionInfo | 是 | 连接信息对象。 |
 
 **示例:**
 
@@ -48,7 +52,6 @@ export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAb
     console.info(`Caller bundle: ${info.bundleName}`);
     // 在此处处理连接建立后的业务逻辑
   }
-}
 ```
 
 #### onDisconnectNative
@@ -63,7 +66,9 @@ Web原生信息连接断开时回调此方法。
 
 **参数:**
 
-参数名类型必填说明info[ConnectionInfo](#ZH-CN_TOPIC_0000002529285195__connectioninfo)是连接信息对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| info | ConnectionInfo | 是 | 连接信息对象。 |
 
 **示例:**
 
@@ -75,7 +80,6 @@ export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAb
     console.info('Web Native connection closed!');
     console.info(`Connection ID: ${info.connectionId}`);
     // 在此处处理连接断开后的清理工作
-  }
 }
 ```
 
@@ -99,7 +103,6 @@ export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAb
     console.info('WebNativeMessagingExtensionAbility is about to be destroyed!');
     // 在此处释放资源或者执行清理操作
   }
-}
 ```
 
 #### ConnectionInfo
@@ -108,4 +111,10 @@ Web原生消息连接的信息对象。
 
 **系统能力:** SystemCapability.Web.Webview.Core
 
-名称类型只读可选说明connectionIdnumber否否连接的唯一标识符。bundleNamestring否否调用方的应用包名。extensionOriginstring否否调用方扩展的原始URL。fdReadnumber否否用于读取数据的管道文件描述符。fdWritenumber否否用于写入数据的管道文件描述符。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| connectionId | number | 否 | 否 | 连接的唯一标识符。 |
+| bundleName | string | 否 | 否 | 调用方的应用包名。 |
+| extensionOrigin | string | 否 | 否 | 调用方扩展的原始URL。 |
+| fdRead | number | 否 | 否 | 用于读取数据的管道文件描述符。 |
+| fdWrite | number | 否 | 否 | 用于写入数据的管道文件描述符。 |

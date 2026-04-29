@@ -20,6 +20,8 @@
 
 本模块首批接口从API version 20开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
+模型约束：此接口仅可在Stage模型下使用
+
 #### 导入模块
 
 ```ets
@@ -48,19 +50,33 @@ openProxyChannel(channelInfo: ChannelInfo): Promise<number>
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明channelInfo[ChannelInfo](#ZH-CN_TOPIC_0000002529285431__channelinfo)是对端设备及服务的MAC和UUID信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| channelInfo | ChannelInfo | 是 | 对端设备及服务的MAC和UUID信息。 |
 
 **返回值：**
 
-类型说明Promise<number>返回代理通道的channelId，取值范围为1~2147483647。channelId的生命周期和代理通道生命周期相同，不关闭代理时，传入相同入参将返回相同channelId。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 返回代理通道的channelId，取值范围为1~2147483647。channelId的生命周期和代理通道生命周期相同，不关闭代理时，传入相同入参将返回相同channelId。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[代理通道管理错误码](../../errors/代理通道管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参考[代理通道管理错误码]([代理通道管理错误码](../../errors/代理通道管理错误码.md).md)和[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息201Permission denied.32390001BR is disabled.32390002Device not paired.32390006Parameter error.32390100Internal error.32390101Call is restricted.32390102Operation failed or Connection timed out.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390001 | BR is disabled. |
+| 32390002 | Device not paired. |
+| 32390006 | Parameter error. |
+| 32390100 | Internal error. |
+| 32390101 | Call is restricted. |
+| 32390102 | Operation failed or Connection timed out. |
 
 **示例：**
 
@@ -99,7 +115,6 @@ struct Index {
     .height('100%')
     .width('100%')
   }
-}
 ```
 
 #### proxyChannelManager.closeProxyChannel
@@ -112,15 +127,25 @@ closeProxyChannel(channelId: number): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明channelIdnumber是打开代理通道时获取的channelId。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| channelId | number | 是 | 打开代理通道时获取的channelId。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[代理通道管理错误码](../../errors/代理通道管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参考[代理通道管理错误码](代理通道管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.32390004ChannelId is invalid or unavailable.32390006Parameter error.32390100Internal error.32390101Call is restricted.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390004 | ChannelId is invalid or unavailable. |
+| 32390006 | Parameter error. |
+| 32390100 | Internal error. |
+| 32390101 | Call is restricted. |
 
 **示例：**
 
@@ -148,7 +173,6 @@ struct Index {
     .height('100%')
     .width('100%')
   }
-}
 ```
 
 #### proxyChannelManager.sendData
@@ -161,19 +185,34 @@ sendData(channelId:number, data:ArrayBuffer):Promise<void>
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明channelIdnumber是打开代理通道时获取的channelId。dataArrayBuffer是向对端发送的字节消息，长度最大为4096个字节。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| channelId | number | 是 | 打开代理通道时获取的channelId。 |
+| data | ArrayBuffer | 是 | 向对端发送的字节消息，长度最大为4096个字节。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回值的Promise的对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回值的Promise的对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[代理通道管理错误码](../../errors/代理通道管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参考[代理通道管理错误码](代理通道管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.32390004ChannelId is invalid or unavailable.32390006Parameter error.32390100Internal error.32390101Call is restricted.32390103Data too long.32390104Send failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390004 | ChannelId is invalid or unavailable. |
+| 32390006 | Parameter error. |
+| 32390100 | Internal error. |
+| 32390101 | Call is restricted. |
+| 32390103 | Data too long. |
+| 32390104 | Send failed. |
 
 **示例：**
 
@@ -205,7 +244,6 @@ struct Index {
     .height('100%')
     .width('100%')
   }
-}
 ```
 
 #### proxyChannelManager.on('receiveData')
@@ -218,15 +256,27 @@ on(type: 'receiveData', channelId: number, callback: Callback<DataInfo>): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明typestring是设置订阅类型，固定取值为'receiveData'。channelIdnumber是打开代理通道时获取的channelId。callbackCallback<[DataInfo](#ZH-CN_TOPIC_0000002529285431__datainfo)>是回调函数，返回接收到的数据。多次注册回调函数，最后一次注册的回调函数生效。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 设置订阅类型，固定取值为'receiveData'。 |
+| channelId | number | 是 | 打开代理通道时获取的channelId。 |
+| callback | Callback<DataInfo> | 是 | 回调函数，返回接收到的数据。多次注册回调函数，最后一次注册的回调函数生效。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[代理通道管理错误码](../../errors/代理通道管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参考[代理通道管理错误码](代理通道管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.32390004ChannelId is invalid or unavailable.32390006Parameter error.32390100Internal error.32390101Call is restricted.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390004 | ChannelId is invalid or unavailable. |
+| 32390006 | Parameter error. |
+| 32390100 | Internal error. |
+| 32390101 | Call is restricted. |
 
 **示例：**
 
@@ -254,7 +304,6 @@ struct Index {
     .height('100%')
     .width('100%')
   }
-}
 ```
 
 #### proxyChannelManager.off('receiveData')
@@ -267,15 +316,27 @@ off(type: 'receiveData', channelId: number, callback?: Callback<DataInfo>): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明typestring是设置订阅类型，固定取值为'receiveData'。channelIdnumber是打开代理通道时获取的channelId。callbackCallback<[DataInfo](#ZH-CN_TOPIC_0000002529285431__datainfo)>否注册的回调函数。如果为空、undefined、null，则取消订阅所有的数据接收事件。如果不为空，传入最后一次注册的回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 设置订阅类型，固定取值为'receiveData'。 |
+| channelId | number | 是 | 打开代理通道时获取的channelId。 |
+| callback | Callback<DataInfo> | 否 | 注册的回调函数。如果为空、undefined、null，则取消订阅所有的数据接收事件。如果不为空，传入最后一次注册的回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[代理通道管理错误码](../../errors/代理通道管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参考[代理通道管理错误码](代理通道管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.32390004ChannelId is invalid or unavailable.32390006Parameter error.32390100Internal error.32390101Call is restricted.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390004 | ChannelId is invalid or unavailable. |
+| 32390006 | Parameter error. |
+| 32390100 | Internal error. |
+| 32390101 | Call is restricted. |
 
 **示例：**
 
@@ -301,7 +362,6 @@ struct Index {
     .height('100%')
     .width('100%')
   }
-}
 ```
 
 #### proxyChannelManager.on('channelStateChange')
@@ -314,15 +374,27 @@ on(type: 'channelStateChange', channelId: number, callback: Callback<ChannelStat
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明typestring是设置订阅类型，固定取值为'channelStateChange'。channelIdnumber是打开代理通道时获取的channelId。callbackCallback<[ChannelStateInfo](#ZH-CN_TOPIC_0000002529285431__channelstateinfo)>是回调函数，返回接收到的通道状态。多次注册callback，最后一次注册的callback生效
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 设置订阅类型，固定取值为'channelStateChange'。 |
+| channelId | number | 是 | 打开代理通道时获取的channelId。 |
+| callback | Callback<ChannelStateInfo> | 是 | 回调函数，返回接收到的通道状态。多次注册callback，最后一次注册的callback生效 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[代理通道管理错误码](../../errors/代理通道管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参考[代理通道管理错误码](代理通道管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.32390004ChannelId is invalid or unavailable.32390006Parameter error.32390100Internal error.32390101Call is restricted.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390004 | ChannelId is invalid or unavailable. |
+| 32390006 | Parameter error. |
+| 32390100 | Internal error. |
+| 32390101 | Call is restricted. |
 
 **示例：**
 
@@ -350,7 +422,6 @@ struct Index {
     .height('100%')
     .width('100%')
   }
-}
 ```
 
 #### proxyChannelManager.off('channelStateChange')
@@ -363,15 +434,27 @@ off(type: 'channelStateChange', channelId: number, callback?: Callback<ChannelSt
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明typestring是设置订阅类型为'channelStateChange'。channelIdnumber是打开代理通道时获取的channelId。callbackCallback<[ChannelStateInfo](#ZH-CN_TOPIC_0000002529285431__channelstateinfo)>否注册的回调函数。如果为空、undefined、null，则取消订阅所有的数据接收事件。如果不为空，传入最后一次注册的回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 设置订阅类型为'channelStateChange'。 |
+| channelId | number | 是 | 打开代理通道时获取的channelId。 |
+| callback | Callback<ChannelStateInfo> | 否 | 注册的回调函数。如果为空、undefined、null，则取消订阅所有的数据接收事件。如果不为空，传入最后一次注册的回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[代理通道管理错误码](../../errors/代理通道管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参考[代理通道管理错误码](代理通道管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.32390004ChannelId is invalid or unavailable.32390006Parameter error.32390100Internal error.32390101Call is restricted.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390004 | ChannelId is invalid or unavailable. |
+| 32390006 | Parameter error. |
+| 32390100 | Internal error. |
+| 32390101 | Call is restricted. |
 
 **示例：**
 
@@ -397,7 +480,6 @@ struct Index {
     .height('100%')
     .width('100%')
   }
-}
 ```
 
 #### DataInfo
@@ -406,7 +488,10 @@ struct Index {
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
-名称类型只读可选说明channelIdnumber否否代理通道的channelId。dataArrayBuffer否否接收到的字节数据。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| channelId | number | 否 | 否 | 代理通道的channelId。 |
+| data | ArrayBuffer | 否 | 否 | 接收到的字节数据。 |
 
 #### ChannelInfo
 
@@ -414,7 +499,11 @@ struct Index {
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
-名称类型只读可选说明linkType[LinkType](#ZH-CN_TOPIC_0000002529285431__linktype)否否代理通道的链路类型。peerDevAddrstring否否对端设备的MAC地址。peerUuidstring否否对端监听的服务的UUID。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| linkType | LinkType | 否 | 否 | 代理通道的链路类型。 |
+| peerDevAddr | string | 否 | 否 | 对端设备的MAC地址。 |
+| peerUuid | string | 否 | 否 | 对端监听的服务的UUID。 |
 
 #### ChannelStateInfo
 
@@ -422,7 +511,10 @@ struct Index {
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
-名称类型只读可选说明channelIdnumber否否代理通道的channelId。state[ChannelState](#ZH-CN_TOPIC_0000002529285431__channelstate)否否通道的连接状态。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| channelId | number | 否 | 否 | 代理通道的channelId。 |
+| state | ChannelState | 否 | 否 | 通道的连接状态。 |
 
 #### ChannelState
 
@@ -430,7 +522,12 @@ struct Index {
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
-名称值说明CHANNEL_WAIT_RESUME0连接已断开，通道不可用。CHANNEL_RESUME1连接已恢复，通道可用。CHANNEL_EXCEPTION_SOFTWARE_FAILED2其他软件错误导致通道不可用。CHANNEL_BR_NO_PAIRED3蓝牙配对关系被删除，通道不可用。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CHANNEL_WAIT_RESUME | 0 | 连接已断开，通道不可用。 |
+| CHANNEL_RESUME | 1 | 连接已恢复，通道可用。 |
+| CHANNEL_EXCEPTION_SOFTWARE_FAILED | 2 | 其他软件错误导致通道不可用。 |
+| CHANNEL_BR_NO_PAIRED | 3 | 蓝牙配对关系被删除，通道不可用。 |
 
 #### LinkType
 
@@ -438,4 +535,6 @@ struct Index {
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
-名称值说明LINK_BR0蓝牙。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| LINK_BR | 0 | 蓝牙。 |

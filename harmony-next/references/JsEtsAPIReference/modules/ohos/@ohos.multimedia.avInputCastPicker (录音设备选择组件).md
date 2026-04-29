@@ -13,7 +13,7 @@ import { AVInputCastPicker } from '@kit.AVSessionKit';
 
 #### 属性
 
-支持[通用属性](../../topics/misc/通用属性.md)。
+支持[通用属性]([通用属性](../../topics/misc/通用属性.md).md)。
 
 #### AVInputCastPicker
 
@@ -36,7 +36,10 @@ AVInputCastPicker({
 
 **参数：**
 
-名称类型必填装饰器类型说明customPicker[CustomBuilder](../../topics/misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__custombuilder8)否@Prop自定义样式。建议应用自定义组件样式，可有效提升组件渲染性能。onStateChange[OnPickerStateCallback](#ZH-CN_TOPIC_0000002497605766__onpickerstatecallback)否-设备列表状态变更回调。
+| 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- |
+| customPicker | [CustomBuilder](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__custombuilder8) | 否 | @Prop | 自定义样式。建议应用自定义组件样式，可有效提升组件渲染性能。 |
+| onStateChange | OnPickerStateCallback | 否 | - | 设备列表状态变更回调。 |
 
 #### OnPickerStateCallback
 
@@ -48,11 +51,13 @@ type OnPickerStateCallback = (state: AVCastPickerState) => void
 
 **参数：**
 
-参数名类型必填说明state[AVCastPickerState](@ohos.multimedia.avCastPickerParam (投播组件参数).md#ZH-CN_TOPIC_0000002497445786__avcastpickerstate)是设备列表状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| state | AVCastPickerState | 是 | 设备列表状态。 |
 
 #### 事件
 
-支持[通用事件](../../topics/misc/通用事件.md)。
+支持[通用事件]([通用事件](../../topics/misc/通用事件.md).md)。
 
 #### 示例
 
@@ -72,7 +77,6 @@ struct Index {
       console.info('The picker starts showing.');
     } else if (state == AVCastPickerState.STATE_DISAPPEARING) {
       console.info('The picker finishes presenting.');
-    }
   }
 
   @Builder
@@ -96,5 +100,4 @@ struct Index {
       }.height('50%')
     }.width('50%')
   }
-}
 ```

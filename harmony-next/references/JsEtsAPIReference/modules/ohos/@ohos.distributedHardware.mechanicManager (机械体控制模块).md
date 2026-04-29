@@ -20,13 +20,18 @@ on(type: 'attachStateChange', callback: Callback<AttachStateChangeInfo>): void
 
 **参数：**
 
-参数名类型必填说明type'attachStateChange'是注册监听事件的类型。取值为：'attachStateChange'。callbackCallback<[AttachStateChangeInfo](#ZH-CN_TOPIC_0000002497605654__attachstatechangeinfo)>是回调函数，返回机械体设备连接变化信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | 'attachStateChange' | 是 | 注册监听事件的类型。取值为：'attachStateChange'。 |
+| callback | Callback<AttachStateChangeInfo> | 是 | 回调函数，返回机械体设备连接变化信息。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[机械体控制模块错误码](../../errors/机械体控制模块错误码.md)。
+以下的错误码的详细介绍请参见[机械体控制模块错误码]([机械体控制模块错误码](../../errors/机械体控制模块错误码.md).md)。
 
-错误码ID错误信息33300001Service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 33300001 | Service exception. |
 
 **示例：**
 
@@ -50,13 +55,18 @@ off(type: 'attachStateChange', callback?: Callback<AttachStateChangeInfo>): void
 
 **参数：**
 
-参数名类型必填说明type'attachStateChange'是取消注册监听事件的类型。取值为：'attachStateChange'。callbackCallback<[AttachStateChangeInfo](#ZH-CN_TOPIC_0000002497605654__attachstatechangeinfo)>否mechanicManager.off('attachStateChange')注册的回调函数。不填时默认取消所有注册的回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | 'attachStateChange' | 是 | 取消注册监听事件的类型。取值为：'attachStateChange'。 |
+| callback | Callback<AttachStateChangeInfo> | 否 | mechanicManager.off('attachStateChange')注册的回调函数。不填时默认取消所有注册的回调函数。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[机械体控制模块错误码](../../errors/机械体控制模块错误码.md)。
+以下的错误码的详细介绍请参见[机械体控制模块错误码](机械体控制模块错误码.md)。
 
-错误码ID错误信息33300001Service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 33300001 | Service exception. |
 
 **示例：**
 
@@ -80,13 +90,17 @@ getAttachedMechDevices(): MechInfo[]
 
 **返回值：**
 
-类型说明[MechInfo](#ZH-CN_TOPIC_0000002497605654__mechinfo)[]已连接机械体设备的列表。
+| 类型 | 说明 |
+| --- | --- |
+| MechInfo[] | 已连接机械体设备的列表。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[机械体控制模块错误码](../../errors/机械体控制模块错误码.md)。
+以下的错误码的详细介绍请参见[机械体控制模块错误码](机械体控制模块错误码.md)。
 
-错误码ID错误信息33300001Service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 33300001 | Service exception. |
 
 **示例：**
 
@@ -106,13 +120,19 @@ setCameraTrackingEnabled(isEnabled: boolean): void
 
 **参数：**
 
-参数名类型必填说明isEnabledboolean是是否启用摄像头跟踪， true表示启用摄像头跟踪，false表示禁用摄像头跟踪。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isEnabled | boolean | 是 | 是否启用摄像头跟踪， true表示启用摄像头跟踪，false表示禁用摄像头跟踪。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[机械体控制模块错误码](../../errors/机械体控制模块错误码.md)。
+以下的错误码的详细介绍请参见[机械体控制模块错误码](机械体控制模块错误码.md)。
 
-错误码ID错误信息33300001Service exception.33300002Device not connected.33300003Feature not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 33300001 | Service exception. |
+| 33300002 | Device not connected. |
+| 33300003 | Feature not supported. |
 
 **示例：**
 
@@ -132,13 +152,18 @@ getCameraTrackingEnabled(): boolean
 
 **返回值：**
 
-类型说明boolean摄像头跟踪启用状态，true表示已启用，false表示已禁用。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 摄像头跟踪启用状态，true表示已启用，false表示已禁用。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[机械体控制模块错误码](../../errors/机械体控制模块错误码.md)。
+以下的错误码的详细介绍请参见[机械体控制模块错误码](机械体控制模块错误码.md)。
 
-错误码ID错误信息33300001Service exception.33300002Device not connected.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 33300001 | Service exception. |
+| 33300002 | Device not connected. |
 
 **示例：**
 
@@ -158,13 +183,18 @@ on(type: 'trackingStateChange', callback: Callback<TrackingEventInfo>): void
 
 **参数：**
 
-参数名类型必填说明type'trackingStateChange'是注册监听事件的类型。取值为：'trackingStateChange'。callbackCallback<[TrackingEventInfo](#ZH-CN_TOPIC_0000002497605654__trackingeventinfo)>是回调函数，返回跟踪事件信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | 'trackingStateChange' | 是 | 注册监听事件的类型。取值为：'trackingStateChange'。 |
+| callback | Callback<TrackingEventInfo> | 是 | 回调函数，返回跟踪事件信息。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[机械体控制模块错误码](../../errors/机械体控制模块错误码.md)。
+以下的错误码的详细介绍请参见[机械体控制模块错误码](机械体控制模块错误码.md)。
 
-错误码ID错误信息33300001Service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 33300001 | Service exception. |
 
 **示例：**
 
@@ -188,13 +218,18 @@ off(type: 'trackingStateChange', callback?: Callback<TrackingEventInfo>): void
 
 **参数：**
 
-参数名类型必填说明type'trackingStateChange'是取消注册的监听事件类型。取值为：'trackingStateChange'。callbackCallback<[TrackingEventInfo](#ZH-CN_TOPIC_0000002497605654__trackingeventinfo)>否mechanicManager.off('trackingStateChange')注册的回调函数。不填时默认取消所有注册的回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | 'trackingStateChange' | 是 | 取消注册的监听事件类型。取值为：'trackingStateChange'。 |
+| callback | Callback<TrackingEventInfo> | 否 | mechanicManager.off('trackingStateChange')注册的回调函数。不填时默认取消所有注册的回调函数。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[机械体控制模块错误码](../../errors/机械体控制模块错误码.md)。
+以下的错误码的详细介绍请参见[机械体控制模块错误码](机械体控制模块错误码.md)。
 
-错误码ID错误信息33300001Service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 33300001 | Service exception. |
 
 **示例：**
 
@@ -218,13 +253,18 @@ getCameraTrackingLayout(): CameraTrackingLayout
 
 **返回值：**
 
-类型说明[CameraTrackingLayout](#ZH-CN_TOPIC_0000002497605654__cameratrackinglayout)获取到的当前机械体设备摄像头跟踪布局。
+| 类型 | 说明 |
+| --- | --- |
+| CameraTrackingLayout | 获取到的当前机械体设备摄像头跟踪布局。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[机械体控制模块错误码](../../errors/机械体控制模块错误码.md)。
+以下的错误码的详细介绍请参见[机械体控制模块错误码](机械体控制模块错误码.md)。
 
-错误码ID错误信息33300001Service exception.33300002Device not connected.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 33300001 | Service exception. |
+| 33300002 | Device not connected. |
 
 **示例：**
 
@@ -240,7 +280,11 @@ console.info(`'Query layout successful, current layout:' ${layout}`);
 
 **系统能力**：SystemCapability.Mechanic.Core
 
-名称类型只读可选说明mechIdnumber否否机械体设备ID。mechDeviceType[MechDeviceType](#ZH-CN_TOPIC_0000002497605654__mechdevicetype)否否机械体设备的类型。mechNamestring否否机械体设备名称。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| mechId | number | 否 | 否 | 机械体设备ID。 |
+| mechDeviceType | MechDeviceType | 否 | 否 | 机械体设备的类型。 |
+| mechName | string | 否 | 否 | 机械体设备名称。 |
 
 #### TrackingEventInfo
 
@@ -248,7 +292,9 @@ console.info(`'Query layout successful, current layout:' ${layout}`);
 
 **系统能力**：SystemCapability.Mechanic.Core
 
-名称类型只读可选说明event[TrackingEvent](#ZH-CN_TOPIC_0000002497605654__trackingevent)否否跟踪事件。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| event | TrackingEvent | 否 | 否 | 跟踪事件。 |
 
 #### AttachStateChangeInfo
 
@@ -256,7 +302,10 @@ console.info(`'Query layout successful, current layout:' ${layout}`);
 
 **系统能力**：SystemCapability.Mechanic.Core
 
-名称类型只读可选说明state[AttachState](#ZH-CN_TOPIC_0000002497605654__attachstate)否否设备连接状态。mechInfo[MechInfo](#ZH-CN_TOPIC_0000002497605654__mechinfo)否否机械体设备信息。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| state | AttachState | 否 | 否 | 设备连接状态。 |
+| mechInfo | MechInfo | 否 | 否 | 机械体设备信息。 |
 
 #### TrackingEvent
 
@@ -264,7 +313,11 @@ console.info(`'Query layout successful, current layout:' ${layout}`);
 
 **系统能力**：SystemCapability.Mechanic.Core
 
-名称值说明CAMERA_TRACKING_USER_ENABLED0用户启用了摄像头跟踪。CAMERA_TRACKING_USER_DISABLED1用户禁用了摄像头跟踪。CAMERA_TRACKING_LAYOUT_CHANGED2摄像头跟踪构图变更。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CAMERA_TRACKING_USER_ENABLED | 0 | 用户启用了摄像头跟踪。 |
+| CAMERA_TRACKING_USER_DISABLED | 1 | 用户禁用了摄像头跟踪。 |
+| CAMERA_TRACKING_LAYOUT_CHANGED | 2 | 摄像头跟踪构图变更。 |
 
 #### MechDeviceType
 
@@ -272,7 +325,9 @@ console.info(`'Query layout successful, current layout:' ${layout}`);
 
 **系统能力**：SystemCapability.Mechanic.Core
 
-名称值说明GIMBAL_DEVICE0便携式云台设备。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| GIMBAL_DEVICE | 0 | 便携式云台设备。 |
 
 #### AttachState
 
@@ -280,7 +335,10 @@ console.info(`'Query layout successful, current layout:' ${layout}`);
 
 **系统能力**：SystemCapability.Mechanic.Core
 
-名称值说明ATTACHED0设备已连接。DETACHED1设备已断开。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ATTACHED | 0 | 设备已连接。 |
+| DETACHED | 1 | 设备已断开。 |
 
 #### CameraTrackingLayout
 
@@ -288,4 +346,9 @@ console.info(`'Query layout successful, current layout:' ${layout}`);
 
 **系统能力**：SystemCapability.Mechanic.Core
 
-名称值说明DEFAULT0系统默认跟踪布局。LEFT1靠左布局。MIDDLE2居中布局。RIGHT3靠右布局。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DEFAULT | 0 | 系统默认跟踪布局。 |
+| LEFT | 1 | 靠左布局。 |
+| MIDDLE | 2 | 居中布局。 |
+| RIGHT | 3 | 靠右布局。 |

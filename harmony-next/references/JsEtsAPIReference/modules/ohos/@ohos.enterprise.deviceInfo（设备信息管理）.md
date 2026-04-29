@@ -28,33 +28,27 @@ getDeviceInfo(admin: Want, label: string): string
 
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。labelstring是
-
-支持获取的设备信息标签。
-
-- deviceName：设备名称。
-
-- deviceSerial：设备序列号。
-
-- simInfo：SIM卡信息。
-
-- disk：硬盘信息。
-
-- memory：内存信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| label | string | 是 | 支持获取的设备信息标签。 - deviceName：设备名称。 - deviceSerial：设备序列号。 - simInfo：SIM卡信息。 - disk：硬盘信息。 - memory：内存信息。 |
 
 **返回值：**
 
-类型说明string
-
-返回label对应的参数值。
-
-当label为simInfo时，返回值为表示SIM卡信息的JSON字符串。例如：[{"slotId": 0, "MEID": "", "IMSI": "", "ICCID": "", "IMEI": ""}, {"slotId": 1, "MEID": "", "IMSI": "", "ICCID": "", "IMEI": ""}]，其中：slotId:0表示卡槽1，slotId:1表示卡槽2。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回label对应的参数值。 当label为simInfo时，返回值为表示SIM卡信息的JSON字符串。例如：[{"slotId": 0, "MEID": "", "IMSI": "", "ICCID": "", "IMEI": "", "NUMBER": ""}, {"slotId": 1, "MEID": "", "IMSI": "", "ICCID": "", "IMEI": "", "NUMBER": ""}]，其中：slotId:0表示卡槽1，slotId:1表示卡槽2。 NUMBER：从API version 23开始支持，表示手机号码，格式为包含国家码的E.164国际标准格式（如 +8612345678901）。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码]([企业设备管理错误码](../../errors/企业设备管理错误码.md).md)和[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 

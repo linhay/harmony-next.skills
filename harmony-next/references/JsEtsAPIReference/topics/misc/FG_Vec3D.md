@@ -6,27 +6,19 @@
 
 **起始版本：** 5.0.0(12)
 
-**相关模块：**[GraphicsAccelerate](../graphics/GraphicsAccelerate.md)
+相关模块： [GraphicsAccelerate](GraphicsAccelerate.md)
+
+所在头文件： [frame_generation_base.h](frame_generation_base.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称
-
-描述
-
-float x
-
-三维向量的X轴坐标。
-
-float y
-
-三维向量的Y轴坐标。
-
-float z
-
-三维向量的Z轴坐标。
+| 名称 | 描述 |
+| --- | --- |
+| float x | 三维向量的X轴坐标。 |
+| float y | 三维向量的Y轴坐标。 |
+| float z | 三维向量的Z轴坐标。 |
 
 #### 结构体成员变量说明
 

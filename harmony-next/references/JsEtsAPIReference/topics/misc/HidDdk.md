@@ -10,4 +10,7 @@
 
 #### 文件汇总
 
-名称描述[hid_ddk_api.h](../../capi/headers/hid_ddk_api.h.md)声明主机侧访问输入设备的HID DDK接口。[hid_ddk_types.h](../../capi/headers/hid_ddk_types.h.md)提供HID DDK中的枚举变量与结构体定义。
+| 名称 | 描述 |
+| --- | --- |
+| [hid_ddk_api.h](hid_ddk_api.h.md) | 声明主机侧访问输入设备的HID DDK接口。 |
+| [hid_ddk_types.h](hid_ddk_types.h.md) | 提供HID DDK中的枚举变量与结构体定义。 |

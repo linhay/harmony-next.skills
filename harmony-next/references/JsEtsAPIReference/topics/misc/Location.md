@@ -8,4 +8,7 @@
 
 #### 文件汇总
 
-名称描述[oh_location.h](../../capi/headers/oh_location.h.md)定义查询位置开关状态、启动定位、停止定位的接口。[oh_location_type.h](../../capi/headers/oh_location_type.h.md)定义位置服务常用的属性。
+| 名称 | 描述 |
+| --- | --- |
+| [oh_location.h](oh_location.h.md) | 定义查询位置开关状态、启动定位、停止定位的接口。 |
+| [oh_location_type.h](oh_location_type.h.md) | 定义位置服务常用的属性。 |

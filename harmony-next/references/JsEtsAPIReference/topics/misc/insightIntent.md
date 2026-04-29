@@ -22,75 +22,13 @@ InsightIntent，包括意图名称、意图版本号、标识、Action信息、E
 
 **起始版本：**4.0.0(10)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-intentName
-
-string
-
-否
-
-否
-
-表示意图名称，例如：'PlayMusic'。
-
-intentVersion
-
-string
-
-否
-
-否
-
-表示意图版本，当前为初始版本'1.0'。
-
-identifier
-
-string
-
-否
-
-否
-
-表示意图的标识符，开发者按照自身业务需要生成，作为单条共享记录的唯一标识符。该字段的生成方式可参考UUID生成方式，或基于时间戳生成随机字符串。例如：'52dac3b0-6520-4974-81e5-25f0879449b5'。
-
-intentActionInfo
-
-[IntentActionInfo](#section13611343185915)
-
-否
-
-否
-
-表示意图的执行信息，例如：已执行或预测将要执行意图的时间。示例请参考[shareIntent](#section144826162913)的示例代码。
-
- 说明：
-
-- 在4.0.0(10)版本，参数类型为{[key: string]: Object}。
-- 从5.0.0(12)版本开始，参数类型为[IntentActionInfo](#section13611343185915)。该类型定义与5.0.0(12)前版本兼容。
-
-intentEntityInfo
-
-[IntentEntityInfo](#section1934412225108)
-
-否
-
-否
-
-表示意图的实体信息，包含行为和事件。示例请参考[shareIntent](#section144826162913)的示例代码。
-
- 说明：
-
-- 在4.0.0(10)版本，参数类型为{entityId: string; entityName: string; [key: string]: Object}。
-- 从5.0.0(12)版本开始，参数类型为[IntentEntityInfo](#section1934412225108)。该类型定义与5.0.0(12)前版本兼容。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| intentName | string | 否 | 否 | 表示意图名称，例如：'PlayMusic'。 |
+| intentVersion | string | 否 | 否 | 表示意图版本，当前为初始版本'1.0'。 |
+| identifier | string | 否 | 否 | 表示意图的标识符，开发者按照自身业务需要生成，作为单条共享记录的唯一标识符。该字段的生成方式可参考UUID生成方式，或基于时间戳生成随机字符串。例如：'52dac3b0-6520-4974-81e5-25f0879449b5'。 |
+| intentActionInfo | IntentActionInfo | 否 | 否 | 表示意图的执行信息，例如：已执行或预测将要执行意图的时间。示例请参考shareIntent的示例代码。 说明： - 在4.0.0(10)版本，参数类型为{[key: string]: Object}。 - 从5.0.0(12)版本开始，参数类型为IntentActionInfo。该类型定义与5.0.0(12)前版本兼容。 |
+| intentEntityInfo | IntentEntityInfo | 否 | 否 | 表示意图的实体信息，包含行为和事件。示例请参考shareIntent的示例代码。 说明： 在4.0.0(10)版本，参数类型为{entityId: string; entityName: string; [key: string]: Object}。 从5.0.0(12)版本开始，参数类型为IntentEntityInfo。该类型定义与5.0.0(12)前版本兼容。 |
 
 #### IntentActionInfo
 
@@ -102,25 +40,9 @@ IntentActionInfo，表示意图的执行信息。
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-[key: string]
-
-Object
-
-否
-
-否
-
-表示值的类型为包含一个或多个键值对的对象。其中键的类型为字符，值的类型为Object，键和值的取值范围因意图名称而异，具体请参考[各垂域意图Schema](https://developer.huawei.com/consumer/cn/doc/service/intents-schema-0000001901962713)。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| [key: string] | Object | 否 | 否 | 表示值的类型为包含一个或多个键值对的对象。其中键的类型为字符，值的类型为Object，键和值的取值范围因意图名称而异，具体请参考各垂域意图Schema。 |
 
 #### IntentEntityInfo
 
@@ -132,45 +54,11 @@ IntentEntityInfo，表示意图的实体信息。
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-entityId
-
-string
-
-否
-
-否
-
-表示意图实体的标识符，开发者按照自身业务需要生成，作为单条实体的唯一标识符。该字段的生成方式可参考UUID生成方式，或基于时间戳生成随机字符串。例如：'C10194368'。
-
-entityName
-
-string
-
-否
-
-否
-
-表示意图实体的名称。取值请参考[各垂域意图Schema](https://developer.huawei.com/consumer/cn/doc/service/intents-schema-0000001901962713)。
-
-[key: string]
-
-Object
-
-否
-
-否
-
-意图实体的其他信息，表示为一个或多个键值对。其中键的类型为字符，值的类型为Object，键和值的取值范围因意图名称而异，具体请参考[各垂域意图Schema](https://developer.huawei.com/consumer/cn/doc/service/intents-schema-0000001901962713)。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| entityId | string | 否 | 否 | 表示意图实体的标识符，开发者按照自身业务需要生成，作为单条实体的唯一标识符。该字段的生成方式可参考UUID生成方式，或基于时间戳生成随机字符串。例如：'C10194368'。 |
+| entityName | string | 否 | 否 | 表示意图实体的名称。取值请参考各垂域意图Schema。 |
+| [key: string] | Object | 否 | 否 | 意图实体的其他信息，表示为一个或多个键值对。其中键的类型为字符，值的类型为Object，键和值的取值范围因意图名称而异，具体请参考各垂域意图Schema。 |
 
 #### insightIntent.shareIntent
 
@@ -188,69 +76,24 @@ shareIntent(context: common.BaseContext, intents: InsightIntent[], callback: Asy
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-common.[BaseContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-basecontext)
-
-是
-
-表示应用上下文。
-
-intents
-
-[InsightIntent](#section1081123302517)[]
-
-是
-
-表示共享的InsightIntent。
-
-callback
-
-AsyncCallback<void>
-
-是
-
-回调函数。当具体的操作（视具体接口功能描述）成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | common.BaseContext | 是 | 表示应用上下文。 |
+| intents | InsightIntent[] | 是 | 表示共享的InsightIntent。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当具体的操作（视具体接口功能描述）成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[ArkTS API错误码]([ArkTS API错误码](../../errors/ArkTS API错误码.md).md)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
-错误码ID
-
-错误信息
-
-401
-
-The parameter check failed.
-
-1000101101
-
-The application has not been registered with the InsightIntent.
-
-1000101104
-
-The number of sharing times exceeds the limit.
-
-1000101105
-
-The size of a single shared data exceeds the limit.
-
-1000101106
-
-Exceeded the maximum number of sharing times of all applications.
-
-1000101201
-
-The service is abnormal.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. |
+| 1000101101 | The application has not been registered with the InsightIntent. |
+| 1000101104 | The number of sharing times exceeds the limit. |
+| 1000101105 | The size of a single shared data exceeds the limit. |
+| 1000101106 | Exceeded the maximum number of sharing times of all applications. |
+| 1000101201 | The service is abnormal. |
 
 **示例：**
 
@@ -291,7 +134,6 @@ let playMusicIntent: insightIntent.InsightIntent = {
     musicalGenre: ['民族风','摇滚'],
     isPublicData: false
   }
-}
 try {
   // 共享数据
   // 此处仅为示例，请根据实际代码上下文自行传入合适的context
@@ -327,71 +169,29 @@ shareIntent(context: common.BaseContext, intents: InsightIntent[]): Promise<void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-common.[BaseContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-basecontext)
-
-是
-
-表示应用上下文。
-
-intents
-
-[InsightIntent](#section1081123302517)[]
-
-是
-
-表示共享的InsightIntent 。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | common.BaseContext | 是 | 表示应用上下文。 |
+| intents | InsightIntent[] | 是 | 表示共享的InsightIntent 。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<void>
-
-Promise对象，无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码]([ArkTS API错误码](../../errors/ArkTS API错误码.md).md)。
 
-错误码ID
-
-错误信息
-
-401
-
-The parameter check failed.
-
-1000101101
-
-The application has not been registered with the InsightIntent.
-
-1000101104
-
-The number of sharing times exceeds the limit.
-
-1000101105
-
-The size of a single shared data exceeds the limit.
-
-1000101106
-
-Exceeded the maximum number of sharing times of all applications.
-
-1000101201
-
-The service is abnormal.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. |
+| 1000101101 | The application has not been registered with the InsightIntent. |
+| 1000101104 | The number of sharing times exceeds the limit. |
+| 1000101105 | The size of a single shared data exceeds the limit. |
+| 1000101106 | Exceeded the maximum number of sharing times of all applications. |
+| 1000101201 | The service is abnormal. |
 
 **示例：**
 
@@ -433,7 +233,6 @@ let playMusicIntent: insightIntent.InsightIntent = {
     musicalGenre: ['民族风','摇滚'],
     isPublicData: false
   }
-}
 
 // 共享数据
 // 此处仅为示例，请根据实际代码上下文自行传入合适的context
@@ -459,65 +258,22 @@ deleteIntent(context: common.BaseContext, intentName: string, identifiers: strin
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-common.[BaseContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-basecontext)
-
-是
-
-表示应用上下文。
-
-intentName
-
-string
-
-是
-
-表示意图的名称。
-
-identifiers
-
-string[]
-
-是
-
-表示意图的标识符。
-
-callback
-
-AsyncCallback<void>
-
-是
-
-回调函数，返回删除InsightIntent接口调用是否成功的结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | common.BaseContext | 是 | 表示应用上下文。 |
+| intentName | string | 是 | 表示意图的名称。 |
+| identifiers | string[] | 是 | 表示意图的标识符。 |
+| callback | AsyncCallback<void> | 是 | 回调函数，返回删除InsightIntent接口调用是否成功的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码]([ArkTS API错误码](../../errors/ArkTS API错误码.md).md)。
 
-错误码ID
-
-错误信息
-
-401
-
-The parameter check failed.
-
-1000101101
-
-The application has not been registered with the InsightIntent.
-
-1000101201
-
-The service is abnormal.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. |
+| 1000101101 | The application has not been registered with the InsightIntent. |
+| 1000101201 | The service is abnormal. |
 
 **示例：**
 
@@ -558,57 +314,21 @@ deleteIntent(context: common.BaseContext, intentName: string, callback: AsyncCal
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-common.[BaseContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-basecontext)
-
-是
-
-表示应用上下文。
-
-intentName
-
-string
-
-是
-
-表示意图的名称。
-
-callback
-
-AsyncCallback<void>
-
-是
-
-回调函数，返回删除InsightIntent接口调用是否成功的结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | common.BaseContext | 是 | 表示应用上下文。 |
+| intentName | string | 是 | 表示意图的名称。 |
+| callback | AsyncCallback<void> | 是 | 回调函数，返回删除InsightIntent接口调用是否成功的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码]([ArkTS API错误码](../../errors/ArkTS API错误码.md).md)。
 
-错误码ID
-
-错误信息
-
-401
-
-The parameter check failed.
-
-1000101101
-
-The application has not been registered with the InsightIntent.
-
-1000101201
-
-The service is abnormal.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. |
+| 1000101101 | The application has not been registered with the InsightIntent. |
+| 1000101201 | The service is abnormal. |
 
 **示例：**
 
@@ -649,67 +369,27 @@ deleteIntent(context: common.BaseContext, intentName: string, identifiers?: stri
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-common.[BaseContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-basecontext)
-
-是
-
-表示应用上下文。
-
-intentName
-
-string
-
-是
-
-表示意图的名称。
-
-identifiers
-
-string[]
-
-否
-
-表示意图的标识符。如果填写该字段，则删除指定标识符的意图；如果未填写该字段，则删除意图名称下的所有记录。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | common.BaseContext | 是 | 表示应用上下文。 |
+| intentName | string | 是 | 表示意图的名称。 |
+| identifiers | string[] | 否 | 表示意图的标识符。如果填写该字段，则删除指定标识符的意图；如果未填写该字段，则删除意图名称下的所有记录。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<void>
-
-Promise对象，无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码]([ArkTS API错误码](../../errors/ArkTS API错误码.md).md)。
 
-错误码ID
-
-错误信息
-
-401
-
-The parameter check failed.
-
-1000101101
-
-The application has not been registered with the InsightIntent.
-
-1000101201
-
-The service is abnormal.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. |
+| 1000101101 | The application has not been registered with the InsightIntent. |
+| 1000101201 | The service is abnormal. |
 
 **示例：**
 
@@ -742,65 +422,22 @@ deleteEntity(context: common.BaseContext, entityName: string, entityIds: string[
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-common.[BaseContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-basecontext)
-
-是
-
-表示应用上下文。
-
-entityName
-
-string
-
-是
-
-表示实体的名称。
-
-entityIds
-
-string[]
-
-是
-
-表示实体的id。
-
-callback
-
-AsyncCallback<void>
-
-是
-
-回调函数，返回删除InsightIntent实体接口调用是否成功的结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | common.BaseContext | 是 | 表示应用上下文。 |
+| entityName | string | 是 | 表示实体的名称。 |
+| entityIds | string[] | 是 | 表示实体的id。 |
+| callback | AsyncCallback<void> | 是 | 回调函数，返回删除InsightIntent实体接口调用是否成功的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码]([ArkTS API错误码](../../errors/ArkTS API错误码.md).md)。
 
-错误码ID
-
-错误信息
-
-401
-
-The parameter check failed.
-
-1000101101
-
-The application has not been registered with the InsightIntent.
-
-1000101201
-
-The service is abnormal.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. |
+| 1000101101 | The application has not been registered with the InsightIntent. |
+| 1000101201 | The service is abnormal. |
 
 **示例：**
 
@@ -841,67 +478,27 @@ deleteEntity(context: common.BaseContext, entityName: string, entityIds: string[
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-common.[BaseContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-basecontext)
-
-是
-
-表示应用上下文。
-
-entityName
-
-string
-
-是
-
-表示实体的名称。
-
-entityIds
-
-string[]
-
-是
-
-表示实体的id。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | common.BaseContext | 是 | 表示应用上下文。 |
+| entityName | string | 是 | 表示实体的名称。 |
+| entityIds | string[] | 是 | 表示实体的id。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<void>
-
-Promise对象，无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码]([ArkTS API错误码](../../errors/ArkTS API错误码.md).md)。
 
-错误码ID
-
-错误信息
-
-401
-
-The parameter check failed.
-
-1000101101
-
-The application has not been registered with the InsightIntent.
-
-1000101201
-
-The service is abnormal.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. |
+| 1000101101 | The application has not been registered with the InsightIntent. |
+| 1000101201 | The service is abnormal. |
 
 **示例：**
 
@@ -934,67 +531,28 @@ getSid(context: common.BaseContext, renew: boolean): Promise<string>
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-common.[BaseContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-basecontext)
-
-是
-
-表示应用上下文。
-
-renew
-
-boolean
-
-是
-
-是否强制从云端获取新的服务开放ID。如果为true，从云端获取新的服务开放ID；如果为false，则优先获取本地存储的服务开放ID。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | common.BaseContext | 是 | 表示应用上下文。 |
+| renew | boolean | 是 | 是否强制从云端获取新的服务开放ID。如果为true，从云端获取新的服务开放ID；如果为false，则优先获取本地存储的服务开放ID。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<string>
-
-Promise对象，返回获取到的Service Open ID。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回获取到的Service Open ID。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码]([ArkTS API错误码](../../errors/ArkTS API错误码.md).md)。
 
-错误码ID
-
-错误信息
-
-401
-
-The parameter check failed.
-
-1000101101
-
-The application has not been registered with the InsightIntent.
-
-1000101102
-
-HUAWEI Assistant has stopped providing services.
-
-1000101107
-
-Too many Service Open ID renew requests.
-
-1000101201
-
-The service is abnormal.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. |
+| 1000101101 | The application has not been registered with the InsightIntent. |
+| 1000101102 | HUAWEI Assistant has stopped providing services. |
+| 1000101107 | Too many Service Open ID renew requests. |
+| 1000101201 | The service is abnormal. |
 
 **示例：**
 

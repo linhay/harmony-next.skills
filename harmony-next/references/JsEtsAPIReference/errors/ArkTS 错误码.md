@@ -122,8 +122,42 @@
 
 **可能原因**
 
-使用[createCollaborationServiceMenuItems](../topics/system-services/CollaborationService (跨设备互通组件).md#section149271552154711)传入的自定义图片张数canReceiveNumber小于等于0。
+使用[createCollaborationServiceMenuItems](CollaborationService (跨设备互通组件).md#ZH-CN_TOPIC_0000002553361489__createcollaborationservicemenuitems-1)传入的自定义图片张数canReceiveNumber小于等于0。
 
 **处理步骤**
 
-使用[createCollaborationServiceMenuItems](../topics/system-services/CollaborationService (跨设备互通组件).md#section149271552154711)时，自定义图片张数canReceiveNumber请传入1到50的值。
+使用[createCollaborationServiceMenuItems](CollaborationService (跨设备互通组件).md#ZH-CN_TOPIC_0000002553361489__createcollaborationservicemenuitems-1)时，自定义图片张数canReceiveNumber请传入1到50的值。
+
+#### 1001202015 代表视频回传成功
+**错误信息**
+
+视频全部回传成功。
+
+**错误描述**
+
+视频全部回传成功。
+
+**可能原因**
+
+视频已经全部回传成功。
+
+**处理步骤**
+
+属于正常状态code，代表本次视频全部回传成功。
+
+#### 1001202016 代表回传视频名称
+**错误信息**
+
+回传视频名称。
+
+**错误描述**
+
+回传视频名称。
+
+**可能原因**
+
+回传视频名称。
+
+**处理步骤**
+
+属于正常状态code，代表本次回传视频名称。

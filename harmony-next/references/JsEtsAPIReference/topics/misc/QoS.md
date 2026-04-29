@@ -8,4 +8,6 @@
 
 #### 文件汇总
 
-名称描述[qos.h](../../capi/headers/qos.h.md)声明QoS提供的C接口。
+| 名称 | 描述 |
+| --- | --- |
+| [qos.h](qos.h.md) | 声明QoS提供的C接口。 |

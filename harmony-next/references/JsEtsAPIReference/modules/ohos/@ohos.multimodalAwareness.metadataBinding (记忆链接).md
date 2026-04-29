@@ -22,13 +22,17 @@ submitMetadata(metadata: string): void
 
 **参数**：
 
-参数名类型必填说明metadatastring是要嵌入图片中的信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| metadata | string | 是 | 要嵌入图片中的信息。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[记忆链接错误码](../../errors/记忆链接错误码.md)。
+以下错误码的详细介绍请参见[记忆链接错误码]([记忆链接错误码](../../errors/记忆链接错误码.md).md)。
 
-错误码ID错误信息32100001Internal handling failed. Set Meta data to screenshot app fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 32100001 | Internal handling failed. Set Meta data to screenshot app fail. |
 
 **示例**：
 
@@ -55,13 +59,20 @@ on(type: 'operationSubmitMetadata', bundleName: string, callback: Callback<numbe
 
 **参数**：
 
-参数名类型必填说明typestring是事件类型，type为‘operationSubmitMetadata’，表示系统应用获取编码内容。bundleNamestring是应用包名，标识注册应用的包名。callbackCallback<number>是回调函数，用于返回编码内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件类型，type为‘operationSubmitMetadata’，表示系统应用获取编码内容。 |
+| bundleName | string | 是 | 应用包名，标识注册应用的包名。 |
+| callback | Callback<number> | 是 | 回调函数，用于返回编码内容。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[记忆链接错误码](../../errors/记忆链接错误码.md)。
+以下错误码的详细介绍请参见[记忆链接错误码](记忆链接错误码.md)。
 
-错误码ID错误信息32100001Internal handling failed. Service exception.32100004Subscribe Failed. Possible causes: 1. Abnormal system capability; 2. IPC communication abnormality; 3. Algorithm loading exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 32100001 | Internal handling failed. Service exception. |
+| 32100004 | Subscribe Failed. Possible causes: 1. Abnormal system capability; 2. IPC communication abnormality; 3. Algorithm loading exception. |
 
 **示例：**
 
@@ -92,13 +103,20 @@ off(type: 'operationSubmitMetadata', bundleName: string, callback?: Callback<num
 
 **参数**：
 
-参数名类型必填说明typestring是事件类型，type为“operationSubmitMetadata”，表示系统应用获取编码内容。bundleNamestring是应用包名，标识注册应用的包名。callbackCallback<number>否回调函数，返回编码内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件类型，type为“operationSubmitMetadata”，表示系统应用获取编码内容。 |
+| bundleName | string | 是 | 应用包名，标识注册应用的包名。 |
+| callback | Callback<number> | 否 | 回调函数，返回编码内容。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[记忆链接错误码](../../errors/记忆链接错误码.md)。
+以下错误码的详细介绍请参见[记忆链接错误码](记忆链接错误码.md)。
 
-错误码ID错误信息32100001Internal handling failed. Service exception.32100005Unsubscribe Failed. Possible causes: 1. Abnormal system capability; 2. IPC communication abnormality.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 32100001 | Internal handling failed. Service exception. |
+| 32100005 | Unsubscribe Failed. Possible causes: 1. Abnormal system capability; 2. IPC communication abnormality. |
 
 **示例**：
 

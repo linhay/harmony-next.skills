@@ -12,7 +12,7 @@
 
 -
 
-以下接口需先使用UIContext中的requireDynamicSyncScene()方法获取DynamicSyncScene对象，再通过此实例调用对应方法。
+以下接口需先使用UIContext中的[requireDynamicSyncScene](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__requiredynamicsyncscene12)方法获取DynamicSyncScene对象，再通过此实例调用对应方法。
 
 #### setFrameRateRange12+
 
@@ -28,11 +28,9 @@ setFrameRateRange(range: ExpectedFrameRateRange): void
 
 **参数：**
 
-参数名类型必填说明range[ExpectedFrameRateRange](../../topics/misc/显式动画 (animateTo).md#ZH-CN_TOPIC_0000002497444950__expectedframeraterange11)是
-
-设置期望的帧率范围。
-
-默认值：{min:0, max:120, expected: 120}
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| range | ExpectedFrameRateRange | 是 | 设置期望的帧率范围。 默认值：{min:0, max:120, expected: 120} |
 
 **示例：**
 
@@ -80,8 +78,6 @@ struct Frame {
           });
         })
     }
-  }
-}
 ```
 
 #### getFrameRateRange12+
@@ -96,7 +92,9 @@ getFrameRateRange(): ExpectedFrameRateRange
 
 **返回值：**
 
-类型说明[ExpectedFrameRateRange](../../topics/misc/显式动画 (animateTo).md#ZH-CN_TOPIC_0000002497444950__expectedframeraterange11)期望帧率范围。
+| 类型 | 说明 |
+| --- | --- |
+| ExpectedFrameRateRange | 期望帧率范围。 |
 
 **示例：**
 
@@ -146,6 +144,4 @@ struct Frame {
           });
         })
       }
-  }
-}
 ```

@@ -24,65 +24,12 @@ HdsSideMenu({items?: HdsSideMenuMainItem[], selectedIndex: number, $selectedInde
 
 **起始版本：**6.0.0(20)
 
-参数名
-
-类型
-
-必填
-
-装饰器类型
-
-说明
-
-items
-
-[HdsSideMenuMainItem](#section1050510599502)[]
-
-否
-
-@Param
-
-一级菜单栏组，数量最多为5个。
-
-selectedIndex
-
-number
-
-是
-
-@Param
-
-@Require
-
-当前选中的菜单栏。
-
-取值范围：大于等于-1的整数。
-
--1表示当前侧边菜单栏没有菜单被选中。
-
-$selectedIndex
-
-[OnSelectedIndexChange](#section58771018173714)
-
-否
-
-@Event
-
-用于双向绑定selectedIndex。
-
-maxItemTextLines
-
-number
-
-否
-
-@Param
-
-设置最大内容行数。
-
-默认值：1。
-
-取值范围：(0, +∞)的整数。
+| 参数名 | 类型 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- |
+| items | HdsSideMenuMainItem[] | 否 | @Param | 一级菜单栏组，数量最多为5个。 |
+| selectedIndex | number | 是 | @Param @Require | 当前选中的菜单栏。 取值范围：大于等于-1的整数。 -1表示当前侧边菜单栏没有菜单被选中。 |
+| $selectedIndex | OnSelectedIndexChange | 否 | @Event | 用于双向绑定selectedIndex。 |
+| maxItemTextLines | number | 否 | @Param | 设置最大内容行数。 默认值：1。 取值范围：(0, +∞)的整数。 |
 
 #### build
 
@@ -122,21 +69,9 @@ HdsSideMenuMainItem的构造函数。
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-param
-
-[HdsSideMenuMainItemParam](#section292095817402)
-
-是
-
-HdsSideMenu一级菜单栏的参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| param | HdsSideMenuMainItemParam | 是 | HdsSideMenu一级菜单栏的参数。 |
 
 #### getSideMenuSubItem
 
@@ -152,13 +87,9 @@ getSideMenuSubItem(): HdsSideMenuSubItem[]
 
 **返回值：**
 
-类型
-
-说明
-
-[HdsSideMenuSubItem](#section144191823155313)[]
-
-当前菜单下的二级菜单对象数组。
+| 类型 | 说明 |
+| --- | --- |
+| HdsSideMenuSubItem[] | 当前菜单下的二级菜单对象数组。 |
 
 #### updateBadge
 
@@ -174,31 +105,15 @@ updateBadge(badge?: HdsSideMenuBadgeParam): HdsSideMenuMainItem
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-badge
-
-[HdsSideMenuBadgeParam](#section10384044394)
-
-否
-
-HdsSideMenu上带信息提醒的图标配置信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| badge | HdsSideMenuBadgeParam | 否 | HdsSideMenu上带信息提醒的图标配置信息。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[HdsSideMenuMainItem](#section1050510599502)
-
-当前菜单下的一级菜单对象。
+| 类型 | 说明 |
+| --- | --- |
+| HdsSideMenuMainItem | 当前菜单下的一级菜单对象。 |
 
 #### HdsSideMenuSubItem
 
@@ -226,21 +141,9 @@ HdsSideMenuSubItem的构造函数。
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-param
-
-[HdsSideMenuSubItemParam](#section730054414319)
-
-是
-
-HdsSideMenu二级菜单栏的参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| param | HdsSideMenuSubItemParam | 是 | HdsSideMenu二级菜单栏的参数。 |
 
 #### updateBadge
 
@@ -256,31 +159,15 @@ updateBadge(badge?: HdsSideMenuBadgeParam): HdsSideMenuSubItem
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-badge
-
-[HdsSideMenuBadgeParam](#section10384044394)
-
-否
-
-HdsSideMenu上带信息提醒的图标配置信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| badge | HdsSideMenuBadgeParam | 否 | HdsSideMenu上带信息提醒的图标配置信息。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[HdsSideMenuSubItem](#section144191823155313)
-
-当前菜单下的二级菜单对象。
+| 类型 | 说明 |
+| --- | --- |
+| HdsSideMenuSubItem | 当前菜单下的二级菜单对象。 |
 
 #### HdsSideMenuBadgeParam
 
@@ -292,39 +179,10 @@ HdsSideMenu上带信息提醒的图标配置信息。
 
 **起始版本：**6.0.0(20)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-count
-
-number
-
-否
-
-是
-
-设置提醒消息数。值为0时不显示；值为1时，显示“·”；大于99时，显示“99+”。不支持设置小于0的数字。
-
-默认值：0。
-
-value
-
-string
-
-否
-
-是
-
-提示内容的文本字符串，超长文本换行显示。
-
-默认值：""。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| count | number | 否 | 是 | 设置提醒消息数。值为0时不显示；值为1时，显示“·”；大于99时，显示“99+”。不支持设置小于0的数字。 默认值：0。 |
+| value | string | 否 | 是 | 提示内容的文本字符串，超长文本换行显示。 默认值：""。 |
 
 #### HdsSideMenuBaseItemParam
 
@@ -336,51 +194,15 @@ HdsSideMenu菜单栏基础类。
 
 **起始版本：**6.0.0(20)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-itemId
-
-string
-
-否
-
-是
-
-菜单的id。
-
-默认值：""。
-
-label
-
-[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)
-
-否
-
-是
-
-菜单显示的文本内容。
-
-action
-
-[Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#callback12)<void>
-
-否
-
-是
-
-点击菜单时的回调。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| itemId | string | 否 | 是 | 菜单的id。 默认值：""。 |
+| label | ResourceStr | 否 | 是 | 菜单显示的文本内容。 |
+| action | Callback<void> | 否 | 是 | 点击菜单时的回调。 |
 
 #### HdsSideMenuMainItemParam
 
-HdsSideMenu一级菜单栏配置项，继承自[HdsSideMenuBaseItemParam](#section131215146362)。
+HdsSideMenu一级菜单栏配置项，继承自[HdsSideMenuBaseItemParam](#ZH-CN_TOPIC_0000002553361237__hdssidemenubaseitemparam)。
 
 **模型约束：**此接口仅可在Stage模型下使用。
 
@@ -388,59 +210,16 @@ HdsSideMenu一级菜单栏配置项，继承自[HdsSideMenuBaseItemParam](#secti
 
 **起始版本：**6.0.0(20)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-icon
-
-[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)
-
-否
-
-是
-
-设置一级菜单栏的图标，优先级高于symbol。
-
-symbol
-
-[SymbolGlyphModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#自定义modifier)
-
-否
-
-是
-
-设置一级菜单栏的图标。
-
-hdsSideMenuSubItem
-
-[HdsSideMenuSubItem](#section144191823155313)[]
-
-否
-
-是
-
-设置一级菜单栏中的二级菜单栏数组。二级菜单栏数量最多5个。
-
-badge
-
-[HdsSideMenuBadgeParam](#section10384044394)
-
-否
-
-是
-
-设置一级菜单栏上带信息提醒的图标配置信息。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| icon | ResourceStr | 否 | 是 | 设置一级菜单栏的图标，优先级高于symbol。 |
+| symbol | SymbolGlyphModifier | 否 | 是 | 设置一级菜单栏的图标。 |
+| hdsSideMenuSubItem | HdsSideMenuSubItem[] | 否 | 是 | 设置一级菜单栏中的二级菜单栏数组。二级菜单栏数量最多5个。 |
+| badge | HdsSideMenuBadgeParam | 否 | 是 | 设置一级菜单栏上带信息提醒的图标配置信息。 |
 
 #### HdsSideMenuSubItemParam
 
-HdsSideMenu二级菜单栏配置项，继承自[HdsSideMenuBaseItemParam](#section131215146362)。
+HdsSideMenu二级菜单栏配置项，继承自[HdsSideMenuBaseItemParam](#ZH-CN_TOPIC_0000002553361237__hdssidemenubaseitemparam)。
 
 **模型约束：**此接口仅可在Stage模型下使用。
 
@@ -448,25 +227,9 @@ HdsSideMenu二级菜单栏配置项，继承自[HdsSideMenuBaseItemParam](#secti
 
 **起始版本：**6.0.0(20)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-badge
-
-[HdsSideMenuBadgeParam](#section10384044394)
-
-否
-
-是
-
-设置二级菜单栏上带信息提醒的图标配置信息。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| badge | HdsSideMenuBadgeParam | 否 | 是 | 设置二级菜单栏上带信息提醒的图标配置信息。 |
 
 #### 事件
 
@@ -474,7 +237,7 @@ badge
 
 type OnSelectedIndexChange = (selectedIndex: number) => void
 
-HdsSideMenu的selectIndex发生变化时的回调函数。
+HdsSideMenu的selectedIndex发生变化时的回调函数。
 
 **模型约束：**此接口仅可在Stage模型下使用。
 
@@ -484,21 +247,9 @@ HdsSideMenu的selectIndex发生变化时的回调函数。
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-selectedIndex
-
-number
-
-是
-
-选择项的序号。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| selectedIndex | number | 是 | 选择项的序号。 |
 
 #### 示例
 
@@ -597,6 +348,6 @@ struct Index {
         },
       })
     }
-  }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553365703.webp)

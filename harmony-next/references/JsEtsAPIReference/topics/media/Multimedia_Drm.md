@@ -12,4 +12,6 @@
 
 #### 文件汇总
 
-名称描述[native_cencinfo.h](../../capi/headers/native_cencinfo.h.md)声明用于设置解密参数的Native API。
+| 名称 | 描述 |
+| --- | --- |
+| [native_cencinfo.h](native_cencinfo.h.md) | 声明用于设置解密参数的Native API。 |

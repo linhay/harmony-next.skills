@@ -34,7 +34,9 @@ import { HashMap } from '@kit.ArkTS';
 
 **系统能力：** SystemCapability.Utils.Lang
 
-名称类型只读可选说明lengthnumber是否HashMap的元素个数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| length | number | 是 | 否 | HashMap的元素个数。 |
 
 #### constructor
 
@@ -48,9 +50,11 @@ HashMap的构造函数。
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码]([语言基础类库错误码](../../errors/语言基础类库错误码.md).md)。
 
-错误码ID错误信息10200012The HashMap's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200012 | The HashMap's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -70,13 +74,17 @@ isEmpty(): boolean
 
 **返回值：**
 
-类型说明boolean为空返回true，不为空返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 为空返回true，不为空返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The isEmpty method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The isEmpty method cannot be bound. |
 
 **示例：**
 
@@ -98,17 +106,23 @@ hasKey(key: K): boolean
 
 **参数：**
 
-参数名类型必填说明keyK是指定Key。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | K | 是 | 指定Key。 |
 
 **返回值：**
 
-类型说明boolean包含指定Key返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 包含指定Key返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The hasKey method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The hasKey method cannot be bound. |
 
 **示例：**
 
@@ -131,17 +145,23 @@ hasValue(value: V): boolean
 
 **参数：**
 
-参数名类型必填说明valueV是指定value。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | V | 是 | 指定value。 |
 
 **返回值：**
 
-类型说明boolean包含指定的value返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 包含指定的value返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The hasValue method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The hasValue method cannot be bound. |
 
 **示例：**
 
@@ -164,17 +184,23 @@ get(key: K): V
 
 **参数：**
 
-参数名类型必填说明keyK是查找的指定key。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | K | 是 | 查找的指定key。 |
 
 **返回值：**
 
-类型说明V返回key映射的value值。
+| 类型 | 说明 |
+| --- | --- |
+| V | 返回key映射的value值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The get method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The get method cannot be bound. |
 
 **示例：**
 
@@ -198,13 +224,18 @@ setAll(map: HashMap<K, V>): void
 
 **参数：**
 
-参数名类型必填说明mapHashMap<K, V>是被添加元素的hashMap。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| map | HashMap<K, V> | 是 | 被添加元素的hashMap。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The setAll method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The setAll method cannot be bound. |
 
 **示例：**
 
@@ -231,17 +262,25 @@ set(key: K, value: V): Object
 
 **参数：**
 
-参数名类型必填说明keyK是添加或更新成员数据的键名。valueV是添加或更新成员数据的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | K | 是 | 添加或更新成员数据的键名。 |
+| value | V | 是 | 添加或更新成员数据的值。 |
 
 **返回值：**
 
-类型说明Object返回添加或更新后的hashMap。
+| 类型 | 说明 |
+| --- | --- |
+| Object | 返回添加或更新后的hashMap。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.10200011The set method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. |
+| 10200011 | The set method cannot be bound. |
 
 **示例：**
 
@@ -263,17 +302,23 @@ remove(key: K): V
 
 **参数：**
 
-参数名类型必填说明keyK是指定key。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | K | 是 | 指定key。 |
 
 **返回值：**
 
-类型说明V返回删除元素的值。
+| 类型 | 说明 |
+| --- | --- |
+| V | 返回删除元素的值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The remove method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The remove method cannot be bound. |
 
 **示例：**
 
@@ -297,9 +342,11 @@ clear(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The clear method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The clear method cannot be bound. |
 
 **示例：**
 
@@ -324,13 +371,17 @@ keys(): IterableIterator<K>
 
 **返回值：**
 
-类型说明IterableIterator<K>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<K> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The keys method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The keys method cannot be bound. |
 
 **示例：**
 
@@ -358,13 +409,17 @@ values(): IterableIterator<V>
 
 **返回值：**
 
-类型说明IterableIterator<V>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<V> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The values method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The values method cannot be bound. |
 
 **示例：**
 
@@ -392,17 +447,24 @@ replace(key: K, newValue: V): boolean
 
 **参数：**
 
-参数名类型必填说明keyK是依据key指定替换的元素。newValueV是替换成员数据的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | K | 是 | 依据key指定替换的元素。 |
+| newValue | V | 是 | 替换成员数据的值。 |
 
 **返回值：**
 
-类型说明boolean是否成功对已有数据进行替换，成功返回true，失败返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否成功对已有数据进行替换，成功返回true，失败返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The replace method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The replace method cannot be bound. |
 
 **示例：**
 
@@ -425,17 +487,27 @@ forEach(callbackFn: (value?: V, key?: K, map?: HashMap<K, V>) => void, thisArg?:
 
 **参数：**
 
-参数名类型必填说明callbackFnfunction是回调函数。thisArgObject否callbackFn被调用时用作this值，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | function | 是 | 回调函数。 |
+| thisArg | Object | 否 | callbackFn被调用时用作this值，默认值为当前实例对象。 |
 
 callbackFn的参数说明：
 
-参数名类型必填说明valueV否当前遍历到的元素键值对的值。keyK否当前遍历到的元素键值对的键。mapHashMap<K, V>否当前调用forEach方法的实例对象，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | V | 否 | 当前遍历到的元素键值对的值。 |
+| key | K | 否 | 当前遍历到的元素键值对的键。 |
+| map | HashMap<K, V> | 否 | 当前调用forEach方法的实例对象，默认值为当前实例对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The forEach method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The forEach method cannot be bound. |
 
 **示例：**
 
@@ -474,13 +546,17 @@ entries(): IterableIterator<[K, V]>
 
 **返回值：**
 
-类型说明IterableIterator<[K, V]>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<[K, V]> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The entries method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The entries method cannot be bound. |
 
 **示例：**
 
@@ -521,13 +597,17 @@ for(let i = 0; i < 10; i++) {
 
 **返回值：**
 
-类型说明IterableIterator<[K, V]>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<[K, V]> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The Symbol.iterator method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The Symbol.iterator method cannot be bound. |
 
 **示例：**
 

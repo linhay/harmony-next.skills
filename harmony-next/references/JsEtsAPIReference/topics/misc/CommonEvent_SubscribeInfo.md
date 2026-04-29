@@ -12,4 +12,4 @@ typedef struct CommonEvent_SubscribeInfo CommonEvent_SubscribeInfo
 
 **相关模块：**[OH_CommonEvent](OH_CommonEvent.md)
 
-**所在头文件：**[oh_commonevent.h](../../capi/headers/oh_commonevent.h.md)
+**所在头文件：**[oh_commonevent.h](../../topics/misc/[oh_commonevent.h](oh_commonevent.h.md).md)

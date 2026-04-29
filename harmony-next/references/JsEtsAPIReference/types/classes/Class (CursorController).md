@@ -12,7 +12,7 @@
 
 -
 
-以下API需先使用UIContext中的[getCursorController()](Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getcursorcontroller12)方法获取CursorController实例，再通过此实例调用对应方法。
+以下API需先使用UIContext中的[getCursorController()](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getcursorcontroller12)方法获取CursorController实例，再通过此实例调用对应方法。
 
 #### restoreDefault12+
 
@@ -51,12 +51,11 @@ struct CursorControlExample {
         })
     }.width('100%')
   }
-}
 ```
 
 #### setCursor12+
 
-setCursor(value: PointerStyle): void
+setCursor(value: [PointerStyle](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__pointerstyle12)): void
 
 更改当前的鼠标光标样式。
 
@@ -68,11 +67,13 @@ setCursor(value: PointerStyle): void
 
 **参数：**
 
-参数名类型必填说明value[PointerStyle](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__pointerstyle12)是光标样式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [PointerStyle](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__pointerstyle12) | 是 | 光标样式。 |
 
 **示例：**
 
-当光标进入蓝框时，通过CursorController的setCursor方法修改光标样式为PointerStyle.WEST。
+当光标进入蓝框时，通过CursorController的setCursor方法修改光标样式为[PointerStyle](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__pointerstyle12).WEST。
 
 ```ets
 import { pointer } from '@kit.InputKit';
@@ -96,5 +97,6 @@ struct CursorControlExample {
         })
     }.width('100%')
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553364597.webp)

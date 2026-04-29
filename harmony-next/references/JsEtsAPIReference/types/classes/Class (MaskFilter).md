@@ -26,7 +26,7 @@ import { drawing } from '@kit.ArkGraphics2D';
 
 #### createBlurMaskFilter12+
 
-static createBlurMaskFilter(blurType: BlurType, sigma: number): MaskFilter
+static createBlurMaskFilter(blurType: [BlurType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__blurtype12), sigma: number): MaskFilter
 
 创建具有模糊效果的蒙版滤镜。
 
@@ -34,28 +34,34 @@ static createBlurMaskFilter(blurType: BlurType, sigma: number): MaskFilter
 
 **参数：**
 
-参数名类型必填说明blurType[BlurType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__blurtype12)是模糊类型。sigmanumber是高斯模糊的标准偏差，必须为大于0的浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| blurType | [BlurType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__blurtype12) | 是 | 模糊类型。 |
+| sigma | number | 是 | 高斯模糊的标准偏差，必须为大于0的浮点数。 |
 
 **返回值：**
 
-类型说明[MaskFilter](Class (MaskFilter).md)返回创建的蒙版滤镜对象。
+| 类型 | 说明 |
+| --- | --- |
+| MaskFilter | 返回创建的蒙版滤镜对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
 
 **示例：**
 
 ```ets
 import { RenderNode } from '@kit.ArkUI';
-import { common2D, drawing } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
 
 class DrawingRenderNode extends RenderNode {
   draw(context : DrawContext) {
     const canvas = context.canvas;
     let maskFilter = drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.OUTER, 10);
   }
-}
 ```

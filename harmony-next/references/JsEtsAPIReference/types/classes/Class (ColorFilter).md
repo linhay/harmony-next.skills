@@ -20,9 +20,9 @@
 import { drawing } from '@kit.ArkGraphics2D';
 ```
 
-#### createBlendModeColorFilter
+#### create[BlendMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__blendmode)ColorFilter
 
-createBlendModeColorFilter(color: common2D.Color, mode: BlendMode) : ColorFilter
+create[BlendMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__blendmode)ColorFilter(color: common2D.Color, mode: BlendMode) : ColorFilter
 
 创建指定的颜色和混合模式的颜色滤波器。
 
@@ -30,17 +30,24 @@ createBlendModeColorFilter(color: common2D.Color, mode: BlendMode) : ColorFilter
 
 **参数：**
 
-参数名类型必填说明color[common2D.Color](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__color)是ARGB格式的颜色，每个颜色通道的值是0到255之间的整数。mode[BlendMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__blendmode)是颜色的混合模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| color | common2D.Color | 是 | ARGB格式的颜色，每个颜色通道的值是0到255之间的整数。 |
+| mode | [BlendMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__blendmode) | 是 | 颜色的混合模式。 |
 
 **返回值：**
 
-类型说明[ColorFilter](Class (ColorFilter).md)返回颜色滤波器。
+| 类型 | 说明 |
+| --- | --- |
+| ColorFilter | 返回颜色滤波器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
 
 **示例：**
 
@@ -51,9 +58,9 @@ const color : common2D.Color = { alpha: 255, red: 255, green: 0, blue: 0 };
 let colorFilter = drawing.ColorFilter.createBlendModeColorFilter(color, drawing.BlendMode.SRC);
 ```
 
-#### createBlendModeColorFilter18+
+#### create[BlendMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__blendmode)ColorFilter18+
 
-static createBlendModeColorFilter(color: common2D.Color | number, mode: BlendMode) : ColorFilter
+static create[BlendMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__blendmode)ColorFilter(color: common2D.Color | number, mode: BlendMode) : ColorFilter
 
 使用指定的颜色和混合模式创建颜色滤波器。
 
@@ -61,17 +68,24 @@ static createBlendModeColorFilter(color: common2D.Color | number, mode: BlendMod
 
 **参数：**
 
-参数名类型必填说明color[common2D.Color](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__color) | number是颜色，可以用16进制ARGB格式的无符号整数表示。mode[BlendMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__blendmode)是颜色的混合模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| color | common2D.Color | number | 是 | 颜色，可以用16进制ARGB格式的无符号整数表示。 |
+| mode | [BlendMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__blendmode) | 是 | 颜色的混合模式。 |
 
 **返回值：**
 
-类型说明[ColorFilter](Class (ColorFilter).md)返回颜色滤波器。
+| 类型 | 说明 |
+| --- | --- |
+| ColorFilter | 返回颜色滤波器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
 
 **示例：**
 
@@ -91,17 +105,24 @@ createComposeColorFilter(outer: ColorFilter, inner: ColorFilter) : ColorFilter
 
 **参数：**
 
-参数名类型必填说明outer[ColorFilter](Class (ColorFilter).md)是组合滤波器中后生效的颜色滤波器。inner[ColorFilter](Class (ColorFilter).md)是组合滤波器中先生效的颜色滤波器。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| outer | ColorFilter | 是 | 组合滤波器中后生效的颜色滤波器。 |
+| inner | ColorFilter | 是 | 组合滤波器中先生效的颜色滤波器。 |
 
 **返回值：**
 
-类型说明[ColorFilter](Class (ColorFilter).md)返回颜色滤波器。
+| 类型 | 说明 |
+| --- | --- |
+| ColorFilter | 返回颜色滤波器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -124,7 +145,9 @@ createLinearToSRGBGamma() : ColorFilter
 
 **返回值：**
 
-类型说明[ColorFilter](Class (ColorFilter).md)返回颜色滤波器。
+| 类型 | 说明 |
+| --- | --- |
+| ColorFilter | 返回颜色滤波器。 |
 
 **示例：**
 
@@ -144,7 +167,9 @@ createSRGBGammaToLinear() : ColorFilter
 
 **返回值：**
 
-类型说明[ColorFilter](Class (ColorFilter).md)返回颜色滤波器。
+| 类型 | 说明 |
+| --- | --- |
+| ColorFilter | 返回颜色滤波器。 |
 
 **示例：**
 
@@ -164,7 +189,9 @@ createLumaColorFilter() : ColorFilter
 
 **返回值：**
 
-类型说明[ColorFilter](Class (ColorFilter).md)返回颜色滤波器。
+| 类型 | 说明 |
+| --- | --- |
+| ColorFilter | 返回颜色滤波器。 |
 
 **示例：**
 
@@ -184,17 +211,23 @@ static createMatrixColorFilter(matrix: Array<number>): ColorFilter
 
 **参数：**
 
-参数名类型必填说明matrixArray<number>是长度为20的数组，表示用于颜色变换的4*5矩阵。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| matrix | Array<number> | 是 | 长度为20的数组，表示用于颜色变换的4*5矩阵。 |
 
 **返回值：**
 
-类型说明[ColorFilter](Class (ColorFilter).md)返回颜色滤波器。
+| 类型 | 说明 |
+| --- | --- |
+| ColorFilter | 返回颜色滤波器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
 
 **示例：**
 
@@ -220,11 +253,16 @@ static createLightingColorFilter(mutColor: common2D.Color | number, addColor: co
 
 **参数：**
 
-参数名类型必填说明mutColor[common2D.Color](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__color) | number是用来进行乘法运算的颜色，ARGB格式的颜色，每个颜色通道是0到255之间的整数。为number类型时必须是16进制ARGB格式的无符号整数。addColor[common2D.Color](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__color) | number是用来进行加法运算的颜色，ARGB格式的颜色，每个颜色通道是0到255之间的整数。为number类型时必须是16进制ARGB格式的无符号整数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mutColor | common2D.Color | number | 是 | 用来进行乘法运算的颜色，ARGB格式的颜色，每个颜色通道是0到255之间的整数。为number类型时必须是16进制ARGB格式的无符号整数。 |
+| addColor | common2D.Color | number | 是 | 用来进行加法运算的颜色，ARGB格式的颜色，每个颜色通道是0到255之间的整数。为number类型时必须是16进制ARGB格式的无符号整数。 |
 
 **返回值：**
 
-类型说明[ColorFilter](Class (ColorFilter).md)返回一个颜色滤波器。
+| 类型 | 说明 |
+| --- | --- |
+| ColorFilter | 返回一个颜色滤波器。 |
 
 **示例：**
 

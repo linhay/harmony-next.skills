@@ -30,7 +30,9 @@ getFamilyName(): string
 
 **返回值：**
 
-类型说明string返回字体的族名。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回字体的族名。 |
 
 **示例：**
 
@@ -52,11 +54,15 @@ makeFromCurrent(typefaceArguments: TypefaceArguments): Typeface
 
 **参数：**
 
-参数名类型必填说明typefaceArguments[TypefaceArguments](Class (TypefaceArguments).md)是字体属性。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| typefaceArguments | TypefaceArguments | 是 | 字体属性。 |
 
 **返回值：**
 
-类型说明[Typeface](Class (Typeface).md)返回字体对象（异常情况下会返回空指针）。
+| 类型 | 说明 |
+| --- | --- |
+| Typeface | 返回字体对象（异常情况下会返回空指针）。 |
 
 **示例：**
 
@@ -76,7 +82,6 @@ class TextRenderNode extends RenderNode {
     const textBlob = drawing.TextBlob.makeFromString("Hello World", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
     canvas.drawTextBlob(textBlob, 60, 100);
   }
-}
 ```
 
 #### makeFromFile12+
@@ -91,17 +96,23 @@ static makeFromFile(filePath: string): Typeface
 
 **参数：**
 
-参数名类型必填说明filePathstring是表示字体资源存放的路径。应用沙箱路径和真实物理路径的对应关系请参考[应用沙箱路径和真实物理路径的对应关系](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-sandbox-directory#应用沙箱路径和真实物理路径的对应关系)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| filePath | string | 是 | 表示字体资源存放的路径。应用沙箱路径和真实物理路径的对应关系请参考应用沙箱路径和真实物理路径的对应关系。 |
 
 **返回值：**
 
-类型说明[Typeface](Class (Typeface).md)返回Typeface对象。
+| 类型 | 说明 |
+| --- | --- |
+| Typeface | 返回Typeface对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -119,12 +130,11 @@ class TextRenderNode extends RenderNode {
     const textBlob = drawing.TextBlob.makeFromString("Hello World", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
     canvas.drawTextBlob(textBlob, 60, 100);
   }
-}
 ```
 
 #### makeFromRawFile18+
 
-static makeFromRawFile(rawfile: Resource): Typeface
+static makeFromRawFile(rawfile: [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)): Typeface
 
 使用指定的字体文件构造字体，其中要求指定的字体文件需保存在应用资源文件夹的rawfile路径下。
 
@@ -134,11 +144,15 @@ static makeFromRawFile(rawfile: Resource): Typeface
 
 **参数：**
 
-参数名类型必填说明rawfile[Resource](../../topics/misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)是指定字体文件对应的资源对象。当前只支持$rawfile格式引用的资源对象，对应格式写为$rawfile('filePath')，其中filePath为指定字体文件相对于工程中resources/rawfile目录的相对路径。如将字体文件直接存放在resources/rawfile目录下，则引用格式应写为：$rawfile('HarmonyOS_Sans_Bold.ttf')；也可以创建子目录，将字体文件存放在resources/rawfile/ttf下，则引用格式应写为：$rawfile('ttf/HarmonyOS_Sans_Bold.ttf')。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rawfile | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 是 | 指定字体文件对应的资源对象。当前只支持$rawfile格式引用的资源对象，对应格式写为$rawfile('filePath')，其中filePath为指定字体文件相对于工程中resources/rawfile目录的相对路径。如将字体文件直接存放在resources/rawfile目录下，则引用格式应写为：$rawfile('HarmonyOS_Sans_Bold.ttf')；也可以创建子目录，将字体文件存放在resources/rawfile/ttf下，则引用格式应写为：$rawfile('ttf/HarmonyOS_Sans_Bold.ttf')。 |
 
 **返回值：**
 
-类型说明[Typeface](Class (Typeface).md)返回Typeface对象（异常情况下会返回空指针）。
+| 类型 | 说明 |
+| --- | --- |
+| Typeface | 返回Typeface对象（异常情况下会返回空指针）。 |
 
 **示例：**
 
@@ -155,7 +169,6 @@ class TextRenderNode extends RenderNode {
     const textBlob = drawing.TextBlob.makeFromString("Hello World", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
     canvas.drawTextBlob(textBlob, 60, 100);
   }
-}
 ```
 
 #### makeFromFileWithArguments20+
@@ -170,11 +183,16 @@ static makeFromFileWithArguments(filePath: string, typefaceArguments: TypefaceAr
 
 **参数：**
 
-参数名类型必填说明filePathstring是表示字体资源存放的路径。应用沙箱路径和真实物理路径的对应关系请参考[应用沙箱路径和真实物理路径的对应关系](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-sandbox-directory#应用沙箱路径和真实物理路径的对应关系)。typefaceArguments[TypefaceArguments](Class (TypefaceArguments).md)是表示字体属性。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| filePath | string | 是 | 表示字体资源存放的路径。应用沙箱路径和真实物理路径的对应关系请参考应用沙箱路径和真实物理路径的对应关系。 |
+| typefaceArguments | TypefaceArguments | 是 | 表示字体属性。 |
 
 **返回值：**
 
-类型说明[Typeface](Class (Typeface).md)返回字体对象（异常情况下会返回空指针）。
+| 类型 | 说明 |
+| --- | --- |
+| Typeface | 返回字体对象（异常情况下会返回空指针）。 |
 
 **示例：**
 
@@ -193,12 +211,11 @@ class TextRenderNode extends RenderNode {
     const textBlob = drawing.TextBlob.makeFromString("Hello World", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
     canvas.drawTextBlob(textBlob, 60, 100);
   }
-}
 ```
 
 #### makeFromRawFileWithArguments20+
 
-static makeFromRawFileWithArguments(rawfile: Resource, typefaceArguments: TypefaceArguments): Typeface
+static makeFromRawFileWithArguments(rawfile: [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource), typefaceArguments: TypefaceArguments): Typeface
 
 使用指定的字体文件和字体属性构造字体，其中要求指定的字体文件需保存在应用资源文件夹的rawfile路径下。
 
@@ -208,11 +225,16 @@ static makeFromRawFileWithArguments(rawfile: Resource, typefaceArguments: Typefa
 
 **参数：**
 
-参数名类型必填说明rawfile[Resource](../../topics/misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)是指定字体文件对应的资源对象。当前只支持$rawfile格式引用的资源对象，对应格式写为$rawfile('filePath')，其中filePath为指定字体文件相对于工程中resources/rawfile目录的相对路径。typefaceArguments[TypefaceArguments](Class (TypefaceArguments).md)是表示字体属性。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rawfile | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 是 | 指定字体文件对应的资源对象。当前只支持$rawfile格式引用的资源对象，对应格式写为$rawfile('filePath')，其中filePath为指定字体文件相对于工程中resources/rawfile目录的相对路径。 |
+| typefaceArguments | TypefaceArguments | 是 | 表示字体属性。 |
 
 **返回值：**
 
-类型说明[Typeface](Class (Typeface).md)返回字体对象（异常情况下会返回空指针）。
+| 类型 | 说明 |
+| --- | --- |
+| Typeface | 返回字体对象（异常情况下会返回空指针）。 |
 
 **示例：**
 
@@ -230,5 +252,52 @@ class TextRenderNode extends RenderNode {
     const textBlob = drawing.TextBlob.makeFromString("Hello World", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
     canvas.drawTextBlob(textBlob, 60, 100);
   }
-}
+```
+
+**isBold23+**
+
+isBold(): boolean
+
+检查字体是否加粗。
+
+系统能力： SystemCapability.Graphics.Drawing
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回当前字体是否加粗。true表示字体加粗，false表示字体未加粗。 |
+
+示例：
+
+```ets
+import { drawing } from '@kit.ArkGraphics2D';
+
+const font = new drawing.Font();
+let typeface = font.getTypeface();
+let result = typeface.isBold();
+```
+
+**isItalic23+**
+
+isItalic(): boolean
+
+检查字体是否是斜体。
+
+系统能力： SystemCapability.Graphics.Drawing
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回当前字体是否是斜体。true表示字体是斜体，false表示字体不是斜体。 |
+
+示例：
+
+```ets
+import { drawing } from '@kit.ArkGraphics2D';
+
+const font = new drawing.Font();
+let typeface = font.getTypeface();
+let result = typeface.isItalic();
 ```

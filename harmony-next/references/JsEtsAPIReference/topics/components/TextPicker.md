@@ -1,4 +1,4 @@
-# TextPicker
+# [Text](Text.md)Picker
 
 滑动选择文本、图片或图文混排内容的组件，用户可以按需创建单列数据选择器、多列非联动数据选择器和多列联动数据选择器。
 
@@ -24,7 +24,7 @@
 
 #### 接口
 
-TextPicker(options?: TextPickerOptions)
+[Text](Text.md)Picker(options?: TextPickerOptions)
 
 根据指定的数据列表创建文本选择器。
 
@@ -34,91 +34,24 @@ TextPicker(options?: TextPickerOptions)
 
 **参数：**
 
-参数名类型必填说明options[TextPickerOptions](#ZH-CN_TOPIC_0000002529444853__textpickeroptions对象说明)否配置文本选择器的参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | [Text](Text.md)PickerOptions | 否 | 配置文本选择器的参数。 |
 
-#### TextPickerOptions对象说明
+#### [Text](Text.md)PickerOptions对象说明
 
 文本选择器的参数说明。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明range
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| range | string[] | string[][]10+ | [Resource](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | TextPickerRangeContent[]10+ | TextCascadePickerRangeContent[]10+ | 否 | 否 | 选择器的数据选择列表。不可设置为空数组，若设置为空数组，则不显示；若动态变化为空数组，则保持当前正常值显示。 说明： 1. 单列数据选择器使用string[]，Resource，TextPickerRangeContent[]类型。 2. 多列非联动数据选择器使用string[][]类型。 3. 多列联动数据选择器使用TextCascadePickerRangeContent[]类型。 4. Resource类型只支持strarray.json。 5. range的类型及列数不可以动态修改。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| selected | number | number[]10+ | 否 | 是 | 设置选中项在数据选择列表中的索引值，索引从0开始。 默认值：0 说明： 1. 单列数据选择器使用number类型。 2. 多列数据选择器使用number[]类型。 3. 从API version 10开始，该参数支持$$双向绑定变量。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| value | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | ResourceStr[] | 否 | 是 | 设置选中项的值，优先级低于selected。 默认值：数据选择列表中第一个元素的值。 说明： 1. 从API version 10开始，该参数支持$$双向绑定变量。 2. 从API version 20开始，支持Resource类型。 3. 只有显示文本列表时该值有效。显示图片或图文混排的列表时，该值无效。 4. 单列数据选择器使用ResourceStr类型。 5. 多列数据选择器使用ResourceStr[]类型。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| columnWidths18+ | [LengthMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetrics12)[] | 否 | 是 | 设置每一列的列宽。 默认值：每一列的列宽相等，为组件宽度除以列数。 说明： 1. 当文本长度大于列宽时，文本被截断。 2. 当设置为异常值时，使用默认值。 3. 支持设置为Undefined和Null，不支持Undefined[]和Null[]。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 
-string[] | string[][]10+ | [Resource](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) |
-
-[TextPickerRangeContent](#ZH-CN_TOPIC_0000002529444853__textpickerrangecontent10对象说明)[]10+ | [TextCascadePickerRangeContent](#ZH-CN_TOPIC_0000002529444853__textcascadepickerrangecontent10对象说明)[]10+
-
-否否
-
-选择器的数据选择列表。不可设置为空数组，若设置为空数组，则不显示；若动态变化为空数组，则保持当前正常值显示。
-
-**说明**：
-
-1. 单列数据选择器使用string[]，[Resource](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)，[TextPickerRangeContent](#ZH-CN_TOPIC_0000002529444853__textpickerrangecontent10对象说明)[]类型。
-
-2. 多列非联动数据选择器使用string[][]类型。
-
-3. 多列联动数据选择器使用[TextCascadePickerRangeContent](#ZH-CN_TOPIC_0000002529444853__textcascadepickerrangecontent10对象说明)[]类型。
-
-4. Resource类型只支持[strarray.json](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-categories-and-access#资源组目录)。
-
-5. range的类型及列数不可以动态修改。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-selectednumber | number[]10+否是
-
-设置选中项在数据选择列表中的索引值，索引从0开始。
-
-默认值：0
-
-**说明**：
-
-1. 单列数据选择器使用number类型。
-
-2. 多列数据选择器使用number[]类型。
-
-3. 从API version 10开始，该参数支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定变量。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-value[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | [ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)[]否是
-
-设置选中项的值，优先级低于selected。
-
-默认值：数据选择列表中第一个元素的值。
-
-**说明**：
-
-1. 从API version 10开始，该参数支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定变量。
-
-2. 从API version 20开始，支持[Resource](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)类型。
-
-3. 只有显示文本列表时该值有效。显示图片或图文混排的列表时，该值无效。
-
-4. 单列数据选择器使用[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)类型。
-
-5. 多列数据选择器使用[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)[]类型。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-columnWidths18+[LengthMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetrics12)[]否是
-
-设置每一列的列宽。
-
-默认值：每一列的列宽相等，为组件宽度除以列数。
-
-**说明**：
-
-1. 当文本长度大于列宽时，文本被截断。
-
-2. 当设置为异常值时，使用默认值。
-
-3. 支持设置为Undefined和Null，不支持Undefined[]和Null[]。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-#### TextPickerRangeContent10+对象说明
+#### [Text](Text.md)PickerRangeContent10+对象说明
 
 单列数据选择器的数据选项内容。
 
@@ -126,15 +59,12 @@ columnWidths18+[LengthMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明iconstring | [Resource](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)否否图片资源。 icon是string类型时，表示图片存放的路径，例如"/common/hello.png"。textstring | [Resource](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)否是
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| icon | string | [Resource](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 否 | 否 | 图片资源。 icon是string类型时，表示图片存放的路径，例如"/common/hello.png"。 |
+| text | string | [Resource](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 否 | 是 | 文本信息。 默认值：空字符串 说明：当文本长度大于列宽时，文本被截断。 |
 
-文本信息。
-
-默认值：空字符串
-
-**说明**：当文本长度大于列宽时，文本被截断。
-
-#### TextCascadePickerRangeContent10+对象说明
+#### [Text](Text.md)CascadePickerRangeContent10+对象说明
 
 多列联动数据选择器的数据选项内容。
 
@@ -142,13 +72,10 @@ columnWidths18+[LengthMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明textstring | [Resource](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)否否
-
-文本信息。
-
-**说明**：当文本长度大于列宽时，文本被截断。
-
-children[TextCascadePickerRangeContent](#ZH-CN_TOPIC_0000002529444853__textcascadepickerrangecontent10对象说明)[]否是联动数据。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| text | string | [Resource](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 否 | 否 | 文本信息。 说明：当文本长度大于列宽时，文本被截断。 |
+| children | [Text](Text.md)CascadePickerRangeContent[] | 否 | 是 | 联动数据。 |
 
 #### DividerOptions12+对象说明
 
@@ -158,45 +85,16 @@ children[TextCascadePickerRangeContent](#ZH-CN_TOPIC_0000002529444853__textcasca
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明strokeWidth[Dimension](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10)否是
-
-分割线的线宽。
-
-默认值：2.0px
-
-单位：默认为vp，也可指定单位为px。
-
-取值范围：strokeWidth小于0取默认值，最大不得超过列高的一半。不支持“百分比”类型。
-
-startMargin[Dimension](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10)否是
-
-分割线与TextPicker侧边起始端的距离。
-
-默认值：0
-
-单位：默认为vp，也可指定单位为px。
-
-取值范围：startMargin小于0时无效，最大值不得超过TextPicker列宽。不支持“百分比”类型。
-
-endMargin[Dimension](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10)否是
-
-分割线与TextPicker侧边结束端的距离。
-
-默认值：0
-
-单位：默认为vp，也可指定单位为px。
-
-取值范围：endMargin小于0时无效，最大值不得超过TextPicker列宽。不支持“百分比”类型。
-
-color[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)否是
-
-分割线的颜色。
-
-默认值：'#33000000'
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| strokeWidth | [Dimension](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10) | 否 | 是 | 分割线的线宽。 默认值：2.0px 单位：默认为vp，也可指定单位为px。 取值范围：strokeWidth小于0取默认值，最大不得超过列高的一半。不支持“百分比”类型。 |
+| startMargin | [Dimension](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10) | 否 | 是 | 分割线与TextPicker侧边起始端的距离。 默认值：0 单位：默认为vp，也可指定单位为px。 取值范围：startMargin小于0时无效，最大值不得超过TextPicker列宽。不支持“百分比”类型。 |
+| endMargin | [Dimension](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10) | 否 | 是 | 分割线与TextPicker侧边结束端的距离。 默认值：0 单位：默认为vp，也可指定单位为px。 取值范围：endMargin小于0时无效，最大值不得超过TextPicker列宽。不支持“百分比”类型。 |
+| color | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 否 | 是 | 分割线的颜色。 默认值：'#33000000' |
 
 #### 属性
 
-除支持[通用属性](../misc/通用属性.md)外，还支持以下属性：
+除支持[通用属性]([通用属性](../misc/通用属性.md).md)外，还支持以下属性：
 
 #### defaultPickerItemHeight
 
@@ -210,27 +108,15 @@ defaultPickerItemHeight(value: number | string)
 
 **参数：**
 
-参数名类型必填说明valuenumber | string是
-
-选择项的高度。
-
-取值范围：
-
-number类型：[0, +∞)，单位为vp。
-
-string类型：仅支持number类型取值的字符串形式，例如"56"。
-
-默认值：选中项56vp，非选中项36vp。
-
-**说明：**
-
-设置该参数后，选中项与非选中项的高度均为所设置的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | string | 是 | 选择项的高度。 取值范围： number类型：[0, +∞)，单位为vp。 string类型：仅支持number类型取值的字符串形式，例如"56"。 默认值：选中项56vp，非选中项36vp。 说明： 设置该参数后，选中项与非选中项的高度均为所设置的值。 |
 
 #### defaultPickerItemHeight18+
 
-defaultPickerItemHeight(height: Optional<number | string>)
+defaultPickerItemHeight(height: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<number | string>)
 
-设置选择项的高度。与[defaultPickerItemHeight](#ZH-CN_TOPIC_0000002529444853__defaultpickeritemheight)相比，height参数新增了对undefined类型的支持。
+设置选择项的高度。与[defaultPickerItemHeight](#ZH-CN_TOPIC_0000002553200801__defaultpickeritemheight)相比，height参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -238,27 +124,13 @@ defaultPickerItemHeight(height: Optional<number | string>)
 
 **参数：**
 
-参数名类型必填说明height[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<number | string>是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| height | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<number | string> | 是 | 选择项的高度。 取值范围： number类型：[0, +∞)，单位为vp。 string类型：仅支持number类型取值的字符串形式，例如"56"。 默认值：选中项56vp，非选中项36vp。 说明： 1. 设置该参数后，选中项与非选中项的高度均为所设置的值。 2. 当height的值为undefined时，维持上次取值。 |
 
-选择项的高度。
+#### disappear[Text](Text.md)Style10+
 
-取值范围：
-
-number类型：[0, +∞)，单位为vp。
-
-string类型：仅支持number类型取值的字符串形式，例如"56"。
-
-默认值：选中项56vp，非选中项36vp。
-
-**说明：**
-
-1. 设置该参数后，选中项与非选中项的高度均为所设置的值。
-
-2. 当height的值为undefined时，维持上次取值。
-
-#### disappearTextStyle10+
-
-disappearTextStyle(value: PickerTextStyle)
+disappearTextStyle(value: [PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明))
 
 设置边缘项（以选中项为基准向上或向下的第二项）的文本颜色、字号、字体粗细。
 
@@ -268,33 +140,18 @@ disappearTextStyle(value: PickerTextStyle)
 
 **参数：**
 
-参数名类型必填说明value[PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明)是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明) | 是 | 边缘项的文本颜色、字号、字体粗细。 默认值： { color: '#ff182431', font: { size: '14fp', weight: FontWeight.Regular } } |
 
-边缘项的文本颜色、字号、字体粗细。
-
-默认值：
-
-{
-
-color: '#ff182431',
-
-font: {
-
-size: '14fp',
-
-weight: FontWeight.Regular
-
-}
-
-}
 
 若选中项向上或向下的可视项数低于两项则无对应边缘项。
 
-#### disappearTextStyle18+
+#### disappear[Text](Text.md)Style18+
 
-disappearTextStyle(style: Optional<PickerTextStyle>)
+disappearTextStyle(style: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<PickerTextStyle>)
 
-设置边缘项（以选中项为基准向上或向下的第二项）的文本颜色、字号、字体粗细。与[disappearTextStyle10+](#ZH-CN_TOPIC_0000002529444853__disappeartextstyle10)相比，style参数新增了对undefined类型的支持。
+设置边缘项（以选中项为基准向上或向下的第二项）的文本颜色、字号、字体粗细。与[disappearTextStyle10+](#ZH-CN_TOPIC_0000002553200801__disappeartextstyle10)相比，style参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -302,35 +159,18 @@ disappearTextStyle(style: Optional<PickerTextStyle>)
 
 **参数：**
 
-参数名类型必填说明style[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明)>是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| style | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明)> | 是 | 边缘项的文本颜色、字号、字体粗细。 默认值： { color: '#ff182431', font: { size: '14fp', weight: FontWeight.Regular } } 当style的值为undefined时，使用默认值。 |
 
-边缘项的文本颜色、字号、字体粗细。
-
-默认值：
-
-{
-
-color: '#ff182431',
-
-font: {
-
-size: '14fp',
-
-weight: FontWeight.Regular
-
-}
-
-}
-
-当style的值为undefined时，使用默认值。
 
 若选中项向上或向下的可视项数低于两项则无对应边缘项。
 
-#### disappearTextStyle20+
+#### disappear[Text](Text.md)Style20+
 
-disappearTextStyle(style: Optional<PickerTextStyle|TextPickerTextStyle>)
+disappearTextStyle(style: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<PickerTextStyle|TextPickerTextStyle>)
 
-设置边缘项（以选中项为基准向上或向下的第二项）的文本颜色、字号、字体粗细、最大字号、最小字号、超长文本截断方式。与[disappearTextStyle](#ZH-CN_TOPIC_0000002529444853__disappeartextstyle18)18+相比，style参数新增了对[TextPickerTextStyle](#ZH-CN_TOPIC_0000002529444853__textpickertextstyle15类型说明)类型的支持。
+设置边缘项（以选中项为基准向上或向下的第二项）的文本颜色、字号、字体粗细、最大字号、最小字号、超长文本截断方式。与[disappearTextStyle](#ZH-CN_TOPIC_0000002553200801__disappeartextstyle18)18+相比，style参数新增了对[TextPickerTextStyle](#ZH-CN_TOPIC_0000002553200801__textpickertextstyle15类型说明)类型的支持。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -338,39 +178,16 @@ disappearTextStyle(style: Optional<PickerTextStyle|TextPickerTextStyle>)
 
 **参数：**
 
-参数名类型必填说明style[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明)|[TextPickerTextStyle](#ZH-CN_TOPIC_0000002529444853__textpickertextstyle15类型说明)>是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| style | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明)|TextPickerTextStyle> | 是 | 边缘项的文本颜色、字号、字体粗细、最大字号、最小字号、超长文本截断方式。 默认值： { color: '#ff182431', font: { size: '14fp', weight: FontWeight.Regular }, minFontSize: 0, maxFontSize: 0, overflow: TextOverflow.Clip } 当style的值为undefined时，使用默认值。 |
 
-边缘项的文本颜色、字号、字体粗细、最大字号、最小字号、超长文本截断方式。
-
-默认值：
-
-{
-
-color: '#ff182431',
-
-font: {
-
-size: '14fp',
-
-weight: FontWeight.Regular
-
-},
-
-minFontSize: 0,
-
-maxFontSize: 0,
-
-overflow: TextOverflow.Clip
-
-}
-
-当style的值为undefined时，使用默认值。
 
 若选中项向上或向下的可视项数低于两项则无对应边缘项。
 
 #### textStyle10+
 
-textStyle(value: PickerTextStyle)
+textStyle(value: [PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明))
 
 设置待选项（以选中项为基准向上或向下的第一项）的文本颜色、字号、字体粗细。
 
@@ -380,33 +197,18 @@ textStyle(value: PickerTextStyle)
 
 **参数：**
 
-参数名类型必填说明value[PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明)是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明) | 是 | 待选项的文本颜色、字号、字体粗细。 默认值： { color: '#ff182431', font: { size: '16fp', weight: FontWeight.Regular } } |
 
-待选项的文本颜色、字号、字体粗细。
-
-默认值：
-
-{
-
-color: '#ff182431',
-
-font: {
-
-size: '16fp',
-
-weight: FontWeight.Regular
-
-}
-
-}
 
 若选中项向上或向下可视项数低于一项则无对应待选项。
 
 #### textStyle18+
 
-textStyle(style: Optional<PickerTextStyle>)
+textStyle(style: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<PickerTextStyle>)
 
-设置待选项（以选中项为基准向上或向下的第一项）的文本颜色、字号、字体粗细。与[textStyle10+](#ZH-CN_TOPIC_0000002529444853__textstyle10)相比，style参数新增了对undefined类型的支持。
+设置待选项（以选中项为基准向上或向下的第一项）的文本颜色、字号、字体粗细。与[textStyle10+](#ZH-CN_TOPIC_0000002553200801__textstyle10)相比，style参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -414,35 +216,18 @@ textStyle(style: Optional<PickerTextStyle>)
 
 **参数：**
 
-参数名类型必填说明style[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明)>是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| style | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明)> | 是 | 待选项的文本颜色、字号、字体粗细。 默认值： { color: '#ff182431', font: { size: '16fp', weight: FontWeight.Regular } } 当style的值为undefined时，使用默认值。 |
 
-待选项的文本颜色、字号、字体粗细。
-
-默认值：
-
-{
-
-color: '#ff182431',
-
-font: {
-
-size: '16fp',
-
-weight: FontWeight.Regular
-
-}
-
-}
-
-当style的值为undefined时，使用默认值。
 
 若选中项向上或向下可视项数低于一项则无对应待选项。
 
 #### textStyle20+
 
-textStyle(style: Optional<PickerTextStyle|TextPickerTextStyle>)
+textStyle(style: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<PickerTextStyle|TextPickerTextStyle>)
 
-设置待选项（以选中项为基准向上或向下的第一项）的文本颜色、字号、字体粗细、最大字号、最小字号、超长文本截断方式。与[textStyle](#ZH-CN_TOPIC_0000002529444853__textstyle18)18+相比，style参数新增了对[TextPickerTextStyle](#ZH-CN_TOPIC_0000002529444853__textpickertextstyle15类型说明)类型的支持。
+设置待选项（以选中项为基准向上或向下的第一项）的文本颜色、字号、字体粗细、最大字号、最小字号、超长文本截断方式。与[textStyle](#ZH-CN_TOPIC_0000002553200801__textstyle18)18+相比，style参数新增了对[TextPickerTextStyle](#ZH-CN_TOPIC_0000002553200801__textpickertextstyle15类型说明)类型的支持。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -450,39 +235,16 @@ textStyle(style: Optional<PickerTextStyle|TextPickerTextStyle>)
 
 **参数：**
 
-参数名类型必填说明style[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明)|[TextPickerTextStyle](#ZH-CN_TOPIC_0000002529444853__textpickertextstyle15类型说明)>是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| style | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明)|TextPickerTextStyle> | 是 | 待选项的文本颜色、字号、字体粗细、最大字号、最小字号、超长文本截断方式。 默认值： { color: '#ff182431', font: { size: '16fp', weight: FontWeight.Regular }, minFontSize: 0, maxFontSize: 0, overflow: TextOverflow.Clip } 当style的值为undefined时，使用默认值。 |
 
-待选项的文本颜色、字号、字体粗细、最大字号、最小字号、超长文本截断方式。
-
-默认值：
-
-{
-
-color: '#ff182431',
-
-font: {
-
-size: '16fp',
-
-weight: FontWeight.Regular
-
-},
-
-minFontSize: 0,
-
-maxFontSize: 0,
-
-overflow: TextOverflow.Clip
-
-}
-
-当style的值为undefined时，使用默认值。
 
 若选中项向上或向下可视项数低于一项则无对应待选项。
 
-#### selectedTextStyle10+
+#### selected[Text](Text.md)Style10+
 
-selectedTextStyle(value: PickerTextStyle)
+selectedTextStyle(value: [PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明))
 
 设置选中项的文本颜色、字号、字体粗细。
 
@@ -494,31 +256,15 @@ selectedTextStyle(value: PickerTextStyle)
 
 **参数：**
 
-参数名类型必填说明value[PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明)是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明) | 是 | 选中项的文本颜色、字号、字体粗细。 默认值： { color: '#ff007dff', font: { size: '20fp', weight: FontWeight.Medium } } |
 
-选中项的文本颜色、字号、字体粗细。
+#### selected[Text](Text.md)Style18+
 
-默认值：
+selectedTextStyle(style: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<PickerTextStyle>)
 
-{
-
-color: '#ff007dff',
-
-font: {
-
-size: '20fp',
-
-weight: FontWeight.Medium
-
-}
-
-}
-
-#### selectedTextStyle18+
-
-selectedTextStyle(style: Optional<PickerTextStyle>)
-
-设置选中项的文本颜色、字号、字体粗细。与[selectedTextStyle10+](#ZH-CN_TOPIC_0000002529444853__selectedtextstyle10)相比，style参数新增了对undefined类型的支持。
+设置选中项的文本颜色、字号、字体粗细。与[selectedTextStyle10+](#ZH-CN_TOPIC_0000002553200801__selectedtextstyle10)相比，style参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -528,33 +274,15 @@ selectedTextStyle(style: Optional<PickerTextStyle>)
 
 **参数：**
 
-参数名类型必填说明style[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明)>是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| style | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明)> | 是 | 选中项的文本颜色、字号、字体粗细。 默认值： { color: '#ff007dff', font: { size: '20fp', weight: FontWeight.Medium } } 当style的值为undefined时，使用默认值。 |
 
-选中项的文本颜色、字号、字体粗细。
+#### selected[Text](Text.md)Style20+
 
-默认值：
+selectedTextStyle(style: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<PickerTextStyle|TextPickerTextStyle>)
 
-{
-
-color: '#ff007dff',
-
-font: {
-
-size: '20fp',
-
-weight: FontWeight.Medium
-
-}
-
-}
-
-当style的值为undefined时，使用默认值。
-
-#### selectedTextStyle20+
-
-selectedTextStyle(style: Optional<PickerTextStyle|TextPickerTextStyle>)
-
-设置选中项的文本颜色、字号、字体粗细、最大字号、最小字号、超长文本截断方式。与[selectedTextStyle](#ZH-CN_TOPIC_0000002529444853__selectedtextstyle18)18+相比，style参数新增了对[TextPickerTextStyle](#ZH-CN_TOPIC_0000002529444853__textpickertextstyle15类型说明)类型的支持。
+设置选中项的文本颜色、字号、字体粗细、最大字号、最小字号、超长文本截断方式。与[selectedTextStyle](#ZH-CN_TOPIC_0000002553200801__selectedtextstyle18)18+相比，style参数新增了对[TextPickerTextStyle](#ZH-CN_TOPIC_0000002553200801__textpickertextstyle15类型说明)类型的支持。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -564,39 +292,15 @@ selectedTextStyle(style: Optional<PickerTextStyle|TextPickerTextStyle>)
 
 **参数：**
 
-参数名类型必填说明style[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明)|[TextPickerTextStyle](#ZH-CN_TOPIC_0000002529444853__textpickertextstyle15类型说明)>是
-
-选中项的文本颜色、字号、字体粗细、最大字号、最小字号、超长文本截断方式。
-
-默认值：
-
-{
-
-color: '#ff007dff',
-
-font: {
-
-size: '20fp',
-
-weight: FontWeight.Medium
-
-},
-
-minFontSize: 0,
-
-maxFontSize: 0,
-
-overflow: TextOverflow.Clip
-
-}
-
-当style的值为undefined时，使用默认值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| style | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明)|TextPickerTextStyle> | 是 | 选中项的文本颜色、字号、字体粗细、最大字号、最小字号、超长文本截断方式。 默认值： { color: '#ff007dff', font: { size: '20fp', weight: FontWeight.Medium }, minFontSize: 0, maxFontSize: 0, overflow: TextOverflow.Clip } 当style的值为undefined时，使用默认值。 |
 
 #### selectedIndex10+
 
 selectedIndex(value: number | number[])
 
-设置选中项在数据选择列表中的索引值，优先级高于[TextPickerOptions](#ZH-CN_TOPIC_0000002529444853__textpickeroptions对象说明)中的"value"属性。单列数据选择器使用number类型。多列数据选择器使用number[]类型。
+设置选中项在数据选择列表中的索引值，优先级高于[TextPickerOptions](#ZH-CN_TOPIC_0000002553200801__textpickeroptions对象说明)中的"value"属性。单列数据选择器使用number类型。多列数据选择器使用number[]类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -604,19 +308,15 @@ selectedIndex(value: number | number[])
 
 **参数：**
 
-参数名类型必填说明valuenumber | number[]是
-
-选中项在数据选择列表中的索引值，索引从0开始。
-
-默认值：0
-
-当value的值为负数或者超过数据选择列表的最大索引值时，使用默认值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | number[] | 是 | 选中项在数据选择列表中的索引值，索引从0开始。 默认值：0 当value的值为负数或者超过数据选择列表的最大索引值时，使用默认值。 |
 
 #### selectedIndex18+
 
-selectedIndex(index: Optional<number | number[]>)
+selectedIndex(index: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<number | number[]>)
 
-设置选中项在数据选择列表中的索引值，优先级高于[TextPickerOptions](#ZH-CN_TOPIC_0000002529444853__textpickeroptions对象说明)中的"value"属性。单列数据选择器使用number类型，多列数据选择器使用number[]类型。与[selectedIndex10+](#ZH-CN_TOPIC_0000002529444853__selectedindex10)相比，index参数新增了对undefined类型的支持。
+设置选中项在数据选择列表中的索引值，优先级高于[TextPickerOptions](#ZH-CN_TOPIC_0000002553200801__textpickeroptions对象说明)中的"value"属性。单列数据选择器使用number类型，多列数据选择器使用number[]类型。与[selectedIndex10+](#ZH-CN_TOPIC_0000002553200801__selectedindex10)相比，index参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -624,15 +324,9 @@ selectedIndex(index: Optional<number | number[]>)
 
 **参数：**
 
-参数名类型必填说明index[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<number | number[]>是
-
-选中项在数据选择列表中的索引值，索引从0开始。
-
-默认值：0
-
-当index的值为undefined时，使用[TextPickerOptions](#ZH-CN_TOPIC_0000002529444853__textpickeroptions对象说明)中的selected值。
-
-当index的值为负数或者超过数据选择列表的最大索引值时，使用默认值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<number | number[]> | 是 | 选中项在数据选择列表中的索引值，索引从0开始。 默认值：0 当index的值为undefined时，使用TextPickerOptions中的selected值。 当index的值为负数或者超过数据选择列表的最大索引值时，使用默认值。 |
 
 #### canLoop10+
 
@@ -646,21 +340,15 @@ canLoop(value: boolean)
 
 **参数：**
 
-参数名类型必填说明valueboolean是
-
-是否可循环滚动。
-
-- true：可循环。
-
-- false：不可循环。
-
-默认值：true
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | boolean | 是 | 是否可循环滚动。 - true：可循环。 - false：不可循环。 默认值：true |
 
 #### canLoop18+
 
-canLoop(isLoop: Optional<boolean>)
+canLoop(isLoop: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<boolean>)
 
-设置是否可循环滚动。与[canLoop10+](#ZH-CN_TOPIC_0000002529444853__canloop10)相比，isLoop参数新增了对undefined类型的支持。
+设置是否可循环滚动。与[canLoop10+](#ZH-CN_TOPIC_0000002553200801__canloop10)相比，isLoop参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -668,17 +356,9 @@ canLoop(isLoop: Optional<boolean>)
 
 **参数：**
 
-参数名类型必填说明isLoop[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<boolean>是
-
-是否可循环滚动。
-
-- true：可循环。
-
-- false：不可循环。
-
-默认值：true
-
-当isLoop的值为undefined时，使用默认值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isLoop | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<boolean> | 是 | 是否可循环滚动。 - true：可循环。 - false：不可循环。 默认值：true 当isLoop的值为undefined时，使用默认值。 |
 
 #### divider12+
 
@@ -686,7 +366,7 @@ divider(value: DividerOptions | null)
 
 设置分割线样式，不设置该属性则按“默认值”展示分割线。
 
-[DividerOptions](#ZH-CN_TOPIC_0000002529444853__divideroptions12对象说明)中startMargin + endMargin 超过组件宽度后，startMargin和endMargin会被置0。
+[DividerOptions](#ZH-CN_TOPIC_0000002553200801__divideroptions12对象说明)中startMargin + endMargin 超过组件宽度后，startMargin和endMargin会被置0。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -694,33 +374,17 @@ divider(value: DividerOptions | null)
 
 **参数：**
 
-参数名类型必填说明value[DividerOptions](#ZH-CN_TOPIC_0000002529444853__divideroptions12对象说明) | null是
-
-默认值：
-
-{
-
-strokeWidth: '2px',
-
-startMargin: 0,
-
-endMargin: 0,
-
-color: '#33000000'
-
-}
-
-1. 当textDivider设置为有效的[DividerOptions](#ZH-CN_TOPIC_0000002529444853__divideroptions12对象说明)时，按设置的样式显示分割线。
-
-2. 当textDivider设置为null时，不显示分割线。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | DividerOptions | null | 是 | 默认值： { strokeWidth: '2px', startMargin: 0, endMargin: 0, color: '#33000000' } 1. 当textDivider设置为有效的DividerOptions时，按设置的样式显示分割线。 2. 当textDivider设置为null时，不显示分割线。 |
 
 #### divider18+
 
-divider(textDivider: Optional<DividerOptions | null>)
+divider(textDivider: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<DividerOptions | null>)
 
-设置分割线样式，不设置该属性则按“默认值”展示分割线。与[divider12+](#ZH-CN_TOPIC_0000002529444853__divider12)相比，textDivider参数新增了对undefined类型的支持。
+设置分割线样式，不设置该属性则按“默认值”展示分割线。与[divider12+](#ZH-CN_TOPIC_0000002553200801__divider12)相比，textDivider参数新增了对undefined类型的支持。
 
-[DividerOptions](#ZH-CN_TOPIC_0000002529444853__divideroptions12对象说明)中startMargin + endMargin 超过组件宽度后，startMargin和endMargin会被置0。
+[DividerOptions](#ZH-CN_TOPIC_0000002553200801__divideroptions12对象说明)中startMargin + endMargin 超过组件宽度后，startMargin和endMargin会被置0。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -728,31 +392,13 @@ divider(textDivider: Optional<DividerOptions | null>)
 
 **参数：**
 
-参数名类型必填说明textDivider[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[DividerOptions](#ZH-CN_TOPIC_0000002529444853__divideroptions12对象说明) | null>是
-
-默认值：
-
-{
-
-strokeWidth: '2px',
-
-startMargin: 0,
-
-endMargin: 0,
-
-color: '#33000000'
-
-}
-
-1. 当textDivider的值为undefined时，使用默认值。
-
-2. 当textDivider设置为有效的[DividerOptions](#ZH-CN_TOPIC_0000002529444853__divideroptions12对象说明)时，按设置的样式显示分割线。
-
-3. 当textDivider设置为null时，不显示分割线。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| textDivider | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<DividerOptions | null> | 是 | 默认值： { strokeWidth: '2px', startMargin: 0, endMargin: 0, color: '#33000000' } 1. 当textDivider的值为undefined时，使用默认值。 2. 当textDivider设置为有效的DividerOptions时，按设置的样式显示分割线。 3. 当textDivider设置为null时，不显示分割线。 |
 
 #### gradientHeight12+
 
-gradientHeight(value: Dimension)
+gradientHeight(value: [Dimension](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10))
 
 设置渐隐效果的高度。若未设置该属性，则显示默认渐隐效果。
 
@@ -762,29 +408,15 @@ gradientHeight(value: Dimension)
 
 **参数：**
 
-参数名类型必填说明value[Dimension](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10)是
-
-内容区上下边缘的渐隐高度。
-
-默认值：36vp
-
-取值范围：[0, +∞)，支持百分比。
-
-**说明：**
-
-1. value设置为百分比时，100%为TextPicker高度的一半。
-
-2. value设置为0时不显示渐隐效果。
-
-3. value设置为数字且超过TextPicker高度的一半时，使用默认值。
-
-4. 当value的值为负数时，使用默认值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [Dimension](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10) | 是 | 内容区上下边缘的渐隐高度。 默认值：36vp 取值范围：[0, +∞)，支持百分比。 说明： 1. value设置为百分比时，100%为TextPicker高度的一半。 2. value设置为0时不显示渐隐效果。 3. value设置为数字且超过TextPicker高度的一半时，使用默认值。 4. 当value的值为负数时，使用默认值。 |
 
 #### gradientHeight18+
 
-gradientHeight(height: Optional<Dimension>)
+gradientHeight(height: Optional<[Dimension](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10)>)
 
-设置渐隐效果的高度。若未设置该属性，则显示默认渐隐效果。与[gradientHeight12+](#ZH-CN_TOPIC_0000002529444853__gradientheight12)相比，height参数新增了对undefined类型的支持。
+设置渐隐效果的高度。若未设置该属性，则显示默认渐隐效果。与[gradientHeight12+](#ZH-CN_TOPIC_0000002553200801__gradientheight12)相比，height参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -792,27 +424,13 @@ gradientHeight(height: Optional<Dimension>)
 
 **参数：**
 
-参数名类型必填说明height[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[Dimension](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10)>是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| height | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[Dimension](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10)> | 是 | 内容区上下边缘的渐隐高度。 默认值：36vp 取值范围：[0, +∞)，支持百分比。 说明： 1. height设置为百分比时，100%为TextPicker高度的一半。 2. height设置为0时不显示渐隐效果。 3. height设置为数字且超过TextPicker高度的一半时，使用默认值。 4. 当height的值为undefined或负数时，使用默认值。 |
 
-内容区上下边缘的渐隐高度。
+#### disable[Text](Text.md)StyleAnimation15+
 
-默认值：36vp
-
-取值范围：[0, +∞)，支持百分比。
-
-**说明：**
-
-1. height设置为百分比时，100%为TextPicker高度的一半。
-
-2. height设置为0时不显示渐隐效果。
-
-3. height设置为数字且超过TextPicker高度的一半时，使用默认值。
-
-4. 当height的值为undefined或负数时，使用默认值。
-
-#### disableTextStyleAnimation15+
-
-disableTextStyleAnimation(disabled: boolean)
+disable[Text](Text.md)StyleAnimation(disabled: boolean)
 
 设置是否关闭滑动过程中文本样式变化的动效。
 
@@ -822,25 +440,15 @@ disableTextStyleAnimation(disabled: boolean)
 
 **参数：**
 
-参数名类型必填说明disabledboolean是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| disabled | boolean | 是 | 是否关闭滑动过程中文本样式变化的动效。 - true：关闭文本样式变化动效。 - false：不关闭文本样式变化动效。 默认值：false 说明： 设置为true时，滑动过程中无字号、字重、字体颜色等变化动效，且文本均显示为default[Text](Text.md)Style属性设置的样式。如未设置defaultTextStyle，则显示为Text组件默认样式。 |
 
-是否关闭滑动过程中文本样式变化的动效。
+#### default[Text](Text.md)Style15+
 
-- true：关闭文本样式变化动效。
+defaultTextStyle(style: Text[PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明))
 
-- false：不关闭文本样式变化动效。
-
-默认值：false
-
-**说明：**
-
-设置为true时，滑动过程中无字号、字重、字体颜色等变化动效，且文本均显示为[defaultTextStyle](#ZH-CN_TOPIC_0000002529444853__defaulttextstyle15)属性设置的样式。如未设置[defaultTextStyle](#ZH-CN_TOPIC_0000002529444853__defaulttextstyle15)，则显示为[Text](../graphics/Text.md)组件默认样式。
-
-#### defaultTextStyle15+
-
-defaultTextStyle(style: TextPickerTextStyle)
-
-设置关闭滑动过程中文本样式变化的动效时，各个选项的文本样式。仅当[disableTextStyleAnimation](#ZH-CN_TOPIC_0000002529444853__disabletextstyleanimation15)为true时生效。
+设置关闭滑动过程中文本样式变化的动效时，各个选项的文本样式。仅当[disableTextStyleAnimation](#ZH-CN_TOPIC_0000002553200801__disabletextstyleanimation15)为true时生效。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
@@ -848,11 +456,9 @@ defaultTextStyle(style: TextPickerTextStyle)
 
 **参数：**
 
-参数名类型必填说明style[TextPickerTextStyle](#ZH-CN_TOPIC_0000002529444853__textpickertextstyle15类型说明)是
-
-设置关闭滑动过程中文本样式变化的动效时，各个选项的文本样式。
-
-默认值：与[Text](../graphics/Text.md)组件默认值相同。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| style | [Text](Text.md)PickerTextStyle | 是 | 设置关闭滑动过程中文本样式变化的动效时，各个选项的文本样式。 默认值：与Text组件默认值相同。 |
 
 开启触控反馈时，需要在工程的src/main/module.json5文件的"module"内配置requestPermissions字段开启振动权限，配置如下：
 
@@ -866,7 +472,7 @@ defaultTextStyle(style: TextPickerTextStyle)
 
 #### enableHapticFeedback18+
 
-enableHapticFeedback(enable: Optional<boolean>)
+enableHapticFeedback(enable: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<boolean>)
 
 设置是否开启触控反馈。
 
@@ -876,17 +482,9 @@ enableHapticFeedback(enable: Optional<boolean>)
 
 **参数：**
 
-参数名类型必填说明enable[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<boolean>是
-
-设置是否开启触控反馈。
-
-- true：开启触控反馈。
-
-- false：不开启触控反馈。
-
-默认值：true
-
-设置为true后，其生效情况取决于系统的硬件是否支持。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enable | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<boolean> | 是 | 设置是否开启触控反馈。 - true：开启触控反馈。 - false：不开启触控反馈。 默认值：true 设置为true后，其生效情况取决于系统的硬件是否支持。 |
 
 开启触控反馈时，需要在工程的src/main/module.json5文件的"module"内配置requestPermissions字段开启振动权限，配置如下：
 
@@ -898,9 +496,9 @@ enableHapticFeedback(enable: Optional<boolean>)
 ]
 ```
 
-#### digitalCrownSensitivity18+
+#### digital[CrownSensitivity](枚举说明.md#ZH-CN_TOPIC_0000002529284967__crownsensitivity18)18+
 
-digitalCrownSensitivity(sensitivity: Optional<CrownSensitivity>)
+digitalCrownSensitivity(sensitivity: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<CrownSensitivity>)
 
 设置表冠灵敏度。
 
@@ -910,17 +508,16 @@ digitalCrownSensitivity(sensitivity: Optional<CrownSensitivity>)
 
 **参数：**
 
-参数名类型必填说明sensitivity[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[CrownSensitivity](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__crownsensitivity18)>是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sensitivity | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[CrownSensitivity](枚举说明.md#ZH-CN_TOPIC_0000002529284967__crownsensitivity18)> | 是 | 表冠响应灵敏度。 默认值：CrownSensitivity.MEDIUM，响应速度适中。 |
 
-表冠响应灵敏度。
 
-默认值：CrownSensitivity.MEDIUM，响应速度适中。
-
-用于圆形屏幕的穿戴设备。组件响应[表冠事件](../misc/表冠事件.md)，需要先获取焦点。
+用于圆形屏幕的穿戴设备。组件响应[表冠事件](表冠事件.md)，需要先获取焦点。
 
 #### selectedBackgroundStyle20+
 
-selectedBackgroundStyle(style: Optional<PickerBackgroundStyle>)
+selectedBackgroundStyle(style: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<PickerBackgroundStyle>)
 
 设置选中项的背景样式。
 
@@ -930,31 +527,21 @@ selectedBackgroundStyle(style: Optional<PickerBackgroundStyle>)
 
 **参数：**
 
-参数名类型必填说明style[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[PickerBackgroundStyle](#ZH-CN_TOPIC_0000002529444853__pickerbackgroundstyle20)>是
-
-选中项背景的颜色和边框圆角半径，多列模式时会同时设置所有列的选中项背景的颜色和圆角半径。
-
-默认值：
-
-{
-
-color: $r('sys.color.comp_background_tertiary'),
-
-borderRadius: $r('sys.float.corner_radius_level12')
-
-}
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| style | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<PickerBackgroundStyle> | 是 | 选中项背景的颜色和边框圆角半径，多列模式时会同时设置所有列的选中项背景的颜色和圆角半径。 默认值： { color: $r('sys.color.comp_background_tertiary'), borderRadius: $r('sys.float.corner_radius_level12') } |
 
 #### 事件
 
-除支持[通用事件](../misc/通用事件.md)外，还支持以下事件：
+除支持[通用事件]([通用事件](../misc/通用事件.md).md)外，还支持以下事件：
 
 #### onChange
 
 onChange(callback: (value: string | string[], index: number | number[]) => void)
 
-滑动TextPicker文本内容后，选项归位至选中项位置时，触发该回调。不能通过双向绑定的状态变量触发。当显示文本或图片加文本列表时，value值为选中项中的文本值，当显示图片列表时，value值为空。
+滑动[Text](Text.md)Picker文本内容后，选项归位至选中项位置时，触发该回调。不能通过双向绑定的状态变量触发。当显示文本或图片加文本列表时，value值为选中项中的文本值，当显示图片列表时，value值为空。
 
-回调会在滑动动画结束后触发，如果需要快速获取索引值变化，建议使用[onEnterSelectedArea](#ZH-CN_TOPIC_0000002529444853__onenterselectedarea18)接口。
+回调会在滑动动画结束后触发，如果需要快速获取索引值变化，建议使用[onEnterSelectedArea](#ZH-CN_TOPIC_0000002553200801__onenterselectedarea18)接口。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -962,15 +549,18 @@ onChange(callback: (value: string | string[], index: number | number[]) => void)
 
 **参数：**
 
-参数名类型必填说明valuestring | string[]10+是当前选中项的文本。多列数据选择器的value为数组类型。indexnumber | number[]10+是当前选中项的索引值，索引从0开始。多列数据选择器的index为数组类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | string | string[]10+ | 是 | 当前选中项的文本。多列数据选择器的value为数组类型。 |
+| index | number | number[]10+ | 是 | 当前选中项的索引值，索引从0开始。多列数据选择器的index为数组类型。 |
 
 #### onChange18+
 
-onChange(callback: Optional<OnTextPickerChangeCallback>)
+onChange(callback: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<OnTextPickerChangeCallback>)
 
-滑动TextPicker文本内容后，选项归位至选中项位置时，触发该回调。不能通过双向绑定的状态变量触发。当显示文本或图片加文本列表时，value值为选中项中的文本值，当显示图片列表时，value值为空。与[onChange](#ZH-CN_TOPIC_0000002529444853__onchange)相比，callback参数新增了对undefined类型的支持。
+滑动TextPicker文本内容后，选项归位至选中项位置时，触发该回调。不能通过双向绑定的状态变量触发。当显示文本或图片加文本列表时，value值为选中项中的文本值，当显示图片列表时，value值为空。与[onChange](#ZH-CN_TOPIC_0000002553200801__onchange)相比，callback参数新增了对undefined类型的支持。
 
-回调会在滑动动画结束后触发，如果需要快速获取索引值变化，建议使用[onEnterSelectedArea](#ZH-CN_TOPIC_0000002529444853__onenterselectedarea18)接口。
+回调会在滑动动画结束后触发，如果需要快速获取索引值变化，建议使用[onEnterSelectedArea](#ZH-CN_TOPIC_0000002553200801__onenterselectedarea18)接口。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -978,21 +568,20 @@ onChange(callback: Optional<OnTextPickerChangeCallback>)
 
 **参数：**
 
-参数名类型必填说明callback[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[OnTextPickerChangeCallback](#ZH-CN_TOPIC_0000002529444853__ontextpickerchangecallback18)>是
-
-滑动选中TextPicker文本内容后，触发的回调。
-
-当callback的值为undefined时，不使用回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<OnTextPickerChangeCallback> | 是 | 滑动选中TextPicker文本内容后，触发的回调。 当callback的值为undefined时，不使用回调函数。 |
 
 #### onScrollStop14+
 
-onScrollStop(callback: TextPickerScrollStopCallback)
+onScrollStop(callback: [Text](Text.md)PickerScrollStopCallback)
 
 文本选择器的选项列滑动停止时触发该事件。
 
 手指拖动选项列触发的滑动，手指离开屏幕且滑动停止时会触发该事件。
 
-从API version 20开始，该接口支持在[attributeModifier](../misc/动态属性设置.md#ZH-CN_TOPIC_0000002529284843__attributemodifier)中调用。
+
+从API version 20开始，该接口支持在[attributeModifier](动态属性设置.md#ZH-CN_TOPIC_0000002522240800__attributemodifier)中调用。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
@@ -1000,17 +589,20 @@ onScrollStop(callback: TextPickerScrollStopCallback)
 
 **参数：**
 
-参数名类型必填说明callback[TextPickerScrollStopCallback](#ZH-CN_TOPIC_0000002529444853__textpickerscrollstopcallback14)是文本选择器的选项列滑动停止时触发该事件。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | [Text](Text.md)PickerScrollStopCallback | 是 | 文本选择器的选项列滑动停止时触发该事件。 |
 
 #### onScrollStop18+
 
-onScrollStop(callback: Optional<TextPickerScrollStopCallback>)
+onScrollStop(callback: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<TextPickerScrollStopCallback>)
 
-文本选择器的选项列滑动停止时触发该事件。与[onScrollStop14+](#ZH-CN_TOPIC_0000002529444853__onscrollstop14)相比，callback参数新增了对undefined类型的支持。
+文本选择器的选项列滑动停止时触发该事件。与[onScrollStop14+](#ZH-CN_TOPIC_0000002553200801__onscrollstop14)相比，callback参数新增了对undefined类型的支持。
 
 手指拖动选项列触发的滑动，手指离开屏幕且滑动停止时会触发该事件。
 
-从API version 20开始，该接口支持在[attributeModifier](../misc/动态属性设置.md#ZH-CN_TOPIC_0000002529284843__attributemodifier)中调用。
+
+从API version 20开始，该接口支持在[attributeModifier](动态属性设置.md#ZH-CN_TOPIC_0000002522240800__attributemodifier)中调用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -1018,21 +610,19 @@ onScrollStop(callback: Optional<TextPickerScrollStopCallback>)
 
 **参数：**
 
-参数名类型必填说明callback[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[TextPickerScrollStopCallback](#ZH-CN_TOPIC_0000002529444853__textpickerscrollstopcallback14)>是
-
-文本选择器的选项列滑动停止时触发该事件。
-
-当callback的值为undefined时，不使用回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<TextPickerScrollStopCallback> | 是 | 文本选择器的选项列滑动停止时触发该事件。 当callback的值为undefined时，不使用回调函数。 |
 
 #### onEnterSelectedArea18+
 
-onEnterSelectedArea(callback: TextPickerEnterSelectedAreaCallback)
+onEnterSelectedArea(callback: [Text](Text.md)PickerEnterSelectedAreaCallback)
 
-滑动TextPicker过程中，选项进入分割线区域内（当前列的滑动距离超过选中项高度的一半）时，触发该回调。
+滑动[Text](Text.md)Picker过程中，选项进入分割线区域内（当前列的滑动距离超过选中项高度的一半）时，触发该回调。
 
 -
 
-与[onChange](#ZH-CN_TOPIC_0000002529444853__onchange)事件的差别在于，该事件的触发时机早于[onChange](#ZH-CN_TOPIC_0000002529444853__onchange)事件。
+与[onChange](#ZH-CN_TOPIC_0000002553200801__onchange)事件的差别在于，该事件的触发时机早于[onChange](#ZH-CN_TOPIC_0000002553200801__onchange)事件。
 
 -
 
@@ -1040,7 +630,7 @@ onEnterSelectedArea(callback: TextPickerEnterSelectedAreaCallback)
 
 -
 
-该接口不支持在[attributeModifier](../misc/动态属性设置.md#ZH-CN_TOPIC_0000002529284843__attributemodifier)中调用。
+该接口不支持在[attributeModifier](动态属性设置.md#ZH-CN_TOPIC_0000002522240800__attributemodifier)中调用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -1048,7 +638,9 @@ onEnterSelectedArea(callback: TextPickerEnterSelectedAreaCallback)
 
 **参数：**
 
-参数名类型必填说明callback[TextPickerEnterSelectedAreaCallback](#ZH-CN_TOPIC_0000002529444853__textpickerenterselectedareacallback18)是滑动TextPicker过程中，选项进入分割线区域时触发的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | [Text](Text.md)PickerEnterSelectedAreaCallback | 是 | 滑动TextPicker过程中，选项进入分割线区域时触发的回调。 |
 
 #### onAccept(deprecated)
 
@@ -1062,7 +654,10 @@ onAccept(callback: (value: string, index: number) => void)
 
 **参数：**
 
-参数名类型必填说明valuestring是当前选中项的文本。indexnumber是当前选中项的索引值，索引从0开始。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | string | 是 | 当前选中项的文本。 |
+| index | number | 是 | 当前选中项的索引值，索引从0开始。 |
 
 #### onCancel(deprecated)
 
@@ -1076,21 +671,27 @@ onCancel(callback: () => void)
 
 **参数：**
 
-参数名类型必填说明callback() => void是点击弹窗中的“取消”按钮时触发该回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | () => void | 是 | 点击弹窗中的“取消”按钮时触发该回调。 |
 
-#### TextPickerTextStyle15+类型说明
+#### Text[PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明)15+类型说明
 
-文本样式选项，继承自[PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002529444857__pickertextstyle对象说明)。
+文本样式选项，继承自[PickerTextStyle](选择器（Picker）公共接口.md#ZH-CN_TOPIC_0000002553200805__pickertextstyle对象说明)。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明minFontSizenumber | string | [Resource](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)否是文本最小显示字号，与maxFontSize配合使用。当设置minFontSize和maxFontSize时，font中的size将不生效。默认最大行数为1，自适应高度方式为MIN_FONT_SIZE_FIRST。详细规则请参考Text组件的[minFontSize](../graphics/Text.md#ZH-CN_TOPIC_0000002497444914__minfontsize)属性。maxFontSizenumber | string | [Resource](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)否是文本最大显示字号。详细规则请参考Text组件的[maxFontSize](../graphics/Text.md#ZH-CN_TOPIC_0000002497444914__maxfontsize)属性。overflow[TextOverflow](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__textoverflow)否是文本截断方式。当设置为MARQUEE时，该属性不生效。详细规则请参考Text组件的[textOverflow](../graphics/Text.md#ZH-CN_TOPIC_0000002497444914__textoverflow)属性。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| [minFontSize](Text.md#ZH-CN_TOPIC_0000002497444914__minfontsize) | number | string | [Resource](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 否 | 是 | 文本最小显示字号，与[maxFontSize](Text.md#ZH-CN_TOPIC_0000002497444914__maxfontsize)配合使用。当设置minFontSize和maxFontSize时，font中的size将不生效。默认最大行数为1，自适应高度方式为MIN_FONT_SIZE_FIRST。详细规则请参考Text组件的minFontSize属性。 |
+| maxFontSize | number | string | [Resource](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 否 | 是 | 文本最大显示字号。详细规则请参考Text组件的maxFontSize属性。 |
+| overflow | [TextOverflow](枚举说明.md#ZH-CN_TOPIC_0000002529284967__textoverflow) | 否 | 是 | 文本截断方式。当设置为MARQUEE时，该属性不生效。详细规则请参考Text组件的[textOverflow](Text.md#ZH-CN_TOPIC_0000002497444914__textoverflow)属性。 |
 
-#### OnTextPickerChangeCallback18+
+#### On[Text](Text.md)PickerChangeCallback18+
 
-type OnTextPickerChangeCallback = (selectItem: string | string[], index: number | number[]) => void
+type On[Text](Text.md)PickerChangeCallback = (selectItem: string | string[], index: number | number[]) => void
 
 定义触发onChange事件的回调类型。
 
@@ -1100,19 +701,14 @@ type OnTextPickerChangeCallback = (selectItem: string | string[], index: number 
 
 **参数：**
 
-参数名类型必填说明selectItemstring | string[]10+是
-
-当前选中项的文本。多列数据选择器的selectItem为数组类型。
-
-**说明：**
-
-当选择器内容为文本或图文混排时，selectItem值为选中项中的文本值；当选择器内容为图片时，selectItem值为空。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| selectItem | string | string[]10+ | 是 | 当前选中项的文本。多列数据选择器的selectItem为数组类型。 说明： 当选择器内容为文本或图文混排时，selectItem值为选中项中的文本值；当选择器内容为图片时，selectItem值为空。 |
 indexnumber | number[]10+是当前选中项的索引值，索引从0开始。多列数据选择器的index为数组类型。
 
-#### TextPickerScrollStopCallback14+
+#### [Text](Text.md)PickerScrollStopCallback14+
 
-type TextPickerScrollStopCallback = (value: string | string[], index: number | number[]) => void
+type [Text](Text.md)PickerScrollStopCallback = (value: string | string[], index: number | number[]) => void
 
 定义触发onScrollStop事件的回调类型。
 
@@ -1122,19 +718,14 @@ type TextPickerScrollStopCallback = (value: string | string[], index: number | n
 
 **参数：**
 
-参数名类型必填说明valuestring | string[]是
-
-当前选中项的文本。多列数据选择器的value为数组类型。
-
-**说明：**
-
-当选择器内容为文本或图文混排时，value值为选中项中的文本值；当选择器内容为图片时，value值为空。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | string | string[] | 是 | 当前选中项的文本。多列数据选择器的value为数组类型。 说明： 当选择器内容为文本或图文混排时，value值为选中项中的文本值；当选择器内容为图片时，value值为空。 |
 indexnumber | number[]是当前选中项的索引值，索引从0开始。多列数据选择器的index为数组类型。
 
-#### TextPickerEnterSelectedAreaCallback18+
+#### [Text](Text.md)PickerEnterSelectedAreaCallback18+
 
-type TextPickerEnterSelectedAreaCallback = (value: string | string[], index: number | number[]) => void
+type [Text](Text.md)PickerEnterSelectedAreaCallback = (value: string | string[], index: number | number[]) => void
 
 定义触发onEnterSelectedArea事件的回调类型。
 
@@ -1144,14 +735,9 @@ type TextPickerEnterSelectedAreaCallback = (value: string | string[], index: num
 
 **参数：**
 
-参数名类型必填说明valuestring | string[]是
-
-当前选中项的文本。多列数据选择器的value为数组类型。
-
-**说明：**
-
-当选择器内容为文本或图文混排时，value值为选中项中的文本值；当选择器内容为图片时，value值为空。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | string | string[] | 是 | 当前选中项的文本。多列数据选择器的value为数组类型。 说明： 当选择器内容为文本或图文混排时，value值为选中项中的文本值；当选择器内容为图片时，value值为空。 |
 indexnumber | number[]是当前选中项的索引值，索引从0开始。多列数据选择器的index为数组类型。
 
 #### PickerBackgroundStyle20+
@@ -1162,25 +748,10 @@ indexnumber | number[]是当前选中项的索引值，索引从0开始。多列
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明color[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)否是
-
-选中项的背景颜色。
-
-默认值：'sys.color.comp_background_tertiary'。
-
-borderRadius[LengthMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetrics12) | [BorderRadiuses](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__borderradiuses9) | [LocalizedBorderRadiuses](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__localizedborderradiuses12)否是
-
-选中项的边框圆角半径。
-
-默认值：{ value:24, unit:LengthUnit.VP }，即四个圆角半径均为24VP。
-
-**说明：**
-
-1. [LengthMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetrics12)类型的value参数同时作用于四个圆角半径大小，unit参数用于设置单位。
-
-2. [BorderRadiuses](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__borderradiuses9)类型可以设置四个不同值的圆角半径，所有单位固定为VP。
-
-3. [LocalizedBorderRadiuses](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__localizedborderradiuses12)类型可以设置四个不同值的圆角半径，并且可以单独设置每个圆角的单位。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| color | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 否 | 是 | 选中项的背景颜色。 默认值： 'sys.color.comp_background_tertiary' |
+| borderRadius | [LengthMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetrics12) | [BorderRadiuses](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__borderradiuses9) | [LocalizedBorderRadiuses](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__localizedborderradiuses12) | 否 | 是 | 选中项的边框圆角半径。 默认值：{ value:24, unit:LengthUnit.VP }，即四个圆角半径均为24VP。 说明： 1. LengthMetrics类型的value参数同时作用于四个圆角半径大小，unit参数用于设置单位。 2. BorderRadiuses类型可以设置四个不同值的圆角半径，所有单位固定为VP。 3. LocalizedBorderRadiuses类型可以设置四个不同值的圆角半径，并且可以单独设置每个圆角的单位。 |
 
 #### 示例
 
@@ -1188,7 +759,7 @@ borderRadius[LengthMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761
 
 该示例通过配置range实现单列数据选择器和多列数据选择器，并使用columnWidths调整每一列的宽度。
 
-从API version 18开始，新增了[TextPickerOptions](#ZH-CN_TOPIC_0000002529444853__textpickeroptions对象说明)的columnWidths属性。
+从API version 18开始，新增了[TextPickerOptions](#ZH-CN_TOPIC_0000002553200801__textpickeroptions对象说明)的columnWidths属性。
 
 ```ets
 // xxx.ets
@@ -1275,13 +846,13 @@ struct TextPickerExample {
           console.info('TextPicker 多列联动:onEnterSelectedArea ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
         })
     }
-  }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522084980.webp)
 
 #### 示例2（设置文本样式）
 
-该示例使用[disappearTextStyle](#ZH-CN_TOPIC_0000002529444853__disappeartextstyle10)、[textStyle](#ZH-CN_TOPIC_0000002529444853__textstyle10)、[selectedTextStyle](#ZH-CN_TOPIC_0000002529444853__selectedtextstyle10)设置文本选择器中的文本样式。
+该示例使用[disappearTextStyle](#ZH-CN_TOPIC_0000002553200801__disappeartextstyle10)、[textStyle](#ZH-CN_TOPIC_0000002553200801__textstyle10)、[selectedTextStyle](#ZH-CN_TOPIC_0000002553200801__selectedtextstyle10)设置文本选择器中的文本样式。
 
 ```ets
 // xxx.ets
@@ -1312,12 +883,13 @@ struct TextPickerExample {
         .selectedIndex(2)
     }.width('100%').height('100%')
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553364895.webp)
 
 #### 示例3（设置无分割线样式）
 
-该示例通过配置divider为null实现无分割线样式的文本选择器。
+该示例通过配置[divider](#ZH-CN_TOPIC_0000002553200801__divider12)为null实现无分割线样式的文本选择器。
 
 ```ets
 // xxx.ets
@@ -1341,7 +913,6 @@ struct TextPickerExample {
         .selectedTextStyle({color: Color.Blue, font: {size: 30, weight: FontWeight.Bolder}})
         .divider(null)
     }.width('100%').height('100%')
-  }
 }
 ```
 
@@ -1377,12 +948,13 @@ struct TextPickerExample {
         } as DividerOptions)
     }.width('100%').height('100%')
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553204935.webp)
 
 #### 示例5（设置渐隐效果）
 
-该示例通过配置gradientHeight设置文本选择器的渐隐效果高度。
+该示例通过配置[gradientHeight](#ZH-CN_TOPIC_0000002553200801__gradientheight12)设置文本选择器的渐隐效果高度。
 
 ```ets
 // xxx.ets
@@ -1407,12 +979,13 @@ struct TextPickerExample {
         .gradientHeight(100)
     }.width('100%').height('100%')
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522084982.webp)
 
 #### 示例6（设置选择项高度）
 
-该示例通过配置defaultPickerItemHeight设置选择项的高度。
+该示例通过配置[defaultPickerItemHeight](#ZH-CN_TOPIC_0000002553200801__defaultpickeritemheight)设置选择项的高度。
 
 ```ets
 // xxx.ets
@@ -1434,12 +1007,13 @@ struct TextPickerExample {
         })
     }.width('100%').height('100%')
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553364897.webp)
 
 #### 示例7（设置循环滚动）
 
-该示例通过配置[canLoop](#ZH-CN_TOPIC_0000002529444853__canloop10)设置文本选择器是否循环滚动。
+该示例通过配置[canLoop](#ZH-CN_TOPIC_0000002553200801__canloop10)设置文本选择器是否循环滚动。
 
 ```ets
 // xxx.ets
@@ -1472,12 +1046,13 @@ struct TextPickerExample {
 
     }.width('100%')
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522244976.webp)
 
 #### 示例8（设置选中项索引值）
 
-该示例通过配置selectedIndex设置默认选中项的索引值。
+该示例通过配置[selectedIndex](#ZH-CN_TOPIC_0000002553200801__selectedindex10)设置默认选中项的索引值。
 
 ```ets
 // xxx.ets
@@ -1498,12 +1073,15 @@ struct TextPickerExample {
         })
     }.width('100%').height('100%')
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553204937.webp)
 
 #### 示例9（设置关闭文本样式变化动效与对应文本样式）
 
-该示例通过配置[disableTextStyleAnimation](#ZH-CN_TOPIC_0000002529444853__disabletextstyleanimation15)、[defaultTextStyle](#ZH-CN_TOPIC_0000002529444853__defaulttextstyle15)实现关闭文本选择器文本样式变化的动效，并设置文本样式。
+该示例通过配置[disableTextStyleAnimation](#ZH-CN_TOPIC_0000002553200801__disabletextstyleanimation15)、[defaultTextStyle](#ZH-CN_TOPIC_0000002553200801__defaulttextstyle15)实现关闭文本选择器文本样式变化的动效，并设置文本样式。
+
+从API version 15开始，新增disable[Text](Text.md)StyleAnimation、defaultTextStyle接口。
 
 ```ets
 // xxx.ets
@@ -1531,12 +1109,13 @@ struct TextPickerExample {
         .defaultTextStyle({ minFontSize: 18, maxFontSize: 28, overflow: TextOverflow.Ellipsis })
     }.width('100%').height('100%')
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522084984.webp)
 
 #### 示例10（设置选中项背景样式）
 
-该示例通过配置[selectedBackgroundStyle](#ZH-CN_TOPIC_0000002529444853__selectedbackgroundstyle20)实现文本选择器选中项的背景样式。
+该示例通过配置[selectedBackgroundStyle](#ZH-CN_TOPIC_0000002553200801__selectedbackgroundstyle20)实现文本选择器选中项的背景样式。
 
 ```ets
 import { LengthUnit } from '@kit.ArkUI';
@@ -1546,11 +1125,11 @@ import { LengthUnit } from '@kit.ArkUI';
 @Component
 struct TextPickerExample {
   private showText1: string [] =
-    ["Text1", "Text1", "Text1", "Text1"]
+    ['Text1', 'Text1', 'Text1', 'Text1']
   private showText2: string[] [] =
     [
-      ["Text2", "Text2", "Text2", "Text2"],
-      ["Text3", "Text3", "Text3", "Text3"]
+      ['Text2', 'Text2', 'Text2', 'Text2'],
+      ['Text3', 'Text3', 'Text3', 'Text3']
     ]
 
   build() {
@@ -1558,14 +1137,14 @@ struct TextPickerExample {
       Row() {
         TextPicker({ range: this.showText1 })
           .selectedBackgroundStyle({
-            color: "#FFD5D5D5",
+            color: '#FFD5D5D5',
             borderRadius: { value: 0, unit: LengthUnit.VP }
           })
         Column()
-          .width("10%")
+          .width('10%')
         TextPicker({ range: this.showText1 })
           .selectedBackgroundStyle({
-            color: "#FFE3F8F9",
+            color: '#FFE3F8F9',
             borderRadius: {
               topStart: { value: 5, unit: LengthUnit.VP },
               topEnd: { value: 10, unit: LengthUnit.VP },
@@ -1576,7 +1155,7 @@ struct TextPickerExample {
       }
 
       Row()
-        .height("10%")
+        .height('10%')
       Row() {
         TextPicker({ range: this.showText2 })
           .selectedBackgroundStyle({
@@ -1586,17 +1165,20 @@ struct TextPickerExample {
               bottomLeft: 8,
               bottomRight: 8
             },
-            color: "#FFFFEEF6"
+            color: '#FFFFEEF6'
           })
       }
-    }.height("100%")
+    }.height('100%')
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553364899.webp)
 
 #### 示例11（设置文本的最大字号、最小字号、超长文本截断方式）
 
-该示例通过配置[disappearTextStyle](#ZH-CN_TOPIC_0000002529444853__disappeartextstyle20)、[textStyle](#ZH-CN_TOPIC_0000002529444853__textstyle20)和[selectedTextStyle](#ZH-CN_TOPIC_0000002529444853__selectedtextstyle20)，设置文本的颜色、最大字号、最小字号、超长文本截断方式。
+该示例通过配置[disappearTextStyle](#ZH-CN_TOPIC_0000002553200801__disappeartextstyle20)、[textStyle](#ZH-CN_TOPIC_0000002553200801__textstyle20)和[selectedTextStyle](#ZH-CN_TOPIC_0000002553200801__selectedtextstyle20)，设置文本的颜色、最大字号、最小字号、超长文本截断方式。
+
+从API version 20开始，新增disappear[Text](Text.md)Style、textStyle和selectedTextStyle接口。
 
 ```ets
 // xxx.ets
@@ -1635,5 +1217,6 @@ struct TextPickerExample {
     .height('100%')
     .width('100%')
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522244978.webp)

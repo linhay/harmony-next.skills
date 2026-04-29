@@ -16,43 +16,16 @@ import { hiTraceChain } from '@kit.PerformanceAnalysisKit';
 
 **系统能力**：SystemCapability.HiviewDFX.HiTrace
 
-名称值说明DEFAULT0缺省标志。INCLUDE_ASYNC1
-
-异步调用标志。
-
-设置该标志，同时跟踪同步和异步调用；缺省只跟踪同步调用。
-
-DONOT_CREATE_SPAN1 << 1
-
-无分支标志。
-
-设置该标志，不创建分支信息；缺省创建分支信息。
-
-TP_INFO1 << 2
-
-埋点标志。
-
-调试场景下设置该标志，调用信息埋点接口[tracepoint()](#ZH-CN_TOPIC_0000002529285651__hitracechaintracepoint)时，会打印埋点信息hilog日志；缺省不打印埋点信息hilog日志。
-
-NO_BE_INFO1 << 3
-
-无开始结束信息标志。
-
-调试场景下设置该标志，调用开始跟踪接口[begin()](#ZH-CN_TOPIC_0000002529285651__hitracechainbegin)和结束跟踪接口[end()](#ZH-CN_TOPIC_0000002529285651__hitracechainend)时，分别会打印开始、结束跟踪信息hilog日志；缺省不打印开始、结束跟踪信息hilog日志。
-
-DISABLE_LOG1 << 4
-
-日志关联标志。
-
-设置该标志，不会在hilog日志中附加HiTraceId信息；缺省会在hilog日志中附加HiTraceId信息。
-
-FAILURE_TRIGGER1 << 5故障触发标志。预置标志，暂未启用。D2D_TP_INFO1 << 6
-
-设备间埋点标志。TP_INFO的一个子集，调试场景下使用。
-
-当已设置TP_INFO标志时，D2D_TP_INFO标志不生效；
-
-当未设置TP_INFO标志时，设置D2D_TP_INFO标志，此时调用信息埋点接口[tracepoint()](#ZH-CN_TOPIC_0000002529285651__hitracechaintracepoint)，仅当mode参数为设备间通信DEVICE的情况下，会打印埋点信息hilog日志。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DEFAULT | 0 | 缺省标志。 |
+| INCLUDE_ASYNC | 1 | 异步调用标志。 设置该标志，同时跟踪同步和异步调用；缺省只跟踪同步调用。 |
+| DONOT_CREATE_SPAN | 1 << 1 | 无分支标志。 设置该标志，不创建分支信息；缺省创建分支信息。 |
+| TP_INFO | 1 << 2 | 埋点标志。 调试场景下设置该标志，调用信息埋点接口tracepoint()时，会打印埋点信息hilog日志；缺省不打印埋点信息hilog日志。 |
+| NO_BE_INFO | 1 << 3 | 无开始结束信息标志。 调试场景下设置该标志，调用开始跟踪接口begin()和结束跟踪接口end()时，分别会打印开始、结束跟踪信息hilog日志；缺省不打印开始、结束跟踪信息hilog日志。 |
+| DISABLE_LOG | 1 << 4 | 日志关联标志。 设置该标志，不会在hilog日志中附加HiTraceId信息；缺省会在hilog日志中附加HiTraceId信息。 |
+| FAILURE_TRIGGER | 1 << 5 | 故障触发标志。预置标志，暂未启用。 |
+| D2D_TP_INFO | 1 << 6 | 设备间埋点标志。TP_INFO的一个子集，调试场景下使用。 当已设置TP_INFO标志时，D2D_TP_INFO标志不生效； 当未设置TP_INFO标志时，设置D2D_TP_INFO标志，此时调用信息埋点接口tracepoint()，仅当mode参数为设备间通信DEVICE的情况下，会打印埋点信息hilog日志。 |
 
 #### HiTraceTracepointType
 
@@ -60,7 +33,13 @@ FAILURE_TRIGGER1 << 5故障触发标志。预置标志，暂未启用。D2D_TP_I
 
 **系统能力**：SystemCapability.HiviewDFX.HiTrace
 
-名称值说明CS0客户端发送。CR1客户端接收。SS2服务端发送。SR3服务端接收。GENERAL4通用类型，标识CS、CR、SS、SR四种场景之外的埋点。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CS | 0 | 客户端发送。 |
+| CR | 1 | 客户端接收。 |
+| SS | 2 | 服务端发送。 |
+| SR | 3 | 服务端接收。 |
+| GENERAL | 4 | 通用类型，标识CS、CR、SS、SR四种场景之外的埋点。 |
 
 #### HiTraceCommunicationMode
 
@@ -68,7 +47,12 @@ FAILURE_TRIGGER1 << 5故障触发标志。预置标志，暂未启用。D2D_TP_I
 
 **系统能力**：SystemCapability.HiviewDFX.HiTrace
 
-名称值说明DEFAULT0缺省通信类型。THREAD1线程间通信。PROCESS2进程间通信。DEVICE3设备间通信。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DEFAULT | 0 | 缺省通信类型。 |
+| THREAD | 1 | 线程间通信。 |
+| PROCESS | 2 | 进程间通信。 |
+| DEVICE | 3 | 设备间通信。 |
 
 #### HiTraceId
 
@@ -76,7 +60,12 @@ FAILURE_TRIGGER1 << 5故障触发标志。预置标志，暂未启用。D2D_TP_I
 
 **系统能力**：SystemCapability.HiviewDFX.HiTrace
 
-名称类型只读可选说明chainIdbigint否否跟踪链标识。spanIdnumber否是分支标识，默认值为0。parentSpanIdnumber否是父分支标识，默认值为0。flagsnumber否是跟踪标志位，默认值为0。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| chainId | bigint | 否 | 否 | 跟踪链标识。 |
+| spanId | number | 否 | 是 | 分支标识，默认值为0。 |
+| parentSpanId | number | 否 | 是 | 父分支标识，默认值为0。 |
+| flags | number | 否 | 是 | 跟踪标志位，默认值为0。 |
 
 #### hiTraceChain.begin
 
@@ -92,11 +81,16 @@ begin(name: string, flags?: number): HiTraceId
 
 **参数：**
 
-参数名类型必填说明namestring是跟踪业务名。flagsnumber否跟踪标志组合，具体可参考[HiTraceFlag](#ZH-CN_TOPIC_0000002529285651__hitraceflag)，默认值为0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 跟踪业务名。 |
+| flags | number | 否 | 跟踪标志组合，具体可参考HiTraceFlag，默认值为0。 |
 
 **返回值：**
 
-类型说明[HiTraceId](#ZH-CN_TOPIC_0000002529285651__hitraceid)HiTraceId实例。
+| 类型 | 说明 |
+| --- | --- |
+| HiTraceId | HiTraceId实例。 |
 
 **示例：**
 
@@ -121,7 +115,9 @@ end(id: HiTraceId): void
 
 **参数：**
 
-参数名类型必填说明id[HiTraceId](#ZH-CN_TOPIC_0000002529285651__hitraceid)是HiTraceId实例。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | HiTraceId | 是 | HiTraceId实例。 |
 
 **示例：**
 
@@ -144,7 +140,9 @@ getId(): HiTraceId
 
 **返回值：**
 
-类型说明[HiTraceId](#ZH-CN_TOPIC_0000002529285651__hitraceid)HiTraceId实例。
+| 类型 | 说明 |
+| --- | --- |
+| HiTraceId | HiTraceId实例。 |
 
 **示例：**
 
@@ -173,7 +171,9 @@ setId(id: HiTraceId): void
 
 **参数：**
 
-参数名类型必填说明id[HiTraceId](#ZH-CN_TOPIC_0000002529285651__hitraceid)是HiTraceId实例。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | HiTraceId | 是 | HiTraceId实例。 |
 
 **示例：**
 
@@ -217,7 +217,9 @@ createSpan(): HiTraceId
 
 **返回值：**
 
-类型说明[HiTraceId](#ZH-CN_TOPIC_0000002529285651__hitraceid)HiTraceId实例。
+| 类型 | 说明 |
+| --- | --- |
+| HiTraceId | HiTraceId实例。 |
 
 **示例：**
 
@@ -238,17 +240,22 @@ hiTraceChain.end(traceId);
 
 tracepoint(mode: HiTraceCommunicationMode, type: HiTraceTracepointType, id: HiTraceId, msg?: string): void
 
-[HiTraceMeter](@ohos.hiTraceMeter (性能打点).md)跟踪信息埋点，同步接口。
+[@ohos.hiTraceMeter (性能打点)](@ohos.hiTraceMeter (性能打点).md)跟踪信息埋点，同步接口。
 
-当type为客户端发送CS和服务端接收SC时，进行同步HiTraceMeter开始打点；当type为客户端接收CC和服务端发送SS时，进行同步HiTraceMeter结束打点；当type为通用类型GENERAL时，不会进行HiTraceMeter打点。
+当type为客户端发送CS和服务端接收SR时，进行同步HiTraceMeter开始打点；当type为客户端接收CR和服务端发送SS时，进行同步HiTraceMeter结束打点；当type为通用类型GENERAL时，不会进行HiTraceMeter打点。
 
-type为客户端发送CS和客户端接收CC的信息埋点需配套使用；type为服务端接收SC和服务端发送SS的信息埋点需配套使用。否则，HiTraceMeter开始与结束打点无法正常匹配。
+type为客户端发送CS和客户端接收CR的信息埋点需配套使用；type为服务端接收SR和服务端发送SS的信息埋点需配套使用。否则，HiTraceMeter开始与结束打点无法正常匹配。
 
 **系统能力**：SystemCapability.HiviewDFX.HiTrace
 
 **参数：**
 
-参数名类型必填说明mode[HiTraceCommunicationMode](#ZH-CN_TOPIC_0000002529285651__hitracecommunicationmode)是信息埋点需要指定的跟踪通信模式。type[HiTraceTracepointType](#ZH-CN_TOPIC_0000002529285651__hitracetracepointtype)是信息埋点需要指定的跟踪埋点类型。id[HiTraceId](#ZH-CN_TOPIC_0000002529285651__hitraceid)是实施信息埋点操作的HiTraceId实例。msgstring否HiTraceMeter打点操作传入的trace说明信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mode | HiTraceCommunicationMode | 是 | 信息埋点需要指定的跟踪通信模式。 |
+| type | HiTraceTracepointType | 是 | 信息埋点需要指定的跟踪埋点类型。 |
+| id | HiTraceId | 是 | 实施信息埋点操作的HiTraceId实例。 |
+| msg | string | 否 | HiTraceMeter打点操作传入的trace说明信息。 |
 
 **示例：**
 
@@ -271,11 +278,15 @@ isValid(id: HiTraceId): boolean
 
 **参数：**
 
-参数名类型必填说明id[HiTraceId](#ZH-CN_TOPIC_0000002529285651__hitraceid)是需要判断是否有效的HiTraceId实例。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | HiTraceId | 是 | 需要判断是否有效的HiTraceId实例。 |
 
 **返回值：**
 
-类型说明booleantrue：HiTraceId有效；false：HiTraceId无效。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：HiTraceId有效；false：HiTraceId无效。 |
 
 **示例：**
 
@@ -301,11 +312,16 @@ isFlagEnabled(id: HiTraceId, flag: HiTraceFlag): boolean
 
 **参数：**
 
-参数名类型必填说明id[HiTraceId](#ZH-CN_TOPIC_0000002529285651__hitraceid)是需要判断指定跟踪标志是否启用的HiTraceId实例。flag[HiTraceFlag](#ZH-CN_TOPIC_0000002529285651__hitraceflag)是指定的跟踪标志。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | HiTraceId | 是 | 需要判断指定跟踪标志是否启用的HiTraceId实例。 |
+| flag | HiTraceFlag | 是 | 指定的跟踪标志。 |
 
 **返回值：**
 
-类型说明booleantrue：HiTraceId已启用flag；false：HiTraceId未启用flag。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：HiTraceId已启用flag；false：HiTraceId未启用flag。 |
 
 **示例：**
 
@@ -331,7 +347,10 @@ enableFlag(id: HiTraceId, flag: HiTraceFlag): void
 
 **参数：**
 
-参数名类型必填说明id[HiTraceId](#ZH-CN_TOPIC_0000002529285651__hitraceid)是需要启用指定跟踪标志的HiTraceId实例。flag[HiTraceFlag](#ZH-CN_TOPIC_0000002529285651__hitraceflag)是指定的跟踪标志。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | HiTraceId | 是 | 需要启用指定跟踪标志的HiTraceId实例。 |
+| flag | HiTraceFlag | 是 | 指定的跟踪标志。 |
 
 **示例：**
 

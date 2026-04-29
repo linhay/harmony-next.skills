@@ -6,7 +6,10 @@
 
 本文中T和S的含义如下：
 
-类型说明TClass，number，boolean，string和这些类型的数组形式。Snumber，boolean，string。
+| 类型 | 说明 |
+| --- | --- |
+| T | Class，number，boolean，string和这些类型的数组形式。 |
+| S | number，boolean，string。 |
 
 #### 导入模块
 
@@ -38,7 +41,12 @@ defaultCreator?: StorageDefaultCreator<T>
 
 **参数：**
 
-参数名类型必填说明type[TypeConstructorWithArgs<T>](#ZH-CN_TOPIC_0000002529444753__typeconstructorwithargst)是指定的类型，若未指定key，则使用type的name作为key。keyOrDefaultCreatorstring | [StorageDefaultCreator<T>](#ZH-CN_TOPIC_0000002529444753__storagedefaultcreatort)否指定的key，或者是获取默认值的构造器。defaultCreatorStorageDefaultCreator<T>否获取默认值的构造器。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | TypeConstructorWithArgs<T> | 是 | 指定的类型，若未指定key，则使用type的name作为key。 |
+| keyOrDefaultCreator | string | StorageDefaultCreator<T> | 否 | 指定的key，或者是获取默认值的构造器。默认值为undefined。 |
+| defaultCreator | StorageDefaultCreator<T> | 否 | 获取默认值的构造器。默认值为undefined。 |
+
 
 1、若未指定key，使用第二个参数作为默认构造器；否则使用第三个参数作为默认构造器（第二个参数非法也使用第三个参数作为默认构造器）。
 
@@ -50,7 +58,9 @@ defaultCreator?: StorageDefaultCreator<T>
 
 **返回值：**
 
-类型说明T | undefined创建或获取AppStorageV2数据成功时，返回数据；否则返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| T | undefined | 创建或获取AppStorageV2数据成功时，返回数据；否则返回undefined。 |
 
 **示例：**
 
@@ -84,7 +94,10 @@ static remove<T>(keyOrType: string | TypeConstructorWithArgs<T>): void
 
 **参数：**
 
-参数名类型必填说明keyOrTypestring | TypeConstructorWithArgs<T>是需要删除的key；如果指定的是type类型，删除的key为type的name。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| keyOrType | string | TypeConstructorWithArgs<T> | 是 | 需要删除的key；如果指定的是type类型，删除的key为type的name。 |
+
 
 删除AppStorageV2中不存在的key会报警告。
 
@@ -113,7 +126,10 @@ static keys(): Array<string>
 
 **返回值：**
 
-类型说明Array<string>所有AppStorageV2中的key。
+| 类型 | 说明 |
+| --- | --- |
+| Array<string> | 所有AppStorageV2中的key。 |
+
 
 key在Array中的顺序是无序的，与key插入到AppStorageV2中的顺序无关。
 
@@ -126,13 +142,13 @@ const keys: Array<string> = AppStorageV2.keys();
 
 #### PersistenceV2
 
-继承自[AppStorageV2](#ZH-CN_TOPIC_0000002529444753__appstoragev2)，PersistenceV2具体UI使用说明，详见[PersistenceV2(持久化存储UI状态)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-persistencev2)。
+继承自[AppStorageV2](#ZH-CN_TOPIC_0000002553200701__appstoragev2)，PersistenceV2具体UI使用说明，详见[PersistenceV2(持久化存储UI状态)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-persistencev2)。
 
 #### globalConnect18+
 
 static globalConnect<T extends object>(type: ConnectOptions<T>): T | undefined
 
-将键值对数据储存在应用磁盘中。如果给定的key已经存在于[PersistenceV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-persistencev2)中，返回对应的值；否则，会通过获取默认值的构造器构造默认值，并返回。如果globalConnect的是@ObservedV2对象，该对象@Trace属性的变化，会触发整个关联对象的自动刷新；非@Trace属性变化则不会，如有必要，可调用PersistenceV2.save接口手动存储。
+将键值对数据储存在应用磁盘中。如果给定的key已经存在于[PersistenceV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-persistencev2)中，返回对应的值；否则，会通过获取默认值的构造器构造默认值，并返回。如果globalConnect的是[@ObservedV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)对象，该对象[@Trace](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)属性的变化，会触发整个关联对象的自动刷新；非@Trace属性变化则不会，如有必要，可调用[PersistenceV2.save](#ZH-CN_TOPIC_0000002553200701__save)接口手动存储。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -140,11 +156,16 @@ static globalConnect<T extends object>(type: ConnectOptions<T>): T | undefined
 
 **参数：**
 
-参数名类型必填说明type[ConnectOptions<T>](#ZH-CN_TOPIC_0000002529444753__connectoptions18)是传入的connect参数，详细说明见ConnectOptions参数说明。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | ConnectOptions<T> | 是 | 传入的connect参数，详细说明见ConnectOptions参数说明。 |
 
 **返回值：**
 
-类型说明T | undefined创建或获取数据成功时，返回数据；否则返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| T | undefined | 创建或获取数据成功时，返回数据；否则返回undefined。 |
+
 
 1、若未指定key，使用第二个参数作为默认构造器；否则使用第三个参数作为默认构造器（第二个参数非法也使用第三个参数作为默认构造器）。
 
@@ -169,7 +190,7 @@ static globalConnect<T extends object>(type: ConnectOptions<T>): T | undefined
 仅供开发者了解globalConnect用法，完整使用需开发者自己写出@Entry组件。
 
 ```ets
-import { PersistenceV2, Type, ConnectOptions } from '@kit.ArkUI';
+import { PersistenceV2, Type } from '@kit.ArkUI';
 import { contextConstant } from '@kit.AbilityKit';
 
 @ObservedV2
@@ -208,6 +229,96 @@ const p3: Sample = PersistenceV2.globalConnect({
 })!;
 ```
 
+**globalConnect23+**
+
+static globalConnect<T extends CollectionType<S>, S extends object>(
+
+type: ConnectOptionsCollections<T, S> | ConnectOptions<T>
+
+): T | undefined
+
+将键值对数据储存在应用磁盘中。支持集合类型[Array，Map，Set，Date，collections.Array, collections.Map, collections.Set类型的持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-persistencev2#globalconnect支持集合的类型)。注意在持久化Array<ClassA>类型的数据时，需要调用[makeObserved](#ZH-CN_TOPIC_0000002553200701__makeobserved)使返回的对象被观察到。不支持多个嵌套集合，例如不支持Array<Array<ClassA>>的持久化。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | ConnectOptionsCollections<T, S>| ConnectOptions<T> | 是 | 传入的globalConnect参数，详细说明见ConnectOptions和ConnectOptionsCollections参数说明。 当开发者在ConnectOptionsCollections中提供默认defaultSubCreator时，则需要同时提供默认创建器defaultCreator，如果不提供，会导致持久化失败。且集合项类型S必须与defaultSubCreator的返回类型相同。如果返回类型不一致，编译会报错。 |
+
+当开发者在globalConnect中使用defaultSubCreator选项时，必须要提供defaultCreator。且defaultSubCreator函数的返回类型必须与defaultCreator返回的集合项类型相同。
+
+当globalConnect持久化Array<ClassA>类型的数据时，开发者需要使用defaultSubCreator选项去告诉状态管理框架创建ClassA类的一个实例。如下是globalConnect持久化Array<ClassA>类型的数据的示例：
+
+```ets
+class ClassA {
+  propA: number;
+  // ...
+}
+
+@ComponentV2
+struct Page1 {
+  // 顶层持久化数据类型为Array<ClassA>
+  @Local arr: Array<ClassA> = PersistenceV2.globalConnect({
+    type: Array<ClassA>,
+    defaultCreator: () => UIUtils.makeObserved(new Array<ClassA>()),
+    // 添加defaultSubCreator，通知状态管理框架如何创建ClassA对象
+    // 另外持久化后的数据需要加上makeObserved，否则会持久化失败
+    defaultSubCreator: () => UIUtils.makeObserved(new ClassA())
+  })!
+  // ...
+}
+```
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| T | undefined | 创建或获取数据成功时，返回数据；否则返回undefined。 |
+
+示例：
+
+如下展示globalConnect持久化Map类型的示例代码：
+
+```ets
+import { PersistenceV2, ConnectOptions } from '@kit.ArkUI';
+
+@Entry
+@ComponentV2
+struct Page1 {
+  // globalConnect支持持久化Map类型的数据
+  @Local map: Map<number, number> = PersistenceV2.globalConnect({
+    type: Map<number, number>, defaultCreator: () => new Map<number, number>()
+  })!
+  output: string[] = [];
+
+  // 启动应用，第一次进入，展示restored Map.size=0, map.get(0)=undefined, map.get(1)=undefined, map.get(2)=undefined
+  // 关闭应用，第二次进入，展示restored Map.size=1, map.get(0)=0, map.get(1)=undefined, map.get(2)=undefined
+  // 关闭应用，第三次进入，展示restored Map.size=2, map.get(0)=0, map.get(1)=1, map.get(2)=undefined
+  // 关闭应用，第四次进入，展示restored Map.size=3, map.get(0)=0, map.get(1)=1, map.get(2)=2
+  aboutToAppear(): void {
+    const restoredMapSize = this.map.size;
+    this.output.push(`restored Map.size=${restoredMapSize}, map.get(0)=${this.map.get(0)}, map.get(1)=${this.map.get(1)}, map.get(2)=${this.map.get(2)}`);
+    this.map.set(restoredMapSize, restoredMapSize);
+    // 需要手工持久化
+    PersistenceV2.save('Map');
+  }
+
+  build() {
+    Column() {
+      Row() {
+        Text(this.output.join('\n\n'))
+          .fontSize(24)
+      }
+    .width('100%')
+  }
+```
+
 #### save
 
 static save<T>(keyOrType: string | TypeConstructorWithArgs<T>): void
@@ -220,7 +331,10 @@ static save<T>(keyOrType: string | TypeConstructorWithArgs<T>): void
 
 **参数：**
 
-参数名类型必填说明keyOrTypestring | TypeConstructorWithArgs<T>是需要持久化的key；如果指定的是type类型，持久化的key为type的name。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| keyOrType | string | TypeConstructorWithArgs<T> | 是 | 需要持久化的key；如果指定的是type类型，持久化的key为type的name。 |
+
 
 由于非[@Trace](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)的数据改变不会触发[PersistenceV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-persistencev2)的自动持久化，如有必要，可调用该接口持久化对应key的数据。
 
@@ -256,7 +370,9 @@ static notifyOnError(callback: PersistenceErrorCallback | undefined): void
 
 **参数：**
 
-参数名类型必填说明callbackPersistenceErrorCallback | undefined是持久化失败时调用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | PersistenceErrorCallback | undefined | 是 | 持久化失败时调用。 |
 
 **示例：**
 
@@ -275,7 +391,178 @@ globalConnect参数类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明typeTypeConstructorWithArgs<T>否否指定的类型。keystring否是传入的key，不传则使用type的名字作为key。defaultCreatorStorageDefaultCreator<T>否是默认数据的构造器，建议传递，如果globalConnect是第一次连接key，不传会报错。areaModecontextConstant.AreaMode否是加密级别：EL1-EL5，详见[加密级别](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#获取和修改加密分区)，对应数值：0-4，不传时默认为EL2，不同加密级别对应不同的加密分区，即不同的存储路径，传入的加密等级数值不在0-4会直接运行crash。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| type | TypeConstructorWithArgs<T> | 否 | 否 | 指定的类型。 |
+| key | string | 否 | 是 | 传入的key，不传则使用type的名字作为key。 |
+| defaultCreator | StorageDefaultCreator<T> | 否 | 是 | 默认数据的构造器，建议传递，如果globalConnect是第一次连接key，不传会报错。 |
+| areaMode | contextConstant.AreaMode | 否 | 是 | 加密级别：EL1-EL5，详见加密级别，对应数值：0-4，不传时默认为EL2，不同加密级别对应不同的加密分区，即不同的存储路径，传入的加密等级数值不在0-4会直接运行crash。 |
+
+**ConnectOptionsCollections23+**
+
+[globalConnect](#ZH-CN_TOPIC_0000002553200701__globalconnect23)接口参数类型，ConnectOptionsCollections继承自[ConnectOptions](#ZH-CN_TOPIC_0000002553200701__connectoptions18)。当开发者需要持久化容器类型数据（如Array<S>）时，需要使用ConnectOptionsCollections入参。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| defaultCreator | StorageDefaultCreator<T> | 否 | 是 | 用于持久化容器类型数据，当提供默认defaultSubCreator时，则需要同时提供默认创建器defaultCreator，不提供默认创建器，会导致无法持久化容器类型数据。集合项类型S必须与defaultSubCreator的返回类型相同。如果提供defaultSubCreator，没有提供defaultCreator，会导致持久化失败。 |
+| defaultSubCreator | StorageDefaultCreator<S> | 否 | 是 | 使用该集合项默认构造函数，用于持久化容器类数据。如果defaultSubCreator返回的是undefined或null，会导致持久化失败。 当持久化用户自定义class类集合（如Array<ClassA>）时，defaultCreator中的泛型类型T为Array<ClassA>，则defaultSubCreator中的泛型类型S为ClassA。 |
+
+如下展示StorageDefaultCreator<T>和StorageDefaultCreator<S>示例：
+
+示例：
+
+```ets
+class ClassA {
+  propA: number;
+  // ...
+}
+
+@ComponentV2
+struct Page {
+  // StorageDefaultCreator<T>默认创建器为`() => UIUtils.makeObserved(new Array<ClassA>())`, 其中`T`的类型是指`Array<ClassA>`
+  // StorageDefaultCreator<S> 默认创建器为`() =>UIUtils.makeObserved(new ClassA())`，其中，`S`的类型是指`ClassA`
+  @Local arr: Array<ClassA> = PersistenceV2.globalConnect({
+    type: Array<ClassA>,
+    defaultCreator: () => UIUtils.makeObserved(new Array<ClassA>()),
+    // 添加defaultSubCreator，通知状态管理框架如何创建ClassA对象
+    // 另外持久化后的数据需要加上makeObserved，否则会持久化失败
+    defaultSubCreator: () => UIUtils.makeObserved(new ClassA())
+  })!
+  // ...
+}
+```
+
+当StorageDefaultCreator<S>返回值为undefined或null时，持久化会失败。当StorageDefaultCreator<S>直接设置为undefined或null时,状态管理框架会按照原始的类型（如Object类型）进行持久化，但是会丢失class对象中的方法。在如下示例中，StorageDefaultCreator<S>直接被设置为undefined或null时，持久化过程中ClassA对象中的report方法将被丢失。
+
+```ets
+import { PersistenceV2, UIUtils } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@ObservedV2
+class ClassA {
+  @Trace public propA: string = '';
+  @Trace public propB: string = '';
+
+  public report(): string {
+    return `${this.propA} - ${this.propB}`;
+  }
+
+@Entry
+@ComponentV2
+struct Comp {
+  // 持久化顶层数据类型为`Array<ClassA>`的数据。
+  @Local arr: Array<ClassA> = PersistenceV2.globalConnect({
+    type: Array<ClassA>,
+    defaultCreator: () => UIUtils.makeObserved(new Array<ClassA>()),
+    // defaultSubCreator的返回的值被设置为`undefined`或`null` (defaultSubCreator: () => undefined)，持久化失败。
+    // defaultSubCreator被直接设置为`undefined`或`null` (defaultSubCreator: undefined))，持久化会丢失`ClassA`中的方法。
+    defaultSubCreator: undefined
+  })!;
+
+  aboutToAppear(): void {
+    if (this.arr.length) {
+      // 步骤3：再次进入应用，持久化过程中丢失`ClassA中`的方法，当调用`ClassA`对象中的`report`方法，会报`undefined is not callable`的错误。
+      hilog.info(0xFF00, 'testTag', '%{public}s', this.arr[0].report());
+    }
+  build() {
+    Column() {
+      Repeat(this.arr)
+        .each(ri => {
+          Row() {
+            Text(`propA '${ri.item.propA}'`)
+            Text(`propB '${ri.item.propB}'`)
+            Text(`report?.() '${ri.item.report?.()}'`)
+          }
+        })
+      // 步骤1：点击'add item'，显示`propA 'a' propB 'b'report?.'a' - 'b'`。
+      // 步骤2：关闭应用。
+      Button('add item')
+        .onClick(() => {
+          let temp: ClassA = new ClassA();
+          temp.propA = 'a';
+          temp.propB = 'b';
+          this.arr.push(temp);
+        })
+    }
+```
+
+**CollectionType23+**
+
+type CollectionType<S> = Array<S> | Map<string | number, S> |
+
+Set<S> | collections.Array<S> | collections.Map<string | number, S> | collections.Set<S>
+
+globalConnect的入参泛型，用于定义globalConnect支持的持久化集合数据类型。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+| 类型 | 说明 |
+| --- | --- |
+| Array<S> | 表示值类型为Array类型。 |
+| Map<string | number, S> | 表示值类型为Map类型。 |
+| Set<S> | 表示值类型为Set类型。 |
+| collections.Array<S> | 表示值类型为collections.Array类型。 |
+| collections.Map<string | number, S> | 表示值类型为collections.Map类型。 |
+| collections.Set<S> | 表示值类型为collections.Set类型。 |
+
+**ObservedResult23+**
+
+对象是否可被观察的结果。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| isObserved | boolean | 否 | 否 | 对象是否可被观察。 true：表示是可被观察对象。 false：表示不是可被观察对象。 |
+| reason | string | 否 | 否 | 对象是否可被观察的原因。 不可被观察原因：对象本身是不可被观察的。 可被观察原因或使用场景： 1. V1对象被@Observed装饰器装饰或对象是被makeV1Observed方法转换的。 2. V1对象被@Observed装饰器装饰或对象是被makeV1Observed方法转换的，但对象没有被UI组件使用。 3. V1对象被enableV2Compatibility方法转换后传入V2组件。 4. V1对象被enableV2Compatibility方法转换后传入V2组件，但没有被V2组件使用。 5. V2对象是被@ObservedV2/@Trace装饰的。 6. V2对象是被makeObserved方法转换的。 7. V2对象属于Array/Map/Set/Date类型。 8. V2对象是被@ObservedV2/@Trace装饰的，但对象没有被UI组件使用。 9. V2对象是被makeObserved方法转换的，但没有被UI组件使用。 10. V2对象属于Array/Map/Set/Date类型，但没有被UI组件使用。 |
+| decoratorInfo | Array<DecoratorInfo> | 否 | 否 | 对象可被观察时，数组中内容为对象关联的装饰器和组件信息。对象不可被观察时，此数组为空。 |
+
+**DecoratorInfo23+**
+
+可被观察对象关联的装饰器和组件信息。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| decoratorName | string | 否 | 否 | 当对象是V1对象时，值是对象关联的装饰器名称。 当V1对象使用@Track时，值为：'@Track'。 当V2对象使用@Trace时，值为：'@Trace'。 当V2对象使用makeObserved时，值为：'MakeObserved'。 当V2对象使用enableV2Compatibility时，值为：'EnableV2Compatible'。 当V2对象使用built-in类型数据时，值为：'ProxyObservedV2'。 |
+| stateVariableName | string | 否 | 否 | 被装饰器装饰的属性名称。 |
+| owningComponentOrClassName | string | 否 | 否 | V1对象返回被使用的组件名称。 V1对象有属性使用@Track装饰器时返回对象名称。 V2对象返回对象名称。 |
+| owningComponentId | number | 否 | 否 | V1对象返回被使用的组件id。 V1对象有属性使用@Track装饰器时和V2对象返回的是对象名称，无组件id，返回-1。 |
+| dependentInfo | Array<ElementInfo> | 否 | 否 | 使用该可观察对象的组件信息。若对象没有用在任何UI上，则返回空数组。 |
+
+**ElementInfo23+**
+
+可被观察对象关联的组件信息，包含系统组件和自定义组件。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| elementName | string | 否 | 否 | 组件的名称。 |
+| elementId | number | 否 | 否 | 组件的ID。 |
 
 #### UIUtils
 
@@ -293,11 +580,15 @@ static getTarget<T extends object>(source: T): T
 
 **参数：**
 
-参数名类型必填说明sourceT是数据源对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| source | T | 是 | 数据源对象。 |
 
 **返回值：**
 
-类型说明T数据源对象去除状态管理框架所加代理后的原始对象。
+| 类型 | 说明 |
+| --- | --- |
+| T | 数据源对象去除状态管理框架所加代理后的原始对象。 |
 
 **示例：**
 
@@ -321,7 +612,177 @@ struct Index {
       Text(`UIUtils.getTarget(this.someClass) === nonObservedClass: ${UIUtils.getTarget(this.someClass) ===
         nonObservedClass}`) // true
     }
+```
+
+**getLifecycle23+**
+
+static getLifecycle<T extends BaseCustomComponent>(customComponent: T): CustomComponentLifecycle
+
+getLifecycle用于获取[自定义组件的生命周期](自定义组件的生命周期（推荐）.md)实例。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| customComponent | T | 是 | 自定义组件实例。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| CustomComponentLifecycle | 自定义组件的生命周期实例。 |
+
+示例：
+
+```ets
+import { UIUtils, ComponentAppear } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  @State lifecycleState: number = -1;
+
+  @ComponentAppear
+  myAppear() {
+    // UIUtils.getLifecycle获得自定义组件的生命周期实例，getCurrentState查询自定义组件当前生命周期。
+    // 预期查询到的生命周期为CustomComponentLifecycleState.APPEARED = 1。
+    this.lifecycleState = UIUtils.getLifecycle(this).getCurrentState();
   }
+
+  build() {
+    Text(`${this.lifecycleState}`)
+  }
+```
+
+**canBeObserved23+**
+
+static canBeObserved<T extends object>(source: T): ObservedResult
+
+判断数据对象是否为可观察对象，并返回观察结果。详见[canBeObserved接口：判断对象是否为可被观察对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-canbeobserved)。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| source | T | 是 | 输入一个数据对象，判断其是否可被观察。支持Array、Map、Set和Date类型数据。 具体使用规则，详见canBeObserved接口：判断对象是否为可被观察对象。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| ObservedResult | 返回对象是否可被观察的结果。 |
+
+示例：
+
+```ets
+import { UIUtils } from '@kit.ArkUI';
+import { DecoratorInfo, ElementInfo } from '@ohos.arkui.StateManagement';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const TAG = 'CanBeObserved';
+
+class Student {
+  public name?: string;
+
+  constructor(name?: string) {
+    this.name = name ?? '';
+  }
+
+  // 在对象中提供判断该对象是否为可被观察对象的方法
+  test(): void {
+    const result = UIUtils.canBeObserved(this);
+    // 对象是否可被观察
+    const isObserved = result.isObserved;
+    hilog.info(0x00, TAG, `isObserved: ${JSON.stringify(isObserved)}`);
+    // 对象是否可被观察的原因
+    const reason = result.reason;
+    hilog.info(0x00, TAG, `reason: ${reason}`);
+    // 对象可被观察时，对象关联的装饰器信息
+    const decoratorInfoArr = result.decoratorInfo;
+    decoratorInfoArr.forEach((decorator: DecoratorInfo) => {
+      // 装饰器名称
+      const decoratorName = decorator.decoratorName;
+      hilog.info(0x00, TAG, `decoratorName: ${decoratorName}`);
+      // 装饰器装饰的属性名称
+      const stateVariableName = decorator.stateVariableName;
+      hilog.info(0x00, TAG, `stateVariableName: ${stateVariableName}`);
+      // 装饰器所在的组件名称
+      const owningName = decorator.owningComponentOrClassName;
+      hilog.info(0x00, TAG, `owningComponentOrClassName: ${owningName}`);
+      // 装饰器所在的组件id
+      const owningId = decorator.owningComponentId;
+      hilog.info(0x00, TAG, `owningComponentId: ${owningId}`);
+      // 装饰器关联的组件信息
+      const dependentInfo = decorator.dependentInfo;
+      dependentInfo.forEach((elementInfo: ElementInfo) => {
+        // 装饰器关联的组件名称
+        const eleName = elementInfo.elementName;
+        hilog.info(0x00, TAG, `elementName: ${eleName}`);
+        // 装饰器关联的组件id
+        const eleId = elementInfo.elementId;
+        hilog.info(0x00, TAG, `elementId: ${eleId}`);
+      })
+  }
+
+@Entry
+@Component
+struct Index {
+  @State student: Student = new Student('LiMei');
+
+  build() {
+    Column({ space: 20 }) {
+      Classroom({ student: this.student })
+      Home({ student: this.student })
+      Button('test')
+        .onClick(() => {
+          // 开发者可以在任意页面中使用接口来判断当前对象是否为可被观察对象
+          this.student.test();
+        })
+    }
+    .height('100%')
+    .width('100%')
+    .justifyContent(FlexAlign.Center)
+    .alignItems(HorizontalAlign.Center)
+  }
+
+@Component
+export struct Classroom {
+  @State student: Student = new Student();
+
+  build() {
+    Column() {
+      Text('Classroom ' + this.student.name)
+      School({ student: this.student })
+    }
+
+@Component
+export struct Home {
+  @State student: Student = new Student();
+
+  build() {
+    Column() {
+      Text('Home ' + this.student.name)
+    }
+
+@Component
+export struct School {
+  @State student: Student = new Student();
+
+  build() {
+    Column() {
+      Text('School ' + this.student.name)
 }
 ```
 
@@ -337,19 +798,15 @@ static makeObserved<T extends object>(source: T): T
 
 **参数：**
 
-参数名类型必填说明sourceT是
-
-数据源对象。支持非@Observed和@ObservedV2装饰的class，JSON.parse返回的Object和@Sendable修饰的class。
-
-支持Array、Map、Set和Date。
-
-支持collection.Array, collection.Set和collection.Map。
-
-具体使用规则，详见[makeObserved接口：将非观察数据变为可观察数据](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-makeobserved)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| source | T | 是 | 数据源对象。支持非@Observed和@ObservedV2装饰的class，JSON.parse返回的Object和@Sendable修饰的class。 支持Array、Map、Set和Date。 支持collections.Array, collections.Set和collections.Map。 具体使用规则，详见makeObserved接口：将非观察数据变为可观察数据。 |
 
 **返回值：**
 
-类型说明T可观察的数据。
+| 类型 | 说明 |
+| --- | --- |
+| T | 可观察的数据。 |
 
 **示例：**
 
@@ -377,15 +834,13 @@ struct Index {
           this.nonObservedClass.name = 'Jane'; // 不刷新
         })
     }
-  }
-}
 ```
 
 #### enableV2Compatibility19+
 
 static enableV2Compatibility<T extends object>(source: T): T
 
-使V1的状态变量能够在@ComponentV2中观察，主要应用于状态管理V1、V2混用场景。详见[状态管理V1V2混用文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-mixusage)。
+使V1的状态变量能够在@ComponentV2中观察，主要应用于状态管理V1、V2混用场景。详见[状态管理V1和V2混用指导（API version 19及之后）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-mixusage)。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -393,11 +848,15 @@ static enableV2Compatibility<T extends object>(source: T): T
 
 **参数：**
 
-参数名类型必填说明sourceT是数据源，仅支持V1状态数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| source | T | 是 | 数据源，仅支持V1状态数据。 |
 
 **返回值：**
 
-类型说明T如果数据源是V1的状态数据，则返回能够在@ComponentV2中观察的数据。否则返回数据源本身。
+| 类型 | 说明 |
+| --- | --- |
+| T | 如果数据源是V1的状态数据，则返回能够在@ComponentV2中观察的数据。否则返回数据源本身。 |
 
 **示例：**
 
@@ -423,8 +882,6 @@ struct CompV1 {
       // 将V1的状态变量使能V2的观察能力
       CompV2({ observedClass: UIUtils.enableV2Compatibility(this.observedClass) })
     }
-  }
-}
 
 @ComponentV2
 struct CompV2 {
@@ -437,7 +894,6 @@ struct CompV2 {
         this.observedClass.name = 'Param'; // 刷新
       })
   }
-}
 ```
 
 #### makeV1Observed19+
@@ -446,7 +902,7 @@ static makeV1Observed<T extends object>(source: T): T
 
 将不可观察的对象包装成状态管理V1可观察的对象，其能力等同于@Observed，可初始化@ObjectLink。
 
-该接口可搭配[enableV2Compatibility](#ZH-CN_TOPIC_0000002529444753__enablev2compatibility19)应用于状态管理V1和V2混用场景，详见[状态管理V1V2混用文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-mixusage)。
+该接口可搭配[enableV2Compatibility](#ZH-CN_TOPIC_0000002553200701__enablev2compatibility19)应用于状态管理V1和V2混用场景，详见[状态管理V1和V2混用指导（API version 19及之后）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-mixusage)。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -454,17 +910,15 @@ static makeV1Observed<T extends object>(source: T): T
 
 **参数：**
 
-参数名类型必填说明sourceT是
-
-数据源。支持普通class、Array、Map、Set、Date类型。
-
-不支持[collections类型](../../guides/模块描述.md)和[@Sendable](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)修饰的class。
-
-不支持undefined和null。不支持状态管理V2的数据和[makeObserved](#ZH-CN_TOPIC_0000002529444753__makeobserved)的返回值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| source | T | 是 | 数据源。支持普通class、Array、Map、Set、Date类型。 不支持collections类型和@Sendable修饰的class。 不支持undefined和null。不支持状态管理V2的数据和makeObserved的返回值。 |
 
 **返回值：**
 
-类型说明T对于支持的入参类型，返回状态管理V1的观察数据。对于不支持的入参类型，返回数据源对象本身。
+| 类型 | 说明 |
+| --- | --- |
+| T | 对于支持的入参类型，返回状态管理V1的观察数据。对于不支持的入参类型，返回数据源对象本身。 |
 
 **示例：**
 
@@ -477,7 +931,6 @@ class Outer {
 
   constructor(inner: Inner) {
     this.inner = inner;
-  }
 }
 
 class Inner {
@@ -497,7 +950,6 @@ struct Index {
     .height('100%')
     .width('100%')
   }
-}
 
 @Component
 struct Child {
@@ -509,14 +961,13 @@ struct Child {
         this.inner.interValue += '!';
       })
   }
-}
 ```
 
 #### makeBinding20+
 
 static makeBinding<T>(getter: GetterCallback<T>): Binding<T>
 
-创建只读的单向数据绑定实例，用于构建@Builder函数中参数类型为Binding的对应实参。
+创建只读的单向数据绑定实例，用于构建[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder)函数中参数类型为Binding的对应实参。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -524,11 +975,15 @@ static makeBinding<T>(getter: GetterCallback<T>): Binding<T>
 
 **参数：**
 
-参数名类型必填说明getter[GetterCallback<T>](#ZH-CN_TOPIC_0000002529444753__gettercallback20)是获取值的回调函数，每次访问值都会重新执行函数，获取最新值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| getter | GetterCallback<T> | 是 | 获取值的回调函数，每次访问值都会重新执行函数，获取最新值。 |
 
 **返回值：**
 
-类型说明[Binding<T>](#ZH-CN_TOPIC_0000002529444753__bindingt20)仅包含一个value属性，用于获取当前绑定的值。只能读取值，不能直接修改。
+| 类型 | 说明 |
+| --- | --- |
+| Binding<T> | 仅包含一个value属性，用于获取当前绑定的值。只能读取值，不能直接修改。 |
 
 **示例：**
 
@@ -542,7 +997,6 @@ function CustomButton(num1: Binding<number>) {
       .onClick(() => {
         // num1.value += 1; 会报错，Binding类型不支持修改
       })
-  }
 }
 
 @Entry
@@ -568,9 +1022,6 @@ struct CompV2 {
         UIUtils.makeBinding<number>(
           () => this.number1 // GetterCallback
         )
-      )
-    }
-  }
 }
 ```
 
@@ -586,11 +1037,16 @@ static makeBinding<T>(getter: GetterCallback<T>, setter: SetterCallback<T>): Mut
 
 **参数：**
 
-参数名类型必填说明getter[GetterCallback<T>](#ZH-CN_TOPIC_0000002529444753__gettercallback20)是获取值的回调函数，每次访问值都会重新执行函数，获取最新值。setter[SetterCallback<T>](#ZH-CN_TOPIC_0000002529444753__settercallback20)是定义如何更新值，当.value被修改时自动调用此函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| getter | GetterCallback<T> | 是 | 获取值的回调函数，每次访问值都会重新执行函数，获取最新值。 |
+| setter | SetterCallback<T> | 是 | 定义如何更新值，当.value被修改时自动调用此函数。 |
 
 **返回值：**
 
-类型说明[MutableBinding<T>](#ZH-CN_TOPIC_0000002529444753__mutablebindingt20)包含一个value属性，支持通过.value读取和修改数据，设置值时会检查类型是否匹配泛型T。
+| 类型 | 说明 |
+| --- | --- |
+| MutableBinding<T> | 包含一个value属性，支持通过.value读取和修改数据，设置值时会检查类型是否匹配泛型T。 |
 
 **示例：**
 
@@ -605,7 +1061,6 @@ function CustomButton(num2: MutableBinding<number>) {
         // MutableBinding类型支持修改
         num2.value += 1;
       })
-  }
 }
 
 @Entry
@@ -636,8 +1091,6 @@ struct CompV2 {
           }) // SetterCallback
       )
     }
-  }
-}
 ```
 
 #### addMonitor20+
@@ -652,31 +1105,22 @@ static addMonitor(target: object, path: string | string[], monitorCallback: Moni
 
 **参数：**
 
-参数名类型必填说明targetobject是
-
-目标对象，仅支持[@ComponentV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#componentv2)和[@ObservedV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)实例。
-
-对于不支持的类型，会抛出运行时错误，错误码见表格。
-
-pathstring | string[]是
-
-添加监听的变量名路径。可指定一个路径或者传入string数组用于一次性指定多个监听的变量路径。
-
-仅支持string和string数组，对于不支持的类型，会抛出运行时错误，错误码见表格。
-
-monitorCallback[MonitorCallback](#ZH-CN_TOPIC_0000002529444753__monitorcallback20)是
-
-给对应的状态变量注册的监听函数，即path路径对应的状态变量改变时，会回调对应的函数。
-
-对于不支持的类型，会抛出运行时错误，错误码见表格。
-
-options[MonitorOptions](#ZH-CN_TOPIC_0000002529444753__monitoroptions20)否监听函数的配置项，具体可见[MonitorOptions](#ZH-CN_TOPIC_0000002529444753__monitoroptions20)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| target | object | 是 | 目标对象，仅支持@ComponentV2和@ObservedV2实例。 对于不支持的类型，会抛出运行时错误，错误码见表格。 |
+| path | string | string[] | 是 | 添加监听的变量名路径。可指定一个路径或者传入string数组用于一次性指定多个监听的变量路径。 仅支持string和string数组，对于不支持的类型，会抛出运行时错误，错误码见表格。 |
+| monitorCallback | MonitorCallback | 是 | 给对应的状态变量注册的监听函数，即path路径对应的状态变量改变时，会回调对应的函数。 对于不支持的类型，会抛出运行时错误，错误码见表格。 |
+| options | MonitorOptions | 否 | 监听函数的配置项，具体可见MonitorOptions。默认为异步回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[状态管理错误码](../../errors/状态管理错误码.md)。
+以下错误码的详细介绍请参见[状态管理错误码]([状态管理错误码](../../errors/状态管理错误码.md).md)。
 
-错误码ID错误信息130000The target is not a custom component instance or V2 class instance.130001The path is invalid.130002monitorCallback is not a function or an anonymous function.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 130000 | The target is not a custom component instance or V2 class instance. |
+| 130001 | The path is invalid. |
+| 130002 | monitorCallback is not a function or an anonymous function. |
 
 **示例：**
 
@@ -707,7 +1151,6 @@ class ObservedClass {
     // 给当前ObservedClass的实例this添加对属性name的监听回调this.onChange，且当前监听回调是同步监听
     UIUtils.addMonitor(this, 'name', this.onChange, { isSynchronous: true });
   }
-}
 
 @Entry
 @ComponentV2
@@ -723,15 +1166,13 @@ struct Index {
           this.observedClass.name = 'Jane';
         })
     }
-  }
-}
 ```
 
 #### clearMonitor20+
 
 static clearMonitor(target: object, path: string | string[], monitorCallback?: MonitorCallback): void
 
-删除通过[addMonitor](#ZH-CN_TOPIC_0000002529444753__addmonitor20)给状态管理V2的状态变量添加的监听方法，详见[addMonitor/clearMonitor](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-addmonitor-clearmonitor)。
+删除通过[addMonitor](#ZH-CN_TOPIC_0000002553200701__addmonitor20)给状态管理V2的状态变量添加的监听方法，详见[addMonitor/clearMonitor](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-addmonitor-clearmonitor)。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -739,31 +1180,21 @@ static clearMonitor(target: object, path: string | string[], monitorCallback?: M
 
 **参数：**
 
-参数名类型必填说明targetobject是
-
-目标对象，仅支持[@ComponentV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#componentv2)和[@ObservedV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)实例。
-
-对于不支持的类型，会抛出运行时错误，错误码见表格。
-
-pathstring | string[]是
-
-删除监听的变量名路径。可指定一个路径或者传入string数组用于一次性指定删除多个状态变量的监听函数。
-
-仅支持string和数组，对于不支持的类型，会抛出运行时错误，错误码见表格。
-
-monitorCallback[MonitorCallback](#ZH-CN_TOPIC_0000002529444753__monitorcallback20)否
-
-指定被删除的监听函数。
-
-当开发者不传此参数时，将删除path对应变量注册的所有监听函数。
-
-对于不支持的类型，会抛出运行时错误，错误码见表格。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| target | object | 是 | 目标对象，仅支持@ComponentV2和@ObservedV2实例。 对于不支持的类型，会抛出运行时错误，错误码见表格。 |
+| path | string | string[] | 是 | 删除监听的变量名路径。可指定一个路径或者传入string数组用于一次性指定删除多个状态变量的监听函数。 仅支持string和数组，对于不支持的类型，会抛出运行时错误，错误码见表格。 |
+| monitorCallback | MonitorCallback | 否 | 指定被删除的监听函数。 当开发者不传此参数时，将删除path对应变量注册的所有监听函数。 对于不支持的类型，会抛出运行时错误，错误码见表格。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[状态管理错误码](../../errors/状态管理错误码.md)。
+以下错误码的详细介绍请参见[状态管理错误码](状态管理错误码.md)。
 
-错误码ID错误信息130000The target is not a custom component instance or V2 class instance.130001The path is invalid.130002monitorCallback is not a function or an anonymous function.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 130000 | The target is not a custom component instance or V2 class instance. |
+| 130001 | The path is invalid. |
+| 130002 | monitorCallback is not a function or an anonymous function. |
 
 **示例：**
 
@@ -771,7 +1202,6 @@ monitorCallback[MonitorCallback](#ZH-CN_TOPIC_0000002529444753__monitorcallback2
 
 1. 在ObservedClass的构造方法中，添加对age属性的同步监听回调onChange。
 1. 点击Text组件，触发age自增，onChange的监听回调函数被触发。打印日志如下。
-
 ```ets
 ObservedClass property age change from 10 to 11
 ```
@@ -793,9 +1223,8 @@ class ObservedClass {
   }
 
   constructor() {
-    // 给当前ObservedClass的实例this添加对属性name的监听回调this.onChange，且当前监听回调是同步监听
+    // 给当前ObservedClass的实例this添加对属性age的监听回调this.onChange，且当前监听回调是同步监听
     UIUtils.addMonitor(this, 'age', this.onChange);
-  }
 }
 
 @Entry
@@ -818,8 +1247,6 @@ struct Index {
           UIUtils.clearMonitor(this.observedClass, 'age', this.observedClass.onChange);
         })
     }
-  }
-}
 ```
 
 #### applySync22+
@@ -834,17 +1261,23 @@ static applySync<T>(task: TaskCallback): T
 
 **参数：**
 
-参数名类型必填说明task[TaskCallback](#ZH-CN_TOPIC_0000002529444753__taskcallback22)是闭包函数，该闭包中产生的状态变量修改会同步执行。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| task | TaskCallback | 是 | 闭包函数，该闭包中产生的状态变量修改会同步执行。 |
 
 **返回值：**
 
-类型说明T闭包函数执行得到的返回值。
+| 类型 | 说明 |
+| --- | --- |
+| T | 闭包函数执行得到的返回值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[状态管理错误码](../../errors/状态管理错误码.md)。
+以下错误码的详细介绍请参见[状态管理错误码](状态管理错误码.md)。
 
-错误码ID错误信息140001The function is not allowed to be called in @Computed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 140001 | The function is not allowed to be called in @Computed. |
 
 **示例：**
 
@@ -888,8 +1321,6 @@ struct Index {
       .width(this.w)
       .height(this.h)
     }
-  }
-}
 ```
 
 #### flushUpdates22+
@@ -904,9 +1335,12 @@ static flushUpdates(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[状态管理错误码](../../errors/状态管理错误码.md)。
+以下错误码的详细介绍请参见[状态管理错误码](状态管理错误码.md)。
 
-错误码ID错误信息140001The function is not allowed to be called in @Computed.140002The function is not allowed to be called in @Monitor.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 140001 | The function is not allowed to be called in @Computed. |
+| 140002 | The function is not allowed to be called in @Monitor. |
 
 **示例：**
 
@@ -949,8 +1383,6 @@ struct Index {
       .width(this.w)
       .height(this.h)
     }
-  }
-}
 ```
 
 #### flushUIUpdates22+
@@ -965,9 +1397,12 @@ static flushUIUpdates(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[状态管理错误码](../../errors/状态管理错误码.md)。
+以下错误码的详细介绍请参见[状态管理错误码](状态管理错误码.md)。
 
-错误码ID错误信息140001The function is not allowed to be called in @Computed.140002The function is not allowed to be called in @Monitor.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 140001 | The function is not allowed to be called in @Computed. |
+| 140002 | The function is not allowed to be called in @Monitor. |
 
 **示例：**
 
@@ -1010,8 +1445,6 @@ struct Index {
       .width(this.w)
       .height(this.h)
     }
-  }
-}
 ```
 
 #### TaskCallback22+
@@ -1026,23 +1459,27 @@ type TaskCallback = () => T
 
 **返回值：**
 
-类型说明T闭包函数执行得到的返回值。
+| 类型 | 说明 |
+| --- | --- |
+| T | 闭包函数执行得到的返回值。 |
 
 #### MonitorOptions20+
 
-[addMonitor](#ZH-CN_TOPIC_0000002529444753__addmonitor20)的可选参数，用于配置回调类型。
+[addMonitor](#ZH-CN_TOPIC_0000002553200701__addmonitor20)的可选参数，用于配置回调类型。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明isSynchronousboolean否是配置当前回调函数否是为同步回调。true为同步回调。默认值为false，即异步回调。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| isSynchronous | boolean | 否 | 是 | 配置当前回调函数否是为同步回调。true为同步回调。默认值为false，即异步回调。 |
 
 #### MonitorCallback20+
 
-type MonitorCallback = (monitorValue: IMonitor) => void
+type MonitorCallback = (monitorValue: [IMonitor](../../topics/components/状态变量变化监听.md#ZH-CN_TOPIC_0000002497604970__imonitor12)) => void
 
-参数为[IMonitor](../../topics/misc/状态变量变化监听.md#ZH-CN_TOPIC_0000002497604970__imonitor12)类型的监听回调函数。
+参数为[IMonitor](状态变量变化监听.md#ZH-CN_TOPIC_0000002553360845__imonitor12)类型的监听回调函数。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -1050,7 +1487,9 @@ type MonitorCallback = (monitorValue: IMonitor) => void
 
 **参数：**
 
-参数名类型必填说明monitorValueIMonitor是回调函数传入的变化信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| monitorValue | [IMonitor](../../topics/components/状态变量变化监听.md#ZH-CN_TOPIC_0000002497604970__imonitor12) | 是 | 回调函数传入的变化信息。 |
 
 #### StorageDefaultCreator<T>
 
@@ -1064,7 +1503,9 @@ type StorageDefaultCreator<T> = () => T
 
 **返回值：**
 
-类型说明T默认构造器执行得到的返回值。
+| 类型 | 说明 |
+| --- | --- |
+| T | 默认构造器执行得到的返回值。 |
 
 **示例：**
 
@@ -1095,8 +1536,6 @@ struct SampleComp {
     Column() {
       Text(`${this.data?.sampleClass.id}`)
     }
-  }
-}
 ```
 
 #### TypeConstructorWithArgs<T>
@@ -1115,11 +1554,15 @@ new(...args: any): T
 
 **参数：**
 
-参数名类型必填说明...argsany否函数入参。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ...args | any | 否 | 函数入参。 |
 
 **返回值：**
 
-类型说明TT类型的实例。
+| 类型 | 说明 |
+| --- | --- |
+| T | T类型的实例。 |
 
 **示例：**
 
@@ -1150,8 +1593,6 @@ struct SampleComp {
     Column() {
       Text(`${this.data?.sampleClass.id}`)
     }
-  }
-}
 ```
 
 #### PersistenceErrorCallback
@@ -1166,7 +1607,11 @@ type PersistenceErrorCallback = (key: string, reason: 'quota' | 'serialization' 
 
 **参数：**
 
-参数名类型必填说明keystring是出错的键值。reason'quota' | 'serialization' | 'unknown'是出错的原因类型。messagestring是出错的更多消息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 出错的键值。 |
+| reason | 'quota' | 'serialization' | 'unknown' | 是 | 出错的原因类型。 |
+| message | string | 是 | 出错的更多消息。 |
 
 **示例：**
 
@@ -1207,7 +1652,6 @@ struct Index {
         this.data.sampleChild.id++;
       })
   }
-}
 ```
 
 #### TypeConstructor<T>
@@ -1226,7 +1670,9 @@ new(): T
 
 **返回值：**
 
-类型说明TT类型的实例。
+| 类型 | 说明 |
+| --- | --- |
+| T | T类型的实例。 |
 
 **示例：**
 
@@ -1260,8 +1706,6 @@ struct Index {
           this.data.sampleChild.id++;
         })
     }
-  }
-}
 ```
 
 #### TypeDecorator
@@ -1276,11 +1720,15 @@ type TypeDecorator = <T>(type: TypeConstructor<T>) => PropertyDecorator
 
 **参数：**
 
-参数名类型必填说明type[TypeConstructor<T>](#ZH-CN_TOPIC_0000002529444753__typeconstructort)是标记类属性的类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | TypeConstructor<T> | 是 | 标记类属性的类型。 |
 
 **返回值：**
 
-类型说明PropertyDecorator属性装饰器。
+| 类型 | 说明 |
+| --- | --- |
+| PropertyDecorator | 属性装饰器。 |
 
 **示例：**
 
@@ -1314,8 +1762,6 @@ struct Index {
           this.data.sampleChild.id++;
         })
     }
-  }
-}
 ```
 
 #### GetterCallback20+
@@ -1330,12 +1776,14 @@ type GetterCallback<T> = () => T
 
 **返回值：**
 
-类型说明TT类型的值。
+| 类型 | 说明 |
+| --- | --- |
+| T | T类型的值。 |
 
 **示例：**
 
 ```ets
-import { Binding, MutableBinding, UIUtils } from '@kit.ArkUI';
+import { Binding, UIUtils } from '@kit.ArkUI';
 
 @Builder
 function CustomButton(num1: Binding<number>) {
@@ -1344,7 +1792,6 @@ function CustomButton(num1: Binding<number>) {
       .onClick(() => {
         // num1.value += 1; 会报错，Binding类型不支持修改
       })
-  }
 }
 
 @Entry
@@ -1362,9 +1809,6 @@ struct CompV2 {
         UIUtils.makeBinding<number>(
           () => this.number1 // GetterCallback
         )
-      )
-    }
-  }
 }
 ```
 
@@ -1380,12 +1824,14 @@ type SetterCallback<T> = (newValue: T) => void
 
 **参数：**
 
-参数名类型必填说明newValueT是类型为T的参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| newValue | T | 是 | 类型为T的参数。 |
 
 **示例：**
 
 ```ets
-import { Binding, MutableBinding, UIUtils } from '@kit.ArkUI';
+import { MutableBinding, UIUtils } from '@kit.ArkUI';
 
 @Builder
 function CustomButton(num2: MutableBinding<number>) {
@@ -1395,7 +1841,6 @@ function CustomButton(num2: MutableBinding<number>) {
         // MutableBinding支持可变，可以修改num2.value
         num2.value += 1;
       })
-  }
 }
 
 @Entry
@@ -1417,8 +1862,6 @@ struct CompV2 {
           }) // SetterCallback 必须提供，否则触发时会造成运行时错误
       )
     }
-  }
-}
 ```
 
 #### Binding<T>20+
@@ -1437,12 +1880,14 @@ get value(): T
 
 **返回值：**
 
-类型说明T返回值类型为泛型参数T，与Binding<T>定义的类型一致。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回值类型为泛型参数T，与Binding<T>定义的类型一致。 |
 
 **示例：**
 
 ```ets
-import { Binding, MutableBinding, UIUtils } from '@kit.ArkUI';
+import { Binding, UIUtils } from '@kit.ArkUI';
 
 @Builder
 function CustomButton(num1: Binding<number>) {
@@ -1453,7 +1898,6 @@ function CustomButton(num1: Binding<number>) {
       .onClick(() => {
         // num1.value += 1; 会报错，只读数据绑定的泛型类不能修改值
       })
-  }
 }
 
 @Entry
@@ -1470,9 +1914,6 @@ struct CompV2 {
         UIUtils.makeBinding<number>(
           () => this.number1 // GetterCallback
         )
-      )
-    }
-  }
 }
 ```
 
@@ -1492,7 +1933,9 @@ set value(newValue: T)
 
 **参数：**
 
-参数名类型必填说明newValueT是参数类型为泛型参数T，与MutableBinding<T>定义的类型一致。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| newValue | T | 是 | 参数类型为泛型参数T，与MutableBinding<T>定义的类型一致。 |
 
 #### value20+
 
@@ -1506,12 +1949,14 @@ get value(): T
 
 **返回值：**
 
-类型说明T返回值类型为泛型参数T，与Binding<T>定义的类型一致。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回值类型为泛型参数T，与Binding<T>定义的类型一致。 |
 
 **示例：**
 
 ```ets
-import { Binding, MutableBinding, UIUtils } from '@kit.ArkUI';
+import { MutableBinding, UIUtils } from '@kit.ArkUI';
 
 @Builder
 function CustomButton(num2: MutableBinding<number>) {
@@ -1522,7 +1967,6 @@ function CustomButton(num2: MutableBinding<number>) {
         // 可变数据绑定的泛型类可以修改绑定的值
         num2.value += 1;
       })
-  }
 }
 
 @Entry
@@ -1543,6 +1987,4 @@ struct CompV2 {
           }) // SetterCallback 必须提供，否则触发时会造成运行时错误
       )
     }
-  }
-}
 ```

@@ -1,53 +1,55 @@
 # @ohos.arkui.UIContext (UIContext)
 
-- **[模块描述](../../guides/模块描述.md)**
+- [模块描述](模块描述.md)
 
-- **[Class (ComponentSnapshot)](../../types/classes/Class (ComponentSnapshot).md)**
+- [Class (ComponentSnapshot)](Class (ComponentSnapshot).md)
 
-- **[Class (ComponentUtils)](../../types/classes/Class (ComponentUtils).md)**
+- [Class (ComponentUtils)](Class (ComponentUtils).md)
 
-- **[Class (ContextMenuController)](../../types/classes/Class (ContextMenuController).md)**
+- [Class (ContextMenuController)](Class (ContextMenuController).md)
 
-- **[Class (CursorController)](../../types/classes/Class (CursorController).md)**
+- [Class (CursorController)](Class (CursorController).md)
 
-- **[Class (DragController)](../../types/classes/Class (DragController).md)**
+- [Class (DragController)](Class (DragController).md)
 
-- **[Class (DynamicSyncScene)](../../types/classes/Class (DynamicSyncScene).md)**
+- [Class (DynamicSyncScene)](Class (DynamicSyncScene).md)
 
-- **[Class (FocusController)](../../types/classes/Class (FocusController).md)**
+- [Class (FocusController)](Class (FocusController).md)
 
-- **[Class (Font)](../../types/classes/Class (Font).md)**
+- [Class (Font)](Class (Font).md)
 
-- **[Class (FrameCallback)](../../types/classes/Class (FrameCallback).md)**
+- [Class (FrameCallback)](Class (FrameCallback).md)
 
-- **[Class (Magnifier)](../../types/classes/Class (Magnifier).md)**
+- [Class (Magnifier)](Class (Magnifier).md)
 
-- **[Class (MarqueeDynamicSyncScene)](../../types/classes/Class (MarqueeDynamicSyncScene).md)**
+- [Class (MarqueeDynamicSyncScene)](Class (MarqueeDynamicSyncScene).md)
 
-- **[Class (MeasureUtils)](../../types/classes/Class (MeasureUtils).md)**
+- [Class (MeasureUtils)](Class (MeasureUtils).md)
 
-- **[Class (MediaQuery)](../../types/classes/Class (MediaQuery).md)**
+- [Class (MediaQuery)](Class (MediaQuery).md)
 
-- **[Class (OverlayManager)](../../types/classes/Class (OverlayManager).md)**
+- [Class (OverlayManager)](Class (OverlayManager).md)
 
-- **[Class (PromptAction)](../../types/classes/Class (PromptAction).md)**
+- [Class (PromptAction)](Class (PromptAction).md)
 
-- **[Class (Router)](../../types/classes/Class (Router).md)**
+- [Class (Router)](Class (Router).md)
 
-- **[Class (SwiperDynamicSyncScene)](../../types/classes/Class (SwiperDynamicSyncScene).md)**
+- [Class (SwiperDynamicSyncScene)](Class (SwiperDynamicSyncScene).md)
 
-- **[Class (TextMenuController)](../../types/classes/Class (TextMenuController).md)**
+- [Class (TextMenuController)](Class (TextMenuController).md)
 
-- **[Class (UIContext)](../../types/classes/Class (UIContext).md)**
+- [Class (UIContext)](Class (UIContext).md)
 
-- **[Class (UIInspector)](../../types/classes/Class (UIInspector).md)**
+- [Class (ResolvedUIContext)](Class (ResolvedUIContext).md)
 
-- **[Class (UIObserver)](../../types/classes/Class (UIObserver).md)**
+- [Class (UIInspector)](Class (UIInspector).md)
 
-- **[Interface (AtomicServiceBar)](../../types/interfaces/Interface (AtomicServiceBar).md)**
+- [Class (UIObserver)](Class (UIObserver).md)
 
-- **[Interfaces (其他)](../../types/interfaces/Interfaces (其他).md)**
+- [Interface (AtomicServiceBar)](Interface (AtomicServiceBar).md)
 
-- **[Enums](../../topics/misc/Enums.md)**
+- [Interfaces (其他)](Interfaces (其他).md)
 
-- **[Types](../../topics/misc/Types.md)**
+- [Enums]([Enums](../../types/enums/Enums.md).md)
+
+- [Types]([Types](../../topics/misc/Types.md).md)

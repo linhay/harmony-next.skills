@@ -2,7 +2,8 @@
 
 音频音量和设备管理。
 
-在使用AudioManager的接口之前，需先通过[getAudioManager](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529285689__audiogetaudiomanager)获取AudioManager实例。
+在使用AudioManager的接口之前，需先通过[getAudioManager](Functions.md#ZH-CN_TOPIC_0000002553201779__audiogetaudiomanager)获取AudioManager实例。
+
 
 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -12,9 +13,9 @@
 import { audio } from '@kit.AudioKit';
 ```
 
-#### getAudioScene8+
+#### get[AudioScene](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioscene8)8+
 
-getAudioScene(callback: AsyncCallback<AudioScene>): void
+get[AudioScene](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioscene8)(callback: AsyncCallback<AudioScene>): void
 
 获取音频场景模式。使用callback异步回调。
 
@@ -22,7 +23,9 @@ getAudioScene(callback: AsyncCallback<AudioScene>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[AudioScene](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioscene8)>是回调函数。当获取音频场景模式成功，err为undefined，data为获取到的音频场景模式；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<[AudioScene](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioscene8)> | 是 | 回调函数。当获取音频场景模式成功，err为undefined，data为获取到的音频场景模式；否则为错误对象。 |
 
 **示例：**
 
@@ -38,9 +41,9 @@ audioManager.getAudioScene((err: BusinessError, value: audio.AudioScene) => {
 });
 ```
 
-#### getAudioScene8+
+#### get[AudioScene](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioscene8)8+
 
-getAudioScene(): Promise<AudioScene>
+get[AudioScene](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioscene8)(): Promise<AudioScene>
 
 获取音频场景模式。使用Promise异步回调。
 
@@ -48,7 +51,9 @@ getAudioScene(): Promise<AudioScene>
 
 **返回值：**
 
-类型说明Promise<[AudioScene](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioscene8)>Promise对象，返回音频场景模式。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AudioScene](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioscene8)> | Promise对象，返回音频场景模式。 |
 
 **示例：**
 
@@ -62,9 +67,9 @@ audioManager.getAudioScene().then((value: audio.AudioScene) => {
 });
 ```
 
-#### getAudioSceneSync10+
+#### get[AudioScene](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioscene8)Sync10+
 
-getAudioSceneSync(): AudioScene
+get[AudioScene](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioscene8)Sync(): AudioScene
 
 获取音频场景模式。同步返回结果。
 
@@ -72,7 +77,9 @@ getAudioSceneSync(): AudioScene
 
 **返回值：**
 
-类型说明[AudioScene](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioscene8)音频场景模式。
+| 类型 | 说明 |
+| --- | --- |
+| [AudioScene](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioscene8) | 音频场景模式。 |
 
 **示例：**
 
@@ -90,7 +97,7 @@ try {
 
 #### on('audioSceneChange')20+
 
-on(type: 'audioSceneChange', callback: Callback<AudioScene>): void
+on(type: 'audioSceneChange', callback: Callback<[AudioScene](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioscene8)>): void
 
 监听音频场景变化事件。使用callback异步回调。
 
@@ -98,7 +105,10 @@ on(type: 'audioSceneChange', callback: Callback<AudioScene>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'audioSceneChange'，当音频场景模式发生变化时，触发该事件。callbackCallback<[AudioScene](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioscene8)>是回调函数，返回当前音频场景模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'audioSceneChange'，当音频场景模式发生变化时，触发该事件。 |
+| callback | Callback<[AudioScene](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioscene8)> | 是 | 回调函数，返回当前音频场景模式。 |
 
 **示例：**
 
@@ -110,7 +120,7 @@ audioManager.on('audioSceneChange', (audioScene: audio.AudioScene) => {
 
 #### off('audioSceneChange')20+
 
-off(type: 'audioSceneChange', callback?: Callback<AudioScene>): void
+off(type: 'audioSceneChange', callback?: Callback<[AudioScene](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioscene8)>): void
 
 取消监听音频场景变化事件。使用callback异步回调。
 
@@ -118,7 +128,10 @@ off(type: 'audioSceneChange', callback?: Callback<AudioScene>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'audioSceneChange'，当取消监听当前音频场景变化事件时，触发该事件。callbackCallback<[AudioScene](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioscene8)>否回调函数，返回当前音频场景模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'audioSceneChange'，当取消监听当前音频场景变化事件时，触发该事件。 |
+| callback | Callback<[AudioScene](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioscene8)> | 否 | 回调函数，返回当前音频场景模式。 |
 
 **示例：**
 
@@ -142,11 +155,15 @@ getVolumeManager(): AudioVolumeManager
 
 获取音频音量管理器。
 
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **返回值：**
 
-类型说明[AudioVolumeManager](Interface (AudioVolumeManager).md)AudioVolumeManager实例。
+| 类型 | 说明 |
+| --- | --- |
+| AudioVolumeManager | AudioVolumeManager实例。 |
 
 **示例：**
 
@@ -166,7 +183,9 @@ getStreamManager(): AudioStreamManager
 
 **返回值：**
 
-类型说明[AudioStreamManager](Interface (AudioStreamManager).md)AudioStreamManager实例。
+| 类型 | 说明 |
+| --- | --- |
+| AudioStreamManager | AudioStreamManager实例。 |
 
 **示例：**
 
@@ -186,7 +205,9 @@ getRoutingManager(): AudioRoutingManager
 
 **返回值：**
 
-类型说明[AudioRoutingManager](Interface (AudioRoutingManager).md)AudioRoutingManager实例。
+| 类型 | 说明 |
+| --- | --- |
+| AudioRoutingManager | AudioRoutingManager实例。 |
 
 **示例：**
 
@@ -206,7 +227,9 @@ getSessionManager(): AudioSessionManager
 
 **返回值：**
 
-类型说明[AudioSessionManager](Interface (AudioSessionManager).md)AudioSessionManager实例。
+| 类型 | 说明 |
+| --- | --- |
+| AudioSessionManager | AudioSessionManager实例。 |
 
 **示例：**
 
@@ -226,7 +249,9 @@ getSpatializationManager(): AudioSpatializationManager
 
 **返回值：**
 
-类型说明[AudioSpatializationManager](Interface (AudioSpatializationManager).md)AudioSpatializationManager实例。
+| 类型 | 说明 |
+| --- | --- |
+| AudioSpatializationManager | AudioSpatializationManager实例。 |
 
 **示例：**
 
@@ -251,7 +276,11 @@ setAudioParameter(key: string, value: string, callback: AsyncCallback<void>): vo
 
 **参数：**
 
-参数名类型必填说明keystring是被设置的音频参数的键。valuestring是被设置的音频参数的值。callbackAsyncCallback<void>是回调函数。当音频参数设置成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 被设置的音频参数的键。 |
+| value | string | 是 | 被设置的音频参数的值。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当音频参数设置成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -283,11 +312,16 @@ setAudioParameter(key: string, value: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明keystring是被设置的音频参数的键。valuestring是被设置的音频参数的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 被设置的音频参数的键。 |
+| value | string | 是 | 被设置的音频参数的值。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -311,7 +345,10 @@ getAudioParameter(key: string, callback: AsyncCallback<string>): void
 
 **参数：**
 
-参数名类型必填说明keystring是待获取的音频参数的键。callbackAsyncCallback<string>是回调函数。当获取指定音频参数值成功，err为undefined，data为获取到的指定音频参数值；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 待获取的音频参数的键。 |
+| callback | AsyncCallback<string> | 是 | 回调函数。当获取指定音频参数值成功，err为undefined，data为获取到的指定音频参数值；否则为错误对象。 |
 
 **示例：**
 
@@ -341,11 +378,15 @@ getAudioParameter(key: string): Promise<string>
 
 **参数：**
 
-参数名类型必填说明keystring是待获取的音频参数的键。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 待获取的音频参数的键。 |
 
 **返回值：**
 
-类型说明Promise<string>Promise对象，返回获取的音频参数值。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回获取的音频参数值。 |
 
 **示例：**
 
@@ -357,23 +398,32 @@ audioManager.getAudioParameter('key_example').then((value: string) => {
 
 #### setVolume(deprecated)
 
-setVolume(volumeType: AudioVolumeType, volume: number, callback: AsyncCallback<void>): void
+setVolume(volumeType: [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype), volume: number, callback: AsyncCallback<void>): void
 
 设置指定流的音量。使用callback异步回调。
 
+
+-
+
 从API version 7开始支持，从API version 9开始废弃，替代接口仅面向系统应用开放。
 
-应用无法直接调节系统音量，建议通过系统音量面板组件调节音量。具体样例和介绍请查看[AVVolumePanel参考文档](../../modules/ohos/@ohos.multimedia.avVolumePanel (音量面板).md)。
+-
+
+应用无法直接调节系统音量，建议通过系统音量面板组件调节音量。具体样例和介绍请查看API文档：[音量面板](@ohos.multimedia.avVolumePanel (音量面板).md)。
 
 **需要权限：** ohos.permission.ACCESS_NOTIFICATION_POLICY
 
-仅设置铃声（即volumeType为AudioVolumeType.RINGTONE）在静音和非静音状态切换时需要该权限。
+仅设置铃声（即volumeType为[AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype).RINGTONE）在静音和非静音状态切换时需要该权限。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
 
-参数名类型必填说明volumeType[AudioVolumeType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)是音频音量类型。volumenumber是音量等级，可设置范围通过[getMinVolume](#ZH-CN_TOPIC_0000002497605698__getminvolumedeprecated)和[getMaxVolume](#ZH-CN_TOPIC_0000002497605698__getmaxvolumedeprecated)获取。callbackAsyncCallback<void>是回调函数。当设置指定流的音量成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volumeType | [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype) | 是 | 音频音量类型。 |
+| volume | number | 是 | 音量等级，可设置范围通过getMinVolume和getMaxVolume获取。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置指定流的音量成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -391,27 +441,37 @@ audioManager.setVolume(audio.AudioVolumeType.MEDIA, 10, (err: BusinessError) => 
 
 #### setVolume(deprecated)
 
-setVolume(volumeType: AudioVolumeType, volume: number): Promise<void>
+setVolume(volumeType: [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype), volume: number): Promise<void>
 
 设置指定流的音量。使用Promise异步回调。
 
+
+-
+
 从API version 7开始支持，从API version 9开始废弃，替代接口仅面向系统应用开放。
 
-应用无法直接调节系统音量，建议通过系统音量面板组件调节音量。具体样例和介绍请查看[AVVolumePanel参考文档](../../modules/ohos/@ohos.multimedia.avVolumePanel (音量面板).md)。
+-
+
+应用无法直接调节系统音量，建议通过系统音量面板组件调节音量。具体样例和介绍请查看API文档：[音量面板](@ohos.multimedia.avVolumePanel (音量面板).md)。
 
 **需要权限：** ohos.permission.ACCESS_NOTIFICATION_POLICY
 
-仅设置铃声（即volumeType为AudioVolumeType.RINGTONE）在静音和非静音状态切换时需要该权限。
+仅设置铃声（即volumeType为[AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype).RINGTONE）在静音和非静音状态切换时需要该权限。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
 
-参数名类型必填说明volumeType[AudioVolumeType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)是音频音量类型。volumenumber是音量等级，可设置范围通过[getMinVolume](#ZH-CN_TOPIC_0000002497605698__getminvolumedeprecated)和[getMaxVolume](#ZH-CN_TOPIC_0000002497605698__getmaxvolumedeprecated)获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volumeType | [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype) | 是 | 音频音量类型。 |
+| volume | number | 是 | 音量等级，可设置范围通过getMinVolume和getMaxVolume获取。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -423,17 +483,21 @@ audioManager.setVolume(audio.AudioVolumeType.MEDIA, 10).then(() => {
 
 #### getVolume(deprecated)
 
-getVolume(volumeType: AudioVolumeType, callback: AsyncCallback<number>): void
+getVolume(volumeType: [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype), callback: AsyncCallback<number>): void
 
 获取指定流的音量。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[getVolume](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002529285693__getvolumedeprecated)替代；API version 20及以后，建议使用[getVolumeByStream](Interface (AudioVolumeManager).md#ZH-CN_TOPIC_0000002529445667__getvolumebystream20)替代。
+
+从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[getVolume](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002553201783__getvolumedeprecated)替代；API version 20及以后，建议使用[getVolumeByStream](Interface (AudioVolumeManager).md#ZH-CN_TOPIC_0000002522081822__getvolumebystream20)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
 
-参数名类型必填说明volumeType[AudioVolumeType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)是音频音量类型。callbackAsyncCallback<number>是回调函数。当获取指定流的音量成功，err为undefined，data为获取到的指定流的音量；否则为错误对象。指定流的音量等级范围可通过[getMinVolume](#ZH-CN_TOPIC_0000002497605698__getminvolumedeprecated)和[getMaxVolume](#ZH-CN_TOPIC_0000002497605698__getmaxvolumedeprecated)获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volumeType | [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype) | 是 | 音频音量类型。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。当获取指定流的音量成功，err为undefined，data为获取到的指定流的音量；否则为错误对象。指定流的音量等级范围可通过getMinVolume和getMaxVolume获取。 |
 
 **示例：**
 
@@ -451,21 +515,26 @@ audioManager.getVolume(audio.AudioVolumeType.MEDIA, (err: BusinessError, value: 
 
 #### getVolume(deprecated)
 
-getVolume(volumeType: AudioVolumeType): Promise<number>
+getVolume(volumeType: [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)): Promise<number>
 
 获取指定流的音量。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[getVolume](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002529285693__getvolumedeprecated)替代；API version 20及以后，建议使用[getVolumeByStream](Interface (AudioVolumeManager).md#ZH-CN_TOPIC_0000002529445667__getvolumebystream20)替代。
+
+从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[getVolume](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002553201783__getvolumedeprecated)替代；API version 20及以后，建议使用[getVolumeByStream](Interface (AudioVolumeManager).md#ZH-CN_TOPIC_0000002522081822__getvolumebystream20)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
 
-参数名类型必填说明volumeType[AudioVolumeType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)是音频音量类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volumeType | [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype) | 是 | 音频音量类型。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回指定流的音量。指定流的音量等级范围可通过[getMinVolume](#ZH-CN_TOPIC_0000002497605698__getminvolumedeprecated)和[getMaxVolume](#ZH-CN_TOPIC_0000002497605698__getmaxvolumedeprecated)获取。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回指定流的音量。指定流的音量等级范围可通过getMinVolume和getMaxVolume获取。 |
 
 **示例：**
 
@@ -477,17 +546,21 @@ audioManager.getVolume(audio.AudioVolumeType.MEDIA).then((value: number) => {
 
 #### getMinVolume(deprecated)
 
-getMinVolume(volumeType: AudioVolumeType, callback: AsyncCallback<number>): void
+getMinVolume(volumeType: [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype), callback: AsyncCallback<number>): void
 
 获取指定流的最小音量。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[getMinVolume](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002529285693__getminvolumedeprecated)替代；API version 20及以后，建议使用[getMinVolumeByStream](Interface (AudioVolumeManager).md#ZH-CN_TOPIC_0000002529445667__getminvolumebystream20)替代。
+
+从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[getMinVolume](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002553201783__getminvolumedeprecated)替代；API version 20及以后，建议使用[getMinVolumeByStream](Interface (AudioVolumeManager).md#ZH-CN_TOPIC_0000002522081822__getminvolumebystream20)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
 
-参数名类型必填说明volumeType[AudioVolumeType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)是音频音量类型。callbackAsyncCallback<number>是回调函数。当获取指定流的最小音量成功，err为undefined，data为获取到的指定流的最小音量；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volumeType | [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype) | 是 | 音频音量类型。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。当获取指定流的最小音量成功，err为undefined，data为获取到的指定流的最小音量；否则为错误对象。 |
 
 **示例：**
 
@@ -505,21 +578,26 @@ audioManager.getMinVolume(audio.AudioVolumeType.MEDIA, (err: BusinessError, valu
 
 #### getMinVolume(deprecated)
 
-getMinVolume(volumeType: AudioVolumeType): Promise<number>
+getMinVolume(volumeType: [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)): Promise<number>
 
 获取指定流的最小音量。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[getMinVolume](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002529285693__getminvolumedeprecated)替代；API version 20及以后，建议使用[getMinVolumeByStream](Interface (AudioVolumeManager).md#ZH-CN_TOPIC_0000002529445667__getminvolumebystream20)替代。
+
+从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[getMinVolume](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002553201783__getminvolumedeprecated)替代；API version 20及以后，建议使用[getMinVolumeByStream](Interface (AudioVolumeManager).md#ZH-CN_TOPIC_0000002522081822__getminvolumebystream20)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
 
-参数名类型必填说明volumeType[AudioVolumeType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)是音频音量类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volumeType | [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype) | 是 | 音频音量类型。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回最小音量。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回最小音量。 |
 
 **示例：**
 
@@ -531,17 +609,21 @@ audioManager.getMinVolume(audio.AudioVolumeType.MEDIA).then((value: number) => {
 
 #### getMaxVolume(deprecated)
 
-getMaxVolume(volumeType: AudioVolumeType, callback: AsyncCallback<number>): void
+getMaxVolume(volumeType: [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype), callback: AsyncCallback<number>): void
 
 获取指定流的最大音量。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[getMaxVolume](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002529285693__getmaxvolumedeprecated)替代；API version 20及以后，建议使用[getMaxVolumeByStream](Interface (AudioVolumeManager).md#ZH-CN_TOPIC_0000002529445667__getmaxvolumebystream20)替代。
+
+从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[getMaxVolume](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002553201783__getmaxvolumedeprecated)替代；API version 20及以后，建议使用[getMaxVolumeByStream](Interface (AudioVolumeManager).md#ZH-CN_TOPIC_0000002522081822__getmaxvolumebystream20)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
 
-参数名类型必填说明volumeType[AudioVolumeType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)是音频音量类型。callbackAsyncCallback<number>是回调函数。当获取指定流的最大音量成功，err为undefined，data为获取到的指定流的最大音量；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volumeType | [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype) | 是 | 音频音量类型。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。当获取指定流的最大音量成功，err为undefined，data为获取到的指定流的最大音量；否则为错误对象。 |
 
 **示例：**
 
@@ -559,21 +641,26 @@ audioManager.getMaxVolume(audio.AudioVolumeType.MEDIA, (err: BusinessError, valu
 
 #### getMaxVolume(deprecated)
 
-getMaxVolume(volumeType: AudioVolumeType): Promise<number>
+getMaxVolume(volumeType: [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)): Promise<number>
 
 获取指定流的最大音量。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[getMaxVolume](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002529285693__getmaxvolumedeprecated)替代；API version 20及以后，建议使用[getMaxVolumeByStream](Interface (AudioVolumeManager).md#ZH-CN_TOPIC_0000002529445667__getmaxvolumebystream20)替代。
+
+从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[getMaxVolume](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002553201783__getmaxvolumedeprecated)替代；API version 20及以后，建议使用[getMaxVolumeByStream](Interface (AudioVolumeManager).md#ZH-CN_TOPIC_0000002522081822__getmaxvolumebystream20)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
 
-参数名类型必填说明volumeType[AudioVolumeType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)是音频音量类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volumeType | [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype) | 是 | 音频音量类型。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回最大音量。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回最大音量。 |
 
 **示例：**
 
@@ -585,7 +672,7 @@ audioManager.getMaxVolume(audio.AudioVolumeType.MEDIA).then((data: number) => {
 
 #### mute(deprecated)
 
-mute(volumeType: AudioVolumeType, mute: boolean, callback: AsyncCallback<void>): void
+mute(volumeType: [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype), mute: boolean, callback: AsyncCallback<void>): void
 
 设置指定音量流静音。使用callback异步回调。
 
@@ -597,7 +684,11 @@ mute(volumeType: AudioVolumeType, mute: boolean, callback: AsyncCallback<void>):
 
 **参数：**
 
-参数名类型必填说明volumeType[AudioVolumeType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)是音频音量类型。muteboolean是是否设置指定音量流为静音状态。true表示静音，false表示非静音。callbackAsyncCallback<void>是回调函数。当设置指定音量流静音成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volumeType | [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype) | 是 | 音频音量类型。 |
+| mute | boolean | 是 | 是否设置指定音量流为静音状态。true表示静音，false表示非静音。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置指定音量流静音成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -615,7 +706,7 @@ audioManager.mute(audio.AudioVolumeType.MEDIA, true, (err: BusinessError) => {
 
 #### mute(deprecated)
 
-mute(volumeType: AudioVolumeType, mute: boolean): Promise<void>
+mute(volumeType: [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype), mute: boolean): Promise<void>
 
 设置指定音量流静音。使用Promise异步回调。
 
@@ -627,11 +718,16 @@ mute(volumeType: AudioVolumeType, mute: boolean): Promise<void>
 
 **参数：**
 
-参数名类型必填说明volumeType[AudioVolumeType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)是音频音量类型。muteboolean是是否设置指定音量流为静音状态。true表示静音，false表示非静音。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volumeType | [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype) | 是 | 音频音量类型。 |
+| mute | boolean | 是 | 是否设置指定音量流为静音状态。true表示静音，false表示非静音。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -643,17 +739,21 @@ audioManager.mute(audio.AudioVolumeType.MEDIA, true).then(() => {
 
 #### isMute(deprecated)
 
-isMute(volumeType: AudioVolumeType, callback: AsyncCallback<boolean>): void
+isMute(volumeType: [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype), callback: AsyncCallback<boolean>): void
 
 获取指定音量流的静音状态。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[isMute](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002529285693__ismutedeprecated)替代；API version 20及以后，建议使用[isSystemMutedForStream](Interface (AudioVolumeManager).md#ZH-CN_TOPIC_0000002529445667__issystemmutedforstream20)替代。
+
+从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[isMute](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002553201783__ismutedeprecated)替代；API version 20及以后，建议使用[isSystemMutedForStream](Interface (AudioVolumeManager).md#ZH-CN_TOPIC_0000002522081822__issystemmutedforstream20)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
 
-参数名类型必填说明volumeType[AudioVolumeType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)是音频音量类型。callbackAsyncCallback<boolean>是回调函数。当获取指定音量流的静音状态成功，err为undefined，data为true表示静音，false表示非静音；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volumeType | [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype) | 是 | 音频音量类型。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当获取指定音量流的静音状态成功，err为undefined，data为true表示静音，false表示非静音；否则为错误对象。 |
 
 **示例：**
 
@@ -671,21 +771,26 @@ audioManager.isMute(audio.AudioVolumeType.MEDIA, (err: BusinessError, value: boo
 
 #### isMute(deprecated)
 
-isMute(volumeType: AudioVolumeType): Promise<boolean>
+isMute(volumeType: [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)): Promise<boolean>
 
 获取指定音量流的静音状态。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[isMute](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002529285693__ismutedeprecated)替代；API version 20及以后，建议使用[isSystemMutedForStream](Interface (AudioVolumeManager).md#ZH-CN_TOPIC_0000002529445667__issystemmutedforstream20)替代。
+
+从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[isMute](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002553201783__ismutedeprecated)替代；API version 20及以后，建议使用[isSystemMutedForStream](Interface (AudioVolumeManager).md#ZH-CN_TOPIC_0000002522081822__issystemmutedforstream20)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
 
-参数名类型必填说明volumeType[AudioVolumeType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)是音频音量类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volumeType | [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype) | 是 | 音频音量类型。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示静音；返回false表示非静音。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示静音；返回false表示非静音。 |
 
 **示例：**
 
@@ -697,17 +802,21 @@ audioManager.isMute(audio.AudioVolumeType.MEDIA).then((value: boolean) => {
 
 #### isActive(deprecated)
 
-isActive(volumeType: AudioVolumeType, callback: AsyncCallback<boolean>): void
+isActive(volumeType: [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype), callback: AsyncCallback<boolean>): void
 
 获取指定音量流的活跃状态。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[isActive](Interface (AudioStreamManager).md#ZH-CN_TOPIC_0000002497445722__isactivedeprecated)替代；API version 20及以后，建议使用[isStreamActive](Interface (AudioStreamManager).md#ZH-CN_TOPIC_0000002497445722__isstreamactive20)替代。
+
+从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[isActive](Interface (AudioStreamManager).md#ZH-CN_TOPIC_0000002522241816__isactivedeprecated)替代；API version 20及以后，建议使用[isStreamActive](Interface (AudioStreamManager).md#ZH-CN_TOPIC_0000002522241816__isstreamactive20)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
 
-参数名类型必填说明volumeType[AudioVolumeType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)是音频音量类型。callbackAsyncCallback<boolean>是回调函数。当获取指定音量流的活跃状态成功，err为undefined，data为true表示活跃，false表示不活跃；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volumeType | [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype) | 是 | 音频音量类型。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当获取指定音量流的活跃状态成功，err为undefined，data为true表示活跃，false表示不活跃；否则为错误对象。 |
 
 **示例：**
 
@@ -725,21 +834,26 @@ audioManager.isActive(audio.AudioVolumeType.MEDIA, (err: BusinessError, value: b
 
 #### isActive(deprecated)
 
-isActive(volumeType: AudioVolumeType): Promise<boolean>
+isActive(volumeType: [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)): Promise<boolean>
 
 获取指定音量流的活跃状态。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[isActive](Interface (AudioStreamManager).md#ZH-CN_TOPIC_0000002497445722__isactivedeprecated)替代；API version 20及以后，建议使用[isStreamActive](Interface (AudioStreamManager).md#ZH-CN_TOPIC_0000002497445722__isstreamactive20)替代。
+
+从API version 7开始支持，从API version 9开始废弃。在API version 9-19建议使用[isActive](Interface (AudioStreamManager).md#ZH-CN_TOPIC_0000002522241816__isactivedeprecated)替代；API version 20及以后，建议使用[isStreamActive](Interface (AudioStreamManager).md#ZH-CN_TOPIC_0000002522241816__isstreamactive20)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
 
-参数名类型必填说明volumeType[AudioVolumeType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)是音频音量类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volumeType | [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype) | 是 | 音频音量类型。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示流状态为活跃；返回false表示流状态不活跃。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示流状态为活跃；返回false表示流状态不活跃。 |
 
 **示例：**
 
@@ -751,7 +865,7 @@ audioManager.isActive(audio.AudioVolumeType.MEDIA).then((value: boolean) => {
 
 #### setRingerMode(deprecated)
 
-setRingerMode(mode: AudioRingMode, callback: AsyncCallback<void>): void
+setRingerMode(mode: [AudioRingMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioringmode), callback: AsyncCallback<void>): void
 
 设置铃声模式。使用callback异步回调。
 
@@ -765,7 +879,10 @@ setRingerMode(mode: AudioRingMode, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明mode[AudioRingMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioringmode)是音频铃声模式。callbackAsyncCallback<void>是回调函数。当设置铃声模式成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mode | [AudioRingMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioringmode) | 是 | 音频铃声模式。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置铃声模式成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -783,7 +900,7 @@ audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_NORMAL, (err: Busines
 
 #### setRingerMode(deprecated)
 
-setRingerMode(mode: AudioRingMode): Promise<void>
+setRingerMode(mode: [AudioRingMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioringmode)): Promise<void>
 
 设置铃声模式。使用Promise异步回调。
 
@@ -797,11 +914,15 @@ setRingerMode(mode: AudioRingMode): Promise<void>
 
 **参数：**
 
-参数名类型必填说明mode[AudioRingMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioringmode)是音频铃声模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mode | [AudioRingMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioringmode) | 是 | 音频铃声模式。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -813,17 +934,20 @@ audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_NORMAL).then(() => {
 
 #### getRingerMode(deprecated)
 
-getRingerMode(callback: AsyncCallback<AudioRingMode>): void
+getRingerMode(callback: AsyncCallback<[AudioRingMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioringmode)>): void
 
 获取铃声模式。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[getRingerMode](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002529285693__getringermode9)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[getRingerMode](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002553201783__getringermode9)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Communication
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[AudioRingMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioringmode)>是回调函数。当获取铃声模式成功，err为undefined，data为获取到的铃声模式；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<[AudioRingMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioringmode)> | 是 | 回调函数。当获取铃声模式成功，err为undefined，data为获取到的铃声模式；否则为错误对象。 |
 
 **示例：**
 
@@ -841,17 +965,20 @@ audioManager.getRingerMode((err: BusinessError, value: audio.AudioRingMode) => {
 
 #### getRingerMode(deprecated)
 
-getRingerMode(): Promise<AudioRingMode>
+getRingerMode(): Promise<[AudioRingMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioringmode)>
 
 获取铃声模式。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[getRingerMode](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002529285693__getringermode9)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[getRingerMode](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002553201783__getringermode9)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Communication
 
 **返回值：**
 
-类型说明Promise<[AudioRingMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioringmode)>Promise对象，返回系统的铃声模式。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AudioRingMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioringmode)> | Promise对象，返回系统的铃声模式。 |
 
 **示例：**
 
@@ -863,17 +990,21 @@ audioManager.getRingerMode().then((value: audio.AudioRingMode) => {
 
 #### getDevices(deprecated)
 
-getDevices(deviceFlag: DeviceFlag, callback: AsyncCallback<AudioDeviceDescriptors>): void
+getDevices(deviceFlag: [DeviceFlag](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceflag), callback: AsyncCallback<AudioDeviceDescriptors>): void
 
 获取音频设备列表。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[getDevices](Interface (AudioRoutingManager).md#ZH-CN_TOPIC_0000002529285691__getdevices9)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[getDevices](Interface (AudioRoutingManager).md#ZH-CN_TOPIC_0000002553201781__getdevices9)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
 
-参数名类型必填说明deviceFlag[DeviceFlag](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceflag)是音频设备类型。callbackAsyncCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>是回调函数。当获取音频设备列表成功，err为undefined，data为获取到的音频设备列表；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceFlag | [DeviceFlag](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceflag) | 是 | 音频设备类型。 |
+| callback | AsyncCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)> | 是 | 回调函数。当获取音频设备列表成功，err为undefined，data为获取到的音频设备列表；否则为错误对象。 |
 
 **示例：**
 
@@ -891,21 +1022,26 @@ audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG, (err: BusinessErro
 
 #### getDevices(deprecated)
 
-getDevices(deviceFlag: DeviceFlag): Promise<AudioDeviceDescriptors>
+getDevices(deviceFlag: [DeviceFlag](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceflag)): Promise<AudioDeviceDescriptors>
 
 获取音频设备列表。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[getDevices](Interface (AudioRoutingManager).md#ZH-CN_TOPIC_0000002529285691__getdevices9)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[getDevices](Interface (AudioRoutingManager).md#ZH-CN_TOPIC_0000002553201781__getdevices9)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
 
-参数名类型必填说明deviceFlag[DeviceFlag](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceflag)是音频设备类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceFlag | [DeviceFlag](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceflag) | 是 | 音频设备类型。 |
 
 **返回值：**
 
-类型说明Promise<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>Promise对象，返回设备列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)> | Promise对象，返回设备列表。 |
 
 **示例：**
 
@@ -917,17 +1053,22 @@ audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG).then((data: audio.
 
 #### setDeviceActive(deprecated)
 
-setDeviceActive(deviceType: ActiveDeviceType, active: boolean, callback: AsyncCallback<void>): void
+setDeviceActive(deviceType: [ActiveDeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__activedevicetypedeprecated), active: boolean, callback: AsyncCallback<void>): void
 
 设置设备激活状态。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[setCommunicationDevice](Interface (AudioRoutingManager).md#ZH-CN_TOPIC_0000002529285691__setcommunicationdevice9)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[setCommunicationDevice](Interface (AudioRoutingManager).md#ZH-CN_TOPIC_0000002553201781__setcommunicationdevice9)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
 
-参数名类型必填说明deviceType[ActiveDeviceType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__activedevicetypedeprecated)是活跃音频设备类型。activeboolean是是否设置设备为激活状态。true表示已激活，false表示未激活。callbackAsyncCallback<void>是回调函数。当设置设备激活状态成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceType | [ActiveDeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__activedevicetypedeprecated) | 是 | 活跃音频设备类型。 |
+| active | boolean | 是 | 是否设置设备为激活状态。true表示已激活，false表示未激活。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置设备激活状态成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -945,21 +1086,27 @@ audioManager.setDeviceActive(audio.ActiveDeviceType.SPEAKER, true, (err: Busines
 
 #### setDeviceActive(deprecated)
 
-setDeviceActive(deviceType: ActiveDeviceType, active: boolean): Promise<void>
+setDeviceActive(deviceType: [ActiveDeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__activedevicetypedeprecated), active: boolean): Promise<void>
 
 设置设备激活状态。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[setCommunicationDevice](Interface (AudioRoutingManager).md#ZH-CN_TOPIC_0000002529285691__setcommunicationdevice9)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[setCommunicationDevice](Interface (AudioRoutingManager).md#ZH-CN_TOPIC_0000002553201781__setcommunicationdevice9)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
 
-参数名类型必填说明deviceType[ActiveDeviceType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__activedevicetypedeprecated)是活跃音频设备类型。activeboolean是是否设置设备为激活状态。true表示已激活，false表示未激活。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceType | [ActiveDeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__activedevicetypedeprecated) | 是 | 活跃音频设备类型。 |
+| active | boolean | 是 | 是否设置设备为激活状态。true表示已激活，false表示未激活。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -971,17 +1118,21 @@ audioManager.setDeviceActive(audio.ActiveDeviceType.SPEAKER, true).then(() => {
 
 #### isDeviceActive(deprecated)
 
-isDeviceActive(deviceType: ActiveDeviceType, callback: AsyncCallback<boolean>): void
+isDeviceActive(deviceType: [ActiveDeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__activedevicetypedeprecated), callback: AsyncCallback<boolean>): void
 
 获取指定设备的激活状态。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[isCommunicationDeviceActive](Interface (AudioRoutingManager).md#ZH-CN_TOPIC_0000002529285691__iscommunicationdeviceactive9)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[isCommunicationDeviceActive](Interface (AudioRoutingManager).md#ZH-CN_TOPIC_0000002553201781__iscommunicationdeviceactive9)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
 
-参数名类型必填说明deviceType[ActiveDeviceType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__activedevicetypedeprecated)是活跃音频设备类型。callbackAsyncCallback<boolean>是回调函数。当获取指定设备的激活状态成功，err为undefined，data为true表示激活，false表示未激活；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceType | [ActiveDeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__activedevicetypedeprecated) | 是 | 活跃音频设备类型。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当获取指定设备的激活状态成功，err为undefined，data为true表示激活，false表示未激活；否则为错误对象。 |
 
 **示例：**
 
@@ -999,21 +1150,26 @@ audioManager.isDeviceActive(audio.ActiveDeviceType.SPEAKER, (err: BusinessError,
 
 #### isDeviceActive(deprecated)
 
-isDeviceActive(deviceType: ActiveDeviceType): Promise<boolean>
+isDeviceActive(deviceType: [ActiveDeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__activedevicetypedeprecated)): Promise<boolean>
 
 获取指定设备的激活状态。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[isCommunicationDeviceActive](Interface (AudioRoutingManager).md#ZH-CN_TOPIC_0000002529285691__iscommunicationdeviceactive9)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[isCommunicationDeviceActive](Interface (AudioRoutingManager).md#ZH-CN_TOPIC_0000002553201781__iscommunicationdeviceactive9)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
 
-参数名类型必填说明deviceType[ActiveDeviceType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__activedevicetypedeprecated)是活跃音频设备类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceType | [ActiveDeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__activedevicetypedeprecated) | 是 | 活跃音频设备类型。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示设备已激活；返回false表示设备未激活。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示设备已激活；返回false表示设备未激活。 |
 
 **示例：**
 
@@ -1037,7 +1193,10 @@ setMicrophoneMute(mute: boolean, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明muteboolean是是否设置麦克风为静音状态。true表示静音，false表示非静音。callbackAsyncCallback<void>是回调函数。当设置麦克风静音状态成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mute | boolean | 是 | 是否设置麦克风为静音状态。true表示静音，false表示非静音。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置麦克风静音状态成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -1067,11 +1226,15 @@ setMicrophoneMute(mute: boolean): Promise<void>
 
 **参数：**
 
-参数名类型必填说明muteboolean是是否设置麦克风为静音状态。true表示静音，false表示非静音。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mute | boolean | 是 | 是否设置麦克风为静音状态。true表示静音，false表示非静音。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -1087,7 +1250,8 @@ isMicrophoneMute(callback: AsyncCallback<boolean>): void
 
 获取麦克风静音状态。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[isMicrophoneMute](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002529285693__ismicrophonemute9)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[isMicrophoneMute](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002553201783__ismicrophonemute9)替代。
 
 **需要权限：** ohos.permission.MICROPHONE
 
@@ -1095,7 +1259,9 @@ isMicrophoneMute(callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<boolean>是回调函数。当获取麦克风静音状态成功，err为undefined，data为true表示静音，false表示非静音；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当获取麦克风静音状态成功，err为undefined，data为true表示静音，false表示非静音；否则为错误对象。 |
 
 **示例：**
 
@@ -1117,7 +1283,8 @@ isMicrophoneMute(): Promise<boolean>
 
 获取麦克风静音状态。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[isMicrophoneMute](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002529285693__ismicrophonemute9)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[isMicrophoneMute](Interface (AudioVolumeGroupManager).md#ZH-CN_TOPIC_0000002553201783__ismicrophonemute9)替代。
 
 **需要权限：** ohos.permission.MICROPHONE
 
@@ -1125,7 +1292,9 @@ isMicrophoneMute(): Promise<boolean>
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示麦克风被静音；返回false表示麦克风未被静音。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示麦克风被静音；返回false表示麦克风未被静音。 |
 
 **示例：**
 
@@ -1141,13 +1310,17 @@ on(type: 'deviceChange', callback: Callback<DeviceChangeAction>): void
 
 监听音频设备连接变化事件（当音频设备连接状态发生变化时触发）。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[on('deviceChange')](Interface (AudioRoutingManager).md#ZH-CN_TOPIC_0000002529285691__ondevicechange9)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[on('deviceChange')](Interface (AudioRoutingManager).md#ZH-CN_TOPIC_0000002553201781__ondevicechange9)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'deviceChange'，当音频设备连接状态发生变化时，触发该事件。callbackCallback<[DeviceChangeAction](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__devicechangeaction)>是回调函数，返回设备更新详情。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'deviceChange'，当音频设备连接状态发生变化时，触发该事件。 |
+| callback | Callback<DeviceChangeAction> | 是 | 回调函数，返回设备更新详情。 |
 
 **示例：**
 
@@ -1166,13 +1339,17 @@ off(type: 'deviceChange', callback?: Callback<DeviceChangeAction>): void
 
 取消监听音频设备连接变化事件。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[off('deviceChange')](Interface (AudioRoutingManager).md#ZH-CN_TOPIC_0000002529285691__offdevicechange9)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[off('deviceChange')](Interface (AudioRoutingManager).md#ZH-CN_TOPIC_0000002553201781__offdevicechange9)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'deviceChange'，当取消监听音频设备连接变化事件时，触发该事件。callbackCallback<[DeviceChangeAction](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__devicechangeaction)>否回调函数，返回设备更新详情。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'deviceChange'，当取消监听音频设备连接变化事件时，触发该事件。 |
+| callback | Callback<DeviceChangeAction> | 否 | 回调函数，返回设备更新详情。 |
 
 **示例：**
 
@@ -1199,15 +1376,20 @@ on(type: 'interrupt', interrupt: AudioInterrupt, callback: Callback<InterruptAct
 
 监听音频打断事件（当音频焦点发生变化时触发）。使用callback异步回调。
 
-与[on('audioInterrupt')](Interface (AudioRenderer).md#ZH-CN_TOPIC_0000002497445720__onaudiointerrupt9)作用一致，均用于监听焦点变化。为无音频流的场景（未曾创建AudioRenderer对象），比如FM、语音唤醒等提供焦点变化监听功能。
+与[on('audioInterrupt')](Interface (AudioRenderer).md#ZH-CN_TOPIC_0000002522241812__onaudiointerrupt9)作用一致，均用于监听焦点变化。为无音频流的场景（未曾创建AudioRenderer对象），比如FM、语音唤醒等提供焦点变化监听功能。
 
-从API version 7开始支持，从API version 11开始废弃，建议使用[on('audioInterrupt')](Interface (AudioCapturer).md#ZH-CN_TOPIC_0000002529445663__onaudiointerrupt10)替代。
+
+从API version 7开始支持，从API version 11开始废弃，建议使用[on('audioInterrupt')](Interface (AudioCapturer).md#ZH-CN_TOPIC_0000002522081818__onaudiointerrupt10)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'interrupt'，当音频焦点状态发生变化时，触发该事件。interrupt[AudioInterrupt](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiointerruptdeprecated)是音频打断事件类型的参数。callbackCallback<[InterruptAction](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__interruptactiondeprecated)>是回调函数，返回打断事件信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'interrupt'，当音频焦点状态发生变化时，触发该事件。 |
+| interrupt | AudioInterrupt | 是 | 音频打断事件类型的参数。 |
+| callback | Callback<InterruptAction> | 是 | 回调函数，返回打断事件信息。 |
 
 **示例：**
 
@@ -1238,13 +1420,18 @@ off(type: 'interrupt', interrupt: AudioInterrupt, callback?: Callback<InterruptA
 
 取消监听音频打断事件。使用callback异步回调。
 
-从API version 7开始支持，从API version 11开始废弃，建议使用[off('audioInterrupt')](Interface (AudioCapturer).md#ZH-CN_TOPIC_0000002529445663__offaudiointerrupt10)替代。
+
+从API version 7开始支持，从API version 11开始废弃，建议使用[off('audioInterrupt')](Interface (AudioCapturer).md#ZH-CN_TOPIC_0000002522081818__offaudiointerrupt10)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'interrupt'，当取消监听音频打断事件时，触发该事件。interrupt[AudioInterrupt](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiointerruptdeprecated)是音频打断事件类型的参数。callbackCallback<[InterruptAction](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__interruptactiondeprecated)>否回调函数，返回打断事件信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'interrupt'，当取消监听音频打断事件时，触发该事件。 |
+| interrupt | AudioInterrupt | 是 | 音频打断事件类型的参数。 |
+| callback | Callback<InterruptAction> | 否 | 回调函数，返回打断事件信息。 |
 
 **示例：**
 

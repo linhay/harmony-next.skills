@@ -32,7 +32,9 @@ isSubpixel(): boolean
 
 **返回值：**
 
-类型说明boolean返回字型是否使用次像素渲染的结果，true表示使用，false表示不使用。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回字型是否使用次像素渲染的结果，true表示使用，false表示不使用。 |
 
 **示例：**
 
@@ -56,7 +58,9 @@ isLinearMetrics(): boolean
 
 **返回值：**
 
-类型说明boolean返回字型是否可线性缩放的结果，true表示可线性缩放，false表示不可线性缩放。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回字型是否可线性缩放的结果，true表示可线性缩放，false表示不可线性缩放。 |
 
 **示例：**
 
@@ -80,7 +84,9 @@ getSkewX(): number
 
 **返回值：**
 
-类型说明number返回字型在x轴方向上的倾斜度。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回字型在x轴方向上的倾斜度。 |
 
 **示例：**
 
@@ -104,7 +110,9 @@ isEmbolden(): boolean
 
 **返回值：**
 
-类型说明boolean返回字型是否设置粗体效果的结果，true表示设置了粗体效果，false表示未设置粗体效果。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回字型是否设置粗体效果的结果，true表示设置了粗体效果，false表示未设置粗体效果。 |
 
 **示例：**
 
@@ -128,7 +136,9 @@ getScaleX(): number
 
 **返回值：**
 
-类型说明number返回字型在x轴方向上的缩放比例。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回字型在x轴方向上的缩放比例。 |
 
 **示例：**
 
@@ -142,7 +152,7 @@ console.info("values=" + font.getScaleX());
 
 #### getHinting12+
 
-getHinting(): FontHinting
+getHinting(): [FontHinting](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__fonthinting12)
 
 获取字型轮廓效果。
 
@@ -152,7 +162,9 @@ getHinting(): FontHinting
 
 **返回值：**
 
-类型说明[FontHinting](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__fonthinting12)返回字型轮廓效果。
+| 类型 | 说明 |
+| --- | --- |
+| [FontHinting](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__fonthinting12) | 返回字型轮廓效果。 |
 
 **示例：**
 
@@ -165,7 +177,7 @@ console.info("values=" + font.getHinting());
 
 #### getEdging12+
 
-getEdging(): FontEdging
+getEdging(): [FontEdging](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__fontedging12)
 
 获取字型边缘效果。
 
@@ -175,7 +187,9 @@ getEdging(): FontEdging
 
 **返回值：**
 
-类型说明[FontEdging](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__fontedging12)返回字型边缘效果。
+| 类型 | 说明 |
+| --- | --- |
+| [FontEdging](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__fontedging12) | 返回字型边缘效果。 |
 
 **示例：**
 
@@ -198,13 +212,17 @@ enableSubpixel(isSubpixel: boolean): void
 
 **参数：**
 
-参数名类型必填说明isSubpixelboolean是表示是否使能字型亚像素级别的文字绘制。true表示使能，false表示不使能。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isSubpixel | boolean | 是 | 表示是否使能字型亚像素级别的文字绘制。true表示使能，false表示不使能。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -227,13 +245,17 @@ enableEmbolden(isEmbolden: boolean): void
 
 **参数：**
 
-参数名类型必填说明isEmboldenboolean是表示是否使能字型粗体。true表示使能，false表示不使能。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isEmbolden | boolean | 是 | 表示是否使能字型粗体。true表示使能，false表示不使能。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -256,13 +278,17 @@ enableLinearMetrics(isLinearMetrics: boolean): void
 
 **参数：**
 
-参数名类型必填说明isLinearMetricsboolean是表示是否使能字型的线性缩放。true表示使能，false表示不使能。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isLinearMetrics | boolean | 是 | 表示是否使能字型的线性缩放。true表示使能，false表示不使能。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -285,13 +311,17 @@ setSize(textSize: number): void
 
 **参数：**
 
-参数名类型必填说明textSizenumber是字型大小，该参数为浮点数，为负数时字型大小会被置为0。字型大小为0时，绘制的文字不会显示。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| textSize | number | 是 | 字型大小，该参数为浮点数，为负数时字型大小会被置为0。字型大小为0时，绘制的文字不会显示。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
 
 **示例：**
 
@@ -314,7 +344,9 @@ getSize(): number
 
 **返回值：**
 
-类型说明number字型大小，浮点数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 字型大小，浮点数。 |
 
 **示例：**
 
@@ -338,13 +370,17 @@ setTypeface(typeface: Typeface): void
 
 **参数：**
 
-参数名类型必填说明typeface[Typeface](Class (Typeface).md)是字体样式，包括字体名称、粗细、斜体等属性。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| typeface | Typeface | 是 | 字体样式，包括字体名称、粗细、斜体等属性。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -367,7 +403,9 @@ getTypeface(): Typeface
 
 **返回值：**
 
-类型说明[Typeface](Class (Typeface).md)字体。
+| 类型 | 说明 |
+| --- | --- |
+| Typeface | 字体。 |
 
 **示例：**
 
@@ -390,7 +428,9 @@ getMetrics(): FontMetrics
 
 **返回值：**
 
-类型说明[FontMetrics](../interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002497446006__fontmetrics)FontMetrics属性。
+| 类型 | 说明 |
+| --- | --- |
+| FontMetrics | FontMetrics属性。 |
 
 **示例：**
 
@@ -403,11 +443,12 @@ let metrics = font.getMetrics();
 
 #### measureText
 
-measureText(text: string, encoding: TextEncoding): number
+measureText(text: string, encoding: [TextEncoding](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__textencoding)): number
 
 测量文本的宽度。
 
-此接口用于测量原始字符串的文本宽度，若想测量排版后的文本宽度，建议使用[measure.measureText](Class (MeasureUtils).md#ZH-CN_TOPIC_0000002497604780__measuretext12)替代。
+
+此接口用于测量原始字符串的文本宽度，若想测量排版后的文本宽度，建议使用[measure.measureText](Class (MeasureUtils).md#ZH-CN_TOPIC_0000002553200693__measuretext12)替代。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -415,17 +456,24 @@ measureText(text: string, encoding: TextEncoding): number
 
 **参数：**
 
-参数名类型必填说明textstring是文本内容。encoding[TextEncoding](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__textencoding)是编码格式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 文本内容。 |
+| encoding | [TextEncoding](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__textencoding) | 是 | 编码格式。 |
 
 **返回值：**
 
-类型说明number文本的宽度，浮点数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 文本的宽度，浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -448,17 +496,23 @@ measureSingleCharacter(text: string): number
 
 **参数**
 
-参数名类型必填说明textstring是待测量的单个字符，字符串的长度必须为1。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 待测量的单个字符，字符串的长度必须为1。 |
 
 **返回值：**
 
-类型说明number字符的宽度，浮点数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 字符的宽度，浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
 
 **示例：**
 
@@ -473,7 +527,6 @@ class DrawingRenderNode extends RenderNode {
     font.setSize(20);
     let width = font.measureSingleCharacter("你");
   }
-}
 ```
 
 #### measureSingleCharacterWithFeatures20+
@@ -488,17 +541,24 @@ measureSingleCharacterWithFeatures(text: string, features: Array<FontFeature>): 
 
 **参数**
 
-参数名类型必填说明textstring是待测量的单个字符。字符串长度必须为1。featuresArray<[FontFeature](../interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002497446006__fontfeature20)>是字体特征对象数组。参数为空数组时使用TTF(TrueType Font)文件中预设的字体特征。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 待测量的单个字符。字符串长度必须为1。 |
+| features | Array<FontFeature> | 是 | 字体特征对象数组。参数为空数组时使用TTF(TrueType Font)文件中预设的字体特征。 |
 
 **返回值：**
 
-类型说明number字符的宽度，浮点数，单位为px。
+| 类型 | 说明 |
+| --- | --- |
+| number | 字符的宽度，浮点数，单位为px。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[图形绘制与显示错误码](../../errors/图形绘制与显示错误码.md)。
+以下错误码的详细介绍请参见[图形绘制与显示错误码]([图形绘制与显示错误码](../../errors/图形绘制与显示错误码.md).md)。
 
-错误码ID错误信息25900001Parameter error. Possible causes: Incorrect parameter range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 25900001 | Parameter error. Possible causes: Incorrect parameter range. |
 
 **示例：**
 
@@ -514,7 +574,6 @@ class DrawingRenderNode extends RenderNode {
     fontFeatures.push({name: 'calt', value: 0});
     let width = font.measureSingleCharacterWithFeatures("你", fontFeatures);
   }
-}
 ```
 
 #### setScaleX12+
@@ -529,13 +588,17 @@ setScaleX(scaleX: number): void
 
 **参数：**
 
-参数名类型必填说明scaleXnumber是文本在x轴上的缩放比例，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| scaleX | number | 是 | 文本在x轴上的缩放比例，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -556,7 +619,6 @@ class DrawingRenderNode extends RenderNode {
     const textBlob = drawing.TextBlob.makeFromString("hello", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
     canvas.drawTextBlob(textBlob, 200, 200);
   }
-}
 ```
 
 #### setSkewX12+
@@ -571,13 +633,17 @@ setSkewX(skewX: number): void
 
 **参数：**
 
-参数名类型必填说明skewXnumber是文本在x轴上的倾斜比例，正数表示往左边倾斜，负数表示往右边倾斜，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| skewX | number | 是 | 文本在x轴上的倾斜比例，正数表示往左边倾斜，负数表示往右边倾斜，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -598,12 +664,11 @@ class DrawingRenderNode extends RenderNode {
     const textBlob = drawing.TextBlob.makeFromString("hello", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
     canvas.drawTextBlob(textBlob, 200, 200);
   }
-}
 ```
 
 #### setEdging12+
 
-setEdging(edging: FontEdging): void
+setEdging(edging: [FontEdging](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__fontedging12)): void
 
 设置字型边缘效果。
 
@@ -613,13 +678,17 @@ setEdging(edging: FontEdging): void
 
 **参数：**
 
-参数名类型必填说明edging[FontEdging](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__fontedging12)是字型边缘效果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| edging | [FontEdging](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__fontedging12) | 是 | 字型边缘效果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -632,7 +701,7 @@ font.setEdging(drawing.FontEdging.SUBPIXEL_ANTI_ALIAS);
 
 #### setHinting12+
 
-setHinting(hinting: FontHinting): void
+setHinting(hinting: [FontHinting](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__fonthinting12)): void
 
 设置字型轮廓效果。
 
@@ -642,13 +711,17 @@ setHinting(hinting: FontHinting): void
 
 **参数：**
 
-参数名类型必填说明hinting[FontHinting](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__fonthinting12)是字型轮廓效果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| hinting | [FontHinting](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__fonthinting12) | 是 | 字型轮廓效果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -671,17 +744,23 @@ countText(text: string): number
 
 **参数：**
 
-参数名类型必填说明textstring是文本内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 文本内容。 |
 
 **返回值：**
 
-类型说明number返回文本所表示的字符数量，整数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回文本所表示的字符数量，整数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -705,13 +784,17 @@ setBaselineSnap(isBaselineSnap: boolean): void
 
 **参数：**
 
-参数名类型必填说明isBaselineSnapboolean是指示字型基线是否和像素对齐，true表示对齐，false表示不对齐。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isBaselineSnap | boolean | 是 | 指示字型基线是否和像素对齐，true表示对齐，false表示不对齐。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -735,7 +818,9 @@ isBaselineSnap(): boolean
 
 **返回值：**
 
-类型说明boolean返回字型基线是否与像素对齐，true为对齐，false为没有对齐。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回字型基线是否与像素对齐，true为对齐，false为没有对齐。 |
 
 **示例：**
 
@@ -760,13 +845,17 @@ setEmbeddedBitmaps(isEmbeddedBitmaps: boolean): void
 
 **参数：**
 
-参数名类型必填说明isEmbeddedBitmapsboolean是设置字型是否转换成位图处理，true表示转换成位图处理，false表示不转换成位图处理。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isEmbeddedBitmaps | boolean | 是 | 设置字型是否转换成位图处理，true表示转换成位图处理，false表示不转换成位图处理。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -791,7 +880,9 @@ isEmbeddedBitmaps(): boolean
 
 **返回值：**
 
-类型说明boolean返回字型是否转换成位图处理结果，true表示转换成位图处理，false表示不转换成位图处理。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回字型是否转换成位图处理结果，true表示转换成位图处理，false表示不转换成位图处理。 |
 
 **示例：**
 
@@ -816,13 +907,17 @@ setForceAutoHinting(isForceAutoHinting: boolean): void
 
 **参数：**
 
-参数名类型必填说明isForceAutoHintingboolean是是否自动调整字型轮廓，true为自动调整，false为不自动调整。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isForceAutoHinting | boolean | 是 | 是否自动调整字型轮廓，true为自动调整，false为不自动调整。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -847,7 +942,9 @@ isForceAutoHinting(): boolean
 
 **返回值：**
 
-类型说明boolean返回字型轮廓是否自动调整，true为自动调整，false为不自动调整。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回字型轮廓是否自动调整，true为自动调整，false为不自动调整。 |
 
 **示例：**
 
@@ -872,17 +969,23 @@ getWidths(glyphs: Array<number>): Array<number>
 
 **参数：**
 
-参数名类型必填说明glyphsArray<number>是字形索引数组，可由[textToGlyphs](#ZH-CN_TOPIC_0000002529285967__texttoglyphs12)生成。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| glyphs | Array<number> | 是 | 字形索引数组，可由textToGlyphs生成。 |
 
 **返回值：**
 
-类型说明Array<number>返回字形宽度数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<number> | 返回字形宽度数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -910,17 +1013,24 @@ textToGlyphs(text: string, glyphCount?: number): Array<number>
 
 **参数：**
 
-参数名类型必填说明textstring是文本字符串。glyphCountnumber否文本表示的字符数量，必须与[countText](#ZH-CN_TOPIC_0000002529285967__counttext12)获取的值相等，默认为text的字符数量，该参数为整数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 文本字符串。 |
+| glyphCount | number | 否 | 文本表示的字符数量，必须与countText获取的值相等，默认为text的字符数量，该参数为整数。 |
 
 **返回值：**
 
-类型说明Array<number>返回转换得到的字形索引数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<number> | 返回转换得到的字形索引数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -945,11 +1055,15 @@ getBounds(glyphs: Array<number>): Array<common2D.Rect>
 
 **参数：**
 
-参数名类型必填说明glyphsArray<number>是字形索引数组，可由[textToGlyphs](#ZH-CN_TOPIC_0000002529285967__texttoglyphs12)生成。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| glyphs | Array<number> | 是 | 字形索引数组，可由textToGlyphs生成。 |
 
 **返回值：**
 
-类型说明Array<[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)>返回字形边界矩形数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<common2D.Rect> | 返回字形边界矩形数组。 |
 
 **示例：**
 
@@ -978,17 +1092,26 @@ getTextPath(text: string, byteLength: number, x: number, y: number): Path
 
 **参数：**
 
-参数名类型必填说明textstring是表示存储UTF-8 文本编码的字符。byteLengthnumber是表示要获取对应文本路径的字节长度，按传入的字节长度和实际的文本字节大小之间的最小值来获取对应的文本路径。xnumber是表示文本在绘图区域内以原点为起始位置的X坐标。ynumber是表示文本在绘图区域内以原点为起始位置的Y坐标。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 表示存储UTF-8 文本编码的字符。 |
+| byteLength | number | 是 | 表示要获取对应文本路径的字节长度，按传入的字节长度和实际的文本字节大小之间的最小值来获取对应的文本路径。 |
+| x | number | 是 | 表示文本在绘图区域内以原点为起始位置的X坐标。 |
+| y | number | 是 | 表示文本在绘图区域内以原点为起始位置的Y坐标。 |
 
 **返回值：**
 
-类型说明[Path](Class (Path).md)返回获取到的文本的路径轮廓。
+| 类型 | 说明 |
+| --- | --- |
+| Path | 返回获取到的文本的路径轮廓。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
 
 **示例：**
 
@@ -1007,7 +1130,6 @@ class DrawingRenderNode extends RenderNode {
     let path = font.getTextPath(myString, length, 0, 100);
     canvas.drawPath(path);
   }
-}
 ```
 
 #### createPathForGlyph18+
@@ -1022,16 +1144,20 @@ createPathForGlyph(index: number): Path
 
 **参数：**
 
-参数名类型必填说明indexnumber是字形索引。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 字形索引。 |
 
 **返回值：**
 
-类型说明[Path](Class (Path).md)返回指定字形的路径轮廓。
+| 类型 | 说明 |
+| --- | --- |
+| Path | 返回指定字形的路径轮廓。 |
 
 **示例：**
 
 ```ets
-import { FrameNode, NodeController, RenderNode } from '@kit.ArkUI';
+import { RenderNode } from '@kit.ArkUI';
 import { drawing } from '@kit.ArkGraphics2D';
 
 class DrawingRenderNode extends RenderNode {
@@ -1045,8 +1171,6 @@ class DrawingRenderNode extends RenderNode {
       let path: drawing.Path = font.createPathForGlyph(glyphs[index])
       canvas.drawPath(path)
     }
-  }
-}
 ```
 
 #### setThemeFontFollowed15+
@@ -1061,13 +1185,17 @@ setThemeFontFollowed(followed: boolean): void
 
 **参数：**
 
-参数名类型必填说明followedboolean是字型中的字体是否跟随主题字体，true表示跟随主题字体，false表示不跟随主题字体。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| followed | boolean | 是 | 字型中的字体是否跟随主题字体，true表示跟随主题字体，false表示不跟随主题字体。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -1091,7 +1219,9 @@ isThemeFontFollowed(): boolean
 
 **返回值：**
 
-类型说明boolean返回字型中的字体是否跟随主题字体的结果，true表示跟随主题字体，false表示不跟随主题字体。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回字型中的字体是否跟随主题字体的结果，true表示跟随主题字体，false表示不跟随主题字体。 |
 
 **示例：**
 

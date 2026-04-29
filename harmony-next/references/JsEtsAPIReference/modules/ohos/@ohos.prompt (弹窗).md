@@ -2,7 +2,8 @@
 
 创建并显示文本提示框、对话框和操作菜单。
 
-从API Version 9 开始，该接口不再维护，推荐使用新接口[@ohos.promptAction (弹窗)](@ohos.promptAction (弹窗).md)。
+
+从API version 9 开始，该接口不再维护，推荐使用新接口[@ohos.promptAction (弹窗)](@ohos.promptAction (弹窗).md)。
 
 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -22,7 +23,9 @@ showToast(options: ShowToastOptions): void
 
 **参数：**
 
-参数名类型必填说明options[ShowToastOptions](#ZH-CN_TOPIC_0000002497444828__showtoastoptions)是文本弹窗选项。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | ShowToastOptions | 是 | 文本弹窗选项。 |
 
 **示例：**
 
@@ -40,7 +43,11 @@ prompt.showToast({
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full。
 
-名称类型必填说明messagestring是显示的文本信息。durationnumber否默认值1500ms，取值区间：1500ms-10000ms。若小于1500ms则取默认值，若大于10000ms则取上限值10000ms。bottomstring| number否设置弹窗边框距离屏幕底部的位置，无上限值，默认单位vp。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| message | string | 是 | 显示的文本信息。 |
+| duration | number | 否 | 默认值1500ms，取值区间：1500ms-10000ms。若小于1500ms则取默认值，若大于10000ms则取上限值10000ms。 |
+| bottom | string| number | 否 | 设置弹窗边框距离屏幕底部的位置，无上限值，默认单位vp。 |
 
 #### prompt.showDialog
 
@@ -52,11 +59,15 @@ showDialog(options: ShowDialogOptions): Promise<ShowDialogSuccessResponse>
 
 **参数：**
 
-参数名类型必填说明options[ShowDialogOptions](#ZH-CN_TOPIC_0000002497444828__showdialogoptions)是对话框选项。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | ShowDialogOptions | 是 | 对话框选项。 |
 
 **返回值：**
 
-类型说明Promise<[ShowDialogSuccessResponse](#ZH-CN_TOPIC_0000002497444828__showdialogsuccessresponse)>对话框响应结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<ShowDialogSuccessResponse> | 对话框响应结果。 |
 
 **示例：**
 
@@ -94,7 +105,10 @@ showDialog(options: ShowDialogOptions, callback: AsyncCallback<ShowDialogSuccess
 
 **参数：**
 
-参数名类型必填说明options[ShowDialogOptions](#ZH-CN_TOPIC_0000002497444828__showdialogoptions)是页面显示对话框信息描述。callbackAsyncCallback<[ShowDialogSuccessResponse](#ZH-CN_TOPIC_0000002497444828__showdialogsuccessresponse)>是对话框响应结果回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | ShowDialogOptions | 是 | 页面显示对话框信息描述。 |
+| callback | AsyncCallback<ShowDialogSuccessResponse> | 是 | 对话框响应结果回调。 |
 
 **示例：**
 
@@ -128,7 +142,11 @@ prompt.showDialog({
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型必填说明titlestring否标题文本。messagestring否内容文本。buttons[[Button](#ZH-CN_TOPIC_0000002497444828__button),[Button](#ZH-CN_TOPIC_0000002497444828__button)?,[Button](#ZH-CN_TOPIC_0000002497444828__button)?]否对话框中按钮的数组，结构为：{text:'button', color: '#666666'}，支持1-3个按钮。其中第一个为positiveButton，第二个为negativeButton，第三个为neutralButton。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| title | string | 否 | 标题文本。 |
+| message | string | 否 | 内容文本。 |
+| buttons | [Button,Button?,Button?] | 否 | 对话框中按钮的数组，结构为：{text:'button', color: '#666666'}，支持1-3个按钮。其中第一个为positiveButton，第二个为negativeButton，第三个为neutralButton。 |
 
 #### ShowDialogSuccessResponse
 
@@ -136,7 +154,9 @@ prompt.showDialog({
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型必填说明indexnumber是选中按钮在buttons数组中的索引。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 选中按钮在buttons数组中的索引。 |
 
 #### prompt.showActionMenu
 
@@ -148,7 +168,10 @@ showActionMenu(options: ActionMenuOptions, callback: AsyncCallback<ActionMenuSuc
 
 **参数：**
 
-参数名类型必填说明options[ActionMenuOptions](#ZH-CN_TOPIC_0000002497444828__actionmenuoptions)是操作菜单选项。callbackAsyncCallback<[ActionMenuSuccessResponse](#ZH-CN_TOPIC_0000002497444828__actionmenusuccessresponse)>是菜单响应结果回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | ActionMenuOptions | 是 | 操作菜单选项。 |
+| callback | AsyncCallback<ActionMenuSuccessResponse> | 是 | 菜单响应结果回调。 |
 
 **示例：**
 
@@ -185,11 +208,15 @@ showActionMenu(options: ActionMenuOptions): Promise<ActionMenuSuccessResponse>
 
 **参数：**
 
-参数名类型必填说明options[ActionMenuOptions](#ZH-CN_TOPIC_0000002497444828__actionmenuoptions)是操作菜单选项。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | ActionMenuOptions | 是 | 操作菜单选项。 |
 
 **返回值：**
 
-类型说明Promise<[ActionMenuSuccessResponse](#ZH-CN_TOPIC_0000002497444828__actionmenusuccessresponse)>菜单响应结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<ActionMenuSuccessResponse> | 菜单响应结果。 |
 
 **示例：**
 
@@ -222,7 +249,10 @@ prompt.showActionMenu({
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full。
 
-名称类型必填说明titlestring否标题文本。buttons[[Button](#ZH-CN_TOPIC_0000002497444828__button),[Button](#ZH-CN_TOPIC_0000002497444828__button)?,[Button](#ZH-CN_TOPIC_0000002497444828__button)?,[Button](#ZH-CN_TOPIC_0000002497444828__button)?,[Button](#ZH-CN_TOPIC_0000002497444828__button)?,[Button](#ZH-CN_TOPIC_0000002497444828__button)?]是菜单中菜单项按钮的数组，结构为：{text:'button', color: '#666666'}，支持1-6个按钮。大于6个按钮时弹窗不显示。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| title | string | 否 | 标题文本。 |
+| buttons | [Button,Button?,Button?,Button?,Button?,Button?] | 是 | 菜单中菜单项按钮的数组，结构为：{text:'button', color: '#666666'}，支持1-6个按钮。大于6个按钮时弹窗不显示。 |
 
 #### ActionMenuSuccessResponse
 
@@ -230,7 +260,9 @@ prompt.showActionMenu({
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型必填说明indexnumber是选中按钮在buttons数组中的索引，从0开始。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 选中按钮在buttons数组中的索引，从0开始。 |
 
 #### Button
 
@@ -238,4 +270,7 @@ prompt.showActionMenu({
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型必填说明textstring是按钮文本内容。colorstring是按钮文本颜色。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 按钮文本内容。 |
+| color | string | 是 | 按钮文本颜色。 |

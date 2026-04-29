@@ -12,10 +12,14 @@ HTTP请求结构体。
 
 **相关模块：**[netstack](Netstack.md)
 
-**所在头文件：**[net_http_type.h](../../capi/headers/net_http_type.h.md)
+所在头文件： [net_http_type.h](net_http_type.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述uint32_t requestIdHTTP请求的Id。char *urlHTTP请求的URL。[Http_RequestOptions](Http_RequestOptions.md) *optionsHTTP请求配置，指向Http_RequestOptions的指针，参考[Http_RequestOptions](Http_RequestOptions.md)。
+| 名称 | 描述 |
+| --- | --- |
+| uint32_t requestId | HTTP请求的Id。 |
+| char *url | HTTP请求的URL。 |
+| [Http_RequestOptions](Http_RequestOptions.md) *options | HTTP请求配置，指向Http_RequestOptions的指针，参考Http_RequestOptions。 |

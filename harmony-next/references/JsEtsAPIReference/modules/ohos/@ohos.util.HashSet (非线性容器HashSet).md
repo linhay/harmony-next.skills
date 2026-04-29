@@ -28,7 +28,9 @@ import { HashSet } from '@kit.ArkTS';
 
 **系统能力：** SystemCapability.Utils.Lang
 
-名称类型只读可选说明lengthnumber是否HashSet的元素个数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| length | number | 是 | 否 | HashSet的元素个数。 |
 
 **示例：**
 
@@ -55,9 +57,11 @@ HashSet的构造函数。
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码]([语言基础类库错误码](../../errors/语言基础类库错误码.md).md)。
 
-错误码ID错误信息10200012The HashSet's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200012 | The HashSet's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -77,13 +81,17 @@ isEmpty(): boolean
 
 **返回值：**
 
-类型说明boolean为空返回true，不为空返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 为空返回true，不为空返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The isEmpty method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The isEmpty method cannot be bound. |
 
 **示例：**
 
@@ -105,17 +113,24 @@ has(value: T): boolean
 
 **参数：**
 
-参数名类型必填说明valueT是指定元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | T | 是 | 指定元素。 |
 
 **返回值：**
 
-类型说明boolean包含指定元素返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 包含指定元素返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.10200011The has method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 10200011 | The has method cannot be bound. |
 
 **示例：**
 
@@ -138,17 +153,24 @@ add(value: T): boolean
 
 **参数：**
 
-参数名类型必填说明valueT是添加成员数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | T | 是 | 添加成员数据。 |
 
 **返回值：**
 
-类型说明boolean成功添加元素返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 成功添加元素返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.10200011The add method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 10200011 | The add method cannot be bound. |
 
 **示例：**
 
@@ -170,17 +192,24 @@ remove(value: T): boolean
 
 **参数：**
 
-参数名类型必填说明valueT是指定删除的元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | T | 是 | 指定删除的元素。 |
 
 **返回值：**
 
-类型说明boolean成功删除指定元素返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 成功删除指定元素返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.10200011The remove method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 10200011 | The remove method cannot be bound. |
 
 **示例：**
 
@@ -204,9 +233,11 @@ clear(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The clear method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The clear method cannot be bound. |
 
 **示例：**
 
@@ -231,13 +262,17 @@ values(): IterableIterator<T>
 
 **返回值：**
 
-类型说明IterableIterator<T>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<T> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The values method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The values method cannot be bound. |
 
 **示例：**
 
@@ -265,17 +300,27 @@ forEach(callbackFn: (value?: T, key?: T, set?: HashSet<T>) => void, thisArg?: Ob
 
 **参数：**
 
-参数名类型必填说明callbackFnfunction是回调函数。thisArgObject否callbackFn被调用时用作this值，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | function | 是 | 回调函数。 |
+| thisArg | Object | 否 | callbackFn被调用时用作this值，默认值为当前实例对象。 |
 
 callbackFn的参数说明：
 
-参数名类型必填说明valueT否当前遍历到的元素键值对的值。keyT否当前遍历到的元素键值对的键（和value相同）。setHashSet<T>否当前调用forEach方法的实例对象，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | T | 否 | 当前遍历到的元素键值对的值。 |
+| key | T | 否 | 当前遍历到的元素键值对的键（和value相同）。 |
+| set | HashSet<T> | 否 | 当前调用forEach方法的实例对象，默认值为当前实例对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The forEach method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The forEach method cannot be bound. |
 
 **示例：**
 
@@ -313,13 +358,17 @@ entries(): IterableIterator<[T, T]>
 
 **返回值：**
 
-类型说明IterableIterator<[T, T]>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<[T, T]> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The entries method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The entries method cannot be bound. |
 
 **示例：**
 
@@ -363,13 +412,17 @@ for(let i = 0; i < 10; i++) {
 
 **返回值：**
 
-类型说明IterableIterator<T>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<T> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The Symbol.iterator method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The Symbol.iterator method cannot be bound. |
 
 **示例：**
 

@@ -6,7 +6,10 @@
 - 该组件的父组件只能是[ArcList](ArcList.md)。
 - 当ArcListItem配合[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)使用时，ArcListItem子组件在ArcListItem创建时创建。配合[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)使用时，或父组件为[ArcList](ArcList.md)时，ArcListItem子组件在ArcListItem布局时创建。
 
+- 该组件支持在Phone、PC/2in1、Tablet、TV、Wearable设备上使用。API version 22及以前版本，在Phone、PC/2in1、Tablet、TV上使用会编译告警，但可以正常运行。
+
 #### 导入模块
+
 
 -
 
@@ -34,8 +37,6 @@ import { ArcListItem } from '@kit.ArkUI';
 
 #### 接口
 
-#### ArcListItem
-
 ArcListItem()
 
 创建弧形列表子组件。
@@ -46,7 +47,7 @@ ArcListItem()
 
 #### 属性
 
-除支持[通用属性](../misc/通用属性.md)外，还支持以下属性：
+除支持[通用属性]([通用属性](../misc/通用属性.md).md)外，还支持以下属性：
 
 #### autoScale
 
@@ -60,15 +61,13 @@ autoScale(enable: Optional<boolean>)
 
 **参数：**
 
-参数名类型必填说明enableOptional<boolean>是
-
-ArcListItem是否支持自动缩放显示，true表示支持自动缩放显示，false表示不支持自动缩放显示。
-
-默认值：true，支持自动缩放显示。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enable | Optional<boolean> | 是 | ArcListItem是否支持自动缩放显示，true表示支持自动缩放显示，false表示不支持自动缩放显示。 默认值：true，支持自动缩放显示。 |
 
 #### swipeAction
 
-swipeAction(options: Optional<SwipeActionOptions>)
+swipeAction(options: [Optional<SwipeActionOptions>](ListItem.md#ZH-CN_TOPIC_0000002529444837__swipeactionoptions9对象说明))
 
 用于设置ArcListItem的划出组件。
 
@@ -78,7 +77,9 @@ swipeAction(options: Optional<SwipeActionOptions>)
 
 **参数：**
 
-参数名类型必填说明options[Optional<SwipeActionOptions>](ListItem.md#ZH-CN_TOPIC_0000002529444837__swipeactionoptions9对象说明)是ArcListItem的划出组件。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | [Optional<SwipeActionOptions>](ListItem.md#ZH-CN_TOPIC_0000002529444837__swipeactionoptions9对象说明) | 是 | ArcListItem的划出组件。 |
 
 #### 示例
 
@@ -135,5 +136,4 @@ struct ArcListItemExample {
     .alignItems(HorizontalAlign.Center)
     .justifyContent(FlexAlign.Center)
   }
-}
 ```

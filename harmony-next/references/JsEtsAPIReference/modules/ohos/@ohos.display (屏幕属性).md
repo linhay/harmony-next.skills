@@ -18,7 +18,15 @@ import { display } from '@kit.ArkUI';
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
-名称值说明STATE_UNKNOWN0表示显示设备状态未知。STATE_OFF1表示显示设备状态为关闭。STATE_ON2表示显示设备状态为开启。STATE_DOZE3表示显示设备为低电耗模式。STATE_DOZE_SUSPEND4表示显示设备为睡眠模式，CPU为挂起状态。STATE_VR5表示显示设备为VR模式。STATE_ON_SUSPEND6表示显示设备为开启状态，CPU为挂起状态。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| STATE_UNKNOWN | 0 | 表示显示设备状态未知。 |
+| STATE_OFF | 1 | 表示显示设备状态为关闭。 |
+| STATE_ON | 2 | 表示显示设备状态为开启。 |
+| STATE_DOZE | 3 | 表示显示设备为低电耗模式。 |
+| STATE_DOZE_SUSPEND | 4 | 表示显示设备为睡眠模式，CPU为挂起状态。 |
+| STATE_VR | 5 | 表示显示设备为VR模式。 |
+| STATE_ON_SUSPEND | 6 | 表示显示设备为开启状态，CPU为挂起状态。 |
 
 #### Orientation10+
 
@@ -28,7 +36,12 @@ import { display } from '@kit.ArkUI';
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
-名称值说明PORTRAIT0表示设备当前以竖屏方式显示。LANDSCAPE1表示设备当前以横屏方式显示。PORTRAIT_INVERTED2表示设备当前以反向竖屏方式显示。LANDSCAPE_INVERTED3表示设备当前以反向横屏方式显示。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PORTRAIT | 0 | 表示设备当前以竖屏方式显示。 |
+| LANDSCAPE | 1 | 表示设备当前以横屏方式显示。 |
+| PORTRAIT_INVERTED | 2 | 表示设备当前以反向竖屏方式显示。 |
+| LANDSCAPE_INVERTED | 3 | 表示设备当前以反向横屏方式显示。 |
 
 #### DisplaySourceMode19+
 
@@ -38,7 +51,13 @@ import { display } from '@kit.ArkUI';
 
 **系统能力：** SystemCapability.Window.SessionManager
 
-名称值说明NONE0表示设备当前未使用。MAIN1表示设备当前为主屏。MIRROR2表示设备当前为镜像显示模式。EXTEND3表示设备当前为扩展显示模式。ALONE4表示设备当前为异源显示模式。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NONE | 0 | 表示设备当前未使用。 |
+| MAIN | 1 | 表示设备当前为主屏。 |
+| MIRROR | 2 | 表示设备当前为镜像显示模式。 |
+| EXTEND | 3 | 表示设备当前为扩展显示模式。 |
+| ALONE | 4 | 表示设备当前为异源显示模式。 |
 
 #### FoldStatus10+
 
@@ -46,69 +65,23 @@ import { display } from '@kit.ArkUI';
 
 **系统能力：** SystemCapability.Window.SessionManager
 
-名称值说明FOLD_STATUS_UNKNOWN0
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| FOLD_STATUS_UNKNOWN | 0 | 表示设备当前折叠状态无法确定或设备本身不可折叠。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| FOLD_STATUS_EXPANDED | 1 | 表示设备当前折叠状态为完全展开。如果是双折轴设备，则表示折轴一折叠状态为完全展开，折轴二折叠状态为折叠。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| FOLD_STATUS_FOLDED | 2 | 表示设备当前折叠状态为折叠。如果是双折轴设备，则表示折轴一和折轴二的折叠状态均为折叠。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| FOLD_STATUS_HALF_FOLDED | 3 | 表示设备当前折叠状态为半折叠。半折叠指完全展开和折叠之间的状态。如果是双折轴设备，则表示折轴一折叠状态为半折叠，折轴二折叠状态为折叠。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| FOLD_STATUS_EXPANDED_WITH_SECOND_EXPANDED15+ | 11 | 表示双折轴设备折轴一和折轴二的折叠状态均为完全展开。 元服务API： 从API version 15开始，该接口支持在元服务中使用。 |
+| FOLD_STATUS_EXPANDED_WITH_SECOND_HALF_FOLDED15+ | 21 | 表示双折轴设备折轴一折叠状态为完全展开，折轴二折叠状态为半折叠。 元服务API： 从API version 15开始，该接口支持在元服务中使用。 |
+| FOLD_STATUS_FOLDED_WITH_SECOND_EXPANDED15+ | 12 | 表示双折轴设备折轴一折叠状态为折叠，折轴二折叠状态为完全展开。 元服务API： 从API version 15开始，该接口支持在元服务中使用。 |
+| FOLD_STATUS_FOLDED_WITH_SECOND_HALF_FOLDED15+ | 22 | 表示双折轴设备折轴一折叠状态为折叠，折轴二折叠状态为半折叠。 元服务API： 从API version 15开始，该接口支持在元服务中使用。 |
+| FOLD_STATUS_HALF_FOLDED_WITH_SECOND_EXPANDED15+ | 13 | 表示双折轴设备折轴一折叠状态为半折叠，折轴二折叠状态为完全展开。 元服务API： 从API version 15开始，该接口支持在元服务中使用。 |
+| FOLD_STATUS_HALF_FOLDED_WITH_SECOND_HALF_FOLDED15+ | 23 | 表示双折轴设备折轴一和折轴二的折叠状态均为半折叠。 元服务API： 从API version 15开始，该接口支持在元服务中使用。 |
 
-表示设备当前折叠状态未知。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-FOLD_STATUS_EXPANDED1
-
-表示设备当前折叠状态为完全展开。如果是双折轴设备，则表示折轴一折叠状态为完全展开，折轴二折叠状态为折叠。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-FOLD_STATUS_FOLDED2
-
-表示设备当前折叠状态为折叠。如果是双折轴设备，则表示折轴一折叠状态为折叠，折轴二折叠状态为折叠。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-FOLD_STATUS_HALF_FOLDED3
-
-表示设备当前折叠状态为半折叠。半折叠指完全展开和折叠之间的状态。如果是双折轴设备，则表示折轴一折叠状态为半折叠，折轴二折叠状态为折叠。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-FOLD_STATUS_EXPANDED_WITH_SECOND_EXPANDED15+11
-
-表示双折轴设备折轴一折叠状态为完全展开，折轴二折叠状态为完全展开。
-
-**元服务API：** 从API version 15开始，该接口支持在元服务中使用。
-
-FOLD_STATUS_EXPANDED_WITH_SECOND_HALF_FOLDED15+21
-
-表示双折轴设备折轴一折叠状态为完全展开，折轴二折叠状态为半折叠。
-
-**元服务API：** 从API version 15开始，该接口支持在元服务中使用。
-
-FOLD_STATUS_FOLDED_WITH_SECOND_EXPANDED15+12
-
-表示双折轴设备折轴一折叠状态为折叠，折轴二折叠状态为完全展开。
-
-**元服务API：** 从API version 15开始，该接口支持在元服务中使用。
-
-FOLD_STATUS_FOLDED_WITH_SECOND_HALF_FOLDED15+22
-
-表示双折轴设备折轴一折叠状态为折叠，折轴二折叠状态为半折叠。
-
-**元服务API：** 从API version 15开始，该接口支持在元服务中使用。
-
-FOLD_STATUS_HALF_FOLDED_WITH_SECOND_EXPANDED15+13
-
-表示双折轴设备折轴一折叠状态为半折叠，折轴二折叠状态为完全展开。
-
-**元服务API：** 从API version 15开始，该接口支持在元服务中使用。
-
-FOLD_STATUS_HALF_FOLDED_WITH_SECOND_HALF_FOLDED15+23
-
-表示双折轴设备折轴一折叠状态为半折叠，折轴二折叠状态为半折叠。
-
-**元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
 只有一个折轴的产品包含FOLD_STATUS_EXPANDED、FOLD_STATUS_FOLDED、FOLD_STATUS_HALF_FOLDED三种折叠状态。
 
-具有两个折轴的产品包含上表所示九种折叠状态。
+具有两个折轴的产品包含上表除FOLD_STATUS_UNKNOWN以外的九种折叠状态。
 
 FOLD_STATUS_UNKNOWN是一种不可用的折叠状态。
 
@@ -120,11 +93,49 @@ FOLD_STATUS_UNKNOWN是一种不可用的折叠状态。
 
 **系统能力：** SystemCapability.Window.SessionManager
 
-名称值说明FOLD_DISPLAY_MODE_UNKNOWN0表示设备当前折叠显示模式未知。FOLD_DISPLAY_MODE_FULL1表示设备当前全屏显示。FOLD_DISPLAY_MODE_MAIN2表示设备当前主屏幕显示。FOLD_DISPLAY_MODE_SUB3表示设备当前子屏幕显示。FOLD_DISPLAY_MODE_COORDINATION4表示设备当前双屏协同显示。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| FOLD_DISPLAY_MODE_UNKNOWN | 0 | 表示设备当前折叠显示模式未知。 |
+| FOLD_DISPLAY_MODE_FULL | 1 | 表示设备当前全屏显示。 |
+| FOLD_DISPLAY_MODE_MAIN | 2 | 表示设备当前主屏幕显示。 |
+| FOLD_DISPLAY_MODE_SUB | 3 | 表示设备当前子屏幕显示。 |
+| FOLD_DISPLAY_MODE_COORDINATION | 4 | 表示设备当前双屏协同显示。 |
+
 
 • 对于内外屏均可作为主屏幕使用的折叠产品，例如大折叠、阔折叠，内屏显示状态为FOLD_DISPLAY_MODE_FULL，外屏显示状态为FOLD_DISPLAY_MODE_MAIN。
 
 • 对于外屏只有简单的辅助显示作用的折叠产品，例如小折叠，内屏显示状态为FOLD_DISPLAY_MODE_MAIN，外屏显示状态为FOLD_DISPLAY_MODE_SUB。
+
+**CornerType23+**
+
+屏幕圆角类型枚举。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.Window.SessionManager
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| TOP_LEFT | 0 | 屏幕左上方的圆角。 |
+| TOP_RIGHT | 1 | 屏幕右上方的圆角。 |
+| BOTTOM_RIGHT | 2 | 屏幕右下方的圆角。 |
+| BOTTOM_LEFT | 3 | 屏幕左下方的圆角。 |
+
+**RoundedCorner23+**
+
+屏幕圆角定义。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+系统能力： SystemCapability.Window.SessionManager
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| type | CornerType | 是 | 否 | 圆角类型。 |
+| position | Position | 是 | 否 | 圆角圆心的坐标点。 |
+| radius | number | 是 | 否 | 圆角半径，单位为px。 |
 
 #### FoldCreaseRegion10+
 
@@ -134,7 +145,10 @@ FOLD_STATUS_UNKNOWN是一种不可用的折叠状态。
 
 **系统能力：** SystemCapability.Window.SessionManager
 
-名称类型只读可选说明displayIdnumber是否屏幕ID，用于识别折痕所在的屏幕。creaseRectsArray<[Rect](#ZH-CN_TOPIC_0000002529284797__rect9)>是否折痕区域。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| displayId | number | 是 | 否 | 屏幕ID，用于识别折痕所在的屏幕。 |
+| creaseRects | Array<Rect> | 是 | 否 | 折痕区域。 |
 
 #### Rect9+
 
@@ -144,7 +158,12 @@ FOLD_STATUS_UNKNOWN是一种不可用的折叠状态。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
-名称类型只读可选说明leftnumber否否矩形区域的左边界，单位为px，该参数为整数。topnumber否否矩形区域的上边界，单位为px，该参数为整数。widthnumber否否矩形区域的宽度，单位为px，该参数为整数。heightnumber否否矩形区域的高度，单位为px，该参数为整数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| left | number | 否 | 否 | 矩形区域的左边界，单位为px，该参数为整数。 |
+| top | number | 否 | 否 | 矩形区域的上边界，单位为px，该参数为整数。 |
+| width | number | 否 | 否 | 矩形区域的宽度，单位为px，该参数为整数。 |
+| height | number | 否 | 否 | 矩形区域的高度，单位为px，该参数为整数。 |
 
 #### WaterfallDisplayAreaRects9+
 
@@ -154,7 +173,12 @@ FOLD_STATUS_UNKNOWN是一种不可用的折叠状态。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
-名称类型只读可选说明left[Rect](#ZH-CN_TOPIC_0000002529284797__rect9)是否瀑布曲面区域的左侧矩形区域。top[Rect](#ZH-CN_TOPIC_0000002529284797__rect9)是否瀑布曲面区域的顶部矩形区域。right[Rect](#ZH-CN_TOPIC_0000002529284797__rect9)是否瀑布曲面区域的右侧矩形区域。bottom[Rect](#ZH-CN_TOPIC_0000002529284797__rect9)是否瀑布曲面区域的底部矩形区域。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| left | Rect | 是 | 否 | 瀑布曲面区域的左侧矩形区域。 |
+| top | Rect | 是 | 否 | 瀑布曲面区域的顶部矩形区域。 |
+| right | Rect | 是 | 否 | 瀑布曲面区域的右侧矩形区域。 |
+| bottom | Rect | 是 | 否 | 瀑布曲面区域的底部矩形区域。 |
 
 #### CutoutInfo9+
 
@@ -164,7 +188,10 @@ FOLD_STATUS_UNKNOWN是一种不可用的折叠状态。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
-名称类型只读可选说明boundingRectsArray<[Rect](#ZH-CN_TOPIC_0000002529284797__rect9)>是否挖孔、刘海等区域的边界矩形。如果没有挖孔、刘海等区域，数组返回为空。waterfallDisplayAreaRects[WaterfallDisplayAreaRects](#ZH-CN_TOPIC_0000002529284797__waterfalldisplayarearects9)是否瀑布屏曲面部分显示区域。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| boundingRects | Array<Rect> | 是 | 否 | 挖孔、刘海等区域的边界矩形。如果没有挖孔、刘海等区域，数组返回为空。 |
+| waterfallDisplayAreaRects | WaterfallDisplayAreaRects | 是 | 否 | 瀑布屏曲面部分显示区域。 |
 
 #### DisplayPhysicalResolution12+
 
@@ -174,7 +201,11 @@ FOLD_STATUS_UNKNOWN是一种不可用的折叠状态。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
-名称类型只读可选说明foldDisplayMode[FoldDisplayMode](#ZH-CN_TOPIC_0000002529284797__folddisplaymode10)是否设备的显示模式，非折叠设备时值为0。physicalWidthnumber是否设备的宽度，单位为px，该参数为大于0的整数。physicalHeightnumber是否设备的高度，单位为px，该参数为大于0的整数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| foldDisplayMode | FoldDisplayMode | 是 | 否 | 设备的显示模式，非折叠设备时值为0。 |
+| physicalWidth | number | 是 | 否 | 设备的宽度，单位为px，该参数为大于0的整数。 |
+| physicalHeight | number | 是 | 否 | 设备的高度，单位为px，该参数为大于0的整数。 |
 
 #### BrightnessInfo22+
 
@@ -184,19 +215,26 @@ FOLD_STATUS_UNKNOWN是一种不可用的折叠状态。
 
 **系统能力：** SystemCapability.Window.SessionManager
 
-名称类型只读可选说明currentHeadroomnumber是否当前亮度动态余量，该参数为大于0的浮点数。默认值为1.0。maxHeadroomnumber是否当前最大亮度余量，该参数为大于0的浮点数。默认值为1.0。sdrNitsnumber是否屏幕的亮度，该参数为大于0的浮点数。默认值为500.0。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| currentHeadroom | number | 是 | 否 | 当前亮度动态余量，该参数为大于0的浮点数。默认值为1.0。 |
+| maxHeadroom | number | 是 | 否 | 当前最大亮度余量，该参数为大于0的浮点数。默认值为1.0。 |
+| sdrNits | number | 是 | 否 | 屏幕的亮度，该参数为大于0的浮点数。默认值为500.0。 |
 
 #### BrightnessCallback22+
 
-监听屏幕亮度信息时使用的回调函数类型。
-
 type BrightnessCallback<T1, T2> = (data1: T1, data2: T2) => void
+
+监听屏幕亮度信息时使用的回调函数类型。
 
 **系统能力：** SystemCapability.Window.SessionManager
 
 **参数：**
 
-参数名类型必填说明data1T1是表示displayId，类型为number。data2T2是表示brightnessInfo，类型为[BrightnessInfo](#ZH-CN_TOPIC_0000002529284797__brightnessinfo22)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data1 | T1 | 是 | 表示displayId，类型为number。 |
+| data2 | T2 | 是 | 表示brightnessInfo，类型为BrightnessInfo。 |
 
 #### ScreenShape18+
 
@@ -204,7 +242,10 @@ type BrightnessCallback<T1, T2> = (data1: T1, data2: T2) => void
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
-名称值说明RECTANGLE0表示设备屏幕形状为矩形。ROUND1表示设备屏幕形状为圆形。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| RECTANGLE | 0 | 表示设备屏幕形状为矩形。 |
+| ROUND | 1 | 表示设备屏幕形状为圆形。 |
 
 #### VirtualScreenConfig16+
 
@@ -212,7 +253,14 @@ type BrightnessCallback<T1, T2> = (data1: T1, data2: T2) => void
 
 **系统能力：** SystemCapability.Window.SessionManager
 
-名称类型只读可选说明namestring否否指定虚拟屏幕的名称，用户可自行定义。widthnumber否否指定虚拟屏幕的宽度，单位为px，该参数应为正整数。heightnumber否否指定虚拟屏幕的高度，单位为px，该参数应为正整数。densitynumber否否指定虚拟屏幕的密度，单位为px，该参数为浮点数。surfaceIdstring否否指定虚拟屏幕的surfaceId，用户可自行定义，该参数最大长度为4096个字节，超出最大长度时则取前4096个字节。supportsFocus22+boolean否是指定虚拟屏幕是否可获得焦点。true表示可获焦，false表示不可获焦，默认值为true。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | string | 否 | 否 | 指定虚拟屏幕的名称，用户可自行定义。 |
+| width | number | 否 | 否 | 指定虚拟屏幕的宽度，单位为px，该参数应为正整数。 |
+| height | number | 否 | 否 | 指定虚拟屏幕的高度，单位为px，该参数应为正整数。 |
+| density | number | 否 | 否 | 指定虚拟屏幕的密度，单位为px，该参数为浮点数。 |
+| surfaceId | string | 否 | 否 | 指定虚拟屏幕的surfaceId，用户可自行定义，该参数最大长度为4096个字节，超出最大长度时则取前4096个字节。 |
+| supportsFocus22+ | boolean | 否 | 是 | 指定虚拟屏幕是否可获得焦点。true表示可获焦，false表示不可获焦，默认值为true。 |
 
 #### Position20+
 
@@ -220,7 +268,10 @@ type BrightnessCallback<T1, T2> = (data1: T1, data2: T2) => void
 
 **系统能力：** SystemCapability.Window.SessionManager
 
-名称类型只读可选说明xnumber否否相对原点的横坐标，单位为px，该参数应为32位有符号整数，输入浮点数时向下取整。ynumber否否相对原点的纵坐标，单位为px，该参数应为32位有符号整数，输入浮点数时向下取整。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| x | number | 否 | 否 | 相对原点的横坐标，单位为px，该参数应为32位有符号整数，输入浮点数时向下取整。 |
+| y | number | 否 | 否 | 相对原点的纵坐标，单位为px，该参数应为32位有符号整数，输入浮点数时向下取整。 |
 
 #### RelativePosition20+
 
@@ -228,7 +279,10 @@ type BrightnessCallback<T1, T2> = (data1: T1, data2: T2) => void
 
 **系统能力：** SystemCapability.Window.SessionManager
 
-名称类型只读可选说明displayIdnumber否否相对坐标所对应的屏幕ID，仅支持整数输入，且需大于等于0。position[Position](#ZH-CN_TOPIC_0000002529284797__position20)否否以displayId所指定屏幕左上角为原点的坐标值。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| displayId | number | 否 | 否 | 相对坐标所对应的屏幕ID，仅支持整数输入，且需大于等于0。 |
+| position | Position | 否 | 否 | 以displayId所指定屏幕左上角为原点的坐标值。 |
 
 #### display.getDisplayByIdSync12+
 
@@ -242,17 +296,24 @@ getDisplayByIdSync(displayId: number): Display
 
 **参数：**
 
-参数名类型必填说明displayIdnumber是屏幕ID。该参数仅支持整数输入，该参数大于等于0。需要确保displayId准确才能成功获取到对应结果。可以通过[WindowProperties](../../types/interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529284795__windowproperties)的displayId属性获取到准确的displayId作为入参。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| displayId | number | 是 | 屏幕ID。该参数仅支持整数输入，该参数大于等于0。需要确保displayId准确才能成功获取到对应结果。可以通过WindowProperties的displayId属性获取到准确的displayId作为入参。 |
 
 **返回值：**
 
-类型说明[Display](#ZH-CN_TOPIC_0000002529284797__display)返回displayId对应的Display对象。
+| 类型 | 说明 |
+| --- | --- |
+| Display | 返回displayId对应的Display对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[屏幕错误码]([屏幕错误码](../../errors/屏幕错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed.1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
+| 1400003 | This display manager service works abnormally. Possible causes: Display is null, display id corresponding display does not exist. |
 
 **示例：**
 
@@ -272,9 +333,9 @@ try {
 
 #### display.getBrightnessInfo22+
 
-getBrightnessInfo(displayId: number): [BrightnessInfo](#ZH-CN_TOPIC_0000002529284797__brightnessinfo22)
+getBrightnessInfo(displayId: number): [BrightnessInfo](#ZH-CN_TOPIC_0000002522240754__brightnessinfo22)
 
-获取指定displayId对应屏幕的亮度信息。如果屏幕不支持HDR，返回的[BrightnessInfo](#ZH-CN_TOPIC_0000002529284797__brightnessinfo22)对象中的currentHeadroom和maxHeadroom为默认值。虚拟屏的BrightnessInfo对象中sdrNits为默认值。
+获取指定displayId对应屏幕的亮度信息。如果屏幕不支持HDR，返回的[BrightnessInfo](#ZH-CN_TOPIC_0000002522240754__brightnessinfo22)对象中的currentHeadroom和maxHeadroom为默认值。虚拟屏的BrightnessInfo对象中sdrNits为默认值。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -282,17 +343,25 @@ getBrightnessInfo(displayId: number): [BrightnessInfo](#ZH-CN_TOPIC_000000252928
 
 **参数：**
 
-参数名类型必填说明displayIdnumber是屏幕ID。该参数仅支持整数输入，该参数大于等于0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| displayId | number | 是 | 屏幕ID。该参数仅支持整数输入，该参数大于等于0。 |
 
 **返回值：**
 
-类型说明[BrightnessInfo](#ZH-CN_TOPIC_0000002529284797__brightnessinfo22)返回displayId对应屏幕的亮度信息。
+| 类型 | 说明 |
+| --- | --- |
+| BrightnessInfo | 返回displayId对应屏幕的亮度信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息801Capability not supported.1400003This display manager service works abnormally.1400004Parameter error. Possible cause: 1.Invalid parameter range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 1400003 | This display manager service works abnormally. |
+| 1400004 | Parameter error. Possible cause: 1.Invalid parameter range. |
 
 **示例：**
 
@@ -319,13 +388,17 @@ getAllDisplayPhysicalResolution(): Promise<Array<DisplayPhysicalResolution>>
 
 **返回值：**
 
-类型说明Promise<Array<[DisplayPhysicalResolution](#ZH-CN_TOPIC_0000002529284797__displayphysicalresolution12)>>Promise对象。返回当前所有的DisplayPhysicalResolution对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<DisplayPhysicalResolution>> | Promise对象。返回当前所有的DisplayPhysicalResolution对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 
@@ -350,7 +423,7 @@ promise.then((resolutionObjects) => {
 
 getDefaultDisplaySync(): Display
 
-获取当前默认的Display对象。
+返回应用所在屏幕的Display对象。若应用内多个Ability在不同屏幕，返回主屏的Display对象，若应用内多个Ability在同一屏幕，返回所在屏幕的Display对象。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -358,13 +431,17 @@ getDefaultDisplaySync(): Display
 
 **返回值：**
 
-类型说明[Display](#ZH-CN_TOPIC_0000002529284797__display)返回默认的Display对象。
+| 类型 | 说明 |
+| --- | --- |
+| Display | 返回默认的Display对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息1400001Invalid display or screen.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1400001 | Invalid display or screen. Possible cause: Display is not created or destroyed. |
 
 **示例：**
 
@@ -391,13 +468,17 @@ getPrimaryDisplaySync(): Display
 
 **返回值：**
 
-类型说明[Display](#ZH-CN_TOPIC_0000002529284797__display)当前设备主屏幕的Display对象。
+| 类型 | 说明 |
+| --- | --- |
+| Display | 当前设备主屏幕的Display对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息1400001Invalid display or screen.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1400001 | Invalid display or screen. Possible cause: Invalid display id. |
 
 **示例：**
 
@@ -421,13 +502,17 @@ getAllDisplays(callback: AsyncCallback<Array<Display>>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<Array<[Display](#ZH-CN_TOPIC_0000002529284797__display)>>是回调函数。返回当前所有的Display对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<Display>> | 是 | 回调函数。返回当前所有的Display对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息1400001Invalid display or screen.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1400001 | Invalid display or screen. |
 
 **示例：**
 
@@ -459,13 +544,17 @@ getAllDisplays(): Promise<Array<Display>>
 
 **返回值：**
 
-类型说明Promise<Array<[Display](#ZH-CN_TOPIC_0000002529284797__display)>>Promise对象。返回当前所有的Display对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<Display>> | Promise对象。返回当前所有的Display对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息1400001Invalid display or screen.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1400001 | Invalid display or screen. |
 
 **示例：**
 
@@ -495,23 +584,18 @@ on(type: 'add'|'remove'|'change', callback: Callback<number>): void
 
 **参数：**
 
-参数名类型必填说明typestring是
-
-监听事件。
-
-- type为"add"，表示增加显示设备事件。例如：插入显示器。
-
-- type为"remove"，表示移除显示设备事件。例如：移除显示器。
-
-- type为"change"，表示改变显示设备事件。例如：显示器方向改变。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件。 - type为"add"，表示增加显示设备事件。例如：插入显示器。 - type为"remove"，表示移除显示设备事件。例如：移除显示器。 - type为"change"，表示改变显示设备事件。例如：显示器方向改变。 |
 callbackCallback<number>是回调函数。返回监听到的屏幕ID，该参数为整数。
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 
 **示例：**
 
@@ -537,23 +621,18 @@ off(type: 'add'|'remove'|'change', callback?: Callback<number>): void
 
 **参数：**
 
-参数名类型必填说明typestring是
-
-监听事件。
-
-- type为"add"，表示增加显示设备事件。例如：插入显示器。
-
-- type为"remove"，表示移除显示设备事件。例如：移除显示器。
-
-- type为"change"，表示改变显示设备事件。例如：显示器方向改变。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件。 - type为"add"，表示增加显示设备事件。例如：插入显示器。 - type为"remove"，表示移除显示设备事件。例如：移除显示器。 - type为"change"，表示改变显示设备事件。例如：显示器方向改变。 |
 callbackCallback<number>否需要取消注册的回调函数。返回监听到的屏幕ID，该参数为整数。若无此参数，则取消注册当前type类型事件监听的所有回调函数。
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 
 **示例：**
 
@@ -569,11 +648,49 @@ let callback: Callback<number> = (data: number) => {
 display.off('remove', callback);
 ```
 
+**display.onChangeWithAttribute23+**
+
+onChangeWithAttribute(displayAttributeOption: Array<string>, callback: Callback<number>): void
+
+开启显示设备指定属性变化的监听。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.Window.SessionManager
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| displayAttributeOption | Array<string> | 是 | 指定需要监听的屏幕属性名称，且仅限于display属性中包含的属性。 |
+| callback | Callback<number> | 是 | 回调函数。返回监听到的屏幕ID，该参数为整数。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. Function onChangeWithAttribute can not work correctly due to limited device capabilities. |
+| 1400003 | This display manager service works abnormally. Possible causes: Internal IPC error. |
+
+示例：
+
+```ets
+import { Callback } from '@kit.BasicServicesKit';
+
+let attributesChangeCallback: Callback<number> = (data: number) => {
+  console.info(`Listening enabled. Data: ${data}`);
+};
+let attributes: Array<string> = ["rotation", "width"];
+display.onChangeWithAttribute(attributes, attributesChangeCallback);
+```
+
 #### display.isFoldable10+
 
 isFoldable(): boolean
 
-检查设备是否可折叠。
+判断设备是否可折叠。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -581,13 +698,17 @@ isFoldable(): boolean
 
 **返回值：**
 
-类型说明booleanboolean对象，返回当前设备是否可折叠的结果。false表示不可折叠，true表示可折叠。对于外屏只有简单辅助显示作用的小折叠设备，应用无法自定义外屏界面，故其返回值为false。其他可折叠设备的返回值均为true。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | boolean对象，返回当前设备是否可折叠的结果。false表示不可折叠，true表示可折叠。对于外屏只有简单辅助显示作用的小折叠设备，应用无法自定义外屏界面，故其返回值为false。其他可折叠设备的返回值均为true。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 
@@ -602,7 +723,7 @@ ret = display.isFoldable();
 
 getFoldStatus(): FoldStatus
 
-获取可折叠设备的当前折叠状态。
+获取可折叠设备当前的折叠状态。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -610,13 +731,17 @@ getFoldStatus(): FoldStatus
 
 **返回值：**
 
-类型说明[FoldStatus](#ZH-CN_TOPIC_0000002529284797__foldstatus10)FoldStatus对象，返回当前可折叠设备的折叠状态。
+| 类型 | 说明 |
+| --- | --- |
+| FoldStatus | FoldStatus对象，返回当前可折叠设备的折叠状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 
@@ -631,7 +756,7 @@ console.info(`Succeeded in obtaining fold status. Data: ${data}`);
 
 getFoldDisplayMode(): FoldDisplayMode
 
-获取可折叠设备的显示模式。
+获取可折叠设备当前的显示模式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -641,13 +766,17 @@ getFoldDisplayMode(): FoldDisplayMode
 
 **返回值：**
 
-类型说明[FoldDisplayMode](#ZH-CN_TOPIC_0000002529284797__folddisplaymode10)FoldDisplayMode对象，返回当前可折叠设备的显示模式。
+| 类型 | 说明 |
+| --- | --- |
+| FoldDisplayMode | FoldDisplayMode对象，返回可折叠设备当前的显示模式。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 
@@ -672,13 +801,17 @@ getCurrentFoldCreaseRegion(): FoldCreaseRegion
 
 **返回值：**
 
-类型说明[FoldCreaseRegion](#ZH-CN_TOPIC_0000002529284797__foldcreaseregion10)FoldCreaseRegion对象，返回设备在当前显示模式下的折叠折痕区域。
+| 类型 | 说明 |
+| --- | --- |
+| FoldCreaseRegion | FoldCreaseRegion对象，返回设备在当前显示模式下的折叠折痕区域。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 
@@ -695,11 +828,11 @@ on(type: 'foldStatusChange', callback: Callback<FoldStatus>): void
 
 开启折叠设备折叠状态变化的监听。
 
-本接口监听设备物理折叠状态的变化，如果要监听屏幕显示模式的变化，需要使用[display.on('foldDisplayModeChange')](#ZH-CN_TOPIC_0000002529284797__displayonfolddisplaymodechange10)接口。
+本接口监听设备物理折叠状态的变化，如果要监听屏幕显示模式的变化，需要使用[display.on('foldDisplayModeChange')](#ZH-CN_TOPIC_0000002522240754__displayonfolddisplaymodechange10)接口。
 
 两者存在差异，时序上物理折叠状态变化在前，底层会根据物理折叠状态匹配屏幕显示模式状态。
 
-若需监听当前显示内容是显示在折叠设备的内屏还是外屏，请使用[display.on('foldDisplayModeChange')](#ZH-CN_TOPIC_0000002529284797__displayonfolddisplaymodechange10)。
+若需监听当前显示内容是显示在折叠设备的内屏还是外屏，请使用[display.on('foldDisplayModeChange')](#ZH-CN_TOPIC_0000002522240754__displayonfolddisplaymodechange10)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -707,13 +840,19 @@ on(type: 'foldStatusChange', callback: Callback<FoldStatus>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'foldStatusChange'，表示折叠设备折叠状态发生变化。callbackCallback<[FoldStatus](#ZH-CN_TOPIC_0000002529284797__foldstatus10)>是回调函数。表示折叠设备折叠状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'foldStatusChange'，表示折叠设备折叠状态发生变化。 |
+| callback | Callback<FoldStatus> | 是 | 回调函数。表示折叠设备折叠状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 
@@ -721,7 +860,7 @@ on(type: 'foldStatusChange', callback: Callback<FoldStatus>): void
 import { Callback } from '@kit.BasicServicesKit';
 
 /**
- * 注册监听的callback参数要采用对象传递.
+ * 注册监听的callback参数要采用对象传递。
  * 若使用匿名函数注册，每次调用会创建一个新的底层对象，引起内存泄漏问题。
 */
 let callback: Callback<display.FoldStatus> = (data: display.FoldStatus) => {
@@ -742,13 +881,19 @@ off(type: 'foldStatusChange', callback?: Callback<FoldStatus>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'foldStatusChange'，表示折叠设备折叠状态发生变化。callbackCallback<[FoldStatus](#ZH-CN_TOPIC_0000002529284797__foldstatus10)>否需要取消注册的回调函数。表示折叠设备折叠状态。若无此参数，则取消注册折叠状态变化监听的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'foldStatusChange'，表示折叠设备折叠状态发生变化。 |
+| callback | Callback<FoldStatus> | 否 | 需要取消注册的回调函数。表示折叠设备折叠状态。若无此参数，则取消注册折叠状态变化监听的所有回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 
@@ -768,7 +913,7 @@ display.off('foldStatusChange', callback);
 
 on(type: 'brightnessInfoChange', callback: BrightnessCallback<number, BrightnessInfo>): void
 
-开启所有屏幕亮度信息变化的监听。如果屏幕不支持HDR，监听到的[BrightnessInfo](#ZH-CN_TOPIC_0000002529284797__brightnessinfo22)对象中的currentHeadroom和maxHeadroom为默认值。虚拟屏的BrightnessInfo对象中sdrNits为默认值。
+开启所有屏幕亮度信息变化的监听。如果屏幕不支持HDR，监听到的[BrightnessInfo](#ZH-CN_TOPIC_0000002522240754__brightnessinfo22)对象中的currentHeadroom和maxHeadroom为默认值。虚拟屏的BrightnessInfo对象中sdrNits为默认值。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -776,13 +921,20 @@ on(type: 'brightnessInfoChange', callback: BrightnessCallback<number, Brightness
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'brightnessInfoChange'，表示屏幕亮度信息状态发生变化。callback[BrightnessCallback](#ZH-CN_TOPIC_0000002529284797__brightnesscallback22)<number, [BrightnessInfo](#ZH-CN_TOPIC_0000002529284797__brightnessinfo22)>是回调函数。返回屏幕亮度信息改变的displayId(参数1)及对应的屏幕亮度信息(参数2)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'brightnessInfoChange'，表示屏幕亮度信息状态发生变化。 |
+| callback | BrightnessCallback<number, BrightnessInfo> | 是 | 回调函数。返回屏幕亮度信息改变的displayId(参数1)及对应的屏幕亮度信息(参数2)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息801Capability not supported.1400003This display manager service works abnormally.1400004Parameter error. Possible cause: 1.Invalid parameter range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 1400003 | This display manager service works abnormally. |
+| 1400004 | Parameter error. Possible cause: 1.Invalid parameter range. |
 
 **示例：**
 
@@ -809,13 +961,20 @@ off(type: 'brightnessInfoChange', callback?: BrightnessCallback<number, Brightne
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'brightnessInfoChange'，表示屏幕亮度信息状态发生变化。callback[BrightnessCallback](#ZH-CN_TOPIC_0000002529284797__brightnesscallback22)<number, [BrightnessInfo](#ZH-CN_TOPIC_0000002529284797__brightnessinfo22)>否需要取消注册的回调函数。表示brightnessInfo状态发生改变。若无此参数，则取消所有注册brightnessInfo状态发生改变的回调函数。参数1为dispalyId，参数2为屏幕亮度信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'brightnessInfoChange'，表示屏幕亮度信息状态发生变化。 |
+| callback | BrightnessCallback<number, BrightnessInfo> | 否 | 需要取消注册的回调函数。表示brightnessInfo状态发生改变。若无此参数，则取消所有注册brightnessInfo状态发生改变的回调函数。参数1为displayId，参数2为屏幕亮度信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息801Capability not supported.1400003This display manager service works abnormally.1400004Parameter error. Possible cause: 1.Invalid parameter range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 1400003 | This display manager service works abnormally. |
+| 1400004 | Parameter error. Possible cause: 1.Invalid parameter range. |
 
 **示例：**
 
@@ -842,13 +1001,19 @@ on(type: 'foldAngleChange', callback: Callback<Array<number>>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'foldAngleChange'，表示折叠设备折叠角度发生变化。callbackCallback<Array<number>>是回调函数。表示折叠设备屏幕折叠角度值（0度~180度）。如果是双折轴设备，则数组返回两个角度值，第一个值是折轴一的折叠角度值，第二个值是折轴二的折叠角度值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'foldAngleChange'，表示折叠设备折叠角度发生变化。 |
+| callback | Callback<Array<number>> | 是 | 回调函数。表示折叠设备屏幕折叠角度值（0度~180度）。如果是双折轴设备，则数组返回两个角度值，第一个值是折轴一的折叠角度值，第二个值是折轴二的折叠角度值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 
@@ -873,13 +1038,19 @@ off(type: 'foldAngleChange', callback?: Callback<Array<number>>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'foldAngleChange'表示折叠设备折叠角度发生变化。callbackCallback<Array<number>>否需要取消注册的回调函数。表示折叠设备屏幕折叠角度值（0度~180度）。若无此参数，则取消注册折叠角度变化监听的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'foldAngleChange'表示折叠设备折叠角度发生变化。 |
+| callback | Callback<Array<number>> | 否 | 需要取消注册的回调函数。表示折叠设备屏幕折叠角度值（0度~180度）。若无此参数，则取消注册折叠角度变化监听的所有回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 
@@ -907,13 +1078,19 @@ on(type: 'captureStatusChange', callback: Callback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'captureStatusChange'表示设备的屏幕显示信息被获取的状态发生变化。callbackCallback<boolean>是回调函数。表示设备的屏幕显示信息是否被获取。true表示设备的屏幕显示信息开始被获取，包括处于截屏、投屏、录屏状态，或创建了虚拟屏幕(虚拟屏幕可能被应用获取屏幕图像)，截屏仅返回一次true；false表示获取结束。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'captureStatusChange'表示设备的屏幕显示信息被获取的状态发生变化。 |
+| callback | Callback<boolean> | 是 | 回调函数。表示设备的屏幕显示信息是否被获取。true表示设备的屏幕显示信息开始被获取，包括处于截屏、投屏、录屏状态，或创建了虚拟屏幕(虚拟屏幕可能被应用获取屏幕图像)，截屏仅返回一次true；false表示获取结束。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 
@@ -938,13 +1115,19 @@ off(type: 'captureStatusChange', callback?: Callback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'captureStatusChange'表示设备的屏幕显示信息被获取的状态发生变化。callbackCallback<boolean>否需要取消注册的回调函数。表示设备的屏幕显示信息是否被获取。true表示设备的屏幕显示信息开始被获取，包括处于截屏、投屏、录屏状态，或创建了虚拟屏幕(虚拟屏幕可能被应用获取屏幕图像)，截屏仅返回一次true；false表示获取结束。若无此参数，则取消注册设备的屏幕显示信息是否存在被获取监听的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'captureStatusChange'表示设备的屏幕显示信息被获取的状态发生变化。 |
+| callback | Callback<boolean> | 否 | 需要取消注册的回调函数。表示设备的屏幕显示信息是否被获取。true表示设备的屏幕显示信息开始被获取，包括处于截屏、投屏、录屏状态，或创建了虚拟屏幕(虚拟屏幕可能被应用获取屏幕图像)，截屏仅返回一次true；false表示获取结束。若无此参数，则取消注册设备的屏幕显示信息是否存在被获取监听的所有回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 
@@ -972,13 +1155,17 @@ isCaptured(): boolean
 
 **返回值：**
 
-类型说明booleanboolean值，返回设备的屏幕显示信息是否存在被获取的情况。返回true表示设备的屏幕信息存在被获取的情况，可能为：设备正处于截屏、投屏、录屏状态，或已创建虚拟屏幕(虚拟屏幕可能被应用获取屏幕图像)；返回false则表示设备的屏幕信息不存在被获取的情况。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | boolean值，返回设备的屏幕显示信息是否存在被获取的情况。返回true表示设备的屏幕信息存在被获取的情况，可能为：设备正处于截屏、投屏、录屏状态，或已创建虚拟屏幕(虚拟屏幕可能被应用获取屏幕图像)；返回false则表示设备的屏幕信息不存在被获取的情况。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 
@@ -995,7 +1182,7 @@ on(type: 'foldDisplayModeChange', callback: Callback<FoldDisplayMode>): void
 
 开启折叠设备屏幕显示模式变化的监听。
 
-本接口监听设备屏幕显示模式的变化，如果要监听设备物理折叠状态的变化，需要使用[display.on('foldStatusChange')](#ZH-CN_TOPIC_0000002529284797__displayonfoldstatuschange10)接口。
+本接口监听设备屏幕显示模式的变化，如果要监听设备物理折叠状态的变化，需要使用[display.on('foldStatusChange')](#ZH-CN_TOPIC_0000002522240754__displayonfoldstatuschange10)接口。
 
 两者存在差异，时序上物理折叠状态变化在前，底层会根据物理折叠状态匹配屏幕显示模式状态。
 
@@ -1007,13 +1194,19 @@ on(type: 'foldDisplayModeChange', callback: Callback<FoldDisplayMode>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'foldDisplayModeChange'，表示折叠设备屏幕显示模式发生变化。callbackCallback<[FoldDisplayMode](#ZH-CN_TOPIC_0000002529284797__folddisplaymode10)>是回调函数。表示折叠设备屏幕显示模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'foldDisplayModeChange'，表示折叠设备屏幕显示模式发生变化。 |
+| callback | Callback<FoldDisplayMode> | 是 | 回调函数。表示折叠设备屏幕显示模式。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 
@@ -1021,7 +1214,7 @@ on(type: 'foldDisplayModeChange', callback: Callback<FoldDisplayMode>): void
 import { Callback } from '@kit.BasicServicesKit';
 
 /**
- * 注册监听的callback参数要采用对象传递.
+ * 注册监听的callback参数要采用对象传递。
  * 若使用匿名函数注册，每次调用会创建一个新的底层对象，引起内存泄漏问题。
 */
 let callback: Callback<display.FoldDisplayMode> = (data: display.FoldDisplayMode) => {
@@ -1044,13 +1237,19 @@ off(type: 'foldDisplayModeChange', callback?: Callback<FoldDisplayMode>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'foldDisplayModeChange'，表示折叠设备屏幕显示模式发生变化。callbackCallback<[FoldDisplayMode](#ZH-CN_TOPIC_0000002529284797__folddisplaymode10)>否需要取消注册的回调函数。表示折叠设备屏幕显示模式。若无此参数，则取消注册屏幕显示模式变化监听的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'foldDisplayModeChange'，表示折叠设备屏幕显示模式发生变化。 |
+| callback | Callback<FoldDisplayMode> | 否 | 需要取消注册的回调函数。表示折叠设备屏幕显示模式。若无此参数，则取消注册屏幕显示模式变化监听的所有回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 
@@ -1078,17 +1277,26 @@ createVirtualScreen(config:VirtualScreenConfig): Promise<number>
 
 **参数：**
 
-参数名类型必填说明config[VirtualScreenConfig](#ZH-CN_TOPIC_0000002529284797__virtualscreenconfig16)是用于创建虚拟屏幕的参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | VirtualScreenConfig | 是 | 用于创建虚拟屏幕的参数。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象。返回创建的虚拟屏幕的ScreenId。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象。返回创建的虚拟屏幕的ScreenId。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.801Capability not supported.function createVirtualScreen can not work correctly due to limited device capabilities.1400001Invalid display or screen.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 801 | Capability not supported.function createVirtualScreen can not work correctly due to limited device capabilities. |
+| 1400001 | Invalid display or screen. |
 
 **示例：**
 
@@ -1132,17 +1340,27 @@ destroyVirtualScreen(screenId:number): Promise<void>
 
 **参数：**
 
-参数名类型必填说明screenIdnumber是屏幕ID，与创建的虚拟屏幕ID保持一致，即使用[createVirtualScreen()](#ZH-CN_TOPIC_0000002529284797__displaycreatevirtualscreen16)接口成功创建对应虚拟屏幕时的返回值，该参数仅支持整数输入。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| screenId | number | 是 | 屏幕ID，与创建的虚拟屏幕ID保持一致，即使用createVirtualScreen()接口成功创建对应虚拟屏幕时的返回值，该参数仅支持整数输入。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.801Capability not supported.function destroyVirtualScreen can not work correctly due to limited device capabilities.1400001Invalid display or screen.1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 801 | Capability not supported.function destroyVirtualScreen can not work correctly due to limited device capabilities. |
+| 1400001 | Invalid display or screen. |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 
@@ -1169,17 +1387,28 @@ setVirtualScreenSurface(screenId:number, surfaceId: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明screenIdnumber是屏幕ID，与创建的虚拟屏幕ID保持一致，即使用[createVirtualScreen()](#ZH-CN_TOPIC_0000002529284797__displaycreatevirtualscreen16)接口成功创建对应虚拟屏幕时的返回值，该参数仅支持整数输入。surfaceIdstring是代表虚拟屏幕绑定的surfaceId，由用户指定某一实际存在的surface对应的surfaceId，该参数最大长度为4096个字节，超出最大长度时则取前4096个字节。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| screenId | number | 是 | 屏幕ID，与创建的虚拟屏幕ID保持一致，即使用createVirtualScreen()接口成功创建对应虚拟屏幕时的返回值，该参数仅支持整数输入。 |
+| surfaceId | string | 是 | 代表虚拟屏幕绑定的surfaceId，由用户指定某一实际存在的surface对应的surfaceId，该参数最大长度为4096个字节，超出最大长度时则取前4096个字节。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.801Capability not supported.function setVirtualScreenSurface can not work correctly due to limited device capabilities.1400001Invalid display or screen.1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 801 | Capability not supported.function setVirtualScreenSurface can not work correctly due to limited device capabilities. |
+| 1400001 | Invalid display or screen. |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 
@@ -1216,7 +1445,6 @@ struct Index {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### display.makeUnique16+
@@ -1231,17 +1459,27 @@ makeUnique(screenId:number): Promise<void>
 
 **参数：**
 
-参数名类型必填说明screenIdnumber是要设置成异源模式的屏幕ID。其中id应为大于0的整数，否则返回401错误码。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| screenId | number | 是 | 要设置成异源模式的屏幕ID。其中id应为大于0的整数，否则返回401错误码。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed.801Capability not supported.function makeUnique can not work correctly due to limited device capabilities.1400001Invalid display or screen.1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 801 | Capability not supported.function makeUnique can not work correctly due to limited device capabilities. |
+| 1400001 | Invalid display or screen. |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 
@@ -1268,17 +1506,24 @@ convertRelativeToGlobalCoordinate(relativePosition: RelativePosition): Position
 
 **参数：**
 
-参数名类型必填说明relativePosition[RelativePosition](#ZH-CN_TOPIC_0000002529284797__relativeposition20)是需要转化为全局坐标的相对坐标。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| relativePosition | RelativePosition | 是 | 需要转化为全局坐标的相对坐标。 |
 
 **返回值：**
 
-类型说明[Position](#ZH-CN_TOPIC_0000002529284797__position20)返回相对于主屏左上角的全局坐标。
+| 类型 | 说明 |
+| --- | --- |
+| Position | 返回相对于主屏左上角的全局坐标。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)、[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息801Capability not supported.1400003This display manager service works abnormally.1400004Parameter error. Possible cause: 1.Invalid parameter range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1400003 | This display manager service works abnormally. |
+| 1400004 | Parameter error. Possible cause: 1.Invalid parameter range. |
 
 **示例：**
 
@@ -1313,17 +1558,25 @@ convertGlobalToRelativeCoordinate(position: Position, displayId?: number): Relat
 
 **参数：**
 
-参数名类型必填说明position[Position](#ZH-CN_TOPIC_0000002529284797__position20)是需要转化为相对坐标的全局坐标。displayIdnumber否相对坐标系原点所在的屏幕ID，传递该参数表示以指定屏幕左上角为原点转换相对坐标。不指定则不传参，默认转换成全局坐标所在屏幕的相对坐标，若全局坐标不在任何屏幕上，则默认转换成主屏的相对坐标。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| position | Position | 是 | 需要转化为相对坐标的全局坐标。 |
+| displayId | number | 否 | 相对坐标系原点所在的屏幕ID，传递该参数表示以指定屏幕左上角为原点转换相对坐标。不指定则不传参，默认转换成全局坐标所在屏幕的相对坐标，若全局坐标不在任何屏幕上，则默认转换成主屏的相对坐标。 |
 
 **返回值：**
 
-类型说明[RelativePosition](#ZH-CN_TOPIC_0000002529284797__relativeposition20)返回对应屏幕的相对坐标。
+| 类型 | 说明 |
+| --- | --- |
+| RelativePosition | 返回对应屏幕的相对坐标。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)、[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息801Capability not supported.1400003This display manager service works abnormally.1400004Parameter error. Possible cause: 1.Invalid parameter range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1400003 | This display manager service works abnormally. |
+| 1400004 | Parameter error. Possible cause: 1.Invalid parameter range. |
 
 **示例：**
 
@@ -1349,13 +1602,16 @@ getDefaultDisplay(callback: AsyncCallback<Display>): void
 
 获取当前默认的Display对象，使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃，推荐使用[getDefaultDisplaySync()](#ZH-CN_TOPIC_0000002529284797__displaygetdefaultdisplaysync9)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[getDefaultDisplaySync()](#ZH-CN_TOPIC_0000002522240754__displaygetdefaultdisplaysync9)替代。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[Display](#ZH-CN_TOPIC_0000002529284797__display)>是回调函数。返回当前默认的Display对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Display> | 是 | 回调函数。返回当前默认的Display对象。 |
 
 **示例：**
 
@@ -1380,13 +1636,16 @@ getDefaultDisplay(): Promise<Display>
 
 获取当前默认的Display对象，使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃，推荐使用[getDefaultDisplaySync()](#ZH-CN_TOPIC_0000002529284797__displaygetdefaultdisplaysync9)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[getDefaultDisplaySync()](#ZH-CN_TOPIC_0000002522240754__displaygetdefaultdisplaysync9)替代。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
 **返回值：**
 
-类型说明Promise<[Display](#ZH-CN_TOPIC_0000002529284797__display)>Promise对象。返回当前默认的Display对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Display> | Promise对象。返回当前默认的Display对象。 |
 
 **示例：**
 
@@ -1409,13 +1668,16 @@ getAllDisplay(callback: AsyncCallback<Array<Display>>): void
 
 获取当前所有的Display对象，使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃，推荐使用[getAllDisplays()](#ZH-CN_TOPIC_0000002529284797__displaygetalldisplays9)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[getAllDisplays()](#ZH-CN_TOPIC_0000002522240754__displaygetalldisplays9)替代。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<Array<[Display](#ZH-CN_TOPIC_0000002529284797__display)>>是回调函数。返回当前所有的Display对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<Display>> | 是 | 回调函数。返回当前所有的Display对象。 |
 
 **示例：**
 
@@ -1438,13 +1700,16 @@ getAllDisplay(): Promise<Array<Display>>
 
 获取当前所有的Display对象，使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃，推荐使用[getAllDisplays()](#ZH-CN_TOPIC_0000002529284797__displaygetalldisplays9-1)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[getAllDisplays()](#ZH-CN_TOPIC_0000002522240754__displaygetalldisplays9-1)替代。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
 **返回值：**
 
-类型说明Promise<Array<[Display](#ZH-CN_TOPIC_0000002529284797__display)>>Promise对象。返回当前所有的Display对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<Display>> | Promise对象。返回当前所有的Display对象。 |
 
 **示例：**
 
@@ -1463,207 +1728,78 @@ promise.then((data: Array<display.Display>) => {
 
 屏幕实例。描述Display对象的属性和方法。
 
-下列API示例中都需先使用[getAllDisplays()](#ZH-CN_TOPIC_0000002529284797__displaygetalldisplays9)、[getDefaultDisplaySync()](#ZH-CN_TOPIC_0000002529284797__displaygetdefaultdisplaysync9)中的任一方法获取到Display实例，再通过此实例调用对应方法。
+下列API示例中都需先使用[getAllDisplays()](#ZH-CN_TOPIC_0000002522240754__displaygetalldisplays9)、[getDefaultDisplaySync()](#ZH-CN_TOPIC_0000002522240754__displaygetdefaultdisplaysync9)中的任一方法获取到Display实例，再通过此实例调用对应方法。
 
 #### 属性
 
-名称类型只读可选说明idnumber是否
-
-屏幕ID，该参数为大于等于0的整数。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-namestring是否
-
-显示设备的名称。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-aliveboolean是否
-
-显示设备是否启用。true表示设备启用，false表示设备未启用。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-state[DisplayState](#ZH-CN_TOPIC_0000002529284797__displaystate)是否
-
-显示设备的状态。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-refreshRatenumber是否
-
-显示设备当前采用的刷新率，该参数为整数，单位为Hz。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-rotationnumber是否
-
-显示设备的屏幕顺时针旋转角度。
-
-值为0时，表示显示设备屏幕顺时针旋转为0°；
-
-值为1时，表示显示设备屏幕顺时针旋转为90°；
-
-值为2时，表示显示设备屏幕顺时针旋转为180°；
-
-值为3时，表示显示设备屏幕顺时针旋转为270°。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-widthnumber是否
-
-显示设备的屏幕宽度，单位为px，该参数为整数。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-heightnumber是否
-
-显示设备的屏幕高度，单位为px，该参数为整数。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-densityDPInumber是否
-
-显示设备屏幕的物理像素密度，表示每英寸上的像素点数。该参数为浮点数，单位为px。一般取值160.0、480.0等，实际能取到的值取决于不同设备设置里提供的可选值。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-orientation10+[Orientation](#ZH-CN_TOPIC_0000002529284797__orientation10)是否
-
-表示屏幕当前显示的方向。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-densityPixelsnumber是否
-
-显示设备逻辑像素的密度，代表物理像素与逻辑像素的缩放系数，计算方式为：
-
-该参数为浮点数，受densityDPI范围限制，取值范围在[0.5，4.0]。一般取值1.0、3.0等，实际取值取决于不同设备提供的densityDPI。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-scaledDensitynumber是否
-
-显示设备的显示字体的缩放因子。该参数为浮点数，通常与densityPixels相同。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-xDPInumber是否
-
-x方向中每英寸屏幕的确切物理像素值，该参数为浮点数。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-yDPInumber是否
-
-y方向中每英寸屏幕的确切物理像素值，该参数为浮点数。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-colorSpaces11+Array<[colorSpaceManager.ColorSpace](@ohos.graphics.colorSpaceManager (色彩管理).md)>是否
-
-显示设备支持的所有色域类型。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-hdrFormats11+Array<[hdrCapability.HDRFormat](@ohos.graphics.hdrCapability (HDR能力).md)>是否
-
-显示设备支持的所有HDR格式。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-availableWidth12+number是否
-
-屏幕的可用区域宽度，单位为px，该参数为大于0的整数。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**设备行为差异：** 该接口在2in1设备、Tablet设备中可正常调用；在其他设备中不可用，请通过width属性获取当前设备屏幕的可用区域宽度。
-
-availableHeight12+number是否
-
-屏幕的可用区域高度，单位为px，该参数为大于0的整数。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**设备行为差异：** 该接口在2in1设备、Tablet设备中可正常调用；在其他设备中不可用，请通过height属性获取当前设备屏幕的可用区域高度。
-
-screenShape18+[ScreenShape](#ZH-CN_TOPIC_0000002529284797__screenshape18)是是
-
-显示设备的屏幕形状，默认值为RECTANGLE。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-sourceMode19+[DisplaySourceMode](#ZH-CN_TOPIC_0000002529284797__displaysourcemode19)是是
-
-屏幕显示内容的显示模式枚举，默认值为DisplaySourceMode.NONE。
+![image](public_sys-resources/zh-cn_image_0000002522244724.webp)
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| id | number | 是 | 否 | 显示设备的屏幕ID，该参数为大于等于0的整数。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| name | string | 是 | 否 | 显示设备的名称。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| alive | boolean | 是 | 否 | 显示设备的启用状态，表示设备是否处于正常运行状态。true表示已启用，处于正常运行状态；false表示未启用，未处于正常运行状态。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| state | DisplayState | 是 | 否 | 显示设备的状态。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| refreshRate | number | 是 | 否 | 显示设备当前采用的刷新率，该参数为整数，单位为Hz。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| rotation | number | 是 | 否 | 显示设备的屏幕顺时针旋转角度。 值为0时，表示显示设备屏幕顺时针旋转为0°，表示显示设备的标准显示方向； 值为1时，表示显示设备屏幕顺时针旋转为90°； 值为2时，表示显示设备屏幕顺时针旋转为180°； 值为3时，表示显示设备屏幕顺时针旋转为270°。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| width | number | 是 | 否 | 显示设备的屏幕宽度，单位为px，该参数为整数。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| height | number | 是 | 否 | 显示设备的屏幕高度，单位为px，该参数为整数。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| densityDPI | number | 是 | 否 | 显示设备的物理像素密度，表示每英寸上的像素点数。该参数为浮点数，单位为px。一般取值160.0、480.0等，实际能取到的值取决于不同设备设置里提供的可选值。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| orientation10+ | Orientation | 是 | 否 | 表示显示设备当前显示的方向。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| densityPixels | number | 是 | 否 | 显示设备逻辑像素的密度，代表物理像素与逻辑像素的缩放系数，计算方式为： 该参数为浮点数，受densityDPI范围限制，取值范围在[0.5，4.0]。一般取值1.0、3.0等，实际取值取决于不同设备提供的densityDPI。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| scaledDensity | number | 是 | 否 | 显示设备上的字体的缩放因子。该参数为浮点数，通常与densityPixels相同。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| xDPI | number | 是 | 否 | x轴方向中每英寸屏幕的确切物理像素值，该参数为浮点数。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| yDPI | number | 是 | 否 | y轴方向中每英寸屏幕的确切物理像素值，该参数为浮点数。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| colorSpaces11+ | Array<colorSpaceManager.ColorSpace> | 是 | 否 | 显示设备支持的所有色域类型。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| hdrFormats11+ | Array<hdrCapability.HDRFormat> | 是 | 否 | 显示设备支持的所有HDR格式。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| availableWidth12+ | number | 是 | 否 | 显示设备的可用区域宽度，单位为px，该参数为大于0的整数。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。  设备行为差异： 该接口在2in1设备、Tablet设备中可正常调用；在其他设备中不可用，请通过width属性获取当前设备屏幕的可用区域宽度。 |
+| availableHeight12+ | number | 是 | 否 | 显示设备的可用区域高度，单位为px，该参数为大于0的整数。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。  设备行为差异： 该接口在2in1设备、Tablet设备中可正常调用；在其他设备中不可用，请通过height属性获取当前设备屏幕的可用区域高度。 |
+| screenShape18+ | ScreenShape | 是 | 是 | 显示设备的屏幕形状，默认值为RECTANGLE。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
+| sourceMode19+ | DisplaySourceMode | 是 | 是 | 显示设备的显示模式枚举，默认值为DisplaySourceMode.NONE。 系统能力： SystemCapability.Window.SessionManager  元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
+| x19+ | number | 是 | 是 | 显示设备左上角相对于原点的x轴坐标，原点为主屏左上角，单位为px，该参数为整数，默认值为0。仅DisplaySourceMode为MAIN和EXTEND时返回实际值，其余默认返回默认值0。 系统能力： SystemCapability.Window.SessionManager 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
+| y19+ | number | 是 | 是 | 显示设备左上角相对于原点的y轴坐标，原点为主屏左上角，单位为px，该参数为整数，默认值为0。仅DisplaySourceMode为MAIN和EXTEND时返回实际值，其余默认返回默认值0。 系统能力： SystemCapability.Window.SessionManager 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
+| supportedRefreshRates20+ | Array<number> | 是 | 是 | 显示设备支持的所有刷新率，从小到大排序。刷新率值为正整数，单位为Hz。默认为空。 系统能力： SystemCapability.Window.SessionManager 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+
+**getRoundedCorner23+**
+
+getRoundedCorner(): Array<RoundedCorner>
+
+获取屏幕的圆角信息。屏幕圆角信息由产品配置决定，只有配置了屏幕圆角半径的物理屏幕才能返回圆角信息，否则返回空数组，虚拟屏同样返回空数组。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
 
-**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+返回值：
 
-x19+number是是
+| 类型 | 说明 |
+| --- | --- |
+| Array<RoundedCorner> | 返回当前屏幕的圆角信息。 |
 
-屏幕左上角相对于原点的x轴坐标，原点为主屏左上角，单位为px，该参数为整数，默认值为0。仅DisplaySourceMode为MAIN和EXTEND时返回。
+错误码：
 
-**系统能力：** SystemCapability.Window.SessionManager
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 1400001 | Invalid display or screen. |
+| 1400003 | This display manager service works abnormally. |
 
-y19+number是是
+示例：
 
-屏幕左上角相对于原点的y轴坐标，原点为主屏左上角，单位为px，该参数为整数，默认值为0。仅DisplaySourceMode为MAIN和EXTEND时返回。
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
 
-**系统能力：** SystemCapability.Window.SessionManager
-
-**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
-
-supportedRefreshRates20+Array<number>是是
-
-显示设备支持的所有刷新率，从小到大排序。刷新率值为正整数，单位为Hz。默认为空。
-
-**系统能力：** SystemCapability.Window.SessionManager
-
-**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+let displayClass: display.Display | null = null;
+try {
+  displayClass = display.getDefaultDisplaySync();
+  let data = displayClass.getRoundedCorner();
+  console.info(`Succeeded in getting rounded corner. Data: ${JSON.stringify(data)}`);
+} catch (error) {
+  console.error(`Failed to getRoundedCorner. Code: ${error.code}, message: ${error.message}`);
+}
+```
 
 #### getCutoutInfo9+
 
@@ -1677,13 +1813,17 @@ getCutoutInfo(callback: AsyncCallback<CutoutInfo>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[CutoutInfo](#ZH-CN_TOPIC_0000002529284797__cutoutinfo9)>是回调函数。返回描述不可用屏幕区域的CutoutInfo对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<CutoutInfo> | 是 | 回调函数。返回不可用屏幕区域对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息1400001Invalid display or screen.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1400001 | Invalid display or screen. Possible cause: 1. This display is abnormal. 2. Internal task error. |
 
 **示例：**
 
@@ -1715,13 +1855,17 @@ getCutoutInfo(): Promise<CutoutInfo>
 
 **返回值：**
 
-类型说明Promise<[CutoutInfo](#ZH-CN_TOPIC_0000002529284797__cutoutinfo9)>Promise对象。返回描述不可用屏幕区域的CutoutInfo对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<CutoutInfo> | Promise对象。返回描述不可用屏幕区域的CutoutInfo对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息1400001Invalid display or screen.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1400001 | Invalid display or screen. |
 
 **示例：**
 
@@ -1750,17 +1894,22 @@ getAvailableArea(): Promise<Rect>
 
 **系统能力：** SystemCapability.Window.SessionManager
 
-**设备行为差异：** 该接口在2in1设备、Tablet设备中可正常调用；在其他设备中不可用，请通过[Display属性](#ZH-CN_TOPIC_0000002529284797__属性)中的width、height属性获取当前设备屏幕的可用区域。
+设备行为差异： 该接口在2in1设备、Tablet设备中可正常调用；在其他设备中不可用，请通过[Display属性](#ZH-CN_TOPIC_0000002522240754__属性)中的width、height属性获取当前设备屏幕的可用区域。
 
 **返回值：**
 
-类型说明Promise<[Rect](#ZH-CN_TOPIC_0000002529284797__rect9)>Promise对象。返回当前屏幕可用矩形区域。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Rect> | Promise对象。返回当前屏幕可用矩形区域。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息801Capability not supported. Failed to call the API due to limited device capabilities.1400001Invalid display or screen.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 1400001 | Invalid display or screen. Possible cause: 1. This display is abnormal. 2. Internal task error. |
 
 **示例：**
 
@@ -1786,7 +1935,7 @@ try {
 
 on(type: 'availableAreaChange', callback: Callback<Rect>): void
 
-开启当前设备屏幕的可用区域监听。当前设备屏幕有可用区域变化时，触发回调函数，返回可用区域。
+开启当前设备屏幕可用区域的监听。当屏幕旋转、进入/退出自由多窗模式、设置Dock栏/状态栏等系统控件可见性变化时，触发回调函数，返回可用区域信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1796,13 +1945,20 @@ on(type: 'availableAreaChange', callback: Callback<Rect>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件。固定为'availableAreaChange'，表示屏幕可用区域变更。callbackCallback<[Rect](#ZH-CN_TOPIC_0000002529284797__rect9)>是回调函数。返回改变后的可用区域。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件。固定为'availableAreaChange'，表示屏幕可用区域变更。 |
+| callback | Callback<Rect> | 是 | 回调函数。返回改变后的可用区域。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.801Capability not supported. Failed to call the API due to limited device capabilities.1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 
@@ -1836,13 +1992,20 @@ off(type: 'availableAreaChange', callback?: Callback<Rect>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'availableAreaChange'，表示屏幕可用区域变更。callbackCallback<[Rect](#ZH-CN_TOPIC_0000002529284797__rect9)>否需要取消注册的回调函数。返回改变后的可用区域。若无此参数，则取消注册屏幕可用区域变化监听的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'availableAreaChange'，表示屏幕可用区域变更。 |
+| callback | Callback<Rect> | 否 | 需要取消注册的回调函数。返回改变后的可用区域。若无此参数，则取消注册屏幕可用区域变化监听的所有回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.801Capability not supported. Failed to call the API due to limited device capabilities.1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 
@@ -1872,13 +2035,18 @@ getLiveCreaseRegion(): FoldCreaseRegion
 
 **返回值：**
 
-类型说明[FoldCreaseRegion](#ZH-CN_TOPIC_0000002529284797__foldcreaseregion10)返回设备在当前显示模式下的折叠折痕区域。
+| 类型 | 说明 |
+| --- | --- |
+| FoldCreaseRegion | 返回设备在当前显示模式下的折叠折痕区域。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[屏幕错误码](../../errors/屏幕错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[屏幕错误码](屏幕错误码.md)。
 
-错误码ID错误信息801Capability not supported. Failed to call the API due to limited device capabilities.1400003This display manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 1400003 | This display manager service works abnormally. |
 
 **示例：**
 

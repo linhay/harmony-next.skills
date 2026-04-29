@@ -2,7 +2,8 @@
 
 音频池提供了短音频的加载、播放、音量设置、循环设置、停止播放、资源卸载等功能。
 
-SoundPool需要和@ohos.multimedia.media配合使用，需要先通过[media.createSoundPool](../misc/Functions.md#ZH-CN_TOPIC_0000002529445861__mediacreatesoundpool10)完成音频池实例的创建。
+SoundPool需要和@ohos.multimedia.media配合使用，需要先通过[media.createSoundPool](Functions.md#ZH-CN_TOPIC_0000002522082030__mediacreatesoundpool10)完成音频池实例的创建。
+
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -21,17 +22,13 @@ import { audio } from '@kit.AudioKit';
 
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
-名称类型只读可选说明loopnumber否是
-
-设置循环次数。
-
-当loop≥0时，实际播放次数为loop+1。
-
- 当loop＜0时，表示一直循环。
-
-默认值：0，表示仅播放一次。
-
-ratenumber否是设置音频播放的倍速，具体倍速范围参照[AudioRendererRate](../misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8)。默认值：0。leftVolumenumber否是设置左声道音量，设置范围（0.0, 1.0）。默认值：1.0。rightVolumenumber否是设置右声道音量，设置范围（0.0, 1.0）。（当前不支持左右分别设置，将以左声道音量为准）。默认值：1.0。prioritynumber否是音频流播放的优先级，0为最低优先级，数值越大优先级越高，通过相互比较大小确定播放优先级，设置范围为大于等于0的整数。默认值：0。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| loop | number | 否 | 是 | 设置循环次数。 当loop≥0时，实际播放次数为loop+1。  当loop＜0时，表示一直循环。 默认值：0，表示仅播放一次。 |
+| rate | number | 否 | 是 | 设置音频播放的倍速，具体倍速范围参照[AudioRendererRate](../../types/enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8)。默认值：0。 |
+| leftVolume | number | 否 | 是 | 设置左声道音量，设置范围（0.0, 1.0）。默认值：1.0。 |
+| rightVolume | number | 否 | 是 | 设置右声道音量，设置范围（0.0, 1.0）。（当前不支持左右分别设置，将以左声道音量为准）。默认值：1.0。 |
+| priority | number | 否 | 是 | 音频流播放的优先级，0为最低优先级，数值越大优先级越高，通过相互比较大小确定播放优先级，设置范围为大于等于0的整数。默认值：0。 |
 
 #### ErrorType20+
 
@@ -39,7 +36,10 @@ ratenumber否是设置音频播放的倍速，具体倍速范围参照[AudioRend
 
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
-名称值说明LOAD_ERROR1表示加载资源时发生错误。PLAY_ERROR2表示播放资源时发生错误。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| LOAD_ERROR | 1 | 表示加载资源时发生错误。 |
+| PLAY_ERROR | 2 | 表示播放资源时发生错误。 |
 
 #### ErrorInfo20+
 
@@ -47,27 +47,40 @@ ratenumber否是设置音频播放的倍速，具体倍速范围参照[AudioRend
 
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
-名称类型只读可选说明errorCodeT否否错误码。errorCode的类型T为[BusinessError](../../modules/ohos/@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__businesserror)类型。errorType[ErrorType](#ZH-CN_TOPIC_0000002529445869__errortype20)否是表示错误发生阶段。soundIdnumber否是发生错误的资源ID，load方法能够获取soundId。streamIdnumber否是发生错误的音频流ID，play方法能够获取streamId。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| errorCode | T | 否 | 否 | 错误码。errorCode的类型T为BusinessError类型。 |
+| errorType | ErrorType | 否 | 是 | 表示错误发生阶段。 |
+| soundId | number | 否 | 是 | 发生错误的资源ID，load方法能够获取soundId。 |
+| streamId | number | 否 | 是 | 发生错误的音频流ID，play方法能够获取streamId。 |
 
 #### SoundPool
 
-音频池提供了系统声音的加载、播放、音量设置、循环设置、停止播放和资源卸载等功能，在调用SoundPool的接口前，需要先通过[media.createSoundPool](../misc/Functions.md#ZH-CN_TOPIC_0000002529445861__mediacreatesoundpool10)创建实例。
+音频池提供了系统声音的加载、播放、音量设置、循环设置、停止播放和资源卸载等功能，在调用SoundPool的接口前，需要先通过[media.createSoundPool](Functions.md#ZH-CN_TOPIC_0000002522082030__mediacreatesoundpool10)创建实例。
+
 
 在使用SoundPool实例的方法时，建议开发者注册相关回调，主动获取当前状态变化。
 
-- [on('loadComplete')](#ZH-CN_TOPIC_0000002529445869__onloadcomplete)：监听资源加载完成。
-- [on('playFinishedWithStreamId')](#ZH-CN_TOPIC_0000002529445869__onplayfinishedwithstreamid18)：监听播放完成，同时返回播放结束的音频的streamId。
-- [on('playFinished')](#ZH-CN_TOPIC_0000002529445869__onplayfinished)：监听播放完成。
-- [on('error')](#ZH-CN_TOPIC_0000002529445869__onerror)：监听错误事件。
-- [on('errorOccurred')](#ZH-CN_TOPIC_0000002529445869__onerroroccurred20)：监听错误事件，同时返回[errorInfo](#ZH-CN_TOPIC_0000002529445869__errorinfo20)。
+- [on('loadComplete')](#ZH-CN_TOPIC_0000002522082038__onloadcomplete)：监听资源加载完成。
+
+- [on('playFinishedWithStreamId')](#ZH-CN_TOPIC_0000002522082038__onplayfinishedwithstreamid18)：监听播放完成，同时返回播放结束的音频的streamId。
+
+- [on('playFinished')](#ZH-CN_TOPIC_0000002522082038__onplayfinished)：监听播放完成。
+
+- [on('error')](#ZH-CN_TOPIC_0000002522082038__onerror)：监听错误事件。
+
+- [on('errorOccurred')](#ZH-CN_TOPIC_0000002522082038__onerroroccurred20)：监听错误事件，同时返回[errorInfo](#ZH-CN_TOPIC_0000002522082038__errorinfo20)。
 
 #### load
 
 load(uri: string, callback: AsyncCallback<number>): void
 
-加载音频资源。使用callback方式异步获取资源ID，入参uri通过获取文件fd生成以"fd://"开头的文件描述字符串。
+加载音频资源。使用callback异步回调。
 
-该方法不支持加载rawfile目录资源，需要通过[load(fd: number, offset: number, length: number, callback: AsyncCallback<number>): void](#ZH-CN_TOPIC_0000002529445869__load-2)或者[load(fd: number, offset: number, length: number): Promise<number>](#ZH-CN_TOPIC_0000002529445869__load-3)实现。
+通过callback异步回调获取资源ID，入参URL通过获取文件fd生成以"fd://"开头的文件描述字符串。
+
+该方法不支持加载rawfile目录资源，需要通过[load(fd: number, offset: number, length: number, callback: AsyncCallback<number>): void](#ZH-CN_TOPIC_0000002522082038__load-2)或者[load(fd: number, offset: number, length: number): Promise<number>](#ZH-CN_TOPIC_0000002522082038__load-3)实现。
+
 
 将资源句柄（fd）或加载路径描述（uri）传递给音频池播放器之后，请不要通过该资源句柄或加载路径描述做其他读写操作，包括但不限于将同一个资源句柄或加载路径描述传递给多个音频池播放器。
 
@@ -77,13 +90,20 @@ load(uri: string, callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明uristring是音频文件的加载路径描述，一般以"fd://"开头的文件描述。callbackAsyncCallback<number>是异步音频资源加载返回的资源id，有效值大于0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 音频文件的加载路径描述，一般以"fd://"开头的文件描述。 |
+| callback | AsyncCallback<number> | 是 | 异步音频资源加载返回的资源id，有效值大于0。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息5400102Operation not allowed. Return by callback.5400103I/O error. Return by callback.5400105Service died. Return by callback.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by callback. |
+| 5400103 | I/O error. Return by callback. |
+| 5400105 | Service died. Return by callback. |
 
 **示例：**
 
@@ -129,9 +149,12 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 load(uri: string): Promise<number>
 
-加载音频资源。使用Promise方式异步获取资源ID，入参uri通过获取文件fd生成以"fd://"开头的文件描述字符串。
+加载音频资源。使用Promise异步回调。
 
-该方法不支持加载rawfile目录资源，需要通过[load(fd: number, offset: number, length: number, callback: AsyncCallback<number>): void](#ZH-CN_TOPIC_0000002529445869__load-2)或者[load(fd: number, offset: number, length: number): Promise<number>](#ZH-CN_TOPIC_0000002529445869__load-3)实现。
+通过Promise异步回调获取资源ID，入参URL通过获取文件fd生成以"fd://"开头的文件描述字符串。
+
+该方法不支持加载rawfile目录资源，需要通过[load(fd: number, offset: number, length: number, callback: AsyncCallback<number>): void](#ZH-CN_TOPIC_0000002522082038__load-2)或者[load(fd: number, offset: number, length: number): Promise<number>](#ZH-CN_TOPIC_0000002522082038__load-3)实现。
+
 
 将资源句柄（fd）或加载路径描述（uri）传递给音频池播放器之后，请不要通过该资源句柄或加载路径描述做其他读写操作，包括但不限于将同一个资源句柄或加载路径描述传递给多个音频池播放器。
 
@@ -141,17 +164,25 @@ load(uri: string): Promise<number>
 
 **参数：**
 
-参数名类型必填说明uristring是音频文件的加载路径描述，一般以"fd://"开头的文件描述。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 音频文件的加载路径描述，一般以"fd://"开头的文件描述。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回资源的id，有效值大于0。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回资源的id，有效值大于0。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息5400102Operation not allowed. Return by promise.5400103I/O error. Return by promise.5400105Service died. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400103 | I/O error. Return by promise. |
+| 5400105 | Service died. Return by promise. |
 
 **示例：**
 
@@ -197,7 +228,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 load(fd: number, offset: number, length: number, callback: AsyncCallback<number>): void
 
-加载音频资源。使用callback方式异步获取资源ID，入参可手动传入资源信息或通过读取应用内置资源自动获取。
+加载音频资源。使用callback异步回调。
+
+通过callback异步回调获取资源ID，入参可手动传入资源信息或通过读取应用内置资源自动获取。
+
 
 将资源句柄（fd）或加载路径描述（uri）传递给音频池播放器之后，请不要通过该资源句柄或加载路径描述做其他读写操作，包括但不限于将同一个资源句柄或加载路径描述传递给多个音频池播放器。
 
@@ -207,13 +241,22 @@ load(fd: number, offset: number, length: number, callback: AsyncCallback<number>
 
 **参数：**
 
-参数名类型必填说明fdnumber是资源句柄，通过[resourceManager.getRawFd](../../modules/ohos/@ohos.resourceManager (资源管理).md#ZH-CN_TOPIC_0000002497445338__getrawfd9)获取。offsetnumber是资源偏移量，需要基于预置资源的信息输入，非法值会造成音视频资源解析错误。lengthnumber是资源长度，需要基于预置资源的信息输入，非法值会造成音视频资源解析错误。callbackAsyncCallback<number>是获取回调的soundID，有效值大于0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fd | number | 是 | 资源句柄，通过resourceManager.getRawFd获取。 |
+| offset | number | 是 | 资源偏移量，需要基于预置资源的信息输入，非法值会造成音视频资源解析错误。 |
+| length | number | 是 | 资源长度，需要基于预置资源的信息输入，非法值会造成音视频资源解析错误。 |
+| callback | AsyncCallback<number> | 是 | 获取回调的soundID，有效值大于0。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息5400102Operation not allowed. Return by callback.5400103I/O error. Return by callback.5400105Service died. Return by callback.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by callback. |
+| 5400103 | I/O error. Return by callback. |
+| 5400105 | Service died. Return by callback. |
 
 **示例1：**
 
@@ -299,7 +342,10 @@ function create(context: Context) {
 
 load(fd: number, offset: number, length: number): Promise<number>
 
-加载音频资源。使用Promise方式异步获取资源ID，入参可手动传入资源信息或通过读取应用内置资源自动获取。
+加载音频资源。使用Promise异步回调。
+
+通过Promise异步回调获取资源ID，入参可手动传入资源信息或通过读取应用内置资源自动获取。
+
 
 将资源句柄（fd）或加载路径描述（uri）传递给音频池播放器之后，请不要通过该资源句柄或加载路径描述做其他读写操作，包括但不限于将同一个资源句柄或加载路径描述传递给多个音频池播放器。
 
@@ -309,17 +355,27 @@ load(fd: number, offset: number, length: number): Promise<number>
 
 **参数：**
 
-参数名类型必填说明fdnumber是资源句柄，通过[resourceManager.getRawFd](../../modules/ohos/@ohos.resourceManager (资源管理).md#ZH-CN_TOPIC_0000002497445338__getrawfd9)获取。offsetnumber是资源偏移量，需要基于预置资源的信息输入，非法值会造成音视频资源解析错误。lengthnumber是资源长度，需要基于预置资源的信息输入，非法值会造成音视频资源解析错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fd | number | 是 | 资源句柄，通过resourceManager.getRawFd获取。 |
+| offset | number | 是 | 资源偏移量，需要基于预置资源的信息输入，非法值会造成音视频资源解析错误。 |
+| length | number | 是 | 资源长度，需要基于预置资源的信息输入，非法值会造成音视频资源解析错误。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回soundID，有效值大于0。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回soundID，有效值大于0。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息5400102Operation not allowed. Return by promise.5400103I/O error. Return by promise.5400105Service died. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400103 | I/O error. Return by promise. |
+| 5400105 | Service died. Return by promise. |
 
 **示例1：**
 
@@ -356,7 +412,6 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
         soundID = soundId;
       }, (err: BusinessError) => {
         console.error('Failed to load soundpool and catch error is ' + err.message);
-      });
     });
   }
 });
@@ -407,13 +462,21 @@ play(soundID: number, params: PlayParameters, callback: AsyncCallback<number>): 
 
 **参数：**
 
-参数名类型必填说明soundIDnumber是资源ID，通过load方法获取。params[PlayParameters](#ZH-CN_TOPIC_0000002529445869__playparameters)是play播放相关参数的设置。callbackAsyncCallback<number>是获取回调的音频流ID，有效值大于0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| soundID | number | 是 | 资源ID，通过load方法获取。 |
+| params | PlayParameters | 是 | play播放相关参数的设置。 |
+| callback | AsyncCallback<number> | 是 | 获取回调的音频流ID，有效值大于0。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback.5400102Operation not allowed. Return by callback.5400105Service died. Return by callback.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback. |
+| 5400102 | Operation not allowed. Return by callback. |
+| 5400105 | Service died. Return by callback. |
 
 **示例：**
 
@@ -466,13 +529,20 @@ play(soundID: number, callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明soundIDnumber是资源ID，通过load方法获取。callbackAsyncCallback<number>是获取回调的音频流ID，有效值大于0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| soundID | number | 是 | 资源ID，通过load方法获取。 |
+| callback | AsyncCallback<number> | 是 | 获取回调的音频流ID，有效值大于0。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback.5400102Operation not allowed. Return by callback.5400105Service died. Return by callback.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback. |
+| 5400102 | Operation not allowed. Return by callback. |
+| 5400105 | Service died. Return by callback. |
 
 **示例：**
 
@@ -518,17 +588,26 @@ play(soundID: number, params?: PlayParameters): Promise<number>
 
 **参数：**
 
-参数名类型必填说明soundIDnumber是资源ID，通过load方法获取。params[PlayParameters](#ZH-CN_TOPIC_0000002529445869__playparameters)否play播放相关参数的设置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| soundID | number | 是 | 资源ID，通过load方法获取。 |
+| params | PlayParameters | 否 | play播放相关参数的设置。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回音频流ID，有效值大于0。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回音频流ID，有效值大于0。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise.5400102Operation not allowed. Return by promise.5400105Service died. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise. |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400105 | Service died. Return by promise. |
 
 **示例：**
 
@@ -580,13 +659,20 @@ stop(streamID: number, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明streamIDnumber是音频流ID，通过play方法获取。callbackAsyncCallback<void>是异步音频池stop的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| streamID | number | 是 | 音频流ID，通过play方法获取。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当音频池stop回调成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback.5400102Operation not allowed. Return by callback.5400105Service died. Return by callback.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback. |
+| 5400102 | Operation not allowed. Return by callback. |
+| 5400105 | Service died. Return by callback. |
 
 **示例：**
 
@@ -631,17 +717,25 @@ stop(streamID: number): Promise<void>
 
 **参数：**
 
-参数名类型必填说明streamIDnumber是音频流ID，通过play方法获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| streamID | number | 是 | 音频流ID，通过play方法获取。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise方式返回，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise.5400102Operation not allowed. Return by promise.5400105Service died. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise. |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400105 | Service died. Return by promise. |
 
 **示例：**
 
@@ -684,21 +778,21 @@ setLoop(streamID: number, loop: number, callback: AsyncCallback<void>): void;
 
 **参数：**
 
-参数名类型必填说明streamIDnumber是音频流ID，通过play方法获取。loopnumber是
-
-设置循环次数。
-
-当loop≥0时，实际播放次数为loop+1。
-
- 当loop＜0时，表示一直循环。
-
-callbackAsyncCallback<void>是异步setLoop的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| streamID | number | 是 | 音频流ID，通过play方法获取。 |
+| loop | number | 是 | 设置循环次数。 当loop≥0时，实际播放次数为loop+1。  当loop＜0时，表示一直循环。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当setLoop的回调成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback.5400102Operation not allowed. Return by callback.5400105Service died. Return by callback.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback. |
+| 5400102 | Operation not allowed. Return by callback. |
+| 5400105 | Service died. Return by callback. |
 
 **示例：**
 
@@ -727,7 +821,7 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
       if (error) {
         console.error(`Failed to setLoop soundPool: errCode is ${error.code}, errMessage is ${error.message}`);
       } else {
-        console.info('Succeeded in setLoopping soundpool, streamID:' + streamID);
+        console.info('Succeeded in setLooping soundpool, streamID:' + streamID);
       }
     });
   }
@@ -744,23 +838,26 @@ setLoop(streamID: number, loop: number): Promise<void>
 
 **参数：**
 
-参数名类型必填说明streamIDnumber是音频流ID，通过play方法获取。loopnumber是
-
-设置循环次数。
-
-当loop≥0时，实际播放次数为loop+1。
-
- 当loop＜0时，表示一直循环。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| streamID | number | 是 | 音频流ID，通过play方法获取。 |
+| loop | number | 是 | 设置循环次数。 当loop≥0时，实际播放次数为loop+1。  当loop＜0时，表示一直循环。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise.5400102Operation not allowed. Return by promise.5400105Service died. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise. |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400105 | Service died. Return by promise. |
 
 **示例：**
 
@@ -786,7 +883,7 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
     // 先通过调用play方法获取到对应的streamID。
     // 设置循环1次。
     soundPool.setLoop(streamID, 1).then(() => {
-      console.info('Succeeded in setLoopping soundpool, streamID:' + streamID);
+      console.info('Succeeded in setLooping soundpool, streamID:' + streamID);
     }).catch((err: BusinessError) => {
       console.error('Failed to setLoop soundPool and catch error is ' + err.message);
     });
@@ -804,13 +901,21 @@ setPriority(streamID: number, priority: number, callback: AsyncCallback<void>): 
 
 **参数：**
 
-参数名类型必填说明streamIDnumber是音频流ID，通过play方法获取。prioritynumber是优先级，0表示最低优先级。设置范围为大于等于0的整数。callbackAsyncCallback<void>是异步音频池setPriority方法的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| streamID | number | 是 | 音频流ID，通过play方法获取。 |
+| priority | number | 是 | 优先级，0表示最低优先级。设置范围为大于等于0的整数。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当音频池setPriority方法回调成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback.5400102Operation not allowed. Return by callback.5400105Service died. Return by callback.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback. |
+| 5400102 | Operation not allowed. Return by callback. |
+| 5400105 | Service died. Return by callback. |
 
 **示例：**
 
@@ -856,17 +961,26 @@ setPriority(streamID: number, priority: number): Promise<void>
 
 **参数：**
 
-参数名类型必填说明streamIDnumber是音频流ID，通过play方法获取。prioritynumber是优先级，0表示最低优先级。设置范围为大于等于0的整数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| streamID | number | 是 | 音频流ID，通过play方法获取。 |
+| priority | number | 是 | 优先级，0表示最低优先级。设置范围为大于等于0的整数。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise.5400102Operation not allowed. Return by promise.5400105Service died. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise. |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400105 | Service died. Return by promise. |
 
 **示例：**
 
@@ -903,7 +1017,7 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 #### setRate
 
-setRate(streamID: number, rate: audio.AudioRendererRate, callback: AsyncCallback<void>): void
+setRate(streamID: number, rate: audio.[AudioRendererRate](../../types/enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8), callback: AsyncCallback<void>): void
 
 设置音频流播放速率。使用callback异步回调。
 
@@ -911,13 +1025,21 @@ setRate(streamID: number, rate: audio.AudioRendererRate, callback: AsyncCallback
 
 **参数：**
 
-参数名类型必填说明streamIDnumber是音频流ID，通过play方法获取。rate[audio.AudioRendererRate](../misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8)是音频rate相关参数。callbackAsyncCallback<void>是异步音频池setRate方法的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| streamID | number | 是 | 音频流ID，通过play方法获取。 |
+| rate | audio.[AudioRendererRate](../../types/enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8) | 是 | 音频rate相关参数。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当音频池setRate方法回调成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback.5400102Operation not allowed. Return by callback.5400105Service died. Return by callback.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback. |
+| 5400102 | Operation not allowed. Return by callback. |
+| 5400105 | Service died. Return by callback. |
 
 **示例：**
 
@@ -955,7 +1077,7 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 #### setRate
 
-setRate(streamID: number, rate: audio.AudioRendererRate): Promise<void>
+setRate(streamID: number, rate: audio.[AudioRendererRate](../../types/enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8)): Promise<void>
 
 设置音频流的播放速率。使用Promise异步回调。
 
@@ -963,17 +1085,26 @@ setRate(streamID: number, rate: audio.AudioRendererRate): Promise<void>
 
 **参数：**
 
-参数名类型必填说明streamIDnumber是音频流ID，通过play方法获取。rate[audio.AudioRendererRate](../misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8)是音频rate相关参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| streamID | number | 是 | 音频流ID，通过play方法获取。 |
+| rate | audio.[AudioRendererRate](../../types/enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8) | 是 | 音频rate相关参数。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise.5400102Operation not allowed. Return by promise.5400105Service died. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise. |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400105 | Service died. Return by promise. |
 
 **示例：**
 
@@ -1017,13 +1148,22 @@ setVolume(streamID: number, leftVolume: number, rightVolume: number, callback: A
 
 **参数：**
 
-参数名类型必填说明streamIDnumber是音频流ID，通过play方法获取。leftVolumenumber是左声道音量，设置范围为0.0-1.0之间。rightVolumenumber是右声道音量，设置范围为0.0-1.0之间，当前右声道设置无效，以左声道为准。callbackAsyncCallback<void>是异步音频池setVolume方法的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| streamID | number | 是 | 音频流ID，通过play方法获取。 |
+| leftVolume | number | 是 | 左声道音量，设置范围为0.0-1.0之间。 |
+| rightVolume | number | 是 | 右声道音量，设置范围为0.0-1.0之间，当前右声道设置无效，以左声道为准。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当音频池setVolume方法回调成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback.5400102Operation not allowed. Return by callback.5400105Service died. Return by callback.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback. |
+| 5400102 | Operation not allowed. Return by callback. |
+| 5400105 | Service died. Return by callback. |
 
 **示例：**
 
@@ -1069,17 +1209,27 @@ setVolume(streamID: number, leftVolume: number, rightVolume: number): Promise<vo
 
 **参数：**
 
-参数名类型必填说明streamIDnumber是音频流ID，通过play方法获取。leftVolumenumber是左声道音量，设置范围为0.0-1.0之间。rightVolumenumber是右声道音量，设置范围为0.0-1.0之间，当前右声道设置无效，以左声道为准。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| streamID | number | 是 | 音频流ID，通过play方法获取。 |
+| leftVolume | number | 是 | 左声道音量，设置范围为0.0-1.0之间。 |
+| rightVolume | number | 是 | 右声道音量，设置范围为0.0-1.0之间，当前右声道设置无效，以左声道为准。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise.5400102Operation not allowed. Return by promise.5400105Service died. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise. |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400105 | Service died. Return by promise. |
 
 **示例：**
 
@@ -1113,6 +1263,48 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 });
 ```
 
+**setInterruptMode23+**
+
+setInterruptMode(interruptMode: media.SoundInterruptMode): void
+
+设置同一ID音频在播放时的打断模式。创建soundPool之后，该接口仅在首次调用soundPool的Play函数之前设置有效，期间可多次设置，否则将默认使用[SAME_SOUND_INTERRUPT](Enums.md#ZH-CN_TOPIC_0000002522242030__soundinterruptmode23)，即对同一ID的音频，如果前者尚未播放完成，后者在播放前会先打断前者的播放。
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+系统能力： SystemCapability.Multimedia.Media.SoundPool
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| interruptMode | media.SoundInterruptMode | 是 | 同一ID音频在播放时的打断模式，通过media.SoundInterruptMode枚举获取。 |
+
+示例：
+
+```ets
+import { media } from '@kit.MediaKit';
+
+// 创建soundPool实例。
+let soundPool: media.SoundPool;
+let audioRendererInfo: audio.AudioRendererInfo = {
+  usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+  rendererFlags: 1
+}
+media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: media.SoundPool) => {
+  if (error) {
+    console.error(`Failed to createSoundPool`);
+    return;
+  } else {
+    soundPool = soundPool_;
+    console.info(`Succeeded in createSoundPool`);
+    // 选择模式1：同ID音频并行播放模式。
+    soundPool.setInterruptMode(media.SoundInterruptMode.NO_INTERRUPT);
+    // 选择模式2：同ID音频截断模式。
+    soundPool.setInterruptMode(media.SoundInterruptMode.SAME_SOUND_INTERRUPT);
+  }
+});
+```
+
 #### unload
 
 unload(soundID: number, callback: AsyncCallback<void>): void
@@ -1123,13 +1315,20 @@ unload(soundID: number, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明soundIDnumber是资源ID，通过load方法获取。callbackAsyncCallback<void>是异步音频池unload方法的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| soundID | number | 是 | 资源ID，通过load方法获取。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当音频池unload方法回调成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息5400102Operation not allowed. Return by callback.5400103I/O error. Return by callback.5400105Service died. Return by callback.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by callback. |
+| 5400103 | I/O error. Return by callback. |
+| 5400105 | Service died. Return by callback. |
 
 **示例：**
 
@@ -1157,7 +1356,7 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
       if (error) {
         console.error(`Failed to unload soundPool: errCode is ${error.code}, errMessage is ${error.message}`);
       } else {
-        console.info('Succceeded in unload soundPool');
+        console.info('Succeeded in unload soundPool');
       }
     })
   }
@@ -1174,17 +1373,25 @@ unload(soundID: number): Promise<void>
 
 **参数：**
 
-参数名类型必填说明soundIDnumber是资源ID，通过load方法获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| soundID | number | 是 | 资源ID，通过load方法获取。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息5400102Operation not allowed. Return by promise.5400103I/O error. Return by promise.5400105Service died. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400103 | I/O error. Return by promise. |
+| 5400105 | Service died. Return by promise. |
 
 **示例：**
 
@@ -1210,7 +1417,7 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
     // 先调用load方法获取到对应资源的soundID。
 
     soundPool.unload(soundID).then(() => {
-      console.info('Succceeded in unload soundPool');
+      console.info('Succeeded in unload soundPool');
     }, (err: BusinessError) => {
       console.error('Failed to unload soundPool and catch error is ' + err.message);
     });
@@ -1228,13 +1435,17 @@ release(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是异步音频池release方法的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当音频池release方法回调成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息5400105Service died. Return by callback.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400105 | Service died. Return by callback. |
 
 **示例：**
 
@@ -1277,13 +1488,17 @@ release(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[媒体错误码](Media错误码.md)。
 
-错误码ID错误信息5400105Service died. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400105 | Service died. Return by promise. |
 
 **示例：**
 
@@ -1318,13 +1533,16 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 on(type: 'loadComplete', callback: Callback<number>): void
 
-音频池资源加载完成监听。
+音频池资源加载完成监听。使用callback异步回调。
 
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
 
-参数名类型必填说明typestring是支持的事件：'loadComplete'，对应的ID加载完成会触发此回调。callbackCallback<number>是对应资源加载完成的资源ID。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 支持的事件：'loadComplete'，对应的ID加载完成会触发此回调。 |
+| callback | Callback<number> | 是 | 回调函数，返回对应资源加载完成的资源ID。 |
 
 **示例：**
 
@@ -1363,7 +1581,9 @@ off(type: 'loadComplete'): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消注册的事件：'loadComplete'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消注册的事件：'loadComplete'。 |
 
 **示例：**
 
@@ -1394,17 +1614,20 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 on(type: 'playFinishedWithStreamId', callback: Callback<number>): void
 
-音频池资源播放完成监听，同时返回播放结束的音频的streamId。
+音频池资源播放完成监听，同时返回播放结束的音频的streamId。使用callback异步回调。
 
-当仅单独注册[on('playFinished')](#ZH-CN_TOPIC_0000002529445869__onplayfinished)事件回调或者[on('playFinishedWithStreamId')](#ZH-CN_TOPIC_0000002529445869__onplayfinishedwithstreamid18)事件回调时，当音频播放完成的时候，都会触发注册的回调。
+当仅单独注册[on('playFinished')](#ZH-CN_TOPIC_0000002522082038__onplayfinished)事件回调或者[on('playFinishedWithStreamId')](#ZH-CN_TOPIC_0000002522082038__onplayfinishedwithstreamid18)事件回调时，当音频播放完成的时候，都会触发注册的回调。
 
-当同时注册[on('playFinished')](#ZH-CN_TOPIC_0000002529445869__onplayfinished)事件回调和[on('playFinishedWithStreamId')](#ZH-CN_TOPIC_0000002529445869__onplayfinishedwithstreamid18)事件回调时，当音频播放完成的时候，仅会触发'playFinishedWithStreamId'事件回调，不会触发'playFinished'事件回调。
+当同时注册[on('playFinished')](#ZH-CN_TOPIC_0000002522082038__onplayfinished)事件回调和[on('playFinishedWithStreamId')](#ZH-CN_TOPIC_0000002522082038__onplayfinishedwithstreamid18)事件回调时，当音频播放完成的时候，仅会触发'playFinishedWithStreamId'事件回调，不会触发'playFinished'事件回调。
 
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
 
-参数名类型必填说明typestring是支持的事件：'playFinishedWithStreamId'，音频流播放完成会触发此回调，并返回播放完成的音频的streamId。callbackCallback<number>是异步'playFinishedWithStreamId'的回调方法。返回播放完成的音频的streamId。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 支持的事件：'playFinishedWithStreamId'，音频流播放完成会触发此回调，并返回播放完成的音频的streamId。 |
+| callback | Callback<number> | 是 | 回调函数，返回播放完成的音频的streamId。 |
 
 **示例：**
 
@@ -1442,7 +1665,9 @@ off(type: 'playFinishedWithStreamId'): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消注册的事件：'playFinishedWithStreamId'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消注册的事件：'playFinishedWithStreamId'。 |
 
 **示例：**
 
@@ -1472,13 +1697,16 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool: me
 
 on(type: 'playFinished', callback: Callback<void>): void
 
-音频池资源播放完成监听。
+音频池资源播放完成监听。使用callback异步回调。
 
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
 
-参数名类型必填说明typestring是支持的事件：'playFinished'，音频流播放完成会触发此回调。callbackCallback<void>是异步'playFinished'的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 支持的事件：'playFinished'，音频流播放完成会触发此回调。 |
+| callback | Callback<void> | 是 | 异步'playFinished'的回调方法。 |
 
 **示例：**
 
@@ -1517,7 +1745,9 @@ off(type: 'playFinished'): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消注册的事件：'playFinished'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消注册的事件：'playFinished'。 |
 
 **示例：**
 
@@ -1548,13 +1778,16 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 on(type: 'error', callback: ErrorCallback): void
 
-监听[SoundPool](#ZH-CN_TOPIC_0000002529445869__soundpool)的错误事件，该事件仅用于错误提示。
+监听[SoundPool](#ZH-CN_TOPIC_0000002522082038__soundpool)的错误事件，该事件仅用于错误提示。使用callback异步回调。
 
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
 
-参数名类型必填说明typestring是错误事件回调类型，支持的事件：'error'，用户操作和系统都会触发此事件。callbackErrorCallback是错误事件回调方法：使用播放器的过程中发生错误，会提供错误码ID和错误信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 错误事件回调类型，支持的事件：'error'，用户操作和系统都会触发此事件。 |
+| callback | ErrorCallback | 是 | 错误事件回调方法：使用播放器的过程中发生错误，会提供错误码ID和错误信息。 |
 
 **示例：**
 
@@ -1594,7 +1827,9 @@ off(type: 'error'): void
 
 **参数：**
 
-参数名类型必填说明typestring是错误事件回调类型，取消注册的事件：'error'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 错误事件回调类型，取消注册的事件：'error'。 |
 
 **示例：**
 
@@ -1625,13 +1860,16 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 on(type: 'errorOccurred', callback: Callback<ErrorInfo>): void
 
-监听[SoundPool](#ZH-CN_TOPIC_0000002529445869__soundpool)的错误事件，并返回包含错误码、错误发生阶段、资源ID和音频流ID的[ErrorInfo](#ZH-CN_TOPIC_0000002529445869__errorinfo20)。
+监听[SoundPool](#ZH-CN_TOPIC_0000002522082038__soundpool)的错误事件，并返回包含错误码、错误发生阶段、资源ID和音频流ID的[ErrorInfo](#ZH-CN_TOPIC_0000002522082038__errorinfo20)。使用callback异步回调。
 
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'errorOccurred'，当用户或系统操作导致错误，触发该事件。callbackCallback<[ErrorInfo](#ZH-CN_TOPIC_0000002529445869__errorinfo20)>是错误事件回调方法。在使用播放器的过程中发生错误时，提供错误信息[ErrorInfo](#ZH-CN_TOPIC_0000002529445869__errorinfo20)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'errorOccurred'，当用户或系统操作导致错误，触发该事件。 |
+| callback | Callback<ErrorInfo> | 是 | 回调函数，返回错误事件回调方法。在使用播放器的过程中发生错误时，提供错误信息ErrorInfo。 |
 
 **示例：**
 
@@ -1674,7 +1912,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，取消注册的事件为'errorOccurred'。callbackCallback<[ErrorInfo](#ZH-CN_TOPIC_0000002529445869__errorinfo20)>否错误事件回调方法。在使用播放器的过程中发生错误时，提供错误信息[ErrorInfo](#ZH-CN_TOPIC_0000002529445869__errorinfo20)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，取消注册的事件为'errorOccurred'。 |
+| callback | Callback<ErrorInfo> | 否 | 错误事件回调方法。在使用播放器的过程中发生错误时，提供错误信息ErrorInfo。 |
 
 **示例：**
 

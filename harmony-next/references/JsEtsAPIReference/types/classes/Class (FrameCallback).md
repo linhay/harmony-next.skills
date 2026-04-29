@@ -12,7 +12,7 @@
 
 -
 
-以下API需要配合[UIContext](Class (UIContext).md)中的[postFrameCallback](Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__postframecallback12)和[postDelayedFrameCallback](Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__postdelayedframecallback12)使用。开发者需要继承该类并重写[onFrame](#ZH-CN_TOPIC_0000002497444800__onframe12)或[onIdle](#ZH-CN_TOPIC_0000002497444800__onidle12)方法，实现具体的业务逻辑。
+以下API需要配合[UIContext](Class (UIContext).md)中的[postFrameCallback](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__postframecallback12)和[postDelayedFrameCallback](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__postdelayedframecallback12)使用。开发者需要继承该类并重写[onFrame](#ZH-CN_TOPIC_0000002522080728__onframe12)或[onIdle](#ZH-CN_TOPIC_0000002522080728__onidle12)方法，实现具体的业务逻辑。
 
 #### onFrame12+
 
@@ -26,11 +26,9 @@ onFrame(frameTimeInNano: number): void
 
 **参数：**
 
-参数名类型必填说明frameTimeInNanonumber是
-
-下一帧渲染开始执行的时间，以纳秒为单位。
-
-取值范围：[0, +∞)
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| frameTimeInNano | number | 是 | 下一帧渲染开始执行的时间，以纳秒为单位。 取值范围：[0, +∞) |
 
 **示例：**
 
@@ -47,7 +45,6 @@ class MyFrameCallback extends FrameCallback {
 
   onFrame(frameTimeNanos: number) {
     console.info('MyFrameCallback ' + this.tag + ' ' + frameTimeNanos.toString());
-  }
 }
 
 @Entry
@@ -69,7 +66,6 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```
 
 #### onIdle12+
@@ -84,11 +80,9 @@ onIdle(timeLeftInNano: number): void
 
 **参数：**
 
-参数名类型必填说明timeLeftInNanonumber是
-
-这一帧剩余的空闲时间，以纳秒为单位。
-
-取值范围：[0, +∞)
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| timeLeftInNano | number | 是 | 这一帧剩余的空闲时间，以纳秒为单位。 取值范围：[0, +∞) |
 
 **示例：**
 
@@ -105,7 +99,6 @@ class MyIdleCallback extends FrameCallback {
 
   onIdle(timeLeftInNano: number) {
     console.info('MyIdleCallback ' + this.tag + ' ' + timeLeftInNano.toString());
-  }
 }
 
 @Entry
@@ -127,5 +120,4 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```

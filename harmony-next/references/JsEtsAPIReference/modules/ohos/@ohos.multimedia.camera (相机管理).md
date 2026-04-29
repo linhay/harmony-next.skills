@@ -1,75 +1,79 @@
 # @ohos.multimedia.camera (相机管理)
 
-- **[模块描述](../../guides/模块描述.md)**
+- [模块描述](模块描述.md)
 
-- **[Functions](../../topics/misc/Functions.md)**
+- [Functions]([Functions](../../topics/misc/Functions.md).md)
 
-- **[Interface (AutoDeviceSwitch)](../../types/interfaces/Interface (AutoDeviceSwitch).md)**
+- [Interface (AutoDeviceSwitch)](Interface (AutoDeviceSwitch).md)
 
-- **[Interface (AutoDeviceSwitchQuery)](../../types/interfaces/Interface (AutoDeviceSwitchQuery).md)**
+- [Interface (AutoDeviceSwitchQuery)](Interface (AutoDeviceSwitchQuery).md)
 
-- **[Interface (AutoExposure)](../../types/interfaces/Interface (AutoExposure).md)**
+- [Interface (AutoExposure)](Interface (AutoExposure).md)
 
-- **[Interface (AutoExposureQuery)](../../types/interfaces/Interface (AutoExposureQuery).md)**
+- [Interface (AutoExposureQuery)](Interface (AutoExposureQuery).md)
 
-- **[Interface (CameraInput)](../../types/interfaces/Interface (CameraInput).md)**
+- [Interface (CameraInput)](Interface (CameraInput).md)
 
-- **[Interface (CameraManager)](../../types/interfaces/Interface (CameraManager).md)**
+- [Interface (CameraManager)](Interface (CameraManager).md)
 
-- **[Interface (CameraOutput)](../../types/interfaces/Interface (CameraOutput).md)**
+- [Interface (CameraOutput)](Interface (CameraOutput).md)
 
-- **[Interface (ColorManagement)](../../types/interfaces/Interface (ColorManagement).md)**
+- [Interface (CapturePhoto)](Interface (CapturePhoto).md)
 
-- **[Interface (ColorManagementQuery)](../../types/interfaces/Interface (ColorManagementQuery).md)**
+- [Interface (ColorManagement)](Interface (ColorManagement).md)
 
-- **[Interface (ControlCenter)](../../types/interfaces/Interface (ControlCenter).md)**
+- [Interface (ColorManagementQuery)](Interface (ColorManagementQuery).md)
 
-- **[Interface (ControlCenterQuery)](../../types/interfaces/Interface (ControlCenterQuery).md)**
+- [Interface (ControlCenter)](Interface (ControlCenter).md)
 
-- **[Interface (Flash)](../../types/interfaces/Interface (Flash).md)**
+- [Interface (ControlCenterQuery)](Interface (ControlCenterQuery).md)
 
-- **[Interface (FlashQuery)](../../types/interfaces/Interface (FlashQuery).md)**
+- [Interface (Flash)](Interface (Flash).md)
 
-- **[Interface (Focus)](../../types/interfaces/Interface (Focus).md)**
+- [Interface (FlashQuery)](Interface (FlashQuery).md)
 
-- **[Interface (FocusQuery)](../../types/interfaces/Interface (FocusQuery).md)**
+- [Interface (Focus)](Interface (Focus).md)
 
-- **[Interface (Macro)](../../types/interfaces/Interface (Macro).md)**
+- [Interface (FocusQuery)](Interface (FocusQuery).md)
 
-- **[Interface (MacroQuery)](../../types/interfaces/Interface (MacroQuery).md)**
+- [Interface (Macro)](Interface (Macro).md)
 
-- **[Interface (MetadataOutput)](../../types/interfaces/Interface (MetadataOutput).md)**
+- [Interface (MacroQuery)](Interface (MacroQuery).md)
 
-- **[Interface (Photo)](../../types/interfaces/Interface (Photo).md)**
+- [Interface (MetadataOutput)](Interface (MetadataOutput).md)
 
-- **[Interface (PhotoOutput)](../../types/interfaces/Interface (PhotoOutput).md)**
+- [Interface (Photo)](Interface (Photo).md)
 
-- **[Interface (PhotoSession)](../../types/interfaces/Interface (PhotoSession).md)**
+- [Interface (PhotoOutput)](Interface (PhotoOutput).md)
 
-- **[Interface (PreviewOutput)](../../types/interfaces/Interface (PreviewOutput).md)**
+- [Interface (PhotoSession)](Interface (PhotoSession).md)
 
-- **[Interface (SecureSession)](../../types/interfaces/Interface (SecureSession).md)**
+- [Interface (PreviewOutput)](Interface (PreviewOutput).md)
 
-- **[Interface (Session)](../../types/interfaces/Interface (Session).md)**
+- [Interface (SecureSession)](Interface (SecureSession).md)
 
-- **[Interface (Stabilization)](../../types/interfaces/Interface (Stabilization).md)**
+- [Interface (Session)](Interface (Session).md)
 
-- **[Interface (StabilizationQuery)](../../types/interfaces/Interface (StabilizationQuery).md)**
+- [Interface (Stabilization)](Interface (Stabilization).md)
 
-- **[Interface (VideoOutput)](../../types/interfaces/Interface (VideoOutput).md)**
+- [Interface (StabilizationQuery)](Interface (StabilizationQuery).md)
 
-- **[Interface (VideoSession)](../../types/interfaces/Interface (VideoSession).md)**
+- [Interface (VideoOutput)](Interface (VideoOutput).md)
 
-- **[Interface (WhiteBalance)](../../types/interfaces/Interface (WhiteBalance).md)**
+- [Interface (VideoSession)](Interface (VideoSession).md)
 
-- **[Interface (WhiteBalanceQuery)](../../types/interfaces/Interface (WhiteBalanceQuery).md)**
+- [Interface (WhiteBalance)](Interface (WhiteBalance).md)
 
-- **[Interface (Zoom)](../../types/interfaces/Interface (Zoom).md)**
+- [Interface (WhiteBalanceQuery)](Interface (WhiteBalanceQuery).md)
 
-- **[Interface (ZoomQuery)](../../types/interfaces/Interface (ZoomQuery).md)**
+- [Interface (Zoom)](Interface (Zoom).md)
 
-- **[Interfaces (其他)](../../types/interfaces/Interfaces (其他).md)**
+- [Interface (ZoomQuery)](Interface (ZoomQuery).md)
 
-- **[Enums](../../topics/misc/Enums.md)**
+- [Interfaces (其他)](Interfaces (其他).md)
 
-- **[废弃的Interface (CaptureSession, deprecated)](../../topics/misc/废弃的Interface (CaptureSession, deprecated).md)**
+- [Enums]([Enums](../../types/enums/Enums.md).md)
+
+- [Types](Types.md)
+
+- [废弃的Interface (CaptureSession, deprecated)](废弃的Interface (CaptureSession, deprecated).md)

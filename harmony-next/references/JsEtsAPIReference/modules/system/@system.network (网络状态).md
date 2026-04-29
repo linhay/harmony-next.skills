@@ -6,7 +6,7 @@
 
 -
 
-从API Version 8 开始，该接口不再维护，推荐使用新接口['@ohos.net.connection'](../ohos/@ohos.net.connection (网络连接管理).md)。
+从API Version 8 开始，该接口不再维护，推荐使用新接口['@ohos.net.connection'](@ohos.net.connection (网络连接管理).md)。
 
 #### 导入模块
 
@@ -38,11 +38,17 @@ getType(options?: {
 
 **参数：**
 
-参数名类型必填说明successFunction否接口调用成功的回调函数，返回值为[NetworkResponse](#ZH-CN_TOPIC_0000002497445500__networkresponse3)。failFunction否接口调用失败的回调函数。completeFunction否接口调用结束的回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| success | Function | 否 | 接口调用成功的回调函数，返回值为NetworkResponse。 |
+| fail | Function | 否 | 接口调用失败的回调函数。 |
+| complete | Function | 否 | 接口调用结束的回调函数。 |
 
 fail返回值：
 
-错误码说明602当前权限未声明。
+| 错误码 | 说明 |
+| --- | --- |
+| 602 | 当前权限未声明。 |
 
 **示例：**
 
@@ -55,7 +61,6 @@ export default class Network {
       }
     });
   }
-}
 ```
 
 #### network.subscribe3+
@@ -74,11 +79,17 @@ subscribe(options?:{
 
 **参数：**
 
-参数名类型必填说明successFunction否网络发生变化的回调函数。返回值为[NetworkResponse](#ZH-CN_TOPIC_0000002497445500__networkresponse3)。failFunction否接口调用失败的回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| success | Function | 否 | 网络发生变化的回调函数。返回值为NetworkResponse。 |
+| fail | Function | 否 | 接口调用失败的回调函数。 |
 
 fail返回值：
 
-错误码说明602当前权限未声明。200订阅失败。
+| 错误码 | 说明 |
+| --- | --- |
+| 602 | 当前权限未声明。 |
+| 200 | 订阅失败。 |
 
 **示例：**
 
@@ -90,7 +101,6 @@ export default class Network {
         console.info('success get network type:' + data.type);
       }
     });
-  }
 }
 ```
 
@@ -114,4 +124,7 @@ network.unsubscribe();
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
-名称类型只读可选说明meteredboolean否是是否按照流量计费。true：按照流量计费；false：不按照流量计费。typestring否否网络类型，可能的值有2g，3g，4g，5g，wifi，none等。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| metered | boolean | 否 | 是 | 是否按照流量计费。true：按照流量计费；false：不按照流量计费。 |
+| type | string | 否 | 否 | 网络类型，可能的值有2g，3g，4g，5g，wifi，none等。 |

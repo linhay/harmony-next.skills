@@ -1,6 +1,6 @@
 # @ohos.bundle.overlay (overlay模块)
 
-本模块提供overlay特征应用的[OverlayModuleInfo](../../topics/system-services/OverlayModuleInfo.md)信息查询以及禁用使能的能力。
+本模块提供overlay特征应用的[OverlayModuleInfo](OverlayModuleInfo.md)信息查询以及禁用使能的能力。
 
 overlay特征应用指应用中包含有overlay资源包，overlay资源包详见[overlay机制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-categories-and-access#overlay机制)。
 
@@ -24,17 +24,26 @@ setOverlayEnabled(moduleName:string, isEnabled: boolean): Promise<void>
 
 **参数：**
 
-参数名类型必填说明moduleNamestring是overlay特征module的名称。isEnabledboolean是值为true表示使能，值为false表示禁用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| moduleName | string | 是 | overlay特征module的名称。 |
+| isEnabled | boolean | 是 | 值为true表示使能，值为false表示禁用。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[ohos.bundle错误码](../../errors/包管理子系统通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[ohos.bundle错误码](包管理子系统通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.17700002The specified module name is not found.17700033The specified module is not an overlay module.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 17700002 | The specified module name is not found. |
+| 17700033 | The specified module is not an overlay module. |
 
 **示例：**
 
@@ -69,13 +78,21 @@ setOverlayEnabled(moduleName: string, isEnabled: boolean, callback: AsyncCallbac
 
 **参数：**
 
-参数名类型必填说明moduleNamestring是overlay特征module的名称。isEnabledboolean是值为true表示使能，值为false表示禁用。callbackAsyncCallback<void>是[回调函数](@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__asynccallback)，当设置指定module的overlay禁用使能状态成功时，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| moduleName | string | 是 | overlay特征module的名称。 |
+| isEnabled | boolean | 是 | 值为true表示使能，值为false表示禁用。 |
+| callback | AsyncCallback<void> | 是 | 回调函数，当设置指定module的overlay禁用使能状态成功时，err为null，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[ohos.bundle错误码](../../errors/包管理子系统通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[ohos.bundle错误码](包管理子系统通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.17700002The specified module name is not found.17700033The specified module is not an overlay module.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 17700002 | The specified module name is not found. |
+| 17700033 | The specified module is not an overlay module. |
 
 **示例：**
 
@@ -101,27 +118,36 @@ try {
 }
 ```
 
-#### overlay.getOverlayModuleInfo
+#### overlay.get[OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md)
 
-getOverlayModuleInfo(moduleName: string): Promise<OverlayModuleInfo>
+get[OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md)(moduleName: string): Promise<OverlayModuleInfo>
 
-获取当前应用中overlay特征module的OverlayModuleInfo信息。使用Promise异步回调。
+获取当前应用中overlay特征module的[OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md)信息。使用Promise异步回调。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Overlay
 
 **参数：**
 
-参数名类型必填说明moduleNamestring是指定当前应用中的overlay module的名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| moduleName | string | 是 | 指定当前应用中的overlay module的名称。 |
 
 **返回值：**
 
-类型说明Promise<[OverlayModuleInfo](../../topics/system-services/OverlayModuleInfo.md)>Promise对象，返回[OverlayModuleInfo](../../topics/system-services/OverlayModuleInfo.md)。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md)> | Promise对象，返回OverlayModuleInfo。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[ohos.bundle错误码](../../errors/包管理子系统通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[ohos.bundle错误码](包管理子系统通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.17700002The specified module name is not found.17700032The specified bundle does not contain any overlay module.17700033The specified module is not an overlay module.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 17700002 | The specified module name is not found. |
+| 17700032 | The specified bundle does not contain any overlay module. |
+| 17700033 | The specified module is not an overlay module. |
 
 **示例：**
 
@@ -143,23 +169,31 @@ let moduleName = "feature";
 })();
 ```
 
-#### overlay.getOverlayModuleInfo
+#### overlay.get[OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md)
 
-getOverlayModuleInfo(moduleName: string, callback: AsyncCallback<OverlayModuleInfo>): void
+get[OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md)(moduleName: string, callback: AsyncCallback<OverlayModuleInfo>): void
 
-获取当前应用中overlay特征module的OverlayModuleInfo信息。使用callback异步回调。
+获取当前应用中overlay特征module的[OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md)信息。使用callback异步回调。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Overlay
 
 **参数：**
 
-参数名类型必填说明moduleNamestring是指定当前应用中的overlay特征module的名称。callbackAsyncCallback<[OverlayModuleInfo](../../topics/system-services/OverlayModuleInfo.md)>是[回调函数](@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__asynccallback)，当获取当前应用中指定的module的[OverlayModuleInfo](../../topics/system-services/OverlayModuleInfo.md)信息成功时，err返回null。否则回调函数返回具体错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| moduleName | string | 是 | 指定当前应用中的overlay特征module的名称。 |
+| callback | AsyncCallback<[OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md)> | 是 | 回调函数，当获取当前应用中指定的module的OverlayModuleInfo信息成功时，err返回null。否则回调函数返回具体错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[ohos.bundle错误码](../../errors/包管理子系统通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[ohos.bundle错误码](包管理子系统通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.17700002The specified module name is not found.17700032The specified bundle does not contain any overlay module.17700033The specified module is not an overlay module.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 17700002 | The specified module name is not found. |
+| 17700032 | The specified bundle does not contain any overlay module. |
+| 17700033 | The specified module is not an overlay module. |
 
 **示例：**
 
@@ -184,27 +218,35 @@ try {
 }
 ```
 
-#### overlay.getTargetOverlayModuleInfos
+#### overlay.getTarget[OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md)s
 
-getTargetOverlayModuleInfos(targetModuleName: string): Promise<Array<OverlayModuleInfo>>
+getTarget[OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md)s(targetModuleName: string): Promise<Array<OverlayModuleInfo>>
 
-获取指定的目标module所关联的OverlayModuleInfo。overlay特征的module一般是为设备上存在的非overlay特征的module提供覆盖的资源文件，其中非overlay特征的module被称作目标module。使用Promise异步回调。
+获取指定的目标module所关联的[OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md)。overlay特征的module一般是为设备上存在的非overlay特征的module提供覆盖的资源文件，其中非overlay特征的module被称作目标module。使用Promise异步回调。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Overlay
 
 **参数：**
 
-参数名类型必填说明targetModuleNamestring是指定当前应用中的目标module的名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| targetModuleName | string | 是 | 指定当前应用中的目标module的名称。 |
 
 **返回值：**
 
-类型说明Promise<Array<[OverlayModuleInfo](../../topics/system-services/OverlayModuleInfo.md)>>Promise对象，返回<Array<[OverlayModuleInfo](../../topics/system-services/OverlayModuleInfo.md)>>。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<[OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md)>> | Promise对象，返回<Array<OverlayModuleInfo>>。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[ohos.bundle错误码](../../errors/包管理子系统通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[ohos.bundle错误码](包管理子系统通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.17700002The specified module name is not found.17700034The specified module is an overlay module.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 17700002 | The specified module name is not found. |
+| 17700034 | The specified module is an overlay module. |
 
 **示例：**
 
@@ -226,23 +268,30 @@ let targetModuleName = "feature";
 })();
 ```
 
-#### overlay.getTargetOverlayModuleInfos
+#### overlay.getTarget[OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md)s
 
-getTargetOverlayModuleInfos(targetModuleName: string, callback: AsyncCallback<Array<OverlayModuleInfo>>): void
+getTarget[OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md)s(targetModuleName: string, callback: AsyncCallback<Array<OverlayModuleInfo>>): void
 
-获取指定的目标module所关联的OverlayModuleInfo。overlay特征的module一般是为设备上存在的非overlay特征的module提供覆盖的资源文件，其中非overlay特征的module被称作目标module。使用callback异步回调。
+获取指定的目标module所关联的[OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md)。overlay特征的module一般是为设备上存在的非overlay特征的module提供覆盖的资源文件，其中非overlay特征的module被称作目标module。使用callback异步回调。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Overlay
 
 **参数：**
 
-参数名类型必填说明targetModuleNamestring是指定当前应用中的目标module的名称。callbackAsyncCallback<Array<[OverlayModuleInfo](../../topics/system-services/OverlayModuleInfo.md)>>是[回调函数](@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__asynccallback)，当获取指定的目标module的[OverlayModuleInfo](../../topics/system-services/OverlayModuleInfo.md)成功时，err返回null。否则回调函数返回具体错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| targetModuleName | string | 是 | 指定当前应用中的目标module的名称。 |
+| callback | AsyncCallback<Array<[OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md)>> | 是 | 回调函数，当获取指定的目标module的OverlayModuleInfo成功时，err返回null。否则回调函数返回具体错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[ohos.bundle错误码](../../errors/包管理子系统通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[ohos.bundle错误码](包管理子系统通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.17700002The specified module name is not found.17700034The specified module is an overlay module.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 17700002 | The specified module name is not found. |
+| 17700034 | The specified module is an overlay module. |
 
 **示例：**
 
@@ -268,12 +317,14 @@ try {
 }
 ```
 
-#### OverlayModuleInfo
+#### [OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md)
 
-type OverlayModuleInfo = _OverlayModuleInfo.OverlayModuleInfo
+type [OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md) = [_OverlayModuleInfo.OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md#ZH-CN_TOPIC_0000002497604636__overlaymoduleinfo-1)
 
-OverlayModuleInfo信息。
+[OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md)信息。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Overlay
 
-类型说明[_OverlayModuleInfo.OverlayModuleInfo](../../topics/system-services/OverlayModuleInfo.md#ZH-CN_TOPIC_0000002497604636__overlaymoduleinfo-1)OverlayModuleInfo信息。
+| 类型 | 说明 |
+| --- | --- |
+| _[OverlayModuleInfo](../../topics/misc/OverlayModuleInfo.md).OverlayModuleInfo | OverlayModuleInfo信息。 |

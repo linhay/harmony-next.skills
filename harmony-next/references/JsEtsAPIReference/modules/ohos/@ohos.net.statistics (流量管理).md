@@ -10,23 +10,33 @@
 import { statistics } from '@kit.NetworkKit';
 ```
 
-#### statistics.getIfaceRxBytes10+
+**statistics.getIfaceRxBytes**
 
 getIfaceRxBytes(nic: string, callback: AsyncCallback<number>): void
 
-获取指定网卡实时下行流量，使用callback方式作为异步方法。
+获取指定网卡实时下行流量，使用callback异步回调。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
 
-参数名类型必填说明nicstring是指定查询的网卡名。callbackAsyncCallback<number>是回调函数。当成功获取网卡实时下行流量时，error 为 undefined，stats 为获取到的网卡实时下行流量(单位:字节)；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| nic | string | 是 | 指定查询的网卡名。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。当成功获取网卡实时下行流量时，error 为 undefined，stats 为获取到的网卡实时下行流量(单位:字节)；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码]([流量管理错误码](../../errors/流量管理错误码.md).md)和[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error.2100002Failed to connect to the service.2100003System internal error.2103005Failed to read the system map.2103011Failed to create a system map.2103012Failed to obtain the NIC name.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
+| 2103005 | Failed to read the system map. |
+| 2103011 | Failed to create a system map. |
+| 2103012 | Failed to obtain the NIC name. |
 
 **示例：**
 
@@ -40,27 +50,38 @@ statistics.getIfaceRxBytes("wlan0", (error: BusinessError, stats: number) => {
 });
 ```
 
-#### statistics.getIfaceRxBytes10+
+**statistics.getIfaceRxBytes**
 
 getIfaceRxBytes(nic: string): Promise<number>
 
-获取指定网卡实时下行流量，使用 Promise 方式作为异步方法。
+获取指定网卡实时下行流量，使用 Promise 异步回调。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
 
-参数名类型必填说明nicstring是指定查询的网卡名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| nic | string | 是 | 指定查询的网卡名。 |
 
 **返回值：**
 
-类型说明Promise<number>以 Promise 形式返回获取结果。返回网卡实时下行流量(单位:字节)。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 以 Promise 形式返回获取结果。返回网卡实时下行流量(单位:字节)。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.2100002Failed to connect to the service.2100003System internal error.2103005Failed to read the system map.2103011Failed to create a system map.2103012Failed to obtain the NIC name.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
+| 2103005 | Failed to read the system map. |
+| 2103011 | Failed to create a system map. |
+| 2103012 | Failed to obtain the NIC name. |
 
 **示例：**
 
@@ -72,23 +93,33 @@ statistics.getIfaceRxBytes("wlan0").then((stats: number) => {
 });
 ```
 
-#### statistics.getIfaceTxBytes10+
+**statistics.getIfaceTxBytes**
 
 getIfaceTxBytes(nic: string, callback: AsyncCallback<number>): void
 
-获取指定网卡实时上行流量，使用 callback 方式作为异步方法。
+获取指定网卡实时上行流量，使用 callback 异步回调。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
 
-参数名类型必填说明nicstring是指定查询的网卡名。callbackAsyncCallback<number>是回调函数。当成功获取网卡实时上行流量时，error 为 undefined，stats 为获取到的网卡实时上行流量(单位:字节)；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| nic | string | 是 | 指定查询的网卡名。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。当成功获取网卡实时上行流量时，error 为 undefined，stats 为获取到的网卡实时上行流量(单位:字节)；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.2100002Failed to connect to the service.2100003System internal error.2103005Failed to read the system map.2103011Failed to create a system map.2103012Failed to obtain the NIC name.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
+| 2103005 | Failed to read the system map. |
+| 2103011 | Failed to create a system map. |
+| 2103012 | Failed to obtain the NIC name. |
 
 **示例：**
 
@@ -102,27 +133,38 @@ statistics.getIfaceTxBytes("wlan0", (error: BusinessError, stats: number) => {
 });
 ```
 
-#### statistics.getIfaceTxBytes10+
+**statistics.getIfaceTxBytes**
 
 getIfaceTxBytes(nic: string): Promise<number>
 
-获取指定网卡实时上行流量，使用 Promise 方式作为异步方法。
+获取指定网卡实时上行流量，使用 Promise 异步回调。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
 
-参数名类型必填说明nicstring是指定查询的网卡名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| nic | string | 是 | 指定查询的网卡名。 |
 
 **返回值：**
 
-类型说明Promise<number>以 Promise 形式返回获取结果。返回网卡实时上行流量(单位:字节)。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 以 Promise 形式返回获取结果。返回网卡实时上行流量(单位:字节)。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.2100002Failed to connect to the service.2100003System internal error.2103005Failed to read the system map.2103011Failed to create a system map.2103012Failed to obtain the NIC name.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
+| 2103005 | Failed to read the system map. |
+| 2103011 | Failed to create a system map. |
+| 2103012 | Failed to obtain the NIC name. |
 
 **示例：**
 
@@ -134,23 +176,31 @@ statistics.getIfaceTxBytes("wlan0").then((stats: number) => {
 });
 ```
 
-#### statistics.getCellularRxBytes10+
+**statistics.getCellularRxBytes**
 
 getCellularRxBytes(callback: AsyncCallback<number>): void
 
-获取蜂窝实时下行流量，使用 callback 方式作为异步方法。
+获取蜂窝实时下行流量，使用 callback 异步回调。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是回调函数。当成功获取蜂窝实时下行流量时，error 为 undefined，stats 为获取到的蜂窝实时下行流量(单位:字节)；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 回调函数。当成功获取蜂窝实时下行流量时，error 为 undefined，stats 为获取到的蜂窝实时下行流量(单位:字节)；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)。
 
-错误码ID错误信息2100002Failed to connect to the service.2100003System internal error.2103005Failed to read the system map.2103011Failed to create a system map.2103012Failed to obtain the NIC name.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
+| 2103005 | Failed to read the system map. |
+| 2103011 | Failed to create a system map. |
+| 2103012 | Failed to obtain the NIC name. |
 
 **示例：**
 
@@ -164,23 +214,31 @@ statistics.getCellularRxBytes((error: BusinessError, stats: number) => {
 });
 ```
 
-#### statistics.getCellularRxBytes10+
+**statistics.getCellularRxBytes**
 
 getCellularRxBytes(): Promise<number>
 
-获取蜂窝实时下行流量，使用 Promise 方式作为异步方法。
+获取蜂窝实时下行流量，使用 Promise 异步回调。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **返回值：**
 
-类型说明Promise<number>以 Promise 形式返回获取结果。返回蜂窝实时下行流量(单位:字节)。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 以 Promise 形式返回获取结果。返回蜂窝实时下行流量(单位:字节)。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)。
 
-错误码ID错误信息2100002Failed to connect to the service.2100003System internal error.2103005Failed to read the system map.2103011Failed to create a system map.2103012Failed to obtain the NIC name.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
+| 2103005 | Failed to read the system map. |
+| 2103011 | Failed to create a system map. |
+| 2103012 | Failed to obtain the NIC name. |
 
 **示例：**
 
@@ -192,23 +250,31 @@ statistics.getCellularRxBytes().then((stats: number) => {
 });
 ```
 
-#### statistics.getCellularTxBytes10+
+**statistics.getCellularTxBytes**
 
 getCellularTxBytes(callback: AsyncCallback<number>): void
 
-获取蜂窝实时上行流量，使用 callback 方式作为异步方法。
+获取蜂窝实时上行流量，使用 callback 异步回调。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是回调函数。当成功获取蜂窝实时上行流量时，error 为 undefined，stats 为获取到的蜂窝实时上行流量(单位:字节)；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 回调函数。当成功获取蜂窝实时上行流量时，error 为 undefined，stats 为获取到的蜂窝实时上行流量(单位:字节)；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)。
 
-错误码ID错误信息2100002Failed to connect to the service.2100003System internal error.2103005Failed to read the system map.2103011Failed to create a system map.2103012Failed to obtain the NIC name.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
+| 2103005 | Failed to read the system map. |
+| 2103011 | Failed to create a system map. |
+| 2103012 | Failed to obtain the NIC name. |
 
 **示例：**
 
@@ -222,23 +288,31 @@ statistics.getCellularTxBytes((error: BusinessError, stats: number) => {
 });
 ```
 
-#### statistics.getCellularTxBytes10+
+**statistics.getCellularTxBytes**
 
 getCellularTxBytes(): Promise<number>
 
-获取蜂窝实时上行流量，使用 Promise 方式作为异步方法。
+获取蜂窝实时上行流量，使用 Promise 异步回调。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **返回值：**
 
-类型说明Promise<number>以 Promise 形式返回获取结果。返回蜂窝实时上行流量(单位:字节)。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 以 Promise 形式返回获取结果。返回蜂窝实时上行流量(单位:字节)。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)。
 
-错误码ID错误信息2100002Failed to connect to the service.2100003System internal error.2103005Failed to read the system map.2103011Failed to create a system map.2103012Failed to obtain the NIC name.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
+| 2103005 | Failed to read the system map. |
+| 2103011 | Failed to create a system map. |
+| 2103012 | Failed to obtain the NIC name. |
 
 **示例：**
 
@@ -250,11 +324,11 @@ statistics.getCellularTxBytes().then((stats: number) => {
 });
 ```
 
-#### statistics.getAllRxBytes10+
+**statistics.getAllRxBytes**
 
 getAllRxBytes(callback: AsyncCallback<number>): void
 
-获取所有网卡实时下行流量，使用 callback 方式作为异步方法。
+获取所有网卡实时下行流量，使用 callback 异步回调。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
@@ -262,13 +336,20 @@ getAllRxBytes(callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是回调函数。当成功获取所有网卡实时下行流量，error 为 undefined，stats 为获取到的所有网卡实时下行流量(单位:字节)；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 回调函数。当成功获取所有网卡实时下行流量，error 为 undefined，stats 为获取到的所有网卡实时下行流量(单位:字节)；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)。
 
-错误码ID错误信息2100002Failed to connect to the service.2100003System internal error.2103005Failed to read the system map.2103011Failed to create a system map.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
+| 2103005 | Failed to read the system map. |
+| 2103011 | Failed to create a system map. |
 
 **示例：**
 
@@ -282,11 +363,11 @@ statistics.getAllRxBytes((error: BusinessError, stats: number) => {
 });
 ```
 
-#### statistics.getAllRxBytes10+
+**statistics.getAllRxBytes**
 
 getAllRxBytes(): Promise<number>
 
-获取所有网卡实时下行流量，使用 Promise 方式作为异步方法。
+获取所有网卡实时下行流量，使用 Promise 异步回调。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
@@ -294,13 +375,20 @@ getAllRxBytes(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>以 Promise 形式返回获取结果。返回所有网卡实时下行流量(单位:字节)。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 以 Promise 形式返回获取结果。返回所有网卡实时下行流量(单位:字节)。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)。
 
-错误码ID错误信息2100002Failed to connect to the service.2100003System internal error.2103005Failed to read the system map.2103011Failed to create a system map.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
+| 2103005 | Failed to read the system map. |
+| 2103011 | Failed to create a system map. |
 
 **示例：**
 
@@ -312,11 +400,11 @@ statistics.getAllRxBytes().then((stats: number) => {
 });
 ```
 
-#### statistics.getAllTxBytes10+
+**statistics.getAllTxBytes**
 
 getAllTxBytes(callback: AsyncCallback<number>): void
 
-获取所有网卡实时上行流量，使用 callback 方式作为异步方法。
+获取所有网卡实时上行流量，使用 callback 异步回调。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
@@ -324,13 +412,20 @@ getAllTxBytes(callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是回调函数。当成功获取所有网卡实时上行流量，error 为 undefined，stats 为获取到的所有网卡实时上行流量(单位:字节)；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 回调函数。当成功获取所有网卡实时上行流量，error 为 undefined，stats 为获取到的所有网卡实时上行流量(单位:字节)；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)。
 
-错误码ID错误信息2100002Failed to connect to the service.2100003System internal error.2103005Failed to read the system map.2103011Failed to create a system map.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
+| 2103005 | Failed to read the system map. |
+| 2103011 | Failed to create a system map. |
 
 **示例：**
 
@@ -344,11 +439,11 @@ statistics.getAllTxBytes((error: BusinessError, stats: number) => {
 });
 ```
 
-#### statistics.getAllTxBytes10+
+**statistics.getAllTxBytes**
 
 getAllTxBytes(): Promise<number>
 
-获取所有网卡实时上行流量，使用 Promise 方式作为异步方法。
+获取所有网卡实时上行流量，使用 Promise 异步回调。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
@@ -356,13 +451,20 @@ getAllTxBytes(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>以 Promise 形式返回获取结果。返回所有网卡实时上行流量(单位:字节)。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 以 Promise 形式返回获取结果。返回所有网卡实时上行流量(单位:字节)。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)。
 
-错误码ID错误信息2100002Failed to connect to the service.2100003System internal error.2103005Failed to read the system map.2103011Failed to create a system map.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
+| 2103005 | Failed to read the system map. |
+| 2103011 | Failed to create a system map. |
 
 **示例：**
 
@@ -374,23 +476,32 @@ statistics.getAllTxBytes().then((stats: number) => {
 });
 ```
 
-#### statistics.getUidRxBytes10+
+**statistics.getUidRxBytes**
 
 getUidRxBytes(uid: number, callback: AsyncCallback<number>): void
 
-获取指定应用实时下行流量，使用 callback 方式作为异步方法。
+获取指定应用实时下行流量，使用 callback 异步回调。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
 
-参数名类型必填说明uidnumber是指定查询的应用 uid。callbackAsyncCallback<number>是回调函数。当成功获取应用实时下行流量时，error 为 undefined，stats 为获取到的应用实时下行流量(单位:字节)；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uid | number | 是 | 指定查询的应用 uid。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。当成功获取应用实时下行流量时，error 为 undefined，stats 为获取到的应用实时下行流量(单位:字节)；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.2100002Failed to connect to the service.2100003System internal error.2103005Failed to read the system map.2103011Failed to create a system map.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
+| 2103005 | Failed to read the system map. |
+| 2103011 | Failed to create a system map. |
 
 **示例：**
 
@@ -404,27 +515,37 @@ statistics.getUidRxBytes(20010038, (error: BusinessError, stats: number) => {
 });
 ```
 
-#### statistics.getUidRxBytes10+
+**statistics.getUidRxBytes**
 
 getUidRxBytes(uid: number): Promise<number>
 
-获取指定应用实时下行流量，使用 Promise 方式作为异步方法。
+获取指定应用实时下行流量，使用 Promise 异步回调。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
 
-参数名类型必填说明uidnumber是指定查询的应用 uid。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uid | number | 是 | 指定查询的应用 uid。 |
 
 **返回值：**
 
-类型说明Promise<number>以 Promise 形式返回获取结果。返回指定应用实时下行流量(单位:字节)。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 以 Promise 形式返回获取结果。返回指定应用实时下行流量(单位:字节)。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.2100002Failed to connect to the service.2100003System internal error.2103005Failed to read the system map.2103011Failed to create a system map.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
+| 2103005 | Failed to read the system map. |
+| 2103011 | Failed to create a system map. |
 
 **示例：**
 
@@ -436,23 +557,32 @@ statistics.getUidRxBytes(20010038).then((stats: number) => {
 });
 ```
 
-#### statistics.getUidTxBytes10+
+**statistics.getUidTxBytes**
 
 getUidTxBytes(uid: number, callback: AsyncCallback<number>): void
 
-获取指定应用实时上行流量，使用 callback 方式作为异步方法。
+获取指定应用实时上行流量，使用 callback 异步回调。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
 
-参数名类型必填说明uidnumber是指定查询的应用 uid。callbackAsyncCallback<number>是回调函数。当成功获取应用实时上行流量时，error 为 undefined，stats 为获取到的应用实时上行流量(单位:字节)；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uid | number | 是 | 指定查询的应用 uid。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。当成功获取应用实时上行流量时，error 为 undefined，stats 为获取到的应用实时上行流量(单位:字节)；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.2100002Failed to connect to the service.2100003System internal error.2103005Failed to read the system map.2103011Failed to create a system map.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
+| 2103005 | Failed to read the system map. |
+| 2103011 | Failed to create a system map. |
 
 **示例：**
 
@@ -466,27 +596,37 @@ statistics.getUidTxBytes(20010038, (error: BusinessError, stats: number) => {
 });
 ```
 
-#### statistics.getUidTxBytes10+
+**statistics.getUidTxBytes**
 
 getUidTxBytes(uid: number): Promise<number>
 
-获取指定应用实时上行流量，使用 Promise 方式作为异步方法。
+获取指定应用实时上行流量，使用 Promise 异步回调。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
 
-参数名类型必填说明uidnumber是指定查询的应用 uid。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uid | number | 是 | 指定查询的应用 uid。 |
 
 **返回值：**
 
-类型说明Promise<number>以 Promise 形式返回获取结果。返回指定应用实时上行流量(单位:字节)。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 以 Promise 形式返回获取结果。返回指定应用实时上行流量(单位:字节)。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.2100002Failed to connect to the service.2100003System internal error.2103005Failed to read the system map.2103011Failed to create a system map.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
+| 2103005 | Failed to read the system map. |
+| 2103011 | Failed to create a system map. |
 
 **示例：**
 
@@ -502,19 +642,27 @@ statistics.getUidTxBytes(20010038).then((stats: number) => {
 
 getSockfdRxBytes(sockfd: number, callback: AsyncCallback<number>): void
 
-获取指定socket的下行流量信息，使用 callback 方式作为异步方法。
+获取指定socket的下行流量信息，使用 callback 异步回调。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
 
-参数名类型必填说明sockfdnumber是指定查询的socket的fd(file description)。callbackAsyncCallback<number>是回调函数。当成功获取socket的下行流量时，error 为 undefined，stats 为获取到的该socket的实时下行流量(单位:字节)；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sockfd | number | 是 | 指定查询的socket的fd(file description)。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。当成功获取socket的下行流量时，error 为 undefined，stats 为获取到的该socket的实时下行流量(单位:字节)；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.2100001Invalid parameter value.2100002Failed to connect to the service.2100003System internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 2100001 | Invalid parameter value. |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
 
 **示例：**
 
@@ -533,23 +681,32 @@ statistics.getSockfdRxBytes(sockfd, (error: BusinessError, stats: number) => {
 
 getSockfdRxBytes(sockfd: number): Promise<number>
 
-获取指定socket的下行流量信息，使用 Promise 方式作为异步方法。
+获取指定socket的下行流量信息，使用 Promise 异步回调。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
 
-参数名类型必填说明sockfdnumber是指定查询的socket的fd(file description)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sockfd | number | 是 | 指定查询的socket的fd(file description)。 |
 
 **返回值：**
 
-类型说明Promise<number>以 Promise 形式返回获取结果，返回该socket的实时下行流量(单位:字节)。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 以 Promise 形式返回获取结果，返回该socket的实时下行流量(单位:字节)。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.2100001Invalid parameter value.2100002Failed to connect to the service.2100003System internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 2100001 | Invalid parameter value. |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
 
 **示例：**
 
@@ -569,19 +726,27 @@ statistics.getSockfdRxBytes(sockfd).then((stats: number) => {
 
 getSockfdTxBytes(sockfd: number, callback: AsyncCallback<number>): void
 
-获取指定socket的上行流量信息，使用 callback 方式作为异步方法。
+获取指定socket的上行流量信息，使用 callback 异步回调。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
 
-参数名类型必填说明sockfdnumber是指定查询的socket的fd(file description)。callbackAsyncCallback<number>是回调函数。当成功获取socket的上行流量时，error 为 undefined，stats 为获取到的该socket的实时上行流量(单位:字节)；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sockfd | number | 是 | 指定查询的socket的fd(file description)。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。当成功获取socket的上行流量时，error 为 undefined，stats 为获取到的该socket的实时上行流量(单位:字节)；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.2100001Invalid parameter value.2100002Failed to connect to the service.2100003System internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 2100001 | Invalid parameter value. |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
 
 **示例：**
 
@@ -600,23 +765,32 @@ statistics.getSockfdTxBytes(sockfd, (error: BusinessError, stats: number) => {
 
 getSockfdTxBytes(sockfd: number): Promise<number>
 
-获取指定socket的上行流量信息，使用 Promise 方式作为异步方法。
+获取指定socket的上行流量信息，使用 Promise 异步回调。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
 
-参数名类型必填说明sockfdnumber是指定查询的socket的fd(file description)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sockfd | number | 是 | 指定查询的socket的fd(file description)。 |
 
 **返回值：**
 
-类型说明Promise<number>以 Promise 形式返回获取结果，返回该socket的实时上行流量(单位:字节)。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 以 Promise 形式返回获取结果，返回该socket的实时上行流量(单位:字节)。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.2100001Invalid parameter value.2100002Failed to connect to the service.2100003System internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 2100001 | Invalid parameter value. |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
 
 **示例：**
 
@@ -636,7 +810,8 @@ statistics.getSockfdTxBytes(sockfd).then((stats: number) => {
 
 getSelfTrafficStats(networkInfo: NetworkInfo): Promise<NetStatsInfo>
 
-获取指定时间段内，本应用在指定网络中的流量使用情况。使用Promise方式作为异步方法。
+获取指定时间段内，本应用在指定网络中的流量使用情况。使用Promise异步回调。
+
 
 -
 
@@ -648,17 +823,27 @@ getSelfTrafficStats(networkInfo: NetworkInfo): Promise<NetStatsInfo>
 
 **参数：**
 
-参数名类型必填说明networkInfo[NetworkInfo](#ZH-CN_TOPIC_0000002529285441__networkinfo22)是指定查询的网络信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| networkInfo | NetworkInfo | 是 | 指定查询的网络信息。 |
 
 **返回值：**
 
-类型说明Promise<[NetStatsInfo](#ZH-CN_TOPIC_0000002529285441__netstatsinfo22)>Promise对象，返回应用历史流量统计信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<NetStatsInfo> | Promise对象，返回应用历史流量统计信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[流量管理错误码](../../errors/流量管理错误码.md)。
+以下错误码的详细介绍参见[流量管理错误码](流量管理错误码.md)。
 
-错误码ID错误信息2100001Invalid parameter value.2100002Failed to connect to the service.2100003System internal error.2103017Failed to read the database.2103019The timestamp in param is invalid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 2100001 | Invalid parameter value. |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
+| 2103017 | Failed to read the database. |
+| 2103019 | The timestamp in param is invalid. |
 
 **示例：**
 
@@ -688,7 +873,9 @@ type NetBearType = connection.NetBearType
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
-类型说明[connection.NetBearType](@ohos.net.connection (网络连接管理).md#ZH-CN_TOPIC_0000002497605446__netbeartype)枚举网络类型。
+| 类型 | 说明 |
+| --- | --- |
+| connection.NetBearType | 枚举网络类型。 |
 
 #### NetworkInfo22+
 
@@ -696,17 +883,12 @@ type NetBearType = connection.NetBearType
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
-名称类型只读可选说明type[NetBearType](#ZH-CN_TOPIC_0000002529285441__netbeartype12)否否
-
-网络类型。
-
-**注意：** 当type为蜂窝网络时，需指定simId字段。
-
-startTimenumber否否开始时间戳(单位：秒)。endTimenumber否否结束时间戳(单位：秒)。simIdnumber否是
-
-SIM卡ID。默认值为uint32_t类型最大值。
-
-**注意：** 当type为蜂窝网络时，需指定本字段。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| type | NetBearType | 否 | 否 | 网络类型。 注意： 当type为蜂窝网络时，需指定simId字段。 |
+| startTime | number | 否 | 否 | 开始时间戳(单位：秒)。 |
+| endTime | number | 否 | 否 | 结束时间戳(单位：秒)。 |
+| simId | number | 否 | 是 | SIM卡ID。默认值为uint32_t类型最大值。 注意： 当type为蜂窝网络时，需指定本字段。 |
 
 #### NetStatsInfo22+
 
@@ -714,4 +896,9 @@ SIM卡ID。默认值为uint32_t类型最大值。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
-名称类型只读可选说明rxBytesnumber否否流量下行数据(单位：字节)。txBytesnumber否否流量上行数据(单位：字节)。rxPacketsnumber否否流量下行包个数。txPacketsnumber否否流量上行包个数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| rxBytes | number | 否 | 否 | 流量下行数据(单位：字节)。 |
+| txBytes | number | 否 | 否 | 流量上行数据(单位：字节)。 |
+| rxPackets | number | 否 | 否 | 流量下行包个数。 |
+| txPackets | number | 否 | 否 | 流量上行包个数。 |

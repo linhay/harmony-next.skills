@@ -34,9 +34,7 @@
 
 #### AnimatableArithmetic<T>
 
-该接口定义非number数据类型的动画运算规则。对非number类型的数据（如数组、结构体、颜色等）做动画，需要实现AnimatableArithmetic<T>接口中加法、减法、乘法和判断相等函数，
-
-使得该数据能参与动画的插值运算和识别该数据是否发生改变。即定义它们为实现了AnimatableArithmetic<T>接口的类型。
+该接口定义非number数据类型的动画运算规则。对非number类型的数据（如数组、结构体、颜色等）做动画，需要实现AnimatableArithmetic<T>接口中加法、减法、乘法和判断相等函数，使得该数据能参与动画的插值运算和识别该数据是否发生改变。即定义它们为实现了AnimatableArithmetic<T>接口的类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -54,11 +52,15 @@ plus(rhs: AnimatableArithmetic<T>): AnimatableArithmetic<T>
 
 **参数：**
 
-参数名类型必填说明rhs[AnimatableArithmetic<T>](#ZH-CN_TOPIC_0000002497604950__animatablearithmetict)是加法运算的对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rhs | AnimatableArithmetic<T> | 是 | 加法运算的对象。 |
 
 **返回值：**
 
-类型说明[AnimatableArithmetic<T>](#ZH-CN_TOPIC_0000002497604950__animatablearithmetict)加法运算的结果。
+| 类型 | 说明 |
+| --- | --- |
+| AnimatableArithmetic<T> | 加法运算的结果。 |
 
 #### subtract
 
@@ -72,11 +74,15 @@ subtract(rhs: AnimatableArithmetic<T>): AnimatableArithmetic<T>
 
 **参数：**
 
-参数名类型必填说明rhs[AnimatableArithmetic<T>](#ZH-CN_TOPIC_0000002497604950__animatablearithmetict)是减法运算的对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rhs | AnimatableArithmetic<T> | 是 | 减法运算的对象。 |
 
 **返回值：**
 
-类型说明[AnimatableArithmetic<T>](#ZH-CN_TOPIC_0000002497604950__animatablearithmetict)减法运算的结果。
+| 类型 | 说明 |
+| --- | --- |
+| AnimatableArithmetic<T> | 减法运算的结果。 |
 
 #### multiply
 
@@ -90,11 +96,15 @@ multiply(scale: number): AnimatableArithmetic<T>
 
 **参数：**
 
-参数名类型必填说明scalenumber是乘法运算的系数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| scale | number | 是 | 乘法运算的系数。 |
 
 **返回值：**
 
-类型说明[AnimatableArithmetic<T>](#ZH-CN_TOPIC_0000002497604950__animatablearithmetict)乘法运算的结果。
+| 类型 | 说明 |
+| --- | --- |
+| AnimatableArithmetic<T> | 乘法运算的结果。 |
 
 #### equals
 
@@ -108,11 +118,15 @@ equals(rhs: AnimatableArithmetic<T>): boolean
 
 **参数：**
 
-参数名类型必填说明rhs[AnimatableArithmetic<T>](#ZH-CN_TOPIC_0000002497604950__animatablearithmetict)是和自身比较相等的另一个数据对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rhs | AnimatableArithmetic<T> | 是 | 和自身比较相等的另一个数据对象。 |
 
 **返回值：**
 
-类型说明boolean是否相等。返回true表示相等，返回false表示不相等。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否相等。返回true表示相等，返回false表示不相等。 |
 
 #### 示例
 
@@ -143,7 +157,6 @@ struct AnimatablePropertyExample {
     }.width("100%")
     .padding(10)
   }
-}
 ```
 
 #### 示例2（折线的动画效果）
@@ -174,7 +187,6 @@ class Point {
 
   equals(rhs: Point): boolean {
     return this.x === rhs.x && this.y === rhs.y;
-  }
 }
 
 // PointVector实现了AnimatableArithmetic<T>接口
@@ -218,7 +230,6 @@ class PointVector extends Array<Point> implements AnimatableArithmetic<PointVect
       if (!(this as Array<Point>)[i].equals((rhs as Array<Point>)[i])) {
         return false;
       }
-    }
     return true;
   }
 
@@ -226,7 +237,6 @@ class PointVector extends Array<Point> implements AnimatableArithmetic<PointVect
     let result: Array<Object[]> = [];
     this.forEach(p => result.push([p.x, p.y]));
     return result;
-  }
 }
 
 @AnimatableExtend(Polyline)
@@ -268,5 +278,6 @@ struct AnimatablePropertyExample {
     }.width("100%")
     .padding(10)
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522245356.webp)

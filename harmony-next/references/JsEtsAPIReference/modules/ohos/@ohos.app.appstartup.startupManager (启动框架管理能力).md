@@ -20,23 +20,36 @@ run(startupTasks: Array<string>, config?: StartupConfig): Promise<void>
 
 执行启动框架启动任务或加载so文件。
 
-本接口不支持执行feature类型HAP中的启动任务，如需要使用相关能力请调用[startupManager.run](#ZH-CN_TOPIC_0000002529284589__startupmanagerrun20)接口。
+
+本接口不支持执行feature类型HAP中的启动任务，如需要使用相关能力请调用[startupManager.run](#ZH-CN_TOPIC_0000002553360467__startupmanagerrun20)接口。
 
 **系统能力**：SystemCapability.Ability.AppStartup
 
 **参数：**
 
-参数名类型必填说明startupTasksArray<string>是表示准备执行的启动任务[StartupTask](@ohos.app.appstartup.StartupTask (启动框架任务).md)的名称或预加载so名称的数组。config[StartupConfig](@ohos.app.appstartup.StartupConfig (启动框架配置信息).md)否表示启动任务配置信息，包含启动框架超时时间与启动任务监听器配置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| startupTasks | Array<string> | 是 | 表示准备执行的启动任务StartupTask的名称或预加载so名称的数组。 |
+| config | StartupConfig | 否 | 表示启动任务配置信息，包含启动框架超时时间与启动任务监听器配置。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[元能力子系统错误码]([元能力子系统错误码](../../errors/元能力子系统错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.16000050Internal error.28800001Startup task or its dependency not found.28800002The startup tasks have circular dependencies.28800003An error occurred while running the startup tasks.28800004Running startup tasks timeout.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 16000050 | Internal error. |
+| 28800001 | Startup task or its dependency not found. |
+| 28800002 | The startup tasks have circular dependencies. |
+| 28800003 | An error occurred while running the startup tasks. |
+| 28800004 | Running startup tasks timeout. |
 
 **示例：**
 
@@ -61,7 +74,6 @@ export default class EntryAbility extends UIAbility {
       let errCode = (error as BusinessError).code;
       console.error(`Startup.run failed, err code: ${errCode}, err msg: ${errMsg}.`);
     }
-  }
 
   // ...
 }
@@ -69,25 +81,37 @@ export default class EntryAbility extends UIAbility {
 
 #### startupManager.run20+
 
-run(startupTasks: Array<string>, context: common.AbilityStageContext, config: StartupConfig): Promise<void>
+run(startupTasks: Array<string>, context: common.[AbilityStageContext](../../topics/misc/AbilityStageContext.md), config: StartupConfig): Promise<void>
 
-执行启动框架启动任务或加载so文件。支持指定[AbilityStageContext](../../topics/graphics/AbilityStageContext.md)用于启动任务的加载。使用Promise异步回调。
+执行启动框架启动任务或加载so文件。支持指定[AbilityStageContext](AbilityStageContext.md)用于启动任务的加载。使用Promise异步回调。
 
 **系统能力**：SystemCapability.Ability.AppStartup
 
 **参数：**
 
-参数名类型必填说明startupTasksArray<string>是表示准备执行的启动任务[StartupTask](@ohos.app.appstartup.StartupTask (启动框架任务).md)的名称或预加载so名称的数组。context[common.AbilityStageContext](../../topics/graphics/AbilityStageContext.md)是表示执行启动任务[StartupTask](@ohos.app.appstartup.StartupTask (启动框架任务).md)的AbilityStage上下文，作为入参传给启动任务的[init](@ohos.app.appstartup.StartupTask (启动框架任务).md#ZH-CN_TOPIC_0000002529444563__init)。config[StartupConfig](@ohos.app.appstartup.StartupConfig (启动框架配置信息).md)是表示启动任务配置信息，包含启动框架超时时间与启动任务监听器配置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| startupTasks | Array<string> | 是 | 表示准备执行的启动任务StartupTask的名称或预加载so名称的数组。 |
+| context | common.[AbilityStageContext](../../topics/misc/AbilityStageContext.md) | 是 | 表示执行启动任务StartupTask的AbilityStage上下文，作为入参传给启动任务的init。 |
+| config | StartupConfig | 是 | 表示启动任务配置信息，包含启动框架超时时间与启动任务监听器配置。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息16000050Internal error.28800001Startup task or its dependency not found.28800002The startup tasks have circular dependencies.28800003An error occurred while running the startup tasks.28800004Running startup tasks timeout.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16000050 | Internal error. |
+| 28800001 | Startup task or its dependency not found. |
+| 28800002 | The startup tasks have circular dependencies. |
+| 28800003 | An error occurred while running the startup tasks. |
+| 28800004 | Running startup tasks timeout. |
 
 **示例：**
 
@@ -124,7 +148,6 @@ export default class MyAbilityStage extends AbilityStage {
     } catch (error) {
       hilog.error(0x0000, 'testTag', 'startupManager.run catch error: %{public}s', JSON.stringify(error));
     }
-  }
   // ...
 }
 ```
@@ -160,7 +183,6 @@ export default class EntryAbility extends UIAbility {
     } catch (error) {
       hilog.error(0x0000, 'testTag', `StartupTask_001.run failed, error: %{public}s`, JSON.stringify(error) ?? '');
     }
-  }
 
   onWindowStageCreate(windowStage: window.WindowStage) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
@@ -174,7 +196,6 @@ export default class EntryAbility extends UIAbility {
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
     });
   }
-}
 ```
 
 #### startupManager.getStartupTaskResult
@@ -187,21 +208,23 @@ getStartupTaskResult(startupTask: string): Object
 
 **参数：**
 
-参数名类型必填说明startupTaskstring是启动任务[StartupTask](@ohos.app.appstartup.StartupTask (启动框架任务).md)的名称或预加载so名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| startupTask | string | 是 | 启动任务StartupTask的名称或预加载so名称。 |
 
 **返回值：**
 
-类型说明Object
-
-输入为启动任务名时，返回指定的启动任务[init](@ohos.app.appstartup.StartupTask (启动框架任务).md#ZH-CN_TOPIC_0000002529444563__init)返回的执行结果。
-
-输入为so文件名时，返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| Object | 输入为启动任务名时，返回指定的启动任务init返回的执行结果。 输入为so文件名时，返回undefined。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -224,7 +247,6 @@ export default class EntryAbility extends UIAbility {
     } catch (error) {
       hilog.error(0x0000, 'testTag', `StartupTask_001.run failed, error: %{public}s`, JSON.stringify(error) ?? '');
     }
-  }
 
   onWindowStageCreate(windowStage: window.WindowStage) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
@@ -238,7 +260,6 @@ export default class EntryAbility extends UIAbility {
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
     });
   }
-}
 ```
 
 #### startupManager.isStartupTaskInitialized
@@ -251,17 +272,23 @@ isStartupTaskInitialized(startupTask: string): boolean
 
 **参数：**
 
-参数名类型必填说明startupTaskstring是启动任务[StartupTask](@ohos.app.appstartup.StartupTask (启动框架任务).md)的名称或预加载so名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| startupTask | string | 是 | 启动任务StartupTask的名称或预加载so名称。 |
 
 **返回值：**
 
-类型说明boolean返回布尔值，true表示该启动任务或so预加载任务已执行完成，false表示该启动任务或so预加载任务尚未执行完成。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回布尔值，true表示该启动任务或so预加载任务已执行完成，false表示该启动任务或so预加载任务尚未执行完成。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -283,7 +310,6 @@ export default class EntryAbility extends UIAbility {
       });
     } catch (error) {
       hilog.error(0x0000, 'testTag', `StartupTask_001.run failed, error: %{public}s`, JSON.stringify(error) ?? '');
-    }
   }
 
   onWindowStageCreate(windowStage: window.WindowStage) {
@@ -309,7 +335,6 @@ export default class EntryAbility extends UIAbility {
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
     });
   }
-}
 ```
 
 #### startupManager.removeStartupTaskResult
@@ -330,13 +355,17 @@ removeStartupTaskResult(startupTask: string): void
 
 **参数：**
 
-参数名类型必填说明startupTaskstring是启动任务[StartupTask](@ohos.app.appstartup.StartupTask (启动框架任务).md)的名称或预加载so名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| startupTask | string | 是 | 启动任务StartupTask的名称或预加载so名称。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -359,7 +388,6 @@ export default class EntryAbility extends UIAbility {
     } catch (error) {
       hilog.error(0x0000, 'testTag', `StartupTask_001.run failed, error: %{public}s`, JSON.stringify(error) ?? '');
     }
-  }
 
   onWindowStageCreate(windowStage: window.WindowStage) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
@@ -374,5 +402,4 @@ export default class EntryAbility extends UIAbility {
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
     });
   }
-}
 ```

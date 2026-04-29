@@ -12,7 +12,7 @@ createPdf函数输出数据流类。
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 -
 
@@ -22,10 +22,12 @@ createPdf函数输出数据流类。
 
 pdfArrayBuffer(): Uint8Array
 
-获取网页生成的数据流。完整示例代码参考[createPdf](Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__createpdf14)。
+获取网页生成的数据流。完整示例代码参考[createPdf](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__createpdf14)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
 
-类型说明Uint8Array数据流。
+| 类型 | 说明 |
+| --- | --- |
+| Uint8Array | 数据流。 |

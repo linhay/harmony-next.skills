@@ -18,7 +18,9 @@ type BaseProfile = baseProfile.BaseProfile
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-类型说明[baseProfile.BaseProfile](@ohos.bluetooth.baseProfile (蓝牙baseProfile模块).md#ZH-CN_TOPIC_0000002497445438__baseprofile)基础Profile接口定义。
+| 类型 | 说明 |
+| --- | --- |
+| baseProfile.BaseProfile | 基础Profile接口定义。 |
 
 #### a2dp.createA2dpSrcProfile
 
@@ -30,13 +32,18 @@ createA2dpSrcProfile(): A2dpSourceProfile
 
 **返回值：**
 
-类型说明[A2dpSourceProfile](#ZH-CN_TOPIC_0000002529445381__a2dpsourceprofile)返回蓝牙媒体音频源实例。
+| 类型 | 说明 |
+| --- | --- |
+| A2dpSourceProfile | 返回蓝牙媒体音频源实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)。
 
-错误码ID错误信息401Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -54,8 +61,10 @@ try {
 
 该实例表示蓝牙媒体音频中的[A2DP Source](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#a2dp-source)角色。
 
-- 该类继承于[BaseProfile](#ZH-CN_TOPIC_0000002529445381__baseprofile)，因此可以使用其父类中的方法。
-- 使用该类的方法前，需通过[createA2dpSrcProfile](#ZH-CN_TOPIC_0000002529445381__a2dpcreatea2dpsrcprofile)方法构造该类的实例。
+- 该类继承于[BaseProfile](#ZH-CN_TOPIC_0000002553361363__baseprofile)，因此可以使用其父类中的方法。
+
+- 使用该类的方法前，需通过[createA2dpSrcProfile](#ZH-CN_TOPIC_0000002553361363__a2dpcreatea2dpsrcprofile)方法构造该类的实例。
+
 - 和该实例角色相对应的是[A2DP Sink](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#a2dp-sink)。
 
 #### getPlayingState
@@ -72,17 +81,29 @@ getPlayingState(deviceId: string): PlayingState
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是对端设备地址，例如："XX:XX:XX:XX:XX:XX"。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 对端设备地址，例如："XX:XX:XX:XX:XX:XX"。 |
 
 **返回值：**
 
-类型说明[PlayingState](#ZH-CN_TOPIC_0000002529445381__playingstate)蓝牙媒体音频播放状态。
+| 类型 | 说明 |
+| --- | --- |
+| PlayingState | 蓝牙媒体音频播放状态。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[蓝牙服务子系统错误码](../../errors/蓝牙服务子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[蓝牙服务子系统错误码]([蓝牙服务子系统错误码](../../errors/蓝牙服务子系统错误码.md).md)。
 
-错误码ID错误信息201Permission denied.401Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.801Capability not supported.2900001Service stopped.2900003Bluetooth disabled.2900004Profile not supported.2900099Operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
+| 2900001 | Service stopped. |
+| 2900003 | Bluetooth disabled. |
+| 2900004 | Profile not supported. |
+| 2900099 | Operation failed. |
 
 **示例：**
 
@@ -102,7 +123,10 @@ try {
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-名称值说明STATE_NOT_PLAYING0未播放媒体音频。STATE_PLAYING1正在播放媒体音频。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| STATE_NOT_PLAYING | 0 | 未播放媒体音频。 |
+| STATE_PLAYING | 1 | 正在播放媒体音频。 |
 
 #### CodecInfo11+
 
@@ -110,7 +134,14 @@ try {
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-名称类型只读可选说明codecType[CodecType](#ZH-CN_TOPIC_0000002529445381__codectype11)否否编解码器类型，默认值为CODEC_TYPE_SBC。codecBitsPerSample[CodecBitsPerSample](#ZH-CN_TOPIC_0000002529445381__codecbitspersample11)否否每个采样点的位深，默认值为CODEC_BITS_PER_SAMPLE_NONE。codecChannelMode[CodecChannelMode](#ZH-CN_TOPIC_0000002529445381__codecchannelmode11)否否编解码器的声道模式，默认值为CODEC_CHANNEL_MODE_NONE。codecSampleRate[CodecSampleRate](#ZH-CN_TOPIC_0000002529445381__codecsamplerate11)否否编解码器的采样率，默认值为CODEC_SAMPLE_RATE_NONE。codecBitRate19+[CodecBitRate](#ZH-CN_TOPIC_0000002529445381__codecbitrate19)否是编解码器的码率，默认值为CODEC_BIT_RATE_ABR。codecFrameLength19+[CodecFrameLength](#ZH-CN_TOPIC_0000002529445381__codecframelength19)否是编解码器的帧长，默认值为CODEC_FRAME_LENGTH_10MS。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| codecType | CodecType | 否 | 否 | 编解码器类型，默认值为CODEC_TYPE_SBC。 |
+| codecBitsPerSample | CodecBitsPerSample | 否 | 否 | 每个采样点的位深，默认值为CODEC_BITS_PER_SAMPLE_NONE。 |
+| codecChannelMode | CodecChannelMode | 否 | 否 | 编解码器的声道模式，默认值为CODEC_CHANNEL_MODE_NONE。 |
+| codecSampleRate | CodecSampleRate | 否 | 否 | 编解码器的采样率，默认值为CODEC_SAMPLE_RATE_NONE。 |
+| codecBitRate19+ | CodecBitRate | 否 | 是 | 编解码器的码率，默认值为CODEC_BIT_RATE_ABR。 |
+| codecFrameLength19+ | CodecFrameLength | 否 | 是 | 编解码器的帧长，默认值为CODEC_FRAME_LENGTH_10MS。 |
 
 #### CodecInfoList19+
 
@@ -118,7 +149,14 @@ try {
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-名称类型只读可选说明codecType[CodecType](#ZH-CN_TOPIC_0000002529445381__codectype11)否否编解码器类型。codecBitsPerSampleArray[CodecBitsPerSample](#ZH-CN_TOPIC_0000002529445381__codecbitspersample11)[]否否编解码器支持的位深能力集合。codecChannelModeArray[CodecChannelMode](#ZH-CN_TOPIC_0000002529445381__codecchannelmode11)[]否否编解码器支持的声道模式能力集合。codecSampleRateArray[CodecSampleRate](#ZH-CN_TOPIC_0000002529445381__codecsamplerate11)[]否否编解码器支持的采样率能力集合。codecBitRateArray[CodecBitRate](#ZH-CN_TOPIC_0000002529445381__codecbitrate19)[]否否编解码器支持的码率能力集合。codecFrameLengthArray[CodecFrameLength](#ZH-CN_TOPIC_0000002529445381__codecframelength19)[]否否编解码器支持的帧长能力集合。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| codecType | CodecType | 否 | 否 | 编解码器类型。 |
+| codecBitsPerSampleArray | CodecBitsPerSample[] | 否 | 否 | 编解码器支持的位深能力集合。 |
+| codecChannelModeArray | CodecChannelMode[] | 否 | 否 | 编解码器支持的声道模式能力集合。 |
+| codecSampleRateArray | CodecSampleRate[] | 否 | 否 | 编解码器支持的采样率能力集合。 |
+| codecBitRateArray | CodecBitRate[] | 否 | 否 | 编解码器支持的码率能力集合。 |
+| codecFrameLengthArray | CodecFrameLength[] | 否 | 否 | 编解码器支持的帧长能力集合。 |
 
 #### CodecType11+
 
@@ -126,7 +164,14 @@ try {
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-名称值说明CODEC_TYPE_INVALID-1编解码器类型未知。CODEC_TYPE_SBC0SBCCODEC_TYPE_AAC1AACCODEC_TYPE_L2HC2L2HCCODEC_TYPE_L2HCST13+3L2HCSTCODEC_TYPE_LDAC13+4LDAC
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CODEC_TYPE_INVALID | -1 | 编解码器类型未知。 |
+| CODEC_TYPE_SBC | 0 | SBC |
+| CODEC_TYPE_AAC | 1 | AAC |
+| CODEC_TYPE_L2HC | 2 | L2HC |
+| CODEC_TYPE_L2HCST13+ | 3 | L2HCST |
+| CODEC_TYPE_LDAC13+ | 4 | LDAC |
 
 #### CodecChannelMode11+
 
@@ -134,7 +179,11 @@ try {
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-名称值说明CODEC_CHANNEL_MODE_NONE0声道未知。CODEC_CHANNEL_MODE_MONO1单声道。CODEC_CHANNEL_MODE_STEREO2双声道。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CODEC_CHANNEL_MODE_NONE | 0 | 声道未知。 |
+| CODEC_CHANNEL_MODE_MONO | 1 | 单声道。 |
+| CODEC_CHANNEL_MODE_STEREO | 2 | 双声道。 |
 
 #### CodecBitsPerSample11+
 
@@ -142,7 +191,12 @@ try {
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-名称值说明CODEC_BITS_PER_SAMPLE_NONE0位深未知。CODEC_BITS_PER_SAMPLE_16116bitCODEC_BITS_PER_SAMPLE_24224bitCODEC_BITS_PER_SAMPLE_32332bit
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CODEC_BITS_PER_SAMPLE_NONE | 0 | 位深未知。 |
+| CODEC_BITS_PER_SAMPLE_16 | 1 | 16bit |
+| CODEC_BITS_PER_SAMPLE_24 | 2 | 24bit |
+| CODEC_BITS_PER_SAMPLE_32 | 3 | 32bit |
 
 #### CodecSampleRate11+
 
@@ -150,7 +204,15 @@ try {
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-名称值说明CODEC_SAMPLE_RATE_NONE0采样率未知。CODEC_SAMPLE_RATE_44100144.1kHzCODEC_SAMPLE_RATE_48000248kHzCODEC_SAMPLE_RATE_88200388.2kHzCODEC_SAMPLE_RATE_96000496kHzCODEC_SAMPLE_RATE_1764005176.4kHzCODEC_SAMPLE_RATE_1920006192kHz
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CODEC_SAMPLE_RATE_NONE | 0 | 采样率未知。 |
+| CODEC_SAMPLE_RATE_44100 | 1 | 44.1kHz |
+| CODEC_SAMPLE_RATE_48000 | 2 | 48kHz |
+| CODEC_SAMPLE_RATE_88200 | 3 | 88.2kHz |
+| CODEC_SAMPLE_RATE_96000 | 4 | 96kHz |
+| CODEC_SAMPLE_RATE_176400 | 5 | 176.4kHz |
+| CODEC_SAMPLE_RATE_192000 | 6 | 192kHz |
 
 #### CodecBitRate19+
 
@@ -158,7 +220,19 @@ try {
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-名称值说明CODEC_BIT_RATE_96000096kbpsCODEC_BIT_RATE_1280001128kbpsCODEC_BIT_RATE_1920002192kbpsCODEC_BIT_RATE_2560003256kbpsCODEC_BIT_RATE_3200004320kbpsCODEC_BIT_RATE_4800005480kbpsCODEC_BIT_RATE_6400006640kbpsCODEC_BIT_RATE_9600007960kbpsCODEC_BIT_RATE_ABR8自适应码率（根据网络条件自动调整）。CODEC_BIT_RATE_150000021+91500kbpsCODEC_BIT_RATE_230000021+102300kbps
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CODEC_BIT_RATE_96000 | 0 | 96kbps |
+| CODEC_BIT_RATE_128000 | 1 | 128kbps |
+| CODEC_BIT_RATE_192000 | 2 | 192kbps |
+| CODEC_BIT_RATE_256000 | 3 | 256kbps |
+| CODEC_BIT_RATE_320000 | 4 | 320kbps |
+| CODEC_BIT_RATE_480000 | 5 | 480kbps |
+| CODEC_BIT_RATE_640000 | 6 | 640kbps |
+| CODEC_BIT_RATE_960000 | 7 | 960kbps |
+| CODEC_BIT_RATE_ABR | 8 | 自适应码率（根据网络条件自动调整）。 |
+| CODEC_BIT_RATE_150000021+ | 9 | 1500kbps |
+| CODEC_BIT_RATE_230000021+ | 10 | 2300kbps |
 
 #### CodecFrameLength19+
 
@@ -166,4 +240,7 @@ try {
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-名称值说明CODEC_FRAME_LENGTH_5MS05ms帧长。CODEC_FRAME_LENGTH_10MS110ms帧长。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CODEC_FRAME_LENGTH_5MS | 0 | 5ms帧长。 |
+| CODEC_FRAME_LENGTH_10MS | 1 | 10ms帧长。 |

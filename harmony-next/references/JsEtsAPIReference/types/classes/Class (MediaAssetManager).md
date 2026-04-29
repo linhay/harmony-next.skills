@@ -21,26 +21,38 @@ static requestImage(context: Context, asset: PhotoAsset, requestOptions: Request
 
 **需要权限**：ohos.permission.READ_IMAGEVIDEO
 
-- 通过picker的方式调用该接口来请求图片资源，不需要申请'ohos.permission.READ_IMAGEVIDEO'权限，详情请参考[开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker#指定uri获取图片或视频资源)。
+- 通过picker的方式调用该接口来请求图片资源，不需要申请'ohos.permission.READ_IMAGEVIDEO'权限，详情请参考[指定URI获取图片或视频资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker#指定uri获取图片或视频资源)。
+
 - 对于本应用保存到媒体库的图片资源，应用无需额外申请'ohos.permission.READ_IMAGEVIDEO'权限即可访问。
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是传入Ability实例的上下文。asset[PhotoAsset](../interfaces/Interface (PhotoAsset).md)是待请求的媒体文件对象。requestOptions[RequestOptions](../interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529285945__requestoptions11)是图片请求策略模式配置项。dataHandler[MediaAssetDataHandler](../interfaces/Interface (MediaAssetDataHandler).md)<[image.ImageSource](../interfaces/Interface (ImageSource).md)>是媒体资源处理器，请求完成时触发回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 传入Ability实例的上下文。 |
+| asset | PhotoAsset | 是 | 待请求的媒体文件对象。 |
+| requestOptions | RequestOptions | 是 | 图片请求策略模式配置项。 |
+| dataHandler | MediaAssetDataHandler<image.ImageSource> | 是 | 媒体资源处理器，请求完成时触发回调。 |
 
 **返回值：**
 
-类型说明Promise<string>Promise对象，返回请求id，可用于[cancelRequest](#ZH-CN_TOPIC_0000002529285939__cancelrequest12)取消请求。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回请求id，可用于cancelRequest取消请求。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[文件管理错误码]([文件管理错误码](../../errors/文件管理错误码.md).md)。
 
-错误码ID错误信息201Permission denied401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -53,7 +65,6 @@ class MediaHandler implements photoAccessHelper.MediaAssetDataHandler<image.Imag
       return;
     }
     console.info('on image data prepared');
-  }
 }
 
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
@@ -91,26 +102,38 @@ static requestImageData(context: Context, asset: PhotoAsset, requestOptions: Req
 
 **需要权限**：ohos.permission.READ_IMAGEVIDEO
 
-- 通过picker的方式调用该接口来请求图片资源数据，不需要申请'ohos.permission.READ_IMAGEVIDEO'权限，详情请参考[开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker#指定uri获取图片或视频资源)。
+- 通过picker的方式调用该接口来请求图片资源数据，不需要申请'ohos.permission.READ_IMAGEVIDEO'权限，详情请参考[指定URI获取图片或视频资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker#指定uri获取图片或视频资源)。
+
 - 对于本应用保存到媒体库的图片资源，应用无需额外申请'ohos.permission.READ_IMAGEVIDEO'权限即可访问。
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是传入Ability实例的上下文。asset[PhotoAsset](../interfaces/Interface (PhotoAsset).md)是待请求的媒体文件对象。requestOptions[RequestOptions](../interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529285945__requestoptions11)是图片请求策略模式配置项。dataHandler[MediaAssetDataHandler](../interfaces/Interface (MediaAssetDataHandler).md)<ArrayBuffer>是媒体资源处理器，当所请求的图片资源准备完成时会触发回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 传入Ability实例的上下文。 |
+| asset | PhotoAsset | 是 | 待请求的媒体文件对象。 |
+| requestOptions | RequestOptions | 是 | 图片请求策略模式配置项。 |
+| dataHandler | MediaAssetDataHandler<ArrayBuffer> | 是 | 媒体资源处理器，当所请求的图片资源准备完成时会触发回调。 |
 
 **返回值：**
 
-类型说明Promise<string>Promise对象，返回请求id，可用于[cancelRequest](#ZH-CN_TOPIC_0000002529285939__cancelrequest12)取消请求。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回请求id，可用于cancelRequest取消请求。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息201Permission denied401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -122,7 +145,6 @@ class MediaDataHandler implements photoAccessHelper.MediaAssetDataHandler<ArrayB
       return;
     }
     console.info('on image data prepared');
-  }
 }
 
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
@@ -160,26 +182,39 @@ static requestMovingPhoto(context: Context, asset: PhotoAsset, requestOptions: R
 
 **需要权限**：ohos.permission.READ_IMAGEVIDEO
 
-- 通过picker的方式调用该接口来请求动态照片对象，不需要申请'ohos.permission.READ_IMAGEVIDEO'权限，详情请参考[开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker#指定uri获取图片或视频资源)。
+- 通过picker的方式调用该接口来请求动态照片对象，不需要申请'ohos.permission.READ_IMAGEVIDEO'权限，详情请参考[指定URI获取图片或视频资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker#指定uri获取图片或视频资源)。
+
 - 对于本应用保存到媒体库的动态照片资源，应用无需额外申请'ohos.permission.READ_IMAGEVIDEO'权限即可访问。
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是传入Ability实例的上下文。asset[PhotoAsset](../interfaces/Interface (PhotoAsset).md)是待请求的媒体文件对象。requestOptions[RequestOptions](../interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529285945__requestoptions11)是图片请求策略模式配置项。dataHandler[MediaAssetDataHandler](../interfaces/Interface (MediaAssetDataHandler).md)<[MovingPhoto](../interfaces/Interface (MovingPhoto).md)>是媒体资源处理器，当所请求的图片资源准备完成时会触发回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 传入Ability实例的上下文。 |
+| asset | PhotoAsset | 是 | 待请求的媒体文件对象。 |
+| requestOptions | RequestOptions | 是 | 图片请求策略模式配置项。 |
+| dataHandler | MediaAssetDataHandler<MovingPhoto> | 是 | 媒体资源处理器，当所请求的图片资源准备完成时会触发回调。 |
 
 **返回值：**
 
-类型说明Promise<string>Promise对象，返回请求id，可用于[cancelRequest](#ZH-CN_TOPIC_0000002529285939__cancelrequest12)取消请求。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回请求id，可用于cancelRequest取消请求。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息201Permission denied401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.801Capability not supported.14000011System inner fail
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | Capability not supported. |
+| 14000011 | System inner fail |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -191,7 +226,6 @@ class MovingPhotoHandler implements photoAccessHelper.MediaAssetDataHandler<phot
       return;
     }
     console.info("moving photo acquired successfully, uri: " + movingPhoto.getUri());
-  }
 }
 
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
@@ -214,7 +248,6 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   } catch (err) {
     console.error(`failed to request moving photo, error code is ${err.code}, message is ${err.message}`);
   }
-}
 ```
 
 #### requestVideoFile12+
@@ -227,30 +260,40 @@ static requestVideoFile(context: Context, asset: PhotoAsset, requestOptions: Req
 
 **需要权限**：ohos.permission.READ_IMAGEVIDEO
 
-- 通过picker的方式调用该接口来请求视频资源数据到应用沙箱，不需要申请'ohos.permission.READ_IMAGEVIDEO'权限，详情请参考[开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker#指定uri获取图片或视频资源)。
+- 通过picker的方式调用该接口来请求视频资源数据到应用沙箱，不需要申请'ohos.permission.READ_IMAGEVIDEO'权限，详情请参考[指定URI获取图片或视频资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker#指定uri获取图片或视频资源)。
+
 - 对于本应用保存到媒体库的视频资源，应用无需额外申请'ohos.permission.READ_IMAGEVIDEO'权限即可访问。
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是传入Ability实例的上下文。asset[PhotoAsset](../interfaces/Interface (PhotoAsset).md)是待请求的媒体文件对象。requestOptions[RequestOptions](../interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529285945__requestoptions11)是视频请求策略模式配置项。fileUristring是目标写入沙箱路径uri。示例fileUri：'file://com.example.temptest/data/storage/el2/base/haps/entry/files/test.mp4'。dataHandler[MediaAssetDataHandler](../interfaces/Interface (MediaAssetDataHandler).md)<boolean>是
-
-媒体资源处理器，当所请求的视频资源写入完成时会触发回调。
-
-视频资源写入成功时返回true，写入失败则返回false。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 传入Ability实例的上下文。 |
+| asset | PhotoAsset | 是 | 待请求的媒体文件对象。 |
+| requestOptions | RequestOptions | 是 | 视频请求策略模式配置项。 |
+| fileUri | string | 是 | 目标写入沙箱路径uri。示例fileUri：'file://com.example.temptest/data/storage/el2/base/haps/entry/files/test.mp4'。 |
+| dataHandler | MediaAssetDataHandler<boolean> | 是 | 媒体资源处理器，当所请求的视频资源写入完成时会触发回调。 视频资源写入成功时返回true，写入失败则返回false。 |
 
 **返回值：**
 
-类型说明Promise<string>Promise对象，返回请求id，可用于[cancelRequest](#ZH-CN_TOPIC_0000002529285939__cancelrequest12)取消请求。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回请求id，可用于cancelRequest取消请求。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息201Permission denied401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.801Capability not supported.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | Capability not supported. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -258,7 +301,6 @@ import { dataSharePredicates } from '@kit.ArkData';
 class MediaDataHandler implements photoAccessHelper.MediaAssetDataHandler<boolean> {
     onDataPrepared(data: boolean) {
         console.info('on video request status prepared');
-    }
 }
 
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
@@ -294,17 +336,26 @@ static cancelRequest(context: Context, requestId: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是传入Ability实例的上下文。requestIdstring是需要取消的请求id，requestImage等接口返回的有效请求id。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 传入Ability实例的上下文。 |
+| requestId | string | 是 | 需要取消的请求id，requestImage等接口返回的有效请求id。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，返回void。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，返回void。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息201Permission denied401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14000011System inner fail
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14000011 | System inner fail |
 
 **示例：**
 
@@ -319,7 +370,6 @@ async function example(context: Context) {
   } catch (err) {
     console.error(`cancelRequest failed with error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### loadMovingPhoto12+
@@ -334,27 +384,26 @@ static loadMovingPhoto(context: Context, imageFileUri: string, videoFileUri: str
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是传入AbilityContext或者UIExtensionContext的实例。imageFileUristring是
-
-应用沙箱动态照片的图片uri。
-
-示例：'file://com.example.temptest/data/storage/el2/base/haps/ImageFile.jpg'
-
-videoFileUristring是
-
-应用沙箱动态照片的视频uri。
-
-示例：'file://com.example.temptest/data/storage/el2/base/haps/VideoFile.mp4'
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 传入AbilityContext或者UIExtensionContext的实例。 |
+| imageFileUri | string | 是 | 应用沙箱动态照片的图片uri。 示例：'file://com.example.temptest/data/storage/el2/base/haps/ImageFile.jpg' |
+| videoFileUri | string | 是 | 应用沙箱动态照片的视频uri。 示例：'file://com.example.temptest/data/storage/el2/base/haps/VideoFile.mp4' |
 
 **返回值：**
 
-类型说明Promise<MovingPhoto>Promise对象，返回[MovingPhoto](../interfaces/Interface (MovingPhoto).md)实例。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<MovingPhoto> | Promise对象，返回MovingPhoto实例。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14000011 | Internal system error. |
 
 **示例：**
 
@@ -367,7 +416,6 @@ async function example(context: Context) {
   } catch (err) {
     console.error(`loadMovingPhoto failed with error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### quickRequestImage13+
@@ -380,25 +428,36 @@ static quickRequestImage(context: Context, asset: PhotoAsset, requestOptions: Re
 
 **需要权限**：ohos.permission.READ_IMAGEVIDEO
 
-- 通过picker的方式调用该接口来请求图片资源，不需要申请'ohos.permission.READ_IMAGEVIDEO'权限，详情请参考[开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker#指定uri获取图片或视频资源)。
+- 通过picker的方式调用该接口来请求图片资源，不需要申请'ohos.permission.READ_IMAGEVIDEO'权限，详情请参考[指定URI获取图片或视频资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker#指定uri获取图片或视频资源)。
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是传入Ability实例的上下文。asset[PhotoAsset](../interfaces/Interface (PhotoAsset).md)是待请求的媒体文件对象。requestOptions[RequestOptions](../interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529285945__requestoptions11)是图片请求策略模式配置项。dataHandler[QuickImageDataHandler](../interfaces/Interface (QuickImageDataHandler).md)<[image.Picture](../interfaces/Interface (Picture).md)>是媒体资源处理器，当所请求的图片资源准备完成时会触发回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 传入Ability实例的上下文。 |
+| asset | PhotoAsset | 是 | 待请求的媒体文件对象。 |
+| requestOptions | RequestOptions | 是 | 图片请求策略模式配置项。 |
+| dataHandler | QuickImageDataHandler<image.Picture> | 是 | 媒体资源处理器，当所请求的图片资源准备完成时会触发回调。 |
 
 **返回值：**
 
-类型说明Promise<string>Promise对象，返回请求id，可用于[cancelRequest](#ZH-CN_TOPIC_0000002529285939__cancelrequest12)取消请求。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回请求id，可用于cancelRequest取消请求。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息201Permission denied401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -407,7 +466,6 @@ import { image } from '@kit.ImageKit';
 class MediaHandler implements photoAccessHelper.QuickImageDataHandler<image.Picture> {
   onDataPrepared(data: image.Picture, imageSource: image.ImageSource, map: Map<string, string>) {
     console.info('on image data prepared');
-  }
 }
 
 async function example(context: Context) {

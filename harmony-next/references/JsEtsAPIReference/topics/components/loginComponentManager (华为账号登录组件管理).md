@@ -20,67 +20,12 @@ import { loginComponentManager } from '@kit.AccountKit';
 
 **起始版本：**4.1.0(11)
 
-名称
-
-值
-
-说明
-
-ID
-
-0
-
-表示用OpenID、UnionID来关联华为账号。
-
-用户在登录成功后会返回对应数据。
-
-该登录类型响应数据包含openID、unionID、authorizationCode、idToken字段。
-
-PHONE_NUMBER
-
-1
-
-表示用PhoneNumber来关联华为账号。
-
-用户在登录成功后，如之前未对快速验证手机号进行授权，则会拉起手机号授权页面；如已授权，则返回对应数据。
-
-该登录类型不需要实时验证华为账号的手机号码，响应数据包含openID、unionID、authorizationCode、idToken字段。
-
-应用使用Authorization Code调用[获取用户级凭证接口](../misc/获取用户级凭证.md#section1085901313579)向华为账号服务器请求获取Access Token，再使用Access Token调用[获取华为账号用户信息接口](../misc/获取华为账号用户信息-获取手机号.md#section2520125725115)获取用户信息，从用户信息中获取用户手机号。
-
-REAL_TIME_PHONE_NUMBER
-
-2
-
-表示用PhoneNumber来关联华为账号。
-
-用户每次在登录成功后，都会拉起实时验证手机号授权页面。
-
-该登录类型会实时验证华为账号的手机号码，响应数据包含openID、unionID、authorizationCode、idToken字段。
-
-应用使用Authorization Code调用[获取用户级凭证接口](../misc/获取用户级凭证.md#section1085901313579)向华为账号服务器请求获取Access Token，再使用Access Token调用[获取华为账号用户信息接口](../misc/获取华为账号用户信息-获取手机号.md#section2520125725115)获取用户信息，从用户信息中获取用户手机号。
-
- 说明：
-
-REAL_TIME_PHONE_NUMBER暂不支持使用。
-
-QUICK_LOGIN
-
-3
-
-表示用PhoneNumber来关联华为账号。
-
-该类型不支持Icon类型和图文类型的LoginWithHuaweiIDButton组件。
-
-该登录类型需要通过[AuthorizationWithHuaweiIDRequest](../security/authentication (华为账号应用统一认证服务).md#section12940173017165)接口获取华为账号绑定的匿名手机号，如果未获取到华为账号绑定的匿名手机号，请使用其他登录类型。
-
-该登录类型响应数据包含openID、unionID、authorizationCode、idToken字段。
-
-应用使用Authorization Code调用[/oauth2/v6/quickLogin/getPhoneNumber接口](../misc/一键登录获取华为账号绑定号码和UnionID_OpenID.md#section2520125725115)获取用户信息，从用户信息中获取用户手机号。
-
-**起始版本：**5.0.0(12)
-
-**设备行为差异：**该接口在Phone、PC/2in1、Tablet、TV(仅在5.1.1版本)中可正常调用，在其他设备类型中返回1001500003错误码。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ID | 0 | 表示用OpenID、UnionID来关联华为账号。 用户在登录成功后会返回对应数据。 该登录类型响应数据包含openID、unionID、authorizationCode、idToken字段。 |
+| PHONE_NUMBER | 1 | 表示用PhoneNumber来关联华为账号。 用户在登录成功后，如之前未对快速验证手机号进行授权，则会拉起手机号授权页面；如已授权，则返回对应数据。 该登录类型不需要实时验证华为账号的手机号码，响应数据包含openID、unionID、authorizationCode、idToken字段。 应用使用Authorization Code调用[获取用户级凭证接口](../misc/获取用户级凭证.md#section1085901313579)向华为账号服务器请求获取Access Token，再使用Access Token调用[获取华为账号用户信息接口](../misc/获取华为账号用户信息-获取手机号.md#section2520125725115)获取用户信息，从用户信息中获取用户手机号。 |
+| REAL_TIME_PHONE_NUMBER | 2 | 表示用PhoneNumber来关联华为账号。 用户每次在登录成功后，都会拉起实时验证手机号授权页面。 该登录类型会实时验证华为账号的手机号码，响应数据包含openID、unionID、authorizationCode、idToken字段。 应用使用Authorization Code调用[获取用户级凭证接口](../misc/获取用户级凭证.md#section1085901313579)向华为账号服务器请求获取Access Token，再使用Access Token调用获取华为账号用户信息接口获取用户信息，从用户信息中获取用户手机号。 说明： REAL_TIME_PHONE_NUMBER暂不支持使用。 |
+| QUICK_LOGIN | 3 | 表示用PhoneNumber来关联华为账号。 该类型不支持Icon类型和图文类型的LoginWithHuaweiIDButton组件。 该登录类型需要通过AuthorizationWithHuaweiIDRequest接口获取华为账号绑定的匿名手机号，如果未获取到华为账号绑定的匿名手机号，请使用其他登录类型。 该登录类型响应数据包含openID、unionID、authorizationCode、idToken字段。 应用使用Authorization Code调用[/oauth2/v6/quickLogin/getPhoneNumber接口](../misc/一键登录获取华为账号绑定号码和UnionID_OpenID.md#section2520125725115)获取用户信息，从用户信息中获取用户手机号。 起始版本： 5.0.0(12) 设备行为差异： 该接口在Phone、PC/2in1、Tablet、TV中可正常调用（TV设备从5.1.1(19)版本开始支持），在其他设备类型中返回1001500003错误码。 |
 
 #### AppInfo
 
@@ -92,50 +37,11 @@ QUICK_LOGIN
 
 **起始版本：**4.1.0(11)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-appIcon
-
-[PixelMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap) | [ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr) | [DrawableDescriptor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-drawabledescriptor#drawabledescriptor)
-
-否
-
-否
-
-应用的图标。
-
-appName
-
-[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)
-
-否
-
-否
-
-应用的名称，长度限制1-19个字符，字符超长和大字体下展示不全会截断，使用省略号填充。
-
-appDescription
-
-[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)
-
-否
-
-是
-
-应用的详细描述，长度限制1-44个字符。
-
- 说明：
-
-- 在4.1.0(11)版本，为必填参数。
-- 从5.0.0(12)版本开始，为非必填参数。仅当登录类型为[LoginType.QUICK_LOGIN](#section79023235528)时不需要设置该值。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| appIcon | PixelMap | ResourceStr | DrawableDescriptor | 否 | 否 | 应用的图标。 |
+| appName | ResourceStr | 否 | 否 | 应用的名称，长度限制1-19个字符，字符超长和大字体下展示不全会截断，使用省略号填充。 |
+| appDescription | ResourceStr | 否 | 是 | 应用的详细描述，长度限制1-44个字符。 说明： - 在4.1.0(11)版本，为必填参数。 - 从5.0.0(12)版本开始，为非必填参数。仅当登录类型为LoginType.QUICK_LOGIN时不需要设置该值。 |
 
 #### TextType
 
@@ -147,23 +53,10 @@ appDescription
 
 **起始版本：**4.1.0(11)
 
-名称
-
-值
-
-说明
-
-PLAIN_TEXT
-
-0
-
-纯文本类型不支持点击。
-
-RICH_TEXT
-
-1
-
-富文本类型展示为蓝色，支持点击。用于展示《华为账号用户认证协议》和应用相关隐私协议。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PLAIN_TEXT | 0 | 纯文本类型不支持点击。 |
+| RICH_TEXT | 1 | 富文本类型展示为蓝色，支持点击。用于展示《华为账号用户认证协议》和应用相关隐私协议。 |
 
 #### PrivacyText
 
@@ -175,45 +68,11 @@ RICH_TEXT
 
 **起始版本：**4.1.0(11)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-type
-
-[TextType](#section7401948625)
-
-否
-
-否
-
-隐私文本的类型，包含纯文本和富文本。
-
-text
-
-[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)
-
-否
-
-否
-
-在登录面板上显示的隐私文本内容，一般用于展示应用隐私协议和《华为账号用户认证协议》跳转链接。
-
-tag
-
-string
-
-否
-
-是
-
-当type类型为[TextType.RICH_TEXT](#section7401948625)必须设置tag。当用户点击文本时将跳转应用给tag设置的链接，应用可以根据用户的点击行为展示不同的隐私内容。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| type | TextType | 否 | 否 | 隐私文本的类型，包含纯文本和富文本。 |
+| text | ResourceStr | 否 | 否 | 在登录面板上显示的隐私文本内容，一般用于展示应用隐私协议和《华为账号用户认证协议》跳转链接。 |
+| tag | string | 否 | 是 | 当type类型为TextType.RICH_TEXT必须设置tag。当用户点击文本时将跳转应用给tag设置的链接，应用可以根据用户的点击行为展示不同的隐私内容。 |
 
 #### LoginIcon
 
@@ -225,35 +84,10 @@ string
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-icon
-
-[PixelMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap) | [ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr) | [DrawableDescriptor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-drawabledescriptor#drawabledescriptor)
-
-否
-
-否
-
-可选登录区域展示其他登录方式的Icon。根据[视觉规范](https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344#section61791745172816)，Icon建议为半径18vp的圆形图片。
-
-tag
-
-string
-
-否
-
-是
-
-当用户点击Icon时可以将tag对应值回调给应用，应用可以根据用户的点击行为展示其他登录方式页面。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| icon | PixelMap | ResourceStr | DrawableDescriptor | 否 | 否 | 可选登录区域展示其他登录方式的Icon。根据视觉规范，Icon建议为半径18vp的圆形图片。 |
+| tag | string | 否 | 是 | 当用户点击Icon时可以将tag对应值回调给应用，应用可以根据用户的点击行为展示其他登录方式页面。 |
 
 #### OptionalLoginButtonAttr
 
@@ -265,25 +99,9 @@ string
 
 **起始版本：**4.1.0(11)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-text
-
-[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)
-
-否
-
-否
-
-可选登录按钮的文字描述。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| text | ResourceStr | 否 | 否 | 可选登录按钮的文字描述。 |
 
 #### OptionalLoginAreaAttr
 
@@ -295,25 +113,9 @@ text
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-iconArray
-
-[LoginIcon](#section1248254952118)[]
-
-否
-
-否
-
-可选登录区域会展示应用传入的其他登录方式的Icon，最多支持展示5个Icon。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| iconArray | LoginIcon[] | 否 | 否 | 可选登录区域会展示应用传入的其他登录方式的Icon，最多支持展示5个Icon。 |
 
 #### LoginPanelParams
 
@@ -325,141 +127,17 @@ iconArray
 
 **起始版本：**4.1.0(11)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-appInfo
-
-[AppInfo](#section52091116105916)
-
-否
-
-否
-
-组件展示应用信息。
-
-privacyText
-
-[PrivacyText](#section7272252193)[]
-
-否
-
-是
-
-组件展示隐私文本内容。
-
-optionalLoginButtonAttr
-
-[OptionalLoginButtonAttr](#section16996104113138)
-
-否
-
-是
-
-组件展示可选登录按钮。
-
-loginType
-
-[LoginType](#section79023235528)
-
-否
-
-是
-
-华为账号登录类型。默认值：[LoginType.ID](#section79023235528)。
-
-一键登录请使用[LoginType.QUICK_LOGIN](#section79023235528)。
-
-anonymousPhoneNumber
-
-string
-
-否
-
-是
-
-华为账号绑定的匿名手机号。当登录类型为[LoginType.QUICK_LOGIN](#section79023235528)时需要设置该参数。可参考[华为账号一键登录客户端开发](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-phone-unionid-login#section834212543125)获取。
-
-**起始版本：**5.0.0(12)
-
-verifyPhoneNumber
-
-boolean
-
-否
-
-是
-
-华为账号用户在过去90天内未进行过短信验证，是否拉起Account Kit提供的短信验证码页面。
-
-true：拉起Account Kit提供的短信验证码页面。
-
-false：不拉起Account Kit提供的短信验证码页面。需要应用验证手机号时效性。
-
-默认值：true。
-
-**起始版本：**5.0.0(12)
-
-optionalLoginAreaAttr
-
-[OptionalLoginAreaAttr](#section438720171816)
-
-否
-
-是
-
-组件可选登录区域属性。
-
-如果optionalLoginButtonAttr和optionalLoginAreaAttr同时存在，优先展示optionalLoginAreaAttr。
-
-**起始版本：**5.0.0(12)
-
-riskLevel
-
-boolean
-
-否
-
-是
-
-是否需要获取华为账号用户风险等级。
-
-仅登录类型为[LoginType.QUICK_LOGIN](#section79023235528)时需要设置该参数。
-
-true：需要[获取用户风险等级](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-risklevel-byquicklogin)。
-
-false：不获取用户风险等级。
-
-默认值：false。
-
-**起始版本：**5.1.0(18)
-
-securityVerification
-
-boolean
-
-否
-
-是
-
-用户开启华为账号一键登录增强身份验证后，应用会在登录过程中通过华为账号使用生物识别或短信进行身份验证。如果需要获取用户一键登录增强身份验证的开关状态，需设置该字段为false。
-
-仅登录类型为[LoginType.QUICK_LOGIN](#section79023235528)时需要设置该参数。
-
-true：响应结果HuaweiIDCredential将不会返回 [enableSecurityVerification](#section1862534912215)。
-
-false：响应结果HuaweiIDCredential将返回 [enableSecurityVerification](#section1862534912215)。
-
-默认值：true。
-
-**起始版本：**6.0.0(20)
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| appInfo | AppInfo | 否 | 否 | 组件展示应用信息。 |
+| privacyText | PrivacyText[] | 否 | 是 | 组件展示隐私文本内容。 |
+| optionalLoginButtonAttr | OptionalLoginButtonAttr | 否 | 是 | 组件展示可选登录按钮。 |
+| loginType | LoginType | 否 | 是 | 华为账号登录类型。默认值：LoginType.ID。 一键登录请使用LoginType.QUICK_LOGIN。 |
+| anonymousPhoneNumber | string | 否 | 是 | 华为账号绑定的匿名手机号。当登录类型为LoginType.QUICK_LOGIN时需要设置该参数。可参考华为账号一键登录客户端开发获取。 起始版本： 5.0.0(12) |
+| verifyPhoneNumber | boolean | 否 | 是 | 华为账号用户在过去90天内未进行过短信验证，是否拉起Account Kit提供的短信验证码页面。 true：拉起Account Kit提供的短信验证码页面。 false：不拉起Account Kit提供的短信验证码页面。需要应用验证手机号时效性。 默认值：true。 起始版本： 5.0.0(12) |
+| optionalLoginAreaAttr | OptionalLoginAreaAttr | 否 | 是 | 组件可选登录区域属性。 如果optionalLoginButtonAttr和optionalLoginAreaAttr同时存在，优先展示optionalLoginAreaAttr。 起始版本： 5.0.0(12) |
+| riskLevel | boolean | 否 | 是 | 是否需要获取华为账号用户风险等级。 仅登录类型为LoginType.QUICK_LOGIN时需要设置该参数。 true：需要获取用户风险等级。 false：不获取用户风险等级。 默认值：false。 起始版本： 5.1.0(18) |
+| securityVerification | boolean | 否 | 是 | 用户开启华为账号一键登录增强身份验证后，应用会在登录过程中通过华为账号使用生物识别或短信进行身份验证。如果需要获取用户一键登录增强身份验证的开关状态，需设置该字段为false。 仅登录类型为LoginType.QUICK_LOGIN时需要设置该参数。 true：响应结果HuaweiIDCredential将不会返回 enableSecurityVerification。 false：响应结果HuaweiIDCredential将返回 enableSecurityVerification。 默认值：true。 起始版本： 6.0.0(20) |
 
 #### ClickEvent
 
@@ -471,21 +149,13 @@ false：响应结果HuaweiIDCredential将返回 [enableSecurityVerification](#se
 
 **起始版本：**5.0.0(12)
 
-名称
-
-值
-
-说明
-
-HUAWEI_ID_LOGIN_BUTTON
-
-0
-
-点击华为账号登录按钮。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| HUAWEI_ID_LOGIN_BUTTON | 0 | 点击华为账号登录按钮。 |
 
 #### AgreementStatus
 
-该枚举定义了用户是否同意通过[TextType.RICH_TEXT](#section7401948625)设置的协议的状态。
+该枚举定义了用户是否同意通过[TextType.RICH_TEXT](#ZH-CN_TOPIC_0000002522082288__texttype)设置的协议的状态。
 
 **模型约束：**此接口仅可在Stage模型下使用。
 
@@ -493,23 +163,10 @@ HUAWEI_ID_LOGIN_BUTTON
 
 **起始版本：**5.0.0(12)
 
-名称
-
-值
-
-说明
-
-NOT_ACCEPTED
-
-0
-
-用户未同意协议。
-
-ACCEPTED
-
-1
-
-用户已同意协议。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NOT_ACCEPTED | 0 | 用户未同意协议。 |
+| ACCEPTED | 1 | 用户已同意协议。 |
 
 #### HuaweiIDCredential
 
@@ -521,73 +178,13 @@ ACCEPTED
 
 **起始版本：**4.1.0(11)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-unionID
-
-string
-
-是
-
-否
-
-UnionID。UnionID是华为账号用户在同一个开发者账号下产品的身份ID，同一个用户，同一个开发者账号下管理的不同应用，UnionID值相同。具体格式要求请参考[OpenID和UnionID的格式说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-faq-9)。
-
-openID
-
-string
-
-是
-
-否
-
-OpenID。OpenID是华为账号用户在不同类型的产品的身份ID，同一个用户，不同应用，OpenID值不同。具体格式要求请参考[OpenID和UnionID的格式说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-faq-9)。
-
-authorizationCode
-
-string
-
-是
-
-否
-
-Authorization Code。临时凭据，用于获取Access Token，有效时间5分钟，并且只能使用1次。长度限制1-1024。
-
-idToken
-
-string
-
-是
-
-是
-
-ID Token。JWT格式的字符串，包含用户信息，用于应用获取部分用户相关信息及验证签名。长度限制1-2048。
-
-enableSecurityVerification
-
-boolean
-
-是
-
-是
-
-enableSecurityVerification。华为账号用户是否开启一键登录增强身份验证。如果开发者需要获取该字段，请将参数[securityVerification](#section4717249182518)设置为false。
-
-仅登录类型为[LoginType.QUICK_LOGIN](#section79023235528)时会返回该字段。
-
-true：表示用户已启用增强身份验证。
-
-false：表示用户未启用增强身份验证。
-
-**起始版本：**6.0.0(20)
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| unionID | string | 是 | 否 | UnionID。UnionID是华为账号用户在同一个开发者账号下产品的身份ID，同一个用户，同一个开发者账号下管理的不同应用，UnionID值相同。具体格式要求请参考OpenID和UnionID的格式说明。 |
+| openID | string | 是 | 否 | OpenID。OpenID是华为账号用户在不同类型的产品的身份ID，同一个用户，不同应用，OpenID值不同。具体格式要求请参考OpenID和UnionID的格式说明。 |
+| authorizationCode | string | 是 | 否 | Authorization Code。临时凭据，用于获取Access Token，有效时间5分钟，并且只能使用1次。长度限制1-1024。 |
+| idToken | string | 是 | 是 | ID Token。JWT格式的字符串，包含用户信息，用于应用获取部分用户相关信息及验证签名。长度限制1-2048。 |
+| enableSecurityVerification | boolean | 是 | 是 | enableSecurityVerification。华为账号用户是否开启一键登录增强身份验证。如果开发者需要获取该字段，请将参数securityVerification设置为false。 仅登录类型为LoginType.QUICK_LOGIN时会返回该字段。 true：表示用户已启用增强身份验证。 false：表示用户未启用增强身份验证。 起始版本： 6.0.0(20) |
 
 #### 事件
 
@@ -617,91 +214,35 @@ onClickLoginWithHuaweiIDButton(callback: AsyncCallback<HuaweiIDCredential>): Log
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-callback
-
-AsyncCallback<[HuaweiIDCredential](#section1862534912215)>
-
-是
-
-回调函数。当注册华为账号登录返回结果成功，err为undefined，data为获取到的[HuaweiIDCredential](#section1862534912215)对象；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<HuaweiIDCredential> | 是 | 回调函数。当注册华为账号登录返回结果成功，err为undefined，data为获取到的HuaweiIDCredential对象；否则为错误对象。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[LoginPanelController](#section1419019854714)
-
-[LoginPanel](LoginPanel (华为账号Panel登录组件).md)组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。
+| 类型 | 说明 |
+| --- | --- |
+| LoginPanelController | LoginPanel组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS错误码](../../errors/ArkTS错误码.md)和[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+以下错误码的详细介绍请参见[ArkTS错误码]([ArkTS错误码](../../errors/ArkTS错误码.md).md)和[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
 
-错误码ID
-
-错误信息
-
-[401](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal#section401-参数检查失败)
-
-Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
-
-[1001500001](../../errors/ArkTS错误码.md#section1581681312511)
-
-Failed to check the fingerprint of the app bundle.
-
-[1001500002](../../errors/ArkTS错误码.md#section134761318124311)
-
-This error code is reported when a request is already being processed.
-
-[1001500003](../../errors/ArkTS错误码.md#section116574197436)
-
-The scopes or permissions are not supported.
-
-[1001502001](../../errors/ArkTS错误码.md#section539558125020)
-
-The user has not logged in with HUAWEI ID.
-
-[1001502002](../../errors/ArkTS错误码.md#section1393125918588)
-
-The application is not authorized.
-
-[1001502003](../../errors/ArkTS错误码.md#section289120911112)
-
-Invalid input parameter value.
-
-[1001502005](../../errors/ArkTS错误码.md#section1281526328)
-
-Network error.
-
-[1001502009](../../errors/ArkTS错误码.md#section17561151616317)
-
-Internal error.
-
-[1001502012](../../errors/ArkTS错误码.md#section223413481361)
-
-The user canceled the authorization.
-
-[1001502014](../../errors/ArkTS错误码.md#section78953611814)
-
-The app does not have the required scopes or permissions.
-
-[12300001](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account#section12300001-系统服务异常)
-
-System service works abnormally.
-
-[1005300001](../../errors/ArkTS错误码.md#section54021153246)
-
-The user did not accept the agreement.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| [1001500001](../../errors/ArkTS错误码.md#section1581681312511) | Failed to check the fingerprint of the app bundle. |
+| [1001500002](../../errors/ArkTS错误码.md#section134761318124311) | This error code is reported when a request is already being processed. |
+| [1001500003](../../errors/ArkTS错误码.md#section116574197436) | The scopes or permissions are not supported. |
+| [1001502001](../../errors/ArkTS错误码.md#section539558125020) | The user has not logged in with HUAWEI ID. |
+| [1001502002](../../errors/ArkTS错误码.md#section1393125918588) | The application is not authorized. |
+| [1001502003](../../errors/ArkTS错误码.md#section289120911112) | Invalid input parameter value. |
+| [1001502005](../../errors/ArkTS错误码.md#section1281526328) | Network error. |
+| [1001502009](../../errors/ArkTS错误码.md#section17561151616317) | Internal error. |
+| [1001502012](../../errors/ArkTS错误码.md#section223413481361) | The user canceled the authorization. |
+| [1001502014](../../errors/ArkTS错误码.md#section78953611814) | The app does not have the required scopes or permissions. |
+| 12300001 | System service works abnormally. |
+| [1005300001](../../errors/ArkTS错误码.md#section54021153246) | The user did not accept the agreement. |
 
 #### onClickOptionalLoginButton
 
@@ -717,31 +258,15 @@ onClickOptionalLoginButton(callback: AsyncCallback<void>): LoginPanelController
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-callback
-
-AsyncCallback<void>
-
-是
-
-回调函数。当用户点击可选登录按钮操作成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当用户点击可选登录按钮操作成功，err为undefined，否则为错误对象。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[LoginPanelController](#section1419019854714)
-
-[LoginPanel](LoginPanel (华为账号Panel登录组件).md)组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。
+| 类型 | 说明 |
+| --- | --- |
+| LoginPanelController | LoginPanel组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。 |
 
 #### onClickOptionalLoginIcon
 
@@ -757,31 +282,15 @@ onClickOptionalLoginIcon(callback: AsyncCallback<string>): LoginPanelController
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-callback
-
-AsyncCallback<string>
-
-是
-
-回调函数。当用户点击[LoginIcon](#section1248254952118)操作成功，err为undefined，data为获取到的[LoginIcon](#section1248254952118)的tag；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<string> | 是 | 回调函数。当用户点击LoginIcon操作成功，err为undefined，data为获取到的LoginIcon的tag；否则为错误对象。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[LoginPanelController](#section1419019854714)
-
-[LoginPanel](LoginPanel (华为账号Panel登录组件).md)组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。
+| 类型 | 说明 |
+| --- | --- |
+| LoginPanelController | LoginPanel组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。 |
 
 #### onClickPrivacyText
 
@@ -797,37 +306,21 @@ onClickPrivacyText(callback: AsyncCallback<string>): LoginPanelController
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-callback
-
-AsyncCallback<string>
-
-是
-
-回调函数。当注册隐私内容为富文本的点击操作成功时，err为undefined，data为获取到的[PrivacyText](#section7272252193)的tag；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<string> | 是 | 回调函数。当注册隐私内容为富文本的点击操作成功时，err为undefined，data为获取到的PrivacyText的tag；否则为错误对象。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[LoginPanelController](#section1419019854714)
-
-[LoginPanel](LoginPanel (华为账号Panel登录组件).md)组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。
+| 类型 | 说明 |
+| --- | --- |
+| LoginPanelController | LoginPanel组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。 |
 
 #### onChangeAgreementStatus
 
 onChangeAgreementStatus(callback: AsyncCallback<AgreementStatus>): LoginPanelController
 
-注册用户协议状态变化的事件。使用callback异步回调。当用户同意或者取消同意协议成功时，通过[setAgreementStatus](#section20291953195314)设置用户同意或取消同意的协议状态。
+注册用户协议状态变化的事件。使用callback异步回调。当用户同意或者取消同意协议成功时，通过[setAgreementStatus](#ZH-CN_TOPIC_0000002522082288__setagreementstatus-1)设置用户同意或取消同意的协议状态。
 
 **模型约束：**此接口仅可在Stage模型下使用。
 
@@ -837,31 +330,15 @@ onChangeAgreementStatus(callback: AsyncCallback<AgreementStatus>): LoginPanelCon
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-callback
-
-AsyncCallback<[AgreementStatus](#section183397331373)>
-
-是
-
-回调函数。当用户同意或者取消同意协议成功，err为undefined，data为获取到的[AgreementStatus](#section183397331373)；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<AgreementStatus> | 是 | 回调函数。当用户同意或者取消同意协议成功，err为undefined，data为获取到的AgreementStatus；否则为错误对象。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[LoginPanelController](#section1419019854714)
-
-[LoginPanel](LoginPanel (华为账号Panel登录组件).md)组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。
+| 类型 | 说明 |
+| --- | --- |
+| LoginPanelController | LoginPanel组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。 |
 
 #### setAgreementStatus
 
@@ -877,31 +354,15 @@ setAgreementStatus(agreementStatus: AgreementStatus): LoginPanelController
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-agreementStatus
-
-[AgreementStatus](#section183397331373)
-
-是
-
-开发者如果使用自定义协议页面，需要先设置agreementStatus为NOT_ACCEPTED，当用户同意协议后设置为ACCEPTED。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agreementStatus | AgreementStatus | 是 | 开发者如果使用自定义协议页面，需要先设置agreementStatus为NOT_ACCEPTED，当用户同意协议后设置为ACCEPTED。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[LoginPanelController](#section1419019854714)
-
-[LoginPanel](LoginPanel (华为账号Panel登录组件).md)组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。
+| 类型 | 说明 |
+| --- | --- |
+| LoginPanelController | LoginPanel组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。 |
 
 #### setShowAgreementForOptionalLogin
 
@@ -917,13 +378,9 @@ setShowAgreementForOptionalLogin(): LoginPanelController
 
 **返回值：**
 
-类型
-
-说明
-
-[LoginPanelController](#section1419019854714)
-
-[LoginPanel](LoginPanel (华为账号Panel登录组件).md)组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。
+| 类型 | 说明 |
+| --- | --- |
+| LoginPanelController | LoginPanel组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。 |
 
 #### onClickEvent
 
@@ -939,31 +396,15 @@ onClickEvent(callback: AsyncCallback<ClickEvent>): LoginPanelController
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-callback
-
-AsyncCallback<[ClickEvent](#section967316103272)>
-
-是
-
-回调函数。当用户点击华为账号登录按钮时，err为undefined，data为获取到的[ClickEvent](#section967316103272)；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<ClickEvent> | 是 | 回调函数。当用户点击华为账号登录按钮时，err为undefined，data为获取到的ClickEvent；否则为错误对象。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[LoginPanelController](#section1419019854714)
-
-[LoginPanel](LoginPanel (华为账号Panel登录组件).md)组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。
+| 类型 | 说明 |
+| --- | --- |
+| LoginPanelController | LoginPanel组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。 |
 
 #### onClickCloseButton
 
@@ -979,31 +420,15 @@ onClickCloseButton(callback: AsyncCallback<void>): LoginPanelController
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-callback
-
-AsyncCallback<void>
-
-是
-
-回调函数。当注册关闭按钮的点击操作或侧滑返回成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当注册关闭按钮的点击操作或侧滑返回成功，err为undefined，否则为错误对象。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[LoginPanelController](#section1419019854714)
-
-[LoginPanel](LoginPanel (华为账号Panel登录组件).md)组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。
+| 类型 | 说明 |
+| --- | --- |
+| LoginPanelController | LoginPanel组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。 |
 
 **示例：**
 
@@ -1123,7 +548,6 @@ struct PreviewLoginPanelPage {
     } else {
       // 应用登录失败，请尝试使用其他方式登录
     }
-  }
 
   build() {
     if (this.show) {
@@ -1150,8 +574,6 @@ struct PreviewLoginPanelPage {
       .height('100%')
       .width('100%')
     }
-  }
-}
 
 export enum ErrorCode {
   // 账号未登录
@@ -1181,204 +603,20 @@ export enum ErrorCode {
 
 **起始版本：**4.1.0(11)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-style
-
-[Style](#section19823216112610)
-
-否
-
-否
-
-[LoginWithHuaweiIDButton](LoginWithHuaweiIDButton (华为账号Button登录组件).md)组件的样式。
-
-borderRadius
-
-number
-
-否
-
-是
-
-按钮边框圆角半径。
-
-取值范围：[0,+∞)，值小于0时，按0处理。
-
-默认值：height属性取值的一半。
-
-单位：vp。
-
-iconRadius
-
-number
-
-否
-
-是
-
-Icon类型按钮的半径。
-
-取值范围：[0,+∞)，值小于0时，按0处理。
-
-默认值：24。
-
-单位：vp。
-
-supportDarkMode
-
-boolean
-
-否
-
-是
-
-表示按钮的样式是否随系统深浅色模式变化。
-
-true：按钮的样式会随着系统深浅色模式变化。
-
-false：按钮的样式不会随着系统深浅色模式变化。
-
-默认值：true。
-
-loginType
-
-[LoginType](#section79023235528)
-
-否
-
-是
-
-华为账号登录类型。默认值：[LoginType.ID](#section79023235528)。
-
-一键登录请使用[LoginType.QUICK_LOGIN](#section79023235528)。
-
-textAndIconStyle
-
-boolean
-
-否
-
-是
-
-是否展示图文混合样式的华为账号登录按钮。
-
-true：按钮支持Icon和文字混合样式。
-
-false：按钮仅支持文本样式。
-
-默认值：false。
-
-当loginType不等于[LoginType.QUICK_LOGIN](#section79023235528)且style等于[BUTTON_RED](#section19823216112610)、[BUTTON_WHITE](#section19823216112610)、[BUTTON_WHITE_OUTLINE](#section19823216112610)、[BUTTON_BLACK](#section19823216112610)、[BUTTON_GRAY](#section19823216112610)时该参数生效。
-
-**起始版本：**5.0.0(12)
-
-customButtonParams
-
-[CustomButtonParams](#section2938142118617)
-
-否
-
-是
-
-[BUTTON_CUSTOM](#section19823216112610)按钮样式参数。
-
-**起始版本：**5.0.0(12)
-
-verifyPhoneNumber
-
-boolean
-
-否
-
-是
-
-华为账号用户在过去90天内未进行短信验证，是否拉起Account Kit提供的短信验证码页面。
-
-true：拉起Account Kit提供的短信验证码页面。
-
-false：不拉起Account Kit提供的短信验证码页面。需要应用验证手机号时效性。
-
-默认值：true。
-
-**起始版本：**5.0.0(12)
-
-extraStyle
-
-[ExtraStyle](#section87572031102713)
-
-否
-
-是
-
-如果应用想使用华为账号提供的固定样式之外的效果，可使用此接口自定义按钮样式。
-
-**起始版本：**5.0.0(12)
-
-loginButtonTextType
-
-[LoginButtonTextType](#section1645283915811)
-
-否
-
-是
-
-当loginType为[LoginType.QUICK_LOGIN](#section79023235528)时，可传入此参数，控制按钮文本内容显示。
-
-默认值：[LoginButtonTextType.QUICK_LOGIN](#section1645283915811)
-
-- 当该参数为[LoginButtonTextType.QUICK_LOGIN](#section1645283915811)时，按钮文本内容显示“华为账号一键登录”。
-- 当该参数为[LoginButtonTextType.QUICK_REGISTRATION](#section1645283915811)时，按钮文本内容显示“华为账号一键注册”。
-
-**起始版本：**5.0.0(12)
-
-riskLevel
-
-boolean
-
-否
-
-是
-
-是否需要获取华为账号用户风险等级。
-
-仅登录类型为[LoginType.QUICK_LOGIN](#section79023235528)时需要设置该参数。
-
-true：需要[获取用户风险等级](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-risklevel-byquicklogin)。
-
-false：不获取用户风险等级。
-
-默认值：false。
-
-**起始版本：**5.1.0(18)
-
-securityVerification
-
-boolean
-
-否
-
-是
-
-用户开启华为账号一键登录增强身份验证后，应用会在登录过程中通过华为账号使用生物识别或短信进行身份验证。如果需要获取用户一键登录增强身份验证的开关状态，需设置该字段为false。
-
-仅登录类型为[LoginType.QUICK_LOGIN](#section79023235528)时需要设置该参数。
-
-true：响应结果HuaweiIDCredential将不会返回 [enableSecurityVerification](#section1862534912215)。
-
-false：响应结果HuaweiIDCredential将返回 [enableSecurityVerification](#section1862534912215)。
-
-默认值：true。
-
-**起始版本：**6.0.0(20)
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| style | Style | 否 | 否 | LoginWithHuaweiIDButton组件的样式。 |
+| borderRadius | number | 否 | 是 | 按钮边框圆角半径。 取值范围：[0,+∞)，值小于0时，按0处理。 默认值：height属性取值的一半。 单位：vp。 |
+| iconRadius | number | 否 | 是 | Icon类型按钮的半径。 取值范围：[0,+∞)，值小于0时，按0处理。 默认值：24。 单位：vp。 |
+| supportDarkMode | boolean | 否 | 是 | 表示按钮的样式是否随系统深浅色模式变化。 true：按钮的样式会随着系统深浅色模式变化。 false：按钮的样式不会随着系统深浅色模式变化。 默认值：true。 |
+| loginType | LoginType | 否 | 是 | 华为账号登录类型。默认值：LoginType.ID。 一键登录请使用LoginType.QUICK_LOGIN。 |
+| textAndIconStyle | boolean | 否 | 是 | 是否展示图文混合样式的华为账号登录按钮。 true：按钮支持Icon和文字混合样式。 false：按钮仅支持文本样式。 默认值：false。 当loginType不等于LoginType.QUICK_LOGIN且style等于BUTTON_RED、BUTTON_WHITE、BUTTON_WHITE_OUTLINE、BUTTON_BLACK、BUTTON_GRAY时该参数生效。 起始版本： 5.0.0(12) |
+| customButtonParams | CustomButtonParams | 否 | 是 | BUTTON_CUSTOM按钮样式参数。 起始版本： 5.0.0(12) |
+| verifyPhoneNumber | boolean | 否 | 是 | 华为账号用户在过去90天内未进行短信验证，是否拉起Account Kit提供的短信验证码页面。 true：拉起Account Kit提供的短信验证码页面。 false：不拉起Account Kit提供的短信验证码页面。需要应用验证手机号时效性。 默认值：true。 起始版本： 5.0.0(12) |
+| extraStyle | ExtraStyle | 否 | 是 | 如果应用想使用华为账号提供的固定样式之外的效果，可使用此接口自定义按钮样式。 起始版本： 5.0.0(12) |
+| loginButtonTextType | LoginButtonTextType | 否 | 是 | 当loginType为LoginType.QUICK_LOGIN时，可传入此参数，控制按钮文本内容显示。 默认值：LoginButtonTextType.QUICK_LOGIN - 当该参数为LoginButtonTextType.QUICK_LOGIN时，按钮文本内容显示“华为账号一键登录”。 - 当该参数为LoginButtonTextType.QUICK_REGISTRATION时，按钮文本内容显示“华为账号一键注册”。 起始版本： 5.0.0(12) |
+| riskLevel | boolean | 否 | 是 | 是否需要获取华为账号用户风险等级。 仅登录类型为LoginType.QUICK_LOGIN时需要设置该参数。 true：需要获取用户风险等级。 false：不获取用户风险等级。 默认值：false。 起始版本： 5.1.0(18) |
+| securityVerification | boolean | 否 | 是 | 用户开启华为账号一键登录增强身份验证后，应用会在登录过程中通过华为账号使用生物识别或短信进行身份验证。如果需要获取用户一键登录增强身份验证的开关状态，需设置该字段为false。 仅登录类型为LoginType.QUICK_LOGIN时需要设置该参数。 true：响应结果HuaweiIDCredential将不会返回 enableSecurityVerification。 false：响应结果HuaweiIDCredential将返回 enableSecurityVerification。 默认值：true。 起始版本： 6.0.0(20) |
 
 #### Style
 
@@ -1392,133 +630,19 @@ false：响应结果HuaweiIDCredential将返回 [enableSecurityVerification](#se
 
 **起始版本：**4.1.0(11)
 
-名称
-
-值
-
-说明
-
-BUTTON_RED
-
-0
-
-红色背景白色文字按钮，字体大小会随着按钮的宽高自适应，最小为9号，最大为16号。
-
-根据开发场景从以下链接中选择其中一个规范查看。
-
-请参见[【华为账号一键登录】按钮](https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344#section41792374210)视觉规范。
-
-请参见[【华为账号登录】按钮](https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344#section2624430102713)视觉规范。
-
-BUTTON_WHITE
-
-1
-
-白色背景黑色文字按钮，字体大小会随着按钮的宽高自适应，最小为9号，最大为16号。
-
-根据开发场景从以下链接中选择其中一个规范查看。
-
-请参见[【华为账号一键登录】按钮](https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344#section41792374210)视觉规范。
-
-请参见[【华为账号登录】按钮](https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344#section2624430102713)视觉规范。
-
-BUTTON_WHITE_OUTLINE
-
-2
-
-白色背景黑色文字带边框按钮，字体大小会随着按钮的宽高自适应，最小为9号，最大为16号。
-
-根据开发场景从以下链接中选择其中一个规范查看。
-
-请参见[【华为账号一键登录】按钮](https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344#section41792374210)视觉规范。
-
-请参见[【华为账号登录】按钮](https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344#section2624430102713)视觉规范。
-
-BUTTON_BLACK
-
-3
-
-黑色背景白色文字按钮，字体大小会随着按钮的宽高自适应，最小为9号，最大为16号。
-
-根据开发场景从以下链接中选择其中一个规范查看。
-
-请参见[【华为账号一键登录】按钮](https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344#section41792374210)视觉规范。
-
-请参见[【华为账号登录】按钮](https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344#section2624430102713)视觉规范。
-
-ICON_RED
-
-4
-
-红色背景白色Icon按钮。
-
-请参见[【华为账号登录】按钮](https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344#section2624430102713)视觉规范。
-
-ICON_WHITE
-
-5
-
-白色背景红色Icon按钮。
-
-请参见[【华为账号登录】按钮](https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344#section2624430102713)视觉规范。
-
-ICON_WHITE_OUTLINE
-
-6
-
-白色背景红色Icon带边框按钮。
-
-请参见[【华为账号登录】按钮](https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344#section2624430102713)视觉规范。
-
-ICON_BLACK
-
-7
-
-黑色背景白色Icon按钮。
-
-请参见[【华为账号登录】按钮](https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344#section2624430102713)视觉规范。
-
-ICON_GRAY
-
-8
-
-灰色背景红色Icon按钮。
-
-请参见[【华为账号登录】按钮](https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344#section2624430102713)视觉规范。
-
-**起始版本：**5.0.0(12)
-
-BUTTON_GRAY
-
-9
-
-灰色背景黑色文字按钮，字体大小会随着按钮的宽高自适应，最小为9号，最大为16号。
-
-根据开发场景从以下链接中选择其中一个规范查看。
-
-请参见[【华为账号一键登录】按钮](https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344#section41792374210)视觉规范。
-
-请参见[【华为账号登录】按钮](https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344#section2624430102713)视觉规范。
-
-**起始版本：**5.0.0(12)
-
-BUTTON_CUSTOM
-
-10
-
-支持自定义背景颜色、文字颜色及圆角等效果的按钮，字体大小会随着按钮的宽高自适应，最小为9号，最大为16号。开发者可以通过[CustomButtonParams](#section2938142118617)设置按钮自定义的参数，且需要自行适配深浅色模式。
-
-根据开发场景从以下链接中选择其中一个规范查看。
-
-请参见[【华为账号一键登录】按钮](https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344#section41792374210)视觉规范。
-
-请参见[【华为账号登录】按钮](https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344#section2624430102713)视觉规范。
-
- 须知：
-
-此类型仅支持纯文本按钮。
-
-**起始版本：**5.0.0(12)
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| BUTTON_RED | 0 | 红色背景白色文字按钮，字体大小会随着按钮的宽高自适应，最小为9号，最大为16号。 根据开发场景从以下链接中选择其中一个规范查看。 请参见【华为账号一键登录】按钮视觉规范。 请参见【华为账号登录】按钮视觉规范。 |
+| BUTTON_WHITE | 1 | 白色背景黑色文字按钮，字体大小会随着按钮的宽高自适应，最小为9号，最大为16号。 根据开发场景从以下链接中选择其中一个规范查看。 请参见【华为账号一键登录】按钮视觉规范。 请参见【华为账号登录】按钮视觉规范。 |
+| BUTTON_WHITE_OUTLINE | 2 | 白色背景黑色文字带边框按钮，字体大小会随着按钮的宽高自适应，最小为9号，最大为16号。 根据开发场景从以下链接中选择其中一个规范查看。 请参见【华为账号一键登录】按钮视觉规范。 请参见【华为账号登录】按钮视觉规范。 |
+| BUTTON_BLACK | 3 | 黑色背景白色文字按钮，字体大小会随着按钮的宽高自适应，最小为9号，最大为16号。 根据开发场景从以下链接中选择其中一个规范查看。 请参见【华为账号一键登录】按钮视觉规范。 请参见【华为账号登录】按钮视觉规范。 |
+| ICON_RED | 4 | 红色背景白色Icon按钮。 请参见【华为账号登录】按钮视觉规范。 |
+| ICON_WHITE | 5 | 白色背景红色Icon按钮。 请参见【华为账号登录】按钮视觉规范。 |
+| ICON_WHITE_OUTLINE | 6 | 白色背景红色Icon带边框按钮。 请参见【华为账号登录】按钮视觉规范。 |
+| ICON_BLACK | 7 | 黑色背景白色Icon按钮。 请参见【华为账号登录】按钮视觉规范。 |
+| ICON_GRAY | 8 | 灰色背景红色Icon按钮。 请参见【华为账号登录】按钮视觉规范。 起始版本： 5.0.0(12) |
+| BUTTON_GRAY | 9 | 灰色背景黑色文字按钮，字体大小会随着按钮的宽高自适应，最小为9号，最大为16号。 根据开发场景从以下链接中选择其中一个规范查看。 请参见【华为账号一键登录】按钮视觉规范。 请参见【华为账号登录】按钮视觉规范。 起始版本： 5.0.0(12) |
+| BUTTON_CUSTOM | 10 | 支持自定义背景颜色、文字颜色及圆角等效果的按钮，字体大小会随着按钮的宽高自适应，最小为9号，最大为16号。开发者可以通过CustomButtonParams设置按钮自定义的参数，且需要自行适配深浅色模式。 根据开发场景从以下链接中选择其中一个规范查看。 请参见【华为账号一键登录】按钮视觉规范。 请参见【华为账号登录】按钮视觉规范。 起始版本： 5.0.0(12) 说明： 此类型仅支持纯文本按钮。 |
 
 #### LoginButtonTextType
 
@@ -1530,27 +654,14 @@ BUTTON_CUSTOM
 
 **起始版本：**5.0.0(12)
 
-名称
-
-值
-
-说明
-
-QUICK_LOGIN
-
-0
-
-华为账号一键登录按钮文本内容显示为“华为账号一键登录”。用于应用账号登录场景。
-
-QUICK_REGISTRATION
-
-1
-
-华为账号一键登录按钮文本内容显示为“华为账号一键注册”。用于应用账号注册场景。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| QUICK_LOGIN | 0 | 华为账号一键登录按钮文本内容显示为“华为账号一键登录”。用于应用账号登录场景。 |
+| QUICK_REGISTRATION | 1 | 华为账号一键登录按钮文本内容显示为“华为账号一键注册”。用于应用账号注册场景。 |
 
 #### CustomButtonParams
 
-该接口定义了[BUTTON_CUSTOM](#section19823216112610)按钮的参数。
+该接口定义了[BUTTON_CUSTOM](#ZH-CN_TOPIC_0000002522082288__style)按钮的参数。
 
 **模型约束：**此接口仅可在Stage模型下使用。
 
@@ -1558,43 +669,14 @@ QUICK_REGISTRATION
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-fontColor
-
-[FontColor](#section1660816591873)
-
-否
-
-是
-
-[LoginWithHuaweiIDButton](LoginWithHuaweiIDButton (华为账号Button登录组件).md)按钮文字颜色。
-
-默认值：[FontColor](#section1660816591873).WHITE
-
-backgroundColor
-
-[ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor)
-
-否
-
-是
-
-[LoginWithHuaweiIDButton](LoginWithHuaweiIDButton (华为账号Button登录组件).md)按钮背景颜色。
-
-默认值：Red
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| fontColor | FontColor | 否 | 是 | LoginWithHuaweiIDButton按钮文字颜色。 默认值：FontColor.WHITE |
+| backgroundColor | ResourceColor | 否 | 是 | LoginWithHuaweiIDButton按钮背景颜色。 默认值：Red |
 
 #### FontColor
 
-该枚举定义了[BUTTON_CUSTOM](#section19823216112610)按钮可以使用的文字颜色。
+该枚举定义了[BUTTON_CUSTOM](#ZH-CN_TOPIC_0000002522082288__style)按钮可以使用的文字颜色。
 
 **模型约束：**此接口仅可在Stage模型下使用。
 
@@ -1602,23 +684,10 @@ backgroundColor
 
 **起始版本：**5.0.0(12)
 
-名称
-
-值
-
-说明
-
-WHITE
-
-0
-
-华为账号登录按钮文字颜色为白色。
-
-BLACK
-
-1
-
-华为账号登录按钮文字颜色为黑色。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| WHITE | 0 | 华为账号登录按钮文字颜色为白色。 |
+| BLACK | 1 | 华为账号登录按钮文字颜色为黑色。 |
 
 #### ExtraStyle
 
@@ -1630,55 +699,12 @@ BLACK
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-buttonStyle
-
-[ButtonStyle](#section4742141694510)
-
-否
-
-是
-
-华为账号登录按钮提供给开发者自定义按钮样式，可动态设置一些属性。
-
-customButtonStateStyles
-
-[StateStyles](#section885411463712)
-
-否
-
-是
-
-华为账号登录按钮提供给开发者自定义按钮多态样式。仅对[BUTTON_CUSTOM](#section19823216112610)类型按钮生效。
-
-textAndIconButtonParams
-
-[TextAndIconButtonParams](#section68654575117)
-
-否
-
-是
-
-图文混合样式按钮下设置该参数可以控制图文间距。
-
-iconButtonParams
-
-[IconButtonParams](#section474074855419)
-
-否
-
-是
-
-纯图标按钮下设置该参数可控制图标按钮内图标的显示半径。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| buttonStyle | ButtonStyle | 否 | 是 | 华为账号登录按钮提供给开发者自定义按钮样式，可动态设置一些属性。 |
+| customButtonStateStyles | StateStyles | 否 | 是 | 华为账号登录按钮提供给开发者自定义按钮多态样式。仅对BUTTON_CUSTOM类型按钮生效。 |
+| textAndIconButtonParams | TextAndIconButtonParams | 否 | 是 | 图文混合样式按钮下设置该参数可以控制图文间距。 |
+| iconButtonParams | IconButtonParams | 否 | 是 | 纯图标按钮下设置该参数可控制图标按钮内图标的显示半径。 |
 
 #### RadialGradient
 
@@ -1690,67 +716,12 @@ iconButtonParams
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-center
-
-[[Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length), [Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length)]
-
-否
-
-否
-
-径向渐变的中心点，即相对于当前组件左上角的坐标。
-
-radius
-
-number | string
-
-否
-
-否
-
-径向渐变的半径。
-
-取值范围：[0,+∞)。
-
-值小于0时，按0处理。
-
-colors
-
-Array<[[ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor), number]>
-
-否
-
-否
-
-指定某百分比位置处的渐变色颜色，设置非法颜色直接跳过。
-
-不设置则无效果。
-
-repeating
-
-boolean
-
-否
-
-是
-
-为渐变的颜色重复着色。
-
-true：重复着色。
-
-false：不重复着色。
-
-默认值：false。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| center | [Length, Length] | 否 | 否 | 径向渐变的中心点，即相对于当前组件左上角的坐标。 |
+| radius | number | string | 否 | 否 | 径向渐变的半径。 取值范围：[0,+∞)。 值小于0时，按0处理。 |
+| colors | Array<[ResourceColor, number]> | 否 | 否 | 指定某百分比位置处的渐变色颜色，设置非法颜色直接跳过。 不设置则无效果。 |
+| repeating | boolean | 否 | 是 | 为渐变的颜色重复着色。 true：重复着色。 false：不重复着色。 默认值：false。 |
 
 #### SweepGradient
 
@@ -1762,95 +733,14 @@ false：不重复着色。
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-center
-
-[[Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length), [Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length)]
-
-否
-
-否
-
-角度渐变的中心点，即相对于当前组件左上角的坐标。
-
-start
-
-number | string
-
-否
-
-是
-
-角度渐变的起点。
-
-当start的数据类型为number时，默认值是0，设置为小于0的值时，按值为0处理，设置为大于360的值时，按值为360处理。
-
-当start的数据类型为string时，合法的取值为纯数字或纯数字后带"deg"(度)、"rad"(弧度)、"grad"(梯度)、"turn"(圈)单位，例如："90"、 "90deg"、"1.57rad"。
-
-end
-
-number | string
-
-否
-
-是
-
-角度渐变的终点。
-
-当end的数据类型为number时，默认值是0，设置为小于0的值时，按值为0处理，设置为大于360的值时，按值为360处理。
-
-当end的数据类型为string时，合法的取值为纯数字或纯数字后带"deg"(度)、"rad"(弧度)、"grad"(梯度)、"turn"(圈)单位，例如："90"、 "90deg"、"1.57rad"。
-
-rotation
-
-number | string
-
-否
-
-是
-
-角度渐变的旋转角度。
-
-当rotation的数据类型为number时，默认值是0，设置为小于0的值时，按值为0处理，设置为大于360的值时，按值为360处理。
-
-当rotation的数据类型为string时，合法的取值为纯数字或纯数字后带"deg"(度)、"rad"(弧度)、"grad"(梯度)、"turn"(圈)单位，例如："90"、 "90deg"、"1.57rad"。
-
-colors
-
-Array<[[ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor), number]>
-
-否
-
-否
-
-指定某百分比位置处的渐变色颜色，设置非法颜色直接跳过。
-
-不设置则无效果。
-
-repeating
-
-boolean
-
-否
-
-是
-
-为渐变的颜色重复着色。
-
-true：重复着色。
-
-false：不重复着色。
-
-默认值：false。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| center | [Length, Length] | 否 | 否 | 角度渐变的中心点，即相对于当前组件左上角的坐标。 |
+| start | number | string | 否 | 是 | 角度渐变的起点。 当start的数据类型为number时，默认值是0，设置为小于0的值时，按值为0处理，设置为大于360的值时，按值为360处理。 当start的数据类型为string时，合法的取值为纯数字或纯数字后带"deg"(度)、"rad"(弧度)、"grad"(梯度)、"turn"(圈)单位，例如："90"、 "90deg"、"1.57rad"。 |
+| end | number | string | 否 | 是 | 角度渐变的终点。 当end的数据类型为number时，默认值是0，设置为小于0的值时，按值为0处理，设置为大于360的值时，按值为360处理。 当end的数据类型为string时，合法的取值为纯数字或纯数字后带"deg"(度)、"rad"(弧度)、"grad"(梯度)、"turn"(圈)单位，例如："90"、 "90deg"、"1.57rad"。 |
+| rotation | number | string | 否 | 是 | 角度渐变的旋转角度。 当rotation的数据类型为number时，默认值是0，设置为小于0的值时，按值为0处理，设置为大于360的值时，按值为360处理。 当rotation的数据类型为string时，合法的取值为纯数字或纯数字后带"deg"(度)、"rad"(弧度)、"grad"(梯度)、"turn"(圈)单位，例如："90"、 "90deg"、"1.57rad"。 |
+| colors | Array<[ResourceColor, number]> | 否 | 否 | 指定某百分比位置处的渐变色颜色，设置非法颜色直接跳过。 不设置则无效果。 |
+| repeating | boolean | 否 | 是 | 为渐变的颜色重复着色。 true：重复着色。 false：不重复着色。 默认值：false。 |
 
 #### ButtonStyle
 
@@ -1876,37 +766,15 @@ buttonSize(value: ButtonSize): ButtonStyle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-value
-
-[ButtonSize](#section169691441164919)
-
-是
-
-当按钮类型为纯图标按钮时，按钮的宽度和高度相等，取value.width和value.height的非undefined的最小值，如果value.width和value.height都为undefined取[LoginWithHuaweiIDButtonParams](#section4717249182518)的iconRadius的2倍值，如果iconRadius也是undefined则取默认值48vp；
-
-当按钮类型为非纯图标按钮时，按钮的宽度和高度分别取value.width和value.height，当value.width或者value.height为undefined，按钮宽度或高度取父布局宽高。
-
- 须知：
-
-当设置该属性的宽高，父组件的宽高值应该大于等于该属性的宽高值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | ButtonSize | 是 | 当按钮类型为纯图标按钮时，按钮的宽度和高度相等，取value.width和value.height的非undefined的最小值，如果value.width和value.height都为undefined取LoginWithHuaweiIDButtonParams的iconRadius的2倍值，如果iconRadius也是undefined则取默认值48vp； 当按钮类型为非纯图标按钮时，按钮的宽度和高度分别取value.width和value.height，当value.width或者value.height为undefined，按钮宽度或高度取父布局宽高。 说明： 当设置该属性的宽高，父组件的宽高值应该大于等于该属性的宽高值。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[ButtonStyle](#section4742141694510)
-
-定义了华为账号登录按钮的通用属性。
+| 类型 | 说明 |
+| --- | --- |
+| ButtonStyle | 定义了华为账号登录按钮的通用属性。 |
 
 #### fontSize
 
@@ -1922,33 +790,15 @@ fontSize(value: Length): ButtonStyle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-value
-
-[Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length)
-
-是
-
-当按钮为图文按钮或文本按钮时，设置按钮文字的字号。根据[华为账号开放登录视觉规范](https://developer.huawei.com/consumer/cn/doc/design-guides/id-0000001880001344#section61791745172816)，设置范围建议在按钮高度的30%~50%之间。
-
-如果没传此值，字号大小在9~16vp之间随按钮宽度自适应。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | Length | 是 | 当按钮为图文按钮或文本按钮时，设置按钮文字的字号。根据华为账号开放登录视觉规范，设置范围建议在按钮高度的30% 50%之间。 如果没传此值，字号大小在9 16vp之间随按钮宽度自适应。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[ButtonStyle](#section4742141694510)
-
-定义了华为账号登录按钮的通用属性。
+| 类型 | 说明 |
+| --- | --- |
+| ButtonStyle | 定义了华为账号登录按钮的通用属性。 |
 
 #### fontColor
 
@@ -1964,33 +814,15 @@ fontColor(value: ResourceColor | FontColor): ButtonStyle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-value
-
-[ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | [FontColor](#section1660816591873)
-
-是
-
-当按钮类型为[BUTTON_CUSTOM](#section19823216112610)时，此参数可设置按钮文字颜色。当已经设置[CustomButtonParams](#section2938142118617)的fontColor属性时，优先取此参数值。
-
-不设置则为黑色。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | ResourceColor | FontColor | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮文字颜色。当已经设置CustomButtonParams的fontColor属性时，优先取此参数值。 不设置则为黑色。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[ButtonStyle](#section4742141694510)
-
-定义了华为账号登录按钮的通用属性。
+| 类型 | 说明 |
+| --- | --- |
+| ButtonStyle | 定义了华为账号登录按钮的通用属性。 |
 
 #### fontWeight
 
@@ -2006,33 +838,15 @@ fontWeight(value: string | number | FontWeight): ButtonStyle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-value
-
-string | number | [FontWeight](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#fontweight)
-
-是
-
-当按钮类型为[BUTTON_CUSTOM](#section19823216112610)时，此参数可设置按钮文字字重。number类型取值[100, 900]，取值间隔为100，取值越大字体越粗，当超出边界值时取值为400。string类型仅支持number类型取值的字符串形式，例如"400"，以及"bold"、"bolder"、"lighter"、"regular"、"medium"，分别对应FontWeight中相应的枚举值。
-
-默认字重为FontWeight.Medium，对应的number值为500。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | string | number | FontWeight | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮文字字重。number类型取值[100, 900]，取值间隔为100，取值越大字体越粗，当超出边界值时取值为400。string类型仅支持number类型取值的字符串形式，例如"400"，以及"bold"、"bolder"、"lighter"、"regular"、"medium"，分别对应FontWeight中相应的枚举值。 默认字重为FontWeight.Medium，对应的number值为500。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[ButtonStyle](#section4742141694510)
-
-定义了华为账号登录按钮的通用属性。
+| 类型 | 说明 |
+| --- | --- |
+| ButtonStyle | 定义了华为账号登录按钮的通用属性。 |
 
 #### fontFamily
 
@@ -2048,35 +862,15 @@ fontFamily(value: ResourceStr): ButtonStyle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-value
-
-[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)
-
-是
-
-当按钮类型为[BUTTON_CUSTOM](#section19823216112610)时，此参数可设置按钮文字字体。
-
-默认字体'HarmonyOS Sans'。
-
-应用当前支持'HarmonyOS Sans'字体和[注册自定义字体](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-font)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | ResourceStr | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮文字字体。 默认字体'HarmonyOS Sans'。 应用当前支持'HarmonyOS Sans'字体和注册自定义字体。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[ButtonStyle](#section4742141694510)
-
-定义了华为账号登录按钮的通用属性。
+| 类型 | 说明 |
+| --- | --- |
+| ButtonStyle | 定义了华为账号登录按钮的通用属性。 |
 
 #### backgroundColor
 
@@ -2092,35 +886,15 @@ backgroundColor(value: ResourceColor): ButtonStyle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-value
-
-[ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor)
-
-是
-
-当按钮类型为[BUTTON_CUSTOM](#section19823216112610)时，此参数可设置按钮背景颜色。
-
-当已经设置[CustomButtonParams](#section2938142118617)的backgroundColor属性时，优先取此参数值。
-
-不设置则为 Red 红色背景。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | ResourceColor | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮背景颜色。 当已经设置CustomButtonParams的backgroundColor属性时，优先取此参数值。 不设置则为 Red 红色背景。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[ButtonStyle](#section4742141694510)
-
-定义了华为账号登录按钮的通用属性。
+| 类型 | 说明 |
+| --- | --- |
+| ButtonStyle | 定义了华为账号登录按钮的通用属性。 |
 
 #### backgroundEffect
 
@@ -2136,33 +910,15 @@ backgroundEffect(value: BackgroundEffectOptions): ButtonStyle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-value
-
-[BackgroundEffectOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-background#backgroundeffectoptions11)
-
-是
-
-当按钮类型为[BUTTON_CUSTOM](#section19823216112610)时，此参数可设置按钮背景属性，包括饱和度，亮度，颜色。
-
-不设置则无效果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | BackgroundEffectOptions | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮背景属性，包括饱和度，亮度，颜色。 不设置则无效果。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[ButtonStyle](#section4742141694510)
-
-定义了华为账号登录按钮的通用属性。
+| 类型 | 说明 |
+| --- | --- |
+| ButtonStyle | 定义了华为账号登录按钮的通用属性。 |
 
 #### backgroundBrightness
 
@@ -2178,33 +934,15 @@ backgroundBrightness(value: BackgroundBrightnessOptions): ButtonStyle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-value
-
-[BackgroundBrightnessOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-background#backgroundbrightnessoptions12对象说明)
-
-是
-
-当按钮类型为[BUTTON_CUSTOM](#section19823216112610)时，此参数可设置按钮背景提亮效果，包括：亮度变化速率，提亮程度。
-
-不设置则无效果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | BackgroundBrightnessOptions | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮背景提亮效果，包括：亮度变化速率，提亮程度。 不设置则无效果。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[ButtonStyle](#section4742141694510)
-
-定义了华为账号登录按钮的通用属性。
+| 类型 | 说明 |
+| --- | --- |
+| ButtonStyle | 定义了华为账号登录按钮的通用属性。 |
 
 #### linearGradient
 
@@ -2220,35 +958,15 @@ linearGradient(value: LinearGradient): ButtonStyle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-value
-
-[LinearGradient](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border-image#lineargradient)
-
-是
-
-当按钮类型为[BUTTON_CUSTOM](#section19823216112610)时，此参数可设置按钮背景颜色线性渐变效果，不设置则无效果。
-
- 须知：
-
-使用此属性时，按钮不能有背景色，否则按钮边缘会出现锯齿毛边，需把按钮背景色设置为透明色，如backgroundColor(Color.Transparent)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | LinearGradient | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮背景颜色线性渐变效果，不设置则无效果。 说明： 使用此属性时，按钮不能有背景色，否则按钮边缘会出现锯齿毛边，需把按钮背景色设置为透明色，如backgroundColor(Color.Transparent)。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[ButtonStyle](#section4742141694510)
-
-定义了华为账号登录按钮的通用属性。
+| 类型 | 说明 |
+| --- | --- |
+| ButtonStyle | 定义了华为账号登录按钮的通用属性。 |
 
 #### sweepGradient
 
@@ -2264,37 +982,15 @@ sweepGradient(value: SweepGradient): ButtonStyle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-value
-
-[SweepGradient](#section4541924134916)
-
-是
-
-当按钮类型为[BUTTON_CUSTOM](#section19823216112610)时，此参数可设置按钮背景颜色角度渐变效果。
-
-不设置则无效果。
-
- 须知：
-
-使用此属性时，按钮不能有背景色，否则按钮边缘会出现锯齿毛边，需把按钮背景色设置为透明色，如backgroundColor(Color.Transparent)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | SweepGradient | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮背景颜色角度渐变效果。 不设置则无效果。 说明： 使用此属性时，按钮不能有背景色，否则按钮边缘会出现锯齿毛边，需把按钮背景色设置为透明色，如backgroundColor(Color.Transparent)。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[ButtonStyle](#section4742141694510)
-
-定义了华为账号登录按钮的通用属性。
+| 类型 | 说明 |
+| --- | --- |
+| ButtonStyle | 定义了华为账号登录按钮的通用属性。 |
 
 #### radialGradient
 
@@ -2310,37 +1006,15 @@ radialGradient(value: RadialGradient): ButtonStyle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-value
-
-[RadialGradient](#section17457938194018)
-
-是
-
-当按钮类型为[BUTTON_CUSTOM](#section19823216112610)时，此参数可设置按钮背景颜色径向渐变效果。
-
-不设置则无效果。
-
- 须知：
-
-使用此属性时，按钮不能有背景色，否则按钮边缘会出现锯齿毛边，需把按钮背景色设置为透明色，如backgroundColor(Color.Transparent)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | RadialGradient | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮背景颜色径向渐变效果。 不设置则无效果。 说明： 使用此属性时，按钮不能有背景色，否则按钮边缘会出现锯齿毛边，需把按钮背景色设置为透明色，如backgroundColor(Color.Transparent)。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[ButtonStyle](#section4742141694510)
-
-定义了华为账号登录按钮的通用属性。
+| 类型 | 说明 |
+| --- | --- |
+| ButtonStyle | 定义了华为账号登录按钮的通用属性。 |
 
 #### shadow
 
@@ -2356,31 +1030,15 @@ shadow(value: ShadowOptions | ShadowStyle): ButtonStyle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-value
-
-[ShadowOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#shadowoptions对象说明) | [ShadowStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#shadowstyle10枚举说明)
-
-是
-
-当按钮类型为[BUTTON_CUSTOM](#section19823216112610)时，此参数可设置按钮阴影效果，不设置则无效果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | ShadowOptions | ShadowStyle | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮阴影效果，不设置则无效果。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[ButtonStyle](#section4742141694510)
-
-定义了华为账号登录按钮的通用属性。
+| 类型 | 说明 |
+| --- | --- |
+| ButtonStyle | 定义了华为账号登录按钮的通用属性。 |
 
 #### opacity
 
@@ -2396,35 +1054,15 @@ opacity(value: number | Resource): ButtonStyle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-value
-
-number | [Resource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resource)
-
-是
-
-元素的不透明度，取值范围为0到1，1表示不透明，0表示完全透明, 达到隐藏组件效果，但是在布局中占位。
-
-默认值：1
-
-当按钮类型为[BUTTON_CUSTOM](#section19823216112610)时，此参数可设置按钮的不透明度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | Resource | 是 | 元素的不透明度，取值范围为0到1，1表示不透明，0表示完全透明, 达到隐藏组件效果，但是在布局中占位。 默认值：1 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮的不透明度。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[ButtonStyle](#section4742141694510)
-
-定义了华为账号登录按钮的通用属性。
+| 类型 | 说明 |
+| --- | --- |
+| ButtonStyle | 定义了华为账号登录按钮的通用属性。 |
 
 #### border
 
@@ -2440,35 +1078,15 @@ border(value: BorderOptions): ButtonStyle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-value
-
-[BorderOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#borderoptions)
-
-是
-
-当按钮类型为[BUTTON_CUSTOM](#section19823216112610)时，此参数可设置按钮的边框样式，不设置则无效果。
-
- 须知：
-
-设置内边框需要预留充足的空间展示按钮，请确保按钮父组件宽高大于按钮本身。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | BorderOptions | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮的边框样式，不设置则无效果。 说明： 设置内边框需要预留充足的空间展示按钮，请确保按钮父组件宽高大于按钮本身。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[ButtonStyle](#section4742141694510)
-
-定义了华为账号登录按钮的通用属性。
+| 类型 | 说明 |
+| --- | --- |
+| ButtonStyle | 定义了华为账号登录按钮的通用属性。 |
 
 #### borderImage
 
@@ -2484,31 +1102,15 @@ borderImage(value: BorderImageOption): ButtonStyle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-value
-
-[BorderImageOption](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border-image#borderimageoption对象说明)
-
-是
-
-当按钮类型为[BUTTON_CUSTOM](#section19823216112610)时，此参数可设置按钮的图片边框样式，不设置则无效果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | BorderImageOption | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮的图片边框样式，不设置则无效果。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[ButtonStyle](#section4742141694510)
-
-定义了华为账号登录按钮的通用属性。
+| 类型 | 说明 |
+| --- | --- |
+| ButtonStyle | 定义了华为账号登录按钮的通用属性。 |
 
 #### outline
 
@@ -2524,31 +1126,15 @@ outline(value: OutlineOptions): ButtonStyle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-value
-
-[OutlineOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#outlineoptions11对象说明)
-
-是
-
-当按钮类型为[BUTTON_CUSTOM](#section19823216112610)时，此参数可设置按钮的外描边样式，不设置则无效果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | OutlineOptions | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮的外描边样式，不设置则无效果。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[ButtonStyle](#section4742141694510)
-
-定义了华为账号登录按钮的通用属性。
+| 类型 | 说明 |
+| --- | --- |
+| ButtonStyle | 定义了华为账号登录按钮的通用属性。 |
 
 #### hoverEffect
 
@@ -2564,31 +1150,15 @@ hoverEffect(value: HoverEffect): ButtonStyle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-value
-
-[HoverEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#hovereffect8)
-
-是
-
-当按钮类型为[BUTTON_CUSTOM](#section19823216112610)时，此参数可设置按钮的悬浮态效果，不设置则为默认效果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | HoverEffect | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮的悬浮态效果，不设置则为默认效果。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[ButtonStyle](#section4742141694510)
-
-定义了华为账号登录按钮的通用属性。
+| 类型 | 说明 |
+| --- | --- |
+| ButtonStyle | 定义了华为账号登录按钮的通用属性。 |
 
 #### clickEffect
 
@@ -2604,31 +1174,15 @@ clickEffect(value: ClickEffect): ButtonStyle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-value
-
-[ClickEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-click-effect#clickeffect对象说明)
-
-是
-
-当按钮类型为[BUTTON_CUSTOM](#section19823216112610)时，此参数可设置按钮的点击回弹效果，不设置则无效果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | ClickEffect | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮的点击回弹效果，不设置则无效果。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[ButtonStyle](#section4742141694510)
-
-定义了华为账号登录按钮的通用属性。
+| 类型 | 说明 |
+| --- | --- |
+| ButtonStyle | 定义了华为账号登录按钮的通用属性。 |
 
 #### loadingStyle
 
@@ -2644,37 +1198,15 @@ loadingStyle(value: LoadingStyle): ButtonStyle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-value
-
-[LoadingStyle](#section1075651914820)
-
-是
-
-此参数可设置按钮在登录过程中是否显示加载态，
-
-默认不显示加载态。
-
- 须知：
-
-纯图标按钮不支持设置加载态，此参数不生效。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | LoadingStyle | 是 | 此参数可设置按钮在登录过程中是否显示加载态， 默认不显示加载态。 说明： 纯图标按钮不支持设置加载态，此参数不生效。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[ButtonStyle](#section4742141694510)
-
-定义了华为账号登录按钮的通用属性。
+| 类型 | 说明 |
+| --- | --- |
+| ButtonStyle | 定义了华为账号登录按钮的通用属性。 |
 
 #### ButtonSize
 
@@ -2686,35 +1218,10 @@ value
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-width
-
-[Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length)
-
-否
-
-是
-
-设置华为账号登录按钮宽度。
-
-height
-
-[Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length)
-
-否
-
-是
-
-设置华为账号登录按钮高度。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| width | Length | 否 | 是 | 设置华为账号登录按钮宽度。 |
+| height | Length | 否 | 是 | 设置华为账号登录按钮高度。 |
 
 #### LoadingStyle
 
@@ -2726,31 +1233,9 @@ height
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-show
-
-boolean
-
-否
-
-是
-
-设置华为账号登录按钮在登录过程中是否展示加载态。
-
-true：展示登录按钮加载态
-
-false：不展示登录按钮加载态
-
-默认值：false
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| show | boolean | 否 | 是 | 设置华为账号登录按钮在登录过程中是否展示加载态。 true：展示登录按钮加载态 false：不展示登录按钮加载态 默认值：false |
 
 #### TextAndIconButtonParams
 
@@ -2762,25 +1247,9 @@ false：不展示登录按钮加载态
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-textAndIconMargin
-
-number
-
-否
-
-是
-
-设置华为账号登录按钮为图文按钮时的图文间距。默认值：8vp，取值范围：4~16vp。当小于4vp时取值为4vp，当大于16vp时取值为16vp。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| textAndIconMargin | number | 否 | 是 | 设置华为账号登录按钮为图文按钮时的图文间距。默认值：8vp，取值范围：4~16vp。当小于4vp时取值为4vp，当大于16vp时取值为16vp。 |
 
 #### IconButtonParams
 
@@ -2792,27 +1261,9 @@ number
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-logoRadius
-
-number
-
-否
-
-是
-
-设置华为账号登录按钮为纯图标按钮时的华为图标的半径。
-
-默认值：14vp，最小值：8vp。取值范围：按钮高度的20%~32%。当小于20%时取值为20%，当大于32%时取值为32%。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| logoRadius | number | 否 | 是 | 设置华为账号登录按钮为纯图标按钮时的华为图标的半径。 默认值：14vp，最小值：8vp。取值范围：按钮高度的20%~32%。当小于20%时取值为20%，当大于32%时取值为32%。 |
 
 #### StateStyles
 
@@ -2824,59 +1275,16 @@ number
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-normal
-
-[ButtonStyle](#section4742141694510)
-
-否
-
-是
-
-登录按钮正常态的通用样式。
-
-pressed
-
-[ButtonStyle](#section4742141694510)
-
-否
-
-是
-
-登录按钮按压态的通用样式。
-
-disabled
-
-[ButtonStyle](#section4742141694510)
-
-否
-
-是
-
-登录按钮不可点击态的通用样式。
-
-focused
-
-[ButtonStyle](#section4742141694510)
-
-否
-
-是
-
-登录按钮聚焦态的通用样式。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| normal | ButtonStyle | 否 | 是 | 登录按钮正常态的通用样式。 |
+| pressed | ButtonStyle | 否 | 是 | 登录按钮按压态的通用样式。 |
+| disabled | ButtonStyle | 否 | 是 | 登录按钮不可点击态的通用样式。 |
+| focused | ButtonStyle | 否 | 是 | 登录按钮聚焦态的通用样式。 |
 
 #### LoginWithHuaweiIDButtonController
 
-[LoginWithHuaweiIDButton](LoginWithHuaweiIDButton (华为账号Button登录组件).md#section1624716107193)组件控制器，用来回调组件内部的点击事件。
+[LoginWithHuaweiIDButton](LoginWithHuaweiIDButton (华为账号Button登录组件).md#ZH-CN_TOPIC_0000002553202249__loginwithhuaweiidbutton)组件控制器，用来回调组件内部的点击事件。
 
 **模型约束：**此接口仅可在Stage模型下使用。
 
@@ -2898,33 +1306,15 @@ setAgreementStatus(agreementStatus: AgreementStatus): LoginWithHuaweiIDButtonCon
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-agreementStatus
-
-[AgreementStatus](#section183397331373)
-
-是
-
-当登录类型为[LoginType.QUICK_LOGIN](#section79023235528)时必须设置协议状态为ACCEPTED才可以完成华为账号登录。
-
-当登录类型不是[LoginType.QUICK_LOGIN](#section79023235528)时，如果需要用户同意协议才能完成华为账号登录，请先设置协议状态为NOT_ACCEPTED，当用户同意协议后设置协议状态为ACCEPTED，才可以完成华为账号登录。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agreementStatus | AgreementStatus | 是 | 当登录类型为LoginType.QUICK_LOGIN时必须设置协议状态为ACCEPTED才可以完成华为账号登录。 当登录类型不是LoginType.QUICK_LOGIN时，如果需要用户同意协议才能完成华为账号登录，请先设置协议状态为NOT_ACCEPTED，当用户同意协议后设置协议状态为ACCEPTED，才可以完成华为账号登录。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[LoginWithHuaweiIDButtonController](#section6921622144614)
-
-[LoginWithHuaweiIDButton](LoginWithHuaweiIDButton (华为账号Button登录组件).md)组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。
+| 类型 | 说明 |
+| --- | --- |
+| LoginWithHuaweiIDButtonController | LoginWithHuaweiIDButton组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。 |
 
 #### onClickEvent
 
@@ -2940,31 +1330,15 @@ onClickEvent(callback: AsyncCallback<ClickEvent>): LoginWithHuaweiIDButtonContro
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-callback
-
-AsyncCallback<[ClickEvent](#section967316103272)>
-
-是
-
-回调函数。当用户点击华为账号登录时，err为undefined，data为获取到的[ClickEvent](#section967316103272)；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<ClickEvent> | 是 | 回调函数。当用户点击华为账号登录时，err为undefined，data为获取到的ClickEvent；否则为错误对象。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[LoginWithHuaweiIDButtonController](#section6921622144614)
-
-[LoginWithHuaweiIDButton](LoginWithHuaweiIDButton (华为账号Button登录组件).md)组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。
+| 类型 | 说明 |
+| --- | --- |
+| LoginWithHuaweiIDButtonController | LoginWithHuaweiIDButton组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。 |
 
 #### onClickLoginWithHuaweiIDButton
 
@@ -2980,91 +1354,35 @@ onClickLoginWithHuaweiIDButton(callback: AsyncCallback<HuaweiIDCredential>): Log
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-callback
-
-AsyncCallback<[HuaweiIDCredential](#section1862534912215)>
-
-是
-
-回调函数。当华为账号登录成功返回结果，err为undefined，data为获取到的[HuaweiIDCredential](#section1862534912215)对象；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<HuaweiIDCredential> | 是 | 回调函数。当华为账号登录成功返回结果，err为undefined，data为获取到的HuaweiIDCredential对象；否则为错误对象。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[LoginWithHuaweiIDButtonController](#section6921622144614)
-
-[LoginWithHuaweiIDButton](LoginWithHuaweiIDButton (华为账号Button登录组件).md)组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。
+| 类型 | 说明 |
+| --- | --- |
+| LoginWithHuaweiIDButtonController | LoginWithHuaweiIDButton组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS错误码](../../errors/ArkTS错误码.md)和[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+以下错误码的详细介绍请参见[ArkTS错误码](ArkTS错误码.md)和[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
 
-错误码ID
-
-错误信息
-
-[401](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal#section401-参数检查失败)
-
-Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
-
-[1001500001](../../errors/ArkTS错误码.md#section1581681312511)
-
-Failed to check the fingerprint of the app bundle.
-
-[1001500002](../../errors/ArkTS错误码.md#section134761318124311)
-
-This error code is reported when a request is already being processed.
-
-[1001500003](../../errors/ArkTS错误码.md#section116574197436)
-
-The scopes or permissions are not supported.
-
-[1001502001](../../errors/ArkTS错误码.md#section539558125020)
-
-The user has not logged in with HUAWEI ID.
-
-[1001502002](../../errors/ArkTS错误码.md#section1393125918588)
-
-The application is not authorized.
-
-[1001502003](../../errors/ArkTS错误码.md#section289120911112)
-
-Invalid input parameter value.
-
-[1001502005](../../errors/ArkTS错误码.md#section1281526328)
-
-Network error.
-
-[1001502009](../../errors/ArkTS错误码.md#section17561151616317)
-
-Internal error.
-
-[1001502012](../../errors/ArkTS错误码.md#section223413481361)
-
-The user canceled the authorization.
-
-[1001502014](../../errors/ArkTS错误码.md#section78953611814)
-
-The app does not have the required scopes or permissions.
-
-[12300001](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account#section12300001-系统服务异常)
-
-System service works abnormally.
-
-[1005300001](../../errors/ArkTS错误码.md#section54021153246)
-
-The user did not accept the agreement.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| [1001500001](../../errors/ArkTS错误码.md#section1581681312511) | Failed to check the fingerprint of the app bundle. |
+| [1001500002](../../errors/ArkTS错误码.md#section134761318124311) | This error code is reported when a request is already being processed. |
+| [1001500003](../../errors/ArkTS错误码.md#section116574197436) | The scopes or permissions are not supported. |
+| [1001502001](../../errors/ArkTS错误码.md#section539558125020) | The user has not logged in with HUAWEI ID. |
+| [1001502002](../../errors/ArkTS错误码.md#section1393125918588) | The application is not authorized. |
+| [1001502003](../../errors/ArkTS错误码.md#section289120911112) | Invalid input parameter value. |
+| [1001502005](../../errors/ArkTS错误码.md#section1281526328) | Network error. |
+| [1001502009](../../errors/ArkTS错误码.md#section17561151616317) | Internal error. |
+| [1001502012](../../errors/ArkTS错误码.md#section223413481361) | The user canceled the authorization. |
+| [1001502014](../../errors/ArkTS错误码.md#section78953611814) | The app does not have the required scopes or permissions. |
+| 12300001 | System service works abnormally. |
+| [1005300001](../../errors/ArkTS错误码.md#section54021153246) | The user did not accept the agreement. |
 
 #### setEnabled
 
@@ -3080,33 +1398,15 @@ setEnabled(enabled: boolean): LoginWithHuaweiIDButtonController
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-enabled
-
-boolean
-
-是
-
-按钮是否可点击。
-
-当enabled为true时，华为账号登录按钮高亮可点击，当enabled为false时，华为账号登录按钮置灰不可点击，默认值：true。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enabled | boolean | 是 | 按钮是否可点击。 当enabled为true时，华为账号登录按钮高亮可点击，当enabled为false时，华为账号登录按钮置灰不可点击，默认值：true。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[LoginWithHuaweiIDButtonController](#section6921622144614)
-
-[LoginWithHuaweiIDButton](LoginWithHuaweiIDButton (华为账号Button登录组件).md)组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。
+| 类型 | 说明 |
+| --- | --- |
+| LoginWithHuaweiIDButtonController | LoginWithHuaweiIDButton组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。 |
 
 #### continueLogin
 
@@ -3122,43 +1422,23 @@ continueLogin(callback: AsyncCallback<void>): LoginWithHuaweiIDButtonController
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-callback
-
-AsyncCallback<void>
-
-是
-
-回调函数。当用户点击协议弹框的同意并登录按钮操作成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当用户点击协议弹框的同意并登录按钮操作成功，err为undefined，否则为错误对象。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[LoginWithHuaweiIDButtonController](#section6921622144614)
-
-[LoginWithHuaweiIDButton](LoginWithHuaweiIDButton (华为账号Button登录组件).md)组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。
+| 类型 | 说明 |
+| --- | --- |
+| LoginWithHuaweiIDButtonController | LoginWithHuaweiIDButton组件控制器可以用来注册组件内部的点击事件或者调用组件提供的方法。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS错误码](../../errors/ArkTS错误码.md)。
+以下错误码的详细介绍请参见[ArkTS错误码](ArkTS错误码.md)。
 
-错误码ID
-
-错误信息
-
-[1005300002](../../errors/ArkTS错误码.md#section1396765353817)
-
-The user did not click the HUAWEI ID login button.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| [1005300002](../../errors/ArkTS错误码.md#section1396765353817) | The user did not click the HUAWEI ID login button. |
 
 **示例：**
 
@@ -3274,7 +1554,6 @@ struct QuickLoginButtonComponent {
       const code = (error as BusinessError).code
       hilog.error(this.domainId, this.logTag, `showToast args  errCode is ${code}, errMessage is ${message}`);
     }
-  }
 
   // 跳转华为账号用户认证协议页,该页面需在工程main_pages.json文件配置
   jumpToPrivacyWebView() {
@@ -3308,8 +1587,6 @@ struct QuickLoginButtonComponent {
             confirm: {
               value: "知道了",
               action: () => {
-              }
-            }
           }
         );
       } else if (error.code === ErrorCode.ERROR_CODE_AGREEMENT_STATUS_NOT_ACCEPTED) {
@@ -3356,10 +1633,7 @@ struct QuickLoginButtonComponent {
             value: '知道了',
             action: () => {
             }
-          }
-        }
       );
-    }
   }
 
   // 错误处理
@@ -3382,7 +1656,6 @@ struct QuickLoginButtonComponent {
       // 用户未同意协议
     } else {
       // 应用登录失败，请尝试使用其他方式登录
-    }
   }
 
   getQuickLoginAnonymousPhone() {
@@ -3415,12 +1688,9 @@ struct QuickLoginButtonComponent {
     } catch (error) {
       this.dealAllError(error);
     }
-  }
 
   build() {
     Scroll() {
-      Column() {
-        Column() {
           Column() {
             // 此处为示例资源，开发者可使用应用图标进行替换，以保证正常编译运行
             Image($r('app.media.app_icon'))
@@ -3545,7 +1815,6 @@ struct QuickLoginButtonComponent {
         }.width('100%')
 
         Row() {
-          Row() {
             Checkbox({ name: 'privacyCheckbox', group: 'privacyCheckboxGroup' })
               .width(24)
               .height(24)
@@ -3611,7 +1880,6 @@ struct QuickLoginButtonComponent {
     }
     .width('100%')
     .height('100%')
-  }
 }
 
 @CustomDialog
@@ -3734,7 +2002,6 @@ export struct AgreementDialog {
       right: 16
     })
   }
-}
 
 export enum ErrorCode {
   // 账号未登录
@@ -3773,7 +2040,6 @@ struct WebPage {
   controller: webview.WebviewController = new webview.WebviewController();
 
   build() {
-    Column() {
       Column() {
         Button({ type: ButtonType.Normal }) {
           Image($r('sys.media.ohos_ic_compnent_titlebar_back'))
@@ -3844,7 +2110,4 @@ struct WebPage {
       } catch (error) {
         hilog.error(0x0000, 'testTag', `stop web error, errorCode=${error.code}, errorMsg=${error.message}`);
       }
-    }
-  }
-}
 ```

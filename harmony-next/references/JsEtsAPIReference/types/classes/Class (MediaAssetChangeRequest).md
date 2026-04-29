@@ -1,6 +1,6 @@
 # Class (MediaAssetChangeRequest)
 
-MediaAssetChangeRequest implements [MediaChangeRequest](../interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529285945__mediachangerequest11).
+MediaAssetChangeRequest implements [MediaChangeRequest](Interfaces (其他).md#ZH-CN_TOPIC_0000002522082094__mediachangerequest11).
 
 资产变更请求。
 
@@ -12,6 +12,18 @@ MediaAssetChangeRequest implements [MediaChangeRequest](../interfaces/Interfaces
 ```ets
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
 ```
+
+**属性**
+
+模型约束：此接口仅可在Stage模型下使用。
+
+元服务API：从API version 23开始，该接口支持在元服务中使用。
+
+系统能力：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| comment23+ | string | 是 | 否 | 用于MediaChangeRequest类型校验。 如果类（如MediaAssetChangeRequest）对象可以访问，就说明该类是MediaChangeRequest的实现类。 |
 
 #### constructor11+
 
@@ -25,17 +37,22 @@ constructor(asset: PhotoAsset)
 
 **参数：**
 
-参数名类型必填说明asset[PhotoAsset](../interfaces/Interface (PhotoAsset).md)是需要变更的资产。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| asset | PhotoAsset | 是 | 需要变更的资产。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[文件管理错误码]([文件管理错误码](../../errors/文件管理错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -59,7 +76,7 @@ static createImageAssetRequest(context: Context, fileUri: string): MediaAssetCha
 
 创建图片资产变更请求。
 
-指定待创建资产的数据来源，可参考[FileUri](../../modules/ohos/@ohos.file.fileuri (文件URI).md)。
+指定待创建资产的数据来源，可参考[@ohos.file.fileuri (文件URI)](@ohos.file.fileuri (文件URI).md)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -67,21 +84,30 @@ static createImageAssetRequest(context: Context, fileUri: string): MediaAssetCha
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是传入Ability实例的上下文。fileUristring是图片资产的数据来源，在应用沙箱下的uri。示例fileUri：'file://com.example.temptest/data/storage/el2/base/haps/entry/files/test.jpg'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 传入Ability实例的上下文。 |
+| fileUri | string | 是 | 图片资产的数据来源，在应用沙箱下的uri。示例fileUri：'file://com.example.temptest/data/storage/el2/base/haps/entry/files/test.jpg'。 |
 
 **返回值：**
 
-类型说明[MediaAssetChangeRequest](Class (MediaAssetChangeRequest).md)返回创建资产的变更请求。
+| 类型 | 说明 |
+| --- | --- |
+| MediaAssetChangeRequest | 返回创建资产的变更请求。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.13900002The file corresponding to the URI is not in the app sandbox.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 13900002 | The file corresponding to the URI is not in the app sandbox. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
@@ -95,7 +121,6 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   } catch (err) {
     console.error(`createImageAssetRequestDemo failed with error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### createVideoAssetRequest11+
@@ -104,27 +129,36 @@ static createVideoAssetRequest(context: Context, fileUri: string): MediaAssetCha
 
 创建视频资产变更请求。
 
-指定待创建资产的数据来源，可参考[FileUri](../../modules/ohos/@ohos.file.fileuri (文件URI).md)。
+指定待创建资产的数据来源，可参考[@ohos.file.fileuri (文件URI)](@ohos.file.fileuri (文件URI).md)。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是传入Ability实例的上下文。fileUristring是视频资产的数据来源，在应用沙箱下的uri。示例fileUri：'file://com.example.temptest/data/storage/el2/base/haps/entry/files/test.mp4'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 传入Ability实例的上下文。 |
+| fileUri | string | 是 | 视频资产的数据来源，在应用沙箱下的uri。示例fileUri：'file://com.example.temptest/data/storage/el2/base/haps/entry/files/test.mp4'。 |
 
 **返回值：**
 
-类型说明[MediaAssetChangeRequest](Class (MediaAssetChangeRequest).md)返回创建资产的变更请求。
+| 类型 | 说明 |
+| --- | --- |
+| MediaAssetChangeRequest | 返回创建资产的变更请求。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.13900002The file corresponding to the URI is not in the app sandbox.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 13900002 | The file corresponding to the URI is not in the app sandbox. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
@@ -138,12 +172,11 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   } catch (err) {
     console.error(`createVideoAssetRequestDemo failed with error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### createAssetRequest11+
 
-static createAssetRequest(context: Context, photoType: PhotoType, extension: string, options?: CreateOptions): MediaAssetChangeRequest
+static createAssetRequest(context: Context, photoType: [PhotoType](../enums/Enums.md#ZH-CN_TOPIC_0000002529445919__phototype), extension: string, options?: CreateOptions): MediaAssetChangeRequest
 
 指定文件类型和扩展名，创建资产变更请求。
 
@@ -153,25 +186,31 @@ static createAssetRequest(context: Context, photoType: PhotoType, extension: str
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是传入Ability实例的上下文。photoType[PhotoType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445919__phototype)是待创建的文件类型，IMAGE或者VIDEO类型。extensionstring是文件扩展名，例如：'jpg'。options[CreateOptions](../interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529285945__createoptions)否
-
-创建选项，例如：{title: 'testPhoto'}。
-
-文件名中不允许出现非法英文字符，包括： . .. \ / : * ? " ' ` < > | { } [ ]
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 传入Ability实例的上下文。 |
+| photoType | [PhotoType](../enums/Enums.md#ZH-CN_TOPIC_0000002529445919__phototype) | 是 | 待创建的文件类型，IMAGE或者VIDEO类型。 |
+| extension | string | 是 | 文件扩展名，例如：'jpg'。 |
+| options | CreateOptions | 否 | 创建选项，例如：{title: 'testPhoto'}。 文件名中不允许出现非法英文字符，包括： . .. \ / : * ? " ' ` < > | { } [ ] |
 
 **返回值：**
 
-类型说明[MediaAssetChangeRequest](Class (MediaAssetChangeRequest).md)返回创建资产的变更请求。
+| 类型 | 说明 |
+| --- | --- |
+| MediaAssetChangeRequest | 返回创建资产的变更请求。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
@@ -191,7 +230,6 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   } catch (err) {
     console.error(`createAssetRequestDemo failed with error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### deleteAssets11+
@@ -206,21 +244,30 @@ static deleteAssets(context: Context, assets: Array<PhotoAsset>): Promise<void>
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是传入Ability实例的上下文。assetsArray<[PhotoAsset](../interfaces/Interface (PhotoAsset).md)>是待删除的媒体文件数组，数组中元素个数不超过300个。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 传入Ability实例的上下文。 |
+| assets | Array<PhotoAsset> | 是 | 待删除的媒体文件数组，数组中元素个数不超过300个。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，返回void。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，返回void。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -240,7 +287,6 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   } catch (err) {
     console.error(`deleteAssetsDemo failed with error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### deleteAssets11+
@@ -255,21 +301,31 @@ static deleteAssets(context: Context, uriList: Array<string>): Promise<void>
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是传入Ability实例的上下文。uriListArray<string>是待删除的媒体文件uri数组，数组中元素个数不超过300个。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 传入Ability实例的上下文。 |
+| uriList | Array<string> | 是 | 待删除的媒体文件uri数组，数组中元素个数不超过300个。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，返回void。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，返回void。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14000002The uri format is incorrect or does not exist.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14000002 | The uri format is incorrect or does not exist. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -289,7 +345,6 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   } catch (err) {
     console.error(`deleteAssetsDemo failed with error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### getAsset11+
@@ -298,7 +353,8 @@ getAsset(): PhotoAsset
 
 获取当前资产变更请求中的资产。
 
-对于创建资产的变更请求，在调用接口[applyChanges](../interfaces/Interface (PhotoAccessHelper).md#ZH-CN_TOPIC_0000002529445917__applychanges11)的提交生效之前，该接口会返回null。
+
+对于创建资产的变更请求，在调用接口[applyChanges](Interface (PhotoAccessHelper).md#ZH-CN_TOPIC_0000002553362013__applychanges11)的提交生效之前，该接口会返回null。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -306,17 +362,22 @@ getAsset(): PhotoAsset
 
 **返回值：**
 
-类型说明[PhotoAsset](../interfaces/Interface (PhotoAsset).md)返回当前资产变更请求中的资产。
+| 类型 | 说明 |
+| --- | --- |
+| PhotoAsset | 返回当前资产变更请求中的资产。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
@@ -331,7 +392,6 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   } catch (err) {
     console.error(`getAssetDemo failed with error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### setTitle11+
@@ -346,7 +406,9 @@ setTitle(title: string): void
 
 **参数：**
 
-参数名类型必填说明titlestring是待修改的资产标题。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| title | string | 是 | 待修改的资产标题。 |
 
 title参数规格为：
 
@@ -360,13 +422,16 @@ title参数规格为：
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -406,17 +471,24 @@ getWriteCacheHandler(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回临时文件写句柄。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回临时文件写句柄。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.14000011System inner fail.14000016Operation Not Support.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 14000011 | System inner fail. |
+| 14000016 | Operation Not Support. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { fileIo } from '@kit.CoreFileKit';
@@ -435,14 +507,14 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   } catch (err) {
     console.error(`getWriteCacheHandlerDemo failed with error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### addResource11+
 
-addResource(type: ResourceType, fileUri: string): void
+addResource(type: [ResourceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529445919__resourcetype11), fileUri: string): void
 
-通过[fileUri](../../modules/ohos/@ohos.file.fileuri (文件URI).md)从应用沙箱添加资源。
+通过文件URI从应用沙箱添加资源，待添加资源的数据来源可参考[@ohos.file.fileuri (文件URI)](@ohos.file.fileuri (文件URI).md)。
+
 
 对于同一个资产变更请求，成功添加资源后不支持重复调用该接口。对于动态照片，可调用两次该接口分别添加图片和视频资源。
 
@@ -452,17 +524,25 @@ addResource(type: ResourceType, fileUri: string): void
 
 **参数：**
 
-参数名类型必填说明type[ResourceType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445919__resourcetype11)是待添加资源的类型。fileUristring是待添加资源的数据来源，在应用沙箱下的uri。示例fileUri：'file://com.example.temptest/data/storage/el2/base/haps/entry/files/test.jpg'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | [ResourceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529445919__resourcetype11) | 是 | 待添加资源的类型。 |
+| fileUri | string | 是 | 待添加资源的数据来源，在应用沙箱下的uri。示例fileUri：'file://com.example.temptest/data/storage/el2/base/haps/entry/files/test.jpg'。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.13900002The file corresponding to the URI is not in the app sandbox.14000011System inner fail.14000016Operation Not Support.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 13900002 | The file corresponding to the URI is not in the app sandbox. |
+| 14000011 | System inner fail. |
+| 14000016 | Operation Not Support. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
@@ -479,12 +559,11 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   } catch (err) {
     console.error(`addResourceByFileUriDemo failed with error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### addResource11+
 
-addResource(type: ResourceType, data: ArrayBuffer): void
+addResource(type: [ResourceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529445919__resourcetype11), data: ArrayBuffer): void
 
 通过ArrayBuffer数据添加资源。
 
@@ -496,17 +575,24 @@ addResource(type: ResourceType, data: ArrayBuffer): void
 
 **参数：**
 
-参数名类型必填说明type[ResourceType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445919__resourcetype11)是待添加资源的类型。dataArrayBuffer是待添加资源的数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | [ResourceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529445919__resourcetype11) | 是 | 待添加资源的类型。 |
+| data | ArrayBuffer | 是 | 待添加资源的数据。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14000011System inner fail.14000016Operation Not Support.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14000011 | System inner fail. |
+| 14000016 | Operation Not Support. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
@@ -522,7 +608,6 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   } catch (err) {
     console.error(`addResourceByArrayBufferDemo failed with error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### saveCameraPhoto12+
@@ -535,13 +620,16 @@ saveCameraPhoto(): void
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息14000011System inner fail.14000016Operation Not Support.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14000011 | System inner fail. |
+| 14000016 | Operation Not Support. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, asset: photoAccessHelper.PhotoAsset) {
@@ -554,12 +642,11 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, asse
   } catch (err) {
     console.error(`apply saveCameraPhoto failed with error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### saveCameraPhoto13+
 
-saveCameraPhoto(imageFileType: ImageFileType): void
+saveCameraPhoto(imageFileType: [ImageFileType](../enums/Enums.md#ZH-CN_TOPIC_0000002529445919__imagefiletype13)): void
 
 保存相机拍摄的照片。
 
@@ -567,17 +654,22 @@ saveCameraPhoto(imageFileType: ImageFileType): void
 
 **参数：**
 
-参数名类型必填说明imageFileType[ImageFileType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445919__imagefiletype13)是需要保存的类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| imageFileType | [ImageFileType](../enums/Enums.md#ZH-CN_TOPIC_0000002529445919__imagefiletype13) | 是 | 需要保存的类型。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息14000011System inner fail.14000016Operation Not Support.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14000011 | System inner fail. |
+| 14000016 | Operation Not Support. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -594,7 +686,6 @@ async function example(context: Context, asset: photoAccessHelper.PhotoAsset) {
   } catch (err) {
     console.error(`apply saveCameraPhoto failed with error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### discardCameraPhoto12+
@@ -607,13 +698,16 @@ discardCameraPhoto(): void
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息14000011Internal system error.14000016Operation Not Support.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14000011 | Internal system error. |
+| 14000016 | Operation Not Support. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, asset: photoAccessHelper.PhotoAsset) {
@@ -626,7 +720,6 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, asse
   } catch (err) {
     console.error(`apply discardCameraPhoto failed with error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### setOrientation15+
@@ -639,17 +732,22 @@ setOrientation(orientation: number): void
 
 **参数：**
 
-参数名类型必填说明orientationnumber是待修改的图片旋转角度，且只能为0、90、180、270。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| orientation | number | 是 | 待修改的图片旋转角度，且只能为0、90、180、270。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';

@@ -1,9 +1,10 @@
 # Interface (AVSession)
 
+调用[avSession.createAVSession](Functions.md#ZH-CN_TOPIC_0000002522081884__avsessioncreateavsession10)后，返回会话的实例，可以获得会话ID，完成设置元数据，播放状态信息等操作。
+
+
 - 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 - 本Interface首批接口从API version 10开始支持。
-
-调用[avSession.createAVSession](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002497445782__avsessioncreateavsession10)后，返回会话的实例，可以获得会话ID，完成设置元数据，播放状态信息等操作。
 
 #### 导入模块
 
@@ -15,23 +16,11 @@ import { avSession } from '@kit.AVSessionKit';
 
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
 
-名称类型只读可选说明sessionId10+string是否
-
-AVSession对象唯一的会话标识。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-sessionType10+[AVSessionType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__avsessiontype10)是否
-
-AVSession会话类型。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-sessionTag22+string是否
-
-AVSession会话的自定义标签信息。
-
-**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| sessionId10+ | string | 是 | 否 | AVSession对象唯一的会话标识。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| sessionType10+ | [AVSessionType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__avsessiontype10) | 是 | 否 | AVSession会话类型。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| sessionTag22+ | string | 是 | 否 | AVSession会话的自定义标签信息。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
 
 **示例：**
 
@@ -52,17 +41,25 @@ setAVMetadata(data: AVMetadata): Promise<void>
 
 **参数：**
 
-参数名类型必填说明data[AVMetadata](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avmetadata10)是会话元数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | AVMetadata | 是 | 会话元数据。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。当元数据设置成功，无返回结果，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。当元数据设置成功，无返回结果，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码]([媒体会话管理错误码](../../errors/媒体会话管理错误码.md).md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -107,13 +104,20 @@ setAVMetadata(data: AVMetadata, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明data[AVMetadata](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avmetadata10)是会话元数据。callbackAsyncCallback<void>是回调函数。当元数据设置成功，err为undefined，否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | AVMetadata | 是 | 会话元数据。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当元数据设置成功，err为undefined，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -160,17 +164,25 @@ setCallMetadata(data: CallMetadata): Promise<void>
 
 **参数：**
 
-参数名类型必填说明data[CallMetadata](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__callmetadata11)是通话会话元数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | CallMetadata | 是 | 通话会话元数据。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。当通话元数据设置成功，无返回结果，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。当通话元数据设置成功，无返回结果，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -191,7 +203,6 @@ struct Index {
     }
     .width('100%')
     .height('100%')
-  }
 }
 
 class CallManager {
@@ -215,9 +226,6 @@ class CallManager {
       } else {
         console.error('setCallMetadata Error: ${err}')
       }
-    }
-  }
-}
 ```
 
 #### setCallMetadata11+
@@ -230,13 +238,20 @@ setCallMetadata(data: CallMetadata, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明data[CallMetadata](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__callmetadata11)是通话会话元数据。callbackAsyncCallback<void>是回调函数。当通话元数据设置成功，err为undefined，否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | CallMetadata | 是 | 通话会话元数据。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当通话元数据设置成功，err为undefined，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -257,7 +272,6 @@ struct Index {
     }
     .width('100%')
     .height('100%')
-  }
 }
 
 class CallManager {
@@ -281,9 +295,7 @@ class CallManager {
         }
       });
     }catch (syncErr) {
-      console.error('Syncronous operation failed: ${syncErr}');
-    }
-  }
+      console.error('Synchronous operation failed: ${syncErr}');
 }
 ```
 
@@ -297,17 +309,25 @@ setAVCallState(state: AVCallState): Promise<void>
 
 **参数：**
 
-参数名类型必填说明state[AVCallState](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avcallstate11)是通话状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| state | AVCallState | 是 | 通话状态。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。当通话元数据设置成功，无返回结果，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。当通话元数据设置成功，无返回结果，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -335,13 +355,20 @@ setAVCallState(state: AVCallState, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明state[AVCallState](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avcallstate11)是通话状态。callbackAsyncCallback<void>是回调函数。当通话元数据设置成功，err为undefined，否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| state | AVCallState | 是 | 通话状态。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当通话元数据设置成功，err为undefined，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -373,17 +400,25 @@ setAVPlaybackState(state: AVPlaybackState): Promise<void>
 
 **参数：**
 
-参数名类型必填说明state[AVPlaybackState](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avplaybackstate10)是会话播放状态，包括状态、倍数、循环模式等信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| state | AVPlaybackState | 是 | 会话播放状态，包括状态、倍数、循环模式等信息。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。当播放状态设置成功，无返回结果，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。当播放状态设置成功，无返回结果，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -415,13 +450,20 @@ setAVPlaybackState(state: AVPlaybackState, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明state[AVPlaybackState](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avplaybackstate10)是会话播放状态，包括状态、倍数、循环模式等信息。callbackAsyncCallback<void>是回调函数。当播放状态设置成功，err为undefined，否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| state | AVPlaybackState | 是 | 会话播放状态，包括状态、倍数、循环模式等信息。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当播放状态设置成功，err为undefined，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -457,17 +499,25 @@ setLaunchAbility(ability: WantAgent): Promise<void>
 
 **参数：**
 
-参数名类型必填说明ability[WantAgent](../../modules/ohos/@ohos.app.ability.wantAgent (WantAgent模块).md)是应用的相关属性信息，如bundleName，abilityName，deviceId等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | WantAgent | 是 | 应用的相关属性信息，如bundleName，abilityName，deviceId等。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。当Ability设置成功，无返回结果，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。当Ability设置成功，无返回结果，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -496,7 +546,6 @@ let wantAgentInfo: wantAgent.WantAgentInfo = {
           mykey5: ["qqqqq", "wwwwww", "aaaaaaaaaaaaaaaaa"],
           mykey6: true
         }
-    }
   ],
   operationType: wantAgent.OperationType.START_ABILITIES,
   requestCode: 0,
@@ -509,7 +558,6 @@ wantAgent.getWantAgent(wantAgentInfo).then((agent) => {
   }).catch((err: BusinessError) => {
     console.error(`SetLaunchAbility BusinessError: code: ${err.code}, message: ${err.message}`);
   });
-});
 ```
 
 #### setLaunchAbility10+
@@ -522,13 +570,20 @@ setLaunchAbility(ability: WantAgent, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明ability[WantAgent](../../modules/ohos/@ohos.app.ability.wantAgent (WantAgent模块).md)是应用的相关属性信息，如bundleName，abilityName，deviceId等。callbackAsyncCallback<void>是回调函数。当Ability设置成功，err为undefined，否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | WantAgent | 是 | 应用的相关属性信息，如bundleName，abilityName，deviceId等。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当Ability设置成功，err为undefined，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -557,7 +612,6 @@ let wantAgentInfo: wantAgent.WantAgentInfo = {
           mykey5: ["qqqqq", "wwwwww", "aaaaaaaaaaaaaaaaa"],
           mykey6: true
         }
-    }
   ],
   operationType: wantAgent.OperationType.START_ABILITIES,
   requestCode: 0,
@@ -572,14 +626,13 @@ wantAgent.getWantAgent(wantAgentInfo).then((agent) => {
       console.info('SetLaunchAbility successfully');
     }
   });
-});
 ```
 
 #### dispatchSessionEvent10+
 
-dispatchSessionEvent(event: string, args: Record<string, Object>): Promise<void>
+dispatchSessionEvent(event: string, args: {[key: string]: Object}): Promise<void>
 
-媒体提供方设置一个会话内自定义事件，包括事件名和键值对形式的事件内容，结果通过Promise异步回调方式返回。
+媒体提供方设置一个会话内自定义事件，包括事件名和键值对形式的事件内容。使用Promise异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -587,23 +640,29 @@ dispatchSessionEvent(event: string, args: Record<string, Object>): Promise<void>
 
 **参数：**
 
-参数名类型必填说明eventstring是需要设置的会话事件的名称。argsRecord<string, Object>是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 需要设置的会话事件的名称。 |
+| args | {[key: string]: Object} | 是 | 需要传递的会话事件内容。 |
 
-需要传递的会话事件内容。
 
-API version 20开始发生兼容变更，在API version 19及之前的版本args的参数类型为：{[key: string]: Object}。
-
-参数args支持的数据类型有：字符串、数字、布尔、对象、数组和文件描述符等，详细介绍请参见[@ohos.app.ability.Want(Want)](../../modules/ohos/@ohos.app.ability.Want (Want).md)。
+参数args支持的数据类型有：字符串、数字、布尔值、对象、数组和文件描述符等，详细介绍请参见[@ohos.app.ability.Want(Want)](@ohos.app.ability.Want (Want).md)。
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。当事件设置成功，无返回结果，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。当事件设置成功，无返回结果，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -637,41 +696,42 @@ struct Index {
                     console.error(`dispatchSessionEvent BusinessError: code: ${err.code}, message: ${err.message}`);
                   })
                 }
-              }
             });
           })
       }
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### dispatchSessionEvent10+
 
-dispatchSessionEvent(event: string, args: Record<string, Object>, callback: AsyncCallback<void>): void
+dispatchSessionEvent(event: string, args: {[key: string]: Object}, callback: AsyncCallback<void>): void
 
-媒体提供方设置一个会话内自定义事件，包括事件名和键值对形式的事件内容，结果通过callback异步回调方式返回。
+媒体提供方设置一个会话内自定义事件，包括事件名和键值对形式的事件内容。使用callback异步回调。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
 
 **参数：**
 
-参数名类型必填说明eventstring是需要设置的会话事件的名称。argsRecord<string, Object>是
-
-需要传递的会话事件内容。
-
-API version 20开始发生兼容变更，在API version 19及之前的版本args的参数类型为：{[key: string]: Object}。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 需要设置的会话事件的名称。 |
+| args | {[key: string]: Object} | 是 | 需要传递的会话事件内容。 |
 callbackAsyncCallback<void>是回调函数。当会话事件设置成功，err为undefined，否则返回错误对象。
 
-参数args支持的数据类型有：字符串、数字、布尔、对象、数组和文件描述符等，详细介绍请参见[@ohos.app.ability.Want(Want)](../../modules/ohos/@ohos.app.ability.Want (Want).md)。
+
+参数args支持的数据类型有：字符串、数字、布尔值、对象、数组和文件描述符等，详细介绍请参见[@ohos.app.ability.Want(Want)](@ohos.app.ability.Want (Want).md)。
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -704,13 +764,11 @@ struct Index {
                     }
                   })
                 }
-              }
             });
           })
       }
     .width('100%')
     .height('100%')
-  }
 }
 ```
 
@@ -726,17 +784,25 @@ setAVQueueItems(items: Array<AVQueueItem>): Promise<void>
 
 **参数：**
 
-参数名类型必填说明itemsArray<[AVQueueItem](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avqueueitem10)>是播放列表单项的队列，用以表示播放列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| items | Array<AVQueueItem> | 是 | 播放列表单项的队列，用以表示播放列表。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。当播放列表设置成功，无返回结果，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。当播放列表设置成功，无返回结果，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -754,8 +820,6 @@ interface ExtrasType {
 struct Index {
   build() {
     Column() {
-    }
-  }
 }
 
 let currentAVSession: avSession.AVSession;
@@ -799,8 +863,6 @@ async function setAVQueueItems() {
     if (err) {
       console.error(`ImageSource or PixelMap create Error: code: ${err.code}, message: ${err.message}`);
     }
-  }
-}
 ```
 
 #### setAVQueueItems10+
@@ -813,13 +875,20 @@ setAVQueueItems(items: Array<AVQueueItem>, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明itemsArray<[AVQueueItem](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avqueueitem10)>是播放列表单项的队列，用以表示播放列表。callbackAsyncCallback<void>是回调函数。当播放状态设置成功，err为undefined，否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| items | Array<AVQueueItem> | 是 | 播放列表单项的队列，用以表示播放列表。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当播放状态设置成功，err为undefined，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -838,8 +907,6 @@ interface ExtrasType {
 struct Index {
   build() {
     Column() {
-    }
-  }
 }
 
 let currentAVSession: avSession.AVSession;
@@ -885,8 +952,6 @@ async function setAVQueueItems() {
     if (err) {
       console.error(`ImageSource or PixelMap create Error: code: ${err.code}, message: ${err.message}`);
     }
-  }
-}
 ```
 
 #### setAVQueueTitle10+
@@ -901,17 +966,25 @@ setAVQueueTitle(title: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明titlestring是播放列表的名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| title | string | 是 | 播放列表的名称。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。当播放列表设置成功，无返回结果，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。当播放列表设置成功，无返回结果，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -936,13 +1009,20 @@ setAVQueueTitle(title: string, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明titlestring是播放列表名称字段。callbackAsyncCallback<void>是回调函数。当播放状态设置成功，err为undefined，否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| title | string | 是 | 播放列表名称字段。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当播放状态设置成功，err为undefined，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -961,9 +1041,9 @@ currentAVSession.setAVQueueTitle(queueTitle, (err: BusinessError) => {
 
 #### setExtras10+
 
-setExtras(extras: Record<string, Object>): Promise<void>
+setExtras(extras: {[key: string]: Object}): Promise<void>
 
-媒体提供方设置键值对形式的自定义媒体数据包，结果通过Promise异步回调方式返回。
+媒体提供方设置键值对形式的自定义媒体数据包。使用Promise异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -971,23 +1051,25 @@ setExtras(extras: Record<string, Object>): Promise<void>
 
 **参数：**
 
-参数名类型必填说明extrasRecord<string, Object>是
-
-需要传递的自定义媒体数据包键值对。
-
-API version 20开始发生兼容变更，在API version 19及之前的版本args的参数类型为：{[key: string]: Object}。
-
-参数extras支持的数据类型有：字符串、数字、布尔、对象、数组和文件描述符等，详细介绍请参见[@ohos.app.ability.Want(Want)](../../modules/ohos/@ohos.app.ability.Want (Want).md)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| extras | {[key: string]: Object} | 是 | 需要传递的自定义媒体数据包键值对。  说明： 参数extras支持的数据类型有：字符串、数字、布尔值、对象、数组和文件描述符等，详细介绍请参见@ohos.app.ability.Want(Want)。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。当自定义媒体数据包设置成功，无返回结果，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified.2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1019,35 +1101,38 @@ struct Index {
                       console.error(`setExtras BusinessError: code: ${err.code}, message: ${err.message}`);
                   })
                 }
-              }
             });
           })
       }
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### setExtras10+
 
 setExtras(extras: {[key: string]: Object}, callback: AsyncCallback<void>): void
 
-媒体提供方设置键值对形式的自定义媒体数据包，结果通过callback异步回调方式返回。
+媒体提供方设置键值对形式的自定义媒体数据包，使用callback异步回调。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
 
 **参数：**
 
-参数名类型必填说明extras{[key: string]: Object}是需要传递的自定义媒体数据包键值对。callbackAsyncCallback<void>是回调函数。当自定义媒体数据包设置成功，err为undefined，否则返回错误对象。
-
-参数extras支持的数据类型有：字符串、数字、布尔、对象、数组和文件描述符等，详细介绍请参见[@ohos.app.ability.Want(Want)](../../modules/ohos/@ohos.app.ability.Want (Want).md)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| extras | {[key: string]: Object} | 是 | 需要传递的自定义媒体数据包键值对。  说明： 参数extras支持的数据类型有：字符串、数字、布尔值、对象、数组和文件描述符等，详细介绍请参见@ohos.app.ability.Want(Want)。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当自定义媒体数据包设置成功，err为undefined，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1079,13 +1164,11 @@ struct Index {
                     }
                   })
                 }
-              }
             });
           })
       }
     .width('100%')
     .height('100%')
-  }
 }
 ```
 
@@ -1101,17 +1184,24 @@ sendCustomData(data: Record<string, Object>): Promise<void>
 
 **参数：**
 
-参数名类型必填说明dataRecord<string, Object>是应用程序填充的自定义数据。服务端仅解析key为'customData'，且Object为string类型的对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | Record<string, Object> | 是 | 应用程序填充的自定义数据。服务端仅解析key为'customData'，且Object为string类型的对象。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.You are advised to:1.Scheduled retry.2.Destroy the current session or session controller and re-create it.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception.You are advised to:1.Scheduled retry.2.Destroy the current session or session controller and re-create it. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1150,6 +1240,618 @@ struct Index {
     .width('100%')
     .height('100%')
   }
+```
+
+**enableDesktopLyric23+**
+
+enableDesktopLyric(enable: boolean): Promise<void>
+
+当前会话是否启用桌面歌词功能。使用Promise异步回调。
+
+系统能力： SystemCapability.Multimedia.AVSession.Core
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enable | boolean | 是 | 是否启用桌面歌词。true表示启用，false表示不启用。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
+| 6600111 | The desktop lyrics feature is not supported. |
+
+示例：
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+import { avSession } from '@kit.AVSessionKit';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'hello world';
+
+  build() {
+    Column() {
+      Text(this.message)
+        .onClick(() => {
+          let currentAVSession: avSession.AVSession | undefined = undefined;
+          let tag = "createNewSession";
+          let context: Context = this.getUIContext().getHostContext() as Context;
+
+          avSession.createAVSession(context, tag, "audio", (err: BusinessError, data: avSession.AVSession) => {
+            if (err) {
+              console.error(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
+            } else {
+              currentAVSession = data;
+            }
+          });
+          if (currentAVSession !== undefined) {
+            (currentAVSession as avSession.AVSession).enableDesktopLyric(true).then(() => {
+              console.info('enableDesktopLyric successfully');
+            }).catch((err: BusinessError) => {
+              console.error(`enableDesktopLyric BusinessError: code: ${err.code}, message: ${err.message}`);
+            })
+          }
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+```
+
+**setDesktopLyricVisible23+**
+
+setDesktopLyricVisible(visible: boolean): Promise<void>
+
+设置当前会话桌面歌词的显示状态。使用Promise异步回调。
+
+系统能力： SystemCapability.Multimedia.AVSession.Core
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| visible | boolean | 是 | 是否显示桌面歌词。true表示显示；false表示不显示。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
+| 6600110 | The desktop lyrics feature of this application is not enabled. |
+| 6600111 | The desktop lyrics feature is not supported. |
+
+示例：
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+import { avSession } from '@kit.AVSessionKit';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'hello world';
+
+  build() {
+    Column() {
+      Text(this.message)
+        .onClick(() => {
+          let currentAVSession: avSession.AVSession | undefined = undefined;
+          let tag = "createNewSession";
+          let context: Context = this.getUIContext().getHostContext() as Context;
+
+          avSession.createAVSession(context, tag, "audio", (err: BusinessError, data: avSession.AVSession) => {
+            if (err) {
+              console.error(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
+            } else {
+              currentAVSession = data;
+            }
+          });
+          if (currentAVSession !== undefined) {
+            (currentAVSession as avSession.AVSession).setDesktopLyricVisible(true).then(() => {
+              console.info('setDesktopLyricVisible successfully');
+            }).catch((err: BusinessError) => {
+              console.error(`setDesktopLyricVisible BusinessError: code: ${err.code}, message: ${err.message}`);
+            })
+          }
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+```
+
+**isDesktopLyricVisible23+**
+
+isDesktopLyricVisible(): Promise<boolean>
+
+查询当前会话桌面歌词的显示状态。使用Promise异步回调。
+
+系统能力： SystemCapability.Multimedia.AVSession.Core
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示显示桌面歌词；返回false表示不显示桌面歌词。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
+| 6600110 | The desktop lyrics feature of this application is not enabled. |
+| 6600111 | The desktop lyrics feature is not supported. |
+
+示例：
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+import { avSession } from '@kit.AVSessionKit';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'hello world';
+
+  build() {
+    Column() {
+      Text(this.message)
+        .onClick(() => {
+          let currentAVSession: avSession.AVSession | undefined = undefined;
+          let tag = "createNewSession";
+          let context: Context = this.getUIContext().getHostContext() as Context;
+          avSession.createAVSession(context, tag, "audio", (err: BusinessError, data: avSession.AVSession) => {
+            if (err) {
+              console.error(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
+            } else {
+              currentAVSession = data;
+            }
+          });
+          if (currentAVSession !== undefined) {
+            (currentAVSession as avSession.AVSession).isDesktopLyricVisible().then((visible: boolean) => {
+              console.info(`isDesktopLyricVisible: ${visible}`);
+            }).catch((err: BusinessError) => {
+              console.error(`isDesktopLyricVisible BusinessError: code: ${err.code}, message: ${err.message}`);
+            })
+          }
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+```
+
+**onDesktopLyricVisibilityChanged23+**
+
+onDesktopLyricVisibilityChanged(callback: Callback<boolean>): void
+
+显示桌面歌词状态变更的监听事件。使用callback异步回调。
+
+系统能力： SystemCapability.Multimedia.AVSession.Core
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<boolean> | 是 | 回调函数。返回true表示开启显示桌面歌词状态；返回false表示关闭显示桌面歌词状态。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
+
+示例：
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+import { avSession } from '@kit.AVSessionKit';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'hello world';
+
+  build() {
+    Column() {
+      Text(this.message)
+        .onClick(() => {
+          let currentAVSession: avSession.AVSession | undefined = undefined;
+          let tag = "createNewSession";
+          let context: Context = this.getUIContext().getHostContext() as Context;
+          avSession.createAVSession(context, tag, "audio", (err: BusinessError, data: avSession.AVSession) => {
+            if (err) {
+              console.error(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
+            } else {
+              currentAVSession = data;
+            }
+          });
+          if (currentAVSession !== undefined) {
+            try {
+              (currentAVSession as avSession.AVSession).onDesktopLyricVisibilityChanged((visible: boolean) => {
+                console.info(`desktop lyric visible state: ${visible}`);
+              });
+            } catch (err) {
+              console.error(`onDesktopLyricVisibilityChanged BusinessError: code: ${err.code}, message: ${err.message}`);
+            }
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+```
+
+**offDesktopLyricVisibilityChanged23+**
+
+offDesktopLyricVisibilityChanged(callback?: Callback<boolean>): void
+
+取消显示桌面歌词状态变更事件监听，取消后将不再对该事件进行监听。使用callback异步回调。
+
+系统能力： SystemCapability.Multimedia.AVSession.Core
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<boolean> | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有显示桌面歌词状态变更事件监听。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
+
+示例：
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+import { avSession } from '@kit.AVSessionKit';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'hello world';
+
+  build() {
+    Column() {
+      Text(this.message)
+        .onClick(() => {
+          let currentAVSession: avSession.AVSession | undefined = undefined;
+          let tag = "createNewSession";
+          let context: Context = this.getUIContext().getHostContext() as Context;
+          avSession.createAVSession(context, tag, "audio", (err: BusinessError, data: avSession.AVSession) => {
+            if (err) {
+              console.error(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
+            } else {
+              currentAVSession = data;
+            }
+          });
+          if (currentAVSession !== undefined) {
+            try {
+              (currentAVSession as avSession.AVSession).offDesktopLyricVisibilityChanged();
+            } catch (err) {
+              console.error(`offDesktopLyricVisibilityChanged BusinessError: code: ${err.code}, message: ${err.message}`);
+            }
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+```
+
+**setDesktopLyricState23+**
+
+setDesktopLyricState(state: DesktopLyricState): Promise<void>
+
+设置当前会话桌面歌词状态。使用Promise异步回调。
+
+系统能力： SystemCapability.Multimedia.AVSession.Core
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| state | DesktopLyricState | 是 | 桌面歌词状态。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
+| 6600110 | The desktop lyrics feature of this application is not enabled. |
+| 6600111 | The desktop lyrics feature is not supported. |
+
+示例：
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+import { avSession } from '@kit.AVSessionKit';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'hello world';
+
+  build() {
+    Column() {
+      Text(this.message)
+        .onClick(() => {
+          let currentAVSession: avSession.AVSession | undefined = undefined;
+          let tag = "createNewSession";
+          let context: Context = this.getUIContext().getHostContext() as Context;
+
+          avSession.createAVSession(context, tag, "audio", (err: BusinessError, data: avSession.AVSession) => {
+            if (err) {
+              console.error(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
+            } else {
+              currentAVSession = data;
+            }
+          });
+          if (currentAVSession !== undefined) {
+            let state: avSession.DesktopLyricState = {
+              isLocked: true,
+            };
+            (currentAVSession as avSession.AVSession).setDesktopLyricState(state).then(() => {
+              console.info('setDesktopLyricState successfully');
+            }).catch((err: BusinessError) => {
+              console.error(`setDesktopLyricState BusinessError: code: ${err.code}, message: ${err.message}`);
+            })
+          }
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+```
+
+**getDesktopLyricState23+**
+
+getDesktopLyricState(): Promise<DesktopLyricState>
+
+获取当前会话桌面歌词状态。使用Promise异步回调。
+
+系统能力： SystemCapability.Multimedia.AVSession.Core
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<DesktopLyricState> | Promise对象。返回桌面歌词状态。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
+| 6600110 | The desktop lyrics feature of this application is not enabled. |
+| 6600111 | The desktop lyrics feature is not supported. |
+
+示例：
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+import { avSession } from '@kit.AVSessionKit';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'hello world';
+
+  build() {
+    Column() {
+      Text(this.message)
+        .onClick(() => {
+          let currentAVSession: avSession.AVSession | undefined = undefined;
+          let tag = "createNewSession";
+          let context: Context = this.getUIContext().getHostContext() as Context;
+
+          avSession.createAVSession(context, tag, "audio", (err: BusinessError, data: avSession.AVSession) => {
+            if (err) {
+              console.error(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
+            } else {
+              currentAVSession = data;
+            }
+          });
+          if (currentAVSession !== undefined) {
+            (currentAVSession as avSession.AVSession).getDesktopLyricState()
+              .then((state: avSession.DesktopLyricState) => {
+                console.info(`getDesktopLyricState: ${state.isLocked}`);
+              })
+              .catch((err: BusinessError) => {
+                console.error(`setDesktopLyricState BusinessError: code: ${err.code}, message: ${err.message}`);
+              })
+          }
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+```
+
+**onDesktopLyricStateChanged23+**
+
+onDesktopLyricStateChanged(callback: Callback<DesktopLyricState>): void
+
+桌面歌词状态变更的监听事件。使用callback异步回调。
+
+系统能力： SystemCapability.Multimedia.AVSession.Core
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<DesktopLyricState> | 是 | 回调函数。返回桌面歌词状态。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
+
+示例：
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+import { avSession } from '@kit.AVSessionKit';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'hello world';
+
+  build() {
+    Column() {
+      Text(this.message)
+        .onClick(() => {
+          let currentAVSession: avSession.AVSession | undefined = undefined;
+          let tag = "createNewSession";
+          let context: Context = this.getUIContext().getHostContext() as Context;
+
+          avSession.createAVSession(context, tag, "audio", (err: BusinessError, data: avSession.AVSession) => {
+            if (err) {
+              console.error(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
+            } else {
+              currentAVSession = data;
+            }
+          });
+          if (currentAVSession !== undefined) {
+            try {
+              (currentAVSession as avSession.AVSession).onDesktopLyricStateChanged((state: avSession.DesktopLyricState) => {
+                console.info(`desktop lyric isLocked : ${state.isLocked}`);
+              })
+            } catch (err) {
+              console.error(`onDesktopLyricStateChanged BusinessError: code: ${err.code}, message: ${err.message}`);
+            }
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+```
+
+**offDesktopLyricStateChanged23+**
+
+offDesktopLyricStateChanged(callback?: Callback<DesktopLyricState>): void
+
+取消桌面歌词状态变更事件监听，取消后将不再对该事件进行监听。使用callback异步回调。
+
+系统能力： SystemCapability.Multimedia.AVSession.Core
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<DesktopLyricState> | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有桌面歌词状态变更事件监听。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
+
+示例：
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+import { avSession } from '@kit.AVSessionKit';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'hello world';
+
+  build() {
+    Column() {
+      Text(this.message)
+        .onClick(() => {
+          let currentAVSession: avSession.AVSession | undefined = undefined;
+          let tag = "createNewSession";
+          let context: Context = this.getUIContext().getHostContext() as Context;
+          avSession.createAVSession(context, tag, "audio", (err: BusinessError, data: avSession.AVSession) => {
+            if (err) {
+              console.error(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
+            } else {
+              currentAVSession = data;
+            }
+          });
+          if (currentAVSession !== undefined) {
+            try {
+              (currentAVSession as avSession.AVSession).offDesktopLyricStateChanged();
+            } catch (err) {
+              console.error(`offDesktopLyricStateChanged BusinessError: code: ${err.code}, message: ${err.message}`);
+            }
+        })
+    }
+    .width('100%')
+    .height('100%')
 }
 ```
 
@@ -1165,13 +1867,18 @@ getController(): Promise<AVSessionController>
 
 **返回值：**
 
-类型说明Promise<[AVSessionController](Interface (AVSessionController).md)>Promise对象。返回会话控制器。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AVSessionController> | Promise对象。返回会话控制器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1201,12 +1908,10 @@ struct Index {
             if (err) {
               console.error(`AVSession create Error: ${JSON.stringify(err)}`);
             }
-          }
         })
     }
     .width('100%')
     .height('100%')
-  }
 }
 ```
 
@@ -1220,13 +1925,18 @@ getController(callback: AsyncCallback<AVSessionController>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[AVSessionController](Interface (AVSessionController).md)>是回调函数。返回会话控制器。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<AVSessionController> | 是 | 回调函数。返回会话控制器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1259,12 +1969,10 @@ struct Index {
             if (err) {
               console.error(`AVSession create Error: code: ${err.code}, message: ${err.message}`);
             }
-          }
         })
     }
     .width('100%')
     .height('100%')
-  }
 }
 ```
 
@@ -1280,13 +1988,18 @@ getAVCastController(): Promise<AVCastController>
 
 **返回值：**
 
-类型说明Promise<[AVCastController](Interface (AVCastController).md)>Promise对象。返回投播控制器实例。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AVCastController> | Promise对象。返回投播控制器实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600102The session does not exist.6600109The remote connection is not established.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600102 | The session does not exist. |
+| 6600109 | The remote connection is not established. |
 
 **示例：**
 
@@ -1312,13 +2025,18 @@ getAVCastController(callback: AsyncCallback<AVCastController>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[AVCastController](Interface (AVCastController).md)>是回调函数，返回投播控制器实例。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<AVCastController> | 是 | 回调函数，返回投播控制器实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600102The session does not exist.6600109The remote connection is not established.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600102 | The session does not exist. |
+| 6600109 | The remote connection is not established. |
 
 **示例：**
 
@@ -1348,13 +2066,18 @@ getOutputDevice(): Promise<OutputDeviceInfo>
 
 **返回值：**
 
-类型说明Promise<[OutputDeviceInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__outputdeviceinfo10)>Promise对象。返回播放设备信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<OutputDeviceInfo> | Promise对象。返回播放设备信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1378,13 +2101,18 @@ getOutputDevice(callback: AsyncCallback<OutputDeviceInfo>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[OutputDeviceInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__outputdeviceinfo10)>是回调函数，返回播放设备信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<OutputDeviceInfo> | 是 | 回调函数，返回播放设备信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1412,13 +2140,18 @@ activate(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。当会话激活成功，无返回结果，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。当会话激活成功，无返回结果，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1442,13 +2175,18 @@ activate(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当会话激活成功，err为undefined，否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当会话激活成功，err为undefined，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1468,7 +2206,7 @@ currentAVSession.activate((err: BusinessError) => {
 
 deactivate(): Promise<void>
 
-禁用当前会话的功能，可通过[activate](#ZH-CN_TOPIC_0000002497605762__activate10)恢复。结果通过Promise异步回调方式返回。
+禁用当前会话的功能，可通过[activate](#ZH-CN_TOPIC_0000002553201847__activate10)恢复。结果通过Promise异步回调方式返回。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1476,13 +2214,18 @@ deactivate(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。当禁用会话成功，无返回结果，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。当禁用会话成功，无返回结果，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1502,19 +2245,24 @@ deactivate(callback: AsyncCallback<void>): void
 
 禁用当前会话。结果通过callback异步回调方式返回。
 
-禁用当前会话的功能，可通过[activate](#ZH-CN_TOPIC_0000002497605762__activate10)恢复。
+禁用当前会话的功能，可通过[activate](#ZH-CN_TOPIC_0000002553201847__activate10)恢复。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当禁用会话成功，err为undefined，否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当禁用会话成功，err为undefined，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1542,13 +2290,18 @@ destroy(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。当会话销毁成功，无返回结果，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。当会话销毁成功，无返回结果，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1572,13 +2325,18 @@ destroy(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当会话销毁成功，err为undefined，否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当会话销毁成功，err为undefined，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1608,13 +2366,20 @@ on(type: 'play', callback: () => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'play'，当播放命令被发送到会话时，触发该事件回调。callback() => void是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'play'，当播放命令被发送到会话时，触发该事件回调。 |
+| callback | () => void | 是 | 回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1630,24 +2395,29 @@ onPlay(callback: Callback<CommandInfo>): void
 
 设置播放命令监听事件。使用callback异步回调。
 
-应用将通过回调接收控制器发送的[CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__commandinfo22)信息。
+应用将通过回调接收控制器发送的[CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002553361805__commandinfo22)信息。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
 
 **参数：**
 
-参数名类型必填说明callbackCallback<[CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__commandinfo22)>是回调函数。当监听事件注册成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<CommandInfo> | 是 | 回调函数。当监听事件注册成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
 ```ets
-currentAVSession.onPlay((info: CommandInfo) => {
+currentAVSession.onPlay((info: avSession.CommandInfo) => {
   console.info('on play entry');
 });
 ```
@@ -1666,13 +2436,20 @@ on(type: 'pause', callback: () => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'pause'，当暂停命令被发送到会话时，触发该事件回调。callback() => void是回调函数。当监听事件注册成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'pause'，当暂停命令被发送到会话时，触发该事件回调。 |
+| callback | () => void | 是 | 回调函数。当监听事件注册成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1696,13 +2473,20 @@ on(type:'stop', callback: () => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件是'stop'，当停止命令被发送到会话时，触发该事件回调。callback() => void是回调函数。当监听事件注册成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件是'stop'，当停止命令被发送到会话时，触发该事件回调。 |
+| callback | () => void | 是 | 回调函数。当监听事件注册成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1726,13 +2510,20 @@ on(type:'playNext', callback: () => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件是'playNext'，当播放下一首命令被发送到会话时，触发该事件回调。callback() => void是回调函数。当监听事件注册成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件是'playNext'，当播放下一首命令被发送到会话时，触发该事件回调。 |
+| callback | () => void | 是 | 回调函数。当监听事件注册成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1748,24 +2539,29 @@ onPlayNext(callback: Callback<CommandInfo>): void
 
 设置播放下一首命令监听事件。使用callback异步回调。
 
-应用将通过回调接收控制器发送的[CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__commandinfo22)信息。
+应用将通过回调接收控制器发送的[CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002553361805__commandinfo22)信息。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
 
 **参数：**
 
-参数名类型必填说明callbackCallback<[CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__commandinfo22)>是回调函数。当监听事件注册成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<CommandInfo> | 是 | 回调函数。当监听事件注册成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
 ```ets
-currentAVSession.onPlayNext((info: CommandInfo) => {
+currentAVSession.onPlayNext((info: avSession.CommandInfo) => {
   console.info('on playNext entry');
 });
 ```
@@ -1784,13 +2580,20 @@ on(type:'playPrevious', callback: () => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件是'playPrevious'，当播放上一首命令被发送到会话时，触发该事件回调。callback() => void是回调函数。当监听事件注册成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件是'playPrevious'，当播放上一首命令被发送到会话时，触发该事件回调。 |
+| callback | () => void | 是 | 回调函数。当监听事件注册成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1806,24 +2609,31 @@ onPlayPrevious(callback: Callback<CommandInfo>): void
 
 设置播放上一首命令监听事件。使用callback异步回调。
 
-应用将通过回调接收控制器发送的[CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__commandinfo22)信息。
+应用将通过回调接收控制器发送的[CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002553361805__commandinfo22)信息。
+
+元服务API： 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
 
 **参数：**
 
-参数名类型必填说明callbackCallback<[CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__commandinfo22)>是回调函数。当监听事件注册成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<CommandInfo> | 是 | 回调函数。当监听事件注册成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
 ```ets
-currentAVSession.onPlayPrevious((info: CommandInfo) => {
+currentAVSession.onPlayPrevious((info: avSession.CommandInfo) => {
   console.info('on playPrevious entry');
 });
 ```
@@ -1842,13 +2652,20 @@ on(type: 'fastForward', callback: (time?: number) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件是 'fastForward'，当快进命令被发送到会话时，触发该事件回调。callback(time?: number) => void是回调函数。参数time是时间节点，单位为秒。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件是 'fastForward'，当快进命令被发送到会话时，触发该事件回调。 |
+| callback | (time?: number) => void | 是 | 回调函数。参数time是时间节点，单位为秒。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1864,24 +2681,29 @@ onFastForward(callback: TwoParamCallback<number, CommandInfo>): void
 
 设置快进命令监听事件。使用callback异步回调。
 
-应用将通过回调接收控制器发送的快进时间参数，以及对应的[CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__commandinfo22)信息。
+应用将通过回调接收控制器发送的快进时间参数，以及对应的[CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002553361805__commandinfo22)信息。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
 
 **参数：**
 
-参数名类型必填说明callbackTwoParamCallback<number, [CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__commandinfo22)>是回调函数。用于处理'fastForward'操作。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | TwoParamCallback<number, CommandInfo> | 是 | 回调函数。用于处理'fastForward'操作。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
 ```ets
-currentAVSession.onFastForward((time: number, info: CommandInfo) => {
+currentAVSession.onFastForward((time: number, info: avSession.CommandInfo) => {
   console.info('on fastForward entry');
 });
 ```
@@ -1900,13 +2722,20 @@ on(type:'rewind', callback: (time?: number) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件是'rewind'，当快退命令被发送到会话时，触发该事件回调。callback(time?: number) => void是回调函数。参数time是时间节点，单位为秒。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件是'rewind'，当快退命令被发送到会话时，触发该事件回调。 |
+| callback | (time?: number) => void | 是 | 回调函数。参数time是时间节点，单位为秒。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1922,24 +2751,29 @@ onRewind(callback: TwoParamCallback<number, CommandInfo>): void
 
 设置快退命令监听事件。使用callback异步回调。
 
-应用将通过回调接收控制器发送的快退时间参数，以及对应的[CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__commandinfo22)信息。
+应用将通过回调接收控制器发送的快退时间参数，以及对应的[CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002553361805__commandinfo22)信息。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
 
 **参数：**
 
-参数名类型必填说明callbackTwoParamCallback<number, [CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__commandinfo22)>是回调函数。用于处理'rewind'操作。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | TwoParamCallback<number, CommandInfo> | 是 | 回调函数。用于处理'rewind'操作。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
 ```ets
-currentAVSession.onRewind((time: number, info: CommandInfo) => {
+currentAVSession.onRewind((time: number, info: avSession.CommandInfo) => {
   console.info('on rewind entry');
 });
 ```
@@ -1958,13 +2792,19 @@ on(type:'playWithAssetId', callback: Callback<string>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件是'playWithAssetId'，当指定资源id进行播放时，触发该事件回调。callbackCallback<string>是回调函数。参数assetId是媒体id。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件是'playWithAssetId'，当指定资源id进行播放时，触发该事件回调。 |
+| callback | Callback<string> | 是 | 回调函数。参数assetId是媒体id。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -1987,17 +2827,19 @@ off(type: 'playWithAssetId', callback?: Callback<string>): void
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持的事件是'playWithAssetId'。callbackCallback<string>否
-
-回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。参数assetId是媒体id。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持的事件是'playWithAssetId'。 |
+| callback | Callback<string> | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。参数assetId是媒体id。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2019,13 +2861,20 @@ on(type: 'seek', callback: (time: number) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'seek'：当跳转节点命令被发送到会话时，触发该事件。callback(time: number) => void是回调函数。参数time是时间节点，单位为毫秒。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'seek'：当跳转节点命令被发送到会话时，触发该事件。 |
+| callback | (time: number) => void | 是 | 回调函数。参数time是时间节点，单位为毫秒。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2049,13 +2898,20 @@ on(type: 'setSpeed', callback: (speed: number) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'setSpeed'：当设置播放速率的命令被发送到会话时，触发该事件。callback(speed: number) => void是回调函数。参数speed是播放倍速。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'setSpeed'：当设置播放速率的命令被发送到会话时，触发该事件。 |
+| callback | (speed: number) => void | 是 | 回调函数。参数speed是播放倍速。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2065,9 +2921,9 @@ currentAVSession.on('setSpeed', (speed: number) => {
 });
 ```
 
-#### on('setLoopMode')10+
+#### on('set[LoopMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)')10+
 
-on(type: 'setLoopMode', callback: (mode: LoopMode) => void): void
+on(type: 'set[LoopMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)', callback: (mode: LoopMode) => void): void
 
 设置循环模式的监听事件。
 
@@ -2079,13 +2935,20 @@ on(type: 'setLoopMode', callback: (mode: LoopMode) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'setLoopMode'：当设置循环模式的命令被发送到会话时，触发该事件。callback(mode: [LoopMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)) => void是回调函数。参数mode是循环模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'set[LoopMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)'：当设置循环模式的命令被发送到会话时，触发该事件。 |
+| callback | (mode: [LoopMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)) => void | 是 | 回调函数。参数mode是循环模式。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2095,9 +2958,9 @@ currentAVSession.on('setLoopMode', (mode: avSession.LoopMode) => {
 });
 ```
 
-#### on('setTargetLoopMode')18+
+#### on('setTarget[LoopMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)')18+
 
-on(type: 'setTargetLoopMode', callback: Callback<LoopMode>): void
+on(type: 'setTarget[LoopMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)', callback: Callback<LoopMode>): void
 
 设置目标循环模式的监听事件。
 
@@ -2109,19 +2972,19 @@ on(type: 'setTargetLoopMode', callback: Callback<LoopMode>): void
 
 **参数：**
 
-参数名类型必填说明typestring是
-
-事件回调类型，支持事件'setTargetLoopMode'。
-
-- 'setTargetLoopMode'：当设置目标循环模式的命令被发送到会话时，触发该事件。
-
-callbackCallback<[LoopMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)>是回调函数。参数表示目标循环模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'setTarget[LoopMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)'。 - 'setTargetLoopMode'：当设置目标循环模式的命令被发送到会话时，触发该事件。 |
+| callback | Callback<[LoopMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)> | 是 | 回调函数。参数表示目标循环模式。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2145,13 +3008,20 @@ on(type: 'toggleFavorite', callback: (assetId: string) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'toggleFavorite'：当是否收藏的命令被发送到会话时，触发该事件。callback(assetId: string) => void是回调函数。参数assetId是媒体ID。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'toggleFavorite'：当是否收藏的命令被发送到会话时，触发该事件。 |
+| callback | (assetId: string) => void | 是 | 回调函数。参数assetId是媒体ID。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2175,13 +3045,20 @@ on(type: 'skipToQueueItem', callback: (itemId: number) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'skipToQueueItem'：当播放列表选中单项的命令被发送到会话时，触发该事件。callback(itemId: number) => void是回调函数。参数itemId是选中的播放列表项的ID。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'skipToQueueItem'：当播放列表选中单项的命令被发送到会话时，触发该事件。 |
+| callback | (itemId: number) => void | 是 | 回调函数。参数itemId是选中的播放列表项的ID。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2205,13 +3082,20 @@ on(type: 'handleKeyEvent', callback: (event: KeyEvent) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'handleKeyEvent'：当按键事件被发送到会话时，触发该事件。callback(event: [KeyEvent](../../modules/ohos/@ohos.multimodalInput.keyEvent (按键输入事件).md)) => void是回调函数。参数event是按键事件。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'handleKeyEvent'：当按键事件被发送到会话时，触发该事件。 |
+| callback | (event: KeyEvent) => void | 是 | 回调函数。参数event是按键事件。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2225,9 +3109,9 @@ currentAVSession.on('handleKeyEvent', (event: KeyEvent) => {
 
 #### on('outputDeviceChange')10+
 
-on(type: 'outputDeviceChange', callback: (state: ConnectionState, device: OutputDeviceInfo) => void): void
+on(type: 'outputDeviceChange', callback: (state: [ConnectionState](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__connectionstate10), device: OutputDeviceInfo) => void): void
 
-设置播放设备变化的监听事件。应用接入[系统投播组件](../../modules/ohos/@ohos.multimedia.avCastPicker (投播组件).md)，当用户通过组件切换设备时，会收到设备切换的回调。
+设置播放设备变化的监听事件。应用接入[multimedia.avCastPicker (投播组件)](@ohos.multimedia.avCastPicker (投播组件).md)，当用户通过组件切换设备时，会收到设备切换的回调。
 
 每个指令支持注册多个回调，如果需要只执行最新监听，需要先注销旧的监听，否则新旧监听都会触发回调。
 
@@ -2237,17 +3121,20 @@ on(type: 'outputDeviceChange', callback: (state: ConnectionState, device: Output
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'outputDeviceChange'：当播放设备变化时，触发该事件。callback(state: [ConnectionState](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445729__connectionstate10), device: [OutputDeviceInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__outputdeviceinfo10)) => void是
-
-回调函数，参数device是设备相关信息。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'outputDeviceChange'：当播放设备变化时，触发该事件。 |
+| callback | (state: [ConnectionState](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__connectionstate10), device: OutputDeviceInfo) => void | 是 | 回调函数，参数device是设备相关信息。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2259,7 +3146,7 @@ currentAVSession.on('outputDeviceChange', (state: avSession.ConnectionState, dev
 
 #### on('commonCommand')10+
 
-on(type: 'commonCommand', callback: (command: string, args: Record<string, Object>) => void): void
+on(type: 'commonCommand', callback: (command :string, args:{[key: string]: Object}) => void): void
 
 设置自定义控制命令变化的监听器。
 
@@ -2271,17 +3158,20 @@ on(type: 'commonCommand', callback: (command: string, args: Record<string, Objec
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'commonCommand'：当自定义控制命令变化时，触发该事件。callback(command: string, args: Record<string, Object>) => void是
-
-回调函数，command为变化的自定义控制命令名，args为自定义控制命令的参数，参数内容与[sendCommonCommand](Interface (AVSessionController).md#ZH-CN_TOPIC_0000002497445784__sendcommoncommand10)方法设置的参数内容完全一致。
-
-API version 20开始发生兼容变更，在API version 19及之前的版本callback的参数类型为：(command :string, args:{[key: string]: Object}) => void。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'commonCommand'：当自定义控制命令变化时，触发该事件。 |
+| callback | (command :string, args:{[key: string]: Object}) => void | 是 | 回调函数，command为变化的自定义控制命令名，args为自定义控制命令的参数，参数内容与sendCommonCommand方法设置的参数内容完全一致。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2311,13 +3201,11 @@ struct Index {
                       console.info(`OnCommonCommand, the command is ${commonCommand}, args: ${JSON.stringify(args)}`);
                   });
                 }
-              }
             });
           })
       }
     .width('100%')
     .height('100%')
-  }
 }
 ```
 
@@ -2333,17 +3221,20 @@ off(type: 'play', callback?: () => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持的事件是'play'。callback() => void否
-
-回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持的事件是'play'。 |
+| callback | () => void | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2363,17 +3254,18 @@ offPlay(callback?: Callback<CommandInfo>): void
 
 **参数：**
 
-参数名类型必填说明callbackCallback<[CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__commandinfo22)>否
-
-回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<CommandInfo> | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2393,17 +3285,20 @@ off(type: 'pause', callback?: () => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持的事件是'pause'。callback() => void否
-
-回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持的事件是'pause'。 |
+| callback | () => void | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2423,17 +3318,20 @@ off(type: 'stop', callback?: () => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持的事件是'stop'。callback() => void否
-
-回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持的事件是'stop'。 |
+| callback | () => void | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2453,17 +3351,20 @@ off(type: 'playNext', callback?: () => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持的事件是 'playNext'。callback() => void否
-
-回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持的事件是 'playNext'。 |
+| callback | () => void | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2483,17 +3384,18 @@ offPlayNext(callback?: Callback<CommandInfo>): void
 
 **参数：**
 
-参数名类型必填说明callbackCallback<[CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__commandinfo22)>否
-
-回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<CommandInfo> | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2513,17 +3415,20 @@ off(type: 'playPrevious', callback?: () => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持的事件是'playPrevious'。callback() => void否
-
-回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持的事件是'playPrevious'。 |
+| callback | () => void | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2543,17 +3448,18 @@ offPlayPrevious(callback?: Callback<CommandInfo>): void
 
 **参数：**
 
-参数名类型必填说明callbackCallback<[CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__commandinfo22)>否
-
-回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<CommandInfo> | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2573,17 +3479,20 @@ off(type: 'fastForward', callback?: () => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持的事件是'fastForward'。callback() => void否
-
-回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持的事件是'fastForward'。 |
+| callback | () => void | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2603,17 +3512,18 @@ offFastForward(callback?: TwoParamCallback<number, CommandInfo>): void
 
 **参数：**
 
-参数名类型必填说明callbackTwoParamCallback<number, [CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__commandinfo22)>否
-
-回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | TwoParamCallback<number, CommandInfo> | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2633,17 +3543,20 @@ off(type: 'rewind', callback?: () => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持的事件是'rewind'。callback() => void否
-
-回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持的事件是'rewind'。 |
+| callback | () => void | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2663,17 +3576,18 @@ offRewind(callback?: TwoParamCallback<number, CommandInfo>): void
 
 **参数：**
 
-参数名类型必填说明callbackTwoParamCallback<number, [CommandInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__commandinfo22)>否
-
-回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | TwoParamCallback<number, CommandInfo> | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2693,19 +3607,20 @@ off(type: 'seek', callback?: (time: number) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持关闭事件'seek'。callback(time: number) => void否
-
-回调函数，参数time是时间节点，单位为毫秒。
-
-当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持关闭事件'seek'。 |
+| callback | (time: number) => void | 否 | 回调函数，参数time是时间节点，单位为毫秒。 当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2725,19 +3640,20 @@ off(type: 'setSpeed', callback?: (speed: number) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持关闭事件'setSpeed'。callback(speed: number) => void否
-
-回调函数，参数speed是播放倍速。
-
-当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持关闭事件'setSpeed'。 |
+| callback | (speed: number) => void | 否 | 回调函数，参数speed是播放倍速。 当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2745,9 +3661,9 @@ off(type: 'setSpeed', callback?: (speed: number) => void): void
 currentAVSession.off('setSpeed');
 ```
 
-#### off('setLoopMode')10+
+#### off('set[LoopMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)')10+
 
-off(type: 'setLoopMode', callback?: (mode: LoopMode) => void): void
+off(type: 'set[LoopMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)', callback?: (mode: LoopMode) => void): void
 
 取消循环模式变化事件监听。指定callback，可取消对应监听；未指定callback，取消所有事件监听。
 
@@ -2757,19 +3673,20 @@ off(type: 'setLoopMode', callback?: (mode: LoopMode) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持关闭事件'setLoopMode'。callback(mode: [LoopMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)) => void否
-
-回调函数，参数mode是循环模式。
-
-- 当监听事件取消成功，err为undefined，否则返回错误对象。
-
-- 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持关闭事件'set[LoopMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)'。 |
+| callback | (mode: [LoopMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)) => void | 否 | 回调函数，参数mode是循环模式。 - 当监听事件取消成功，err为undefined，否则返回错误对象。 - 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2777,9 +3694,9 @@ off(type: 'setLoopMode', callback?: (mode: LoopMode) => void): void
 currentAVSession.off('setLoopMode');
 ```
 
-#### off('setTargetLoopMode')18+
+#### off('setTarget[LoopMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)')18+
 
-off(type: 'setTargetLoopMode', callback?: Callback<LoopMode>): void
+off(type: 'setTarget[LoopMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)', callback?: Callback<LoopMode>): void
 
 取消目标循环模式变化事件监听。指定callback，可取消对应监听；未指定callback，取消所有事件监听。
 
@@ -2789,19 +3706,19 @@ off(type: 'setTargetLoopMode', callback?: Callback<LoopMode>): void
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持关闭事件'setTargetLoopMode'。callbackCallback<[LoopMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)>否
-
-回调函数，参数表示目标循环模式。
-
-- 当监听事件取消成功，err为undefined，否则返回错误对象。
-
-- 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持关闭事件'setTarget[LoopMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)'。 |
+| callback | Callback<[LoopMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__loopmode10)> | 否 | 回调函数，参数表示目标循环模式。 - 当监听事件取消成功，err为undefined，否则返回错误对象。 - 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2821,19 +3738,20 @@ off(type: 'toggleFavorite', callback?: (assetId: string) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持关闭事件'toggleFavorite'。callback(assetId: string) => void否
-
-回调函数，参数assetId是媒体ID。
-
-当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持关闭事件'toggleFavorite'。 |
+| callback | (assetId: string) => void | 否 | 回调函数，参数assetId是媒体ID。 当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2853,19 +3771,20 @@ off(type: 'skipToQueueItem', callback?: (itemId: number) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持关闭事件'skipToQueueItem'。callback(itemId: number) => void否
-
-回调函数，参数itemId是播放列表单项ID。
-
-当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持关闭事件'skipToQueueItem'。 |
+| callback | (itemId: number) => void | 否 | 回调函数，参数itemId是播放列表单项ID。 当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2885,19 +3804,20 @@ off(type: 'handleKeyEvent', callback?: (event: KeyEvent) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持关闭事件'handleKeyEvent'。callback(event: [KeyEvent](../../modules/ohos/@ohos.multimodalInput.keyEvent (按键输入事件).md)) => void否
-
-回调函数，参数event是按键事件。
-
-当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持关闭事件'handleKeyEvent'。 |
+| callback | (event: KeyEvent) => void | 否 | 回调函数，参数event是按键事件。 当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2907,7 +3827,7 @@ currentAVSession.off('handleKeyEvent');
 
 #### off('outputDeviceChange')10+
 
-off(type: 'outputDeviceChange', callback?: (state: ConnectionState, device: OutputDeviceInfo) => void): void
+off(type: 'outputDeviceChange', callback?: (state: [ConnectionState](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__connectionstate10), device: OutputDeviceInfo) => void): void
 
 取消播放设备变化的事件监听。指定callback，可取消对应监听；未指定callback，取消所有事件监听。
 
@@ -2917,19 +3837,20 @@ off(type: 'outputDeviceChange', callback?: (state: ConnectionState, device: Outp
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持关闭事件'outputDeviceChange'。callback(state: [ConnectionState](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445729__connectionstate10), device: [OutputDeviceInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__outputdeviceinfo10)) => void否
-
-回调函数，参数device是设备相关信息。
-
-当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持关闭事件'outputDeviceChange'。 |
+| callback | (state: [ConnectionState](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__connectionstate10), device: OutputDeviceInfo) => void | 否 | 回调函数，参数device是设备相关信息。 当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2939,7 +3860,7 @@ currentAVSession.off('outputDeviceChange');
 
 #### off('commonCommand')10+
 
-off(type: 'commonCommand', callback?: (command: string, args: Record<string, Object>) => void): void
+off(type: 'commonCommand', callback?: (command: string, args:{[key: string]: Object}) => void): void
 
 取消自定义控制命令的变化事件监听。指定callback，可取消对应监听；未指定callback，取消所有事件监听。
 
@@ -2949,19 +3870,20 @@ off(type: 'commonCommand', callback?: (command: string, args: Record<string, Obj
 
 **参数：**
 
-参数名类型必填说明typestring是取消对应的监听事件，支持事件'commonCommand'。callback(command: string, args: Record<string, Object>) => void否
-
-回调函数，参数command是变化的自定义控制命令名，args为自定义控制命令的参数。
-
-该参数为可选参数，若不填写该参数，则认为取消所有对command事件的监听。
-
-API version 20开始发生兼容变更，在API version 19及之前的版本callback的参数类型为：(command: string, args:{[key: string]: Object}) => void。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消对应的监听事件，支持事件'commonCommand'。 |
+| callback | (command: string, args:{[key: string]: Object}) => void | 否 | 回调函数，参数command是变化的自定义控制命令名，args为自定义控制命令的参数。 该参数为可选参数，若不填写该参数，则认为取消所有对command事件的监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -2983,13 +3905,20 @@ on(type: 'answer', callback: Callback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'answer'：当通话接听时，触发该事件。callbackCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'answer'：当通话接听时，触发该事件。 |
+| callback | Callback<void> | 是 | 回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -3011,17 +3940,20 @@ off(type: 'answer', callback?: Callback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持的事件是'answer'。callbackCallback<void>否
-
-回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持的事件是'answer'。 |
+| callback | Callback<void> | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -3043,13 +3975,20 @@ on(type: 'hangUp', callback: Callback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'hangUp'：当通话挂断时，触发该事件。callbackCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'hangUp'：当通话挂断时，触发该事件。 |
+| callback | Callback<void> | 是 | 回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -3071,17 +4010,20 @@ off(type: 'hangUp', callback?: Callback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持的事件是'hangUp'。callbackCallback<void>否
-
-回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持的事件是'hangUp'。 |
+| callback | Callback<void> | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -3103,13 +4045,20 @@ on(type: 'toggleCallMute', callback: Callback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'toggleCallMute'：当通话静音或解除静音时，触发该事件。callbackCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'toggleCallMute'：当通话静音或解除静音时，触发该事件。 |
+| callback | Callback<void> | 是 | 回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -3131,17 +4080,20 @@ off(type: 'toggleCallMute', callback?: Callback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持的事件是'toggleCallMute'。callbackCallback<void>否
-
-回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持的事件是'toggleCallMute'。 |
+| callback | Callback<void> | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -3163,13 +4115,20 @@ on(type: 'castDisplayChange', callback: Callback<CastDisplayInfo>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'castDisplayChange'：当扩展屏投播显示设备变化时触发事件。callbackCallback<[CastDisplayInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__castdisplayinfo12)>是回调函数。参数是扩展屏投播显示设备信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'castDisplayChange'：当扩展屏投播显示设备变化时触发事件。 |
+| callback | Callback<CastDisplayInfo> | 是 | 回调函数。参数是扩展屏投播显示设备信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -3197,13 +4156,20 @@ currentAVSession.on('castDisplayChange', (display: avSession.CastDisplayInfo) =>
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持的事件是'castDisplayChange'。callbackCallback<[CastDisplayInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__castdisplayinfo12)>否回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持的事件是'castDisplayChange'。 |
+| callback | Callback<CastDisplayInfo> | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -3221,13 +4187,17 @@ stopCasting(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当命令发送成功，err为undefined，否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当命令发送成功，err为undefined，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600109The remote connection is not established.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600109 | The remote connection is not established. |
 
 **示例：**
 
@@ -3255,13 +4225,17 @@ stopCasting(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。当成功结束投播，无返回结果，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。当成功结束投播，无返回结果，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600109The remote connection is not established.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600109 | The remote connection is not established. |
 
 **示例：**
 
@@ -3287,13 +4261,18 @@ getOutputDeviceSync(): OutputDeviceInfo
 
 **返回值：**
 
-类型说明[OutputDeviceInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__outputdeviceinfo10)当前输出设备信息。
+| 类型 | 说明 |
+| --- | --- |
+| OutputDeviceInfo | 当前输出设备信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -3320,13 +4299,18 @@ getAllCastDisplays(): Promise<Array<CastDisplayInfo>>
 
 **返回值：**
 
-类型说明Promise<Array<[CastDisplayInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__castdisplayinfo12)>>Promise对象，返回当前系统中所有支持扩展屏投播的显示设备。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<CastDisplayInfo>> | Promise对象，返回当前系统中所有支持扩展屏投播的显示设备。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -3349,7 +4333,8 @@ on(type:'playFromAssetId', callback: (assetId: number) => void): void
 
 设置媒体id播放监听事件。
 
-从 API version 11 开始支持，从 API version 20 开始废弃。建议使用[on('playWithAssetId')](#ZH-CN_TOPIC_0000002497605762__onplaywithassetid20)设置媒体id播放监听事件。
+
+从 API version 11 开始支持，从 API version 20 开始废弃。建议使用[on('playWithAssetId')](#ZH-CN_TOPIC_0000002553201847__onplaywithassetid20)设置媒体id播放监听事件。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -3357,13 +4342,20 @@ on(type:'playFromAssetId', callback: (assetId: number) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件是'playFromAssetId'，当媒体id播放时，触发该事件回调。callback(assetId: number) => void是回调函数。参数assetId是媒体id。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件是'playFromAssetId'，当媒体id播放时，触发该事件回调。 |
+| callback | (assetId: number) => void | 是 | 回调函数。参数assetId是媒体id。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -3379,7 +4371,8 @@ off(type: 'playFromAssetId', callback?: (assetId: number) => void): void
 
 取消媒体id播放事件监听。指定callback，可取消对应监听；未指定callback，取消所有事件监听。
 
-从 API version 11 开始支持，从 API version 20 开始废弃。建议使用[off('playWithAssetId')](#ZH-CN_TOPIC_0000002497605762__offplaywithassetid20)取消媒体id播放事件监听。
+
+从 API version 11 开始支持，从 API version 20 开始废弃。建议使用[off('playWithAssetId')](#ZH-CN_TOPIC_0000002553201847__offplaywithassetid20)取消媒体id播放事件监听。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -3387,17 +4380,20 @@ off(type: 'playFromAssetId', callback?: (assetId: number) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是关闭对应的监听事件，支持的事件是'playFromAssetId'。callback(assetId: number) => void否
-
-回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。参数assetId是媒体id。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 关闭对应的监听事件，支持的事件是'playFromAssetId'。 |
+| callback | (assetId: number) => void | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。参数assetId是媒体id。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -3417,13 +4413,19 @@ on(type: 'customDataChange', callback: Callback<Record<string, Object>>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'customDataChange'，当媒体提供方发送自定义数据时，触发该事件。callbackCallback<Record<string, Object>>是回调函数，用于接收自定义数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'customDataChange'，当媒体提供方发送自定义数据时，触发该事件。 |
+| callback | Callback<Record<string, Object>> | 是 | 回调函数，用于接收自定义数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.You are advised to:1.Scheduled retry.2.Destroy the current session or session controller and re-create it.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 
@@ -3445,13 +4447,19 @@ off(type: 'customDataChange', callback?: Callback<Record<string, Object>>): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消对应的监听事件，支持的事件是'customDataChange'。callbackCallback<Record<string, Object>>否注册监听事件时的回调函数。该参数为可选参数，若不填写该参数，则认为取消会话所有与此事件相关的监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消对应的监听事件，支持的事件是'customDataChange'。 |
+| callback | Callback<Record<string, Object>> | 否 | 注册监听事件时的回调函数。该参数为可选参数，若不填写该参数，则认为取消会话所有与此事件相关的监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.You are advised to:1.Scheduled retry.2.Destroy the current session or session controller and re-create it.6600102The session does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
+| 6600102 | The session does not exist. |
 
 **示例：**
 

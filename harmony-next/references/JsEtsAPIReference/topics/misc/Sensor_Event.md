@@ -12,4 +12,4 @@ typedef struct Sensor_Event Sensor_Event
 
 **相关模块：**[Sensor](Sensor.md)
 
-**所在头文件：**[oh_sensor_type.h](../../capi/headers/oh_sensor_type.h.md)
+**所在头文件：**[oh_sensor_type.h](../../topics/misc/[oh_sensor_type.h](oh_sensor_type.h.md).md)

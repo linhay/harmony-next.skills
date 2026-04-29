@@ -36,35 +36,10 @@ Button组件需要[functionalButtonComponentManager](functionalButtonComponentMa
 
 **起始版本：**4.1.0(11)
 
-名称
-
-类型
-
-必填
-
-装饰器类型
-
-说明
-
-params
-
-functionalButtonComponentManager.[FunctionalButtonParams](functionalButtonComponentManager(场景化融合Button组件管理).md#section684371910189)
-
-是
-
-@Prop
-
-FunctionalButton组件参数。
-
-controller
-
-functionalButtonComponentManager.[FunctionalButtonController](functionalButtonComponentManager(场景化融合Button组件管理).md#section942719311715)
-
-是
-
--
-
-FunctionalButton组件控制器，用来接收组件的点击事件。
+| 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- |
+| params | functionalButtonComponentManager.FunctionalButtonParams | 是 | @Prop | FunctionalButton组件参数。 |
+| controller | functionalButtonComponentManager.FunctionalButtonController | 是 | - | FunctionalButton组件控制器，用来接收组件的点击事件。 |
 
 #### build
 
@@ -111,7 +86,6 @@ struct Index {
               styleConfig: new functionalButtonComponentManager.ButtonConfig()
                 .fontSize(20)
             },
-          },
           // 当OpenType为GET_PHONE_NUMBER时，回调必须为onGetPhoneNumber。
           controller: new functionalButtonComponentManager.FunctionalButtonController()
             .onGetPhoneNumber((err, data) => {
@@ -125,9 +99,7 @@ struct Index {
               // 获取授权码。
               let authorizationCode = data.code;
             })
-        })
       }.width('100%')
     }.height('100%')
   }
-}
 ```

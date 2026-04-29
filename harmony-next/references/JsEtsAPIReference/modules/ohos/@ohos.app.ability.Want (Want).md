@@ -22,80 +22,25 @@ import { Want } from '@kit.AbilityKit';
 
 **系统能力**：SystemCapability.Ability.AbilityBase
 
-名称类型只读可选说明deviceIdstring否是设备ID。在应用启动场景中表示被拉起方的设备ID，如果未设置该字段，则表示指定当前设备。bundleNamestring否是应用包名。在应用启动场景中表示被拉起方的应用包名。moduleNamestring否是
-
-应用模块名。在应用启动场景中表示被拉起方的应用模块名。
-
-**说明：**
-
-若待启动的Ability所属的模块为[HAR](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/har-package)，则moduleName需为依赖该HAR的[HAP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hap-package)/[HSP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/in-app-hsp)的moduleName。
-
-abilityNamestring否是应用的Ability组件名。在应用启动场景中表示被拉起方的Ability组件名。如果在Want中该字段同时指定了BundleName和AbilityName，则Want可以直接匹配到指定的Ability。AbilityName需要在一个应用的范围内保证唯一。actionstring否是表示要执行的通用操作（如：查看、分享、应用详情）。在隐式Want中，开发者可以定义该字段，配合uri或parameters来表示对数据执行的操作。隐式Want定义及匹配规则请参见[显式Want与隐式Want匹配规则](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/explicit-implicit-want-mappings)。entitiesArray<string>否是表示目标Ability额外的类别信息（如：浏览器、视频播放器）。在隐式Want中是对action字段的补充。在隐式Want中，开发者可以定义该字段，来过滤匹配Ability类型。uristring否是统一资源标识符，一般在应用启动场景中配合type使用，指明待处理的数据类型。如果在Want中指定了uri，则Want将匹配指定的Uri信息，包括scheme、schemeSpecificPart、authority和path信息。typestring否是表示MIME type类型描述，打开文件的类型，主要用于文管打开文件。比如：'text/xml' 、 'image/*'等，MIME定义请参见[Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml?utm_source=ld246.com)。parametersRecord<string, Object>否是
-
-表示WantParams描述。
-
-一、以下Key均由系统赋值，开发者手动修改也不会生效，系统在数据传递时会自动修改为实际值。
-
-- ohos.aafwk.param.callerPid：表示拉起方的pid，值为字符串类型。
-
-- ohos.aafwk.param.callerBundleName：表示拉起方的BundleName，值为字符串类型。
-
-- ohos.aafwk.param.callerAbilityName：表示拉起方的AbilityName，值为字符串类型。
-
-- ohos.aafwk.param.callerNativeName：表示native调用时拉起方的进程名，值为字符串类型。
-
-- ohos.aafwk.param.callerAppId：表示拉起应用的AppId信息，值为字符串类型。
-
-- ohos.aafwk.param.callerAppIdentifier：表示拉起应用的AppIdentifier信息，值为字符串类型。
-
-- ohos.aafwk.param.callerToken：表示拉起方的token，值为字符串类型。
-
-- ohos.aafwk.param.callerUid：表示[BundleInfo](../../topics/misc/BundleInfo.md#ZH-CN_TOPIC_0000002529284625__bundleinfo-1)中的uid，应用包里应用程序的uid，值为数值类型。
-
-- ohos.param.callerAppCloneIndex：表示拉起方应用的分身索引，值为数值类型。
-
-- component.startup.newRules：表示是否启用新的管控规则，值为布尔类型。
-
-- moduleName：表示拉起方的moduleName，值为字符串类型。
-
-- ohos.ability.params.abilityRecoveryRestart：表示当前Ability是否发生了故障恢复重启，值为布尔类型。
-
-- ohos.extra.param.key.showMode：表示拉起元服务的展示模式，值为枚举类型[wantConstant.ShowMode](@ohos.app.ability.wantConstant (Want常量).md#ZH-CN_TOPIC_0000002497604612__showmode12)。
-
-**说明**：
-
-在跨端场景中，以下三个字段不生效，不可用于身份或权限校验：ohos.aafwk.param.callerPid、ohos.aafwk.param.callerToken、ohos.aafwk.param.callerUid。
-
-二、提供了一些由系统定义、开发者按需赋值的Key。具体的key值与对应说明详见[wantConstant.Params](@ohos.app.ability.wantConstant (Want常量).md#ZH-CN_TOPIC_0000002497604612__params)。
-
-三、除了上述情况，应用间还可以相互约定传入的键值对。
-
-**说明**：
-
-want的Params操作的常量的具体信息请参考[wantConstant](@ohos.app.ability.wantConstant (Want常量).md)。
-
-需注意，WantParams支持传输的最大数据量约为100KB。当数据量超过100KB时，请使用[WriteRawDataBuffer](@ohos.rpc (RPC通信).md#ZH-CN_TOPIC_0000002529445269__writerawdatabuffer11)或[uri](@ohos.uri (URI字符串解析).md)的方式进行数据传输。
-
-parameters的Value值仅支持基本数据类型：String、Number、Boolean、Object、undefined和null，不支持传递Object内部的function。
-
-flagsnumber否是
-
-表示处理Want的方式。值为枚举类型[Flags](@ohos.app.ability.wantConstant (Want常量).md#ZH-CN_TOPIC_0000002497604612__flags)，默认传数字。
-
-例如取值为0x00000001（即wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION）表示临时授予接收方读取该URI指向的数据的权限。
-
-fds15+Record<string, number>是是
-
-表示文件描述符，在启动场景中拉起方写入的FD，会设置到该参数中。
-
-**元服务API**：从API version 15开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| deviceId | string | 否 | 是 | 设备ID。在应用启动场景中表示被拉起方的设备ID，如果未设置该字段，则表示指定当前设备。 |
+| bundleName | string | 否 | 是 | 应用包名。在应用启动场景中表示被拉起方的应用包名。 |
+| moduleName | string | 否 | 是 | 应用模块名。在应用启动场景中表示被拉起方的应用模块名。 说明： 若待启动的Ability所属的模块为HAR，则moduleName需为依赖该HAR的HAP/HSP的moduleName。 |
+| abilityName | string | 否 | 是 | 应用的Ability组件名。在应用启动场景中表示被拉起方的Ability组件名。如果在Want中该字段同时指定了BundleName和AbilityName，则Want可以直接匹配到指定的Ability。AbilityName需要在一个应用的范围内保证唯一。 |
+| action | string | 否 | 是 | 表示要执行的通用操作（如：查看、分享、应用详情）。在隐式Want中，开发者可以定义该字段，配合uri或parameters来表示对数据执行的操作。隐式Want定义及匹配规则请参见显式Want与隐式Want匹配规则。 |
+| entities | Array<string> | 否 | 是 | 表示目标Ability额外的类别信息（如：浏览器、视频播放器）。在隐式Want中是对action字段的补充。在隐式Want中，开发者可以定义该字段，来过滤匹配Ability类型。 |
+| uri | string | 否 | 是 | 统一资源标识符，一般在应用启动场景中配合type使用，指明待处理的数据类型。如果在Want中指定了uri，则Want将匹配指定的Uri信息，包括scheme、schemeSpecificPart、authority和path信息。 |
+| type | string | 否 | 是 | 表示MIME type类型描述，打开文件的类型，主要用于文管打开文件。比如：'text/xml' 、 'image/*'等，MIME定义请参见Media Types。 |
+| parameters | Record<string, Object> | 否 | 是 | 表示WantParams描述。 一、以下Key均由系统赋值，开发者手动修改也不会生效，系统在数据传递时会自动修改为实际值。 - ohos.aafwk.param.callerPid：表示拉起方的pid，值为字符串类型。 - ohos.aafwk.param.callerBundleName：表示拉起方的BundleName，值为字符串类型。 - ohos.aafwk.param.callerAbilityName：表示拉起方的AbilityName，值为字符串类型。 - ohos.aafwk.param.callerNativeName：表示native调用时拉起方的进程名，值为字符串类型。 - ohos.aafwk.param.callerAppId：表示拉起应用的AppId信息，值为字符串类型。 - ohos.aafwk.param.callerAppIdentifier：表示拉起应用的AppIdentifier信息，值为字符串类型。 - ohos.aafwk.param.callerToken：表示拉起方的token，值为字符串类型。 - ohos.aafwk.param.callerUid：表示[BundleInfo](../../topics/misc/BundleInfo.md#ZH-CN_TOPIC_0000002529284625__bundleinfo-1)中的uid，应用包里应用程序的uid，值为数值类型。 - ohos.param.callerAppCloneIndex：表示拉起方应用的分身索引，值为数值类型。 - component.startup.newRules：表示是否启用新的管控规则，值为布尔类型。 - moduleName：表示拉起方的moduleName，值为字符串类型。 - ohos.ability.params.abilityRecoveryRestart：表示当前Ability是否发生了故障恢复重启，值为布尔类型。 - ohos.extra.param.key.showMode：表示拉起元服务的展示模式，值为枚举类型wantConstant.ShowMode。 说明： 在跨端场景中，以下三个字段不生效，不可用于身份或权限校验：ohos.aafwk.param.callerPid、ohos.aafwk.param.callerToken、ohos.aafwk.param.callerUid。 二、提供了一些由系统定义、开发者按需赋值的Key。具体的key值与对应说明详见wantConstant.Params。 三、除了上述情况，应用间还可以相互约定传入的键值对。 说明： want的Params操作的常量的具体信息请参考wantConstant。 需注意，WantParams支持传输的最大数据量约为100KB。当数据量超过100KB时，请使用WriteRawDataBuffer或uri的方式进行数据传输。 parameters的Value值仅支持基本数据类型：String、Number、Boolean、Object、undefined和null，不支持传递Object内部的function。 |
+| flags | number | 否 | 是 | 表示处理Want的方式。值为枚举类型Flags，默认传数字。 例如取值为0x00000001（即wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION）表示临时授予接收方读取该URI指向的数据的权限。 |
+| fds15+ | Record<string, number> | 是 | 是 | 表示文件描述符，在启动场景中拉起方写入的FD，会设置到该参数中。 元服务API：从API version 15开始，该接口支持在元服务中使用。 |
 
 **示例：**
 
 -
 
 基础用法：在UIAbility对象中调用，示例中的context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
-
 ```ets
 import { UIAbility, Want } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
@@ -116,7 +61,6 @@ export default class EntryAbility extends UIAbility {
         console.error(`Failed to startAbility. Code: ${err.code}, message: ${err.message}`);
       }
     });
-  }
 }
 ```
 
@@ -127,7 +71,6 @@ export default class EntryAbility extends UIAbility {
   -
 
 字符串（String）
-
 ```ets
 import { UIAbility, Want } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
@@ -149,13 +92,11 @@ export default class EntryAbility extends UIAbility {
       }
     });
   }
-}
 ```
 
   -
 
 数字（Number）
-
 ```ets
 import { UIAbility, Want } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
@@ -178,13 +119,11 @@ export default class EntryAbility extends UIAbility {
       }
     });
   }
-}
 ```
 
   -
 
 布尔（Boolean）
-
 ```ets
 import { UIAbility, Want } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
@@ -206,13 +145,11 @@ export default class EntryAbility extends UIAbility {
       }
     });
   }
-}
 ```
 
   -
 
 对象（Object）
-
 ```ets
 import { UIAbility, Want } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
@@ -230,7 +167,6 @@ export default class EntryAbility extends UIAbility {
           keyForObjectDouble: 35.5,
           keyForObjectBool: false,
         },
-      },
     };
 
     this.context.startAbility(want, (err: BusinessError) => {
@@ -238,14 +174,12 @@ export default class EntryAbility extends UIAbility {
         console.error(`Failed to startAbility. Code: ${err.code}, message: ${err.message}`);
       }
     });
-  }
 }
 ```
 
   -
 
 数组（Array）
-
 ```ets
 import { UIAbility, Want } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
@@ -269,14 +203,12 @@ export default class EntryAbility extends UIAbility {
         console.error(`Failed to startAbility. Code: ${err.code}, message: ${err.message}`);
       }
     });
-  }
 }
 ```
 
   -
 
 文件描述符（FD）
-
 ```ets
 import { UIAbility, Want } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
@@ -310,13 +242,11 @@ export default class EntryAbility extends UIAbility {
       }
     });
   }
-}
 ```
 
   -
 
 parameters参数用法：parameters携带开发者自定义参数，由UIAbilityA传递给UIAbilityB，并在UIAbilityB中进行获取。
-
 ```ets
 // (1) UIAbilityA通过startAbility启动UIAbilityB
 import { UIAbility, Want } from '@kit.AbilityKit';
@@ -339,7 +269,6 @@ export default class EntryAbility extends UIAbility {
       }
     });
   }
-}
 ```
 
 ```ets
@@ -349,14 +278,12 @@ import { UIAbility, Want, AbilityConstant } from '@kit.AbilityKit';
 class UIAbilityB extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     console.info(`onCreate, want parameters: ${want.parameters?.developerParameters}`);
-  }
 }
 ```
 
   -
 
 parameters参数中[wantConstant](@ohos.app.ability.wantConstant (Want常量).md)的Key的使用方法。
-
 ```ets
 import { UIAbility, Want, wantConstant } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
@@ -378,7 +305,6 @@ export default class EntryAbility extends UIAbility {
       }
     });
   }
-}
 ```
 
   -

@@ -22,7 +22,9 @@ isRunningInStabilityTest(callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<boolean>是以回调方式返回接口运行结果及当前系统是否处于稳定性测试场景，可进行错误处理或其他自定义处理。返回true表示系统处于稳定性测试场景，返回false表示系统不处于稳定性测试场景。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<boolean> | 是 | 以回调方式返回接口运行结果及当前系统是否处于稳定性测试场景，可进行错误处理或其他自定义处理。返回true表示系统处于稳定性测试场景，返回false表示系统不处于稳定性测试场景。 |
 
 **示例：**
 
@@ -50,7 +52,9 @@ isRunningInStabilityTest(): Promise<boolean>
 
 **返回值：**
 
-类型说明Promise<boolean>以Promise方式返回接口运行结果及当前是否处于稳定性测试场景，可进行错误处理或其他自定义处理。返回true表示系统处于稳定性测试场景，返回false表示系统不处于稳定性测试场景。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | 以Promise方式返回接口运行结果及当前是否处于稳定性测试场景，可进行错误处理或其他自定义处理。返回true表示系统处于稳定性测试场景，返回false表示系统不处于稳定性测试场景。 |
 
 **示例：**
 
@@ -75,7 +79,9 @@ isRamConstrainedDevice(): Promise<boolean>
 
 **返回值：**
 
-类型说明Promise<boolean>以Promise方式返回接口运行结果及当前设备是否为RAM受限设备，可进行错误处理或其他自定义处理。true：当前设备为RAM受限设备，false：当前设备为非RAM受限设备。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | 以Promise方式返回接口运行结果及当前设备是否为RAM受限设备，可进行错误处理或其他自定义处理。true：当前设备为RAM受限设备，false：当前设备为非RAM受限设备。 |
 
 **示例：**
 
@@ -100,7 +106,9 @@ isRamConstrainedDevice(callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<boolean>是以回调方式返回接口运行结果及当前设备是否为RAM受限设备，可进行错误处理或其他自定义处理。true：当前设备为RAM受限设备，false：当前设备为非RAM受限设备。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<boolean> | 是 | 以回调方式返回接口运行结果及当前设备是否为RAM受限设备，可进行错误处理或其他自定义处理。true：当前设备为RAM受限设备，false：当前设备为非RAM受限设备。 |
 
 **示例：**
 
@@ -126,7 +134,9 @@ getAppMemorySize(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>当前应用程序可以使用的最大内存（RAM）值，可根据此值进行错误处理或其他自定义处理，单位是M。使用Promise异步回调。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 当前应用程序可以使用的最大内存（RAM）值，可根据此值进行错误处理或其他自定义处理，单位是M。使用Promise异步回调。 |
 
 **示例：**
 
@@ -151,7 +161,9 @@ getAppMemorySize(callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是获取当前应用程序可以使用的最大内存（RAM）值，可根据此值进行错误处理或其他自定义处理，单位是M。使用callback异步回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 获取当前应用程序可以使用的最大内存（RAM）值，可根据此值进行错误处理或其他自定义处理，单位是M。使用callback异步回调。 |
 
 **示例：**
 
@@ -167,13 +179,13 @@ appManager.getAppMemorySize((error, data) => {
 });
 ```
 
-#### appManager.getProcessRunningInfos(deprecated)
+#### appManager.get[ProcessRunningInfo](../../topics/misc/ProcessRunningInfo.md)s(deprecated)
 
-getProcessRunningInfos(): Promise<Array<ProcessRunningInfo>>
+get[ProcessRunningInfo](../../topics/misc/ProcessRunningInfo.md)s(): Promise<Array<ProcessRunningInfo>>
 
 获取有关运行进程的信息。使用Promise异步回调。
 
-从 API Version 9 开始废弃，建议使用[appManager.getRunningProcessInformation](@ohos.app.ability.appManager (应用管理).md#ZH-CN_TOPIC_0000002497444628__appmanagergetrunningprocessinformation)替代。
+从 API Version 9 开始废弃，建议使用[appManager.getRunningProcessInformation](@ohos.app.ability.appManager (应用管理).md#ZH-CN_TOPIC_0000002522080556__appmanagergetrunningprocessinformation)替代。
 
 **需要权限**：ohos.permission.GET_RUNNING_INFO（该权限仅系统应用可申请）
 
@@ -181,7 +193,9 @@ getProcessRunningInfos(): Promise<Array<ProcessRunningInfo>>
 
 **返回值：**
 
-类型说明Promise<Array<[ProcessRunningInfo](../../topics/system-services/ProcessRunningInfo.md)>>Promise对象，返回有关运行进程的信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<[ProcessRunningInfo](../../topics/misc/ProcessRunningInfo.md)>> | Promise对象，返回有关运行进程的信息。 |
 
 **示例：**
 
@@ -196,13 +210,13 @@ appManager.getProcessRunningInfos().then((data) => {
 });
 ```
 
-#### appManager.getProcessRunningInfos(deprecated)
+#### appManager.get[ProcessRunningInfo](../../topics/misc/ProcessRunningInfo.md)s(deprecated)
 
-getProcessRunningInfos(callback: AsyncCallback<Array<ProcessRunningInfo>>): void
+get[ProcessRunningInfo](../../topics/misc/ProcessRunningInfo.md)s(callback: AsyncCallback<Array<ProcessRunningInfo>>): void
 
 获取有关运行进程的信息。使用callback异步回调。
 
-从 API Version 9 开始废弃，建议使用[appManager.getRunningProcessInformation](@ohos.app.ability.appManager (应用管理).md#ZH-CN_TOPIC_0000002497444628__appmanagergetrunningprocessinformation)替代。
+从 API Version 9 开始废弃，建议使用[appManager.getRunningProcessInformation](@ohos.app.ability.appManager (应用管理).md#ZH-CN_TOPIC_0000002522080556__appmanagergetrunningprocessinformation)替代。
 
 **需要权限**：ohos.permission.GET_RUNNING_INFO（该权限仅系统应用可申请）
 
@@ -210,7 +224,9 @@ getProcessRunningInfos(callback: AsyncCallback<Array<ProcessRunningInfo>>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<Array<[ProcessRunningInfo](../../topics/system-services/ProcessRunningInfo.md)>>是回调函数，返回有关运行进程的信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<[ProcessRunningInfo](../../topics/misc/ProcessRunningInfo.md)>> | 是 | 回调函数，返回有关运行进程的信息。 |
 
 **示例：**
 

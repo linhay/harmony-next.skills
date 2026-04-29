@@ -16,4 +16,8 @@ import ConfigurationConstant from '@ohos.application.ConfigurationConstant';
 
 **系统能力**：SystemCapability.Ability.AbilityBase
 
-名称值说明COLOR_MODE_NOT_SET-1未设置颜色模式。COLOR_MODE_DARK0深色模式。COLOR_MODE_LIGHT1浅色模式。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| COLOR_MODE_NOT_SET | -1 | 未设置颜色模式。 |
+| COLOR_MODE_DARK | 0 | 深色模式。 |
+| COLOR_MODE_LIGHT | 1 | 浅色模式。 |

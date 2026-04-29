@@ -24,7 +24,9 @@ Checkbox(options?: CheckboxOptions)
 
 **参数：**
 
-参数名类型必填说明options[CheckboxOptions](#ZH-CN_TOPIC_0000002529284877__checkboxoptions对象说明)否配置多选框的参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | CheckboxOptions | 否 | 配置多选框的参数。 |
 
 #### CheckboxOptions对象说明
 
@@ -32,35 +34,15 @@ Checkbox(options?: CheckboxOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明namestring否是
-
-指定多选框名称。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-groupstring否是
-
-用于指定多选框所属群组的名称（即所属CheckboxGroup的名称）。
-
-**说明：**
-
-未配合使用[CheckboxGroup](CheckboxGroup.md)组件时，此值无用。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-indicatorBuilder12+[CustomBuilder](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__custombuilder8)否是
-
-配置多选框的选中样式为自定义组件。自定义组件与Checkbox组件为中心点对齐显示。indicatorBuilder设置为undefined/null时，默认为indicatorBuilder未设置状态。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | string | 否 | 是 | 指定多选框名称。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| group | string | 否 | 是 | 用于指定多选框所属群组的名称（即所属[CheckboxGroup](CheckboxGroup.md)的名称）。 说明： 未配合使用CheckboxGroup组件时，此值无用。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| indicatorBuilder12+ | [CustomBuilder](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__custombuilder8) | 否 | 是 | 配置多选框的选中样式为自定义组件。自定义组件与Checkbox组件为中心点对齐显示。indicatorBuilder设置为undefined/null时，默认为indicatorBuilder未设置状态。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 
 #### 属性
 
-除支持[通用属性](../misc/通用属性.md)外，还支持以下属性：
+除支持[通用属性]([通用属性](../misc/通用属性.md).md)外，还支持以下属性：
 
 #### select
 
@@ -80,19 +62,15 @@ select(value: boolean)
 
 **参数：**
 
-参数名类型必填说明valueboolean是
-
-多选框是否选中。
-
-默认值：false
-
-值为true时，多选框被选中。值为false时，多选框未选中。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | boolean | 是 | 多选框是否选中。 默认值：false 值为true时，多选框被选中。值为false时，多选框未选中。 |
 
 #### select18+
 
-select(isSelected: Optional<boolean>)
+select(isSelected: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<boolean>)
 
-设置多选框选中状态。与[select](#ZH-CN_TOPIC_0000002529284877__select)相比，isSelected参数新增了对undefined类型的支持。
+设置多选框选中状态。与[select](#ZH-CN_TOPIC_0000002522240834__select)相比，isSelected参数新增了对undefined类型的支持。
 
 该属性支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)、[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding#系统组件参数双向绑定)双向绑定变量。
 
@@ -104,17 +82,13 @@ select(isSelected: Optional<boolean>)
 
 **参数：**
 
-参数名类型必填说明isSelected[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<boolean>是
-
-多选框是否选中。
-
-当isSelected的值为undefined时取默认值false。
-
-值为true时，多选框被选中。值为false时，多选框未选中。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isSelected | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<boolean> | 是 | 多选框是否选中。 当isSelected的值为undefined时取默认值false。 值为true时，多选框被选中。值为false时，多选框未选中。 |
 
 #### selectedColor
 
-selectedColor(value: ResourceColor)
+selectedColor(value: [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor))
 
 设置多选框选中状态颜色。
 
@@ -126,19 +100,15 @@ selectedColor(value: ResourceColor)
 
 **参数：**
 
-参数名类型必填说明value[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)是
-
-多选框选中状态颜色。
-
-默认值：$r('sys.color.ohos_id_color_text_primary_activated')
-
-异常值按照默认值处理。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 是 | 多选框选中状态颜色。 默认值：$r('sys.color.ohos_id_color_text_primary_activated') 异常值按照默认值处理。 |
 
 #### selectedColor18+
 
-selectedColor(resColor: Optional<ResourceColor>)
+selectedColor(resColor: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<ResourceColor>)
 
-设置多选框选中状态颜色。与[selectedColor](#ZH-CN_TOPIC_0000002529284877__selectedcolor)相比，resColor参数新增了对undefined类型的支持。
+设置多选框选中状态颜色。与[selectedColor](#ZH-CN_TOPIC_0000002522240834__selectedcolor)相比，resColor参数新增了对undefined类型的支持。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
@@ -148,17 +118,13 @@ selectedColor(resColor: Optional<ResourceColor>)
 
 **参数：**
 
-参数名类型必填说明resColor[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)>是
-
-多选框选中状态颜色。
-
-当resColor的值为undefined时取默认值$r('sys.color.ohos_id_color_text_primary_activated')。
-
-异常值按照默认值处理。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| resColor | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)> | 是 | 多选框选中状态颜色。 当resColor的值为undefined时取默认值$r('sys.color.ohos_id_color_text_primary_activated')。 异常值按照默认值处理。 |
 
 #### unselectedColor10+
 
-unselectedColor(value: ResourceColor)
+unselectedColor(value: [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor))
 
 设置多选框非选中状态的边框颜色。
 
@@ -168,17 +134,15 @@ unselectedColor(value: ResourceColor)
 
 **参数：**
 
-参数名类型必填说明value[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)是
-
-多选框非选中状态边框颜色。
-
-默认值：$r('sys.color.ohos_id_color_switch_outline_off')
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 是 | 多选框非选中状态边框颜色。 默认值：$r('sys.color.ohos_id_color_switch_outline_off') |
 
 #### unselectedColor18+
 
-unselectedColor(resColor: Optional<ResourceColor>)
+unselectedColor(resColor: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<ResourceColor>)
 
-设置多选框非选中状态的边框颜色。与[unselectedColor](#ZH-CN_TOPIC_0000002529284877__unselectedcolor10)10+相比，resColor参数新增了对undefined类型的支持。
+设置多选框非选中状态的边框颜色。与[unselectedColor](#ZH-CN_TOPIC_0000002522240834__unselectedcolor10)10+相比，resColor参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -186,15 +150,13 @@ unselectedColor(resColor: Optional<ResourceColor>)
 
 **参数：**
 
-参数名类型必填说明resColor[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)>是
-
-多选框非选中状态边框颜色。
-
-当resColor的值为undefined时取默认值$r('sys.color.ohos_id_color_switch_outline_off')
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| resColor | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)> | 是 | 多选框非选中状态边框颜色。 当resColor的值为undefined时取默认值$r('sys.color.ohos_id_color_switch_outline_off') |
 
 #### mark10+
 
-mark(value: MarkStyle)
+mark(value: [MarkStyle](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__markstyle10对象说明))
 
 设置多选框内部图标的样式。
 
@@ -204,25 +166,15 @@ mark(value: MarkStyle)
 
 **参数：**
 
-参数名类型必填说明value[MarkStyle](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__markstyle10对象说明)是
-
-多选框内部图标样式。 从API version 12开始，设置了indicatorBuilder时，按照indicatorBuilder中的内容显示。
-
-默认值：{
-
-strokeColor : $r('sys.color.ohos_id_color_foreground_contrary'),
-
-strokeWidth: $r('sys.float.ohos_id_checkbox_stroke_width'),
-
-size: '20vp'
-
-}
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [MarkStyle](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__markstyle10对象说明) | 是 | 多选框内部图标样式。 从API version 12开始，设置了indicatorBuilder时，按照indicatorBuilder中的内容显示。 默认值：{ strokeColor : $r('sys.color.ohos_id_color_foreground_contrary'), strokeWidth: $r('sys.float.ohos_id_checkbox_stroke_width'), size: '20vp' } |
 
 #### mark18+
 
-mark(style: Optional<MarkStyle>)
+mark(style: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<MarkStyle>)
 
-设置多选框内部图标的样式。与[mark](#ZH-CN_TOPIC_0000002529284877__mark10)10+相比，style参数新增了对undefined类型的支持。
+设置多选框内部图标的样式。与[mark](#ZH-CN_TOPIC_0000002522240834__mark10)10+相比，style参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -230,25 +182,15 @@ mark(style: Optional<MarkStyle>)
 
 **参数：**
 
-参数名类型必填说明style[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[MarkStyle](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__markstyle10对象说明)>是
-
-多选框内部图标样式。 设置了indicatorBuilder时，按照indicatorBuilder中的内容显示。
-
-当style的值为undefined时，默认值：{
-
-strokeColor : $r('sys.color.ohos_id_color_foreground_contrary'),
-
-strokeWidth: $r('sys.float.ohos_id_checkbox_stroke_width'),
-
-size: '20vp'
-
-}
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| style | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[MarkStyle](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__markstyle10对象说明)> | 是 | 多选框内部图标样式。 设置了indicatorBuilder时，按照indicatorBuilder中的内容显示。 当style的值为undefined时，默认值：{ strokeColor : $r('sys.color.ohos_id_color_foreground_contrary'), strokeWidth: $r('sys.float.ohos_id_checkbox_stroke_width'), size: '20vp' } |
 
 #### shape11+
 
-shape(value: CheckBoxShape)
+shape(value: [CheckBoxShape](枚举说明.md#ZH-CN_TOPIC_0000002529284967__checkboxshape11))
 
-设置Checkbox组件形状，包括圆形和圆角方形。如果想要调整当前Checkbox的样式，需使用[contentModifier](#ZH-CN_TOPIC_0000002529284877__contentmodifier12)属性自定义Checkbox样式。
+设置Checkbox组件形状，包括圆形和圆角方形。如果想要调整当前Checkbox的样式，需使用[contentModifier](#ZH-CN_TOPIC_0000002522240834__contentmodifier12)属性自定义Checkbox样式。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
@@ -258,17 +200,15 @@ shape(value: CheckBoxShape)
 
 **参数：**
 
-参数名类型必填说明value[CheckBoxShape](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__checkboxshape11)是
-
-Checkbox组件形状，包括圆形和圆角方形。
-
-默认值：CheckBoxShape.CIRCLE
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [CheckBoxShape](枚举说明.md#ZH-CN_TOPIC_0000002529284967__checkboxshape11) | 是 | Checkbox组件形状，包括圆形和圆角方形。 默认值：CheckBoxShape.CIRCLE |
 
 #### shape18+
 
-shape(shape: Optional<CheckBoxShape>)
+shape(shape: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<CheckBoxShape>)
 
-设置Checkbox组件形状，包括圆形和圆角方形。与[shape](#ZH-CN_TOPIC_0000002529284877__shape11)11+相比，shape参数新增了对undefined类型的支持。如果想要调整当前Checkbox的样式，需使用[contentModifier](#ZH-CN_TOPIC_0000002529284877__contentmodifier12)属性自定义Checkbox样式。
+设置Checkbox组件形状，包括圆形和圆角方形。与[shape](#ZH-CN_TOPIC_0000002522240834__shape11)11+相比，shape参数新增了对undefined类型的支持。如果想要调整当前Checkbox的样式，需使用[contentModifier](#ZH-CN_TOPIC_0000002522240834__contentmodifier12)属性自定义Checkbox样式。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
@@ -278,15 +218,13 @@ shape(shape: Optional<CheckBoxShape>)
 
 **参数：**
 
-参数名类型必填说明shape[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[CheckBoxShape](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__checkboxshape11)>是
-
-Checkbox组件形状，包括圆形和圆角方形。
-
-当shape的值为undefined时，默认值为CheckBoxShape.CIRCLE。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| shape | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[CheckBoxShape](枚举说明.md#ZH-CN_TOPIC_0000002529284967__checkboxshape11)> | 是 | Checkbox组件形状，包括圆形和圆角方形。 当shape的值为undefined时，默认值为CheckBoxShape.CIRCLE。 |
 
 #### contentModifier12+
 
-contentModifier(modifier: ContentModifier<CheckBoxConfiguration>)
+contentModifier(modifier: [ContentModifier](自定义内容.md#ZH-CN_TOPIC_0000002497444874__contentmodifiert)<CheckBoxConfiguration>)
 
 定制Checkbox内容区的方法。设置该属性时，会导致其他属性设置失效。
 
@@ -296,17 +234,15 @@ contentModifier(modifier: ContentModifier<CheckBoxConfiguration>)
 
 **参数：**
 
-参数名类型必填说明modifier[ContentModifier](../misc/自定义内容.md#ZH-CN_TOPIC_0000002497444874__contentmodifiert)[<CheckBoxConfiguration>](#ZH-CN_TOPIC_0000002529284877__checkboxconfiguration12对象说明)是
-
-在Checkbox组件上，定制内容区的方法。
-
-modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| modifier | [ContentModifier](自定义内容.md#ZH-CN_TOPIC_0000002497444874__contentmodifiert)<CheckBoxConfiguration> | 是 | 在Checkbox组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
 
 #### contentModifier18+
 
-contentModifier(modifier: Optional<ContentModifier<CheckBoxConfiguration>>)
+contentModifier(modifier: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<ContentModifier<CheckBoxConfiguration>>)
 
-定制Checkbox内容区的方法。与[contentModifier](#ZH-CN_TOPIC_0000002529284877__contentmodifier12)12+相比，modifier参数新增了对undefined类型的支持。设置该属性时，会导致其他属性设置失效。
+定制Checkbox内容区的方法。与[contentModifier](#ZH-CN_TOPIC_0000002522240834__contentmodifier12)12+相比，modifier参数新增了对undefined类型的支持。设置该属性时，会导致其他属性设置失效。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -314,17 +250,13 @@ contentModifier(modifier: Optional<ContentModifier<CheckBoxConfiguration>>)
 
 **参数：**
 
-参数名类型必填说明modifier[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[ContentModifier](../misc/自定义内容.md#ZH-CN_TOPIC_0000002497444874__contentmodifiert)[<CheckBoxConfiguration>](#ZH-CN_TOPIC_0000002529284877__checkboxconfiguration12对象说明)>是
-
-在Checkbox组件上，定制内容区的方法。
-
-modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。
-
-当modifier的值为undefined时，不使用内容修改器。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| modifier | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[ContentModifier](自定义内容.md#ZH-CN_TOPIC_0000002497444874__contentmodifiert)<CheckBoxConfiguration>> | 是 | 在Checkbox组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 当modifier的值为undefined时，不使用内容修改器。 |
 
 #### 事件
 
-支持[通用事件](../misc/通用事件.md)外，还支持以下事件：
+支持[通用事件]([通用事件](../misc/通用事件.md).md)外，还支持以下事件：
 
 #### onChange
 
@@ -340,13 +272,15 @@ onChange(callback: OnCheckboxChangeCallback)
 
 **参数：**
 
-参数名类型必填说明callback[OnCheckboxChangeCallback](#ZH-CN_TOPIC_0000002529284877__oncheckboxchangecallback18)是返回选中的状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | OnCheckboxChangeCallback | 是 | 返回选中的状态。 |
 
 #### onChange18+
 
-onChange(callback: Optional<OnCheckboxChangeCallback>)
+onChange(callback: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<OnCheckboxChangeCallback>)
 
-当选中状态发生变化时，触发该回调。与[onChange](#ZH-CN_TOPIC_0000002529284877__onchange)相比，callback参数新增了对undefined类型的支持。
+当选中状态发生变化时，触发该回调。与[onChange](#ZH-CN_TOPIC_0000002522240834__onchange)相比，callback参数新增了对undefined类型的支持。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
@@ -356,11 +290,9 @@ onChange(callback: Optional<OnCheckboxChangeCallback>)
 
 **参数：**
 
-参数名类型必填说明callback[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[OnCheckboxChangeCallback](#ZH-CN_TOPIC_0000002529284877__oncheckboxchangecallback18)>是
-
-返回选中的状态。
-
-当callback的值为undefined时，不使用回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<OnCheckboxChangeCallback> | 是 | 返回选中的状态。 当callback的值为undefined时，不使用回调函数。 |
 
 #### OnCheckboxChangeCallback18+
 
@@ -376,31 +308,29 @@ type OnCheckboxChangeCallback = (value: boolean) => void
 
 **参数：**
 
-参数名类型必填说明valueboolean是返回true表示已选中。返回false表示未选中。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | boolean | 是 | 返回true表示已选中。返回false表示未选中。 |
 
 #### CheckBoxConfiguration12+对象说明
 
-开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](../misc/自定义内容.md#ZH-CN_TOPIC_0000002497444874__commonconfigurationt)。
+开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](自定义内容.md#ZH-CN_TOPIC_0000002553360727__commonconfigurationt)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明namestring否否当前多选框名称。selectedboolean否否
-
-指示多选框是否被选中，值为true时，多选框被选中。值为false时，多选框未选中。
-
-如果select属性没有设置默认值是false。
-
-如果设置select属性，此值与设置select属性的值相同。
-
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | string | 否 | 否 | 当前多选框名称。 |
+| selected | boolean | 否 | 否 | 指示多选框是否被选中，值为true时，多选框被选中。值为false时，多选框未选中。 如果select属性没有设置默认值是false。 如果设置select属性，此值与设置select属性的值相同。 |
 triggerChangeCallback<boolean>否否触发多选框选中状态变化。true表示从未选中变为选中，false表示从选中变为未选中。
 
 #### 示例
 
 #### 示例1（设置多选框形状）
 
-该示例通过配置CheckBoxShape实现圆形和圆角方形多选框样式。
+该示例通过配置[CheckBoxShape](枚举说明.md#ZH-CN_TOPIC_0000002529284967__checkboxshape11)实现圆形和圆角方形多选框样式。
 
 ```ets
 // xxx.ets
@@ -423,8 +353,6 @@ struct CheckboxExample {
         .onChange((value: boolean) => {
           console.info('Checkbox2 change is' + value);
         })
-    }
-  }
 }
 ```
 
@@ -469,17 +397,17 @@ struct Index {
             .height(30)
           Text('Checkbox2').fontSize(20)
         }
-      }
       .width('100%')
     }
     .height('100%')
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522084968.webp)
 
 #### 示例3（自定义多选框样式）
 
-该示例通过[contentModifier](#ZH-CN_TOPIC_0000002529284877__contentmodifier12)属性实现了自定义多选框样式的功能，自定义样式实现了一个五边形多选框，如果选中，内部会出现红色三角图案，标题会显示选中字样，如果取消选中，红色三角图案消失，标题会显示非选中字样。
+该示例通过[contentModifier](#ZH-CN_TOPIC_0000002522240834__contentmodifier12)属性实现了自定义多选框样式的功能，自定义样式实现了一个五边形多选框，如果选中，内部会出现红色三角图案，标题会显示选中字样，如果取消选中，红色三角图案消失，标题会显示非选中字样。
 
 ```ets
 // xxx.ets
@@ -492,7 +420,6 @@ class MyCheckboxStyle implements ContentModifier<CheckBoxConfiguration> {
 
   applyContent(): WrappedBuilder<[CheckBoxConfiguration]> {
     return wrapBuilder(buildCheckbox);
-  }
 }
 
 @Builder
@@ -537,7 +464,6 @@ function buildCheckbox(config: CheckBoxConfiguration) {
     .strokeMiterLimit(5)
     .margin({ left: 50 })
   }
-}
 
 @Entry
 @Component
@@ -563,7 +489,6 @@ struct Index {
       }.position({ x: 50, y: 130 })
     }.margin({ top: 30 })
   }
-}
 ```
 
 #### 示例4（设置文本多选框样式）
@@ -583,7 +508,6 @@ struct CheckboxExample {
         .fontSize(value > 99 ?  '16vp': '20vp')
         .fontWeight(FontWeight.Medium)
         .fontColor('#ffffffff')
-    }
   }
   build() {
     Row() {
@@ -613,17 +537,15 @@ struct CheckboxExample {
             .height(30)
           Text('Checkbox2').fontSize(20)
         }
-      }
       .width('100%')
     }
     .height('100%')
-  }
 }
 ```
 
 #### 示例5（获取多选框选中信息）
 
-该示例通过选中Checkbox以及CheckboxGroup多选框来获取选中的信息。
+该示例通过选中Checkbox以及[CheckboxGroup](CheckboxGroup.md)多选框来获取选中的信息。
 
 ```ets
 // xxx.ets
@@ -773,9 +695,7 @@ struct CheckboxExample {
           this.getUIContext().getPromptAction().showToast({
             message: 'selected info: ' + this.infoOne + '\n' + this.infoTwo + '\n' + this.infoThree
           })
-        })
     }.padding(10)
-  }
 }
 ```
 
@@ -825,8 +745,6 @@ struct Index {
         if (x1 <= fingerX && fingerX < x2 && y1 <= fingerY && fingerY < y2) {
           return i;
         }
-      }
-    }
     return this.selectedEnd;
   }
 
@@ -845,13 +763,10 @@ struct Index {
         if (!this.selectedPhotos.has(i)) {
           this.selectedPhotos.add(i);
         }
-      }
     } else if (this.selectedState == SelectedState.Remove) {
       for (let i = start; i <= end; i++) {
         if (this.selectedPhotos.has(i)) {
           this.selectedPhotos.remove(i);
-        }
-      }
     }
     this.selectedList = this.selectedPhotos.convertToArray();
   }
@@ -864,7 +779,6 @@ struct Index {
     if (fingerY < 200 && this.currentOffsetY > 0) {
       this.listScroller.scrollBy(0, this.getSpeed(fingerY, 200));
       return;
-    }
   }
 
   onPanGestureUpdate(event: GestureEvent) {
@@ -980,9 +894,6 @@ struct Index {
               this.selectedState = SelectedState.None;
             })
         )
-      )
-    }
-  }
 }
 
 enum SelectedState {

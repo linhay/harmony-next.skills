@@ -22,13 +22,18 @@ start(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当启动录制成功，err为undefined，否则为错误对象。错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当启动录制成功，err为undefined，否则为错误对象。错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码]([Camera错误码](../../errors/Camera错误码.md).md)。
 
-错误码ID错误信息7400103Session not config.7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -58,13 +63,18 @@ start(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400103Session not config.7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -92,7 +102,9 @@ stop(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当结束录制成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当结束录制成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -116,7 +128,9 @@ stop(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **示例：**
 
@@ -146,7 +160,10 @@ on(type: 'frameStart', callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'frameStart'，videoOutput创建成功后可监听。底层第一次曝光时触发该事件并返回。callbackAsyncCallback<void>是回调函数，用于获取结果。 只要有该事件返回就证明录像开始。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'frameStart'，videoOutput创建成功后可监听。底层第一次曝光时触发该事件并返回。 |
+| callback | AsyncCallback<void> | 是 | 回调函数，用于获取结果。 只要有该事件返回就证明录像开始。 |
 
 **示例：**
 
@@ -180,7 +197,10 @@ off(type: 'frameStart', callback?: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'frameStart'，videoOutput创建成功后可监听。callbackAsyncCallback<void>否回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'frameStart'，videoOutput创建成功后可监听。 |
+| callback | AsyncCallback<void> | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。 |
 
 **示例：**
 
@@ -202,7 +222,10 @@ on(type: 'frameEnd', callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'frameEnd'，videoOutput创建成功后可监听。录像完全结束最后一帧时触发该事件并返回。callbackAsyncCallback<void>是回调函数，用于获取结果。 只要有该事件返回就证明录像结束。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'frameEnd'，videoOutput创建成功后可监听。录像完全结束最后一帧时触发该事件并返回。 |
+| callback | AsyncCallback<void> | 是 | 回调函数，用于获取结果。 只要有该事件返回就证明录像结束。 |
 
 **示例：**
 
@@ -234,7 +257,10 @@ off(type: 'frameEnd', callback?: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'frameEnd'，videoOutput创建成功后可监听。callbackAsyncCallback<void>否回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'frameEnd'，videoOutput创建成功后可监听。 |
+| callback | AsyncCallback<void> | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。 |
 
 **示例：**
 
@@ -258,7 +284,10 @@ on(type: 'error', callback: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'error'，videoOutput创建成功后可监听。录像接口调用出现错误时触发该事件并返回对应错误码，比如调用[start](#ZH-CN_TOPIC_0000002529285781__start-1)，[CameraOutput.release](Interface (CameraOutput).md#ZH-CN_TOPIC_0000002529285771__release-1)接口时出现错误返回对应错误信息。callback[ErrorCallback](../../modules/ohos/@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__errorcallback)是回调函数，用于获取错误信息。返回错误码，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'error'，videoOutput创建成功后可监听。录像接口调用出现错误时触发该事件并返回对应错误码，比如调用start，CameraOutput.release接口时出现错误返回对应错误信息。 |
+| callback | ErrorCallback | 是 | 回调函数，用于获取错误信息。返回错误码，错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **示例：**
 
@@ -286,7 +315,10 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'error'，photoOutput创建成功后可监听。callback[ErrorCallback](../../modules/ohos/@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__errorcallback)否回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'error'，photoOutput创建成功后可监听。 |
+| callback | ErrorCallback | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。 |
 
 **示例：**
 
@@ -308,7 +340,9 @@ getSupportedFrameRates(): Array<FrameRateRange>
 
 **返回值：**
 
-类型说明Array<[FrameRateRange](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__frameraterange)>支持的帧率范围列表。若接口调用失败，返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| Array<FrameRateRange> | 支持的帧率范围列表。若接口调用失败，返回undefined。 |
 
 **示例：**
 
@@ -325,11 +359,12 @@ setFrameRate(minFps: number, maxFps: number): void
 
 设置录像流帧率范围，设置的范围必须在支持的帧率范围内。
 
-进行设置前，可通过[getSupportedFrameRates](#ZH-CN_TOPIC_0000002529285781__getsupportedframerates12)查询支持的帧率范围。
+进行设置前，可通过[getSupportedFrameRates](#ZH-CN_TOPIC_0000002522241914__getsupportedframerates12)查询支持的帧率范围。
+
 
 仅在[PhotoSession](Interface (PhotoSession).md)或[VideoSession](Interface (VideoSession).md)模式下支持。
 
-接口调用前，先调用[getActiveFrameRate](Interface (VideoOutput).md#ZH-CN_TOPIC_0000002529285781__getactiveframerate12)接口查询当前VideoSession的帧率，若下发的帧率与当前帧率相等，则下发的帧率不会生效。
+接口调用前，先调用[getActiveFrameRate](Interface (VideoOutput).md#ZH-CN_TOPIC_0000002522241914__getactiveframerate12)接口查询当前VideoSession的帧率，若下发的帧率与当前帧率相等，则下发的帧率不会生效。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -337,13 +372,19 @@ setFrameRate(minFps: number, maxFps: number): void
 
 **参数：**
 
-参数名类型必填说明minFpsnumber是最小帧率，单位：fps。当传入的最大值小于最小值时，传参异常，接口不生效。maxFpsnumber是最大帧率，单位：fps。当传入的最小值大于最大值时，传参异常，接口不生效。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| minFps | number | 是 | 最小帧率，单位：fps。当传入的最大值小于最小值时，传参异常，接口不生效。 |
+| maxFps | number | 是 | 最大帧率，单位：fps。当传入的最小值大于最大值时，传参异常，接口不生效。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400101Parameter missing or parameter type incorrect.7400110Unresolved conflicts with current configurations.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400101 | Parameter missing or parameter type incorrect. |
+| 7400110 | Unresolved conflicts with current configurations. |
 
 **示例：**
 
@@ -359,7 +400,7 @@ getActiveFrameRate(): FrameRateRange
 
 获取已设置的帧率范围。
 
-使用[setFrameRate](#ZH-CN_TOPIC_0000002529285781__setframerate12)对录像流设置过帧率后可查询。
+使用[setFrameRate](#ZH-CN_TOPIC_0000002522241914__setframerate12)对录像流设置过帧率后可查询。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -367,7 +408,9 @@ getActiveFrameRate(): FrameRateRange
 
 **返回值：**
 
-类型说明[FrameRateRange](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__frameraterange)帧率范围
+| 类型 | 说明 |
+| --- | --- |
+| FrameRateRange | 帧率范围 |
 
 **示例：**
 
@@ -390,13 +433,17 @@ getActiveProfile(): VideoProfile
 
 **返回值：**
 
-类型说明[VideoProfile](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__videoprofile)当前生效的配置信息
+| 类型 | 说明 |
+| --- | --- |
+| VideoProfile | 当前生效的配置信息 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -428,7 +475,9 @@ isMirrorSupported(): boolean
 
 **返回值：**
 
-类型说明boolean返回是否支持镜像录像，true表示支持，false表示不支持。若接口调用失败，返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回是否支持镜像录像，true表示支持，false表示不支持。若接口调用失败，返回undefined。 |
 
 **示例：**
 
@@ -447,11 +496,11 @@ enableMirror(enabled: boolean): void
 
 -
 
-调用该接口前，需要通过[isMirrorSupported](#ZH-CN_TOPIC_0000002529285781__ismirrorsupported15)查询是否支录像镜像功能。
+调用该接口前，需要通过[isMirrorSupported](#ZH-CN_TOPIC_0000002522241914__ismirrorsupported15)查询是否支录像镜像功能。
 
 -
 
-启用/关闭录像镜像后，需要通过[getVideoRotation](#ZH-CN_TOPIC_0000002529285781__getvideorotation12)获取录像旋转角度以及[updateRotation](Interface (AVRecorder).md#ZH-CN_TOPIC_0000002529445863__updaterotation12)更新旋转角度。
+启用/关闭录像镜像后，需要通过[getVideoRotation](#ZH-CN_TOPIC_0000002522241914__getvideorotation12)获取录像旋转角度以及[updateRotation](Interface (AVRecorder).md#ZH-CN_TOPIC_0000002522082032__updaterotation12)更新旋转角度。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -459,13 +508,18 @@ enableMirror(enabled: boolean): void
 
 **参数：**
 
-参数名类型必填说明enabledboolean是启用/关闭镜像录像。true为开启镜像录像，false为关闭镜像录像。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enabled | boolean | 是 | 启用/关闭镜像录像。true为开启镜像录像，false为关闭镜像录像。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400101Parameter missing or parameter type incorrect.7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400101 | Parameter missing or parameter type incorrect. |
+| 7400103 | Session not config. |
 
 **示例：**
 
@@ -481,18 +535,19 @@ function enableMirror(videoOutput: camera.VideoOutput, mirrorMode: boolean, aVRe
     } catch (error) {
         let err = error as BusinessError;
     }
-}
 ```
 
 #### getVideoRotation12+
 
-getVideoRotation(deviceDegree: number): ImageRotation
+getVideoRotation(deviceDegree?: number): [ImageRotation](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__imagerotation)
 
 获取录像旋转角度。
 
-- 设备自然方向：设备默认使用方向，手机为竖屏（充电口向下）。
-- 相机镜头角度：值等于相机图像顺时针旋转到设备自然方向的角度，手机后置相机传感器是横屏安装的，所以需要顺时针旋转90度到设备自然方向。
-- 屏幕显示方向：需要屏幕显示的图片左上角为第一个像素点为坐标原点。锁屏时与自然方向一致。
+- 设备自然方向：设备默认使用方向。例如，直板机默认使用方向为竖屏（充电口向下）。
+
+- 相机镜头角度：值等于相机图像顺时针旋转到设备自然方向的角度。例如，直板机后置相机传感器是横屏安装的，所以需要顺时针旋转90度到设备自然方向。
+
+模型约束： 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -500,17 +555,23 @@ getVideoRotation(deviceDegree: number): ImageRotation
 
 **参数：**
 
-参数名类型必填说明deviceDegreenumber是设备旋转角度，单位度，取值范围0-360。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceDegree | number | 否 | 设备旋转角度，单位度，取值范围[0, 360]。  从API version 23开始，入参deviceDegree为可选参数，当不传入参数时，由系统获取deviceDegree进行录像旋转角度计算。 |
 
 **返回值：**
 
-类型说明[ImageRotation](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__imagerotation)获取录像旋转角度。
+| 类型 | 说明 |
+| --- | --- |
+| [ImageRotation](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__imagerotation) | 返回录像旋转角度。若接口调用失败，返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400101Parameter missing or parameter type incorrect.7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -528,6 +589,19 @@ async function getVideoRotation(videoOutput: camera.VideoOutput): Promise<camera
   } catch (error) {
     let err = error as BusinessError;
     console.error('Failed to get video rotation: ' + JSON.stringify(err));
+  }
+  return videoRotation;
+}
+
+function testGetVideoRotationWithOutParam(videoOutput: camera.VideoOutput): camera.ImageRotation {
+  let videoRotation: camera.ImageRotation = camera.ImageRotation.ROTATION_0;
+  try {
+    videoRotation = videoOutput.getVideoRotation();
+    console.info(`Video rotation is: ${videoRotation}`);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The videoOutput.testGetVideoRotationWithOutParam call failed. error code: ${err.code}`);
   }
   return videoRotation;
 }

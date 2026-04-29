@@ -26,7 +26,9 @@ import { Vector } from '@kit.ArkTS';
 
 **系统能力：** SystemCapability.Utils.Lang
 
-名称类型只读可选说明lengthnumber是否Vector的元素个数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| length | number | 是 | 否 | Vector的元素个数。 |
 
 #### constructor
 
@@ -52,11 +54,15 @@ add(element: T): boolean
 
 **参数：**
 
-参数名类型必填说明elementT是添加进去的元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | T | 是 | 添加进去的元素。 |
 
 **返回值：**
 
-类型说明boolean插入成功返回true，失败返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 插入成功返回true，失败返回false。 |
 
 **示例：**
 
@@ -84,7 +90,10 @@ insert(element: T, index: number): void
 
 **参数：**
 
-参数名类型必填说明elementT是被插入的元素。indexnumber是被插入的位置索引。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | T | 是 | 被插入的元素。 |
+| index | number | 是 | 被插入的位置索引。 |
 
 **示例：**
 
@@ -105,11 +114,15 @@ has(element: T): boolean
 
 **参数：**
 
-参数名类型必填说明elementT是指定的元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | T | 是 | 指定的元素。 |
 
 **返回值：**
 
-类型说明boolean是否包含指定元素，true表示包含该元素，false表示不包含。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否包含指定元素，true表示包含该元素，false表示不包含。 |
 
 **示例：**
 
@@ -130,11 +143,15 @@ getIndexOf(element: T): number
 
 **参数：**
 
-参数名类型必填说明elementT是指定的元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | T | 是 | 指定的元素。 |
 
 **返回值：**
 
-类型说明number返回指定元素第一次出现时的下标值，查找失败返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回指定元素第一次出现时的下标值，查找失败返回-1。 |
 
 **示例：**
 
@@ -160,11 +177,15 @@ getLastIndexOf(element: T): number
 
 **参数：**
 
-参数名类型必填说明elementT是指定元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | T | 是 | 指定元素。 |
 
 **返回值：**
 
-类型说明number返回指定元素最后一次出现时的下标值，查找失败返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回指定元素最后一次出现时的下标值，查找失败返回-1。 |
 
 **示例：**
 
@@ -190,11 +211,15 @@ removeByIndex(index: number): T
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定元素的下标值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定元素的下标值。 |
 
 **返回值：**
 
-类型说明T返回被删除的元素。数组为空时返回undefined，下标越界时抛出异常。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回被删除的元素。数组为空时返回undefined，下标越界时抛出异常。 |
 
 **示例：**
 
@@ -218,11 +243,15 @@ remove(element: T): boolean
 
 **参数：**
 
-参数名类型必填说明elementT是指定元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | T | 是 | 指定元素。 |
 
 **返回值：**
 
-类型说明boolean删除成功返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 删除成功返回true，否则返回false。 |
 
 **示例：**
 
@@ -245,7 +274,10 @@ removeByRange(fromIndex: number, toIndex: number): void
 
 **参数：**
 
-参数名类型必填说明fromIndexnumber是起始下标。toIndexnumber是终止下标。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fromIndex | number | 是 | 起始下标。 |
+| toIndex | number | 是 | 终止下标。 |
 
 **示例：**
 
@@ -260,9 +292,7 @@ vector.removeByRange(2,4);
 
 #### replaceAllElements
 
-replaceAllElements(callbackFn: (value: T, index?: number, vector?: Vector<T>) => T,
-
-thisArg?: Object): void
+replaceAllElements(callbackFn: (value: T, index?: number, vector?: Vector<T>) => T, thisArg?: Object): void
 
 用户操作Vector中的元素，用操作后的元素替换原元素并返回操作后的元素。
 
@@ -270,11 +300,18 @@ thisArg?: Object): void
 
 **参数：**
 
-参数名类型必填说明callbackFnfunction是回调函数。thisArgObject否callbackfn被调用时用作this值，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | function | 是 | 回调函数。 |
+| thisArg | Object | 否 | callbackfn被调用时用作this值，默认值为当前实例对象。 |
 
 callbackfn的参数说明：
 
-参数名类型必填说明valueT是当前遍历到的元素。indexnumber否当前遍历到的下标值，默认值为0。vectorVector<T>否当前调用replaceAllElements方法的实例对象，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | T | 是 | 当前遍历到的元素。 |
+| index | number | 否 | 当前遍历到的下标值，默认值为0。 |
+| vector | Vector<T> | 否 | 当前调用replaceAllElements方法的实例对象，默认值为当前实例对象。 |
 
 **示例：**
 
@@ -292,9 +329,7 @@ vector.replaceAllElements((value : number) : number => {
 
 #### forEach
 
-forEach(callbackFn: (value: T, index?: number, vector?: Vector<T>) => void,
-
-thisArg?: Object): void
+forEach(callbackFn: (value: T, index?: number, vector?: Vector<T>) => void, thisArg?: Object): void
 
 通过回调函数来遍历Vector实例对象上的元素以及元素对应的下标。
 
@@ -302,11 +337,18 @@ thisArg?: Object): void
 
 **参数：**
 
-参数名类型必填说明callbackFnfunction是回调函数。thisArgObject否callbackfn被调用时用作this值，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | function | 是 | 回调函数。 |
+| thisArg | Object | 否 | callbackfn被调用时用作this值，默认值为当前实例对象。 |
 
 callbackfn的参数说明：
 
-参数名类型必填说明valueT是当前遍历到的元素。indexnumber否当前遍历到的下标值，默认值为0。vectorVector<T>否当前调用forEach方法的实例对象，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | T | 是 | 当前遍历到的元素。 |
+| index | number | 否 | 当前遍历到的下标值，默认值为0。 |
+| vector | Vector<T> | 否 | 当前调用forEach方法的实例对象，默认值为当前实例对象。 |
 
 **示例：**
 
@@ -331,11 +373,16 @@ sort(comparator?: (firstValue: T, secondValue: T) => number): void
 
 **参数：**
 
-参数名类型必填说明comparatorfunction否回调函数，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| comparator | function | 否 | 回调函数，默认值为当前实例对象。 |
 
 comparator的参数说明：
 
-参数名类型必填说明firstValueT是前一项元素。secondValueT是后一项元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| firstValue | T | 是 | 前一项元素。 |
+| secondValue | T | 是 | 后一项元素。 |
 
 **示例：**
 
@@ -360,11 +407,16 @@ subVector(fromIndex: number, toIndex: number): Vector<T>
 
 **参数：**
 
-参数名类型必填说明fromIndexnumber是起始下标。toIndexnumber是终止下标。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fromIndex | number | 是 | 起始下标。 |
+| toIndex | number | 是 | 终止下标。 |
 
 **返回值：**
 
-类型说明Vector<T>返回Vector对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Vector<T> | 返回Vector对象实例。 |
 
 **示例：**
 
@@ -409,7 +461,9 @@ clone(): Vector<T>
 
 **返回值：**
 
-类型说明Vector<T>返回Vector对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Vector<T> | 返回Vector对象实例。 |
 
 **示例：**
 
@@ -432,7 +486,9 @@ getCapacity(): number
 
 **返回值：**
 
-类型说明number返回Vector的容量大小。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回Vector的容量大小。 |
 
 **示例：**
 
@@ -455,7 +511,9 @@ convertToArray(): Array<T>
 
 **返回值：**
 
-类型说明Array<T>返回数组类型。
+| 类型 | 说明 |
+| --- | --- |
+| Array<T> | 返回数组类型。 |
 
 **示例：**
 
@@ -478,7 +536,9 @@ isEmpty(): boolean
 
 **返回值：**
 
-类型说明boolean为空返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 为空返回true，否则返回false。 |
 
 **示例：**
 
@@ -501,7 +561,9 @@ increaseCapacityTo(newCapacity: number): void
 
 **参数：**
 
-参数名类型必填说明newCapacitynumber是新容量。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| newCapacity | number | 是 | 新容量。 |
 
 **示例：**
 
@@ -544,7 +606,9 @@ toString(): string
 
 **返回值：**
 
-类型说明string返回对应的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回对应的字符串。 |
 
 **示例：**
 
@@ -567,7 +631,9 @@ copyToArray(array: Array<T>): void
 
 **参数：**
 
-参数名类型必填说明arrayArray<T>是指定数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| array | Array<T> | 是 | 指定数组。 |
 
 #### getFirstElement
 
@@ -579,7 +645,9 @@ getFirstElement(): T
 
 **返回值：**
 
-类型说明T返回第一个元素。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回第一个元素。 |
 
 **示例：**
 
@@ -602,7 +670,9 @@ getLastElement(): T
 
 **返回值：**
 
-类型说明T返回最后一个元素。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回最后一个元素。 |
 
 **示例：**
 
@@ -625,11 +695,16 @@ getLastIndexFrom(element: T, index: number): number
 
 **参数：**
 
-参数名类型必填说明elementT是要查找的元素。indexnumber是从指定索引开始搜索。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | T | 是 | 要查找的元素。 |
+| index | number | 是 | 从指定索引开始搜索。 |
 
 **返回值：**
 
-类型说明number返回该元素的下标，如果查找失败，则返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回该元素的下标，如果查找失败，则返回-1。 |
 
 **示例：**
 
@@ -652,11 +727,16 @@ getIndexFrom(element: T, index: number): number
 
 **参数：**
 
-参数名类型必填说明elementT是要查找的元素。indexnumber是从指定索引开始搜索。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | T | 是 | 要查找的元素。 |
+| index | number | 是 | 从指定索引开始搜索。 |
 
 **返回值：**
 
-类型说明number返回该元素的下标，如果查找失败，则返回 -1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回该元素的下标，如果查找失败，则返回 -1。 |
 
 **示例：**
 
@@ -679,7 +759,9 @@ setLength(newSize: number): void
 
 **参数：**
 
-参数名类型必填说明newSizenumber是设置的新长度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| newSize | number | 是 | 设置的新长度。 |
 
 **示例：**
 
@@ -703,11 +785,15 @@ get(index: number): T
 
 **参数：**
 
-参数名类型必填说明indexnumber是查找的下标值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 查找的下标值。 |
 
 **返回值：**
 
-类型说明T返回获取到的元素。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回获取到的元素。 |
 
 **示例：**
 
@@ -730,11 +816,16 @@ set(index: number, element: T): T
 
 **参数：**
 
-参数名类型必填说明indexnumber是查找的下标值。elementT是用来替换的元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 查找的下标值。 |
+| element | T | 是 | 用来替换的元素。 |
 
 **返回值：**
 
-类型说明T返回替换后的元素。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回替换后的元素。 |
 
 #### [Symbol.iterator]
 
@@ -746,7 +837,9 @@ set(index: number, element: T): T
 
 **返回值：**
 
-类型说明IterableIterator<T>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<T> | 返回一个迭代器。 |
 
 **示例：**
 

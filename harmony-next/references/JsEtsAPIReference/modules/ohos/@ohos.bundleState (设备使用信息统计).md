@@ -24,7 +24,10 @@ isIdleState(bundleName: string, callback: AsyncCallback<boolean>): void
 
 **参数**：
 
-参数名类型必填说明bundleNamestring是应用的bundleName。callbackAsyncCallback<boolean>是指定的callback回调方法。如果指定的bundleName有效，则返回指定bundleName的应用当前是否是空闲状态；否则返回null。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| bundleName | string | 是 | 应用的bundleName。 |
+| callback | AsyncCallback<boolean> | 是 | 指定的callback回调方法。如果指定的bundleName有效，则返回指定bundleName的应用当前是否是空闲状态；否则返回null。 |
 
 **示例**：
 
@@ -52,11 +55,15 @@ isIdleState(bundleName: string): Promise<boolean>
 
 **参数**：
 
-参数名类型必填说明bundleNamestring是应用的bundleName。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| bundleName | string | 是 | 应用的bundleName。 |
 
 **返回值**：
 
-类型说明Promise<boolean>指定的Promise回调方法。如果指定的bundleName有效，则返回指定bundleName的应用当前是否是空闲状态；否则返回null。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | 指定的Promise回调方法。如果指定的bundleName有效，则返回指定bundleName的应用当前是否是空闲状态；否则返回null。 |
 
 **示例**：
 

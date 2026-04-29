@@ -13,11 +13,11 @@ WhiteBalance 继承自 [WhiteBalanceQuery](Interface (WhiteBalanceQuery).md)。
 import { camera } from '@kit.CameraKit';
 ```
 
-#### setWhiteBalanceMode20+
+#### set[WhiteBalanceMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__whitebalancemode20)20+
 
-setWhiteBalanceMode(mode: WhiteBalanceMode): void
+set[WhiteBalanceMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__whitebalancemode20)(mode: WhiteBalanceMode): void
 
-设置白平衡模式。设置之前需要先检查设备是否支持指定的白平衡模式，具体方法请参考[isWhiteBalanceModeSupported](Interface (WhiteBalanceQuery).md#ZH-CN_TOPIC_0000002497445812__iswhitebalancemodesupported20)。
+设置白平衡模式。设置之前需要先检查设备是否支持指定的白平衡模式，具体方法请参考[isWhiteBalanceModeSupported](Interface (WhiteBalanceQuery).md#ZH-CN_TOPIC_0000002553361839__iswhitebalancemodesupported20)。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -25,13 +25,18 @@ setWhiteBalanceMode(mode: WhiteBalanceMode): void
 
 **参数：**
 
-参数名类型必填说明mode[WhiteBalanceMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__whitebalancemode20)是白平衡模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mode | [WhiteBalanceMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__whitebalancemode20) | 是 | 白平衡模式。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码]([Camera错误码](../../errors/Camera错误码.md).md)。
 
-错误码ID错误信息7400101Parameter missing or parameter type incorrect.7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400101 | Parameter missing or parameter type incorrect. |
+| 7400103 | Session not config. |
 
 **示例：**
 
@@ -45,12 +50,11 @@ function setWhiteBalanceMode(session: camera.PhotoSession | camera.VideoSession)
     let err = error as BusinessError;
     console.error(`The setWhiteBalanceMode call failed. error code: ${err.code}`);
   }
-}
 ```
 
-#### getWhiteBalanceMode20+
+#### get[WhiteBalanceMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__whitebalancemode20)20+
 
-getWhiteBalanceMode(): WhiteBalanceMode
+get[WhiteBalanceMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__whitebalancemode20)(): WhiteBalanceMode
 
 获取当前白平衡模式。
 
@@ -60,13 +64,17 @@ getWhiteBalanceMode(): WhiteBalanceMode
 
 **返回值：**
 
-类型说明[WhiteBalanceMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__whitebalancemode20)获取当前白平衡模式。若接口调用失败，返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| [WhiteBalanceMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__whitebalancemode20) | 获取当前白平衡模式。若接口调用失败，返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
 
 **示例：**
 
@@ -91,7 +99,7 @@ setWhiteBalance(whiteBalance: number): void
 
 设置手动白平衡值。
 
-设置之前需要先检查设备支持的白平衡值范围，具体方法请参考[getWhiteBalanceRange](Interface (WhiteBalanceQuery).md#ZH-CN_TOPIC_0000002497445812__getwhitebalancerange20)。
+设置之前需要先检查设备支持的白平衡值范围，具体方法请参考[getWhiteBalanceRange](Interface (WhiteBalanceQuery).md#ZH-CN_TOPIC_0000002553361839__getwhitebalancerange20)。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -99,13 +107,18 @@ setWhiteBalance(whiteBalance: number): void
 
 **参数：**
 
-参数名类型必填说明whiteBalancenumber是设置手动白平衡值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| whiteBalance | number | 是 | 设置手动白平衡值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400101Parameter missing or parameter type incorrect.7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400101 | Parameter missing or parameter type incorrect. |
+| 7400103 | Session not config. |
 
 **示例：**
 
@@ -120,7 +133,6 @@ function setWhiteBalance(session: camera.PhotoSession | camera.VideoSession): vo
     let err = error as BusinessError;
     console.error(`The setWhiteBalance call failed. error code: ${err.code}`);
   }
-}
 ```
 
 #### getWhiteBalance20+
@@ -135,13 +147,17 @@ getWhiteBalance(): number
 
 **返回值：**
 
-类型说明number返回当前白平衡值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回当前白平衡值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
 
 **示例：**
 

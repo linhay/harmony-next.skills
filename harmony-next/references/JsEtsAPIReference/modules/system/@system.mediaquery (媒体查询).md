@@ -2,7 +2,9 @@
 
 提供根据不同媒体类型定义不同的样式。
 
-- 从API Version 7 开始，该接口不再维护，推荐使用新接口[@ohos.mediaquery](../ohos/@ohos.mediaquery (媒体查询).md)。
+
+- 从API version 7 开始，该接口不再维护，推荐使用新接口[@ohos.mediaquery](@ohos.mediaquery (媒体查询).md)。
+
 - 本模块首批接口从API version 3开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 #### 导入模块
@@ -31,11 +33,15 @@ matchMedia(condition: string): MediaQueryList
 
 **参数：**
 
-参数名类型必填说明conditionstring是用于查询的条件。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| condition | string | 是 | 用于查询的条件。 |
 
 **返回值：**
 
-类型说明[MediaQueryList](@system.mediaquery (媒体查询).md#ZH-CN_TOPIC_0000002497604808__mediaquerylist)表示创建MediaQueryList对象的属性，详情见下表说明。
+| 类型 | 说明 |
+| --- | --- |
+| MediaQueryList | 表示创建MediaQueryList对象的属性，详情见下表说明。 |
 
 **示例：**
 
@@ -51,7 +57,9 @@ let mMediaQueryList = mediaquery.matchMedia('(max-width: 466)');
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明matchesboolean否否匹配结果。true表示满足查询条件，false表示不满足查询条件。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| matches | boolean | 否 | 否 | 匹配结果。true表示满足查询条件，false表示不满足查询条件。 |
 
 #### MediaQueryList
 
@@ -63,7 +71,11 @@ let mMediaQueryList = mediaquery.matchMedia('(max-width: 466)');
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明mediastring否是序列化媒体查询条件，该参数为只读。matchesboolean否是匹配结果。 true表示满足查询条件，false表示不满足查询条件。onchange(matches: boolean) => void否是匹配结果发生变化时的执行函数。matches表示是否匹配媒体查询条件，true满足查询条件，false不满足查询条件。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| media | string | 否 | 是 | 序列化媒体查询条件，该参数为只读。 |
+| matches | boolean | 否 | 是 | 匹配结果。 true表示满足查询条件，false表示不满足查询条件。 |
+| onchange | (matches: boolean) => void | 否 | 是 | 匹配结果发生变化时的执行函数。matches表示是否匹配媒体查询条件，true满足查询条件，false不满足查询条件。 |
 
 #### MediaQueryList.addListener
 
@@ -77,7 +89,9 @@ addListener(callback: (event: MediaQueryEvent) => void): void
 
 **参数：**
 
-参数名类型必填说明callback(event: MediaQueryEvent) => void是匹配条件发生变化的响应函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | (event: MediaQueryEvent) => void | 是 | 匹配条件发生变化的响应函数。 |
 
 **示例：**
 
@@ -89,7 +103,6 @@ function maxWidthMatch(e: MediaQueryEvent): void {
   if(e.matches){
     // do something
   }
-}
 mMediaQueryList.addListener(maxWidthMatch);
 ```
 
@@ -105,7 +118,9 @@ removeListener(callback: (event: MediaQueryEvent) => void): void
 
 **参数：**
 
-参数名类型必填说明callback(event: MediaQueryEvent) => void是匹配条件发生变化的响应函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | (event: MediaQueryEvent) => void | 是 | 匹配条件发生变化的响应函数。 |
 
 **示例：**
 
@@ -117,6 +132,5 @@ function maxWidthMatch(e: MediaQueryEvent): void {
   if(e.matches){
     // do something
   }
-}
 mMediaQueryList.removeListener(maxWidthMatch);
 ```

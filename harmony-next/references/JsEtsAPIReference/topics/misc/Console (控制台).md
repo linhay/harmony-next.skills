@@ -18,7 +18,10 @@ static debug(message: string, ...arguments: any[]): void
 
 **参数：**
 
-参数名类型必填说明messagestring是表示要打印的文本信息。argumentsany[]否表示其余要打印的信息或message的替换值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| message | string | 是 | 表示要打印的文本信息。 |
+| arguments | any[] | 否 | 表示其余要打印的信息或message的替换值。 |
 
 **示例：**
 
@@ -46,7 +49,10 @@ static log(message: string, ...arguments: any[]): void
 
 **参数：**
 
-参数名类型必填说明messagestring是表示要打印的文本信息。argumentsany[]否表示其余要打印的信息或message的替换值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| message | string | 是 | 表示要打印的文本信息。 |
+| arguments | any[] | 否 | 表示其余要打印的信息或message的替换值。 |
 
 **示例：**
 
@@ -74,7 +80,10 @@ static info(message: string, ...arguments: any[]): void
 
 **参数：**
 
-参数名类型必填说明messagestring是表示要打印的文本信息。argumentsany[]否表示其余要打印的信息或message的替换值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| message | string | 是 | 表示要打印的文本信息。 |
+| arguments | any[] | 否 | 表示其余要打印的信息或message的替换值。 |
 
 **示例：**
 
@@ -102,7 +111,10 @@ static warn(message: string, ...arguments: any[]): void
 
 **参数：**
 
-参数名类型必填说明messagestring是表示要打印的警告信息。argumentsany[]否表示其余要打印的信息或message的替换值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| message | string | 是 | 表示要打印的警告信息。 |
+| arguments | any[] | 否 | 表示其余要打印的信息或message的替换值。 |
 
 **示例：**
 
@@ -130,7 +142,10 @@ static error(message: string, ...arguments: any[]): void
 
 **参数：**
 
-参数名类型必填说明messagestring是表示要打印的错误信息。argumentsany[]否表示其余要打印的信息或message的替换值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| message | string | 是 | 表示要打印的错误信息。 |
+| arguments | any[] | 否 | 表示其余要打印的信息或message的替换值。 |
 
 **示例：**
 
@@ -156,13 +171,18 @@ static assert(value?: Object, ...arguments: Object[]): void
 
 **参数：**
 
-参数名类型必填说明valueObject否语句结果值。若value为假（false）或者省略，则输出以"Assertion failed"开头。如果value为真值（true），则无打印。argumentsObject否value为假（false）的后续错误消息打印。省略则不打印。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | Object | 否 | 语句结果值。若value为假（false）或者省略，则输出以"Assertion failed"开头。如果value为真值（true），则无打印。 |
+| arguments | Object | 否 | value为假（false）的后续错误消息打印。省略则不打印。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -189,13 +209,17 @@ static count(label?: string): void
 
 **参数：**
 
-参数名类型必填说明labelstring否计数器标签名。默认值为'default'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| label | string | 否 | 计数器标签名。默认值为'default'。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -226,13 +250,17 @@ static countReset(label?: string): void
 
 **参数：**
 
-参数名类型必填说明labelstring否计数器标签名。默认值为'default'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| label | string | 否 | 计数器标签名。默认值为'default'。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -256,7 +284,9 @@ static dir(dir?: Object): void
 
 **参数：**
 
-参数名类型必填说明dirObject否需要打印内容的对象。省略则无任何打印。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dir | Object | 否 | 需要打印内容的对象。省略则无任何打印。 |
 
 **示例：**
 
@@ -291,7 +321,9 @@ static dirxml(...arguments: Object[]): void
 
 **参数：**
 
-参数名类型必填说明argumentsObject否要打印的信息。省略则无任何打印。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| arguments | Object | 否 | 要打印的信息。省略则无任何打印。 |
 
 **示例：**
 
@@ -319,13 +351,15 @@ static group(...arguments: Object[]): void
 
 **参数：**
 
-参数名类型必填说明argumentsObject否要打印的信息。省略则仅打印两个空格。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| arguments | Object | 否 | 要打印的信息。省略则仅打印两个空格。 |
 
 **示例：**
 
 ```ets
-console.info("outter");
-// outter
+console.info("outer");
+// outer
 console.group();
 console.info("level 1");
 //   level 1
@@ -347,13 +381,15 @@ static groupCollapsed(...arguments: Object[]): void
 
 **参数：**
 
-参数名类型必填说明argumentsObject否要打印的信息。省略则仅打印两个空格。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| arguments | Object | 否 | 要打印的信息。省略则仅打印两个空格。 |
 
 **示例：**
 
 ```ets
-console.groupCollapsed("outter");
-// outter
+console.groupCollapsed("outer");
+// outer
 console.groupCollapsed();
 console.info("level 1");
 //   level 1
@@ -376,14 +412,14 @@ static groupEnd(): void
 **示例：**
 
 ```ets
-console.info("outter");
-// outter
+console.info("outer");
+// outer
 console.group();
 console.info("level 1");
 //   level 1
 console.groupEnd();
-console.info("outter");
-// outter
+console.info("outer");
+// outer
 ```
 
 #### console.table10+
@@ -398,7 +434,9 @@ static table(tableData?: Object): void
 
 **参数：**
 
-参数名类型必填说明tableDataObject否要打印为表格形式的对象。省略则无任何打印。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| tableData | Object | 否 | 要打印为表格形式的对象。省略则无任何打印。 |
 
 **示例：**
 
@@ -435,13 +473,17 @@ static time(label?: string): void
 
 **参数：**
 
-参数名类型必填说明labelstring否计时器标识。默认值为'default'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| label | string | 否 | 计时器标识。默认值为'default'。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -461,13 +503,17 @@ static timeEnd(label?: string): void
 
 **参数：**
 
-参数名类型必填说明labelstring否计时器标识。默认值为'default'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| label | string | 否 | 计时器标识。默认值为'default'。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -489,13 +535,18 @@ static timeLog(label?: string, ...arguments: Object[]): void
 
 **参数：**
 
-参数名类型必填说明labelstring否计时器标识。默认值为'default'。argumentsObject否需要打印的其他日志。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| label | string | 否 | 计时器标识。默认值为'default'。 |
+| arguments | Object | 否 | 需要打印的其他日志。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -519,7 +570,9 @@ static trace(...arguments: Object[]): void
 
 **参数：**
 
-参数名类型必填说明argumentsObject否需要打印的其他日志。省略则仅打印堆栈信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| arguments | Object | 否 | 需要打印的其他日志。省略则仅打印堆栈信息。 |
 
 **示例：**
 

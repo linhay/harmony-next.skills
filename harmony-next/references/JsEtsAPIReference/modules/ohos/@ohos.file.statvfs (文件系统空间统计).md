@@ -20,17 +20,35 @@ getFreeSize(path:string): Promise<number>
 
 **参数：**
 
-参数名类型必填说明pathstring是需要查询的文件系统的文件路径。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 需要查询的文件系统的文件路径。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回空闲字节数。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回空闲字节数。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[基础文件IO错误码](../../errors/文件管理错误码.md#ZH-CN_TOPIC_0000002529445241__基础文件io错误码)。
+接口抛出错误码的详细介绍请参见[基础文件IO错误码](文件管理错误码.md#ZH-CN_TOPIC_0000002522241236__基础文件io错误码)。
 
-错误码ID错误信息13900002No such file or directory.13900004Interrupted system call.13900005I/O error.13900008Bad file descriptor.13900011Out of memory.13900012Permission denied.13900013Bad address.13900018Not a directory.13900030File name too long.13900031Function not implemented.13900033Too many symbolic links encountered.13900038Value too large for defined data type.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900002 | No such file or directory. |
+| 13900004 | Interrupted system call. |
+| 13900005 | I/O error. |
+| 13900008 | Bad file descriptor. |
+| 13900011 | Out of memory. |
+| 13900012 | Permission denied. |
+| 13900013 | Bad address. |
+| 13900018 | Not a directory. |
+| 13900030 | File name too long. |
+| 13900031 | Function not implemented. |
+| 13900033 | Too many symbolic links encountered. |
+| 13900038 | Value too large for defined data type. |
+| 13900042 | Unknown error. |
 
 **示例：**
 
@@ -58,13 +76,30 @@ getFreeSize(path:string, callback:AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明pathstring是需要查询的文件系统的文件路径。callbackAsyncCallback<number>是异步获取空闲字节数之后的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 需要查询的文件系统的文件路径。 |
+| callback | AsyncCallback<number> | 是 | 异步获取空闲字节数之后的回调。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[基础文件IO错误码](../../errors/文件管理错误码.md#ZH-CN_TOPIC_0000002529445241__基础文件io错误码)。
+接口抛出错误码的详细介绍请参见[基础文件IO错误码](文件管理错误码.md#ZH-CN_TOPIC_0000002522241236__基础文件io错误码)。
 
-错误码ID错误信息13900002No such file or directory.13900004Interrupted system call.13900005I/O error.13900008Bad file descriptor.13900011Out of memory.13900012Permission denied.13900013Bad address.13900018Not a directory.13900030File name too long.13900031Function not implemented.13900033Too many symbolic links encountered.13900038Value too large for defined data type.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900002 | No such file or directory. |
+| 13900004 | Interrupted system call. |
+| 13900005 | I/O error. |
+| 13900008 | Bad file descriptor. |
+| 13900011 | Out of memory. |
+| 13900012 | Permission denied. |
+| 13900013 | Bad address. |
+| 13900018 | Not a directory. |
+| 13900030 | File name too long. |
+| 13900031 | Function not implemented. |
+| 13900033 | Too many symbolic links encountered. |
+| 13900038 | Value too large for defined data type. |
+| 13900042 | Unknown error. |
 
 **示例：**
 
@@ -94,17 +129,35 @@ getFreeSizeSync(path:string): number
 
 **参数：**
 
-参数名类型必填说明pathstring是需要查询的文件系统的文件路径。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 需要查询的文件系统的文件路径。 |
 
 **返回值：**
 
-类型说明number返回空闲字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回空闲字节数。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[基础文件IO错误码](../../errors/文件管理错误码.md#ZH-CN_TOPIC_0000002529445241__基础文件io错误码)。
+接口抛出错误码的详细介绍请参见[基础文件IO错误码](文件管理错误码.md#ZH-CN_TOPIC_0000002522241236__基础文件io错误码)。
 
-错误码ID错误信息13900002No such file or directory.13900004Interrupted system call.13900005I/O error.13900008Bad file descriptor.13900011Out of memory.13900012Permission denied.13900013Bad address.13900018Not a directory.13900030File name too long.13900031Function not implemented.13900033Too many symbolic links encountered.13900038Value too large for defined data type.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900002 | No such file or directory. |
+| 13900004 | Interrupted system call. |
+| 13900005 | I/O error. |
+| 13900008 | Bad file descriptor. |
+| 13900011 | Out of memory. |
+| 13900012 | Permission denied. |
+| 13900013 | Bad address. |
+| 13900018 | Not a directory. |
+| 13900030 | File name too long. |
+| 13900031 | Function not implemented. |
+| 13900033 | Too many symbolic links encountered. |
+| 13900038 | Value too large for defined data type. |
+| 13900042 | Unknown error. |
 
 **示例：**
 
@@ -128,17 +181,35 @@ getTotalSize(path: string): Promise<number>
 
 **参数：**
 
-参数名类型必填说明pathstring是需要查询的文件系统的文件路径。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 需要查询的文件系统的文件路径。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回总字节数。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回总字节数。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[基础文件IO错误码](../../errors/文件管理错误码.md#ZH-CN_TOPIC_0000002529445241__基础文件io错误码)。
+接口抛出错误码的详细介绍请参见[基础文件IO错误码](文件管理错误码.md#ZH-CN_TOPIC_0000002522241236__基础文件io错误码)。
 
-错误码ID错误信息13900002No such file or directory.13900004Interrupted system call.13900005I/O error.13900008Bad file descriptor.13900011Out of memory.13900012Permission denied.13900013Bad address.13900018Not a directory.13900030File name too long.13900031Function not implemented.13900033Too many symbolic links encountered.13900038Value too large for defined data type.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900002 | No such file or directory. |
+| 13900004 | Interrupted system call. |
+| 13900005 | I/O error. |
+| 13900008 | Bad file descriptor. |
+| 13900011 | Out of memory. |
+| 13900012 | Permission denied. |
+| 13900013 | Bad address. |
+| 13900018 | Not a directory. |
+| 13900030 | File name too long. |
+| 13900031 | Function not implemented. |
+| 13900033 | Too many symbolic links encountered. |
+| 13900038 | Value too large for defined data type. |
+| 13900042 | Unknown error. |
 
 **示例：**
 
@@ -166,13 +237,30 @@ getTotalSize(path: string, callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明pathstring是需要查询的文件系统的文件路径。callbackAsyncCallback<number>是异步获取总字节数之后的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 需要查询的文件系统的文件路径。 |
+| callback | AsyncCallback<number> | 是 | 异步获取总字节数之后的回调。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[基础文件IO错误码](../../errors/文件管理错误码.md#ZH-CN_TOPIC_0000002529445241__基础文件io错误码)。
+接口抛出错误码的详细介绍请参见[基础文件IO错误码](文件管理错误码.md#ZH-CN_TOPIC_0000002522241236__基础文件io错误码)。
 
-错误码ID错误信息13900002No such file or directory.13900004Interrupted system call.13900005I/O error.13900008Bad file descriptor.13900011Out of memory.13900012Permission denied.13900013Bad address.13900018Not a directory.13900030File name too long.13900031Function not implemented.13900033Too many symbolic links encountered.13900038Value too large for defined data type.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900002 | No such file or directory. |
+| 13900004 | Interrupted system call. |
+| 13900005 | I/O error. |
+| 13900008 | Bad file descriptor. |
+| 13900011 | Out of memory. |
+| 13900012 | Permission denied. |
+| 13900013 | Bad address. |
+| 13900018 | Not a directory. |
+| 13900030 | File name too long. |
+| 13900031 | Function not implemented. |
+| 13900033 | Too many symbolic links encountered. |
+| 13900038 | Value too large for defined data type. |
+| 13900042 | Unknown error. |
 
 **示例：**
 
@@ -202,17 +290,35 @@ getTotalSizeSync(path: string): number
 
 **参数：**
 
-参数名类型必填说明pathstring是需要查询的文件系统的文件路径。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 需要查询的文件系统的文件路径。 |
 
 **返回值：**
 
-类型说明number返回总字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回总字节数。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[基础文件IO错误码](../../errors/文件管理错误码.md#ZH-CN_TOPIC_0000002529445241__基础文件io错误码)。
+接口抛出错误码的详细介绍请参见[基础文件IO错误码](文件管理错误码.md#ZH-CN_TOPIC_0000002522241236__基础文件io错误码)。
 
-错误码ID错误信息13900002No such file or directory.13900004Interrupted system call.13900005I/O error.13900008Bad file descriptor.13900011Out of memory.13900012Permission denied.13900013Bad address.13900018Not a directory.13900030File name too long.13900031Function not implemented.13900033Too many symbolic links encountered.13900038Value too large for defined data type.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900002 | No such file or directory. |
+| 13900004 | Interrupted system call. |
+| 13900005 | I/O error. |
+| 13900008 | Bad file descriptor. |
+| 13900011 | Out of memory. |
+| 13900012 | Permission denied. |
+| 13900013 | Bad address. |
+| 13900018 | Not a directory. |
+| 13900030 | File name too long. |
+| 13900031 | Function not implemented. |
+| 13900033 | Too many symbolic links encountered. |
+| 13900038 | Value too large for defined data type. |
+| 13900042 | Unknown error. |
 
 **示例：**
 

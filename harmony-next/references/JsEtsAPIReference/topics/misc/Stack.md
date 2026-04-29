@@ -1,12 +1,9 @@
 # stack
 
-从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-
 堆叠容器，子组件按照顺序依次入栈，后一个子组件覆盖前一个子组件。
 
-#### 权限列表
 
-无
+从API version 8 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 #### 子组件
 
@@ -24,10 +21,6 @@
 
 支持[通用事件](通用事件.md)。
 
-#### 方法
-
-支持[通用方法](通用方法.md)。
-
 #### 示例
 
 ```ets
@@ -44,6 +37,7 @@
 .stack-parent {
   width: 400px;
   height: 400px;
+  margin: 50px;
   background-color: #ffffff;
   border-width: 1px;
   border-style: solid;
@@ -69,3 +63,7 @@
   border-radius: 16px;
 }
 ```
+
+4×4卡片
+
+![image](public_sys-resources/zh-cn_image_0000002553205653.webp)

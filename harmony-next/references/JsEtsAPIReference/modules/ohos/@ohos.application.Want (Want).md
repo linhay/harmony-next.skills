@@ -14,30 +14,23 @@ import Want from '@ohos.application.Want';
 
 **系统能力**：SystemCapability.Ability.AbilityBase
 
-名称类型只读可选说明deviceIdstring否是表示运行指定Ability的设备ID。如果未设置该字段，则表明指定本设备。bundleNamestring否是表示Bundle名称。abilityNamestring否是表示待启动的Ability名称。如果在Want中该字段同时指定了BundleName和AbilityName，则Want可以直接匹配到指定的Ability。AbilityName需要在一个应用的范围内保证唯一。uristring否是表示Uri描述。如果在Want中指定了Uri，则Want将匹配指定的Uri信息，包括scheme、schemeSpecificPart、authority和path信息。typestring否是表示MIME type类型描述，打开文件的类型，主要用于文管打开文件。比如：'text/xml' 、 'image/*'等，MIME定义参考：[https://www.iana.org/assignments/media-types/media-types.xhtml?utm_source=ld246.com。](https://www.iana.org/assignments/media-types/media-types.xhtml?utm_source=ld246.com。)flagsnumber否是表示处理Want的方式。默认传数字，具体参考：[flags说明](@ohos.ability.wantConstant (wantConstant).md#ZH-CN_TOPIC_0000002529444607__flags)。actionstring否是表示要执行的通用操作（如：查看、分享、应用详情）。在隐式Want中，您可以定义该字段，配合uri或parameters来表示对数据要执行的操作。具体参考：[action说明](@ohos.ability.wantConstant (wantConstant).md#ZH-CN_TOPIC_0000002529444607__action)。隐式Want定义及匹配规则参考：[显式Want与隐式Want匹配规则](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/explicit-implicit-want-mappings)。parameters{ [key: string]: any }否是
-
-表示WantParams描述，由开发者自行决定传入的键值对。默认会携带以下key值：
-
-ohos.aafwk.param.callerPid 表示拉起方的pid。
-
-ohos.aafwk.param.callerToken 表示拉起方的token。
-
-ohos.aafwk.param.callerUid 表示[bundleInfo](../../topics/misc/BundleInfo.md#ZH-CN_TOPIC_0000002497604650__bundleinfodeprecated)中的uid，应用包里应用程序的uid。
-
-- component.startup.newRules：表示是否启用新的管控规则。
-
-- moduleName：表示拉起方的模块名，该字段的值即使定义成其他字符串，在传递到另一端时会被修改为正确的值。
-
-- ohos.dlp.params.sandbox：表示dlp文件才会有。
-
-entitiesArray<string>否是表示目标Ability额外的类别信息（如：浏览器、视频播放器）。在隐式Want中是对action字段的补充。在隐式Want中，您可以定义该字段，来过滤匹配Ability类型。具体参考：[entity说明](@ohos.ability.wantConstant (wantConstant).md#ZH-CN_TOPIC_0000002529444607__entity)。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| deviceId | string | 否 | 是 | 表示运行指定Ability的设备ID。如果未设置该字段，则表明指定本设备。 |
+| bundleName | string | 否 | 是 | 表示Bundle名称。 |
+| abilityName | string | 否 | 是 | 表示待启动的Ability名称。如果在Want中该字段同时指定了BundleName和AbilityName，则Want可以直接匹配到指定的Ability。AbilityName需要在一个应用的范围内保证唯一。 |
+| uri | string | 否 | 是 | 表示Uri描述。如果在Want中指定了Uri，则Want将匹配指定的Uri信息，包括scheme、schemeSpecificPart、authority和path信息。 |
+| type | string | 否 | 是 | 表示MIME type类型描述，打开文件的类型，主要用于文管打开文件。比如：'text/xml' 、 'image/*'等，MIME定义参考：https://www.iana.org/assignments/media-types/media-types.xhtml?utm_source=ld246.com。 |
+| flags | number | 否 | 是 | 表示处理Want的方式。默认传数字，具体参考：flags说明。 |
+| action | string | 否 | 是 | 表示要执行的通用操作（如：查看、分享、应用详情）。在隐式Want中，您可以定义该字段，配合uri或parameters来表示对数据要执行的操作。具体参考：action说明。隐式Want定义及匹配规则参考：显式Want与隐式Want匹配规则。 |
+| parameters | { [key: string]: any } | 否 | 是 | 表示WantParams描述，由开发者自行决定传入的键值对。默认会携带以下key值： ohos.aafwk.param.callerPid 表示拉起方的pid。 ohos.aafwk.param.callerToken 表示拉起方的token。 ohos.aafwk.param.callerUid 表示[bundleInfo](../../topics/misc/BundleInfo.md#ZH-CN_TOPIC_0000002497604650__bundleinfodeprecated)中的uid，应用包里应用程序的uid。 - component.startup.newRules：表示是否启用新的管控规则。 - moduleName：表示拉起方的模块名，该字段的值即使定义成其他字符串，在传递到另一端时会被修改为正确的值。 - ohos.dlp.params.sandbox：表示dlp文件才会有。 |
+| entities | Array<string> | 否 | 是 | 表示目标Ability额外的类别信息（如：浏览器、视频播放器）。在隐式Want中是对action字段的补充。在隐式Want中，您可以定义该字段，来过滤匹配Ability类型。具体参考：entity说明。 |
 
 **示例：**
 
 -
 
 基础用法(在UIAbility对象中调用，其中示例中的context为UIAbility的上下文对象)。
-
 ```ets
 import Want from '@ohos.application.Want';
 import { BusinessError } from '@ohos.base';
@@ -56,7 +49,6 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam){
     console.error(`error.code = ${error.code}`);
     });
 }
-}
 ```
 
 -
@@ -64,7 +56,6 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam){
 通过自定字段传递数据，以下为当前支持类型(在UIAbility对象中调用，其中示例中的context为UIAbility的上下文对象)。
 
   - 字符串（String）
-
 ```ets
 import Want from '@ohos.application.Want';
 
@@ -78,7 +69,6 @@ let want: Want = {
 ```
 
   - 数字（Number）
-
 ```ets
 import Want from '@ohos.application.Want';
 
@@ -93,7 +83,6 @@ let want: Want = {
 ```
 
   - 布尔（Boolean）
-
 ```ets
 import Want from '@ohos.application.Want';
 
@@ -107,7 +96,6 @@ let want: Want = {
 ```
 
   - 对象（Object）
-
 ```ets
 import Want from '@ohos.application.Want';
 
@@ -121,12 +109,10 @@ let want: Want = {
             keyForObjectDouble: 35.5,
             keyForObjectBool: false,
         },
-    },
 };
 ```
 
   - 数组（Array）
-
 ```ets
 import Want from '@ohos.application.Want';
 
@@ -143,7 +129,6 @@ let want: Want = {
 ```
 
   - 文件描述符（FD）
-
 ```ets
 import fs from '@ohos.file.fs';
 import Want from '@ohos.application.Want';
@@ -172,6 +157,5 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam){
     // 显式拉起Ability，通过bundleName、abilityName和moduleName可以唯一确定一个Ability
     console.error(`error.code = ${error.code}`);
     });
-}
 }
 ```

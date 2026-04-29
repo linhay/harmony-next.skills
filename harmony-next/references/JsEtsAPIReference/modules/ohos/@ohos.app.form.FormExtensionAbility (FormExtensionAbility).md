@@ -34,11 +34,9 @@ import { FormExtensionAbility } from '@kit.FormKit';
 
 **系统能力：** SystemCapability.Ability.Form
 
-名称类型只读可选说明context[FormExtensionContext](../../topics/graphics/FormExtensionContext.md)否否
-
-FormExtensionAbility的上下文环境，继承自[ExtensionContext](../../topics/graphics/ExtensionContext.md)。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| context | [FormExtensionContext](../../topics/misc/Form[ExtensionContext](../../topics/misc/ExtensionContext.md).md) | 否 | 否 | FormExtensionAbility的上下文环境，继承自ExtensionContext。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 
 #### FormExtensionAbility.onAddForm
 
@@ -54,11 +52,15 @@ onAddForm(want: Want): formBindingData.FormBindingData
 
 **参数：**
 
-参数名类型必填说明want[Want](@ohos.app.ability.Want (Want).md)是当前卡片相关的Want类型信息，其中Want中的parameters为自定义取值，取值可以包含[卡片参数枚举](@ohos.app.form.formInfo (formInfo).md#ZH-CN_TOPIC_0000002497445300__formparam)中的一个或多个，如卡片ID、卡片名称、卡片样式等。这些卡片信息必须作为持久数据进行管理，以便后续更新和删除卡片。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | Want | 是 | 当前卡片相关的Want类型信息，其中Want中的parameters为自定义取值，取值可以包含卡片参数枚举中的一个或多个，如卡片ID、卡片名称、卡片样式等。这些卡片信息必须作为持久数据进行管理，以便后续更新和删除卡片。 |
 
 **返回值：**
 
-类型说明[formBindingData.FormBindingData](@ohos.app.form.formBindingData (卡片数据绑定类).md#ZH-CN_TOPIC_0000002529445243__formbindingdata)formBindingData.FormBindingData对象，卡片要显示的数据。
+| 类型 | 说明 |
+| --- | --- |
+| formBindingData.FormBindingData | formBindingData.FormBindingData对象，卡片要显示的数据。 |
 
 **示例：**
 
@@ -77,7 +79,6 @@ export default class MyFormExtensionAbility extends FormExtensionAbility {
     let obj1: formBindingData.FormBindingData = formBindingData.createFormBindingData(dataObj1);
     return obj1;
   }
-}
 ```
 
 #### FormExtensionAbility.onCastToNormalForm
@@ -94,7 +95,9 @@ onCastToNormalForm(formId: string): void
 
 **参数：**
 
-参数名类型必填说明formIdstring是请求转换为常态的卡片标识。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| formId | string | 是 | 请求转换为常态的卡片标识。 |
 
 **示例：**
 
@@ -113,7 +116,7 @@ export default class MyFormExtensionAbility extends FormExtensionAbility {
 
 onUpdateForm(formId: string, wantParams?: Record<string, Object>): void
 
-卡片提供方接收携带参数的更新卡片的通知接口。获取最新数据后调用formProvider的[updateForm](@ohos.app.form.formProvider (formProvider).md#ZH-CN_TOPIC_0000002529285271__formproviderupdateform)接口刷新卡片数据。
+卡片提供方接收携带参数的更新卡片的通知接口。获取最新数据后调用formProvider的[updateForm](@ohos.app.form.formProvider (formProvider).md#ZH-CN_TOPIC_0000002522241248__formproviderupdateform)接口刷新卡片数据。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -123,7 +126,10 @@ onUpdateForm(formId: string, wantParams?: Record<string, Object>): void
 
 **参数：**
 
-参数名类型必填说明formIdstring是请求更新的卡片ID。wantParams12+Record<string, Object>否更新参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| formId | string | 是 | 请求更新的卡片ID。 |
+| wantParams12+ | Record<string, Object> | 否 | 更新参数。 |
 
 **示例：**
 
@@ -143,7 +149,7 @@ export default class MyFormExtensionAbility extends FormExtensionAbility {
     formProvider.updateForm(formId, obj2).then(() => {
       console.info(`FormExtensionAbility context updateForm`);
     }).catch((error: BusinessError) => {
-      console.error(`FormExtensionAbility context updateForm failed, data: ${error}`);
+      console.error(`FormExtensionAbility context updateForm failed, code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
     });
   }
 };
@@ -163,7 +169,9 @@ onChangeFormVisibility(newStatus: Record<string, number>): void
 
 **参数：**
 
-参数名类型必填说明newStatusRecord<string, number>是请求修改的卡片标识和可见状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| newStatus | Record<string, number> | 是 | 请求修改的卡片标识和可见状态。 |
 
 **示例：**
 
@@ -192,11 +200,10 @@ export default class MyFormExtensionAbility extends FormExtensionAbility {
     for (let i: number = 0; i < keys.length; i++) {
       console.info(`FormExtensionAbility onChangeFormVisibility, key: ${keys[i]}, value= ${newStatus[keys[i]]}`);
       formProvider.updateForm(keys[i], obj2).then(() => {
-        console.info(`FormExtensionAbility context updateForm`);
+        console.info('FormExtensionAbility context updateForm');
       }).catch((error: BusinessError) => {
-        console.error(`Operation updateForm failed. Cause: ${JSON.stringify(error)}`);
+        console.error(`Operation updateForm failed. , code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message})`);
       });
-    }
   }
 };
 ```
@@ -215,7 +222,10 @@ onFormEvent(formId: string, message: string): void
 
 **参数：**
 
-参数名类型必填说明formIdstring是请求触发事件的卡片标识。messagestring是事件消息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| formId | string | 是 | 请求触发事件的卡片标识。 |
+| message | string | 是 | 事件消息。 |
 
 **示例：**
 
@@ -243,7 +253,9 @@ onRemoveForm(formId: string): void
 
 **参数：**
 
-参数名类型必填说明formIdstring是请求销毁的卡片标识。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| formId | string | 是 | 请求销毁的卡片标识。 |
 
 **示例：**
 
@@ -271,7 +283,9 @@ onConfigurationUpdate(newConfig: Configuration): void
 
 **参数：**
 
-参数名类型必填说明newConfig[Configuration](@ohos.app.ability.Configuration (环境变量).md)是表示需要更新的配置信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| newConfig | Configuration | 是 | 表示需要更新的配置信息。 |
 
 **示例：**
 
@@ -283,7 +297,7 @@ export default class MyFormExtensionAbility extends FormExtensionAbility {
   onConfigurationUpdate(newConfig: Configuration) {
     // 仅当前formExtensionAbility存活时更新配置才会触发此生命周期。
     // 需要注意：formExtensionAbility创建后10秒内无操作将会被清理。
-    console.info(`onConfigurationUpdate, config: ${JSON.stringify(newConfig)}`);
+    console.info(`onConfigurationUpdate, config: ${newConfig?.language}`);
   }
 };
 ```
@@ -302,11 +316,15 @@ onAcquireFormState?(want: Want): formInfo.FormState
 
 **参数：**
 
-参数名类型必填说明want[Want](@ohos.app.ability.Want (Want).md)是want表示获取卡片状态的描述。描述包括Bundle名称、能力名称、模块名称、卡片名称等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | Want | 是 | want表示获取卡片状态的描述。描述包括Bundle名称、能力名称、模块名称、卡片名称等。 |
 
 **返回值：**
 
-类型说明[formInfo.FormState](@ohos.app.form.formInfo (formInfo).md#ZH-CN_TOPIC_0000002497445300__formstate)formInfo.FormState枚举，表示卡片当前的状态。
+| 类型 | 说明 |
+| --- | --- |
+| formInfo.FormState | formInfo.FormState枚举，表示卡片当前的状态。 |
 
 **示例：**
 
@@ -343,7 +361,6 @@ export default class MyFormExtensionAbility extends FormExtensionAbility {
   onStop() {
     console.info(`FormExtensionAbility onStop`);
   }
-}
 ```
 
 #### FormExtensionAbility.onFormLocationChanged20+
@@ -360,7 +377,10 @@ onFormLocationChanged(formId: string, newFormLocation: formInfo.FormLocation): v
 
 **参数：**
 
-参数名类型必填说明formIdstring是发生位置变化的卡片标识。newFormLocation[formInfo.FormLocation](@ohos.app.form.formInfo (formInfo).md#ZH-CN_TOPIC_0000002497445300__formlocation20)是卡片最新位置的枚举值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| formId | string | 是 | 发生位置变化的卡片标识。 |
+| newFormLocation | formInfo.FormLocation | 是 | 卡片最新位置的枚举值。 |
 
 **示例：**
 
@@ -378,7 +398,6 @@ export default class EntryFormAbility extends FormExtensionAbility {
   onFormLocationChanged(formId: string, newFormLocation: formInfo.FormLocation) {
     console.info("EntryFormAbility onFormLocationChanged current location: " + newFormLocation);
   }
-}
 ```
 
 #### FormExtensionAbility.onSizeChanged20+
@@ -395,7 +414,11 @@ onSizeChanged(formId: string, newDimension: formInfo.FormDimension, newRect: for
 
 **参数：**
 
-参数名类型必填说明formIdstring是卡片标识。newDimension[formInfo.FormDimension](@ohos.app.form.formInfo (formInfo).md#ZH-CN_TOPIC_0000002497445300__formdimension)是卡片尺寸，例如 Dimension_1_2，表示 1 x 2 卡片。newRect[formInfo.Rect](@ohos.app.form.formInfo (formInfo).md#ZH-CN_TOPIC_0000002497445300__rect20)是卡片位置信息，包括卡片左上角顶点的xy坐标和卡片的宽高。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| formId | string | 是 | 卡片标识。 |
+| newDimension | formInfo.FormDimension | 是 | 卡片尺寸，例如 Dimension_1_2，表示 1 x 2 卡片。 |
+| newRect | formInfo.Rect | 是 | 卡片位置信息，包括卡片左上角顶点的xy坐标和卡片的宽高。 |
 
 **示例：**
 
@@ -406,5 +429,4 @@ export default class MyFormExtensionAbility extends FormExtensionAbility {
   onSizeChanged(formId: string, newDimension: formInfo.FormDimension, newRect: formInfo.Rect) {
     console.info(`FormExtensionAbility onSizeChanged, formId: ${formId}, newDimension: ${newDimension}`);
   }
-}
 ```

@@ -26,41 +26,16 @@ import { LoginWithHuaweiIDButton, loginComponentManager } from '@kit.AccountKit'
 
 **参数：**
 
-名称
-
-类型
-
-必填
-
-装饰器类型
-
-说明
-
-params
-
-[LoginWithHuaweiIDButtonParams](loginComponentManager (华为账号登录组件管理).md#section4717249182518)
-
-是
-
--
-
-LoginWithHuaweiIDButton组件参数。
-
-controller
-
-[LoginWithHuaweiIDButtonController](loginComponentManager (华为账号登录组件管理).md#section6921622144614)
-
-是
-
--
-
-LoginWithHuaweiIDButton组件控制器用来接收组件的点击事件。
+| 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- |
+| params | [LoginWithHuaweiIDButtonParams](loginComponentManager (华为账号登录组件管理).md#section4717249182518) | 是 | - | LoginWithHuaweiIDButton组件参数。 |
+| controller | [LoginWithHuaweiIDButtonController](loginComponentManager (华为账号登录组件管理).md#section6921622144614) | 是 | - | LoginWithHuaweiIDButton组件控制器用来接收组件的点击事件。 |
 
 #### build
 
 build(): void
 
-用于创建[LoginWithHuaweiIDButton](#section1624716107193)对象的构造函数。
+用于创建[LoginWithHuaweiIDButton](#ZH-CN_TOPIC_0000002553202249__loginwithhuaweiidbutton)对象的构造函数。
 
 **模型约束：**此接口仅可在Stage模型下使用。
 
@@ -151,12 +126,9 @@ struct QuickLoginButtonComponent {
     } else {
       // 应用登录失败，请尝试使用其他方式登录
     }
-  }
 
   build() {
     Scroll() {
-      Column() {
-        Column() {
           Column() {
             // 此处为示例资源，开发者可使用应用图标进行替换，以保证正常编译运行
             Image($r('app.media.app_icon'))
@@ -282,7 +254,6 @@ struct QuickLoginButtonComponent {
         }.width('100%')
 
         Row() {
-          Row() {
             Checkbox({ name: 'privacyCheckbox', group: 'privacyCheckboxGroup' })
               .width(24)
               .height(24)
@@ -343,7 +314,6 @@ struct QuickLoginButtonComponent {
     .width('100%')
     .height('100%')
   }
-}
 
 export enum ErrorCode {
   // 账号未登录

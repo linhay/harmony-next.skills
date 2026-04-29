@@ -1,10 +1,15 @@
 # @ohos.secureElement (安全单元的通道管理)
 
-本模块主要用于操作及管理安全单元（SecureElement，简称SE），电子设备上可能存在的安全单元有eSE（Embedded SE）和SIM卡。文档中出现的SE服务为SEService实例，参见[createService](#ZH-CN_TOPIC_0000002497605424__omapicreateservice12)。
+本模块主要用于操作及管理安全单元（SecureElement，简称SE），电子设备上可能存在的安全单元有eSE（Embedded SE）和SIM卡。文档中出现的SE服务为SEService实例，参见[createService](#ZH-CN_TOPIC_0000002522241444__omapicreateservice12)。
 
 对于文档中出现以下类型说明：
 
-类型说明Reader此类的实例表示该设备支持的SE，如果支持eSE、SIM和SIM2，则返回3个实例。Session此类的实例表示在某个SE Reader实例上创建连接会话。Channel此类的实例表示在某个Session实例上创建通道，可能为基础通道或逻辑通道。
+| 类型 | 说明 |
+| --- | --- |
+| Reader | 此类的实例表示该设备支持的SE，如果支持eSE、SIM和SIM2，则返回3个实例，其中SIM2从API version 22开始支持。 |
+| Session | 此类的实例表示在某个SE Reader实例上创建连接会话。 |
+| Channel | 此类的实例表示在某个Session实例上创建通道，可能为基础通道或逻辑通道。 |
+
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -20,7 +25,10 @@ import { omapi } from '@kit.ConnectivityKit';
 
 **系统能力：** SystemCapability.Communication.SecureElement
 
-名称值说明DISCONNECTED0SE服务状态已断开。CONNECTED1SE服务状态已连接。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DISCONNECTED | 0 | SE服务状态已断开。 |
+| CONNECTED | 1 | SE服务状态已连接。 |
 
 #### omapi.newSEService(deprecated)
 
@@ -28,34 +36,33 @@ newSEService(type: 'serviceState', callback: Callback<ServiceState>): SEService
 
 建立一个可用于连接到系统中所有可用SE的新连接（服务）。连接过程较为耗时，所以此方法仅提供异步方式进行的。使用callback异步回调。
 
-仅当指定的回调或者当[isConnected](#ZH-CN_TOPIC_0000002497605424__seserviceisconnected)方法返回true时，该返回SEService对象是可用的。
+仅当指定的回调或者当[isConnected](#ZH-CN_TOPIC_0000002522241444__seserviceisconnected)方法返回true时，该返回SEService对象是可用的。
 
-从 API version 10 开始支持，从 API version 12 开始废弃，建议使用[createService](#ZH-CN_TOPIC_0000002497605424__omapicreateservice12)替代。
+
+从 API version 10 开始支持，从 API version 12 开始废弃，建议使用[createService](#ZH-CN_TOPIC_0000002522241444__omapicreateservice12)替代。
 
 **系统能力：** SystemCapability.Communication.SecureElement
 
 **参数：**
 
-**参数名****类型****必填****说明**typestring是固定填'serviceState' 。callbackCallback<[ServiceState](#ZH-CN_TOPIC_0000002497605424__servicestate)>是返回SE服务状态的回调 。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填'serviceState' 。 |
+| callback | Callback<ServiceState> | 是 | 返回SE服务状态的回调 。 |
 
 **返回值：**
 
-**类型****说明**SEServiceSE服务实例。
+| 类型 | 说明 |
+| --- | --- |
+| SEService | SE服务实例。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息401
-
-The parameter check failed. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameters types.
-
-3. Parameter verification failed.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possible causes:  1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
 801Capability not supported.
 
 **示例：**
@@ -79,7 +86,6 @@ function secureElementDemo() {
         hilog.error(0x0000, 'testTag', 'secure element service disconnected.');
         return;
     }
-}
 ```
 
 #### omapi.createService12+
@@ -88,19 +94,23 @@ createService(): Promise<SEService>;
 
 建立一个可用于连接到系统中所有可用SE的新连接（服务）。连接过程较为耗时，所以此方法仅提供异步方式。使用Promise异步回调。
 
-仅当[isConnected](#ZH-CN_TOPIC_0000002497605424__seserviceisconnected)方法返回true时，该返回SEService对象是可用的。
+仅当[isConnected](#ZH-CN_TOPIC_0000002522241444__seserviceisconnected)方法返回true时，该返回SEService对象是可用的。
 
 **系统能力：** SystemCapability.Communication.SecureElement
 
 **返回值：**
 
-**类型****说明**Promise<[SEService](#ZH-CN_TOPIC_0000002497605424__seservice)>以Promise形式异步返回可用的SE服务实例。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<SEService> | 以Promise形式异步返回可用的SE服务实例。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -131,23 +141,28 @@ on(type: 'stateChanged', callback: Callback<ServiceState>): void;
 
 注册监听服务状态变化事件。
 
-调用[omapi.newSEService](#ZH-CN_TOPIC_0000002497605424__omapinewseservicedeprecated)或[omapi.createService](#ZH-CN_TOPIC_0000002497605424__omapicreateservice12)创建服务成功后再用on接口注册回调。
+调用[omapi.newSEService](#ZH-CN_TOPIC_0000002522241444__omapinewseservicedeprecated)或[omapi.createService](#ZH-CN_TOPIC_0000002522241444__omapicreateservice12)创建服务成功后再用on接口注册回调。
 
 **系统能力：** SystemCapability.Communication.SecureElement
 
 **参数：**
 
-**参数名****类型****必填****说明**typestring是订阅监听的事件类型，固定填'stateChanged' 。callbackCallback<[ServiceState](#ZH-CN_TOPIC_0000002497605424__servicestate)>是返回SE服务状态的回调 。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 订阅监听的事件类型，固定填'stateChanged' 。 |
+| callback | Callback<ServiceState> | 是 | 返回SE服务状态的回调 。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
 
 **示例：**
 
-示例请参见[off](#ZH-CN_TOPIC_0000002497605424__omapioff18)接口的示例。
+示例请参见[off](#ZH-CN_TOPIC_0000002522241444__omapioff18)接口的示例。
 
 #### omapi.off18+
 
@@ -159,13 +174,18 @@ off(type: 'stateChanged', callback?: Callback<ServiceState>): void;
 
 **参数：**
 
-**参数名****类型****必填****说明**typestring是取消订阅监听的事件类型，固定填'stateChanged' 。callbackCallback<[ServiceState](#ZH-CN_TOPIC_0000002497605424__servicestate)>否返回SE服务状态的回调 。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消订阅监听的事件类型，固定填'stateChanged' 。 |
+| callback | Callback<ServiceState> | 否 | 返回SE服务状态的回调 。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -201,20 +221,17 @@ function secureElementDemo() {
         if (error as BusinessError) {
             hilog.error(0x0000, 'testTag', 'omapi on error %{public}s', JSON.stringify(error));
         }
-    }
     try{
         omapi.off('stateChanged', seStateOffCb);
     } catch (error) {
         if (error as BusinessError) {
             hilog.error(0x0000, 'testTag', 'omapi off error %{public}s', JSON.stringify(error));
         }
-    }
-}
 ```
 
 #### SEService
 
-SEService表示可用于连接到系统中所有可用SE的连接（服务），通过[createService](#ZH-CN_TOPIC_0000002497605424__omapicreateservice12)获取SEService实例。
+SEService表示可用于连接到系统中所有可用SE的连接（服务），通过[createService](#ZH-CN_TOPIC_0000002522241444__omapicreateservice12)获取SEService实例。
 
 #### SEService.getReaders
 
@@ -226,13 +243,17 @@ getReaders(): Reader[]
 
 **返回值：**
 
-**类型****说明**[Reader](#ZH-CN_TOPIC_0000002497605424__reader)[]返回可用Reader对象数组。
+| 类型 | 说明 |
+| --- | --- |
+| Reader[] | 返回可用Reader对象数组。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -257,7 +278,6 @@ function secureElementDemo() {
         seService.shutdown();
         return;
     }
-}
 ```
 
 #### SEService.isConnected
@@ -270,13 +290,17 @@ isConnected(): boolean
 
 **返回值：**
 
-**类型****说明**booleantrue: SE服务状态已连接，false: SE服务状态已断开。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true: SE服务状态已连接，false: SE服务状态已断开。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -305,15 +329,17 @@ function secureElementDemo() {
 
 shutdown(): void
 
-释放该Service分配的所有SE资源。此后[isConnected](#ZH-CN_TOPIC_0000002497605424__seserviceisconnected)将返回false。
+释放该Service分配的所有SE资源。此后[isConnected](#ZH-CN_TOPIC_0000002522241444__seserviceisconnected)将返回false。
 
 **系统能力：** SystemCapability.Communication.SecureElement
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -343,13 +369,17 @@ getVersion(): string
 
 **返回值：**
 
-**类型****说明**stringOMA版本号（例如，“3.3”表示Open Mobile API规范版本3.3）
+| 类型 | 说明 |
+| --- | --- |
+| string | OMA版本号（例如，“3.3”表示Open Mobile API规范版本3.3） |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -372,7 +402,7 @@ try {
 
 #### Reader
 
-Reader的实例表示该设备支持的SE，如果支持eSE、SIM和SIM2，则返回3个实例。通过[SEService.getReaders](#ZH-CN_TOPIC_0000002497605424__seservicegetreaders)获取Reader实例。
+Reader的实例表示该设备支持的SE，如果支持eSE、SIM和SIM2，则返回3个实例，其中SIM2从API version 22开始支持。通过[SEService.getReaders](#ZH-CN_TOPIC_0000002522241444__seservicegetreaders)获取Reader实例。
 
 #### Reader.getName
 
@@ -384,13 +414,17 @@ getName(): string
 
 **返回值：**
 
-**类型****说明**string[Reader](#ZH-CN_TOPIC_0000002497605424__reader)名称。
+| 类型 | 说明 |
+| --- | --- |
+| string | Reader名称。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[NFC错误码](../../errors/NFC错误码.md)。
+以下错误码的详细介绍请参见[NFC错误码]([NFC错误码](../../errors/NFC错误码.md).md)。
 
-错误码ID错误信息801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -421,13 +455,18 @@ isSecureElementPresent(): boolean
 
 **返回值：**
 
-**类型****说明**booleantrue: 安全单元可用， false: 安全单元不可用。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true: 安全单元可用， false: 安全单元不可用。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.3300101IllegalStateError, service state exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 3300101 | IllegalStateError, service state exception. |
 
 **示例：**
 
@@ -458,13 +497,19 @@ try {
 
 **返回值：**
 
-**类型****说明**[Session](#ZH-CN_TOPIC_0000002497605424__session)连接会话Session实例。
+| 类型 | 说明 |
+| --- | --- |
+| Session | 连接会话Session实例。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.3300101IllegalStateError, service state exception.3300104IOError, there is a communication problem to the reader or the SE.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 3300101 | IllegalStateError, service state exception. |
+| 3300104 | IOError, there is a communication problem to the reader or the SE. |
 
 **示例：**
 
@@ -487,7 +532,6 @@ function secureElementDemo() {
         hilog.error(0x0000, 'testTag', 'seSession invalid.');
         return;
     }
-}
 ```
 
 #### Reader.closeSessions
@@ -500,9 +544,12 @@ function secureElementDemo() {
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.3300101IllegalStateError, service state exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 3300101 | IllegalStateError, service state exception. |
 
 **示例：**
 
@@ -533,12 +580,11 @@ function secureElementDemo() {
     } catch (error) {
         hilog.error(0x0000, 'testTag', 'closeSessions error %{public}s', JSON.stringify(error));
     }
-}
 ```
 
 #### Session
 
-Session的实例表示在某个SE Reader实例上创建连接会话。通过[Reader.openSession](#ZH-CN_TOPIC_0000002497605424__readeropensession)获取Session实例。
+Session的实例表示在某个SE Reader实例上创建连接会话。通过[Reader.openSession](#ZH-CN_TOPIC_0000002522241444__readeropensession)获取Session实例。
 
 #### Session.getReader
 
@@ -550,13 +596,17 @@ getReader(): Reader
 
 **返回值：**
 
-**类型****说明**[Reader](#ZH-CN_TOPIC_0000002497605424__reader)返回此Session的Reader实例。
+| 类型 | 说明 |
+| --- | --- |
+| Reader | 返回此Session的Reader实例。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -585,7 +635,6 @@ function secureElementDemo() {
     } catch (error) {
         hilog.error(0x0000, 'testTag', 'getReader error %{public}s', JSON.stringify(error));
     }
-}
 ```
 
 #### Session.getATR
@@ -598,13 +647,18 @@ getATR(): number[]
 
 **返回值：**
 
-**类型****说明**number[]返回SE的ATR，SE的ATR不可用时，返回空的数组。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | 返回SE的ATR，SE的ATR不可用时，返回空的数组。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.3300101IllegalStateError, service state exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 3300101 | IllegalStateError, service state exception. |
 
 **示例：**
 
@@ -634,9 +688,12 @@ close(): void
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.3300101IllegalStateError, service state exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 3300101 | IllegalStateError, service state exception. |
 
 **示例：**
 
@@ -665,13 +722,17 @@ isClosed(): boolean
 
 **返回值：**
 
-**类型****说明**booleantrue：Session状态已关闭，false：Session是打开的。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：Session状态已关闭，false：Session是打开的。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -701,9 +762,12 @@ closeChannels(): void
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.3300101IllegalStateError, service state exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 3300101 | IllegalStateError, service state exception. |
 
 **示例：**
 
@@ -732,27 +796,28 @@ openBasicChannel(aid: number[]): Promise<Channel>
 
 **参数：**
 
-**参数名****类型****必填****说明**aidnumber[]是在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| aid | number[] | 是 | 在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。 |
 
 **返回值：**
 
-**类型****说明**Promise<[Channel](#ZH-CN_TOPIC_0000002497605424__channel)>以Promise形式异步返回可用的基础Channel对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Channel> | 以Promise形式异步返回可用的基础Channel对象实例。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息401
-
-The parameter check failed. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameters types.
-
-3. Parameter verification failed.
-
-801Capability not supported.3300101IllegalStateError, an attempt is made to use an SE session that has been closed.3300102NoSuchElementError, the AID on the SE is not available or cannot be selected.3300103SecurityError, the calling application cannot be granted access to this AID or the default applet on this session.3300104IOError, there is a communication problem to the reader or the SE.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possible causes:  1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
+| 3300101 | IllegalStateError, an attempt is made to use an SE session that has been closed. |
+| 3300102 | NoSuchElementError, the AID on the SE is not available or cannot be selected. |
+| 3300103 | SecurityError, the calling application cannot be granted access to this AID or the default applet on this session. |
+| 3300104 | IOError, there is a communication problem to the reader or the SE. |
 
 **示例：**
 
@@ -780,7 +845,6 @@ function secureElementDemo() {
         hilog.error(0x0000, 'testTag', 'seChannel invalid.');
         return;
     }
-}
 ```
 
 #### Session.openBasicChannel
@@ -793,23 +857,23 @@ function secureElementDemo() {
 
 **参数：**
 
-**参数名****类型****必填****说明**aidnumber[]是在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。callbackAsyncCallback<[Channel](#ZH-CN_TOPIC_0000002497605424__channel)>是以callback形式异步返回可用的基础Channel对象实例。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| aid | number[] | 是 | 在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。 |
+| callback | AsyncCallback<Channel> | 是 | 以callback形式异步返回可用的基础Channel对象实例。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息401
-
-The parameter check failed. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameters types.
-
-3. Parameter verification failed.
-
-801Capability not supported.3300101IllegalStateError, an attempt is made to use an SE session that has been closed.3300102NoSuchElementError, the AID on the SE is not available or cannot be selected.3300103SecurityError, the calling application cannot be granted access to this AID or the default applet on this session.3300104IOError, there is a communication problem to the reader or the SE.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possible causes:  1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
+| 3300101 | IllegalStateError, an attempt is made to use an SE session that has been closed. |
+| 3300102 | NoSuchElementError, the AID on the SE is not available or cannot be selected. |
+| 3300103 | SecurityError, the calling application cannot be granted access to this AID or the default applet on this session. |
+| 3300104 | IOError, there is a communication problem to the reader or the SE. |
 
 **示例：**
 
@@ -839,7 +903,6 @@ function secureElementDemo() {
         hilog.error(0x0000, 'testTag', 'seChannel invalid.');
         return;
     }
-}
 ```
 
 #### Session.openBasicChannel
@@ -852,27 +915,29 @@ openBasicChannel(aid: number[], p2: number): Promise<Channel>
 
 **参数：**
 
-**参数名****类型****必填****说明**aidnumber[]是在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。p2number是在该Channel上执行的SELECT APDU的P2参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| aid | number[] | 是 | 在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。 |
+| p2 | number | 是 | 在该Channel上执行的SELECT APDU的P2参数。 |
 
 **返回值：**
 
-**类型****说明**Promise<[Channel](#ZH-CN_TOPIC_0000002497605424__channel)>以Promise形式异步返回可用的基础Channel对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Channel> | 以Promise形式异步返回可用的基础Channel对象实例。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息401
-
-The parameter check failed. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameters types.
-
-3. Parameter verification failed.
-
-801Capability not supported.3300101IllegalStateError, an attempt is made to use an SE session that has been closed.3300102NoSuchElementError, the AID on the SE is not available or cannot be selected.3300103SecurityError, the calling application cannot be granted access to this AID or the default applet on this session.3300104IOError, there is a communication problem to the reader or the SE.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possible causes:  1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
+| 3300101 | IllegalStateError, an attempt is made to use an SE session that has been closed. |
+| 3300102 | NoSuchElementError, the AID on the SE is not available or cannot be selected. |
+| 3300103 | SecurityError, the calling application cannot be granted access to this AID or the default applet on this session. |
+| 3300104 | IOError, there is a communication problem to the reader or the SE. |
 
 **示例：**
 
@@ -901,7 +966,6 @@ function secureElementDemo() {
         hilog.error(0x0000, 'testTag', 'seChannel invalid.');
         return;
     }
-}
 ```
 
 #### Session.openBasicChannel
@@ -914,23 +978,24 @@ openBasicChannel(aid: number[], p2:number, callback: AsyncCallback<Channel>): vo
 
 **参数：**
 
-**参数名****类型****必填****说明**aidnumber[]是在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。p2number是此Channel上执行SELECT APDU命令的P2参数。callbackAsyncCallback<[Channel](#ZH-CN_TOPIC_0000002497605424__channel)>是以callback形式异步返回可用的基础Channel对象实例。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| aid | number[] | 是 | 在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。 |
+| p2 | number | 是 | 此Channel上执行SELECT APDU命令的P2参数。 |
+| callback | AsyncCallback<Channel> | 是 | 以callback形式异步返回可用的基础Channel对象实例。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息401
-
-The parameter check failed. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameters types.
-
-3. Parameter verification failed.
-
-801Capability not supported.3300101IllegalStateError, an attempt is made to use an SE session that has been closed.3300102NoSuchElementError, the AID on the SE is not available or cannot be selected.3300103SecurityError, the calling application cannot be granted access to this AID or the default applet on this session.3300104IOError, there is a communication problem to the reader or the SE.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possible causes:  1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
+| 3300101 | IllegalStateError, an attempt is made to use an SE session that has been closed. |
+| 3300102 | NoSuchElementError, the AID on the SE is not available or cannot be selected. |
+| 3300103 | SecurityError, the calling application cannot be granted access to this AID or the default applet on this session. |
+| 3300104 | IOError, there is a communication problem to the reader or the SE. |
 
 **示例：**
 
@@ -961,7 +1026,6 @@ function secureElementDemo() {
         hilog.error(0x0000, 'testTag', 'seChannel invalid.');
         return;
     }
-}
 ```
 
 #### Session.openLogicalChannel
@@ -974,27 +1038,28 @@ openLogicalChannel(aid: number[]): Promise<Channel>
 
 **参数：**
 
-**参数名****类型****必填****说明**aidnumber[]是在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| aid | number[] | 是 | 在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。 |
 
 **返回值：**
 
-**类型****说明**Promise<[Channel](#ZH-CN_TOPIC_0000002497605424__channel)>以Promise形式异步返回可用的逻辑Channel对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Channel> | 以Promise形式异步返回可用的逻辑Channel对象实例。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息401
-
-The parameter check failed. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameters types.
-
-3. Parameter verification failed.
-
-801Capability not supported.3300101IllegalStateError, an attempt is made to use an SE session that has been closed.3300102NoSuchElementError, the AID on the SE is not available or cannot be selected or a logical channel is already open to a non-multi-selectable applet.3300103SecurityError, the calling application cannot be granted access to this AID or the default applet on this session.3300104IOError, there is a communication problem to the reader or the SE.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possible causes:  1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
+| 3300101 | IllegalStateError, an attempt is made to use an SE session that has been closed. |
+| 3300102 | NoSuchElementError, the AID on the SE is not available or cannot be selected or a logical channel is already open to a non-multi-selectable applet. |
+| 3300103 | SecurityError, the calling application cannot be granted access to this AID or the default applet on this session. |
+| 3300104 | IOError, there is a communication problem to the reader or the SE. |
 
 **示例：**
 
@@ -1022,7 +1087,6 @@ function secureElementDemo() {
         hilog.error(0x0000, 'testTag', 'seChannel invalid.');
         return;
     }
-}
 ```
 
 #### Session.openLogicalChannel
@@ -1035,23 +1099,23 @@ function secureElementDemo() {
 
 **参数：**
 
-**参数名****类型****必填****说明**aidnumber[]是在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。callbackAsyncCallback<[Channel](#ZH-CN_TOPIC_0000002497605424__channel)>是以callback形式异步返回可用的逻辑Channel对象实例。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| aid | number[] | 是 | 在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。 |
+| callback | AsyncCallback<Channel> | 是 | 以callback形式异步返回可用的逻辑Channel对象实例。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息401
-
-The parameter check failed. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameters types.
-
-3. Parameter verification failed.
-
-801Capability not supported.3300101IllegalStateError, an attempt is made to use an SE session that has been closed.3300102NoSuchElementError, the AID on the SE is not available or cannot be selected or a logical channel is already open to a non-multi-selectable applet.3300103SecurityError, the calling application cannot be granted access to this AID or the default applet on this session.3300104IOError, there is a communication problem to the reader or the SE.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possible causes:  1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
+| 3300101 | IllegalStateError, an attempt is made to use an SE session that has been closed. |
+| 3300102 | NoSuchElementError, the AID on the SE is not available or cannot be selected or a logical channel is already open to a non-multi-selectable applet. |
+| 3300103 | SecurityError, the calling application cannot be granted access to this AID or the default applet on this session. |
+| 3300104 | IOError, there is a communication problem to the reader or the SE. |
 
 **示例：**
 
@@ -1081,7 +1145,6 @@ function secureElementDemo() {
         hilog.error(0x0000, 'testTag', 'seChannel invalid.');
         return;
     }
-}
 ```
 
 #### Session.openLogicalChannel
@@ -1094,27 +1157,29 @@ openLogicalChannel(aid: number[], p2: number): Promise<Channel>
 
 **参数：**
 
-**参数名****类型****必填****说明**aidnumber[]是在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。p2number是此Channel上执行SELECT APDU命令的P2参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| aid | number[] | 是 | 在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。 |
+| p2 | number | 是 | 此Channel上执行SELECT APDU命令的P2参数。 |
 
 **返回值：**
 
-**类型****说明**Promise<[Channel](#ZH-CN_TOPIC_0000002497605424__channel)>以Promise形式异步返回可用的逻辑Channel实例对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Channel> | 以Promise形式异步返回可用的逻辑Channel实例对象。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息401
-
-The parameter check failed. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameters types.
-
-3. Parameter verification failed.
-
-801Capability not supported.3300101IllegalStateError, an attempt is made to use an SE session that has been closed.3300102NoSuchElementError, the AID on the SE is not available or cannot be selected or a logical channel is already open to a non-multi-selectable applet.3300103SecurityError, the calling application cannot be granted access to this AID or the default applet on this session.3300104IOError, there is a communication problem to the reader or the SE.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possible causes:  1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
+| 3300101 | IllegalStateError, an attempt is made to use an SE session that has been closed. |
+| 3300102 | NoSuchElementError, the AID on the SE is not available or cannot be selected or a logical channel is already open to a non-multi-selectable applet. |
+| 3300103 | SecurityError, the calling application cannot be granted access to this AID or the default applet on this session. |
+| 3300104 | IOError, there is a communication problem to the reader or the SE. |
 
 **示例：**
 
@@ -1143,7 +1208,6 @@ function secureElementDemo() {
         hilog.error(0x0000, 'testTag', 'seChannel invalid.');
         return;
     }
-}
 ```
 
 #### Session.openLogicalChannel
@@ -1156,23 +1220,24 @@ openLogicalChannel(aid: number[], p2: number, callback: AsyncCallback<Channel>):
 
 **参数：**
 
-**参数名****类型****必填****说明**aidnumber[]是在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。p2number是此Channel上执行SELECT APDU命令的P2参数。callbackAsyncCallback<[Channel](#ZH-CN_TOPIC_0000002497605424__channel)>是以callback形式异步返回可用的逻辑Channel对象实例。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| aid | number[] | 是 | 在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。 |
+| p2 | number | 是 | 此Channel上执行SELECT APDU命令的P2参数。 |
+| callback | AsyncCallback<Channel> | 是 | 以callback形式异步返回可用的逻辑Channel对象实例。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息401
-
-The parameter check failed. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameters types.
-
-3. Parameter verification failed.
-
-801Capability not supported.3300101IllegalStateError, an attempt is made to use an SE session that has been closed.3300102NoSuchElementError, the AID on the SE is not available or cannot be selected or a logical channel is already open to a non-multi-selectable applet.3300103SecurityError, the calling application cannot be granted access to this AID or the default applet on this session.3300104IOError, there is a communication problem to the reader or the SE.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possible causes:  1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
+| 3300101 | IllegalStateError, an attempt is made to use an SE session that has been closed. |
+| 3300102 | NoSuchElementError, the AID on the SE is not available or cannot be selected or a logical channel is already open to a non-multi-selectable applet. |
+| 3300103 | SecurityError, the calling application cannot be granted access to this AID or the default applet on this session. |
+| 3300104 | IOError, there is a communication problem to the reader or the SE. |
 
 **示例：**
 
@@ -1203,12 +1268,11 @@ function secureElementDemo() {
         hilog.error(0x0000, 'testTag', 'seChannel invalid.');
         return;
     }
-}
 ```
 
 #### Channel
 
-Channel的实例表示在某个Session实例上创建通道，可能为基础通道或逻辑通道。通过[Session.openBasicChannel](#ZH-CN_TOPIC_0000002497605424__sessionopenbasicchannel)或[Session.openLogicalChannel](#ZH-CN_TOPIC_0000002497605424__sessionopenlogicalchannel)获取Channel实例。
+Channel的实例表示在某个Session实例上创建通道，可能为基础通道或逻辑通道。通过[Session.openBasicChannel](#ZH-CN_TOPIC_0000002522241444__sessionopenbasicchannel)或[Session.openLogicalChannel](#ZH-CN_TOPIC_0000002522241444__sessionopenlogicalchannel)获取Channel实例。
 
 #### Channel.getSession
 
@@ -1220,13 +1284,17 @@ Channel的实例表示在某个Session实例上创建通道，可能为基础通
 
 **返回值：**
 
-**类型****说明**[Session](#ZH-CN_TOPIC_0000002497605424__session)该Channel绑定的Session 对象。
+| 类型 | 说明 |
+| --- | --- |
+| Session | 该Channel绑定的Session 对象。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -1256,9 +1324,11 @@ close(): void
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -1286,13 +1356,17 @@ isBasicChannel(): boolean
 
 **返回值：**
 
-**类型****说明**booleantrue: 该Channel是基础Channel, false：该Channel逻辑Channel 。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true: 该Channel是基础Channel, false：该Channel逻辑Channel 。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -1321,13 +1395,17 @@ isClosed(): boolean
 
 **返回值：**
 
-**类型****说明**booleantrue: Channel是关闭的，false: 不是关闭的。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true: Channel是关闭的，false: 不是关闭的。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -1356,13 +1434,17 @@ getSelectResponse(): number[]
 
 **返回值：**
 
-**类型****说明**number[]SELECT Applet时的响应数据，包含状态字。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | SELECT Applet时的响应数据，包含状态字。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -1391,27 +1473,27 @@ transmit(command: number[]): Promise<number[]>
 
 **参数：**
 
-**参数名****类型****必填****说明**commandnumber[]是需要发送到SE的APDU数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| command | number[] | 是 | 需要发送到SE的APDU数据。 |
 
 **返回值：**
 
-**类型****说明**Promise<number[]>以Promise形式异步返回接收到的响应APDU数据，number数组。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number[]> | 以Promise形式异步返回接收到的响应APDU数据，number数组。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息401
-
-The parameter check failed. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameters types.
-
-3. Parameter verification failed.
-
-801Capability not supported.3300101IllegalStateError, an attempt is made to use an SE session or channel that has been closed.3300103SecurityError, the command is filtered by the security policy.3300104IOError, there is a communication problem to the reader or the SE.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possible causes:  1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
+| 3300101 | IllegalStateError, an attempt is made to use an SE session or channel that has been closed. |
+| 3300103 | SecurityError, the command is filtered by the security policy. |
+| 3300104 | IOError, there is a communication problem to the reader or the SE. |
 
 **示例：**
 
@@ -1444,23 +1526,22 @@ transmit(command: number[], callback: AsyncCallback<number[]>): void
 
 **参数：**
 
-**参数名****类型****必填****说明**commandnumber[]是需要发送到SE的APDU数据。callbackAsyncCallback<number[]>是返回接收到的响应APDU数据，number数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| command | number[] | 是 | 需要发送到SE的APDU数据。 |
+| callback | AsyncCallback<number[]> | 是 | 返回接收到的响应APDU数据，number数组。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[SE错误码](../../errors/SE(secureElement)错误码.md)。
+错误码的详细介绍请参见[SE错误码](SE(secureElement)错误码.md)。
 
-错误码ID错误信息401
-
-The parameter check failed. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameters types.
-
-3. Parameter verification failed.
-
-801Capability not supported.3300101IllegalStateError, an attempt is made to use an SE session or channel that has been closed.3300103SecurityError, the command is filtered by the security policy.3300104IOError, there is a communication problem to the reader or the SE.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possible causes:  1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
+| 3300101 | IllegalStateError, an attempt is made to use an SE session or channel that has been closed. |
+| 3300103 | SecurityError, the command is filtered by the security policy. |
+| 3300104 | IOError, there is a communication problem to the reader or the SE. |
 
 **示例：**
 

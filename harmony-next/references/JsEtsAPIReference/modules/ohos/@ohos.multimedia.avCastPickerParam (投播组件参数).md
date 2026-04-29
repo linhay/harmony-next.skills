@@ -12,7 +12,10 @@ avCastPickerParam提供了[@ohos.multimedia.avCastPicker](@ohos.multimedia.avCas
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVCast
 
-名称值说明STATE_APPEARING0组件显示。STATE_DISAPPEARING1组件消失。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| STATE_APPEARING | 0 | 组件显示。 |
+| STATE_DISAPPEARING | 1 | 组件消失。 |
 
 #### AVCastPickerStyle12+
 
@@ -22,7 +25,10 @@ avCastPickerParam提供了[@ohos.multimedia.avCastPicker](@ohos.multimedia.avCas
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVCast
 
-名称值说明STYLE_PANEL0面板样式。STYLE_MENU1菜单样式。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| STYLE_PANEL | 0 | 面板样式。 |
+| STYLE_MENU | 1 | 菜单样式。 |
 
 #### AVCastPickerColorMode12+
 
@@ -32,4 +38,8 @@ avCastPickerParam提供了[@ohos.multimedia.avCastPicker](@ohos.multimedia.avCas
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVCast
 
-名称值说明AUTO0跟随系统模式。DARK1深色模式。LIGHT2浅色模式。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| AUTO | 0 | 跟随系统模式。 |
+| DARK | 1 | 深色模式。 |
+| LIGHT | 2 | 浅色模式。 |

@@ -16,7 +16,10 @@ import Configuration from '@ohos.application.Configuration';
 
 **系统能力**：SystemCapability.Ability.AbilityBase
 
-名称类型只读可选说明language8+string否是表示应用程序的当前语言。例如：zh。colorMode8+[ConfigurationConstant.ColorMode](@ohos.application.ConfigurationConstant (ConfigurationConstant).md#ZH-CN_TOPIC_0000002529284635__colormode)否是表示深浅色模式，取值范围：浅色模式（COLOR_MODE_LIGHT），深色模式（COLOR_MODE_DARK）。默认为浅色。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| language8+ | string | 否 | 是 | 表示应用程序的当前语言。例如：zh。 |
+| colorMode8+ | ConfigurationConstant.ColorMode | 否 | 是 | 表示深浅色模式，取值范围：浅色模式（COLOR_MODE_LIGHT），深色模式（COLOR_MODE_DARK）。默认为浅色。 |
 
 具体字段描述参考ohos.application.Configuration.d.ts文件
 
@@ -64,5 +67,4 @@ export default class EntryAbility extends UIAbility {
       console.info(`Succeeded in loading the content, data: ${JSON.stringify(data)}`);
     });
   }
-}
 ```

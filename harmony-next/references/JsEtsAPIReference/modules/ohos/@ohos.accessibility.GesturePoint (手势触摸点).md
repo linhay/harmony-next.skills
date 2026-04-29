@@ -20,7 +20,10 @@ import { GesturePoint } from '@kit.AccessibilityKit';
 
 #### 属性
 
-名称类型只读可选说明positionXnumber否否触摸点X坐标。positionYnumber否否触摸点Y坐标。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| positionX | number | 否 | 否 | 触摸点X坐标。 |
+| positionY | number | 否 | 否 | 触摸点Y坐标。 |
 
 #### constructor(deprecated)
 
@@ -28,13 +31,17 @@ constructor(positionX: number, positionY: number);
 
 构造函数。
 
-从API version 12开始废弃。
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
 
 **系统能力**：SystemCapability.BarrierFree.Accessibility.Core
 
 **参数：**
 
-参数名类型必填说明positionXnumber是触摸点X坐标。positionYnumber是触摸点Y坐标。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| positionX | number | 是 | 触摸点X坐标。 |
+| positionY | number | 是 | 触摸点Y坐标。 |
 
 **示例：**
 

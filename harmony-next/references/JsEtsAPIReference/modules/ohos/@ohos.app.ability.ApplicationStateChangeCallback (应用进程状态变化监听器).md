@@ -2,7 +2,8 @@
 
 本模块用于监听当前应用进程的状态变化。为了便于表述，下文中将“应用进程”简称为“进程”。
 
-开发者可调用[ApplicationContext.on('applicationStateChange')](../../topics/graphics/ApplicationContext (应用上下文).md#ZH-CN_TOPIC_0000002529284613__applicationcontextonapplicationstatechange10)方法传入自定义ApplicationStateChangeCallback来监听当前进程的前后台状态变化，从而根据进程前后台状态变化来执行某些操作。例如，统计进程前后台时长、或者当进程退到后台时清理内存缓存。
+开发者可调用[ApplicationContext.on('applicationStateChange')](ApplicationContext (应用上下文).md#ZH-CN_TOPIC_0000002553360493__applicationcontextonapplicationstatechange10)方法传入自定义ApplicationStateChangeCallback来监听当前进程的前后台状态变化，从而根据进程前后台状态变化来执行某些操作。例如，统计进程前后台时长、或者当进程退到后台时清理内存缓存。
+
 
 本模块首批接口从API version 10 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -10,7 +11,8 @@
 
 #### 约束限制
 
-该模块仅支持监听当前进程的前后台状态变化。如果需要监听整个应用的前后台状态变化，可使用[ApplicationStateObserver.onForegroundApplicationChanged](../../topics/system-services/ApplicationStateObserver.md#ZH-CN_TOPIC_0000002529444587__applicationstateobserveronforegroundapplicationchanged)。
+该模块仅支持监听当前进程的前后台状态变化。如果需要监听整个应用的前后台状态变化，可使用[ApplicationStateObserver.onForegroundApplicationChanged](ApplicationStateObserver.md#ZH-CN_TOPIC_0000002522240570__applicationstateobserveronforegroundapplicationchanged)。
+
 
 进程的前后台状态不同于应用的前后台状态，两者的差别如下：
 
@@ -35,7 +37,7 @@ onApplicationForeground(): void
 
 **示例：**
 
-参见[onApplicationBackground](#ZH-CN_TOPIC_0000002497444602__applicationstatechangecallbackonapplicationbackground)。
+参见[onApplicationBackground](#ZH-CN_TOPIC_0000002553200491__applicationstatechangecallbackonapplicationbackground)。
 
 #### ApplicationStateChangeCallback.onApplicationBackground
 
@@ -87,6 +89,4 @@ export default class MyAbility extends UIAbility {
     } catch (paramError) {
       console.error(`error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);
     }
-  }
-}
 ```

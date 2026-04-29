@@ -1,4 +1,4 @@
-# Camera_StatusInfo
+# [Camera_Status](camera.h.md#ZH-CN_TOPIC_0000002497605798__camera_status)Info
 
 ```ets
 typedef struct Camera_StatusInfo {...} Camera_StatusInfo
@@ -12,10 +12,13 @@ typedef struct Camera_StatusInfo {...} Camera_StatusInfo
 
 **相关模块：**[OH_Camera](OH_Camera.md)
 
-**所在头文件：**[camera.h](../../capi/headers/camera.h.md)
+所在头文件： [camera.h](camera.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述[Camera_Device](../system-services/Camera_Device.md)* camera相机实例。[Camera_Status](../../capi/headers/camera.h.md#ZH-CN_TOPIC_0000002497605798__camera_status) status当前相机状态。
+| 名称 | 描述 |
+| --- | --- |
+| [Camera_Device](Camera_Device.md)* camera | 相机实例。 |
+| [Camera_Status](camera.h.md#ZH-CN_TOPIC_0000002497605798__camera_status) status | 当前相机状态。 |

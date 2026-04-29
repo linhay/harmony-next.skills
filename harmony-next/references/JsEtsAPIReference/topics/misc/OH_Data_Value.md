@@ -12,4 +12,4 @@ OH_Data_Value结构类型，用于储存单条数据值。
 
 **相关模块：**[RDB](RDB.md)
 
-**所在头文件：**[oh_data_value.h](../../capi/headers/oh_data_value.h.md)
+**所在头文件：**[oh_data_value.h](../../topics/misc/[oh_data_value.h](oh_data_value.h.md).md)

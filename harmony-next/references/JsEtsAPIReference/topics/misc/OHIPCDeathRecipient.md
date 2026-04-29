@@ -12,4 +12,4 @@ typedef struct OHIPCDeathRecipient OHIPCDeathRecipient
 
 **相关模块：**[OHIPCRemoteObject](OHIPCRemoteObject.md)
 
-**所在头文件：**[ipc_cremote_object.h](../../capi/headers/ipc_cremote_object.h.md)
+**所在头文件：**[ipc_cremote_object.h](../../topics/misc/[ipc_cremote_object.h](ipc_cremote_object.h.md).md)

@@ -2,9 +2,13 @@
 
 弧形索引条是一种弧形的、可按字母顺序排序进行快速定位的组件，可以与容器组件联动，按逻辑结构快速定位至容器显示区域。
 
+
 该组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
+- 该组件支持在Phone、PC/2in1、Tablet、TV、Wearable设备上使用。API version 22及以前版本，在Phone、PC/2in1、Tablet、TV上使用会编译告警，但可以正常运行。
+
 #### 导入模块
+
 
 -
 
@@ -42,15 +46,17 @@ ArcAlphabetIndexer(info: ArcAlphabetIndexerInitInfo)
 
 **参数：** 参数内容为设置弧形索引条索引项字符串数组、初始选中项索引位置。
 
-参数名类型必填说明info[ArcAlphabetIndexerInitInfo](#ZH-CN_TOPIC_0000002497444926__arcalphabetindexerinitinfo对象说明)是定义弧形字母索引条的初始化参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| info | ArcAlphabetIndexerInitInfo | 是 | 定义弧形字母索引条的初始化参数。 |
 
 #### 属性
 
-除支持[通用属性](../misc/通用属性.md)外，还支持以下属性：
+除支持[通用属性]([通用属性](../misc/通用属性.md).md)外，还支持以下属性：
 
 #### color
 
-color(color: Optional<ColorMetrics>)
+color(color: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<ColorMetrics>)
 
 设置普通状态下索引项文字颜色。
 
@@ -60,15 +66,13 @@ color(color: Optional<ColorMetrics>)
 
 **参数：**
 
-参数名类型必填说明color[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[ColorMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)>是
-
-文字颜色。
-
-默认值：0xFFFFFF，显示为白色。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| color | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[ColorMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)> | 是 | 文字颜色。 默认值：0xFFFFFF，显示为白色。 |
 
 #### selectedColor
 
-selectedColor(color: Optional<ColorMetrics>)
+selectedColor(color: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<ColorMetrics>)
 
 设置选中项文字颜色。
 
@@ -78,15 +82,13 @@ selectedColor(color: Optional<ColorMetrics>)
 
 **参数：**
 
-参数名类型必填说明color[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[ColorMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)>是
-
-选中项文字颜色。
-
-默认值：0xFFFFFF，显示为白色。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| color | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[ColorMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)> | 是 | 选中项文字颜色。 默认值：0xFFFFFF，显示为白色。 |
 
 #### popupColor
 
-popupColor(color: Optional<ColorMetrics>)
+popupColor(color: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<ColorMetrics>)
 
 设置提示弹窗文字颜色。
 
@@ -96,15 +98,13 @@ popupColor(color: Optional<ColorMetrics>)
 
 **参数：**
 
-参数名类型必填说明color[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[ColorMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)>是
-
-提示弹窗文字颜色。
-
-默认值：0xFFFFFF，显示为白色。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| color | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[ColorMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)> | 是 | 提示弹窗文字颜色。 默认值：0xFFFFFF，显示为白色。 |
 
 #### selectedBackgroundColor
 
-selectedBackgroundColor(color: Optional<ColorMetrics>)
+selectedBackgroundColor(color: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<ColorMetrics>)
 
 设置选中项背景颜色。
 
@@ -114,15 +114,13 @@ selectedBackgroundColor(color: Optional<ColorMetrics>)
 
 **参数：**
 
-参数名类型必填说明color[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[ColorMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)>是
-
-选中项背景颜色。
-
-默认值：0x1F71FF，显示为深蓝色。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| color | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[ColorMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)> | 是 | 选中项背景颜色。 默认值：0x1F71FF，显示为深蓝色。 |
 
 #### popupBackground
 
-popupBackground(color: Optional<ColorMetrics>)
+popupBackground(color: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<ColorMetrics>)
 
 设置提示弹窗背景色。
 
@@ -132,17 +130,16 @@ popupBackground(color: Optional<ColorMetrics>)
 
 **参数：**
 
-参数名类型必填说明color[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[ColorMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)>是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| color | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[ColorMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)> | 是 | 提示弹窗背景色。 默认值：0xD8404040，显示为微透明的深灰色。 |
 
-提示弹窗背景色。
 
-默认值：0xD8404040，显示为微透明的深灰色。
-
-当通过popupBackground设置弹窗气泡的背景颜色后，不建议再通过[popupBackgroundBlurStyle](#ZH-CN_TOPIC_0000002497444926__popupbackgroundblurstyle)设置背景模糊效果。
+当通过popupBackground设置弹窗气泡的背景颜色后，不建议再通过[popupBackgroundBlurStyle](#ZH-CN_TOPIC_0000002553360779__popupbackgroundblurstyle)设置背景模糊效果。
 
 #### usePopup
 
-usePopup(enabled: Optional<boolean>)
+usePopup(enabled: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<boolean>)
 
 设置是否使用提示弹窗。
 
@@ -152,17 +149,13 @@ usePopup(enabled: Optional<boolean>)
 
 **参数：**
 
-参数名类型必填说明enabled[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<boolean>是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enabled | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<boolean> | 是 | 是否使用提示弹窗。 true表示使用提示弹窗；false表示不使用提示弹窗。 默认值：false |
 
-是否使用提示弹窗。
+#### selected[Font](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font)
 
-true表示使用提示弹窗；false表示不使用提示弹窗。
-
-默认值：false
-
-#### selectedFont
-
-selectedFont(font: Optional<Font>)
+selectedFont(font: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<Font>)
 
 设置选中项文字尺寸、粗细、字体族、倾斜等样式。
 
@@ -172,25 +165,13 @@ selectedFont(font: Optional<Font>)
 
 **参数：**
 
-参数名类型必填说明font[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[Font](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font)>是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| font | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[Font](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font)> | 是 | 选中项文字样式。 默认值：{ size:'13.0fp', style:FontStyle.Normal, weight:500, family:'HarmonyOS Sans' } |
 
-选中项文字样式。
+#### popup[Font](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font)
 
-默认值：{
-
-size:'13.0fp',
-
-style:FontStyle.Normal,
-
-weight:500,
-
-family:'HarmonyOS Sans'
-
-}
-
-#### popupFont
-
-popupFont(font: Optional<Font>)
+popupFont(font: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<Font>)
 
 设置提示弹窗字体样式。
 
@@ -200,27 +181,13 @@ popupFont(font: Optional<Font>)
 
 **参数：**
 
-参数名类型必填说明font[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[Font](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font)>是
-
-提示弹窗字体样式。
-
-默认值：
-
-{
-
-size:'19.0fp',
-
-style:FontStyle.Normal,
-
-weight:500,
-
-family:'HarmonyOS Sans'
-
-}
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| font | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[Font](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font)> | 是 | 提示弹窗字体样式。 默认值： { size:'19.0fp', style:FontStyle.Normal, weight:500, family:'HarmonyOS Sans' } |
 
 #### font
 
-font(font: Optional<Font>)
+font(font: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<Font>)
 
 设置字母索引条默认字体样式。
 
@@ -230,27 +197,13 @@ font(font: Optional<Font>)
 
 **参数：**
 
-参数名类型必填说明font[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[Font](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font)>是
-
-字母索引条默认字体样式。
-
-默认值：
-
-{
-
-size:'13.0fp',
-
-style:FontStyle.Normal,
-
-weight:500,
-
-family:'HarmonyOS Sans'
-
-}
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| font | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[Font](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font)> | 是 | 字母索引条默认字体样式。 默认值： { size:'13.0fp', style:FontStyle.Normal, weight:500, family:'HarmonyOS Sans' } |
 
 #### itemSize
 
-itemSize(size: Optional<LengthMetrics>)
+itemSize(size: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<LengthMetrics>)
 
 设置字母索引条字母区域大小。
 
@@ -260,17 +213,13 @@ itemSize(size: Optional<LengthMetrics>)
 
 **参数：**
 
-参数名类型必填说明size[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[LengthMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetrics12)>是
-
-字母索引条字母区域大小，字母区域为圆形，即圆形直径。不支持设置为百分比。
-
-默认值：24.0
-
-单位：vp
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[LengthMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetrics12)> | 是 | 字母索引条字母区域大小，字母区域为圆形，即圆形直径。不支持设置为百分比。 默认值：24.0 单位：vp |
 
 #### selected
 
-selected(index: Optional<number>)
+selected(index: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<number>)
 
 设置选中项索引值。
 
@@ -280,17 +229,13 @@ selected(index: Optional<number>)
 
 **参数：**
 
-参数名类型必填说明indexOptional<number>是
-
-选中项索引值。
-
-默认值：0
-
-该参数支持[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding)双向绑定变量。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<number> | 是 | 选中项索引值。 默认值：0 该参数支持!!双向绑定变量。 |
 
 #### autoCollapse
 
-autoCollapse(enable: Optional<boolean>)
+autoCollapse(enable: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<boolean>)
 
 设置是否使用自适应折叠模式。
 
@@ -300,21 +245,18 @@ autoCollapse(enable: Optional<boolean>)
 
 **参数：**
 
-参数名类型必填说明enable[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<boolean>是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enable | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<boolean> | 是 | 是否使用自适应折叠模式。 默认值：true true：使用自适应折叠模式。 false：不使用自适应折叠模式。 |
 
-是否使用自适应折叠模式。
+#### popupBackground[BlurStyle](背景设置.md#ZH-CN_TOPIC_0000002529444791__blurstyle9)
 
-默认值：true
+popupBackgroundBlurStyle(style: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<BlurStyle>)
 
-true：使用自适应折叠模式。
+设置提示弹窗的背景模糊材质。未通过该接口设置时，默认为关闭模糊，对应取值为[BlurStyle](背景设置.md#ZH-CN_TOPIC_0000002529444791__blurstyle9)中的NONE。
 
-false：不使用自适应折叠模式。
 
-#### popupBackgroundBlurStyle
-
-popupBackgroundBlurStyle(style: Optional<BlurStyle>)
-
-设置提示弹窗的背景模糊材质。
+当通过popupBackgroundBlurStyle设置弹窗气泡的背景模糊材质时，不建议再通过[popupBackground](#ZH-CN_TOPIC_0000002553360779__popupbackground)设置背景色。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -322,21 +264,17 @@ popupBackgroundBlurStyle(style: Optional<BlurStyle>)
 
 **参数：**
 
-参数名类型必填说明style[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[BlurStyle](../misc/背景设置.md#ZH-CN_TOPIC_0000002529444791__blurstyle9)>是
-
-设置提示弹窗的背景模糊材质。
-
-默认值：NONE
-
-当通过popupBackgroundBlurStyle设置弹窗气泡的背景模糊材质时，不建议再通过[popupBackground](#ZH-CN_TOPIC_0000002497444926__popupbackground)设置背景色。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| style | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[BlurStyle](背景设置.md#ZH-CN_TOPIC_0000002529444791__blurstyle9)> | 是 | 设置提示弹窗的背景模糊材质。 |
 
 #### 事件
 
-除支持[通用事件](../misc/通用事件.md)外，还支持以下事件：
+除支持[通用事件]([通用事件](../misc/通用事件.md).md)外，还支持以下事件：
 
 #### onSelect
 
-onSelect(handler: Optional<OnSelectCallback>)
+onSelect(handler: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<OnSelectCallback>)
 
 索引条选中回调，返回值为当前选中索引。
 
@@ -346,7 +284,9 @@ onSelect(handler: Optional<OnSelectCallback>)
 
 **参数：**
 
-参数名类型必填说明handler[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[OnSelectCallback](#ZH-CN_TOPIC_0000002497444926__onselectcallback)>是回调函数类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| handler | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<OnSelectCallback> | 是 | 回调函数类型。 |
 
 #### ArcAlphabetIndexerInitInfo对象说明
 
@@ -356,17 +296,16 @@ onSelect(handler: Optional<OnSelectCallback>)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
-名称类型只读可选说明arrayValuestring[]否否字母索引字符串数组，不可设置为空。selectednumber否否
-
-初始选中项索引值，若超出索引值范围，则取默认值0。
-
-该参数支持[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding)双向绑定变量。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| arrayValue | string[] | 否 | 否 | 字母索引字符串数组，不可设置为空。 |
+| selected | number | 否 | 否 | 初始选中项索引值，若超出索引值范围，则取默认值0。 该参数支持!!双向绑定变量。 |
 
 #### OnSelectCallback
 
 type OnSelectCallback = (index: number) => void
 
-定义[onSelect](#ZH-CN_TOPIC_0000002497444926__onselect)中使用的回调类型。
+定义[onSelect](#ZH-CN_TOPIC_0000002553360779__onselect)中使用的回调类型。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -374,7 +313,9 @@ type OnSelectCallback = (index: number) => void
 
 **参数：**
 
-参数名类型必填说明indexnumber是选中项序号。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 选中项序号。 |
 
 #### 示例
 
@@ -392,7 +333,7 @@ import {
   ArcAlphabetIndexer,
   ArcAlphabetIndexerAttribute
 } from '@kit.ArkUI';
-// 从API Version 22开始，无需手动导入ArcListAttribute、ArcListItemAttribute、ArcAlphabetIndexerAttribute。具体请参考ArcList、ArcListItem、ArcAlphabetIndexer的导入模块说明。
+// 从API version 22开始，无需手动导入ArcListAttribute、ArcListItemAttribute、ArcAlphabetIndexerAttribute。具体请参考ArcList、ArcListItem、ArcAlphabetIndexer的导入模块说明。
 
 @Entry
 @Component
@@ -472,8 +413,7 @@ struct ArcListAndIndexer {
             })
 
         }.width('100%').height('100%')
-      }.width('100%').height('100%')
     }
-  }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522085170.webp)

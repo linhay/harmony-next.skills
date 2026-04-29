@@ -359,8 +359,26 @@ Unsupported request.
 1. 确认客户端请求参数是否正常。
 1. 销毁当前实例，并重新创建，如果重新创建失败，则停止相关操作。
 
-#### 5410002 不支持SEEK_CONTINUOUS模式的Seek
+#### 5411012 HTTP明文拦截导致请求不受支持
+**错误信息**
 
+Http cleartext traffic is not permitted.
+
+**错误描述**
+
+不允许HTTP明文访问。
+
+**可能原因**
+
+客户端在network_config.json中对相关域名配置禁止HTTP明文访问。
+
+**处理步骤**
+
+1. 确认network_config.json配置文件中是否对相关域名进行HTTP明文访问拦截。
+
+1. 如果不需要拦截，则参考[明文HTTP访问权限配置说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/http-request#明文http访问权限配置说明)对域名权限进行配置。
+
+#### 5410002 不支持SEEK_CONTINUOUS模式的Seek
 **错误信息**
 
 Seek continuous is unsupported.
@@ -407,7 +425,7 @@ Super resolution not enabled.
 
 **可能原因**
 
-若没有通过[PlaybackStrategy](../types/interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002497605902__playbackstrategy12)使能超分，则每次调用超分相关接口时会返回该错误码。
+若没有通过[PlaybackStrategy](Interfaces (其他).md#ZH-CN_TOPIC_0000002553361955__playbackstrategy12)使能超分，则每次调用超分相关接口时会返回该错误码。
 
 **处理步骤**
 

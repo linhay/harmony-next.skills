@@ -1,6 +1,7 @@
 # Class (WebResourceRequest)
 
-Web组件获取资源请求对象。示例代码参考[onErrorReceive事件](../../topics/misc/事件.md#ZH-CN_TOPIC_0000002497445228__onerrorreceive)。
+Web组件获取资源请求对象。示例代码参考[onErrorReceive事件](事件.md#ZH-CN_TOPIC_0000002522081170__onerrorreceive)。
+
 
 -
 
@@ -12,7 +13,7 @@ Web组件获取资源请求对象。示例代码参考[onErrorReceive事件](../
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### constructor
 
@@ -22,9 +23,9 @@ WebResourceRequest的构造函数。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
-#### getRequestHeader
+#### getRequest[Header](../interfaces/Interfaces（其他）.md#ZH-CN_TOPIC_0000002529445183__header)
 
-getRequestHeader(): Array<Header>
+getRequest[Header](../interfaces/Interfaces（其他）.md#ZH-CN_TOPIC_0000002529445183__header)(): Array<Header>
 
 获取资源请求头信息。
 
@@ -32,7 +33,9 @@ getRequestHeader(): Array<Header>
 
 **返回值：**
 
-类型说明Array<[Header](../interfaces/Interfaces（其他）.md#ZH-CN_TOPIC_0000002529445183__header)>返回资源请求头信息。
+| 类型 | 说明 |
+| --- | --- |
+| Array<[Header](../interfaces/Interfaces（其他）.md#ZH-CN_TOPIC_0000002529445183__header)> | 返回资源请求头信息。 |
 
 #### getRequestUrl
 
@@ -44,7 +47,9 @@ getRequestUrl(): string
 
 **返回值：**
 
-类型说明string返回资源请求的URL信息。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回资源请求的URL信息。 |
 
 #### isMainFrame
 
@@ -56,11 +61,9 @@ isMainFrame(): boolean
 
 **返回值：**
 
-类型说明boolean
-
-返回资源请求是否为主frame。
-
-true表示返回资源请求为主frame，false表示返回资源请求不为主frame。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回资源请求是否为主frame。 true表示返回资源请求为主frame，false表示返回资源请求不为主frame。 |
 
 #### isRedirect
 
@@ -72,11 +75,9 @@ isRedirect(): boolean
 
 **返回值：**
 
-类型说明boolean
-
-返回资源请求是否被服务端重定向。
-
-true表示返回资源请求被服务端重定向，false表示返回资源请求未被服务端重定向。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回资源请求是否被服务端重定向。 true表示返回资源请求被服务端重定向，false表示返回资源请求未被服务端重定向。 |
 
 #### isRequestGesture
 
@@ -88,11 +89,9 @@ isRequestGesture(): boolean
 
 **返回值：**
 
-类型说明boolean
-
-返回资源请求是否与手势（如点击）相关联。
-
-true表示返回资源请求与手势（如点击）相关联，false表示返回资源请求与手势（如点击）不相关联。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回资源请求是否与手势（如点击）相关联。 true表示返回资源请求与手势（如点击）相关联，false表示返回资源请求与手势（如点击）不相关联。 |
 
 #### getRequestMethod9+
 
@@ -104,4 +103,6 @@ getRequestMethod(): string
 
 **返回值：**
 
-类型说明string返回请求方法。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回请求方法。 |

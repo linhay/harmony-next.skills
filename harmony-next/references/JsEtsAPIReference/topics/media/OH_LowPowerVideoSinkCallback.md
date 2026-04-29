@@ -14,4 +14,4 @@ typedef struct OH_LowPowerVideoSinkCallback OH_LowPowerVideoSinkCallback
 
 **相关模块：**[LowPowerVideoSink](LowPowerVideoSink.md)
 
-**所在头文件：**[lowpower_video_sink_base.h](../../capi/headers/lowpower_video_sink_base.h.md)
+**所在头文件：**[lowpower_video_sink_base.h](../../topics/media/[lowpower_video_sink_base.h](lowpower_video_sink_base.h.md).md)

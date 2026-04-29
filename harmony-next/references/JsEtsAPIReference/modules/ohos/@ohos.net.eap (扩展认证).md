@@ -24,31 +24,25 @@ regCustomEapHandler(netType: number, eapCode: number, eapType: number, callback:
 
 **参数：**
 
-参数名类型必填说明netTypenumber是
-
-网络类型，取值为1或2。
-
-netType=1表示WLAN，netType=2表示以太网。
-
-eapCodenumber是
-
-需要进行定制的EAP code，取值为1、2、3、4 。
-
-code=1 Request、 code=2 Response、 code=3 Success、 code=4 Failure。
-
-eapTypenumber是
-
-需要进行定制处理的EAP method类型，取值范围[0, 255]。
-
-常用取值包括：eapType=1 Identity，eapType=2 Notification，eapType=3 NAK，eapType=4 MD5-Challenge，eapType=5 OTP（One-Time Password），eapType=6 GTC（Generic Token Card），eapType=13 EAP-TLS，eapType=21 EAP-TTLS，eapType=25 EAP-PEAP，eapType=254 Expanded Types，eapType=255 Experimental use。
-
-callbackCallback<[EapData](#ZH-CN_TOPIC_0000002497445474__eapdata)>是回调函数，返回指定的eapCode+eapType的报文。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| netType | number | 是 | 网络类型，取值为1或2。 netType=1表示WLAN，netType=2表示以太网。 |
+| eapCode | number | 是 | 需要进行定制的EAP code，取值为1、2、3、4 。 code=1 Request、 code=2 Response、 code=3 Success、 code=4 Failure。 |
+| eapType | number | 是 | 需要进行定制处理的EAP method类型，取值范围[0, 255]。 常用取值包括：eapType=1 Identity，eapType=2 Notification，eapType=3 NAK，eapType=4 MD5-Challenge，eapType=5 OTP（One-Time Password），eapType=6 GTC（Generic Token Card），eapType=13 EAP-TLS，eapType=21 EAP-TTLS，eapType=25 EAP-PEAP，eapType=254 Expanded Types，eapType=255 Experimental use。 |
+| callback | Callback<EapData> | 是 | 回调函数，返回指定的eapCode+eapType的报文。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[扩展认证错误码](../../errors/扩展认证错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[扩展认证错误码]([扩展认证错误码](../../errors/扩展认证错误码.md).md)。
 
-错误码ID错误信息201Permission denied.33200006Invalid net type.33200007Invalid eap code.33200008Invalid eap type.33200009netmanager stop.33200099internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 33200006 | Invalid net type. |
+| 33200007 | Invalid eap code. |
+| 33200008 | Invalid eap type. |
+| 33200009 | netmanager stop. |
+| 33200099 | internal error. |
 
 **示例：**
 
@@ -81,31 +75,25 @@ unregCustomEapHandler(netType:number, eapCode: number, eapType: number, callback
 
 **参数：**
 
-参数名类型必填说明netTypenumber是
-
-网络类型，取值为1或2。
-
-netType=1表示WLAN，netType=2表示以太网。
-
-eapCodenumber是
-
-需要进行定制的EAP code，取值为1、2、3、4 。
-
-code=1 Request、 code=2 Response、 code=3 Success、 code=4 Failure。
-
-eapTypenumber是
-
-需要进行定制处理的EAP method类型，取值范围[0, 255]。
-
-常用取值包括：eapType=1 Identity，eapType=2 Notification，eapType=3 NAK，eapType=4 MD5-Challenge，eapType=5 OTP（One-Time Password），eapType=6 GTC（Generic Token Card），eapType=13 EAP-TLS，eapType=21 EAP-TTLS，eapType=25 EAP-PEAP，eapType=254 Expanded Types，eapType=255 Experimental use。
-
-callbackCallback<[EapData](#ZH-CN_TOPIC_0000002497445474__eapdata)>是回调函数，返回指定的eapCode+eapType的报文。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| netType | number | 是 | 网络类型，取值为1或2。 netType=1表示WLAN，netType=2表示以太网。 |
+| eapCode | number | 是 | 需要进行定制的EAP code，取值为1、2、3、4 。 code=1 Request、 code=2 Response、 code=3 Success、 code=4 Failure。 |
+| eapType | number | 是 | 需要进行定制处理的EAP method类型，取值范围[0, 255]。 常用取值包括：eapType=1 Identity，eapType=2 Notification，eapType=3 NAK，eapType=4 MD5-Challenge，eapType=5 OTP（One-Time Password），eapType=6 GTC（Generic Token Card），eapType=13 EAP-TLS，eapType=21 EAP-TTLS，eapType=25 EAP-PEAP，eapType=254 Expanded Types，eapType=255 Experimental use。 |
+| callback | Callback<EapData> | 是 | 回调函数，返回指定的eapCode+eapType的报文。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[扩展认证错误码](../../errors/扩展认证错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[扩展认证错误码](扩展认证错误码.md)。
 
-错误码ID错误信息201Permission denied.33200006Invalid net type.33200007Invalid eap code.33200008Invalid eap type.33200009netmanager stop.33200099internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 33200006 | Invalid net type. |
+| 33200007 | Invalid eap code. |
+| 33200008 | Invalid eap type. |
+| 33200009 | netmanager stop. |
+| 33200099 | internal error. |
 
 **示例：**
 
@@ -141,13 +129,22 @@ replyCustomEapData(result: CustomResult, data: EapData): void
 
 **参数：**
 
-参数名类型必填说明result[CustomResult](#ZH-CN_TOPIC_0000002497445474__customresult)是定制化判定结果。data[EapData](#ZH-CN_TOPIC_0000002497445474__eapdata)是经过定制化的EAP数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| result | CustomResult | 是 | 定制化判定结果。 |
+| data | EapData | 是 | 经过定制化的EAP数据。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[扩展认证错误码](../../errors/扩展认证错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[扩展认证错误码](扩展认证错误码.md)。
 
-错误码ID错误信息201Permission denied.33200004Invalid result.33200005Invalid size of eap data.33200009netmanager stop.33200099internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 33200004 | Invalid result. |
+| 33200005 | Invalid size of eap data. |
+| 33200009 | netmanager stop. |
+| 33200099 | internal error. |
 
 ```ets
 import {eap} from '@kit.NetworkKit';
@@ -178,13 +175,23 @@ startEthEap(netId: number, profile: EthEapProfile): void
 
 **参数：**
 
-参数名类型必填说明netIdnumber是以太网卡Id。（传入默认参数-1，系统将自动匹配以太网卡发起EAP认证）profile[EthEapProfile](#ZH-CN_TOPIC_0000002497445474__etheapprofile)是EAP配置信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| netId | number | 是 | 以太网卡Id。（传入默认参数-1，系统将自动匹配以太网卡发起EAP认证） |
+| profile | EthEapProfile | 是 | EAP配置信息。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[扩展认证错误码](../../errors/扩展认证错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[扩展认证错误码](扩展认证错误码.md)。
 
-错误码ID错误信息201Permission denied.33200001Invalid netId.33200003Invalid profile.33200009netmanager stop.33200010invalid eth state.33200099internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 33200001 | Invalid netId. |
+| 33200003 | Invalid profile. |
+| 33200009 | netmanager stop. |
+| 33200010 | invalid eth state. |
+| 33200099 | internal error. |
 
 **示例：**
 
@@ -229,13 +236,22 @@ logOffEthEap(netId: number): void
 
 **参数：**
 
-参数名类型必填说明netIdnumber是以太网卡Id。（传入默认参数-1，系统将自动匹配以太网卡发起EAP认证）
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| netId | number | 是 | 以太网卡Id。（传入默认参数-1，系统将自动匹配以太网卡发起EAP认证） |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[扩展认证错误码](../../errors/扩展认证错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[扩展认证错误码](扩展认证错误码.md)。
 
-错误码ID错误信息201Permission denied.33200001Invalid netId.33200002Log off fail.33200009netmanager stop.33200010invalid eth state.33200099internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 33200001 | Invalid netId. |
+| 33200002 | Log off fail. |
+| 33200009 | netmanager stop. |
+| 33200010 | invalid eth state. |
+| 33200099 | internal error. |
 
 **示例：**
 
@@ -256,7 +272,11 @@ EAP信息。
 
 ​**系统能力**​：SystemCapability.Communication.NetManager.Eap
 
-**名称****类型****只读****可选****说明**msgIdnumber否否伪随机数，用于关联处理前后的EAP数据。eapBufferUint8Array否否从EAP header开始的EAP原始数据，未加密。bufferLennumber否否数据长度。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| msgId | number | 否 | 否 | 伪随机数，用于关联处理前后的EAP数据。 |
+| eapBuffer | Uint8Array | 否 | 否 | 从EAP header开始的EAP原始数据，未加密。 |
+| bufferLen | number | 否 | 否 | 数据长度。 |
 
 #### CustomResult
 
@@ -264,7 +284,11 @@ EAP信息。
 
 ​**系统能力**​：SystemCapability.Communication.NetManager.Eap
 
-**名称****值****说明**RESULT_FAIL0认证流程结束，结果失败。RESULT_NEXT1认证当前流程成功，跳转到下一步。RESULT_FINISH2认证流程结束，结果成功。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| RESULT_FAIL | 0 | 认证流程结束，结果失败。 |
+| RESULT_NEXT | 1 | 认证当前流程成功，跳转到下一步。 |
+| RESULT_FINISH | 2 | 认证流程结束，结果成功。 |
 
 #### EapMethod
 
@@ -272,7 +296,17 @@ EAP信息。
 
 **系统能力：** SystemCapability.Communication.NetManager.Eap
 
-名称值说明EAP_NONE0不指定。EAP_PEAP1PEAP类型。EAP_TLS2TLS类型。EAP_TTLS3TTLS类型。EAP_PWD4PWD类型。EAP_SIM5SIM类型。EAP_AKA6AKA类型。EAP_AKA_PRIME7AKA Prime类型。EAP_UNAUTH_TLS8UNAUTH TLS类型。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| EAP_NONE | 0 | 不指定。 |
+| EAP_PEAP | 1 | PEAP类型。 |
+| EAP_TLS | 2 | TLS类型。 |
+| EAP_TTLS | 3 | TTLS类型。 |
+| EAP_PWD | 4 | PWD类型。 |
+| EAP_SIM | 5 | SIM类型。 |
+| EAP_AKA | 6 | AKA类型。 |
+| EAP_AKA_PRIME | 7 | AKA Prime类型。 |
+| EAP_UNAUTH_TLS | 8 | UNAUTH TLS类型。 |
 
 #### Phase2Method
 
@@ -280,7 +314,16 @@ EAP信息。
 
 **系统能力：** SystemCapability.Communication.NetManager.Eap
 
-名称值说明PHASE2_NONE0不指定。PHASE2_PAP1PAP类型。PHASE2_MSCHAP2MSCHAP类型。PHASE2_MSCHAPV23MSCHAPV2类型。PHASE2_GTC4GTC类型。PHASE2_SIM5SIM类型。PHASE2_AKA6AKA类型。PHASE2_AKA_PRIME7AKA Prime类型。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PHASE2_NONE | 0 | 不指定。 |
+| PHASE2_PAP | 1 | PAP类型。 |
+| PHASE2_MSCHAP | 2 | MSCHAP类型。 |
+| PHASE2_MSCHAPV2 | 3 | MSCHAPV2类型。 |
+| PHASE2_GTC | 4 | GTC类型。 |
+| PHASE2_SIM | 5 | SIM类型。 |
+| PHASE2_AKA | 6 | AKA类型。 |
+| PHASE2_AKA_PRIME | 7 | AKA Prime类型。 |
 
 #### EthEapProfile
 
@@ -288,4 +331,20 @@ EAP信息。
 
 **系统能力：** SystemCapability.Communication.NetManager.Eap
 
-名称类型只读可选说明eapMethod[EapMethod](#ZH-CN_TOPIC_0000002497445474__eapmethod)否否AP认证方式。phase2Method[Phase2Method](#ZH-CN_TOPIC_0000002497445474__phase2method)否否第二阶段认证方式。identitystring否否身份信息。anonymousIdentitystring否否匿名身份。passwordstring否否密码。caCertAliasesstring否否CA证书别名。caPathstring否否CA证书路径。clientCertAliasesstring否否客户端证书别名。certEntryUint8Array否否CA证书内容。certPasswordstring否否CA证书密码。altSubjectMatchstring否否替代主题匹配。domainSuffixMatchstring否否域后缀匹配。realmstring否否通行证凭证的领域。plmnstring否否公共陆地移动网的直通凭证提供商。eapSubIdnumber否否SIM卡的子ID。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| eapMethod | EapMethod | 否 | 否 | AP认证方式。 |
+| phase2Method | Phase2Method | 否 | 否 | 第二阶段认证方式。 |
+| identity | string | 否 | 否 | 身份信息。 |
+| anonymousIdentity | string | 否 | 否 | 匿名身份。 |
+| password | string | 否 | 否 | 密码。 |
+| caCertAliases | string | 否 | 否 | CA证书别名。 |
+| caPath | string | 否 | 否 | CA证书路径。 |
+| clientCertAliases | string | 否 | 否 | 客户端证书别名。 |
+| certEntry | Uint8Array | 否 | 否 | CA证书内容。 |
+| certPassword | string | 否 | 否 | CA证书密码。 |
+| altSubjectMatch | string | 否 | 否 | 替代主题匹配。 |
+| domainSuffixMatch | string | 否 | 否 | 域后缀匹配。 |
+| realm | string | 否 | 否 | 通行证凭证的领域。 |
+| plmn | string | 否 | 否 | 公共陆地移动网的直通凭证提供商。 |
+| eapSubId | number | 否 | 否 | SIM卡的子ID。 |

@@ -12,4 +12,4 @@ typedef struct OH_UdsHyperlink OH_UdsHyperlink
 
 **相关模块：**[UDMF](UDMF.md)
 
-**所在头文件：**[uds.h](../../capi/headers/uds.h.md)
+**所在头文件：**[uds.h](../../topics/misc/[uds.h](uds.h.md).md)

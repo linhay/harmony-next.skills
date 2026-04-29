@@ -2,11 +2,24 @@
 
 弹出框是一种模态窗口，通常用于在保持当前的上下文环境时，临时展示用户需关注的信息或待处理的操作，用户在模态弹出框内完成上述交互任务。模态弹出框需要用户进行交互才能够退出模态模式。
 
-该组件基于[状态管理V2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-overview#状态管理v2)实现，相较于[状态管理V1](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-overview#状态管理v1)，状态管理V2增强了对数据对象的深度观察与管理能力，不再局限于组件层级。借助状态管理V2，开发者可以通过该组件更灵活地控制弹出框的数据和状态，实现更高效的用户界面刷新。
+该组件基于[状态管理（V2）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-overview#状态管理v2)实现，相较于[状态管理（V1）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-overview#状态管理v1)，状态管理（V2）增强了对数据对象的深度观察与管理能力，不再局限于组件层级。借助状态管理（V2），开发者可以通过该组件更灵活地控制弹出框的数据和状态，实现更高效的用户界面刷新。
+
+
+-
 
 该组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
+-
+
+该组件仅可在Stage模型下使用。
+
+-
+
 该组件不支持在Wearable设备上使用。
+
+-
+
+如果DialogV2设置[通用属性](通用属性.md)和[通用事件](通用事件.md)，编译工具链会额外生成节点__Common__，并将通用属性或通用事件挂载在__Common__上，而不是直接应用到DialogV2本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议DialogV2设置通用属性和通用事件。
 
 #### 导入模块
 
@@ -20,7 +33,7 @@ import { TipsDialogV2, SelectDialogV2, ConfirmDialogV2, AlertDialogV2, LoadingDi
 
 #### TipsDialogV2
 
-TipsDialogV2({imageRes: ResourceStr | PixelMap, imageSize?: SizeOptions, imageBorderColor: ColorMetrics, imageBorderWidth: LengthMetrics, title?: ResourceStr, content?: ResourceStr, checkTips?: ResourceStr, checked?: boolean, onCheckedChange?: AdvancedDialogV2OnCheckedChange, primaryButton?: AdvancedDialogV2Button, secondaryButton?: AdvancedDialogV2Button})
+TipsDialogV2({imageRes: [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | PixelMap, imageSize?: SizeOptions, imageBorderColor: ColorMetrics, imageBorderWidth: LengthMetrics, title?: ResourceStr, content?: ResourceStr, checkTips?: ResourceStr, checked?: boolean, onCheckedChange?: AdvancedDialogV2OnCheckedChange, primaryButton?: AdvancedDialogV2Button, secondaryButton?: AdvancedDialogV2Button})
 
 提示弹出框，即为带图形确认弹出框，必要时可通过图形化方式展现确认弹出框。
 
@@ -30,73 +43,19 @@ TipsDialogV2({imageRes: ResourceStr | PixelMap, imageSize?: SizeOptions, imageBo
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型必填装饰器类型说明imageRes[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | [PixelMap](../../types/interfaces/Interface (PixelMap).md)是
-
-@Param
-
-@Require
-
-展示的图片。imageSize[SizeOptions](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__sizeoptions)否@Param
-
-自定义图片尺寸。
-
-默认值：64*64vp
-
-imageBorderColor[ColorMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)否@Param
-
-图片描边颜色。
-
-默认值：Color.Black
-
-imageBorderWidth[LengthMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetrics12)否@Param
-
-图片描边宽度。
-
-默认无描边效果。
-
-title[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)否@Param
-
-提示弹出框标题。
-
-默认不显示。
-
-**说明：** 标题超过两行会显示“...”。
-
-content[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)否@Param
-
-提示弹出框内容。
-
-默认不显示。
-
-checkTips[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)否@Param
-
-选择框的提示内容。
-
-默认不显示。
-
-checkedboolean否@Param
-
-checked为true时，表示选择框已选中。checked为false时，表示选择框未选中。
-
-默认值：false
-
-onCheckedChange[AdvancedDialogV2OnCheckedChange](#ZH-CN_TOPIC_0000002497604956__advanceddialogv2oncheckedchange)否@Param
-
-选择框的选中状态改变事件。
-
-默认无事件。
-
-primaryButton[AdvancedDialogV2Button](#ZH-CN_TOPIC_0000002497604956__advanceddialogv2button)否@Param
-
-提示弹出框左侧按钮。
-
-默认不显示。
-
-secondaryButton[AdvancedDialogV2Button](#ZH-CN_TOPIC_0000002497604956__advanceddialogv2button)否@Param
-
-提示弹出框右侧按钮。
-
-默认不显示。
+| 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- |
+| imageRes | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | PixelMap | 是 | @Param @Require | 展示的图片。 |
+| imageSize | [SizeOptions](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__sizeoptions) | 否 | @Param | 自定义图片尺寸。 默认值：64*64vp |
+| imageBorderColor | [ColorMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12) | 否 | @Param | 图片描边颜色。 默认值：Color.Black |
+| imageBorderWidth | [LengthMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetrics12) | 否 | @Param | 图片描边宽度。 默认无描边效果。 |
+| title | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 否 | @Param | 提示弹出框标题。 默认不显示。 说明： 标题超过两行会显示“...”。 |
+| content | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 否 | @Param | 提示弹出框内容。 默认不显示。 |
+| checkTips | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 否 | @Param | 选择框的提示内容。 默认不显示。 |
+| checked | boolean | 否 | @Param | checked为true时，表示选择框已选中。checked为false时，表示选择框未选中。 默认值：false |
+| onCheckedChange | AdvancedDialogV2OnCheckedChange | 否 | @Param | 选择框的选中状态改变事件。 默认无事件。 |
+| primaryButton | AdvancedDialogV2Button | 否 | @Param | 提示弹出框左侧按钮。 默认不显示。 |
+| secondaryButton | AdvancedDialogV2Button | 否 | @Param | 提示弹出框右侧按钮。 默认不显示。 |
 
 #### AdvancedDialogV2OnCheckedChange
 
@@ -110,15 +69,13 @@ type AdvancedDialogV2OnCheckedChange = (checked: boolean) => void
 
 **参数：**
 
-参数名类型必填说明checkedboolean是
-
-表示选择框选中状态。
-
-checked为true时，表示选择框已选中。checked为false时，表示选择框未选中。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| checked | boolean | 是 | 表示选择框选中状态。 checked为true时，表示选择框已选中。checked为false时，表示选择框未选中。 |
 
 #### SelectDialogV2
 
-SelectDialogV2({title: ResourceStr, content?: ResourceStr, selectedIndex?: number, confirm?: AdvancedDialogV2Button, radioContent: SheetInfo[]})
+SelectDialogV2({title: [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr), content?: ResourceStr, selectedIndex?: number, confirm?: AdvancedDialogV2Button, radioContent: SheetInfo[]})
 
 选择类弹出框，弹框中以列表或网格的形式提供可选的内容。
 
@@ -128,41 +85,17 @@ SelectDialogV2({title: ResourceStr, content?: ResourceStr, selectedIndex?: numbe
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型必填装饰器类型说明title[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)是
-
-@Param
-
-@Require
-
-选择弹出框标题。
-
-**说明：** 标题超过两行会显示“...”。
-
-content[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)否@Param选择弹出框内容。默认不显示。selectedIndexnumber否@Param
-
-选择弹出框的选中项。
-
-默认值：-1，没有选中项。若设置数值不在取值范围，按没有选中项处理。
-
-取值范围：小于选择弹出框的子项内容列表长度。
-
-confirm[AdvancedDialogV2Button](#ZH-CN_TOPIC_0000002497604956__advanceddialogv2button)否@Param
-
-选择弹出框底部按钮。
-
-默认不显示。
-
-radioContent[SheetInfo](../misc/列表选择弹窗 (ActionSheet).md#ZH-CN_TOPIC_0000002497604934__sheetinfo对象说明)[]是
-
-@Param
-
-@Require
-
-选择弹出框的子项内容列表，每个选择项支持设置文本和选中的回调事件。
+| 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- |
+| title | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 是 | @Param @Require | 选择弹出框标题。 说明： 标题超过两行会显示“...”。 |
+| content | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 否 | @Param | 选择弹出框内容。默认不显示。 |
+| selectedIndex | number | 否 | @Param | 选择弹出框的选中项。 默认值：-1，没有选中项。若设置数值不在取值范围，按没有选中项处理。 取值范围：小于选择弹出框的子项内容列表长度。 |
+| confirm | AdvancedDialogV2Button | 否 | @Param | 选择弹出框底部按钮。 默认不显示。 |
+| radioContent | SheetInfo[] | 是 | @Param @Require | 选择弹出框的子项内容列表，每个选择项支持设置文本和选中的回调事件。 |
 
 #### ConfirmDialogV2
 
-ConfirmDialogV2({title: ResourceStr, content?: ResourceStr, checkTips?: ResourceStr, checked?: boolean, onCheckedChange: AdvancedDialogV2OnCheckedChange, primaryButton?: AdvancedDialogV2Button, secondaryButton?: AdvancedDialogV2Button})
+ConfirmDialogV2({title: [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr), content?: ResourceStr, checkTips?: ResourceStr, checked?: boolean, onCheckedChange: AdvancedDialogV2OnCheckedChange, primaryButton?: AdvancedDialogV2Button, secondaryButton?: AdvancedDialogV2Button})
 
 信息确认类弹出框，操作未正确执行（如网络错误、电池电量过低），或未正确操作时（如指纹录入），反馈的错误或提示信息。
 
@@ -172,55 +105,19 @@ ConfirmDialogV2({title: ResourceStr, content?: ResourceStr, checkTips?: Resource
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型必填装饰器类型说明title[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)是
-
-@Param
-
-@Require
-
-确认弹出框标题。
-
-**说明：** 标题超过两行会显示“...”。
-
-content[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)否@Param
-
-确认弹出框内容。
-
-默认不显示。
-
-checkTips[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)否@Param
-
-checkbox的提示内容。
-
-默认不显示。
-
-checkedboolean否@Param
-
-checked为true时，表示checkbox已选中，为false时，表示未选中。
-
-默认值：false
-
-onCheckedChange[AdvancedDialogV2OnCheckedChange](#ZH-CN_TOPIC_0000002497604956__advanceddialogv2oncheckedchange)否@Param
-
-checkbox的选中状态改变事件。
-
-默认无事件。
-
-primaryButton[AdvancedDialogV2Button](#ZH-CN_TOPIC_0000002497604956__advanceddialogv2button)否@Param
-
-确认弹出框左侧按钮。
-
-默认不显示。
-
-secondaryButton[AdvancedDialogV2Button](#ZH-CN_TOPIC_0000002497604956__advanceddialogv2button)否@Param
-
-确认弹出框右侧按钮。
-
-默认不显示。
+| 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- |
+| title | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 是 | @Param @Require | 确认弹出框标题。 说明： 标题超过两行会显示“...”。 |
+| content | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 否 | @Param | 确认弹出框内容。 默认不显示。 |
+| checkTips | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 否 | @Param | checkbox的提示内容。 默认不显示。 |
+| checked | boolean | 否 | @Param | checked为true时，表示checkbox已选中，为false时，表示未选中。 默认值：false |
+| onCheckedChange | AdvancedDialogV2OnCheckedChange | 否 | @Param | checkbox的选中状态改变事件。 默认无事件。 |
+| primaryButton | AdvancedDialogV2Button | 否 | @Param | 确认弹出框左侧按钮。 默认不显示。 |
+| secondaryButton | AdvancedDialogV2Button | 否 | @Param | 确认弹出框右侧按钮。 默认不显示。 |
 
 #### AlertDialogV2
 
-AlertDialogV2({primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, content: ResourceStr, primaryButton?: AdvancedDialogV2Button, secondaryButton?: AdvancedDialogV2Button})
+AlertDialogV2({primaryTitle?: [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr), secondaryTitle?: ResourceStr, content: ResourceStr, primaryButton?: AdvancedDialogV2Button, secondaryButton?: AdvancedDialogV2Button})
 
 操作确认类弹出框。当触发一个将产生严重后果的不可逆操作时，如删除、重置、取消编辑、停止等，会触发该类弹出框提示。
 
@@ -230,45 +127,17 @@ AlertDialogV2({primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, content
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型必填装饰器类型说明primaryTitle[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)否@Param
-
-确认弹出框一级标题。
-
-默认不显示。
-
-**说明：** 标题超过两行会显示“...”。
-
-secondaryTitle[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)否@Param
-
-确认弹出框二级标题。
-
-默认不显示。
-
-**说明：** 标题超过两行会显示“...”。
-
-content[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)是
-
-@Param
-
-@Require
-
-确认弹出框内容。
-
-primaryButton[AdvancedDialogV2Button](#ZH-CN_TOPIC_0000002497604956__advanceddialogv2button)否@Param
-
-确认弹出框左侧按钮。
-
-默认不显示。
-
-secondaryButton[AdvancedDialogV2Button](#ZH-CN_TOPIC_0000002497604956__advanceddialogv2button)否@Param
-
-确认弹出框右侧按钮。
-
-默认不显示。
+| 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- |
+| primaryTitle | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 否 | @Param | 确认弹出框一级标题。 默认不显示。 说明： 标题超过两行会显示“...”。 |
+| secondaryTitle | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 否 | @Param | 确认弹出框二级标题。 默认不显示。 说明： 标题超过两行会显示“...”。 |
+| content | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 是 | @Param @Require | 确认弹出框内容。 |
+| primaryButton | AdvancedDialogV2Button | 否 | @Param | 确认弹出框左侧按钮。 默认不显示。 |
+| secondaryButton | AdvancedDialogV2Button | 否 | @Param | 确认弹出框右侧按钮。 默认不显示。 |
 
 #### LoadingDialogV2
 
-LoadingDialogV2({content?: ResourceStr})
+LoadingDialogV2({content?: [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)})
 
 进度加载类弹出框，操作正在执行时的提示信息。
 
@@ -278,17 +147,13 @@ LoadingDialogV2({content?: ResourceStr})
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型必填装饰器类型说明content[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)否@Param
-
-加载弹出框内容。
-
-默认为空。
-
-**说明：** 内容超过十行会显示“...”。
+| 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- |
+| content | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 否 | @Param | 加载弹出框内容。 默认为空。 说明： 内容超过十行会显示“...”。 |
 
 #### CustomContentDialogV2
 
-CustomContentDialogV2({contentBuilder: () => void, primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, contentAreaPadding?: LocalizedPadding, buttons?: AdvancedDialogV2Button[]})
+CustomContentDialogV2({contentBuilder: () => void, primaryTitle?: [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr), secondaryTitle?: ResourceStr, contentAreaPadding?: LocalizedPadding, buttons?: AdvancedDialogV2Button[]})
 
 自定义内容区弹出框，同时支持定义操作区按钮样式。
 
@@ -298,33 +163,13 @@ CustomContentDialogV2({contentBuilder: () => void, primaryTitle?: ResourceStr, s
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型必填装饰器类型说明contentBuilder[CustomBuilder](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__custombuilder8)是@BuilderParam弹出框内容。primaryTitle[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)否@Param
-
-弹出框标题。
-
-默认不显示。
-
-**说明：** 标题超过两行会显示“...”。
-
-secondaryTitle[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)否@Param
-
-弹出框辅助文本。
-
-默认不显示。
-
-**说明：** 辅助文本超过两行会显示“...”。
-
-contentAreaPadding[LocalizedPadding](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__localizedpadding12)否@Param
-
-弹出框内容区内边距。
-
-默认不显示。
-
-buttons[AdvancedDialogV2Button](#ZH-CN_TOPIC_0000002497604956__advanceddialogv2button)[]否@Param
-
-弹出框操作区按钮，最多支持4个按钮。
-
-默认不显示。
+| 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- |
+| contentBuilder | [CustomBuilder](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__custombuilder8) | 是 | @BuilderParam | 弹出框内容。 |
+| primaryTitle | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 否 | @Param | 弹出框标题。 默认不显示。 说明： 标题超过两行会显示“...”。 |
+| secondaryTitle | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 否 | @Param | 弹出框辅助文本。 默认不显示。 说明： 辅助文本超过两行会显示“...”。 |
+| contentAreaPadding | [LocalizedPadding](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__localizedpadding12) | 否 | @Param | 弹出框内容区内边距。 默认不显示。 |
+| buttons | AdvancedDialogV2Button[] | 否 | @Param | 弹出框操作区按钮，最多支持4个按钮。 默认不显示。 |
 
 #### PopoverDialogV2OnVisibleChange
 
@@ -338,15 +183,13 @@ type PopoverDialogV2OnVisibleChange = (visible: boolean) => void
 
 **参数：**
 
-参数名类型必填说明visibleboolean是
-
-表示跟手弹出框显示状态。
-
-值为true时跟手弹出框显示，为false时隐藏。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| visible | boolean | 是 | 表示跟手弹出框显示状态。 值为true时跟手弹出框显示，为false时隐藏。 |
 
 #### PopoverDialogV2
 
-PopoverDialogV2({visible: boolean, $visible: PopoverDialogV2OnVisibleChange, popover: PopoverDialogV2Options, targetBuilder: CustomBuilder})
+PopoverDialogV2({visible: boolean, $visible: PopoverDialogV2OnVisibleChange, popover: PopoverDialogV2Options, targetBuilder: [CustomBuilder](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__custombuilder8)})
 
 跟手弹出框，基于目标组件位置弹出，上文中的TipsDialogV2、SelectDialogV2、ConfirmDialogV2、AlertDialogV2、LoadingDialogV2、CustomContentDialogV2都可作为弹出框内容。
 
@@ -356,35 +199,19 @@ PopoverDialogV2({visible: boolean, $visible: PopoverDialogV2OnVisibleChange, pop
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型必填装饰器类型说明visibleboolean是
-
-@Param
-
-@Require
-
-跟手弹出框显示状态。
-
-值为true时跟手弹出框显示，为false时隐藏。
-
-$visible[PopoverDialogV2OnVisibleChange](#ZH-CN_TOPIC_0000002497604956__popoverdialogv2onvisiblechange)否@Event
-
-修改跟手弹出框显示状态时触发的回调函数，建议在visible后使用!!语法设置双向同步。
-
-默认无事件。
-
-popover[PopoverDialogV2Options](#ZH-CN_TOPIC_0000002497604956__popoverdialogv2options)是
-
-@Param
-
-@Require
-
-配置跟手弹出框的参数。targetBuilder[CustomBuilder](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__custombuilder8)是@BuilderParam跟手弹出框基于的目标组件。
+| 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- |
+| visible | boolean | 是 | @Param @Require | 跟手弹出框显示状态。 值为true时跟手弹出框显示，为false时隐藏。 |
+| $visible | PopoverDialogV2OnVisibleChange | 否 | @Event | 修改跟手弹出框显示状态时触发的回调函数，建议在visible后使用!!语法设置双向同步。 默认无事件。 |
+| popover | PopoverDialogV2Options | 是 | @Param @Require | 配置跟手弹出框的参数。 |
+| targetBuilder | [CustomBuilder](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__custombuilder8) | 是 | @BuilderParam | 跟手弹出框基于的目标组件。 |
 
 #### PopoverDialogV2Options
 
 跟手弹出框参数，用于设置弹出框内容、位置属性等。
 
-继承自[CustomPopupOptions](../misc/Popup控制.md#ZH-CN_TOPIC_0000002529284839__custompopupoptions8类型说明)。
+继承自[CustomPopupOptions](Popup控制.md#ZH-CN_TOPIC_0000002522240796__custompopupoptions8类型说明)。
+
 
 radius默认值为32vp。
 
@@ -412,75 +239,17 @@ type AdvancedDialogV2ButtonAction = () => void
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明content[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)否否
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| content | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 否 | 否 | 按钮的内容。 装饰器类型：@Trace |
+| action | AdvancedDialogV2ButtonAction | 否 | 是 | 按钮的点击事件。 默认无事件。 装饰器类型：@Trace |
+| background | [ColorMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12) | 否 | 是 | 按钮的背景。 默认值跟随buttonStyle。 装饰器类型：@Trace |
+| fontColor | [ColorMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12) | 否 | 是 | 按钮的字体颜色。 默认值跟随buttonStyle。 装饰器类型：@Trace |
+| buttonStyle | [ButtonStyleMode](Button.md#ZH-CN_TOPIC_0000002497604884__buttonstylemode11枚举说明) | 否 | 是 | 按钮的样式。 默认值：2in1设备为ButtonStyleMode.NORMAL，其他设备为ButtonStyleMode.TEXTUAL。 装饰器类型：@Trace |
+| role | [ButtonRole](Button.md#ZH-CN_TOPIC_0000002497604884__buttonrole12枚举说明) | 否 | 是 | 按钮的角色。 默认值：ButtonRole.NORMAL 装饰器类型：@Trace |
+| defaultFocus | boolean | 否 | 是 | 是否为默认焦点。 true：按钮是默认焦点。 false：按钮不是默认焦点。 默认值：false 装饰器类型：@Trace |
+| enabled | boolean | 否 | 是 | 是否可用。 true：按钮可用。 false：按钮不可用。 默认值：true 装饰器类型：@Trace |
 
-按钮的内容。
-
-装饰器类型：@Trace
-
-action[AdvancedDialogV2ButtonAction](#ZH-CN_TOPIC_0000002497604956__advanceddialogv2buttonaction)否是
-
-按钮的点击事件。
-
-默认无事件。
-
-装饰器类型：@Trace
-
-background[ColorMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)否是
-
-按钮的背景。
-
-默认值跟随buttonStyle。
-
-装饰器类型：@Trace
-
-fontColor[ColorMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)否是
-
-按钮的字体颜色。
-
-默认值跟随buttonStyle。
-
-装饰器类型：@Trace
-
-buttonStyle[ButtonStyleMode](Button.md#ZH-CN_TOPIC_0000002497604884__buttonstylemode11枚举说明)否是
-
-按钮的样式。
-
-默认值：2in1设备为ButtonStyleMode.NORMAL，其他设备为ButtonStyleMode.TEXTUAL。
-
-装饰器类型：@Trace
-
-role[ButtonRole](Button.md#ZH-CN_TOPIC_0000002497604884__buttonrole12枚举说明)否是
-
-按钮的角色。
-
-默认值：ButtonRole.NORMAL
-
-装饰器类型：@Trace
-
-defaultFocusboolean否是
-
-是否为默认焦点。
-
-true：按钮是默认焦点。
-
-false：按钮不是默认焦点。
-
-默认值：false
-
-装饰器类型：@Trace
-
-enabledboolean否是
-
-是否可用。
-
-true：按钮可用。
-
-false：按钮不可用。
-
-默认值：true
-
-装饰器类型：@Trace
 
 buttonStyle和role优先级高于fontColor和background。如果buttonStyle和role设置的是默认值，那么fontColor和background可生效。
 
@@ -498,7 +267,9 @@ AdvancedDialogV2Button的构造函数。
 
 **参数：**
 
-参数名类型必填说明options[AdvancedDialogV2ButtonOptions](#ZH-CN_TOPIC_0000002497604956__advanceddialogv2buttonoptions)是按钮配置信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | AdvancedDialogV2ButtonOptions | 是 | 按钮配置信息。 |
 
 #### AdvancedDialogV2ButtonOptions
 
@@ -508,55 +279,16 @@ AdvancedDialogV2Button的构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明content[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)否否按钮的内容。action[AdvancedDialogV2ButtonAction](#ZH-CN_TOPIC_0000002497604956__advanceddialogv2buttonaction)否是
-
-按钮的点击事件。
-
-默认无事件。
-
-background[ColorMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)否是
-
-按钮的背景。
-
-默认值跟随buttonStyle。
-
-fontColor[ColorMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)否是
-
-按钮的字体颜色。
-
-默认值跟随buttonStyle。
-
-buttonStyle[ButtonStyleMode](Button.md#ZH-CN_TOPIC_0000002497604884__buttonstylemode11枚举说明)否是
-
-按钮的样式。
-
-默认值：2in1设备为ButtonStyleMode.NORMAL，其他设备为ButtonStyleMode.TEXTUAL。
-
-role[ButtonRole](Button.md#ZH-CN_TOPIC_0000002497604884__buttonrole12枚举说明)否是
-
-按钮的角色。
-
-默认值：ButtonRole.NORMAL
-
-defaultFocusboolean否是
-
-是否为默认焦点。
-
-true：按钮是默认焦点。
-
-false：按钮不是默认焦点。
-
-默认值：false
-
-enabledboolean否是
-
-是否可用。
-
-true：按钮可用。
-
-false：按钮不可用。
-
-默认值：true
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| content | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 否 | 否 | 按钮的内容。 |
+| action | AdvancedDialogV2ButtonAction | 否 | 是 | 按钮的点击事件。 默认无事件。 |
+| background | [ColorMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12) | 否 | 是 | 按钮的背景。 默认值跟随buttonStyle。 |
+| fontColor | [ColorMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12) | 否 | 是 | 按钮的字体颜色。 默认值跟随buttonStyle。 |
+| buttonStyle | [ButtonStyleMode](Button.md#ZH-CN_TOPIC_0000002497604884__buttonstylemode11枚举说明) | 否 | 是 | 按钮的样式。 默认值：2in1设备为ButtonStyleMode.NORMAL，其他设备为ButtonStyleMode.TEXTUAL。 |
+| role | [ButtonRole](Button.md#ZH-CN_TOPIC_0000002497604884__buttonrole12枚举说明) | 否 | 是 | 按钮的角色。 默认值：ButtonRole.NORMAL |
+| defaultFocus | boolean | 否 | 是 | 是否为默认焦点。 true：按钮是默认焦点。 false：按钮不是默认焦点。 默认值：false |
+| enabled | boolean | 否 | 是 | 是否可用。 true：按钮可用。 false：按钮不可用。 默认值：true |
 
 #### 示例
 
@@ -622,7 +354,6 @@ struct Index {
     .backgroundImageSize({ width: '100%', height: '100%' })
     .height('100%')
   }
-}
 ```
 
 #### 示例2（纯列表弹出框）
@@ -681,14 +412,12 @@ struct Index {
                   this.dialogBuilder();
                 }
               })
-            })
         }.margin({ bottom: 300 })
       }.align(Alignment.Bottom)
       .width('100%').height('100%')
     }
     .backgroundImageSize({ width: '100%', height: '100%' })
     .height('100%')
-  }
 }
 ```
 
@@ -754,7 +483,6 @@ struct Index {
     .backgroundImageSize({ width: '100%', height: '100%' })
     .height('100%')
   }
-}
 ```
 
 #### 示例4（纯文本弹出框）
@@ -811,7 +539,6 @@ struct Index {
     .backgroundImageSize({ width: '100%', height: '100%' })
     .height('100%')
   }
-}
 ```
 
 #### 示例5（进度加载类弹出框）
@@ -853,7 +580,6 @@ struct Index {
     .backgroundImageSize({ width: '100%', height: '100%' })
     .height('100%')
   }
-}
 ```
 
 #### 示例6（自定义主题风格弹出框）
@@ -868,7 +594,6 @@ class CustomThemeImpl implements CustomTheme {
 
   constructor(colors: CustomColors) {
     this.colors = colors;
-  }
 }
 
 class CustomThemeColors implements CustomColors {
@@ -885,7 +610,6 @@ struct Index {
       LoadingDialogV2({
         content: '文本文本文本文本文本...',
       })
-    }
   }
 
   build() {
@@ -909,7 +633,6 @@ struct Index {
     }
     .backgroundImageSize({ width: '100%', height: '100%' })
     .height('100%')
-  }
 }
 ```
 
@@ -955,7 +678,6 @@ struct Index {
               this.dialogBuilder();
             }
           })
-        })
     }
     .width('100%')
     .height('100%')
@@ -966,8 +688,6 @@ struct Index {
   buildContent(): void {
     Column() {
       Text('内容区')
-    }
-  }
 }
 ```
 
@@ -985,7 +705,6 @@ struct Index {
   @Local popoverOptions: PopoverDialogV2Options = {
     builder: () => {
       this.dialogBuilder();
-    }
   }
 
   @Builder dialogBuilder() {
@@ -1022,6 +741,6 @@ struct Index {
         },
       })
     }
-  }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522245366.webp)

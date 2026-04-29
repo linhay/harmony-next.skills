@@ -26,7 +26,7 @@ libuv.so
 
 #### 接口列表
 
-详见[libuv支持的API文档](http://docs.libuv.org/en/v1.x/api.md)。
+详见[libuv支持的API文档](http://docs.libuv.org/en/v1.x/api.html)。
 
 #### HarmonyOS引入libuv的背景
 
@@ -76,7 +76,6 @@ struct Index {
         }).margin(20)
       }.width('100%')
     }.height('100%')
-  }
 }
 ```
 
@@ -168,7 +167,6 @@ struct Index {
         }).margin(20)
       }.width('100%')
     }.height('100%')
-  }
 }
 ```
 
@@ -263,7 +261,6 @@ struct Index {
       }.width('100%')
     }.height('100%')
   }
-}
 ```
 
 Native侧:
@@ -314,7 +311,6 @@ static napi_value TestClose(napi_env env, napi_callback_info info)
             if (ret == -1){
                 OH_LOG_INFO(LOG_APP, "write failed!");
                 continue;
-            }
         }
     });
     mythread.detach();
@@ -388,7 +384,6 @@ struct Index {
       }.width('100%')
     }.height('100%')
   }
-}
 ```
 
 Native侧:
@@ -440,7 +435,6 @@ static napi_value TestClose(napi_env env, napi_callback_info info)
             if (ret == -1){
                 OH_LOG_INFO(LOG_APP, "write failed!");
                 continue;
-            }
         }
     });
     mythread.detach();
@@ -602,7 +596,26 @@ napi_status napi_release_threadsafe_function(napi_threadsafe_function function,
 
 #### 接口汇总说明
 
-接口类型接口汇总[loop概念及相关接口](#ZH-CN_TOPIC_0000002497606182__libuv中的事件循环)uv_loop_init[loop概念及相关接口](#ZH-CN_TOPIC_0000002497606182__libuv中的事件循环)uv_loop_close[loop概念及相关接口](#ZH-CN_TOPIC_0000002497606182__libuv中的事件循环)uv_default_loop[loop概念及相关接口](#ZH-CN_TOPIC_0000002497606182__libuv中的事件循环)uv_run[loop概念及相关接口](#ZH-CN_TOPIC_0000002497606182__libuv中的事件循环)uv_loop_alive[loop概念及相关接口](#ZH-CN_TOPIC_0000002497606182__libuv中的事件循环)uv_stop[Handle概念及相关接口](#ZH-CN_TOPIC_0000002497606182__libuv中的handles和requests)uv_poll_*[Handle概念及相关接口](#ZH-CN_TOPIC_0000002497606182__libuv中的handles和requests)uv_timer_*[Handle概念及相关接口](#ZH-CN_TOPIC_0000002497606182__libuv中的handles和requests)uv_async_*[Handle概念及相关接口](#ZH-CN_TOPIC_0000002497606182__libuv中的handles和requests)uv_signal_*[Handle概念及相关接口](#ZH-CN_TOPIC_0000002497606182__libuv中的handles和requests)uv_fs_*[Request概念及相关接口](#ZH-CN_TOPIC_0000002497606182__libuv中的handles和requests)uv_random[Request概念及相关接口](#ZH-CN_TOPIC_0000002497606182__libuv中的handles和requests)uv_getaddrinfo[Request概念及相关接口](#ZH-CN_TOPIC_0000002497606182__libuv中的handles和requests)uv_getnameinfo[Request概念及相关接口](#ZH-CN_TOPIC_0000002497606182__libuv中的handles和requests)uv_queue_work[线程间通信原理及相关接口](#ZH-CN_TOPIC_0000002497606182__线程间通信)uv_async_init[线程间通信原理及相关接口](#ZH-CN_TOPIC_0000002497606182__线程间通信)uv_async_send[线程池概念及相关接口](#ZH-CN_TOPIC_0000002497606182__线程池)uv_queue_work
+| 接口类型 | 接口汇总 |
+| --- | --- |
+| loop概念及相关接口 | uv_loop_init |
+| loop概念及相关接口 | uv_loop_close |
+| loop概念及相关接口 | uv_default_loop |
+| loop概念及相关接口 | uv_run |
+| loop概念及相关接口 | uv_loop_alive |
+| loop概念及相关接口 | uv_stop |
+| Handle概念及相关接口 | uv_poll_* |
+| Handle概念及相关接口 | uv_timer_* |
+| Handle概念及相关接口 | uv_async_* |
+| Handle概念及相关接口 | uv_signal_* |
+| Handle概念及相关接口 | uv_fs_* |
+| Request概念及相关接口 | uv_random |
+| Request概念及相关接口 | uv_getaddrinfo |
+| Request概念及相关接口 | uv_getnameinfo |
+| Request概念及相关接口 | uv_queue_work |
+| 线程间通信原理及相关接口 | uv_async_init |
+| 线程间通信原理及相关接口 | uv_async_send |
+| 线程池概念及相关接口 | uv_queue_work |
 
 #### libuv单线程约束
 
@@ -642,7 +655,6 @@ struct Index {
       }.width('100%')
     }.height('100%')
   }
-}
 ```
 
 Native侧：
@@ -677,7 +689,6 @@ int stop_loop(uv_loop_t* loop)
     while(true) {
         if (uv_run(loop, UV_RUN_DEFAULT) == 0) {
             break;
-        }
     }
 
     // 最后检查loop状态
@@ -796,7 +807,7 @@ export const testTimerAsyncSend:() => number;
 
 开发者使用napi_get_uv_event_loop接口从env获取到的loop一般是系统创建的JS主线程的事件循环，因此应当避免在子线程中调用非线程安全函数。
 
-如因业务需要，必须在非loop线程上调用非线程安全函数，请使用线程安全函数uv_async_send将任务提交到loop线程。即定义一个uv_async_t*类型的句柄，初始化该句柄的时候，将需要在子线程调用的非线程安全函数在对应的async_cb中调用，然后在非loop线程上调用uv_async_send函数，并回到loop线程上执行async_cb。请参考[libuv中的handles和requests](#ZH-CN_TOPIC_0000002497606182__libuv中的handles和requests)章节关于**正确使用timer示例**的场景二内容。
+如因业务需要，必须在非loop线程上调用非线程安全函数，请使用线程安全函数uv_async_send将任务提交到loop线程。即定义一个uv_async_t*类型的句柄，初始化该句柄的时候，将需要在子线程调用的非线程安全函数在对应的async_cb中调用，然后在非loop线程上调用uv_async_send函数，并回到loop线程上执行async_cb。请参考[libuv中的handles和requests](#ZH-CN_TOPIC_0000002553202593__libuv中的handles和requests)章节关于正确使用timer示例的场景二内容。
 
 #### 线程安全函数
 
@@ -920,6 +931,7 @@ close_cb：处理该句柄的函数，用来进行内存管理等操作。
 
 **Tips**：在[libuv官方文档](http://libuv.org/)中，有个经验法则需要在此提示一下。原文翻译：如果 uv_foo_t 类型的句柄具有 uv_foo_start() 函数，则从调用该函数的那一刻起，它就处于活动状态。 同样，uv_foo_stop()再次停用句柄。
 
+
 1.
 
 所有的handle关闭前必须要调用uv_close，所有的内存操作都要在uv_close的close_cb中执行。
@@ -945,6 +957,7 @@ uv_queue_work(loop, work, [](uv_work_t* req) {
 使用libuv timer需要遵守如下约定：
 
 1. 请不要在多个线程中使用libuv的接口（uv_timer_start、uv_timer_stop和uv_timer_again）同时操作同一个loop的timer heap，否则将导致崩溃，如果想要使用libuv的接口操作定时器，请**保持在与当前env绑定的loop所在线程上操作**；
+
 1. 如因业务需求往指定线程抛定时器，请使用uv_async_send线程安全函数实现。
 
 **1. 错误使用timer示例**
@@ -982,7 +995,6 @@ struct Index {
       }.width('100%')
     }.height('100%')
   }
-}
 ```
 
 Native C++侧：
@@ -1095,7 +1107,6 @@ struct Index {
         }).margin(20)
       }.width('100%')
     }.height('100%')
-  }
 }
 ```
 
@@ -1233,7 +1244,6 @@ void async_handler(uv_async_t* handle)
             delete (uv_async_t*)handle;
         });
     }
-}
 
 int main()
 {
@@ -1334,7 +1344,7 @@ uv_queue_work(loop, work, [](uv_work_t* work) {
 
 另外，uv_queue_work仅限于在loop线程中调用，这样不会有多线程安全问题。**请不要把uv_queue_work作为线程间通信的手段，即A线程获取到B线程的loop，并通过uv_queue_work抛异步任务的方式，把execute置为空任务，而把complete回调放在B线程中执行。** 这种方式不仅低效，而且还增加了发生故障时定位问题的难度。为了避免低效的任务提交，请使用[napi_threadsafe_function相关函数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-thread-safety)。
 
-#### HarmonyOS中libuv的使用现状
+**OpenHarmony中libuv的使用现状**
 
 当前HarmonyOS系统中涉及到libuv的线程主要有主线程、JS Worker线程、Taskpool中的TaskWorker线程以及IPC线程。除了主线程采用了eventhandler作为主循环，其他线程都是使用libuv中的UV_RUN_DEFAULT运行模式作为当前线程的事件主循环来执行任务。在主线程中，eventhandler通过fd驱动的方式来触发任务的执行，eventhandler监听了uv_loop中的backend_fd。当loop中有fd事件触发的时候，eventhandler会执行一次uv_run来执行一遍libuv中的任务。
 

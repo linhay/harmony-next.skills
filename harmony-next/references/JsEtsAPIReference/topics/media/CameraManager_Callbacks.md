@@ -12,10 +12,12 @@ typedef struct CameraManager_Callbacks {...} CameraManager_Callbacks
 
 **相关模块：**[OH_Camera](OH_Camera.md)
 
-**所在头文件：**[camera_manager.h](../../capi/headers/camera_manager.h.md)
+所在头文件： [camera_manager.h](camera_manager.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述[OH_CameraManager_StatusCallback](../../capi/headers/camera_manager.h.md#ZH-CN_TOPIC_0000002529445763__oh_cameramanager_statuscallback) onCameraStatus相机状态更改事件。
+| 名称 | 描述 |
+| --- | --- |
+| [OH_CameraManager_StatusCallback](camera_manager.h.md#ZH-CN_TOPIC_0000002529445763__oh_cameramanager_statuscallback) onCameraStatus | 相机状态更改事件。 |

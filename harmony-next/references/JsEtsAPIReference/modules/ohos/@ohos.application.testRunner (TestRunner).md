@@ -36,7 +36,6 @@ export default class UserTestRunner implements TestRunner {
 
   onRun() {
   }
-}
 ```
 
 #### TestRunner.onRun
@@ -61,5 +60,4 @@ export default class UserTestRunner implements TestRunner {
   onRun() {
     console.info('Trigger onRun');
   }
-}
 ```

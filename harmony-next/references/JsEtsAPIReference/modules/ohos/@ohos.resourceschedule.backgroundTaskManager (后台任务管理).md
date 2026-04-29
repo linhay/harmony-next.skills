@@ -22,17 +22,30 @@ requestSuspendDelay(reason: string, callback: Callback<void>): DelaySuspendInfo
 
 **参数**：
 
-参数名类型必填说明reasonstring是申请短时任务的原因。callbackCallback<void>是短时任务即将超时的回调函数，一般在超时前6秒，通过此回调通知应用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| reason | string | 是 | 申请短时任务的原因。 |
+| callback | Callback<void> | 是 | 短时任务即将超时的回调函数，一般在超时前6秒，通过此回调通知应用。 |
 
 **返回值**：
 
-类型说明[DelaySuspendInfo](#ZH-CN_TOPIC_0000002529285231__delaysuspendinfo)返回短时任务信息。
+| 类型 | 说明 |
+| --- | --- |
+| DelaySuspendInfo | 返回短时任务信息。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[backgroundTaskManager错误码]([backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.9800001Memory operation failed.9800002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9800003Internal transaction failed.9800004System service operation failed.9900001Caller information verification failed for a transient task.9900002Transient task verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 9800001 | Memory operation failed. |
+| 9800002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9800003 | Internal transaction failed. |
+| 9800004 | System service operation failed. |
+| 9900001 | Caller information verification failed for a transient task. |
+| 9900002 | Transient task verification failed. |
 
 **示例**：
 
@@ -66,13 +79,24 @@ getRemainingDelayTime(requestId: number, callback: AsyncCallback<number>): void
 
 **参数**：
 
-参数名类型必填说明requestIdnumber是短时任务的请求ID。通过申请短时任务[requestSuspendDelay](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerrequestsuspenddelay)接口获取。callbackAsyncCallback<number>是回调函数，返回本次短时任务的剩余时间，单位：ms。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| requestId | number | 是 | 短时任务的请求ID。通过申请短时任务requestSuspendDelay接口获取。 |
+| callback | AsyncCallback<number> | 是 | 回调函数，返回本次短时任务的剩余时间，单位：ms。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed.9800001Memory operation failed.9800002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9800003Internal transaction failed.9800004System service operation failed.9900001Caller information verification failed for a transient task.9900002Transient task verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
+| 9800001 | Memory operation failed. |
+| 9800002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9800003 | Internal transaction failed. |
+| 9800004 | System service operation failed. |
+| 9900001 | Caller information verification failed for a transient task. |
+| 9900002 | Transient task verification failed. |
 
 **示例**：
 
@@ -100,17 +124,29 @@ getRemainingDelayTime(requestId: number): Promise<number>
 
 **参数**：
 
-参数名类型必填说明requestIdnumber是短时任务的请求ID。通过申请短时任务[requestSuspendDelay](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerrequestsuspenddelay)接口获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| requestId | number | 是 | 短时任务的请求ID。通过申请短时任务requestSuspendDelay接口获取。 |
 
 **返回值**：
 
-类型说明Promise<number>Promise对象，返回本次短时任务的剩余时间，单位：ms。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回本次短时任务的剩余时间，单位：ms。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed.9800001Memory operation failed.9800002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9800003Internal transaction failed.9800004System service operation failed.9900001Caller information verification failed for a transient task.9900002Transient task verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
+| 9800001 | Memory operation failed. |
+| 9800002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9800003 | Internal transaction failed. |
+| 9800004 | System service operation failed. |
+| 9900001 | Caller information verification failed for a transient task. |
+| 9900002 | Transient task verification failed. |
 
 **示例**：
 
@@ -136,13 +172,23 @@ cancelSuspendDelay(requestId: number): void
 
 **参数**：
 
-参数名类型必填说明requestIdnumber是短时任务的请求ID。通过申请短时任务[requestSuspendDelay](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerrequestsuspenddelay)接口获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| requestId | number | 是 | 短时任务的请求ID。通过申请短时任务requestSuspendDelay接口获取。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed.9800001Memory operation failed.9800002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9800003Internal transaction failed.9800004System service operation failed.9900001Caller information verification failed for a transient task.9900002Transient task verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
+| 9800001 | Memory operation failed. |
+| 9800002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9800003 | Internal transaction failed. |
+| 9800004 | System service operation failed. |
+| 9900001 | Caller information verification failed for a transient task. |
+| 9900002 | Transient task verification failed. |
 
 **示例**：
 
@@ -168,13 +214,19 @@ getTransientTaskInfo(): Promise<TransientTaskInfo>
 
 **返回值**：
 
-类型说明Promise<[TransientTaskInfo](#ZH-CN_TOPIC_0000002529285231__transienttaskinfo20)>Promise对象，返回所有短时任务信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<TransientTaskInfo> | Promise对象，返回所有短时任务信息。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息9900001Caller information verification failed for a transient task.9900003Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9900004System service operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9900001 | Caller information verification failed for a transient task. |
+| 9900003 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9900004 | System service operation failed. |
 
 **示例**：
 
@@ -197,7 +249,7 @@ try {
 
 startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: WantAgent, callback: AsyncCallback<void>): void
 
-申请长时任务，支持申请一种类型，使用callback异步回调。长时任务申请成功后，会有通知栏消息，没有提示音。一个UIAbility（FA模型则为ServiceAbility）同一时刻仅支持通过本接口支持申请一个长时任务，可以通过API version 21新增接口[startBackgroundRunning](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstartbackgroundrunning21)申请多个长时任务。
+申请长时任务，支持申请一种类型，使用callback异步回调。长时任务申请成功后，会有通知栏消息，没有提示音。一个UIAbility（FA模型则为ServiceAbility）同一时刻仅支持通过本接口支持申请一个长时任务，可以通过API version 21新增接口[startBackgroundRunning](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstartbackgroundrunning21)申请多个长时任务。
 
 **需要权限:** ohos.permission.KEEP_BACKGROUND_RUNNING
 
@@ -207,21 +259,29 @@ startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: Want
 
 **参数**：
 
-参数名类型必填说明contextContext是
-
-应用运行的上下文。
-
-FA模型的应用Context定义见[Context](../../topics/graphics/Context (FA模型的上下文基类).md)。
-
-Stage模型的应用Context定义见[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)。
-
-bgMode[BackgroundMode](#ZH-CN_TOPIC_0000002529285231__backgroundmode)是长时任务类型。wantAgent[WantAgent](@ohos.app.ability.wantAgent (WantAgent模块).md)是通知参数，用于指定点击长时任务通知后跳转的界面。callbackAsyncCallback<void>是回调函数，申请长时任务成功时，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
+| bgMode | BackgroundMode | 是 | 长时任务类型。 |
+| wantAgent | WantAgent | 是 | 通知参数，用于指定点击长时任务通知后跳转的界面。 |
+| callback | AsyncCallback<void> | 是 | 回调函数，申请长时任务成功时，err为undefined，否则为错误对象。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息201Permission denied.202Not System App.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed.9800001Memory operation failed.9800002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9800003Internal transaction failed.9800004System service operation failed.9800005Continuous task verification failed.9800006Notification verification failed for a continuous task.9800007Continuous task storage failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 202 | Not System App. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
+| 9800001 | Memory operation failed. |
+| 9800002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9800003 | Internal transaction failed. |
+| 9800004 | System service operation failed. |
+| 9800005 | Continuous task verification failed. |
+| 9800006 | Notification verification failed for a continuous task. |
+| 9800007 | Continuous task storage failed. |
 
 **示例**：
 
@@ -237,7 +297,6 @@ function callback(error: BusinessError, data: void) {
         console.error(`Operation startBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
     } else {
         console.info("Operation startBackgroundRunning succeeded");
-    }
 }
 
 export default class EntryAbility extends UIAbility {
@@ -272,7 +331,6 @@ export default class EntryAbility extends UIAbility {
         } catch (error) {
             console.error(`Operation getWantAgent failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
         }
-    }
 };
 ```
 
@@ -280,7 +338,7 @@ export default class EntryAbility extends UIAbility {
 
 startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: WantAgent): Promise<void>
 
-申请长时任务，支持申请一种类型，使用Promise异步回调。长时任务申请成功后，会有通知栏消息，没有提示音。一个UIAbility（FA模型则为ServiceAbility）同一时刻仅支持通过本接口支持申请一个长时任务，可以通过API version 21新增接口[startBackgroundRunning](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstartbackgroundrunning21)申请多个长时任务。
+申请长时任务，支持申请一种类型，使用Promise异步回调。长时任务申请成功后，会有通知栏消息，没有提示音。一个UIAbility（FA模型则为ServiceAbility）同一时刻仅支持通过本接口支持申请一个长时任务，可以通过API version 21新增接口[startBackgroundRunning](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstartbackgroundrunning21)申请多个长时任务。
 
 **需要权限:** ohos.permission.KEEP_BACKGROUND_RUNNING
 
@@ -290,25 +348,34 @@ startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: Want
 
 **参数**：
 
-参数名类型必填说明contextContext是
-
-应用运行的上下文。
-
-FA模型的应用Context定义见[Context](../../topics/graphics/Context (FA模型的上下文基类).md)。
-
-Stage模型的应用Context定义见[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)。
-
-bgMode[BackgroundMode](#ZH-CN_TOPIC_0000002529285231__backgroundmode)是长时任务类型。wantAgent[WantAgent](@ohos.app.ability.wantAgent (WantAgent模块).md)是通知参数，用于指定点击长时任务通知后跳转的界面。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
+| bgMode | BackgroundMode | 是 | 长时任务类型。 |
+| wantAgent | WantAgent | 是 | 通知参数，用于指定点击长时任务通知后跳转的界面。 |
 
 **返回值**：
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息201Permission denied.202Not System App.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed.9800001Memory operation failed.9800002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9800003Internal transaction failed.9800004System service operation failed.9800005Continuous task verification failed.9800006Notification verification failed for a continuous task.9800007Continuous task storage failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 202 | Not System App. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
+| 9800001 | Memory operation failed. |
+| 9800002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9800003 | Internal transaction failed. |
+| 9800004 | System service operation failed. |
+| 9800005 | Continuous task verification failed. |
+| 9800006 | Notification verification failed for a continuous task. |
+| 9800007 | Continuous task storage failed. |
 
 **示例**：
 
@@ -355,7 +422,6 @@ export default class EntryAbility extends UIAbility {
         } catch (error) {
             console.error(`Operation getWantAgent failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
         }
-    }
 };
 ```
 
@@ -363,7 +429,7 @@ export default class EntryAbility extends UIAbility {
 
 stopBackgroundRunning(context: Context, callback: AsyncCallback<void>): void
 
-取消当前UIAbility（FA模型则为ServiceAbility）下所有长时任务，使用callback异步回调。也可以通过[stopBackgroundRunning](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstopbackgroundrunning21)接口取消指定Id的长时任务。
+取消当前UIAbility（FA模型则为ServiceAbility）下所有长时任务，使用callback异步回调。也可以通过[stopBackgroundRunning](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstopbackgroundrunning21)接口取消指定Id的长时任务。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -371,21 +437,25 @@ stopBackgroundRunning(context: Context, callback: AsyncCallback<void>): void
 
 **参数**：
 
-参数名类型必填说明contextContext是
-
-应用运行的上下文。
-
-FA模型的应用Context定义见[Context](../../topics/graphics/Context (FA模型的上下文基类).md)。
-
-Stage模型的应用Context定义见[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
 callbackAsyncCallback<void>是回调函数，取消长时任务成功时，err为undefined，否则为错误对象。
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.9800001Memory operation failed.9800002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9800003Internal transaction failed.9800004System service operation failed.9800005Continuous task verification failed.9800006Notification verification failed for a continuous task.9800007Continuous task storage failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. |
+| 9800001 | Memory operation failed. |
+| 9800002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9800003 | Internal transaction failed. |
+| 9800004 | System service operation failed. |
+| 9800005 | Continuous task verification failed. |
+| 9800006 | Notification verification failed for a continuous task. |
+| 9800007 | Continuous task storage failed. |
 
 **示例**：
 
@@ -400,7 +470,6 @@ function callback(error: BusinessError, data: void) {
     } else {
         console.info("Operation stopBackgroundRunning succeeded");
     }
-}
 
 export default class EntryAbility extends UIAbility {
     onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
@@ -409,7 +478,6 @@ export default class EntryAbility extends UIAbility {
         } catch (error) {
             console.error(`Operation stopBackgroundRunning failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
         }
-    }
 };
 ```
 
@@ -417,7 +485,7 @@ export default class EntryAbility extends UIAbility {
 
 stopBackgroundRunning(context: Context): Promise<void>
 
-取消当前UIAbility（FA模型则为ServiceAbility）下所有长时任务，使用Promise异步回调。也可以通过[stopBackgroundRunning](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstopbackgroundrunning21)接口取消指定Id的长时任务。
+取消当前UIAbility（FA模型则为ServiceAbility）下所有长时任务，使用Promise异步回调。也可以通过[stopBackgroundRunning](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstopbackgroundrunning21)接口取消指定Id的长时任务。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -425,23 +493,30 @@ stopBackgroundRunning(context: Context): Promise<void>
 
 **参数**：
 
-参数名类型必填说明contextContext是
-
-应用运行的上下文。
-
-FA模型的应用Context定义见[Context](../../topics/graphics/Context (FA模型的上下文基类).md)。
-
-Stage模型的应用Context定义见[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
 
 **返回值**：
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.9800001Memory operation failed.9800002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9800003Internal transaction failed.9800004System service operation failed.9800005Continuous task verification failed.9800006Notification verification failed for a continuous task.9800007Continuous task storage failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. |
+| 9800001 | Memory operation failed. |
+| 9800002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9800003 | Internal transaction failed. |
+| 9800004 | System service operation failed. |
+| 9800005 | Continuous task verification failed. |
+| 9800006 | Notification verification failed for a continuous task. |
+| 9800007 | Continuous task storage failed. |
 
 **示例**：
 
@@ -461,7 +536,6 @@ export default class EntryAbility extends UIAbility {
         } catch (error) {
             console.error(`Operation stopBackgroundRunning failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
         }
-    }
 };
 ```
 
@@ -469,7 +543,7 @@ export default class EntryAbility extends UIAbility {
 
 startBackgroundRunning(context: Context, bgModes: string[], wantAgent: WantAgent): Promise<ContinuousTaskNotification>
 
-申请长时任务，支持申请多种类型，使用Promise异步回调。长时任务申请成功后，会有通知栏消息，没有提示音。一个UIAbility（FA模型则为ServiceAbility）同一时刻仅支持通过本接口支持申请一个长时任务，可以通过API version 21新增接口[startBackgroundRunning](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstartbackgroundrunning21)申请多个长时任务。
+申请长时任务，支持申请多种类型，使用Promise异步回调。长时任务申请成功后，会有通知栏消息，没有提示音。一个UIAbility（FA模型则为ServiceAbility）同一时刻仅支持通过本接口支持申请一个长时任务，可以通过API version 21新增接口[startBackgroundRunning](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstartbackgroundrunning21)申请多个长时任务。
 
 **需要权限:** ohos.permission.KEEP_BACKGROUND_RUNNING
 
@@ -479,23 +553,33 @@ startBackgroundRunning(context: Context, bgModes: string[], wantAgent: WantAgent
 
 **参数**：
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是应用运行的上下文。bgModesstring[]是
-
-长时任务类型，取值范围请参考长时任务类型中的[配置项](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/continuous-task#使用场景)。
-
-**说明：** 支持传入一个或多个类型。
-
-wantAgent[WantAgent](@ohos.app.ability.wantAgent (WantAgent模块).md)是通知参数，用于指定点击长时任务通知后跳转的界面。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 应用运行的上下文。 |
+| bgModes | string[] | 是 | 长时任务类型，取值范围请参考长时任务类型中的配置项。 说明： 支持传入一个或多个类型。 |
+| wantAgent | WantAgent | 是 | 通知参数，用于指定点击长时任务通知后跳转的界面。 |
 
 **返回值**：
 
-类型说明Promise<[ContinuousTaskNotification](#ZH-CN_TOPIC_0000002529285231__continuoustasknotification12)>Promise对象，返回[ContinuousTaskNotification](#ZH-CN_TOPIC_0000002529285231__continuoustasknotification12)类型对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<ContinuousTaskNotification> | Promise对象，返回ContinuousTaskNotification类型对象。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed.9800001Memory operation failed.9800002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9800003Internal transaction failed.9800004System service operation failed.9800005Continuous task verification failed.9800006Notification verification failed for a continuous task.9800007Continuous task storage failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
+| 9800001 | Memory operation failed. |
+| 9800002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9800003 | Internal transaction failed. |
+| 9800004 | System service operation failed. |
+| 9800005 | Continuous task verification failed. |
+| 9800006 | Notification verification failed for a continuous task. |
+| 9800007 | Continuous task storage failed. |
 
 **示例**：
 
@@ -548,7 +632,6 @@ export default class EntryAbility extends UIAbility {
     } catch (error) {
       console.error(`Operation getWantAgent failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
     }
-  }
 
   // 应用更新进度
   updateProcess(process: number) {
@@ -585,7 +668,6 @@ export default class EntryAbility extends UIAbility {
     } catch (err) {
       console.error(`publish fail: ${JSON.stringify(err)}`);
     }
-  }
 };
 ```
 
@@ -595,15 +677,15 @@ updateBackgroundRunning(context: Context, bgModes: string[]): Promise<Continuous
 
 更新长时任务类型，使用Promise异步回调。长时任务更新成功后，会有通知栏消息，没有提示音。
 
-更新长时任务前，可以通过[getAllContinuousTasks](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagergetallcontinuoustasks20)接口获取当前所有长时任务信息，如果当前没有已经存在的长时任务，会更新失败。
+更新长时任务前，可以通过[getAllContinuousTasks](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagergetallcontinuoustasks20)接口获取当前所有长时任务信息，如果当前没有已经存在的长时任务，会更新失败。
 
 该接口仅支持更新如下三个接口申请的长时任务：
 
-[startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: WantAgent, callback: AsyncCallback<void>): void](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstartbackgroundrunning)
+[startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: WantAgent, callback: AsyncCallback<void>): void](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstartbackgroundrunning)
 
-[startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: WantAgent): Promise<void>](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstartbackgroundrunning-1)
+[startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: WantAgent): Promise<void>](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstartbackgroundrunning-1)
 
-[startBackgroundRunning(context: Context, bgModes: string[], wantAgent: WantAgent): Promise<ContinuousTaskNotification>](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstartbackgroundrunning12)
+[startBackgroundRunning(context: Context, bgModes: string[], wantAgent: WantAgent): Promise<ContinuousTaskNotification>](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstartbackgroundrunning12)
 
 **需要权限:** ohos.permission.KEEP_BACKGROUND_RUNNING
 
@@ -613,21 +695,32 @@ updateBackgroundRunning(context: Context, bgModes: string[]): Promise<Continuous
 
 **参数**：
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是应用运行的上下文。bgModesstring[]是
-
-更新后的长时任务类型，取值范围请参考长时任务类型中的[配置项](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/continuous-task#使用场景)。
-
-**说明：** 支持传入一个或多个类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 应用运行的上下文。 |
+| bgModes | string[] | 是 | 更新后的长时任务类型，取值范围请参考长时任务类型中的配置项。 说明： 支持传入一个或多个类型。 |
 
 **返回值**：
 
-类型说明Promise<[ContinuousTaskNotification](#ZH-CN_TOPIC_0000002529285231__continuoustasknotification12)>Promise对象，返回[ContinuousTaskNotification](#ZH-CN_TOPIC_0000002529285231__continuoustasknotification12)类型对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<ContinuousTaskNotification> | Promise对象，返回ContinuousTaskNotification类型对象。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed.9800001Memory operation failed.9800002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9800003Internal transaction failed.9800004System service operation failed.9800005Continuous task verification failed.9800006Notification verification failed for a continuous task.9800007Continuous task storage failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
+| 9800001 | Memory operation failed. |
+| 9800002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9800003 | Internal transaction failed. |
+| 9800004 | System service operation failed. |
+| 9800005 | Continuous task verification failed. |
+| 9800006 | Notification verification failed for a continuous task. |
+| 9800007 | Continuous task storage failed. |
 
 **示例**：
 
@@ -649,7 +742,6 @@ export default class EntryAbility extends UIAbility {
         } catch (error) {
             console.error(`Operation updateBackgroundRunning failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
         }
-    }
 };
 ```
 
@@ -665,17 +757,26 @@ getAllContinuousTasks(context: Context): Promise<ContinuousTaskInfo[]>
 
 **参数**：
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是应用运行的上下文。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 应用运行的上下文。 |
 
 **返回值**：
 
-类型说明Promise<[ContinuousTaskInfo](#ZH-CN_TOPIC_0000002529285231__continuoustaskinfo20)[]>Promise对象，返回所有长时任务信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<ContinuousTaskInfo[]> | Promise对象，返回所有长时任务信息。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息201Permission denied.9800002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9800004System service operation failed.9800005Continuous task verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 9800002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9800004 | System service operation failed. |
+| 9800005 | Continuous task verification failed. |
 
 **示例**：
 
@@ -696,7 +797,6 @@ export default class EntryAbility extends UIAbility {
         } catch (error) {
             console.error(`Operation getAllContinuousTasks failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
         }
-    }
 };
 ```
 
@@ -712,17 +812,27 @@ getAllContinuousTasks(context: Context, includeSuspended: boolean): Promise<Cont
 
 **参数**：
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是应用运行的上下文。includeSuspendedboolean是是否获取暂停的长时任务信息， true表示获取， false表示不获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 应用运行的上下文。 |
+| includeSuspended | boolean | 是 | 是否获取暂停的长时任务信息， true表示获取， false表示不获取。 |
 
 **返回值**：
 
-类型说明Promise<[ContinuousTaskInfo](#ZH-CN_TOPIC_0000002529285231__continuoustaskinfo20)[]>Promise对象，返回所有长时任务信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<ContinuousTaskInfo[]> | Promise对象，返回所有长时任务信息。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息201Permission denied.9800002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9800004System service operation failed.9800005Continuous task verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 9800002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9800004 | System service operation failed. |
+| 9800005 | Continuous task verification failed. |
 
 **示例**：
 
@@ -743,7 +853,6 @@ export default class EntryAbility extends UIAbility {
         } catch (error) {
             console.error(`Operation getAllContinuousTasks failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
         }
-    }
 };
 ```
 
@@ -759,13 +868,19 @@ on(type: 'continuousTaskCancel', callback: Callback<ContinuousTaskCancelInfo>): 
 
 **参数**：
 
-参数名类型必填说明typestring是事件回调类型，固定取值为'continuousTaskCancel'，表示长时任务取消。callbackCallback<[ContinuousTaskCancelInfo](#ZH-CN_TOPIC_0000002529285231__continuoustaskcancelinfo15)>是回调函数，返回长时任务取消原因等信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，固定取值为'continuousTaskCancel'，表示长时任务取消。 |
+| callback | Callback<ContinuousTaskCancelInfo> | 是 | 回调函数，返回长时任务取消原因等信息。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible cause: 1. Callback parameter error; 2. Register a exist callback type; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible cause: 1. Callback parameter error; 2. Register a exist callback type; 3. Parameter verification failed. |
 
 **示例**：
 
@@ -786,7 +901,6 @@ export default class EntryAbility extends UIAbility {
         } catch (error) {
             console.error(`Operation onContinuousTaskCancel failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
         }
-    }
 };
 ```
 
@@ -802,13 +916,19 @@ off(type: 'continuousTaskCancel', callback?: Callback<ContinuousTaskCancelInfo>)
 
 **参数**：
 
-参数名类型必填说明typestring是取消长时任务，固定取值为'continuousTaskCancel'。callbackCallback<[ContinuousTaskCancelInfo](#ZH-CN_TOPIC_0000002529285231__continuoustaskcancelinfo15)>否需要取消监听的回调函数，未传入则取消所有注册回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消长时任务，固定取值为'continuousTaskCancel'。 |
+| callback | Callback<ContinuousTaskCancelInfo> | 否 | 需要取消监听的回调函数，未传入则取消所有注册回调。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible cause: 1. Callback parameter error; 2. Unregister type has not register; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible cause: 1. Callback parameter error; 2. Unregister type has not register; 3. Parameter verification failed. |
 
 **示例**：
 
@@ -829,7 +949,6 @@ export default class EntryAbility extends UIAbility {
         } catch (error) {
             console.error(`Operation onContinuousTaskCancel failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
         }
-    }
 };
 ```
 
@@ -847,13 +966,19 @@ on(type: 'continuousTaskSuspend', callback: Callback<ContinuousTaskSuspendInfo>)
 
 **参数**：
 
-参数名类型必填说明typestring是事件回调类型，固定取值为'continuousTaskSuspend'，表示长时任务暂停。callbackCallback<[ContinuousTaskSuspendInfo](#ZH-CN_TOPIC_0000002529285231__continuoustasksuspendinfo20)>是回调函数，返回长时任务暂停原因等信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，固定取值为'continuousTaskSuspend'，表示长时任务暂停。 |
+| callback | Callback<ContinuousTaskSuspendInfo> | 是 | 回调函数，返回长时任务暂停原因等信息。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息201Permission denied.9800005Continuous task verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 9800005 | Continuous task verification failed. |
 
 **示例**：
 
@@ -875,7 +1000,6 @@ export default class EntryAbility extends UIAbility {
         } catch (error) {
             console.error(`Operation onContinuousTaskSuspend failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
         }
-    }
 };
 ```
 
@@ -891,13 +1015,19 @@ off(type: 'continuousTaskSuspend', callback?: Callback<ContinuousTaskSuspendInfo
 
 **参数**：
 
-参数名类型必填说明typestring是事件回调类型，固定取值为'continuousTaskSuspend'，表示长时任务暂停。callbackCallback<[ContinuousTaskSuspendInfo](#ZH-CN_TOPIC_0000002529285231__continuoustasksuspendinfo20)>否需要取消监听的回调函数，未传入则取消所有注册的暂停回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，固定取值为'continuousTaskSuspend'，表示长时任务暂停。 |
+| callback | Callback<ContinuousTaskSuspendInfo> | 否 | 需要取消监听的回调函数，未传入则取消所有注册的暂停回调。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息201Permission denied.9800005Continuous task verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 9800005 | Continuous task verification failed. |
 
 **示例**：
 
@@ -919,7 +1049,6 @@ export default class EntryAbility extends UIAbility {
         } catch (error) {
             console.error(`Operation offContinuousTaskSuspend failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
         }
-    }
 };
 ```
 
@@ -935,13 +1064,19 @@ on(type: 'continuousTaskActive', callback: Callback<ContinuousTaskActiveInfo>): 
 
 **参数**：
 
-参数名类型必填说明typestring是事件回调类型，固定取值为'continuousTaskActive'，表示长时任务激活。callbackCallback<[ContinuousTaskActiveInfo](#ZH-CN_TOPIC_0000002529285231__continuoustaskactiveinfo20)>是回调函数，返回长时任务激活相关信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，固定取值为'continuousTaskActive'，表示长时任务激活。 |
+| callback | Callback<ContinuousTaskActiveInfo> | 是 | 回调函数，返回长时任务激活相关信息。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息201Permission denied.9800005Continuous task verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 9800005 | Continuous task verification failed. |
 
 **示例**：
 
@@ -961,7 +1096,6 @@ export default class EntryAbility extends UIAbility {
         } catch (error) {
             console.error(`Operation onContinuousTaskActive failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
         }
-    }
 };
 ```
 
@@ -977,13 +1111,19 @@ off(type: 'continuousTaskActive', callback?: Callback<ContinuousTaskActiveInfo>)
 
 **参数**：
 
-参数名类型必填说明typestring是事件回调类型，固定取值为'continuousTaskActive'，表示长时任务激活。callbackCallback<[ContinuousTaskActiveInfo](#ZH-CN_TOPIC_0000002529285231__continuoustaskactiveinfo20)>否需要取消监听的回调函数，未传入则取消所有注册的激活回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，固定取值为'continuousTaskActive'，表示长时任务激活。 |
+| callback | Callback<ContinuousTaskActiveInfo> | 否 | 需要取消监听的回调函数，未传入则取消所有注册的激活回调。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息201Permission denied.9800005Continuous task verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 9800005 | Continuous task verification failed. |
 
 **示例**：
 
@@ -1003,7 +1143,6 @@ export default class EntryAbility extends UIAbility {
         } catch (error) {
             console.error(`Operation offContinuousTaskActive failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
         }
-    }
 };
 ```
 
@@ -1011,7 +1150,7 @@ export default class EntryAbility extends UIAbility {
 
 startBackgroundRunning(context: Context, request: ContinuousTaskRequest): Promise<ContinuousTaskNotification>
 
-申请长时任务，一个UIAbility（FA模型则为ServiceAbility）下支持通过本接口申请多个长时任务，使用Promise异步回调。通过本接口申请长时任务时，支持与已存在的长时任务合并通知，具体请参考[ContinuousTaskRequest](#ZH-CN_TOPIC_0000002529285231__continuoustaskrequest21)。
+申请长时任务，一个UIAbility（FA模型则为ServiceAbility）下支持通过本接口申请多个长时任务，使用Promise异步回调。通过本接口申请长时任务时，支持与已存在的长时任务合并通知，具体请参考[ContinuousTaskRequest](#ZH-CN_TOPIC_0000002553361127__continuoustaskrequest21)。
 
 同一时间最多可存在10个长时任务，长时任务申请成功后，会有通知栏消息，没有提示音。
 
@@ -1023,17 +1162,29 @@ startBackgroundRunning(context: Context, request: ContinuousTaskRequest): Promis
 
 **参数**：
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是应用运行的上下文。request[ContinuousTaskRequest](#ZH-CN_TOPIC_0000002529285231__continuoustaskrequest21)是长时任务请求信息，包括长时任务主类型、子类型等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 应用运行的上下文。 |
+| request | ContinuousTaskRequest | 是 | 长时任务请求信息，包括长时任务主类型、子类型等。 |
 
 **返回值**：
 
-类型说明Promise<[ContinuousTaskNotification](#ZH-CN_TOPIC_0000002529285231__continuoustasknotification12)>Promise对象，返回长时任务通知信息，包括长时任务ID等。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<ContinuousTaskNotification> | Promise对象，返回长时任务通知信息，包括长时任务ID等。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息201Permission denied.9800001Memory operation failed.9800004System service operation failed.9800005Continuous task verification failed.9800006Notification verification failed for a continuous task.9800007Continuous task storage failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 9800001 | Memory operation failed. |
+| 9800004 | System service operation failed. |
+| 9800005 | Continuous task verification failed. |
+| 9800006 | Notification verification failed for a continuous task. |
+| 9800007 | Continuous task storage failed. |
 
 **示例**：
 
@@ -1091,7 +1242,6 @@ export default class EntryAbility extends UIAbility {
     } catch (error) {
       console.error(`Operation getWantAgent failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
     }
-  }
 };
 ```
 
@@ -1103,7 +1253,8 @@ updateBackgroundRunning(context: Context, request: ContinuousTaskRequest): Promi
 
 更新长时任务还存在如下约束限制：
 
-1. 本接口仅支持更新如下接口申请的长时任务：[startBackgroundRunning(context: Context, request: ContinuousTaskRequest): Promise<ContinuousTaskNotification>](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstartbackgroundrunning21)。
+1. 本接口仅支持更新如下接口申请的长时任务：[startBackgroundRunning(context: Context, request: ContinuousTaskRequest): Promise<ContinuousTaskNotification>](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstartbackgroundrunning21)。
+
 1. 已经合并的长时任务，且后台任务主类型和子类型均相同，仅支持更新ContinuousTaskRequest.wantAgent中的wants信息（abilityName等），如果类型不同，更新失败。
 1. 如果待更新的长时任务或指定的更新类型中包含数据传输类型，直接返回失败。
 
@@ -1113,17 +1264,29 @@ updateBackgroundRunning(context: Context, request: ContinuousTaskRequest): Promi
 
 **参数**：
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是应用运行的上下文。request[ContinuousTaskRequest](#ZH-CN_TOPIC_0000002529285231__continuoustaskrequest21)是长时任务请求信息, 包括待更新的长时任务ID等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 应用运行的上下文。 |
+| request | ContinuousTaskRequest | 是 | 长时任务请求信息, 包括待更新的长时任务ID等。 |
 
 **返回值**：
 
-类型说明Promise<[ContinuousTaskNotification](#ZH-CN_TOPIC_0000002529285231__continuoustasknotification12)>Promise对象，返回更新后的长时任务通知信息，包括长时任务ID等。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<ContinuousTaskNotification> | Promise对象，返回更新后的长时任务通知信息，包括长时任务ID等。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息201Permission denied.9800001Memory operation failed.9800004System service operation failed.9800005Continuous task verification failed.9800006Notification verification failed for a continuous task.9800007Continuous task storage failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 9800001 | Memory operation failed. |
+| 9800004 | System service operation failed. |
+| 9800005 | Continuous task verification failed. |
+| 9800006 | Notification verification failed for a continuous task. |
+| 9800007 | Continuous task storage failed. |
 
 **示例**：
 
@@ -1179,7 +1342,6 @@ export default class EntryAbility extends UIAbility {
     } catch (error) {
       console.error(`Operation getWantAgent failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
     }
-  }
 };
 ```
 
@@ -1187,27 +1349,34 @@ export default class EntryAbility extends UIAbility {
 
 stopBackgroundRunning(context: Context, continuousTaskId: number): Promise<void>
 
-取消指定Id的长时任务，使用Promise异步回调。也可以通过[stopBackgroundRunning](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstopbackgroundrunning)取消当前UIAbility下所有长时任务。
+取消指定Id的长时任务，使用Promise异步回调。也可以通过[stopBackgroundRunning](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstopbackgroundrunning)取消当前UIAbility下所有长时任务。
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
 **参数**：
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是应用运行的上下文。continuousTaskIdnumber是
-
-长时任务ID。
-
-**说明**：可以通过[startBackgroundRunning](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstartbackgroundrunning21)接口的返回值获取当前申请的长时任务ID，或者通过[getAllContinuousTasks](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagergetallcontinuoustasks20-1)接口获取所有长时任务信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 应用运行的上下文。 |
+| continuousTaskId | number | 是 | 长时任务ID。 说明：可以通过startBackgroundRunning接口的返回值获取当前申请的长时任务ID，或者通过getAllContinuousTasks接口获取所有长时任务信息。 |
 
 **返回值**：
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息9800001Memory operation failed.9800004System service operation failed.9800005Continuous task verification failed.9800006Notification verification failed for a continuous task.9800007Continuous task storage failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9800001 | Memory operation failed. |
+| 9800004 | System service operation failed. |
+| 9800005 | Continuous task verification failed. |
+| 9800006 | Notification verification failed for a continuous task. |
+| 9800007 | Continuous task storage failed. |
 
 **示例**：
 
@@ -1228,7 +1397,6 @@ export default class EntryAbility extends UIAbility {
     } catch (error) {
         console.error(`Operation stopBackgroundRunning failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
     }
-  }
 };
 ```
 
@@ -1238,11 +1406,10 @@ export default class EntryAbility extends UIAbility {
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.TransientTask
 
-名称类型只读可选说明requestIdnumber否否短时任务的请求ID。actualDelayTimenumber否否
-
-应用实际申请的短时任务时间，单位：ms。
-
-**说明** ：申请时间最长为3分钟，[低电量](@ohos.batteryInfo (电量信息).md)时最长为1分钟。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| requestId | number | 否 | 否 | 短时任务的请求ID。 |
+| actualDelayTime | number | 否 | 否 | 应用实际申请的短时任务时间，单位：ms。 说明 ：申请时间最长为3分钟，低电量时最长为1分钟。 |
 
 #### TransientTaskInfo20+
 
@@ -1250,7 +1417,10 @@ export default class EntryAbility extends UIAbility {
 
 **系统能力**: SystemCapability.ResourceSchedule.BackgroundTaskManager.TransientTask
 
-名称类型只读可选说明remainingQuotanumber否否应用当日所剩余总配额，单位：ms。transientTasks[DelaySuspendInfo](#ZH-CN_TOPIC_0000002529285231__delaysuspendinfo)[]否否当前已申请的所有短时任务信息。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| remainingQuota | number | 否 | 否 | 应用当日所剩余总配额，单位：ms。 |
+| transientTasks | DelaySuspendInfo[] | 否 | 否 | 当前已申请的所有短时任务信息。 |
 
 #### BackgroundMode
 
@@ -1258,63 +1428,16 @@ export default class EntryAbility extends UIAbility {
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
-名称值说明DATA_TRANSFER1
-
-数据传输。
-
-使用场景举例：非托管形式的上传、下载，如在浏览器后台上传或下载数据。
-
-**说明：** 在数据传输时，应用需要更新进度，如果进度长时间（超过10分钟）未更新，数据传输的长时任务会被取消。
-
-更新进度的通知类型必须为实况窗，具体实现可参考[startBackgroundRunning()](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstartbackgroundrunning12)中的示例。
-
-AUDIO_PLAYBACK2
-
-音视频播放。
-
-使用场景举例：音频、视频在后台播放，音视频投播。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**说明：** 从API version 20开始，申请/更新AUDIO_PLAYBACK类型长时任务但不接入AVSession，申请/更新长时任务成功后会在通知栏显示通知。
-
-接入AVSession后，后台任务模块不会发送通知栏通知，由AVSession发送通知。
-
-对于API version 19及之前的版本，后台任务模块不会在通知栏显示通知。
-
-AUDIO_RECORDING3
-
-录制。
-
-使用场景举例：录音、录屏退后台。
-
-LOCATION4定位导航。BLUETOOTH_INTERACTION5
-
-蓝牙相关业务。
-
-使用场景举例：通过蓝牙传输文件时退后台。
-
-MULTI_DEVICE_CONNECTION6
-
-多设备互联。
-
-使用场景举例：分布式业务连接、投播。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-VOIP13+8
-
-音视频通话。
-
-使用场景举例：某些聊天类应用（具有音视频业务）音频、视频通话时退后台。
-
-TASK_KEEPING9
-
-计算任务。
-
-使用场景举例：杀毒软件。
-
-**说明：** 从API version 21开始，对PC/2in1设备、非PC/2in1设备但申请了ACL权限为[ohos.permission.KEEP_BACKGROUND_RUNNING_SYSTEM](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-permissions#ohospermissionkeep_background_running_system)的应用开放。 API version 20及之前版本，仅对PC/2in1设备开放。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DATA_TRANSFER | 1 | 数据传输。 使用场景举例：非托管形式的上传、下载，如在浏览器后台上传或下载数据。 说明： 在数据传输时，应用需要更新进度，如果进度长时间（超过10分钟）未更新，数据传输的长时任务会被取消。 更新进度的通知类型必须为实况窗，具体实现可参考startBackgroundRunning()中的示例。 |
+| AUDIO_PLAYBACK | 2 | 音视频播放。 使用场景举例：音频、视频在后台播放，音视频投播。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 说明： 从API version 20开始，申请/更新AUDIO_PLAYBACK类型长时任务但不接入AVSession，申请/更新长时任务成功后会在通知栏显示通知。 接入AVSession后，后台任务模块不会发送通知栏通知，由AVSession发送通知。 对于API version 19及之前的版本，后台任务模块不会在通知栏显示通知。 |
+| AUDIO_RECORDING | 3 | 录制。 使用场景举例：录音、录屏退后台。 |
+| LOCATION | 4 | 定位导航。 |
+| BLUETOOTH_INTERACTION | 5 | 蓝牙相关业务。 使用场景举例：通过蓝牙传输文件时退后台。 |
+| MULTI_DEVICE_CONNECTION | 6 | 多设备互联。 使用场景举例：分布式业务连接、投播。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| VOIP13+ | 8 | 音视频通话。 使用场景举例：某些聊天类应用（具有音视频业务）音频、视频通话时退后台。 |
+| TASK_KEEPING | 9 | 计算任务。 使用场景举例：杀毒软件。 说明： 从API version 21开始，对PC/2in1设备、非PC/2in1设备但申请了ACL权限为ohos.permission.KEEP_BACKGROUND_RUNNING_SYSTEM的应用开放。 API version 20及之前版本，仅对PC/2in1设备开放。 |
 
 #### ContinuousTaskNotification12+
 
@@ -1322,26 +1445,11 @@ TASK_KEEPING9
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
-名称类型只读可选说明slotType[notificationManager.SlotType](@ohos.notificationManager (NotificationManager模块).md#ZH-CN_TOPIC_0000002497446132__slottype)否否
-
-长时任务通知的渠道类型。
-
-**说明：** 长时任务申请或更新成功后不支持提示音。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-contentType[notificationManager.ContentType](@ohos.notificationManager (NotificationManager模块).md#ZH-CN_TOPIC_0000002497446132__contenttype)否否
-
-长时任务通知的内容类型。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-notificationIdnumber否否
-
-长时任务通知 Id。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| slotType | notificationManager.SlotType | 否 | 否 | 长时任务通知的渠道类型。 说明： 长时任务申请或更新成功后不支持提示音。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| contentType | notificationManager.ContentType | 否 | 否 | 长时任务通知的内容类型。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| notificationId | number | 否 | 否 | 长时任务通知 Id。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 continuousTaskId15+number否是长时任务 Id。
 
 #### ContinuousTaskCancelInfo15+
@@ -1350,7 +1458,10 @@ continuousTaskId15+number否是长时任务 Id。
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
-名称类型只读可选说明reason[ContinuousTaskCancelReason](#ZH-CN_TOPIC_0000002529285231__continuoustaskcancelreason15)否否长时任务取消原因。idnumber否否被取消的长时任务 Id。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| reason | ContinuousTaskCancelReason | 否 | 否 | 长时任务取消原因。 |
+| id | number | 否 | 否 | 被取消的长时任务 Id。 |
 
 #### ContinuousTaskCancelReason15+
 
@@ -1358,7 +1469,19 @@ continuousTaskId15+number否是长时任务 Id。
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
-名称值说明USER_CANCEL1用户取消。SYSTEM_CANCEL2系统取消。USER_CANCEL_REMOVE_NOTIFICATION3用户移除通知。预留接口，暂未启用。SYSTEM_CANCEL_DATA_TRANSFER_LOW_SPEED4申请DATA_TRANSFER类型长时任务，但是数据传输速率低。预留接口，暂未启用。SYSTEM_CANCEL_AUDIO_PLAYBACK_NOT_USE_AVSESSION5申请AUDIO_PLAYBACK类型长时任务，但是未接入[AVSession](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-overview)。预留接口，暂未启用。SYSTEM_CANCEL_AUDIO_PLAYBACK_NOT_RUNNING6申请AUDIO_PLAYBACK类型长时任务，但是未播放音视频。预留接口，暂未启用。SYSTEM_CANCEL_AUDIO_RECORDING_NOT_RUNNING7申请AUDIO_RECORDING类型长时任务，但是未录制。预留接口，暂未启用。SYSTEM_CANCEL_NOT_USE_LOCATION8申请LOCATION类型长时任务，但是未使用定位导航。预留接口，暂未启用。SYSTEM_CANCEL_NOT_USE_BLUETOOTH9申请BLUETOOTH_INTERACTION类型长时任务，但是未使用蓝牙相关业务。预留接口，暂未启用。SYSTEM_CANCEL_NOT_USE_MULTI_DEVICE10申请MULTI_DEVICE_CONNECTION类型长时任务，但是未使用多设备互联。预留接口，暂未启用。SYSTEM_CANCEL_USE_ILLEGALLY11使用非法类型的长时任务，如申请AUDIO_PLAYBACK类型长时任务，但是使用音视频播放及定位导航业务。预留接口，暂未启用。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| USER_CANCEL | 1 | 用户取消。 |
+| SYSTEM_CANCEL | 2 | 系统取消。 |
+| USER_CANCEL_REMOVE_NOTIFICATION | 3 | 用户移除通知。预留接口，暂未启用。 |
+| SYSTEM_CANCEL_DATA_TRANSFER_LOW_SPEED | 4 | 申请DATA_TRANSFER类型长时任务，但是数据传输速率低。预留接口，暂未启用。 |
+| SYSTEM_CANCEL_AUDIO_PLAYBACK_NOT_USE_AVSESSION | 5 | 申请AUDIO_PLAYBACK类型长时任务，但是未接入AVSession。预留接口，暂未启用。 |
+| SYSTEM_CANCEL_AUDIO_PLAYBACK_NOT_RUNNING | 6 | 申请AUDIO_PLAYBACK类型长时任务，但是未播放音视频。预留接口，暂未启用。 |
+| SYSTEM_CANCEL_AUDIO_RECORDING_NOT_RUNNING | 7 | 申请AUDIO_RECORDING类型长时任务，但是未录制。预留接口，暂未启用。 |
+| SYSTEM_CANCEL_NOT_USE_LOCATION | 8 | 申请LOCATION类型长时任务，但是未使用定位导航。预留接口，暂未启用。 |
+| SYSTEM_CANCEL_NOT_USE_BLUETOOTH | 9 | 申请BLUETOOTH_INTERACTION类型长时任务，但是未使用蓝牙相关业务。预留接口，暂未启用。 |
+| SYSTEM_CANCEL_NOT_USE_MULTI_DEVICE | 10 | 申请MULTI_DEVICE_CONNECTION类型长时任务，但是未使用多设备互联。预留接口，暂未启用。 |
+| SYSTEM_CANCEL_USE_ILLEGALLY | 11 | 使用非法类型的长时任务，如申请AUDIO_PLAYBACK类型长时任务，但是使用音视频播放及定位导航业务。预留接口，暂未启用。 |
 
 #### BackgroundSubMode16+
 
@@ -1366,11 +1489,9 @@ continuousTaskId15+number否是长时任务 Id。
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
-名称值说明CAR_KEY1
-
-车钥匙。
-
-**说明：** 只有申请BLUETOOTH_INTERACTION类型的长时任务，车钥匙子类型才能生效。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CAR_KEY | 1 | 车钥匙。 说明： 1. 只有申请BLUETOOTH_INTERACTION类型的长时任务，车钥匙子类型才能生效。 2. 不支持通过updateBackgroundRunning接口更新为此类型长时任务。 |
 
 #### BackgroundModeType16+
 
@@ -1378,7 +1499,9 @@ continuousTaskId15+number否是长时任务 Id。
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
-名称值说明SUB_MODE'subMode'子类型。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SUB_MODE | 'subMode' | 子类型。 |
 
 #### ContinuousTaskSuspendInfo20+
 
@@ -1386,7 +1509,11 @@ continuousTaskId15+number否是长时任务 Id。
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
-名称类型只读可选说明continuousTaskIdnumber否否被暂停的长时任务 Id。suspendStateboolean否否长时任务状态，false表示激活，true表示暂停。suspendReason[ContinuousTaskSuspendReason](#ZH-CN_TOPIC_0000002529285231__continuoustasksuspendreason20)否否长时任务暂停原因。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| continuousTaskId | number | 否 | 否 | 被暂停的长时任务 Id。 |
+| suspendState | boolean | 否 | 否 | 长时任务状态，false表示激活，true表示暂停。 |
+| suspendReason | ContinuousTaskSuspendReason | 否 | 否 | 长时任务暂停原因。 |
 
 #### ContinuousTaskSuspendReason20+
 
@@ -1394,7 +1521,17 @@ continuousTaskId15+number否是长时任务 Id。
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
-名称值说明SYSTEM_SUSPEND_DATA_TRANSFER_LOW_SPEED4申请DATA_TRANSFER类型长时任务，但是数据传输速率低。SYSTEM_SUSPEND_AUDIO_PLAYBACK_NOT_USE_AVSESSION5申请AUDIO_PLAYBACK类型长时任务，但是未接入[AVSession](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-overview)。SYSTEM_SUSPEND_AUDIO_PLAYBACK_NOT_RUNNING6申请AUDIO_PLAYBACK类型长时任务，但是未播放音视频。SYSTEM_SUSPEND_AUDIO_RECORDING_NOT_RUNNING7申请AUDIO_RECORDING类型长时任务，但是未录制。SYSTEM_SUSPEND_LOCATION_NOT_USED8申请LOCATION类型长时任务，但是未使用定位导航。SYSTEM_SUSPEND_BLUETOOTH_NOT_USED9申请BLUETOOTH_INTERACTION类型长时任务，但是未使用蓝牙相关业务。SYSTEM_SUSPEND_MULTI_DEVICE_NOT_USED10申请MULTI_DEVICE_CONNECTION类型长时任务，但是未使用多设备互联。SYSTEM_SUSPEND_USED_ILLEGALLY11使用非法类型的长时任务，如申请AUDIO_PLAYBACK类型长时任务，但是使用音视频播放及定位导航业务。预留接口，暂未启用。SYSTEM_SUSPEND_SYSTEM_LOAD_WARNING12系统高负载暂停长时任务。预留接口，暂未启用。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SYSTEM_SUSPEND_DATA_TRANSFER_LOW_SPEED | 4 | 申请DATA_TRANSFER类型长时任务，但是数据传输速率低。 |
+| SYSTEM_SUSPEND_AUDIO_PLAYBACK_NOT_USE_AVSESSION | 5 | 申请AUDIO_PLAYBACK类型长时任务，但是未接入AVSession。 |
+| SYSTEM_SUSPEND_AUDIO_PLAYBACK_NOT_RUNNING | 6 | 申请AUDIO_PLAYBACK类型长时任务，但是未播放音视频。 |
+| SYSTEM_SUSPEND_AUDIO_RECORDING_NOT_RUNNING | 7 | 申请AUDIO_RECORDING类型长时任务，但是未录制。 |
+| SYSTEM_SUSPEND_LOCATION_NOT_USED | 8 | 申请LOCATION类型长时任务，但是未使用定位导航。 |
+| SYSTEM_SUSPEND_BLUETOOTH_NOT_USED | 9 | 申请BLUETOOTH_INTERACTION类型长时任务，但是未使用蓝牙相关业务。 |
+| SYSTEM_SUSPEND_MULTI_DEVICE_NOT_USED | 10 | 申请MULTI_DEVICE_CONNECTION类型长时任务，但是未使用多设备互联。 |
+| SYSTEM_SUSPEND_USED_ILLEGALLY | 11 | 使用非法类型的长时任务，如申请AUDIO_PLAYBACK类型长时任务，但是使用音视频播放及定位导航业务。预留接口，暂未启用。 |
+| SYSTEM_SUSPEND_SYSTEM_LOAD_WARNING | 12 | 系统高负载暂停长时任务。预留接口，暂未启用。 |
 
 #### ContinuousTaskActiveInfo20+
 
@@ -1402,7 +1539,9 @@ continuousTaskId15+number否是长时任务 Id。
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
-名称类型只读可选说明idnumber否否被激活的长时任务 Id。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| id | number | 否 | 否 | 被激活的长时任务 Id。 |
 
 #### ContinuousTaskInfo20+
 
@@ -1410,57 +1549,56 @@ continuousTaskId15+number否是长时任务 Id。
 
 **系统能力**: SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
-名称类型只读可选说明abilityNamestring否否UIAbility名称。uidnumber否否应用的UID。pidnumber否否应用进程的PID。isFromWebViewboolean否否是否通过Webview方式申请，即通过系统代理应用申请长时任务。true表示通过Webview方式申请，false表示不通过Webview方式申请。[backgroundModes](#ZH-CN_TOPIC_0000002529285231__backgroundmode)string[]否否长时任务类型。[backgroundSubModes](#ZH-CN_TOPIC_0000002529285231__backgroundsubmode16)string[]否否长时任务子类型。notificationIdnumber否否通知 Id。continuousTaskIdnumber否否长时任务ID。abilityIdnumber否否UIAbility Id。wantAgentBundleNamestring否否[WantAgent](@ohos.app.ability.wantAgent (WantAgent模块).md) 配置的包名。WantAgent为通知参数，用于指定点击长时任务通知后跳转的界面，在申请长时任务时作为参数传入。wantAgentAbilityNamestring否否[WantAgent](@ohos.app.ability.wantAgent (WantAgent模块).md) 配置的ability名称。WantAgent为通知参数，用于指定点击长时任务通知后跳转的界面，在申请长时任务时作为参数传入。suspendStateboolean否否申请的长时任务是否处于暂停状态。true表示处于暂停状态，false表示处于激活状态。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| abilityName | string | 否 | 否 | UIAbility名称。 |
+| uid | number | 否 | 否 | 应用的UID。 |
+| pid | number | 否 | 否 | 应用进程的PID。 |
+| isFromWebView | boolean | 否 | 否 | 是否通过Webview方式申请，即通过系统代理应用申请长时任务。true表示通过Webview方式申请，false表示不通过Webview方式申请。 |
+| backgroundModes | string[] | 否 | 否 | 长时任务类型。 |
+| backgroundSubModes | string[] | 否 | 否 | 长时任务子类型。 |
+| notificationId | number | 否 | 否 | 通知 Id。 |
+| continuousTaskId | number | 否 | 否 | 长时任务ID。 |
+| abilityId | number | 否 | 否 | UIAbility Id。 |
+| wantAgentBundleName | string | 否 | 否 | WantAgent 配置的包名。WantAgent为通知参数，用于指定点击长时任务通知后跳转的界面，在申请长时任务时作为参数传入。 |
+| wantAgentAbilityName | string | 否 | 否 | WantAgent 配置的ability名称。WantAgent为通知参数，用于指定点击长时任务通知后跳转的界面，在申请长时任务时作为参数传入。 |
+| suspendState | boolean | 否 | 否 | 申请的长时任务是否处于暂停状态。true表示处于暂停状态，false表示处于激活状态。 |
+| bundleName23+ | string | 否 | 是 | 应用包名。 |
+| appIndex23+ | number | 否 | 是 | 应用分身ID。 |
 
 #### ContinuousTaskRequest21+
 
-通常作为[startBackgroundRunning()](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstartbackgroundrunning21)和[updateBackgroundRunning](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerupdatebackgroundrunning21)接口的入参，用于指定申请或更新的长时任务信息。其中：
+通常作为[startBackgroundRunning()](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstartbackgroundrunning21)和[updateBackgroundRunning](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerupdatebackgroundrunning21)接口的入参，用于指定申请或更新的长时任务信息。其中：
 
-1. 通过[startBackgroundRunning()](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstartbackgroundrunning21)接口申请长时任务时，如果待申请长时任务与当前应用下已存在长时任务，两者的主类型和子类型均相同，且combinedTaskNotification均取值为true，则会合并通知。否则不会合并通知。
-1. 如果长时任务本身没有通知，则不会合并，长时任务类型是否会通知请参考[BackgroundTaskMode](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmode21)。
+1. 通过[startBackgroundRunning()](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstartbackgroundrunning21)接口申请长时任务时，如果待申请长时任务与当前应用下已存在长时任务，两者的主类型和子类型均相同，且combinedTaskNotification均取值为true，则会合并通知。否则不会合并通知。
+
+1. 如果长时任务本身没有通知，则不会合并，长时任务类型是否会通知请参考[BackgroundTaskMode](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmode21)。
+
 1. 如果长时任务类型中包含数据传输类型，则不会合并通知。
 1. 通知合并后不能取消合并，已合并的不能更新成不合并。
 1. 通知合并后，点击通知栏消息，会跳转到第一个申请的长时任务对应的UIAbility，如果调用了更新接口，则跳转到最后一次更新的长时任务对应的UIAbility。
-1. 通过[updateBackgroundRunning](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerupdatebackgroundrunning21)接口更新长时任务时，传入的continuousTaskId必须存在，否则更新失败。
-1. 从API version 22开始支持[特殊场景类型的长时任务](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmode21)。必须单独使用且不支持通知合并，即申请或更新长时任务时，长时任务类型只能有特殊场景类型，否则返回错误。
+
+1. 通过[updateBackgroundRunning](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerupdatebackgroundrunning21)接口更新长时任务时，传入的continuousTaskId必须存在，否则更新失败。
+
+1. 从API version 22开始支持[特殊场景类型的长时任务](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmode21)。必须单独使用且不支持通知合并，即申请或更新长时任务时，长时任务类型只能有特殊场景类型，否则返回错误。
 
 #### 属性
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
-名称类型只读可选说明backgroundTaskModes[BackgroundTaskMode](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmode21)[]否否
-
-长时任务主类型。
-
-**说明：** 主类型与子类型必须匹配。
-
-backgroundTaskSubmodes[BackgroundTaskSubmode](#ZH-CN_TOPIC_0000002529285231__backgroundtasksubmode21)[]否否
-
-长时任务子类型。
-
-**说明：** 主类型与子类型必须匹配。
-
-wantAgent[WantAgent](@ohos.app.ability.wantAgent (WantAgent模块).md#ZH-CN_TOPIC_0000002529444577__wantagent)否否通知参数，用于指定点击长时任务通知后跳转的界面。combinedTaskNotificationboolean否是
-
-是否合并通知，true表示合并，false表示不合并，默认为false。
-
-**说明：** 该属性在[updateBackgroundRunning](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerupdatebackgroundrunning21)接口中不生效，如需在已有任务上合并通知，请重新申请该任务，并在申请时设置为支持合并。
-
-continuousTaskIdnumber否是
-
-长时任务ID，默认值为-1。
-
-**说明：** 如果combinedTaskNotification取值为true，则该值为必填项，且必须是存在的ID。
-
-作为[updateBackgroundRunning](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerupdatebackgroundrunning21)接口入参时，该属性必填，且必须是存在的ID。
-
-可以通过[getAllContinuousTasks](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagergetallcontinuoustasks20-1)接口查看当前所有长时任务信息。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| backgroundTaskModes | BackgroundTaskMode[] | 否 | 否 | 长时任务主类型。 说明： 主类型与子类型必须匹配。 |
+| backgroundTaskSubmodes | BackgroundTaskSubmode[] | 否 | 否 | 长时任务子类型。 说明： 主类型与子类型必须匹配。 |
+| wantAgent | WantAgent | 否 | 否 | 通知参数，用于指定点击长时任务通知后跳转的界面。 |
+| combinedTaskNotification | boolean | 否 | 是 | 是否合并通知，true表示合并，false表示不合并，默认为false。 说明： 该属性在updateBackgroundRunning接口中不生效，如需在已有任务上合并通知，请重新申请该任务，并在申请时设置为支持合并。 |
+| continuousTaskId | number | 否 | 是 | 长时任务ID，默认值为-1。 说明： 如果combinedTaskNotification取值为true，则该值为必填项，且必须是存在的ID。 作为updateBackgroundRunning接口入参时，该属性必填，且必须是存在的ID。 可以通过getAllContinuousTasks接口查看当前所有长时任务信息。 |
 
 #### isModeSupported21+
 
 isModeSupported(): boolean
 
-查询当前[ContinuousTaskRequest](#ZH-CN_TOPIC_0000002529285231__continuoustaskrequest21)设置的长时任务主类型，是否支持申请长时任务。是否支持申请长时任务请参考[BackgroundTaskMode](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmode21)的说明。
+查询当前[ContinuousTaskRequest](#ZH-CN_TOPIC_0000002553361127__continuoustaskrequest21)设置的长时任务主类型，是否支持申请长时任务。是否支持申请长时任务请参考[BackgroundTaskMode](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmode21)的说明。
 
 **需要权限:** ohos.permission.KEEP_BACKGROUND_RUNNING
 
@@ -1468,13 +1606,18 @@ isModeSupported(): boolean
 
 **返回值**：
 
-类型说明boolean返回长时任务主类型是否支持。true表示支持，false表示不支持。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回长时任务主类型是否支持。true表示支持，false表示不支持。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息201Permission denied.9800005Continuous task verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 9800005 | Continuous task verification failed. |
 
 **示例**：
 
@@ -1495,7 +1638,6 @@ export default class EntryAbility extends UIAbility {
     } catch (error) {
       console.error(`Operation startBackgroundRunning failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
     }
-  }
 };
 ```
 
@@ -1503,7 +1645,7 @@ export default class EntryAbility extends UIAbility {
 
 requestAuthFromUser(context: Context, callback: Callback<UserAuthResult>): void
 
-请求用户授权是否能在后台长时间运行，使用callback异步回调。接口调用成功会发送横幅通知，有提示音。仅适用于[特殊场景类型长时任务](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmode21)。
+请求用户授权是否能在后台长时间运行，使用callback异步回调。接口调用成功会发送横幅通知，有提示音。仅适用于[特殊场景类型长时任务](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmode21)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1515,13 +1657,20 @@ requestAuthFromUser(context: Context, callback: Callback<UserAuthResult>): void
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是应用运行的上下文。callbackCallback<[UserAuthResult](#ZH-CN_TOPIC_0000002529285231__userauthresult22)>是用户操作后，返回授权结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 应用运行的上下文。 |
+| callback | Callback<UserAuthResult> | 是 | 用户操作后，返回授权结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息201Permission denied.9800004System service operation failed.9800005Continuous task verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 9800004 | System service operation failed. |
+| 9800005 | Continuous task verification failed. |
 
 **示例：**
 
@@ -1547,7 +1696,6 @@ export default class EntryAbility extends UIAbility {
     } catch (error) {
       console.error(`Operation requestAuthFromUser failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
     }
-  }
 };
 ```
 
@@ -1567,17 +1715,25 @@ checkSpecialScenarioAuth(context: Context): Promise<UserAuthResult>
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是应用运行的上下文。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 应用运行的上下文。 |
 
 **返回值：**
 
-类型说明Promise<[UserAuthResult](#ZH-CN_TOPIC_0000002529285231__userauthresult22)>Promise对象，返回用户授权结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<UserAuthResult> | Promise对象，返回用户授权结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[backgroundTaskManager错误码](../../errors/backgroundTaskManager错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[backgroundTaskManager错误码](backgroundTaskManager错误码.md)。
 
-错误码ID错误信息201Permission denied.9800004System service operation failed.9800005Continuous task verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 9800004 | System service operation failed. |
+| 9800005 | Continuous task verification failed. |
 
 **示例：**
 
@@ -1598,121 +1754,62 @@ export default class EntryAbility extends UIAbility {
     } catch (error) {
       console.error(`Operation checkSpecialScenarioAuth failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
     }
-  }
 };
 ```
 
 #### BackgroundTaskMode21+
 
-长时任务主类型。通常与长时任务子类型[BackgroundTaskSubmode](#ZH-CN_TOPIC_0000002529285231__backgroundtasksubmode21)配合使用，对照关系请参考长时任务主类型与子类型对照表，两者共同作为API version 21新增的[申请](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstartbackgroundrunning21)、[更新](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerupdatebackgroundrunning21)长时任务接口入参，用于指定长时任务类型。
+长时任务主类型。通常与长时任务子类型[BackgroundTaskSubmode](#ZH-CN_TOPIC_0000002553361127__backgroundtasksubmode21)配合使用，对照关系请参考长时任务主类型与子类型对照表，两者共同作为API version 21新增的[申请](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstartbackgroundrunning21)、[更新](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerupdatebackgroundrunning21)长时任务接口入参，用于指定长时任务类型。
 
 **系统能力**: SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
-名称值说明MODE_DATA_TRANSFER1
-
-数据传输。
-
-使用场景举例：非托管形式的上传、下载，如在浏览器后台上传或下载数据。
-
-**说明：**
-
-1. 在数据传输时，应用需要更新进度，如果进度长时间（超过10分钟）未更新，数据传输的长时任务会被取消。
-
-2. 更新进度的通知类型必须为实况窗，具体实现可参考[startBackgroundRunning()](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstartbackgroundrunning12)中的示例。
-
-MODE_AUDIO_PLAYBACK2
-
-音视频播放。
-
-使用场景举例：音频、视频在后台播放，音视频投播。
-
-**说明：** 申请/更新MODE_AUDIO_PLAYBACK类型长时任务但不接入AVSession，申请/更新长时任务成功后会在通知栏显示通知。接入AVSession后，后台任务模块不会发送通知栏通知，由AVSession发送通知。
-
-MODE_AUDIO_RECORDING3
-
-录制。
-
-使用场景举例：录音、录屏退后台。
-
-MODE_LOCATION4定位导航。MODE_BLUETOOTH_INTERACTION5
-
-蓝牙相关业务。
-
-使用场景举例：通过蓝牙传输文件时退后台。
-
-MODE_MULTI_DEVICE_CONNECTION6
-
-多设备互联。
-
-使用场景举例：分布式业务连接、投播。
-
-MODE_VOIP8
-
-音视频通话。
-
-使用场景举例：某些聊天类应用（具有音视频业务）音频、视频通话时退后台。
-
-MODE_TASK_KEEPING9
-
-计算任务。
-
-使用场景举例：杀毒软件。
-
-**说明：** 仅对PC/2in1设备开放，或者非PC/2in1设备但申请了ACL权限为[ohos.permission.KEEP_BACKGROUND_RUNNING_SYSTEM](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-permissions#ohospermissionkeep_background_running_system)的应用开放。
-
-MODE_AV_PLAYBACK_AND_RECORD22+12
-
-多媒体相关业务。
-
-使用场景举例：音视频播放、录制、音视频通话场景，场景需与长时任务子类型相匹配。在上述场景下，选择此类型或者对应的长时任务主类型均可。例如：音视频播放场景可以申请MODE_AUDIO_PLAYBACK或者MODE_AV_PLAYBACK_AND_RECORD长时任务主类型。
-
-MODE_SPECIAL_SCENARIO_PROCESSING22+13
-
-特殊场景类型（仅对Phone、Tablet、PC/2in1设备开放）。
-
-使用场景举例：应用在后台导出媒体文件导出、应用使用三方投播组件在后台进行投播，场景需与长时任务子类型相匹配。
-
-**说明：**
-
-1. 如果应用需要在后台长时间运行，可以通过[requestAuthFromUser](#ZH-CN_TOPIC_0000002529285231__requestauthfromuser22)接口请求用户授权、通过[checkSpecialScenarioAuth](#ZH-CN_TOPIC_0000002529285231__checkspecialscenarioauth22)接口查询用户授权结果。
-
-2. 仅对申请ACL权限[ohos.permission.KEEP_BACKGROUND_RUNNING_SYSTEM](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-permissions#ohospermissionkeep_background_running_system)的应用开放。
-
-3. 必须单独使用且不支持通知合并，即申请或更新长时任务时，长时任务类型只能有特殊场景类型，否则返回错误。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| MODE_DATA_TRANSFER | 1 | 数据传输。 使用场景举例：非托管形式的上传、下载，如在浏览器后台上传或下载数据。 说明： 1. 在数据传输时，应用需要更新进度，如果进度长时间（超过10分钟）未更新，数据传输的长时任务会被取消。 2. 更新进度的通知类型必须为实况窗，具体实现可参考startBackgroundRunning()中的示例。 |
+| MODE_AUDIO_PLAYBACK | 2 | 音视频播放。 使用场景举例：音频、视频在后台播放，音视频投播。 说明： 申请/更新MODE_AUDIO_PLAYBACK类型长时任务但不接入AVSession，申请/更新长时任务成功后会在通知栏显示通知。接入AVSession后，后台任务模块不会发送通知栏通知，由AVSession发送通知。 |
+| MODE_AUDIO_RECORDING | 3 | 录制。 使用场景举例：录音、录屏退后台。 |
+| MODE_LOCATION | 4 | 定位导航。 |
+| MODE_BLUETOOTH_INTERACTION | 5 | 蓝牙相关业务。 使用场景举例：通过蓝牙传输文件时退后台。 |
+| MODE_MULTI_DEVICE_CONNECTION | 6 | 多设备互联。 使用场景举例：分布式业务连接、投播。 |
+| MODE_VOIP | 8 | 音视频通话。 使用场景举例：某些聊天类应用（具有音视频业务）音频、视频通话时退后台。 |
+| MODE_TASK_KEEPING | 9 | 计算任务。 使用场景举例：杀毒软件。 说明： 仅对PC/2in1设备开放，或者非PC/2in1设备但申请了ACL权限为ohos.permission.KEEP_BACKGROUND_RUNNING_SYSTEM的应用开放。 |
+| MODE_AV_PLAYBACK_AND_RECORD22+ | 12 | 多媒体相关业务。 使用场景举例：音视频播放、录制、音视频通话场景，场景需与长时任务子类型相匹配。在上述场景下，选择此类型或者对应的长时任务主类型均可。例如：音视频播放场景可以申请MODE_AUDIO_PLAYBACK或者MODE_AV_PLAYBACK_AND_RECORD长时任务主类型。 |
+| MODE_SPECIAL_SCENARIO_PROCESSING22+ | 13 | 特殊场景类型（仅对Phone、Tablet、PC/2in1设备开放）。 使用场景举例：应用在后台导出媒体文件导出、应用使用三方投播组件在后台进行投播，场景需与长时任务子类型相匹配。 说明： 1. 如果应用需要在后台长时间运行，可以通过requestAuthFromUser接口请求用户授权、通过checkSpecialScenarioAuth接口查询用户授权结果。 2. 仅对申请ACL权限ohos.permission.KEEP_BACKGROUND_RUNNING_SYSTEM的应用开放。 3. 必须单独使用且不支持通知合并，即申请或更新长时任务时，长时任务类型只能有特殊场景类型，否则返回错误。 |
 
 #### BackgroundTaskSubmode21+
 
-长时任务子类型。通常与长时任务主类型[BackgroundTaskMode](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmode21)配合使用，对照关系请参考长时任务主类型与子类型对照表，两者共同作为API version 21新增的申请、更新长时任务接口入参，用于指定长时任务类型。
+长时任务子类型。通常与长时任务主类型[BackgroundTaskMode](#ZH-CN_TOPIC_0000002553361127__backgroundtaskmode21)配合使用，对照关系请参考长时任务主类型与子类型对照表，两者共同作为API version 21新增的申请、更新长时任务接口入参，用于指定长时任务类型。
 
 **系统能力**: SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
-名称值说明SUBMODE_CAR_KEY_NORMAL_NOTIFICATION1车钥匙类型，通知类型为普通文本通知。SUBMODE_NORMAL_NOTIFICATION2普通文本通知。SUBMODE_LIVE_VIEW_NOTIFICATION3实况窗通知。SUBMODE_AUDIO_PLAYBACK_NORMAL_NOTIFICATION22+4音视频播放，通知类型为普通文本通知。根据实际场景选择是否接入[AVSession](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-overview)。SUBMODE_AVSESSION_AUDIO_PLAYBACK22+5已接入[AVSession](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-overview)的音视频播放场景，通知类型为普通文本类型。SUBMODE_AUDIO_RECORD_NORMAL_NOTIFICATION22+6录音，通知类型为普通文本通知。SUBMODE_SCREEN_RECORD_NORMAL_NOTIFICATION22+7录屏，通知类型为普通文本通知。SUBMODE_VOICE_CHAT_NORMAL_NOTIFICATION22+8通话，通知类型为普通文本通知。SUBMODE_MEDIA_PROCESS_NORMAL_NOTIFICATION22+9媒体处理，例如：应用在后台导出媒体文件，通知类型为普通文本通知。SUBMODE_VIDEO_BROADCAST_NORMAL_NOTIFICATION22+10视频投播，例如：应用使用三方投播组件在后台进行投播，通知类型为普通文本通知。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SUBMODE_CAR_KEY_NORMAL_NOTIFICATION | 1 | 车钥匙类型，通知类型为普通文本通知。 |
+| SUBMODE_NORMAL_NOTIFICATION | 2 | 普通文本通知。 |
+| SUBMODE_LIVE_VIEW_NOTIFICATION | 3 | 实况窗通知。 |
+| SUBMODE_AUDIO_PLAYBACK_NORMAL_NOTIFICATION22+ | 4 | 音视频播放，通知类型为普通文本通知。根据实际场景选择是否接入AVSession。 |
+| SUBMODE_AVSESSION_AUDIO_PLAYBACK22+ | 5 | 已接入AVSession的音视频播放场景，通知类型为普通文本类型。 |
+| SUBMODE_AUDIO_RECORD_NORMAL_NOTIFICATION22+ | 6 | 录音，通知类型为普通文本通知。 |
+| SUBMODE_SCREEN_RECORD_NORMAL_NOTIFICATION22+ | 7 | 录屏，通知类型为普通文本通知。 |
+| SUBMODE_VOICE_CHAT_NORMAL_NOTIFICATION22+ | 8 | 通话，通知类型为普通文本通知。 |
+| SUBMODE_MEDIA_PROCESS_NORMAL_NOTIFICATION22+ | 9 | 媒体处理，例如：应用在后台导出媒体文件，通知类型为普通文本通知。 |
+| SUBMODE_VIDEO_BROADCAST_NORMAL_NOTIFICATION22+ | 10 | 视频投播，例如：应用使用三方投播组件在后台进行投播，通知类型为普通文本通知。 |
+| SUBMODE_WORK_OUT_NORMAL_NOTIFICATION23+ | 11 | 运动，例如：应用在后台有室内跑步场景，通知类型为普通文本通知。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 **长时任务主类型与子类型对照表：**
 
-[长时任务主类型](#ZH-CN_TOPIC_0000002529285231__backgroundtaskmode21)[长时任务子类型](#ZH-CN_TOPIC_0000002529285231__backgroundtasksubmode21)MODE_DATA_TRANSFERSUBMODE_LIVE_VIEW_NOTIFICATIONMODE_AUDIO_PLAYBACKSUBMODE_NORMAL_NOTIFICATIONMODE_AUDIO_RECORDINGSUBMODE_NORMAL_NOTIFICATIONMODE_LOCATIONSUBMODE_NORMAL_NOTIFICATIONMODE_BLUETOOTH_INTERACTION
-
-SUBMODE_NORMAL_NOTIFICATION
-
-SUBMODE_CAR_KEY_NORMAL_NOTIFICATION
-
-MODE_MULTI_DEVICE_CONNECTIONSUBMODE_NORMAL_NOTIFICATIONMODE_VOIPSUBMODE_NORMAL_NOTIFICATIONMODE_TASK_KEEPINGSUBMODE_NORMAL_NOTIFICATIONMODE_AV_PLAYBACK_AND_RECORD22+
-
-SUBMODE_AUDIO_PLAYBACK_NORMAL_NOTIFICATION22+
-
-SUBMODE_AVSESSION_AUDIO_PLAYBACK22+
-
-SUBMODE_AUDIO_RECORD_NORMAL_NOTIFICATION22+
-
-SUBMODE_SCREEN_RECORD_NORMAL_NOTIFICATION22+
-
-SUBMODE_VOICE_CHAT_NORMAL_NOTIFICATION22+
-
-MODE_SPECIAL_SCENARIO_PROCESSING22+
-
-SUBMODE_MEDIA_PROCESS_NORMAL_NOTIFICATION22+
-
-SUBMODE_VIDEO_BROADCAST_NORMAL_NOTIFICATION22+
+| 长时任务主类型 | 长时任务子类型 |
+| --- | --- |
+| MODE_DATA_TRANSFER | SUBMODE_LIVE_VIEW_NOTIFICATION |
+| MODE_AUDIO_PLAYBACK | SUBMODE_NORMAL_NOTIFICATION |
+| MODE_AUDIO_RECORDING | SUBMODE_NORMAL_NOTIFICATION |
+| MODE_LOCATION | SUBMODE_NORMAL_NOTIFICATION |
+| MODE_BLUETOOTH_INTERACTION | SUBMODE_NORMAL_NOTIFICATION SUBMODE_CAR_KEY_NORMAL_NOTIFICATION |
+| MODE_MULTI_DEVICE_CONNECTION | SUBMODE_NORMAL_NOTIFICATION |
+| MODE_VOIP | SUBMODE_NORMAL_NOTIFICATION |
+| MODE_TASK_KEEPING | SUBMODE_NORMAL_NOTIFICATION |
+| MODE_AV_PLAYBACK_AND_RECORD22+ | SUBMODE_AUDIO_PLAYBACK_NORMAL_NOTIFICATION22+ SUBMODE_AVSESSION_AUDIO_PLAYBACK22+ SUBMODE_AUDIO_RECORD_NORMAL_NOTIFICATION22+ SUBMODE_SCREEN_RECORD_NORMAL_NOTIFICATION22+ SUBMODE_VOICE_CHAT_NORMAL_NOTIFICATION22+ |
+| MODE_SPECIAL_SCENARIO_PROCESSING22+ | SUBMODE_MEDIA_PROCESS_NORMAL_NOTIFICATION22+ SUBMODE_VIDEO_BROADCAST_NORMAL_NOTIFICATION22+ SUBMODE_WORK_OUT_NORMAL_NOTIFICATION23+ |
 
 #### UserAuthResult22+
 
@@ -1720,18 +1817,10 @@ SUBMODE_VIDEO_BROADCAST_NORMAL_NOTIFICATION22+
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
-名称值说明NOT_SUPPORTED0不支持。例如：申请的长时任务主类型非MODE_SPECIAL_SCENARIO_PROCESSING时，不支持申请用户授权是否能在后台长时间运行。NOT_DETERMINED1用户未操作。DENIED2拒绝。GRANTED_ONCE3
-
-本次允许。
-
-**说明：** 在应用退出时该授权记录会被清除。
-
-GRANTED_ALWAYS4
-
-始终允许。
-
-**说明：**
-
-当接收到以下公共事件时，相关授权记录将被清除：
-
-[COMMON_EVENT_PACKAGE_ADDED](../../topics/misc/系统定义的公共事件.md#ZH-CN_TOPIC_0000002497605510__common_event_package_added)、[COMMON_EVENT_PACKAGE_REMOVED](../../topics/misc/系统定义的公共事件.md#ZH-CN_TOPIC_0000002497605510__common_event_package_removed)、[COMMON_EVENT_BUNDLE_REMOVED](../../topics/misc/系统定义的公共事件.md#ZH-CN_TOPIC_0000002497605510__common_event_package_removed)、[COMMON_EVENT_PACKAGE_FULLY_REMOVED](../../topics/misc/系统定义的公共事件.md#ZH-CN_TOPIC_0000002497605510__common_event_package_fully_removed)、[COMMON_EVENT_PACKAGE_CHANGED](../../topics/misc/系统定义的公共事件.md#ZH-CN_TOPIC_0000002497605510__common_event_package_changed)
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NOT_SUPPORTED | 0 | 不支持。例如：申请的长时任务主类型非MODE_SPECIAL_SCENARIO_PROCESSING时，不支持申请用户授权是否能在后台长时间运行。 |
+| NOT_DETERMINED | 1 | 用户未操作。 |
+| DENIED | 2 | 拒绝。 |
+| GRANTED_ONCE | 3 | 本次允许。 说明： 在应用退出时该授权记录会被清除。 |
+| GRANTED_ALWAYS | 4 | 始终允许。 说明： 当接收到以下公共事件时，相关授权记录将被清除： [COMMON_EVENT_PACKAGE_ADDED](../../topics/misc/系统定义的公共事件.md#ZH-CN_TOPIC_0000002497605510__common_event_package_added)、[COMMON_EVENT_PACKAGE_REMOVED](../../topics/misc/系统定义的公共事件.md#ZH-CN_TOPIC_0000002497605510__common_event_package_removed)、[COMMON_EVENT_BUNDLE_REMOVED](../../topics/misc/系统定义的公共事件.md#ZH-CN_TOPIC_0000002497605510__common_event_package_removed)、[COMMON_EVENT_PACKAGE_FULLY_REMOVED](../../topics/misc/系统定义的公共事件.md#ZH-CN_TOPIC_0000002497605510__common_event_package_fully_removed)、[COMMON_EVENT_PACKAGE_CHANGED](../../topics/misc/系统定义的公共事件.md#ZH-CN_TOPIC_0000002497605510__common_event_package_changed)。 |

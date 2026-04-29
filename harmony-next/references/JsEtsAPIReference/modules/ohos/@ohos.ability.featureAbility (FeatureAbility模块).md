@@ -18,7 +18,7 @@ import { featureAbility } from '@kit.AbilityKit';
 
 #### featureAbility.startAbility
 
-startAbility(parameter: StartAbilityParameter, callback: AsyncCallback<number>): void
+startAbility(parameter: [StartAbilityParameter](../../topics/misc/StartAbilityParameter.md), callback: AsyncCallback<number>): void
 
 启动新的Ability。使用callback异步回调。
 
@@ -30,7 +30,10 @@ startAbility(parameter: StartAbilityParameter, callback: AsyncCallback<number>):
 
 **参数：**
 
-参数名类型必填说明parameter[StartAbilityParameter](../../topics/components/StartAbilityParameter.md)是表示被启动的Ability。callbackAsyncCallback<number>是回调函数。当启动Ability成功，err为undefined，data为0表示启动成功，data为其他表示启动失败；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| parameter | [StartAbilityParameter](../../topics/misc/StartAbilityParameter.md) | 是 | 表示被启动的Ability。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。当启动Ability成功，err为undefined，data为0表示启动成功，data为其他表示启动失败；否则为错误对象。 |
 
 **示例：**
 
@@ -51,20 +54,18 @@ featureAbility.startAbility(
       abilityName: 'com.example.myapplication.secondAbility',
       uri: ''
     },
-  },
   (error, data) => {
     if (error && error.code !== 0) {
       console.error(`startAbility fail, error: ${JSON.stringify(error)}`);
     } else {
-      console.log(`startAbility success, data: ${JSON.stringify(data)}`);
-    }
+      console.info(`startAbility success, data: ${JSON.stringify(data)}`);
   }
 );
 ```
 
 #### featureAbility.startAbility
 
-startAbility(parameter: StartAbilityParameter): Promise<number>
+startAbility(parameter: [StartAbilityParameter](../../topics/misc/StartAbilityParameter.md)): Promise<number>
 
 启动新的Ability。使用Promise异步回调。
 
@@ -76,11 +77,15 @@ startAbility(parameter: StartAbilityParameter): Promise<number>
 
 **参数：**
 
-参数名类型必填说明parameter[StartAbilityParameter](../../topics/components/StartAbilityParameter.md)是表示被启动的Ability。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| parameter | [StartAbilityParameter](../../topics/misc/StartAbilityParameter.md) | 是 | 表示被启动的Ability。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象。返回0表示启动成功，返回其他表示启动失败。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象。返回0表示启动成功，返回其他表示启动失败。 |
 
 **示例：**
 
@@ -107,9 +112,9 @@ featureAbility.startAbility(
 });
 ```
 
-#### featureAbility.acquireDataAbilityHelper7+
+#### featureAbility.acquire[DataAbilityHelper](../../topics/misc/DataAbilityHelper.md)7+
 
-acquireDataAbilityHelper(uri: string): DataAbilityHelper
+acquire[DataAbilityHelper](../../topics/misc/DataAbilityHelper.md)(uri: string): DataAbilityHelper
 
 获取dataAbilityHelper对象。
 
@@ -123,11 +128,15 @@ acquireDataAbilityHelper(uri: string): DataAbilityHelper
 
 **参数：**
 
-参数名类型必填说明uristring是表示要打开的文件的路径。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 表示要打开的文件的路径。 |
 
 **返回值：**
 
-类型说明[DataAbilityHelper](../../topics/system-services/DataAbilityHelper.md)用来协助其他Ability访问DataAbility的工具类。
+| 类型 | 说明 |
+| --- | --- |
+| [DataAbilityHelper](../../topics/misc/DataAbilityHelper.md) | 用来协助其他Ability访问DataAbility的工具类。 |
 
 **示例：**
 
@@ -141,13 +150,16 @@ let dataAbilityHelper = featureAbility.acquireDataAbilityHelper(
 
 #### featureAbility.startAbilityForResult7+
 
-startAbilityForResult(parameter: StartAbilityParameter, callback: AsyncCallback<AbilityResult>): void
+startAbilityForResult(parameter: [StartAbilityParameter](../../topics/misc/StartAbilityParameter.md), callback: AsyncCallback<AbilityResult>): void
 
 启动一个Ability。使用callback异步回调。启动Ability后，存在如下几种情况：
 
-- 正常情况下可通过调用[terminateSelfWithResult](#ZH-CN_TOPIC_0000002529444565__featureabilityterminateselfwithresult7)接口使之终止并且返回结果给调用方。
+- 正常情况下可通过调用[terminateSelfWithResult](#ZH-CN_TOPIC_0000002522240548__featureabilityterminateselfwithresult7)接口使之终止并且返回结果给调用方。
+
 - 异常情况下比如杀死Ability会返回异常信息给调用方, 异常信息中resultCode为-1。
-- 如果被启动的Ability模式是单实例模式, 不同应用多次调用该接口启动这个Ability，当这个Ability调用[terminateSelfWithResult](#ZH-CN_TOPIC_0000002529444565__featureabilityterminateselfwithresult7)接口使之终止时，只将正常结果返回给最后一个调用方, 其它调用方返回异常信息, 异常信息中resultCode为-1。
+
+- 如果被启动的Ability模式是单实例模式, 不同应用多次调用该接口启动这个Ability，当这个Ability调用[terminateSelfWithResult](#ZH-CN_TOPIC_0000002522240548__featureabilityterminateselfwithresult7)接口使之终止时，只将正常结果返回给最后一个调用方, 其它调用方返回异常信息, 异常信息中resultCode为-1。
+
 
 组件启动规则详见：[组件启动规则（FA模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules-fa)。
 
@@ -157,7 +169,10 @@ startAbilityForResult(parameter: StartAbilityParameter, callback: AsyncCallback<
 
 **参数：**
 
-参数名类型必填说明parameter[StartAbilityParameter](../../topics/components/StartAbilityParameter.md)是表示被启动的Ability。callbackAsyncCallback<[AbilityResult](../../topics/system-services/AbilityResult.md)>是回调函数。当启动Ability成功，err为undefined，data为ability的启动结果；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| parameter | [StartAbilityParameter](../../topics/misc/StartAbilityParameter.md) | 是 | 表示被启动的Ability。 |
+| callback | AsyncCallback<[AbilityResult](../../topics/misc/AbilityResult.md)> | 是 | 回调函数。当启动Ability成功，err为undefined，data为ability的启动结果；否则为错误对象。 |
 
 **示例：**
 
@@ -178,26 +193,27 @@ featureAbility.startAbilityForResult(
       abilityName: 'com.example.myapplication.secondAbility',
       uri: ''
     },
-  },
   (error, data) => {
     if (error && error.code !== 0) {
       console.error(`startAbilityForResult fail, error: ${JSON.stringify(error)}`);
     } else {
-      console.log(`startAbilityForResult success, data: ${JSON.stringify(data)}`);
-    }
+      console.info(`startAbilityForResult success, data: ${JSON.stringify(data)}`);
   }
 );
 ```
 
 #### featureAbility.startAbilityForResult7+
 
-startAbilityForResult(parameter: StartAbilityParameter): Promise<AbilityResult>
+startAbilityForResult(parameter: [StartAbilityParameter](../../topics/misc/StartAbilityParameter.md)): Promise<AbilityResult>
 
 启动一个Ability。使用Promise异步回调。启动Ability后，存在如下几种情况：
 
-- 正常情况下可通过调用[terminateSelfWithResult](#ZH-CN_TOPIC_0000002529444565__featureabilityterminateselfwithresult7)接口使之终止并且返回结果给调用方。
+- 正常情况下可通过调用[terminateSelfWithResult](#ZH-CN_TOPIC_0000002522240548__featureabilityterminateselfwithresult7)接口使之终止并且返回结果给调用方。
+
 - 异常情况下比如杀死Ability会返回异常信息给调用方, 异常信息中resultCode为-1。
-- 如果被启动的Ability模式是单实例模式, 不同应用多次调用该接口启动这个Ability，当这个Ability调用[terminateSelfWithResult](#ZH-CN_TOPIC_0000002529444565__featureabilityterminateselfwithresult7)接口使之终止时，只将正常结果返回给最后一个调用方, 其它调用方返回异常信息, 异常信息中resultCode为-1。
+
+- 如果被启动的Ability模式是单实例模式, 不同应用多次调用该接口启动这个Ability，当这个Ability调用[terminateSelfWithResult](#ZH-CN_TOPIC_0000002522240548__featureabilityterminateselfwithresult7)接口使之终止时，只将正常结果返回给最后一个调用方, 其它调用方返回异常信息, 异常信息中resultCode为-1。
+
 
 组件启动规则详见：[组件启动规则（FA模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules-fa)。
 
@@ -207,11 +223,15 @@ startAbilityForResult(parameter: StartAbilityParameter): Promise<AbilityResult>
 
 **参数：**
 
-参数名类型必填说明parameter[StartAbilityParameter](../../topics/components/StartAbilityParameter.md)是表示被启动的Ability。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| parameter | [StartAbilityParameter](../../topics/misc/StartAbilityParameter.md) | 是 | 表示被启动的Ability。 |
 
 **返回值：**
 
-类型说明Promise<[AbilityResult](../../topics/system-services/AbilityResult.md)>Promise对象，返回启动Ability的结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AbilityResult](../../topics/misc/AbilityResult.md)> | Promise对象，返回启动Ability的结果。 |
 
 **示例：**
 
@@ -242,8 +262,6 @@ featureAbility.startAbilityForResult(
         mykey6: ['aaaaaa', 'bbbbb', 'ccccccccccc'],
         mykey7: true,
       },
-    },
-  },
 ).then((data) => {
   console.info(`startAbilityForResult data: ${JSON.stringify(data)}`);
 });
@@ -251,9 +269,9 @@ featureAbility.startAbilityForResult(
 
 #### featureAbility.terminateSelfWithResult7+
 
-terminateSelfWithResult(parameter: AbilityResult, callback: AsyncCallback<void>): void
+terminateSelfWithResult(parameter: [AbilityResult](../../topics/misc/AbilityResult.md), callback: AsyncCallback<void>): void
 
-停止当前的Ability。使用callback异步回调。如果该Ability是通过调用[startAbilityForResult](#ZH-CN_TOPIC_0000002529444565__featureabilitystartabilityforresult7)接口被拉起的，调用terminateSelfWithResult接口时会将结果返回给调用者，如果该Ability不是通过调用[startAbilityForResult](#ZH-CN_TOPIC_0000002529444565__featureabilitystartabilityforresult7)接口被拉起的，调用terminateSelfWithResult接口时不会有结果返回给调用者。
+停止当前的Ability。使用callback异步回调。如果该Ability是通过调用[startAbilityForResult](#ZH-CN_TOPIC_0000002522240548__featureabilitystartabilityforresult7)接口被拉起的，调用terminateSelfWithResult接口时会将结果返回给调用者，如果该Ability不是通过调用[startAbilityForResult](#ZH-CN_TOPIC_0000002522240548__featureabilitystartabilityforresult7)接口被拉起的，调用terminateSelfWithResult接口时不会有结果返回给调用者。
 
 **模型约束**：此接口仅可在FA模型下使用。
 
@@ -261,7 +279,10 @@ terminateSelfWithResult(parameter: AbilityResult, callback: AsyncCallback<void>)
 
 **参数：**
 
-参数名类型必填说明parameter[AbilityResult](../../topics/system-services/AbilityResult.md)是表示停止Ability之后返回的结果。callbackAsyncCallback<void>是回调函数。当停止当前Ability成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| parameter | [AbilityResult](../../topics/misc/AbilityResult.md) | 是 | 表示停止Ability之后返回的结果。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当停止当前Ability成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -293,7 +314,6 @@ featureAbility.terminateSelfWithResult(
         mykey7: true,
       }
     },
-  },
   (error) => {
     console.error(`error: ${JSON.stringify(error)}`);
   }
@@ -302,9 +322,9 @@ featureAbility.terminateSelfWithResult(
 
 #### featureAbility.terminateSelfWithResult7+
 
-terminateSelfWithResult(parameter: AbilityResult): Promise<void>
+terminateSelfWithResult(parameter: [AbilityResult](../../topics/misc/AbilityResult.md)): Promise<void>
 
-停止当前的Ability。使用Promise异步回调。如果该Ability是通过调用[startAbilityForResult](#ZH-CN_TOPIC_0000002529444565__featureabilitystartabilityforresult7)接口被拉起的，调用terminateSelfWithResult接口时会将结果返回给调用者，如果该Ability不是通过调用[startAbilityForResult](#ZH-CN_TOPIC_0000002529444565__featureabilitystartabilityforresult7)接口被拉起的，调用terminateSelfWithResult接口时不会有结果返回给调用者。
+停止当前的Ability。使用Promise异步回调。如果该Ability是通过调用[startAbilityForResult](#ZH-CN_TOPIC_0000002522240548__featureabilitystartabilityforresult7)接口被拉起的，调用terminateSelfWithResult接口时会将结果返回给调用者，如果该Ability不是通过调用[startAbilityForResult](#ZH-CN_TOPIC_0000002522240548__featureabilitystartabilityforresult7)接口被拉起的，调用terminateSelfWithResult接口时不会有结果返回给调用者。
 
 **模型约束**：此接口仅可在FA模型下使用。
 
@@ -312,11 +332,15 @@ terminateSelfWithResult(parameter: AbilityResult): Promise<void>
 
 **参数：**
 
-参数名类型必填说明parameter[AbilityResult](../../topics/system-services/AbilityResult.md)是表示停止Ability之后返回的结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| parameter | [AbilityResult](../../topics/misc/AbilityResult.md) | 是 | 表示停止Ability之后返回的结果。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -366,11 +390,9 @@ hasWindowFocus(callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<boolean>是
-
-回调函数。
-
-如果此Ability当前具有视窗焦点，则返回true；否则返回false。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。 如果此Ability当前具有视窗焦点，则返回true；否则返回false。 |
 
 **示例：**
 
@@ -381,7 +403,7 @@ featureAbility.hasWindowFocus((error, data) => {
   if (error && error.code !== 0) {
     console.error(`hasWindowFocus fail, error: ${JSON.stringify(error)}`);
   } else {
-    console.log(`hasWindowFocus success, data: ${JSON.stringify(data)}`);
+    console.info(`hasWindowFocus success, data: ${JSON.stringify(data)}`);
   }
 });
 ```
@@ -398,7 +420,9 @@ hasWindowFocus(): Promise<boolean>
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。如果此Ability当前具有视窗焦点，则返回true；否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。如果此Ability当前具有视窗焦点，则返回true；否则返回false。 |
 
 **示例：**
 
@@ -422,7 +446,9 @@ getWant(callback: AsyncCallback<Want>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[Want](@ohos.application.Want (Want).md)>是回调函数，返回want信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Want> | 是 | 回调函数，返回want信息。 |
 
 **示例：**
 
@@ -433,7 +459,7 @@ featureAbility.getWant((error, data) => {
   if (error && error.code !== 0) {
     console.error(`getWant fail, error: ${JSON.stringify(error)}`);
   } else {
-    console.log(`getWant success, data: ${JSON.stringify(data)}`);
+    console.info(`getWant success, data: ${JSON.stringify(data)}`);
   }
 });
 ```
@@ -450,7 +476,9 @@ getWant(): Promise<Want>
 
 **返回值：**
 
-类型说明Promise<[Want](@ohos.application.Want (Want).md)>Promise对象，返回want信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Want> | Promise对象，返回want信息。 |
 
 **示例：**
 
@@ -474,7 +502,9 @@ getContext(): Context
 
 **返回值：**
 
-类型说明Context返回应用程序上下文。
+| 类型 | 说明 |
+| --- | --- |
+| Context | 返回应用程序上下文。 |
 
 **示例：**
 
@@ -486,7 +516,7 @@ context.getBundleName((error, data) => {
   if (error && error.code !== 0) {
     console.error(`getBundleName fail, error: ${JSON.stringify(error)}`);
   } else {
-    console.log(`getBundleName success, data: ${JSON.stringify(data)}`);
+    console.info(`getBundleName success, data: ${JSON.stringify(data)}`);
   }
 });
 ```
@@ -503,7 +533,9 @@ terminateSelf(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当停止当前的Ability成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当停止当前的Ability成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -529,7 +561,9 @@ terminateSelf(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -546,7 +580,7 @@ featureAbility.terminateSelf().then(() => {
 
 #### featureAbility.connectAbility7+
 
-connectAbility(request: Want, options:ConnectOptions): number
+connectAbility(request: Want, options:[ConnectOptions](../../topics/misc/ConnectOptions.md)): number
 
 将当前Ability与指定的ServiceAbility进行连接。
 
@@ -560,11 +594,16 @@ connectAbility(request: Want, options:ConnectOptions): number
 
 **参数：**
 
-参数名类型必填说明request[Want](@ohos.application.Want (Want).md)是表示被连接的ServiceAbility。options[ConnectOptions](../../topics/misc/ConnectOptions.md)是表示连接回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| request | Want | 是 | 表示被连接的ServiceAbility。 |
+| options | [ConnectOptions](../../topics/misc/ConnectOptions.md) | 是 | 表示连接回调函数。 |
 
 **返回值：**
 
-类型说明number连接的ServiceAbility的ID(ID从0开始自增，每连接成功一次ID加1)。
+| 类型 | 说明 |
+| --- | --- |
+| number | 连接的ServiceAbility的ID(ID从0开始自增，每连接成功一次ID加1)。 |
 
 **示例：**
 
@@ -580,14 +619,13 @@ let connectId = featureAbility.connectAbility(
   },
   {
     onConnect: (element, remote) => {
-      console.log(`ConnectAbility onConnect remote is proxy: ${(remote instanceof rpc.RemoteProxy)}`);
+      console.info(`ConnectAbility onConnect remote is proxy: ${(remote instanceof rpc.RemoteProxy)}`);
     },
     onDisconnect: (element) => {
-      console.log(`ConnectAbility onDisconnect element.deviceId : ${element.deviceId}`);
+      console.info(`ConnectAbility onDisconnect element.deviceId : ${element.deviceId}`);
     },
     onFailed: (code) => {
       console.error(`featureAbilityTest ConnectAbility onFailed errCode : ${code}`);
-    },
   },
 );
 ```
@@ -604,7 +642,10 @@ disconnectAbility(connection: number, callback:AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明connectionnumber是表示断开连接的ServiceAbility的ID。callbackAsyncCallback<void>是回调函数。当断开与指定ServiceAbility的连接成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| connection | number | 是 | 表示断开连接的ServiceAbility的ID。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当断开与指定ServiceAbility的连接成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -619,14 +660,13 @@ let connectId = featureAbility.connectAbility(
   },
   {
     onConnect: (element, remote) => {
-      console.log(`ConnectAbility onConnect remote is proxy: ${(remote instanceof rpc.RemoteProxy)}`);
+      console.info(`ConnectAbility onConnect remote is proxy: ${(remote instanceof rpc.RemoteProxy)}`);
     },
     onDisconnect: (element) => {
-      console.log(`ConnectAbility onDisconnect element.deviceId : ${element.deviceId}`);
+      console.info(`ConnectAbility onDisconnect element.deviceId : ${element.deviceId}`);
     },
     onFailed: (code) => {
       console.error(`featureAbilityTest ConnectAbility onFailed errCode : ${code}`);
-    },
   },
 );
 
@@ -634,7 +674,7 @@ featureAbility.disconnectAbility(connectId, (error) => {
   if (error && error.code !== 0) {
     console.error(`disconnectAbility fail, connectId: ${connectId}, error: ${JSON.stringify(error)}`);
   } else {
-    console.log(`disconnectAbility success， connectId: ${connectId}`);
+    console.info(`disconnectAbility success， connectId: ${connectId}`);
   }
 });
 ```
@@ -651,11 +691,15 @@ disconnectAbility(connection: number): Promise<void>
 
 **参数：**
 
-参数名类型必填说明connectionnumber是表示断开连接的ServiceAbility的ID。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| connection | number | 是 | 表示断开连接的ServiceAbility的ID。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -671,19 +715,18 @@ let connectId = featureAbility.connectAbility(
   },
   {
     onConnect: (element, remote) => {
-      console.log(`ConnectAbility onConnect remote is proxy: ${(remote instanceof rpc.RemoteProxy)}`);
+      console.info(`ConnectAbility onConnect remote is proxy: ${(remote instanceof rpc.RemoteProxy)}`);
     },
     onDisconnect: (element) => {
-      console.log(`ConnectAbility onDisconnect element.deviceId : ${element.deviceId}`);
+      console.info(`ConnectAbility onDisconnect element.deviceId : ${element.deviceId}`);
     },
     onFailed: (code) => {
       console.error(`featureAbilityTest ConnectAbility onFailed errCode : ${code}`);
     },
-  },
 );
 
 featureAbility.disconnectAbility(connectId).then(() => {
-  console.log('disconnectAbility success');
+  console.info('disconnectAbility success');
 }).catch((error: BusinessError)=>{
   console.error(`featureAbilityTest result errCode : ${error.code}`);
 });
@@ -701,7 +744,9 @@ getWindow(callback: AsyncCallback<window.Window>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[window.Window](../../types/interfaces/Interface (Window).md)>是回调函数，返回当前Ability对应的窗口。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<window.Window> | 是 | 回调函数，返回当前Ability对应的窗口。 |
 
 **示例：**
 
@@ -714,7 +759,7 @@ featureAbility.getWindow((error: BusinessError, data: window.Window) => {
   if (error && error.code !== 0) {
     console.error(`getWindow fail, error: ${JSON.stringify(error)}`);
   } else {
-    console.log(`getWindow success, data: ${typeof(data)}`);
+    console.info(`getWindow success, data: ${typeof(data)}`);
   }
 });
 ```
@@ -731,7 +776,9 @@ getWindow(): Promise<window.Window>
 
 **返回值：**
 
-类型说明Promise<[window.Window](../../types/interfaces/Interface (Window).md)>Promise对象，返回当前Ability对应的窗口。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<window.Window> | Promise对象，返回当前Ability对应的窗口。 |
 
 **示例：**
 
@@ -741,7 +788,7 @@ import { window } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 featureAbility.getWindow().then((data: window.Window) => {
-  console.log(`getWindow success, data: ${typeof(data)}`);
+  console.info(`getWindow success, data: ${typeof(data)}`);
 }).catch((error: BusinessError)=>{
   console.error(`getWindow fail, error: ${JSON.stringify(error)}`);
 });
@@ -755,7 +802,13 @@ featureAbility.getWindow().then((data: window.Window) => {
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
-名称值说明WINDOW_MODE_UNDEFINED0未定义。WINDOW_MODE_FULLSCREEN1全屏。WINDOW_MODE_SPLIT_PRIMARY100屏幕如果是水平方向表示左分屏，屏幕如果是竖直方向表示上分屏。WINDOW_MODE_SPLIT_SECONDARY101屏幕如果是水平方向表示右分屏，屏幕如果是竖直方向表示下分屏。WINDOW_MODE_FLOATING102悬浮窗。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| WINDOW_MODE_UNDEFINED | 0 | 未定义。 |
+| WINDOW_MODE_FULLSCREEN | 1 | 全屏。 |
+| WINDOW_MODE_SPLIT_PRIMARY | 100 | 屏幕如果是水平方向表示左分屏，屏幕如果是竖直方向表示上分屏。 |
+| WINDOW_MODE_SPLIT_SECONDARY | 101 | 屏幕如果是水平方向表示右分屏，屏幕如果是竖直方向表示下分屏。 |
+| WINDOW_MODE_FLOATING | 102 | 悬浮窗。 |
 
 **示例：**
 
@@ -775,7 +828,11 @@ featureAbility.AbilityWindowConfiguration.WINDOW_MODE_UNDEFINED
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
-名称值说明BOUNDS_KEY'abilityBounds'窗口显示大小属性的参数名。WINDOW_MODE_KEY'windowMode'窗口显示模式属性的参数名。DISPLAY_ID_KEY'displayId'窗口显示设备ID属性的参数名。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| BOUNDS_KEY | 'abilityBounds' | 窗口显示大小属性的参数名。 |
+| WINDOW_MODE_KEY | 'windowMode' | 窗口显示模式属性的参数名。 |
+| DISPLAY_ID_KEY | 'displayId' | 窗口显示设备ID属性的参数名。 |
 
 **示例：**
 
@@ -793,7 +850,12 @@ featureAbility.AbilityStartSetting.BOUNDS_KEY
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
-名称值说明NO_ERROR0没有异常。INVALID_PARAMETER-1无效的参数。ABILITY_NOT_FOUND-2找不到ABILITY。PERMISSION_DENY-3权限拒绝。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NO_ERROR | 0 | 没有异常。 |
+| INVALID_PARAMETER | -1 | 无效的参数。 |
+| ABILITY_NOT_FOUND | -2 | 找不到ABILITY。 |
+| PERMISSION_DENY | -3 | 权限拒绝。 |
 
 #### DataAbilityOperationType7+
 
@@ -803,7 +865,12 @@ featureAbility.AbilityStartSetting.BOUNDS_KEY
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
-名称值说明TYPE_INSERT1插入类型。TYPE_UPDATE2修改类型。TYPE_DELETE3删除类型。TYPE_ASSERT4声明类型。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| TYPE_INSERT | 1 | 插入类型。 |
+| TYPE_UPDATE | 2 | 修改类型。 |
+| TYPE_DELETE | 3 | 删除类型。 |
+| TYPE_ASSERT | 4 | 声明类型。 |
 
 #### Context9+
 
@@ -815,11 +882,13 @@ Context模块。
 
 **模型约束**：此接口仅可在FA模型下使用。
 
-类型说明[_Context](../../topics/graphics/Context (FA模型的上下文基类).md)Context模块。
+| 类型 | 说明 |
+| --- | --- |
+| _Context | Context模块。 |
 
 #### AppVersionInfo9+
 
-type AppVersionInfo = _AppVersionInfo
+type AppVersionInfo = [_AppVersionInfo](../../topics/misc/AppVersionInfo.md)
 
 应用版本信息。
 
@@ -827,11 +896,13 @@ type AppVersionInfo = _AppVersionInfo
 
 **模型约束**：此接口仅可在FA模型下使用。
 
-类型说明[_AppVersionInfo](../../topics/system-services/AppVersionInfo.md)应用版本信息。
+| 类型 | 说明 |
+| --- | --- |
+| [_AppVersionInfo](../../topics/misc/AppVersionInfo.md) | 应用版本信息。 |
 
 #### ProcessInfo9+
 
-type ProcessInfo = _ProcessInfo
+type ProcessInfo = [_ProcessInfo](../../topics/misc/ProcessInfo.md)
 
 进程信息。
 
@@ -839,4 +910,6 @@ type ProcessInfo = _ProcessInfo
 
 **模型约束**：此接口仅可在FA模型下使用。
 
-类型说明[_ProcessInfo](../../topics/system-services/ProcessInfo.md)进程信息。
+| 类型 | 说明 |
+| --- | --- |
+| [_ProcessInfo](../../topics/misc/ProcessInfo.md) | 进程信息。 |

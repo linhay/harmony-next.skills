@@ -12,4 +12,4 @@ typedef struct PurgMem OH_PurgeableMemory
 
 **相关模块：**[memory](memory.md)
 
-**所在头文件：**[purgeable_memory.h](../../capi/headers/purgeable_memory.h.md)
+**所在头文件：**[purgeable_memory.h](../../topics/misc/[purgeable_memory.h](purgeable_memory.h.md).md)

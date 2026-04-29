@@ -24,7 +24,10 @@ publish(request: NotificationRequest, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明request[NotificationRequest](#ZH-CN_TOPIC_0000002529286111__notificationrequest)是用于设置要发布通知的内容和相关配置信息。callbackAsyncCallback<void>是发布通知的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| request | NotificationRequest | 是 | 用于设置要发布通知的内容和相关配置信息。 |
+| callback | AsyncCallback<void> | 是 | 发布通知的回调方法。 |
 
 **示例：**
 
@@ -39,7 +42,6 @@ let publishCallback = (err: Base.BusinessError) => {
   } else {
     console.info("publish success");
   }
-}
 // 通知Request对象
 let notificationRequest: NotificationManager.NotificationRequest = {
   id: 1,
@@ -50,7 +52,6 @@ let notificationRequest: NotificationManager.NotificationRequest = {
       text: "test_text",
       additionalText: "test_additionalText"
     }
-  }
 };
 Notification.publish(notificationRequest, publishCallback);
 ```
@@ -65,11 +66,15 @@ publish(request: NotificationRequest): Promise<void>
 
 **参数：**
 
-参数名类型必填说明request[NotificationRequest](#ZH-CN_TOPIC_0000002529286111__notificationrequest)是用于设置要发布通知的内容和相关配置信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| request | NotificationRequest | 是 | 用于设置要发布通知的内容和相关配置信息。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -87,7 +92,6 @@ let notificationRequest: NotificationManager.NotificationRequest = {
       text: "test_text",
       additionalText: "test_additionalText"
     }
-  }
 };
 Notification.publish(notificationRequest).then(() => {
   console.info("publish success");
@@ -106,7 +110,11 @@ cancel(id: number, label: string, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明idnumber是通知ID。labelstring是通知标签。callbackAsyncCallback<void>是表示被指定的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | number | 是 | 通知ID。 |
+| label | string | 是 | 通知标签。 |
+| callback | AsyncCallback<void> | 是 | 表示被指定的回调方法。 |
 
 **示例：**
 
@@ -120,7 +128,6 @@ let cancelCallback = (err: Base.BusinessError) => {
   } else {
     console.info("cancel success");
   }
-}
 Notification.cancel(0, "label", cancelCallback);
 ```
 
@@ -134,11 +141,16 @@ cancel(id: number, label?: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明idnumber是通知ID。labelstring否通知标签，默认为空。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | number | 是 | 通知ID。 |
+| label | string | 否 | 通知标签，默认为空。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -162,7 +174,10 @@ cancel(id: number, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明idnumber是通知ID。callbackAsyncCallback<void>是表示被指定的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | number | 是 | 通知ID。 |
+| callback | AsyncCallback<void> | 是 | 表示被指定的回调方法。 |
 
 **示例：**
 
@@ -176,7 +191,6 @@ let cancelCallback = (err: Base.BusinessError) => {
   } else {
     console.info("cancel success");
   }
-}
 Notification.cancel(0, cancelCallback);
 ```
 
@@ -190,7 +204,9 @@ cancelAll(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是表示被指定的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 表示被指定的回调方法。 |
 
 **示例：**
 
@@ -204,7 +220,6 @@ let cancelAllCallback = (err: Base.BusinessError) => {
   } else {
     console.info("cancelAll success");
   }
-}
 Notification.cancelAll(cancelAllCallback);
 ```
 
@@ -218,7 +233,9 @@ cancelAll(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -242,7 +259,10 @@ addSlot(type: SlotType, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明type[SlotType](#ZH-CN_TOPIC_0000002529286111__slottype)是要创建的通知通道的类型。callbackAsyncCallback<void>是表示被指定的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SlotType | 是 | 要创建的通知通道的类型。 |
+| callback | AsyncCallback<void> | 是 | 表示被指定的回调方法。 |
 
 **示例：**
 
@@ -256,7 +276,6 @@ let addSlotCallBack = (err: Base.BusinessError) => {
   } else {
     console.info("addSlot success");
   }
-}
 Notification.addSlot(Notification.SlotType.SOCIAL_COMMUNICATION, addSlotCallBack);
 ```
 
@@ -270,11 +289,15 @@ addSlot(type: SlotType): Promise<void>
 
 **参数：**
 
-参数名类型必填说明type[SlotType](#ZH-CN_TOPIC_0000002529286111__slottype)是要创建的通知通道的类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SlotType | 是 | 要创建的通知通道的类型。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -298,7 +321,10 @@ getSlot(slotType: SlotType, callback: AsyncCallback<NotificationSlot>): void
 
 **参数：**
 
-参数名类型必填说明slotType[SlotType](#ZH-CN_TOPIC_0000002529286111__slottype)是通知渠道类型，目前分为社交通信、服务提醒、内容咨询和其他类型。callbackAsyncCallback<[NotificationSlot](#ZH-CN_TOPIC_0000002529286111__notificationslot)>是表示被指定的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotType | SlotType | 是 | 通知渠道类型，目前分为社交通信、服务提醒、内容咨询和其他类型。 |
+| callback | AsyncCallback<NotificationSlot> | 是 | 表示被指定的回调方法。 |
 
 **示例：**
 
@@ -312,7 +338,6 @@ let getSlotCallback = (err: Base.BusinessError) => {
   } else {
     console.info("getSlot success");
   }
-}
 let slotType: Notification.SlotType = Notification.SlotType.SOCIAL_COMMUNICATION;
 Notification.getSlot(slotType, getSlotCallback);
 ```
@@ -327,11 +352,15 @@ getSlot(slotType: SlotType): Promise<NotificationSlot>
 
 **参数：**
 
-参数名类型必填说明slotType[SlotType](#ZH-CN_TOPIC_0000002529286111__slottype)是通知渠道类型，目前分为社交通信、服务提醒、内容咨询和其他类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotType | SlotType | 是 | 通知渠道类型，目前分为社交通信、服务提醒、内容咨询和其他类型。 |
 
 **返回值：**
 
-类型说明Promise<NotificationSlot>以Promise形式返回获取一个通知通道。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<NotificationSlot> | 以Promise形式返回获取一个通知通道。 |
 
 **示例：**
 
@@ -356,7 +385,9 @@ getSlots(callback: AsyncCallback<Array<NotificationSlot>>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<Array<[NotificationSlot](#ZH-CN_TOPIC_0000002529286111__notificationslot)>>是以callback形式返回获取此应用程序的所有通知通道的结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<NotificationSlot>> | 是 | 以callback形式返回获取此应用程序的所有通知通道的结果。 |
 
 **示例：**
 
@@ -370,7 +401,6 @@ function getSlotsCallback(err: Base.BusinessError) {
   } else {
     console.info("getSlots success");
   }
-}
 Notification.getSlots(getSlotsCallback);
 ```
 
@@ -384,7 +414,9 @@ getSlots(): Promise<Array<NotificationSlot>>
 
 **返回值：**
 
-类型说明Promise<Array<[NotificationSlot](#ZH-CN_TOPIC_0000002529286111__notificationslot)>>以Promise形式返回获取此应用程序的所有通知通道的结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<NotificationSlot>> | 以Promise形式返回获取此应用程序的所有通知通道的结果。 |
 
 **示例：**
 
@@ -408,7 +440,10 @@ removeSlot(slotType: SlotType, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明slotType[SlotType](#ZH-CN_TOPIC_0000002529286111__slottype)是通知渠道类型,目前分为社交通信、服务提醒、内容咨询和其他类型。callbackAsyncCallback<void>是表示被指定的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotType | SlotType | 是 | 通知渠道类型,目前分为社交通信、服务提醒、内容咨询和其他类型。 |
+| callback | AsyncCallback<void> | 是 | 表示被指定的回调方法。 |
 
 **示例：**
 
@@ -422,7 +457,6 @@ let removeSlotCallback = (err: Base.BusinessError) => {
   } else {
     console.info("removeSlot success");
   }
-}
 let slotType: Notification.SlotType = Notification.SlotType.SOCIAL_COMMUNICATION;
 Notification.removeSlot(slotType, removeSlotCallback);
 ```
@@ -437,11 +471,15 @@ removeSlot(slotType: SlotType): Promise<void>
 
 **参数：**
 
-参数名类型必填说明slotType[SlotType](#ZH-CN_TOPIC_0000002529286111__slottype)是通知渠道类型,目前分为社交通信、服务提醒、内容咨询和其他类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotType | SlotType | 是 | 通知渠道类型,目前分为社交通信、服务提醒、内容咨询和其他类型。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -466,7 +504,9 @@ removeAllSlots(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是表示被指定的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 表示被指定的回调方法。 |
 
 **示例：**
 
@@ -479,7 +519,6 @@ let removeAllCallBack = (err: Base.BusinessError) => {
   } else {
     console.info("removeAllSlots success");
   }
-}
 Notification.removeAllSlots(removeAllCallBack);
 ```
 
@@ -493,7 +532,9 @@ removeAllSlots(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -517,7 +558,9 @@ getActiveNotificationCount(callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是获取未删除通知数回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 获取未删除通知数回调函数。 |
 
 **示例：**
 
@@ -530,7 +573,6 @@ let getActiveNotificationCountCallback = (err: Base.BusinessError, data: number)
   } else {
     console.info("getActiveNotificationCount success");
   }
-}
 
 Notification.getActiveNotificationCount(getActiveNotificationCountCallback);
 ```
@@ -545,7 +587,9 @@ getActiveNotificationCount(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>以Promise形式返回获取当前应用未删除通知数。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 以Promise形式返回获取当前应用未删除通知数。 |
 
 **示例：**
 
@@ -569,7 +613,9 @@ getActiveNotifications(callback: AsyncCallback<Array<NotificationRequest>>): voi
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<Array<[NotificationRequest](#ZH-CN_TOPIC_0000002529286111__notificationrequest)>>是获取当前应用通知列表回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<NotificationRequest>> | 是 | 获取当前应用通知列表回调函数。 |
 
 **示例：**
 
@@ -583,14 +629,13 @@ let getActiveNotificationsCallback = (err: Base.BusinessError, data: Notificatio
   } else {
     console.info("getActiveNotifications success");
   }
-}
 
 Notification.getActiveNotifications(getActiveNotificationsCallback);
 ```
 
 #### Notification.getActiveNotifications
 
-getActiveNotifications(): Promise<Array<[NotificationRequest](#ZH-CN_TOPIC_0000002529286111__notificationrequest)>>
+getActiveNotifications(): Promise<Array<[NotificationRequest](#ZH-CN_TOPIC_0000002522082432__notificationrequest)>>
 
 获取当前应用未删除的通知列表（Promise形式）。
 
@@ -598,7 +643,9 @@ getActiveNotifications(): Promise<Array<[NotificationRequest](#ZH-CN_TOPIC_00000
 
 **返回值：**
 
-类型说明Promise<Array<[NotificationRequest](#ZH-CN_TOPIC_0000002529286111__notificationrequest)>>以Promise形式返回获取当前应用通知列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<NotificationRequest>> | 以Promise形式返回获取当前应用通知列表。 |
 
 **示例：**
 
@@ -623,7 +670,10 @@ cancelGroup(groupName: string, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明groupNamestring是通知组名称，此名称需要在发布通知时通过[NotificationRequest](#ZH-CN_TOPIC_0000002529286111__notificationrequest)对象指定。callbackAsyncCallback<void>是取消本应用指定组下通知的回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| groupName | string | 是 | 通知组名称，此名称需要在发布通知时通过NotificationRequest对象指定。 |
+| callback | AsyncCallback<void> | 是 | 取消本应用指定组下通知的回调函数。 |
 
 **示例：**
 
@@ -636,7 +686,6 @@ let cancelGroupCallback = (err: Base.BusinessError) => {
   } else {
     console.info("cancelGroup success");
   }
-}
 
 let groupName: string = "GroupName";
 
@@ -653,11 +702,15 @@ cancelGroup(groupName: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明groupNamestring是通知组名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| groupName | string | 是 | 通知组名称。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -682,7 +735,10 @@ isSupportTemplate(templateName: string, callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明templateNamestring是模板名称。callbackAsyncCallback<boolean>是查询模板是否存在的回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| templateName | string | 是 | 模板名称。 |
+| callback | AsyncCallback<boolean> | 是 | 查询模板是否存在的回调函数。 |
 
 **示例：**
 
@@ -696,7 +752,6 @@ function isSupportTemplateCallback(err: Base.BusinessError, data: boolean) {
   } else {
     console.info("isSupportTemplate success");
   }
-}
 
 Notification.isSupportTemplate(templateName, isSupportTemplateCallback);
 ```
@@ -711,11 +766,15 @@ isSupportTemplate(templateName: string): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明templateNamestring是模板名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| templateName | string | 是 | 模板名称。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise方式返回模板是否存在的结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise方式返回模板是否存在的结果。 |
 
 **示例：**
 
@@ -740,7 +799,9 @@ requestEnableNotification(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是应用请求通知使能的回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 应用请求通知使能的回调函数。 |
 
 **示例：**
 
@@ -768,7 +829,9 @@ requestEnableNotification(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -792,7 +855,9 @@ isDistributedEnabled(callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<boolean>是设备是否支持分布式通知的回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<boolean> | 是 | 设备是否支持分布式通知的回调函数。 |
 
 **示例：**
 
@@ -820,7 +885,9 @@ isDistributedEnabled(): Promise<boolean>
 
 **返回值：**
 
-类型说明Promise<boolean>Promise方式返回设备是否支持分布式通知的结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise方式返回设备是否支持分布式通知的结果。 |
 
 **示例：**
 
@@ -838,35 +905,61 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 **系统能力**：SystemCapability.Notification.Notification
 
-名称值说明NOTIFICATION_CONTENT_BASIC_TEXTNOTIFICATION_CONTENT_BASIC_TEXT普通类型通知。NOTIFICATION_CONTENT_LONG_TEXTNOTIFICATION_CONTENT_LONG_TEXT长文本类型通知。NOTIFICATION_CONTENT_PICTURENOTIFICATION_CONTENT_PICTURE图片类型通知。NOTIFICATION_CONTENT_CONVERSATIONNOTIFICATION_CONTENT_CONVERSATION社交类型通知。NOTIFICATION_CONTENT_MULTILINENOTIFICATION_CONTENT_MULTILINE多行文本类型通知。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NOTIFICATION_CONTENT_BASIC_TEXT | NOTIFICATION_CONTENT_BASIC_TEXT | 普通类型通知。 |
+| NOTIFICATION_CONTENT_LONG_TEXT | NOTIFICATION_CONTENT_LONG_TEXT | 长文本类型通知。 |
+| NOTIFICATION_CONTENT_PICTURE | NOTIFICATION_CONTENT_PICTURE | 图片类型通知。 |
+| NOTIFICATION_CONTENT_CONVERSATION | NOTIFICATION_CONTENT_CONVERSATION | 社交类型通知。 |
+| NOTIFICATION_CONTENT_MULTILINE | NOTIFICATION_CONTENT_MULTILINE | 多行文本类型通知。 |
 
 #### SlotLevel
 
 **系统能力**：SystemCapability.Notification.Notification
 
-名称值说明LEVEL_NONE0表示关闭通知功能。LEVEL_MIN1表示通知功能已启用，但状态栏中不显示通知图标，且没有横幅或提示音。LEVEL_LOW2表示通知功能已启用，且状态栏中显示通知图标，但没有横幅或提示音。LEVEL_DEFAULT3表示通知功能已启用，状态栏中显示通知图标，没有横幅但有提示音。LEVEL_HIGH4表示通知功能已启用，状态栏中显示通知图标，有横幅和提示音。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| LEVEL_NONE | 0 | 表示关闭通知功能。 |
+| LEVEL_MIN | 1 | 表示通知功能已启用，但状态栏中不显示通知图标，且没有横幅或提示音。 |
+| LEVEL_LOW | 2 | 表示通知功能已启用，且状态栏中显示通知图标，但没有横幅或提示音。 |
+| LEVEL_DEFAULT | 3 | 表示通知功能已启用，状态栏中显示通知图标，没有横幅但有提示音。 |
+| LEVEL_HIGH | 4 | 表示通知功能已启用，状态栏中显示通知图标，有横幅和提示音。 |
 
 #### BundleOptiondeprecated
 
 **系统能力**：SystemCapability.Notification.Notification
 
-从 API version 7开始支持，从API version 9开始废弃。建议使用[notificationManager.BundleOption](../../topics/misc/NotificationCommonDef.md#ZH-CN_TOPIC_0000002529446079__bundleoption)替代。
 
-名称类型必填说明bundlestring是应用的包信息。uidnumber否用户ID，默认为0。
+从 API version 7开始支持，从API version 9开始废弃。建议使用[notificationManager.BundleOption](NotificationCommonDef.md#ZH-CN_TOPIC_0000002553362347__bundleoption)替代。
+
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| bundle | string | 是 | 应用的包信息。 |
+| uid | number | 否 | 用户ID，默认为0。 |
 
 #### NotificationKeydeprecated
 
 **系统能力**：SystemCapability.Notification.Notification
 
+
 从 API version 7开始支持，从API version 9开始废弃。
 
-名称类型可读可写说明idnumber是是通知ID。labelstring是是通知标签。
+| 名称 | 类型 | 可读 | 可写 | 说明 |
+| --- | --- | --- | --- | --- |
+| id | number | 是 | 是 | 通知ID。 |
+| label | string | 是 | 是 | 通知标签。 |
 
 #### SlotType
 
 **系统能力**：SystemCapability.Notification.Notification
 
-名称值说明UNKNOWN_TYPE0未知类型。SOCIAL_COMMUNICATION1社交类型。SERVICE_INFORMATION2服务类型。CONTENT_INFORMATION3内容类型。OTHER_TYPES0xFFFF其他类型。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| UNKNOWN_TYPE | 0 | 未知类型。 |
+| SOCIAL_COMMUNICATION | 1 | 社交类型。 |
+| SERVICE_INFORMATION | 2 | 服务类型。 |
+| CONTENT_INFORMATION | 3 | 内容类型。 |
+| OTHER_TYPES | 0xFFFF | 其他类型。 |
 
 #### NotificationActionButton
 
@@ -874,7 +967,12 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 **系统能力**：SystemCapability.Notification.Notification
 
-名称类型可读可写说明titlestring是是按钮标题。wantAgent[WantAgent](@ohos.wantAgent (WantAgent模块).md)是是点击按钮时触发的WantAgent。extras{ [key: string]: any }是是按钮扩展信息。userInput8+[NotificationUserInput](#ZH-CN_TOPIC_0000002529286111__notificationuserinput8)是是用户输入对象实例。
+| 名称 | 类型 | 可读 | 可写 | 说明 |
+| --- | --- | --- | --- | --- |
+| title | string | 是 | 是 | 按钮标题。 |
+| wantAgent | WantAgent | 是 | 是 | 点击按钮时触发的WantAgent。 |
+| extras | { [key: string]: any } | 是 | 是 | 按钮扩展信息。 |
+| userInput8+ | NotificationUserInput | 是 | 是 | 用户输入对象实例。 |
 
 #### NotificationBasicContent
 
@@ -882,7 +980,11 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 **系统能力**：SystemCapability.Notification.Notification
 
-名称类型可读可写说明titlestring是是通知标题。textstring是是通知内容。additionalTextstring是是通知附加内容，是对通知内容的补充。
+| 名称 | 类型 | 可读 | 可写 | 说明 |
+| --- | --- | --- | --- | --- |
+| title | string | 是 | 是 | 通知标题。 |
+| text | string | 是 | 是 | 通知内容。 |
+| additionalText | string | 是 | 是 | 通知附加内容，是对通知内容的补充。 |
 
 #### NotificationLongTextContent
 
@@ -890,7 +992,14 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 **系统能力**：SystemCapability.Notification.Notification
 
-名称类型可读可写说明titlestring是是通知标题。textstring是是通知内容。additionalTextstring是是通知附加内容，是对通知内容的补充。longTextstring是是通知的长文本。briefTextstring是是通知概要内容，是对通知内容的总结。expandedTitlestring是是通知展开时的标题。
+| 名称 | 类型 | 可读 | 可写 | 说明 |
+| --- | --- | --- | --- | --- |
+| title | string | 是 | 是 | 通知标题。 |
+| text | string | 是 | 是 | 通知内容。 |
+| additionalText | string | 是 | 是 | 通知附加内容，是对通知内容的补充。 |
+| longText | string | 是 | 是 | 通知的长文本。 |
+| briefText | string | 是 | 是 | 通知概要内容，是对通知内容的总结。 |
+| expandedTitle | string | 是 | 是 | 通知展开时的标题。 |
 
 #### NotificationMultiLineContent
 
@@ -898,7 +1007,14 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 **系统能力**：SystemCapability.Notification.Notification
 
-名称类型可读可写说明titlestring是是通知标题。textstring是是通知内容。additionalTextstring是是通知附加内容，是对通知内容的补充。briefTextstring是是通知概要内容，是对通知内容的总结。longTitlestring是是通知展开时的标题。linesArray<string>是是通知的多行文本。
+| 名称 | 类型 | 可读 | 可写 | 说明 |
+| --- | --- | --- | --- | --- |
+| title | string | 是 | 是 | 通知标题。 |
+| text | string | 是 | 是 | 通知内容。 |
+| additionalText | string | 是 | 是 | 通知附加内容，是对通知内容的补充。 |
+| briefText | string | 是 | 是 | 通知概要内容，是对通知内容的总结。 |
+| longTitle | string | 是 | 是 | 通知展开时的标题。 |
+| lines | Array<string> | 是 | 是 | 通知的多行文本。 |
 
 #### NotificationPictureContent
 
@@ -906,7 +1022,14 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 **系统能力**：SystemCapability.Notification.Notification
 
-名称类型可读可写说明titlestring是是通知标题。textstring是是通知内容。additionalTextstring是是通知附加内容，是对通知内容的补充。briefTextstring是是通知概要内容，是对通知内容的总结。expandedTitlestring是是通知展开时的标题。picture[image.PixelMap](../../types/interfaces/Interface (PixelMap).md)是是通知的图片内容。
+| 名称 | 类型 | 可读 | 可写 | 说明 |
+| --- | --- | --- | --- | --- |
+| title | string | 是 | 是 | 通知标题。 |
+| text | string | 是 | 是 | 通知内容。 |
+| additionalText | string | 是 | 是 | 通知附加内容，是对通知内容的补充。 |
+| briefText | string | 是 | 是 | 通知概要内容，是对通知内容的总结。 |
+| expandedTitle | string | 是 | 是 | 通知展开时的标题。 |
+| picture | image.PixelMap | 是 | 是 | 通知的图片内容。 |
 
 #### NotificationContent
 
@@ -914,7 +1037,13 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 **系统能力**：SystemCapability.Notification.Notification
 
-名称类型可读可写说明contentType[notification.ContentType](#ZH-CN_TOPIC_0000002529286111__contenttype)是是通知内容类型。normal[NotificationBasicContent](#ZH-CN_TOPIC_0000002529286111__notificationbasiccontent)是是基本类型通知内容。longText[NotificationLongTextContent](#ZH-CN_TOPIC_0000002529286111__notificationlongtextcontent)是是长文本类型通知内容。multiLine[NotificationMultiLineContent](#ZH-CN_TOPIC_0000002529286111__notificationmultilinecontent)是是多行类型通知内容。picture[NotificationPictureContent](#ZH-CN_TOPIC_0000002529286111__notificationpicturecontent)是是图片类型通知内容。
+| 名称 | 类型 | 可读 | 可写 | 说明 |
+| --- | --- | --- | --- | --- |
+| contentType | notification.ContentType | 是 | 是 | 通知内容类型。 |
+| normal | NotificationBasicContent | 是 | 是 | 基本类型通知内容。 |
+| longText | NotificationLongTextContent | 是 | 是 | 长文本类型通知内容。 |
+| multiLine | NotificationMultiLineContent | 是 | 是 | 多行类型通知内容。 |
+| picture | NotificationPictureContent | 是 | 是 | 图片类型通知内容。 |
 
 #### NotificationRequest
 
@@ -922,7 +1051,41 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 **系统能力**：SystemCapability.Notification.Notification
 
-名称类型可读可写说明content[NotificationContent](#ZH-CN_TOPIC_0000002529286111__notificationcontent)是是通知内容。idnumber是是通知ID。slotType[notification.SlotType](#ZH-CN_TOPIC_0000002529286111__slottype)是是通道类型。isOngoingboolean是是是否进行时通知。isUnremovableboolean是是是否可移除。deliveryTimenumber是是通知发送时间。tapDismissedboolean是是通知是否自动清除。autoDeletedTimenumber是是自动清除的时间。wantAgent[WantAgent](@ohos.wantAgent (WantAgent模块).md)是是WantAgent封装了应用的行为意图，点击通知时触发该行为。extraInfo{[key: string]: any}是是扩展参数。colornumber是是通知背景颜色。预留能力，暂未支持。colorEnabledboolean是是通知背景颜色是否使能。预留能力，暂未支持。isAlertOnceboolean是是设置是否仅有一次此通知提醒。isStopwatchboolean是是是否显示已用时间。isCountDownboolean是是是否显示倒计时时间。isFloatingIconboolean是是是否显示状态栏图标。labelstring是是通知标签。badgeIconStylenumber是是通知角标类型。showDeliveryTimeboolean是是是否显示分发时间。actionButtonsArray<[NotificationActionButton](#ZH-CN_TOPIC_0000002529286111__notificationactionbutton)>是是通知按钮，最多两个按钮。smallIcon[image.PixelMap](../../types/interfaces/Interface (PixelMap).md)是是通知小图标。可选字段，大小不超过30KB。largeIcon[image.PixelMap](../../types/interfaces/Interface (PixelMap).md)是是通知大图标。可选字段，大小不超过30KB。creatorBundleNamestring是否创建通知的包名。creatorUidnumber是否创建通知的UID。creatorPidnumber是否创建通知的PID。creatorUserId8+number是否创建通知的UserId。hashCodestring是否通知唯一标识。groupName8+string是是组通知名称。template8+[NotificationTemplate](#ZH-CN_TOPIC_0000002529286111__notificationtemplate8)是是通知模板。distributedOption8+[DistributedOptions](#ZH-CN_TOPIC_0000002529286111__distributedoptions8)是是分布式通知的选项。notificationFlags8+[NotificationFlags](../../topics/misc/NotificationFlags.md)是否获取NotificationFlags。removalWantAgent9+[WantAgent](@ohos.wantAgent (WantAgent模块).md)是是当移除通知时，通知将被重定向到的WantAgent实例。badgeNumber9+number是是应用程序图标上显示的通知数。
+| 名称 | 类型 | 可读 | 可写 | 说明 |
+| --- | --- | --- | --- | --- |
+| content | NotificationContent | 是 | 是 | 通知内容。 |
+| id | number | 是 | 是 | 通知ID。 |
+| slotType | notification.SlotType | 是 | 是 | 通道类型。 |
+| isOngoing | boolean | 是 | 是 | 是否进行时通知。 |
+| isUnremovable | boolean | 是 | 是 | 是否可移除。 |
+| deliveryTime | number | 是 | 是 | 通知发送时间。 |
+| tapDismissed | boolean | 是 | 是 | 通知是否自动清除。 |
+| autoDeletedTime | number | 是 | 是 | 自动清除的时间。 |
+| wantAgent | WantAgent | 是 | 是 | WantAgent封装了应用的行为意图，点击通知时触发该行为。 |
+| extraInfo | {[key: string]: any} | 是 | 是 | 扩展参数。 |
+| color | number | 是 | 是 | 通知背景颜色。预留能力，暂未支持。 |
+| colorEnabled | boolean | 是 | 是 | 通知背景颜色是否使能。预留能力，暂未支持。 |
+| isAlertOnce | boolean | 是 | 是 | 设置是否仅有一次此通知提醒。 |
+| isStopwatch | boolean | 是 | 是 | 是否显示已用时间。 |
+| isCountDown | boolean | 是 | 是 | 是否显示倒计时时间。 |
+| isFloatingIcon | boolean | 是 | 是 | 是否显示状态栏图标。 |
+| label | string | 是 | 是 | 通知标签。 |
+| badgeIconStyle | number | 是 | 是 | 通知角标类型。 |
+| showDeliveryTime | boolean | 是 | 是 | 是否显示分发时间。 |
+| actionButtons | Array<NotificationActionButton> | 是 | 是 | 通知按钮，最多两个按钮。 |
+| smallIcon | image.PixelMap | 是 | 是 | 通知小图标。可选字段，大小不超过30KB。 |
+| largeIcon | image.PixelMap | 是 | 是 | 通知大图标。可选字段，大小不超过30KB。 |
+| creatorBundleName | string | 是 | 否 | 创建通知的包名。 |
+| creatorUid | number | 是 | 否 | 创建通知的UID。 |
+| creatorPid | number | 是 | 否 | 创建通知的PID。 |
+| creatorUserId8+ | number | 是 | 否 | 创建通知的UserId。 |
+| hashCode | string | 是 | 否 | 通知唯一标识。 |
+| groupName8+ | string | 是 | 是 | 组通知名称。 |
+| template8+ | NotificationTemplate | 是 | 是 | 通知模板。 |
+| distributedOption8+ | DistributedOptions | 是 | 是 | 分布式通知的选项。 |
+| notificationFlags8+ | [NotificationFlags](../../topics/misc/NotificationFlags.md) | 是 | 否 | 获取NotificationFlags。 |
+| removalWantAgent9+ | WantAgent | 是 | 是 | 当移除通知时，通知将被重定向到的WantAgent实例。 |
+| badgeNumber9+ | number | 是 | 是 | 应用程序图标上显示的通知数。 |
 
 #### DistributedOptions8+
 
@@ -930,7 +1093,11 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 **系统能力**：SystemCapability.Notification.Notification
 
-名称类型可读可写说明isDistributedboolean是是是否为分布式通知。supportDisplayDevicesArray<string>是是可以同步通知到的设备列表。supportOperateDevicesArray<string>是是可以打开通知的设备列表。
+| 名称 | 类型 | 可读 | 可写 | 说明 |
+| --- | --- | --- | --- | --- |
+| isDistributed | boolean | 是 | 是 | 是否为分布式通知。 |
+| supportDisplayDevices | Array<string> | 是 | 是 | 可以同步通知到的设备列表。 |
+| supportOperateDevices | Array<string> | 是 | 是 | 可以打开通知的设备列表。 |
 
 #### NotificationSlot
 
@@ -938,7 +1105,20 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 **系统能力**：SystemCapability.Notification.Notification
 
-名称类型可读可写说明type[notification.SlotType](#ZH-CN_TOPIC_0000002529286111__slottype)是是通道类型。level[notification.SlotLevel](#ZH-CN_TOPIC_0000002529286111__slotlevel)是是通知级别，不设置则根据通知渠道类型有默认值。descstring是是通知渠道描述信息。badgeFlagboolean是是是否显示角标。bypassDndboolean是是设置是否在系统中绕过免打扰模式。lockscreenVisibilitynumber是是在锁定屏幕上显示通知的模式。vibrationEnabledboolean是是是否可振动。soundstring是是通知提示音。lightEnabledboolean是是是否闪灯。lightColornumber是是通知灯颜色。vibrationValuesArray<number>是是通知振动样式。enabled9+boolean是否此通知插槽中的启停状态。
+| 名称 | 类型 | 可读 | 可写 | 说明 |
+| --- | --- | --- | --- | --- |
+| type | notification.SlotType | 是 | 是 | 通道类型。 |
+| level | notification.SlotLevel | 是 | 是 | 通知级别，不设置则根据通知渠道类型有默认值。 |
+| desc | string | 是 | 是 | 通知渠道描述信息。 |
+| badgeFlag | boolean | 是 | 是 | 是否显示角标。 |
+| bypassDnd | boolean | 是 | 是 | 设置是否在系统中绕过免打扰模式。 |
+| lockscreenVisibility | number | 是 | 是 | 在锁定屏幕上显示通知的模式。 |
+| vibrationEnabled | boolean | 是 | 是 | 是否可振动。 |
+| sound | string | 是 | 是 | 通知提示音。 |
+| lightEnabled | boolean | 是 | 是 | 是否闪灯。 |
+| lightColor | number | 是 | 是 | 通知灯颜色。 |
+| vibrationValues | Array<number> | 是 | 是 | 通知振动样式。 |
+| enabled9+ | boolean | 是 | 否 | 此通知插槽中的启停状态。 |
 
 #### NotificationTemplate8+
 
@@ -946,7 +1126,10 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 **系统能力**：SystemCapability.Notification.Notification
 
-名称类型可读可写说明namestring是是模板名称。dataRecord<string, Object>是是模板数据。
+| 名称 | 类型 | 可读 | 可写 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | string | 是 | 是 | 模板名称。 |
+| data | Record<string, Object> | 是 | 是 | 模板数据。 |
 
 #### NotificationUserInput8+
 
@@ -954,4 +1137,6 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 **系统能力**：SystemCapability.Notification.Notification
 
-名称类型可读可写说明inputKeystring是是用户输入时用于标识此输入的key。
+| 名称 | 类型 | 可读 | 可写 | 说明 |
+| --- | --- | --- | --- | --- |
+| inputKey | string | 是 | 是 | 用户输入时用于标识此输入的key。 |

@@ -17,7 +17,7 @@ import { camera } from '@kit.CameraKit';
 
 #### canPreconfig12+
 
-canPreconfig(preconfigType: PreconfigType, preconfigRatio?: PreconfigRatio): boolean
+canPreconfig(preconfigType: [PreconfigType](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__preconfigtype12), preconfigRatio?: PreconfigRatio): boolean
 
 查询当前Session是否支持指定的预配置类型。
 
@@ -27,21 +27,24 @@ canPreconfig(preconfigType: PreconfigType, preconfigRatio?: PreconfigRatio): boo
 
 **参数：**
 
-参数名类型必填说明preconfigType[PreconfigType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__preconfigtype12)是指定配置预期分辨率。preconfigRatio[PreconfigRatio](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__preconfigratio12)否可选画幅比例，默认为4:3。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| preconfigType | [PreconfigType](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__preconfigtype12) | 是 | 指定配置预期分辨率。 |
+| preconfigRatio | [PreconfigRatio](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__preconfigratio12) | 否 | 可选画幅比例，默认为4:3。 |
 
 **返回值：**
 
-类型说明boolean
-
-true: 支持指定预配值类型。
-
-false: 不支持指定预配值类型。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true: 支持指定预配值类型。 false: 不支持指定预配值类型。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码]([Camera错误码](../../errors/Camera错误码.md).md)。
 
-错误码ID错误信息7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -57,12 +60,11 @@ function testCanPreconfig(photoSession: camera.PhotoSession, preconfigType: came
     let err = error as BusinessError;
     console.error(`The canPreconfig call failed. error code: ${err.code}`);
   }
-}
 ```
 
 #### preconfig12+
 
-preconfig(preconfigType: PreconfigType, preconfigRatio?: PreconfigRatio): void
+preconfig(preconfigType: [PreconfigType](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__preconfigtype12), preconfigRatio?: PreconfigRatio): void
 
 对当前Session进行预配置。
 
@@ -72,13 +74,18 @@ preconfig(preconfigType: PreconfigType, preconfigRatio?: PreconfigRatio): void
 
 **参数：**
 
-参数名类型必填说明preconfigType[PreconfigType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__preconfigtype12)是指定配置预期分辨率。preconfigRatio[PreconfigRatio](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__preconfigratio12)否可选画幅比例，默认为4:3。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| preconfigType | [PreconfigType](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__preconfigtype12) | 是 | 指定配置预期分辨率。 |
+| preconfigRatio | [PreconfigRatio](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__preconfigratio12) | 否 | 可选画幅比例，默认为4:3。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -94,7 +101,6 @@ function testPreconfig(photoSession: camera.PhotoSession, preconfigType: camera.
     let err = error as BusinessError;
     console.error(`The preconfig call failed. error code: ${err.code}`);
   }
-}
 ```
 
 #### on('error')11+
@@ -111,7 +117,10 @@ on(type: 'error', callback: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'error'，session创建成功之后可监听该接口。session调用相关接口出现错误时会触发该事件，比如调用[beginConfig](Interface (Session).md#ZH-CN_TOPIC_0000002529445753__beginconfig11)，[commitConfig](Interface (Session).md#ZH-CN_TOPIC_0000002529445753__commitconfig11)，[addInput](Interface (Session).md#ZH-CN_TOPIC_0000002529445753__addinput11)等接口发生错误时返回错误信息。callback[ErrorCallback](../../modules/ohos/@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__errorcallback)是回调函数，用于获取错误信息。返回错误码，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'error'，session创建成功之后可监听该接口。session调用相关接口出现错误时会触发该事件，比如调用beginConfig，commitConfig，addInput等接口发生错误时返回错误信息。 |
+| callback | ErrorCallback | 是 | 回调函数，用于获取错误信息。返回错误码，错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **示例：**
 
@@ -139,7 +148,10 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'error'，session创建成功之后可监听该接口。callback[ErrorCallback](../../modules/ohos/@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__errorcallback)否回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'error'，session创建成功之后可监听该接口。 |
+| callback | ErrorCallback | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。 |
 
 **示例：**
 
@@ -151,7 +163,7 @@ function unregisterSessionError(photoSession: camera.PhotoSession): void {
 
 #### on('focusStateChange')11+
 
-on(type: 'focusStateChange', callback: AsyncCallback<FocusState>): void
+on(type: 'focusStateChange', callback: AsyncCallback<[FocusState](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__focusstate)>): void
 
 监听相机聚焦的状态变化，通过注册回调函数获取结果。使用callback异步回调。
 
@@ -163,7 +175,10 @@ on(type: 'focusStateChange', callback: AsyncCallback<FocusState>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'focusStateChange'，session创建成功可监听。仅当自动对焦模式时，且相机对焦状态发生改变时可触发该事件。callbackAsyncCallback<[FocusState](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__focusstate)>是回调函数，用于获取当前对焦状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'focusStateChange'，session创建成功可监听。仅当自动对焦模式时，且相机对焦状态发生改变时可触发该事件。 |
+| callback | AsyncCallback<[FocusState](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__focusstate)> | 是 | 回调函数，用于获取当前对焦状态。 |
 
 **示例：**
 
@@ -185,7 +200,7 @@ function registerFocusStateChange(photoSession: camera.PhotoSession): void {
 
 #### off('focusStateChange')11+
 
-off(type: 'focusStateChange', callback?: AsyncCallback<FocusState>): void
+off(type: 'focusStateChange', callback?: AsyncCallback<[FocusState](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__focusstate)>): void
 
 注销监听相机聚焦的状态变化。
 
@@ -195,7 +210,10 @@ off(type: 'focusStateChange', callback?: AsyncCallback<FocusState>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'focusStateChange'，session创建成功可监听。callbackAsyncCallback<[FocusState](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__focusstate)>否回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'focusStateChange'，session创建成功可监听。 |
+| callback | AsyncCallback<[FocusState](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__focusstate)> | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。 |
 
 **示例：**
 
@@ -219,7 +237,10 @@ on(type: 'smoothZoomInfoAvailable', callback: AsyncCallback<SmoothZoomInfo>): vo
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'smoothZoomInfoAvailable'，session创建成功可监听。callbackAsyncCallback<[SmoothZoomInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__smoothzoominfo11)>是回调函数，用于获取当前平滑变焦状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'smoothZoomInfoAvailable'，session创建成功可监听。 |
+| callback | AsyncCallback<SmoothZoomInfo> | 是 | 回调函数，用于获取当前平滑变焦状态。 |
 
 **示例：**
 
@@ -251,7 +272,10 @@ off(type: 'smoothZoomInfoAvailable', callback?: AsyncCallback<SmoothZoomInfo>): 
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'smoothZoomInfoAvailable'，session创建成功可监听。callbackAsyncCallback<[SmoothZoomInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__smoothzoominfo11)>否回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'smoothZoomInfoAvailable'，session创建成功可监听。 |
+| callback | AsyncCallback<SmoothZoomInfo> | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。 |
 
 **示例：**
 
@@ -275,7 +299,10 @@ on(type: 'autoDeviceSwitchStatusChange', callback: AsyncCallback<AutoDeviceSwitc
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'autoDeviceSwitchStatusChange'，session创建成功可监听。callbackAsyncCallback<[AutoDeviceSwitchStatus](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__autodeviceswitchstatus13)>是回调函数，用于获取当前自动切换镜头的状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'autoDeviceSwitchStatusChange'，session创建成功可监听。 |
+| callback | AsyncCallback<AutoDeviceSwitchStatus> | 是 | 回调函数，用于获取当前自动切换镜头的状态。 |
 
 **示例：**
 
@@ -307,7 +334,10 @@ off(type: 'autoDeviceSwitchStatusChange', callback?: AsyncCallback<AutoDeviceSwi
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'autoDeviceSwitchStatusChange'，session创建成功可监听。callbackAsyncCallback<[AutoDeviceSwitchStatus](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__autodeviceswitchstatus13)>否回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'autoDeviceSwitchStatusChange'，session创建成功可监听。 |
+| callback | AsyncCallback<AutoDeviceSwitchStatus> | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。 |
 
 **示例：**
 
@@ -319,7 +349,7 @@ function unregisterSmoothZoomInfo(photoSession: camera.PhotoSession): void {
 
 #### on('systemPressureLevelChange')20+
 
-on(type: 'systemPressureLevelChange', callback: AsyncCallback<SystemPressureLevel>): void
+on(type: 'systemPressureLevelChange', callback: AsyncCallback<[SystemPressureLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__systempressurelevel20)>): void
 
 监听系统压力状态变化，通过注册回调函数获取结果。使用callback异步回调。
 
@@ -331,7 +361,10 @@ on(type: 'systemPressureLevelChange', callback: AsyncCallback<SystemPressureLeve
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'systemPressureLevelChange'，session创建成功可监听。callbackAsyncCallback<[SystemPressureLevel](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__systempressurelevel20)>是回调函数，用于获取当前系统压力状态.
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'systemPressureLevelChange'，session创建成功可监听。 |
+| callback | AsyncCallback<[SystemPressureLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__systempressurelevel20)> | 是 | 回调函数，用于获取当前系统压力状态. |
 
 **示例：**
 
@@ -353,7 +386,7 @@ function registerSystemPressureLevelChangeCallback(photoSession: camera.PhotoSes
 
 #### off('systemPressureLevelChange')20+
 
-off(type: 'systemPressureLevelChange', callback?: AsyncCallback<SystemPressureLevel>): void
+off(type: 'systemPressureLevelChange', callback?: AsyncCallback<[SystemPressureLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__systempressurelevel20)>): void
 
 注销监听系统压力状态变化。
 
@@ -363,7 +396,10 @@ off(type: 'systemPressureLevelChange', callback?: AsyncCallback<SystemPressureLe
 
 **参数：**
 
-参数名类型必填说明typestring是注销监听事件，固定为'systemPressureLevelChange'，session创建成功可触发此事件。callbackAsyncCallback<[SystemPressureLevel](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__systempressurelevel20)>否回调函数，如果指定参数则取消对应callback (callback对象不可是匿名函数)，否则参数默认为空，取消所有callback。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 注销监听事件，固定为'systemPressureLevelChange'，session创建成功可触发此事件。 |
+| callback | AsyncCallback<[SystemPressureLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__systempressurelevel20)> | 否 | 回调函数，如果指定参数则取消对应callback (callback对象不可是匿名函数)，否则参数默认为空，取消所有callback。 |
 
 **示例：**
 
@@ -385,7 +421,10 @@ on(type: 'macroStatusChanged', callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'macroStatusChanged'，session创建成功可监听。callbackAsyncCallback<boolean>是回调函数，用于获取当前微距状态，返回true为开启状态，返回false为禁用状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'macroStatusChanged'，session创建成功可监听。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数，用于获取当前微距状态，返回true为开启状态，返回false为禁用状态。 |
 
 **示例：**
 
@@ -417,7 +456,10 @@ off(type: 'macroStatusChanged', callback?: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明typestring是注销监听事件，固定为'macroStatusChanged'，session创建成功可触发此事件。callbackAsyncCallback<boolean>否回调函数，可选，如果指定参数则取消对应callback (callback对象不可是匿名函数)，否则参数默认为空，取消所有callback。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 注销监听事件，固定为'macroStatusChanged'，session创建成功可触发此事件。 |
+| callback | AsyncCallback<boolean> | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则参数默认为空，取消所有callback。 |
 
 **示例：**
 

@@ -8,7 +8,7 @@
 
 -
 
-针对系统能力SystemCapability.Window.SessionManager，请先使用[canIUse()](../../topics/misc/SysCap (系统能力).md#ZH-CN_TOPIC_0000002529286149__caniuse)接口判断当前设备是否支持此syscap及对应接口。
+针对系统能力SystemCapability.Window.SessionManager，请先使用[canIUse()](SysCap (系统能力).md#ZH-CN_TOPIC_0000002553202569__caniuse)接口判断当前设备是否支持此syscap及对应接口。
 
 #### 导入模块
 
@@ -26,7 +26,9 @@ isFloatingBallEnabled(): boolean
 
 **返回值：**
 
-类型说明boolean当前设备是否支持闪控球功能。true表示支持，false则表示不支持。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 当前设备是否支持闪控球功能。true表示支持，false则表示不支持。 |
 
 **示例：**
 
@@ -47,17 +49,25 @@ create(config: FloatingBallConfiguration): Promise<FloatingBallController>
 
 **参数：**
 
-参数名类型必填说明config[FloatingBallConfiguration](#ZH-CN_TOPIC_0000002497604800__floatingballconfiguration)是创建闪控球控制器的参数。该参数不能为空，并且构造该参数的context不能为空。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | FloatingBallConfiguration | 是 | 创建闪控球控制器的参数。该参数不能为空，并且构造该参数的context不能为空。 |
 
 **返回值：**
 
-类型说明Promise<[FloatingBallController](#ZH-CN_TOPIC_0000002497604800__floatingballcontroller)>Promise对象。返回当前创建的闪控球控制器。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<FloatingBallController> | Promise对象。返回当前创建的闪控球控制器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[窗口错误码](../../errors/窗口错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[窗口错误码]([窗口错误码](../../errors/窗口错误码.md).md)。
 
-错误码ID错误信息801Capability not supported.Failed to call the API due to limited device capabilities.1300019Wrong parameters for operating the floating ball.1300023Floating ball internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported.Failed to call the API due to limited device capabilities. |
+| 1300019 | Wrong parameters for operating the floating ball. |
+| 1300023 | Floating ball internal error. |
 
 **示例：**
 
@@ -89,13 +99,15 @@ try {
 
 **系统能力：** SystemCapability.Window.SessionManager
 
-名称类型只读可选说明context[BaseContext](../../topics/graphics/BaseContext.md)否否表示上下文环境。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| context | [BaseContext](../../topics/misc/BaseContext.md) | 否 | 否 | 表示上下文环境。 |
 
 #### FloatingBallController
 
 闪控球控制器实例，用于启动、更新、停止闪控球以及注册回调等操作。
 
-下列API示例中都需先使用[floatingBall.create()](#ZH-CN_TOPIC_0000002497604800__floatingballcreate)方法获取到闪控球控制器实例（即floatingBallController），再通过此实例调用对应方法。
+下列API示例中都需先使用[floatingBall.create()](#ZH-CN_TOPIC_0000002522080750__floatingballcreate)方法获取到闪控球控制器实例（即floatingBallController），再通过此实例调用对应方法。
 
 **系统能力：** SystemCapability.Window.SessionManager
 
@@ -111,17 +123,30 @@ startFloatingBall(params: FloatingBallParams): Promise<void>
 
 **参数：**
 
-参数名类型必填说明params[FloatingBallParams](#ZH-CN_TOPIC_0000002497604800__floatingballparams)是启动闪控球的参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| params | FloatingBallParams | 是 | 启动闪控球的参数。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[窗口错误码](../../errors/窗口错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[窗口错误码](窗口错误码.md)。
 
-错误码ID错误信息201Permission verification failed, usually returned by VerifyAccessToken.1300019Wrong parameters for operating the floating ball.1300020Failed to create the floating ball window.1300021Failed to start multiple floating ball windows.1300022Repeated floating ball operation.1300023Floating ball internal error.1300024The floating ball window state is abnormal.1300025The floating ball state does not support this operation.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed, usually returned by VerifyAccessToken. |
+| 1300019 | Wrong parameters for operating the floating ball. |
+| 1300020 | Failed to create the floating ball window. |
+| 1300021 | Failed to start multiple floating ball windows. |
+| 1300022 | Repeated floating ball operation. |
+| 1300023 | Floating ball internal error. |
+| 1300024 | The floating ball window state is abnormal. |
+| 1300025 | The floating ball state does not support this operation. |
 
 **示例：**
 
@@ -154,17 +179,31 @@ updateFloatingBall(params: FloatingBallParams): Promise<void>
 
 **参数：**
 
-参数名类型必填说明params[FloatingBallParams](#ZH-CN_TOPIC_0000002497604800__floatingballparams)是更新闪控球的参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| params | FloatingBallParams | 是 | 更新闪控球的参数。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[窗口错误码](../../errors/窗口错误码.md)。
+以下错误码的详细介绍请参见[窗口错误码](窗口错误码.md)。
 
-错误码ID错误信息1300002This window state is abnormal.1300003This window manager service works abnormally.1300004Unauthorized operation.1300019Wrong parameters for operating the floating ball.1300023Floating ball internal error.1300024The floating ball window state is abnormal.1300025The floating ball state does not support this operation.1300027When updating the floating ball, the template type cannot be changed.1300028Updating static template-based floating balls is not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1300002 | This window state is abnormal. |
+| 1300003 | This window manager service works abnormally. |
+| 1300004 | Unauthorized operation. |
+| 1300019 | Wrong parameters for operating the floating ball. |
+| 1300023 | Floating ball internal error. |
+| 1300024 | The floating ball window state is abnormal. |
+| 1300025 | The floating ball state does not support this operation. |
+| 1300027 | When updating the floating ball, the template type cannot be changed. |
+| 1300028 | Updating static template-based floating balls is not supported. |
 
 **示例：**
 
@@ -197,13 +236,19 @@ stopFloatingBall(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[窗口错误码](../../errors/窗口错误码.md)。
+以下错误码的详细介绍请参见[窗口错误码](窗口错误码.md)。
 
-错误码ID错误信息1300022Repeated floating ball operation.1300023Floating ball internal error.1300024The floating ball window state is abnormal.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1300022 | Repeated floating ball operation. |
+| 1300023 | Floating ball internal error. |
+| 1300024 | The floating ball window state is abnormal. |
 
 **示例：**
 
@@ -227,13 +272,21 @@ on(type: 'stateChange', callback: Callback<FloatingBallState>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'stateChange'，即闪控球生命周期状态变化事件。callbackCallback<[FloatingBallState](#ZH-CN_TOPIC_0000002497604800__floatingballstate)>是回调函数。返回当前的闪控球生命周期状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'stateChange'，即闪控球生命周期状态变化事件。 |
+| callback | Callback<FloatingBallState> | 是 | 回调函数。返回当前的闪控球生命周期状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[窗口错误码](../../errors/窗口错误码.md)。
+以下错误码的详细介绍请参见[窗口错误码](窗口错误码.md)。
 
-错误码ID错误信息1300019Wrong parameters for operating the floating ball.1300022Repeated floating ball operation.1300023Floating ball internal error.1300024The floating ball window state is abnormal.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1300019 | Wrong parameters for operating the floating ball. |
+| 1300022 | Repeated floating ball operation. |
+| 1300023 | Floating ball internal error. |
+| 1300024 | The floating ball window state is abnormal. |
 
 **示例：**
 
@@ -258,13 +311,20 @@ off(type: 'stateChange', callback?: Callback<FloatingBallState>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'stateChange'，即闪控球生命周期状态变化事件。callbackCallback<[FloatingBallState](#ZH-CN_TOPIC_0000002497604800__floatingballstate)>否回调函数。返回当前的闪控球生命周期状态。若传入参数，则停止该监听。若未传入参数，则停止所有闪控球生命周期状态变化的监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'stateChange'，即闪控球生命周期状态变化事件。 |
+| callback | Callback<FloatingBallState> | 否 | 回调函数。返回当前的闪控球生命周期状态。若传入参数，则停止该监听。若未传入参数，则停止所有闪控球生命周期状态变化的监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[窗口错误码](../../errors/窗口错误码.md)。
+以下错误码的详细介绍请参见[窗口错误码](窗口错误码.md)。
 
-错误码ID错误信息1300019Wrong parameters for operating the floating ball.1300023Floating ball internal error.1300024The floating ball window state is abnormal.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1300019 | Wrong parameters for operating the floating ball. |
+| 1300023 | Floating ball internal error. |
+| 1300024 | The floating ball window state is abnormal. |
 
 **示例：**
 
@@ -289,13 +349,21 @@ on(type: 'click', callback: Callback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'click'，即闪控球点击事件。callbackCallback<void>是回调函数。当点击闪控球事件发生时的回调。该回调函数不返回任何参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'click'，即闪控球点击事件。 |
+| callback | Callback<void> | 是 | 回调函数。当点击闪控球事件发生时的回调。该回调函数不返回任何参数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[窗口错误码](../../errors/窗口错误码.md)。
+以下错误码的详细介绍请参见[窗口错误码](窗口错误码.md)。
 
-错误码ID错误信息1300019Wrong parameters for operating the floating ball.1300022Repeated floating ball operation.1300023Floating ball internal error.1300024The floating ball window state is abnormal.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1300019 | Wrong parameters for operating the floating ball. |
+| 1300022 | Repeated floating ball operation. |
+| 1300023 | Floating ball internal error. |
+| 1300024 | The floating ball window state is abnormal. |
 
 **示例：**
 
@@ -320,13 +388,20 @@ off(type: 'click', callback?: Callback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'click'，即闪控球点击事件。callbackCallback<void>否回调函数。当点击闪控球事件发生时的回调。该回调函数不返回任何参数。若传入参数，则关闭特定的监听。若未传入参数，则关闭所有闪控球点击的监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'click'，即闪控球点击事件。 |
+| callback | Callback<void> | 否 | 回调函数。当点击闪控球事件发生时的回调。该回调函数不返回任何参数。若传入参数，则关闭特定的监听。若未传入参数，则关闭所有闪控球点击的监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[窗口错误码](../../errors/窗口错误码.md)。
+以下错误码的详细介绍请参见[窗口错误码](窗口错误码.md)。
 
-错误码ID错误信息1300019Wrong parameters for operating the floating ball.1300023Floating ball internal error.1300024The floating ball window state is abnormal.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1300019 | Wrong parameters for operating the floating ball. |
+| 1300023 | Floating ball internal error. |
+| 1300024 | The floating ball window state is abnormal. |
 
 **示例：**
 
@@ -351,13 +426,22 @@ getFloatingBallWindowInfo(): Promise<FloatingBallWindowInfo>
 
 **返回值：**
 
-类型说明Promise<[FloatingBallWindowInfo](#ZH-CN_TOPIC_0000002497604800__floatingballwindowinfo)>Promise对象，返回闪控球窗口信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<FloatingBallWindowInfo> | Promise对象，返回闪控球窗口信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[窗口错误码](../../errors/窗口错误码.md)。
+以下错误码的详细介绍请参见[窗口错误码](窗口错误码.md)。
 
-错误码ID错误信息1300002This window state is abnormal.1300003This window manager service works abnormally.1300004Unauthorized operation.1300023Floating ball internal error.1300024The floating ball window state is abnormal.1300025The floating ball state does not support this operation.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1300002 | This window state is abnormal. |
+| 1300003 | This window manager service works abnormally. |
+| 1300004 | Unauthorized operation. |
+| 1300023 | Floating ball internal error. |
+| 1300024 | The floating ball window state is abnormal. |
+| 1300025 | The floating ball state does not support this operation. |
 
 **示例：**
 
@@ -383,17 +467,31 @@ restoreMainWindow(want: Want): Promise<void>
 
 **参数：**
 
-参数名类型必填说明want[Want](@ohos.app.ability.Want (Want).md)是加载指定页面的Want。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | Want | 是 | 加载指定页面的Want。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[窗口错误码](../../errors/窗口错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[窗口错误码](窗口错误码.md)。
 
-错误码ID错误信息201Permission verification failed, usually returned by VerifyAccessToken.1300002This window state is abnormal.1300003This window manager service works abnormally.1300004Unauthorized operation.1300019Wrong parameters for operating the floating ball.1300023Floating ball internal error.1300024The floating ball window state is abnormal.1300025The floating ball state does not support this operation.1300026Failed to restore the main window.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed, usually returned by VerifyAccessToken. |
+| 1300002 | This window state is abnormal. |
+| 1300003 | This window manager service works abnormally. |
+| 1300004 | Unauthorized operation. |
+| 1300019 | Wrong parameters for operating the floating ball. |
+| 1300023 | Floating ball internal error. |
+| 1300024 | The floating ball window state is abnormal. |
+| 1300025 | The floating ball state does not support this operation. |
+| 1300026 | Failed to restore the main window. |
 
 **示例：**
 
@@ -422,7 +520,13 @@ try {
 
 **系统能力：** SystemCapability.Window.SessionManager
 
-名称类型只读可选说明template[FloatingBallTemplate](#ZH-CN_TOPIC_0000002497604800__floatingballtemplate)否否闪控球模板。titlestring否否闪控球标题，不可为空字符串，大小不超过64字节。contentstring否是闪控球内容，大小不超过64字节。不传入时默认为空字符串，不显示闪控球内容。backgroundColorstring否是闪控球背景颜色，为不带透明度的十六进制颜色格式（例如'#008EF5'或'#FF008EF5'），不传入时闪控球跟随系统深浅色模式的默认背景色。icon[image.PixelMap](../../types/interfaces/Interface (PixelMap).md)否是闪控球图标，图标像素的总字节数不超过192KB（图标像素的总字节数通过[getPixelBytesNumber](../../types/interfaces/Interface (PixelMap).md#ZH-CN_TOPIC_0000002497605846__getpixelbytesnumber7)获取）。建议图标像素宽高为128px*128px。实际显示效果依赖于设备能力和闪控球UI样式。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| template | FloatingBallTemplate | 否 | 否 | 闪控球模板。 |
+| title | string | 否 | 否 | 闪控球标题，不可为空字符串，大小不超过64字节。 |
+| content | string | 否 | 是 | 闪控球内容，大小不超过64字节。不传入时默认为空字符串，不显示闪控球内容。 |
+| backgroundColor | string | 否 | 是 | 闪控球背景颜色，为不带透明度的十六进制颜色格式（例如'#008EF5'或'#FF008EF5'），不传入时闪控球跟随系统深浅色模式的默认背景色。 |
+| icon | image.PixelMap | 否 | 是 | 闪控球图标，图标像素的总字节数不超过192KB（图标像素的总字节数通过getPixelBytesNumber获取）。建议图标像素宽高为128px*128px。实际显示效果依赖于设备能力和闪控球UI样式。 |
 
 #### FloatingBallState
 
@@ -430,7 +534,10 @@ try {
 
 **系统能力：** SystemCapability.Window.SessionManager
 
-名称值说明STARTED1表示闪控球启动。STOPPED2表示闪控球停止。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| STARTED | 1 | 表示闪控球启动。 |
+| STOPPED | 2 | 表示闪控球停止。 |
 
 #### FloatingBallTemplate
 
@@ -438,7 +545,12 @@ try {
 
 **系统能力：** SystemCapability.Window.SessionManager
 
-名称值说明STATIC1静态布局，支持标题和图标。使用此模板时，FloatingBallParams中的title参数和icon参数必传。NORMAL2普通文本布局，支持标题和内容。使用此模板时，FloatingBallParams中的title参数必传。EMPHATIC3强调文本布局，支持图标、标题和内容。使用此模板时，FloatingBallParams中的title参数必传。SIMPLE4纯文本布局，只支持标题。使用此模板时，FloatingBallParams中的title参数必传。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| STATIC | 1 | 静态布局，支持标题和图标。使用此模板时，FloatingBallParams中的title参数和icon参数必传。 |
+| NORMAL | 2 | 普通文本布局，支持标题和内容。使用此模板时，FloatingBallParams中的title参数必传。 |
+| EMPHATIC | 3 | 强调文本布局，支持图标、标题和内容。使用此模板时，FloatingBallParams中的title参数必传。 |
+| SIMPLE | 4 | 纯文本布局，只支持标题。使用此模板时，FloatingBallParams中的title参数必传。 |
 
 #### FloatingBallWindowInfo
 
@@ -446,4 +558,6 @@ try {
 
 **系统能力：** SystemCapability.Window.SessionManager
 
-名称类型只读可选说明windowIdnumber是否闪控球窗口ID。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| windowId | number | 是 | 否 | 闪控球窗口ID。 |

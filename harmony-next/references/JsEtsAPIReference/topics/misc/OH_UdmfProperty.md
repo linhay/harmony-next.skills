@@ -12,4 +12,4 @@ typedef struct OH_UdmfProperty OH_UdmfProperty
 
 **相关模块：**[UDMF](UDMF.md)
 
-**所在头文件：**[udmf.h](../../capi/headers/udmf.h.md)
+**所在头文件：**[udmf.h](../../topics/misc/[udmf.h](udmf.h.md).md)

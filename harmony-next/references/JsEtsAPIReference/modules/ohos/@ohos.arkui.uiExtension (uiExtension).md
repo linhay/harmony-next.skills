@@ -1,6 +1,7 @@
 # @ohos.arkui.uiExtension (uiExtension)
 
-用于EmbeddedUIExtensionAbility（或UIExtensionAbility）中获取宿主应用的窗口信息或对应的EmbeddedComponent组件的信息。
+用于[EmbeddedUIExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/embeddeduiextensionability)（或[UIExtensionAbility](@ohos.app.ability.UIExtensionAbility (带界面的ExtensionAbility组件).md#ZH-CN_TOPIC_0000002553200505__uiextensionability)）中获取宿主应用的窗口信息或对应的[EmbeddedComponent](EmbeddedComponent.md)组件的信息。
+
 
 从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -20,15 +21,13 @@ UIExtension宿主窗代理。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用
 
-名称类型只读可选说明properties14+[WindowProxyProperties](#ZH-CN_TOPIC_0000002529284779__windowproxyproperties14)否否
-
-组件（EmbeddedComponent或UIExtensionComponent）的信息。
-
-**约束：** 由于架构约束，不建议在[onSessionCreate](@ohos.app.ability.UIExtensionAbility (带界面的ExtensionAbility组件).md#ZH-CN_TOPIC_0000002497604594__onsessioncreate)阶段同步获取该值，建议在收到[on('windowSizeChange')](@ohos.arkui.uiExtension (uiExtension).md#ZH-CN_TOPIC_0000002529284779__onwindowsizechange)回调之后获取。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| properties14+ | WindowProxyProperties | 否 | 否 | 组件（EmbeddedComponent或UIExtensionComponent）的信息。 约束： 由于架构约束，不建议在onSessionCreate阶段同步获取该值，建议在收到on('windowSizeChange')回调之后获取。 |
 
 #### getWindowAvoidArea
 
-getWindowAvoidArea(type: window.AvoidAreaType): window.AvoidArea
+getWindowAvoidArea(type: [window.AvoidAreaType](../../types/enums/Enums.md#ZH-CN_TOPIC_0000002529444769__avoidareatype7)): window.AvoidArea
 
 获取宿主应用窗口内容规避的区域；如系统栏区域、刘海屏区域、手势区域、软键盘区域等与宿主窗口内容重叠时，需要宿主窗口内容避让的区域。
 
@@ -38,17 +37,23 @@ getWindowAvoidArea(type: window.AvoidAreaType): window.AvoidArea
 
 **参数：**
 
-参数名类型必填说明type[window.AvoidAreaType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529444769__avoidareatype7)是表示规避区类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | [window.AvoidAreaType](../../types/enums/Enums.md#ZH-CN_TOPIC_0000002529444769__avoidareatype7) | 是 | 表示规避区类型。 |
 
 **返回值：**
 
-类型说明[window.AvoidArea](../../types/interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529284795__avoidarea7)宿主窗口内容规避区域。
+| 类型 | 说明 |
+| --- | --- |
+| window.AvoidArea | 宿主窗口内容规避区域。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -64,7 +69,6 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
     let avoidArea: window.AvoidArea | undefined = extensionWindow?.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
     console.info(`avoidArea: ${JSON.stringify(avoidArea)}`);
   }
-}
 ```
 
 #### on('avoidAreaChange')
@@ -79,13 +83,18 @@ on(type: 'avoidAreaChange', callback: Callback<AvoidAreaInfo>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听的事件类型，固定为'avoidAreaChange'，即系统规避区变化事件。callback[Callback](@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__callback)<[AvoidAreaInfo](#ZH-CN_TOPIC_0000002529284779__avoidareainfo)>是回调函数：入参用于接收当前规避区的信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听的事件类型，固定为'avoidAreaChange'，即系统规避区变化事件。 |
+| callback | Callback<AvoidAreaInfo> | 是 | 回调函数：入参用于接收当前规避区的信息。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -102,7 +111,6 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
       console.info(`The avoid area of the host window is: ${JSON.stringify(info.area)}.`);
     });
   }
-}
 ```
 
 #### off('avoidAreaChange')
@@ -117,13 +125,18 @@ off(type: 'avoidAreaChange', callback?: Callback<AvoidAreaInfo>): void
 
 **参数：**
 
-参数名类型必填说明typestring是注销的事件类型，固定为'avoidAreaChange'，即系统规避区变化事件。callback[Callback](@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__callback)<[AvoidAreaInfo](#ZH-CN_TOPIC_0000002529284779__avoidareainfo)>否回调函数：如果传入该参数，则关闭该监听。如果未传入参数，则关闭所有系统规避区变化的监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 注销的事件类型，固定为'avoidAreaChange'，即系统规避区变化事件。 |
+| callback | Callback<AvoidAreaInfo> | 否 | 回调函数：如果传入该参数，则关闭该监听。如果未传入参数，则关闭所有系统规避区变化的监听。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -137,7 +150,6 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
     // 注销所有避让区变化的监听
     extensionWindow.off('avoidAreaChange');
   }
-}
 ```
 
 #### on('windowSizeChange')
@@ -152,13 +164,18 @@ on(type: 'windowSizeChange', callback: Callback<window.Size>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听的事件类型，固定为'windowSizeChange'，即组件（EmbeddedComponent或UIExtensionComponent）尺寸变化事件。callback[Callback](@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__callback)<[window.Size](../../types/interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529284795__size7)>是回调函数：入参用于接收当前组件（EmbeddedComponent或UIExtensionComponent）的尺寸。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听的事件类型，固定为'windowSizeChange'，即组件（EmbeddedComponent或UIExtensionComponent）尺寸变化事件。 |
+| callback | Callback<window.Size> | 是 | 回调函数：入参用于接收当前组件（EmbeddedComponent或UIExtensionComponent）的尺寸。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -175,7 +192,6 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
       console.info(`The avoid area of the host window is: ${JSON.stringify(size)}.`);
     });
   }
-}
 ```
 
 #### off('windowSizeChange')
@@ -190,13 +206,18 @@ off(type: 'windowSizeChange', callback?: Callback<window.Size>): void
 
 **参数：**
 
-参数名类型必填说明typestring是注销的事件类型，固定值：'windowSizeChange'，即组件（EmbeddedComponent或UIExtensionComponent）尺寸变化事件。callback[Callback](@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__callback)<[window.Size](../../types/interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529284795__size7)>否回调函数。返回当前的组件（EmbeddedComponent或UIExtensionComponent）尺寸。如果传入该参数，则关闭该监听。如果未传入参数，则关闭组件（EmbeddedComponent或UIExtensionComponent）尺寸变化的监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 注销的事件类型，固定值：'windowSizeChange'，即组件（EmbeddedComponent或UIExtensionComponent）尺寸变化事件。 |
+| callback | Callback<window.Size> | 否 | 回调函数。返回当前的组件（EmbeddedComponent或UIExtensionComponent）尺寸。如果传入该参数，则关闭该监听。如果未传入参数，则关闭组件（EmbeddedComponent或UIExtensionComponent）尺寸变化的监听。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -210,7 +231,6 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
     // 注销组件（EmbeddedComponent或UIExtensionComponent）大小变化的监听
     extensionWindow.off('windowSizeChange');
   }
-}
 ```
 
 #### on('rectChange')14+
@@ -227,13 +247,20 @@ on(type: 'rectChange', reasons: number, callback: Callback<RectChangeOptions>): 
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'rectChange'，即组件（EmbeddedComponent或UIExtensionComponent）矩形变化事件。reasonsnumber是触发组件（EmbeddedComponent或UIExtensionComponent）位置及尺寸变化的原因，具体取值可参考[RectChangeReason](#ZH-CN_TOPIC_0000002529284779__rectchangereason14)枚举值。callback[Callback](@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__callback)<[RectChangeOptions](#ZH-CN_TOPIC_0000002529284779__rectchangeoptions14)>是回调函数。返回当前组件（EmbeddedComponent或UIExtensionComponent）矩形变化值及变化原因。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'rectChange'，即组件（EmbeddedComponent或UIExtensionComponent）矩形变化事件。 |
+| reasons | number | 是 | 触发组件（EmbeddedComponent或UIExtensionComponent）位置及尺寸变化的原因，具体取值可参考RectChangeReason枚举值。 |
+| callback | Callback<RectChangeOptions> | 是 | 回调函数。返回当前组件（EmbeddedComponent或UIExtensionComponent）矩形变化值及变化原因。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible cause: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed.801Capability not supported. Failed to call the API due to limited device capabilities.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible cause: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
 
 **示例：**
 
@@ -250,7 +277,6 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
         console.info('Succeeded window rect changes. Data: ' + JSON.stringify(data));
     });
   }
-}
 ```
 
 #### off('rectChange')14+
@@ -267,13 +293,19 @@ off(type: 'rectChange', callback?: Callback<RectChangeOptions>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'rectChange'，即组件（EmbeddedComponent或UIExtensionComponent）矩形变化事件。callback[Callback](@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__callback)<[RectChangeOptions](#ZH-CN_TOPIC_0000002529284779__rectchangeoptions14)>否回调函数。返回当前组件（EmbeddedComponent或UIExtensionComponent）矩形变化值及变化原因。如果传入参数，则关闭该监听。如果未传入参数，则关闭所有组件（EmbeddedComponent或UIExtensionComponent）矩形变化的监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'rectChange'，即组件（EmbeddedComponent或UIExtensionComponent）矩形变化事件。 |
+| callback | Callback<RectChangeOptions> | 否 | 回调函数。返回当前组件（EmbeddedComponent或UIExtensionComponent）矩形变化值及变化原因。如果传入参数，则关闭该监听。如果未传入参数，则关闭所有组件（EmbeddedComponent或UIExtensionComponent）矩形变化的监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible cause: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed.801Capability not supported. Failed to call the API due to limited device capabilities.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible cause: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
 
 **示例：**
 
@@ -287,7 +319,6 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
     // 注销组件（EmbeddedComponent或UIExtensionComponent）位置及尺寸变化的监听
     extensionWindow.off('rectChange');
   }
-}
 ```
 
 #### createSubWindowWithOptions
@@ -304,17 +335,26 @@ createSubWindowWithOptions(name: string, subWindowOptions: window.SubWindowOptio
 
 **参数：**
 
-参数名类型必填说明namestring是子窗口的名字。subWindowOptions[window.SubWindowOptions](../../types/interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529284795__subwindowoptions11)是子窗口参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 子窗口的名字。 |
+| subWindowOptions | window.SubWindowOptions | 是 | 子窗口参数。 |
 
 **返回值：**
 
-类型说明Promise<[window.Window](../../types/interfaces/Interface (Window).md)>Promise对象。返回当前WindowProxy下创建的子窗口对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<window.Window> | Promise对象。返回当前WindowProxy下创建的子窗口对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[窗口错误码](../../errors/窗口错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[窗口错误码]([窗口错误码](../../errors/窗口错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.801Capability not supported. Failed to call the API due to limited device capabilities.1300002This window state is abnormal.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 1300002 | This window state is abnormal. Possible causes: 1. The window is not created or destroyed. 2. Internal task error. |
 
 **示例：**
 
@@ -353,13 +393,85 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
                   console.error(`Failed to show the subwindow!`);
                 }
               });
-            });
-          });
-        });
       }).catch((error: BusinessError) => {
         console.error(`Create subwindow failed. Cause code: ${error.code}, message: ${error.message}`);
       })
   }
+```
+
+**createSubWindowWithOptions23+**
+
+createSubWindowWithOptions(name: string, subWindowConfig: window.SubWindowOptions, followCreatorLifecycle: boolean): Promise<window.Window>
+
+创建该WindowProxy实例下的子窗口，可通过设置followCreatorLifecycle，决定子窗是否跟随组件（EmbeddedComponent或UIExtensionComponent）的生命周期，使用Promise异步回调。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 子窗口的名字。 |
+| subWindowConfig | window.SubWindowOptions | 是 | 子窗口参数。 |
+| followCreatorLifecycle | boolean | 是 | 子窗生命周期是否跟组件（EmbeddedComponent或UIExtensionComponent）保持同步。true表示该组件隐藏时，子窗隐藏，该组件显示时子窗显示，false表示子窗的显隐不跟随该组件变化。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<window.Window> | Promise对象。返回当前WindowProxy下创建的子窗口对象。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[窗口错误码](窗口错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 1300002 | This window state is abnormal. Possible cause: 1. The window is not created or destroyed; 2. Internal task error. |
+
+示例：
+
+```ets
+// ExtensionProvider.ts
+import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+export default class EntryAbility extends EmbeddedUIExtensionAbility {
+  onSessionCreate(want: Want, session: UIExtensionContentSession) {
+    const extensionWindow = session.getUIExtensionWindowProxy();
+    const subWindowConfig: window.SubWindowOptions = {
+      title: 'This is a subwindow',
+      decorEnabled: true
+    };
+    // 创建子窗口
+    extensionWindow.createSubWindowWithOptions('subWindowForHost', subWindowConfig, true)
+      .then((subWindow: window.Window) => {
+        subWindow.setUIContent('pages/Index', (err, data) =>{
+          if (err && err.code != 0) {
+            return;
+          }
+          subWindow?.resize(300, 300, (err, data)=>{
+            if (err && err.code != 0) {
+              return;
+            }
+            subWindow?.moveWindowTo(100, 100, (err, data)=>{
+              if (err && err.code != 0) {
+                return;
+              }
+              subWindow?.showWindow((err, data) => {
+                if (err && err.code == 0) {
+                  console.info(`The subwindow has been shown!`);
+                } else {
+                  console.error(`Failed to show the subwindow!`);
+                }
+        });
+      }).catch((error: BusinessError) => {
+        console.error(`Create subwindow failed. Cause code: ${error.code}, message: ${error.message}`);
+      })
 }
 ```
 
@@ -375,17 +487,25 @@ occupyEvents(eventFlags: number): Promise<void>
 
 **参数：**
 
-参数名类型必填说明eventFlagsnumber是占用的事件类型，具体取值可见[EventFlag](#ZH-CN_TOPIC_0000002529284779__eventflag18)枚举值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| eventFlags | number | 是 | 占用的事件类型，具体取值可见EventFlag枚举值。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[窗口错误码](../../errors/窗口错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[窗口错误码](窗口错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible cause: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed.1300002This window state is abnormal.1300003This window manager service works abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible cause: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 1300002 | This window state is abnormal. Possible cause: 1. The window is not created or destroyed. 2. Internal task error. |
+| 1300003 | This window manager service works abnormally. |
 
 **示例：**
 
@@ -403,7 +523,7 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
       try {
         let promise = extensionWindow.occupyEvents(uiExtension.EventFlag.EVENT_CLICK | uiExtension.EventFlag.EVENT_LONG_PRESS);
         promise.then(() => {
-          console.info(`Successed in occupy events`);
+          console.info(`Succeeded in occupying events`);
         }).catch((err: BusinessError) => {
           console.error(`Failed to occupy events. Cause code: ${err.code}, message: ${err.message}`);
         });
@@ -412,7 +532,6 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
       }
     }, 500);
   }
-}
 ```
 
 #### EventFlag18+
@@ -423,7 +542,15 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
-名称值说明EVENT_NONE0x00000000无事件。EVENT_PAN_GESTURE_LEFT0x00000001左滑事件。EVENT_PAN_GESTURE_RIGHT0x00000002右滑事件。EVENT_PAN_GESTURE_UP0x00000004上滑事件。EVENT_PAN_GESTURE_DOWN0x00000008下滑事件。EVENT_CLICK0x00000100点击事件。EVENT_LONG_PRESS0x00000200长按事件。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| EVENT_NONE | 0x00000000 | 无事件。 |
+| EVENT_PAN_GESTURE_LEFT | 0x00000001 | 左滑事件。 |
+| EVENT_PAN_GESTURE_RIGHT | 0x00000002 | 右滑事件。 |
+| EVENT_PAN_GESTURE_UP | 0x00000004 | 上滑事件。 |
+| EVENT_PAN_GESTURE_DOWN | 0x00000008 | 下滑事件。 |
+| EVENT_CLICK | 0x00000100 | 点击事件。 |
+| EVENT_LONG_PRESS | 0x00000200 | 长按事件。 |
 
 #### AvoidAreaInfo
 
@@ -433,7 +560,10 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明type[window.AvoidAreaType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529444769__avoidareatype7)否否窗口规避区类型。area[window.AvoidArea](../../types/interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529284795__avoidarea7)否否窗口内容规避区域。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| type | [window.AvoidAreaType](../../types/enums/Enums.md#ZH-CN_TOPIC_0000002529444769__avoidareatype7) | 否 | 否 | 窗口规避区类型。 |
+| area | window.AvoidArea | 否 | 否 | 窗口内容规避区域。 |
 
 #### WindowProxyProperties14+
 
@@ -443,7 +573,9 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明uiExtensionHostWindowProxyRect[window.Rect](../../types/interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529284795__rect7)否否组件（EmbeddedComponent或UIExtensionComponent）的位置和宽高。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uiExtensionHostWindowProxyRect | window.Rect | 否 | 否 | 组件（EmbeddedComponent或UIExtensionComponent）的位置和宽高。 |
 
 #### RectChangeReason14+
 
@@ -453,7 +585,9 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
-名称值说明HOST_WINDOW_RECT_CHANGE0x0001组件所在的宿主窗口矩形变化。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| HOST_WINDOW_RECT_CHANGE | 0x0001 | 组件所在的宿主窗口矩形变化。 |
 
 #### RectChangeOptions14+
 
@@ -463,16 +597,18 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明rect[window.Rect](../../types/interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529284795__rect7)否否组件矩形变化后的值。reason[RectChangeReason](#ZH-CN_TOPIC_0000002529284779__rectchangereason14)否否组件矩形变化的原因。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| rect | window.Rect | 否 | 否 | 组件矩形变化后的值。 |
+| reason | RectChangeReason | 否 | 否 | 组件矩形变化的原因。 |
 
 #### 完整示例
 
-本示例展示文档中所有API在EmbeddedUIExtensionAbility中的基础使用方式，示例应用的bundleName为"com.example.embeddeddemo", 被拉起的EmbeddedUIExtensionAbility为"ExampleEmbeddedAbility"。
+本示例展示文档中所有API在[EmbeddedUIExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/embeddeduiextensionability)中的基础使用方式，示例应用的bundleName为"com.example.embeddeddemo"，被拉起的EmbeddedUIExtensionAbility为"ExampleEmbeddedAbility"。
 
 -
 
 示例应用中的EntryAbility(UIAbility)加载首页文件：pages/Index.ets，其中内容如下：
-
 ```ets
 // pages/Index.ets -- UIAbility启动时加载此页面
 import { Want } from '@kit.AbilityKit';
@@ -504,13 +640,11 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```
 
 -
 
 EmbeddedComponent拉起的EmbeddedUIExtensionAbility在ets/extensionAbility/ExampleEmbeddedAbility文件中实现，内容如下：
-
 ```ets
 import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
 
@@ -540,14 +674,12 @@ export default class ExampleEmbeddedAbility extends EmbeddedUIExtensionAbility {
     };
     let storage: LocalStorage = new LocalStorage(param);
     session.loadContent('pages/extension', storage);
-  }
 }
 ```
 
 -
 
 EmbeddedUIExtensionAbility的入口页面文件pages/extension.ets内容如下：
-
 ```ets
 import { UIExtensionContentSession } from '@kit.AbilityKit';
 import { uiExtension, window } from '@kit.ArkUI';
@@ -620,22 +752,16 @@ struct Extension {
                                     console.error(`Failed to show the subwindow!`);
                                 }
                             });
-                        });
-                    });
-                });
             }).catch((error: BusinessError) => {
                 console.error(`Create subwindow failed. Cause code: ${error.code}, message: ${error.message}`);
             })
-      })
     }.width('100%').height('100%')
-  }
 }
 ```
 
 -
 
 最后，示例应用的module.json5中的"extensionAbilities"中需要增加一项，具体内容如下：
-
 ```ets
 {
   "name": "ExampleEmbeddedAbility",

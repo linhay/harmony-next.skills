@@ -12,15 +12,22 @@ import { abilityManager } from '@kit.AbilityKit';
 
 #### AbilityState14+
 
-Ability的状态，该类型为枚举，可配合[AbilityRunningInfo](../../topics/system-services/AbilityRunningInfo.md)返回Ability的状态。
+Ability的状态，该类型为枚举，可配合[AbilityRunningInfo](AbilityRunningInfo.md)返回Ability的状态。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称值说明INITIAL0表示ability为初始化状态。FOCUS2表示ability为获焦状态。FOREGROUND9表示ability为前台状态。BACKGROUND10表示ability为后台状态。FOREGROUNDING11表示ability为前台调度中状态。BACKGROUNDING12表示ability为后台调度中状态。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| INITIAL | 0 | 表示ability为初始化状态。 |
+| FOCUS | 2 | 表示ability为获焦状态。 |
+| FOREGROUND | 9 | 表示ability为前台状态。 |
+| BACKGROUND | 10 | 表示ability为后台状态。 |
+| FOREGROUNDING | 11 | 表示ability为前台调度中状态。 |
+| BACKGROUNDING | 12 | 表示ability为后台调度中状态。 |
 
-#### abilityManager.getAbilityRunningInfos14+
+#### abilityManager.get[AbilityRunningInfo](../../topics/misc/AbilityRunningInfo.md)s14+
 
-getAbilityRunningInfos(): Promise<Array<AbilityRunningInfo>>
+get[AbilityRunningInfo](../../topics/misc/AbilityRunningInfo.md)s(): Promise<Array<AbilityRunningInfo>>
 
 获取UIAbility运行时的相关信息。使用Promise异步回调。
 
@@ -32,13 +39,17 @@ getAbilityRunningInfos(): Promise<Array<AbilityRunningInfo>>
 
 **返回值：**
 
-类型说明Promise<Array<[AbilityRunningInfo](../../topics/system-services/AbilityRunningInfo.md)>>Promise对象，返回UIAbility运行时的相关信息。开发者可在此进行错误处理或其他自定义处理。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<[AbilityRunningInfo](../../topics/misc/AbilityRunningInfo.md)>> | Promise对象，返回UIAbility运行时的相关信息。开发者可在此进行错误处理或其他自定义处理。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[元能力子系统错误码]([元能力子系统错误码](../../errors/元能力子系统错误码.md).md)。
 
-错误码ID错误信息16000050Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16000050 | Internal error. |
 
 **示例**：
 
@@ -73,7 +84,7 @@ restartSelfAtomicService(context: Context): void
 
 -
 
-在调用本接口成功后的3秒内，再次调用本接口、[ApplicationContext.restartApp()](../../topics/graphics/ApplicationContext (应用上下文).md#ZH-CN_TOPIC_0000002529284613__applicationcontextrestartapp12)或[UIAbilityContext.restartApp()](../../topics/graphics/UIAbilityContext.md#ZH-CN_TOPIC_0000002497604628__restartapp22)接口中的任一接口，系统将返回错误码16000064。
+在调用本接口成功后的3秒内，再次调用本接口、[ApplicationContext.restartApp()](ApplicationContext (应用上下文).md#ZH-CN_TOPIC_0000002553360493__applicationcontextrestartapp12)或[UIAbilityContext.restartApp()](UIAbilityContext.md#ZH-CN_TOPIC_0000002553200541__restartapp22)接口中的任一接口，系统将返回错误码16000064。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -83,17 +94,21 @@ restartSelfAtomicService(context: Context): void
 
 **参数**：
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是
-
-当前Ability的上下文。
-
-**说明**：当前仅支持[UIAbilityContext](../../topics/graphics/UIAbilityContext.md)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 当前Ability的上下文。 说明：当前仅支持[UIAbilityContext](../../topics/misc/UIAbilityContext.md)。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息16000050Internal error. Possible causes: 1. Connect to system service failed; 2.Send restart message to system service failed; 3.System service failed to communicate with dependency module.16000053The ability is not on the top of the UI.16000064Restart too frequently. Try again at least 3s later.16000086The context is not UIAbilityContext.16000090The caller is not an atomic service.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16000050 | Internal error. Possible causes: 1. Connect to system service failed; 2.Send restart message to system service failed; 3.System service failed to communicate with dependency module. |
+| 16000053 | The ability is not on the top of the UI. |
+| 16000064 | Restart too frequently. Try again at least 3s later. |
+| 16000086 | The context is not [UIAbilityContext](../../topics/misc/UIAbilityContext.md). |
+| 16000090 | The caller is not an atomic service. |
 
 **示例**：
 
@@ -108,26 +123,28 @@ export default class EntryAbility extends EmbeddableUIAbility {
     } catch (e) {
       console.error(`restartSelfAtomicService error: ${JSON.stringify(e as BusinessError)}`);
     }
-  }
-}
 ```
 
-#### AbilityRunningInfo14+
+#### [AbilityRunningInfo](../../topics/misc/AbilityRunningInfo.md)14+
 
-type AbilityRunningInfo = _AbilityRunningInfo
+type [AbilityRunningInfo](../../topics/misc/AbilityRunningInfo.md) = [_AbilityRunningInfo](../../topics/misc/AbilityRunningInfo.md)
 
-AbilityRunningInfo二级模块。
+[AbilityRunningInfo](../../topics/misc/AbilityRunningInfo.md)二级模块。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-类型说明[_AbilityRunningInfo](../../topics/system-services/AbilityRunningInfo.md)AbilityRunningInfo二级模块，提供对Ability运行的相关信息和状态的定义。
+| 类型 | 说明 |
+| --- | --- |
+| _[AbilityRunningInfo](../../topics/misc/AbilityRunningInfo.md) | AbilityRunningInfo二级模块，提供对Ability运行的相关信息和状态的定义。 |
 
 #### AbilityStateData14+
 
-type AbilityStateData = _AbilityStateData.default
+type AbilityStateData = [_AbilityStateData.default](../../topics/misc/AbilityStateData.md)
 
 AbilityStateData二级模块。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-类型说明[_AbilityStateData.default](../../topics/system-services/AbilityStateData.md)AbilityStateData二级模块，提供Ability状态信息。
+| 类型 | 说明 |
+| --- | --- |
+| [_AbilityStateData.default](../../topics/misc/AbilityStateData.md) | AbilityStateData二级模块，提供Ability状态信息。 |

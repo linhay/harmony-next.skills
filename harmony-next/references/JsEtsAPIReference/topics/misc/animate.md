@@ -14,42 +14,21 @@
 
 #### 属性
 
-名称类型默认值必填描述idstring-否组件的唯一标识。attributeNamestring-否设置需要进行动效的属性名。begin<time>0否
-
-设置动效的延迟时间。
-
-支持输入ms(毫秒)、s（秒）、m（分），默认为s(秒)，其他格式不支持。
-
-dur<time>0否
-
-设置动效持续时间，如果dur没设置，按照end-begin的结果作为持续时间，小于等于0时，动效不触发。
-
-支持输入ms(毫秒)、s（秒）、m（分），默认为s(秒)，其他格式不支持。
-
-end<time>0否设置动效多久时间后结束。支持输入ms(毫秒)、s（秒）、m（分），默认为s(秒)，其他格式不支持。repeatCount<number | indefinite>1否设置动画播放的次数，默认无限次播放(indefinite)，可通过设置为数值1仅播放一次。fill<freeze | remove>remove否设置动画结束时的状态。calcMode<discrete | linear | paced | spline>linear否
-
-设置动画的插值模式。
-
-discrete：阶跃，from值直接跳转到to的值；
-
-linear：线性；
-
-paced：线性，设置此项后keyTimes和keyPoints值无效；
-
-spline：自定义贝塞尔曲线，spline点定义在keyTimes属性中，每个时间间隔控制点由keySplines定义。
-
-keyTimesstring-否设置关键帧动画的开始时间，值为0~1之间的数值用分号隔开，比如0;0.3;0.8;1。keyTimes、keySplines、values组合设置关键帧动画。keyTimes和values的个数保持一致。keySplines个数为keyTimes个数减一。keySplinesstring-否与keyTimes相关联的一组贝塞尔控制点。定义每个关键帧的贝塞尔曲线，曲线之间用分号隔开。曲线内的两个控制点格式为x1 y1 x2 y2。比如0.5 0 0.5 1; 0.5 0 0.5 1;0.5 0 0.5 1bynumber-否在动画中对某一指定属性，添加相对偏移值，from默认为原属性值。fromstring-否
-
-设置需要进行动画的属性的开始值。
-
-如果已经设置了values属性，则from失效。
-
-tostring-否
-
-设置需要进行动画的属性的结束值。
-
-如果已经设置了values属性，则to都失效。
-
+| 名称 | 类型 | 默认值 | 必填 | 描述 |
+| --- | --- | --- | --- | --- |
+| id | string | - | 否 | 组件的唯一标识。 |
+| attributeName | string | - | 否 | 设置需要进行动效的属性名。 |
+| begin | <time> | 0 | 否 | 设置动效的延迟时间。 支持输入ms(毫秒)、s（秒）、m（分），默认为s(秒)，其他格式不支持。 |
+| dur | <time> | 0 | 否 | 设置动效持续时间，如果dur没设置，按照end-begin的结果作为持续时间，小于等于0时，动效不触发。 支持输入ms(毫秒)、s（秒）、m（分），默认为s(秒)，其他格式不支持。 |
+| end | <time> | 0 | 否 | 设置动效多久时间后结束。支持输入ms(毫秒)、s（秒）、m（分），默认为s(秒)，其他格式不支持。 |
+| repeatCount | <number | indefinite> | 1 | 否 | 设置动画播放的次数，默认无限次播放(indefinite)，可通过设置为数值1仅播放一次。 |
+| fill | <freeze | remove> | remove | 否 | 设置动画结束时的状态。 |
+| calcMode | <discrete | linear | paced | spline> | linear | 否 | 设置动画的插值模式。 discrete：阶跃，from值直接跳转到to的值； linear：线性； paced：线性，设置此项后keyTimes和keyPoints值无效； spline：自定义贝塞尔曲线，spline点定义在keyTimes属性中，每个时间间隔控制点由keySplines定义。 |
+| keyTimes | string | - | 否 | 设置关键帧动画的开始时间，值为0~1之间的数值用分号隔开，比如0;0.3;0.8;1。keyTimes、keySplines、values组合设置关键帧动画。keyTimes和values的个数保持一致。keySplines个数为keyTimes个数减一。 |
+| keySplines | string | - | 否 | 与keyTimes相关联的一组贝塞尔控制点。定义每个关键帧的贝塞尔曲线，曲线之间用分号隔开。曲线内的两个控制点格式为x1 y1 x2 y2。比如0.5 0 0.5 1; 0.5 0 0.5 1;0.5 0 0.5 1 |
+| by | number | - | 否 | 在动画中对某一指定属性，添加相对偏移值，from默认为原属性值。 |
+| from | string | - | 否 | 设置需要进行动画的属性的开始值。 如果已经设置了values属性，则from失效。 |
+| to | string | - | 否 | 设置需要进行动画的属性的结束值。 如果已经设置了values属性，则to都失效。 |
 valuesstring-否设置一组动画的变化值。格式为value1;value2;value3。
 
 #### 示例

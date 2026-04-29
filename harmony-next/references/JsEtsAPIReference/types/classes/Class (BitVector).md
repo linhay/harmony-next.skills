@@ -20,7 +20,9 @@ import { collections } from '@kit.ArkTS';
 
 **系统能力：** SystemCapability.Utils.Lang
 
-名称类型只读可选说明lengthnumber是否BitVector的元素个数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| length | number | 是 | 否 | BitVector的元素个数。 |
 
 #### constructor
 
@@ -34,7 +36,9 @@ BitVector的构造函数。
 
 **参数：**
 
-参数名类型必填说明lengthnumber是初始化BitVector的长度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| length | number | 是 | 初始化BitVector的长度。 |
 
 **示例：**
 
@@ -54,17 +58,25 @@ push(element:number): boolean
 
 **参数：**
 
-参数名类型必填说明elementnumber是待插入的元素，0表示0，其余值表示1。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | number | 是 | 待插入的元素，0表示0，其余值表示1。 |
 
 **返回值：**
 
-类型说明boolean插入成功返回true，失败返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 插入成功返回true，失败返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[语言基础类库错误码]([语言基础类库错误码](../../errors/语言基础类库错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.10200011The push method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 10200011 | The push method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -89,13 +101,18 @@ pop(): number
 
 **返回值：**
 
-类型说明number弹出BitVector尾部的元素，其值为对应bit值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 弹出BitVector尾部的元素，其值为对应bit值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The pop method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The pop method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -122,17 +139,27 @@ has(element: number, fromIndex: number, toIndex: number): boolean
 
 **参数：**
 
-参数名类型必填说明elementnumber是待判断的bit值，0表示0，其余值表示1。fromIndexnumber是范围起始索引，包含本索引值。fromIndex<0或者fromIndex>=toIndex时，则会抛出错误。toIndexnumber是范围终止索引，包含本索引值。toIndex<0或者toIndex>=length时，则会抛出错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | number | 是 | 待判断的bit值，0表示0，其余值表示1。 |
+| fromIndex | number | 是 | 范围起始索引，包含本索引值。fromIndex<0或者fromIndex>=toIndex时，则会抛出错误。 |
+| toIndex | number | 是 | 范围终止索引，包含本索引值。toIndex<0或者toIndex>=length时，则会抛出错误。 |
 
 **返回值：**
 
-类型说明boolean包含特定bit值返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 包含特定bit值返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of fromIndex or toIndex is out of range.10200011The has method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of fromIndex or toIndex is out of range. |
+| 10200011 | The has method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -159,13 +186,22 @@ setBitsByRange(element: number, fromIndex: number, toIndex: number): void
 
 **参数：**
 
-参数名类型必填说明elementnumber是待设置的bit值，0表示0，其余表示1。fromIndexnumber是范围起始索引，包含本索引值。fromIndex<0或者fromIndex>=toIndex时，则会抛出错误。toIndexnumber是范围终止索引，不包含本索引值。toIndex<0或者toIndex>=length时，则会抛出错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | number | 是 | 待设置的bit值，0表示0，其余表示1。 |
+| fromIndex | number | 是 | 范围起始索引，包含本索引值。fromIndex<0或者fromIndex>=toIndex时，则会抛出错误。 |
+| toIndex | number | 是 | 范围终止索引，不包含本索引值。toIndex<0或者toIndex>=length时，则会抛出错误。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.10200001The value of fromIndex or toIndex is out of range.10200011The setBitsByRange method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 10200001 | The value of fromIndex or toIndex is out of range. |
+| 10200011 | The setBitsByRange method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -191,13 +227,19 @@ setAllBits(element: number): void
 
 **参数：**
 
-参数名类型必填说明elementnumber是待设置的元素，0表示0，其余值表示1。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | number | 是 | 待设置的元素，0表示0，其余值表示1。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.10200011The setAllBits method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 10200011 | The setAllBits method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -223,17 +265,27 @@ getBitsByRange(fromIndex: number, toIndex: number): BitVector
 
 **参数：**
 
-参数名类型必填说明fromIndexnumber是范围起始索引，包含本索引值。fromIndex<0或者fromIndex>=toIndex时，则会抛出错误。toIndexnumber是范围终止索引，不包含本索引值。toIndex<0或者toIndex>=length时，则会抛出错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fromIndex | number | 是 | 范围起始索引，包含本索引值。fromIndex<0或者fromIndex>=toIndex时，则会抛出错误。 |
+| toIndex | number | 是 | 范围终止索引，不包含本索引值。toIndex<0或者toIndex>=length时，则会抛出错误。 |
 
 **返回值：**
 
-类型说明BitVector指定范围内的bit值组成的BitVector。
+| 类型 | 说明 |
+| --- | --- |
+| BitVector | 指定范围内的bit值组成的BitVector。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.10200001The value of fromIndex or toIndex is out of range.10200011The getBitsByRange method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 10200001 | The value of fromIndex or toIndex is out of range. |
+| 10200011 | The getBitsByRange method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -264,13 +316,19 @@ resize(size: number): void
 
 **参数：**
 
-参数名类型必填说明sizenumber是需要改变的长度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | number | 是 | 需要改变的长度。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.10200011The resize method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 10200011 | The resize method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -299,17 +357,28 @@ getBitCountByRange(element: number, fromIndex: number, toIndex: number): number
 
 **参数：**
 
-参数名类型必填说明elementnumber是待统计的bit值，0表示0，其余值表示1。fromIndexnumber是范围起始索引，包含本索引值。fromIndex<0或者fromIndex>=toIndex时，则会抛出错误。toIndexnumber是范围终止索引，不包含本索引值。toIndex<0或者toIndex>=length时，则会抛出错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | number | 是 | 待统计的bit值，0表示0，其余值表示1。 |
+| fromIndex | number | 是 | 范围起始索引，包含本索引值。fromIndex<0或者fromIndex>=toIndex时，则会抛出错误。 |
+| toIndex | number | 是 | 范围终止索引，不包含本索引值。toIndex<0或者toIndex>=length时，则会抛出错误。 |
 
 **返回值：**
 
-类型说明number统计指定范围内获取指定bit值的数量。
+| 类型 | 说明 |
+| --- | --- |
+| number | 统计指定范围内获取指定bit值的数量。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.10200001The value of fromIndex or toIndex is out of range.10200011The getBitCountByRange method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 10200001 | The value of fromIndex or toIndex is out of range. |
+| 10200011 | The getBitCountByRange method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -336,17 +405,28 @@ getIndexOf(element: number, fromIndex: number, toIndex: number): number
 
 **参数：**
 
-参数名类型必填说明elementnumber是待统计的bit值，0表示0，其余值表示1。fromIndexnumber是范围起始索引，包含本索引值。fromIndex<0或者fromIndex>=toIndex时，则会抛出错误。toIndexnumber是范围终止索引，不包含本索引值。toIndex<0或者toIndex>=length时，则会抛出错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | number | 是 | 待统计的bit值，0表示0，其余值表示1。 |
+| fromIndex | number | 是 | 范围起始索引，包含本索引值。fromIndex<0或者fromIndex>=toIndex时，则会抛出错误。 |
+| toIndex | number | 是 | 范围终止索引，不包含本索引值。toIndex<0或者toIndex>=length时，则会抛出错误。 |
 
 **返回值：**
 
-类型说明number返回指定bit值首次出现时的下标值，查找失败返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回指定bit值首次出现时的下标值，查找失败返回-1。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.10200001The value of fromIndex or toIndex is out of range.10200011The getIndexOf method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 10200001 | The value of fromIndex or toIndex is out of range. |
+| 10200011 | The getIndexOf method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -373,17 +453,28 @@ getLastIndexOf(element: number, fromIndex: number, toIndex: number): number
 
 **参数：**
 
-参数名类型必填说明elementnumber是待统计的bit值，0表示0，其余值表示1。fromIndexnumber是范围起始索引，包含本索引值。fromIndex<0或者fromIndex>=toIndex时，则会抛出错误。toIndexnumber是范围终止索引，不包含本索引值。toIndex<0或者toIndex>=length时，则会抛出错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | number | 是 | 待统计的bit值，0表示0，其余值表示1。 |
+| fromIndex | number | 是 | 范围起始索引，包含本索引值。fromIndex<0或者fromIndex>=toIndex时，则会抛出错误。 |
+| toIndex | number | 是 | 范围终止索引，不包含本索引值。toIndex<0或者toIndex>=length时，则会抛出错误。 |
 
 **返回值：**
 
-类型说明number返回指定bit值最后一次出现时的下标值，查找失败返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回指定bit值最后一次出现时的下标值，查找失败返回-1。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.10200001The value of fromIndex or toIndex is out of range.10200011The getLastIndexOf method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 10200001 | The value of fromIndex or toIndex is out of range. |
+| 10200011 | The getLastIndexOf method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -410,13 +501,20 @@ flipBitByIndex(index: number): void
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定索引。index<0或者index>=length时，则会抛出错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定索引。index<0或者index>=length时，则会抛出错误。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.10200001The value of index is out of range.10200011The flipBitByIndex method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 10200001 | The value of index is out of range. |
+| 10200011 | The flipBitByIndex method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -442,13 +540,21 @@ flipBitsByRange(fromIndex: number, toIndex: number): void
 
 **参数：**
 
-参数名类型必填说明fromIndexnumber是范围起始索引，包含本索引值。fromIndex<0或者fromIndex>=toIndex时，则会抛出错误。toIndexnumber是范围终止索引，不包含本索引值。toIndex<0或者toIndex>=length时，则会抛出错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fromIndex | number | 是 | 范围起始索引，包含本索引值。fromIndex<0或者fromIndex>=toIndex时，则会抛出错误。 |
+| toIndex | number | 是 | 范围终止索引，不包含本索引值。toIndex<0或者toIndex>=length时，则会抛出错误。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.10200001The value of fromIndex or toIndex is out of range.10200011The flipBitsByRange method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 10200001 | The value of fromIndex or toIndex is out of range. |
+| 10200011 | The flipBitsByRange method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -474,13 +580,18 @@ values(): IterableIterator<number>
 
 **返回值：**
 
-类型说明IterableIterator<number>返回一个BitVector迭代器对象。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<number> | 返回一个BitVector迭代器对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The values method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The values method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -513,13 +624,17 @@ while (!temp.done) {
 
 **返回值：**
 
-类型说明IterableIterator<number>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<number> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The Symbol.iterator method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The Symbol.iterator method cannot be bound. |
 
 **示例：**
 
@@ -548,11 +663,15 @@ for (let item of bitVector) {
 
 **参数：**
 
-参数名类型必填说明indexnumber是所需代码单元的从零开始的索引。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 所需代码单元的从零开始的索引。 |
 
 **返回值：**
 
-类型说明number返回number数据类型。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回number数据类型。 |
 
 **示例：**
 

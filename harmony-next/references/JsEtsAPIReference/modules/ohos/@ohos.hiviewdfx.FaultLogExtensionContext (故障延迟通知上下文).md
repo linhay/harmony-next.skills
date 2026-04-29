@@ -1,6 +1,6 @@
-# @ohos.hiviewdfx.FaultLogExtensionContext (故障延迟通知上下文)
+# @ohos.hiviewdfx.FaultLog[ExtensionContext](../../topics/misc/ExtensionContext.md) (故障延迟通知上下文)
 
-FaultLogExtensionContext是[FaultLogExtensionAbility](@ohos.hiviewdfx.FaultLogExtensionAbility (故障延迟通知).md)的上下文环境，继承自[ExtensionContext](../../topics/graphics/ExtensionContext.md)。
+FaultLogExtensionContext是[FaultLogExtensionAbility](@ohos.hiviewdfx.FaultLogExtensionAbility (故障延迟通知).md)的上下文环境，继承自[ExtensionContext](ExtensionContext.md)。
 
 FaultLogExtensionContext模块提供访问[FaultLogExtensionAbility](@ohos.hiviewdfx.FaultLogExtensionAbility (故障延迟通知).md)的资源的能力，对于扩展的ExtensionAbility，可直接将ExtensionContext作为上下文环境，或者定义一个继承自ExtensionContext的类型作为上下文环境。
 
@@ -19,10 +19,9 @@ export default class MyFaultLogExtension extends FaultLogExtensionAbility {
         let context = this.context; // 获取FaultLogExtensionContext
         console.info('cache dir is ' + context.cacheDir); // 访问context中的成员
     }
-}
 ```
 
-#### FaultLogExtensionContext
+#### FaultLog[ExtensionContext](../../topics/misc/ExtensionContext.md)
 
 FaultLogExtensionContext是[FaultLogExtensionAbility](@ohos.hiviewdfx.FaultLogExtensionAbility (故障延迟通知).md)的上下文环境。
 

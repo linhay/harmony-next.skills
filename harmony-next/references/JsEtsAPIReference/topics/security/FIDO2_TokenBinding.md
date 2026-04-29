@@ -6,27 +6,20 @@ Token binding协议，用于客户端与依赖方通信。
 
 **起始版本：** 6.0.0(20)
 
-**相关模块：**[FIDO2](../misc/通行密钥.md)
+相关模块： [FIDO2](通行密钥.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称
-
-描述
-
-[FIDO2_TokenBindingStatus](../misc/通行密钥.md#ZH-CN_TOPIC_0000002523299537__ga3a0c5c93081cd75c8ecd7a1efac8252e)[status](FIDO2_TokenBinding.md#ZH-CN_TOPIC_0000002523139575__a0e1fafe7c82fb1abd4fab1dcf6f047a0)
-
-客户端的绑定状态。
-
-char * [id](FIDO2_TokenBinding.md#ZH-CN_TOPIC_0000002523139575__a2991164fd206d98a42ce81e23040623f)
-
-令牌绑定标识符。
+| 名称 | 描述 |
+| --- | --- |
+| [FIDO2_TokenBindingStatus](../security/通行密钥.md#ZH-CN_TOPIC_0000002523299537__ga3a0c5c93081cd75c8ecd7a1efac8252e) [status](FIDO2_TokenBinding.md#ZH-CN_TOPIC_0000002523139575__a0e1fafe7c82fb1abd4fab1dcf6f047a0) | 客户端的绑定状态。 |
+| char * [id](FIDO2_TokenBinding.md#ZH-CN_TOPIC_0000002523139575__a2991164fd206d98a42ce81e23040623f) | 令牌绑定标识符。 |
 
 #### 结构体成员变量说明
 
-#### id
+#### [id](FIDO2_TokenBinding.md#ZH-CN_TOPIC_0000002523139575__a2991164fd206d98a42ce81e23040623f)
 
 ```ets
 char* FIDO2_TokenBinding::id
@@ -36,10 +29,10 @@ char* FIDO2_TokenBinding::id
 
 令牌绑定标识符。
 
-#### status
+#### [status](FIDO2_TokenBinding.md#ZH-CN_TOPIC_0000002523139575__a0e1fafe7c82fb1abd4fab1dcf6f047a0)
 
 ```ets
-[FIDO2_TokenBindingStatus](../misc/通行密钥.md#ZH-CN_TOPIC_0000002523299537__ga3a0c5c93081cd75c8ecd7a1efac8252e) FIDO2_TokenBinding::status
+FIDO2_TokenBindingStatus FIDO2_TokenBinding::status
 ```
 
 **描述**

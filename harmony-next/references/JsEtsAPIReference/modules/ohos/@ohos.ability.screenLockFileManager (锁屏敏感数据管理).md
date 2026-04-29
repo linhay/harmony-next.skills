@@ -16,7 +16,10 @@ import { screenLockFileManager } from '@kit.AbilityKit';
 
 **系统能力：** SystemCapability.Security.ScreenLockFileManager
 
-名称值说明MEDIA_DATA0x00000001媒体类型数据。ALL_DATA0xffffffff所有敏感加密数据。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| MEDIA_DATA | 0x00000001 | 媒体类型数据。 |
+| ALL_DATA | 0xffffffff | 所有敏感加密数据。 |
 
 #### AccessStatus
 
@@ -24,7 +27,10 @@ import { screenLockFileManager } from '@kit.AbilityKit';
 
 **系统能力：** SystemCapability.Security.ScreenLockFileManager
 
-名称值说明ACCESS_DENIED-1拒绝授予锁屏下敏感数据访问。ACCESS_GRANTED0授予锁屏下敏感数据访问。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ACCESS_DENIED | -1 | 拒绝授予锁屏下敏感数据访问。 |
+| ACCESS_GRANTED | 0 | 授予锁屏下敏感数据访问。 |
 
 #### ReleaseStatus
 
@@ -32,7 +38,10 @@ import { screenLockFileManager } from '@kit.AbilityKit';
 
 **系统能力：** SystemCapability.Security.ScreenLockFileManager
 
-名称值说明RELEASE_DENIED-1拒绝锁屏下敏感数据访问释放。RELEASE_GRANTED0释放锁屏下敏感数据访问。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| RELEASE_DENIED | -1 | 拒绝锁屏下敏感数据访问释放。 |
+| RELEASE_GRANTED | 0 | 释放锁屏下敏感数据访问。 |
 
 #### KeyStatus18+
 
@@ -40,7 +49,11 @@ import { screenLockFileManager } from '@kit.AbilityKit';
 
 **系统能力：** SystemCapability.Security.ScreenLockFileManager
 
-名称值说明KEY_NOT_EXIST-2应用未开启锁屏敏感数据保护功能。KEY_RELEASED-1锁屏敏感数据访问权限已释放。KEY_EXIST0应用可以访问锁屏敏感数据。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| KEY_NOT_EXIST | -2 | 应用未开启锁屏敏感数据保护功能。 |
+| KEY_RELEASED | -1 | 锁屏敏感数据访问权限已释放。 |
+| KEY_EXIST | 0 | 应用可以访问锁屏敏感数据。 |
 
 #### screenLockFileManager.acquireAccess
 
@@ -52,13 +65,20 @@ acquireAccess(): AccessStatus
 
 **返回值：**
 
-类型说明[AccessStatus](#ZH-CN_TOPIC_0000002529444571__accessstatus)锁屏下敏感数据访问权限申请的状态。
+| 类型 | 说明 |
+| --- | --- |
+| AccessStatus | 锁屏下敏感数据访问权限申请的状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[ohos.screenLockFileManager错误码](../../errors/锁屏敏感数据管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[ohos.screenLockFileManager错误码](锁屏敏感数据管理错误码.md)。
 
-错误码ID错误信息801The specified SystemCapability name was not found.29300002The system ability work abnormally.29300003The application is not enabled the data protection under lock screen.29300004File access is denied.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | The specified SystemCapability name was not found. |
+| 29300002 | The system ability work abnormally. |
+| 29300003 | The application is not enabled the data protection under lock screen. |
+| 29300004 | File access is denied. |
 
 **示例：**
 
@@ -89,13 +109,20 @@ releaseAccess(): ReleaseStatus
 
 **返回值：**
 
-类型说明[ReleaseStatus](#ZH-CN_TOPIC_0000002529444571__releasestatus)锁屏下敏感数据访问权限释放的状态。
+| 类型 | 说明 |
+| --- | --- |
+| ReleaseStatus | 锁屏下敏感数据访问权限释放的状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[ohos.screenLockFileManager错误码](../../errors/锁屏敏感数据管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[ohos.screenLockFileManager错误码](锁屏敏感数据管理错误码.md)。
 
-错误码ID错误信息801The specified SystemCapability name was not found.29300002The system ability work abnormally.29300003The application is not enabled the data protection under lock screen.29300005File access was not acquired.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | The specified SystemCapability name was not found. |
+| 29300002 | The system ability work abnormally. |
+| 29300003 | The application is not enabled the data protection under lock screen. |
+| 29300005 | File access was not acquired. |
 
 **示例：**
 
@@ -126,13 +153,18 @@ queryAppKeyState(): KeyStatus
 
 **返回值：**
 
-类型说明[KeyStatus](#ZH-CN_TOPIC_0000002529444571__keystatus18)锁屏下敏感数据访问权限的状态。
+| 类型 | 说明 |
+| --- | --- |
+| KeyStatus | 锁屏下敏感数据访问权限的状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[ohos.screenLockFileManager错误码](../../errors/锁屏敏感数据管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[ohos.screenLockFileManager错误码](锁屏敏感数据管理错误码.md)。
 
-错误码ID错误信息801The specified SystemCapability name was not found.29300002The system ability work abnormally.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | The specified SystemCapability name was not found. |
+| 29300002 | The system ability work abnormally. |
 
 **示例：**
 

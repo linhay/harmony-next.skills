@@ -18,7 +18,14 @@ import { cloudSync } from '@kit.CoreFileKit';
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
-名称值说明UPLOADING0上行同步中。UPLOAD_FAILED1上行同步失败。DOWNLOADING2下行同步中。DOWNLOAD_FAILED3下行同步失败。COMPLETED4同步成功。STOPPED5同步已停止。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| UPLOADING | 0 | 上行同步中。 |
+| UPLOAD_FAILED | 1 | 上行同步失败。 |
+| DOWNLOADING | 2 | 下行同步中。 |
+| DOWNLOAD_FAILED | 3 | 下行同步失败。 |
+| COMPLETED | 4 | 同步成功。 |
+| STOPPED | 5 | 同步已停止。 |
 
 #### ErrorType12+
 
@@ -31,7 +38,17 @@ import { cloudSync } from '@kit.CoreFileKit';
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
-名称值说明NO_ERROR0没有错误。NETWORK_UNAVAILABLE1所有网络不可用。WIFI_UNAVAILABLE2WIFI不可用。BATTERY_LEVEL_LOW3低电量（低于10%）。BATTERY_LEVEL_WARNING4告警电量（低于15%）。CLOUD_STORAGE_FULL5云端空间不足。LOCAL_STORAGE_FULL6本地空间不足。DEVICE_TEMPERATURE_TOO_HIGH7设备温度过高。REMOTE_SERVER_ABNORMAL20+8远端服务不可用。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NO_ERROR | 0 | 没有错误。 |
+| NETWORK_UNAVAILABLE | 1 | 所有网络不可用。 |
+| WIFI_UNAVAILABLE | 2 | WIFI不可用。 |
+| BATTERY_LEVEL_LOW | 3 | 低电量（低于10%）。 |
+| BATTERY_LEVEL_WARNING | 4 | 告警电量（低于15%）。 |
+| CLOUD_STORAGE_FULL | 5 | 云端空间不足。 |
+| LOCAL_STORAGE_FULL | 6 | 本地空间不足。 |
+| DEVICE_TEMPERATURE_TOO_HIGH | 7 | 设备温度过高。 |
+| REMOTE_SERVER_ABNORMAL20+ | 8 | 远端服务不可用。 |
 
 #### SyncProgress12+
 
@@ -41,7 +58,10 @@ import { cloudSync } from '@kit.CoreFileKit';
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
-名称类型只读可选说明state[SyncState](#ZH-CN_TOPIC_0000002529445219__syncstate12)否否枚举值，端云同步状态。error[ErrorType](#ZH-CN_TOPIC_0000002529445219__errortype12)否否枚举值，同步失败错误类型。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| state | SyncState | 否 | 否 | 枚举值，端云同步状态。 |
+| error | ErrorType | 否 | 否 | 枚举值，同步失败错误类型。 |
 
 #### State11+
 
@@ -49,7 +69,12 @@ import { cloudSync } from '@kit.CoreFileKit';
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
-名称值说明RUNNING0云文件正在下载中。COMPLETED1云文件下载完成。FAILED2云文件下载失败。STOPPED3云文件下载已停止。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| RUNNING | 0 | 云文件正在下载中。 |
+| COMPLETED | 1 | 云文件下载完成。 |
+| FAILED | 2 | 云文件下载失败。 |
+| STOPPED | 3 | 云文件下载已停止。 |
 
 #### DownloadProgress11+
 
@@ -59,7 +84,13 @@ import { cloudSync } from '@kit.CoreFileKit';
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
-名称类型只读可选说明state[State](#ZH-CN_TOPIC_0000002529445219__state11)否否枚举值，云文件下载状态。processednumber否否已下载数据大小，取值范围[0，9223372036854775807]（单位：Byte）。sizenumber否否当前云文件大小，取值范围[0，9223372036854775807]（单位：Byte）。uristring否否当前云文件URI。error[DownloadErrorType](#ZH-CN_TOPIC_0000002529445219__downloaderrortype11)否否下载的错误类型。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| state | State | 否 | 否 | 枚举值，云文件下载状态。 |
+| processed | number | 否 | 否 | 已下载数据大小，取值范围[0，9223372036854775807]（单位：Byte）。 |
+| size | number | 否 | 否 | 当前云文件大小，取值范围[0，9223372036854775807]（单位：Byte）。 |
+| uri | string | 否 | 否 | 当前云文件URI。 |
+| error | DownloadErrorType | 否 | 否 | 下载的错误类型。 |
 
 #### FileSync12+
 
@@ -77,9 +108,11 @@ constructor()
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes:Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes:Incorrect parameter types. |
 
 **示例：**
 
@@ -97,13 +130,19 @@ on(event: 'progress', callback: Callback<SyncProgress>): void
 
 **参数：**
 
-参数名类型必填说明eventstring是订阅的事件类型，取值为'progress'（同步过程事件）。callbackCallback<[SyncProgress](#ZH-CN_TOPIC_0000002529445219__syncprogress12)>是同步过程事件回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 订阅的事件类型，取值为'progress'（同步过程事件）。 |
+| callback | Callback<SyncProgress> | 是 | 同步过程事件回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.13600001IPC error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 13600001 | IPC error. |
 
 **示例：**
 
@@ -126,13 +165,19 @@ off(event: 'progress', callback?: Callback<SyncProgress>): void
 
 **参数：**
 
-参数名类型必填说明eventstring是取消订阅的事件类型，取值为'progress'（同步过程事件）。callbackCallback<[SyncProgress](#ZH-CN_TOPIC_0000002529445219__syncprogress12)>否同步过程事件回调， 默认值为null。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 取消订阅的事件类型，取值为'progress'（同步过程事件）。 |
+| callback | Callback<SyncProgress> | 否 | 同步过程事件回调， 默认值为null。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.13600001IPC error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 13600001 | IPC error. |
 
 **示例：**
 
@@ -158,13 +203,21 @@ start(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回值。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes:Incorrect parameter types.13600001IPC error.22400001Cloud status not ready.22400002Network unavailable.22400003Low battery level.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes:Incorrect parameter types. |
+| 13600001 | IPC error. |
+| 22400001 | Cloud status not ready. |
+| 22400002 | Network unavailable. |
+| 22400003 | Low battery level. |
 
 **示例：**
 
@@ -196,13 +249,21 @@ start(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是异步启动端云同步的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 异步启动端云同步的回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.13600001IPC error.22400001Cloud status not ready.22400002Network unavailable.22400003Low battery level.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 13600001 | IPC error. |
+| 22400001 | Cloud status not ready. |
+| 22400002 | Network unavailable. |
+| 22400003 | Low battery level. |
 
 **示例：**
 
@@ -226,19 +287,24 @@ stop(): Promise<void>
 
 异步方法停止云盘端云同步。使用Promise异步回调。
 
-调用stop接口，同步流程会停止。再次调用[start](#ZH-CN_TOPIC_0000002529445219__start12)接口会继续同步。
+调用stop接口，同步流程会停止。再次调用[start](#ZH-CN_TOPIC_0000002522241214__start12)接口会继续同步。
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
 **返回值：**
 
-类型说明Promise<void>使用Promise形式返回停止端云同步的结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 使用Promise形式返回停止端云同步的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes:Incorrect parameter types.13600001IPC error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes:Incorrect parameter types. |
+| 13600001 | IPC error. |
 
 **示例：**
 
@@ -260,19 +326,24 @@ stop(callback: AsyncCallback<void>): void
 
 异步方法停止云盘端云同步。使用callback异步回调。
 
-调用stop接口，同步流程会停止。再次调用[start](#ZH-CN_TOPIC_0000002529445219__start12)接口会继续同步。
+调用stop接口，同步流程会停止。再次调用[start](#ZH-CN_TOPIC_0000002522241214__start12)接口会继续同步。
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是异步停止端云同步的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 异步停止端云同步的回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.13600001IPC error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 13600001 | IPC error. |
 
 **示例：**
 
@@ -300,13 +371,18 @@ getLastSyncTime(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>使用Promise形式返回上次同步时间。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 使用Promise形式返回上次同步时间。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes:Incorrect parameter types.13600001IPC error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes:Incorrect parameter types. |
+| 13600001 | IPC error. |
 
 **示例：**
 
@@ -333,13 +409,18 @@ getLastSyncTime(callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是异步获取上次同步时间的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 异步获取上次同步时间的回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.13600001IPC error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 13600001 | IPC error. |
 
 **示例：**
 
@@ -374,9 +455,11 @@ constructor()
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes:Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes:Incorrect parameter types. |
 
 **示例：**
 
@@ -394,13 +477,19 @@ on(event: 'progress', callback: Callback<DownloadProgress>): void
 
 **参数：**
 
-参数名类型必填说明eventstring是订阅的事件类型，取值为'progress'（下载过程事件）。callbackCallback<[DownloadProgress](#ZH-CN_TOPIC_0000002529445219__downloadprogress11)>是云文件下载过程事件回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 订阅的事件类型，取值为'progress'（下载过程事件）。 |
+| callback | Callback<DownloadProgress> | 是 | 云文件下载过程事件回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.13600001IPC error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 13600001 | IPC error. |
 
 **示例：**
 
@@ -430,13 +519,19 @@ on(event: 'batchDownload', callback: Callback<MultiDownloadProgress>): void
 
 **参数：**
 
-参数名类型必填说明eventstring是订阅的事件类型，取值为'batchDownload'，表示批量缓存过程事件。callbackCallback<[MultiDownloadProgress](#ZH-CN_TOPIC_0000002529445219__multidownloadprogress20)>是云文件批量缓存过程的事件回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 订阅的事件类型，取值为'batchDownload'，表示批量缓存过程事件。 |
+| callback | Callback<MultiDownloadProgress> | 是 | 云文件批量缓存过程的事件回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息13900020Invalid argument. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.22400005Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900020 | Invalid argument. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 22400005 | Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 
 **示例：**
 
@@ -471,13 +566,19 @@ off(event: 'progress', callback?: Callback<DownloadProgress>): void
 
 **参数：**
 
-参数名类型必填说明eventstring是取消订阅的事件类型，取值为'progress'（同步过程事件）。callbackCallback<[DownloadProgress](#ZH-CN_TOPIC_0000002529445219__downloadprogress11)>否云文件下载过程事件回调。若填写，将视为取消指定的回调函数；否则为取消当前订阅的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 取消订阅的事件类型，取值为'progress'（同步过程事件）。 |
+| callback | Callback<DownloadProgress> | 否 | 云文件下载过程事件回调。若填写，将视为取消指定的回调函数；否则为取消当前订阅的所有回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.13600001IPC error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 13600001 | IPC error. |
 
 **示例：**
 
@@ -503,19 +604,25 @@ try {
 
 off(event: 'batchDownload', callback?: Callback<MultiDownloadProgress>): void
 
-云盘文件缓存对象移除由[on](#ZH-CN_TOPIC_0000002529445219__on20)接口添加的云文件批量缓存过程事件的监听。
+云盘文件缓存对象移除由[on](#ZH-CN_TOPIC_0000002522241214__on20)接口添加的云文件批量缓存过程事件的监听。
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
 **参数：**
 
-参数名类型必填说明eventstring是取消订阅的事件类型，取值为'batchDownload'，表示批量缓存过程事件。callbackCallback<[MultiDownloadProgress](#ZH-CN_TOPIC_0000002529445219__multidownloadprogress20)>否云文件批量缓存过程事件的回调。如果填写此参数，将取消指定的回调函数；否则，将取消当前订阅的相同事件类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 取消订阅的事件类型，取值为'batchDownload'，表示批量缓存过程事件。 |
+| callback | Callback<MultiDownloadProgress> | 否 | 云文件批量缓存过程事件的回调。如果填写此参数，将取消指定的回调函数；否则，将取消当前订阅的相同事件类型的所有回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息13900020Invalid argument. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.22400005Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900020 | Invalid argument. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 22400005 | Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 
 **示例：**
 
@@ -546,17 +653,27 @@ start(uri: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明uristring是待下载文件uri。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 待下载文件uri。 |
 
 **返回值：**
 
-类型说明Promise<void>使用Promise形式返回启动云文件下载的结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 使用Promise形式返回启动云文件下载的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.13600001IPC error.13900002No such file or directory.13900025No space left on device.14000002Invalid URI.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 13600001 | IPC error. |
+| 13900002 | No such file or directory. |
+| 13900025 | No space left on device. |
+| 14000002 | Invalid URI. |
 
 **示例：**
 
@@ -594,13 +711,22 @@ start(uri: string, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明uristring是待下载文件uri。callbackAsyncCallback<void>是异步启动云文件下载的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 待下载文件uri。 |
+| callback | AsyncCallback<void> | 是 | 异步启动云文件下载的回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.13600001IPC error.13900002No such file or directory.13900025No space left on device.14000002Invalid URI.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 13600001 | IPC error. |
+| 13900002 | No such file or directory. |
+| 13900025 | No space left on device. |
+| 14000002 | Invalid URI. |
 
 **示例：**
 
@@ -633,17 +759,28 @@ startBatch(uris: Array<string>, fileType?: DownloadFileType): Promise<number>
 
 **参数：**
 
-参数名类型必填说明urisArray<string>是URI列表，一次调用最多支持传入400个URI，超过报错22400004。fileType[DownloadFileType](#ZH-CN_TOPIC_0000002529445219__downloadfiletype20)否文件类型，默认值为CONTENT类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uris | Array<string> | 是 | URI列表，一次调用最多支持传入400个URI，超过报错22400004。 |
+| fileType | DownloadFileType | 否 | 文件类型，默认值为CONTENT类型。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回启动的云文件批量缓存任务的ID。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回启动的云文件批量缓存任务的ID。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息13600001IPC error. Possible causes: 1.IPC failed or timed out. 2.Failed to load the service.13900020Invalid argument. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.14000002Invalid uri.22400004Exceed the maximum limit.22400005Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13600001 | IPC error. Possible causes: 1.IPC failed or timed out. 2.Failed to load the service. |
+| 13900020 | Invalid argument. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 14000002 | Invalid uri. |
+| 22400004 | Exceed the maximum limit. |
+| 22400005 | Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 
 **示例：**
 
@@ -680,21 +817,27 @@ stop(uri: string, needClean?: boolean): Promise<void>
 
 **参数：**
 
-参数名类型必填说明uristring是待下载文件uri。needClean12+boolean否
-
-是否删除已下载的文件。默认值为false表示不删除；true表示删除。
-
-从API version12开始支持该参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 待下载文件uri。 |
+| needClean12+ | boolean | 否 | 是否删除已下载的文件。默认值为false表示不删除；true表示删除。 从API version12开始支持该参数。 |
 
 **返回值：**
 
-类型说明Promise<void>使用Promise形式返回停止云文件下载的结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 使用Promise形式返回停止云文件下载的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.13600001IPC error.13900002No such file or directory.14000002Invalid URI.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 13600001 | IPC error. |
+| 13900002 | No such file or directory. |
+| 14000002 | Invalid URI. |
 
 **示例：**
 
@@ -725,13 +868,21 @@ stop(uri: string, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明uristring是待下载文件uri。callbackAsyncCallback<void>是异步停止云文件下载的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 待下载文件uri。 |
+| callback | AsyncCallback<void> | 是 | 异步停止云文件下载的回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.13600001IPC error.13900002No such file or directory.14000002Invalid URI.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 13600001 | IPC error. |
+| 13900002 | No such file or directory. |
+| 14000002 | Invalid URI. |
 
 **示例：**
 
@@ -756,7 +907,7 @@ fileCache.stop(uri, (err: BusinessError) => {
 
 stopBatch(downloadId: number, needClean?: boolean): Promise<void>
 
-停止由[startBatch](#ZH-CN_TOPIC_0000002529445219__startbatch20)启动的云文件批量缓存任务。使用Promise异步回调。
+停止由[startBatch](#ZH-CN_TOPIC_0000002522241214__startbatch20)启动的云文件批量缓存任务。使用Promise异步回调。
 
 调用stopBatch接口会终止当前文件批量缓存流程，未下载完成的缓存文件是否删除由needClean参数决定。
 
@@ -764,17 +915,26 @@ stopBatch(downloadId: number, needClean?: boolean): Promise<void>
 
 **参数：**
 
-参数名类型必填说明downloadIdnumber是需要停止缓存的任务ID。needCleanboolean否是否删除未完成缓存的文件。默认值为false表示不删除；true表示删除。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| downloadId | number | 是 | 需要停止缓存的任务ID。 |
+| needClean | boolean | 否 | 是否删除未完成缓存的文件。默认值为false表示不删除；true表示删除。 |
 
 **返回值：**
 
-类型说明Promise<void>使用Promise形式返回，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 使用Promise形式返回，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息13600001IPC error. Possible causes: 1.IPC failed or timed out. 2.Failed to load the service.13900020Invalid argument. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.22400005Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13600001 | IPC error. Possible causes: 1.IPC failed or timed out. 2.Failed to load the service. |
+| 13900020 | Invalid argument. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 22400005 | Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 
 **示例：**
 
@@ -811,13 +971,23 @@ cleanFileCache(uri: string): void
 
 **参数：**
 
-参数名类型必填说明uristring是待删除缓存文件的URI。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 待删除缓存文件的URI。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息13600001IPC error. Possible causes:1.IPC failed or timed out. 2.Failed to load the service.13900002No such file or directory.13900010Try again.13900012Permission denied by the file system.13900020Parameter error. Possible causes:1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.14000002Invalid URI.22400005Inner error. Possible causes:1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13600001 | IPC error. Possible causes:1.IPC failed or timed out. 2.Failed to load the service. |
+| 13900002 | No such file or directory. |
+| 13900010 | Try again. |
+| 13900012 | Permission denied by the file system. |
+| 13900020 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 14000002 | Invalid URI. |
+| 22400005 | Inner error. Possible causes:1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 
 **示例：**
 
@@ -843,7 +1013,14 @@ try {
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
-名称值说明NO_ERROR0没有错误。UNKNOWN_ERROR1未知错误。NETWORK_UNAVAILABLE2网络不可用。LOCAL_STORAGE_FULL3本地空间不足。CONTENT_NOT_FOUND4云端空间未找到对应文件。FREQUENT_USER_REQUESTS5用户请求过于频繁。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NO_ERROR | 0 | 没有错误。 |
+| UNKNOWN_ERROR | 1 | 未知错误。 |
+| NETWORK_UNAVAILABLE | 2 | 网络不可用。 |
+| LOCAL_STORAGE_FULL | 3 | 本地空间不足。 |
+| CONTENT_NOT_FOUND | 4 | 云端空间未找到对应文件。 |
+| FREQUENT_USER_REQUESTS | 5 | 用户请求过于频繁。 |
 
 #### DownloadFileType20+
 
@@ -851,7 +1028,11 @@ try {
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
-名称值说明CONTENT0content类型文件。THUMBNAIL1thumbnail类型文件。LCD2lcd类型文件。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CONTENT | 0 | content类型文件。 |
+| THUMBNAIL | 1 | thumbnail类型文件。 |
+| LCD | 2 | lcd类型文件。 |
 
 #### FailedFileInfo20+
 
@@ -859,7 +1040,10 @@ try {
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
-名称类型只读可选说明uristring否否下载失败文件URI。error[DownloadErrorType](#ZH-CN_TOPIC_0000002529445219__downloaderrortype11)否否文件下载失败错误类型。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uri | string | 否 | 否 | 下载失败文件URI。 |
+| error | DownloadErrorType | 否 | 否 | 文件下载失败错误类型。 |
 
 #### MultiDownloadProgress20+
 
@@ -869,7 +1053,16 @@ try {
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
-名称类型只读可选说明state[State](#ZH-CN_TOPIC_0000002529445219__state11)否否批量缓存任务的执行状态。taskIdnumber否否批量缓存任务的ID，取值范围为0到INT64_MAX。如果进度异常，返回值为-1。successfulCountnumber否否缓存成功的文件数量，取值范围为0至400，单位：个。如果进度异常，返回值为-1。failedCountnumber否否缓存失败的文件数，取值范围为0至400，单位：个。如果进度异常，返回值为-1。totalCountnumber否否文件总数，取值范围为0至400，单位：个。如果进度异常，返回值为-1。downloadedSizenumber否否已缓存的文件大小，取值范围为 [0, INT64_MAX)，单位：Byte。如果进度异常，返回值为 INT64_MAX。totalSizenumber否否待缓存的文件总大小，取值范围为 [0, INT64_MAX)，单位为 Byte。如果进度异常，返回值为 INT64_MAX。errType[DownloadErrorType](#ZH-CN_TOPIC_0000002529445219__downloaderrortype11)否否返回批量缓存任务执行失败时的错误类型。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| state | State | 否 | 否 | 批量缓存任务的执行状态。 |
+| taskId | number | 否 | 否 | 批量缓存任务的ID，取值范围为0到INT64_MAX。如果进度异常，返回值为-1。 |
+| successfulCount | number | 否 | 否 | 缓存成功的文件数量，取值范围为0至400，单位：个。如果进度异常，返回值为-1。 |
+| failedCount | number | 否 | 否 | 缓存失败的文件数，取值范围为0至400，单位：个。如果进度异常，返回值为-1。 |
+| totalCount | number | 否 | 否 | 文件总数，取值范围为0至400，单位：个。如果进度异常，返回值为-1。 |
+| downloadedSize | number | 否 | 否 | 已缓存的文件大小，取值范围为 [0, INT64_MAX)，单位：Byte。如果进度异常，返回值为 INT64_MAX。 |
+| totalSize | number | 否 | 否 | 待缓存的文件总大小，取值范围为 [0, INT64_MAX)，单位为 Byte。如果进度异常，返回值为 INT64_MAX。 |
+| errType | DownloadErrorType | 否 | 否 | 返回批量缓存任务执行失败时的错误类型。 |
 
 #### getFailedFiles20+
 
@@ -881,13 +1074,17 @@ getFailedFiles(): Array<FailedFileInfo>
 
 **返回值：**
 
-类型说明Array<[FailedFileInfo](#ZH-CN_TOPIC_0000002529445219__failedfileinfo20)>返回缓存失败的文件URI列表及其对应的错误类型。
+| 类型 | 说明 |
+| --- | --- |
+| Array<FailedFileInfo> | 返回缓存失败的文件URI列表及其对应的错误类型。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息22400005Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 22400005 | Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 
 **示例：**
 
@@ -931,13 +1128,17 @@ getSuccessfulFiles(): Array<string>
 
 **返回值：**
 
-类型说明Array<string>数组类型，返回缓存成功的文件URI列表。
+| 类型 | 说明 |
+| --- | --- |
+| Array<string> | 数组类型，返回缓存成功的文件URI列表。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息22400005Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 22400005 | Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 
 **示例：**
 
@@ -979,13 +1180,23 @@ registerChange(uri: string, recursion: boolean, callback: Callback<ChangeData>):
 
 **参数：**
 
-参数名类型必填说明uristring是待下载文件uri。recursionboolean是true为监听该URI以及子文件和子目录，false为仅监听该URI文件。callbackCallback<[ChangeData](#ZH-CN_TOPIC_0000002529445219__changedata12)>是返回更改的数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 待下载文件uri。 |
+| recursion | boolean | 是 | true为监听该URI以及子文件和子目录，false为仅监听该URI文件。 |
+| callback | Callback<ChangeData> | 是 | 返回更改的数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.13900001Operation not permitted.13900002No such file or directory.13900012Permission denied.14000002Invalid URI.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 13900001 | Operation not permitted. |
+| 13900002 | No such file or directory. |
+| 13900012 | Permission denied. |
+| 14000002 | Invalid URI. |
 
 **示例：**
 
@@ -1000,7 +1211,6 @@ let onCallback1 = (changeData: cloudSync.ChangeData) => {
   } else if (changeData.type== cloudSync.NotifyType.NOTIFY_DELETED) {
     //file had removed, do something
   }
-}
 cloudSync.registerChange(uri, false, onCallback1);
 // 取消注册监听
 cloudSync.unregisterChange(uri);
@@ -1016,13 +1226,21 @@ unregisterChange(uri: string): void
 
 **参数：**
 
-参数名类型必填说明uristring是待下载文件uri。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 待下载文件uri。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.13900001Operation not permitted.13900002No such file or directory.13900012Permission denied.14000002Invalid URI.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 13900001 | Operation not permitted. |
+| 13900002 | No such file or directory. |
+| 13900012 | Permission denied. |
+| 14000002 | Invalid URI. |
 
 **示例：**
 
@@ -1037,7 +1255,6 @@ let onCallback1 = (changeData: cloudSync.ChangeData) => {
   } else if (changeData.type== cloudSync.NotifyType.NOTIFY_DELETED) {
     //file had removed, do something
   }
-}
 cloudSync.registerChange(uri, false, onCallback1);
 // 取消注册监听
 cloudSync.unregisterChange(uri);
@@ -1049,7 +1266,12 @@ cloudSync.unregisterChange(uri);
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
-名称值说明NOTIFY_ADDED0文件已新建。NOTIFY_MODIFIED1文件已修改。NOTIFY_DELETED2文件已被删除。NOTIFY_RENAMED3文件被重命名或者移动。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NOTIFY_ADDED | 0 | 文件已新建。 |
+| NOTIFY_MODIFIED | 1 | 文件已修改。 |
+| NOTIFY_DELETED | 2 | 文件已被删除。 |
+| NOTIFY_RENAMED | 3 | 文件被重命名或者移动。 |
 
 #### ChangeData12+
 
@@ -1057,23 +1279,28 @@ cloudSync.unregisterChange(uri);
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
-名称类型只读可选说明type[NotifyType](#ZH-CN_TOPIC_0000002529445219__notifytype12)否否更改的通知类型。isDirectoryArray<boolean>否否指示更改的URI是否为目录。true：是目录。false：非目录。urisArray<string>否否需要更改的URI列表。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| type | NotifyType | 否 | 否 | 更改的通知类型。 |
+| isDirectory | Array<boolean> | 否 | 否 | 指示更改的URI是否为目录。true：是目录。false：非目录。 |
+| uris | Array<string> | 否 | 否 | 需要更改的URI列表。 |
 
 #### HistoryVersion20+
 
-端云文件历史版本信息，调用端云文件版本管理类[FileVersion](#ZH-CN_TOPIC_0000002529445219__fileversion20)的[gethistoryversionlist](#ZH-CN_TOPIC_0000002529445219__gethistoryversionlist20)方法时，历史版本列表中的属性。
+端云文件历史版本信息，调用端云文件版本管理类[FileVersion](#ZH-CN_TOPIC_0000002522241214__fileversion20)的[gethistoryversionlist](#ZH-CN_TOPIC_0000002522241214__gethistoryversionlist20)方法时，历史版本列表中的属性。
 
 #### 属性
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
-名称类型只读可选说明editedTimenumber否否文件内容修改时间。fileSizenumber否否文件大小，单位：Byte。versionIdstring否否文件版本号。originalFileNamestring否否当前版本对应的文件名。sha256string否否当前版本对应文件内容的哈希值。autoResolvedboolean否否
-
-当前版本是否为自动解决冲突的版本。
-
-应用设置手动解冲突时，默认返回false，无意义。
-
-应用设置自动解冲突时，端侧会自动解冲突，true表示当前版本存在冲突，端云服务已自动解决冲突，false表示无冲突，未自动解冲突。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| editedTime | number | 否 | 否 | 文件内容修改时间。 |
+| fileSize | number | 否 | 否 | 文件大小，单位：Byte。 |
+| versionId | string | 否 | 否 | 文件版本号。 |
+| originalFileName | string | 否 | 否 | 当前版本对应的文件名。 |
+| sha256 | string | 否 | 否 | 当前版本对应文件内容的哈希值。 |
+| autoResolved | boolean | 否 | 否 | 当前版本是否为自动解决冲突的版本。 应用设置手动解冲突时，默认返回false，无意义。 应用设置自动解冲突时，端侧会自动解冲突，true表示当前版本存在冲突，端云服务已自动解决冲突，false表示无冲突，未自动解冲突。 |
 
 **补充说明**：当本地和他端同时修改文件产生冲突时，当前端云同步有自动解冲突机制，但有些应用希望由用户手动解决冲突，此时应用可以通过在项目工程的/entry/src/main/resources/base/profile目录下增加cloudkit_config.json文件，并配置manualConflictResolutionEnable为true，表示手动解决冲突使能；若应用不需要手动解决冲突，可以不配置该文件或者配置manualConflictResolutionEnable为false，表示采用已有的自动解冲突策略。
 
@@ -1085,19 +1312,21 @@ cloudSync.unregisterChange(uri);
     "cloudFileSyncConfig": {
       "manualConflictResolutionEnable": "true"
     }
-  }
-}
 ```
 
 #### VersionDownloadProgress20+
 
-历史版本文件下载状态和进度信息，调用端云文件版本管理类[FileVersion](#ZH-CN_TOPIC_0000002529445219__fileversion20)的[downloadHistoryVersion](#ZH-CN_TOPIC_0000002529445219__downloadhistoryversion20)方法时，回调函数的入参类型。
+历史版本文件下载状态和进度信息，调用端云文件版本管理类[FileVersion](#ZH-CN_TOPIC_0000002522241214__fileversion20)的[downloadHistoryVersion](#ZH-CN_TOPIC_0000002522241214__downloadhistoryversion20)方法时，回调函数的入参类型。
 
 #### 属性
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
-名称类型只读可选说明state[State](#ZH-CN_TOPIC_0000002529445219__state11)否否所选版本云文件的下载状态。progressnumber否否下载进度。errType[DownloadErrorType](#ZH-CN_TOPIC_0000002529445219__downloaderrortype11)否否若出现下载失败，失败的错误类型。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| state | State | 否 | 否 | 所选版本云文件的下载状态。 |
+| progress | number | 否 | 否 | 下载进度。 |
+| errType | DownloadErrorType | 否 | 否 | 若出现下载失败，失败的错误类型。 |
 
 #### FileVersion20+
 
@@ -1113,9 +1342,11 @@ constructor()
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息22400005Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 22400005 | Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 
 **示例：**
 
@@ -1137,17 +1368,31 @@ getHistoryVersionList(uri: string, versionNumLimit: number): Promise<Array<Histo
 
 **参数：**
 
-参数名类型必填说明uristring是文件的URI。versionNumLimitnumber是历史版本列表长度限制，取值范围[0, 100000]（单位：个）。当输入值大于100000时，按照最大值返回列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 文件的URI。 |
+| versionNumLimit | number | 是 | 历史版本列表长度限制，取值范围[0, 100000]（单位：个）。当输入值大于100000时，按照最大值返回列表。 |
 
 **返回值：**
 
-类型说明Promise<Array<[HistoryVersion](#ZH-CN_TOPIC_0000002529445219__historyversion20)>>Promise对象，返回历史版本列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<HistoryVersion>> | Promise对象，返回历史版本列表。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息13600001IPC error. Possible causes: 1.IPC failed or timed out. 2.Failed to load the service.13900002No such file or directory.13900010Try again.13900012Permission denied by the file system.13900020Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.14000002Invalid URI.22400002Network unavailable.22400005Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13600001 | IPC error. Possible causes: 1.IPC failed or timed out. 2.Failed to load the service. |
+| 13900002 | No such file or directory. |
+| 13900010 | Try again. |
+| 13900012 | Permission denied by the file system. |
+| 13900020 | Invalid argument. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 14000002 | Invalid URI. |
+| 22400002 | Network unavailable. |
+| 22400005 | Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 
 **示例：**
 
@@ -1172,7 +1417,7 @@ fileVersion.getHistoryVersionList(uri, limit).then((versionList: Array<cloudSync
 
 #### downloadHistoryVersion20+
 
-downloadHistoryVersion(uri: string, versionId: string, callback: Callback<[VersionDownloadProgress](#ZH-CN_TOPIC_0000002529445219__versiondownloadprogress20)>): Promise<string>
+downloadHistoryVersion(uri: string, versionId: string, callback: Callback<[VersionDownloadProgress](#ZH-CN_TOPIC_0000002522241214__versiondownloadprogress20)>): Promise<string>
 
 根据版本号获取指定文件的某一版本的文件内容。用户通过版本号指定云上某一版本，将其下载到本地临时存储路径，临时文件由应用自行决定是否替换原始文件，也可以选择保留或直接删除。使用Promise异步回调。
 
@@ -1180,17 +1425,32 @@ downloadHistoryVersion(uri: string, versionId: string, callback: Callback<[Versi
 
 **参数：**
 
-参数名类型必填说明uristring是文件的URI。versionIdstring是文件某一版本的版本号，格式以接口[gethistoryversionlist](#ZH-CN_TOPIC_0000002529445219__gethistoryversionlist20)返回为准。callbackCallback<[VersionDownloadProgress](#ZH-CN_TOPIC_0000002529445219__versiondownloadprogress20)>是下载进度的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 文件的URI。 |
+| versionId | string | 是 | 文件某一版本的版本号，格式以接口gethistoryversionlist返回为准。 |
+| callback | Callback<VersionDownloadProgress> | 是 | 下载进度的回调。 |
 
 **返回值：**
 
-类型说明Promise<string>Promise对象，返回历史版本临时存储文件的URI。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回历史版本临时存储文件的URI。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息13600001IPC error. Possible causes: 1.IPC failed or timed out. 2.Failed to load the service.13900002No such file or directory.13900010Try again.13900012Permission denied by the file system.13900020Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.14000002Invalid URI.22400002Network unavailable.22400005Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13600001 | IPC error. Possible causes: 1.IPC failed or timed out. 2.Failed to load the service. |
+| 13900002 | No such file or directory. |
+| 13900010 | Try again. |
+| 13900012 | Permission denied by the file system. |
+| 13900020 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 14000002 | Invalid URI. |
+| 22400002 | Network unavailable. |
+| 22400005 | Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 
 **示例：**
 
@@ -1225,23 +1485,39 @@ fileVersion.downloadHistoryVersion(uri, versionId, callback).then((fileUri: stri
 
 replaceFileWithHistoryVersion(originalUri: string, versionUri: string): Promise<void>
 
-提供使用历史版本文件替换本地文件的能力。在替换前，需要调用[downloadHistoryVersion](#ZH-CN_TOPIC_0000002529445219__downloadhistoryversion20)方法对选择的历史版本进行下载并拿到versionUri；直接调用此接口或者versionUri非法会产生异常；替换完成后会删除临时存储文件。使用Promise异步回调。
+提供使用历史版本文件替换本地文件的能力。在替换前，需要调用[downloadHistoryVersion](#ZH-CN_TOPIC_0000002522241214__downloadhistoryversion20)方法对选择的历史版本进行下载并拿到versionUri；直接调用此接口或者versionUri非法会产生异常；替换完成后会删除临时存储文件。使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
 **参数：**
 
-参数名类型必填说明originalUristring是本地文件的URI。versionUristring是历史版本文件的URI。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| originalUri | string | 是 | 本地文件的URI。 |
+| versionUri | string | 是 | 历史版本文件的URI。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息13600001IPC error. Possible causes: 1.IPC failed or timed out. 2.Failed to load the service.13900002No such file or directory.13900005I/O error.13900008Bad file descriptor.13900010Try again.13900012Permission denied by the file system.13900020Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.14000002Invalid URI.22400005Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception.22400007Version file not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13600001 | IPC error. Possible causes: 1.IPC failed or timed out. 2.Failed to load the service. |
+| 13900002 | No such file or directory. |
+| 13900005 | I/O error. |
+| 13900008 | Bad file descriptor. |
+| 13900010 | Try again. |
+| 13900012 | Permission denied by the file system. |
+| 13900020 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 14000002 | Invalid URI. |
+| 22400005 | Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
+| 22400007 | The version file specified to replace the original file does not exist. |
 
 **示例：**
 
@@ -1285,23 +1561,35 @@ isFileConflict(uri: string): Promise<boolean>
 
 获取本地文件版本冲突标志。使用Promise异步回调。此方法只有应用在配置手动解冲突后才会生效，否则默认自动解冲突，返回值为false，由同步流程自动完成解冲突；
 
-当应用配置手动解冲突后，调用此方法会返回当前文件是否与云侧文件产生冲突，并且由应用提示用户对冲突进行处理，在冲突解决前不会再自动同步上云。当处理完冲突后，需要调用[clearfileconflict](#ZH-CN_TOPIC_0000002529445219__clearfileconflict20)方法来清除冲突标志，后续才会继续触发同步，与云端保持一致。
+当应用配置手动解冲突后，调用此方法会返回当前文件是否与云侧文件产生冲突，并且由应用提示用户对冲突进行处理，在冲突解决前不会再自动同步上云。当处理完冲突后，需要调用[clearFileConflict](#ZH-CN_TOPIC_0000002522241214__clearfileconflict20)方法来清除冲突标志，后续才会继续触发同步，与云端保持一致。
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
 **参数：**
 
-参数名类型必填说明uristring是文件的URI。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 文件的URI。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象，返回本地文件和云端文件的冲突标志，true表示冲突，false表示不冲突。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象，返回本地文件和云端文件的冲突标志，true表示冲突，false表示不冲突。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息13600001IPC error. Possible causes: 1.IPC failed or timed out. 2.Failed to load the service.13900002No such file or directory.13900010Try again.13900012Permission denied by the file system.13900020Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.14000002Invalid URI.22400005Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13600001 | IPC error. Possible causes: 1.IPC failed or timed out. 2.Failed to load the service. |
+| 13900002 | No such file or directory. |
+| 13900010 | Try again. |
+| 13900012 | Permission denied by the file system. |
+| 13900020 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 14000002 | Invalid URI. |
+| 22400005 | Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 
 **示例：**
 
@@ -1331,17 +1619,29 @@ clearFileConflict(uri: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明uristring是待清除冲突标志的文件URI。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 待清除冲突标志的文件URI。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息13600001IPC error. Possible causes: 1.IPC failed or timed out. 2.Failed to load the service.13900002No such file or directory.13900010Try again.13900012Permission denied by the file system.13900020Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.14000002Invalid URI.22400005Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13600001 | IPC error. Possible causes: 1.IPC failed or timed out. 2.Failed to load the service. |
+| 13900002 | No such file or directory. |
+| 13900010 | Try again. |
+| 13900012 | Permission denied by the file system. |
+| 13900020 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 14000002 | Invalid URI. |
+| 22400005 | Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 
 **示例：**
 
@@ -1378,17 +1678,31 @@ getCoreFileSyncState(uri: string): FileState
 
 **参数：**
 
-参数名类型必填说明uristring是待获取云盘文件同步上行状态的文件URI。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 待获取云盘文件同步上行状态的文件URI。 |
 
 **返回值：**
 
-类型说明[FileState](#ZH-CN_TOPIC_0000002529445219__filestate20)返回给定云盘文件的同步上行状态。
+| 类型 | 说明 |
+| --- | --- |
+| FileState | 返回给定云盘文件的同步上行状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息13600001IPC error. Possible causes:1.IPC failed or timed out. 2.Failed to load the service.13900002No such file or directory.13900004Interrupted system call.13900010Try again.13900012Permission denied by the file system.13900020Parameter error. Possible causes:1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.13900031Function not implemented.14000002Invalid URI.22400005Inner error. Possible causes:1.Failed to access the database or execute the SQL statement.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13600001 | IPC error. Possible causes:1.IPC failed or timed out. 2.Failed to load the service. |
+| 13900002 | No such file or directory. |
+| 13900004 | Interrupted system call. |
+| 13900010 | Try again. |
+| 13900012 | Permission denied by the file system. |
+| 13900020 | Invalid argument. Possible causes:1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 13900031 | Function not implemented. |
+| 14000002 | Invalid URI. |
+| 22400005 | Inner error. Possible causes:1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 
 **示例：**
 
@@ -1412,4 +1726,11 @@ try {
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
-名称值说明INITIAL_AFTER_DOWNLOAD0首次下行后的初始状态。UPLOADING1上行同步中。STOPPED2上行已停止。TO_BE_UPLOADED3正在等待上行。UPLOAD_SUCCESS4文件已成功上行。UPLOAD_FAILURE5文件上行失败。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| INITIAL_AFTER_DOWNLOAD | 0 | 首次下行后的初始状态。 |
+| UPLOADING | 1 | 上行同步中。 |
+| STOPPED | 2 | 上行已停止。 |
+| TO_BE_UPLOADED | 3 | 正在等待上行。 |
+| UPLOAD_SUCCESS | 4 | 文件已成功上行。 |
+| UPLOAD_FAILURE | 5 | 文件上行失败。 |

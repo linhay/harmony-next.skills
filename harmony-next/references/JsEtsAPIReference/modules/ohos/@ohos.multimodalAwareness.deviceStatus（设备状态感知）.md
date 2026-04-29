@@ -18,7 +18,10 @@ import { deviceStatus } from '@kit.MultimodalAwarenessKit';
 
 **系统能力**：SystemCapability.MultimodalAwareness.DeviceStatus
 
-名称值说明STATUS_EXIT0表示设备退出支架态。STATUS_ENTER1表示设备进入支架态。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| STATUS_EXIT | 0 | 表示设备退出支架态。 |
+| STATUS_ENTER | 1 | 表示设备进入支架态。 |
 
 #### deviceStatus.on('steadyStandingDetect')
 
@@ -30,13 +33,20 @@ import { deviceStatus } from '@kit.MultimodalAwarenessKit';
 
 **参数**：
 
-参数名类型必填说明typestring是事件类型。type为“steadyStandingDetect”，表示设备静止姿态（支架态）感知。callbackCallback<[SteadyStandingStatus](#ZH-CN_TOPIC_0000002497605636__steadystandingstatus)>是回调函数，返回设备静止姿态感知（支架态）状态信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件类型。type为“steadyStandingDetect”，表示设备静止姿态（支架态）感知。 |
+| callback | Callback<SteadyStandingStatus> | 是 | 回调函数，返回设备静止姿态感知（支架态）状态信息。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[设备状态感知错误码](../../errors/设备状态感知错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[设备状态感知错误码]([设备状态感知错误码](../../errors/设备状态感知错误码.md).md)和[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.801Capability not supported. Function can not work correctly due to limited device capabilities.32500001Service exception.32500002Subscription failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. Function can not work correctly due to limited device capabilities. |
+| 32500001 | Service exception. |
+| 32500002 | Subscription failed. |
 
 **示例**：
 
@@ -60,13 +70,20 @@ off(type: 'steadyStandingDetect', callback?: Callback<SteadyStandingStatus>): vo
 
 **参数**：
 
-参数名类型必填说明typestring是事件类型。type为“steadyStandingDetect”，表示设备静止姿态（支架态）感知。callbackCallback<[SteadyStandingStatus](#ZH-CN_TOPIC_0000002497605636__steadystandingstatus)>否回调函数，返回设备静止姿态感知（支架态）状态信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件类型。type为“steadyStandingDetect”，表示设备静止姿态（支架态）感知。 |
+| callback | Callback<SteadyStandingStatus> | 否 | 回调函数，返回设备静止姿态感知（支架态）状态信息。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[设备状态感知错误码](../../errors/设备状态感知错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[设备状态感知错误码](设备状态感知错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.801Capability not supported. Function can not work correctly due to limited device capabilities.32500001Service exception.32500003Unsubscription failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. Function can not work correctly due to limited device capabilities. |
+| 32500001 | Service exception. |
+| 32500003 | Unsubscription failed. |
 
 **示例**：
 

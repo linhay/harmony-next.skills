@@ -12,7 +12,7 @@
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 -
 
@@ -36,15 +36,21 @@ static setAdsBlockRules(rulesFile: string, replace: boolean): void
 
 **参数：**
 
-参数名类型必填说明rulesFilestring是指定了符合 easylist 通用语法的规则文件路径，应用需要有此文件的读权限。replaceboolean是true表示强制替换掉内置的默认规则，false表示设置的自定义规则将与内置规则共同工作。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rulesFile | string | 是 | 指定了符合 easylist 通用语法的规则文件路径，应用需要有此文件的读权限。 |
+| replace | boolean | 是 | true表示强制替换掉内置的默认规则，false表示设置的自定义规则将与内置规则共同工作。 |
 
 **错误码：**
 
 从API version 18开始，在不支持广告过滤功能的设备上调用该API会抛出801异常。
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -81,9 +87,6 @@ struct WebComponent {
           }
         })
       }
-    }
-  }
-}
 ```
 
 #### addAdsBlockDisallowedList12+
@@ -100,15 +103,20 @@ static addAdsBlockDisallowedList(domainSuffixes: Array<string>): void
 
 **参数：**
 
-参数名类型必填说明domainSuffixesArray<string>是一组域名列表，例如['example.com', 'abcd.efg.com']
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| domainSuffixes | Array<string> | 是 | 一组域名列表，例如['example.com', 'abcd.efg.com'] |
 
 **错误码：**
 
 从API version 18开始，在不支持广告过滤功能的设备上调用该API会抛出801异常。
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -151,13 +159,10 @@ struct WebComponent {
             webview.AdsBlockManager.addAdsBlockDisallowedList(arrDomainSuffixes);
           })
         }
-      }
       Web({ src: this.main_url, controller: this.controller })
         .onControllerAttached(()=>{
           this.controller.enableAdsBlock(true);
         })
-    }
-  }
 }
 ```
 
@@ -173,15 +178,20 @@ AdsBlockManager的DisallowedList不会持久化，应用重启需要重新设置
 
 **参数：**
 
-参数名类型必填说明domainSuffixesArray<string>是一组域名列表，例如['example.com', 'abcd.efg.com']
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| domainSuffixes | Array<string> | 是 | 一组域名列表，例如['example.com', 'abcd.efg.com'] |
 
 **错误码：**
 
 从API version 18开始，在不支持广告过滤功能的设备上调用该API会抛出801异常。
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -224,13 +234,10 @@ struct WebComponent {
             webview.AdsBlockManager.removeAdsBlockDisallowedList(arrDomainSuffixes);
           })
         }
-      }
       Web({ src: this.main_url, controller: this.controller })
         .onControllerAttached(()=>{
           this.controller.enableAdsBlock(true);
         })
-    }
-  }
 }
 ```
 
@@ -246,9 +253,11 @@ static clearAdsBlockDisallowedList(): void
 
 从API version 18开始，在不支持广告过滤功能的设备上调用该API会抛出801异常。
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -287,13 +296,10 @@ struct WebComponent {
             webview.AdsBlockManager.clearAdsBlockDisallowedList();
           })
         }
-      }
       Web({ src: this.main_url, controller: this.controller })
         .onControllerAttached(()=>{
           this.controller.enableAdsBlock(true);
         })
-    }
-  }
 }
 ```
 
@@ -311,15 +317,20 @@ AllowedList的优先级比DisAllowList高，例如，DisallowList中配置了['e
 
 **参数：**
 
-参数名类型必填说明domainSuffixesArray<string>是一组域名列表，例如['example.com', 'abcd.efg.com']
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| domainSuffixes | Array<string> | 是 | 一组域名列表，例如['example.com', 'abcd.efg.com'] |
 
 **错误码：**
 
 从API version 18开始，在不支持广告过滤功能的设备上调用该API会抛出801异常。
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -365,13 +376,10 @@ struct WebComponent {
             webview.AdsBlockManager.addAdsBlockAllowedList(arrAllowedDomainSuffixes);
           })
         }
-      }
       Web({ src: this.main_url, controller: this.controller })
         .onControllerAttached(()=>{
           this.controller.enableAdsBlock(true)
         })
-    }
-  }
 }
 ```
 
@@ -387,15 +395,20 @@ AdsBlockManager的AllowedList不会持久化，应用重启需要重新设置。
 
 **参数：**
 
-参数名类型必填说明domainSuffixesArray<string>是一组域名列表，例如['example.com', 'abcd.efg.com']
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| domainSuffixes | Array<string> | 是 | 一组域名列表，例如['example.com', 'abcd.efg.com'] |
 
 **错误码：**
 
 从API version 18开始，在不支持广告过滤功能的设备上调用该API会抛出801异常。
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -438,13 +451,10 @@ struct WebComponent {
             webview.AdsBlockManager.removeAdsBlockAllowedList(arrDomainSuffixes);
           })
         }
-      }
       Web({ src: this.main_url, controller: this.controller })
         .onControllerAttached(()=>{
           this.controller.enableAdsBlock(true);
         })
-    }
-  }
 }
 ```
 
@@ -460,9 +470,11 @@ static clearAdsBlockAllowedList(): void
 
 从API version 18开始，在不支持广告过滤功能的设备上调用该API会抛出801异常。
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -501,12 +513,9 @@ struct WebComponent {
             webview.AdsBlockManager.clearAdsBlockAllowedList();
           })
         }
-      }
       Web({ src: this.main_url, controller: this.controller })
       .onControllerAttached(()=>{
         this.controller.enableAdsBlock(true);
       })
     }
-  }
-}
 ```

@@ -1,6 +1,7 @@
 # Class (WebContextMenuResult)
 
-实现长按页面元素或鼠标右键弹出来的菜单所执行的响应事件。示例代码参考[onContextMenuShow事件](../../topics/misc/事件.md#ZH-CN_TOPIC_0000002497445228__oncontextmenushow9)。
+实现长按页面元素或鼠标右键弹出来的菜单所执行的响应事件。示例代码参考[onContextMenuShow事件](事件.md#ZH-CN_TOPIC_0000002522081170__oncontextmenushow9)。
+
 
 -
 
@@ -12,7 +13,7 @@
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### constructor9+
 
@@ -97,3 +98,10 @@ pasteAndMatchStyle(): void
 需要配置权限：ohos.permission.READ_PASTEBOARD。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+**requestPasswordAutoFill23+**
+
+requestPasswordAutoFill(): void
+
+请求密码保险箱中的用户名或密码数据自动填充到当前获得焦点的输入框中。
+
+系统能力： SystemCapability.Web.Webview.Core

@@ -20,8 +20,34 @@ general error.
 
 系统异常，请稍后重试。
 
-#### 16700101 查询数据库失败
+#### 16700002 参数检查失败
+**错误信息**
 
+Invalid parameter value.
+
+**错误描述**
+
+参数校验失败。
+
+**可能原因**
+
+1.
+
+空参数错误 (Null Argument Error)。
+
+1.
+
+参数格式错误 (Format Error)。
+
+1.
+
+参数值范围错误 (Value Range Error)。
+
+**处理步骤**
+
+请阅读参数规格约束，按照可能原因进行排查。
+
+#### 16700101 查询数据库失败
 **错误信息**
 
 Failed to get value from contacts data.

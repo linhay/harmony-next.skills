@@ -1,6 +1,7 @@
 # @ohos.app.ability.OpenLinkOptions (openLink的可选参数)
 
-OpenLinkOptions可以作为[openLink()](../../topics/graphics/UIAbilityContext.md#ZH-CN_TOPIC_0000002497604628__openlink12)的入参，用于标识是否仅打开AppLinking和传递键值对可选参数。
+OpenLinkOptions可以作为[openLink()](UIAbilityContext.md#ZH-CN_TOPIC_0000002553200541__openlink12)的入参，用于标识是否仅打开AppLinking和传递键值对可选参数。
+
 
 -
 
@@ -22,39 +23,12 @@ import { OpenLinkOptions } from '@kit.AbilityKit';
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称类型只读可选说明appLinkingOnlyboolean否是
-
-表示是否必须以[AppLinking](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-linking-startup)的方式启动UIAbility。
-
-- 取值为true时，如果不存在与AppLinking相匹配的UIAbility，直接返回。
-
-- 取值为false时，如果不存在与AppLinking相匹配的UIAbility，AppLinking会退化为[DeepLinking](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/deep-linking-startup)。默认值为false。
-
-aa命令隐式拉起Ability时可以通过设置"--pb appLinkingOnly true/false"以AppLinking的方式进行启动。
-
-parametersRecord<string, Object>否是
-
-表示WantParams参数。
-
-**说明**：具体使用规则请参考[want](@ohos.app.ability.Want (Want).md)中的parameters属性。
-
-hideFailureTipDialog21+boolean否是
-
-表示[Deep Linking](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/deep-linking-startup)找不到应用时是否显示“暂无可用打开方式”的弹窗。
-
-- 取值为true时，不显示“暂无可用打开方式”的弹窗。
-
-- 取值为false时，显示“暂无可用打开方式”的弹窗。默认值为false。
-
-**说明**：appLinkingOnly字段为true时不会触发Deep Linking流程，该字段不会生效。
-
-**元服务API**：从API version 21开始，该接口支持在元服务中使用。
-
-completionHandler21+[CompletionHandler](@ohos.app.ability.CompletionHandler (拉起应用结果的操作类).md#ZH-CN_TOPIC_0000002529284577__completionhandler)否是
-
-拉起应用结果的操作类，用于处理拉起应用的结果。
-
-**元服务API**：从API version 21开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| appLinkingOnly | boolean | 否 | 是 | 表示是否必须以AppLinking的方式启动UIAbility。 - 取值为true时，如果不存在与AppLinking相匹配的UIAbility，直接返回。 - 取值为false时，如果不存在与AppLinking相匹配的UIAbility，AppLinking会退化为DeepLinking。默认值为false。 aa命令隐式拉起Ability时可以通过设置"--pb appLinkingOnly true/false"以AppLinking的方式进行启动。 |
+| parameters | Record<string, Object> | 否 | 是 | 表示WantParams参数。 说明：具体使用规则请参考want中的parameters属性。 |
+| hideFailureTipDialog21+ | boolean | 否 | 是 | 表示Deep Linking找不到应用时是否显示“暂无可用打开方式”的弹窗。 - 取值为true时，不显示“暂无可用打开方式”的弹窗。 - 取值为false时，显示“暂无可用打开方式”的弹窗。默认值为false。 说明：appLinkingOnly字段为true时不会触发Deep Linking流程，该字段不会生效。 元服务API：从API version 21开始，该接口支持在元服务中使用。 |
+| completionHandler21+ | CompletionHandler | 否 | 是 | 拉起应用结果的操作类，用于处理拉起应用的结果。 元服务API：从API version 21开始，该接口支持在元服务中使用。 |
 
 **示例：**
 
@@ -130,5 +104,4 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```

@@ -36,5 +36,4 @@ class CustomData implements lang.ISendable {
         this.data1 = data1;
         this.data2 = data2;
     }
-}
 ```

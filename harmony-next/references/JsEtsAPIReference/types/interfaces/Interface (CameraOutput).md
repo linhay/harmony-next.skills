@@ -22,13 +22,17 @@ release(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当释放输出资源成功，err为undefined，否则为错误对象。错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当释放输出资源成功，err为undefined，否则为错误对象。错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码]([Camera错误码](../../errors/Camera错误码.md).md)。
 
-错误码ID错误信息7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -68,13 +72,17 @@ release(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 

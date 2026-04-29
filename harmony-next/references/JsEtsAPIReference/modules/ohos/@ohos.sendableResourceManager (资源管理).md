@@ -1,6 +1,6 @@
 # @ohos.sendableResourceManager (资源管理)
 
-资源管理导入sendableResourceManager模块，通过调用[resourceToSendableResource](#ZH-CN_TOPIC_0000002529285309__sendableresourcemanagerresourcetosendableresource)和[sendableResourceToResource](#ZH-CN_TOPIC_0000002529285309__sendableresourcemanagersendableresourcetoresource)方法可以将[Resource](#ZH-CN_TOPIC_0000002529285309__resource)对象和[SendableResource](#ZH-CN_TOPIC_0000002529285309__sendableresource)对象进行互转。
+资源管理导入sendableResourceManager模块，通过调用[resourceToSendableResource](#ZH-CN_TOPIC_0000002522241286__sendableresourcemanagerresourcetosendableresource)和[sendableResourceToResource](#ZH-CN_TOPIC_0000002522241286__sendableresourcemanagersendableresourcetoresource)方法可以将[Resource](#ZH-CN_TOPIC_0000002522241286__resource)对象和[SendableResource](#ZH-CN_TOPIC_0000002522241286__sendableresource)对象进行互转。
 
 Resource对象通过转换为SendableResource对象后，可以被[Sendable类](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)持有。Sendable类在跨线程传输后，取出持有的SendableResource对象转为Resource对象，作为参数获取资源。
 
@@ -24,17 +24,23 @@ resourceToSendableResource(resource: Resource): SendableResource
 
 **参数：**
 
-参数名类型必填说明resource[Resource](#ZH-CN_TOPIC_0000002529285309__resource)是Resource对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| resource | Resource | 是 | Resource对象。 |
 
 **返回值：**
 
-类型说明[SendableResource](#ZH-CN_TOPIC_0000002529285309__sendableresource)转换后的SendableResource对象。
+| 类型 | 说明 |
+| --- | --- |
+| SendableResource | 转换后的SendableResource对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
 
 **示例：**
 
@@ -75,17 +81,23 @@ sendableResourceToResource(resource: SendableResource): Resource
 
 **参数：**
 
-参数名类型必填说明resource[SendableResource](#ZH-CN_TOPIC_0000002529285309__sendableresource)是SendableResource对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| resource | SendableResource | 是 | SendableResource对象。 |
 
 **返回值：**
 
-类型说明[Resource](#ZH-CN_TOPIC_0000002529285309__resource)转换后的Resource对象。
+| 类型 | 说明 |
+| --- | --- |
+| Resource | 转换后的Resource对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
 
 **示例：**
 
@@ -116,20 +128,24 @@ try {
 
 #### Resource
 
-type Resource = _Resource
+type Resource = [_Resource](../../topics/misc/Resource.md#ZH-CN_TOPIC_0000002497445340__resource-1)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
-类型说明[_Resource](../../topics/system-services/Resource.md#ZH-CN_TOPIC_0000002497445340__resource-1)表示Resource资源信息。
+| 类型 | 说明 |
+| --- | --- |
+| [_Resource](../../topics/misc/Resource.md#ZH-CN_TOPIC_0000002497445340__resource-1) | 表示Resource资源信息。 |
 
 #### SendableResource
 
-type SendableResource = _SendableResource
+type SendableResource = [_SendableResource](../../topics/misc/SendableResource.md#ZH-CN_TOPIC_0000002529285311__sendableresource-1)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
-类型说明[_SendableResource](../../topics/system-services/SendableResource.md#ZH-CN_TOPIC_0000002529285311__sendableresource-1)表示SendableResource资源信息。
+| 类型 | 说明 |
+| --- | --- |
+| [_SendableResource](../../topics/misc/SendableResource.md#ZH-CN_TOPIC_0000002529285311__sendableresource-1) | 表示SendableResource资源信息。 |

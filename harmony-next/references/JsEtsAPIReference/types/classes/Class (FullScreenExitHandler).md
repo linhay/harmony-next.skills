@@ -1,6 +1,7 @@
 # Class (FullScreenExitHandler)
 
-通知开发者Web组件退出全屏。示例代码参考[onFullScreenEnter事件](../../topics/misc/事件.md#ZH-CN_TOPIC_0000002497445228__onfullscreenenter9)。
+通知开发者Web组件退出全屏。示例代码参考[onFullScreenEnter事件](事件.md#ZH-CN_TOPIC_0000002522081170__onfullscreenenter9)。
+
 
 -
 
@@ -12,7 +13,7 @@
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### constructor9+
 

@@ -4,7 +4,8 @@ UIExtensionAbility组件是带界面的ExtensionAbility组件，继承自[Extens
 
 开发者不可以直接继承UIExtensionAbility组件，但可以根据实际业务场景选择使用继承自UIExtensionAbility组件的其他组件。例如，开发者处理其他应用分享的数据时，可以使用[ShareExtensionAbility组件](@ohos.app.ability.ShareExtensionAbility (支持分享详情页接入的ExtensionAbility组件).md)；开发者提供卡片编辑功能时，可以使用[FormEditExtensionAbility组件](@ohos.app.form.FormEditExtensionAbility (FormEditExtensionAbility).md)。
 
-各类Ability组件的继承关系详见[继承关系说明](@ohos.app.ability.Ability (Ability基类).md#ZH-CN_TOPIC_0000002529444543__ability的继承关系说明)。
+各类Ability组件的继承关系详见[继承关系说明](@ohos.app.ability.Ability (Ability基类).md#ZH-CN_TOPIC_0000002553360447__ability的继承关系说明)。
+
 
 本模块首批接口从API version 10 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -24,7 +25,9 @@ import { UIExtensionAbility } from '@kit.AbilityKit';
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.AbilityCore
 
-名称类型只读可选说明context[UIExtensionContext](../../topics/graphics/UIExtensionContext.md)否否UIExtensionAbility组件的上下文。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| context | [UIExtensionContext](../../topics/misc/UIExtensionContext.md) | 否 | 否 | UIExtensionAbility组件的上下文。 |
 
 #### onCreate
 
@@ -36,7 +39,9 @@ onCreate(launchParam: AbilityConstant.LaunchParam): void
 
 **参数：**
 
-参数名类型必填说明launchParam12+[AbilityConstant.LaunchParam](@ohos.app.ability.AbilityConstant (Ability相关常量).md#ZH-CN_TOPIC_0000002497604576__launchparam)是应用启动参数，包含应用启动原因、应用上次退出原因等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| launchParam12+ | AbilityConstant.LaunchParam | 是 | 应用启动参数，包含应用启动原因、应用上次退出原因等。 |
 
 **示例：**
 
@@ -50,7 +55,6 @@ export default class ShareExtAbility extends ShareExtensionAbility {
   onCreate(launchParam: AbilityConstant.LaunchParam) {
     console.info(TAG, `onCreate, launchParam: ${JSON.stringify(launchParam)}`);
   }
-}
 ```
 
 #### onSessionCreate
@@ -63,7 +67,10 @@ onSessionCreate(want: Want, session: UIExtensionContentSession): void
 
 **参数：**
 
-参数名类型必填说明want[Want](@ohos.app.ability.Want (Want).md)是调用方拉起该UIExtensionAbility组件时传递的数据。session[UIExtensionContentSession](@ohos.app.ability.UIExtensionContentSession (UIExtensionAbility界面操作类).md)是UIExtensionContentSession实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | Want | 是 | 调用方拉起该UIExtensionAbility组件时传递的数据。 |
+| session | UIExtensionContentSession | 是 | UIExtensionContentSession实例对象。 |
 
 **示例：**
 
@@ -84,8 +91,6 @@ export default class ShareExtAbility extends ShareExtensionAbility {
       let message = (error as BusinessError).message;
       console.error(`Failed to load content, code: ${code}, msg: ${message}`);
     }
-  }
-}
 ```
 
 #### onSessionDestroy
@@ -98,7 +103,9 @@ onSessionDestroy(session: UIExtensionContentSession): void
 
 **参数：**
 
-参数名类型必填说明session[UIExtensionContentSession](@ohos.app.ability.UIExtensionContentSession (UIExtensionAbility界面操作类).md)是UIExtensionContentSession实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| session | UIExtensionContentSession | 是 | UIExtensionContentSession实例对象。 |
 
 **示例：**
 
@@ -111,7 +118,6 @@ const TAG: string = '[testTag] ShareExtAbility';
 export default class ShareExtAbility extends ShareExtensionAbility {
   onSessionDestroy(session: UIExtensionContentSession) {
     console.info(TAG, `onSessionDestroy`);
-  }
 }
 ```
 
@@ -135,7 +141,6 @@ export default class ShareExtAbility extends ShareExtensionAbility {
   onForeground() {
     console.info(TAG, `onForeground`);
   }
-}
 ```
 
 #### onBackground
@@ -158,7 +163,6 @@ export default class ShareExtAbility extends ShareExtensionAbility {
   onBackground() {
     console.info(TAG, `onBackground`);
   }
-}
 ```
 
 #### onDestroy
@@ -173,14 +177,15 @@ onDestroy(): void | Promise<void>
 
 **返回值：**
 
-类型说明void | Promise<void>无返回结果或无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| void | Promise<void> | 无返回结果或无返回结果的Promise对象。 |
 
 **示例：**
 
 -
 
 同步回调示例如下：
-
 ```ets
 // UIExtensionAbility组件不支持三方应用直接继承，故以派生类ShareExtensionAbility举例说明。
 import { ShareExtensionAbility } from '@kit.AbilityKit';
@@ -190,14 +195,12 @@ const TAG: string = '[testTag] ShareExtAbility';
 export default class ShareExtAbility extends ShareExtensionAbility {
   onDestroy() {
     console.info(TAG, `onDestroy`);
-  }
 }
 ```
 
 -
 
 异步回调示例如下：
-
 ```ets
 // UIExtensionAbility组件不支持三方应用直接继承，故以派生类ShareExtensionAbility举例说明。
 import { ShareExtensionAbility } from '@kit.AbilityKit';
@@ -220,5 +223,4 @@ export default class ShareExtAbility extends ShareExtensionAbility {
     }
     console.info(TAG, `onDestroy end`);
   }
-}
 ```

@@ -24,7 +24,12 @@ import { FaultLogger } from '@kit.PerformanceAnalysisKit';
 
 **系统能力**：SystemCapability.HiviewDFX.Hiview.FaultLogger
 
-名称值说明NO_SPECIFIC0不区分故障类型。CPP_CRASH2C++程序故障类型。JS_CRASH3JS程序故障类型。APP_FREEZE4应用程序卡死故障类型。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NO_SPECIFIC | 0 | 不区分故障类型。 |
+| CPP_CRASH | 2 | C++程序故障类型。 |
+| JS_CRASH | 3 | JS程序故障类型。 |
+| APP_FREEZE | 4 | 应用程序卡死故障类型。 |
 
 #### FaultLogInfo
 
@@ -32,7 +37,16 @@ import { FaultLogger } from '@kit.PerformanceAnalysisKit';
 
 **系统能力**：SystemCapability.HiviewDFX.Hiview.FaultLogger
 
-名称类型只读可选说明pidnumber否否故障进程的进程id。uidnumber否否故障进程的用户id。type[FaultType](#ZH-CN_TOPIC_0000002529445629__faulttype)否否故障类型。timestampnumber否否日志生成时的毫秒级时间戳。reasonstring否否发生故障的原因。modulestring否否发生故障的模块。summarystring否否故障的概要。fullLogstring否否故障日志全文。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| pid | number | 否 | 否 | 故障进程的进程id。 |
+| uid | number | 否 | 否 | 故障进程的用户id。 |
+| type | FaultType | 否 | 否 | 故障类型。 |
+| timestamp | number | 否 | 否 | 日志生成时的毫秒级时间戳。 |
+| reason | string | 否 | 否 | 发生故障的原因。 |
+| module | string | 否 | 否 | 发生故障的模块。 |
+| summary | string | 否 | 否 | 故障的概要。 |
+| fullLog | string | 否 | 否 | 故障日志全文。 |
 
 #### FaultLogger.query9+
 
@@ -44,17 +58,20 @@ query(faultType: FaultType, callback: AsyncCallback<Array<FaultLogInfo>>) : void
 
 **参数：**
 
-参数名类型必填说明faultType[FaultType](#ZH-CN_TOPIC_0000002529445629__faulttype)是输入要查询的故障类型。callbackAsyncCallback<Array<[FaultLogInfo](#ZH-CN_TOPIC_0000002529445629__faultloginfo)>>是
-
-回调函数，在回调函数中获取故障信息数组。
-
-- value拿到故障信息数组；value为undefined表示获取过程中出现异常，error返回错误提示字符串。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| faultType | FaultType | 是 | 输入要查询的故障类型。 |
+| callback | AsyncCallback<Array<FaultLogInfo>> | 是 | 回调函数，在回调函数中获取故障信息数组。 - value拿到故障信息数组；value为undefined表示获取过程中出现异常，error返回错误提示字符串。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[faultLogger错误码](../../errors/Faultlogger 错误码.md)。
+以下错误码的详细介绍参见[faultLogger错误码](Faultlogger 错误码.md)。
 
-错误码ID错误信息401The parameter check failed, Parameter type error.801The specified SystemCapability name was not found.10600001The service is not started or is faulty.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed, Parameter type error. |
+| 801 | The specified SystemCapability name was not found. |
+| 10600001 | The service is not started or is faulty. |
 
 **示例：**
 
@@ -79,8 +96,6 @@ function queryFaultLogCallback(error: BusinessError, value: Array<FaultLogger.Fa
             console.info(`Log summary: ${value[i].summary}`);
             console.info(`Log text: ${value[i].fullLog}`);
         }
-    }
-}
 try {
     FaultLogger.query(FaultLogger.FaultType.JS_CRASH, queryFaultLogCallback);
 } catch (err) {
@@ -98,21 +113,25 @@ query(faultType: FaultType) : Promise<Array<FaultLogInfo>>
 
 **参数：**
 
-参数名类型必填说明faultType[FaultType](#ZH-CN_TOPIC_0000002529445629__faulttype)是输入要查询的故障类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| faultType | FaultType | 是 | 输入要查询的故障类型。 |
 
 **返回值：**
 
-类型说明Promise<Array<[FaultLogInfo](#ZH-CN_TOPIC_0000002529445629__faultloginfo)>>
-
-Promise实例，可以在其then()方法中获取故障信息实例，也可以使用await。
-
-- value拿到故障信息数组；value为undefined表示获取过程中出现异常。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<FaultLogInfo>> | Promise实例，可以在其then()方法中获取故障信息实例，也可以使用await。 - value拿到故障信息数组；value为undefined表示获取过程中出现异常。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[faultLogger错误码](../../errors/Faultlogger 错误码.md)。
+以下错误码的详细介绍参见[faultLogger错误码](Faultlogger 错误码.md)。
 
-错误码ID错误信息401The parameter check failed, Parameter type error.801The specified SystemCapability name was not found.10600001The service is not started or is faulty.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed, Parameter type error. |
+| 801 | The specified SystemCapability name was not found. |
+| 10600001 | The service is not started or is faulty. |
 
 **示例：**
 
@@ -137,18 +156,17 @@ async function getLog() {
         console.info(`Log summary: ${value[i].summary}`);
         console.info(`Log text: ${value[i].fullLog}`);
       }
-    }
   } catch (err) {
     console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
   }
-}
 ```
 
 #### FaultLogger.querySelfFaultLog(deprecated)
 
 querySelfFaultLog(faultType: FaultType, callback: AsyncCallback<Array<FaultLogInfo>>) : void
 
-从 API Version 9 开始废弃，建议使用[FaultLogger.query](#ZH-CN_TOPIC_0000002529445629__faultloggerquery9)替代。
+
+从API version 8开始支持，从API version 9开始废弃，建议使用[FaultLogger.query](#ZH-CN_TOPIC_0000002522081784__faultloggerquery9)替代。
 
 获取当前应用故障信息，该方法通过回调方式获取故障信息数组，故障信息数组内最多上报10份故障信息。
 
@@ -156,11 +174,10 @@ querySelfFaultLog(faultType: FaultType, callback: AsyncCallback<Array<FaultLogIn
 
 **参数：**
 
-参数名类型必填说明faultType[FaultType](#ZH-CN_TOPIC_0000002529445629__faulttype)是输入要查询的故障类型。callbackAsyncCallback<Array<[FaultLogInfo](#ZH-CN_TOPIC_0000002529445629__faultloginfo)>>是
-
-回调函数，在回调函数中获取故障信息数组。
-
-- value拿到故障信息数组；value为undefined表示获取过程中出现异常，error返回错误提示字符串。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| faultType | FaultType | 是 | 输入要查询的故障类型。 |
+| callback | AsyncCallback<Array<FaultLogInfo>> | 是 | 回调函数，在回调函数中获取故障信息数组。 - value拿到故障信息数组；value为undefined表示获取过程中出现异常，error返回错误提示字符串。 |
 
 **示例：**
 
@@ -185,8 +202,6 @@ function queryFaultLogCallback(error: BusinessError, value: Array<FaultLogger.Fa
       console.info(`Log summary: ${value[i].summary}`);
       console.info(`Log text: ${value[i].fullLog}`);
     }
-  }
-}
 FaultLogger.querySelfFaultLog(FaultLogger.FaultType.JS_CRASH, queryFaultLogCallback);
 ```
 
@@ -194,7 +209,8 @@ FaultLogger.querySelfFaultLog(FaultLogger.FaultType.JS_CRASH, queryFaultLogCallb
 
 querySelfFaultLog(faultType: FaultType) : Promise<Array<FaultLogInfo>>
 
-从 API Version 9 开始废弃，建议使用[FaultLogger.query](#ZH-CN_TOPIC_0000002529445629__faultloggerquery9-1)替代。
+
+从API version 8开始支持，从API version 9开始废弃，建议使用[FaultLogger.query](#ZH-CN_TOPIC_0000002522081784__faultloggerquery9-1)替代。
 
 获取当前应用故障信息，该方法通过Promise方式返回故障信息数组，故障信息数组内最多上报10份故障信息。
 
@@ -202,15 +218,15 @@ querySelfFaultLog(faultType: FaultType) : Promise<Array<FaultLogInfo>>
 
 **参数：**
 
-参数名类型必填说明faultType[FaultType](#ZH-CN_TOPIC_0000002529445629__faulttype)是输入要查询的故障类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| faultType | FaultType | 是 | 输入要查询的故障类型。 |
 
 **返回值：**
 
-类型说明Promise<Array<[FaultLogInfo](#ZH-CN_TOPIC_0000002529445629__faultloginfo)>>
-
-Promise实例，可以在其then()方法中获取故障信息实例，也可以使用await。
-
-- value拿到故障信息数组；value为undefined表示获取过程中出现异常。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<FaultLogInfo>> | Promise实例，可以在其then()方法中获取故障信息实例，也可以使用await。 - value拿到故障信息数组；value为undefined表示获取过程中出现异常。 |
 
 **示例：**
 
@@ -233,6 +249,4 @@ async function getLog() {
       console.info(`Log summary: ${value[i].summary}`);
       console.info(`Log text: ${value[i].fullLog}`);
     }
-  }
-}
 ```

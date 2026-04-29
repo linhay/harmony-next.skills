@@ -12,4 +12,4 @@ typedef struct RawDir RawDir
 
 **相关模块：**[rawfile](rawfile.md)
 
-**所在头文件：**[raw_dir.h](../../capi/headers/raw_dir.h.md)
+**所在头文件：**[raw_dir.h](../../topics/misc/[raw_dir.h](raw_dir.h.md).md)

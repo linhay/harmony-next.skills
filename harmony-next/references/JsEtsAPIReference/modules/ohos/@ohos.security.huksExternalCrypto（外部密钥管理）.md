@@ -16,7 +16,10 @@ import { huksExternalCrypto } from '@kit.UniversalKeystoreKit';
 
 **系统能力：** SystemCapability.Security.Huks.CryptoExtension
 
-名称值说明HUKS_EXT_CRYPTO_TAG_TYPE_INT1 << 28表示TAG的值为整数类型。HUKS_EXT_CRYPTO_TAG_TYPE_BYTES5 << 28表示TAG的值为字节数组。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| HUKS_EXT_CRYPTO_TAG_TYPE_INT | 1 << 28 | 表示TAG的值为整数类型。 |
+| HUKS_EXT_CRYPTO_TAG_TYPE_BYTES | 5 << 28 | 表示TAG的值为字节数组。 |
 
 #### HuksExternalCryptoTag
 
@@ -24,7 +27,13 @@ import { huksExternalCrypto } from '@kit.UniversalKeystoreKit';
 
 **系统能力：** SystemCapability.Security.Huks.CryptoExtension
 
-名称值说明HUKS_EXT_CRYPTO_TAG_UKEY_PINHuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES | 200001表示PIN码的TAG。HUKS_EXT_CRYPTO_TAG_ABILITY_NAMEHuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES | 200002表示[CryptoExtensionAbility](@ohos.security.CryptoExtensionAbility (密钥扩展能力).md)的名称。HUKS_EXT_CRYPTO_TAG_EXTRA_DATAHuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES | 200003外部数据，在通用查询场景，表示返回的数据。HUKS_EXT_CRYPTO_TAG_UIDHuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_INT | 200004表示调用方的uid。HUKS_EXT_CRYPTO_TAG_PURPOSEHuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_INT | 200005表示证书链对应密钥的使用类型，具体类型详见[CertificatePurpose定义](@ohos.security.certManager (证书管理模块).md#ZH-CN_TOPIC_0000002529445349__certificatepurpose22)。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| HUKS_EXT_CRYPTO_TAG_UKEY_PIN | HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES | 200001 | 表示PIN码的TAG。 |
+| HUKS_EXT_CRYPTO_TAG_ABILITY_NAME | HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES | 200002 | 表示CryptoExtensionAbility的名称。 |
+| HUKS_EXT_CRYPTO_TAG_EXTRA_DATA | HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES | 200003 | 外部数据，在通用查询场景，表示返回的数据。 |
+| HUKS_EXT_CRYPTO_TAG_UID | HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_INT | 200004 | 表示调用方的uid。 |
+| HUKS_EXT_CRYPTO_TAG_PURPOSE | HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_INT | 200005 | 表示证书链对应密钥的使用类型，具体类型详见CertificatePurpose定义。 |
 
 #### HuksExternalCryptoParam
 
@@ -32,7 +41,10 @@ import { huksExternalCrypto } from '@kit.UniversalKeystoreKit';
 
 **系统能力：** SystemCapability.Security.Huks.CryptoExtension
 
-名称类型只读可选说明tag[HuksExternalCryptoTag](#ZH-CN_TOPIC_0000002497605394__huksexternalcryptotag)否否参数标签，用于区分参数。valueboolean|number|bigint|Uint8Array否否标签对应值。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| tag | HuksExternalCryptoTag | 否 | 否 | 参数标签，用于区分参数。 |
+| value | boolean|number|bigint|Uint8Array | 否 | 否 | 标签对应值。 |
 
 #### HuksExternalPinAuthState
 
@@ -40,13 +52,17 @@ import { huksExternalCrypto } from '@kit.UniversalKeystoreKit';
 
 **系统能力：** SystemCapability.Security.Huks.CryptoExtension
 
-名称值说明HUKS_EXT_CRYPTO_PIN_NO_AUTH0Ukey PIN未认证。HUKS_EXT_CRYPTO_PIN_AUTH_SUCCEEDED1Ukey PIN认证成功。HUKS_EXT_CRYPTO_PIN_LOCKED2Ukey PIN已锁定。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| HUKS_EXT_CRYPTO_PIN_NO_AUTH | 0 | Ukey PIN未认证。 |
+| HUKS_EXT_CRYPTO_PIN_AUTH_SUCCEEDED | 1 | Ukey PIN认证成功。 |
+| HUKS_EXT_CRYPTO_PIN_LOCKED | 2 | Ukey PIN已锁定。 |
 
 #### huksExternalCrypto.registerProvider
 
 registerProvider(providerName: string, params: Array<HuksExternalCryptoParam>): Promise<void>
 
-注册指定外部provider。使用Promise异步回调。
+注册指定的外部provider。使用Promise异步回调。
 
 **需要权限**：ohos.permission.CRYPTO_EXTENSION_REGISTER
 
@@ -54,23 +70,32 @@ registerProvider(providerName: string, params: Array<HuksExternalCryptoParam>): 
 
 **参数：**
 
-参数名类型必填说明providerNamestring是
-
-provider名称，最大长度为128。建议包含厂商信息，全局唯一，不要包含个人联系方式等敏感数据。
-
-最多支持注册10个provider。
-
-paramsArray<[HuksExternalCryptoParam](#ZH-CN_TOPIC_0000002497605394__huksexternalcryptoparam)>是操作时需传入的参数，必选TAG：[HUKS_EXT_CRYPTO_TAG_ABILITY_NAME](#ZH-CN_TOPIC_0000002497605394__huksexternalcryptotag)，表示ability的名字，根据业务自己内部定义按照实际填写。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| providerName | string | 是 | provider名称，最大长度为128。建议包含厂商信息，全局唯一，不要包含个人联系方式等敏感数据。 最多支持注册10个provider。 |
+| params | Array<HuksExternalCryptoParam> | 是 | 操作时需传入的参数，必选TAG：HUKS_EXT_CRYPTO_TAG_ABILITY_NAME，表示ability的名字，根据业务自己内部定义按照实际填写。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[HUKS错误码](../../errors/HUKS错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[HUKS错误码]([HUKS错误码](../../errors/HUKS错误码.md).md)。
 
-错误码ID错误信息201check permission failed.801api is not supported.12000002the ability name param is missing.12000005IPC communication failed.12000014memory is insufficient.12000018the input parameter is invalid.12000019the provider is already registered.12000020an error occurred in the dependent module.12000025the number of providers exceeds the limit.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | check permission failed. |
+| 801 | api is not supported. |
+| 12000002 | the ability name param is missing. |
+| 12000005 | IPC communication failed. |
+| 12000014 | memory is insufficient. |
+| 12000018 | the input parameter is invalid. |
+| 12000019 | the provider is already registered. |
+| 12000020 | an error occurred in the dependent module. |
+| 12000025 | the number of providers exceeds the limit. |
 
 **示例：**
 
@@ -102,7 +127,7 @@ huksExternalCrypto.registerProvider(providerName, extProperties)
 
 unregisterProvider(providerName: string, params?: Array<HuksExternalCryptoParam>): Promise<void>
 
-注销provider。使用Promise异步回调。
+注销指定的外部provider。使用Promise异步回调。
 
 **需要权限**：ohos.permission.CRYPTO_EXTENSION_REGISTER
 
@@ -110,23 +135,30 @@ unregisterProvider(providerName: string, params?: Array<HuksExternalCryptoParam>
 
 **参数：**
 
-参数名类型必填说明providerNamestring是provider名称，最大长度为128。建议包含厂商信息，全局唯一，不要包含个人联系方式等敏感数据。如果provider注册了多个扩展能力，则该provider下的扩展能力都会被注销。paramsArray<[HuksExternalCryptoParam](#ZH-CN_TOPIC_0000002497605394__huksexternalcryptoparam)>否
-
-操作时需传入的参数。
-
-可以在param参数中指定[HUKS_EXT_CRYPTO_TAG_ABILITY_NAME](#ZH-CN_TOPIC_0000002497605394__huksexternalcryptotag)，将根据“包名 + providerName + abilityName”注销对应的cryptoExtensionAbility。
-
-如果未在params参数中指定[HUKS_EXT_CRYPTO_TAG_ABILITY_NAME](#ZH-CN_TOPIC_0000002497605394__huksexternalcryptotag)，或者未传入params参数，则注销对应的providerName下的所有Provider。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| providerName | string | 是 | provider名称，最大长度为128。建议包含厂商信息，全局唯一，不要包含个人联系方式等敏感数据。如果provider注册了多个扩展能力，则该provider下的扩展能力都会被注销。 |
+| params | Array<HuksExternalCryptoParam> | 否 | 操作时需传入的参数。 可以在param参数中指定HUKS_EXT_CRYPTO_TAG_ABILITY_NAME，将根据“包名 + providerName + abilityName”注销对应的cryptoExtensionAbility。 如果未在params参数中指定HUKS_EXT_CRYPTO_TAG_ABILITY_NAME，或者未传入params参数，则注销对应的providerName下的所有Provider。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[HUKS错误码](../../errors/HUKS错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[HUKS错误码](HUKS错误码.md)。
 
-错误码ID错误信息201check permission failed.801api is not supported.12000005IPC communication failed.12000011the provider is not found.12000014memory is insufficient.12000018the input parameter is invalid.12000020an error occurred in the dependent module.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | check permission failed. |
+| 801 | api is not supported. |
+| 12000005 | IPC communication failed. |
+| 12000011 | the provider is not found. |
+| 12000012 | Device environment or input parameter is abnormal. This may happen for several reasons, such as the model already being unloaded. |
+| 12000014 | memory is insufficient. |
+| 12000018 | the input parameter is invalid. |
 
 **示例：**
 
@@ -164,21 +196,32 @@ getUkeyPinAuthState(resourceId: string, params?: Array<HuksExternalCryptoParam>)
 
 **参数：**
 
-参数名类型必填说明resourceIdstring是资源ID，可通过[导出证书的接口](@ohos.security.certManagerDialog (证书管理对话框模块).md#ZH-CN_TOPIC_0000002497605384__certificatemanagerdialogopenauthorizedialog22)获取，其结果中附带资源ID。paramsArray<[HuksExternalCryptoParam](#ZH-CN_TOPIC_0000002497605394__huksexternalcryptoparam)>否操作的属性。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| resourceId | string | 是 | 资源ID，可通过导出证书的接口获取，其结果中附带资源ID。 |
+| params | Array<HuksExternalCryptoParam> | 否 | 操作的属性。非系统应用传入HUKS_EXT_CRYPTO_TAG_UID是非法参数。 |
 
 **返回值：**
 
-类型说明Promise<[HuksExternalPinAuthState](#ZH-CN_TOPIC_0000002497605394__huksexternalpinauthstate)>
-
-Promise对象，返回认证结果。
-
-HUKS_EXT_CRYPTO_PIN_NO_AUTH 表示未认证；HUKS_EXT_CRYPTO_PIN_AUTH_SUCCEEDED 表示认证成功；HUKS_EXT_CRYPTO_PIN_LOCKED 表示PIN被锁定。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<HuksExternalPinAuthState> | Promise对象，返回认证结果。 HUKS_EXT_CRYPTO_PIN_NO_AUTH 表示未认证；HUKS_EXT_CRYPTO_PIN_AUTH_SUCCEEDED 表示认证成功；HUKS_EXT_CRYPTO_PIN_LOCKED 表示PIN被锁定。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[HUKS错误码](../../errors/HUKS错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[HUKS错误码](HUKS错误码.md)。
 
-错误码ID错误信息801api is not supported.12000005IPC communication failed.12000006the Ukey driver operation failed.12000014memory is insufficient.12000018the input parameter is invalid.12000020the provider operation failed.12000024the provider or Ukey is busy.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | api is not supported. |
+| 12000005 | IPC communication failed. |
+| 12000006 | the Ukey driver operation failed. |
+| 12000011 | queried entity does not exist. This may happen because the resource ID has not been opened. |
+| 12000012 | Device environment or input parameter is abnormal. This error may occur if the process function is not found, or due to other issues. |
+| 12000014 | memory is insufficient. |
+| 12000018 | the input parameter is invalid. |
+| 12000020 | the provider operation failed. |
+| 12000024 | the provider or Ukey is busy. |
 
 **示例：**
 
@@ -193,7 +236,7 @@ function StringToUint8Array(str: string) {
   return new Uint8Array(arr);
 }
 
-const testResourceId = "{\"providerName\":\"testProviderName\", \"bundleName\":\"com.example.cryptoapplication\", \"userid\":100, \"abilityName\":\"CryptoExtension\",\"index\":{\"key\":\"testKey\"}}";
+const testResourceId = "{\"providerName\":\"testProviderName\", \"bundleName\":\"com.example.cryptoapplication\", \"abilityName\":\"CryptoExtension\",\"index\":{\"key\":\"testKey\"}}";
 const extProperties: Array<huksExternalCrypto.HuksExternalCryptoParam> = [];
 huksExternalCrypto.getUkeyPinAuthState(testResourceId, extProperties)
     .then((data) => {
@@ -205,29 +248,50 @@ huksExternalCrypto.getUkeyPinAuthState(testResourceId, extProperties)
 
 getProperty(resourceId: string, propertyId: string, params?: Array<HuksExternalCryptoParam>): Promise<Array<HuksExternalCryptoParam>>
 
-调用此接口获取属性值并返回结果。使用Promise异步回调。propertyId表示查询属性的ID信息，当前仅支持GMT 0016-2023中定义的SKF接口名作为属性ID，支持的ID包括如下：
+调用此接口获取属性值并返回结果。使用Promise异步回调。
+
+propertyId表示查询属性的ID信息，当前仅支持GMT 0016-2023中定义的SKF接口名作为属性ID，支持的ID包括如下：
 
 - SKF_EnumDev
 - SKF_GetDevInfo
 - SKF_EnumApplication
 - SKF_EnumContainer
-- SKF_ExportPublicKey
+
+模型约束： 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.Huks.CryptoExtension
 
 **参数：**
 
-参数名类型必填说明resourceIdstring是资源ID，可通过[导出证书的接口](@ohos.security.certManagerDialog (证书管理对话框模块).md#ZH-CN_TOPIC_0000002497605384__certificatemanagerdialogopenauthorizedialog22)获取，该接口的返回结果中附带resourceId。propertyIdstring是查找操作的属性名称，是GMT 0016-2023中定义的SKF接口名，应用开发者需要针对接口名进行适配。paramsArray<[HuksExternalCryptoParam](#ZH-CN_TOPIC_0000002497605394__huksexternalcryptoparam)>否需要传递给Extension Ability的输入参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| resourceId | string | 是 | 资源ID，可通过导出证书的接口获取，该接口的返回结果中附带resourceId。 |
+| propertyId | string | 是 | 查找操作的属性名称，是GMT 0016-2023中定义的SKF接口名，应用开发者需要针对接口名进行适配。 |
+| params | Array<HuksExternalCryptoParam> | 否 | 需要传递给Extension Ability的输入参数。非系统应用传入HUKS_EXT_CRYPTO_TAG_UID是非法参数。 |
 
 **返回值：**
 
-类型说明Promise<Array<[HuksExternalCryptoParam](#ZH-CN_TOPIC_0000002497605394__huksexternalcryptoparam)>>param数组，包含要查询的属性结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<HuksExternalCryptoParam>> | param数组，包含要查询的属性结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[HUKS错误码](../../errors/HUKS错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[HUKS错误码](HUKS错误码.md)。
 
-错误码ID错误信息12000006the Ukey driver operation failed.12000011if not found the cached resource id.12000014memory is insufficient.12000018the input parameter is invalid.12000020the provider operation failed.12000024the provider or Ukey is busy.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | API is not supported. |
+| 12000005 | IPC communication failed. |
+| 12000006 | If the Ukey driver operation failed. Possible causes: 1. Error reported when the provider accesses the SKF interface of Ukey. |
+| 12000011 | If the cached resource ID is not found. |
+| 12000012 | Device environment or input parameter is abnormal. This error may occur if the process function is not found, or due to other issues. |
+| 12000014 | If the memory is insufficient. |
+| 12000018 | Input parameter is invalid. Possible causes: 1. The resourceId or propertyId length is invalid. 2. The params contains invalid tags or invalid value types. |
+| 12000020 | If the provider operation failed. Possible causes: 1. The provider experienced an internal processing error. |
+| 12000021 | The Ukey PIN is locked. |
+| 12000023 | The Ukey PIN is not authenticated. |
+| 12000024 | If the provider or Ukey is busy. |
 
 **示例：**
 
@@ -238,7 +302,6 @@ const testResourceId = JSON.stringify({
   providerName: "testProviderName",
   bundleName: "com.example.cryptoapplication",
   abilityName: "CryptoExtension",
-  userid: 100,
   index: {
     key: "testKey"
   } as ESObject
@@ -258,5 +321,4 @@ async function testFunction() : Promise<void>
   } catch (error) {
     console.error(`promise: getProperty failed, errCode : ${error.code}, errMsg : ${error.message}`);
   }
-}
 ```

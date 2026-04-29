@@ -28,7 +28,9 @@ import { Stack } from '@kit.ArkTS';
 
 **系统能力：** SystemCapability.Utils.Lang
 
-名称类型只读可选说明lengthnumber是否Stack的元素个数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| length | number | 是 | 否 | Stack的元素个数。 |
 
 #### constructor
 
@@ -42,9 +44,11 @@ Stack的构造函数。
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码]([语言基础类库错误码](../../errors/语言基础类库错误码.md).md)。
 
-错误码ID错误信息10200012The Stack's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200012 | The Stack's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -64,17 +68,23 @@ push(item: T): T
 
 **参数：**
 
-参数名类型必填说明itemT是添加进去的元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| item | T | 是 | 添加进去的元素。 |
 
 **返回值：**
 
-类型说明T返回被添加进去的元素。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回被添加进去的元素。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The push method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The push method cannot be bound. |
 
 **示例：**
 
@@ -103,13 +113,17 @@ pop(): T
 
 **返回值：**
 
-类型说明T返回栈顶元素，栈为空时返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回栈顶元素，栈为空时返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The pop method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The pop method cannot be bound. |
 
 **示例：**
 
@@ -136,13 +150,17 @@ peek(): T
 
 **返回值：**
 
-类型说明T返回栈顶元素，栈为空时返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回栈顶元素，栈为空时返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The peek method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The peek method cannot be bound. |
 
 **示例：**
 
@@ -168,17 +186,23 @@ locate(element: T): number
 
 **参数：**
 
-参数名类型必填说明elementT是指定元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | T | 是 | 指定元素。 |
 
 **返回值：**
 
-类型说明number对应元素下标值，查找失败则返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 对应元素下标值，查找失败则返回-1。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The locate method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The locate method cannot be bound. |
 
 **示例：**
 
@@ -194,9 +218,7 @@ console.info("result:", result);  // result: 2
 
 #### forEach
 
-forEach(callbackFn: (value: T, index?: number, stack?: Stack<T>) => void,
-
-thisArg?: Object): void
+forEach(callbackFn: (value: T, index?: number, stack?: Stack<T>) => void, thisArg?: Object): void
 
 在遍历Stack实例对象中每一个元素的过程中，对每个元素执行回调函数。
 
@@ -206,17 +228,27 @@ thisArg?: Object): void
 
 **参数：**
 
-参数名类型必填说明callbackFnfunction是回调函数。thisArgObject否callbackFn被调用时用作this值，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | function | 是 | 回调函数。 |
+| thisArg | Object | 否 | callbackFn被调用时用作this值，默认值为当前实例对象。 |
 
 callbackFn的参数说明：
 
-参数名类型必填说明valueT是当前遍历到的元素。indexnumber否当前遍历到的下标值，默认值为0。stackStack<T>否当前调用forEach方法的实例对象，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | T | 是 | 当前遍历到的元素。 |
+| index | number | 否 | 当前遍历到的下标值，默认值为0。 |
+| stack | Stack<T> | 否 | 当前调用forEach方法的实例对象，默认值为当前实例对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The forEach method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The forEach method cannot be bound. |
 
 **示例：**
 
@@ -247,13 +279,17 @@ isEmpty(): boolean
 
 **返回值：**
 
-类型说明boolean为空返回true，不为空返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 为空返回true，不为空返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The isEmpty method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The isEmpty method cannot be bound. |
 
 **示例：**
 
@@ -279,13 +315,17 @@ console.info("result:", result);  // result: false
 
 **返回值：**
 
-类型说明IterableIterator<T>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<T> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The Symbol.iterator method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The Symbol.iterator method cannot be bound. |
 
 **示例：**
 

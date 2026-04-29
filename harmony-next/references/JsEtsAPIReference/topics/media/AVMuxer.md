@@ -12,4 +12,6 @@ AVMuxer模块提供用于音视频封装功能的函数。
 
 #### 文件汇总
 
-名称描述[native_avmuxer.h](../../capi/headers/native_avmuxer.h.md)声明用于音视频封装的Native API。
+| 名称 | 描述 |
+| --- | --- |
+| [native_avmuxer.h](native_avmuxer.h.md) | 声明用于音视频封装的Native API。 |

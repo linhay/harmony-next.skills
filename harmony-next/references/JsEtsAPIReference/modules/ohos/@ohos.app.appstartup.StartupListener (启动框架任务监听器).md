@@ -22,7 +22,9 @@ onCompleted?(error: BusinessError<void>): void
 
 **参数：**
 
-参数名类型必填说明error[BusinessError<void>](@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__businesserror)是错误信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| error | BusinessError<void> | 是 | 错误信息。 |
 
 **示例：**
 
@@ -52,5 +54,4 @@ export default class MyStartupConfigEntry extends StartupConfigEntry {
     };
     return config;
   }
-}
 ```

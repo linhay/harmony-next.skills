@@ -2,15 +2,14 @@
 
 以下仅介绍Game Service Kit特有错误码，通用错误码请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
-#### 1010300001 游戏内部通用错误
-
+#### 1010300001 系统内部错误
 **错误信息**
 
 System internal error.
 
 **错误描述**
 
-游戏内部通用错误。
+系统内部错误。
 
 **可能原因**
 
@@ -24,7 +23,7 @@ Game Service Kit系统内部错误。
 
 **错误信息**
 
-Invalid caller.
+Auth failed.
 
 **错误描述**
 
@@ -36,11 +35,15 @@ Invalid caller.
 
 **处理步骤**
 
-1. 首次使用设备进行登录时，请确认网络连接正常。
-1. 请检查[HMS_GamePerformance_Init](../topics/misc/GamePerformance.md#ZH-CN_TOPIC_0000002474311058__ga1045d9d8f4e7972b44ff95571afca8f9)接口传参是否正确。
+1.
+
+首次使用设备进行登录时，请确认网络连接正常。
+
+1.
+
+请检查[HMS_GamePerformance_Init](GamePerformance.md#ZH-CN_TOPIC_0000002553202309__hms_gameperformance_init)接口传参是否正确。
 
 #### 1010300003 非法请求
-
 **错误信息**
 
 Invalid request.
@@ -55,7 +58,7 @@ Invalid request.
 
 **处理步骤**
 
-请先调用[HMS_GamePerformance_Init](../topics/misc/GamePerformance.md#ZH-CN_TOPIC_0000002474311058__ga1045d9d8f4e7972b44ff95571afca8f9)接口，并确保调用成功。
+请先调用[HMS_GamePerformance_Init](GamePerformance.md#ZH-CN_TOPIC_0000002553202309__hms_gameperformance_init)接口，并确保调用成功。
 
 #### 1010300004 参数错误
 
@@ -69,7 +72,12 @@ Parameter error.
 
 **可能原因**
 
+-
+
 - 必填参数为空。
+
+-
+
 - 参数校验失败。
 
 **处理步骤**

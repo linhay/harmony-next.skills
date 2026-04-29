@@ -12,4 +12,4 @@ typedef struct OH_Utd OH_Utd
 
 **相关模块：**[UDMF](UDMF.md)
 
-**所在头文件：**[utd.h](../../capi/headers/utd.h.md)
+**所在头文件：**[utd.h](../../topics/misc/[utd.h](utd.h.md).md)

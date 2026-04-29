@@ -1,6 +1,7 @@
 # Class (ScreenCaptureHandler)
 
-Web组件返回授权或拒绝屏幕捕获功能的对象。示例代码参考[onScreenCaptureRequest事件](../../topics/misc/事件.md#ZH-CN_TOPIC_0000002497445228__onscreencapturerequest10)。
+Web组件返回授权或拒绝屏幕捕获功能的对象。示例代码参考[onScreenCaptureRequest事件](事件.md#ZH-CN_TOPIC_0000002522081170__onscreencapturerequest10)。
+
 
 -
 
@@ -12,7 +13,7 @@ Web组件返回授权或拒绝屏幕捕获功能的对象。示例代码参考[o
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### constructor10+
 
@@ -40,11 +41,13 @@ getOrigin(): string
 
 **返回值：**
 
-类型说明string当前请求权限网页的来源。
+| 类型 | 说明 |
+| --- | --- |
+| string | 当前请求权限网页的来源。 |
 
 #### grant10+
 
-grant(config: ScreenCaptureConfig): void
+grant(config: [ScreenCaptureConfig](../interfaces/Interfaces（其他）.md#ZH-CN_TOPIC_0000002529445183__screencaptureconfig10)): void
 
 对网页访问的屏幕捕获操作进行授权。
 
@@ -54,4 +57,6 @@ grant(config: ScreenCaptureConfig): void
 
 **参数：**
 
-参数名类型必填说明config[ScreenCaptureConfig](../interfaces/Interfaces（其他）.md#ZH-CN_TOPIC_0000002529445183__screencaptureconfig10)是屏幕捕获配置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | [ScreenCaptureConfig](../interfaces/Interfaces（其他）.md#ZH-CN_TOPIC_0000002529445183__screencaptureconfig10) | 是 | 屏幕捕获配置。 |

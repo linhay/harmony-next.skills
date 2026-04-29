@@ -12,7 +12,7 @@
 
 -
 
-以下API需先使用UIContext中的[getFocusController()](Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getfocuscontroller12)方法获取FocusController实例，再通过该实例调用对应方法。
+以下API需先使用UIContext中的[getFocusController()](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfocuscontroller12)方法获取FocusController实例，再通过该实例调用对应方法。
 
 #### clearFocus12+
 
@@ -72,7 +72,6 @@ struct ClearFocusExample {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### requestFocus12+
@@ -87,13 +86,19 @@ requestFocus(key: string): void
 
 **参数：**
 
-参数名类型必填说明keystring是节点对应的[组件标识](../../topics/misc/组件标识.md)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 节点对应的[组件标识](../../topics/components/组件标识.md)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[焦点错误码](../../errors/焦点错误码.md)。
+以下错误码的详细介绍请参见[焦点错误码]([焦点错误码](../../errors/焦点错误码.md).md)。
 
-错误码ID错误信息150001the component cannot be focused.150002This component has an unfocusable ancestor.150003the component is not on tree or does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 150001 | the component cannot be focused. |
+| 150002 | This component has an unfocusable ancestor. |
+| 150003 | the component is not on tree or does not exist. |
 
 **示例：**
 
@@ -140,14 +145,12 @@ struct RequestExample {
             try {
               this.getUIContext().getFocusController().requestFocus("eee");
             } catch (error) {
-              console.error('requestFocus failed code is ' + error.code + ' message is ' + error.message);
+              console.error(`requestFocus failed code is ${error.code} message is ${error.message}`);
             }
           })
       }
-    }
     .width('100%')
     .height('100%')
-  }
 }
 ```
 
@@ -163,19 +166,10 @@ activate(isActive: boolean, autoInactive?: boolean): void
 
 **参数：**
 
-参数名类型必填说明isActiveboolean是
-
-设置是否进入/退出焦点激活态。
-
-true表示设置进入焦点激活态，false表示设置退出焦点激活态。
-
-autoInactiveboolean否
-
-设置焦点激活态退出逻辑。
-
-为true时，会自动在触摸事件、鼠标事件触发时退出，为false时，仅受开发者API控制。
-
-默认值：true
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isActive | boolean | 是 | 设置是否进入/退出焦点激活态。 true表示设置进入焦点激活态，false表示设置退出焦点激活态。 |
+| autoInactive | boolean | 否 | 设置焦点激活态退出逻辑。 为true时，会自动在触摸事件、鼠标事件触发时退出，为false时，仅受开发者API控制。 默认值：true |
 
 **示例：**
 
@@ -211,7 +205,6 @@ struct ActivateExample {
     .justifyContent(FlexAlign.SpaceBetween)
     .width(800)
   }
-}
 ```
 
 #### isActive20+
@@ -228,7 +221,9 @@ isActive(): boolean
 
 **返回值：**
 
-类型说明boolean返回UI实例的焦点激活态。true表示当前进入焦点激活态，false表示当前已退出焦点激活态。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回UI实例的焦点激活态。true表示当前进入焦点激活态，false表示当前已退出焦点激活态。 |
 
 **示例：**
 
@@ -253,7 +248,7 @@ struct ClearFocusExample {
           .onClick(()=> {
             console.info("button1 onClick");
             this.getUIContext().getFocusController().activate(true);
-            console.info("focus status " + this.getUIContext().getFocusController().isActive());
+            console.info(`focus status ${this.getUIContext().getFocusController().isActive()}`);
           })
         Button('button2')
           .width(200)
@@ -265,7 +260,7 @@ struct ClearFocusExample {
           .onClick(()=> {
             console.info("button2 onClick");
             this.getUIContext().getFocusController().activate(false);
-            console.info("focus status " + this.getUIContext().getFocusController().isActive());
+            console.info(`focus status ${this.getUIContext().getFocusController().isActive()}`);
           })
           .onFocus(() => {
             this.btColor = Color.Red;
@@ -274,10 +269,8 @@ struct ClearFocusExample {
             this.btColor = Color.Blue;
           })
       }
-    }
     .width('100%')
     .height('100%')
-  }
 }
 ```
 
@@ -293,7 +286,9 @@ setAutoFocusTransfer(isAutoFocusTransfer: boolean): void
 
 **参数：**
 
-参数名类型必填说明isAutoFocusTransferboolean是设置页面切换时，新的页面是否需要主动获取焦点，例如[Router](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routerpushurldeprecated)、[Navigation](../../topics/misc/Navigation.md)、[Menu](../../topics/components/menu.md)、[Dialog](../../topics/components/弹出框 (Dialog).md)、[Popup](../../topics/misc/popup.md)等。true表示需要主动获取焦点，false表示不需要主动获取焦点。默认值为true。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isAutoFocusTransfer | boolean | 是 | 设置页面切换时，新的页面是否需要主动获取焦点，例如Router、[Navigation](../../topics/components/Navigation.md)、[Menu](../../topics/components/menu.md)、Dialog、[Popup](../../topics/misc/popup.md)等。true表示需要主动获取焦点，false表示不需要主动获取焦点。默认值为true。 |
 
 **示例：**
 
@@ -318,14 +313,12 @@ struct CustomDialogExample {
         })
         .margin(20)
     }
-  }
-}
+
 @Entry
 @Component
 struct CustomDialogUser {
   dialogController: CustomDialogController | null = new CustomDialogController({
-    builder: CustomDialogExample({
-    }),
+    builder: CustomDialogExample({}),
   });
   aboutToDisappear() {
     this.dialogController = null;
@@ -342,12 +335,11 @@ struct CustomDialogUser {
         }).backgroundColor(0x317aff)
     }.width('100%').margin({ top: 5 })
   }
-}
 ```
 
-#### setKeyProcessingMode15+
+#### set[KeyProcessingMode](../../topics/components/焦点控制.md#ZH-CN_TOPIC_0000002529444807__keyprocessingmode15)15+
 
-setKeyProcessingMode(mode: KeyProcessingMode): void
+set[KeyProcessingMode](../../topics/components/焦点控制.md#ZH-CN_TOPIC_0000002529444807__keyprocessingmode15)(mode: KeyProcessingMode): void
 
 设置按键事件处理的优先级。
 
@@ -357,7 +349,9 @@ setKeyProcessingMode(mode: KeyProcessingMode): void
 
 **参数：**
 
-参数名类型必填说明mode[KeyProcessingMode](../../topics/misc/焦点控制.md#ZH-CN_TOPIC_0000002529444807__keyprocessingmode15)是按键处理模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mode | [KeyProcessingMode](../../topics/components/焦点控制.md#ZH-CN_TOPIC_0000002529444807__keyprocessingmode15) | 是 | 按键处理模式。 |
 
 **示例：**
 
@@ -366,13 +360,11 @@ setKeyProcessingMode(mode: KeyProcessingMode): void
 @Entry
 @Component
 struct Index {
-
   aboutToAppear() {
     this.getUIContext().getFocusController().setKeyProcessingMode(KeyProcessingMode.ANCESTOR_EVENT);
   }
 
   build() {
-    Row() {
       Row() {
         Button('Button1').id('Button1').onKeyEvent((event) => {
           console.info("Button1");
@@ -403,5 +395,4 @@ struct Index {
       return true;
     })
   }
-}
 ```

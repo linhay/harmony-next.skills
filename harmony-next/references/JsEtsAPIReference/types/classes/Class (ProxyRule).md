@@ -1,6 +1,7 @@
 # Class (ProxyRule)
 
-[insertProxyRule](Class (ProxyConfig).md#ZH-CN_TOPIC_0000002497605190__insertproxyrule15)中使用的代理规则。
+[insertProxyRule](Class (ProxyConfig).md#ZH-CN_TOPIC_0000002553201115__insertproxyrule15)中使用的代理规则。
+
 
 -
 
@@ -12,23 +13,25 @@
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### getSchemeFilter15+
 
-getSchemeFilter(): ProxySchemeFilter
+getSchemeFilter(): [ProxySchemeFilter](../enums/Enums.md#ZH-CN_TOPIC_0000002529445167__proxyschemefilter15)
 
-获取代理规则中的ProxySchemeFilter信息。
+获取代理规则中的[ProxySchemeFilter](../enums/Enums.md#ZH-CN_TOPIC_0000002529445167__proxyschemefilter15)信息。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
 
-类型说明[ProxySchemeFilter](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445167__proxyschemefilter15)代理规则中的ProxySchemeFilter信息。
+| 类型 | 说明 |
+| --- | --- |
+| [ProxySchemeFilter](../enums/Enums.md#ZH-CN_TOPIC_0000002529445167__proxyschemefilter15) | 代理规则中的ProxySchemeFilter信息。 |
 
 **示例：**
 
-完整示例代码参考[removeProxyOverride](Class (ProxyController).md#ZH-CN_TOPIC_0000002529285183__removeproxyoverride15)。
+完整示例代码参考[removeProxyOverride](Class (ProxyController).md#ZH-CN_TOPIC_0000002553361079__removeproxyoverride15)。
 
 #### getUrl15+
 
@@ -40,8 +43,10 @@ getUrl(): string
 
 **返回值：**
 
-类型说明string代理规则中的代理的Url信息。
+| 类型 | 说明 |
+| --- | --- |
+| string | 代理规则中的代理的Url信息。 |
 
 **示例：**
 
-完整示例代码参考[removeProxyOverride](Class (ProxyController).md#ZH-CN_TOPIC_0000002529285183__removeproxyoverride15)。
+完整示例代码参考[removeProxyOverride](Class (ProxyController).md#ZH-CN_TOPIC_0000002553361079__removeproxyoverride15)。

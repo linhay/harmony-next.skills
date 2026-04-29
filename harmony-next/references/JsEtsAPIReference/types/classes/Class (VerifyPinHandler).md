@@ -1,6 +1,7 @@
 # Class (VerifyPinHandler)
 
-Web组件返回的pin码认证用户处理功能对象。示例代码参考[onVerifyPin](../../topics/misc/事件.md#ZH-CN_TOPIC_0000002497445228__onverifypin22)。
+Web组件返回的pin码认证用户处理功能对象。示例代码参考[onVerifyPin](事件.md#ZH-CN_TOPIC_0000002522081170__onverifypin22)。
+
 
 -
 
@@ -12,7 +13,7 @@ Web组件返回的pin码认证用户处理功能对象。示例代码参考[onVe
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### constructor22+
 
@@ -24,7 +25,7 @@ VerifyPinHandler的构造函数。
 
 #### confirm22+
 
-confirm(result: PinVerifyResult): void
+confirm(result: [PinVerifyResult](../enums/Enums.md#ZH-CN_TOPIC_0000002497605218__pinverifyresult22)): void
 
 通知Web组件PIN码认证结果。
 
@@ -32,4 +33,6 @@ confirm(result: PinVerifyResult): void
 
 **参数：**
 
-参数名类型必填说明result[PinVerifyResult](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497605218__pinverifyresult22)是PIN码认证结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| result | [PinVerifyResult](../enums/Enums.md#ZH-CN_TOPIC_0000002497605218__pinverifyresult22) | 是 | PIN码认证结果。 |

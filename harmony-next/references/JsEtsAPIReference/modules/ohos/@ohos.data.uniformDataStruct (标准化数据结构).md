@@ -1,6 +1,7 @@
 # @ohos.data.uniformDataStruct (标准化数据结构)
 
-本模块为统一数据管理框架（Unified Data Management Framework，UDMF）的组成部分，针对多对多跨应用数据共享的不同业务场景提供了部分标准化数据类型[UniformDataType](@ohos.data.uniformTypeDescriptor (标准化数据定义与描述).md#ZH-CN_TOPIC_0000002497444710__uniformdatatype)对应的数据结构，方便不同应用间进行数据交互，减少数据类型适配的工作量。
+本模块为统一数据管理框架（Unified Data Management Framework，UDMF）的组成部分，针对多对多跨应用数据共享的不同业务场景提供了部分标准化数据类型[UniformDataType](@ohos.data.uniformTypeDescriptor (标准化数据定义与描述).md#ZH-CN_TOPIC_0000002522240636__uniformdatatype)对应的数据结构，方便不同应用间进行数据交互，减少数据类型适配的工作量。
+
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -16,19 +17,12 @@ import { uniformDataStruct } from '@kit.ArkData';
 
 **系统能力**：SystemCapability.DistributedDataManager.UDMF.Core
 
-名称类型只读可选说明uniformDataType'general.plain-text'是否统一数据类型标识，标识为纯文本类型数据，固定为“general.plain-text”，数据类型描述信息见[UniformDataType](@ohos.data.uniformTypeDescriptor (标准化数据定义与描述).md#ZH-CN_TOPIC_0000002497444710__uniformdatatype)。textContentstring否否纯文本内容。abstractstring否是纯文本摘要，非必填字段，默认值为空字符串。detailsRecord<string, string>否是
-
-是一个字典类型对象，key和value都是string类型，用于描述文本内容详细属性。例如，可生成一个details内容为
-
-{
-
-"title":"标题",
-
-"content":"内容"
-
-}
-
-的数据对象，用于描述一篇文章的详细属性。非必填字段，默认值为空字典对象。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uniformDataType | 'general.plain-text' | 是 | 否 | 统一数据类型标识，标识为纯文本类型数据，固定为“general.plain-text”，数据类型描述信息见UniformDataType。 |
+| textContent | string | 否 | 否 | 纯文本内容。 |
+| abstract | string | 否 | 是 | 纯文本摘要，非必填字段，默认值为空字符串。 |
+| details | Record<string, string> | 否 | 是 | 是一个字典类型对象，key和value都是string类型，用于描述文本内容详细属性。例如，可生成一个details内容为 { "title":"标题", "content":"内容" } 的数据对象，用于描述一篇文章的详细属性。非必填字段，默认值为空字典对象。 |
 
 **示例：**
 
@@ -50,7 +44,6 @@ if(plainText.details != undefined){
   for(let kv of Object.entries(plainTextDetailsObj)) {
     console.info('plainText.details.attr: ' + kv[0] + ', value:' + kv[1]);
   }
-}
 let record = new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT, plainText);
 ```
 
@@ -60,19 +53,12 @@ let record = new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformD
 
 **系统能力**：SystemCapability.DistributedDataManager.UDMF.Core
 
-名称类型只读可选说明uniformDataType'general.hyperlink'是否统一数据类型标识为超链接类型数据，固定为“general.hyperlink”，数据类型描述信息见[UniformDataType](@ohos.data.uniformTypeDescriptor (标准化数据定义与描述).md#ZH-CN_TOPIC_0000002497444710__uniformdatatype)。urlstring否否链接url。descriptionstring否是链接内容描述，非必填字段，默认值为空字符串。detailsRecord<string, string>否是
-
-是一个字典类型对象，key和value都是string类型，用于描述Hyperlink的详细属性内容。例如，可生成一个details内容为
-
-{
-
-"title":"标题",
-
-"content":"内容"
-
-}
-
-的数据对象。非必填字段，默认值为空字典对象。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uniformDataType | 'general.hyperlink' | 是 | 否 | 统一数据类型标识为超链接类型数据，固定为“general.hyperlink”，数据类型描述信息见UniformDataType。 |
+| url | string | 否 | 否 | 链接url。 |
+| description | string | 否 | 是 | 链接内容描述，非必填字段，默认值为空字符串。 |
+| details | Record<string, string> | 否 | 是 | 是一个字典类型对象，key和value都是string类型，用于描述Hyperlink的详细属性内容。例如，可生成一个details内容为 { "title":"标题", "content":"内容" } 的数据对象。非必填字段，默认值为空字典对象。 |
 
 **示例：**
 
@@ -98,19 +84,12 @@ HTML类型数据，用于描述超文本标记语言数据。
 
 **系统能力**：SystemCapability.DistributedDataManager.UDMF.Core
 
-名称类型只读可选说明uniformDataType'general.html'是否统一数据类型标识为html类型数据，固定为“general.html”，数据类型描述信息见[UniformDataType](@ohos.data.uniformTypeDescriptor (标准化数据定义与描述).md#ZH-CN_TOPIC_0000002497444710__uniformdatatype)。htmlContentstring否否html格式内容。plainContentstring否是去除html标签后的纯文本内容，非必填字段，默认值为空字符串。detailsRecord<string, string>否是
-
-是一个字典类型对象，key和value都是string类型，用于描述HTML的详细属性内容。例如，可生成一个details内容为
-
-{
-
-"title":"标题",
-
-"content":"内容"
-
-}
-
-的数据对象。非必填字段，默认值为空字典对象。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uniformDataType | 'general.html' | 是 | 否 | 统一数据类型标识为html类型数据，固定为“general.html”，数据类型描述信息见UniformDataType。 |
+| htmlContent | string | 否 | 否 | html格式内容。 |
+| plainContent | string | 否 | 是 | 去除html标签后的纯文本内容，非必填字段，默认值为空字符串。 |
+| details | Record<string, string> | 否 | 是 | 是一个字典类型对象，key和value都是string类型，用于描述HTML的详细属性内容。例如，可生成一个details内容为 { "title":"标题", "content":"内容" } 的数据对象。非必填字段，默认值为空字典对象。 |
 
 **示例：**
 
@@ -136,7 +115,16 @@ let record = new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformD
 
 **系统能力**：SystemCapability.DistributedDataManager.UDMF.Core
 
-名称类型只读可选说明uniformDataType'openharmony.app-item'是否统一数据类型标识为桌面图标类型数据，固定为“openharmony.app-item”，数据类型描述信息见[UniformDataType](@ohos.data.uniformTypeDescriptor (标准化数据定义与描述).md#ZH-CN_TOPIC_0000002497444710__uniformdatatype)。appIdstring否否图标对应的应用id。appNamestring否否图标对应的应用名。appIconIdstring否否图标的图片id。appLabelIdstring否否图标名称对应的标签id。bundleNamestring否否图标对应的应用bundle名。abilityNamestring否否图标对应的应用ability名。detailsRecord<string, number | string | Uint8Array>否是是一个字典类型对象，key是string类型，value可以写入number（数值类型）、string（字符串类型）、Uint8Array（二进制字节数组）类型数据。非必填字段，默认值为空字典对象。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uniformDataType | 'openharmony.app-item' | 是 | 否 | 统一数据类型标识为桌面图标类型数据，固定为“openharmony.app-item”，数据类型描述信息见UniformDataType。 |
+| appId | string | 否 | 否 | 图标对应的应用id。 |
+| appName | string | 否 | 否 | 图标对应的应用名。 |
+| appIconId | string | 否 | 否 | 图标的图片id。 |
+| appLabelId | string | 否 | 否 | 图标名称对应的标签id。 |
+| bundleName | string | 否 | 否 | 图标对应的应用bundle名。 |
+| abilityName | string | 否 | 否 | 图标对应的应用ability名。 |
+| details | Record<string, number | string | Uint8Array> | 否 | 是 | 是一个字典类型对象，key是string类型，value可以写入number（数值类型）、string（字符串类型）、Uint8Array（二进制字节数组）类型数据。非必填字段，默认值为空字典对象。 |
 
 **示例：**
 
@@ -168,7 +156,15 @@ let record = new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformD
 
 **系统能力**：SystemCapability.DistributedDataManager.UDMF.Core
 
-名称类型只读可选说明uniformDataType'general.content-form'是否统一数据类型标识为内容卡片类型数据，固定为“general.content-form”。titlestring否否内容卡片的标题。thumbDataUint8Array否是内容卡片对应的图片数据。descriptionstring否是内容卡片中的描述信息。appIconUint8Array否是内容卡片中的应用图标数据。appNamestring否是内容卡片中应用的应用名。linkUristring否是内容卡片对应的跳转超链接。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uniformDataType | 'general.content-form' | 是 | 否 | 统一数据类型标识为内容卡片类型数据，固定为“general.content-form”。 |
+| title | string | 否 | 否 | 内容卡片的标题。 |
+| thumbData | Uint8Array | 否 | 是 | 内容卡片对应的图片数据。 |
+| description | string | 否 | 是 | 内容卡片中的描述信息。 |
+| appIcon | Uint8Array | 否 | 是 | 内容卡片中的应用图标数据。 |
+| appName | string | 否 | 是 | 内容卡片中应用的应用名。 |
+| linkUri | string | 否 | 是 | 内容卡片对应的跳转超链接。 |
 
 **示例：**
 
@@ -195,7 +191,15 @@ let record = new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformD
 
 **系统能力**：SystemCapability.DistributedDataManager.UDMF.Core
 
-名称类型只读可选说明uniformDataType'openharmony.form'是否统一数据类型标识为卡片类型数据，固定为“openharmony.form”，数据类型描述信息见[UniformDataType](@ohos.data.uniformTypeDescriptor (标准化数据定义与描述).md#ZH-CN_TOPIC_0000002497444710__uniformdatatype)。formIdnumber否否卡片id。formNamestring否否卡片名。bundleNamestring否否卡片所属的bundle名。abilityNamestring否否卡片对应的ability名。modulestring否否卡片所属的module名。detailsRecord<string, number | string | Uint8Array>否是是一个字典类型对象，key是string类型，value可以写入number（数值类型）、string（字符串类型）、Uint8Array（二进制字节数组）类型数据。非必填字段，默认值为空字典对象。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uniformDataType | 'openharmony.form' | 是 | 否 | 统一数据类型标识为卡片类型数据，固定为“openharmony.form”，数据类型描述信息见UniformDataType。 |
+| formId | number | 否 | 否 | 卡片id。 |
+| formName | string | 否 | 否 | 卡片名。 |
+| bundleName | string | 否 | 否 | 卡片所属的bundle名。 |
+| abilityName | string | 否 | 否 | 卡片对应的ability名。 |
+| module | string | 否 | 否 | 卡片所属的module名。 |
+| details | Record<string, number | string | Uint8Array> | 否 | 是 | 是一个字典类型对象，key是string类型，value可以写入number（数值类型）、string（字符串类型）、Uint8Array（二进制字节数组）类型数据。非必填字段，默认值为空字典对象。 |
 
 **示例：**
 
@@ -226,7 +230,12 @@ let record = new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformD
 
 **系统能力**：SystemCapability.DistributedDataManager.UDMF.Core
 
-名称类型只读可选说明uniformDataType'general.file-uri'是否统一数据类型标识为文件地址类型数据，固定为“general.file-uri”，数据类型描述信息见[UniformDataType](@ohos.data.uniformTypeDescriptor (标准化数据定义与描述).md#ZH-CN_TOPIC_0000002497444710__uniformdatatype)。oriUristring否否文件路径。fileTypestring否否文件类型（必须是UTD类型，详情参考[UTD预置列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uniform-data-type-list)）。fileType最大长度限制为1024个字节。detailsRecord<string, number | string | Uint8Array>否是是一个字典类型对象，key是string类型，value可以写入number（数值类型）、string（字符串类型）、Uint8Array（二进制字节数组）类型数据。非必填字段，默认值为空字典对象。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uniformDataType | 'general.file-uri' | 是 | 否 | 统一数据类型标识为文件地址类型数据，固定为“general.file-uri”，数据类型描述信息见UniformDataType。 |
+| oriUri | string | 否 | 否 | 文件路径。 |
+| fileType | string | 否 | 否 | 文件类型（必须是UTD类型，详情参考UTD预置列表）。fileType最大长度限制为1024个字节。 |
+| details | Record<string, number | string | Uint8Array> | 否 | 是 | 是一个字典类型对象，key是string类型，value可以写入number（数值类型）、string（字符串类型）、Uint8Array（二进制字节数组）类型数据。非必填字段，默认值为空字典对象。 |
 
 **示例：**
 
@@ -255,7 +264,11 @@ let record = new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformD
 
 **系统能力**：SystemCapability.DistributedDataManager.UDMF.Core
 
-名称类型只读可选说明uniformDataType'openharmony.pixel-map'是否统一数据类型标识为像素图类型数据，固定为“openharmony.pixel-map”，数据类型描述信息见[UniformDataType](@ohos.data.uniformTypeDescriptor (标准化数据定义与描述).md#ZH-CN_TOPIC_0000002497444710__uniformdatatype)。pixelMapimage.PixelMap否否像素图二进制数据。detailsRecord<string, number | string | Uint8Array>否是是一个字典类型对象，key是string类型，value可以写入number（数值类型）、string（字符串类型）、Uint8Array（二进制字节数组）类型数据。非必填字段，默认值为空字典对象。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uniformDataType | 'openharmony.pixel-map' | 是 | 否 | 统一数据类型标识为像素图类型数据，固定为“openharmony.pixel-map”，数据类型描述信息见UniformDataType。 |
+| pixelMap | image.PixelMap | 否 | 否 | 像素图二进制数据。 |
+| details | Record<string, number | string | Uint8Array> | 否 | 是 | 是一个字典类型对象，key是string类型，value可以写入number（数值类型）、string（字符串类型）、Uint8Array（二进制字节数组）类型数据。非必填字段，默认值为空字典对象。 |
 
 **示例：**
 

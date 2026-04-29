@@ -16,13 +16,14 @@ import { pasteboard } from '@kit.BasicServicesKit';
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
-名称类型值说明MAX_RECORD_NUM7+number-
-
-API version 10之前，此常量值为512，表示单个PasteData中所能包含的最大条目数为512。当剪贴板内容中添加的条目达到数量上限512后，后续的添加操作无效。
-
-从API version 10开始，不再限制单个PasteData中所能包含的最大条目数。
-
-MIMETYPE_TEXT_HTML7+string'text/html'HTML内容的MIME类型定义。MIMETYPE_TEXT_WANT7+string'text/want'Want内容的MIME类型定义。MIMETYPE_TEXT_PLAIN7+string'text/plain'纯文本内容的MIME类型定义。MIMETYPE_TEXT_URI7+string'text/uri'URI内容的MIME类型定义。MIMETYPE_PIXELMAP9+string'pixelMap'PixelMap内容的MIME类型定义。
+| 名称 | 类型 | 值 | 说明 |
+| --- | --- | --- | --- |
+| MAX_RECORD_NUM7+ | number | - | API version 10之前，此常量值为512，表示单个PasteData中所能包含的最大条目数为512。当剪贴板内容中添加的条目达到数量上限512后，后续的添加操作无效。 从API version 10开始，不再限制单个PasteData中所能包含的最大条目数。 |
+| MIMETYPE_TEXT_HTML7+ | string | 'text/html' | HTML内容的MIME类型定义。 |
+| MIMETYPE_TEXT_WANT7+ | string | 'text/want' | Want内容的MIME类型定义。 |
+| MIMETYPE_TEXT_PLAIN7+ | string | 'text/plain' | 纯文本内容的MIME类型定义。 |
+| MIMETYPE_TEXT_URI7+ | string | 'text/uri' | URI内容的MIME类型定义。 |
+| MIMETYPE_PIXELMAP9+ | string | 'pixelMap' | PixelMap内容的MIME类型定义。 |
 
 #### ValueType9+
 
@@ -34,7 +35,12 @@ type ValueType = string | image.PixelMap | Want | ArrayBuffer
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
-类型说明string表示string的类型。image.PixelMap表示[image.PixelMap](../../types/interfaces/Interface (PixelMap).md)的类型。Want表示[Want](@ohos.app.ability.Want (Want).md)的类型。ArrayBuffer表示ArrayBuffer的类型。
+| 类型 | 说明 |
+| --- | --- |
+| string | 表示string的类型。 |
+| image.PixelMap | 表示image.PixelMap的类型。 |
+| Want | 表示Want的类型。 |
+| ArrayBuffer | 表示ArrayBuffer的类型。 |
 
 #### pasteboard.createData9+
 
@@ -48,17 +54,24 @@ createData(mimeType: string, value: ValueType): PasteData
 
 **参数：**
 
-参数名类型必填说明mimeTypestring是剪贴板数据对应的MIME类型，可以是[常量](#ZH-CN_TOPIC_0000002497445528__常量)中已定义的类型，包括HTML类型，WANT类型，纯文本类型，URI类型，PIXELMAP类型；也可以是自定义的MIME类型，开发者可自定义此参数值, mimeType长度不能超过1024字节。value[ValueType](#ZH-CN_TOPIC_0000002497445528__valuetype9)是自定义数据内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mimeType | string | 是 | 剪贴板数据对应的MIME类型，可以是常量中已定义的类型，包括HTML类型，WANT类型，纯文本类型，URI类型，PIXELMAP类型；也可以是自定义的MIME类型，开发者可自定义此参数值, mimeType长度不能超过1024字节。 |
+| value | ValueType | 是 | 自定义数据内容。 |
 
 **返回值：**
 
-类型说明[PasteData](#ZH-CN_TOPIC_0000002497445528__pastedata)剪贴板内容对象。
+| 类型 | 说明 |
+| --- | --- |
+| PasteData | 剪贴板内容对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
 
 **示例1：**
 
@@ -84,23 +97,23 @@ createData(data: Record<string, ValueType>): PasteData
 
 **参数：**
 
-参数名类型必填说明data[Record](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/introduction-to-arkts#对象字面量)<string, [ValueType](#ZH-CN_TOPIC_0000002497445528__valuetype9)>是
-
-Record的key为剪贴板数据对应的MIME类型。可以是[常量](#ZH-CN_TOPIC_0000002497445528__常量)中已定义的类型，包括HTML类型，WANT类型，纯文本类型，URI类型，PIXELMAP类型。也可以是自定义的MIME类型，可自定义此参数值，mimeType长度不能超过1024字节。
-
-Record的value为key中指定MIME类型对应的数据。
-
-Record中的首个key-value指定的MIME类型，会作为剪贴板内容对象中首个PasteDataRecord的默认MIME类型，非默认类型的数据在粘贴时只能使用[getData](#ZH-CN_TOPIC_0000002497445528__getdata14)接口读取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | Record<string, ValueType> | 是 | Record的key为剪贴板数据对应的MIME类型。可以是常量中已定义的类型，包括HTML类型，WANT类型，纯文本类型，URI类型，PIXELMAP类型。也可以是自定义的MIME类型，可自定义此参数值，mimeType长度不能超过1024字节。 Record的value为key中指定MIME类型对应的数据。 Record中的首个key-value指定的MIME类型，会作为剪贴板内容对象中首个PasteDataRecord的默认MIME类型，非默认类型的数据在粘贴时只能使用getData接口读取。 |
 
 **返回值：**
 
-类型说明[PasteData](#ZH-CN_TOPIC_0000002497445528__pastedata)剪贴板内容对象。
+| 类型 | 说明 |
+| --- | --- |
+| PasteData | 剪贴板内容对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
 
 **示例1：**
 
@@ -132,17 +145,24 @@ createRecord(mimeType: string, value: ValueType): PasteDataRecord
 
 **参数：**
 
-参数名类型必填说明mimeTypestring是剪贴板数据对应的MIME类型，可以是[常量](#ZH-CN_TOPIC_0000002497445528__常量)中已定义的类型，包括HTML类型，WANT类型，纯文本类型，URI类型，PIXELMAP类型；也可以是自定义的MIME类型，开发者可自定义此参数值，mimeType长度不能超过1024字节。value[ValueType](#ZH-CN_TOPIC_0000002497445528__valuetype9)是指定类型对应的数据内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mimeType | string | 是 | 剪贴板数据对应的MIME类型，可以是常量中已定义的类型，包括HTML类型，WANT类型，纯文本类型，URI类型，PIXELMAP类型；也可以是自定义的MIME类型，开发者可自定义此参数值，mimeType长度不能超过1024字节。 |
+| value | ValueType | 是 | 指定类型对应的数据内容。 |
 
 **返回值：**
 
-类型说明[PasteDataRecord](#ZH-CN_TOPIC_0000002497445528__pastedatarecord7)一条新建的指定类型的数据内容条目。
+| 类型 | 说明 |
+| --- | --- |
+| PasteDataRecord | 一条新建的指定类型的数据内容条目。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
 
 **示例1：**
 
@@ -171,7 +191,9 @@ getSystemPasteboard(): SystemPasteboard
 
 **返回值：**
 
-类型说明[SystemPasteboard](#ZH-CN_TOPIC_0000002497445528__systempasteboard)系统剪贴板对象。
+| 类型 | 说明 |
+| --- | --- |
+| SystemPasteboard | 系统剪贴板对象。 |
 
 **示例：**
 
@@ -187,11 +209,11 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
-名称值说明INAPP0表示仅允许同应用内粘贴。LOCALDEVICE1表示允许在任何应用内粘贴。用户在“设置-多设备协同-跨设备剪贴板开关”选项中控制允许跨设备粘贴，表示允许跨设备在任何应用内粘贴。CROSSDEVICE(deprecated)2
-
-表示允许跨设备在任何应用内粘贴。
-
-从API version 12开始废弃，无替代接口和替代方法，后续由用户在“设置-多设备协同-跨设备剪贴板开关”选项中控制是否允许跨设备粘贴。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| INAPP | 0 | 表示仅允许同应用内粘贴。 |
+| LOCALDEVICE | 1 | 表示允许在任何应用内粘贴。用户在“设置-多设备协同-跨设备剪贴板开关”选项中控制允许跨设备粘贴，表示允许跨设备在任何应用内粘贴。 |
+| CROSSDEVICE(deprecated) | 2 | 表示允许跨设备在任何应用内粘贴。 从API version 12开始废弃，无替代接口和替代方法，后续由用户在“设置-多设备协同-跨设备剪贴板开关”选项中控制是否允许跨设备粘贴。 |
 
 #### pasteboard.createHtmlData(deprecated)
 
@@ -199,17 +221,22 @@ createHtmlData(htmlText: string): PasteData
 
 构建一个HTML剪贴板内容对象。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.createData](#ZH-CN_TOPIC_0000002497445528__pasteboardcreatedata9)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.createData](#ZH-CN_TOPIC_0000002553201557__pasteboardcreatedata9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明htmlTextstring是HTML内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| htmlText | string | 是 | HTML内容。 |
 
 **返回值：**
 
-类型说明[PasteData](#ZH-CN_TOPIC_0000002497445528__pastedata)剪贴板内容对象。
+| 类型 | 说明 |
+| --- | --- |
+| PasteData | 剪贴板内容对象。 |
 
 **示例：**
 
@@ -224,17 +251,22 @@ createWantData(want: Want): PasteData
 
 构建一个Want剪贴板内容对象。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.createData](#ZH-CN_TOPIC_0000002497445528__pasteboardcreatedata9)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.createData](#ZH-CN_TOPIC_0000002553201557__pasteboardcreatedata9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明want[Want](@ohos.app.ability.Want (Want).md)是Want内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | Want | 是 | Want内容。 |
 
 **返回值：**
 
-类型说明[PasteData](#ZH-CN_TOPIC_0000002497445528__pastedata)剪贴板内容对象。
+| 类型 | 说明 |
+| --- | --- |
+| PasteData | 剪贴板内容对象。 |
 
 **示例：**
 
@@ -254,17 +286,22 @@ createPlainTextData(text: string): PasteData
 
 构建一个纯文本剪贴板内容对象。
 
-从 API version 6 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.createData](#ZH-CN_TOPIC_0000002497445528__pasteboardcreatedata9)替代。
+
+从 API version 6 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.createData](#ZH-CN_TOPIC_0000002553201557__pasteboardcreatedata9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明textstring是纯文本内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 纯文本内容。 |
 
 **返回值：**
 
-类型说明[PasteData](#ZH-CN_TOPIC_0000002497445528__pastedata)剪贴板内容对象。
+| 类型 | 说明 |
+| --- | --- |
+| PasteData | 剪贴板内容对象。 |
 
 **示例：**
 
@@ -278,17 +315,22 @@ createUriData(uri: string): PasteData
 
 构建一个URI剪贴板内容对象。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.createData](#ZH-CN_TOPIC_0000002497445528__pasteboardcreatedata9)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.createData](#ZH-CN_TOPIC_0000002553201557__pasteboardcreatedata9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明uristring是URI内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | URI内容。 |
 
 **返回值：**
 
-类型说明[PasteData](#ZH-CN_TOPIC_0000002497445528__pastedata)剪贴板内容对象。
+| 类型 | 说明 |
+| --- | --- |
+| PasteData | 剪贴板内容对象。 |
 
 **示例：**
 
@@ -302,17 +344,22 @@ createHtmlTextRecord(htmlText: string): PasteDataRecord
 
 创建一条HTML内容的条目。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.createRecord](#ZH-CN_TOPIC_0000002497445528__pasteboardcreaterecord9)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.createRecord](#ZH-CN_TOPIC_0000002553201557__pasteboardcreaterecord9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明htmlTextstring是HTML内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| htmlText | string | 是 | HTML内容。 |
 
 **返回值：**
 
-类型说明[PasteDataRecord](#ZH-CN_TOPIC_0000002497445528__pastedatarecord7)一条新建的HTML内容条目。
+| 类型 | 说明 |
+| --- | --- |
+| PasteDataRecord | 一条新建的HTML内容条目。 |
 
 **示例：**
 
@@ -327,17 +374,22 @@ createWantRecord(want: Want): PasteDataRecord
 
 创建一条Want内容条目。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.createRecord](#ZH-CN_TOPIC_0000002497445528__pasteboardcreaterecord9)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.createRecord](#ZH-CN_TOPIC_0000002553201557__pasteboardcreaterecord9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明want[Want](@ohos.app.ability.Want (Want).md)是Want内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | Want | 是 | Want内容。 |
 
 **返回值：**
 
-类型说明[PasteDataRecord](#ZH-CN_TOPIC_0000002497445528__pastedatarecord7)一条新建的Want内容条目。
+| 类型 | 说明 |
+| --- | --- |
+| PasteDataRecord | 一条新建的Want内容条目。 |
 
 **示例：**
 
@@ -357,17 +409,22 @@ createPlainTextRecord(text: string): PasteDataRecord
 
 创建一条纯文本内容条目。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.createRecord](#ZH-CN_TOPIC_0000002497445528__pasteboardcreaterecord9)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.createRecord](#ZH-CN_TOPIC_0000002553201557__pasteboardcreaterecord9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明textstring是纯文本内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 纯文本内容。 |
 
 **返回值：**
 
-类型说明[PasteDataRecord](#ZH-CN_TOPIC_0000002497445528__pastedatarecord7)一条新建的纯文本内容条目。
+| 类型 | 说明 |
+| --- | --- |
+| PasteDataRecord | 一条新建的纯文本内容条目。 |
 
 **示例：**
 
@@ -381,17 +438,22 @@ createUriRecord(uri: string): PasteDataRecord
 
 创建一条URI内容的条目。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.createRecord](#ZH-CN_TOPIC_0000002497445528__pasteboardcreaterecord9)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.createRecord](#ZH-CN_TOPIC_0000002553201557__pasteboardcreaterecord9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明uristring是URI内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | URI内容。 |
 
 **返回值：**
 
-类型说明[PasteDataRecord](#ZH-CN_TOPIC_0000002497445528__pastedatarecord7)一条新建的URI内容条目。
+| 类型 | 说明 |
+| --- | --- |
+| PasteDataRecord | 一条新建的URI内容条目。 |
 
 **示例：**
 
@@ -401,13 +463,20 @@ let record: pasteboard.PasteDataRecord = pasteboard.createUriRecord('dataability
 
 #### PasteDataProperty7+
 
-定义剪贴板中所有内容条目的属性，包含时间戳、数据类型、粘贴范围以及一些附加数据等，该属性必须通过[setProperty](#ZH-CN_TOPIC_0000002497445528__setproperty9)方法，才能设置到剪贴板中。
+定义剪贴板中所有内容条目的属性，包含时间戳、数据类型、粘贴范围以及一些附加数据等，该属性必须通过[setProperty](#ZH-CN_TOPIC_0000002553201557__setproperty9)方法，才能设置到剪贴板中。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
-名称类型只读可选说明additions7+{[key:string]:object}否否设置其他附加属性数据。不支持动态追加属性，只能通过重新赋值的方式修改附加值，具体见相关示例setProperty， 默认为空。mimeTypes7+Array<string>是否剪贴板内容条目的数据类型，非重复的类型列表。tag7+string否否用户自定义标签，默认为空。timestamp7+number是否剪贴板数据的写入时间戳（单位：ms）。localOnly7+boolean否否配置剪贴板内容是否为“仅在本地”，默认值为false。其值会被shareOption属性覆盖，推荐使用[ShareOption](#ZH-CN_TOPIC_0000002497445528__shareoption9)属性。shareOption9+[ShareOption](#ZH-CN_TOPIC_0000002497445528__shareoption9)否否指示剪贴板数据可以粘贴到的范围，默认值为CROSSDEVICE。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| additions | Record<string, object> | 否 | 否 | 设置其他附加属性数据。不支持动态追加属性，只能通过重新赋值的方式修改附加值，具体见相关示例setProperty， 默认为空。 |
+| mimeTypes | Array<string> | 是 | 否 | 剪贴板内容条目的数据类型，非重复的类型列表。 |
+| tag | string | 否 | 否 | 用户自定义标签，默认为空。 |
+| timestamp | number | 是 | 否 | 剪贴板数据的写入时间戳（单位：ms）。 |
+| localOnly | boolean | 否 | 否 | 配置剪贴板内容是否为“仅在本地”，默认值为false。其值会被shareOption属性覆盖，推荐使用ShareOption属性。 |
+| shareOption9+ | ShareOption | 否 | 否 | 指示剪贴板数据可以粘贴到的范围，默认值为CROSSDEVICE。 |
 
 #### FileConflictOptions15+
 
@@ -417,7 +486,10 @@ let record: pasteboard.PasteDataRecord = pasteboard.createUriRecord('dataability
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
-名称值说明OVERWRITE0目标路径存在同文件名时覆盖。SKIP1目标路径存在同文件名时跳过，若设置SKIP，应用获取到的粘贴数据不包含跳过文件。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| OVERWRITE | 0 | 目标路径存在同文件名时覆盖。 |
+| SKIP | 1 | 目标路径存在同文件名时跳过，若设置SKIP，应用获取到的粘贴数据不包含跳过文件。 |
 
 #### ProgressIndicator15+
 
@@ -427,17 +499,22 @@ let record: pasteboard.PasteDataRecord = pasteboard.createUriRecord('dataability
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
-名称值说明NONE0不采用系统默认进度显示。DEFAULT1采用系统默认进度显示。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NONE | 0 | 不采用系统默认进度显示。 |
+| DEFAULT | 1 | 采用系统默认进度显示。 |
 
 #### ProgressInfo15+
 
-定义进度上报的数据结构，且仅当进度指示选项[ProgressIndicator](#ZH-CN_TOPIC_0000002497445528__progressindicator15)设置为NONE时才会上报此信息。
+定义进度上报的数据结构，且仅当进度指示选项[ProgressIndicator](#ZH-CN_TOPIC_0000002553201557__progressindicator15)设置为NONE时才会上报此信息。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
-名称类型只读可选说明progressnumber否否不使用系统提供的进度条时，系统上报拷贝粘贴任务进度百分比。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| progress | number | 否 | 否 | 不使用系统提供的进度条时，系统上报拷贝粘贴任务进度百分比。 |
 
 #### ProgressListener15+
 
@@ -451,11 +528,13 @@ type ProgressListener = (progress: ProgressInfo) => void
 
 **参数：**
 
-参数名类型必填说明progress[ProgressInfo](#ZH-CN_TOPIC_0000002497445528__progressinfo15)是定义进度上报的数据结构，且仅当进度指示选项[ProgressIndicator](#ZH-CN_TOPIC_0000002497445528__progressindicator15)设置为NONE时才会上报此信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| progress | ProgressInfo | 是 | 定义进度上报的数据结构，且仅当进度指示选项ProgressIndicator设置为NONE时才会上报此信息。 |
 
 #### ProgressSignal15+
 
-定义进度取消的函数，在粘贴过程中可选择取消任务，且仅当进度指示选项[ProgressIndicator](#ZH-CN_TOPIC_0000002497445528__progressindicator15)设置为NONE时此参数才有意义。
+定义进度取消的函数，在粘贴过程中可选择取消任务，且仅当进度指示选项[ProgressIndicator](#ZH-CN_TOPIC_0000002553201557__progressindicator15)设置为NONE时此参数才有意义。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
@@ -479,7 +558,6 @@ import { fileUri} from '@kit.CoreFileKit';
 struct PasteboardTest {
  build() {
    RelativeContainer() {
-     Column() {
        Column() {
          Button("Copy txt")
            .onClick(async ()=>{
@@ -505,11 +583,6 @@ struct PasteboardTest {
               }).catch((err: BusinessError) => {
                 console.error('Failed to get PasteData. Cause: ' + err.message);
               })
-          })
-        }
-      }
-    }
-  }
 }
 ```
 
@@ -521,7 +594,13 @@ struct PasteboardTest {
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
-名称类型只读可选说明destUristring否是拷贝文件时目标路径。若不支持文件处理，则不需要设置此参数；若应用涉及复杂文件处理策略或需要区分文件多路径存储，建议不设置此参数，由应用自行完成文件copy处理，默认为空。fileConflictOptions[FileConflictOptions](#ZH-CN_TOPIC_0000002497445528__fileconflictoptions15)否是定义文件拷贝冲突时的选项，默认为OVERWRITE。progressIndicator[ProgressIndicator](#ZH-CN_TOPIC_0000002497445528__progressindicator15)否否定义进度条指示选项，可选择是否采用系统默认进度显示。progressListener[ProgressListener](#ZH-CN_TOPIC_0000002497445528__progresslistener15)否是定义进度数据变化的订阅函数，当选择不使用系统默认进度显示时，可设置该项获取粘贴过程的进度，默认为空。progressSignal[ProgressSignal](#ZH-CN_TOPIC_0000002497445528__progresssignal15)否是定义进度取消的函数，在粘贴过程中可选择取消任务，且仅当进度指示选项[ProgressIndicator](#ZH-CN_TOPIC_0000002497445528__progressindicator15)设置为NONE时此参数才有意义，默认为空。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| destUri | string | 否 | 是 | 拷贝文件时目标路径。若不支持文件处理，则不需要设置此参数；若应用涉及复杂文件处理策略或需要区分文件多路径存储，建议不设置此参数，由应用自行完成文件copy处理，默认为空。 |
+| fileConflictOptions | FileConflictOptions | 否 | 是 | 定义文件拷贝冲突时的选项，默认为OVERWRITE。 |
+| progressIndicator | ProgressIndicator | 否 | 否 | 定义进度条指示选项，可选择是否采用系统默认进度显示。 |
+| progressListener | ProgressListener | 否 | 是 | 定义进度数据变化的订阅函数，当选择不使用系统默认进度显示时，可设置该项获取粘贴过程的进度，默认为空。 |
+| progressSignal | ProgressSignal | 否 | 是 | 定义进度取消的函数，在粘贴过程中可选择取消任务，且仅当进度指示选项ProgressIndicator设置为NONE时此参数才有意义，默认为空。 |
 
 #### PasteDataRecord7+
 
@@ -533,7 +612,15 @@ struct PasteboardTest {
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
-名称类型只读可选说明htmlText7+string否否HTML内容。want7+[Want](@ohos.app.ability.Want (Want).md)否否Want内容。mimeType7+string否否默认数据类型。plainText7+string否否纯文本内容。uri7+string否否URI内容。pixelMap9+[image.PixelMap](../../types/interfaces/Interface (PixelMap).md)否否PixelMap内容。data9+{[mimeType: string]: ArrayBuffer}否否自定义数据内容。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| htmlText | string | 是 | 否 | HTML内容。 |
+| want | Want | 是 | 否 | Want内容。 |
+| mimeType | string | 是 | 否 | 默认数据类型。 |
+| plainText | string | 是 | 否 | 纯文本内容。 |
+| uri | string | 是 | 否 | URI内容。 |
+| pixelMap9+ | image.PixelMap | 是 | 否 | PixelMap内容。 |
+| data9+ | Record<string, ArrayBuffer>; | 是 | 否 | 自定义数据内容。 |
 
 #### toPlainText9+
 
@@ -547,7 +634,9 @@ toPlainText(): string
 
 **返回值：**
 
-类型说明string纯文本内容。
+| 类型 | 说明 |
+| --- | --- |
+| string | 纯文本内容。 |
 
 **示例：**
 
@@ -561,19 +650,24 @@ console.info(`Succeeded in converting to text. Text: ${text}`);
 
 addEntry(type: string, value: ValueType): void
 
-往一个PasteDataRecord中额外添加一种样式的自定义数据。此方式添加的MIME类型都不是Record的默认类型，粘贴时只能使用[getData](#ZH-CN_TOPIC_0000002497445528__getdata14)接口读取对应数据。
+往一个PasteDataRecord中额外添加一种样式的自定义数据。此方式添加的MIME类型都不是Record的默认类型，粘贴时只能使用[getData](#ZH-CN_TOPIC_0000002553201557__getdata14)接口读取对应数据。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明typestring是剪贴板数据对应的MIME类型，可以是[常量](#ZH-CN_TOPIC_0000002497445528__常量)中已定义的类型，包括HTML类型，WANT类型，纯文本类型，URI类型，PIXELMAP类型；也可以是自定义的MIME类型，开发者可自定义此参数值，mimeType长度不能超过1024字节。value[ValueType](#ZH-CN_TOPIC_0000002497445528__valuetype9)是自定义数据内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 剪贴板数据对应的MIME类型，可以是常量中已定义的类型，包括HTML类型，WANT类型，纯文本类型，URI类型，PIXELMAP类型；也可以是自定义的MIME类型，开发者可自定义此参数值，mimeType长度不能超过1024字节。 |
+| value | ValueType | 是 | 自定义数据内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和见[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和见[剪贴板错误码]([剪贴板错误码](../../errors/剪贴板错误码.md).md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -594,17 +688,23 @@ getValidTypes(types: Array<string>): Array<string>
 
 **参数：**
 
-参数名类型必填说明typesArray<string>是MIME类型列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| types | Array<string> | 是 | MIME类型列表。 |
 
 **返回值：**
 
-类型说明Array<string>传入的MIME类型和剪贴板中数据的MIME类型的交集。
+| 类型 | 说明 |
+| --- | --- |
+| Array<string> | 传入的MIME类型和剪贴板中数据的MIME类型的交集。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和见[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和见[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -632,21 +732,23 @@ getData(type: string): Promise<ValueType>
 
 **参数：**
 
-参数名类型必填说明typestring是MIME类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | MIME类型，其长度不能超过1024字节。 |
 
 **返回值：**
 
-类型说明Promise<[ValueType](#ZH-CN_TOPIC_0000002497445528__valuetype9)>
-
-Promise对象，返回PasteDataRecord中指定MIME类型的自定义数据。
-
-PasteDataRecord中包含多个MIME类型数据时，非PasteDataRecord的默认MIME类型的数据只能通过本接口获取。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<ValueType> | Promise对象，返回PasteDataRecord中指定MIME类型的自定义数据。 PasteDataRecord中包含多个MIME类型数据时，非PasteDataRecord的默认MIME类型的数据只能通过本接口获取。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和见[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和见[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -677,19 +779,24 @@ convertToText(callback: AsyncCallback<string>): void
 
 将一个PasteData中的内容强制转换为文本内容，使用callback异步回调。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[toPlainText](#ZH-CN_TOPIC_0000002497445528__toplaintext9)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[toPlainText](#ZH-CN_TOPIC_0000002553201557__toplaintext9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<string>是回调函数，当转换成功，err为undefined，data为强制转换的文本内容；否则返回错误信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<string> | 是 | 回调函数，当转换成功，err为undefined，data为强制转换的文本内容；否则返回错误信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Possible causes: Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: Incorrect parameters types. |
 
 **示例：**
 
@@ -712,13 +819,16 @@ convertToText(): Promise<string>
 
 将一个PasteData中的内容强制转换为文本内容，使用Promise异步回调。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[toPlainText](#ZH-CN_TOPIC_0000002497445528__toplaintext9)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[toPlainText](#ZH-CN_TOPIC_0000002553201557__toplaintext9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
 
-类型说明Promise<string>Promise对象，返回强制转换的文本内容。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回强制转换的文本内容。 |
 
 **示例：**
 
@@ -735,9 +845,9 @@ record.convertToText().then((data: string) => {
 
 #### PasteData
 
-剪贴板内容对象。剪贴板内容包含一个或者多个内容条目（[PasteDataRecord](#ZH-CN_TOPIC_0000002497445528__pastedatarecord7)）以及属性描述对象（[PasteDataProperty](#ZH-CN_TOPIC_0000002497445528__pastedataproperty7)）。
+剪贴板内容对象。剪贴板内容包含一个或者多个内容条目（[PasteDataRecord](#ZH-CN_TOPIC_0000002553201557__pastedatarecord7)）以及属性描述对象（[PasteDataProperty](#ZH-CN_TOPIC_0000002553201557__pastedataproperty7)）。
 
-在调用PasteData的接口前，需要先通过[createData()](#ZH-CN_TOPIC_0000002497445528__pasteboardcreatedata9)或[getData()](#ZH-CN_TOPIC_0000002497445528__getdata9)获取一个PasteData对象。
+在调用PasteData的接口前，需要先通过[createData()](#ZH-CN_TOPIC_0000002553201557__pasteboardcreatedata9)或[getData()](#ZH-CN_TOPIC_0000002553201557__getdata9)获取一个PasteData对象。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
@@ -753,7 +863,9 @@ getPrimaryText(): string
 
 **返回值：**
 
-类型说明string纯文本内容。剪贴板内容对象中没有纯文本内容时，默认返回为undefined。
+| 类型 | 说明 |
+| --- | --- |
+| string | 纯文本内容。剪贴板内容对象中没有纯文本内容时，默认返回为undefined。 |
 
 **示例：**
 
@@ -780,7 +892,9 @@ getPrimaryHtml(): string
 
 **返回值：**
 
-类型说明stringHTML内容。剪贴板内容对象中没有HTML内容时，默认返回为undefined。
+| 类型 | 说明 |
+| --- | --- |
+| string | HTML内容。剪贴板内容对象中没有HTML内容时，默认返回为undefined。 |
 
 **示例：**
 
@@ -807,7 +921,9 @@ getPrimaryWant(): Want
 
 **返回值：**
 
-类型说明[Want](@ohos.app.ability.Want (Want).md)Want对象内容。剪贴板内容对象中没有Want内容时，默认返回为undefined。
+| 类型 | 说明 |
+| --- | --- |
+| Want | Want对象内容。剪贴板内容对象中没有Want内容时，默认返回为undefined。 |
 
 **示例：**
 
@@ -835,7 +951,9 @@ getPrimaryUri(): string
 
 **返回值：**
 
-类型说明stringURI内容。剪贴板内容对象中没有URI内容时，默认返回为undefined。
+| 类型 | 说明 |
+| --- | --- |
+| string | URI内容。剪贴板内容对象中没有URI内容时，默认返回为undefined。 |
 
 **示例：**
 
@@ -862,7 +980,9 @@ getPrimaryPixelMap(): image.PixelMap
 
 **返回值：**
 
-类型说明[image.PixelMap](../../types/interfaces/Interface (PixelMap).md)PixelMap内容。剪贴板内容对象中没有PixelMap内容时，默认返回为undefined。
+| 类型 | 说明 |
+| --- | --- |
+| image.PixelMap | PixelMap内容。剪贴板内容对象中没有PixelMap内容时，默认返回为undefined。 |
 
 **示例：**
 
@@ -888,7 +1008,7 @@ image.createPixelMap(buffer, opt).then((pixelMap: image.PixelMap) => {
 
 addRecord(record: PasteDataRecord): void
 
-向当前剪贴板内容中添加一条条目，同时也会将条目类型添加到[PasteDataProperty](#ZH-CN_TOPIC_0000002497445528__pastedataproperty7)的mimeTypes中。入参均不能为空，否则添加失败。
+向当前剪贴板内容中添加一条条目，同时也会将条目类型添加到[PasteDataProperty](#ZH-CN_TOPIC_0000002553201557__pastedataproperty7)的mimeTypes中。入参均不能为空，否则添加失败。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -896,7 +1016,9 @@ addRecord(record: PasteDataRecord): void
 
 **参数：**
 
-参数名类型必填说明record[PasteDataRecord](#ZH-CN_TOPIC_0000002497445528__pastedatarecord7)是待添加的条目。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| record | PasteDataRecord | 是 | 待添加的条目。 |
 
 **示例：**
 
@@ -913,7 +1035,7 @@ pasteData.addRecord(htmlRecord);
 
 addRecord(mimeType: string, value: ValueType): void
 
-向当前剪贴板内容中添加一条数据内容条目，同时也会将数据类型添加到[PasteDataProperty](#ZH-CN_TOPIC_0000002497445528__pastedataproperty7)的mimeTypes中。入参均不能为空，否则添加失败。
+向当前剪贴板内容中添加一条数据内容条目，同时也会将数据类型添加到[PasteDataProperty](#ZH-CN_TOPIC_0000002553201557__pastedataproperty7)的mimeTypes中。入参均不能为空，否则添加失败。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -921,13 +1043,18 @@ addRecord(mimeType: string, value: ValueType): void
 
 **参数：**
 
-参数名类型必填说明mimeTypestring是数据的MIME类型， 其长度不能超过1024字节。value[ValueType](#ZH-CN_TOPIC_0000002497445528__valuetype9)是数据内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mimeType | string | 是 | 数据的MIME类型， 其长度不能超过1024字节。 |
+| value | ValueType | 是 | 数据内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -941,7 +1068,7 @@ pasteData.addRecord('app/xml', dataXml);
 
 getMimeTypes(): Array<string>
 
-获取剪贴板中[PasteDataProperty](#ZH-CN_TOPIC_0000002497445528__pastedataproperty7)的mimeTypes列表，接口调用异常时返回undefined。
+获取剪贴板中[PasteDataProperty](#ZH-CN_TOPIC_0000002553201557__pastedataproperty7)的mimeTypes列表，接口调用异常时返回undefined。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -949,7 +1076,9 @@ getMimeTypes(): Array<string>
 
 **返回值：**
 
-类型说明Array<string>剪贴板内容条目的数据类型，非重复的类型列表。
+| 类型 | 说明 |
+| --- | --- |
+| Array<string> | 剪贴板内容条目的数据类型，非重复的类型列表。 |
 
 **示例：**
 
@@ -970,7 +1099,9 @@ getPrimaryMimeType(): string
 
 **返回值：**
 
-类型说明string首个条目的数据类型。
+| 类型 | 说明 |
+| --- | --- |
+| string | 首个条目的数据类型。 |
 
 **示例：**
 
@@ -991,7 +1122,9 @@ getProperty(): PasteDataProperty
 
 **返回值：**
 
-类型说明[PasteDataProperty](#ZH-CN_TOPIC_0000002497445528__pastedataproperty7)属性描述对象。
+| 类型 | 说明 |
+| --- | --- |
+| PasteDataProperty | 属性描述对象。 |
 
 **示例：**
 
@@ -1004,7 +1137,7 @@ let property: pasteboard.PasteDataProperty = pasteData.getProperty();
 
 setProperty(property: PasteDataProperty): void
 
-设置剪贴板内容的属性描述对象[PasteDataProperty](#ZH-CN_TOPIC_0000002497445528__pastedataproperty7)。
+设置剪贴板内容的属性描述对象[PasteDataProperty](#ZH-CN_TOPIC_0000002553201557__pastedataproperty7)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1012,13 +1145,17 @@ setProperty(property: PasteDataProperty): void
 
 **参数：**
 
-参数名类型必填说明property[PasteDataProperty](#ZH-CN_TOPIC_0000002497445528__pastedataproperty7)是属性描述对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| property | PasteDataProperty | 是 | 属性描述对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
 
 **示例：**
 
@@ -1034,7 +1171,7 @@ prop.tag = 'TestTag';
 pasteData.setProperty(prop);
 ```
 
-[PasteDataProperty](#ZH-CN_TOPIC_0000002497445528__pastedataproperty7)的localOnly与shareOption属性互斥，最终结果以shareOption为准，shareOption会影响localOnly的值。
+[PasteDataProperty](#ZH-CN_TOPIC_0000002553201557__pastedataproperty7)的localOnly与shareOption属性互斥，最终结果以shareOption为准，shareOption会影响localOnly的值。
 
 ```ets
 (async () => {
@@ -1051,7 +1188,6 @@ pasteData.setProperty(prop);
             let prop: pasteboard.PasteDataProperty = pasteData.getProperty();
             prop.localOnly; // true
         });
-    });
 
     prop.shareOption = pasteboard.ShareOption.LOCALDEVICE;
     prop.localOnly = false;
@@ -1063,7 +1199,6 @@ pasteData.setProperty(prop);
             let prop: pasteboard.PasteDataProperty = pasteData.getProperty();
             prop.localOnly; // true
         });
-    });
 })
 ```
 
@@ -1079,17 +1214,24 @@ getRecord(index: number): PasteDataRecord
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定条目的下标。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定条目的下标。 |
 
 **返回值：**
 
-类型说明[PasteDataRecord](#ZH-CN_TOPIC_0000002497445528__pastedatarecord7)指定下标的条目。
+| 类型 | 说明 |
+| --- | --- |
+| PasteDataRecord | 指定下标的条目。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息12900001The index is out of the record.401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12900001 | The index is out of the record. |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -1110,7 +1252,9 @@ getRecordCount(): number
 
 **返回值：**
 
-类型说明number条目的个数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 条目的个数。 |
 
 **示例：**
 
@@ -1131,7 +1275,9 @@ getTag(): string
 
 **返回值：**
 
-类型说明string返回用户自定义的标签内容，如果没有设置用户自定义的标签内容，将返回空。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回用户自定义的标签内容，如果没有设置用户自定义的标签内容，将返回空。 |
 
 **示例：**
 
@@ -1152,17 +1298,23 @@ hasType(mimeType: string): boolean
 
 **参数：**
 
-参数名类型必填说明mimeTypestring是待查询的数据类型。可以是[常量](#ZH-CN_TOPIC_0000002497445528__常量)中已定义的类型，包括HTML类型，WANT类型，纯文本类型，URI类型，PIXELMAP类型；也可以是自定义的MIME类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mimeType | string | 是 | 待查询的数据类型。可以是常量中已定义的类型，包括HTML类型，WANT类型，纯文本类型，URI类型，PIXELMAP类型；也可以是自定义的MIME类型。 |
 
 **返回值：**
 
-类型说明boolean有指定的数据类型返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 有指定的数据类型返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
 
 **示例：**
 
@@ -1183,13 +1335,18 @@ removeRecord(index: number): void
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定的下标。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定的下标。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息12900001The index is out of the record.401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12900001 | The index is out of the record. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -1210,13 +1367,19 @@ replaceRecord(index: number, record: PasteDataRecord): void
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定的下标。record[PasteDataRecord](#ZH-CN_TOPIC_0000002497445528__pastedatarecord7)是被替换后的条目数据内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定的下标。 |
+| record | PasteDataRecord | 是 | 被替换后的条目数据内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息12900001The index is out of the record.401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12900001 | The index is out of the record. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -1280,15 +1443,18 @@ systemPasteboard.getData((err: BusinessError, pasteData: pasteboard.PasteData) =
 
 addHtmlRecord(htmlText: string): void
 
-向当前剪贴板内容中添加一条HTML内容条目，并将MIMETYPE_TEXT_HTML添加到[PasteDataProperty](#ZH-CN_TOPIC_0000002497445528__pastedataproperty7)的mimeTypes中。入参均不能为空，否则添加失败。
+向当前剪贴板内容中添加一条HTML内容条目，并将MIMETYPE_TEXT_HTML添加到[PasteDataProperty](#ZH-CN_TOPIC_0000002553201557__pastedataproperty7)的mimeTypes中。入参均不能为空，否则添加失败。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[addRecord](#ZH-CN_TOPIC_0000002497445528__addrecord9)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[addRecord](#ZH-CN_TOPIC_0000002553201557__addrecord9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明htmlTextstring是HTML内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| htmlText | string | 是 | HTML内容。 |
 
 **示例：**
 
@@ -1302,15 +1468,18 @@ pasteData.addHtmlRecord(html);
 
 addWantRecord(want: Want): void
 
-向当前剪贴板内容中添加一条Want条目，并将MIMETYPE_TEXT_WANT添加到[PasteDataProperty](#ZH-CN_TOPIC_0000002497445528__pastedataproperty7)的mimeTypes中。入参均不能为空，否则添加失败。
+向当前剪贴板内容中添加一条Want条目，并将MIMETYPE_TEXT_WANT添加到[PasteDataProperty](#ZH-CN_TOPIC_0000002553201557__pastedataproperty7)的mimeTypes中。入参均不能为空，否则添加失败。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[addRecord](#ZH-CN_TOPIC_0000002497445528__addrecord9)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[addRecord](#ZH-CN_TOPIC_0000002553201557__addrecord9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明want[Want](@ohos.app.ability.Want (Want).md)是Want对象内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | Want | 是 | Want对象内容。 |
 
 **示例：**
 
@@ -1329,15 +1498,18 @@ pasteData.addWantRecord(object);
 
 addTextRecord(text: string): void
 
-向当前剪贴板内容中添加一条纯文本条目，并将MIME_TEXT_PLAIN添加到[PasteDataProperty](#ZH-CN_TOPIC_0000002497445528__pastedataproperty7)的mimeTypes中。入参均不能为空，否则添加失败。
+向当前剪贴板内容中添加一条纯文本条目，并将MIME_TEXT_PLAIN添加到[PasteDataProperty](#ZH-CN_TOPIC_0000002553201557__pastedataproperty7)的mimeTypes中。入参均不能为空，否则添加失败。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[addRecord](#ZH-CN_TOPIC_0000002497445528__addrecord9)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[addRecord](#ZH-CN_TOPIC_0000002553201557__addrecord9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明textstring是纯文本内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 纯文本内容。 |
 
 **示例：**
 
@@ -1350,15 +1522,18 @@ pasteData.addTextRecord('good');
 
 addUriRecord(uri: string): void
 
-向当前剪贴板内容中添加一条URI条目，并将MIMETYPE_TEXT_URI添加到[PasteDataProperty](#ZH-CN_TOPIC_0000002497445528__pastedataproperty7)的mimeTypes中。入参均不能为空，否则添加失败。
+向当前剪贴板内容中添加一条URI条目，并将MIMETYPE_TEXT_URI添加到[PasteDataProperty](#ZH-CN_TOPIC_0000002553201557__pastedataproperty7)的mimeTypes中。入参均不能为空，否则添加失败。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[addRecord](#ZH-CN_TOPIC_0000002497445528__addrecord9)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[addRecord](#ZH-CN_TOPIC_0000002553201557__addrecord9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明uristring是URI内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | URI内容。 |
 
 **示例：**
 
@@ -1373,23 +1548,30 @@ getRecordAt(index: number): PasteDataRecord
 
 获取剪贴板内容中指定下标的条目。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[getRecord](#ZH-CN_TOPIC_0000002497445528__getrecord9)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[getRecord](#ZH-CN_TOPIC_0000002553201557__getrecord9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定条目的下标。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定条目的下标。 |
 
 **返回值：**
 
-类型说明[PasteDataRecord](#ZH-CN_TOPIC_0000002497445528__pastedatarecord7)指定下标的条目。
+| 类型 | 说明 |
+| --- | --- |
+| PasteDataRecord | 指定下标的条目。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
 
 **示例：**
 
@@ -1404,23 +1586,30 @@ hasMimeType(mimeType: string): boolean
 
 检查剪贴板内容中是否有指定的数据类型。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[hasType](#ZH-CN_TOPIC_0000002497445528__hastype9)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[hasType](#ZH-CN_TOPIC_0000002553201557__hastype9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明mimeTypestring是待查询的数据类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mimeType | string | 是 | 待查询的数据类型。 |
 
 **返回值：**
 
-类型说明boolean有指定的数据类型返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 有指定的数据类型返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
 
 **示例：**
 
@@ -1435,23 +1624,30 @@ removeRecordAt(index: number): boolean
 
 移除剪贴板内容中指定下标的条目。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[removeRecord](#ZH-CN_TOPIC_0000002497445528__removerecord9)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[removeRecord](#ZH-CN_TOPIC_0000002553201557__removerecord9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定的下标。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定的下标。 |
 
 **返回值：**
 
-类型说明boolean成功移除返回true，失败返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 成功移除返回true，失败返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
 
 **示例：**
 
@@ -1466,17 +1662,23 @@ replaceRecordAt(index: number, record: PasteDataRecord): boolean
 
 替换剪贴板内容中指定下标的条目。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[replaceRecord](#ZH-CN_TOPIC_0000002497445528__replacerecord9)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[replaceRecord](#ZH-CN_TOPIC_0000002553201557__replacerecord9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定的下标。record[PasteDataRecord](#ZH-CN_TOPIC_0000002497445528__pastedatarecord7)是替换后的条目。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定的下标。 |
+| record | PasteDataRecord | 是 | 替换后的条目。 |
 
 **返回值：**
 
-类型说明boolean成功替换返回true，失败返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 成功替换返回true，失败返回false。 |
 
 **示例：**
 
@@ -1490,7 +1692,7 @@ let isReplace: boolean = pasteData.replaceRecordAt(0, record);
 
 系统剪贴板对象。
 
-在调用SystemPasteboard的接口前，需要先通过[getSystemPasteboard](#ZH-CN_TOPIC_0000002497445528__pasteboardgetsystempasteboard)获取系统剪贴板。
+在调用SystemPasteboard的接口前，需要先通过[getSystemPasteboard](#ZH-CN_TOPIC_0000002553201557__pasteboardgetsystempasteboard)获取系统剪贴板。
 
 ```ets
 const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
@@ -1506,13 +1708,18 @@ on(type: 'update', callback: () =>void): void
 
 **参数：**
 
-参数名类型必填说明typestring是取值为'update'，表示系统剪贴板内容变化事件。callbackfunction是剪贴板中内容变化时触发的用户程序的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取值为'update'，表示系统剪贴板内容变化事件。 |
+| callback | function | 是 | 剪贴板中内容变化时触发的用户程序的回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
 
 **示例：**
 
@@ -1534,13 +1741,18 @@ off(type: 'update', callback?: () =>void): void
 
 **参数：**
 
-参数名类型必填说明typestring是取值为'update'，表示系统剪贴板内容变化事件。callbackfunction否剪贴板中内容变化时触发的用户程序的回调。如果此参数未填，表明清除本应用的所有监听回调，否则表示清除指定监听回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取值为'update'，表示系统剪贴板内容变化事件。 |
+| callback | function | 否 | 剪贴板中内容变化时触发的用户程序的回调。如果此参数未填，表明清除本应用的所有监听回调，否则表示清除指定监听回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
 
 **示例：**
 
@@ -1564,13 +1776,17 @@ clearData(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当成功清空时，err为undefined；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当成功清空时，err为undefined；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
 
 **示例：**
 
@@ -1597,7 +1813,9 @@ clearData(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -1624,13 +1842,20 @@ setData(data: PasteData, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明data[PasteData](#ZH-CN_TOPIC_0000002497445528__pastedata)是PasteData对象。callbackAsyncCallback<void>是回调函数。当写入成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | PasteData | 是 | PasteData对象。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当写入成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息27787277Another copy or paste operation is in progress.27787278Replication is prohibited.401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 27787277 | Another copy or paste operation is in progress. |
+| 27787278 | Replication is prohibited. |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
 
 **示例：**
 
@@ -1658,17 +1883,25 @@ setData(data: PasteData): Promise<void>
 
 **参数：**
 
-参数名类型必填说明data[PasteData](#ZH-CN_TOPIC_0000002497445528__pastedata)是PasteData对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | PasteData | 是 | PasteData对象。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息27787277Another copy or paste operation is in progress.27787278Replication is prohibited.401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 27787277 | Another copy or paste operation is in progress. |
+| 27787278 | Replication is prohibited. |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
 
 **示例：**
 
@@ -1690,7 +1923,7 @@ getData(callback: AsyncCallback<PasteData>): void
 
 读取系统剪贴板内容，使用callback异步回调。
 
-**需要权限**：ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。使用[安全控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
+需要权限：ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1698,13 +1931,19 @@ getData(callback: AsyncCallback<PasteData>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[PasteData](#ZH-CN_TOPIC_0000002497445528__pastedata)>是回调函数。当读取成功，err为undefined，data为返回的系统剪贴板数据；否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<PasteData> | 是 | 回调函数。当读取成功，err为undefined，data为返回的系统剪贴板数据；否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息27787277Another copy or paste operation is in progress.201Permission verification failed. The application does not have the permission required to call the API.401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 27787277 | Another copy or paste operation is in progress. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
 
 **示例：**
 
@@ -1727,7 +1966,7 @@ getData(): Promise<PasteData>
 
 读取系统剪贴板内容，使用Promise异步回调。
 
-**需要权限**：ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。使用[安全控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
+需要权限：ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1735,13 +1974,18 @@ getData(): Promise<PasteData>
 
 **返回值：**
 
-类型说明Promise<[PasteData](#ZH-CN_TOPIC_0000002497445528__pastedata)>Promise对象，返回系统剪贴板数据。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<PasteData> | Promise对象，返回系统剪贴板数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息27787277Another copy or paste operation is in progress.201Permission verification failed. The application does not have the permission required to call the API.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 27787277 | Another copy or paste operation is in progress. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 
 **示例：**
 
@@ -1768,13 +2012,17 @@ hasData(callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<boolean>是返回true表示系统剪贴板中有内容，返回false表示系统剪贴板中没有内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<boolean> | 是 | 返回true表示系统剪贴板中有内容，返回false表示系统剪贴板中没有内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
 
 **示例：**
 
@@ -1803,7 +2051,9 @@ hasData(): Promise<boolean>
 
 **返回值：**
 
-类型说明Promise<boolean>返回true表示系统剪贴板中有内容，返回false表示系统剪贴板中没有内容。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | 返回true表示系统剪贴板中有内容，返回false表示系统剪贴板中没有内容。 |
 
 **示例：**
 
@@ -1824,19 +2074,24 @@ clear(callback: AsyncCallback<void>): void
 
 清空系统剪贴板内容，使用callback异步回调。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.clearData](#ZH-CN_TOPIC_0000002497445528__cleardata9)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.clearData](#ZH-CN_TOPIC_0000002553201557__cleardata9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当成功清空时，err为undefined；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当成功清空时，err为undefined；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
 
 **示例：**
 
@@ -1857,13 +2112,16 @@ clear(): Promise<void>
 
 清空系统剪贴板内容，使用Promise异步回调。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.clearData](#ZH-CN_TOPIC_0000002497445528__cleardata9-1)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[pasteboard.clearData](#ZH-CN_TOPIC_0000002553201557__cleardata9-1)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -1884,19 +2142,24 @@ getPasteData(callback: AsyncCallback<PasteData>): void
 
 读取系统剪贴板内容，使用callback异步回调。
 
-从 API version 6 开始支持，从 API version 9 开始废弃，建议使用[getData](#ZH-CN_TOPIC_0000002497445528__getdata9)替代。
+
+从 API version 6 开始支持，从 API version 9 开始废弃，建议使用[getData](#ZH-CN_TOPIC_0000002553201557__getdata9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[PasteData](#ZH-CN_TOPIC_0000002497445528__pastedata)>是回调函数。当读取成功，err为undefined，data为返回的系统剪贴板数据；否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<PasteData> | 是 | 回调函数。当读取成功，err为undefined，data为返回的系统剪贴板数据；否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
 
 **示例：**
 
@@ -1919,13 +2182,16 @@ getPasteData(): Promise<PasteData>
 
 读取系统剪贴板内容，使用Promise异步回调。
 
-从 API version 6 开始支持，从 API version 9 开始废弃，建议使用[getData](#ZH-CN_TOPIC_0000002497445528__getdata9-1)替代。
+
+从 API version 6 开始支持，从 API version 9 开始废弃，建议使用[getData](#ZH-CN_TOPIC_0000002553201557__getdata9-1)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
 
-类型说明Promise<[PasteData](#ZH-CN_TOPIC_0000002497445528__pastedata)>Promise对象，返回系统剪贴板数据。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<PasteData> | Promise对象，返回系统剪贴板数据。 |
 
 **示例：**
 
@@ -1946,19 +2212,24 @@ hasPasteData(callback: AsyncCallback<boolean>): void
 
 判断系统剪贴板中是否有内容，使用callback异步回调。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[hasData](#ZH-CN_TOPIC_0000002497445528__hasdata9)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[hasData](#ZH-CN_TOPIC_0000002553201557__hasdata9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<boolean>是返回true表示系统剪贴板中有内容，返回false表示系统剪贴板中没有内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<boolean> | 是 | 返回true表示系统剪贴板中有内容，返回false表示系统剪贴板中没有内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
 
 **示例：**
 
@@ -1981,13 +2252,16 @@ hasPasteData(): Promise<boolean>
 
 判断系统剪贴板中是否有内容，使用Promise异步回调。
 
-从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[hasData](#ZH-CN_TOPIC_0000002497445528__hasdata9-1)替代。
+
+从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[hasData](#ZH-CN_TOPIC_0000002553201557__hasdata9-1)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
 
-类型说明Promise<boolean>返回true表示系统剪贴板中有内容，返回false表示系统剪贴板中没有内容。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | 返回true表示系统剪贴板中有内容，返回false表示系统剪贴板中没有内容。 |
 
 **示例：**
 
@@ -2008,19 +2282,25 @@ setPasteData(data: PasteData, callback: AsyncCallback<void>): void
 
 将数据写入系统剪贴板，使用callback异步回调。
 
-从 API version 6 开始支持，从 API version 9 开始废弃，建议使用[setData](#ZH-CN_TOPIC_0000002497445528__setdata9)替代。
+
+从 API version 6 开始支持，从 API version 9 开始废弃，建议使用[setData](#ZH-CN_TOPIC_0000002553201557__setdata9)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明data[PasteData](#ZH-CN_TOPIC_0000002497445528__pastedata)是PasteData对象。callbackAsyncCallback<void>是回调函数。当写入成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | PasteData | 是 | PasteData对象。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当写入成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
 
 **示例：**
 
@@ -2042,17 +2322,22 @@ setPasteData(data: PasteData): Promise<void>
 
 将数据写入系统剪贴板，使用Promise异步回调。
 
-从 API version 6 开始支持，从 API version 9 开始废弃，建议使用[setData](#ZH-CN_TOPIC_0000002497445528__setdata9-1)替代。
+
+从 API version 6 开始支持，从 API version 9 开始废弃，建议使用[setData](#ZH-CN_TOPIC_0000002553201557__setdata9-1)替代。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明data[PasteData](#ZH-CN_TOPIC_0000002497445528__pastedata)是PasteData对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | PasteData | 是 | PasteData对象。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -2080,13 +2365,17 @@ isRemoteData(): boolean
 
 **返回值：**
 
-类型说明boolean是来自其他设备返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是来自其他设备返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息12900005Excessive processing time for internal data.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12900005 | Excessive processing time for internal data. |
 
 **示例：**
 
@@ -2112,13 +2401,17 @@ getDataSource(): string
 
 **返回值：**
 
-类型说明string数据来源的应用名称。
+| 类型 | 说明 |
+| --- | --- |
+| string | 数据来源的应用名称。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息12900005Excessive processing time for internal data.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12900005 | Excessive processing time for internal data. |
 
 **示例：**
 
@@ -2144,17 +2437,24 @@ hasDataType(mimeType: string): boolean
 
 **参数：**
 
-参数名类型必填说明mimeTypestring是数据类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mimeType | string | 是 | 数据类型。 |
 
 **返回值：**
 
-类型说明boolean有指定类型的数据返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 有指定类型的数据返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.12900005Excessive processing time for internal data.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 12900005 | Excessive processing time for internal data. |
 
 **示例：**
 
@@ -2180,9 +2480,11 @@ clearDataSync(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息12900005Excessive processing time for internal data.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12900005 | Excessive processing time for internal data. |
 
 **示例：**
 
@@ -2202,7 +2504,7 @@ getDataSync(): PasteData
 
 读取系统剪贴板内容, 此接口为同步接口。
 
-**需要权限**：ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。使用[安全控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
+需要权限：ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2210,13 +2512,18 @@ getDataSync(): PasteData
 
 **返回值：**
 
-类型说明[PasteData](#ZH-CN_TOPIC_0000002497445528__pastedata)返回系统剪贴板数据。
+| 类型 | 说明 |
+| --- | --- |
+| PasteData | 返回系统剪贴板数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息12900005Excessive processing time for internal data.201Permission verification failed. The application does not have the permission required to call the API.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12900005 | Excessive processing time for internal data. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 
 **示例：**
 
@@ -2242,13 +2549,18 @@ setDataSync(data: PasteData): void
 
 **参数：**
 
-参数名类型必填说明data[PasteData](#ZH-CN_TOPIC_0000002497445528__pastedata)是需要写入剪贴板中的数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | PasteData | 是 | 需要写入剪贴板中的数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.12900005Excessive processing time for internal data.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 12900005 | Excessive processing time for internal data. |
 
 **示例：**
 
@@ -2275,13 +2587,17 @@ hasDataSync(): boolean
 
 **返回值：**
 
-类型说明boolean返回true表示系统剪贴板中有内容，返回false表示系统剪贴板中没有内容。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示系统剪贴板中有内容，返回false表示系统剪贴板中没有内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息12900005Excessive processing time for internal data.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12900005 | Excessive processing time for internal data. |
 
 **示例：**
 
@@ -2301,7 +2617,7 @@ getUnifiedData(): Promise<unifiedDataChannel.UnifiedData>
 
 读取系统剪贴板内容，使用Promise异步回调。
 
-**需要权限**：ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。使用[安全控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
+需要权限：ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2309,13 +2625,18 @@ getUnifiedData(): Promise<unifiedDataChannel.UnifiedData>
 
 **返回值：**
 
-类型说明Promise<[unifiedDataChannel.UnifiedData](@ohos.data.unifiedDataChannel (标准化数据通路).md#ZH-CN_TOPIC_0000002529444653__unifieddata)>Promise对象，返回系统剪贴板数据。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<unifiedDataChannel.UnifiedData> | Promise对象，返回系统剪贴板数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.27787277Another copy or paste operation is in progress.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 27787277 | Another copy or paste operation is in progress. |
 
 **示例：**
 
@@ -2331,7 +2652,6 @@ systemPasteboard.getUnifiedData().then((data) => {
             let text = records[j].getValue() as uniformDataStruct.PlainText;
             console.info(`${j + 1}.${text.textContent}`);
         }
-    }
 }).catch((err: BusinessError) => {
     console.error('Failed to get UnifiedData. Cause: ' + err.message);
 });
@@ -2343,7 +2663,7 @@ getUnifiedDataSync(): unifiedDataChannel.UnifiedData
 
 读取系统剪贴板内容, 此接口为同步接口。
 
-**需要权限**：ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。使用[安全控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
+需要权限：ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2351,13 +2671,18 @@ getUnifiedDataSync(): unifiedDataChannel.UnifiedData
 
 **返回值：**
 
-类型说明[unifiedDataChannel.UnifiedData](@ohos.data.unifiedDataChannel (标准化数据通路).md#ZH-CN_TOPIC_0000002529444653__unifieddata)返回系统剪贴板数据。
+| 类型 | 说明 |
+| --- | --- |
+| unifiedDataChannel.UnifiedData | 返回系统剪贴板数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.12900005Excessive processing time for internal data.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 12900005 | Excessive processing time for internal data. |
 
 **示例：**
 
@@ -2385,17 +2710,25 @@ setUnifiedData(data: unifiedDataChannel.UnifiedData): Promise<void>
 
 **参数：**
 
-参数名类型必填说明data[unifiedDataChannel.UnifiedData](@ohos.data.unifiedDataChannel (标准化数据通路).md#ZH-CN_TOPIC_0000002529444653__unifieddata)是需要写入剪贴板中的数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | unifiedDataChannel.UnifiedData | 是 | 需要写入剪贴板中的数据。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.27787277Another copy or paste operation is in progress.27787278Replication is prohibited.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 27787277 | Another copy or paste operation is in progress. |
+| 27787278 | Replication is prohibited. |
 
 **示例：**
 
@@ -2432,13 +2765,18 @@ setUnifiedDataSync(data: unifiedDataChannel.UnifiedData): void
 
 **参数：**
 
-参数名类型必填说明data[unifiedDataChannel.UnifiedData](@ohos.data.unifiedDataChannel (标准化数据通路).md#ZH-CN_TOPIC_0000002529444653__unifieddata)是需要写入剪贴板中的数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | unifiedDataChannel.UnifiedData | 是 | 需要写入剪贴板中的数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息401Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.12900005Excessive processing time for internal data.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 12900005 | Excessive processing time for internal data. |
 
 **示例：**
 
@@ -2476,13 +2814,19 @@ setAppShareOptions(shareOptions: ShareOption): void
 
 **参数：**
 
-参数名类型必填说明shareOptions[ShareOption](@ohos.pasteboard (剪贴板).md#ZH-CN_TOPIC_0000002497445528__shareoption9)是可粘贴的范围，参数只允许pasteboard.ShareOption.INAPP。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| shareOptions | ShareOption | 是 | 可粘贴的范围，参数只允许pasteboard.ShareOption.INAPP。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.12900006Settings already exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 12900006 | Settings already exist. |
 
 **示例：**
 
@@ -2508,9 +2852,11 @@ removeAppShareOptions(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 
 **示例：**
 
@@ -2530,29 +2876,39 @@ try {
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
-名称值说明URL0URL类型。NUMBER1数字类型。EMAIL_ADDRESS2邮箱地址类型。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| URL | 0 | URL类型。 |
+| NUMBER | 1 | 数字类型。 |
+| EMAIL_ADDRESS | 2 | 邮箱地址类型。 |
 
 #### detectPatterns13+
 
 detectPatterns(patterns: Array<Pattern>): Promise<Array<Pattern>>
 
-检测**本地**剪贴板中存在的[Pattern](#ZH-CN_TOPIC_0000002497445528__pattern13)模式，使用Promise异步回调。
+检测本地剪贴板中存在的[Pattern](#ZH-CN_TOPIC_0000002553201557__pattern13)模式，使用Promise异步回调。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
-参数名类型必填说明patterns[Array<Pattern>](#ZH-CN_TOPIC_0000002497445528__pattern13)是需要在剪贴板中检测的模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| patterns | Array<Pattern> | 是 | 需要在剪贴板中检测的模式。 |
 
 **返回值：**
 
-类型说明Promise<Array<Pattern>>Promise对象，返回检测到的模式。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<Pattern>> | Promise对象，返回检测到的模式。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -2589,7 +2945,9 @@ getMimeTypes(): Promise<Array<string>>
 
 **返回值：**
 
-类型说明Promise<Array<string>>Promise对象，返回读取到的MIME类型。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<string>> | Promise对象，返回读取到的MIME类型。 |
 
 **示例：**
 
@@ -2610,7 +2968,7 @@ getDataWithProgress(params: GetDataParams): Promise<PasteData>
 
 获取剪贴板的内容和进度，使用Promise异步回调，不支持对文件夹的拷贝。
 
-**需要权限**：ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。使用[安全控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
+需要权限：ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
@@ -2618,17 +2976,29 @@ getDataWithProgress(params: GetDataParams): Promise<PasteData>
 
 **参数：**
 
-参数名类型必填说明params[GetDataParams](#ZH-CN_TOPIC_0000002497445528__getdataparams15)是应用在使用剪贴板提供的文件拷贝能力的情况下需要的参数，包含目标路径、文件冲突选项、进度条类型等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| params | GetDataParams | 是 | 应用在使用剪贴板提供的文件拷贝能力的情况下需要的参数，包含目标路径、文件冲突选项、进度条类型等。 |
 
 **返回值：**
 
-类型说明Promise<[PasteData](#ZH-CN_TOPIC_0000002497445528__pastedata)>Promise对象，返回系统剪贴板数据。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<PasteData> | Promise对象，返回系统剪贴板数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[剪贴板错误码](../../errors/剪贴板错误码.md)。
+以下错误码的详细介绍请参见[剪贴板错误码](剪贴板错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error.12900003Another copy or paste operation is in progress.12900007Invalid destUri or file system error.12900008Failed to start progress.12900009Progress exits abnormally.12900010System error occurred during paste execution.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. |
+| 12900003 | Another copy or paste operation is in progress. |
+| 12900007 | Invalid destUri or file system error. |
+| 12900008 | Failed to start progress. |
+| 12900009 | Progress exits abnormally. |
+| 12900010 | System error occurred during paste execution. |
 
 **示例：**
 
@@ -2640,7 +3010,6 @@ import { fileUri} from '@kit.CoreFileKit';
 struct PasteboardTest {
  build() {
    RelativeContainer() {
-     Column() {
        Column() {
          Button("Copy txt")
            .onClick(async ()=>{
@@ -2664,11 +3033,6 @@ struct PasteboardTest {
               }).catch((err: BusinessError) => {
                 console.error('Failed to get PasteData. Cause: ' + err.message);
               })
-          })
-        }
-      }
-    }
-  }
 }
 ```
 
@@ -2680,7 +3044,7 @@ getChangeCount(): number
 
 执行成功时返回剪贴板内容的变化次数，否则返回0。
 
-当剪贴板内容过期或调用[clearDataSync](#ZH-CN_TOPIC_0000002497445528__cleardatasync11)等接口导致剪贴板内容为空时，内容变化次数不会因此改变。
+当剪贴板内容过期或调用[clearDataSync](#ZH-CN_TOPIC_0000002553201557__cleardatasync11)等接口导致剪贴板内容为空时，内容变化次数不会因此改变。
 
 系统重启或剪贴板服务异常重启时，剪贴板内容变化次数重新从0开始计数。对同一内容连续多次复制会被视作多次更改，每次复制均会导致内容变化次数增加。
 
@@ -2690,7 +3054,9 @@ getChangeCount(): number
 
 **返回值：**
 
-类型说明number返回读取到的剪贴板内容变化次数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回读取到的剪贴板内容变化次数。 |
 
 **示例：**
 
@@ -2724,7 +3090,9 @@ onRemoteUpdate(callback: UpdateCallback): void
 
 **参数：**
 
-参数名类型必填说明callback[UpdateCallback](#ZH-CN_TOPIC_0000002497445528__updatecallback-22)是剪贴板中内容变化时触发的用户程序的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | UpdateCallback | 是 | 剪贴板中内容变化时触发的用户程序的回调。 |
 
 **示例：**
 
@@ -2746,7 +3114,9 @@ offRemoteUpdate(callback?: UpdateCallback): void
 
 **参数：**
 
-参数名类型必填说明callback[UpdateCallback](#ZH-CN_TOPIC_0000002497445528__updatecallback-22)否远端设备剪贴板中内容变化时触发的用户程序的回调。如果此参数未填，表明清除本应用的所有远端监听回调，否则表示清除指定远端监听回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | UpdateCallback | 否 | 远端设备剪贴板中内容变化时触发的用户程序的回调。如果此参数未填，表明清除本应用的所有远端监听回调，否则表示清除指定远端监听回调。 |
 
 **示例：**
 

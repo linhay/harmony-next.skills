@@ -28,7 +28,9 @@ import { Queue } from '@kit.ArkTS';
 
 **系统能力：** SystemCapability.Utils.Lang
 
-名称类型只读可选说明lengthnumber是否Queue的元素个数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| length | number | 是 | 否 | Queue的元素个数。 |
 
 #### constructor
 
@@ -42,9 +44,11 @@ Queue的构造函数。
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码]([语言基础类库错误码](../../errors/语言基础类库错误码.md).md)。
 
-错误码ID错误信息10200012The Queue's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200012 | The Queue's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -64,17 +68,23 @@ add(element: T): boolean
 
 **参数：**
 
-参数名类型必填说明elementT是要插入的元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | T | 是 | 要插入的元素。 |
 
 **返回值：**
 
-类型说明boolean插入成功返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 插入成功返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The add method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The add method cannot be bound. |
 
 **示例：**
 
@@ -105,13 +115,17 @@ pop(): T
 
 **返回值：**
 
-类型说明T返回删除的元素。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回删除的元素。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The pop method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The pop method cannot be bound. |
 
 **示例：**
 
@@ -138,13 +152,17 @@ getFirst(): T
 
 **返回值：**
 
-类型说明T返回获取的元素。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回获取的元素。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The getFirst method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The getFirst method cannot be bound. |
 
 **示例：**
 
@@ -160,9 +178,7 @@ console.info("result:", result);  // result: 2
 
 #### forEach
 
-forEach(callbackFn: (value: T, index?: number, Queue?: Queue<T>) => void,
-
-thisArg?: Object): void
+forEach(callbackFn: (value: T, index?: number, Queue?: Queue<T>) => void, thisArg?: Object): void
 
 在遍历Queue实例对象中每一个元素的过程中，对每个元素执行回调函数。
 
@@ -172,17 +188,27 @@ thisArg?: Object): void
 
 **参数：**
 
-参数名类型必填说明callbackFnfunction是回调函数。thisArgObject否callbackfn被调用时用作this值，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | function | 是 | 回调函数。 |
+| thisArg | Object | 否 | callbackfn被调用时用作this值，默认值为当前实例对象。 |
 
 callbackfn的参数说明：
 
-参数名类型必填说明valueT是当前遍历到的元素。indexnumber否当前遍历到的下标值，默认值为0。QueueQueue<T>否当前调用forEach方法的实例对象，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | T | 是 | 当前遍历到的元素。 |
+| index | number | 否 | 当前遍历到的下标值，默认值为0。 |
+| Queue | Queue<T> | 否 | 当前调用forEach方法的实例对象，默认值为当前实例对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The forEach method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The forEach method cannot be bound. |
 
 **示例：**
 
@@ -213,13 +239,17 @@ queue.forEach((value: number, index: number): void => {
 
 **返回值：**
 
-类型说明IterableIterator<T>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<T> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The Symbol.iterator method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The Symbol.iterator method cannot be bound. |
 
 **示例：**
 

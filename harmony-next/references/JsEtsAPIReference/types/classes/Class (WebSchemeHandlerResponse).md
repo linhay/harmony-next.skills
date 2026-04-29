@@ -12,7 +12,7 @@
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### 导入模块
 
@@ -67,8 +67,6 @@ struct WebComponent {
       })
       Web({ src: 'https://www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### setUrl12+
@@ -81,17 +79,21 @@ setUrl(url: string): void
 
 **参数：**
 
-参数名类型必填说明urlstring是即将要跳转的URL。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| url | string | 是 | 即将要跳转的URL。 |
 
 **示例：**
 
-完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002529445163__constructor12)。
+完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002522241158__constructor12)。
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
 
 #### setNetErrorCode12+
 
@@ -103,17 +105,21 @@ setNetErrorCode(code: WebNetErrorList): void
 
 **参数：**
 
-参数名类型必填说明code[WebNetErrorList](../../modules/ohos/@ohos.web.netErrorList (ArkWeb网络协议栈错误列表).md#ZH-CN_TOPIC_0000002497445224__webneterrorlist)是网络错误码。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | WebNetErrorList | 是 | 网络错误码。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 
 **示例：**
 
-完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002529445163__constructor12)。
+完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002522241158__constructor12)。
 
 #### setStatus12+
 
@@ -125,17 +131,21 @@ setStatus(code: number): void
 
 **参数：**
 
-参数名类型必填说明codenumber是Http状态码。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | Http状态码。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
 
 **示例：**
 
-完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002529445163__constructor12)。
+完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002522241158__constructor12)。
 
 #### setStatusText12+
 
@@ -147,17 +157,21 @@ setStatusText(text: string): void
 
 **参数：**
 
-参数名类型必填说明textstring是状态文本。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 状态文本。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
 
 **示例：**
 
-完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002529445163__constructor12)。
+完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002522241158__constructor12)。
 
 #### setMimeType12+
 
@@ -169,17 +183,21 @@ setMimeType(type: string): void
 
 **参数：**
 
-参数名类型必填说明typestring是媒体类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 媒体类型。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
 
 **示例：**
 
-完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002529445163__constructor12)。
+完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002522241158__constructor12)。
 
 #### setEncoding12+
 
@@ -191,17 +209,21 @@ setEncoding(encoding: string): void
 
 **参数：**
 
-参数名类型必填说明encodingstring是字符集。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| encoding | string | 是 | 字符集。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
 
 **示例：**
 
-完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002529445163__constructor12)。
+完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002522241158__constructor12)。
 
 #### setHeaderByName12+
 
@@ -213,17 +235,23 @@ setHeaderByName(name: string, value: string, overwrite: boolean): void
 
 **参数：**
 
-参数名类型必填说明namestring是头部（header）的名称。valuestring是头部（header）的值。overwriteboolean是如果为true，将覆盖现有的头部，否则不覆盖。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 头部（header）的名称。 |
+| value | string | 是 | 头部（header）的值。 |
+| overwrite | boolean | 是 | 如果为true，将覆盖现有的头部，否则不覆盖。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 
 **示例：**
 
-完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002529445163__constructor12)。
+完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002522241158__constructor12)。
 
 #### getUrl12+
 
@@ -231,17 +259,19 @@ getUrl(): string
 
 获取重定向或由于HSTS而更改后的URL。
 
-风险提示：如果想获取url来做JavascriptProxy通信接口认证，请使用[getLastJavascriptProxyCallingFrameUrl12+](Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__getlastjavascriptproxycallingframeurl12)
+风险提示：如果想获取url来做JavascriptProxy通信接口认证，请使用[getLastJavascriptProxyCallingFrameUrl12+](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__getlastjavascriptproxycallingframeurl12)
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
 
-类型说明string获取经过重定向或由于HSTS而更改后的URL。
+| 类型 | 说明 |
+| --- | --- |
+| string | 获取经过重定向或由于HSTS而更改后的URL。 |
 
 **示例：**
 
-完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002529445163__constructor12)。
+完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002522241158__constructor12)。
 
 #### getNetErrorCode12+
 
@@ -253,11 +283,13 @@ getNetErrorCode(): WebNetErrorList
 
 **返回值：**
 
-类型说明[WebNetErrorList](../../modules/ohos/@ohos.web.netErrorList (ArkWeb网络协议栈错误列表).md#ZH-CN_TOPIC_0000002497445224__webneterrorlist)获取Response的网络错误码。
+| 类型 | 说明 |
+| --- | --- |
+| WebNetErrorList | 获取Response的网络错误码。 |
 
 **示例：**
 
-完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002529445163__constructor12)。
+完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002522241158__constructor12)。
 
 #### getStatus12+
 
@@ -269,11 +301,13 @@ getStatus(): number
 
 **返回值：**
 
-类型说明number获取Response的Http状态码。
+| 类型 | 说明 |
+| --- | --- |
+| number | 获取Response的Http状态码。 |
 
 **示例：**
 
-完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002529445163__constructor12)。
+完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002522241158__constructor12)。
 
 #### getStatusText12+
 
@@ -285,11 +319,13 @@ getStatusText(): string
 
 **返回值：**
 
-类型说明string状态文本。
+| 类型 | 说明 |
+| --- | --- |
+| string | 状态文本。 |
 
 **示例：**
 
-完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002529445163__constructor12)。
+完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002522241158__constructor12)。
 
 #### getMimeType12+
 
@@ -301,11 +337,13 @@ getMimeType(): string
 
 **返回值：**
 
-类型说明string媒体类型。
+| 类型 | 说明 |
+| --- | --- |
+| string | 媒体类型。 |
 
 **示例：**
 
-完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002529445163__constructor12)。
+完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002522241158__constructor12)。
 
 #### getEncoding12+
 
@@ -317,11 +355,13 @@ getEncoding(): string
 
 **返回值：**
 
-类型说明string字符集。
+| 类型 | 说明 |
+| --- | --- |
+| string | 字符集。 |
 
 **示例：**
 
-完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002529445163__constructor12)。
+完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002522241158__constructor12)。
 
 #### getHeaderByName12+
 
@@ -333,12 +373,16 @@ getHeaderByName(name: string): string
 
 **参数：**
 
-参数名类型必填说明namestring是头部（header）的名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 头部（header）的名称。 |
 
 **返回值：**
 
-类型说明string头部（header）的值。
+| 类型 | 说明 |
+| --- | --- |
+| string | 头部（header）的值。 |
 
 **示例：**
 
-完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002529445163__constructor12)。
+完整示例代码参考[constructor](#ZH-CN_TOPIC_0000002522241158__constructor12)。

@@ -30,17 +30,26 @@ getBluetoothInfo(admin: Want): BluetoothInfo
 
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 **返回值：**
 
-类型说明[BluetoothInfo](#ZH-CN_TOPIC_0000002497445608__bluetoothinfo)蓝牙信息，包含蓝牙名称、蓝牙状态和蓝牙连接状态。
+| 类型 | 说明 |
+| --- | --- |
+| BluetoothInfo | 蓝牙信息，包含蓝牙名称、蓝牙状态和蓝牙连接状态。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码]([企业设备管理错误码](../../errors/企业设备管理错误码.md).md)和[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -70,8 +79,9 @@ addAllowedBluetoothDevices(admin: Want, deviceIds: Array<string>): void
 
 以下情况下，通过本接口添加蓝牙设备可用名单，会报策略冲突：
 
-1. 已经通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002529285583__restrictionssetdisallowedpolicy)接口禁用了蓝牙。通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002529285583__restrictionssetdisallowedpolicy)接口启用蓝牙后，可解除冲突。
-1. 已经通过[addDisallowedBluetoothDevices](#ZH-CN_TOPIC_0000002497445608__bluetoothmanageradddisallowedbluetoothdevices20)接口添加了蓝牙设备禁用名单。通过[removeDisallowedBluetoothDevices](#ZH-CN_TOPIC_0000002497445608__bluetoothmanagerremovedisallowedbluetoothdevices20)移除蓝牙设备禁用名单后，可解除冲突。
+1. 已经通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002522241688__restrictionssetdisallowedpolicy)接口禁用了蓝牙。通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002522241688__restrictionssetdisallowedpolicy)接口启用蓝牙后，可解除冲突。
+
+1. 已经通过[addDisallowedBluetoothDevices](#ZH-CN_TOPIC_0000002553361609__bluetoothmanageradddisallowedbluetoothdevices20)接口添加了蓝牙设备禁用名单。通过[removeDisallowedBluetoothDevices](#ZH-CN_TOPIC_0000002553361609__bluetoothmanagerremovedisallowedbluetoothdevices20)移除蓝牙设备禁用名单后，可解除冲突。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_BLUETOOTH
 
@@ -79,15 +89,26 @@ addAllowedBluetoothDevices(admin: Want, deviceIds: Array<string>): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。deviceIdsArray<string>是蓝牙设备MAC地址的数组。蓝牙设备允许名单数组长度上限为1000，若当前允许名单中已有300个蓝牙设备MAC地址，则只允许再添加700个。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| deviceIds | Array<string> | 是 | 蓝牙设备MAC地址的数组。蓝牙设备允许名单数组长度上限为1000，若当前允许名单中已有300个蓝牙设备MAC地址，则只允许再添加700个。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.9200010A conflict policy has been configured.201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 9200010 | A conflict policy has been configured. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -122,15 +143,25 @@ removeAllowedBluetoothDevices(admin: Want, deviceIds: Array<string>): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。deviceIdsArray<string>是蓝牙设备MAC地址的数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| deviceIds | Array<string> | 是 | 蓝牙设备MAC地址的数组。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -167,17 +198,26 @@ getAllowedBluetoothDevices(admin: Want): Array<string>
 
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 **返回值：**
 
-类型说明Array<string>可用名单中蓝牙设备MAC地址的数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<string> | 可用名单中蓝牙设备MAC地址的数组。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -206,8 +246,9 @@ addDisallowedBluetoothDevices(admin: Want, deviceIds: Array<string>): void
 
 以下情况下，通过本接口添加蓝牙设备禁用名单，会报策略冲突：
 
-1. 已经通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002529285583__restrictionssetdisallowedpolicy)接口禁用了蓝牙。通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002529285583__restrictionssetdisallowedpolicy)接口启用蓝牙后，可解除冲突。
-1. 已经通过[addAllowedBluetoothDevices](#ZH-CN_TOPIC_0000002497445608__bluetoothmanageraddallowedbluetoothdevices)接口添加了蓝牙设备可用名单。通过[removeAllowedBluetoothDevices](#ZH-CN_TOPIC_0000002497445608__bluetoothmanagerremoveallowedbluetoothdevices)移除蓝牙设备可用名单后，可解除冲突。
+1. 已经通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002522241688__restrictionssetdisallowedpolicy)接口禁用了蓝牙。通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002522241688__restrictionssetdisallowedpolicy)接口启用蓝牙后，可解除冲突。
+
+1. 已经通过[addAllowedBluetoothDevices](#ZH-CN_TOPIC_0000002553361609__bluetoothmanageraddallowedbluetoothdevices)接口添加了蓝牙设备可用名单。通过[removeAllowedBluetoothDevices](#ZH-CN_TOPIC_0000002553361609__bluetoothmanagerremoveallowedbluetoothdevices)移除蓝牙设备可用名单后，可解除冲突。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_BLUETOOTH
 
@@ -215,15 +256,25 @@ addDisallowedBluetoothDevices(admin: Want, deviceIds: Array<string>): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。deviceIdsArray<string>是蓝牙设备MAC地址的数组。蓝牙设备禁用名单数组长度上限为1000，若当前禁用名单中已有300个蓝牙设备MAC地址，则只允许再添加700个。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| deviceIds | Array<string> | 是 | 蓝牙设备MAC地址的数组。蓝牙设备禁用名单数组长度上限为1000，若当前禁用名单中已有300个蓝牙设备MAC地址，则只允许再添加700个。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.9200010A conflict policy has been configured.201Permission verification failed. The application does not have the permission required to call the API.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 9200010 | A conflict policy has been configured. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 
 **示例：**
 
@@ -258,15 +309,24 @@ removeDisallowedBluetoothDevices(admin: Want, deviceIds: Array<string>): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。deviceIdsArray<string>是蓝牙设备MAC地址的数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| deviceIds | Array<string> | 是 | 蓝牙设备MAC地址的数组。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 
 **示例：**
 
@@ -303,17 +363,25 @@ getDisallowedBluetoothDevices(admin: Want): Array<string>
 
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 **返回值：**
 
-类型说明Array<string>禁用名单中蓝牙设备MAC地址的数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<string> | 禁用名单中蓝牙设备MAC地址的数组。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 
 **示例：**
 
@@ -342,7 +410,11 @@ try {
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-名称类型只读可选说明namestring否否表示设备的蓝牙名称。state[access.BluetoothState](@ohos.bluetooth.access (蓝牙access模块).md#ZH-CN_TOPIC_0000002497605416__bluetoothstate)否否表示设备的蓝牙状态。connectionState[constant.ProfileConnectionState](@ohos.bluetooth.constant (蓝牙constant模块).md#ZH-CN_TOPIC_0000002497605418__profileconnectionstate)否否表示设备的蓝牙连接状态。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | string | 否 | 否 | 表示设备的蓝牙名称。 |
+| state | access.BluetoothState | 否 | 否 | 表示设备的蓝牙状态。 |
+| connectionState | constant.ProfileConnectionState | 否 | 否 | 表示设备的蓝牙连接状态。 |
 
 #### bluetoothManager.turnOnBluetooth20+
 
@@ -356,15 +428,24 @@ turnOnBluetooth(admin: Want): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.203This function is prohibited by enterprise management policies.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 203 | This function is prohibited by enterprise management policies. |
 
 **示例：**
 
@@ -397,15 +478,24 @@ turnOffBluetooth(admin: Want): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.203This function is prohibited by enterprise management policies.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 203 | This function is prohibited by enterprise management policies. |
 
 **示例：**
 
@@ -438,21 +528,25 @@ addDisallowedBluetoothProtocols(admin: Want, accountId: number, protocols: Array
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。accountIdnumber是
-
-用户ID，取值范围：大于等于0。
-
-accountId可以通过@ohos.account.osAccount中的[getOsAccountLocalId](@ohos.account.osAccount (系统账号管理).md#ZH-CN_TOPIC_0000002529285493__getosaccountlocalid9-1)等接口来获取。
-
-protocolsArray<[Protocol](#ZH-CN_TOPIC_0000002497445608__protocol20)>是蓝牙协议的数组。数组长度上限为10000。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| accountId | number | 是 | 用户ID，取值范围：大于等于0。 accountId可以通过@ohos.account.osAccount中的getOsAccountLocalId等接口来获取。 |
+| protocols | Array<Protocol> | 是 | 蓝牙协议的数组。数组长度上限为10000。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 
 **示例：**
 
@@ -488,21 +582,25 @@ removeDisallowedBluetoothProtocols(admin: Want, accountId: number, protocols: Ar
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。accountIdnumber是
-
-用户ID，取值范围：大于等于0。
-
-accountId可以通过@ohos.account.osAccount中的[getOsAccountLocalId](@ohos.account.osAccount (系统账号管理).md#ZH-CN_TOPIC_0000002529285493__getosaccountlocalid9-1)等接口来获取。
-
-protocolsArray<[Protocol](#ZH-CN_TOPIC_0000002497445608__protocol20)>是蓝牙协议的数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| accountId | number | 是 | 用户ID，取值范围：大于等于0。 accountId可以通过@ohos.account.osAccount中的getOsAccountLocalId等接口来获取。 |
+| protocols | Array<Protocol> | 是 | 蓝牙协议的数组。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 
 **示例：**
 
@@ -540,21 +638,26 @@ getDisallowedBluetoothProtocols(admin: Want, accountId: number): Array<Protocol>
 
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。accountIdnumber是
-
-用户ID，取值范围：大于等于0。
-
-accountId可以通过@ohos.account.osAccount中的[getOsAccountLocalId](@ohos.account.osAccount (系统账号管理).md#ZH-CN_TOPIC_0000002529285493__getosaccountlocalid9-1)等接口来获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| accountId | number | 是 | 用户ID，取值范围：大于等于0。 accountId可以通过@ohos.account.osAccount中的getOsAccountLocalId等接口来获取。 |
 
 **返回值：**
 
-类型说明Array<[Protocol](#ZH-CN_TOPIC_0000002497445608__protocol20)>禁用名单中蓝牙协议的数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<Protocol> | 禁用名单中蓝牙协议的数组。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 
 **示例：**
 
@@ -585,4 +688,8 @@ try{
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-名称值说明GATT0[GATT协议](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#gatt)。SPP1[SPP协议](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#spp)。OPP2[OPP协议](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#opp)。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| GATT | 0 | GATT协议。 |
+| SPP | 1 | SPP协议。 |
+| OPP | 2 | OPP协议。 |

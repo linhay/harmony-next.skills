@@ -1,4 +1,4 @@
-# Class (TextMenuController)
+# Class ([Text](../../topics/components/Text.md)MenuController)
 
 提供控制文本菜单的能力。
 
@@ -12,11 +12,11 @@
 
 -
 
-以下非静态API需先使用UIContext中的[getTextMenuController()](Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__gettextmenucontroller16)方法获取TextMenuController实例，再通过此实例调用对应方法。
+以下非静态API需先使用UIContext中的[getTextMenuController()](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__gettextmenucontroller16)方法获取TextMenuController实例，再通过此实例调用对应方法。
 
 #### setMenuOptions16+
 
-setMenuOptions(options: TextMenuOptions): void
+setMenuOptions(options: [TextMenuOptions](../../topics/components/文本组件公共接口.md#ZH-CN_TOPIC_0000002529444865__textmenuoptions16对象说明)): void
 
 设置菜单选项。
 
@@ -26,11 +26,9 @@ setMenuOptions(options: TextMenuOptions): void
 
 **参数：**
 
-参数名类型必填说明options[TextMenuOptions](../../topics/misc/文本组件公共接口.md#ZH-CN_TOPIC_0000002529444865__textmenuoptions16对象说明)是
-
-设置菜单选项。
-
-默认值:{showMode: TextMenuShowMode.DEFAULT}
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | [TextMenuOptions](../../topics/components/文本组件公共接口.md#ZH-CN_TOPIC_0000002529444865__textmenuoptions16对象说明) | 是 | 设置菜单选项。 默认值:{showMode: TextMenuShowMode.DEFAULT} |
 
 **示例：**
 
@@ -70,7 +68,6 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```
 
 #### disableSystemServiceMenuItems20+
@@ -85,19 +82,19 @@ static disableSystemServiceMenuItems(disable: boolean): void
 
 -
 
-此接口可在[UIAbility](../../modules/ohos/@ohos.app.ability.UIAbility (带界面的应用组件).md)使用。
+此接口可在[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)使用。
 
 -
 
-此接口调用后将影响文本组件的接口[editMenuOptions](../../topics/graphics/Text.md#ZH-CN_TOPIC_0000002497444914__editmenuoptions12)，其回调方法[onCreateMenu](../../topics/misc/文本组件公共接口.md#ZH-CN_TOPIC_0000002529444865__oncreatemenu12)的入参列表中不包含被屏蔽的菜单选项。
+此接口调用后将影响文本组件的接口[editMenuOptions](Text.md#ZH-CN_TOPIC_0000002553360767__editmenuoptions12)，其回调方法[onCreateMenu](文本组件公共接口.md#ZH-CN_TOPIC_0000002553200813__oncreatemenu12)的入参列表中不包含被屏蔽的菜单选项。
 
 -
 
-涉及文本选择菜单的组件有 [Text](../../topics/graphics/Text.md)、[TextArea](../../topics/graphics/TextArea.md)、[TextInput](../../topics/graphics/TextInput.md)、[Search](../../topics/components/search.md)、[RichEditor](../../topics/misc/RichEditor.md)、[Web](../../topics/misc/组件描述.md)。
+涉及文本选择菜单的组件有 [Text](Text.md)、[TextArea]([TextArea](../../topics/components/TextArea.md).md)、[TextInput]([TextInput](../../topics/components/TextInput.md).md)、[Search]([Search](../../topics/components/search.md).md)、[RichEditor]([RichEditor](../../topics/components/RichEditor.md).md)、[Web](组件描述.md)。
 
 -
 
-系统服务菜单项指除[TextMenuItemId](../../topics/misc/文本组件公共接口.md#ZH-CN_TOPIC_0000002529444865__textmenuitemid12)中的复制、剪切、全选、粘贴以外的菜单项。
+系统服务菜单项指除[TextMenuItemId](文本组件公共接口.md#ZH-CN_TOPIC_0000002553200813__textmenuitemid12)中的复制、剪切、全选、粘贴以外的菜单项。
 
 -
 
@@ -121,11 +118,9 @@ static disableSystemServiceMenuItems(disable: boolean): void
 
 **参数：**
 
-参数名类型必填说明disableboolean是
-
-是否禁用系统服务菜单。true表示禁用，false表示不禁用。
-
-默认值: false
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| disable | boolean | 是 | 是否禁用系统服务菜单。true表示禁用，false表示不禁用。 默认值: false |
 
 **示例：**
 
@@ -168,12 +163,11 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```
 
 #### disableMenuItems20+
 
-static disableMenuItems(items: Array<TextMenuItemId>): void
+static disableMenuItems(items: Array<[Text](../../topics/components/Text.md)MenuItemId>): void
 
 屏蔽文本选择菜单内指定的系统服务菜单项。
 
@@ -183,19 +177,19 @@ static disableMenuItems(items: Array<TextMenuItemId>): void
 
 -
 
-此接口可在[UIAbility](../../modules/ohos/@ohos.app.ability.UIAbility (带界面的应用组件).md)使用。
+此接口可在[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)使用。
 
 -
 
-此接口调用后将影响文本组件的接口[editMenuOptions](../../topics/graphics/Text.md#ZH-CN_TOPIC_0000002497444914__editmenuoptions12)，其回调方法[onCreateMenu](../../topics/misc/文本组件公共接口.md#ZH-CN_TOPIC_0000002529444865__oncreatemenu12)的入参列表中不包含被屏蔽的菜单选项。
+此接口调用后将影响文本组件的接口[editMenuOptions](Text.md#ZH-CN_TOPIC_0000002553360767__editmenuoptions12)，其回调方法[onCreateMenu](文本组件公共接口.md#ZH-CN_TOPIC_0000002553200813__oncreatemenu12)的入参列表中不包含被屏蔽的菜单选项。
 
 -
 
-涉及文本选择菜单的组件有 [Text](../../topics/graphics/Text.md)、[TextArea](../../topics/graphics/TextArea.md)、[TextInput](../../topics/graphics/TextInput.md)、[Search](../../topics/components/search.md)、[RichEditor](../../topics/misc/RichEditor.md)、[Web](../../topics/misc/组件描述.md)。
+涉及文本选择菜单的组件有 [Text](Text.md)、[TextArea](TextArea.md)、[TextInput](TextInput.md)、[Search](Search.md)、[RichEditor](RichEditor.md)、[Web](组件描述.md)。
 
 -
 
-系统服务菜单项指除[TextMenuItemId](../../topics/misc/文本组件公共接口.md#ZH-CN_TOPIC_0000002529444865__textmenuitemid12)中的复制、剪切、全选、粘贴以外的菜单项。
+系统服务菜单项指除[TextMenuItemId](文本组件公共接口.md#ZH-CN_TOPIC_0000002553200813__textmenuitemid12)中的复制、剪切、全选、粘贴以外的菜单项。
 
 -
 
@@ -204,6 +198,14 @@ static disableMenuItems(items: Array<TextMenuItemId>): void
 -
 
 使用该接口时，全局生效，多次调用以最后一次为准。
+
+-
+
+禁用一级菜单项，会同时禁用其所有的二级菜单项。例如禁用一级菜单项[TextMenuItemId](文本组件公共接口.md#ZH-CN_TOPIC_0000002553200813__textmenuitemid12)中的autoFill（父菜单项），会同时禁用二级菜单项[TextMenuItemId](文本组件公共接口.md#ZH-CN_TOPIC_0000002553200813__textmenuitemid12)中的密码保险箱passwordVault（子菜单项）。
+
+-
+
+不支持禁用二级菜单项。如果需要，可通过禁用对应的一级菜单项实现。
 
 -
 
@@ -219,13 +221,9 @@ static disableMenuItems(items: Array<TextMenuItemId>): void
 
 **参数：**
 
-参数名类型必填说明itemsArray<[TextMenuItemId](../../topics/misc/文本组件公共接口.md#ZH-CN_TOPIC_0000002529444865__textmenuitemid12)>是
-
-禁用菜单项的列表。
-
-默认值: []
-
-默认不禁用任何菜单。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| items | Array<[Text](../../topics/components/Text.md)MenuItemId> | 是 | 禁用菜单项的列表。 默认值: [] 默认不禁用任何菜单。 |
 
 **示例：**
 
@@ -268,5 +266,4 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```

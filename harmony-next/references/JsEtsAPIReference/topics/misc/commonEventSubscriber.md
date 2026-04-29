@@ -19,7 +19,7 @@ import { commonEventManager } from '@kit.BasicServicesKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 // 定义订阅者，用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
-let subscriber: commonEventManager.CommonEventSubscriber;
+let subscriber: commonEventManager.CommonEventSubscriber | null = null;
 // 订阅者信息
 let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
     events: ['event']
@@ -40,21 +40,17 @@ getCode(callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是回调函数。返回有序公共事件传递的数据（number类型）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 回调函数。返回有序公共事件传递的数据（number类型）。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -80,7 +76,9 @@ getCode(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>Promise对象。返回有序公共事件传递的数据（number类型）。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象。返回有序公共事件传递的数据（number类型）。 |
 
 **示例：**
 
@@ -104,7 +102,9 @@ getCodeSync(): number
 
 **返回值：**
 
-类型说明number表示有序公共事件传递的数据（number类型）。
+| 类型 | 说明 |
+| --- | --- |
+| number | 表示有序公共事件传递的数据（number类型）。 |
 
 **示例：**
 
@@ -125,21 +125,18 @@ setCode(code: number, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明codenumber是有序公共事件传递的数据（number类型）。callbackAsyncCallback<void>是回调函数。当设置有序公共事件传递的数据（number类型）成功时，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 有序公共事件传递的数据（number类型）。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置有序公共事件传递的数据（number类型）成功时，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -165,25 +162,23 @@ setCode(code: number): Promise<void>
 
 **参数：**
 
-参数名类型必填说明codenumber是有序公共事件传递的数据（number类型）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 有序公共事件传递的数据（number类型）。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -207,21 +202,17 @@ setCodeSync(code: number): void
 
 **参数：**
 
-参数名类型必填说明codenumber是有序公共事件传递的数据（number类型）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 有序公共事件传递的数据（number类型）。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -246,21 +237,17 @@ getData(callback: AsyncCallback<string>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<string>是回调函数。返回有序公共事件传递的数据（string类型）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<string> | 是 | 回调函数。返回有序公共事件传递的数据（string类型）。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -287,7 +274,9 @@ getData(): Promise<string>
 
 **返回值：**
 
-类型说明Promise<string>Promise对象。返回有序公共事件传递的数据（string类型）。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象。返回有序公共事件传递的数据（string类型）。 |
 
 **示例：**
 
@@ -311,7 +300,9 @@ getDataSync(): string
 
 **返回值：**
 
-类型说明string有序公共事件传递的数据（string类型）。
+| 类型 | 说明 |
+| --- | --- |
+| string | 有序公共事件传递的数据（string类型）。 |
 
 **示例：**
 
@@ -332,21 +323,18 @@ setData(data: string, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明datastring是有序公共事件传递的数据（string类型）。callbackAsyncCallback<void>是回调函数。当设置有序公共事件传递的数据（string类型）成功时，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | string | 是 | 有序公共事件传递的数据（string类型）。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置有序公共事件传递的数据（string类型）成功时，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -372,25 +360,23 @@ setData(data: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明datastring是有序公共事件传递的数据（string类型）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | string | 是 | 有序公共事件传递的数据（string类型）。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -414,21 +400,17 @@ setDataSync(data: string): void
 
 **参数：**
 
-参数名类型必填说明datastring是有序公共事件传递的数据（string类型）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | string | 是 | 有序公共事件传递的数据（string类型）。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -453,21 +435,19 @@ setCodeAndData(code: number, data: string, callback:AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明codenumber是有序公共事件传递的数据（number类型）。datastring是有序公共事件传递的数据（string类型）。callbackAsyncCallback<void>是回调函数。当设置有序公共事件传递的数据成功时，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 有序公共事件传递的数据（number类型）。 |
+| data | string | 是 | 有序公共事件传递的数据（string类型）。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置有序公共事件传递的数据成功时，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -493,25 +473,24 @@ setCodeAndData(code: number, data: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明codenumber是有序公共事件传递的数据（number类型）。datastring是有序公共事件传递的数据（string类型）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 有序公共事件传递的数据（number类型）。 |
+| data | string | 是 | 有序公共事件传递的数据（string类型）。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -535,21 +514,18 @@ setCodeAndDataSync(code: number, data: string): void
 
 **参数：**
 
-参数名类型必填说明codenumber是有序公共事件传递的数据（number类型）。datastring是有序公共事件传递的数据（string类型）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 有序公共事件传递的数据（number类型）。 |
+| data | string | 是 | 有序公共事件传递的数据（string类型）。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -572,21 +548,17 @@ isOrderedCommonEvent(callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<boolean>是回调函数。返回true表示有序公共事件；返回false表示无序公共事件。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。返回true表示有序公共事件；返回false表示无序公共事件。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -610,7 +582,9 @@ isOrderedCommonEvent(): Promise<boolean>
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示有序公共事件；返回false表示无序公共事件。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示有序公共事件；返回false表示无序公共事件。 |
 
 **示例：**
 
@@ -632,7 +606,9 @@ isOrderedCommonEventSync(): boolean
 
 **返回值：**
 
-类型说明boolean返回true表示有序公共事件；返回false表示无序公共事件。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示有序公共事件；返回false表示无序公共事件。 |
 
 **示例：**
 
@@ -651,21 +627,17 @@ isStickyCommonEvent(callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<boolean>是回调函数。返回true表示是粘性公共事件；返回false表示不是粘性公共事件。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。返回true表示是粘性公共事件；返回false表示不是粘性公共事件。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -689,7 +661,9 @@ isStickyCommonEvent(): Promise<boolean>
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示是粘性公共事件；返回false表示不是粘性公共事件。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示是粘性公共事件；返回false表示不是粘性公共事件。 |
 
 **示例：**
 
@@ -711,7 +685,9 @@ isStickyCommonEventSync(): boolean
 
 **返回值：**
 
-类型说明boolean返回true表示是粘性公共事件；返回false表示不是粘性公共事件。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示是粘性公共事件；返回false表示不是粘性公共事件。 |
 
 **示例：**
 
@@ -724,27 +700,23 @@ console.info(`isStickyCommonEventSync ${JSON.stringify(isSticky)}`);
 
 abortCommonEvent(callback: AsyncCallback<void>): void
 
-添加有序公共事件的中止状态。当该接口与[finishCommonEvent](#ZH-CN_TOPIC_0000002529285505__finishcommonevent9)配合使用时，可以中止当前的有序公共事件，使该公共事件不再向下一个订阅者传递。使用callback异步回调。
+添加有序公共事件的中止状态。当该接口与[finishCommonEvent](#ZH-CN_TOPIC_0000002522081602__finishcommonevent9)配合使用时，可以中止当前的有序公共事件，使该公共事件不再向下一个订阅者传递。使用callback异步回调。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当添加有序公共事件中止状态成功时，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当添加有序公共事件中止状态成功时，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -769,13 +741,15 @@ subscriber.finishCommonEvent((err: BusinessError) => {
 
 abortCommonEvent(): Promise<void>
 
-添加有序公共事件的中止状态。当该接口与[finishCommonEvent](#ZH-CN_TOPIC_0000002529285505__finishcommonevent9)配合使用时，可以中止当前的有序公共事件，使该公共事件不再向下一个订阅者传递。使用Promise异步回调。
+添加有序公共事件的中止状态。当该接口与[finishCommonEvent](#ZH-CN_TOPIC_0000002522081602__finishcommonevent9)配合使用时，可以中止当前的有序公共事件，使该公共事件不再向下一个订阅者传递。使用Promise异步回调。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -796,7 +770,7 @@ subscriber.finishCommonEvent().then(() => {
 
 abortCommonEventSync(): void
 
-添加有序公共事件的中止状态。当该接口与[finishCommonEvent](#ZH-CN_TOPIC_0000002529285505__finishcommonevent9)配合使用时，可以中止当前的有序公共事件，使该公共事件不再向下一个订阅者传递。
+添加有序公共事件的中止状态。当该接口与[finishCommonEvent](#ZH-CN_TOPIC_0000002522081602__finishcommonevent9)配合使用时，可以中止当前的有序公共事件，使该公共事件不再向下一个订阅者传递。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -815,27 +789,23 @@ subscriber.finishCommonEvent().then(() => {
 
 clearAbortCommonEvent(callback: AsyncCallback<void>): void
 
-清理有序公共事件的中止状态。当该接口与[finishCommonEvent](#ZH-CN_TOPIC_0000002529285505__finishcommonevent9)配合使用时，可以使该公共事件继续向下一个订阅者传递。使用callback异步回调。
+清理有序公共事件的中止状态。当该接口与[finishCommonEvent](#ZH-CN_TOPIC_0000002522081602__finishcommonevent9)配合使用时，可以使该公共事件继续向下一个订阅者传递。使用callback异步回调。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当清理有序公共事件中止状态成功时，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当清理有序公共事件中止状态成功时，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -860,13 +830,15 @@ subscriber.finishCommonEvent((err: BusinessError) => {
 
 clearAbortCommonEvent(): Promise<void>
 
-清理有序公共事件的中止状态。当该接口与[finishCommonEvent](#ZH-CN_TOPIC_0000002529285505__finishcommonevent9)配合使用时，可以使该公共事件继续向下一个订阅者传递。使用Promise异步回调。
+清理有序公共事件的中止状态。当该接口与[finishCommonEvent](#ZH-CN_TOPIC_0000002522081602__finishcommonevent9)配合使用时，可以使该公共事件继续向下一个订阅者传递。使用Promise异步回调。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -887,7 +859,7 @@ subscriber.finishCommonEvent().then(() => {
 
 clearAbortCommonEventSync(): void
 
-清理有序公共事件的中止状态。当该接口与[finishCommonEvent](#ZH-CN_TOPIC_0000002529285505__finishcommonevent9)配合使用时，可以使该公共事件继续向下一个订阅者传递。
+清理有序公共事件的中止状态。当该接口与[finishCommonEvent](#ZH-CN_TOPIC_0000002522081602__finishcommonevent9)配合使用时，可以使该公共事件继续向下一个订阅者传递。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -912,21 +884,17 @@ getAbortCommonEvent(callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<boolean>是回调函数。返回true表示当前有序公共事件处于中止状态；返回false表示当前有序公共事件没有处于中止状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。返回true表示当前有序公共事件处于中止状态；返回false表示当前有序公共事件没有处于中止状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -950,7 +918,9 @@ getAbortCommonEvent(): Promise<boolean>
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示当前有序公共事件处于中止状态；返回false表示当前有序公共事件没有处于中止状态。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示当前有序公共事件处于中止状态；返回false表示当前有序公共事件没有处于中止状态。 |
 
 **示例：**
 
@@ -972,7 +942,9 @@ getAbortCommonEventSync(): boolean
 
 **返回值：**
 
-类型说明boolean返回true表示当前有序公共事件处于中止状态；返回false表示当前有序公共事件没有处于中止状态。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示当前有序公共事件处于中止状态；返回false表示当前有序公共事件没有处于中止状态。 |
 
 **示例：**
 
@@ -983,7 +955,7 @@ console.info(`Succeeded in getting abort common event, abortEvent is ${JSON.stri
 
 #### getSubscribeInfo
 
-getSubscribeInfo(callback: AsyncCallback<CommonEventSubscribeInfo>): void
+getSubscribeInfo(callback: AsyncCallback<[CommonEventSubscribeInfo](CommonEventSubscribeInfo.md)>): void
 
 获取订阅者的订阅信息。使用callback异步回调。
 
@@ -993,21 +965,17 @@ getSubscribeInfo(callback: AsyncCallback<CommonEventSubscribeInfo>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[CommonEventSubscribeInfo](CommonEventSubscribeInfo.md)>是回调函数。返回订阅者的订阅信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<[CommonEventSubscribeInfo](CommonEventSubscribeInfo.md)> | 是 | 回调函数。返回订阅者的订阅信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -1023,7 +991,7 @@ subscriber.getSubscribeInfo((err: BusinessError, subscribeInfo: commonEventManag
 
 #### getSubscribeInfo
 
-getSubscribeInfo(): Promise<CommonEventSubscribeInfo>
+getSubscribeInfo(): Promise<[CommonEventSubscribeInfo](CommonEventSubscribeInfo.md)>
 
 获取订阅者的订阅信息。使用Promise异步回调。
 
@@ -1033,7 +1001,9 @@ getSubscribeInfo(): Promise<CommonEventSubscribeInfo>
 
 **返回值：**
 
-类型说明Promise<[CommonEventSubscribeInfo](CommonEventSubscribeInfo.md)>Promise对象。返回订阅者的订阅信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[CommonEventSubscribeInfo](CommonEventSubscribeInfo.md)> | Promise对象。返回订阅者的订阅信息。 |
 
 **示例：**
 
@@ -1047,7 +1017,7 @@ subscriber.getSubscribeInfo().then((subscribeInfo: commonEventManager.CommonEven
 
 #### getSubscribeInfoSync10+
 
-getSubscribeInfoSync(): CommonEventSubscribeInfo
+getSubscribeInfoSync(): [CommonEventSubscribeInfo](CommonEventSubscribeInfo.md)
 
 获取订阅者的订阅信息。
 
@@ -1057,13 +1027,15 @@ getSubscribeInfoSync(): CommonEventSubscribeInfo
 
 **返回值：**
 
-类型说明[CommonEventSubscribeInfo](CommonEventSubscribeInfo.md)表示订阅者的订阅信息。
+| 类型 | 说明 |
+| --- | --- |
+| [CommonEventSubscribeInfo](CommonEventSubscribeInfo.md) | 表示订阅者的订阅信息。 |
 
 **示例：**
 
 ```ets
-let subscribeInfo = subscriber.getSubscribeInfoSync();
-console.info(`Succeeded in getting subscribe info, subscribe info is ${JSON.stringify(subscribeInfo)}`);
+let subscribeInfo1: commonEventManager.CommonEventSubscribeInfo = subscriber.getSubscribeInfoSync();
+console.info(`Succeeded in getting subscribe info, subscribe info is ${JSON.stringify(subscribeInfo1)}`);
 ```
 
 #### finishCommonEvent9+
@@ -1076,21 +1048,17 @@ finishCommonEvent(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当订阅者结束当前有序公共事件成功时，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当订阅者结束当前有序公共事件成功时，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -1114,7 +1082,9 @@ finishCommonEvent(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 

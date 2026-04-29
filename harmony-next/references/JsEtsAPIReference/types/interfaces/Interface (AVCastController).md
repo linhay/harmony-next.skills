@@ -1,9 +1,10 @@
 # Interface (AVCastController)
 
+在投播建立后，调用[avSession.getAVCastController](Interface (AVSession).md#ZH-CN_TOPIC_0000002553201847__getavcastcontroller10)后，返回会话控制器实例。控制器可查看会话ID，并可完成对会话发送命令及事件，获取会话元数据，播放状态信息等操作。
+
+
 - 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 - 本Interface首批接口从API version 10开始支持。
-
-在投播建立后，调用[avSession.getAVCastController](Interface (AVSession).md#ZH-CN_TOPIC_0000002497605762__getavcastcontroller10)后，返回会话控制器实例。控制器可查看会话ID，并可完成对会话发送命令及事件，获取会话元数据，播放状态信息等操作。
 
 #### 导入模块
 
@@ -21,13 +22,17 @@ getAVPlaybackState(callback: AsyncCallback<AVPlaybackState>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[AVPlaybackState](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avplaybackstate10)>是回调函数，返回远端播放状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<AVPlaybackState> | 是 | 回调函数，返回远端播放状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码]([媒体会话管理错误码](../../errors/媒体会话管理错误码.md).md)。
 
-错误码ID错误信息6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -55,13 +60,17 @@ getAVPlaybackState(): Promise<AVPlaybackState>
 
 **返回值：**
 
-类型说明Promise<[AVPlaybackState](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avplaybackstate10)>Promise对象。返回远端播放状态。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AVPlaybackState> | Promise对象。返回远端播放状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -77,7 +86,7 @@ aVCastController.getAVPlaybackState().then((state: avSession.AVPlaybackState) =>
 
 #### getSupportedDecoders19+
 
-getSupportedDecoders(): Promise<Array<DecoderType>>
+getSupportedDecoders(): Promise<Array<[DecoderType](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__decodertype19)>>
 
 获取当前远端设备的解码方式。使用Promise异步回调。
 
@@ -87,13 +96,17 @@ getSupportedDecoders(): Promise<Array<DecoderType>>
 
 **返回值：**
 
-类型说明Promise<Array<[DecoderType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445729__decodertype19)>>Promise对象。返回远端设备所支持的解码能力列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<[DecoderType](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__decodertype19)>> | Promise对象。返回远端设备所支持的解码能力列表。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -110,9 +123,9 @@ aVCastController.getSupportedDecoders().then((decoderTypes: avSession.DecoderTyp
 });
 ```
 
-#### getRecommendedResolutionLevel19+
+#### getRecommended[ResolutionLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__resolutionlevel19)19+
 
-getRecommendedResolutionLevel(decoderType: DecoderType): Promise<ResolutionLevel>
+getRecommendedResolutionLevel(decoderType: [DecoderType](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__decodertype19)): Promise<ResolutionLevel>
 
 通过传递解码方式，获取推荐的分辨率。使用Promise异步回调。
 
@@ -122,27 +135,23 @@ getRecommendedResolutionLevel(decoderType: DecoderType): Promise<ResolutionLevel
 
 **参数：**
 
-参数名类型必填说明decoderType[DecoderType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445729__decodertype19)是
-
-设备所支持的解码格式。
-
-设备所支持的解码格式包括：
-
-'OH_AVCODEC_MIMETYPE_VIDEO_AVC'：VIDEO AVC，
-
-'OH_AVCODEC_MIMETYPE_VIDEO_HEVC'：VIDEO HEVC，
-
-'OH_AVCODEC_MIMETYPE_AUDIO_VIVID'：AUDIO AV3A。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| decoderType | [DecoderType](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__decodertype19) | 是 | 设备所支持的解码格式。 设备所支持的解码格式包括： 'OH_AVCODEC_MIMETYPE_VIDEO_AVC'：VIDEO AVC， 'OH_AVCODEC_MIMETYPE_VIDEO_HEVC'：VIDEO HEVC， 'OH_AVCODEC_MIMETYPE_AUDIO_VIVID'：AUDIO AV3A。 |
 
 **返回值：**
 
-类型说明Promise<[ResolutionLevel](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445729__resolutionlevel19)>Promise对象。返回远端设备推荐的分辨率。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[ResolutionLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002529445729__resolutionlevel19)> | Promise对象。返回远端设备推荐的分辨率。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -169,13 +178,17 @@ getSupportedHdrCapabilities(): Promise<Array<hdrCapability.HDRFormat>>
 
 **返回值：**
 
-类型说明Promise<Array<[hdrCapability.HDRFormat](../../modules/ohos/@ohos.graphics.hdrCapability (HDR能力).md#ZH-CN_TOPIC_0000002529445951__hdrformat)>>Promise对象。返回远端设备所支持的HDR能力。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<hdrCapability.HDRFormat>> | Promise对象。返回远端设备所支持的HDR能力。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -205,13 +218,17 @@ getSupportedPlaySpeeds(): Promise<Array<number>>
 
 **返回值：**
 
-类型说明Promise<Array<number>>Promise对象。返回远端设备所支持的倍速播放列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<number>> | Promise对象。返回远端设备所支持的倍速播放列表。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -240,17 +257,26 @@ sendControlCommand(command: AVCastControlCommand): Promise<void>
 
 **参数：**
 
-参数名类型必填说明command[AVCastControlCommand](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avcastcontrolcommand10)是会话的相关命令和命令相关参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| command | AVCastControlCommand | 是 | 会话的相关命令和命令相关参数。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。当命令发送成功，无返回结果，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。当命令发送成功，无返回结果，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600105Invalid session command.6600109The remote connection is not established.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600105 | Invalid session command. |
+| 6600109 | The remote connection is not established. |
 
 **示例：**
 
@@ -275,13 +301,21 @@ sendControlCommand(command: AVCastControlCommand, callback: AsyncCallback<void>)
 
 **参数：**
 
-参数名类型必填说明command[AVCastControlCommand](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avcastcontrolcommand10)是会话的相关命令和命令相关参数。callbackAsyncCallback<void>是回调函数。当命令发送成功，err为undefined，否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| command | AVCastControlCommand | 是 | 会话的相关命令和命令相关参数。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当命令发送成功，err为undefined，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600105Invalid session command.6600109The remote connection is not established.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600105 | Invalid session command. |
+| 6600109 | The remote connection is not established. |
 
 **示例：**
 
@@ -310,21 +344,23 @@ sendCustomData(data: Record<string, Object>): Promise<void>
 
 **参数：**
 
-参数名类型必填说明dataRecord<string, Object>是
-
-应用程序填充的自定义数据。
-
-服务端仅解析key：string为'customData'，且Object为string类型的对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | Record<string, Object> | 是 | 应用程序填充的自定义数据。 服务端仅解析key：string为'customData'，且Object为string类型的对象。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.You are advised to:1.Scheduled retry.2.Destroy the current session or session controller and re-create it.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception.You are advised to:1.Scheduled retry.2.Destroy the current session or session controller and re-create it. |
 
 **示例：**
 
@@ -344,13 +380,20 @@ prepare(item: AVQueueItem, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明item[AVQueueItem](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avqueueitem10)是播放列表中单项的相关属性。callbackAsyncCallback<void>是回调函数。当命令发送成功，err为undefined，否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| item | AVQueueItem | 是 | 播放列表中单项的相关属性。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当命令发送成功，err为undefined，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600109The remote connection is not established.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600109 | The remote connection is not established. |
 
 **示例：**
 
@@ -396,17 +439,25 @@ prepare(item: AVQueueItem): Promise<void>
 
 **参数：**
 
-参数名类型必填说明item[AVQueueItem](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avqueueitem10)是播放列表中单项的相关属性。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| item | AVQueueItem | 是 | 播放列表中单项的相关属性。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。当命令发送成功，无返回结果，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。当命令发送成功，无返回结果，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600109The remote connection is not established.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600109 | The remote connection is not established. |
 
 **示例：**
 
@@ -448,13 +499,20 @@ start(item: AVQueueItem, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明item[AVQueueItem](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avqueueitem10)是播放列表中单项的相关属性。callbackAsyncCallback<void>是回调函数。当命令发送成功，err为undefined，否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| item | AVQueueItem | 是 | 播放列表中单项的相关属性。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当命令发送成功，err为undefined，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600109The remote connection is not established.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600109 | The remote connection is not established. |
 
 **示例：**
 
@@ -501,17 +559,25 @@ start(item: AVQueueItem): Promise<void>
 
 **参数：**
 
-参数名类型必填说明item[AVQueueItem](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avqueueitem10)是播放列表中单项的相关属性。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| item | AVQueueItem | 是 | 播放列表中单项的相关属性。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。当命令发送成功，无返回结果，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。当命令发送成功，无返回结果，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.6600109The remote connection is not established.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
+| 6600109 | The remote connection is not established. |
 
 **示例：**
 
@@ -553,13 +619,17 @@ getCurrentItem(callback: AsyncCallback<AVQueueItem>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[AVQueueItem](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avqueueitem10)>是回调函数。当命令发送成功，err为undefined，否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<AVQueueItem> | 是 | 回调函数。当命令发送成功，err为undefined，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -587,13 +657,17 @@ getCurrentItem(): Promise<AVQueueItem>
 
 **返回值：**
 
-类型说明Promise<[AVQueueItem](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avqueueitem10)>Promise对象，返回当前的播放资源，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AVQueueItem> | Promise对象，返回当前的播放资源，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -609,7 +683,7 @@ aVCastController.getCurrentItem().then((value: avSession.AVQueueItem) => {
 
 #### getValidCommands11+
 
-getValidCommands(callback: AsyncCallback<Array<AVCastControlCommandType>>): void
+getValidCommands(callback: AsyncCallback<Array<[AVCastControlCommandType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__avcastcontrolcommandtype10)>>): void
 
 获取当前支持的命令。结果通过callback异步回调方式返回。
 
@@ -617,13 +691,17 @@ getValidCommands(callback: AsyncCallback<Array<AVCastControlCommandType>>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<Array<[AVCastControlCommandType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__avcastcontrolcommandtype10)>>是回调函数。返回当前支持的命令。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<[AVCastControlCommandType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__avcastcontrolcommandtype10)>> | 是 | 回调函数。返回当前支持的命令。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -641,7 +719,7 @@ aVCastController.getValidCommands((err: BusinessError, state: avSession.AVCastCo
 
 #### getValidCommands11+
 
-getValidCommands(): Promise<Array<AVCastControlCommandType>>
+getValidCommands(): Promise<Array<[AVCastControlCommandType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__avcastcontrolcommandtype10)>>
 
 获取当前支持的命令。结果通过Promise异步回调方式返回。
 
@@ -649,13 +727,17 @@ getValidCommands(): Promise<Array<AVCastControlCommandType>>
 
 **返回值：**
 
-类型说明Promise<Array<[AVCastControlCommandType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__avcastcontrolcommandtype10)>>Promise对象，返回当前支持的命令。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<[AVCastControlCommandType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__avcastcontrolcommandtype10)>> | Promise对象，返回当前支持的命令。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -681,17 +763,25 @@ processMediaKeyResponse(assetId: string, response: Uint8Array): Promise<void>
 
 **参数：**
 
-参数名类型必填说明assetIdstring是媒体ID。responseUint8Array是许可证响应。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| assetId | string | 是 | 媒体ID。 |
+| response | Uint8Array | 是 | 许可证响应。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，当处理许可证响应成功，无返回结果，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，当处理许可证响应成功，无返回结果，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -716,13 +806,17 @@ release(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当命令执行成功，err为undefined，否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当命令执行成功，err为undefined，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -750,13 +844,17 @@ release(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，controller销毁成功，无结果返回，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，controller销毁成功，无结果返回，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -772,9 +870,9 @@ aVCastController.release().then(() => {
 
 #### on('playbackStateChange')10+
 
-on(type: 'playbackStateChange', filter: Array<string> | 'all', callback: (state: AVPlaybackState) => void): void
+on(type: 'playbackStateChange', filter: Array<keyof AVPlaybackState> | 'all', callback: (state: AVPlaybackState) => void): void
 
-设置播放状态变化的监听事件。
+设置播放状态变化的监听事件。使用callback异步回调。
 
 每个指令支持注册多个回调，如果需要只执行最新监听，需要先注销旧的监听，否则新旧监听都会触发回调。
 
@@ -784,19 +882,20 @@ on(type: 'playbackStateChange', filter: Array<string> | 'all', callback: (state:
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'playbackStateChange'：当播放状态变化时，触发该事件。filterArray<string>|'all'是
-
-'all' 表示关注播放状态所有字段变化；Array<string> 表示关注Array中的字段变化。
-
-API version 20开始发生兼容变更，在API version 19及之前filter参数类型为：Array<keyof AVPlaybackState> | 'all'。
-
-callback(state: [AVPlaybackState](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avplaybackstate10)) => void是回调函数，参数state是变化后的播放状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'playbackStateChange'：当播放状态变化时，触发该事件。 |
+| filter | Array<keyof AVPlaybackState>|'all' | 是 | 'all' 表示关注播放状态所有字段变化；Array<keyof AVPlaybackstate> 表示关注Array中的字段变化。 |
+| callback | (state: AVPlaybackState) => void | 是 | 回调函数，参数state是变化后的播放状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -823,17 +922,19 @@ off(type: 'playbackStateChange', callback?: (state: AVPlaybackState) => void): v
 
 **参数：**
 
-参数名类型必填说明typestring是取消对应的监听事件，支持事件'playbackStateChange'。callback(state: [AVPlaybackState](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avplaybackstate10)) => void否
-
-回调函数，参数state是变化后的播放状态。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消对应的监听事件，支持事件'playbackStateChange'。 |
+| callback | (state: AVPlaybackState) => void | 否 | 回调函数，参数state是变化后的播放状态。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -845,7 +946,7 @@ aVCastController.off('playbackStateChange');
 
 on(type: 'mediaItemChange', callback: Callback<AVQueueItem>): void
 
-设置投播当前播放媒体内容的监听事件。
+设置投播当前播放媒体内容的监听事件。使用callback异步回调。
 
 每个指令支持注册多个回调，如果需要只执行最新监听，需要先注销旧的监听，否则新旧监听都会触发回调。
 
@@ -855,13 +956,19 @@ on(type: 'mediaItemChange', callback: Callback<AVQueueItem>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'mediaItemChange'：当播放的媒体内容变化时，触发该事件。callbackCallback<[AVQueueItem](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avqueueitem10)>是回调函数，参数AVQueueItem是当前正在播放的媒体内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'mediaItemChange'：当播放的媒体内容变化时，触发该事件。 |
+| callback | Callback<AVQueueItem> | 是 | 回调函数，参数AVQueueItem是当前正在播放的媒体内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -883,13 +990,18 @@ off(type: 'mediaItemChange'): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消对应的监听事件，支持事件'mediaItemChange'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消对应的监听事件，支持事件'mediaItemChange'。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -911,13 +1023,19 @@ on(type: 'playNext', callback: Callback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'playNext'：当播放下一首状态变化时，触发该事件。callbackCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'playNext'：当播放下一首状态变化时，触发该事件。 |
+| callback | Callback<void> | 是 | 回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -939,13 +1057,18 @@ off(type: 'playNext'): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消对应的监听事件，支持事件'playNext'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消对应的监听事件，支持事件'playNext'。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -967,13 +1090,19 @@ on(type: 'playPrevious', callback: Callback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'playPrevious'：当播放上一首状态变化时，触发该事件。callbackCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'playPrevious'：当播放上一首状态变化时，触发该事件。 |
+| callback | Callback<void> | 是 | 回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -995,13 +1124,18 @@ off(type: 'playPrevious'): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消对应的监听事件，支持事件'playPrevious'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消对应的监听事件，支持事件'playPrevious'。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -1021,13 +1155,19 @@ on(type: 'requestPlay', callback: Callback<AVQueueItem>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'requestPlay'：当请求播放状态变化时，触发该事件。callbackCallback<[AVQueueItem](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avqueueitem10)>是回调函数，参数AVQueueItem是当前正在播放的媒体内容。当监听事件注册成功，err为undefined，否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'requestPlay'：当请求播放状态变化时，触发该事件。 |
+| callback | Callback<AVQueueItem> | 是 | 回调函数，参数AVQueueItem是当前正在播放的媒体内容。当监听事件注册成功，err为undefined，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -1047,13 +1187,19 @@ off(type: 'requestPlay', callback?: Callback<AVQueueItem>): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消对应的监听事件，支持事件'requestPlay'。callbackCallback<[AVQueueItem](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avqueueitem10)>否回调函数，参数AVQueueItem是当前正在播放的媒体内容。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消对应的监听事件，支持事件'requestPlay'。 |
+| callback | Callback<AVQueueItem> | 否 | 回调函数，参数AVQueueItem是当前正在播放的媒体内容。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -1073,13 +1219,19 @@ on(type: 'endOfStream', callback: Callback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'endOfStream'：当资源播放结束时，触发该事件。callbackCallback<void>是回调函数。当监听事件注册成功，err为undefined，否则返回错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'endOfStream'：当资源播放结束时，触发该事件。 |
+| callback | Callback<void> | 是 | 回调函数。当监听事件注册成功，err为undefined，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -1099,13 +1251,19 @@ off(type: 'endOfStream', callback?: Callback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消对应的监听事件，支持事件'endOfStream'。callbackCallback<void>否回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消对应的监听事件，支持事件'endOfStream'。 |
+| callback | Callback<void> | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -1127,13 +1285,19 @@ on(type: 'seekDone', callback: Callback<number>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'seekDone'：当seek结束时，触发该事件。callbackCallback<number>是回调函数，返回seek后播放的位置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'seekDone'：当seek结束时，触发该事件。 |
+| callback | Callback<number> | 是 | 回调函数，返回seek后播放的位置。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -1155,13 +1319,18 @@ off(type: 'seekDone'): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消对应的监听事件，支持事件'seekDone'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消对应的监听事件，支持事件'seekDone'。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -1171,7 +1340,7 @@ aVCastController.off('seekDone');
 
 #### on('validCommandChange')11+
 
-on(type: 'validCommandChange', callback: Callback<Array<AVCastControlCommandType>>): void
+on(type: 'validCommandChange', callback: Callback<Array<[AVCastControlCommandType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__avcastcontrolcommandtype10)>>)
 
 会话支持的有效命令变化监听事件。
 
@@ -1181,13 +1350,20 @@ on(type: 'validCommandChange', callback: Callback<Array<AVCastControlCommandType
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'validCommandChange'：当检测到会话的合法命令发生改变时，触发该事件。callbackCallback<Array<[AVCastControlCommandType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__avcastcontrolcommandtype10)>>是回调函数。参数commands是有效命令的集合。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'validCommandChange'：当检测到会话的合法命令发生改变时，触发该事件。 |
+| callback | Callback<Array<[AVCastControlCommandType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__avcastcontrolcommandtype10)>> | 是 | 回调函数。参数commands是有效命令的集合。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600103The session controller does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified.2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600103 | The session controller does not exist. |
 
 **示例：**
 
@@ -1200,7 +1376,7 @@ aVCastController.on('validCommandChange', (validCommands: avSession.AVCastContro
 
 #### off('validCommandChange')11+
 
-off(type: 'validCommandChange', callback?: Callback<Array<AVCastControlCommandType>>): void
+off(type: 'validCommandChange', callback?: Callback<Array<[AVCastControlCommandType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__avcastcontrolcommandtype10)>>)
 
 取消会话有效命令变化事件监听。指定callback，可取消对应监听；未指定callback，取消所有事件监听。
 
@@ -1208,17 +1384,20 @@ off(type: 'validCommandChange', callback?: Callback<Array<AVCastControlCommandTy
 
 **参数：**
 
-参数名类型必填说明typestring是取消对应的监听事件，支持事件'validCommandChange'。callbackCallback<Array<[AVCastControlCommandType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__avcastcontrolcommandtype10)>>否
-
-回调函数。参数commands是有效命令的集合。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消对应的监听事件，支持事件'validCommandChange'。 |
+| callback | Callback<Array<[AVCastControlCommandType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__avcastcontrolcommandtype10)>> | 否 | 回调函数。参数commands是有效命令的集合。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.6600103The session controller does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified.2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
+| 6600103 | The session controller does not exist. |
 
 **示例：**
 
@@ -1238,13 +1417,19 @@ on(type: 'videoSizeChange', callback: (width: number, height: number) => void): 
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'videoSizeChange'：当检测到会话的合法命令发生改变时，触发该事件。callback(width: number, height: number) => void是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'videoSizeChange'：当检测到会话的合法命令发生改变时，触发该事件。 |
+| callback | (width: number, height: number) => void | 是 | 回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -1264,13 +1449,18 @@ off(type: 'videoSizeChange'): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'videoSizeChange'：当检测到会话的合法命令发生改变时，触发该事件。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'videoSizeChange'：当检测到会话的合法命令发生改变时，触发该事件。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -1292,13 +1482,25 @@ on(type: 'error', callback: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是错误事件回调类型，支持的事件：'error'，用户操作和系统都会触发此事件。callbackErrorCallback是错误事件回调方法：远端播放过程中发生的错误，会提供错误码ID和错误信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 错误事件回调类型，支持的事件：'error'，用户操作和系统都会触发此事件。 |
+| callback | ErrorCallback | 是 | 错误事件回调方法：远端播放过程中发生的错误，会提供错误码ID和错误信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)、[媒体服务错误码](../../errors/Media错误码.md)以及[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)、[Media错误码](Media错误码.md)以及[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.5400101No memory.5400102Operation not allowed.5400103I/O error.5400104Time out.5400105Service died.5400106Unsupport format.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 5400101 | No memory. |
+| 5400102 | Operation not allowed. |
+| 5400103 | I/O error. |
+| 5400104 | Time out. |
+| 5400105 | Service died. |
+| 5400106 | Unsupport format. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -1322,13 +1524,24 @@ off(type: 'error'): void
 
 **参数：**
 
-参数名类型必填说明typestring是错误事件回调类型，取消注册的事件：'error'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 错误事件回调类型，取消注册的事件：'error'。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)、[媒体服务错误码](../../errors/Media错误码.md)以及[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)、[Media错误码](Media错误码.md)以及[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.5400101No memory.5400102Operation not allowed.5400103I/O error.5400104Time out.5400105Service died.5400106Unsupport format.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 5400101 | No memory. |
+| 5400102 | Operation not allowed. |
+| 5400103 | I/O error. |
+| 5400104 | Time out. |
+| 5400105 | Service died. |
+| 5400106 | Unsupport format. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -1338,7 +1551,7 @@ aVCastController.off('error')
 
 #### on('keyRequest')12+
 
-on(type: 'keyRequest', callback: KeyRequestCallback): void
+on(type: 'keyRequest', callback: [KeyRequestCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__keyrequestcallback12)): void
 
 在线DRM资源投播时，设置许可证请求的事件监听。
 
@@ -1350,13 +1563,19 @@ on(type: 'keyRequest', callback: KeyRequestCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'keyRequest'：当DRM资源播放需要许可证时，触发该事件。callback[KeyRequestCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__keyrequestcallback12)是回调函数，媒体资源及许可证请求数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'keyRequest'：当DRM资源播放需要许可证时，触发该事件。 |
+| callback | [KeyRequestCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__keyrequestcallback12) | 是 | 回调函数，媒体资源及许可证请求数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -1369,7 +1588,7 @@ aVCastController.on('keyRequest', keyRequestCallback);
 
 #### off('keyRequest')12+
 
-off(type: 'keyRequest', callback?: KeyRequestCallback): void
+off(type: 'keyRequest', callback?: [KeyRequestCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__keyrequestcallback12)): void
 
 取消许可证请求事件监听。指定callback，可取消对应监听；未指定callback，取消所有事件监听。
 
@@ -1379,13 +1598,19 @@ off(type: 'keyRequest', callback?: KeyRequestCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消对应的监听事件，支持的事件是'keyRequest'。callback[KeyRequestCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__keyrequestcallback12)否回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消对应的监听事件，支持的事件是'keyRequest'。 |
+| callback | [KeyRequestCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605764__keyrequestcallback12) | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -1407,13 +1632,32 @@ on(type: 'castControlGenericError', callback: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是错误事件回调类型，支持的事件：'castControlGenericError'。callbackErrorCallback是投播通用错误事件回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 错误事件回调类型，支持的事件：'castControlGenericError'。 |
+| callback | ErrorCallback | 是 | 投播通用错误事件回调方法。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.6611000The error code for cast control is unspecified.6611001An unspecified error occurs in the remote player.6611002The playback position falls behind the live window.6611003The process of cast control times out.6611004The runtime check failed.6611100Cross-device data transmission is locked.6611101The specified seek mode is not supported.6611102The position to seek to is out of the range of the media asset or the specified seek mode is not supported.6611103The specified playback mode is not supported.6611104The specified playback speed is not supported.6611105The action failed because either the media source device or the media sink device has been revoked.6611106The parameter is invalid, for example, the url is illegal to play.6611107Allocation of memory failed.6611108Operation is not allowed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 6611000 | The error code for cast control is unspecified. |
+| 6611001 | An unspecified error occurs in the remote player. |
+| 6611002 | The playback position falls behind the live window. |
+| 6611003 | The process of cast control times out. |
+| 6611004 | The runtime check failed. |
+| 6611100 | Cross-device data transmission is locked. |
+| 6611101 | The specified seek mode is not supported. |
+| 6611102 | The position to seek to is out of the range of the media asset or the specified seek mode is not supported. |
+| 6611103 | The specified playback mode is not supported. |
+| 6611104 | The specified playback speed is not supported. |
+| 6611105 | The action failed because either the media source device or the media sink device has been revoked. |
+| 6611106 | The parameter is invalid, for example, the url is illegal to play. |
+| 6611107 | Allocation of memory failed. |
+| 6611108 | Operation is not allowed. |
 
 **示例：**
 
@@ -1435,13 +1679,18 @@ off(type: 'castControlGenericError', callback?: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消对应的监听事件，支持的事件是'castControlGenericError'。callbackErrorCallback否回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消对应的监听事件，支持的事件是'castControlGenericError'。 |
+| callback | ErrorCallback | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)
 
-错误码ID错误信息401Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -1463,13 +1712,35 @@ on(type: 'castControlIoError', callback: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是错误事件回调类型，支持的事件：'castControlIoError'。callbackErrorCallback是投播输入/输出的错误事件回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 错误事件回调类型，支持的事件：'castControlIoError'。 |
+| callback | ErrorCallback | 是 | 投播输入/输出的错误事件回调方法。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.6612000An unspecified input/output error occurs.6612001Network connection failure.6612002Network timeout.6612003Invalid "Content-Type" HTTP header.6612004The HTTP server returns an unexpected HTTP response status code.6612005The file does not exist.6612006No permission is granted to perform the IO operation.6612007Access to cleartext HTTP traffic is not allowed by the app's network security configuration.6612008Reading data out of the data bound.6612100The media does not contain any contents that can be played.6612101The media cannot be read, for example, because of dust or scratches.6612102This resource is already in use.6612103The content using the validity interval has expired.6612104Using the requested content to play is not allowed.6612105The use of the allowed content cannot be verified.6612106The number of times this content has been used as requested has reached the maximum allowed number of uses.6612107An error occurs when sending packet from source device to sink device.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 6612000 | An unspecified input/output error occurs. |
+| 6612001 | Network connection failure. |
+| 6612002 | Network timeout. |
+| 6612003 | Invalid "Content-Type" HTTP header. |
+| 6612004 | The HTTP server returns an unexpected HTTP response status code. |
+| 6612005 | The file does not exist. |
+| 6612006 | No permission is granted to perform the IO operation. |
+| 6612007 | Access to cleartext HTTP traffic is not allowed by the app's network security configuration. |
+| 6612008 | Reading data out of the data bound. |
+| 6612100 | The media does not contain any contents that can be played. |
+| 6612101 | The media cannot be read, for example, because of dust or scratches. |
+| 6612102 | This resource is already in use. |
+| 6612103 | The content using the validity interval has expired. |
+| 6612104 | Using the requested content to play is not allowed. |
+| 6612105 | The use of the allowed content cannot be verified. |
+| 6612106 | The number of times this content has been used as requested has reached the maximum allowed number of uses. |
+| 6612107 | An error occurs when sending packet from source device to sink device. |
 
 **示例：**
 
@@ -1491,13 +1762,18 @@ off(type: 'castControlIoError', callback?: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消对应的监听事件，支持的事件是'castControlIoError'。callbackErrorCallback否回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消对应的监听事件，支持的事件是'castControlIoError'。 |
+| callback | ErrorCallback | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)
 
-错误码ID错误信息401Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -1519,13 +1795,23 @@ on(type: 'castControlParsingError', callback: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是错误事件回调类型，支持的事件：'castControlParsingError'。callbackErrorCallback是投播解析的错误事件回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 错误事件回调类型，支持的事件：'castControlParsingError'。 |
+| callback | ErrorCallback | 是 | 投播解析的错误事件回调方法。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.6613000Unspecified error related to content parsing.6613001Parsing error associated with media container format bit streams.6613002Parsing error associated with the media manifest.6613003An error occurs when attempting to extract a file with an unsupported media container format or an unsupported media container feature.6613004Unsupported feature in the media manifest.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 6613000 | Unspecified error related to content parsing. |
+| 6613001 | Parsing error associated with media container format bit streams. |
+| 6613002 | Parsing error associated with the media manifest. |
+| 6613003 | An error occurs when attempting to extract a file with an unsupported media container format or an unsupported media container feature. |
+| 6613004 | Unsupported feature in the media manifest. |
 
 **示例：**
 
@@ -1547,13 +1833,18 @@ off(type: 'castControlParsingError', callback?: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消对应的监听事件，支持的事件是'castControlParsingError'。callbackErrorCallback否回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消对应的监听事件，支持的事件是'castControlParsingError'。 |
+| callback | ErrorCallback | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)
 
-错误码ID错误信息401Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -1575,13 +1866,24 @@ on(type: 'castControlDecodingError', callback: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是错误事件回调类型，支持的事件：'castControlDecodingError'。callbackErrorCallback是投播解码的错误事件回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 错误事件回调类型，支持的事件：'castControlDecodingError'。 |
+| callback | ErrorCallback | 是 | 投播解码的错误事件回调方法。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.6614000Unspecified decoding error.6614001Decoder initialization failed.6614002Decoder query failed.6614003Decoding the media samples failed.6614004The format of the content to decode exceeds the capabilities of the device.6614005The format of the content to decode is not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 6614000 | Unspecified decoding error. |
+| 6614001 | Decoder initialization failed. |
+| 6614002 | Decoder query failed. |
+| 6614003 | Decoding the media samples failed. |
+| 6614004 | The format of the content to decode exceeds the capabilities of the device. |
+| 6614005 | The format of the content to decode is not supported. |
 
 **示例：**
 
@@ -1603,13 +1905,18 @@ off(type: 'castControlDecodingError', callback?: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消对应的监听事件，支持的事件是'castControlDecodingError'。callbackErrorCallback否回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消对应的监听事件，支持的事件是'castControlDecodingError'。 |
+| callback | ErrorCallback | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)
 
-错误码ID错误信息401Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -1631,13 +1938,21 @@ on(type: 'castControlAudioRendererError', callback: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是错误事件回调类型，支持的事件：'castControlAudioRendererError'。callbackErrorCallback是投播音频渲染器的错误事件回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 错误事件回调类型，支持的事件：'castControlAudioRendererError'。 |
+| callback | ErrorCallback | 是 | 投播音频渲染器的错误事件回调方法。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.6615000Unspecified errors related to the audio renderer.6615001Initializing the audio renderer failed.6615002The audio renderer fails to write data.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 6615000 | Unspecified errors related to the audio renderer. |
+| 6615001 | Initializing the audio renderer failed. |
+| 6615002 | The audio renderer fails to write data. |
 
 **示例：**
 
@@ -1659,13 +1974,18 @@ off(type: 'castControlAudioRendererError', callback?: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消对应的监听事件，支持的事件是'castControlAudioRendererError'。callbackErrorCallback否回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消对应的监听事件，支持的事件是'castControlAudioRendererError'。 |
+| callback | ErrorCallback | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)
 
-错误码ID错误信息401Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -1687,13 +2007,28 @@ on(type: 'castControlDrmError', callback: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是错误事件回调类型，支持的事件：'castControlDrmError'。callbackErrorCallback是投播drm的错误事件回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 错误事件回调类型，支持的事件：'castControlDrmError'。 |
+| callback | ErrorCallback | 是 | 投播drm的错误事件回调方法。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.6616000Unspecified error related to DRM.6616001The chosen DRM protection scheme is not supported by the device.6616002Device provisioning failed.6616003The DRM-protected content to play is incompatible.6616004Failed to obtain a license.6616005The operation is disallowed by the license policy.6616006An error occurs in the DRM system.6616007The device has revoked DRM privileges.6616008The DRM license being loaded into the open DRM session has expired.6616100An error occurs when the DRM processes the key response.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 6616000 | Unspecified error related to DRM. |
+| 6616001 | The chosen DRM protection scheme is not supported by the device. |
+| 6616002 | Device provisioning failed. |
+| 6616003 | The DRM-protected content to play is incompatible. |
+| 6616004 | Failed to obtain a license. |
+| 6616005 | The operation is disallowed by the license policy. |
+| 6616006 | An error occurs in the DRM system. |
+| 6616007 | The device has revoked DRM privileges. |
+| 6616008 | The DRM license being loaded into the open DRM session has expired. |
+| 6616100 | An error occurs when the DRM processes the key response. |
 
 **示例：**
 
@@ -1715,13 +2050,18 @@ off(type: 'castControlDrmError', callback?: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消对应的监听事件，支持的事件是'castControlDrmError'。callbackErrorCallback否回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消对应的监听事件，支持的事件是'castControlDrmError'。 |
+| callback | ErrorCallback | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)
 
-错误码ID错误信息401Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter check failed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -1741,13 +2081,18 @@ on(type: 'customDataChange', callback: Callback<Record<string, Object>>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持'customDataChange'事件。媒体提供方发送自定义数据时触发。callbackCallback<Record<string, Object>>是回调函数，用于接收自定义数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持'customDataChange'事件。媒体提供方发送自定义数据时触发。 |
+| callback | Callback<Record<string, Object>> | 是 | 回调函数，用于接收自定义数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -1769,13 +2114,18 @@ off(type: 'customDataChange', callback?: Callback<Record<string, Object>>): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消对应的监听事件，支持的事件是'customDataChange'。callbackCallback<Record<string, Object>>否注册监听事件时的回调函数。该参数为可选参数，若不填写该参数，则认为取消会话所有与此事件相关的监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消对应的监听事件，支持的事件是'customDataChange'。 |
+| callback | Callback<Record<string, Object>> | 否 | 注册监听事件时的回调函数。该参数为可选参数，若不填写该参数，则认为取消会话所有与此事件相关的监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6600101 | Session service exception. |
 
 **示例：**
 

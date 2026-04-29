@@ -14,4 +14,4 @@ typedef struct OH_MediaAsset OH_MediaAsset
 
 **相关模块：**[MediaAssetManager](MediaAssetManager.md)
 
-**所在头文件：**[media_asset_base_capi.h](../../capi/headers/media_asset_base_capi.h.md)
+**所在头文件：**[media_asset_base_capi.h](../../topics/media/[media_asset_base_capi.h](media_asset_base_capi.h.md).md)

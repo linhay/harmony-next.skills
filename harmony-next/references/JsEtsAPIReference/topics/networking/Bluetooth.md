@@ -8,4 +8,6 @@
 
 #### 文件汇总
 
-名称描述[oh_bluetooth.h](../../capi/headers/oh_bluetooth.h.md)定义查询蓝牙开关状态的接口。
+| 名称 | 描述 |
+| --- | --- |
+| [oh_bluetooth.h](oh_bluetooth.h.md) | 定义查询蓝牙开关状态的接口。 |

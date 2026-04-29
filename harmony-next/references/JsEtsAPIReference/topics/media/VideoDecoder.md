@@ -12,4 +12,6 @@ VideoDecoder模块提供用于视频解码的函数。
 
 #### 文件汇总
 
-名称描述[native_avcodec_videodecoder.h](../../capi/headers/native_avcodec_videodecoder.h.md)声明用于视频解码的Native API。
+| 名称 | 描述 |
+| --- | --- |
+| [native_avcodec_videodecoder.h](native_avcodec_videodecoder.h.md) | 声明用于视频解码的Native API。 |

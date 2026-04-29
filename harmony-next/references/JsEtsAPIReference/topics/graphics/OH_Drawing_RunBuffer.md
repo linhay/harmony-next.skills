@@ -12,10 +12,15 @@ typedef struct {...} OH_Drawing_RunBuffer
 
 **相关模块：**[Drawing](Drawing.md)
 
-**所在头文件：**[drawing_text_blob.h](../../capi/headers/drawing_text_blob.h.md)
+所在头文件： [drawing_text_blob.h](drawing_text_blob.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述uint16_t* glyphs存储文字索引。float* pos存储文字的位置。char* utf8text存储文字UTF-8编码。uint32_t* clusters存储文字簇UTF-8编码（簇指的是集合）。
+| 名称 | 描述 |
+| --- | --- |
+| uint16_t* glyphs | 存储文字索引。 |
+| float* pos | 存储文字的位置。 |
+| char* utf8text | 存储文字UTF-8编码。 |
+| uint32_t* clusters | 存储文字簇UTF-8编码（簇指的是集合）。 |

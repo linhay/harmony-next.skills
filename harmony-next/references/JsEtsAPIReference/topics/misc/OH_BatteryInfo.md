@@ -10,4 +10,6 @@
 
 #### 文件汇总
 
-名称描述[ohbattery_info.h](../../capi/headers/ohbattery_info.h.md)声明电池API以获取当前电池容量和电源类型的信息，定义电池相应常见事件。
+| 名称 | 描述 |
+| --- | --- |
+| [ohbattery_info.h](ohbattery_info.h.md) | 声明电池API以获取当前电池容量和电源类型的信息，定义电池相应常见事件。 |

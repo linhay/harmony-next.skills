@@ -18,7 +18,9 @@ type NetworkState = radio.NetworkState
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
-类型说明[radio.NetworkState](@ohos.telephony.radio (网络搜索).md#ZH-CN_TOPIC_0000002529285483__networkstate)网络注册状态。
+| 类型 | 说明 |
+| --- | --- |
+| radio.NetworkState | 网络注册状态。 |
 
 #### SignalInformation
 
@@ -28,7 +30,9 @@ type SignalInformation = radio.SignalInformation
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
-类型说明[radio.SignalInformation](@ohos.telephony.radio (网络搜索).md#ZH-CN_TOPIC_0000002529285483__signalinformation)网络信号强度信息对象。
+| 类型 | 说明 |
+| --- | --- |
+| radio.SignalInformation | 网络信号强度信息对象。 |
 
 #### DataConnectState
 
@@ -38,7 +42,9 @@ type DataConnectState = data.DataConnectState
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
-类型说明[data.DataConnectState](@ohos.telephony.data (蜂窝数据).md#ZH-CN_TOPIC_0000002529445455__dataconnectstate)描述蜂窝数据链路连接状态。
+| 类型 | 说明 |
+| --- | --- |
+| data.DataConnectState | 描述蜂窝数据链路连接状态。 |
 
 #### RatType
 
@@ -48,7 +54,9 @@ type RatType = radio.RadioTechnology
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
-类型说明[radio.RadioTechnology](@ohos.telephony.radio (网络搜索).md#ZH-CN_TOPIC_0000002529285483__radiotechnology)无线接入技术。
+| 类型 | 说明 |
+| --- | --- |
+| radio.RadioTechnology | 无线接入技术。 |
 
 #### DataFlowType
 
@@ -58,7 +66,9 @@ type DataFlowType = data.DataFlowType
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
-类型说明[data.DataFlowType](@ohos.telephony.data (蜂窝数据).md#ZH-CN_TOPIC_0000002529445455__dataflowtype)描述蜂窝数据流类型。
+| 类型 | 说明 |
+| --- | --- |
+| data.DataFlowType | 描述蜂窝数据流类型。 |
 
 #### CallState
 
@@ -68,7 +78,9 @@ type CallState = call.CallState
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
-类型说明[call.CallState](@ohos.telephony.call (拨打电话).md#ZH-CN_TOPIC_0000002529285481__callstate)通话状态码（去电过程仅通知CALL_STATE_OFFHOOK状态）。
+| 类型 | 说明 |
+| --- | --- |
+| call.CallState | 通话状态码（去电过程仅通知CALL_STATE_OFFHOOK状态）。 |
 
 #### CardType
 
@@ -78,7 +90,9 @@ type CardType = sim.CardType
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
-类型说明[sim.CardType](@ohos.telephony.sim (SIM卡管理).md#ZH-CN_TOPIC_0000002529445457__cardtype7)卡类型。
+| 类型 | 说明 |
+| --- | --- |
+| sim.CardType | 卡类型。 |
 
 #### SimState
 
@@ -88,7 +102,9 @@ SIM卡状态。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
-类型说明[sim.SimState](@ohos.telephony.sim (SIM卡管理).md#ZH-CN_TOPIC_0000002529445457__simstate)SIM卡状态。
+| 类型 | 说明 |
+| --- | --- |
+| sim.SimState | SIM卡状态。 |
 
 #### TelCallState21+
 
@@ -98,7 +114,9 @@ type TelCallState = call.TelCallState
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
-类型说明[call.TelCallState](@ohos.telephony.call (拨打电话).md#ZH-CN_TOPIC_0000002529285481__telcallstate21)通话状态码（去电过程通知去电号码状态TEL_CALL_STATE_OFFHOOK和去电接通状态TEL_CALL_STATE_CONNECTED）。
+| 类型 | 说明 |
+| --- | --- |
+| call.TelCallState | 通话状态码（去电过程通知去电号码状态TEL_CALL_STATE_OFFHOOK和去电接通状态TEL_CALL_STATE_CONNECTED）。 |
 
 #### observer.on('networkStateChange')
 
@@ -112,19 +130,29 @@ on(type: 'networkStateChange', callback: Callback<NetworkState>): void
 
 **参数：**
 
-参数名类型必填说明typestring是网络状态变化事件，参数固定为'networkStateChange'。callbackCallback<[NetworkState](@ohos.telephony.radio (网络搜索).md#ZH-CN_TOPIC_0000002529285483__networkstate)>是以callback形式异步返回结果。参考radio的[NetworkState](@ohos.telephony.radio (网络搜索).md#ZH-CN_TOPIC_0000002529285483__networkstate)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 网络状态变化事件，参数固定为'networkStateChange'。 |
+| callback | Callback<NetworkState> | 是 | 以callback形式异步返回结果。参考radio的NetworkState。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
 ```ets
 observer.on('networkStateChange', (data: observer.NetworkState) => {
-    console.log("on networkStateChange, data:" + JSON.stringify(data));
+    console.info("on networkStateChange, data:" + JSON.stringify(data));
 });
 ```
 
@@ -140,13 +168,24 @@ on(type: 'networkStateChange', options: ObserverOptions, callback: Callback<Netw
 
 **参数：**
 
-参数名类型必填说明typestring是网络状态变化事件，参数固定为'networkStateChange'。options[ObserverOptions](#ZH-CN_TOPIC_0000002497445512__observeroptions11)是电话相关事件订阅参数可选项。callbackCallback<[NetworkState](@ohos.telephony.radio (网络搜索).md#ZH-CN_TOPIC_0000002529285483__networkstate)>是以callback形式异步返回结果，参考radio的[NetworkState](@ohos.telephony.radio (网络搜索).md#ZH-CN_TOPIC_0000002529285483__networkstate)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 网络状态变化事件，参数固定为'networkStateChange'。 |
+| options | ObserverOptions | 是 | 电话相关事件订阅参数可选项。 |
+| callback | Callback<NetworkState> | 是 | 以callback形式异步返回结果，参考radio的NetworkState。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -155,7 +194,7 @@ let options: observer.ObserverOptions = {
     slotId: 0
 }
 observer.on('networkStateChange', options, (data: observer.NetworkState) => {
-    console.log("on networkStateChange, data:" + JSON.stringify(data));
+    console.info("on networkStateChange, data:" + JSON.stringify(data));
 });
 ```
 
@@ -171,19 +210,28 @@ off(type: 'networkStateChange', callback?: Callback<NetworkState>): void
 
 **参数：**
 
-参数名类型必填说明typestring是网络状态变化事件，参数固定为'networkStateChange'。callbackCallback<[NetworkState](@ohos.telephony.radio (网络搜索).md#ZH-CN_TOPIC_0000002529285483__networkstate)>否以callback形式异步返回结果，参考radio的[NetworkState](@ohos.telephony.radio (网络搜索).md#ZH-CN_TOPIC_0000002529285483__networkstate)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 网络状态变化事件，参数固定为'networkStateChange'。 |
+| callback | Callback<NetworkState> | 否 | 以callback形式异步返回结果，参考radio的NetworkState。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
 ```ets
 let callback: (data: observer.NetworkState) => void = (data: observer.NetworkState) => {
-    console.log("on networkStateChange, data:" + JSON.stringify(data));
+    console.info("on networkStateChange, data:" + JSON.stringify(data));
 }
 observer.on('networkStateChange', callback);
 // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
@@ -201,13 +249,22 @@ on(type: 'signalInfoChange', callback: Callback<Array<SignalInformation>>): void
 
 **参数：**
 
-参数名类型必填说明typestring是信号状态变化事件，参数固定为'signalInfoChange'。callbackCallback<Array<[SignalInformation](@ohos.telephony.radio (网络搜索).md#ZH-CN_TOPIC_0000002529285483__signalinformation)>>是以callback形式异步返回结果，参考radio的[SignalInformation](@ohos.telephony.radio (网络搜索).md#ZH-CN_TOPIC_0000002529285483__signalinformation)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 信号状态变化事件，参数固定为'signalInfoChange'。 |
+| callback | Callback<Array<SignalInformation>> | 是 | 以callback形式异步返回结果，参考radio的SignalInformation。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -215,7 +272,7 @@ on(type: 'signalInfoChange', callback: Callback<Array<SignalInformation>>): void
 import { radio } from '@kit.TelephonyKit';
 
 observer.on('signalInfoChange', (data: Array<radio.SignalInformation>) => {
-    console.log("on signalInfoChange, data:" + JSON.stringify(data));
+    console.info("on signalInfoChange, data:" + JSON.stringify(data));
 });
 ```
 
@@ -229,13 +286,23 @@ on(type: 'signalInfoChange', options: ObserverOptions, callback: Callback<Array<
 
 **参数：**
 
-参数名类型必填说明typestring是信号状态变化事件，参数固定为'signalInfoChange'。options[ObserverOptions](#ZH-CN_TOPIC_0000002497445512__observeroptions11)是电话相关事件订阅参数可选项。callbackCallback<Array<[SignalInformation](@ohos.telephony.radio (网络搜索).md#ZH-CN_TOPIC_0000002529285483__signalinformation)>>是以callback形式异步返回结果，参考radio的[SignalInformation](@ohos.telephony.radio (网络搜索).md#ZH-CN_TOPIC_0000002529285483__signalinformation)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 信号状态变化事件，参数固定为'signalInfoChange'。 |
+| options | ObserverOptions | 是 | 电话相关事件订阅参数可选项。 |
+| callback | Callback<Array<SignalInformation>> | 是 | 以callback形式异步返回结果，参考radio的SignalInformation。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -246,7 +313,7 @@ let options: observer.ObserverOptions = {
     slotId: 0
 }
 observer.on('signalInfoChange', options, (data: Array<radio.SignalInformation>) => {
-    console.log("on signalInfoChange, data:" + JSON.stringify(data));
+    console.info("on signalInfoChange, data:" + JSON.stringify(data));
 });
 ```
 
@@ -262,13 +329,22 @@ off(type: 'signalInfoChange', callback?: Callback<Array<SignalInformation>>): vo
 
 **参数：**
 
-参数名类型必填说明typestring是信号状态变化事件，参数固定为'signalInfoChange'。callbackCallback<Array<[SignalInformation](@ohos.telephony.radio (网络搜索).md#ZH-CN_TOPIC_0000002529285483__signalinformation)>>否以callback形式异步返回结果，参考radio的[SignalInformation](@ohos.telephony.radio (网络搜索).md#ZH-CN_TOPIC_0000002529285483__signalinformation)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 信号状态变化事件，参数固定为'signalInfoChange'。 |
+| callback | Callback<Array<SignalInformation>> | 否 | 以callback形式异步返回结果，参考radio的SignalInformation。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -276,7 +352,7 @@ off(type: 'signalInfoChange', callback?: Callback<Array<SignalInformation>>): vo
 import { radio } from '@kit.TelephonyKit';
 
 let callback: (data: Array<radio.SignalInformation>) => void = (data: Array<radio.SignalInformation>) => {
-    console.log("on signalInfoChange, data:" + JSON.stringify(data));
+    console.info("on signalInfoChange, data:" + JSON.stringify(data));
 }
 observer.on('signalInfoChange', callback);
 // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
@@ -294,19 +370,22 @@ on(type: 'callStateChange', callback: Callback<CallStateInfo>): void
 
 **参数：**
 
-参数名类型必填说明typestring是通话状态变化事件，参数固定为'callStateChange'。callbackCallback<[CallStateInfo](#ZH-CN_TOPIC_0000002497445512__callstateinfo11)>是
-
-以callback形式异步返回结果。
-
-应用可获取到CallStateInfo。
-
-其中，三方应用仅能获取state通话状态。number受系统权限管控，仅面向系统应用开放。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 通话状态变化事件，参数固定为'callStateChange'。 |
+| callback | Callback<CallStateInfo> | 是 | 以callback形式异步返回结果。 应用可获取到CallStateInfo。 其中，三方应用仅能获取state通话状态。number受系统权限管控，仅面向系统应用开放。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -326,19 +405,23 @@ on(type: 'callStateChange', options: ObserverOptions, callback: Callback<CallSta
 
 **参数：**
 
-参数名类型必填说明typestring是通话状态变化事件，参数固定为'callStateChange'。options[ObserverOptions](#ZH-CN_TOPIC_0000002497445512__observeroptions11)是电话相关事件订阅参数可选项。callbackCallback<[CallStateInfo](#ZH-CN_TOPIC_0000002497445512__callstateinfo11)>是
-
-以callback形式异步返回结果。
-
-应用可获取到CallStateInfo。
-
-其中，三方应用仅能获取state通话状态。number受系统权限管控，仅面向系统应用开放。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 通话状态变化事件，参数固定为'callStateChange'。 |
+| options | ObserverOptions | 是 | 电话相关事件订阅参数可选项。 |
+| callback | Callback<CallStateInfo> | 是 | 以callback形式异步返回结果。 应用可获取到CallStateInfo。 其中，三方应用仅能获取state通话状态。number受系统权限管控，仅面向系统应用开放。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -363,17 +446,22 @@ off(type: 'callStateChange', callback?: Callback<CallStateInfo>): void
 
 **参数：**
 
-参数名类型必填说明typestring是通话状态变化事件，参数固定为'callStateChange'。callbackCallback<[CallStateInfo](#ZH-CN_TOPIC_0000002497445512__callstateinfo11)>否
-
-以callback形式异步返回结果，参考call的[CallState](@ohos.telephony.call (拨打电话).md#ZH-CN_TOPIC_0000002529285481__callstate)。
-
-number：电话号码。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 通话状态变化事件，参数固定为'callStateChange'。 |
+| callback | Callback<CallStateInfo> | 否 | 以callback形式异步返回结果，参考call的CallState。 number：电话号码。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -397,19 +485,22 @@ on(type: 'callStateChangeEx', callback: Callback<TelCallState>, options?: Observ
 
 **参数：**
 
-参数名类型必填说明typestring是通话状态变化事件，参数固定为'callStateChangeEx'。callbackCallback<[TelCallState](@ohos.telephony.call (拨打电话).md#ZH-CN_TOPIC_0000002529285481__telcallstate21)>是
-
-以callback形式异步返回结果。
-
-应用可获取到TelCallState。
-
-options[ObserverOptions](#ZH-CN_TOPIC_0000002497445512__observeroptions11)否电话相关事件订阅参数可选项。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 通话状态变化事件，参数固定为'callStateChangeEx'。 |
+| callback | Callback<TelCallState> | 是 | 以callback形式异步返回结果。 应用可获取到TelCallState。 |
+| options | ObserverOptions | 否 | 电话相关事件订阅参数可选项。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息8800001Invalid parameter value.8800002Service connection failed.8800003System internal error.8800999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 8800001 | Invalid parameter value. |
+| 8800002 | Service connection failed. |
+| 8800003 | System internal error. |
+| 8800999 | Unknown error. |
 
 **示例：**
 
@@ -439,15 +530,21 @@ off(type: 'callStateChangeEx', callback?: Callback<TelCallState>): void
 
 **参数：**
 
-参数名类型必填说明typestring是通话状态变化事件，参数固定为'callStateChange'。callbackCallback<[TelCallState](@ohos.telephony.call (拨打电话).md#ZH-CN_TOPIC_0000002529285481__telcallstate21)>否
-
-以callback形式异步返回结果，参考call的[TelCallState](@ohos.telephony.call (拨打电话).md#ZH-CN_TOPIC_0000002529285481__telcallstate21)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 通话状态变化事件，参数固定为'callStateChange'。 |
+| callback | Callback<TelCallState> | 否 | 以callback形式异步返回结果，参考call的TelCallState。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息8800001Invalid parameter value.8800002Service connection failed.8800003System internal error.8800999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 8800001 | Invalid parameter value. |
+| 8800002 | Service connection failed. |
+| 8800003 | System internal error. |
+| 8800999 | Unknown error. |
 
 **示例：**
 
@@ -472,19 +569,28 @@ on(type: 'cellularDataConnectionStateChange', callback: Callback<DataConnectionS
 
 **参数：**
 
-参数名类型必填说明typestring是蜂窝数据链路连接状态事件，参数固定为'cellularDataConnectionStateChange'。callbackCallback<[DataConnectionStateInfo](#ZH-CN_TOPIC_0000002497445512__dataconnectionstateinfo11)>是以callback形式异步返回结果，参考data的[DataConnectState](@ohos.telephony.data (蜂窝数据).md#ZH-CN_TOPIC_0000002529445455__dataconnectstate)，radio的[RadioTechnology](@ohos.telephony.radio (网络搜索).md#ZH-CN_TOPIC_0000002529285483__radiotechnology)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 蜂窝数据链路连接状态事件，参数固定为'cellularDataConnectionStateChange'。 |
+| callback | Callback<DataConnectionStateInfo> | 是 | 以callback形式异步返回结果，参考data的DataConnectState，radio的RadioTechnology。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
 ```ets
 observer.on('cellularDataConnectionStateChange', (data: observer.DataConnectionStateInfo) => {
-    console.log("on cellularDataConnectionStateChange, data:" + JSON.stringify(data));
+    console.info("on cellularDataConnectionStateChange, data:" + JSON.stringify(data));
 });
 ```
 
@@ -498,13 +604,23 @@ on(type: 'cellularDataConnectionStateChange', options: ObserverOptions, callback
 
 **参数：**
 
-参数名类型必填说明typestring是蜂窝数据链路连接状态事件，参数固定为'cellularDataConnectionStateChange'。options[ObserverOptions](#ZH-CN_TOPIC_0000002497445512__observeroptions11)是电话相关事件订阅参数可选项。callbackCallback<[DataConnectionStateInfo](#ZH-CN_TOPIC_0000002497445512__dataconnectionstateinfo11)>是以callback形式异步返回结果，参考data的[DataConnectState](@ohos.telephony.data (蜂窝数据).md#ZH-CN_TOPIC_0000002529445455__dataconnectstate)，radio的[RadioTechnology](@ohos.telephony.radio (网络搜索).md#ZH-CN_TOPIC_0000002529285483__radiotechnology)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 蜂窝数据链路连接状态事件，参数固定为'cellularDataConnectionStateChange'。 |
+| options | ObserverOptions | 是 | 电话相关事件订阅参数可选项。 |
+| callback | Callback<DataConnectionStateInfo> | 是 | 以callback形式异步返回结果，参考data的DataConnectState，radio的RadioTechnology。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -513,7 +629,7 @@ let options: observer.ObserverOptions = {
     slotId: 0
 }
 observer.on('cellularDataConnectionStateChange', options, (data: observer.DataConnectionStateInfo) => {
-    console.log("on cellularDataConnectionStateChange, data:" + JSON.stringify(data));
+    console.info("on cellularDataConnectionStateChange, data:" + JSON.stringify(data));
 });
 ```
 
@@ -529,19 +645,28 @@ off(type: 'cellularDataConnectionStateChange', callback?: Callback<DataConnectio
 
 **参数：**
 
-参数名类型必填说明typestring是蜂窝数据链路连接状态事件，参数固定为'cellularDataConnectionStateChange'。callbackCallback<[DataConnectionStateInfo](#ZH-CN_TOPIC_0000002497445512__dataconnectionstateinfo11)>否以callback形式异步返回结果，参考data的[DataConnectState](@ohos.telephony.data (蜂窝数据).md#ZH-CN_TOPIC_0000002529445455__dataconnectstate)，radio的[RadioTechnology](@ohos.telephony.radio (网络搜索).md#ZH-CN_TOPIC_0000002529285483__radiotechnology)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 蜂窝数据链路连接状态事件，参数固定为'cellularDataConnectionStateChange'。 |
+| callback | Callback<DataConnectionStateInfo> | 否 | 以callback形式异步返回结果，参考data的DataConnectState，radio的RadioTechnology。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
 ```ets
 let callback: (data: observer.DataConnectionStateInfo) => void = (data: observer.DataConnectionStateInfo) => {
-    console.log("on cellularDataConnectionStateChange, data:" + JSON.stringify(data));
+    console.info("on cellularDataConnectionStateChange, data:" + JSON.stringify(data));
 }
 observer.on('cellularDataConnectionStateChange', callback);
 // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
@@ -559,13 +684,22 @@ on(type: 'cellularDataFlowChange', callback: Callback<DataFlowType>): void
 
 **参数：**
 
-参数名类型必填说明typestring是蜂窝数据业务的上下行数据流状态事件，参数固定为'cellularDataFlowChange'。callbackCallback<[DataFlowType](@ohos.telephony.data (蜂窝数据).md#ZH-CN_TOPIC_0000002529445455__dataflowtype)>是以callback形式异步返回结果，参考data的[DataFlowType](@ohos.telephony.data (蜂窝数据).md#ZH-CN_TOPIC_0000002529445455__dataflowtype)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 蜂窝数据业务的上下行数据流状态事件，参数固定为'cellularDataFlowChange'。 |
+| callback | Callback<DataFlowType> | 是 | 以callback形式异步返回结果，参考data的DataFlowType。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -573,7 +707,7 @@ on(type: 'cellularDataFlowChange', callback: Callback<DataFlowType>): void
 import { data } from '@kit.TelephonyKit';
 
 observer.on('cellularDataFlowChange', (data: data.DataFlowType) => {
-    console.log("on cellularDataFlowChange, data:" + JSON.stringify(data));
+    console.info("on cellularDataFlowChange, data:" + JSON.stringify(data));
 });
 ```
 
@@ -587,13 +721,23 @@ on(type: 'cellularDataFlowChange', options: ObserverOptions, callback: Callback<
 
 **参数：**
 
-参数名类型必填说明typestring是蜂窝数据业务的上下行数据流状态事件，参数固定为'cellularDataFlowChange'。options[ObserverOptions](#ZH-CN_TOPIC_0000002497445512__observeroptions11)是电话相关事件订阅参数可选项。callbackCallback<[DataFlowType](@ohos.telephony.data (蜂窝数据).md#ZH-CN_TOPIC_0000002529445455__dataflowtype)>是以callback形式异步返回结果，参考data的[DataFlowType](@ohos.telephony.data (蜂窝数据).md#ZH-CN_TOPIC_0000002529445455__dataflowtype)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 蜂窝数据业务的上下行数据流状态事件，参数固定为'cellularDataFlowChange'。 |
+| options | ObserverOptions | 是 | 电话相关事件订阅参数可选项。 |
+| callback | Callback<DataFlowType> | 是 | 以callback形式异步返回结果，参考data的DataFlowType。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -604,7 +748,7 @@ let options: observer.ObserverOptions = {
     slotId: 0
 }
 observer.on('cellularDataFlowChange', options, (data: data.DataFlowType) => {
-    console.log("on cellularDataFlowChange, data:" + JSON.stringify(data));
+    console.info("on cellularDataFlowChange, data:" + JSON.stringify(data));
 });
 ```
 
@@ -620,13 +764,22 @@ off(type: 'cellularDataFlowChange', callback?: Callback<DataFlowType>): void
 
 **参数：**
 
-参数名类型必填说明typestring是蜂窝数据业务的上下行数据流状态事件，参数固定为'cellularDataFlowChange'。callbackCallback<[DataFlowType](@ohos.telephony.data (蜂窝数据).md#ZH-CN_TOPIC_0000002529445455__dataflowtype)>否以callback形式异步返回结果，参考data的[DataFlowType](@ohos.telephony.data (蜂窝数据).md#ZH-CN_TOPIC_0000002529445455__dataflowtype)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 蜂窝数据业务的上下行数据流状态事件，参数固定为'cellularDataFlowChange'。 |
+| callback | Callback<DataFlowType> | 否 | 以callback形式异步返回结果，参考data的DataFlowType。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -634,7 +787,7 @@ off(type: 'cellularDataFlowChange', callback?: Callback<DataFlowType>): void
 import { data } from '@kit.TelephonyKit';
 
 let callback: (data: data.DataFlowType) => void = (data: data.DataFlowType) => {
-    console.log("on cellularDataFlowChange, data:" + JSON.stringify(data));
+    console.info("on cellularDataFlowChange, data:" + JSON.stringify(data));
 }
 observer.on('cellularDataFlowChange', callback);
 // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
@@ -648,25 +801,35 @@ on(type: 'simStateChange', callback: Callback<SimStateData>): void
 
 订阅sim状态更改事件，使用callback方式作为异步方法。
 
-此接口不包含sim卡的激活状态，具体请参见[sim.isSimActive](@ohos.telephony.sim (SIM卡管理).md#ZH-CN_TOPIC_0000002529445457__simissimactive7)接口。
+
+此接口不包含sim卡的激活状态，具体请参见[sim.isSimActive](@ohos.telephony.sim (SIM卡管理).md#ZH-CN_TOPIC_0000002522081580__simissimactive7)接口。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
 **参数：**
 
-参数名类型必填说明typestring是sim状态更改事件，参数固定为'simStateChange'。callbackCallback<[SimStateData](#ZH-CN_TOPIC_0000002497445512__simstatedata7)>是以callback形式异步返回结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | sim状态更改事件，参数固定为'simStateChange'。 |
+| callback | Callback<SimStateData> | 是 | 以callback形式异步返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
 ```ets
 observer.on('simStateChange', (data: observer.SimStateData) => {
-    console.log("on simStateChange, data:" + JSON.stringify(data));
+    console.info("on simStateChange, data:" + JSON.stringify(data));
 });
 ```
 
@@ -680,13 +843,23 @@ on(type: 'simStateChange', options: ObserverOptions, callback: Callback<SimState
 
 **参数：**
 
-参数名类型必填说明typestring是sim状态更改事件，参数固定为'simStateChange'。options[ObserverOptions](#ZH-CN_TOPIC_0000002497445512__observeroptions11)是电话相关事件订阅参数可选项。callbackCallback<[SimStateData](#ZH-CN_TOPIC_0000002497445512__simstatedata7)>是以callback形式异步返回结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | sim状态更改事件，参数固定为'simStateChange'。 |
+| options | ObserverOptions | 是 | 电话相关事件订阅参数可选项。 |
+| callback | Callback<SimStateData> | 是 | 以callback形式异步返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -695,7 +868,7 @@ let options: observer.ObserverOptions = {
     slotId: 0
 }
 observer.on('simStateChange', options, (data: observer.SimStateData) => {
-    console.log("on simStateChange, data:" + JSON.stringify(data));
+    console.info("on simStateChange, data:" + JSON.stringify(data));
 });
 ```
 
@@ -711,19 +884,28 @@ off(type: 'simStateChange', callback?: Callback<SimStateData>): void
 
 **参数：**
 
-参数名类型必填说明typestring是sim状态更改事件，参数固定为'simStateChange'。callbackCallback<[SimStateData](#ZH-CN_TOPIC_0000002497445512__simstatedata7)>否以callback形式异步返回结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | sim状态更改事件，参数固定为'simStateChange'。 |
+| callback | Callback<SimStateData> | 否 | 以callback形式异步返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
 ```ets
 let callback: (data: observer.SimStateData) => void = (data: observer.SimStateData) => {
-    console.log("on simStateChange, data:" + JSON.stringify(data));
+    console.info("on simStateChange, data:" + JSON.stringify(data));
 }
 observer.on('simStateChange', callback);
 // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
@@ -741,19 +923,28 @@ on(type: 'iccAccountInfoChange', callback: Callback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是卡帐户变化事件，参数固定为'iccAccountInfoChange'。callbackCallback<void>是以callback形式异步返回结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 卡帐户变化事件，参数固定为'iccAccountInfoChange'。 |
+| callback | Callback<void> | 是 | 以callback形式异步返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
 ```ets
 observer.on('iccAccountInfoChange', () => {
-    console.log("on iccAccountInfoChange success");
+    console.info("on iccAccountInfoChange success");
 });
 ```
 
@@ -769,24 +960,196 @@ off(type: 'iccAccountInfoChange', callback?: Callback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是卡帐户变化事件，参数固定为'iccAccountInfoChange'。callbackCallback<void>否以callback形式异步返回结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 卡帐户变化事件，参数固定为'iccAccountInfoChange'。 |
+| callback | Callback<void> | 否 | 以callback形式异步返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
 ```ets
 let callback: () => void = () => {
-    console.log("on iccAccountInfoChange success");
+    console.info("on iccAccountInfoChange success");
 }
 observer.on('iccAccountInfoChange', callback);
 // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
 observer.off('iccAccountInfoChange', callback);
 observer.off('iccAccountInfoChange');
+```
+
+**observer.onGetSimActiveState23+**
+
+onGetSimActiveState(slotId: number, callback: Callback<boolean>): void
+
+SIM卡激活状态变化的监听，使用callback方式作为异步方法。
+
+需要权限：ohos.permission.GET_TELEPHONY_STATE
+
+系统能力：SystemCapability.Telephony.StateRegistry
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 否 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
+| callback | Callback<boolean> | 否 | 以callback形式返回结果。 - true：激活。 - false：未激活。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
+
+示例：
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
+
+let sislotId = 0;
+let simActiveState: Callback<boolean> = (isSimActive: boolean) => {
+    console.info(`simActiveState slotId ${JSON.stringify(isSimActive)}`);
+}
+observer.onGetSimActiveState(sislotId, simActiveState);
+```
+
+**observer.offGetSimActiveState23+**
+
+offGetSimActiveState(callback?: Callback<boolean>): void
+
+取消SIM卡激活状态变化的监听，使用callback方式作为异步方法。
+
+需要权限：ohos.permission.GET_TELEPHONY_STATE
+
+系统能力：SystemCapability.Telephony.StateRegistry
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<boolean> | 否 | 以callback形式返回结果。 - true：激活。 - false：未激活。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
+
+示例：
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
+
+let simActiveState: Callback<boolean> = (isSimActive: boolean) => {
+    console.info(`simActiveState slotId ${JSON.stringify(isSimActive)}`);
+}
+observer.offGetSimActiveState(simActiveState);
+```
+
+**observer.onCCallStateChange23+**
+
+onCCallStateChange(callback: Callback<CCallStateInfo>, options?: ObserverOptions): void
+
+三方应用监听运营商通话状态并获取通话号码，使用callback方式作为异步方法。
+
+系统能力：SystemCapability.Telephony.StateRegistry
+
+参数：
+
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<CCallState> | 是 | 以callback形式异步返回结果。 应用可获取到CCallState。 |
+| options | ObserverOptions | 否 | 电话相关事件订阅参数可选项。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
+
+示例：
+
+```ets
+import { call } from '@kit.TelephonyKit';
+
+let callback: (data: call.CCallStateInfo) => void = (data: call.CCallStateInfo) => {
+    console.info("onCCallStateChange, data:" + JSON.stringify(data));
+}
+let options: observer.ObserverOptions = {
+    slotId: 0
+}
+
+observer.onCCallStateChange(callback, options);
+observer.onCCallStateChange(callback);
+```
+
+**observer.offCCallStateChange23+**
+
+offCCallStateChange(callback: Callback<CCallStateInfo>): void
+
+取消三方应用监听运营商通话状态并获取通话号码，使用callback方式作为异步方法。
+
+系统能力：SystemCapability.Telephony.StateRegistry
+
+参数：
+
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<CCallState> | 是 | 以callback形式异步返回结果。 应用可获取到CCallState。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
+
+示例：
+
+```ets
+import { call } from '@kit.TelephonyKit';
+
+let callback: (data: call.CCallStateInfo) => void = (data: call.CCallStateInfo) => {
+    console.info("onCCallStateChange, data:" + JSON.stringify(data));
+}
+
+observer.off(callback);
 ```
 
 #### LockReason8+
@@ -795,7 +1158,21 @@ SIM卡锁类型。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
-名称值说明SIM_NONE0无锁。SIM_PIN1PIN锁。SIM_PUK2PUK锁。SIM_PN_PIN3网络PIN锁。SIM_PN_PUK4网络PUK锁。SIM_PU_PIN5子网PIN锁。SIM_PU_PUK6子网PUK锁。SIM_PP_PIN7服务提供商PIN锁。SIM_PP_PUK8服务提供商PUK锁。SIM_PC_PIN9组织PIN锁。SIM_PC_PUK10组织PUK锁。SIM_SIM_PIN11SIM PIN锁。SIM_SIM_PUK12SIM PUK锁。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SIM_NONE | 0 | 无锁。 |
+| SIM_PIN | 1 | PIN锁。 |
+| SIM_PUK | 2 | PUK锁。 |
+| SIM_PN_PIN | 3 | 网络PIN锁。 |
+| SIM_PN_PUK | 4 | 网络PUK锁。 |
+| SIM_PU_PIN | 5 | 子网PIN锁。 |
+| SIM_PU_PUK | 6 | 子网PUK锁。 |
+| SIM_PP_PIN | 7 | 服务提供商PIN锁。 |
+| SIM_PP_PUK | 8 | 服务提供商PUK锁。 |
+| SIM_PC_PIN | 9 | 组织PIN锁。 |
+| SIM_PC_PUK | 10 | 组织PUK锁。 |
+| SIM_SIM_PIN | 11 | SIM PIN锁。 |
+| SIM_SIM_PUK | 12 | SIM PUK锁。 |
 
 #### SimStateData7+
 
@@ -803,7 +1180,11 @@ SIM卡类型和状态。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
-名称类型只读可选说明type[CardType](@ohos.telephony.sim (SIM卡管理).md#ZH-CN_TOPIC_0000002529445457__cardtype7)否否SIM卡类型。state[SimState](@ohos.telephony.sim (SIM卡管理).md#ZH-CN_TOPIC_0000002529445457__simstate)否否SIM卡状态。reason8+[LockReason](#ZH-CN_TOPIC_0000002497445512__lockreason8)否否SIM卡锁类型。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| type | CardType | 否 | 否 | SIM卡类型。 |
+| state | SimState | 否 | 否 | SIM卡状态。 |
+| reason8+ | LockReason | 否 | 否 | SIM卡锁类型。 |
 
 #### CallStateInfo11+
 
@@ -811,7 +1192,10 @@ SIM卡类型和状态。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
-名称类型只读可选说明state[CallState](@ohos.telephony.call (拨打电话).md#ZH-CN_TOPIC_0000002529285481__callstate)否否通话类型。numberstring否否电话号码。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| state | CallState | 否 | 否 | 通话类型。 |
+| number | string | 否 | 否 | 电话号码。 |
 
 #### DataConnectionStateInfo11+
 
@@ -819,7 +1203,10 @@ SIM卡类型和状态。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
-名称类型只读可选说明state[DataConnectState](@ohos.telephony.data (蜂窝数据).md#ZH-CN_TOPIC_0000002529445455__dataconnectstate)否否数据连接状态。network[RatType](@ohos.telephony.radio (网络搜索).md#ZH-CN_TOPIC_0000002529285483__radiotechnology)否否网络类型。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| state | DataConnectState | 否 | 否 | 数据连接状态。 |
+| network | RatType | 否 | 否 | 网络类型。 |
 
 #### ObserverOptions11+
 
@@ -827,10 +1214,6 @@ SIM卡类型和状态。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
-名称类型只读可选说明slotIdnumber否否
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| slotId | number | 否 | 否 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |

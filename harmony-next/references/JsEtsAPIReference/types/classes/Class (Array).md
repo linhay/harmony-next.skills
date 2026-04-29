@@ -26,7 +26,9 @@ import { collections } from '@kit.ArkTS';
 
 **系统能力：** SystemCapability.Utils.Lang
 
-名称类型只读可选说明lengthnumber是否Array的元素个数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| length | number | 是 | 否 | Array的元素个数。 |
 
 #### constructor
 
@@ -40,9 +42,11 @@ constructor()
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码]([语言基础类库错误码](../../errors/语言基础类库错误码.md).md)。
 
-错误码ID错误信息10200012The Array's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200012 | The Array's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -62,13 +66,19 @@ ArkTS Array的构造函数，通过开发者提供的元素进行初始化。
 
 **参数：**
 
-参数名类型必填说明firstT是初始化ArkTS Array的第一个元素。leftT[]否初始化ArkTS Array的剩余元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| first | T | 是 | 初始化ArkTS Array的第一个元素。 |
+| left | T[] | 否 | 初始化ArkTS Array的剩余元素。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200012The Array's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200012 | The Array's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -88,13 +98,18 @@ ArkTS Array的构造函数，通过开发者提供的元素进行初始化。
 
 **参数：**
 
-参数名类型必填说明itemsT[]否初始化ArkTS Array的元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| items | T[] | 否 | 初始化ArkTS Array的元素。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200012The Array's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200012 | The Array's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -115,17 +130,24 @@ static create<T>(arrayLength: number, initialValue: T): Array<T>
 
 **参数：**
 
-参数名类型必填说明arrayLengthnumber是用于构造ArkTS Array的长度。initialValueT是用于填充ArkTS Array的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| arrayLength | number | 是 | 用于构造ArkTS Array的长度。 |
+| initialValue | T | 是 | 用于填充ArkTS Array的值。 |
 
 **返回值：**
 
-类型说明Array<T>新创建的ArkTS Array实例。
+| 类型 | 说明 |
+| --- | --- |
+| Array<T> | 新创建的ArkTS Array实例。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
 
 **示例：**
 
@@ -145,17 +167,23 @@ static from<T>(arrayLike: ArrayLike<T>): Array<T>
 
 **参数：**
 
-参数名类型必填说明arrayLikeArrayLike<T>是用于构造ArkTS Array的对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| arrayLike | ArrayLike<T> | 是 | 用于构造ArkTS Array的对象。 |
 
 **返回值：**
 
-类型说明Array<T>新创建的ArkTS Array实例。
+| 类型 | 说明 |
+| --- | --- |
+| Array<T> | 新创建的ArkTS Array实例。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
 
 **示例：**
 
@@ -183,17 +211,23 @@ static from<T>(iterable: Iterable<T>): Array<T>
 
 **参数：**
 
-参数名类型必填说明iterableIterable<T>是用于构造ArkTS Array的对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| iterable | Iterable<T> | 是 | 用于构造ArkTS Array的对象。 |
 
 **返回值：**
 
-类型说明Array<T>新创建的ArkTS Array实例。
+| 类型 | 说明 |
+| --- | --- |
+| Array<T> | 新创建的ArkTS Array实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -209,7 +243,7 @@ console.info(newArray.toString()); // 预期输出： a,b
 
 #### from18+
 
-static from<T>(arrayLike: ArrayLike<T> | Iterable<T>, mapFn: ArrayFromMapFn<T, T>): Array<T>
+static from<T>(arrayLike: ArrayLike<T> | Iterable<T>, mapFn: [ArrayFromMapFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__arrayfrommapfn18)<T, T>): Array<T>
 
 从一个实现了ArrayLike接口的对象创建一个新的ArkTS Array，并且使用自定义函数处理每个数组元素。
 
@@ -219,17 +253,24 @@ static from<T>(arrayLike: ArrayLike<T> | Iterable<T>, mapFn: ArrayFromMapFn<T, T
 
 **参数：**
 
-参数名类型必填说明arrayLikeArrayLike<T> | Iterable<T>是用于构造ArkTS Array的对象。mapFn[ArrayFromMapFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__arrayfrommapfn18)<T,T>是调用数组每个元素的函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| arrayLike | ArrayLike<T> | Iterable<T> | 是 | 用于构造ArkTS Array的对象。 |
+| mapFn | [ArrayFromMapFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__arrayfrommapfn18)<T,T> | 是 | 调用数组每个元素的函数。 |
 
 **返回值：**
 
-类型说明Array<T>新创建的ArkTS Array实例。
+| 类型 | 说明 |
+| --- | --- |
+| Array<T> | 新创建的ArkTS Array实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -241,7 +282,7 @@ console.info(newArray.toString()); // 预期输出： 1, 3, 5
 
 #### from18+
 
-static from<U, T>(arrayLike: ArrayLike<U> | Iterable<U>, mapFn: ArrayFromMapFn<U, T>): Array<T>
+static from<U, T>(arrayLike: ArrayLike<U> | Iterable<U>, mapFn: [ArrayFromMapFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__arrayfrommapfn18)<U, T>): Array<T>
 
 从一个实现了ArrayLike接口的对象创建一个新的ArkTS Array，并且使用自定义函数处理每个数组元素，ArrayLike接口对象的元素类型可以和数组元素的类型不一样。
 
@@ -251,17 +292,24 @@ static from<U, T>(arrayLike: ArrayLike<U> | Iterable<U>, mapFn: ArrayFromMapFn<U
 
 **参数：**
 
-参数名类型必填说明arrayLikeArrayLike<U> | Iterable<U>是用于构造ArkTS Array的对象。mapFn[ArrayFromMapFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__arrayfrommapfn18)<U, T>是调用数组每个元素的函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| arrayLike | ArrayLike<U> | Iterable<U> | 是 | 用于构造ArkTS Array的对象。 |
+| mapFn | [ArrayFromMapFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__arrayfrommapfn18)<U, T> | 是 | 调用数组每个元素的函数。 |
 
 **返回值：**
 
-类型说明Array<T>新创建的ArkTS Array实例。
+| 类型 | 说明 |
+| --- | --- |
+| Array<T> | 新创建的ArkTS Array实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -283,17 +331,23 @@ static isArray(value: Object | undefined | null): boolean
 
 **参数：**
 
-参数名类型必填说明valueObject | undefined | null是需要被检查的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | Object | undefined | null | 是 | 需要被检查的值。 |
 
 **返回值：**
 
-类型说明boolean假如给定对象是ArkTS Array数组，返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 假如给定对象是ArkTS Array数组，返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -315,17 +369,23 @@ static of<T>(...items: T[]): Array<T>
 
 **参数：**
 
-参数名类型必填说明itemsT[]否用于创建数组的元素集合，参数个数可以是0个、1个或者多个。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| items | T[] | 否 | 用于创建数组的元素集合，参数个数可以是0个、1个或者多个。 |
 
 **返回值：**
 
-类型说明Array<T>新的ArkTS Array实例。
+| 类型 | 说明 |
+| --- | --- |
+| Array<T> | 新的ArkTS Array实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -346,17 +406,27 @@ copyWithin(target: number, start: number, end?: number): Array<T>
 
 **参数：**
 
-参数名类型必填说明targetnumber是目标起始位置的下标，如果target < 0，则会从target + array.length位置开始。startnumber是源起始位置下标，如果start < 0，则会从start + array.length位置开始。endnumber否源终止位置下标，如果end < 0，则会从end + array.length位置终止。默认为ArkTS Array的长度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| target | number | 是 | 目标起始位置的下标，如果target < 0，则会从target + array.length位置开始。 |
+| start | number | 是 | 源起始位置下标，如果start < 0，则会从start + array.length位置开始。 |
+| end | number | 否 | 源终止位置下标，如果end < 0，则会从end + array.length位置终止。默认为ArkTS Array的长度。 |
 
 **返回值：**
 
-类型说明Array<T>修改后的Array。
+| 类型 | 说明 |
+| --- | --- |
+| Array<T> | 修改后的Array。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.10200011The copyWithin method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 10200011 | The copyWithin method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -378,17 +448,25 @@ lastIndexOf(searchElement: T, fromIndex?: number): number
 
 **参数：**
 
-参数名类型必填说明searchElementT是待索引的值。fromIndexnumber否搜索的起始下标。默认值为0。如果下标大于等于ArkTS Array的长度，则返回-1。如果提供的下标值是负数，则从数组末尾开始倒数计数：使用 fromIndex + array.length 的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| searchElement | T | 是 | 待索引的值。 |
+| fromIndex | number | 否 | 搜索的起始下标。默认值为0。如果下标大于等于ArkTS Array的长度，则返回-1。如果提供的下标值是负数，则从数组末尾开始倒数计数：使用 fromIndex + array.length 的值。 |
 
 **返回值：**
 
-类型说明number数组中元素的最后一个索引；没有找到，则返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 数组中元素的最后一个索引；没有找到，则返回-1。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The lastIndexOf method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The lastIndexOf method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -402,7 +480,7 @@ console.info(array.lastIndexOf(9, -2) + ''); // 预期输出： -1
 
 #### some18+
 
-some(predicate: ArrayPredicateFn<T, Array<T>>): boolean
+some(predicate: [ArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__arraypredicatefn18)<T, Array<T>>): boolean
 
 测试ArkTS Array是否存在满足指定条件的元素。
 
@@ -412,17 +490,24 @@ some(predicate: ArrayPredicateFn<T, Array<T>>): boolean
 
 **参数：**
 
-参数名类型必填说明predicate[ArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__arraypredicatefn18)<T, Array<T>>是用于测试的断言函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| predicate | [ArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__arraypredicatefn18)<T, Array<T>> | 是 | 用于测试的断言函数。 |
 
 **返回值：**
 
-类型说明boolean如果存在元素满足指定条件返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果存在元素满足指定条件返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The some method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The some method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -433,7 +518,7 @@ console.info(newArray.some((element: number) => element < 0) + ''); // 预期输
 
 #### reduceRight18+
 
-reduceRight(callbackFn: ArrayReduceCallback<T, T, Array<T>>): T
+reduceRight(callbackFn: [ArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__arrayreducecallback18)<T, T, Array<T>>): T
 
 对Array中的每个元素按照从右到左顺序执行回调函数，将其结果作为累加值，并返回最终的结果。
 
@@ -443,17 +528,25 @@ reduceRight(callbackFn: ArrayReduceCallback<T, T, Array<T>>): T
 
 **参数：**
 
-参数名类型必填说明callbackFn[ArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__arrayreducecallback18)<T, T, Array<T>>是一个接受四个参数的函数，用于对每个元素执行操作，并将结果作为累加值传递给下一个元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | [ArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__arrayreducecallback18)<T, T, Array<T>> | 是 | 一个接受四个参数的函数，用于对每个元素执行操作，并将结果作为累加值传递给下一个元素。 |
 
 **返回值：**
 
-类型说明T回调函数执行后的最终结果。
+| 类型 | 说明 |
+| --- | --- |
+| T | 回调函数执行后的最终结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.10200011The reduceRight method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 10200011 | The reduceRight method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -465,9 +558,9 @@ console.info(reducedValue + ''); // 预期输出： 15
 
 #### reduceRight18+
 
-reduceRight<U = T>(callbackFn: ArrayReduceCallback<U, T, Array<T>>, initialValue: U): U
+reduceRight<U = T>(callbackFn: [ArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__arrayreducecallback18)<U, T, Array<T>>, initialValue: U): U
 
-与 [reduceRight](#ZH-CN_TOPIC_0000002529284731__reduceright18)方法类似，但它接受一个初始值作为第二个参数，用于在Array从右到左顺序遍历开始前初始化累加器。
+与 [reduceRight](#ZH-CN_TOPIC_0000002522080688__reduceright18)方法类似，但它接受一个初始值作为第二个参数，用于在Array从右到左顺序遍历开始前初始化累加器。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -475,17 +568,26 @@ reduceRight<U = T>(callbackFn: ArrayReduceCallback<U, T, Array<T>>, initialValue
 
 **参数：**
 
-参数名类型必填说明callbackFn[ArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__arrayreducecallback18)<U, T, Array<T>>是一个接受四个参数的函数，用于对每个元素执行操作，并将结果作为累加值传递给下一个元素。initialValueU是用于初始化累加器的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | [ArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__arrayreducecallback18)<U, T, Array<T>> | 是 | 一个接受四个参数的函数，用于对每个元素执行操作，并将结果作为累加值传递给下一个元素。 |
+| initialValue | U | 是 | 用于初始化累加器的值。 |
 
 **返回值：**
 
-类型说明U回调函数执行后的最终结果。
+| 类型 | 说明 |
+| --- | --- |
+| U | 回调函数执行后的最终结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.10200011The reduceRight method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 10200011 | The reduceRight method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -508,13 +610,18 @@ pop(): T | undefined
 
 **返回值：**
 
-类型说明T | undefined从Array中移除的元素；如果Array为空，则返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| T | undefined | 从Array中移除的元素；如果Array为空，则返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The pop method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The pop method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -535,17 +642,25 @@ push(...items: T[]): number
 
 **参数：**
 
-参数名类型必填说明itemsT[]否要添加到Array末尾的元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| items | T[] | 否 | 要添加到Array末尾的元素。 |
 
 **返回值：**
 
-类型说明number返回新Array的长度。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回新Array的长度。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The push method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The push method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -566,17 +681,25 @@ join(separator?: string): string
 
 **参数：**
 
-参数名类型必填说明separatorstring否用于分隔Array元素的字符串。如果省略，则使用逗号分隔。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| separator | string | 否 | 用于分隔Array元素的字符串。如果省略，则使用逗号分隔。 |
 
 **返回值：**
 
-类型说明string包含所有Array元素连接成的字符串。如果Array为空，则返回空字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 包含所有Array元素连接成的字符串。如果Array为空，则返回空字符串。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The join method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The join method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -597,13 +720,18 @@ shift(): T | undefined
 
 **返回值：**
 
-类型说明T | undefined从Array中移除的元素；如果Array为空，则返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| T | undefined | 从Array中移除的元素；如果Array为空，则返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The shift method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The shift method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -624,13 +752,18 @@ reverse(): Array<T>
 
 **返回值：**
 
-类型说明Array<T>反转后的ArkTS Array对象。
+| 类型 | 说明 |
+| --- | --- |
+| Array<T> | 反转后的ArkTS Array对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The reverse method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The reverse method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -652,17 +785,25 @@ unshift(...items: T[]): number
 
 **参数：**
 
-参数名类型必填说明itemsT[]否要插入到Array首端的元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| items | T[] | 否 | 要插入到Array首端的元素。 |
 
 **返回值：**
 
-类型说明number新Array的长度。
+| 类型 | 说明 |
+| --- | --- |
+| number | 新Array的长度。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The unshift method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The unshift method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -683,13 +824,18 @@ ArkTS数组转换为字符串。
 
 **返回值：**
 
-类型说明string一个包含数组所有元素的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 一个包含数组所有元素的字符串。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The toString method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The toString method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -711,17 +857,26 @@ slice(start?: number, end?: number): Array<T>
 
 **参数：**
 
-参数名类型必填说明startnumber否开始索引。如果start < 0，则会从start + array.length位置开始。默认值为0。endnumber否结束索引（不包括该元素）。如果end < 0，则会到end + array.length位置结束。默认为原始ArkTS Array的长度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| start | number | 否 | 开始索引。如果start < 0，则会从start + array.length位置开始。默认值为0。 |
+| end | number | 否 | 结束索引（不包括该元素）。如果end < 0，则会到end + array.length位置结束。默认为原始ArkTS Array的长度。 |
 
 **返回值：**
 
-类型说明Array<T>包含原始Array切片的新Array。
+| 类型 | 说明 |
+| --- | --- |
+| Array<T> | 包含原始Array切片的新Array。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The slice method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The slice method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -742,17 +897,25 @@ sort(compareFn?: (a: T, b: T) => number): Array<T>
 
 **参数：**
 
-参数名类型必填说明compareFn(a: T, b: T) => number否用于确定元素顺序的函数。默认使用升序排序。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| compareFn | (a: T, b: T) => number | 否 | 用于确定元素顺序的函数。默认使用升序排序。 |
 
 **返回值：**
 
-类型说明Array<T>排序后的Array。
+| 类型 | 说明 |
+| --- | --- |
+| Array<T> | 排序后的Array。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The sort method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The sort method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -774,17 +937,26 @@ indexOf(searchElement: T, fromIndex?: number): number
 
 **参数：**
 
-参数名类型必填说明searchElementT是要搜索的值。fromIndexnumber否开始搜索的索引，从0开始，默认值为0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| searchElement | T | 是 | 要搜索的值。 |
+| fromIndex | number | 否 | 开始搜索的索引，从0开始，默认值为0。 |
 
 **返回值：**
 
-类型说明number搜索元素首次出现的索引；如果不存在，则返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 搜索元素首次出现的索引；如果不存在，则返回-1。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The indexOf method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The indexOf method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -805,13 +977,19 @@ forEach(callbackFn: (value: T, index: number, array: Array<T>) => void): void
 
 **参数：**
 
-参数名类型必填说明callbackFn(value: T, index: number, array: Array<T>) => void是用于对每个元素执行的回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | (value: T, index: number, array: Array<T>) => void | 是 | 用于对每个元素执行的回调函数。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The forEach method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The forEach method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -834,17 +1012,25 @@ map<U>(callbackFn: (value: T, index: number, array: Array<T>) => U): Array<U>
 
 **参数：**
 
-参数名类型必填说明callbackFn(value: T, index: number, array: Array<T>) => U是用于对每个元素执行的回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | (value: T, index: number, array: Array<T>) => U | 是 | 用于对每个元素执行的回调函数。 |
 
 **返回值：**
 
-类型说明Array<U>包含回调函数结果的新Array。
+| 类型 | 说明 |
+| --- | --- |
+| Array<U> | 包含回调函数结果的新Array。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The map method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The map method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -869,17 +1055,25 @@ filter(predicate: (value: T, index: number, array: Array<T>) => boolean): Array<
 
 **参数：**
 
-参数名类型必填说明predicate(value: T, index: number, array: Array<T>) => boolean是一个接受三个参数的函数，用于测试每个元素是否应该包含在新Array中。当返回值为true时表示当前元素通过测试，需被保留在新数组中。为false时表示当前元素未通过测试，需被排除在新数组外。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| predicate | (value: T, index: number, array: Array<T>) => boolean | 是 | 一个接受三个参数的函数，用于测试每个元素是否应该包含在新Array中。当返回值为true时表示当前元素通过测试，需被保留在新数组中。为false时表示当前元素未通过测试，需被排除在新数组外。 |
 
 **返回值：**
 
-类型说明Array<T>包含通过测试的元素的新Array。
+| 类型 | 说明 |
+| --- | --- |
+| Array<T> | 包含通过测试的元素的新Array。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The filter method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The filter method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -900,17 +1094,25 @@ reduce(callbackFn: (previousValue: T, currentValue: T, currentIndex: number, arr
 
 **参数：**
 
-参数名类型必填说明callbackFn(previousValue: T, currentValue: T, currentIndex: number, array: Array<T>) => T是一个接受四个参数的函数，用于对每个元素执行操作，并将结果作为累加值传递给下一个元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | (previousValue: T, currentValue: T, currentIndex: number, array: Array<T>) => T | 是 | 一个接受四个参数的函数，用于对每个元素执行操作，并将结果作为累加值传递给下一个元素。 |
 
 **返回值：**
 
-类型说明T回调函数执行后的最终结果。
+| 类型 | 说明 |
+| --- | --- |
+| T | 回调函数执行后的最终结果。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The reduce method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The reduce method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -931,17 +1133,26 @@ reduce<U>(callbackFn: (previousValue: U, currentValue: T, currentIndex: number, 
 
 **参数：**
 
-参数名类型必填说明callbackFn(previousValue: U, currentValue: T, currentIndex: number, array: Array<T>) => U是一个接受四个参数的函数，用于对每个元素执行操作，并将结果作为累加值传递给下一个元素。initialValueU是用于初始化累加器的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | (previousValue: U, currentValue: T, currentIndex: number, array: Array<T>) => U | 是 | 一个接受四个参数的函数，用于对每个元素执行操作，并将结果作为累加值传递给下一个元素。 |
+| initialValue | U | 是 | 用于初始化累加器的值。 |
 
 **返回值：**
 
-类型说明U回调函数执行后的最终结果。
+| 类型 | 说明 |
+| --- | --- |
+| U | 回调函数执行后的最终结果。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The reduce method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The reduce method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -963,17 +1174,25 @@ at(index: number): T | undefined
 
 **参数：**
 
-参数名类型必填说明indexnumber是要返回的Array元素的索引（从零开始），取值为整数。负数索引从Array末尾开始计数，如果index < 0，则会访问index + array.length位置的元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 要返回的Array元素的索引（从零开始），取值为整数。负数索引从Array末尾开始计数，如果index < 0，则会访问index + array.length位置的元素。 |
 
 **返回值：**
 
-类型说明T | undefined返回指定索引处的元素；如果索引超出范围或无效，则返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| T | undefined | 返回指定索引处的元素；如果索引超出范围或无效，则返回undefined。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The at method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The at method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -994,13 +1213,18 @@ entries(): IterableIterator<[number, T]>
 
 **返回值：**
 
-类型说明IterableIterator<[number, T]>包含Array中每个元素的键值对的迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<[number, T]> | 包含Array中每个元素的键值对的迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The entries method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The entries method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1022,13 +1246,18 @@ keys(): IterableIterator<number>
 
 **返回值：**
 
-类型说明IterableIterator<number>包含Array中每个元素的索引的可迭代迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<number> | 包含Array中每个元素的索引的可迭代迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The keys method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The keys method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1052,13 +1281,18 @@ values(): IterableIterator<T>
 
 **返回值：**
 
-类型说明IterableIterator<T>包含Array中每个元素的值的可迭代迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<T> | 包含Array中每个元素的值的可迭代迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The values method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The values method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1082,17 +1316,25 @@ find(predicate: (value: T, index: number, obj: Array<T>) => boolean): T | undefi
 
 **参数：**
 
-参数名类型必填说明predicate(value: T, index: number, obj: Array<T>) => boolean是一个接受三个参数的函数，用于测试每个元素是否满足条件。当返回值为true时表示元素满足条件，会立即停止遍历，并将该元素作为结果返回。为false时表示元素不满足条件，会继续检查下一个元素，直到找到符合条件的元素或遍历完整个数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| predicate | (value: T, index: number, obj: Array<T>) => boolean | 是 | 一个接受三个参数的函数，用于测试每个元素是否满足条件。当返回值为true时表示元素满足条件，会立即停止遍历，并将该元素作为结果返回。为false时表示元素不满足条件，会继续检查下一个元素，直到找到符合条件的元素或遍历完整个数组。 |
 
 **返回值：**
 
-类型说明T | undefined第一个满足条件的元素的值；如果所有元素都不满足条件，则返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| T | undefined | 第一个满足条件的元素的值；如果所有元素都不满足条件，则返回undefined。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The find method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The find method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1113,17 +1355,26 @@ includes(searchElement: T, fromIndex?: number): boolean
 
 **参数：**
 
-参数名类型必填说明searchElementT是要搜索的元素。fromIndexnumber否开始搜索的索引。默认值为0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| searchElement | T | 是 | 要搜索的元素。 |
+| fromIndex | number | 否 | 开始搜索的索引。默认值为0。 |
 
 **返回值：**
 
-类型说明boolean如果Array包含指定的元素，则返回true；否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果Array包含指定的元素，则返回true；否则返回false。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The includes method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The includes method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1144,17 +1395,25 @@ findIndex(predicate: (value: T, index: number, obj: Array<T>) => boolean): numbe
 
 **参数：**
 
-参数名类型必填说明predicate(value: T, index: number, obj: Array<T>) => boolean是一个接受三个参数的函数，用于测试每个元素是否满足条件。当返回值为true时表示当前元素满足条件，会立即停止遍历，并返回该元素的索引。为false时表示当前元素不满足条件，会继续检查下一个元素，直到找到符合条件的元素或遍历完整个数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| predicate | (value: T, index: number, obj: Array<T>) => boolean | 是 | 一个接受三个参数的函数，用于测试每个元素是否满足条件。当返回值为true时表示当前元素满足条件，会立即停止遍历，并返回该元素的索引。为false时表示当前元素不满足条件，会继续检查下一个元素，直到找到符合条件的元素或遍历完整个数组。 |
 
 **返回值：**
 
-类型说明number第一个满足条件的元素的索引；如果所有元素都不满足条件，则返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 第一个满足条件的元素的索引；如果所有元素都不满足条件，则返回-1。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The findIndex method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The findIndex method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1175,17 +1434,27 @@ fill(value: T, start?: number, end?: number): Array<T>
 
 **参数：**
 
-参数名类型必填说明valueT是要填充的值。startnumber否开始填充的索引。默认值为0。endnumber否结束填充的索引（不包括该元素）。如果省略，则填充到Array的最后一个元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | T | 是 | 要填充的值。 |
+| start | number | 否 | 开始填充的索引。默认值为0。 |
+| end | number | 否 | 结束填充的索引（不包括该元素）。如果省略，则填充到Array的最后一个元素。 |
 
 **返回值：**
 
-类型说明Array<T>填充后的Array。
+| 类型 | 说明 |
+| --- | --- |
+| Array<T> | 填充后的Array。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The fill method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The fill method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1206,13 +1475,19 @@ shrinkTo(arrayLength: number): void
 
 **参数：**
 
-参数名类型必填说明arrayLengthnumber是Array的新长度。如果arrayLength >= array.length，则Array不变。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| arrayLength | number | 是 | Array的新长度。如果arrayLength >= array.length，则Array不变。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The shrinkTo method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The shrinkTo method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1236,13 +1511,20 @@ extendTo(arrayLength: number, initialValue: T): void
 
 **参数：**
 
-参数名类型必填说明arrayLengthnumber是Array的新长度。如果arrayLength <= array.length，则Array不变。initialValueT是扩展的部分的填充值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| arrayLength | number | 是 | Array的新长度。如果arrayLength <= array.length，则Array不变。 |
+| initialValue | T | 是 | 扩展的部分的填充值。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The extendTo method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The extendTo method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1266,17 +1548,25 @@ concat(...items: ConcatArray<T>[]): Array<T>
 
 **参数：**
 
-参数名类型必填说明itemsConcatArray<T>[]否拼接两个或多个数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| items | ConcatArray<T>[] | 否 | 拼接两个或多个数组。 |
 
 **返回值：**
 
-类型说明Array<T>拼接后的数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<T> | 拼接后的数组。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Not a valid array.10200011The concat method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Not a valid array. |
+| 10200011 | The concat method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1300,17 +1590,25 @@ splice(start: number): Array<T>
 
 **参数：**
 
-参数名类型必填说明startnumber是开始索引。如果-array.length =< start < 0，从start + array.length开始，如果start < -array.length，则从0开始。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| start | number | 是 | 开始索引。如果-array.length =< start < 0，从start + array.length开始，如果start < -array.length，则从0开始。 |
 
 **返回值：**
 
-类型说明Array<T>返回一个新的包含被删除元素的Array对象。如果没有元素被删除，返回一个空的Array对象。
+| 类型 | 说明 |
+| --- | --- |
+| Array<T> | 返回一个新的包含被删除元素的Array对象。如果没有元素被删除，返回一个空的Array对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.10200011The splice method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 10200011 | The splice method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1321,7 +1619,7 @@ let removeArray = array.splice(2); // array内容变为[1, 2]，返回[3, 4, 5]
 
 #### every18+
 
-every(predicate: ArrayPredicateFn<T, Array<T>>): boolean
+every(predicate: [ArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__arraypredicatefn18)<T, Array<T>>): boolean
 
 测试ArkTS Array中的所有元素是否满足指定条件。
 
@@ -1331,17 +1629,24 @@ every(predicate: ArrayPredicateFn<T, Array<T>>): boolean
 
 **参数：**
 
-参数名类型必填说明predicate[ArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__arraypredicatefn18)<T, Array<T>>是用于测试的断言函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| predicate | [ArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__arraypredicatefn18)<T, Array<T>> | 是 | 用于测试的断言函数。 |
 
 **返回值：**
 
-类型说明boolean如果所有元素都满足指定条件则返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果所有元素都满足指定条件则返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The every method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The every method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1362,13 +1667,18 @@ toLocaleString(): string
 
 **返回值：**
 
-类型说明string一个包含数组所有元素的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 一个包含数组所有元素的字符串。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The toLocaleString method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The toLocaleString method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1391,17 +1701,27 @@ splice(start: number, deleteCount: number, ...items: T[]): Array<T>
 
 **参数：**
 
-参数名类型必填说明startnumber是开始索引。如果-array.length =< start < 0，从start + array.length开始，如果start < -array.length，则从0开始。deleteCountnumber是删除元素的个数， 如果deleteCount <= 0，则不删除任何元素。itemsT[]否从start位置开始插入的新元素。如果省略，仅删除Array内的指定元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| start | number | 是 | 开始索引。如果-array.length =< start < 0，从start + array.length开始，如果start < -array.length，则从0开始。 |
+| deleteCount | number | 是 | 删除元素的个数， 如果deleteCount <= 0，则不删除任何元素。 |
+| items | T[] | 否 | 从start位置开始插入的新元素。如果省略，仅删除Array内的指定元素。 |
 
 **返回值：**
 
-类型说明Array<T>返回一个新的包含被删除元素的Array对象。如果没有元素被删除，返回一个空的Array对象。
+| 类型 | 说明 |
+| --- | --- |
+| Array<T> | 返回一个新的包含被删除元素的Array对象。如果没有元素被删除，返回一个空的Array对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.10200011The splice method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 10200011 | The splice method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1431,13 +1751,17 @@ let removeArray = array.splice(2, 2, 6, 7, 8); // array内容变为[1, 2, 6, 7, 
 
 **返回值：**
 
-类型说明IterableIterator<T>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<T> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The Symbol.iterator method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The Symbol.iterator method cannot be bound. |
 
 **示例：**
 
@@ -1461,17 +1785,24 @@ for (let item of array) {
 
 **参数：**
 
-参数名类型必填说明indexnumber是所需代码单元的从零开始的索引。当index<0 或者index>=length，则会抛出错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 所需代码单元的从零开始的索引。当index<0 或者index>=length，则会抛出错误。 |
 
 **返回值：**
 
-类型说明TArray给定的元素数据类型。
+| 类型 | 说明 |
+| --- | --- |
+| T | Array给定的元素数据类型。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200001The value of index is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200001 | The value of index is out of range. |
 
 **示例：**
 

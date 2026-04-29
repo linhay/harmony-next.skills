@@ -16,7 +16,10 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
-名称类型只读可选说明imageCount11+number是是相册中图片数量。videoCount11+number是是相册中视频数量。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| imageCount11+ | number | 是 | 是 | 相册中图片数量。 |
+| videoCount11+ | number | 是 | 是 | 相册中视频数量。 |
 
 #### commitModify
 
@@ -30,17 +33,24 @@ commitModify(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当相册属性修改成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当相册属性修改成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[文件管理错误码]([文件管理错误码](../../errors/文件管理错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.201Permission denied.13900020Invalid argument.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 201 | Permission denied. |
+| 13900020 | Invalid argument. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -85,17 +95,24 @@ commitModify(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.201Permission denied.13900020Invalid argument.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 201 | Permission denied. |
+| 13900020 | Invalid argument. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -133,7 +150,8 @@ addAssets(assets: Array<PhotoAsset>, callback: AsyncCallback<void>): void
 
 向用户相册中添加图片或视频，需预置相册和文件资源。使用callback异步回调。
 
-从API version 10开始支持，从API version 11开始废弃。建议使用[MediaAlbumChangeRequest.addAssets](../classes/Class (MediaAlbumChangeRequest).md#ZH-CN_TOPIC_0000002497605948__addassets11)替代。
+
+从API version 10开始支持，从API version 11开始废弃。建议使用[MediaAlbumChangeRequest.addAssets](Class (MediaAlbumChangeRequest).md#ZH-CN_TOPIC_0000002522242082__addassets11)替代。
 
 **需要权限**：ohos.permission.WRITE_IMAGEVIDEO
 
@@ -141,17 +159,25 @@ addAssets(assets: Array<PhotoAsset>, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明assetsArray<[PhotoAsset](Interface (PhotoAsset).md)>是待添加到相册中的图片或视频数组。callbackAsyncCallback<void>是回调函数。当添加图片或视频成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| assets | Array<PhotoAsset> | 是 | 待添加到相册中的图片或视频数组。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当添加图片或视频成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.201Permission denied.13900020Invalid argument.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 201 | Permission denied. |
+| 13900020 | Invalid argument. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -182,7 +208,6 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
   } catch (err) {
     console.error(`addAssetsDemoCallback failed with error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### addAssets(deprecated)
@@ -191,7 +216,8 @@ addAssets(assets: Array<PhotoAsset>): Promise<void>
 
 向用户相册添加图片或视频，需预置相册和文件资源。使用Promise异步回调。
 
-从API version 10开始支持，从API version 11开始废弃。建议使用[MediaAlbumChangeRequest.addAssets](../classes/Class (MediaAlbumChangeRequest).md#ZH-CN_TOPIC_0000002497605948__addassets11)替代。
+
+从API version 10开始支持，从API version 11开始废弃。建议使用[MediaAlbumChangeRequest.addAssets](Class (MediaAlbumChangeRequest).md#ZH-CN_TOPIC_0000002522242082__addassets11)替代。
 
 **需要权限**：ohos.permission.WRITE_IMAGEVIDEO
 
@@ -199,21 +225,30 @@ addAssets(assets: Array<PhotoAsset>): Promise<void>
 
 **参数：**
 
-参数名类型必填说明assetsArray<[PhotoAsset](Interface (PhotoAsset).md)>是待添加到相册中的图片或视频数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| assets | Array<PhotoAsset> | 是 | 待添加到相册中的图片或视频数组。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.201Permission denied.13900020Invalid argument.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 201 | Permission denied. |
+| 13900020 | Invalid argument. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -243,7 +278,6 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
   } catch (err) {
     console.error(`addAssetsDemoPromise failed with error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### removeAssets(deprecated)
@@ -252,7 +286,8 @@ removeAssets(assets: Array<PhotoAsset>, callback: AsyncCallback<void>): void
 
 从用户相册移除图片或视频，需预置相册和文件资源。使用callback异步回调。
 
-从API version 10开始支持，从API version 11开始废弃。建议使用[MediaAlbumChangeRequest.removeAssets](../classes/Class (MediaAlbumChangeRequest).md#ZH-CN_TOPIC_0000002497605948__removeassets11)替代。
+
+从API version 10开始支持，从API version 11开始废弃。建议使用[MediaAlbumChangeRequest.removeAssets](Class (MediaAlbumChangeRequest).md#ZH-CN_TOPIC_0000002522242082__removeassets11)替代。
 
 **需要权限**：ohos.permission.WRITE_IMAGEVIDEO
 
@@ -260,17 +295,25 @@ removeAssets(assets: Array<PhotoAsset>, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明assetsArray<[PhotoAsset](Interface (PhotoAsset).md)>是相册中待移除的图片或视频数组。callbackAsyncCallback<void>是回调函数。当移除图片或视频成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| assets | Array<PhotoAsset> | 是 | 相册中待移除的图片或视频数组。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当移除图片或视频成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.201Permission denied.13900020Invalid argument.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 201 | Permission denied. |
+| 13900020 | Invalid argument. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -301,7 +344,6 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
   } catch (err) {
     console.error(`removeAssetsDemoCallback failed with error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### removeAssets(deprecated)
@@ -310,7 +352,8 @@ removeAssets(assets: Array<PhotoAsset>): Promise<void>
 
 从用户相册中移除图片或视频，需预置相册和文件资源。使用Promise异步回调。
 
-从API version 10开始支持，从API version 11开始废弃。建议使用[MediaAlbumChangeRequest.removeAssets](../classes/Class (MediaAlbumChangeRequest).md#ZH-CN_TOPIC_0000002497605948__removeassets11)替代。
+
+从API version 10开始支持，从API version 11开始废弃。建议使用[MediaAlbumChangeRequest.removeAssets](Class (MediaAlbumChangeRequest).md#ZH-CN_TOPIC_0000002522242082__removeassets11)替代。
 
 **需要权限**：ohos.permission.WRITE_IMAGEVIDEO
 
@@ -318,21 +361,30 @@ removeAssets(assets: Array<PhotoAsset>): Promise<void>
 
 **参数：**
 
-参数名类型必填说明assetsArray<[PhotoAsset](Interface (PhotoAsset).md)>是相册中待移除的图片或视频数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| assets | Array<PhotoAsset> | 是 | 相册中待移除的图片或视频数组。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.201Permission denied.13900020Invalid argument.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 201 | Permission denied. |
+| 13900020 | Invalid argument. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -366,5 +418,4 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
   } catch (err) {
     console.error(`removeAssetsDemoPromise failed with error: ${err.code}, ${err.message}`);
   }
-}
 ```

@@ -8,13 +8,12 @@
 
 ```ets
 import { notificationExtensionSubscription } from '@kit.NotificationKit';
-import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 ```
 
 #### notificationExtensionSubscription.openSubscriptionSettings
 
-openSubscriptionSettings(context: UIAbilityContext): Promise<void>
+openSubscriptionSettings(context: [UIAbilityContext](../../topics/misc/UIAbilityContext.md)): Promise<void>
 
 打开应用的通知扩展订阅授权页面，以半模态弹窗形式显示。用户可在该页面授权"允许获取本机通知"开关与"已获取的本机通知"应用开关。使用Promise异步回调。
 
@@ -24,35 +23,43 @@ openSubscriptionSettings(context: UIAbilityContext): Promise<void>
 
 **参数：**
 
-参数名类型必填说明context[UIAbilityContext](../../topics/graphics/UIAbilityContext.md)是通知设置页面绑定Ability的上下文。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [UIAbilityContext](../../topics/misc/UIAbilityContext.md) | 是 | 通知设置页面绑定Ability的上下文。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[通知错误码](../../errors/通知错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)、[通知错误码]([通知错误码](../../errors/通知错误码.md).md)。
 
-错误码ID错误信息201Permission denied or Current device is not supported.1600001Internal error.1600018The notification settings window is already displayed.1600023The application does not implement the NotificationSubscriberExtensionAbility.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied or current device not supported. |
+| 1600001 | Internal error. |
+| 1600018 | The notification settings window is already displayed. |
+| 1600023 | The application does not implement the NotificationSubscriberExtensionAbility. |
 
 **示例：**
 
 ```ets
 import { common } from '@kit.AbilityKit';
 
-const DOMAIN = 0x0000;
-
 try {
+  // 请在组件内获取context，确保this.getuIContext().getHostContext()返回结果为UIAbilityContext。
   let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
   notificationExtensionSubscription.openSubscriptionSettings(context).then(() => {
-    hilog.info(DOMAIN, 'testTag', `openSubscriberSettings success`);
+    console.info(DOMAIN, 'testTag', `openSubscriberSettings success`);
   }).catch((e:Error) => {
     let error = e as BusinessError
-    hilog.error(DOMAIN, 'testTag', `failed to call openSubscriptionSettings ${JSON.stringify(error)}`)
+    console.error(`failed to call openSubscriptionSettings ${JSON.stringify(error)}`)
   });
 } catch (error) {
-  hilog.error(DOMAIN, 'testTag', `failed to call openSubscriptionSettings ${JSON.stringify(error)}`)
+  console.error(`failed to call openSubscriptionSettings ${JSON.stringify(error)}`)
 }
 ```
 
@@ -68,17 +75,26 @@ subscribe(info: NotificationExtensionSubscriptionInfo[]): Promise<void>
 
 **参数：**
 
-参数名类型必填说明info[NotificationExtensionSubscriptionInfo[]](NotificationExtensionSubscriptionInfo.md)是订阅的信息列表（数组）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| info | NotificationExtensionSubscriptionInfo[] | 是 | 订阅的信息列表（数组）。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[通知错误码](../../errors/通知错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)、[通知错误码](通知错误码.md)。
 
-错误码ID错误信息201Permission denied or Current device is not supported.1600001Internal error.1600003Failed to connect to the service.1600023The application does not implement the NotificationSubscriberExtensionAbility.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied or current device not supported. |
+| 1600001 | Internal error. |
+| 1600003 | Failed to connect to the service. |
+| 1600023 | The application does not implement the NotificationSubscriberExtensionAbility. |
 
 **示例：**
 
@@ -108,13 +124,19 @@ unsubscribe(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[通知错误码](../../errors/通知错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[通知错误码](通知错误码.md)。
 
-错误码ID错误信息201Permission denied or Current device is not supported.1600001Internal error.1600003Failed to connect to the service.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied or current device not supported. |
+| 1600001 | Internal error. |
+| 1600003 | Failed to connect to the service. |
 
 **示例：**
 
@@ -138,18 +160,24 @@ getSubscribeInfo(): Promise<NotificationExtensionSubscriptionInfo[]>
 
 **返回值：**
 
-类型说明Promise<[NotificationExtensionSubscriptionInfo[]](NotificationExtensionSubscriptionInfo.md)>Promise对象，返回一个[NotificationExtensionSubscriptionInfo[]](NotificationExtensionSubscriptionInfo.md)对象数组，表示应用的订阅信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<NotificationExtensionSubscriptionInfo[]> | Promise对象，返回一个NotificationExtensionSubscriptionInfo[]对象数组，表示应用的订阅信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[通知错误码](../../errors/通知错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[通知错误码](通知错误码.md)。
 
-错误码ID错误信息201Permission denied or Current device is not supported.1600001Internal error.1600003Failed to connect to the service.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied or current device not supported. |
+| 1600001 | Internal error. |
+| 1600003 | Failed to connect to the service. |
 
 **示例：**
 
 ```ets
-notificationExtensionSubscription.getSubscribeInfo().then((data) => {
+notificationExtensionSubscription.getSubscribeInfo().then((data: notificationExtensionSubscription.NotificationExtensionSubscriptionInfo[]) => {
   console.info(`getSubscribeInfo successfully. Data: ${JSON.stringify(data)}`);
 }).catch((err: BusinessError) => {
   console.error(`getSubscribeInfo fail: ${JSON.stringify(err)}`);
@@ -168,13 +196,19 @@ isUserGranted(): Promise<boolean>
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示功能已启用；返回false表示功能未启用。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示功能已启用；返回false表示功能未启用。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[通知错误码](../../errors/通知错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)、[通知错误码](通知错误码.md)。
 
-错误码ID错误信息201Permission denied or Current device is not supported.1600001Internal error.1600003Failed to connect to the service.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied or current device not supported. |
+| 1600001 | Internal error. |
+| 1600003 | Failed to connect to the service. |
 
 **示例：**
 
@@ -202,18 +236,24 @@ getUserGrantedEnabledBundles(): Promise<GrantedBundleInfo[]>
 
 **返回值：**
 
-类型说明Promise<[GrantedBundleInfo[]](NotificationCommonDef.md#ZH-CN_TOPIC_0000002529446079__grantedbundleinfo22)>Promise对象，返回获取指定应用中"已获取的本机通知"通知开关开启的应用列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<GrantedBundleInfo[]> | Promise对象，返回获取指定应用中"已获取的本机通知"通知开关开启的应用列表。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[通知错误码](../../errors/通知错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[通知错误码](通知错误码.md)。
 
-错误码ID错误信息201Permission denied or Current device is not supported.1600001Internal error.1600003Failed to connect to the service.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied or current device not supported. |
+| 1600001 | Internal error. |
+| 1600003 | Failed to connect to the service. |
 
 **示例：**
 
 ```ets
-notificationExtensionSubscription.getUserGrantedEnabledBundles().then((data) => {
+notificationExtensionSubscription.getUserGrantedEnabledBundles().then((data: notificationExtensionSubscription.GrantedBundleInfo[]) => {
   console.info(`getUserGrantedEnabledBundles successfully. Data: ${JSON.stringify(data)}`);
 }).catch((err: BusinessError) => {
   console.error(`getUserGrantedEnabledBundles fail: ${JSON.stringify(err)}`);
@@ -222,13 +262,27 @@ notificationExtensionSubscription.getUserGrantedEnabledBundles().then((data) => 
 
 #### NotificationExtensionSubscriptionInfo
 
-type NotificationExtensionSubscriptionInfo = _NotificationExtensionSubscriptionInfo
+type NotificationExtensionSubscriptionInfo = [_NotificationExtensionSubscriptionInfo](../../topics/misc/NotificationExtensionSubscriptionInfo.md)
 
 用于描述通知扩展订阅的信息。
 
 **系统能力**： SystemCapability.Notification.Notification
 
-类型说明[_NotificationExtensionSubscriptionInfo](../../topics/payment/NotificationExtensionSubscriptionInfo.md)用于描述通知扩展订阅的信息。
+| 类型 | 说明 |
+| --- | --- |
+| [_NotificationExtensionSubscriptionInfo](../../topics/misc/NotificationExtensionSubscriptionInfo.md) | 用于描述通知扩展订阅的信息。 |
+
+**NotificationInfo**
+
+type NotificationInfo = _NotificationInfo
+
+通知订阅扩展能力中[onReceiveMessage](@ohos.application.NotificationSubscriberExtensionAbility (通知订阅扩展能力).md#ZH-CN_TOPIC_0000002553362345__onreceivemessage)回调的通知信息。
+
+系统能力：SystemCapability.Notification.Notification
+
+| 类型 | 说明 |
+| --- | --- |
+| _NotificationInfo | 通知订阅扩展能力中onReceiveMessage回调的通知信息。 |
 
 #### SubscribeType
 
@@ -236,24 +290,30 @@ type NotificationExtensionSubscriptionInfo = _NotificationExtensionSubscriptionI
 
 **系统能力**：SystemCapability.Notification.Notification
 
-名称值说明BLUETOOTH0通过蓝牙订阅通知。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| BLUETOOTH | 0 | 通过蓝牙订阅通知。 |
 
 #### BundleOption
 
-type BundleOption = _BundleOption
+type BundleOption = [_BundleOption](../../topics/misc/NotificationCommonDef.md#ZH-CN_TOPIC_0000002529446079__bundleoption)
 
 指定应用的包信息。
 
 **系统能力**： SystemCapability.Notification.Notification
 
-类型说明[_BundleOption](../../topics/misc/NotificationCommonDef.md#ZH-CN_TOPIC_0000002529446079__bundleoption)指定应用的包信息。
+| 类型 | 说明 |
+| --- | --- |
+| [_BundleOption](../../topics/misc/NotificationCommonDef.md#ZH-CN_TOPIC_0000002529446079__bundleoption) | 指定应用的包信息。 |
 
 #### GrantedBundleInfo
 
-type GrantedBundleInfo = _GrantedBundleInfo
+type GrantedBundleInfo = [_GrantedBundleInfo](../../topics/misc/NotificationCommonDef.md#ZH-CN_TOPIC_0000002529446079__grantedbundleinfo22)
 
 授权应用的包信息。
 
 **系统能力**： SystemCapability.Notification.Notification
 
-类型说明[_GrantedBundleInfo](../../topics/misc/NotificationCommonDef.md#ZH-CN_TOPIC_0000002529446079__grantedbundleinfo22)授权应用的包信息。
+| 类型 | 说明 |
+| --- | --- |
+| [_GrantedBundleInfo](../../topics/misc/NotificationCommonDef.md#ZH-CN_TOPIC_0000002529446079__grantedbundleinfo22) | 授权应用的包信息。 |

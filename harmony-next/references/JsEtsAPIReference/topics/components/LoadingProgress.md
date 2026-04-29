@@ -2,7 +2,8 @@
 
 用于显示加载动效的组件。
 
-加载动效在组件不可见时停止，组件的可见状态基于[onVisibleAreaChange](../misc/组件可见区域变化事件.md#ZH-CN_TOPIC_0000002497444844__onvisibleareachange)处理，可见阈值ratios大于0即视为可见状态。
+加载动效在组件不可见时停止，组件的可见状态基于[onVisibleAreaChange](组件可见区域变化事件.md#ZH-CN_TOPIC_0000002553360697__onvisibleareachange)处理，可见阈值ratios大于0即视为可见状态。
+
 
 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -24,13 +25,14 @@ LoadingProgress()
 
 #### 属性
 
-除支持[通用属性](../misc/通用属性.md)外，还支持以下属性：
+除支持[通用属性]([通用属性](../misc/通用属性.md).md)外，还支持以下属性：
+
 
 组件应设置合理的宽高，当组件宽高设置过大时加载动效可能不符合预期效果。
 
 #### color
 
-color(value: ResourceColor)
+color(value: [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor))
 
 设置加载进度条前景色。
 
@@ -42,21 +44,15 @@ color(value: ResourceColor)
 
 **参数：**
 
-参数名类型必填说明value[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)是
-
-加载进度条的前景色。
-
-默认值：
-
-API version 10及以下：'#99666666'
-
-API version 11及以上：'#ff666666'
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 是 | 加载进度条的前景色。 默认值： API version 10及以下：'#99666666' API version 11及以上：'#ff666666' |
 
 #### enableLoading10+
 
 enableLoading(value: boolean)
 
-设置LoadingProgress动画是否显示。LoadingProgress动画不显示时，该组件依旧占位。通用属性[Visibility.Hidden](../misc/显隐控制.md#ZH-CN_TOPIC_0000002529284817__visibility)隐藏的是包括[border](../misc/边框设置.md#ZH-CN_TOPIC_0000002497604832__border)、[padding](../misc/尺寸设置.md#ZH-CN_TOPIC_0000002497444850__padding)等整个组件范围，而enableLoading=false只隐藏LoadingProgress本身动画内容，不包括border等。
+设置LoadingProgress动画是否显示。LoadingProgress动画不显示时，该组件依旧占位。通用属性[Visibility](枚举说明.md#ZH-CN_TOPIC_0000002553200889__visibility).Hidden隐藏的是包括[border](边框设置.md#ZH-CN_TOPIC_0000002522080782__[border](边框设置.md#ZH-CN_TOPIC_0000002497604832__border))、[padding](尺寸设置.md#ZH-CN_TOPIC_0000002553360703__[padding](尺寸设置.md#ZH-CN_TOPIC_0000002497444850__padding))等整个组件范围，而enableLoading=false只隐藏LoadingProgress本身动画内容，不包括border等。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -64,11 +60,9 @@ enableLoading(value: boolean)
 
 **参数：**
 
-参数名类型必填说明valueboolean是
-
-LoadingProgress动画是否显示。
-
-默认值：true，true表示显示LoadingProgress动画，false表示不显示LoadingProgress动画。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | boolean | 是 | LoadingProgress动画是否显示。 默认值：true，true表示显示LoadingProgress动画，false表示不显示LoadingProgress动画。 |
 
 #### contentModifier12+
 
@@ -82,29 +76,25 @@ contentModifier(modifier: ContentModifier<LoadingProgressConfiguration>)
 
 **参数：**
 
-参数名类型必填说明modifier[ContentModifier<LoadingProgressConfiguration>](#ZH-CN_TOPIC_0000002529284899__loadingprogressconfiguration12对象说明)是
-
-在LoadingProgress组件上，定制内容区的方法。
-
-modifier： 内容修改器，开发者需要自定义class实现ContentModifier接口。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| modifier | ContentModifier<LoadingProgressConfiguration> | 是 | 在LoadingProgress组件上，定制内容区的方法。 modifier： 内容修改器，开发者需要自定义class实现ContentModifier接口。 |
 
 #### 事件
 
-支持[通用事件](../misc/通用事件.md)。
+支持[通用事件]([通用事件](../misc/通用事件.md).md)。
 
 #### LoadingProgressConfiguration12+对象说明
 
-开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](../misc/自定义内容.md#ZH-CN_TOPIC_0000002497444874__commonconfigurationt)。
+开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](自定义内容.md#ZH-CN_TOPIC_0000002553360727__commonconfigurationt)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明enableLoadingboolean否否
-
-LoadingProgress动画是否显示。
-
-默认值：true，true表示显示LoadingProgress动画，false表示不显示LoadingProgress动画。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| enableLoading | boolean | 否 | 否 | LoadingProgress动画是否显示。 默认值：true，true表示显示LoadingProgress动画，false表示不显示LoadingProgress动画。 |
 
 #### LoadingProgressStyle枚举说明
 
@@ -116,13 +106,17 @@ LoadingProgress动画是否显示。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称值说明Default-默认加载样式。API version 8及以后不支持设置。Circular-环形加载样式。API version 8及以后不支持设置。Orbital-彗星形加载样式。API version 8及以后默认为彗星形样式。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| Default | 1 | 默认加载样式。API version 8及以后不支持设置。 |
+| Circular | 2 | 环形加载样式。API version 8及以后不支持设置。 |
+| Orbital | 3 | 彗星形加载样式。API version 8及以后默认为彗星形样式。 |
 
 #### 示例
 
 #### 示例1（设置颜色）
 
-该示例通过[color](#ZH-CN_TOPIC_0000002529284899__color)接口，实现了设置加载动效颜色的功能。
+该示例通过[color](#ZH-CN_TOPIC_0000002522240856__color)接口，实现了设置加载动效颜色的功能。
 
 ```ets
 // xxx.ets
@@ -137,12 +131,13 @@ struct LoadingProgressExample {
         .layoutWeight(1)
     }.width('100%').margin({ top: 5 })
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553205135.webp)
 
 #### 示例2（设置定制内容区）
 
-该示例通过[contentModifier](#ZH-CN_TOPIC_0000002529284899__contentmodifier12)接口，实现了定制内容区的功能，并通过[enableLoading](#ZH-CN_TOPIC_0000002529284899__enableloading10)接口实现了通过按钮切换是否显示LoadingProgress的效果。
+该示例通过[contentModifier](#ZH-CN_TOPIC_0000002522240856__contentmodifier12)接口，实现了定制内容区的功能，并通过[enableLoading](#ZH-CN_TOPIC_0000002522240856__enableloading10)接口实现了通过按钮切换是否显示LoadingProgress的效果。
 
 ```ets
 // xxx.ets
@@ -160,11 +155,10 @@ class MyLoadingProgressStyle implements ContentModifier<LoadingProgressConfigura
   applyContent(): WrappedBuilder<[LoadingProgressConfiguration]> {
     return wrapBuilder(buildLoadingProgress);
   }
-}
 
 let arr1: string[] =
-  ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"];
-let arr2: string[] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'];
+let arr2: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 @Builder
 function buildLoadingProgress(config: LoadingProgressConfiguration) {
@@ -201,10 +195,10 @@ function buildLoadingProgress(config: LoadingProgressConfiguration) {
         }) {
           Column() {
             Text('60')
-              .maxFontSize("180sp")
-              .minFontSize("160.0vp")
+              .maxFontSize('180sp')
+              .minFontSize('160.0vp')
               .fontWeight(FontWeight.Medium)
-              .fontColor("#ff182431")
+              .fontColor('#ff182431')
               .width('40%')
               .height('30%')
               .textAlign(TextAlign.Center)
@@ -253,7 +247,7 @@ function buildLoadingProgress(config: LoadingProgressConfiguration) {
       .scrollBar(BarState.Off)
     }
 
-  }.width("100%").padding(10)
+  }.width('100%').padding(10)
 }
 
 @Entry
@@ -286,5 +280,6 @@ struct LoadingProgressDemoExample {
     }
 
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522085180.webp)

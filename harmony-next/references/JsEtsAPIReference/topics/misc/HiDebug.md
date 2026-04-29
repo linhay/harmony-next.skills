@@ -8,4 +8,7 @@
 
 #### 文件汇总
 
-名称描述[hidebug.h](../../capi/headers/hidebug.h.md)定义HiDebug模块的调试功能。[hidebug_type.h](../../capi/headers/hidebug_type.h.md)HiDebug模块代码结构体定义。
+| 名称 | 描述 |
+| --- | --- |
+| [hidebug.h](hidebug.h.md) | 定义HiDebug模块的调试功能。 |
+| [hidebug_type.h](hidebug_type.h.md) | HiDebug模块代码结构体定义。 |

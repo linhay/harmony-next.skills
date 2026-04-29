@@ -1,10 +1,11 @@
 # Interface (AuxiliaryPicture)
 
-AuxiliaryPicture类，用于读取或写入图像的辅助图数据以及获取图像的辅助图信息。目前支持的辅助图类型可参考[AuxiliaryPictureType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285837__auxiliarypicturetype13)。
+AuxiliaryPicture类，用于读取或写入图像的辅助图数据以及获取图像的辅助图信息。目前支持的辅助图类型可参考[AuxiliaryPictureType](Enums.md#ZH-CN_TOPIC_0000002522081978__auxiliarypicturetype13)。
 
-在调用AuxiliaryPicture的方法前，需要通过[image.createAuxiliaryPicture](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445805__imagecreateauxiliarypicture13)或Picture的[getAuxiliaryPicture](Interface (Picture).md#ZH-CN_TOPIC_0000002529445809__getauxiliarypicture13)创建一个AuxiliaryPicture实例。
+在调用AuxiliaryPicture的方法前，需要通过[image.createAuxiliaryPicture](Functions.md#ZH-CN_TOPIC_0000002522241966__imagecreateauxiliarypicture13)或Picture的[getAuxiliaryPicture](Interface (Picture).md#ZH-CN_TOPIC_0000002553361895__getauxiliarypicture13)创建一个AuxiliaryPicture实例。
 
-由于图片占用内存较大，所以当AuxiliaryPicture对象使用完成后，应主动调用[release](#ZH-CN_TOPIC_0000002497605842__release13)方法及时释放对象。释放时应确保该实例的所有异步方法均执行完成，且后续不再使用该对象。
+由于图片占用内存较大，所以当AuxiliaryPicture对象使用完成后，应主动调用[release](#ZH-CN_TOPIC_0000002553201933__release13)方法及时释放对象。释放时应确保该实例的所有异步方法均执行完成，且后续不再使用该对象。
+
 
 - 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 - 本Interface首批接口从API version 13开始支持。
@@ -25,17 +26,23 @@ writePixelsFromBuffer(data: ArrayBuffer): Promise<void>
 
 **参数：**
 
-参数名类型必填说明dataArrayBuffer是辅助图像素数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | ArrayBuffer | 是 | 辅助图像素数据。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Image错误码](../../errors/Image错误码.md)。
+以下错误码的详细介绍请参见[Image错误码]([Image错误码](../../errors/Image错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例:**
 
@@ -57,7 +64,6 @@ async function WritePixelsFromBuffer(context: Context) {
   } else {
     console.error('AuxPictureObj is null.');
   }
-}
 ```
 
 #### readPixelsToBuffer13+
@@ -70,7 +76,9 @@ readPixelsToBuffer(): Promise<ArrayBuffer>
 
 **返回值：**
 
-类型说明Promise<ArrayBuffer>Promise对象。返回辅助图像素数据。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<ArrayBuffer> | Promise对象。返回辅助图像素数据。 |
 
 **示例：**
 
@@ -96,12 +104,11 @@ async function ReadPixelsToBuffer(context: Context) {
   } else {
     console.error('AuxPictureObj is null.');
   }
-}
 ```
 
 #### getType13+
 
-getType(): AuxiliaryPictureType
+getType(): [AuxiliaryPictureType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285837__auxiliarypicturetype13)
 
 获取辅助图的类型。
 
@@ -109,7 +116,9 @@ getType(): AuxiliaryPictureType
 
 **返回值：**
 
-类型说明[AuxiliaryPictureType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285837__auxiliarypicturetype13)操作成功，返回辅助图的类型。
+| 类型 | 说明 |
+| --- | --- |
+| [AuxiliaryPictureType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285837__auxiliarypicturetype13) | 操作成功，返回辅助图的类型。 |
 
 **示例：**
 
@@ -121,12 +130,11 @@ async function GetAuxiliaryPictureType(auxPictureObj : image.AuxiliaryPicture) {
   } else {
     console.error('Failed get auxiliary picture type ');
   }
-}
 ```
 
 #### setMetadata13+
 
-setMetadata(metadataType: MetadataType, metadata: Metadata): Promise<void>
+setMetadata(metadataType: [MetadataType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285837__metadatatype13), metadata: Metadata): Promise<void>
 
 设置辅助图元数据。使用Promise异步回调。
 
@@ -134,17 +142,25 @@ setMetadata(metadataType: MetadataType, metadata: Metadata): Promise<void>
 
 **参数：**
 
-参数名类型必填说明metadataType[MetadataType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285837__metadatatype13)是元数据的类型，用于设置对应的元数据。metadata[Metadata](Interface (Metadata).md)是元数据对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| metadataType | [MetadataType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285837__metadatatype13) | 是 | 元数据的类型，用于设置对应的元数据。 |
+| metadata | Metadata | 是 | 元数据对象。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Image错误码](../../errors/Image错误码.md)。
+以下错误码的详细介绍请参见[Image错误码](Image错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed.7600202Unsupported metadata. Possible causes: 1. Unsupported metadata type. 2. The metadata type does not match the auxiliary picture type.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 7600202 | Unsupported metadata. Possible causes: 1. Unsupported metadata type. 2. The metadata type does not match the auxiliary picture type. |
 
 **示例：**
 
@@ -177,12 +193,11 @@ async function SetAuxPictureObjMetadata(exifContext: Context, auxPictureObj: ima
   } else {
     console.error('AuxPictureObjMetaData is null');
   }
-}
 ```
 
 #### getMetadata13+
 
-getMetadata(metadataType: MetadataType): Promise<Metadata>
+getMetadata(metadataType: [MetadataType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285837__metadatatype13)): Promise<Metadata>
 
 从辅助图中获取元数据。使用Promise异步回调。
 
@@ -190,17 +205,24 @@ getMetadata(metadataType: MetadataType): Promise<Metadata>
 
 **参数：**
 
-参数名类型必填说明metadataType[MetadataType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285837__metadatatype13)是元数据类型，用于获取对应类型的元数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| metadataType | [MetadataType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285837__metadatatype13) | 是 | 元数据类型，用于获取对应类型的元数据。 |
 
 **返回值：**
 
-类型说明Promise<[Metadata](Interface (Metadata).md)>Promise对象，返回元数据的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Metadata> | Promise对象，返回元数据的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Image错误码](../../errors/Image错误码.md)。
+以下错误码的详细介绍请参见[Image错误码](Image错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed.7600202Unsupported metadata. Possible causes: 1. Unsupported metadata type. 2. The metadata type does not match the auxiliary picture type.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 7600202 | Unsupported metadata. Possible causes: 1. Unsupported metadata type. 2. The metadata type does not match the auxiliary picture type. |
 
 **示例：**
 
@@ -217,7 +239,6 @@ async function GetAuxPictureObjMetadata(auxPictureObj: image.AuxiliaryPicture) {
   } else {
     console.error('Get AuxPictureObj is null.');
   }
-}
 ```
 
 #### getAuxiliaryPictureinfo13+
@@ -230,7 +251,9 @@ getAuxiliaryPictureInfo(): AuxiliaryPictureInfo
 
 **返回值：**
 
-类型说明[AuxiliaryPictureInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445866__auxiliarypictureinfo13)返回辅助图图像信息。
+| 类型 | 说明 |
+| --- | --- |
+| AuxiliaryPictureInfo | 返回辅助图图像信息。 |
 
 **示例：**
 
@@ -245,7 +268,6 @@ async function GetAuxiliaryPictureInfo(auxPictureObj: image.AuxiliaryPicture) {
   } else {
     console.error('Get auxiliary picture information failed');
   }
-}
 ```
 
 #### setAuxiliaryPictureinfo13+
@@ -258,13 +280,17 @@ setAuxiliaryPictureInfo(info: AuxiliaryPictureInfo): void
 
 **参数：**
 
-参数名类型必填说明info[AuxiliaryPictureInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445866__auxiliarypictureinfo13)是辅助图的图像信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| info | AuxiliaryPictureInfo | 是 | 辅助图的图像信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Image错误码](../../errors/Image错误码.md)。
+以下错误码的详细介绍请参见[Image错误码](Image错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -282,7 +308,6 @@ async function SetAuxiliaryPictureInfo(auxPictureObj: image.AuxiliaryPicture) {
       colorSpace: colorSpaceManager.create(colorSpaceName),
     };
     auxPictureObj.setAuxiliaryPictureInfo(info);
-  }
 }
 ```
 
@@ -313,5 +338,4 @@ async function Release(auxPictureObj: image.AuxiliaryPicture) {
   } else {
     console.error('PictureObj is null');
   }
-}
 ```

@@ -1,5 +1,0 @@
-[]()[]()
-
-# 已停止维护的接口
-
-- **[@system.cipher (加密算法)](../../modules/system/@system.cipher (加密算法).md)**

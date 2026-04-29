@@ -2,6 +2,7 @@
 
 本模块提供输入设备管理能力，包括监听输入设备的连接和断开状态，查询设备名称等输入设备信息。
 
+
 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 #### 导入模块
@@ -14,19 +15,23 @@ import { inputDevice } from '@kit.InputKit';
 
 getDeviceList(callback: AsyncCallback<Array<number>>): void
 
-获取所有输入设备的ID列表，使用Callback回调。
+获取所有输入设备的ID列表，使用callback异步回调。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
 **参数**：
 
-参数名类型必填说明callbackAsyncCallback<Array<number>>是回调函数，返回所有输入设备的ID列表。ID是输入设备的唯一标识。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<number>> | 是 | 回调函数，返回所有输入设备的ID列表。ID是输入设备的唯一标识。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
@@ -42,7 +47,7 @@ struct Index {
       Text()
         .onClick(() => {
           try {
-            inputDevice.getDeviceList((error: BusinessError, ids: Array<Number>) => {
+            inputDevice.getDeviceList((error: BusinessError, ids: Array<number>) => {
               if (error) {
                 console.error(`Failed to get device id list, error: ${JSON.stringify(error, [`code`, `message`])}`);
                 return;
@@ -54,8 +59,6 @@ struct Index {
           }
         })
     }
-  }
-}
 ```
 
 #### inputDevice.getDeviceList9+
@@ -68,7 +71,9 @@ getDeviceList(): Promise<Array<number>>
 
 **返回值**：
 
-类型说明Promise<Array<number>>Promise对象，返回所有输入设备的ID列表。ID是输入设备的唯一标识。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<number>> | Promise对象，返回所有输入设备的ID列表。ID是输入设备的唯一标识。 |
 
 **示例**：
 
@@ -84,7 +89,7 @@ struct Index {
       Text()
         .onClick(() => {
           try {
-            inputDevice.getDeviceList().then((ids: Array<Number>) => {
+            inputDevice.getDeviceList().then((ids: Array<number>) => {
               console.info(`Device id list: ${JSON.stringify(ids)}`);
             }).catch((error: BusinessError) => {
               console.error(`Failed to get device id list, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -94,27 +99,30 @@ struct Index {
           }
         })
     }
-  }
-}
 ```
 
 #### inputDevice.getDeviceInfo9+
 
 getDeviceInfo(deviceId: number, callback: AsyncCallback<InputDeviceData>): void
 
-获取指定输入设备的信息，使用Callback异步回调。
+获取指定输入设备的信息，使用callback异步回调。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
 **参数**：
 
-参数名类型必填说明deviceIdnumber是输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。callbackAsyncCallback<[InputDeviceData](#ZH-CN_TOPIC_0000002529445531__inputdevicedata)>是回调函数。返回输入设备信息，包括输入设备ID、名称、支持的输入能力、物理地址、版本信息及产品信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
+| callback | AsyncCallback<InputDeviceData> | 是 | 回调函数。返回输入设备信息，包括输入设备ID、名称、支持的输入能力、物理地址、版本信息及产品信息等。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
@@ -143,8 +151,6 @@ struct Index {
           }
         })
     }
-  }
-}
 ```
 
 #### inputDevice.getDeviceInfo9+
@@ -157,17 +163,23 @@ getDeviceInfo(deviceId: number): Promise<InputDeviceData>
 
 **参数**：
 
-参数名类型必填说明deviceIdnumber是输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
 
 **返回值**：
 
-类型说明Promise<[InputDeviceData](#ZH-CN_TOPIC_0000002529445531__inputdevicedata)>Promise对象，返回输入设备信息，包括输入设备ID、名称、支持的输入能力、物理地址、版本信息及产品信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<InputDeviceData> | Promise对象，返回输入设备信息，包括输入设备ID、名称、支持的输入能力、物理地址、版本信息及产品信息等。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
@@ -194,8 +206,6 @@ struct Index {
           }
         })
     }
-  }
-}
 ```
 
 #### inputDevice.getDeviceInfoSync10+
@@ -208,17 +218,23 @@ getDeviceInfoSync(deviceId: number): InputDeviceData
 
 **参数**：
 
-参数名类型必填说明deviceIdnumber是输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
 
 **返回值**：
 
-类型说明[InputDeviceData](#ZH-CN_TOPIC_0000002529445531__inputdevicedata)返回输入设备信息，包括输入设备ID、名称、支持的输入能力、物理地址、版本信息及产品信息。
+| 类型 | 说明 |
+| --- | --- |
+| InputDeviceData | 返回输入设备信息，包括输入设备ID、名称、支持的输入能力、物理地址、版本信息及产品信息等。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
@@ -241,27 +257,30 @@ struct Index {
           }
         })
     }
-  }
-}
 ```
 
-#### inputDevice.on9+
+**inputDevice.on('change')9+**
 
 on(type: "change", listener: Callback<DeviceListener>): void
 
-注册监听输入设备的热插拔事件，使用时需连接鼠标、键盘、触摸屏等外部设备。
+注册监听输入设备的热插拔事件，使用时需连接鼠标、键盘、触摸屏等外部设备。使用callback异步回调。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
 **参数**：
 
-参数名类型必填说明typestring是输入设备的事件类型，固定值为'change'。listenerCallback<[DeviceListener](#ZH-CN_TOPIC_0000002529445531__devicelistener9)>是回调函数，异步上报输入设备热插拔事件。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 输入设备的事件类型，固定值为'change'。 |
+| listener | Callback<DeviceListener> | 是 | 回调函数，异步上报输入设备热插拔事件。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
@@ -323,28 +342,30 @@ struct Index {
             }
           })
       }
-    }
-  }
-}
 ```
 
-#### inputDevice.off9+
+**inputDevice.off('change')9+**
 
 off(type: "change", listener?: Callback<DeviceListener>): void
 
-取消监听输入设备的热插拔事件。在应用退出前调用，取消监听。
+取消监听输入设备的热插拔事件。在应用退出前调用，取消监听。使用callback异步回调。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
 **参数**：
 
-参数名类型必填说明typestring是输入设备的事件类型，固定值为'change'。listenerCallback<[DeviceListener](#ZH-CN_TOPIC_0000002529445531__devicelistener9)>否取消监听的回调函数，缺省时取消所有输入设备热插拔事件的监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 输入设备的事件类型，固定值为'change'。 |
+| listener | Callback<DeviceListener> | 否 | 取消监听的回调函数，缺省时取消所有输入设备热插拔事件的监听。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
@@ -383,23 +404,24 @@ struct Index {
           }
         })
     }
-  }
-}
 ```
 
 #### inputDevice.getDeviceIds(deprecated)
 
 getDeviceIds(callback: AsyncCallback<Array<number>>): void
 
-获取所有输入设备的ID列表，使用Callback异步回调。
+获取所有输入设备的ID列表，使用callback异步回调。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[inputDevice.getDeviceList](#ZH-CN_TOPIC_0000002529445531__inputdevicegetdevicelist9)替代。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[inputDevice.getDeviceList](#ZH-CN_TOPIC_0000002522241662__inputdevicegetdevicelist9)替代。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
 **参数**：
 
-参数名类型必填说明callbackAsyncCallback<Array<number>>是回调函数，返回所有输入设备的ID列表。ID是输入设备的唯一标识。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<number>> | 是 | 回调函数，返回所有输入设备的ID列表。ID是输入设备的唯一标识。 |
 
 **示例**：
 
@@ -414,7 +436,7 @@ struct Index {
     RelativeContainer() {
       Text()
         .onClick(() => {
-          inputDevice.getDeviceIds((error: BusinessError, ids: Array<Number>) => {
+          inputDevice.getDeviceIds((error: BusinessError, ids: Array<number>) => {
             if (error) {
               console.error(`Failed to get device id list, error: ${JSON.stringify(error, [`code`, `message`])}`);
               return;
@@ -423,8 +445,6 @@ struct Index {
           });
         })
     }
-  }
-}
 ```
 
 #### inputDevice.getDeviceIds(deprecated)
@@ -433,13 +453,16 @@ getDeviceIds(): Promise<Array<number>>
 
 获取所有输入设备的ID列表，使用Promise异步回调。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[inputDevice.getDeviceList](#ZH-CN_TOPIC_0000002529445531__inputdevicegetdevicelist9)替代。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[inputDevice.getDeviceList](#ZH-CN_TOPIC_0000002522241662__inputdevicegetdevicelist9)替代。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
 **返回值**：
 
-类型说明Promise<Array<number>>Promise对象，返回所有输入设备的ID列表。ID是输入设备的唯一标识。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<number>> | Promise对象，返回所有输入设备的ID列表。ID是输入设备的唯一标识。 |
 
 **示例**：
 
@@ -454,14 +477,11 @@ struct Index {
     RelativeContainer() {
       Text()
         .onClick(() => {
-          inputDevice.getDeviceIds().then((ids: Array<Number>) => {
+          inputDevice.getDeviceIds().then((ids: Array<number>) => {
             console.info(`Device id list: ${JSON.stringify(ids)}`);
           }).catch((error: BusinessError) => {
             console.error(`Failed to get device id list, error: ${JSON.stringify(error, [`code`, `message`])}`);
           })
-        })
-    }
-  }
 }
 ```
 
@@ -469,15 +489,19 @@ struct Index {
 
 getDevice(deviceId: number, callback: AsyncCallback<InputDeviceData>): void
 
-获取指定id的输入设备信息，使用Callback异步回调。
+获取指定id的输入设备信息，使用callback异步回调。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[inputDevice.getDeviceInfo](#ZH-CN_TOPIC_0000002529445531__inputdevicegetdeviceinfo9)替代。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[inputDevice.getDeviceInfo](#ZH-CN_TOPIC_0000002522241662__inputdevicegetdeviceinfo9)替代。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
 **参数**：
 
-参数名类型必填说明deviceIdnumber是输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。callbackAsyncCallback<[InputDeviceData](#ZH-CN_TOPIC_0000002529445531__inputdevicedata)>是回调函数，返回输入设备信息，包括输入设备ID、名称、支持的输入能力、物理地址、版本信息及产品信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
+| callback | AsyncCallback<InputDeviceData> | 是 | 回调函数，返回输入设备信息，包括输入设备ID、名称、支持的输入能力、物理地址、版本信息及产品信息等。 |
 
 **示例**：
 
@@ -502,8 +526,6 @@ struct Index {
           });
         })
     }
-  }
-}
 ```
 
 #### inputDevice.getDevice(deprecated)
@@ -512,17 +534,22 @@ getDevice(deviceId: number): Promise<InputDeviceData>
 
 获取指定id的输入设备信息，使用Promise异步回调。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[inputDevice.getDeviceInfo](#ZH-CN_TOPIC_0000002529445531__inputdevicegetdeviceinfo9)替代。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[inputDevice.getDeviceInfo](#ZH-CN_TOPIC_0000002522241662__inputdevicegetdeviceinfo9)替代。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
 **参数**：
 
-参数名类型必填说明deviceIdnumber是输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
 
 **返回值**：
 
-类型说明Promise<[InputDeviceData](#ZH-CN_TOPIC_0000002529445531__inputdevicedata)>Promise对象，返回输入设备信息，包括输入设备ID、名称、支持的输入能力、物理地址、版本信息及产品信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<InputDeviceData> | Promise对象，返回输入设备信息，包括输入设备ID、名称、支持的输入能力、物理地址、版本信息及产品信息等。 |
 
 **示例**：
 
@@ -543,9 +570,6 @@ struct Index {
           }).catch((error: BusinessError) => {
             console.error(`Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
           })
-        })
-    }
-  }
 }
 ```
 
@@ -559,13 +583,19 @@ supportKeys(deviceId: number, keys: Array<KeyCode>, callback: AsyncCallback <Arr
 
 **参数**：
 
-参数名类型必填说明deviceIdnumber是输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。keysArray[<KeyCode>](@ohos.multimodalInput.keyCode (键值).md#ZH-CN_TOPIC_0000002529285559__keycode)是需要查询的键值，最多支持5个按键查询。callbackAsyncCallback<Array<boolean>>是回调函数，返回查询结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
+| keys | Array<KeyCode> | 是 | 需要查询的键值，最多支持5个按键查询。 |
+| callback | AsyncCallback<Array<boolean>> | 是 | 回调函数，返回查询结果。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
@@ -590,8 +620,6 @@ struct Index {
           }
         })
     }
-  }
-}
 ```
 
 #### inputDevice.supportKeys9+
@@ -604,17 +632,24 @@ supportKeys(deviceId: number, keys: Array<KeyCode>): Promise<Array<boolean>>
 
 **参数**：
 
-参数名类型必填说明deviceIdnumber是输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。keysArray[<KeyCode>](@ohos.multimodalInput.keyCode (键值).md#ZH-CN_TOPIC_0000002529285559__keycode)是需要查询的键值，最多支持查询5个按键。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
+| keys | Array<KeyCode> | 是 | 需要查询的键值，最多支持查询5个按键。 |
 
 **返回值**：
 
-类型说明Promise<Array<boolean>>Promise对象，返回查询结果。true 表示支持，false表示不支持。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<boolean>> | Promise对象，返回查询结果。true 表示支持，false表示不支持。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
@@ -641,8 +676,6 @@ struct Index {
           }
         })
     }
-  }
-}
 ```
 
 #### inputDevice.supportKeysSync10+
@@ -655,17 +688,24 @@ supportKeysSync(deviceId: number, keys: Array<KeyCode>): Array<boolean>
 
 **参数**：
 
-参数名类型必填说明deviceIdnumber是输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。keysArray[<KeyCode>](@ohos.multimodalInput.keyCode (键值).md#ZH-CN_TOPIC_0000002529285559__keycode)是需要查询的键值，最多支持查询5个按键。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
+| keys | Array<KeyCode> | 是 | 需要查询的键值，最多支持查询5个按键。 |
 
 **返回值**：
 
-类型说明Array<boolean>返回查询结果。true表示支持，false表示不支持。
+| 类型 | 说明 |
+| --- | --- |
+| Array<boolean> | 返回查询结果。true表示支持，false表示不支持。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
@@ -688,8 +728,6 @@ struct Index {
           }
         })
     }
-  }
-}
 ```
 
 #### inputDevice.getKeyboardType9+
@@ -702,13 +740,18 @@ getKeyboardType(deviceId: number, callback: AsyncCallback<KeyboardType>): void
 
 **参数**：
 
-参数名类型必填说明deviceIdnumber是输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。callbackAsyncCallback<[KeyboardType](#ZH-CN_TOPIC_0000002529445531__keyboardtype9)>是回调函数，返回查询结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
+| callback | AsyncCallback<KeyboardType> | 是 | 回调函数，返回查询结果。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
@@ -725,7 +768,7 @@ struct Index {
         .onClick(() => {
           // 查询ID为1的输入设备的键盘类型。
           try {
-            inputDevice.getKeyboardType(1, (error: BusinessError, type: Number) => {
+            inputDevice.getKeyboardType(1, (error: BusinessError, type: number) => {
               if (error) {
                 console.error(`Failed to get keyboard type, error: ${JSON.stringify(error, [`code`, `message`])}`);
                 return;
@@ -737,8 +780,6 @@ struct Index {
           }
         })
     }
-  }
-}
 ```
 
 #### inputDevice.getKeyboardType9+
@@ -751,17 +792,23 @@ getKeyboardType(deviceId: number): Promise<KeyboardType>
 
 **参数**：
 
-参数名类型必填说明deviceIdnumber是输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
 
 **返回值**：
 
-类型说明Promise<[KeyboardType](#ZH-CN_TOPIC_0000002529445531__keyboardtype9)>Promise对象，返回查询结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<KeyboardType> | Promise对象，返回查询结果。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
@@ -788,8 +835,6 @@ struct Index {
           }
         })
     }
-  }
-}
 ```
 
 #### inputDevice.getKeyboardTypeSync10+
@@ -802,17 +847,23 @@ getKeyboardTypeSync(deviceId: number): KeyboardType
 
 **参数**：
 
-参数名类型必填说明deviceIdnumber是输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
 
 **返回值**：
 
-类型说明[KeyboardType](#ZH-CN_TOPIC_0000002529445531__keyboardtype9)返回查询结果。
+| 类型 | 说明 |
+| --- | --- |
+| KeyboardType | 返回查询结果。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
@@ -835,8 +886,6 @@ struct Index {
           }
         })
     }
-  }
-}
 ```
 
 #### inputDevice.isFunctionKeyEnabled15+
@@ -849,17 +898,24 @@ isFunctionKeyEnabled(functionKey: FunctionKey): Promise<boolean>
 
 **参数**：
 
-参数名类型必填说明functionKey[FunctionKey](#ZH-CN_TOPIC_0000002529445531__functionkey15)是需要设置的功能键类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| functionKey | FunctionKey | 是 | 需要设置的功能键类型。 |
 
 **返回值**：
 
-类型说明Promise<boolean>Promise对象。返回查询结果，true表示功能键使能，false表示功能键未使能。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回查询结果，true表示功能键使能，false表示功能键未使能。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[输入设备错误码](../../errors/输入设备错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[输入设备错误码]([输入设备错误码](../../errors/输入设备错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.3900002There is currently no keyboard device connected.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 3900002 | There is currently no keyboard device connected. |
 
 **示例**：
 
@@ -885,8 +941,6 @@ struct Index {
           }
         })
     }
-  }
-}
 ```
 
 #### inputDevice.setFunctionKeyEnabled15+
@@ -901,17 +955,27 @@ setFunctionKeyEnabled(functionKey: FunctionKey, enabled: boolean): Promise<void>
 
 **参数**：
 
-参数名类型必填说明functionKey[FunctionKey](#ZH-CN_TOPIC_0000002529445531__functionkey15)是需要设置的功能键类型。enabledboolean是功能键使能状态。取值为true表示使能功能键，取值为false表示不使能功能键。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| functionKey | FunctionKey | 是 | 需要设置的功能键类型。 |
+| enabled | boolean | 是 | 功能键使能状态。取值为true表示使能功能键，取值为false表示不使能功能键。 |
 
 **返回值**：
 
-类型说明Promise<void>Promise对象，无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果的Promise对象。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[输入设备错误码](../../errors/输入设备错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[输入设备错误码](输入设备错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.3900002There is currently no keyboard device connected.3900003It is prohibited for non-input applications.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 3900002 | There is currently no keyboard device connected. |
+| 3900003 | It is prohibited for non-input applications. |
 
 **示例**：
 
@@ -937,8 +1001,6 @@ struct Index {
           }
         })
     }
-  }
-}
 ```
 
 #### inputDevice.getIntervalSinceLastInput14+
@@ -951,7 +1013,9 @@ getIntervalSinceLastInput(): Promise<number>
 
 **返回值**：
 
-类型说明Promise<number>Promise对象，返回距离上次系统输入事件的时间间隔，单位：μs。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回距离上次系统输入事件的时间间隔，单位：μs。 |
 
 **示例**：
 
@@ -971,9 +1035,6 @@ struct Index {
           }).catch((error: BusinessError) => {
             console.error(`Get interval since last input failed, error: ${JSON.stringify(error)}`);
           })
-        })
-    }
-  }
 }
 ```
 
@@ -983,7 +1044,10 @@ struct Index {
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
-名称类型只读可选说明type[ChangedType](#ZH-CN_TOPIC_0000002529445531__changedtype9)否否输入设备插入或者移除。deviceIdnumber否否输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| type | ChangedType | 否 | 否 | 输入设备插入或者移除。 |
+| deviceId | number | 否 | 否 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
 
 #### InputDeviceData
 
@@ -991,7 +1055,20 @@ struct Index {
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
-名称类型只读可选说明idnumber否否输入设备的唯一标识，同一个物理设备反复插拔，设备ID可能会发生变化。namestring否否输入设备的名称。sourcesArray<[SourceType](#ZH-CN_TOPIC_0000002529445531__sourcetype9)>否否输入设备的输入能力。包括键盘、鼠标、触摸屏、轨迹球、触控板、操纵杆等。axisRangesArray<[AxisRange](#ZH-CN_TOPIC_0000002529445531__axisrange)>否否输入设备的轴信息。bus9+number否否输入设备的总线类型，该值以输入设备上报为准。product9+number否否输入设备的产品信息。vendor9+number否否输入设备的厂商信息。version9+number否否输入设备的版本信息。phys9+string否否输入设备的物理地址。uniq9+string否否输入设备的唯一标识。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| id | number | 否 | 否 | 输入设备的唯一标识，同一个物理设备反复插拔，设备ID可能会发生变化。 |
+| name | string | 否 | 否 | 输入设备的名称。 |
+| sources | Array<SourceType> | 否 | 否 | 输入设备的输入能力。包括键盘、鼠标、触摸屏、轨迹球、触控板、操纵杆等。 |
+| axisRanges | Array<AxisRange> | 否 | 否 | 输入设备的轴信息。 |
+| bus9+ | number | 否 | 否 | 输入设备的总线类型，该值以输入设备上报为准。 |
+| product9+ | number | 否 | 否 | 输入设备的产品信息。 |
+| vendor9+ | number | 否 | 否 | 输入设备的厂商信息。 |
+| version9+ | number | 否 | 否 | 输入设备的版本信息。 |
+| phys9+ | string | 否 | 否 | 输入设备的物理地址。 |
+| uniq9+ | string | 否 | 否 | 输入设备的唯一标识。 |
+| isVirtual23+ | boolean | 否 | 是 | 输入设备是否为虚拟设备。 true表示是虚拟设备，false表示是非虚拟设备。 |
+| isLocal23+ | boolean | 否 | 是 | 输入设备是否为本地设备。 true表示是本地设备，false表示是非本地设备。 |
 
 #### AxisType9+
 
@@ -1001,7 +1078,17 @@ type AxisType = 'touchmajor' | 'touchminor' | 'orientation' | 'x' | 'y' | 'press
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
-类型说明'touchmajor'椭圆触摸区域长轴。'touchminor'椭圆触摸区域短轴。'toolminor'工具区域短轴。'toolmajor'工具区域长轴。'orientation'方向轴。'pressure'压力轴。'x'横坐标轴。'y'纵坐标轴。'null'无。
+| 类型 | 说明 |
+| --- | --- |
+| 'touchmajor' | 椭圆触摸区域长轴。 |
+| 'touchminor' | 椭圆触摸区域短轴。 |
+| 'toolminor' | 工具区域短轴。 |
+| 'toolmajor' | 工具区域长轴。 |
+| 'orientation' | 方向轴。 |
+| 'pressure' | 压力轴。 |
+| 'x' | 横坐标轴。 |
+| 'y' | 纵坐标轴。 |
+| 'null' | 无。 |
 
 #### AxisRange
 
@@ -1009,7 +1096,15 @@ type AxisType = 'touchmajor' | 'touchminor' | 'orientation' | 'x' | 'y' | 'press
 
 **系统能力**： SystemCapability.MultimodalInput.Input.InputDevice
 
-名称类型只读可选说明source[SourceType](#ZH-CN_TOPIC_0000002529445531__sourcetype9)否否输入设备的输入能力。包括键盘、鼠标、触摸屏、轨迹球、触控板、操纵杆等。axis[AxisType](#ZH-CN_TOPIC_0000002529445531__axistype9)否否输入设备的轴类型。maxnumber否否轴的最大值。minnumber否否轴的最小值。fuzz9+number否否轴的模糊值。flat9+number否否轴的基准值。resolution9+number否否轴的分辨率。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| source | SourceType | 否 | 否 | 输入设备的输入能力。包括键盘、鼠标、触摸屏、轨迹球、触控板、操纵杆等。 |
+| axis | AxisType | 否 | 否 | 输入设备的轴类型。 |
+| max | number | 否 | 否 | 轴的最大值。 |
+| min | number | 否 | 否 | 轴的最小值。 |
+| fuzz9+ | number | 否 | 否 | 轴的模糊值。 |
+| flat9+ | number | 否 | 否 | 轴的基准值。 |
+| resolution9+ | number | 否 | 否 | 轴的分辨率。 |
 
 #### SourceType9+
 
@@ -1019,7 +1114,14 @@ type SourceType = 'keyboard' | 'mouse' | 'touchpad' | 'touchscreen' | 'joystick'
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
-类型说明'keyboard'表示输入设备是键盘。'touchscreen'表示输入设备是触摸屏。'mouse'表示输入设备是鼠标。'trackball'表示输入设备是轨迹球。'touchpad'表示输入设备是触控板。'joystick'表示输入设备是操纵杆。
+| 类型 | 说明 |
+| --- | --- |
+| 'keyboard' | 表示输入设备是键盘。 |
+| 'touchscreen' | 表示输入设备是触摸屏。 |
+| 'mouse' | 表示输入设备是鼠标。 |
+| 'trackball' | 表示输入设备是轨迹球。 |
+| 'touchpad' | 表示输入设备是触控板。 |
+| 'joystick' | 表示输入设备是操纵杆。 |
 
 #### ChangedType9+
 
@@ -1029,7 +1131,10 @@ type ChangedType = 'add' | 'remove'
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
-类型说明'add'插入输入设备。'remove'移除输入设备。
+| 类型 | 说明 |
+| --- | --- |
+| 'add' | 插入输入设备。 |
+| 'remove' | 移除输入设备。 |
 
 #### KeyboardType9+
 
@@ -1037,7 +1142,14 @@ type ChangedType = 'add' | 'remove'
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
-名称值说明NONE0表示无按键设备。UNKNOWN1表示未知按键设备。ALPHABETIC_KEYBOARD2表示全键盘设备。DIGITAL_KEYBOARD3表示小键盘设备。HANDWRITING_PEN4表示手写笔设备。REMOTE_CONTROL5表示遥控器设备。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NONE | 0 | 表示无按键设备。 |
+| UNKNOWN | 1 | 表示未知按键设备。 |
+| ALPHABETIC_KEYBOARD | 2 | 表示全键盘设备。 |
+| DIGITAL_KEYBOARD | 3 | 表示小键盘设备。 |
+| HANDWRITING_PEN | 4 | 表示手写笔设备。 |
+| REMOTE_CONTROL | 5 | 表示遥控器设备。 |
 
 #### FunctionKey15+
 
@@ -1045,4 +1157,6 @@ type ChangedType = 'add' | 'remove'
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
-名称值说明CAPS_LOCK1CapsLock键，仅支持对输入键盘扩展的CapsLock键设置使能。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CAPS_LOCK | 1 | CapsLock键，仅支持对输入键盘扩展的CapsLock键设置使能。 |

@@ -10,6 +10,6 @@ typedef struct OH_PictureMetadata OH_PictureMetadata
 
 **起始版本：** 13
 
-**相关模块：**[Image_NativeModule](../graphics/Image_NativeModule.md)
+**相关模块：**[Image_NativeModule](../graphics/[Image_NativeModule](../../types/interfaces/Image_NativeModule.md).md)
 
-**所在头文件：**[image_common.h](../../capi/headers/image_common.h.md)
+**所在头文件：**[image_common.h](../../topics/media/[image_common.h](image_common.h.md).md)

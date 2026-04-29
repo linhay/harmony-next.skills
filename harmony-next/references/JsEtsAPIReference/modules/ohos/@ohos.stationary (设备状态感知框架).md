@@ -18,7 +18,9 @@ import { stationary } from '@kit.MultimodalAwarenessKit';
 
 **系统能力**：SystemCapability.Msdp.DeviceStatus.Stationary
 
-名称类型只读可选说明state[ActivityState](#ZH-CN_TOPIC_0000002497445656__activitystate)否否设备状态变化返回值。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| state | ActivityState | 否 | 否 | 设备状态变化返回值。 |
 
 #### ActivityType
 
@@ -28,7 +30,10 @@ type ActivityType = 'still' | 'relativeStill'
 
 **系统能力**：SystemCapability.Msdp.DeviceStatus.Stationary
 
-类型说明'still'绝对静止。'relativeStill'相对静止。
+| 类型 | 说明 |
+| --- | --- |
+| 'still' | 绝对静止。 |
+| 'relativeStill' | 相对静止。 |
 
 #### ActivityEvent
 
@@ -36,7 +41,11 @@ type ActivityType = 'still' | 'relativeStill'
 
 **系统能力**：SystemCapability.Msdp.DeviceStatus.Stationary
 
-名称值说明ENTER1进入。EXIT2退出。ENTER_EXIT3进入和退出。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ENTER | 1 | 进入。 |
+| EXIT | 2 | 退出。 |
+| ENTER_EXIT | 3 | 进入和退出。 |
 
 #### ActivityState
 
@@ -44,7 +53,10 @@ type ActivityType = 'still' | 'relativeStill'
 
 **系统能力**：SystemCapability.Msdp.DeviceStatus.Stationary
 
-名称值说明ENTER1进入。EXIT2退出。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ENTER | 1 | 进入。 |
+| EXIT | 2 | 退出。 |
 
 #### stationary.on('still' | 'relativeStill')
 
@@ -56,7 +68,12 @@ on(activity: ActivityType, event: ActivityEvent, reportLatencyNs: number, callba
 
 **参数：**
 
-参数名类型必填说明activity[ActivityType](#ZH-CN_TOPIC_0000002497445656__activitytype)是设备状态能力类型。event[ActivityEvent](#ZH-CN_TOPIC_0000002497445656__activityevent)是事件类型。reportLatencyNsnumber是报告延时(取值范围1000000000-3000000000)。callbackCallback<[ActivityResponse](#ZH-CN_TOPIC_0000002497445656__activityresponse)>是回调函数，接收上报状态变化事件。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| activity | ActivityType | 是 | 设备状态能力类型。 |
+| event | ActivityEvent | 是 | 事件类型。 |
+| reportLatencyNs | number | 是 | 报告延时(取值范围1000000000-3000000000)。 |
+| callback | Callback<ActivityResponse> | 是 | 回调函数，接收上报状态变化事件。 |
 
 **示例：**
 
@@ -77,7 +94,10 @@ once(activity: ActivityType, callback: Callback<ActivityResponse>): void
 
 **参数：**
 
-参数名类型必填说明activity[ActivityType](#ZH-CN_TOPIC_0000002497445656__activitytype)是设备状态能力类型。callbackCallback<[ActivityResponse](#ZH-CN_TOPIC_0000002497445656__activityresponse)>是回调函数，接收上报状态变化事件。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| activity | ActivityType | 是 | 设备状态能力类型。 |
+| callback | Callback<ActivityResponse> | 是 | 回调函数，接收上报状态变化事件。 |
 
 **示例：**
 
@@ -97,7 +117,11 @@ off(activity: ActivityType, event: ActivityEvent, callback?: Callback<ActivityRe
 
 **参数：**
 
-参数名类型必填说明activity[ActivityType](#ZH-CN_TOPIC_0000002497445656__activitytype)是设备状态能力类型。event[ActivityEvent](#ZH-CN_TOPIC_0000002497445656__activityevent)是事件类型。callbackCallback<[ActivityResponse](#ZH-CN_TOPIC_0000002497445656__activityresponse)>否回调函数，接收上报状态变化事件，如果没有传递callback参数或者传递的类型是undefined，会移除该进程下订阅该类型的所有callback。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| activity | ActivityType | 是 | 设备状态能力类型。 |
+| event | ActivityEvent | 是 | 事件类型。 |
+| callback | Callback<ActivityResponse> | 否 | 回调函数，接收上报状态变化事件，如果没有传递callback参数或者传递的类型是undefined，会移除该进程下订阅该类型的所有callback。 |
 
 **示例：**
 

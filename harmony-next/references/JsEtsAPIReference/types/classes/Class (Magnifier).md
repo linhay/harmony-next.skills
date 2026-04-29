@@ -12,7 +12,7 @@
 
 -
 
-以下API需先使用UIContext中的[getMagnifier()](Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getmagnifier22)方法获取Magnifier实例，再通过此实例调用对应方法。
+以下API需先使用UIContext中的[getMagnifier()](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getmagnifier22)方法获取Magnifier实例，再通过此实例调用对应方法。
 
 -
 
@@ -20,9 +20,9 @@
 
 #### bind
 
-bind(id: string): void
+bind([id](../../topics/components/组件标识.md#ZH-CN_TOPIC_0000002497604824__id): string): void
 
-绑定放大镜与指定id的组件。
+绑定放大镜与指定[id](../../topics/components/组件标识.md#ZH-CN_TOPIC_0000002497604824__id)的组件。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -30,7 +30,9 @@ bind(id: string): void
 
 **参数：**
 
-参数名类型必填说明idstring是组件id，可通过通用属性[id](../../topics/misc/组件标识.md#ZH-CN_TOPIC_0000002497604824__id)或[key](../../topics/misc/组件标识.md#ZH-CN_TOPIC_0000002497604824__key12)设置。当组件id为空字符串或未找到匹配id的组件时，不显示放大镜。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| [id](../../topics/components/组件标识.md#ZH-CN_TOPIC_0000002497604824__id) | string | 是 | 组件id，可通过通用属性id或[key](../../topics/components/组件标识.md#ZH-CN_TOPIC_0000002497604824__key12)设置。当组件id为空字符串或未找到匹配id的组件时，不显示放大镜。 |
 
 **示例：**
 
@@ -66,16 +68,13 @@ struct MagnifierExample {
             } else if (event.type === TouchType.Cancel) {
               this.magnifier.unbind()
             }
-          }
         })
-    }
-  }
 }
 ```
 
 #### show
 
-show(x: number, y: number): void
+show(x: number, y: number): vo[id](../../topics/components/组件标识.md#ZH-CN_TOPIC_0000002497604824__id)
 
 设置放大镜显示的组件内容相对于组件左上角的位置，设置成功后放大镜会对以该坐标点为中心的区域内容进行放大显示。
 
@@ -87,15 +86,18 @@ show(x: number, y: number): void
 
 **参数：**
 
-参数名类型必填说明xnumber是放大镜显示的组件内容相对组件水平方向坐标。当坐标值大于组件宽度或小于0时不显示放大镜；将值设为undefined时保持放大镜的当前显示状态。ynumber是放大镜显示的组件内容相对组件垂直方向坐标。当坐标值大于组件高度或小于0时不显示放大镜；将值设为undefined时保持放大镜的当前显示状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| x | number | 是 | 放大镜显示的组件内容相对组件水平方向坐标，单位为vp。当坐标值大于组件宽度或小于0时不显示放大镜；将值设为undefined时保持放大镜的当前显示状态。 |
+| y | number | 是 | 放大镜显示的组件内容相对组件垂直方向坐标，单位为vp。当坐标值大于组件高度或小于0时不显示放大镜；将值设为undefined时保持放大镜的当前显示状态。 |
 
 **示例：**
 
-请参考[bind](#ZH-CN_TOPIC_0000002529284771__bind)示例。
+请参考[bind](#ZH-CN_TOPIC_0000002553360653__bind)示例。
 
 #### unbind
 
-unbind(): void
+unbind(): vo[id](../../topics/components/组件标识.md#ZH-CN_TOPIC_0000002497604824__id)
 
 解除放大镜与当前组件的绑定。
 
@@ -105,4 +107,4 @@ unbind(): void
 
 **示例：**
 
-请参考[bind](#ZH-CN_TOPIC_0000002529284771__bind)示例。
+请参考[bind](#ZH-CN_TOPIC_0000002553360653__bind)示例。

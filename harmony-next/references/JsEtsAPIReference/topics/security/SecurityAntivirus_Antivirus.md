@@ -8,7 +8,7 @@
 
 **相关模块：**[SecurityAntivirus](SecurityAntivirus.md)
 
-**所在头文件：**[security_antivirus.h](../../capi/headers/security_antivirus.h.md)
+**所在头文件：**[security_antivirus.h](../../topics/security/[security_antivirus.h](security_antivirus.h.md).md)
 
 #### 汇总
 

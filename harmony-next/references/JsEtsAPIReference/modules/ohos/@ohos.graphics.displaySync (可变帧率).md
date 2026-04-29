@@ -20,7 +20,9 @@ create(): DisplaySync
 
 **返回值：**
 
-类型说明[DisplaySync](#ZH-CN_TOPIC_0000002497605974__displaysync)返回当前创建的DisplaySync对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| DisplaySync | 返回当前创建的DisplaySync对象实例。 |
 
 **示例：**
 
@@ -34,13 +36,16 @@ let backDisplaySync: displaySync.DisplaySync = displaySync.create();
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明timestampnumber否否当前帧到达的时间（单位：纳秒）。targetTimestampnumber否否下一帧预期到达的时间（单位：纳秒）。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| timestamp | number | 否 | 否 | 当前帧到达的时间（单位：纳秒）。 |
+| targetTimestamp | number | 否 | 否 | 下一帧预期到达的时间（单位：纳秒）。 |
 
 #### DisplaySync
 
  帧率和回调函数设置实例。用于帧率设置和回调函数的注册，以及启动和停止回调函数的调用。
 
- 下列API示例中都需先使用[displaySync.create()](#ZH-CN_TOPIC_0000002497605974__displaysynccreate)方法获取到DisplaySync实例，再通过此实例调用对应方法。
+ 下列API示例中都需先使用[displaySync.create()](#ZH-CN_TOPIC_0000002553362047__displaysynccreate)方法获取到DisplaySync实例，再通过此实例调用对应方法。
 
 #### setExpectedFrameRateRange
 
@@ -52,13 +57,17 @@ setExpectedFrameRateRange(rateRange: ExpectedFrameRateRange) : void
 
 **参数：**
 
-参数名类型必填说明rateRange[ExpectedFrameRateRange](../../topics/misc/显式动画 (animateTo).md#ZH-CN_TOPIC_0000002497444950__expectedframeraterange11)是设置DisplaySync期望的帧率。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rateRange | ExpectedFrameRateRange | 是 | 设置DisplaySync期望的帧率。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.Incorrect parameters types. 3. Parameter verification failed. or check ExpectedFrameRateRange if valid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.Incorrect parameters types. 3. Parameter verification failed. or check ExpectedFrameRateRange if valid. |
 
 **示例：**
 
@@ -83,7 +92,10 @@ on(type: 'frame', callback: Callback<IntervalInfo>): void
 
 **参数：**
 
-参数名类型必填说明type'frame'是设置注册回调的类型（只能是'frame'类型）。callbackCallback<[IntervalInfo](#ZH-CN_TOPIC_0000002497605974__intervalinfo)>是订阅函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | 'frame' | 是 | 设置注册回调的类型（只能是'frame'类型）。 |
+| callback | Callback<IntervalInfo> | 是 | 订阅函数。 |
 
 **示例：**
 
@@ -106,7 +118,10 @@ off(type: 'frame', callback?: Callback<IntervalInfo>): void
 
 **参数：**
 
-参数名类型必填说明type'frame'是设置注册回调的类型（只能是'frame'类型）。callbackCallback<[IntervalInfo](#ZH-CN_TOPIC_0000002497605974__intervalinfo)>否订阅函数，参数不填时，默认取消全部订阅函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | 'frame' | 是 | 设置注册回调的类型（只能是'frame'类型）。 |
+| callback | Callback<IntervalInfo> | 否 | 订阅函数，参数不填时，默认取消全部订阅函数。 |
 
 **示例：**
 
@@ -152,7 +167,7 @@ backDisplaySync?.start()
 
 start接口是将DisplaySync关联到UI实例和窗口，若在非UI页面中或者一些异步回调中进行start操作，可能无法跟踪到当前UI的上下文，导致start接口失败，会进一步导致订阅函数无法执行。
 
-因此可以使用UIContext的[runScopedTask](../../types/classes/Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__runscopedtask)接口来指定start函数执行的UI上下文。
+因此可以使用UIContext的[runScopedTask](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__runscopedtask)接口来指定start函数执行的UI上下文。
 
 **示例：**
 
@@ -179,7 +194,6 @@ struct Index {
   build() {
     // ...
   }
-}
 ```
 
 #### stop

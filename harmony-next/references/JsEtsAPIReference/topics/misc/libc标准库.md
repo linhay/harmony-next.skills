@@ -4,9 +4,9 @@
 
 C标准函数库在C语言程序设计中，提供符合标准的头文件，以及常用的库函数实现（如I/O输入输出和字符串控制）。
 
-HarmonyOS采用musl作为C标准库，musl库是一个轻量，快速，简单，免费的开源libc库，详细介绍参考[musl官方参考手册](http://musl.libc.org/manual.md)。
+HarmonyOS采用musl作为C标准库，musl库是一个轻量，快速，简单，免费的开源libc库，详细介绍参考[musl官方参考手册](http://musl.libc.org/manual.html)。
 
-musl与glibc的差异点请参考[musl与glibc功能对比](https://wiki.musl-libc.org/functional-differences-from-glibc.md)。
+musl与glibc的差异点请参考[musl与glibc功能对比](https://wiki.musl-libc.org/functional-differences-from-glibc.html)。
 
 #### 标准C库组件介绍
 
@@ -77,7 +77,9 @@ param set musl.log.ld.app.{app_name} false
 
 #### musl 差异规格接口说明
 
-接口名称说明epoll_create在HarmonyOS5.0 上 该接口逻辑与1.2.3版本保持一致，不会对入参进行判断，不区分入参小于等于0的情况，预计下版本更新此接口逻辑与社区1.2.5保持一致，增加入参逻辑判断，入参小于等于0时创建失败，并返回错误码EINVAL。
+| 接口名称 | 说明 |
+| --- | --- |
+| epoll_create | 在HarmonyOS5.0 上 该接口逻辑与1.2.3版本保持一致，不会对入参进行判断，不区分入参小于等于0的情况，预计下版本更新此接口逻辑与社区1.2.5保持一致，增加入参逻辑判断，入参小于等于0时创建失败，并返回错误码EINVAL。 |
 
 #### ICONV支持的字符集编码格式
 
@@ -87,12 +89,63 @@ musl支持的字符集编码格式，以及受支持的别名。
 
 在musl里不支持将源字符集编码格式转换成这五种目标字符集编码格式：gb18030，gbk，gb2312，big5和euckr。
 
-编码格式别名musl支持情况utf8支持wchart支持ucs2be支持ucs2le支持utf16be支持utf16le支持ucs4beutf32be支持ucs4leutf32le支持asciiusascii, iso646, iso646us支持utf16支持ucs4utf32支持ucs2支持eucjp支持shiftjissjis, cp932支持iso2022jp支持gb18030支持gbk支持gb2312支持big5bigfive, cp950, big5hkscs支持euckrksc5601, ksx1001, cp949支持iso88591latin1支持iso88592支持iso88593支持iso88594支持iso88595支持iso88596支持iso88597支持iso88598支持iso88599支持iso885910支持iso885911tis620支持iso885913支持iso885914支持iso885915latin9支持iso885916支持cp1250windows1250支持cp1251windows1251支持cp1252windows1252支持cp1253windows1253支持cp1254windows1254支持cp1255windows1255支持cp1256windows1256支持cp1257windows1257支持cp1258windows1258支持koi8r支持koi8u支持cp437支持cp850支持cp866支持cp1047ibm1047支持
+| 编码格式 | 别名 | musl支持情况 |
+| --- | --- | --- |
+| utf8 |  | 支持 |
+| wchart |  | 支持 |
+| ucs2be |  | 支持 |
+| ucs2le |  | 支持 |
+| utf16be |  | 支持 |
+| utf16le |  | 支持 |
+| ucs4be | utf32be | 支持 |
+| ucs4le | utf32le | 支持 |
+| ascii | usascii, iso646, iso646us | 支持 |
+| utf16 |  | 支持 |
+| ucs4 | utf32 | 支持 |
+| ucs2 |  | 支持 |
+| eucjp |  | 支持 |
+| shiftjis | sjis, cp932 | 支持 |
+| iso2022jp |  | 支持 |
+| gb18030 |  | 支持 |
+| gbk |  | 支持 |
+| gb2312 |  | 支持 |
+| big5 | bigfive, cp950, big5hkscs | 支持 |
+| euckr | ksc5601, ksx1001, cp949 | 支持 |
+| iso88591 | latin1 | 支持 |
+| iso88592 |  | 支持 |
+| iso88593 |  | 支持 |
+| iso88594 |  | 支持 |
+| iso88595 |  | 支持 |
+| iso88596 |  | 支持 |
+| iso88597 |  | 支持 |
+| iso88598 |  | 支持 |
+| iso88599 |  | 支持 |
+| iso885910 |  | 支持 |
+| iso885911 | tis620 | 支持 |
+| iso885913 |  | 支持 |
+| iso885914 |  | 支持 |
+| iso885915 | latin9 | 支持 |
+| iso885916 |  | 支持 |
+| cp1250 | windows1250 | 支持 |
+| cp1251 | windows1251 | 支持 |
+| cp1252 | windows1252 | 支持 |
+| cp1253 | windows1253 | 支持 |
+| cp1254 | windows1254 | 支持 |
+| cp1255 | windows1255 | 支持 |
+| cp1256 | windows1256 | 支持 |
+| cp1257 | windows1257 | 支持 |
+| cp1258 | windows1258 | 支持 |
+| koi8r |  | 支持 |
+| koi8u |  | 支持 |
+| cp437 |  | 支持 |
+| cp850 |  | 支持 |
+| cp866 |  | 支持 |
+| cp1047 | ibm1047 | 支持 |
 
 #### musl不支持接口列表。
 
-[native api中没有导出的符号列表](../networking/Native api中没有导出的符号列表.md)
+[native api中没有导出的符号列表](Native api中没有导出的符号列表.md)
 
-[NDK musl-libc接口受权限影响的说明](../../guides/NDK涉及的musl libc接口使用限制的说明.md)
+[NDK musl-libc接口受权限影响的说明](NDK涉及的musl libc接口使用限制的说明.md)
 
-[NDK musl-libc补充api文档](https://gitcode.com/HarmonyOS/third_party_musl/tree/master/docs)
+[NDK musl-libc补充api文档](https://gitcode.com/openharmony/third_party_musl/tree/master/docs)

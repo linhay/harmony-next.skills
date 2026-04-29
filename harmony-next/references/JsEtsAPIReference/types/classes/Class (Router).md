@@ -12,7 +12,7 @@
 
 -
 
-以下API需先使用UIContext中的[getRouter()](Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getrouter)方法获取到Router对象，再通过该对象调用对应方法。
+以下API需先使用UIContext中的[getRouter()](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getrouter)方法获取到Router对象，再通过该对象调用对应方法。
 
 #### pushUrl
 
@@ -26,17 +26,156 @@ pushUrl(options: router.RouterOptions): Promise<void>
 
 **参数：**
 
-参数名类型必填说明options[router.RouterOptions](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routeroptions)是跳转页面描述信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | router.RouterOptions | 是 | 跳转页面描述信息。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[页面路由错误码](../../errors/页面路由错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)、[页面路由错误码]([页面路由错误码](../../errors/页面路由错误码.md).md)和[接口调用异常错误码]([接口调用异常错误码](../../errors/接口调用异常错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.100001Internal error.100002Uri error. The URI of the page to redirect is incorrect or does not exist.100003Page stack error. Too many pages are pushed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 100001 | Internal error. |
+| 100002 | Uri error. The URI of the page to redirect is incorrect or does not exist. |
+| 100003 | Page stack error. Too many pages are pushed. |
+
+**示例：**
+
+```ets
+import { router } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+// 定义传递参数的类
+class innerParams {
+  array: number[];
+
+  constructor(tuple: number[]) {
+    this.array = tuple;
+  }
+
+class RouterParams {
+  data: innerParams;
+
+  constructor(tuple: number[]) {
+    this.data = new innerParams(tuple);
+  }
+
+@Entry
+@Component
+struct Index {
+  async routePage() {
+    let options: router.RouterOptions = {
+      url: 'pages/second',
+      params: new RouterParams([12, 45, 78])
+    }
+    this.getUIContext()
+      .getRouter()
+      .pushUrl(options)
+      .then(() => {
+        console.error(`pushUrl finish`);
+      })
+      .catch((err: ESObject) => {
+        console.error(`pushUrl failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);
+      })
+  }
+
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Text('First Page')
+      Button('Next page')
+        .type(ButtonType.Capsule)
+        .margin({ top: 20 })
+        .onClick(() => {
+          this.routePage()
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+```
+
+```ets
+// 在second页面中接收传递过来的参数
+class innerParams {
+  array: number[];
+
+  constructor(tuple: number[]) {
+    this.array = tuple;
+  }
+
+class RouterParams {
+  data: innerParams;
+
+  constructor(tuple: number[]) {
+    this.data = new innerParams(tuple);
+  }
+
+@Entry
+@Component
+struct Second {
+  @State data: object = (this.getUIContext().getRouter().getParams() as RouterParams).data;
+  @State secondData: string = '';
+
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Text('Second Page')
+      Button('Back')
+        .fontSize(30)
+        .onClick(() => {
+          try {
+            this.getUIContext().getRouter().showAlertBeforeBackPage({ message: 'Are you sure to return?' })
+          } catch (error) {
+            // TODO: Implement error handling.
+          }
+          this.getUIContext().getRouter().back()
+        })
+        .margin({ top: 20 })
+      Button(`The value on the first page：${this.secondData}`)
+        .margin({ top: 20 })
+        .onClick(()=> {
+          this.secondData = (this.data['array'][1]).toString();
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+```
+
+**pushUrl**
+
+pushUrl(options: router.RouterOptions, callback: AsyncCallback<void>): void
+
+跳转到应用内的指定页面。使用callback异步回调。
+
+元服务API： 从API version 11开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | router.RouterOptions | 是 | 跳转页面描述信息。 |
+| callback | AsyncCallback<void> | 是 | router跳转结果回调函数。 当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)、[页面路由错误码](页面路由错误码.md)和[接口调用异常错误码](接口调用异常错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 100001 | Internal error. |
+| 100002 | Uri error. The URI of the page to redirect is incorrect or does not exist. |
+| 100003 | Page stack error. Too many pages are pushed. |
 
 **示例：**
 
@@ -53,76 +192,6 @@ struct Index {
           data1: 'message',
           data2: {
             data3: [123, 456, 789]
-          }
-        }
-      })
-      .then(() => {
-        console.info('succeeded');
-      })
-      .catch((error: BusinessError) => {
-        console.error(`pushUrl failed, code is ${error.code}, message is ${error.message}`);
-      })
-  }
-
-  build() {
-    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-      Button() {
-        Text('next page')
-          .fontSize(25)
-          .fontWeight(FontWeight.Bold)
-      }.type(ButtonType.Capsule)
-      .margin({ top: 20 })
-      .backgroundColor('#ccc')
-      .onClick(() => {
-        this.routePage();
-      })
-    }
-    .width('100%')
-    .height('100%')
-  }
-}
-```
-
-#### pushUrl
-
-pushUrl(options: router.RouterOptions, callback: AsyncCallback<void>): void
-
-跳转到应用内的指定页面。使用callback异步回调。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
-参数名类型必填说明options[router.RouterOptions](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routeroptions)是跳转页面描述信息。callbackAsyncCallback<void>是
-
-router跳转结果回调函数。
-
-当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[页面路由错误码](../../errors/页面路由错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)。
-
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.100001Internal error.100002Uri error. The URI of the page to redirect is incorrect or does not exist.100003Page stack error. Too many pages are pushed.
-
-**示例：**
-
-```ets
-import { BusinessError } from '@kit.BasicServicesKit';
-
-@Entry
-@Component
-struct Index {
-  async routePage() {
-    this.getUIContext().getRouter().pushUrl({
-      url: 'pages/routerpage2',
-      params: {
-        data1: 'message',
-        data2: {
-          data3: [123, 456, 789]
-        }
       }
     }, (err: Error) => {
       if (err) {
@@ -151,14 +220,13 @@ struct Index {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### pushUrl
 
 pushUrl(options: router.RouterOptions, mode: router.RouterMode): Promise<void>
 
-跳转到应用内的指定页面，使用Promise异步回调。与[pushUrl](#ZH-CN_TOPIC_0000002497604782__pushurl)相比，新增了mode参数，即支持设置跳转页面使用的模式。
+跳转到应用内的指定页面，使用Promise异步回调。与[pushUrl](#ZH-CN_TOPIC_0000002553200695__pushurl)相比，新增了mode参数，即支持设置跳转页面使用的模式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -166,17 +234,27 @@ pushUrl(options: router.RouterOptions, mode: router.RouterMode): Promise<void>
 
 **参数：**
 
-参数名类型必填说明options[router.RouterOptions](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routeroptions)是跳转页面描述信息。mode[router.RouterMode](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routermode9)是跳转页面使用的模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | router.RouterOptions | 是 | 跳转页面描述信息。 |
+| mode | router.RouterMode | 是 | 跳转页面使用的模式。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[页面路由错误码](../../errors/页面路由错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)、[页面路由错误码](页面路由错误码.md)和[接口调用异常错误码](接口调用异常错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.100001Internal error.100002Uri error. The URI of the page to redirect is incorrect or does not exist.100003Page stack error. Too many pages are pushed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 100001 | Internal error. |
+| 100002 | Uri error. The URI of the page to redirect is incorrect or does not exist. |
+| 100003 | Page stack error. Too many pages are pushed. |
 
 **示例：**
 
@@ -200,7 +278,6 @@ struct Index {
           data1: 'message',
           data2: {
             data3: [123, 456, 789]
-          }
         }
       }, rtm.Standard)
       .then(() => {
@@ -227,14 +304,13 @@ struct Index {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### pushUrl
 
 pushUrl(options: router.RouterOptions, mode: router.RouterMode, callback: AsyncCallback<void>): void
 
-跳转到应用内的指定页面。使用callback异步回调。与[pushUrl](#ZH-CN_TOPIC_0000002497604782__pushurl-1)相比，新增了mode参数，即支持设置跳转页面使用的模式。
+跳转到应用内的指定页面。使用callback异步回调。与[pushUrl](#ZH-CN_TOPIC_0000002553200695__pushurl-1)相比，新增了mode参数，即支持设置跳转页面使用的模式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -242,17 +318,22 @@ pushUrl(options: router.RouterOptions, mode: router.RouterMode, callback: AsyncC
 
 **参数：**
 
-参数名类型必填说明options[router.RouterOptions](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routeroptions)是跳转页面描述信息。mode[router.RouterMode](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routermode9)是跳转页面使用的模式。callbackAsyncCallback<void>是
-
-router跳转结果回调函数。
-
-当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | router.RouterOptions | 是 | 跳转页面描述信息。 |
+| mode | router.RouterMode | 是 | 跳转页面使用的模式。 |
+| callback | AsyncCallback<void> | 是 | router跳转结果回调函数。 当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[页面路由错误码](../../errors/页面路由错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)、[页面路由错误码](页面路由错误码.md)和[接口调用异常错误码](接口调用异常错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.100001Internal error.100002Uri error. The URI of the page to redirect is incorrect or does not exist.100003Page stack error. Too many pages are pushed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 100001 | Internal error. |
+| 100002 | Uri error. The URI of the page to redirect is incorrect or does not exist. |
+| 100003 | Page stack error. Too many pages are pushed. |
 
 **示例：**
 
@@ -276,7 +357,6 @@ struct Index {
         data1: 'message',
         data2: {
           data3: [123, 456, 789]
-        }
       }
     }, rtm.Standard, (err) => {
       if (err) {
@@ -305,7 +385,6 @@ struct Index {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### replaceUrl
@@ -320,17 +399,25 @@ replaceUrl(options: router.RouterOptions): Promise<void>
 
 **参数：**
 
-参数名类型必填说明options[router.RouterOptions](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routeroptions)是替换页面描述信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | router.RouterOptions | 是 | 替换页面描述信息。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[页面路由错误码](../../errors/页面路由错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)、[页面路由错误码](页面路由错误码.md)和[接口调用异常错误码](接口调用异常错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.100001The UI execution context is not found. This error code is thrown only in the standard system.200002Uri error. The URI of the page to be used for replacement is incorrect or does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 100001 | The UI execution context is not found. This error code is thrown only in the standard system. |
+| 200002 | Uri error. The URI of the page to be used for replacement is incorrect or does not exist. |
 
 **示例：**
 
@@ -371,7 +458,6 @@ struct Index {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### replaceUrl
@@ -386,17 +472,20 @@ replaceUrl(options: router.RouterOptions, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明options[router.RouterOptions](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routeroptions)是替换页面描述信息。callbackAsyncCallback<void>是
-
-router跳转结果回调函数。
-
-当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | router.RouterOptions | 是 | 替换页面描述信息。 |
+| callback | AsyncCallback<void> | 是 | router跳转结果回调函数。 当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[页面路由错误码](../../errors/页面路由错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)、[页面路由错误码](页面路由错误码.md)和[接口调用异常错误码](接口调用异常错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.100001The UI execution context is not found. This error code is thrown only in the standard system.200002Uri error. The URI of the page to be used for replacement is incorrect or does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 100001 | The UI execution context is not found. This error code is thrown only in the standard system. |
+| 200002 | Uri error. The URI of the page to be used for replacement is incorrect or does not exist. |
 
 **示例：**
 
@@ -439,14 +528,13 @@ struct Index {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### replaceUrl
 
 replaceUrl(options: router.RouterOptions, mode: router.RouterMode): Promise<void>
 
-用应用内的某个页面替换当前页面，并销毁被替换的页面，使用Promise异步回调。与[replaceUrl](#ZH-CN_TOPIC_0000002497604782__replaceurl)相比，新增了mode参数，即支持设置跳转页面使用的模式。
+用应用内的某个页面替换当前页面，并销毁被替换的页面，使用Promise异步回调。与[replaceUrl](#ZH-CN_TOPIC_0000002553200695__replaceurl)相比，新增了mode参数，即支持设置跳转页面使用的模式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -454,17 +542,26 @@ replaceUrl(options: router.RouterOptions, mode: router.RouterMode): Promise<void
 
 **参数：**
 
-参数名类型必填说明options[router.RouterOptions](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routeroptions)是替换页面描述信息。mode[router.RouterMode](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routermode9)是跳转页面使用的模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | router.RouterOptions | 是 | 替换页面描述信息。 |
+| mode | router.RouterMode | 是 | 跳转页面使用的模式。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[页面路由错误码](../../errors/页面路由错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)、[页面路由错误码](页面路由错误码.md)和[接口调用异常错误码](接口调用异常错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.100001Failed to get the delegate. This error code is thrown only in the standard system.200002Uri error. The URI of the page to be used for replacement is incorrect or does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 100001 | Failed to get the delegate. This error code is thrown only in the standard system. |
+| 200002 | Uri error. The URI of the page to be used for replacement is incorrect or does not exist. |
 
 **示例：**
 
@@ -512,14 +609,13 @@ struct Index {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### replaceUrl
 
 replaceUrl(options: router.RouterOptions, mode: router.RouterMode, callback: AsyncCallback<void>): void
 
-用应用内的某个页面替换当前页面，并销毁被替换的页面。使用callback异步回调。与[replaceUrl](#ZH-CN_TOPIC_0000002497604782__replaceurl-1)相比，新增了mode参数，即支持设置跳转页面使用的模式。
+用应用内的某个页面替换当前页面，并销毁被替换的页面。使用callback异步回调。与[replaceUrl](#ZH-CN_TOPIC_0000002553200695__replaceurl-1)相比，新增了mode参数，即支持设置跳转页面使用的模式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -527,17 +623,21 @@ replaceUrl(options: router.RouterOptions, mode: router.RouterMode, callback: Asy
 
 **参数：**
 
-参数名类型必填说明options[router.RouterOptions](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routeroptions)是替换页面描述信息。mode[router.RouterMode](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routermode9)是跳转页面使用的模式。callbackAsyncCallback<void>是
-
-router跳转结果回调函数。
-
-当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | router.RouterOptions | 是 | 替换页面描述信息。 |
+| mode | router.RouterMode | 是 | 跳转页面使用的模式。 |
+| callback | AsyncCallback<void> | 是 | router跳转结果回调函数。 当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[页面路由错误码](../../errors/页面路由错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)、[页面路由错误码](页面路由错误码.md)和[接口调用异常错误码](接口调用异常错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.100001The UI execution context is not found. This error code is thrown only in the standard system.200002Uri error. The URI of the page to be used for replacement is incorrect or does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 100001 | The UI execution context is not found. This error code is thrown only in the standard system. |
+| 200002 | Uri error. The URI of the page to be used for replacement is incorrect or does not exist. |
 
 **示例：**
 
@@ -587,7 +687,6 @@ struct Index {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### pushNamedRoute
@@ -602,17 +701,26 @@ pushNamedRoute(options: router.NamedRouterOptions): Promise<void>
 
 **参数：**
 
-参数名类型必填说明options[router.NamedRouterOptions](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__namedrouteroptions10)是跳转页面描述信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | router.NamedRouterOptions | 是 | 跳转页面描述信息。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[页面路由错误码](../../errors/页面路由错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)、[页面路由错误码](页面路由错误码.md)和[接口调用异常错误码](接口调用异常错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.100001Internal error.100003Page stack error. Too many pages are pushed.100004Named route error. The named route does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 100001 | Internal error. |
+| 100003 | Page stack error. Too many pages are pushed. |
+| 100004 | Named route error. The named route does not exist. |
 
 **示例：**
 
@@ -629,7 +737,6 @@ struct Index {
           data1: 'message',
           data2: {
             data3: [123, 456, 789]
-          }
         }
       })
       .then(() => {
@@ -656,7 +763,6 @@ struct Index {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### pushNamedRoute
@@ -671,17 +777,21 @@ pushNamedRoute(options: router.NamedRouterOptions, callback: AsyncCallback<void>
 
 **参数：**
 
-参数名类型必填说明options[router.NamedRouterOptions](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__namedrouteroptions10)是跳转页面描述信息。callbackAsyncCallback<void>是
-
-router跳转结果回调函数。
-
-当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | router.NamedRouterOptions | 是 | 跳转页面描述信息。 |
+| callback | AsyncCallback<void> | 是 | router跳转结果回调函数。 当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[页面路由错误码](../../errors/页面路由错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)、[页面路由错误码](页面路由错误码.md)和[接口调用异常错误码](接口调用异常错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.100001Internal error.100003Page stack error. Too many pages are pushed.100004Named route error. The named route does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 100001 | Internal error. |
+| 100003 | Page stack error. Too many pages are pushed. |
+| 100004 | Named route error. The named route does not exist. |
 
 **示例：**
 
@@ -698,7 +808,6 @@ struct Index {
         data1: 'message',
         data2: {
           data3: [123, 456, 789]
-        }
       }
     }, (err: Error) => {
       if (err) {
@@ -727,14 +836,13 @@ struct Index {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### pushNamedRoute
 
 pushNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode): Promise<void>
 
-跳转到指定的命名路由页面，使用Promise异步回调。与[pushNamedRoute](#ZH-CN_TOPIC_0000002497604782__pushnamedroute)相比，新增了mode参数，即支持设置跳转页面使用的模式。
+跳转到指定的命名路由页面，使用Promise异步回调。与[pushNamedRoute](#ZH-CN_TOPIC_0000002553200695__pushnamedroute)相比，新增了mode参数，即支持设置跳转页面使用的模式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -742,17 +850,27 @@ pushNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode): Pro
 
 **参数：**
 
-参数名类型必填说明options[router.NamedRouterOptions](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__namedrouteroptions10)是跳转页面描述信息。mode[router.RouterMode](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routermode9)是跳转页面使用的模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | router.NamedRouterOptions | 是 | 跳转页面描述信息。 |
+| mode | router.RouterMode | 是 | 跳转页面使用的模式。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[页面路由错误码](../../errors/页面路由错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)、[页面路由错误码](页面路由错误码.md)和[接口调用异常错误码](接口调用异常错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.100001Internal error.100003Page stack error. Too many pages are pushed.100004Named route error. The named route does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 100001 | Internal error. |
+| 100003 | Page stack error. Too many pages are pushed. |
+| 100004 | Named route error. The named route does not exist. |
 
 **示例：**
 
@@ -775,7 +893,6 @@ struct Index {
           data1: 'message',
           data2: {
             data3: [123, 456, 789]
-          }
         }
       }, rtm.Standard)
       .then(() => {
@@ -802,14 +919,13 @@ struct Index {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### pushNamedRoute
 
 pushNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode, callback: AsyncCallback<void>): void
 
-跳转到指定的命名路由页面。使用callback异步回调。与[pushNamedRoute](#ZH-CN_TOPIC_0000002497604782__pushnamedroute-1)相比，新增了mode参数，即支持设置跳转页面使用的模式。
+跳转到指定的命名路由页面。使用callback异步回调。与[pushNamedRoute](#ZH-CN_TOPIC_0000002553200695__pushnamedroute-1)相比，新增了mode参数，即支持设置跳转页面使用的模式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -817,17 +933,22 @@ pushNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode, call
 
 **参数：**
 
-参数名类型必填说明options[router.NamedRouterOptions](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__namedrouteroptions10)是跳转页面描述信息。mode[router.RouterMode](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routermode9)是跳转页面使用的模式。callbackAsyncCallback<void>是
-
-router跳转结果回调函数。
-
-当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | router.NamedRouterOptions | 是 | 跳转页面描述信息。 |
+| mode | router.RouterMode | 是 | 跳转页面使用的模式。 |
+| callback | AsyncCallback<void> | 是 | router跳转结果回调函数。 当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[页面路由错误码](../../errors/页面路由错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)、[页面路由错误码](页面路由错误码.md)和[接口调用异常错误码](接口调用异常错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.100001Internal error.100003Page stack error. Too many pages are pushed.100004Named route error. The named route does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 100001 | Internal error. |
+| 100003 | Page stack error. Too many pages are pushed. |
+| 100004 | Named route error. The named route does not exist. |
 
 **示例：**
 
@@ -851,7 +972,6 @@ struct Index {
         data1: 'message',
         data2: {
           data3: [123, 456, 789]
-        }
       }
     }, rtm.Standard, (err: Error) => {
       if (err) {
@@ -880,7 +1000,6 @@ struct Index {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### replaceNamedRoute
@@ -895,17 +1014,25 @@ replaceNamedRoute(options: router.NamedRouterOptions): Promise<void>
 
 **参数：**
 
-参数名类型必填说明options[router.NamedRouterOptions](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__namedrouteroptions10)是替换页面描述信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | router.NamedRouterOptions | 是 | 替换页面描述信息。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[页面路由错误码](../../errors/页面路由错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)、[页面路由错误码](页面路由错误码.md)和[接口调用异常错误码](接口调用异常错误码.md)。
 
-错误码ID错误信息401if the number of parameters is less than 1 or the type of the url parameter is not string.100001The UI execution context is not found. This error code is thrown only in the standard system.100004Named route error. The named route does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | if the number of parameters is less than 1 or the type of the url parameter is not string. |
+| 100001 | The UI execution context is not found. This error code is thrown only in the standard system. |
+| 100004 | Named route error. The named route does not exist. |
 
 **示例：**
 
@@ -946,7 +1073,6 @@ struct Index {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### replaceNamedRoute
@@ -961,17 +1087,20 @@ replaceNamedRoute(options: router.NamedRouterOptions, callback: AsyncCallback<vo
 
 **参数：**
 
-参数名类型必填说明options[router.NamedRouterOptions](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__namedrouteroptions10)是替换页面描述信息。callbackAsyncCallback<void>是
-
-router跳转结果回调函数。
-
-当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | router.NamedRouterOptions | 是 | 替换页面描述信息。 |
+| callback | AsyncCallback<void> | 是 | router跳转结果回调函数。 当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[页面路由错误码](../../errors/页面路由错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)、[页面路由错误码](页面路由错误码.md)和[接口调用异常错误码](接口调用异常错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.100001The UI execution context is not found. This error code is thrown only in the standard system.100004Named route error. The named route does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 100001 | The UI execution context is not found. This error code is thrown only in the standard system. |
+| 100004 | Named route error. The named route does not exist. |
 
 **示例：**
 
@@ -1014,14 +1143,13 @@ struct Index {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### replaceNamedRoute
 
 replaceNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode): Promise<void>
 
-用指定的命名路由页面替换当前页面，并销毁被替换的页面，使用Promise异步回调。与[replaceNamedRoute](#ZH-CN_TOPIC_0000002497604782__replacenamedroute)相比，新增了mode参数，即支持设置跳转页面使用的模式。
+用指定的命名路由页面替换当前页面，并销毁被替换的页面，使用Promise异步回调。与[replaceNamedRoute](#ZH-CN_TOPIC_0000002553200695__replacenamedroute)相比，新增了mode参数，即支持设置跳转页面使用的模式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1029,17 +1157,26 @@ replaceNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode): 
 
 **参数：**
 
-参数名类型必填说明options[router.NamedRouterOptions](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__namedrouteroptions10)是替换页面描述信息。mode[router.RouterMode](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routermode9)是跳转页面使用的模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | router.NamedRouterOptions | 是 | 替换页面描述信息。 |
+| mode | router.RouterMode | 是 | 跳转页面使用的模式。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[页面路由错误码](../../errors/页面路由错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)、[页面路由错误码](页面路由错误码.md)和[接口调用异常错误码](接口调用异常错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.100001Failed to get the delegate. This error code is thrown only in the standard system.100004Named route error. The named route does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 100001 | Failed to get the delegate. This error code is thrown only in the standard system. |
+| 100004 | Named route error. The named route does not exist. |
 
 **示例：**
 
@@ -1087,14 +1224,13 @@ struct Index {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### replaceNamedRoute
 
 replaceNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode, callback: AsyncCallback<void>): void
 
-用指定的命名路由页面替换当前页面，并销毁被替换的页面。使用callback异步回调。与[replaceNamedRoute](#ZH-CN_TOPIC_0000002497604782__replacenamedroute-1)相比，新增了mode参数，即支持设置跳转页面使用的模式。
+用指定的命名路由页面替换当前页面，并销毁被替换的页面。使用callback异步回调。与[replaceNamedRoute](#ZH-CN_TOPIC_0000002553200695__replacenamedroute-1)相比，新增了mode参数，即支持设置跳转页面使用的模式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1102,17 +1238,21 @@ replaceNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode, c
 
 **参数：**
 
-参数名类型必填说明options[router.NamedRouterOptions](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__namedrouteroptions10)是替换页面描述信息。mode[router.RouterMode](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routermode9)是跳转页面使用的模式。callbackAsyncCallback<void>是
-
-router跳转结果回调函数。
-
-当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | router.NamedRouterOptions | 是 | 替换页面描述信息。 |
+| mode | router.RouterMode | 是 | 跳转页面使用的模式。 |
+| callback | AsyncCallback<void> | 是 | router跳转结果回调函数。 当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)、[页面路由错误码](../../errors/页面路由错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)、[页面路由错误码](页面路由错误码.md)和[接口调用异常错误码](接口调用异常错误码.md)。
 
-错误码ID错误信息401if the number of parameters is less than 1 or the type of the url parameter is not string.100001The UI execution context is not found. This error code is thrown only in the standard system.100004Named route error. The named route does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | if the number of parameters is less than 1 or the type of the url parameter is not string. |
+| 100001 | The UI execution context is not found. This error code is thrown only in the standard system. |
+| 100004 | Named route error. The named route does not exist. |
 
 **示例：**
 
@@ -1162,7 +1302,6 @@ struct Index {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### back
@@ -1177,15 +1316,13 @@ back(options?: router.RouterOptions ): void
 
 **参数：**
 
-参数名类型必填说明options[router.RouterOptions](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routeroptions)否
-
-返回页面描述信息，其中参数url指路由跳转时返回到指定url的页面，如果页面栈中没有对应url的页面，则不响应该操作；如果栈中存在对应url的页面，则返回至index最大的同名页面。
-
-如果url未设置，则返回上一页，页面不会重新构建，页面栈里面的page不会回收，出栈后会被回收。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | router.RouterOptions | 否 | 返回页面描述信息，其中参数url指路由跳转时返回到指定url的页面，如果页面栈中没有对应url的页面，则不响应该操作；如果栈中存在对应url的页面，则返回至index最大的同名页面。 如果url未设置，则返回上一页，页面不会重新构建，页面栈里面的page不会回收，出栈后会被回收。 |
 
 **示例：**
 
-完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002497604782__pushurl)中的示例。
+完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002553200695__pushurl)中的示例。
 
 ```ets
 import { Router , UIContext } from '@kit.ArkUI';
@@ -1206,17 +1343,14 @@ back(index: number, params?: Object): void
 
 **参数：**
 
-参数名类型必填说明indexnumber是
-
-跳转目标页面的索引值。
-
- 取值范围：[0, +∞)
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 跳转目标页面的索引值。   取值范围：[0, +∞) |
 paramsObject否页面返回时携带的参数。
 
 **示例：**
 
-完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002497604782__pushurl)中的示例。
+完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002553200695__pushurl)中的示例。
 
 ```ets
 import { Router , UIContext } from '@kit.ArkUI';
@@ -1226,7 +1360,7 @@ let router: Router = uiContext.getRouter();
 router.back(1);
 ```
 
-完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002497604782__pushurl)中的示例。
+完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002553200695__pushurl)中的示例。
 
 ```ets
 import { Router , UIContext } from '@kit.ArkUI';
@@ -1247,7 +1381,7 @@ clear(): void
 
 **示例：**
 
-完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002497604782__pushurl)中的示例。
+完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002553200695__pushurl)中的示例。
 
 ```ets
 import { Router , UIContext } from '@kit.ArkUI';
@@ -1257,11 +1391,14 @@ let router: Router = uiContext.getRouter();
 router.clear();
 ```
 
-#### getLength
+**getLength(deprecated)**
 
 getLength(): string
 
 获取当前在页面栈内的页面数量。
+
+
+从API version 10开始支持，从 API version 23开始废弃，建议使用[getStackSize](#ZH-CN_TOPIC_0000002553200695__getstacksize23)替代。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1269,11 +1406,13 @@ getLength(): string
 
 **返回值：**
 
-类型说明string页面数量，页面栈支持最大数值是32。
+| 类型 | 说明 |
+| --- | --- |
+| string | 页面数量，页面栈支持最大数值是32。 |
 
 **示例：**
 
-完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002497604782__pushurl)中的示例。
+完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002553200695__pushurl)中的示例。
 
 ```ets
 import { Router , UIContext } from '@kit.ArkUI';
@@ -1282,6 +1421,49 @@ let uiContext: UIContext = this.getUIContext();
 let router: Router = uiContext.getRouter();
 let size = router.getLength();
 console.info('pages stack size = ' + size);
+```
+
+**getStackSize23+**
+
+getStackSize(): number
+
+获取当前页面栈内的页面数量。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| number | 页面数量，页面栈支持最大数值是32。 |
+
+示例：
+
+```ets
+@Entry
+@Component
+struct Index {
+
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Button() {
+        Text('stack size')
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+      }.type(ButtonType.Capsule)
+      .margin({ top: 20 })
+      .backgroundColor('#ccc')
+      .onClick(() => {
+        console.info(`get stack size: ${this.getUIContext().getRouter().getStackSize()}`)
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
 ```
 
 #### getState
@@ -1296,11 +1478,13 @@ getState(): router.RouterState
 
 **返回值：**
 
-类型说明router.[RouterState](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routerstate)页面状态信息。
+| 类型 | 说明 |
+| --- | --- |
+| router.RouterState | 页面状态信息。 |
 
 **示例：**
 
-完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002497604782__pushurl)中的示例。
+完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002553200695__pushurl)中的示例。
 
 ```ets
 import { Router , UIContext } from '@kit.ArkUI';
@@ -1327,19 +1511,19 @@ getStateByIndex(index: number): router.RouterState | undefined
 
 **参数：**
 
-参数名类型必填说明indexnumber是
-
-表示要获取的页面索引。
-
- 取值范围：[0, +∞)
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 表示要获取的页面索引。   取值范围：[1, +∞) |
 
 **返回值：**
 
-类型说明router.[RouterState](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routerstate) | undefined返回页面状态信息。索引不存在时返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| router.RouterState | undefined | 返回页面状态信息。索引不存在时返回undefined。 |
 
 **示例：**
 
-完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002497604782__pushurl)中的示例。
+完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002553200695__pushurl)中的示例。
 
 ```ets
 import { Router , UIContext } from '@kit.ArkUI';
@@ -1357,7 +1541,7 @@ if (options != undefined) {
 
 #### getStateByUrl12+
 
-getStateByUrl(url: string): Array<router.[RouterState](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routerstate)>
+getStateByUrl(url: string): Array<router.[RouterState](@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002553200705__routerstate)>
 
 通过url获取当前页面的状态信息。
 
@@ -1367,15 +1551,19 @@ getStateByUrl(url: string): Array<router.[RouterState](../../modules/ohos/@ohos.
 
 **参数：**
 
-参数名类型必填说明urlstring是表示要获取对应页面信息的url。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| url | string | 是 | 表示要获取对应页面信息的url。 |
 
 **返回值：**
 
-类型说明Array<router.[RouterState](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__routerstate)>页面状态信息。
+| 类型 | 说明 |
+| --- | --- |
+| Array<router.RouterState> | 页面状态信息。 |
 
 **示例：**
 
-完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002497604782__pushurl)中的示例。
+完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002553200695__pushurl)中的示例。
 
 ```ets
 import { Router , UIContext } from '@kit.ArkUI';
@@ -1402,17 +1590,22 @@ showAlertBeforeBackPage(options: router.EnableAlertOptions): void
 
 **参数：**
 
-参数名类型必填说明options[router.EnableAlertOptions](../../modules/ohos/@ohos.router (页面路由)(不推荐).md#ZH-CN_TOPIC_0000002529444757__enablealertoptions)是文本弹窗信息描述。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | router.EnableAlertOptions | 是 | 文本弹窗信息描述。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[接口调用异常错误码](接口调用异常错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.100001Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 100001 | Internal error. |
 
 **示例：**
 
-完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002497604782__pushurl)中的示例。
+完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002553200695__pushurl)中的示例。
 
 ```ets
 import { Router , UIContext } from '@kit.ArkUI';
@@ -1443,7 +1636,7 @@ hideAlertBeforeBackPage(): void
 
 **示例：**
 
-完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002497604782__pushurl)中的示例。
+完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002553200695__pushurl)中的示例。
 
 ```ets
 import { Router , UIContext } from '@kit.ArkUI';
@@ -1465,11 +1658,13 @@ getParams(): Object
 
 **返回值：**
 
-类型说明Object发起跳转的页面往当前页传入的参数。
+| 类型 | 说明 |
+| --- | --- |
+| Object | 发起跳转的页面往当前页传入的参数。 |
 
 **示例：**
 
-完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002497604782__pushurl)中的示例。
+完整示例请参考[PushUrl](#ZH-CN_TOPIC_0000002553200695__pushurl)中的示例。
 
 ```ets
 import { Router , UIContext } from '@kit.ArkUI';

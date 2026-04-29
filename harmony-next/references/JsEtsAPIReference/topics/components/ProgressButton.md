@@ -2,7 +2,18 @@
 
 文本下载按钮，可显示具体下载进度。
 
+
+-
+
 该组件从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+
+-
+
+该组件仅可在Stage模型下使用。
+
+-
+
+如果ProgressButton设置[通用属性]([通用属性](../misc/通用属性.md).md)和[通用事件](通用事件.md)，编译工具链会额外生成节点__Common__，并将通用属性或通用事件挂载在__Common__上，而不是直接应用到ProgressButton本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ProgressButton设置通用属性和通用事件。
 
 #### 导入模块
 
@@ -10,15 +21,9 @@
 import { ProgressButton } from '@kit.ArkUI';
 ```
 
-#### 属性
-
-不支持[通用属性](../misc/通用属性.md)。
-
 #### ProgressButton
 
-ProgressButton({progress: number, content: ResourceStr, progressButtonWidth?: Length, clickCallback: () => void, enable:
-
-boolean, colorOptions?: ProgressButtonColorOptions, progressButtonRadius?: LengthMetrics})
+ProgressButton({progress: number, content: [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr), progressButtonWidth?: Length, clickCallback: () => void, enable: boolean, colorOptions?: ProgressButtonColorOptions, progressButtonRadius?: LengthMetrics})
 
 **装饰器类型：**@Component
 
@@ -26,69 +31,15 @@ boolean, colorOptions?: ProgressButtonColorOptions, progressButtonRadius?: Lengt
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
-名称类型必填装饰器类型说明progressnumber是@Prop
-
-下载按钮的当前进度值。
-
-取值范围：[0,100]。设置小于0的数值时置为0，设置大于100的数值时置为100。
-
-默认值：0
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-content[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)是@Prop
-
-下载按钮的文本。
-
-默认值：空字符串。
-
-**说明**：最长显示组件宽度，超出部分用省略号代替。从API version 20开始，支持Resource类型。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-progressButtonWidth[Length](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__length)否-
-
-下载按钮的宽度，单位vp。
-
-取值范围：大于等于44vp。
-
-默认值：44vp。当取值为非Resource类型且小于默认值或取值为非法值时，识别值为默认值。当取值为Resource类型且小于默认值时识别为默认值，为非法值时下载按钮的宽度显示为容器宽度的100%。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-clickCallback() => void是-
-
-下载按钮的点击回调。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-enableboolean是@Prop
-
-下载按钮是否可以点击。
-
- enable为true时，表示可以点击。
-
- enable为false时，表示不可点击。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-colorOptions18+[ProgressButtonColorOptions](#ZH-CN_TOPIC_0000002529284953__progressbuttoncoloroptions18)否@Prop
-
-下载按钮颜色。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-progressButtonRadius18+[LengthMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetrics12)否@Prop
-
-下载按钮的圆角（不支持百分比设置）。
-
-取值范围：[0, height/2]
-
-默认值：height/2
-
-设置值小于0时按照0处理，设置其他非法数值时，按照默认值处理。当直接入参为undefined时，按照默认值处理，入参为LengthMetrics.vp时，建议传入具体数值，传入null/undefined会导致显示异常。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- |
+| progress | number | 是 | @Prop | 下载按钮的当前进度值。 取值范围：[0,100]。设置小于0的数值时置为0，设置大于100的数值时置为100。 默认值：0 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| content | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 是 | @Prop | 下载按钮的文本。 默认值：空字符串。 说明：最长显示组件宽度，超出部分用省略号代替。从API version 20开始，支持Resource类型。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| progressButtonWidth | [Length](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__length) | 否 | - | 下载按钮的宽度，单位vp。 取值范围：大于等于44vp。 默认值：44vp。当取值为非Resource类型且小于默认值或取值为非法值时，识别值为默认值。当取值为Resource类型且小于默认值时识别为默认值，为非法值时下载按钮的宽度显示为容器宽度的100%。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| clickCallback | () => void | 是 | - | 下载按钮的点击回调。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| enable | boolean | 是 | @Prop | 下载按钮是否可以点击。  enable为true时，表示可以点击。  enable为false时，表示不可点击。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| colorOptions18+ | ProgressButtonColorOptions | 否 | @Prop | 下载按钮颜色。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
+| progressButtonRadius18+ | [LengthMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetrics12) | 否 | @Prop | 下载按钮的圆角（不支持百分比设置）。 取值范围：[0, height/2] 默认值：height/2 设置值小于0时按照0处理，设置其他非法数值时，按照默认值处理。当直接入参为undefined时，按照默认值处理，入参为LengthMetrics.vp时，建议传入具体数值，传入null/undefined会导致显示异常。  元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 
 #### ProgressButtonColorOptions18+
 
@@ -100,33 +51,16 @@ progressButtonRadius18+[LengthMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_00000
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
-名称类型只读可选说明progressColor[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)否是
-
-进度条颜色。
-
-默认值：#330A59F7
-
-borderColor[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)否是
-
-按钮描边颜色。
-
-默认值：#330A59F7
-
-textColor[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)否是
-
-按钮文本颜色。
-
-默认值：系统默认值（#CE000000）
-
-backgroundColor[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)否是
-
-按钮背景色。
-
-默认值：$r('sys.color.ohos_id_color_foreground_contrary')
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| progressColor | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 否 | 是 | 进度条颜色。 默认值：#330A59F7 |
+| borderColor | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 否 | 是 | 按钮描边颜色。 默认值：#330A59F7 |
+| textColor | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 否 | 是 | 按钮文本颜色。 默认值：系统默认值（#CE000000） |
+| backgroundColor | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 否 | 是 | 按钮背景色。 默认值：$r('sys.color.ohos_id_color_foreground_contrary') |
 
 #### 事件
 
-不支持[通用事件](../misc/通用事件.md)。
+不支持[通用事件]([通用事件](../misc/通用事件.md).md)。
 
 #### 示例
 
@@ -170,7 +104,6 @@ struct Index {
                       this.textState = '已完成';
                       this.enableState = false;
                     }
-                  }
                 } else {
                   clearInterval(timer);
                 }
@@ -178,9 +111,6 @@ struct Index {
             }
           })
         }.alignItems(HorizontalAlign.Center).width('100%').margin({ top: 20 })
-      }
-    }
-  }
 }
 ```
 
@@ -231,7 +161,6 @@ struct Index {
                       this.textState = '已完成';
                       this.enableState = false;
                     }
-                  }
                 } else {
                   clearInterval(timer);
                 }
@@ -239,9 +168,6 @@ struct Index {
             }
           })
         }.alignItems(HorizontalAlign.Center).width('100%').margin({ top: 20 })
-      }
-    }
-  }
 }
 ```
 
@@ -286,7 +212,6 @@ struct Index {
                       this.textState = '已完成';
                       this.enableState = false;
                     }
-                  }
                 } else {
                   clearInterval(timer);
                 }
@@ -295,7 +220,6 @@ struct Index {
           })
         }.alignItems(HorizontalAlign.Center).width('100%').margin({ top: 20 })
       }
-    }
-  }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522245384.webp)

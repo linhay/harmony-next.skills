@@ -12,7 +12,7 @@
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### 导入模块
 
@@ -22,29 +22,34 @@ import { webview } from '@kit.ArkWeb';
 
 #### applyProxyOverride15+
 
-static applyProxyOverride(proxyConfig: ProxyConfig, callback: OnProxyConfigChangeCallback): void
+static applyProxyOverride(proxyConfig: ProxyConfig, callback: [OnProxyConfigChangeCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__onproxyconfigchangecallback15)): void
 
-设置应用中所有Web使用的代理配置，与[insertBypassRule](Class (ProxyConfig).md#ZH-CN_TOPIC_0000002497605190__insertbypassrule15)中插入的bypass规则匹配的URL将不会使用代理，而是直接向URL指定的源地址发起请求。代理设置成功后，不保证网络连接后会立即使用新的代理设置，在加载页面之前请等待监听器触发，这个监听器将在UI线程上被调用。
+设置应用中所有Web使用的代理配置，与[insertBypassRule](Class (ProxyConfig).md#ZH-CN_TOPIC_0000002553201115__insertbypassrule15)中插入的bypass规则匹配的URL将不会使用代理，而是直接向URL指定的源地址发起请求。代理设置成功后，不保证网络连接后会立即使用新的代理设置，在加载页面之前请等待监听器触发，这个监听器将在UI线程上被调用。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
 
-参数名类型必填说明proxyConfig[ProxyConfig](Class (ProxyConfig).md)是对代理的配置。callback[OnProxyConfigChangeCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__onproxyconfigchangecallback15)是代理设置成功的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| proxyConfig | ProxyConfig | 是 | 对代理的配置。 |
+| callback | [OnProxyConfigChangeCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__onproxyconfigchangecallback15) | 是 | 代理设置成功的回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)说明文档。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)说明文档。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 
 **示例：**
 
-完整示例代码参考[removeProxyOverride](Class (ProxyController).md#ZH-CN_TOPIC_0000002529285183__removeproxyoverride15)。
+完整示例代码参考[removeProxyOverride](Class (ProxyController).md#ZH-CN_TOPIC_0000002553361079__removeproxyoverride15)。
 
 #### removeProxyOverride15+
 
-static removeProxyOverride(callback: OnProxyConfigChangeCallback): void
+static removeProxyOverride(callback: [OnProxyConfigChangeCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__onproxyconfigchangecallback15)): void
 
 移除代理配置。移除代理配置后，不保证网络连接后会立即使用新的代理设置，在加载页面之前等待监听器，这个监听器将在UI线程上被调用。
 
@@ -52,13 +57,17 @@ static removeProxyOverride(callback: OnProxyConfigChangeCallback): void
 
 **参数：**
 
-参数名类型必填说明callback[OnProxyConfigChangeCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__onproxyconfigchangecallback15)是代理设置成功的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | [OnProxyConfigChangeCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__onproxyconfigchangecallback15) | 是 | 代理设置成功的回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)说明文档。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)说明文档。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -142,5 +151,4 @@ struct WebComponent {
     }
     .height('100%')
   }
-}
 ```

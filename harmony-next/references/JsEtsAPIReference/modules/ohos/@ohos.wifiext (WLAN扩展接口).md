@@ -14,39 +14,52 @@
 import wifiext from '@ohos.wifiext';
 ```
 
-#### wifiext.enableHotspot
+**wifiext.enableHotspot(deprecated)**
 
 enableHotspot(): boolean;
 
 使能WLAN热点。
 
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManagerExt.enableHotspot](@ohos.wifiManagerExt (WLAN扩展接口).md#ZH-CN_TOPIC_0000002522081452__wifimanagerextenablehotspotdeprecated)替代。
+
 **需要权限：** ohos.permission.MANAGE_WIFI_HOTSPOT_EXT
 
 **系统能力：** SystemCapability.Communication.WiFi.AP.Extension
 
 **返回值：**
 
-**类型****说明**boolean操作结果， true: 成功， false: 失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 操作结果， true: 成功， false: 失败。 |
 
-#### wifiext.disableHotspot
+**wifiext.disableHotspot(deprecated)**
 
 disableHotspot(): boolean;
 
 去使能WLAN热点。
 
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManagerExt.disableHotspot](@ohos.wifiManagerExt (WLAN扩展接口).md#ZH-CN_TOPIC_0000002522081452__wifimanagerextdisablehotspotdeprecated)替代。
+
 **需要权限：** ohos.permission.MANAGE_WIFI_HOTSPOT_EXT
 
 **系统能力：** SystemCapability.Communication.WiFi.AP.Extension
 
 **返回值：**
 
-**类型****说明**boolean操作结果， true: 成功， false: 失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 操作结果， true: 成功， false: 失败。 |
 
-#### wifiext.getSupportedPowerModel
+**wifiext.getSupportedPowerModel(deprecated)**
 
 getSupportedPowerModel(): Promise<Array<PowerModel>>
 
 获取支持的功率模式。使用Promise异步回调。
+
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManagerExt.getSupportedPowerModel](@ohos.wifiManagerExt (WLAN扩展接口).md#ZH-CN_TOPIC_0000002522081452__wifimanagerextgetsupportedpowermode)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -54,7 +67,9 @@ getSupportedPowerModel(): Promise<Array<PowerModel>>
 
 **返回值：**
 
-类型说明Promise<Array<[PowerModel](#ZH-CN_TOPIC_0000002529285427__powermodel)>>Promise对象。表示功率模式。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<PowerModel>> | Promise对象。表示功率模式。 |
 
 #### PowerModel
 
@@ -62,7 +77,11 @@ getSupportedPowerModel(): Promise<Array<PowerModel>>
 
 **系统能力：** SystemCapability.Communication.WiFi.AP.Extension
 
-名称值说明SLEEPING0睡眠模式。GENERAL1常规模式。THROUGH_WALL2穿墙模式。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SLEEPING | 0 | 睡眠模式。 |
+| GENERAL | 1 | 常规模式。 |
+| THROUGH_WALL | 2 | 穿墙模式。 |
 
 #### wifiext.getSupportedPowerModel
 
@@ -76,13 +95,18 @@ getSupportedPowerModel(callback: AsyncCallback<Array<PowerModel>>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<Array<[PowerModel](#ZH-CN_TOPIC_0000002529285427__powermodel)>>是回调函数。当操作成功时，err为0，data表示支持的功率模式。如果err为非0，表示处理出现错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<PowerModel>> | 是 | 回调函数。当操作成功时，err为0，data表示支持的功率模式。如果err为非0，表示处理出现错误。 |
 
-#### wifiext.getPowerModel
+**wifiext.getPowerModel(deprecated)**
 
 getPowerModel(): Promise<PowerModel>
 
 获取功率模式，使用Promise异步回调。
+
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManagerExt.getSupportedPowerModel](@ohos.wifiManagerExt (WLAN扩展接口).md#ZH-CN_TOPIC_0000002522081452__wifimanagerextgetpowermode)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -90,13 +114,18 @@ getPowerModel(): Promise<PowerModel>
 
 **返回值：**
 
-类型说明Promise<[PowerModel](#ZH-CN_TOPIC_0000002529285427__powermodel)>Promise对象。表示功率模式。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<PowerModel> | Promise对象。表示功率模式。 |
 
-#### wifiext.getPowerModel
+**wifiext.getPowerModel(deprecated)**
 
 getPowerModel(callback: AsyncCallback<PowerModel>): void
 
 获取功率模式。使用callback异步回调。
+
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManagerExt.getSupportedPowerModel](@ohos.wifiManagerExt (WLAN扩展接口).md#ZH-CN_TOPIC_0000002522081452__wifimanagerextgetpowermode-1)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -104,7 +133,9 @@ getPowerModel(callback: AsyncCallback<PowerModel>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[PowerModel](#ZH-CN_TOPIC_0000002529285427__powermodel)>是回调函数。当操作成功时，err为0，data表示功率模式。如果err为非0，表示处理出现错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<PowerModel> | 是 | 回调函数。当操作成功时，err为0，data表示功率模式。如果err为非0，表示处理出现错误。 |
 
 #### wifiext.setPowerModel
 
@@ -118,8 +149,12 @@ setPowerModel(model: PowerModel) : boolean;
 
 **参数：**
 
-参数名类型必填说明model[PowerModel](#ZH-CN_TOPIC_0000002529285427__powermodel)是功率模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| model | PowerModel | 是 | 功率模式。 |
 
 **返回值：**
 
-**类型****说明**boolean操作结果， true: 成功， false: 失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 操作结果， true: 成功， false: 失败。 |

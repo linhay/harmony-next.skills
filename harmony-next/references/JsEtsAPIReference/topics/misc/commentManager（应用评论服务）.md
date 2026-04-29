@@ -26,75 +26,31 @@ showCommentDialog(context: common.UIExtensionContext | common.UIAbilityContext):
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-[common.UIExtensionContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiextensioncontext) | [common.UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext)
-
-是
-
-应用上下文。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | common.UIExtensionContext | common.UIAbilityContext | 是 | 应用上下文。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<void>
-
-Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码]([ArkTS API错误码](../../errors/ArkTS API错误码.md).md)。
 
-错误码ID
-
-错误信息
-
-1021500001
-
-Internal system error.
-
-1021500002
-
-Service request failed.
-
-1021500003
-
-Failed to connect to AppGallery.
-
-1021500004
-
-Failed to write parameters.
-
-1021500005
-
-The app context is invalid.
-
-1021500006
-
-The user has not signed in to their HUAWEI ID.
-
-1021500007
-
-The user has already commented on the current version.
-
-1021500008
-
-The number of comments has reached the maximum limit.
-
-1021500009
-
-The user has already left a comment, and less than a year has elapsed since then.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1021500001 | Internal system error. |
+| 1021500002 | Service request failed. |
+| 1021500003 | Failed to connect to AppGallery. |
+| 1021500004 | Failed to write parameters. |
+| 1021500005 | The app context is invalid. |
+| 1021500006 | The user has not signed in to their HUAWEI ID. |
+| 1021500007 | The user has already commented on the current version. |
+| 1021500008 | The number of comments has reached the maximum limit. |
+| 1021500009 | The user has already left a comment, and less than a year has elapsed since then. |
 
 **示例：**
 
@@ -132,5 +88,4 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```

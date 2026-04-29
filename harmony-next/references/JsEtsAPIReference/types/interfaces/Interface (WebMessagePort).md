@@ -1,6 +1,7 @@
-# Interface (WebMessagePort)
+# Interface ([WebMessage](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__webmessage)Port)
 
-通过WebMessagePort可以进行消息的发送以及接收，发送[WebMessageType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445167__webmessagetype10)/[WebMessage](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__webmessage)类型消息给HTML5侧。
+通过WebMessagePort可以进行消息的发送以及接收，发送[WebMessageType](Enums.md#ZH-CN_TOPIC_0000002522241162__webmessagetype10)/[WebMessage](Types.md#ZH-CN_TOPIC_0000002553201127__webmessage)类型消息给HTML5侧。
+
 
 -
 
@@ -12,7 +13,7 @@
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### 导入模块
 
@@ -24,31 +25,32 @@ import { webview } from '@kit.ArkWeb';
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
-名称类型只读可选说明isExtentionType10+boolean否是
-
-创建WebMessagePort时是否指定使用扩展增强接口，[postMessageEventExt](#ZH-CN_TOPIC_0000002497445222__postmessageeventext10)、[onMessageEventExt](#ZH-CN_TOPIC_0000002497445222__onmessageeventext10)。
-
-true表示使用扩展增强接口，false表示不使用扩展增强接口。
-
-默认值：false。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| isExtentionType10+ | boolean | 否 | 是 | 创建[WebMessage](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__webmessage)Port时是否指定使用扩展增强接口，postMessageEventExt、onMessageEventExt。 true表示使用扩展增强接口，false表示不使用扩展增强接口。 默认值：false。 |
 
 #### postMessageEvent
 
-postMessageEvent(message: WebMessage): void
+postMessageEvent(message: [WebMessage](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__webmessage)): void
 
-发送[WebMessage](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__webmessage)类型消息给HTML5侧，必须先调用[onMessageEvent](#ZH-CN_TOPIC_0000002497445222__onmessageevent)，否则会发送失败。完整示例代码参考[postMessage](../classes/Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__postmessage)。
+发送[WebMessage](Types.md#ZH-CN_TOPIC_0000002553201127__webmessage)类型消息给HTML5侧，必须先调用[onMessageEvent](#ZH-CN_TOPIC_0000002522081164__onmessageevent)，否则会发送失败。完整示例代码参考[postMessage](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__postmessage)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
 
-参数名类型必填说明message[WebMessage](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__webmessage)是要发送的消息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| message | [WebMessage](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__webmessage) | 是 | 要发送的消息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)、[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码]([Webview错误码](../../errors/Webview错误码.md).md)、[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息17100010Failed to post messages through the port.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100010 | Failed to post messages through the port. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -77,27 +79,30 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### onMessageEvent
 
-onMessageEvent(callback: (result: WebMessage) => void): void
+onMessageEvent(callback: (result: [WebMessage](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__webmessage)) => void): void
 
-在应用侧的消息端口上注册回调函数，接收HTML5侧发送过来的[WebMessage](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__webmessage)类型消息。完整示例代码参考[postMessage](../classes/Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__postmessage)。
+在应用侧的消息端口上注册回调函数，接收HTML5侧发送过来的[WebMessage](Types.md#ZH-CN_TOPIC_0000002553201127__webmessage)类型消息。完整示例代码参考[postMessage](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__postmessage)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
 
-参数名类型必填说明callback(result: [WebMessage](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__webmessage)) => void是接收到的消息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | (result: [WebMessage](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__webmessage)) => void | 是 | 接收到的消息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)、[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码](Webview错误码.md)、[通用错误码](通用错误码.md)。
 
-错误码ID错误信息17100006Failed to register a message event for the port.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100006 | Failed to register a message event for the port. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -137,45 +142,53 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### postMessageEventExt10+
 
-postMessageEventExt(message: WebMessageExt): void
+postMessageEventExt(message: [WebMessage](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__webmessage)Ext): void
 
-发送[WebMessageType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445167__webmessagetype10)类型消息给HTML5侧，必须先调用[onMessageEventExt](#ZH-CN_TOPIC_0000002497445222__onmessageeventext10)，否则会发送失败。完整示例代码参考[onMessageEventExt](#ZH-CN_TOPIC_0000002497445222__onmessageeventext10)。
+发送[WebMessageType](Enums.md#ZH-CN_TOPIC_0000002522241162__webmessagetype10)类型消息给HTML5侧，必须先调用[onMessageEventExt](#ZH-CN_TOPIC_0000002522081164__onmessageeventext10)，否则会发送失败。完整示例代码参考[onMessageEventExt](#ZH-CN_TOPIC_0000002522081164__onmessageeventext10)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
 
-参数名类型必填说明message[WebMessageExt](../classes/Class (WebMessageExt).md)是要发送的消息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| message | [WebMessage](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__webmessage)Ext | 是 | 要发送的消息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)、[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码](Webview错误码.md)、[通用错误码](通用错误码.md)。
 
-错误码ID错误信息17100010Failed to post messages through the port.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100010 | Failed to post messages through the port. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 #### onMessageEventExt10+
 
-onMessageEventExt(callback: (result: WebMessageExt) => void): void
+onMessageEventExt(callback: (result: [WebMessage](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__webmessage)Ext) => void): void
 
-在应用侧的消息端口上注册回调函数，接收HTML5侧发送过来的[WebMessageType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445167__webmessagetype10)类型消息。
+在应用侧的消息端口上注册回调函数，接收HTML5侧发送过来的[WebMessageType](Enums.md#ZH-CN_TOPIC_0000002522241162__webmessagetype10)类型消息。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
 
-参数名类型必填说明callback(result: [WebMessageExt](../classes/Class (WebMessageExt).md)) => void是接收到的消息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | (result: [WebMessage](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__webmessage)Ext) => void | 是 | 接收到的消息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)、[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码](Webview错误码.md)、[通用错误码](通用错误码.md)。
 
-错误码ID错误信息17100006Failed to register a message event for the port.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100006 | Failed to register a message event for the port. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -193,7 +206,6 @@ class TestObj {
       buff[i] = str.charCodeAt(i);
     }
     return buf;
-  }
 }
 
 // 应用与网页互发消息的示例：使用"init_web_messageport"的通道，通过端口0在应用侧接受网页发送的消息，通过端口1在网页侧接受应用发送的消息。
@@ -224,7 +236,6 @@ struct WebComponent {
               this.message.setString("helloFromEts");
               this.nativePort.postMessageEventExt(this.message);
             }
-          }
           catch (error) {
             console.error(`In ArkTS side send message catch error, ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
@@ -242,7 +253,6 @@ struct WebComponent {
               this.message.setNumber(12345);
               this.nativePort.postMessageEventExt(this.message);
             }
-          }
           catch (error) {
             console.error(`In ArkTS side send message catch error, ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
@@ -258,7 +268,6 @@ struct WebComponent {
               this.message.setType(3);
               this.message.setBoolean(true);
               this.nativePort.postMessageEventExt(this.message);
-            }
           }
           catch (error) {
             console.error(`In ArkTS side send message catch error, ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
@@ -276,7 +285,6 @@ struct WebComponent {
               this.message.setArrayBuffer(this.testObjtest.test("Name=test&Password=test"));
               this.nativePort.postMessageEventExt(this.message);
             }
-          }
           catch (error) {
             console.error(`In ArkTS side send message catch error, ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
@@ -293,7 +301,6 @@ struct WebComponent {
               this.message.setType(5);
               this.message.setArray([1, 2, 3]);
               this.nativePort.postMessageEventExt(this.message);
-            }
           }
           catch (error) {
             console.error(`In ArkTS side send message catch error, ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
@@ -369,15 +376,11 @@ struct WebComponent {
                   this.msg1 = "default break, type:" + type;
                   break;
                 }
-              }
-            }
             catch (error) {
               console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
             }
           });
         })
-    }
-  }
 }
 ```
 
@@ -447,11 +450,9 @@ window.addEventListener('message', function(event) {
                     console.info("In html got message, not support type");
                     document.getElementById("msg").innerHTML  = "not support type";
                 }
-            }
             h5Port.onmessageerror = (event) => {
                 console.error(`hwd In html Error receiving message: ${event}`);
             };
-        }
     }
 })
 
@@ -464,14 +465,13 @@ function postStringToApp() {
     } else {
         console.error("In html h5port is null, please init first");
     }
-}
 ```
 
 #### close
 
 close(): void
 
-不需要发送消息时关闭该消息端口。在使用close前，请先使用[createWebMessagePorts](../classes/Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__createwebmessageports)创建消息端口。
+不需要发送消息时关闭该消息端口。在使用close前，请先使用[createWebMessagePorts](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__createwebmessageports)创建消息端口。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -515,6 +515,4 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```

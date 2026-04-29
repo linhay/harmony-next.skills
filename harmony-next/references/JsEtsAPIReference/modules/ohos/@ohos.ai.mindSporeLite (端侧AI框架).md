@@ -28,7 +28,10 @@ loadModelFromFile(model: string, callback: Callback<Model>): void
 
 **参数：**
 
-参数名类型必填说明modelstring是模型的完整输入路径。字符串长度限制跟随文件系统。callbackCallback<[Model](#ZH-CN_TOPIC_0000002529286125__model)>是回调函数。返回模型对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| model | string | 是 | 模型的完整输入路径。字符串长度限制跟随文件系统。 |
+| callback | Callback<Model> | 是 | 回调函数。返回模型对象。 |
 
 **示例：**
 
@@ -54,7 +57,11 @@ loadModelFromFile(model: string, context: Context, callback: Callback<Model>): v
 
 **参数：**
 
-参数名类型必填说明modelstring是模型的完整输入路径。字符串长度限制跟随文件系统。context[Context](#ZH-CN_TOPIC_0000002529286125__context)是运行环境的配置信息。callbackCallback<[Model](#ZH-CN_TOPIC_0000002529286125__model)>是回调函数。返回模型对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| model | string | 是 | 模型的完整输入路径。字符串长度限制跟随文件系统。 |
+| context | Context | 是 | 运行环境的配置信息。 |
+| callback | Callback<Model> | 是 | 回调函数。返回模型对象。 |
 
 **示例：**
 
@@ -82,11 +89,16 @@ loadModelFromFile(model: string, context?: Context): Promise<Model>
 
 **参数：**
 
-参数名类型必填说明modelstring是模型的完整输入路径。字符串长度限制跟随文件系统。context[Context](#ZH-CN_TOPIC_0000002529286125__context)否运行环境的配置信息。默认使用CpuDevice初始化。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| model | string | 是 | 模型的完整输入路径。字符串长度限制跟随文件系统。 |
+| context | Context | 否 | 运行环境的配置信息。默认使用CpuDevice初始化。 |
 
 **返回值：**
 
-类型说明Promise<[Model](#ZH-CN_TOPIC_0000002529286125__model)>Promise对象。返回Model对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Model> | Promise对象。返回Model对象。 |
 
 **示例：**
 
@@ -112,7 +124,10 @@ loadModelFromBuffer(model: ArrayBuffer, callback: Callback<Model>): void
 
 **参数：**
 
-参数名类型必填说明modelArrayBuffer是包含模型的内存。callbackCallback<[Model](#ZH-CN_TOPIC_0000002529286125__model)>是回调函数。返回模型对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| model | ArrayBuffer | 是 | 包含模型的内存。 |
+| callback | Callback<Model> | 是 | 回调函数。返回模型对象。 |
 
 **示例：**
 
@@ -123,13 +138,16 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 let modelFile = 'xxx.ms';
 let globalContext = new UIContext().getHostContext() as common.UIAbilityContext;
-globalContext.getApplicationContext().resourceManager.getRawFileContent(modelFile).then((buffer: Uint8Array) => {
+globalContext.getApplicationContext()
+  .resourceManager
+  .getRawFileContent(modelFile)
+  .then((buffer: Uint8Array) => {
   let modelBuffer = buffer.buffer;
   mindSporeLite.loadModelFromBuffer(modelBuffer, (mindSporeLiteModel: mindSporeLite.Model) => {
     let modelInputs: mindSporeLite.MSTensor[] = mindSporeLiteModel.getInputs();
     console.info('MS_LITE_LOG: ' + modelInputs[0].name);
   })
-}).catch((error: BusinessError) => {
+  .catch((error: BusinessError) => {
   console.error("getRawFileContent promise error is " + error);
 });
 ```
@@ -144,7 +162,11 @@ loadModelFromBuffer(model: ArrayBuffer, context: Context, callback: Callback<Mod
 
 **参数：**
 
-参数名类型必填说明modelArrayBuffer是包含模型的内存。context[Context](#ZH-CN_TOPIC_0000002529286125__context)是运行环境的配置信息。callbackCallback<[Model](#ZH-CN_TOPIC_0000002529286125__model)>是回调函数。返回模型对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| model | ArrayBuffer | 是 | 包含模型的内存。 |
+| context | Context | 是 | 运行环境的配置信息。 |
+| callback | Callback<Model> | 是 | 回调函数。返回模型对象。 |
 
 **示例：**
 
@@ -155,7 +177,10 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 let modelFile = 'xxx.ms';
 let globalContext = new UIContext().getHostContext() as common.UIAbilityContext;
-globalContext.getApplicationContext().resourceManager.getRawFileContent(modelFile).then((buffer: Uint8Array) => {
+globalContext.getApplicationContext()
+  .resourceManager
+  .getRawFileContent(modelFile)
+  .then((buffer: Uint8Array) => {
   let modelBuffer = buffer.buffer;
   let context: mindSporeLite.Context = {};
   context.target = ['cpu'];
@@ -163,7 +188,7 @@ globalContext.getApplicationContext().resourceManager.getRawFileContent(modelFil
     let modelInputs: mindSporeLite.MSTensor[] = mindSporeLiteModel.getInputs();
     console.info('MS_LITE_LOG: ' + modelInputs[0].name);
   })
-}).catch((error: BusinessError) => {
+  .catch((error: BusinessError) => {
   console.error("getRawFileContent promise error is " + error);
 });
 ```
@@ -178,11 +203,16 @@ loadModelFromBuffer(model: ArrayBuffer, context?: Context): Promise<Model>
 
 **参数：**
 
-参数名类型必填说明modelArrayBuffer是包含模型的内存。context[Context](#ZH-CN_TOPIC_0000002529286125__context)否运行环境的配置信息。默认使用CpuDevice初始化。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| model | ArrayBuffer | 是 | 包含模型的内存。 |
+| context | Context | 否 | 运行环境的配置信息。默认使用CpuDevice初始化。 |
 
 **返回值：**
 
-类型说明Promise<[Model](#ZH-CN_TOPIC_0000002529286125__model)>Promise对象。返回Model对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Model> | Promise对象。返回Model对象。 |
 
 **示例：**
 
@@ -193,13 +223,16 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 let modelFile = 'xxx.ms';
 let globalContext = new UIContext().getHostContext() as common.UIAbilityContext;
-globalContext.getApplicationContext().resourceManager.getRawFileContent(modelFile).then((buffer: Uint8Array) => {
+globalContext.getApplicationContext()
+  .resourceManager
+  .getRawFileContent(modelFile)
+  .then((buffer: Uint8Array) => {
   let modelBuffer = buffer.buffer;
   mindSporeLite.loadModelFromBuffer(modelBuffer).then((mindSporeLiteModel: mindSporeLite.Model) => {
     let modelInputs: mindSporeLite.MSTensor[] = mindSporeLiteModel.getInputs();
     console.info('MS_LITE_LOG: ' + modelInputs[0].name);
   })
-}).catch((error: BusinessError) => {
+  .catch((error: BusinessError) => {
   console.error("getRawFileContent promise error is " + error);
 });
 ```
@@ -214,7 +247,10 @@ loadModelFromFd(model: number, callback: Callback<Model>): void
 
 **参数：**
 
-参数名类型必填说明modelnumber是模型的文件描述符。跟随文件系统返回fd值传入。callbackCallback<[Model](#ZH-CN_TOPIC_0000002529286125__model)>是回调函数。返回模型对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| model | number | 是 | 模型的文件描述符。跟随文件系统返回fd值传入。 |
+| callback | Callback<Model> | 是 | 回调函数。返回模型对象。 |
 
 **示例：**
 
@@ -242,7 +278,11 @@ loadModelFromFd(model: number, context: Context, callback: Callback<Model>): voi
 
 **参数：**
 
-参数名类型必填说明modelnumber是模型的文件描述符。跟随文件系统返回fd值传入。context[Context](#ZH-CN_TOPIC_0000002529286125__context)是运行环境的配置信息。callbackCallback<[Model](#ZH-CN_TOPIC_0000002529286125__model)>是回调函数。返回模型对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| model | number | 是 | 模型的文件描述符。跟随文件系统返回fd值传入。 |
+| context | Context | 是 | 运行环境的配置信息。 |
+| callback | Callback<Model> | 是 | 回调函数。返回模型对象。 |
 
 **示例：**
 
@@ -272,11 +312,16 @@ loadModelFromFd(model: number, context?: Context): Promise<Model>
 
 **参数：**
 
-参数名类型必填说明modelnumber是模型的文件描述符。跟随文件系统返回fd值传入。context[Context](#ZH-CN_TOPIC_0000002529286125__context)否运行环境的配置信息。默认使用CpuDevice初始化。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| model | number | 是 | 模型的文件描述符。跟随文件系统返回fd值传入。 |
+| context | Context | 否 | 运行环境的配置信息。默认使用CpuDevice初始化。 |
 
 **返回值：**
 
-类型说明Promise<[Model](#ZH-CN_TOPIC_0000002529286125__model)>Promise对象。返回Model对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Model> | Promise对象。返回Model对象。 |
 
 **示例：**
 
@@ -304,11 +349,17 @@ loadTrainModelFromFile(model: string, trainCfg?: TrainCfg, context?: Context): P
 
 **参数：**
 
-参数名类型必填说明modelstring是模型的完整输入路径。字符串长度限制跟随文件系统。trainCfg[TrainCfg](#ZH-CN_TOPIC_0000002529286125__traincfg12)否模型训练配置。默认值为TrainCfg各属性默认值。context[Context](#ZH-CN_TOPIC_0000002529286125__context)否运行环境的配置信息。默认使用CpuDevice初始化。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| model | string | 是 | 模型的完整输入路径。字符串长度限制跟随文件系统。 |
+| trainCfg | TrainCfg | 否 | 模型训练配置。默认值为TrainCfg各属性默认值。 |
+| context | Context | 否 | 运行环境的配置信息。默认使用CpuDevice初始化。 |
 
 **返回值：**
 
-类型说明Promise<[Model](#ZH-CN_TOPIC_0000002529286125__model)>Promise对象。返回Model对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Model> | Promise对象。返回Model对象。 |
 
 **示例：**
 
@@ -334,11 +385,17 @@ loadTrainModelFromBuffer(model: ArrayBuffer, trainCfg?: TrainCfg, context?: Cont
 
 **参数：**
 
-参数名类型必填说明modelArrayBuffer是包含训练模型的内存。trainCfg[TrainCfg](#ZH-CN_TOPIC_0000002529286125__traincfg12)否模型训练配置。默认值为TrainCfg各属性默认值。context[Context](#ZH-CN_TOPIC_0000002529286125__context)否运行环境的配置信息。默认使用CpuDevice初始化。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| model | ArrayBuffer | 是 | 包含训练模型的内存。 |
+| trainCfg | TrainCfg | 否 | 模型训练配置。默认值为TrainCfg各属性默认值。 |
+| context | Context | 否 | 运行环境的配置信息。默认使用CpuDevice初始化。 |
 
 **返回值：**
 
-类型说明Promise<[Model](#ZH-CN_TOPIC_0000002529286125__model)>Promise对象。返回Model对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Model> | Promise对象。返回Model对象。 |
 
 **示例：**
 
@@ -349,12 +406,15 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 let modelFile = 'xxx.ms';
 let globalContext = new UIContext().getHostContext() as common.UIAbilityContext;
-globalContext.getApplicationContext().resourceManager.getRawFileContent(modelFile).then((buffer: Uint8Array) => {
+globalContext.getApplicationContext()
+  .resourceManager
+  .getRawFileContent(modelFile)
+  .then((buffer: Uint8Array) => {
   let modelBuffer = buffer.buffer;
   mindSporeLite.loadTrainModelFromBuffer(modelBuffer).then((mindSporeLiteModel: mindSporeLite.Model) => {
     console.info("MSLITE trainMode: ", mindSporeLiteModel.trainMode);
   })
-}).catch((error: BusinessError) => {
+  .catch((error: BusinessError) => {
   console.error("getRawFileContent promise error is " + error);
 });
 ```
@@ -369,11 +429,17 @@ loadTrainModelFromFd(model: number, trainCfg?: TrainCfg, context?: Context): Pro
 
 **参数：**
 
-参数名类型必填说明modelnumber是训练模型的文件描述符。跟随文件系统返回fd值传入。trainCfg[TrainCfg](#ZH-CN_TOPIC_0000002529286125__traincfg12)否模型训练配置。默认值为TrainCfg各属性默认值。context[Context](#ZH-CN_TOPIC_0000002529286125__context)否运行环境的配置信息。默认使用CpuDevice初始化。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| model | number | 是 | 训练模型的文件描述符。跟随文件系统返回fd值传入。 |
+| trainCfg | TrainCfg | 否 | 模型训练配置。默认值为TrainCfg各属性默认值。 |
+| context | Context | 否 | 运行环境的配置信息。默认使用CpuDevice初始化。 |
 
 **返回值：**
 
-类型说明Promise<[Model](#ZH-CN_TOPIC_0000002529286125__model)>Promise对象。返回Model对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Model> | Promise对象。返回Model对象。 |
 
 **示例：**
 
@@ -396,7 +462,9 @@ getAllNNRTDeviceDescriptions() : NNRTDeviceDescription[]
 
 **返回值：**
 
-类型说明[NNRTDeviceDescription](#ZH-CN_TOPIC_0000002529286125__nnrtdevicedescription12)[]NNRt设备描述信息数组。
+| 类型 | 说明 |
+| --- | --- |
+| NNRTDeviceDescription[] | NNRt设备描述信息数组。 |
 
 **示例：**
 
@@ -413,7 +481,11 @@ if (allDevices == null) {
 
 **系统能力：** SystemCapability.AI.MindSporeLite
 
-名称类型只读可选说明targetstring[]否是配置目标后端。可选'cpu'，'nnrt'，默认'cpu'。cpu[CpuDevice](#ZH-CN_TOPIC_0000002529286125__cpudevice)否是CPU后端设备选项。只有当target包含'cpu'时，才能设置此属性。默认值为CpuDevice各属性默认值。nnrt[NNRTDevice](#ZH-CN_TOPIC_0000002529286125__nnrtdevice)否是NNRt后端设备选项。只有当target包含'nnrt'时，才能设置此属性。默认值为NNRTDevice各属性默认值。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| target | string[] | 否 | 是 | 配置目标后端。可选'cpu'，'nnrt'，默认'cpu'。 |
+| cpu | CpuDevice | 否 | 是 | CPU后端设备选项。只有当target包含'cpu'时，才能设置此属性。默认值为CpuDevice各属性默认值。 |
+| nnrt | NNRTDevice | 否 | 是 | NNRt后端设备选项。只有当target包含'nnrt'时，才能设置此属性。默认值为NNRTDevice各属性默认值。 |
 
 **示例：**
 
@@ -428,7 +500,12 @@ CPU后端设备选项。
 
 **系统能力：** SystemCapability.AI.MindSporeLite
 
-名称类型只读可选说明threadNumnumber否是设置运行时的线程数，默认值：2。threadAffinityMode[ThreadAffinityMode](#ZH-CN_TOPIC_0000002529286125__threadaffinitymode)否是设置运行时的CPU绑核策略模式，默认值为不绑核：mindSporeLite.ThreadAffinityMode.NO_AFFINITIES。threadAffinityCoreListnumber[]否是设置运行时的CPU绑核列表，设置绑核策略模式后使能，当绑核策略模式为mindSporeLite.ThreadAffinityMode.NO_AFFINITIES时，绑核列表为空。列表中的数字代表核的序号。默认值：[]。precisionModestring否是设置是否使能**Float16推理模式**，设置为'preferred_fp16'代表使能半精度推理，其余设置情况均为不支持，默认设置'enforce_fp32'表示不使能半精度推理。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| threadNum | number | 否 | 是 | 设置运行时的线程数，默认值：2。 |
+| threadAffinityMode | ThreadAffinityMode | 否 | 是 | 设置运行时的CPU绑核策略模式，默认值为不绑核：mindSporeLite.ThreadAffinityMode.NO_AFFINITIES。 |
+| threadAffinityCoreList | number[] | 否 | 是 | 设置运行时的CPU绑核列表，设置绑核策略模式后使能，当绑核策略模式为mindSporeLite.ThreadAffinityMode.NO_AFFINITIES时，绑核列表为空。列表中的数字代表核的序号。默认值：[]。 |
+| precisionMode | string | 否 | 是 | 设置是否使能Float16推理模式，设置为'preferred_fp16'代表使能半精度推理，其余设置情况均为不支持，默认设置'enforce_fp32'表示不使能半精度推理。 |
 
 **Float16推理模式**： Float16又称半精度，它使用16比特表示一个数。Float16推理模式表示推理的时候用半精度进行推理。
 
@@ -450,7 +527,11 @@ context.cpu.threadAffinityCoreList = [0, 1, 2];
 
 **系统能力：** SystemCapability.AI.MindSporeLite
 
-名称值说明NO_AFFINITIES0不绑核。BIG_CORES_FIRST1绑大核优先。LITTLE_CORES_FIRST2绑中核优先。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NO_AFFINITIES | 0 | 不绑核。 |
+| BIG_CORES_FIRST | 1 | 绑大核优先。 |
+| LITTLE_CORES_FIRST | 2 | 绑中核优先。 |
 
 #### NNRTDevice
 
@@ -458,7 +539,12 @@ Neural Network Runtime表示神经网络运行时，简称NNRt。作为中间桥
 
 **系统能力：** SystemCapability.AI.MindSporeLite
 
-名称类型只读可选说明deviceID12+bigint否是NNRt设备ID。默认值为0。performanceMode12+[PerformanceMode](#ZH-CN_TOPIC_0000002529286125__performancemode12)否是NNRt设备的工作性能模式。默认值为PERFORMANCE_NONE。priority12+[Priority](#ZH-CN_TOPIC_0000002529286125__priority12)否是NNRt推理任务优先级。默认值为PRIORITY_MEDIUM。extensions12+[Extension](#ZH-CN_TOPIC_0000002529286125__extension12)[]否是NNRt设备的扩展配置。默认为空。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| deviceID12+ | bigint | 否 | 是 | NNRt设备ID。默认值为0。 |
+| performanceMode12+ | PerformanceMode | 否 | 是 | NNRt设备的工作性能模式。默认值为PERFORMANCE_NONE。 |
+| priority12+ | Priority | 否 | 是 | NNRt推理任务优先级。默认值为PRIORITY_MEDIUM。 |
+| extensions12+ | Extension[] | 否 | 是 | NNRt设备的扩展配置。默认为空。 |
 
 #### PerformanceMode12+
 
@@ -466,7 +552,13 @@ NNRt设备的工作性能模式枚举。
 
 **系统能力：** SystemCapability.AI.MindSporeLite
 
-名称值说明PERFORMANCE_NONE0无特殊设置。PERFORMANCE_LOW1低功耗模式。PERFORMANCE_MEDIUM2功耗-性能均衡模式。PERFORMANCE_HIGH3高性能模式。PERFORMANCE_EXTREME4极致性能模式。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PERFORMANCE_NONE | 0 | 无特殊设置。 |
+| PERFORMANCE_LOW | 1 | 低功耗模式。 |
+| PERFORMANCE_MEDIUM | 2 | 功耗-性能均衡模式。 |
+| PERFORMANCE_HIGH | 3 | 高性能模式。 |
+| PERFORMANCE_EXTREME | 4 | 极致性能模式。 |
 
 #### Priority12+
 
@@ -474,7 +566,12 @@ NNRt推理任务优先级枚举。
 
 **系统能力：** SystemCapability.AI.MindSporeLite
 
-名称值说明PRIORITY_NONE0无优先级偏好。PRIORITY_LOW1低优先级任务。PRIORITY_MEDIUM2中优先级任务。PRIORITY_HIGH3高优先级任务。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PRIORITY_NONE | 0 | 无优先级偏好。 |
+| PRIORITY_LOW | 1 | 低优先级任务。 |
+| PRIORITY_MEDIUM | 2 | 中优先级任务。 |
+| PRIORITY_HIGH | 3 | 高优先级任务。 |
 
 #### Extension12+
 
@@ -482,7 +579,10 @@ NNRt推理任务优先级枚举。
 
 **系统能力：** SystemCapability.AI.MindSporeLite
 
-名称类型只读可选说明name12+string否否扩展名称。value12+ArrayBuffer否否包含扩展的内存。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | string | 否 | 否 | 扩展名称。 |
+| value | ArrayBuffer | 否 | 否 | 包含扩展的内存。 |
 
 #### NNRTDeviceDescription12+
 
@@ -500,7 +600,9 @@ deviceID() : bigint
 
 **返回值：**
 
-类型说明bigintNNRt设备ID。
+| 类型 | 说明 |
+| --- | --- |
+| bigint | NNRt设备ID。 |
 
 **示例：**
 
@@ -515,7 +617,6 @@ if (allDevices == null) {
   for (let i: number = 0; i < allDevices.length; i++) {
     console.info(allDevices[i].deviceID().toString());
   }
-}
 ```
 
 #### deviceType12+
@@ -528,7 +629,9 @@ deviceType() : NNRTDeviceType
 
 **返回值：**
 
-类型说明[NNRTDeviceType](#ZH-CN_TOPIC_0000002529286125__nnrtdevicetype12)NNRt设备类型。
+| 类型 | 说明 |
+| --- | --- |
+| NNRTDeviceType | NNRt设备类型。 |
 
 **示例：**
 
@@ -543,7 +646,6 @@ if (allDevices == null) {
   for (let i: number = 0; i < allDevices.length; i++) {
     console.info(allDevices[i].deviceType().toString());
   }
-}
 ```
 
 #### deviceName12+
@@ -556,7 +658,9 @@ deviceName() : string
 
 **返回值：**
 
-类型说明stringNNRt设备名称。
+| 类型 | 说明 |
+| --- | --- |
+| string | NNRt设备名称。 |
 
 **示例：**
 
@@ -571,7 +675,6 @@ if (allDevices == null) {
   for (let i: number = 0; i < allDevices.length; i++) {
     console.info(allDevices[i].deviceName().toString());
   }
-}
 ```
 
 #### NNRTDeviceType12+
@@ -580,7 +683,12 @@ NNRt设备类型枚举。
 
 **系统能力：** SystemCapability.AI.MindSporeLite
 
-名称值说明NNRTDEVICE_OTHERS0设备类型不属于以下3种，则属于其它。NNRTDEVICE_CPU1CPU设备。NNRTDEVICE_GPU2GPU设备。NNRTDEVICE_ACCELERATOR3特定的加速设备。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NNRTDEVICE_OTHERS | 0 | 设备类型不属于以下3种，则属于其它。 |
+| NNRTDEVICE_CPU | 1 | CPU设备。 |
+| NNRTDEVICE_GPU | 2 | GPU设备。 |
+| NNRTDEVICE_ACCELERATOR | 3 | 特定的加速设备。 |
 
 #### TrainCfg12+
 
@@ -588,7 +696,10 @@ NNRt设备类型枚举。
 
 **系统能力：** SystemCapability.AI.MindSporeLite
 
-名称类型只读可选说明lossName12+string[]否是损失函数的名称列表。默认值为["loss_fct", "_loss_fn", "SigmoidCrossEntropy"]。optimizationLevel12+[OptimizationLevel](#ZH-CN_TOPIC_0000002529286125__optimizationlevel12)否是端侧训练的网络优化等级。默认值为O0。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| lossName | string[] | 否 | 是 | 损失函数的名称列表。默认值为["loss_fct", "_loss_fn", "SigmoidCrossEntropy"]。 |
+| optimizationLevel | OptimizationLevel | 否 | 是 | 端侧训练的网络优化等级。默认值为O0。 |
 
 **示例：**
 
@@ -604,7 +715,12 @@ cfg.optimizationLevel = mindSporeLite.OptimizationLevel.O0;
 
 **系统能力：** SystemCapability.AI.MindSporeLite
 
-名称值说明O00无优化等级。O22将网络转换为float16，保持批量归一化层和损失函数为float32。O33将网络转换为float16，包括批量归一化层。AUTO4根据设备选择优化等级。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| O0 | 0 | 无优化等级。 |
+| O2 | 2 | 将网络转换为float16，保持批量归一化层和损失函数为float32。 |
+| O3 | 3 | 将网络转换为float16，包括批量归一化层。 |
+| AUTO | 4 | 根据设备选择优化等级。 |
 
 #### QuantizationType12+
 
@@ -612,19 +728,26 @@ cfg.optimizationLevel = mindSporeLite.OptimizationLevel.O0;
 
 **系统能力：** SystemCapability.AI.MindSporeLite
 
-名称值说明NO_QUANT0不做量化。WEIGHT_QUANT1权重量化。FULL_QUANT2全量化。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NO_QUANT | 0 | 不做量化。 |
+| WEIGHT_QUANT | 1 | 权重量化。 |
+| FULL_QUANT | 2 | 全量化。 |
 
 #### Model
 
 模型实例。描述Model对象的属性和方法。
 
-下例API示例中都需先使用[loadModelFromFile()](#ZH-CN_TOPIC_0000002529286125__mindsporeliteloadmodelfromfile)、[loadModelFromBuffer()](#ZH-CN_TOPIC_0000002529286125__mindsporeliteloadmodelfrombuffer)、[loadModelFromFd()](#ZH-CN_TOPIC_0000002529286125__mindsporeliteloadmodelfromfd)中的任一方法获取到Model实例，再通过此实例调用对应方法。
+下例API示例中都需先使用[loadModelFromFile()](#ZH-CN_TOPIC_0000002522082578__mindsporeliteloadmodelfromfile)、[loadModelFromBuffer()](#ZH-CN_TOPIC_0000002522082578__mindsporeliteloadmodelfrombuffer)、[loadModelFromFd()](#ZH-CN_TOPIC_0000002522082578__mindsporeliteloadmodelfromfd)中的任一方法获取到Model实例，再通过此实例调用对应方法。
 
 #### 属性
 
 **系统能力：** SystemCapability.AI.MindSporeLite
 
-名称类型只读可选说明learningRate12+number否是训练模型的学习率。默认值从加载的模型中读取。trainMode12+boolean否是模型是否为训练模式。true表示训练模式，false表示非训练模式。如果是训练模型，trainMode默认是true；如果是推理模型，trainMode默认是false。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| learningRate12+ | number | 否 | 是 | 训练模型的学习率。默认值从加载的模型中读取。 |
+| trainMode12+ | boolean | 否 | 是 | 模型是否为训练模式。true表示训练模式，false表示非训练模式。如果是训练模型，trainMode默认是true；如果是推理模型，trainMode默认是false。 |
 
 #### getInputs
 
@@ -636,7 +759,9 @@ getInputs(): MSTensor[]
 
 **返回值：**
 
-类型说明[MSTensor](#ZH-CN_TOPIC_0000002529286125__mstensor)[]返回MSTensor对象。
+| 类型 | 说明 |
+| --- | --- |
+| MSTensor[] | 返回MSTensor对象。 |
 
 **示例：**
 
@@ -662,7 +787,10 @@ predict(inputs: MSTensor[], callback: Callback<MSTensor[]>): void
 
 **参数：**
 
-参数名类型必填说明inputs[MSTensor](#ZH-CN_TOPIC_0000002529286125__mstensor)[]是模型的输入列表。MSTensor对象。callbackCallback<[MSTensor](#ZH-CN_TOPIC_0000002529286125__mstensor)[]>是回调函数。返回MSTensor对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| inputs | MSTensor[] | 是 | 模型的输入列表。MSTensor对象。 |
+| callback | Callback<MSTensor[]> | 是 | 回调函数。返回MSTensor对象。 |
 
 **示例：**
 
@@ -673,7 +801,10 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 let inputName = 'input_data.bin';
 let globalContext = new UIContext().getHostContext() as common.UIAbilityContext;
-globalContext.getApplicationContext().resourceManager.getRawFileContent(inputName).then(async (buffer : Uint8Array) => {
+globalContext.getApplicationContext()
+  .resourceManager
+  .getRawFileContent(inputName)
+  .then(async (buffer: Uint8Array) => {
   let inputBuffer = buffer.buffer;
   let modelFile : string = '/path/to/xxx.ms';
   let mindSporeLiteModel : mindSporeLite.Model = await mindSporeLite.loadModelFromFile(modelFile);
@@ -686,7 +817,7 @@ globalContext.getApplicationContext().resourceManager.getRawFileContent(inputNam
       console.info('MS_LITE_LOG: ' + output[i].toString());
     }
   })
-}).catch((error: BusinessError) => {
+  .catch((error: BusinessError) => {
   console.error("getRawFileContent promise error is " + error);
 });
 ```
@@ -701,11 +832,15 @@ predict(inputs: MSTensor[]): Promise<MSTensor[]>
 
 **参数：**
 
-参数名类型必填说明inputs[MSTensor](#ZH-CN_TOPIC_0000002529286125__mstensor)[]是模型的输入列表。MSTensor对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| inputs | MSTensor[] | 是 | 模型的输入列表。MSTensor对象。 |
 
 **返回值：**
 
-类型说明Promise<[MSTensor](#ZH-CN_TOPIC_0000002529286125__mstensor)[]>Promise对象。返回MSTensor对象列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<MSTensor[]> | Promise对象。返回MSTensor对象列表。 |
 
 **示例：**
 
@@ -716,7 +851,10 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 let inputName = 'input_data.bin';
 let globalContext = new UIContext().getHostContext() as common.UIAbilityContext;
-globalContext.getApplicationContext().resourceManager.getRawFileContent(inputName).then(async (buffer : Uint8Array) => {
+globalContext.getApplicationContext()
+  .resourceManager
+  .getRawFileContent(inputName)
+  .then(async (buffer: Uint8Array) => {
   let inputBuffer = buffer.buffer;
   let modelFile = '/path/to/xxx.ms';
   let mindSporeLiteModel : mindSporeLite.Model = await mindSporeLite.loadModelFromFile(modelFile);
@@ -728,7 +866,7 @@ globalContext.getApplicationContext().resourceManager.getRawFileContent(inputNam
       console.info(output[i].toString());
     }
   })
-}).catch((error: BusinessError) => {
+  .catch((error: BusinessError) => {
   console.error("getRawFileContent promise error is " + error);
 });
 ```
@@ -743,11 +881,16 @@ resize(inputs: MSTensor[], dims: Array<Array<number>>): boolean
 
 **参数：**
 
-参数名类型必填说明inputs[MSTensor](#ZH-CN_TOPIC_0000002529286125__mstensor)[]是模型的输入列表。dimsArray<Array<number>>是需要修改的目标张量大小。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| inputs | MSTensor[] | 是 | 模型的输入列表。 |
+| dims | Array<Array<number>> | 是 | 需要修改的目标张量大小。 |
 
 **返回值：**
 
-类型说明boolean返回是否设置成功的结果。true表示重新设置张量大小成功；false表示重新设置张量大小失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回是否设置成功的结果。true表示重新设置张量大小成功；false表示重新设置张量大小失败。 |
 
 **示例：**
 
@@ -770,11 +913,15 @@ runStep(inputs: MSTensor[]): boolean
 
 **参数：**
 
-参数名类型必填说明inputs[MSTensor](#ZH-CN_TOPIC_0000002529286125__mstensor)[]是模型的输入列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| inputs | MSTensor[] | 是 | 模型的输入列表。 |
 
 **返回值：**
 
-类型说明boolean返回单步训练模型是否成功的结果。true表示单步训练模型成功，false表示单步训练模型失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回单步训练模型是否成功的结果。true表示单步训练模型成功，false表示单步训练模型失败。 |
 
 **示例：**
 
@@ -800,7 +947,9 @@ getWeights(): MSTensor[]
 
 **返回值：**
 
-类型说明[MSTensor](#ZH-CN_TOPIC_0000002529286125__mstensor)[]返回模型的权重张量。
+| 类型 | 说明 |
+| --- | --- |
+| MSTensor[] | 返回模型的权重张量。 |
 
 **示例：**
 
@@ -811,8 +960,12 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 let modelFile = 'xxx.ms';
 let globalContext = new UIContext().getHostContext() as common.UIAbilityContext;
-globalContext.getApplicationContext().resourceManager.getRawFileContent(modelFile).then((modelBuffer : Uint8Array) => {
-  mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer.slice(0)).then((mindSporeLiteModel: mindSporeLite.Model) => {
+globalContext.getApplicationContext()
+  .resourceManager
+  .getRawFileContent(modelFile)
+  .then((modelBuffer: Uint8Array) => {
+    mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer.slice(0))
+      .then((mindSporeLiteModel: mindSporeLite.Model) => {
     mindSporeLiteModel.trainMode = true;
     const weights = mindSporeLiteModel.getWeights();
     for (let i = 0; i < weights.length; i++) {
@@ -824,7 +977,7 @@ globalContext.getApplicationContext().resourceManager.getRawFileContent(modelFil
       console.info("MS_LITE weights: ", printStr);
     }
   })
-}).catch((error: BusinessError) => {
+  .catch((error: BusinessError) => {
   console.error("getRawFileContent promise error is " + error);
 });
 ```
@@ -839,11 +992,15 @@ updateWeights(weights: MSTensor[]): boolean
 
 **参数：**
 
-参数名类型必填说明weights[MSTensor](#ZH-CN_TOPIC_0000002529286125__mstensor)[]是权重张量列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| weights | MSTensor[] | 是 | 权重张量列表。 |
 
 **返回值：**
 
-类型说明boolean返回是否更新权重成功的结果。true表示更新权重成功，false表示更新权重失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回是否更新权重成功的结果。true表示更新权重成功，false表示更新权重失败。 |
 
 **示例：**
 
@@ -854,8 +1011,12 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 let modelFile = 'xxx.ms';
 let globalContext = new UIContext().getHostContext() as common.UIAbilityContext;
-globalContext.getApplicationContext().resourceManager.getRawFileContent(modelFile).then((modelBuffer : Uint8Array) => {
-  mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer.slice(0)).then((mindSporeLiteModel: mindSporeLite.Model) => {
+globalContext.getApplicationContext()
+  .resourceManager
+  .getRawFileContent(modelFile)
+  .then((modelBuffer: Uint8Array) => {
+    mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer.slice(0))
+      .then((mindSporeLiteModel: mindSporeLite.Model) => {
     mindSporeLiteModel.trainMode = true;
     const weights = mindSporeLiteModel.getWeights();
     let ret = mindSporeLiteModel.updateWeights(weights);
@@ -863,7 +1024,7 @@ globalContext.getApplicationContext().resourceManager.getRawFileContent(modelFil
       console.error('MS_LITE_LOG: updateWeights failed.')
     }
   })
-}).catch((error: BusinessError) => {
+  .catch((error: BusinessError) => {
   console.error("getRawFileContent promise error is " + error);
 });
 ```
@@ -878,11 +1039,17 @@ setupVirtualBatch(virtualBatchMultiplier: number, lr: number, momentum: number):
 
 **参数：**
 
-参数名类型必填说明virtualBatchMultipliernumber是虚拟批次乘法器，当设置值小于1时，表示禁用虚拟batch。lrnumber是学习率。momentumnumber是动量。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| virtualBatchMultiplier | number | 是 | 虚拟批次乘法器，当设置值小于1时，表示禁用虚拟batch。 |
+| lr | number | 是 | 学习率。 |
+| momentum | number | 是 | 动量。 |
 
 **返回值：**
 
-类型说明boolean返回是否设置虚拟批次成功的结果。true表示设置虚拟批次成功，false表示设置虚拟批次失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回是否设置虚拟批次成功的结果。true表示设置虚拟批次成功，false表示设置虚拟批次失败。 |
 
 **示例：**
 
@@ -893,15 +1060,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 let modelFile = 'xxx.ms';
 let globalContext = new UIContext().getHostContext() as common.UIAbilityContext;
-globalContext.getApplicationContext().resourceManager.getRawFileContent(modelFile).then((modelBuffer : Uint8Array) => {
-  mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer.slice(0)).then((mindSporeLiteModel: mindSporeLite.Model) => {
+globalContext.getApplicationContext()
+  .resourceManager
+  .getRawFileContent(modelFile)
+  .then((modelBuffer: Uint8Array) => {
+    mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer.slice(0))
+      .then((mindSporeLiteModel: mindSporeLite.Model) => {
     mindSporeLiteModel.trainMode = true;
     let ret = mindSporeLiteModel.setupVirtualBatch(2,-1,-1);
     if (ret == false) {
       console.error('MS_LITE setupVirtualBatch failed.')
     }
   })
-}).catch((error: BusinessError) => {
+  .catch((error: BusinessError) => {
   console.error("getRawFileContent promise error is " + error);
 });
 ```
@@ -916,11 +1087,18 @@ exportModel(modelFile: string, quantizationType?: QuantizationType, exportInfere
 
 **参数：**
 
-参数名类型必填说明modelFilestring是导出模型的文件路径。字符串长度限制跟随文件系统。quantizationType[QuantizationType](#ZH-CN_TOPIC_0000002529286125__quantizationtype12)否量化类型，默认为NO_QUANT。exportInferenceOnlyboolean否是否只导出推理模型。true表示只导出推理模型，false表示导出训练和推理两个模型。默认为true。outputTensorNamestring[]否设置导出模型的输出张量的名称。默认为空字符串数组，表示全量导出。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| modelFile | string | 是 | 导出模型的文件路径。字符串长度限制跟随文件系统。 |
+| quantizationType | QuantizationType | 否 | 量化类型，默认为NO_QUANT。 |
+| exportInferenceOnly | boolean | 否 | 是否只导出推理模型。true表示只导出推理模型，false表示导出训练和推理两个模型。默认为true。 |
+| outputTensorName | string[] | 否 | 设置导出模型的输出张量的名称。默认为空字符串数组，表示全量导出。 |
 
 **返回值：**
 
-类型说明boolean返回是否导出训练模型成功的结果。true表示导出训练模型成功，false表示导出训练模型失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回是否导出训练模型成功的结果。true表示导出训练模型成功，false表示导出训练模型失败。 |
 
 **示例：**
 
@@ -948,11 +1126,18 @@ exportWeightsCollaborateWithMicro(weightFile: string, isInference?: boolean, ena
 
 **参数：**
 
-参数名类型必填说明weightFilestring是权重文件路径。字符串长度限制跟随文件系统。isInferenceboolean否是否从推理模型中导出权重。true表示从推理模型中导出权重，目前只支持true，默认为true。enableFp16boolean否浮点权重是否以float16格式保存。true表示以float16格式保存，false表示不以float16格式保存。默认为false。changeableWeightsNamestring[]否设置可变权重的名称。默认为空字符串数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| weightFile | string | 是 | 权重文件路径。字符串长度限制跟随文件系统。 |
+| isInference | boolean | 否 | 是否从推理模型中导出权重。true表示从推理模型中导出权重，目前只支持true，默认为true。 |
+| enableFp16 | boolean | 否 | 浮点权重是否以float16格式保存。true表示以float16格式保存，false表示不以float16格式保存。默认为false。 |
+| changeableWeightsName | string[] | 否 | 设置可变权重的名称。默认为空字符串数组。 |
 
 **返回值：**
 
-类型说明boolean返回是否导出供micro推理使用的模型权重成功的结果。true表示导出供micro推理使用的模型权重成功，false表示导出供micro推理使用的模型权重失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回是否导出供micro推理使用的模型权重成功的结果。true表示导出供micro推理使用的模型权重成功，false表示导出供micro推理使用的模型权重失败。 |
 
 **示例：**
 
@@ -971,13 +1156,20 @@ mindSporeLite.loadTrainModelFromFile(modelFile).then((mindSporeLiteModel: mindSp
 
 模型张量实例。描述MSTensor对象的属性和方法。它与数组和矩阵非常相似，是MindSpore Lite网络运算中的基本数据结构。
 
-下例API示例中都需先使用[getInputs()](#ZH-CN_TOPIC_0000002529286125__getinputs)获取到MSTensor实例，再通过此实例调用对应方法。
+下例API示例中都需先使用[getInputs()](#ZH-CN_TOPIC_0000002522082578__getinputs)获取到MSTensor实例，再通过此实例调用对应方法。
 
 #### 属性
 
 **系统能力：** SystemCapability.AI.MindSporeLite
 
-名称类型只读可选说明namestring否否张量的名称。shapenumber[]否否张量的维度数组。elementNumnumber否否张量的维度数组的长度。dataSizenumber否否张量的数据的长度。dtype[DataType](#ZH-CN_TOPIC_0000002529286125__datatype)否否张量的数据类型。format[Format](#ZH-CN_TOPIC_0000002529286125__format)否否张量的数据排布方式。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | string | 否 | 否 | 张量的名称。 |
+| shape | number[] | 否 | 否 | 张量的维度数组。 |
+| elementNum | number | 否 | 否 | 张量的维度数组的长度。 |
+| dataSize | number | 否 | 否 | 张量的数据的长度。 |
+| dtype | DataType | 否 | 否 | 张量的数据类型。 |
+| format | Format | 否 | 否 | 张量的数据排布方式。 |
 
 **示例：**
 
@@ -1004,7 +1196,9 @@ getData(): ArrayBuffer
 
 **返回值：**
 
-类型说明ArrayBuffer返回张量的数据指针。
+| 类型 | 说明 |
+| --- | --- |
+| ArrayBuffer | 返回张量的数据指针。 |
 
 **示例：**
 
@@ -1015,7 +1209,10 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 let inputName = 'input_data.bin';
 let globalContext = new UIContext().getHostContext() as common.UIAbilityContext;
-globalContext.getApplicationContext().resourceManager.getRawFileContent(inputName).then(async (buffer : Uint8Array) => {
+globalContext.getApplicationContext()
+  .resourceManager
+  .getRawFileContent(inputName)
+  .then(async (buffer: Uint8Array) => {
   let inputBuffer = buffer.buffer;
   let modelFile = '/path/to/xxx.ms';
   let mindSporeLiteModel : mindSporeLite.Model = await mindSporeLite.loadModelFromFile(modelFile);
@@ -1027,7 +1224,7 @@ globalContext.getApplicationContext().resourceManager.getRawFileContent(inputNam
       console.info(output[i].toString());
     }
   })
-}).catch((error: BusinessError) => {
+  .catch((error: BusinessError) => {
   console.error("getRawFileContent promise error is " + error);
 });
 ```
@@ -1042,7 +1239,9 @@ setData(inputArray: ArrayBuffer): void
 
 **参数：**
 
-参数名类型必填说明inputArrayArrayBuffer是张量的输入数据缓冲区。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| inputArray | ArrayBuffer | 是 | 张量的输入数据缓冲区。 |
 
 **示例：**
 
@@ -1053,13 +1252,17 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 let inputName = 'input_data.bin';
 let globalContext = new UIContext().getHostContext() as common.UIAbilityContext;
-globalContext.getApplicationContext().resourceManager.getRawFileContent(inputName).then(async (buffer : Uint8Array) => {
+globalContext.getApplicationContext()
+  .resourceManager
+  .getRawFileContent(inputName)
+  .then(async (buffer: Uint8Array) => {
   let inputBuffer = buffer.buffer;
   let modelFile = '/path/to/xxx.ms';
   let mindSporeLiteModel : mindSporeLite.Model = await mindSporeLite.loadModelFromFile(modelFile);
   let modelInputs : mindSporeLite.MSTensor[] = mindSporeLiteModel.getInputs();
   modelInputs[0].setData(inputBuffer);
-}).catch((error: BusinessError) => {
+  })
+  .catch((error: BusinessError) => {
   console.error("getRawFileContent promise error is " + error);
 });
 ```
@@ -1070,7 +1273,20 @@ globalContext.getApplicationContext().resourceManager.getRawFileContent(inputNam
 
 **系统能力：** SystemCapability.AI.MindSporeLite
 
-名称值说明TYPE_UNKNOWN0未知类型。NUMBER_TYPE_INT832保持Int8的类型。NUMBER_TYPE_INT1633保持Int16的类型。NUMBER_TYPE_INT3234保持Int32的类型。NUMBER_TYPE_INT6435保持Int64的类型。NUMBER_TYPE_UINT837保持UInt8的类型。NUMBER_TYPE_UINT1638保持UInt16的类型。NUMBER_TYPE_UINT3239保持UInt32的类型。NUMBER_TYPE_UINT6440保持UInt64的类型。NUMBER_TYPE_FLOAT1642保持Float16的类型。NUMBER_TYPE_FLOAT3243保持Float32的类型。NUMBER_TYPE_FLOAT6444保持Float64的类型。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| TYPE_UNKNOWN | 0 | 未知类型。 |
+| NUMBER_TYPE_INT8 | 32 | 保持Int8的类型。 |
+| NUMBER_TYPE_INT16 | 33 | 保持Int16的类型。 |
+| NUMBER_TYPE_INT32 | 34 | 保持Int32的类型。 |
+| NUMBER_TYPE_INT64 | 35 | 保持Int64的类型。 |
+| NUMBER_TYPE_UINT8 | 37 | 保持UInt8的类型。 |
+| NUMBER_TYPE_UINT16 | 38 | 保持UInt16的类型。 |
+| NUMBER_TYPE_UINT32 | 39 | 保持UInt32的类型。 |
+| NUMBER_TYPE_UINT64 | 40 | 保持UInt64的类型。 |
+| NUMBER_TYPE_FLOAT16 | 42 | 保持Float16的类型。 |
+| NUMBER_TYPE_FLOAT32 | 43 | 保持Float32的类型。 |
+| NUMBER_TYPE_FLOAT64 | 44 | 保持Float64的类型。 |
 
 #### Format
 
@@ -1078,4 +1294,12 @@ globalContext.getApplicationContext().resourceManager.getRawFileContent(inputNam
 
 **系统能力：** SystemCapability.AI.MindSporeLite
 
-名称值说明DEFAULT_FORMAT-1未知数据排布方式。NCHW0数据排布方式为NCHW。NHWC1数据排布方式为NHWC。NHWC42数据排布方式为NHWC4。HWKC3数据排布方式为HWKC。HWCK4数据排布方式为HWCK。KCHW5数据排布方式为KCHW。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DEFAULT_FORMAT | -1 | 未知数据排布方式。 |
+| NCHW | 0 | 数据排布方式为NCHW。 |
+| NHWC | 1 | 数据排布方式为NHWC。 |
+| NHWC4 | 2 | 数据排布方式为NHWC4。 |
+| HWKC | 3 | 数据排布方式为HWKC。 |
+| HWCK | 4 | 数据排布方式为HWCK。 |
+| KCHW | 5 | 数据排布方式为KCHW。 |

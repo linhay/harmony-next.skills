@@ -26,60 +26,17 @@ import { LoginPanel, loginComponentManager } from '@kit.AccountKit';
 
 **参数：**
 
-名称
-
-类型
-
-必填
-
-装饰器类型
-
-说明
-
-show
-
-boolean
-
-是
-
-@Link
-
-该参数用于控制LoginPanel组件是否展示。
-
-false表示不展示该组件。
-
-true表示展示该组件，当业务需要使用LoginPanel组件时设置值为true。
-
- 说明：
-
-- 该参数必须是@State装饰的局部变量。
-- LoginPanel仅支持在页面中使用，弹框、子窗口等场景暂不支持。
-
-params
-
-[LoginPanelParams](loginComponentManager (华为账号登录组件管理).md#section29582063177)
-
-是
-
--
-
-LoginPanel组件参数。
-
-controller
-
-[LoginPanelController](loginComponentManager (华为账号登录组件管理).md#section1419019854714)
-
-是
-
--
-
-LoginPanel组件控制器用来接收组件的点击事件。
+| 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- |
+| show | boolean | 是 | @Link | 该参数用于控制LoginPanel组件是否展示。 false表示不展示该组件。 true表示展示该组件，当业务需要使用LoginPanel组件时设置值为true。 说明： - 该参数必须是@State装饰的局部变量。 - LoginPanel仅支持在页面中使用，弹框、子窗口等场景暂不支持。 |
+| params | LoginPanelParams | 是 | - | LoginPanel组件参数。 |
+| controller | LoginPanelController | 是 | - | LoginPanel组件控制器用来接收组件的点击事件。 |
 
 #### build
 
 build(): void
 
-用于创建[LoginPanel](#section72281234181611)对象的构造函数。
+用于创建[LoginPanel](#ZH-CN_TOPIC_0000002522242284__loginpanel)对象的构造函数。
 
 **模型约束：**此接口仅可在Stage模型下使用。
 
@@ -205,7 +162,6 @@ struct PreviewLoginPanelPage {
     } else {
       // 应用登录失败，请尝试使用其他方式登录
     }
-  }
 
   build() {
     if (this.show) {
@@ -232,8 +188,6 @@ struct PreviewLoginPanelPage {
       .height('100%')
       .width('100%')
     }
-  }
-}
 
 export enum ErrorCode {
   // 账号未登录

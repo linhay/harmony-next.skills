@@ -12,10 +12,12 @@ typedef struct OH_AudioSession_Strategy {...} OH_AudioSession_Strategy
 
 **相关模块：**[OHAudio](OHAudio.md)
 
-**所在头文件：**[native_audio_session_manager.h](../../capi/headers/native_audio_session_manager.h.md)
+所在头文件： [native_audio_session_manager.h](native_audio_session_manager.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述[OH_AudioSession_ConcurrencyMode](../../capi/headers/native_audio_session_manager.h.md#ZH-CN_TOPIC_0000002497605710__oh_audiosession_concurrencymode) concurrencyMode音频并发模式。
+| 名称 | 描述 |
+| --- | --- |
+| [OH_AudioSession_ConcurrencyMode](native_audio_session_manager.h.md#ZH-CN_TOPIC_0000002497605710__oh_audiosession_concurrencymode) concurrencyMode | 音频并发模式。 |

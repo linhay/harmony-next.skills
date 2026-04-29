@@ -16,7 +16,7 @@
 
 描述
 
-[native_handwrite_api.h](../../capi/headers/native_handwrite_api.h.md)
+[native_handwrite_api.h](../../topics/misc/[native_handwrite_api.h](native_handwrite_api.h.md).md)
 
 声明用于对外提供手写能力。
 

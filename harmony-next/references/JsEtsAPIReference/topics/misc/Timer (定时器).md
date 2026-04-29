@@ -20,37 +20,17 @@ setTimeout(handler: Function | string, delay?: number, ...arguments: any[]): num
 
 **参数：**
 
-参数名类型必填说明handlerFunction | string是
-
-类型为Function表示定时器到期后执行函数；
-
-类型为string则通过Error方式打印string中内容，不进行其他处理。
-
-delaynumber否
-
-延迟的毫秒数，函数的调用会在该延迟之后发生。建议传入整数，若传入小数，会被向下取整。
-
-如果省略该参数，delay取默认值0。
-
-**注意**：
-
-1. 该计时器非精准计时器，实际延迟可能会与预期延迟存在误差。
-
-2. 如果值小于1，会被默认取0。
-
-3. delay值受系统限制，超出2^32 - 1时会溢出，delay值为0。
-
-...argumentsany[]否
-
-附加参数，仅当handler类型为Function时生效，作为参数传递给handler。
-
-arguments参数数量少于handler函数参数数量时，未被arguments覆盖的参数会被设为undefined。
-
-arguments参数数量多于handler函数参数数量时，多余的arguments参数会被忽略，但可通过handler函数内部的arguments对象访问。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| handler | Function | string | 是 | 类型为Function表示定时器到期后执行函数； 类型为string则通过Error方式打印string中内容，不进行其他处理。 |
+| delay | number | 否 | 延迟的毫秒数，函数的调用会在该延迟之后发生。建议传入整数，若传入小数，会被向下取整。 如果省略该参数，delay取默认值0。 注意： 1. 该计时器非精准计时器，实际延迟可能会与预期延迟存在误差。 2. 如果值小于1，会被默认取0。 3. delay值受系统限制，超出2^31 - 1时会溢出，delay值为0。 |
+| ...arguments | any[] | 否 | 附加参数，仅当handler类型为Function时生效，作为参数传递给handler。 arguments参数数量少于handler函数参数数量时，未被arguments覆盖的参数会被设为undefined。 arguments参数数量多于handler函数参数数量时，多余的arguments参数会被忽略，但可通过handler函数内部的arguments对象访问。 |
 
 **返回值：**
 
-类型说明number该定时器的ID，定时器ID为进程共享，是从0开始顺序增加的整数，无重复值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 该定时器的ID，定时器ID为进程共享，是从0开始顺序增加的整数，无重复值。 |
 
 **示例1**：不带参数。
 
@@ -111,7 +91,9 @@ clearTimeout(timeoutID?: number): void
 
 **参数：**
 
-参数名类型必填说明timeoutIDnumber否要取消定时器的ID，需要与调用setTimeout()设置定时器的返回值一致。如果省略该参数或指定的定时器ID不存在时，不会取消任何定时任务。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| timeoutID | number | 否 | 要取消定时器的ID，需要与调用setTimeout()设置定时器的返回值一致。如果省略该参数或指定的定时器ID不存在时，不会取消任何定时任务。 |
 
 **示例：**
 
@@ -136,37 +118,17 @@ setInterval(handler: Function | string, delay: number, ...arguments: any[]): num
 
 **参数：**
 
-参数名类型必填说明handlerFunction | string是
-
-类型为Function表示定时器到期后执行函数；
-
-类型为string则通过Error方式打印string中内容，不进行其他处理。
-
-delaynumber是
-
-延迟的毫秒数，函数的调用会在该延迟之后发生。建议传入整数，若传入小数，会被向下取整。
-
-如果省略该参数，delay取默认值0。
-
-**注意**：
-
-1. 该计时器非精准计时器，实际延迟可能会与预期延迟存在误差。
-
-2. 如果值小于1，将被默认设置为0。
-
-3. delay值受系统限制，超出2^32 - 1时会溢出，delay值为0。
-
-...argumentsany[]否
-
-附加参数，仅当handler类型为Function时生效，作为参数传递给handler。
-
-arguments参数数量少于handler函数参数数量时，未被arguments覆盖的参数会被设为undefined。
-
-arguments参数数量多于handler函数参数数量时，多余的arguments参数会被忽略，但可通过handler函数内部的arguments对象访问。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| handler | Function | string | 是 | 类型为Function表示定时器到期后执行函数； 类型为string则通过Error方式打印string中内容，不进行其他处理。 |
+| delay | number | 是 | 延迟的毫秒数，函数的调用会在该延迟之后发生。建议传入整数，若传入小数，会被向下取整。 如果省略该参数，delay取默认值0。 注意： 1. 该计时器非精准计时器，实际延迟可能会与预期延迟存在误差。 2. 如果值小于1，将被默认设置为0。 3. delay值受系统限制，超出2^31 - 1时会溢出，delay值为0。 |
+| ...arguments | any[] | 否 | 附加参数，仅当handler类型为Function时生效，作为参数传递给handler。 arguments参数数量少于handler函数参数数量时，未被arguments覆盖的参数会被设为undefined。 arguments参数数量多于handler函数参数数量时，多余的arguments参数会被忽略，但可通过handler函数内部的arguments对象访问。 |
 
 **返回值：**
 
-类型说明number该定时器的ID，定时器ID为进程共享，是从0开始顺序增加的整数，无重复值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 该定时器的ID，定时器ID为进程共享，是从0开始顺序增加的整数，无重复值。 |
 
 **示例：**
 
@@ -190,7 +152,9 @@ clearInterval(intervalID?: number): void
 
 **参数：**
 
-参数名类型必填说明intervalIDnumber否要取消的重复定时器的ID，需要与调用setInterval设置重复定时器的返回值一致。如果省略该参数或指定的重复定时器ID不存在时，不会取消任何定时任务。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| intervalID | number | 否 | 要取消的重复定时器的ID，需要与调用setInterval设置重复定时器的返回值一致。如果省略该参数或指定的重复定时器ID不存在时，不会取消任何定时任务。 |
 
 **示例：**
 

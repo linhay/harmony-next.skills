@@ -18,7 +18,7 @@ import { DownloadFileButton } from '@kit.ArkUI';
 
 #### 属性
 
-支持[通用属性](../misc/通用属性.md)。
+支持[通用属性]([通用属性](../misc/通用属性.md).md)。
 
 #### DownloadFileButton
 
@@ -30,7 +30,10 @@ import { DownloadFileButton } from '@kit.ArkUI';
 
 **系统能力**： SystemCapability.ArkUI.ArkUI.Full
 
-名称类型必填装饰器类型说明contentOptions[DownloadContentOptions](#ZH-CN_TOPIC_0000002529444921__downloadcontentoptions)是@State创建包含指定元素内容的下载按钮。styleOptions[DownloadStyleOptions](#ZH-CN_TOPIC_0000002529444921__downloadstyleoptions)是@State创建包含指定元素样式的下载按钮。
+| 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- |
+| contentOptions | DownloadContentOptions | 是 | @State | 创建包含指定元素内容的下载按钮。 |
+| styleOptions | DownloadStyleOptions | 是 | @State | 创建包含指定元素样式的下载按钮。 |
 
 #### DownloadContentOptions
 
@@ -40,17 +43,10 @@ import { DownloadFileButton } from '@kit.ArkUI';
 
 **系统能力**： SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明icon[DownloadIconStyle](#ZH-CN_TOPIC_0000002529444921__downloadiconstyle)否是
-
-设置下载按钮的图标风格。
-
-不传入该参数表示没有图标，icon和text至少存在一个。
-
-text[DownloadDescription](#ZH-CN_TOPIC_0000002529444921__downloaddescription)否是
-
-设置下载按钮的文本描述。
-
-不传入该参数表示没有文字描述，icon和text至少存在一个。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| icon | DownloadIconStyle | 否 | 是 | 设置下载按钮的图标风格。  不传入该参数表示没有图标，icon和text至少存在一个。 |
+| text | DownloadDescription | 否 | 是 | 设置下载按钮的文本描述。  不传入该参数表示没有文字描述，icon和text至少存在一个。 |
 
 #### DownloadStyleOptions
 
@@ -60,59 +56,17 @@ text[DownloadDescription](#ZH-CN_TOPIC_0000002529444921__downloaddescription)否
 
 **系统能力**： SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明iconSize[Dimension](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10)否是
-
-下载控件上图标的尺寸，不支持百分比。
-
-默认值：16vp
-
-layoutDirection[DownloadLayoutDirection](#ZH-CN_TOPIC_0000002529444921__downloadlayoutdirection)否是
-
-下载控件上图标和文字分布的方向。
-
-默认值：DownloadLayoutDirection.HORIZONTAL
-
-fontSize[Dimension](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10)否是
-
-下载控件上文字的尺寸，不支持百分比。
-
-默认值：16fp
-
-fontStyle[FontStyle](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__fontstyle)否是
-
-下载控件上文字的样式。
-
-默认值：FontStyle.Normal
-
-fontWeightnumber|[FontWeight](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__fontweight)|string否是
-
-下载控件上文字粗细，number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如"400"，以及"bold"、"bolder"、"lighter"、"regular"、"medium"，分别对应FontWeight中相应的枚举值。
-
-默认值：FontWeight.Medium
-
-fontFamilystring|[Resource](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)否是
-
-下载控件上文字的字体。
-
- 默认字体：'HarmonyOS Sans'
-
-fontColor[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)否是
-
-下载控件上文字的颜色。
-
-默认值：#ffffffff
-
-iconColor[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)否是
-
-下载控件上图标的颜色。
-
-默认值：#ffffffff
-
-textIconSpace[Dimension](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10)否是
-
-下载控件中图标和文字的间距。
-
- 默认值：4vp
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| iconSize | [Dimension](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10) | 否 | 是 | 下载控件上图标的尺寸，不支持百分比。  默认值：16vp |
+| layoutDirection | DownloadLayoutDirection | 否 | 是 | 下载控件上图标和文字分布的方向。  默认值：DownloadLayoutDirection.HORIZONTAL |
+| fontSize | [Dimension](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10) | 否 | 是 | 下载控件上文字的尺寸，不支持百分比。  默认值：16fp |
+| fontStyle | [FontStyle](枚举说明.md#ZH-CN_TOPIC_0000002529284967__fontstyle) | 否 | 是 | 下载控件上文字的样式。  默认值：FontStyle.Normal |
+| fontWeight | number|[FontWeight](枚举说明.md#ZH-CN_TOPIC_0000002529284967__fontweight)|string | 否 | 是 | 下载控件上文字粗细，number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如"400"，以及"bold"、"bolder"、"lighter"、"regular"、"medium"，分别对应FontWeight中相应的枚举值。  默认值：FontWeight.Medium |
+| fontFamily | string|[Resource](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 否 | 是 | 下载控件上文字的字体。  默认字体：'HarmonyOS Sans' |
+| fontColor | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 否 | 是 | 下载控件上文字的颜色。  默认值：#ffffffff |
+| iconColor | [Resource](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)Color | 否 | 是 | 下载控件上图标的颜色。  默认值：#ffffffff |
+| textIconSpace | [Dimension](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10) | 否 | 是 | 下载控件中图标和文字的间距。  默认值：4vp |
 
 #### DownloadIconStyle
 
@@ -122,7 +76,10 @@ textIconSpace[Dimension](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604
 
 **系统能力**： SystemCapability.ArkUI.ArkUI.Full
 
-名称值说明FULL_FILLED1下载按钮展示填充样式图标。LINES2下载按钮展示线条样式图标。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| FULL_FILLED | 1 | 下载按钮展示填充样式图标。 |
+| LINES | 2 | 下载按钮展示线条样式图标。 |
 
 #### DownloadDescription
 
@@ -132,7 +89,16 @@ textIconSpace[Dimension](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604
 
 **系统能力**： SystemCapability.ArkUI.ArkUI.Full
 
-名称值说明DOWNLOAD1下载按钮的文字描述为“下载”。DOWNLOAD_FILE2下载按钮的文字描述为“下载文件”。SAVE3下载按钮的文字描述为“保存”。SAVE_IMAGE4下载按钮的文字描述为“保存图片”。SAVE_FILE5下载按钮的文字描述为“保存文件”。DOWNLOAD_AND_SHARE6下载按钮的文字描述为“下载分享”。RECEIVE7下载按钮的文字描述为“接收”。CONTINUE_TO_RECEIVE8下载按钮的文字描述为“继续接收”。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DOWNLOAD | 1 | 下载按钮的文字描述为“下载”。 |
+| DOWNLOAD_FILE | 2 | 下载按钮的文字描述为“下载文件”。 |
+| SAVE | 3 | 下载按钮的文字描述为“保存”。 |
+| SAVE_IMAGE | 4 | 下载按钮的文字描述为“保存图片”。 |
+| SAVE_FILE | 5 | 下载按钮的文字描述为“保存文件”。 |
+| DOWNLOAD_AND_SHARE | 6 | 下载按钮的文字描述为“下载分享”。 |
+| RECEIVE | 7 | 下载按钮的文字描述为“接收”。 |
+| CONTINUE_TO_RECEIVE | 8 | 下载按钮的文字描述为“继续接收”。 |
 
 #### DownloadLayoutDirection
 
@@ -142,11 +108,14 @@ textIconSpace[Dimension](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604
 
 **系统能力**： SystemCapability.ArkUI.ArkUI.Full
 
-名称值说明HORIZONTAL0下载控件上图标和文字分布的方向为水平排列。VERTICAL1下载控件上图标和文字分布的方向为垂直排列。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| HORIZONTAL | 0 | 下载控件上图标和文字分布的方向为水平排列。 |
+| VERTICAL | 1 | 下载控件上图标和文字分布的方向为垂直排列。 |
 
 #### 事件
 
-支持[通用事件](../misc/通用事件.md)。
+支持[通用事件]([通用事件](../misc/通用事件.md).md)。
 
 #### 示例
 
@@ -197,7 +166,6 @@ struct Index {
           this.downloadAction();
         })
     }
-  }
 
   downloadAction() {
     try {
@@ -211,6 +179,6 @@ struct Index {
       });
     } catch (e) {
     }
-  }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522245364.webp)

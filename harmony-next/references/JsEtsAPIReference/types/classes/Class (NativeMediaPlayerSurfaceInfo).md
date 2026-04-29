@@ -1,6 +1,7 @@
 # Class (NativeMediaPlayerSurfaceInfo)
 
-[应用接管网页媒体播放功能](../../topics/misc/属性.md#ZH-CN_TOPIC_0000002497605206__enablenativemediaplayer12)中用于同层渲染的 surface 信息。
+[应用接管网页媒体播放功能](属性.md#ZH-CN_TOPIC_0000002553201131__enablenativemediaplayer12)中用于同层渲染的 surface 信息。
+
 
 -
 
@@ -12,16 +13,13 @@
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### 属性
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
-名称类型只读可选说明id12+string否否
-
-surface的id，用于同层渲染的NativeImage的psurfaceid。
-
-详见[NativeEmbedDataInfo](../interfaces/Interfaces（其他）.md#ZH-CN_TOPIC_0000002529445183__nativeembeddatainfo11)。
-
-rect12+[RectEvent](../interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529285193__rectevent12)否否surface的位置信息。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| id12+ | string | 否 | 否 | surface的id，用于同层渲染的NativeImage的psurfaceid。 详见[NativeEmbedDataInfo](../interfaces/Interfaces（其他）.md#ZH-CN_TOPIC_0000002529445183__nativeembeddatainfo11)。 |
+| rect12+ | RectEvent | 否 | 否 | surface的位置信息。 |

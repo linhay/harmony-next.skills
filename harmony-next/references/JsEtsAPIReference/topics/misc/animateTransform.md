@@ -18,7 +18,9 @@ transform动效，支持的组件范围：
 
 支持animate属性和以下表格中的属性。
 
-名称类型默认值必填描述type[translate | scale | rotate | skewX | skewY]-是设置transform动画的类型
+| 名称 | 类型 | 默认值 | 必填 | 描述 |
+| --- | --- | --- | --- | --- |
+| type | [translate | scale | rotate | skewX | skewY] | - | 是 | 设置transform动画的类型 |
 
 #### 示例
 
@@ -59,7 +61,6 @@ transform动效，支持的组件范围：
         <animateTransform attributeName="transform" attributeType="XML" type="translate" from="0 0" to="300 300" dur="3s" repeatCount="indefinite"></animateTransform>
       </polygon>
     </svg>
-  </div>
 </div>
 ```
 
@@ -113,7 +114,6 @@ transform动效，支持的组件范围：
           keyTimes="0; 0.4; 0.8; 1.0" dur="3s" repeatCount="indefinite"></animateTransform>
       </polygon>
     </svg>
-  </div>
 </div>
 ```
 
@@ -180,7 +180,6 @@ transform动效，支持的组件范围：
       </text>
     </svg>
   </div>
-</div>
 ```
 
 ```ets

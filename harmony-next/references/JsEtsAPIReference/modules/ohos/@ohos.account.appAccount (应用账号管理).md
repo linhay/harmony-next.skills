@@ -20,7 +20,9 @@ createAppAccountManager(): AppAccountManager
 
 **返回值：**
 
-类型说明[AppAccountManager](#ZH-CN_TOPIC_0000002497605500__appaccountmanager)应用账号管理器对象。
+| 类型 | 说明 |
+| --- | --- |
+| AppAccountManager | 应用账号管理器对象。 |
 
 **示例：**
 
@@ -42,13 +44,22 @@ createAccount(name: string, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。callbackAsyncCallback<void>是回调函数。当创建成功时，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当创建成功时，err为null，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码]([账号管理错误码](../../errors/账号管理错误码.md).md)和[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name.12300004Account already exists.12300007The number of accounts reaches the upper limit.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name. |
+| 12300004 | Account already exists. |
+| 12300007 | The number of accounts reaches the upper limit. |
 
 **示例：**
 
@@ -79,13 +90,23 @@ createAccount(name: string, options: CreateAccountOptions, callback: AsyncCallba
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。options[CreateAccountOptions](#ZH-CN_TOPIC_0000002497605500__createaccountoptions9)是创建应用账号的选项，可提供自定义数据，但不建议包含敏感数据（如密码、Token等）。callbackAsyncCallback<void>是回调函数。当创建成功时，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| options | CreateAccountOptions | 是 | 创建应用账号的选项，可提供自定义数据，但不建议包含敏感数据（如密码、Token等）。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当创建成功时，err为null，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name or options.12300004Account already exists.12300007The number of accounts reaches the upper limit.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name or options. |
+| 12300004 | Account already exists. |
+| 12300007 | The number of accounts reaches the upper limit. |
 
 **示例：**
 
@@ -95,7 +116,6 @@ import { BusinessError } from '@kit.BasicServicesKit';
 let options: appAccount.CreateAccountOptions = {
   customData: {
     age: '10'
-  }
 }
 try {
   appAccountManager.createAccount('LiSi', options, (err: BusinessError) => {
@@ -121,17 +141,28 @@ createAccount(name: string, options?: CreateAccountOptions): Promise<void>
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。options[CreateAccountOptions](#ZH-CN_TOPIC_0000002497605500__createaccountoptions9)否创建应用账号的选项，可提供自定义数据，但不建议包含敏感数据（如密码、Token等）。不填无影响，默认为空，表示创建的该账号无额外信息需要添加。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| options | CreateAccountOptions | 否 | 创建应用账号的选项，可提供自定义数据，但不建议包含敏感数据（如密码、Token等）。不填无影响，默认为空，表示创建的该账号无额外信息需要添加。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name or options.12300004Account already exists.12300007The number of accounts reaches the upper limit.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name or options. |
+| 12300004 | Account already exists. |
+| 12300007 | The number of accounts reaches the upper limit. |
 
 **示例：**
 
@@ -141,7 +172,6 @@ import { BusinessError } from '@kit.BasicServicesKit';
 let options: appAccount.CreateAccountOptions = {
   customData: {
     age: '10'
-  }
 }
 try {
   appAccountManager.createAccount('LiSi', options).then(() => {
@@ -165,13 +195,24 @@ createAccountImplicitly(owner: string, callback: AuthCallback): void
 
 **参数：**
 
-参数名类型必填说明ownerstring是应用账号所有者的包名。callback[AuthCallback](#ZH-CN_TOPIC_0000002497605500__authcallback9)是认证器回调对象，返回创建结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| callback | AuthCallback | 是 | 认证器回调对象，返回创建结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid owner.12300007The number of accounts reaches the upper limit.12300010Account service busy.12300113Authenticator service not found.12300114Authenticator service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid owner. |
+| 12300007 | The number of accounts reaches the upper limit. |
+| 12300010 | Account service busy. |
+| 12300113 | Authenticator service not found. |
+| 12300114 | Authenticator service exception. |
 
 **示例：**
 
@@ -213,7 +254,6 @@ struct Index {
       const err = e as BusinessError;
       console.error(`createAccountImplicitly exception: code is ${err.code}, message is ${err.message}`);
     }
-  }
   build() {}
 }
 ```
@@ -228,13 +268,25 @@ createAccountImplicitly(owner: string, options: CreateAccountImplicitlyOptions, 
 
 **参数：**
 
-参数名类型必填说明ownerstring是应用账号所有者的包名。options[CreateAccountImplicitlyOptions](#ZH-CN_TOPIC_0000002497605500__createaccountimplicitlyoptions9)是隐式创建账号的选项。callback[AuthCallback](#ZH-CN_TOPIC_0000002497605500__authcallback9)是认证器回调对象，返回创建结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| options | CreateAccountImplicitlyOptions | 是 | 隐式创建账号的选项。 |
+| callback | AuthCallback | 是 | 认证器回调对象，返回创建结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid owner or options.12300007The number of accounts reaches the upper limit.12300010Account service busy.12300113Authenticator service not found.12300114Authenticator service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid owner or options. |
+| 12300007 | The number of accounts reaches the upper limit. |
+| 12300010 | Account service busy. |
+| 12300113 | Authenticator service not found. |
+| 12300114 | Authenticator service exception. |
 
 **示例：**
 
@@ -280,7 +332,6 @@ struct Index {
       const err = e as BusinessError;
       console.error(`createAccountImplicitly exception: code is ${err.code}, message is ${err.message}`);
     }
-  }
   build() {}
 }
 ```
@@ -295,13 +346,21 @@ removeAccount(name: string, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。callbackAsyncCallback<void>是回调函数。当删除成功时，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当删除成功时，err为null，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name.12300003Account not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name. |
+| 12300003 | Account not found. |
 
 **示例：**
 
@@ -332,17 +391,26 @@ removeAccount(name: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name.12300003Account not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name. |
+| 12300003 | Account not found. |
 
 **示例：**
 
@@ -371,13 +439,24 @@ setAppAccess(name: string, bundleName: string, isAccessible: boolean, callback: 
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。bundleNamestring是第三方应用的包名。isAccessibleboolean是是否可访问。true表示允许访问，false表示禁止访问。callbackAsyncCallback<void>是回调函数，如果设置成功，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| bundleName | string | 是 | 第三方应用的包名。 |
+| isAccessible | boolean | 是 | 是否可访问。true表示允许访问，false表示禁止访问。 |
+| callback | AsyncCallback<void> | 是 | 回调函数，如果设置成功，err为null，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name or bundleName.12300003Account not found.12400005The size of authorization list reaches the upper limit.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name or bundleName. |
+| 12300003 | Account not found. |
+| 12400005 | The size of authorization list reaches the upper limit. |
 
 **示例：**
 
@@ -408,17 +487,29 @@ setAppAccess(name: string, bundleName: string, isAccessible: boolean): Promise<v
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。bundleNamestring是第三方应用的包名。isAccessibleboolean是是否可访问。true表示允许访问，false表示禁止访问。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| bundleName | string | 是 | 第三方应用的包名。 |
+| isAccessible | boolean | 是 | 是否可访问。true表示允许访问，false表示禁止访问。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name or bundleName.12300003Account not found.12400005The size of authorization list reaches the upper limit.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name or bundleName. |
+| 12300003 | Account not found. |
+| 12400005 | The size of authorization list reaches the upper limit. |
 
 **示例：**
 
@@ -447,13 +538,22 @@ checkAppAccess(name: string, bundleName: string, callback: AsyncCallback<boolean
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。bundleNamestring是第三方应用的包名。callbackAsyncCallback<boolean>是回调函数。返回true表示指定应用可访问特定账号的数据；返回false表示不可访问。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| bundleName | string | 是 | 第三方应用的包名。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。返回true表示指定应用可访问特定账号的数据；返回false表示不可访问。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name or bundleName.12300003Account not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name or bundleName. |
+| 12300003 | Account not found. |
 
 **示例：**
 
@@ -485,17 +585,27 @@ checkAppAccess(name: string, bundleName: string): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。bundleNamestring是第三方应用的包名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| bundleName | string | 是 | 第三方应用的包名。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示指定应用可访问特定账号的数据；返回false表示不可访问。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示指定应用可访问特定账号的数据；返回false表示不可访问。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name or bundleName.12300003Account not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name or bundleName. |
+| 12300003 | Account not found. |
 
 **示例：**
 
@@ -526,13 +636,23 @@ setDataSyncEnabled(name: string, isEnabled: boolean, callback: AsyncCallback<voi
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。isEnabledboolean是是否开启数据同步。true表示开启数据同步，false表示关闭数据同步。callbackAsyncCallback<void>是回调函数。当开启或禁止成功时，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| isEnabled | boolean | 是 | 是否开启数据同步。true表示开启数据同步，false表示关闭数据同步。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当开启或禁止成功时，err为null，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name.12300003Account not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name. |
+| 12300003 | Account not found. |
 
 **示例：**
 
@@ -561,17 +681,28 @@ setDataSyncEnabled(name: string, isEnabled: boolean): Promise<void>
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。isEnabledboolean是是否开启数据同步。true表示开启数据同步，false表示关闭数据同步。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| isEnabled | boolean | 是 | 是否开启数据同步。true表示开启数据同步，false表示关闭数据同步。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name.12300003Account not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name. |
+| 12300003 | Account not found. |
 
 **示例：**
 
@@ -602,13 +733,22 @@ checkDataSyncEnabled(name: string, callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。callbackAsyncCallback<boolean>是回调函数。返回true表示指定应用账号已开启数据同步功能；返回false表示未开启。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。返回true表示指定应用账号已开启数据同步功能；返回false表示未开启。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name.12300003Account not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name. |
+| 12300003 | Account not found. |
 
 **示例：**
 
@@ -641,17 +781,27 @@ checkDataSyncEnabled(name: string): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示指定应用账号已开启数据同步功能；返回false表示未开启。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示指定应用账号已开启数据同步功能；返回false表示未开启。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name.12300003Account not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name. |
+| 12300003 | Account not found. |
 
 **示例：**
 
@@ -680,13 +830,23 @@ setCredential(name: string, credentialType: string, credential: string,callback:
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。credentialTypestring是凭据类型。credentialstring是凭据取值。callbackAsyncCallback<void>是回调函数。当凭据设置成功时，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| credentialType | string | 是 | 凭据类型。 |
+| credential | string | 是 | 凭据取值。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当凭据设置成功时，err为null，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name, credentialType or credential.12300003Account not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name, credentialType or credential. |
+| 12300003 | Account not found. |
 
 **示例：**
 
@@ -717,17 +877,28 @@ setCredential(name: string, credentialType: string, credential: string): Promise
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。credentialTypestring是凭据类型。credentialstring是凭据取值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| credentialType | string | 是 | 凭据类型。 |
+| credential | string | 是 | 凭据取值。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name, credentialType or credential.12300003Account not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name, credentialType or credential. |
+| 12300003 | Account not found. |
 
 **示例：**
 
@@ -756,13 +927,23 @@ getCredential(name: string, credentialType: string, callback: AsyncCallback<stri
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。credentialTypestring是凭据类型。callbackAsyncCallback<string>是回调函数。当获取凭据成功时，err为null，data为指定应用账号的凭据；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| credentialType | string | 是 | 凭据类型。 |
+| callback | AsyncCallback<string> | 是 | 回调函数。当获取凭据成功时，err为null，data为指定应用账号的凭据；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name or credentialType.12300003Account not found.12300102Credential not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name or credentialType. |
+| 12300003 | Account not found. |
+| 12300102 | Credential not found. |
 
 **示例：**
 
@@ -793,17 +974,28 @@ getCredential(name: string, credentialType: string): Promise<string>
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。credentialTypestring是凭据类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| credentialType | string | 是 | 凭据类型。 |
 
 **返回值：**
 
-类型说明Promise<string>Promise对象，返回指定应用账号的凭据。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回指定应用账号的凭据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name or credentialType.12300003Account not found.12300102Credential not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name or credentialType. |
+| 12300003 | Account not found. |
+| 12300102 | Credential not found. |
 
 **示例：**
 
@@ -832,13 +1024,24 @@ setCustomData(name: string, key: string, value: string, callback: AsyncCallback<
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。keystring是自定义数据的键名。valuestring是自定义数据的取值。callbackAsyncCallback<void>是回调函数。当设置自定义数据成功时，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| key | string | 是 | 自定义数据的键名。 |
+| value | string | 是 | 自定义数据的取值。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置自定义数据成功时，err为null，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name, key or value.12300003Account not found.12400003The number of custom data reaches the upper limit.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name, key or value. |
+| 12300003 | Account not found. |
+| 12400003 | The number of custom data reaches the upper limit. |
 
 **示例：**
 
@@ -869,17 +1072,29 @@ setCustomData(name: string, key: string, value: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。keystring是自定义数据的键名。valuestring是自定义数据的取值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| key | string | 是 | 自定义数据的键名。 |
+| value | string | 是 | 自定义数据的取值。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name, key or value.12300003Account not found.12400003The number of custom data reaches the upper limit.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name, key or value. |
+| 12300003 | Account not found. |
+| 12400003 | The number of custom data reaches the upper limit. |
 
 **示例：**
 
@@ -908,13 +1123,23 @@ getCustomData(name: string, key: string, callback: AsyncCallback<string>): void
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。keystring是自定义数据的键名。callbackAsyncCallback<string>是回调函数。当获取成功时，err为null，data为自定义数据的取值；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| key | string | 是 | 自定义数据的键名。 |
+| callback | AsyncCallback<string> | 是 | 回调函数。当获取成功时，err为null，data为自定义数据的取值；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name or key.12300003Account not found.12400002Custom data not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name or key. |
+| 12300003 | Account not found. |
+| 12400002 | Custom data not found. |
 
 **示例：**
 
@@ -945,17 +1170,28 @@ getCustomData(name: string, key: string): Promise<string>
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。keystring是自定义数据的键名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| key | string | 是 | 自定义数据的键名。 |
 
 **返回值：**
 
-类型说明Promise<string>Promise对象，返回自定义数据的取值。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回自定义数据的取值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name or key.12300003Account not found.12400002Custom data not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name or key. |
+| 12300003 | Account not found. |
+| 12400002 | Custom data not found. |
 
 **示例：**
 
@@ -984,17 +1220,28 @@ getCustomDataSync(name: string, key: string): string
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。keystring是自定义数据的键名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| key | string | 是 | 自定义数据的键名。 |
 
 **返回值：**
 
-类型说明string自定义数据的取值。
+| 类型 | 说明 |
+| --- | --- |
+| string | 自定义数据的取值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name or key.12300003Account not found.12400002Custom data not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name or key. |
+| 12300003 | Account not found. |
+| 12400002 | Custom data not found. |
 
 **示例：**
 
@@ -1020,13 +1267,18 @@ getAllAccounts(callback: AsyncCallback<Array<AppAccountInfo>>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<Array<[AppAccountInfo](#ZH-CN_TOPIC_0000002497605500__appaccountinfo)>>是回调函数。当查询成功时，err为null，data为获取到的应用账号信息列表；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<AppAccountInfo>> | 是 | 回调函数。当查询成功时，err为null，data为获取到的应用账号信息列表；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
 
 **示例：**
 
@@ -1057,13 +1309,17 @@ getAllAccounts(): Promise<Array<AppAccountInfo>>
 
 **返回值：**
 
-类型说明Promise<Array<[AppAccountInfo](#ZH-CN_TOPIC_0000002497605500__appaccountinfo)>>Promise对象，返回全部应用已授权账号信息对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<AppAccountInfo>> | Promise对象，返回全部应用已授权账号信息对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)。
 
-错误码ID错误信息12300001System service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12300001 | System service exception. |
 
 **示例：**
 
@@ -1092,13 +1348,20 @@ getAccountsByOwner(owner: string, callback: AsyncCallback<Array<AppAccountInfo>>
 
 **参数：**
 
-参数名类型必填说明ownerstring是应用账号所有者的包名。callbackAsyncCallback<Array<[AppAccountInfo](#ZH-CN_TOPIC_0000002497605500__appaccountinfo)>>是回调函数。如果获取成功，err为null，data为获取到的应用账号列表；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| callback | AsyncCallback<Array<AppAccountInfo>> | 是 | 回调函数。如果获取成功，err为null，data为获取到的应用账号列表；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid owner.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid owner. |
 
 **示例：**
 
@@ -1130,17 +1393,25 @@ getAccountsByOwner(owner: string): Promise<Array<AppAccountInfo>>
 
 **参数：**
 
-参数名类型必填说明ownerstring是应用账号所有者的包名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| owner | string | 是 | 应用账号所有者的包名。 |
 
 **返回值：**
 
-类型说明Promise<Array<[AppAccountInfo](#ZH-CN_TOPIC_0000002497605500__appaccountinfo)>>Promise对象，返回获取到的应用账号列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<AppAccountInfo>> | Promise对象，返回获取到的应用账号列表。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid owner.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid owner. |
 
 **示例：**
 
@@ -1170,13 +1441,21 @@ on(type: 'accountChange', owners: Array<string>, callback: Callback<Array<AppAcc
 
 **参数：**
 
-参数名类型必填说明type'accountChange'是事件回调类型，支持的事件为'accountChange'，当目标应用更新账号信息时，触发该事件。ownersArray<string>是应用账号所有者的包名列表。callbackCallback<Array<[AppAccountInfo](#ZH-CN_TOPIC_0000002497605500__appaccountinfo)>>是需要注册的回调函数，返回信息为发生变更的应用账号列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | 'accountChange' | 是 | 事件回调类型，支持的事件为'accountChange'，当目标应用更新账号信息时，触发该事件。 |
+| owners | Array<string> | 是 | 应用账号所有者的包名列表。 |
+| callback | Callback<Array<AppAccountInfo>> | 是 | 需要注册的回调函数，返回信息为发生变更的应用账号列表。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid type or owners.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid type or owners. |
 
 **示例：**
 
@@ -1205,13 +1484,20 @@ off(type: 'accountChange', callback?: Callback<Array<AppAccountInfo>>): void
 
 **参数：**
 
-参数名类型必填说明type'accountChange'是事件回调类型，支持的事件为'accountChange'，当账号所有者更新账号信息时，触发该事件。callbackCallback<Array<[AppAccountInfo](#ZH-CN_TOPIC_0000002497605500__appaccountinfo)>>否需要注销的回调函数，默认为空，表示取消该类型事件所有的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | 'accountChange' | 是 | 事件回调类型，支持的事件为'accountChange'，当账号所有者更新账号信息时，触发该事件。 |
+| callback | Callback<Array<AppAccountInfo>> | 否 | 需要注销的回调函数，默认为空，表示取消该类型事件所有的回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid type.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid type. |
 
 **示例：**
 
@@ -1246,13 +1532,26 @@ auth(name: string, owner: string, authType: string, callback: AuthCallback): voi
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。ownerstring是应用账号所有者的包名。authTypestring是鉴权类型。callback[AuthCallback](#ZH-CN_TOPIC_0000002497605500__authcallback9)是回调对象，返回鉴权结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| authType | string | 是 | 鉴权类型。 |
+| callback | AuthCallback | 是 | 回调对象，返回鉴权结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name, owner or authType.12300003Account not found.12300010Account service busy.12300113Authenticator service not found.12300114Authenticator service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name, owner or authType. |
+| 12300003 | Account not found. |
+| 12300010 | Account service busy. |
+| 12300113 | Authenticator service not found. |
+| 12300114 | Authenticator service exception. |
 
 **示例：**
 
@@ -1294,7 +1593,6 @@ struct Index {
       const err = e as BusinessError;
       console.error(`auth exception: code is ${err.code}, message is ${err.message}`);
     }
-  }
 
   build() {}
 }
@@ -1310,13 +1608,27 @@ auth(name: string, owner: string, authType: string, options: Record<string, Obje
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。ownerstring是应用账号所有者的包名。authTypestring是鉴权类型。optionsRecord<string, Object>是鉴权所需的可选项。callback[AuthCallback](#ZH-CN_TOPIC_0000002497605500__authcallback9)是回调对象，返回鉴权结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| authType | string | 是 | 鉴权类型。 |
+| options | Record<string, Object> | 是 | 鉴权所需的可选项。 |
+| callback | AuthCallback | 是 | 回调对象，返回鉴权结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name, owner, authType or options.12300003Account not found.12300010Account service busy.12300113Authenticator service not found.12300114Authenticator service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name, owner, authType or options. |
+| 12300003 | Account not found. |
+| 12300010 | Account service busy. |
+| 12300113 | Authenticator service not found. |
+| 12300114 | Authenticator service exception. |
 
 **示例：**
 
@@ -1361,7 +1673,6 @@ struct Index {
       const err = e as BusinessError;
       console.error(`auth exception: code is ${err.code}, message is ${err.message}`);
     }
-  }
 
   build() {}
 }
@@ -1377,13 +1688,24 @@ getAuthToken(name: string, owner: string, authType: string, callback: AsyncCallb
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。ownerstring是应用账号所有者的包名。authTypestring是鉴权类型。callbackAsyncCallback<string>是回调函数。当获取成功时，err为null，data为授权令牌值；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| authType | string | 是 | 鉴权类型。 |
+| callback | AsyncCallback<string> | 是 | 回调函数。当获取成功时，err为null，data为授权令牌值；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name, owner or authType.12300003Account not found.12300107AuthType not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name, owner or authType. |
+| 12300003 | Account not found. |
+| 12300107 | AuthType not found. |
 
 **示例：**
 
@@ -1415,17 +1737,29 @@ getAuthToken(name: string, owner: string, authType: string): Promise<string>
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。ownerstring是应用账号所有者的包名。authTypestring是鉴权类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| authType | string | 是 | 鉴权类型。 |
 
 **返回值：**
 
-类型说明Promise<string>Promise对象，返回授权令牌。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回授权令牌。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name, owner or authType.12300003Account not found.12300107AuthType not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name, owner or authType. |
+| 12300003 | Account not found. |
+| 12300107 | AuthType not found. |
 
 **示例：**
 
@@ -1454,13 +1788,24 @@ setAuthToken(name: string, authType: string, token: string, callback: AsyncCallb
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。authTypestring是鉴权类型。tokenstring是授权令牌。callbackAsyncCallback<void>是回调函数。当设置成功时，err为null；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| authType | string | 是 | 鉴权类型。 |
+| token | string | 是 | 授权令牌。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置成功时，err为null；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name, authType or token.12300003Account not found.12400004The number of tokens reaches the upper limit.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name, authType or token. |
+| 12300003 | Account not found. |
+| 12400004 | The number of tokens reaches the upper limit. |
 
 **示例：**
 
@@ -1491,17 +1836,29 @@ setAuthToken(name: string, authType: string, token: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。authTypestring是鉴权类型。tokenstring是授权令牌。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| authType | string | 是 | 鉴权类型。 |
+| token | string | 是 | 授权令牌。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name, authType or token.12300003Account not found.12400004The number of tokens reaches the upper limit.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name, authType or token. |
+| 12300003 | Account not found. |
+| 12400004 | The number of tokens reaches the upper limit. |
 
 **示例：**
 
@@ -1530,13 +1887,25 @@ deleteAuthToken(name: string, owner: string, authType: string, token: string, ca
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。ownerstring是应用账号所有者的包名。authTypestring是鉴权类型。tokenstring是授权令牌。如果授权令牌不存在，则不执行任何操作。callbackAsyncCallback<void>是回调函数。当删除成功时，err为null；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| authType | string | 是 | 鉴权类型。 |
+| token | string | 是 | 授权令牌。如果授权令牌不存在，则不执行任何操作。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当删除成功时，err为null；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name, owner, authType or token.12300003Account not found.12300107AuthType not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name, owner, authType or token. |
+| 12300003 | Account not found. |
+| 12300107 | AuthType not found. |
 
 **示例：**
 
@@ -1568,17 +1937,30 @@ deleteAuthToken(name: string, owner: string, authType: string, token: string): P
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。ownerstring是应用账号所有者的包名。authTypestring是鉴权类型。tokenstring是授权令牌。如果授权令牌不存在，则不执行任何操作。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| authType | string | 是 | 鉴权类型。 |
+| token | string | 是 | 授权令牌。如果授权令牌不存在，则不执行任何操作。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name, owner, authType or token.12300003Account not found.12300107AuthType not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name, owner, authType or token. |
+| 12300003 | Account not found. |
+| 12300107 | AuthType not found. |
 
 **示例：**
 
@@ -1607,13 +1989,26 @@ setAuthTokenVisibility(name: string, authType: string, bundleName: string, isVis
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。authTypestring是鉴权类型。bundleNamestring是被设置可见性的应用包名。isVisibleboolean是是否可见。true表示可见，false表示不可见。callbackAsyncCallback<void>是回调函数。当设置成功时，err为null；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| authType | string | 是 | 鉴权类型。 |
+| bundleName | string | 是 | 被设置可见性的应用包名。 |
+| isVisible | boolean | 是 | 是否可见。true表示可见，false表示不可见。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置成功时，err为null；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name, authType or bundleName.12300003Account not found.12300107AuthType not found.12400005The size of authorization list reaches the upper limit.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name, authType or bundleName. |
+| 12300003 | Account not found. |
+| 12300107 | AuthType not found. |
+| 12400005 | The size of authorization list reaches the upper limit. |
 
 **示例：**
 
@@ -1645,17 +2040,31 @@ setAuthTokenVisibility(name: string, authType: string, bundleName: string, isVis
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。authTypestring是鉴权类型。bundleNamestring是被设置可见性的应用包名。isVisibleboolean是是否可见。true表示可见，false表示不可见。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| authType | string | 是 | 鉴权类型。 |
+| bundleName | string | 是 | 被设置可见性的应用包名。 |
+| isVisible | boolean | 是 | 是否可见。true表示可见，false表示不可见。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name, authType or bundleName.12300003Account not found.12300107AuthType not found.12400005The size of authorization list reaches the upper limit.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name, authType or bundleName. |
+| 12300003 | Account not found. |
+| 12300107 | AuthType not found. |
+| 12400005 | The size of authorization list reaches the upper limit. |
 
 **示例：**
 
@@ -1684,13 +2093,24 @@ checkAuthTokenVisibility(name: string, authType: string, bundleName: string, cal
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。authTypestring是鉴权类型。bundleNamestring是检查可见性的应用包名。callbackAsyncCallback<boolean>是回调函数。当检查成功时，err为null，data为true表示可见，data为false表示不可见；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| authType | string | 是 | 鉴权类型。 |
+| bundleName | string | 是 | 检查可见性的应用包名。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当检查成功时，err为null，data为true表示可见，data为false表示不可见；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name, authType or bundleName.12300003Account not found.12300107AuthType not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name, authType or bundleName. |
+| 12300003 | Account not found. |
+| 12300107 | AuthType not found. |
 
 **示例：**
 
@@ -1722,17 +2142,29 @@ checkAuthTokenVisibility(name: string, authType: string, bundleName: string): Pr
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。authTypestring是鉴权类型。bundleNamestring是用于检查可见性的应用包名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| authType | string | 是 | 鉴权类型。 |
+| bundleName | string | 是 | 用于检查可见性的应用包名。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示授权令牌对指定应用的可见，返回false表示不可见。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示授权令牌对指定应用的可见，返回false表示不可见。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name, authType or bundleName.12300003Account not found.12300107AuthType not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name, authType or bundleName. |
+| 12300003 | Account not found. |
+| 12300107 | AuthType not found. |
 
 **示例：**
 
@@ -1762,13 +2194,22 @@ getAllAuthTokens(name: string, owner: string, callback: AsyncCallback<Array<Auth
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。ownerstring是应用账号所有者的包名。callbackAsyncCallback<Array<[AuthTokenInfo](#ZH-CN_TOPIC_0000002497605500__authtokeninfo9)>>是回调函数。当获取成功时，err为null，data为授权令牌数组；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| callback | AsyncCallback<Array<AuthTokenInfo>> | 是 | 回调函数。当获取成功时，err为null，data为授权令牌数组；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name or owner.12300003Account not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name or owner. |
+| 12300003 | Account not found. |
 
 **示例：**
 
@@ -1800,17 +2241,27 @@ getAllAuthTokens(name: string, owner: string): Promise<Array<AuthTokenInfo>>
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。ownerstring是应用账号所有者的包名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| owner | string | 是 | 应用账号所有者的包名。 |
 
 **返回值：**
 
-类型说明Promise<Array<[AuthTokenInfo](#ZH-CN_TOPIC_0000002497605500__authtokeninfo9)>>Promise对象，返回授权令牌数组。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<AuthTokenInfo>> | Promise对象，返回授权令牌数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name or owner.12300003Account not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name or owner. |
+| 12300003 | Account not found. |
 
 **示例：**
 
@@ -1834,19 +2285,29 @@ try {
 
 getAuthList(name: string, authType: string, callback: AsyncCallback<Array<string>>): void
 
-获取指定应用账号的特定鉴权类型的授权列表，即被授权的包名数组（令牌的授权列表通过[setAuthTokenVisibility](#ZH-CN_TOPIC_0000002497605500__setauthtokenvisibility9)来设置）。使用callback异步回调。
+获取指定应用账号的特定鉴权类型的授权列表，即被授权的包名数组（令牌的授权列表通过[setAuthTokenVisibility](#ZH-CN_TOPIC_0000002522241584__setauthtokenvisibility9)来设置）。使用callback异步回调。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。authTypestring是鉴权类型。callbackAsyncCallback<Array<string>>是回调函数。当获取成功时，err为null，data为被授权的包名数组；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| authType | string | 是 | 鉴权类型。 |
+| callback | AsyncCallback<Array<string>> | 是 | 回调函数。当获取成功时，err为null，data为被授权的包名数组；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name or authType.12300003Account not found.12300107AuthType not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name or authType. |
+| 12300003 | Account not found. |
+| 12300107 | AuthType not found. |
 
 **示例：**
 
@@ -1871,23 +2332,34 @@ try {
 
 getAuthList(name: string, authType: string): Promise<Array<string>>
 
-获取指定应用账号的特定鉴权类型的授权列表，即被授权的包名数组（令牌的授权列表通过[setAuthTokenVisibility](#ZH-CN_TOPIC_0000002497605500__setauthtokenvisibility9)来设置）。使用Promise异步回调。
+获取指定应用账号的特定鉴权类型的授权列表，即被授权的包名数组（令牌的授权列表通过[setAuthTokenVisibility](#ZH-CN_TOPIC_0000002522241584__setauthtokenvisibility9)来设置）。使用Promise异步回调。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。authTypestring是鉴权类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| authType | string | 是 | 鉴权类型。 |
 
 **返回值：**
 
-类型说明Promise<Array<string>>Promise对象，返回被授权的包名数组。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<string>> | Promise对象，返回被授权的包名数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name or authType.12300003Account not found.12300107AuthType not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name or authType. |
+| 12300003 | Account not found. |
+| 12300107 | AuthType not found. |
 
 **示例：**
 
@@ -1916,13 +2388,21 @@ getAuthCallback(sessionId: string, callback: AsyncCallback<AuthCallback>): void
 
 **参数：**
 
-参数名类型必填说明sessionIdstring是鉴权会话的标识。callbackAsyncCallback<[AuthCallback](#ZH-CN_TOPIC_0000002497605500__authcallback9)>是回调函数。当获取成功时，err为null，data为鉴权会话的认证器回调对象；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sessionId | string | 是 | 鉴权会话的标识。 |
+| callback | AsyncCallback<AuthCallback> | 是 | 回调函数。当获取成功时，err为null，data为鉴权会话的认证器回调对象；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid sessionId.12300108Session not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid sessionId. |
+| 12300108 | Session not found. |
 
 **示例：**
 
@@ -1955,8 +2435,6 @@ export default class EntryAbility extends UIAbility {
       const err = e as BusinessError;
       console.error(`getAuthCallback exception: code is ${err.code}, message is ${err.message}`);
     }
-  }
-}
 ```
 
 #### getAuthCallback9+
@@ -1969,17 +2447,26 @@ getAuthCallback(sessionId: string): Promise<AuthCallback>
 
 **参数：**
 
-参数名类型必填说明sessionIdstring是鉴权会话的标识。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sessionId | string | 是 | 鉴权会话的标识。 |
 
 **返回值：**
 
-类型说明Promise<[AuthCallback](#ZH-CN_TOPIC_0000002497605500__authcallback9)>Promise对象，返回鉴权会话的认证器回调对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AuthCallback> | Promise对象，返回鉴权会话的认证器回调对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid sessionId.12300108Session not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid sessionId. |
+| 12300108 | Session not found. |
 
 **示例：**
 
@@ -2010,8 +2497,6 @@ export default class EntryAbility extends UIAbility {
       const err = e as BusinessError;
       console.error(`getAuthCallback exception: code is ${err.code}, message is ${err.message}`);
     }
-  }
-}
 ```
 
 #### queryAuthenticatorInfo9+
@@ -2024,13 +2509,21 @@ queryAuthenticatorInfo(owner: string, callback: AsyncCallback<AuthenticatorInfo>
 
 **参数：**
 
-参数名类型必填说明ownerstring是应用账号所有者的包名。callbackAsyncCallback<[AuthenticatorInfo](#ZH-CN_TOPIC_0000002497605500__authenticatorinfo8)>是回调函数。当获取成功时，err为null，data为认证器信息对象；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| callback | AsyncCallback<AuthenticatorInfo> | 是 | 回调函数。当获取成功时，err为null，data为认证器信息对象；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid owner.12300113Authenticator service not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid owner. |
+| 12300113 | Authenticator service not found. |
 
 **示例：**
 
@@ -2062,17 +2555,26 @@ queryAuthenticatorInfo(owner: string): Promise<AuthenticatorInfo>
 
 **参数：**
 
-参数名类型必填说明ownerstring是应用账号所有者的包名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| owner | string | 是 | 应用账号所有者的包名。 |
 
 **返回值：**
 
-类型说明Promise<[AuthenticatorInfo](#ZH-CN_TOPIC_0000002497605500__authenticatorinfo8)>Promise对象，返回指定应用的认证器信息对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AuthenticatorInfo> | Promise对象，返回指定应用的认证器信息对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid owner.12300113Authenticator service not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid owner. |
+| 12300113 | Authenticator service not found. |
 
 **示例：**
 
@@ -2102,13 +2604,26 @@ checkAccountLabels(name: string, owner: string, labels: Array<string>, callback:
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。ownerstring是应用账号所有者的包名。labelsArray<string>是标签数组。callbackAsyncCallback<boolean>是回调函数。当检查成功时，err为null，data为true表示满足特定的标签集合，data为false表示不满足；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| labels | Array<string> | 是 | 标签数组。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当检查成功时，err为null，data为true表示满足特定的标签集合，data为false表示不满足；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name, owner or labels.12300003Account not found.12300010Account service busy.12300113Authenticator service not found.12300114Authenticator service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name, owner or labels. |
+| 12300003 | Account not found. |
+| 12300010 | Account service busy. |
+| 12300113 | Authenticator service not found. |
+| 12300114 | Authenticator service exception. |
 
 **示例：**
 
@@ -2141,17 +2656,31 @@ checkAccountLabels(name: string, owner: string, labels: Array<string>): Promise<
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。ownerstring是应用账号所有者的包名。labelsArray<string>是标签数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| labels | Array<string> | 是 | 标签数组。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示指定账号满足特定的标签集合，返回false表示不满足。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示指定账号满足特定的标签集合，返回false表示不满足。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name, owner or labels.12300003Account not found.12300010Account service busy.12300113Authenticator service not found.12300114Authenticator service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name, owner or labels. |
+| 12300003 | Account not found. |
+| 12300010 | Account service busy. |
+| 12300113 | Authenticator service not found. |
+| 12300114 | Authenticator service exception. |
 
 **示例：**
 
@@ -2182,13 +2711,23 @@ deleteCredential(name: string, credentialType: string, callback: AsyncCallback<v
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。credentialTypestring是凭据类型。callbackAsyncCallback<void>是回调函数。当删除成功时，err为null；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| credentialType | string | 是 | 凭据类型。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当删除成功时，err为null；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name or credentialType.12300003Account not found.12300102Credential not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name or credentialType. |
+| 12300003 | Account not found. |
+| 12300102 | Credential not found. |
 
 **示例：**
 
@@ -2219,17 +2758,28 @@ deleteCredential(name: string, credentialType: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。credentialTypestring是凭据类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| credentialType | string | 是 | 凭据类型。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name or credentialType.12300003Account not found.12300102Credential not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name or credentialType. |
+| 12300003 | Account not found. |
+| 12300102 | Credential not found. |
 
 **示例：**
 
@@ -2258,13 +2808,22 @@ selectAccountsByOptions(options: SelectAccountsOptions, callback: AsyncCallback<
 
 **参数：**
 
-参数名类型必填说明options[SelectAccountsOptions](#ZH-CN_TOPIC_0000002497605500__selectaccountsoptions9)是选择账号的选项。callbackAsyncCallback<Array<[AppAccountInfo](#ZH-CN_TOPIC_0000002497605500__appaccountinfo)>>是回调函数。当根据选项选择请求方可访问的账号列表时，err为null，data为可访问的账号信息对象；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | SelectAccountsOptions | 是 | 选择账号的选项。 |
+| callback | AsyncCallback<Array<AppAccountInfo>> | 是 | 回调函数。当根据选项选择请求方可访问的账号列表时，err为null，data为可访问的账号信息对象；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid options.12300010Account service busy.12300114Authenticator service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid options. |
+| 12300010 | Account service busy. |
+| 12300114 | Authenticator service exception. |
 
 **示例：**
 
@@ -2300,17 +2859,27 @@ selectAccountsByOptions(options: SelectAccountsOptions): Promise<Array<AppAccoun
 
 **参数：**
 
-参数名类型必填说明options[SelectAccountsOptions](#ZH-CN_TOPIC_0000002497605500__selectaccountsoptions9)是选择账号的选项。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | SelectAccountsOptions | 是 | 选择账号的选项。 |
 
 **返回值：**
 
-类型说明Promise<Array<[AppAccountInfo](#ZH-CN_TOPIC_0000002497605500__appaccountinfo)>>Promise对象，返回调用方可访问的账号列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<AppAccountInfo>> | Promise对象，返回调用方可访问的账号列表。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid options.12300010Account service busy.12300114Authenticator service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid options. |
+| 12300010 | Account service busy. |
+| 12300114 | Authenticator service exception. |
 
 **示例：**
 
@@ -2342,13 +2911,25 @@ verifyCredential(name: string, owner: string, callback: AuthCallback): void
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。ownerstring是应用账号所有者的包名。callback[AuthCallback](#ZH-CN_TOPIC_0000002497605500__authcallback9)是回调函数，返回验证结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| callback | AuthCallback | 是 | 回调函数，返回验证结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name or owner.12300003Account not found.12300010Account service busy.12300113Authenticator service not found.12300114Authenticator service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name or owner. |
+| 12300003 | Account not found. |
+| 12300010 | Account service busy. |
+| 12300113 | Authenticator service not found. |
+| 12300114 | Authenticator service exception. |
 
 **示例：**
 
@@ -2382,13 +2963,26 @@ verifyCredential(name: string, owner: string, options: VerifyCredentialOptions, 
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。ownerstring是应用账号所有者的包名。options[VerifyCredentialOptions](#ZH-CN_TOPIC_0000002497605500__verifycredentialoptions9)是验证凭据的选项。callback[AuthCallback](#ZH-CN_TOPIC_0000002497605500__authcallback9)是回调函数，返回验证结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| options | VerifyCredentialOptions | 是 | 验证凭据的选项。 |
+| callback | AuthCallback | 是 | 回调函数，返回验证结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid name, owner or options.12300003Account not found.12300010Account service busy.12300113Authenticator service not found.12300114Authenticator service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid name, owner or options. |
+| 12300003 | Account not found. |
+| 12300010 | Account service busy. |
+| 12300113 | Authenticator service not found. |
+| 12300114 | Authenticator service exception. |
 
 **示例：**
 
@@ -2426,13 +3020,23 @@ setAuthenticatorProperties(owner: string, callback: AuthCallback): void
 
 **参数：**
 
-参数名类型必填说明ownerstring是认证器的所有者的包名。callback[AuthCallback](#ZH-CN_TOPIC_0000002497605500__authcallback9)是回调函数，返回设置属性的结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| owner | string | 是 | 认证器的所有者的包名。 |
+| callback | AuthCallback | 是 | 回调函数，返回设置属性的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid owner.12300010Account service busy.12300113Authenticator service not found.12300114Authenticator service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid owner. |
+| 12300010 | Account service busy. |
+| 12300113 | Authenticator service not found. |
+| 12300114 | Authenticator service exception. |
 
 **示例：**
 
@@ -2466,13 +3070,24 @@ setAuthenticatorProperties(owner: string, options: SetPropertiesOptions, callbac
 
 **参数：**
 
-参数名类型必填说明ownerstring是认证器的所有者的包名。options[SetPropertiesOptions](#ZH-CN_TOPIC_0000002497605500__setpropertiesoptions9)是设置属性的选项。callback[AuthCallback](#ZH-CN_TOPIC_0000002497605500__authcallback9)是认证器回调，返回设置属性的结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| owner | string | 是 | 认证器的所有者的包名。 |
+| options | SetPropertiesOptions | 是 | 设置属性的选项。 |
+| callback | AuthCallback | 是 | 认证器回调，返回设置属性的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[账号管理错误码](../../errors/账号管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[账号管理错误码](账号管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.12300001System service exception.12300002Invalid owner or options.12300010Account service busy.12300113Authenticator service not found.12300114Authenticator service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 12300001 | System service exception. |
+| 12300002 | Invalid owner or options. |
+| 12300010 | Account service busy. |
+| 12300113 | Authenticator service not found. |
+| 12300114 | Authenticator service exception. |
 
 **示例：**
 
@@ -2505,13 +3120,17 @@ addAccount(name: string, callback: AsyncCallback<void>): void
 
 根据账号名添加应用账号。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[createAccount](#ZH-CN_TOPIC_0000002497605500__createaccount9)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[createAccount](#ZH-CN_TOPIC_0000002522241584__createaccount9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。callbackAsyncCallback<void>是回调函数。当创建成功时，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当创建成功时，err为null，否则为错误对象。 |
 
 **示例：**
 
@@ -2529,13 +3148,18 @@ addAccount(name: string, extraInfo: string, callback: AsyncCallback<void>): void
 
 根据账号名和额外信息添加应用账号。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[createAccount](#ZH-CN_TOPIC_0000002497605500__createaccount9-1)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[createAccount](#ZH-CN_TOPIC_0000002522241584__createaccount9-1)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。extraInfostring是额外信息(能转换string类型的其它信息)，额外信息不能是应用账号的敏感信息（如应用账号密码、token等）。callbackAsyncCallback<void>是回调函数。当创建成功时，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| extraInfo | string | 是 | 额外信息(能转换string类型的其它信息)，额外信息不能是应用账号的敏感信息（如应用账号密码、token等）。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当创建成功时，err为null，否则为错误对象。 |
 
 **示例：**
 
@@ -2553,17 +3177,23 @@ addAccount(name: string, extraInfo?: string): Promise<void>
 
 根据账号名和额外信息添加应用账号。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[createAccount](#ZH-CN_TOPIC_0000002497605500__createaccount9-2)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[createAccount](#ZH-CN_TOPIC_0000002522241584__createaccount9-2)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。extraInfostring否额外信息(能转换string类型的其它信息)，额外信息不能是应用账号的敏感信息（如应用账号密码、token等），默认为空，表示创建的该账号无额外信息需要添加。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| extraInfo | string | 否 | 额外信息(能转换string类型的其它信息)，额外信息不能是应用账号的敏感信息（如应用账号密码、token等），默认为空，表示创建的该账号无额外信息需要添加。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -2583,13 +3213,19 @@ addAccountImplicitly(owner: string, authType: string, options: {[key: string]: a
 
 根据指定的账号所有者隐式地添加应用账号。使用callback异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[createAccountImplicitly](#ZH-CN_TOPIC_0000002497605500__createaccountimplicitly9)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[createAccountImplicitly](#ZH-CN_TOPIC_0000002522241584__createaccountimplicitly9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明ownerstring是应用账号所有者的包名。authTypestring是鉴权类型。鉴权类型为自定义。options{[key: string]: any}是鉴权所需要的可选项。可选项可根据自己需要设置。callback[AuthenticatorCallback](#ZH-CN_TOPIC_0000002497605500__authenticatorcallbackdeprecated)是认证器回调对象，返回添加结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| authType | string | 是 | 鉴权类型。鉴权类型为自定义。 |
+| options | {[key: string]: any} | 是 | 鉴权所需要的可选项。可选项可根据自己需要设置。 |
+| callback | AuthenticatorCallback | 是 | 认证器回调对象，返回添加结果。 |
 
 **示例：**
 
@@ -2638,13 +3274,17 @@ deleteAccount(name: string, callback: AsyncCallback<void>): void
 
 删除应用账号。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[removeAccount](#ZH-CN_TOPIC_0000002497605500__removeaccount9)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[removeAccount](#ZH-CN_TOPIC_0000002522241584__removeaccount9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。callbackAsyncCallback<void>是回调函数。当删除成功时，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当删除成功时，err为null，否则为错误对象。 |
 
 **示例：**
 
@@ -2662,17 +3302,22 @@ deleteAccount(name: string): Promise<void>
 
 删除应用账号。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[removeAccount](#ZH-CN_TOPIC_0000002497605500__removeaccount9)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[removeAccount](#ZH-CN_TOPIC_0000002522241584__removeaccount9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -2692,13 +3337,18 @@ disableAppAccess(name: string, bundleName: string, callback: AsyncCallback<void>
 
 禁止指定第三方应用账号名称对指定的第三方应用进行访问。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[setAppAccess](#ZH-CN_TOPIC_0000002497605500__setappaccess9)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[setAppAccess](#ZH-CN_TOPIC_0000002522241584__setappaccess9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。bundleNamestring是第三方应用的包名。callbackAsyncCallback<void>是回调函数。当禁止指定第三方应用账号名称对指定包名称的第三方应用进行访问设置成功时，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| bundleName | string | 是 | 第三方应用的包名。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当禁止指定第三方应用账号名称对指定包名称的第三方应用进行访问设置成功时，err为null，否则为错误对象。 |
 
 **示例：**
 
@@ -2716,17 +3366,23 @@ disableAppAccess(name: string, bundleName: string): Promise<void>
 
 禁止指定第三方应用账号名称对指定包名称的第三方应用进行访问。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[setAppAccess](#ZH-CN_TOPIC_0000002497605500__setappaccess9-1)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[setAppAccess](#ZH-CN_TOPIC_0000002522241584__setappaccess9-1)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是要禁用访问的第三方应用账号的名称。bundleNamestring是第三方应用的包名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 要禁用访问的第三方应用账号的名称。 |
+| bundleName | string | 是 | 第三方应用的包名。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -2746,13 +3402,18 @@ enableAppAccess(name: string, bundleName: string, callback: AsyncCallback<void>)
 
 允许指定第三方应用账号名称对指定包名称的第三方应用进行访问。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[setAppAccess](#ZH-CN_TOPIC_0000002497605500__setappaccess9)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[setAppAccess](#ZH-CN_TOPIC_0000002522241584__setappaccess9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。bundleNamestring是第三方应用的包名。callbackAsyncCallback<void>是回调函数。当允许指定第三方应用账号名称对指定包名称的第三方应用进行访问设置成功时，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| bundleName | string | 是 | 第三方应用的包名。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当允许指定第三方应用账号名称对指定包名称的第三方应用进行访问设置成功时，err为null，否则为错误对象。 |
 
 **示例：**
 
@@ -2774,17 +3435,23 @@ enableAppAccess(name: string, bundleName: string): Promise<void>
 
 允许指定第三方应用账号的名称对指定包名称的第三方应用进行访问。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[setAppAccess](#ZH-CN_TOPIC_0000002497605500__setappaccess9-1)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[setAppAccess](#ZH-CN_TOPIC_0000002522241584__setappaccess9-1)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。bundleNamestring是第三方应用的包名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| bundleName | string | 是 | 第三方应用的包名。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -2804,7 +3471,8 @@ checkAppAccountSyncEnable(name: string, callback: AsyncCallback<boolean>): void
 
 检查指定应用账号是否开启数据同步功能。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[checkDataSyncEnabled](#ZH-CN_TOPIC_0000002497605500__checkdatasyncenabled9)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[checkDataSyncEnabled](#ZH-CN_TOPIC_0000002522241584__checkdatasyncenabled9)替代。
 
 **需要权限：** ohos.permission.DISTRIBUTED_DATASYNC
 
@@ -2812,7 +3480,10 @@ checkAppAccountSyncEnable(name: string, callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。callbackAsyncCallback<boolean>是回调函数。返回true表示指定应用账号已开启数据同步功能；返回false表示未开启。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。返回true表示指定应用账号已开启数据同步功能；返回false表示未开启。 |
 
 **示例：**
 
@@ -2834,7 +3505,8 @@ checkAppAccountSyncEnable(name: string): Promise<boolean>
 
 检查指定应用账号是否开启数据同步功能。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[checkDataSyncEnabled](#ZH-CN_TOPIC_0000002497605500__checkdatasyncenabled9-1)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[checkDataSyncEnabled](#ZH-CN_TOPIC_0000002522241584__checkdatasyncenabled9-1)替代。
 
 **需要权限：** ohos.permission.DISTRIBUTED_DATASYNC
 
@@ -2842,11 +3514,15 @@ checkAppAccountSyncEnable(name: string): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示指定应用账号已开启数据同步功能；返回false表示未开启。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示指定应用账号已开启数据同步功能；返回false表示未开启。 |
 
 **示例：**
 
@@ -2866,13 +3542,19 @@ setAccountCredential(name: string, credentialType: string, credential: string,ca
 
 设置指定应用账号的凭据。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[setCredential](#ZH-CN_TOPIC_0000002497605500__setcredential9)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[setCredential](#ZH-CN_TOPIC_0000002522241584__setcredential9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。credentialTypestring是凭据类型。credentialstring是凭据取值。callbackAsyncCallback<void>是回调函数。当设置此应用程序账号的凭据成功时，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| credentialType | string | 是 | 凭据类型。 |
+| credential | string | 是 | 凭据取值。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置此应用程序账号的凭据成功时，err为null，否则为错误对象。 |
 
 **示例：**
 
@@ -2894,17 +3576,24 @@ setAccountCredential(name: string, credentialType: string, credential: string): 
 
 设置指定应用账号的凭据。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[setCredential](#ZH-CN_TOPIC_0000002497605500__setcredential9-1)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[setCredential](#ZH-CN_TOPIC_0000002522241584__setcredential9-1)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。credentialTypestring是凭据类型。credentialstring是凭据取值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| credentialType | string | 是 | 凭据类型。 |
+| credential | string | 是 | 凭据取值。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -2924,13 +3613,18 @@ setAccountExtraInfo(name: string, extraInfo: string, callback: AsyncCallback<voi
 
 设置指定应用账号的额外信息。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[setCustomData](#ZH-CN_TOPIC_0000002497605500__setcustomdata9)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[setCustomData](#ZH-CN_TOPIC_0000002522241584__setcustomdata9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。extraInfostring是额外信息(能转换string类型的其它信息)，额外信息不能是应用账号的敏感信息（如应用账号密码、token等）。callbackAsyncCallback<void>是回调函数。当设置成功时，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| extraInfo | string | 是 | 额外信息(能转换string类型的其它信息)，额外信息不能是应用账号的敏感信息（如应用账号密码、token等）。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置成功时，err为null，否则为错误对象。 |
 
 **示例：**
 
@@ -2952,17 +3646,23 @@ setAccountExtraInfo(name: string, extraInfo: string): Promise<void>
 
 设置此应用程序账号的额外信息。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[setCustomData](#ZH-CN_TOPIC_0000002497605500__setcustomdata9-1)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[setCustomData](#ZH-CN_TOPIC_0000002522241584__setcustomdata9-1)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。extraInfostring是额外信息(能转换string类型的其它信息)，额外信息不能是应用账号的敏感信息（如应用账号密码、token等）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| extraInfo | string | 是 | 额外信息(能转换string类型的其它信息)，额外信息不能是应用账号的敏感信息（如应用账号密码、token等）。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -2982,7 +3682,8 @@ setAppAccountSyncEnable(name: string, isEnable: boolean, callback: AsyncCallback
 
 开启或禁止指定应用账号的数据同步功能。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[setDataSyncEnabled](#ZH-CN_TOPIC_0000002497605500__setdatasyncenabled9)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[setDataSyncEnabled](#ZH-CN_TOPIC_0000002522241584__setdatasyncenabled9)替代。
 
 **需要权限：** ohos.permission.DISTRIBUTED_DATASYNC
 
@@ -2990,7 +3691,11 @@ setAppAccountSyncEnable(name: string, isEnable: boolean, callback: AsyncCallback
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。isEnableboolean是是否开启数据同步。true表示开启数据同步，false表示关闭数据同步。callbackAsyncCallback<void>是回调函数。当开启或禁止成功时，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| isEnable | boolean | 是 | 是否开启数据同步。true表示开启数据同步，false表示关闭数据同步。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当开启或禁止成功时，err为null，否则为错误对象。 |
 
 **示例：**
 
@@ -3012,7 +3717,8 @@ setAppAccountSyncEnable(name: string, isEnable: boolean): Promise<void>
 
 开启或禁止指定应用账号的数据同步功能。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[setDataSyncEnabled](#ZH-CN_TOPIC_0000002497605500__setdatasyncenabled9-1)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[setDataSyncEnabled](#ZH-CN_TOPIC_0000002522241584__setdatasyncenabled9-1)替代。
 
 **需要权限：** ohos.permission.DISTRIBUTED_DATASYNC
 
@@ -3020,11 +3726,16 @@ setAppAccountSyncEnable(name: string, isEnable: boolean): Promise<void>
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。isEnableboolean是是否开启数据同步。true表示开启数据同步，false表示关闭数据同步。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| isEnable | boolean | 是 | 是否开启数据同步。true表示开启数据同步，false表示关闭数据同步。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -3044,13 +3755,19 @@ setAssociatedData(name: string, key: string, value: string, callback: AsyncCallb
 
 设置指定应用账号的关联数据。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[setCustomData](#ZH-CN_TOPIC_0000002497605500__setcustomdata9)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[setCustomData](#ZH-CN_TOPIC_0000002522241584__setcustomdata9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。keystring是关联数据的键名。valuestring是关联数据的取值。callbackAsyncCallback<void>是回调函数。当设置与此应用账号关联的数据成功时，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| key | string | 是 | 关联数据的键名。 |
+| value | string | 是 | 关联数据的取值。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置与此应用账号关联的数据成功时，err为null，否则为错误对象。 |
 
 **示例：**
 
@@ -3072,17 +3789,24 @@ setAssociatedData(name: string, key: string, value: string): Promise<void>
 
 设置指定应用账号的关联数据。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[setCustomData](#ZH-CN_TOPIC_0000002497605500__setcustomdata9-1)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[setCustomData](#ZH-CN_TOPIC_0000002522241584__setcustomdata9-1)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。keystring是关联数据的键名。valuestring是关联数据的取值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| key | string | 是 | 关联数据的键名。 |
+| value | string | 是 | 关联数据的取值。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -3102,7 +3826,8 @@ getAllAccessibleAccounts(callback: AsyncCallback<Array<AppAccountInfo>>): void
 
 获取所有可访问的应用账号信息。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[getAllAccounts](#ZH-CN_TOPIC_0000002497605500__getallaccounts9)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[getAllAccounts](#ZH-CN_TOPIC_0000002522241584__getallaccounts9)替代。
 
 **需要权限：** ohos.permission.GET_ALL_APP_ACCOUNTS，该权限仅系统应用可申请。
 
@@ -3110,7 +3835,9 @@ getAllAccessibleAccounts(callback: AsyncCallback<Array<AppAccountInfo>>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<Array<[AppAccountInfo](#ZH-CN_TOPIC_0000002497605500__appaccountinfo)>>是回调函数。当查询成功时，err为null，data为获取到的应用账号信息列表；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<AppAccountInfo>> | 是 | 回调函数。当查询成功时，err为null，data为获取到的应用账号信息列表；否则为错误对象。 |
 
 **示例：**
 
@@ -3132,7 +3859,8 @@ getAllAccessibleAccounts(): Promise<Array<AppAccountInfo>>
 
 获取所有可访问的应用账号信息。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[getAllAccounts](#ZH-CN_TOPIC_0000002497605500__getallaccounts9-1)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[getAllAccounts](#ZH-CN_TOPIC_0000002522241584__getallaccounts9-1)替代。
 
 **需要权限：** ohos.permission.GET_ALL_APP_ACCOUNTS，该权限仅系统应用可申请。
 
@@ -3140,7 +3868,9 @@ getAllAccessibleAccounts(): Promise<Array<AppAccountInfo>>
 
 **返回值：**
 
-类型说明Promise<Array<[AppAccountInfo](#ZH-CN_TOPIC_0000002497605500__appaccountinfo)>>Promise对象，返回全部应用已授权账号信息对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<AppAccountInfo>> | Promise对象，返回全部应用已授权账号信息对象。 |
 
 **示例：**
 
@@ -3160,7 +3890,8 @@ getAllAccounts(owner: string, callback: AsyncCallback<Array<AppAccountInfo>>): v
 
 根据应用账号所有者获取调用方可访问的应用账号列表。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[getAccountsByOwner](#ZH-CN_TOPIC_0000002497605500__getaccountsbyowner9)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[getAccountsByOwner](#ZH-CN_TOPIC_0000002522241584__getaccountsbyowner9)替代。
 
 **需要权限：** ohos.permission.GET_ALL_APP_ACCOUNTS，该权限仅系统应用可申请。
 
@@ -3168,7 +3899,10 @@ getAllAccounts(owner: string, callback: AsyncCallback<Array<AppAccountInfo>>): v
 
 **参数：**
 
-参数名类型必填说明ownerstring是应用账号所有者的包名。callbackAsyncCallback<Array<[AppAccountInfo](#ZH-CN_TOPIC_0000002497605500__appaccountinfo)>>是应用账号信息列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| callback | AsyncCallback<Array<AppAccountInfo>> | 是 | 应用账号信息列表。 |
 
 **示例：**
 
@@ -3191,7 +3925,8 @@ getAllAccounts(owner: string): Promise<Array<AppAccountInfo>>
 
 根据应用账号所有者获取调用方可访问的应用账号列表。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[getAccountsByOwner](#ZH-CN_TOPIC_0000002497605500__getaccountsbyowner9-1)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[getAccountsByOwner](#ZH-CN_TOPIC_0000002522241584__getaccountsbyowner9-1)替代。
 
 **需要权限：** ohos.permission.GET_ALL_APP_ACCOUNTS，该权限仅系统应用可申请。
 
@@ -3199,11 +3934,15 @@ getAllAccounts(owner: string): Promise<Array<AppAccountInfo>>
 
 **参数：**
 
-参数名类型必填说明ownerstring是应用账号所有者的包名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| owner | string | 是 | 应用账号所有者的包名。 |
 
 **返回值：**
 
-类型说明Promise<Array<[AppAccountInfo](#ZH-CN_TOPIC_0000002497605500__appaccountinfo)>>Promise对象，返回指定应用全部账号信息对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<AppAccountInfo>> | Promise对象，返回指定应用全部账号信息对象。 |
 
 **示例：**
 
@@ -3224,13 +3963,18 @@ getAccountCredential(name: string, credentialType: string, callback: AsyncCallba
 
 获取指定应用账号的凭据。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[getCredential](#ZH-CN_TOPIC_0000002497605500__getcredential9)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[getCredential](#ZH-CN_TOPIC_0000002522241584__getcredential9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。credentialTypestring是凭据类型。callbackAsyncCallback<string>是回调函数。当获取凭据成功时，err为null，data为指定应用账号的凭据；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| credentialType | string | 是 | 凭据类型。 |
+| callback | AsyncCallback<string> | 是 | 回调函数。当获取凭据成功时，err为null，data为指定应用账号的凭据；否则为错误对象。 |
 
 **示例：**
 
@@ -3252,17 +3996,23 @@ getAccountCredential(name: string, credentialType: string): Promise<string>
 
 获取指定应用账号的凭据。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[getCredential](#ZH-CN_TOPIC_0000002497605500__getcredential9-1)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[getCredential](#ZH-CN_TOPIC_0000002522241584__getcredential9-1)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。credentialTypestring是凭据类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| credentialType | string | 是 | 凭据类型。 |
 
 **返回值：**
 
-类型说明Promise<string>Promise对象，返回指定应用账号的凭据。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回指定应用账号的凭据。 |
 
 **示例：**
 
@@ -3282,13 +4032,17 @@ getAccountExtraInfo(name: string, callback: AsyncCallback<string>): void
 
 获取指定应用账号的额外信息（能转换成string类型的其它信息）。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[getCustomData](#ZH-CN_TOPIC_0000002497605500__getcustomdata9)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[getCustomData](#ZH-CN_TOPIC_0000002522241584__getcustomdata9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。callbackAsyncCallback<string>是回调函数。当获取此应用账号的额外信息成功时，err为null，data返回此应用账号的额外信息对象；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| callback | AsyncCallback<string> | 是 | 回调函数。当获取此应用账号的额外信息成功时，err为null，data返回此应用账号的额外信息对象；否则为错误对象。 |
 
 **示例：**
 
@@ -3310,17 +4064,22 @@ getAccountExtraInfo(name: string): Promise<string>
 
 获取指定应用账号的额外信息（能转换成string类型的其它信息）。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[getCustomData](#ZH-CN_TOPIC_0000002497605500__getcustomdata9-1)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[getCustomData](#ZH-CN_TOPIC_0000002522241584__getcustomdata9-1)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
 
 **返回值：**
 
-类型说明Promise<string>Promise对象，返回此应用程序账号的额外信息对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回此应用程序账号的额外信息对象。 |
 
 **示例：**
 
@@ -3340,13 +4099,18 @@ getAssociatedData(name: string, key: string, callback: AsyncCallback<string>): v
 
 根据指定键名获取特定应用账号的关联数据。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[getCustomData](#ZH-CN_TOPIC_0000002497605500__getcustomdata9)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[getCustomData](#ZH-CN_TOPIC_0000002522241584__getcustomdata9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。keystring是关联数据的键名。callbackAsyncCallback<string>是回调函数。当获取成功时，err为null，data为关联数据的取值；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| key | string | 是 | 关联数据的键名。 |
+| callback | AsyncCallback<string> | 是 | 回调函数。当获取成功时，err为null，data为关联数据的取值；否则为错误对象。 |
 
 **示例：**
 
@@ -3368,17 +4132,23 @@ getAssociatedData(name: string, key: string): Promise<string>
 
 获取与此应用程序账号关联的数据。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[getCustomData](#ZH-CN_TOPIC_0000002497605500__getcustomdata9-1)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[getCustomData](#ZH-CN_TOPIC_0000002522241584__getcustomdata9-1)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。keystring是关联数据的键名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| key | string | 是 | 关联数据的键名。 |
 
 **返回值：**
 
-类型说明Promise<string>Promise对象，返回关联数据的取值。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回关联数据的取值。 |
 
 **示例：**
 
@@ -3398,13 +4168,18 @@ on(type: 'change', owners: Array<string>, callback: Callback<Array<AppAccountInf
 
 订阅指定应用的账号信息变更事件。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[on('accountChange')](#ZH-CN_TOPIC_0000002497605500__onaccountchange9)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[on('accountChange')](#ZH-CN_TOPIC_0000002522241584__onaccountchange9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明type'change'是事件回调类型，支持的事件为'change'，当账号所有者更新账号信息时，触发该事件。ownersArray<string>是应用账号所有者的包名列表。callbackCallback<Array<[AppAccountInfo](#ZH-CN_TOPIC_0000002497605500__appaccountinfo)>>是需要注册的回调函数，返回信息发生变更的应用账号列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | 'change' | 是 | 事件回调类型，支持的事件为'change'，当账号所有者更新账号信息时，触发该事件。 |
+| owners | Array<string> | 是 | 应用账号所有者的包名列表。 |
+| callback | Callback<Array<AppAccountInfo>> | 是 | 需要注册的回调函数，返回信息发生变更的应用账号列表。 |
 
 **示例：**
 
@@ -3429,13 +4204,17 @@ off(type: 'change', callback?: Callback<Array<AppAccountInfo>>): void
 
 取消订阅账号信息变更事件。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[off('accountChange')](#ZH-CN_TOPIC_0000002497605500__offaccountchange9)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[off('accountChange')](#ZH-CN_TOPIC_0000002522241584__offaccountchange9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明type'change'是事件回调类型，支持的事件为'change'，当账号所有者更新账号信息时，触发该事件。callbackCallback<Array<[AppAccountInfo](#ZH-CN_TOPIC_0000002497605500__appaccountinfo)>>否需要注销的回调函数，默认为空，表示取消该类型事件的所有回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | 'change' | 是 | 事件回调类型，支持的事件为'change'，当账号所有者更新账号信息时，触发该事件。 |
+| callback | Callback<Array<AppAccountInfo>> | 否 | 需要注销的回调函数，默认为空，表示取消该类型事件的所有回调。 |
 
 **示例：**
 
@@ -3463,13 +4242,20 @@ authenticate(name: string, owner: string, authType: string, options: {[key: stri
 
 对应用账号进行鉴权以获取授权令牌。使用callback异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[auth](#ZH-CN_TOPIC_0000002497605500__auth9)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[auth](#ZH-CN_TOPIC_0000002522241584__auth9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。ownerstring是应用账号所有者的包名。authTypestring是鉴权类型。options{[key: string]: any}是鉴权所需的可选项。callback[AuthenticatorCallback](#ZH-CN_TOPIC_0000002497605500__authenticatorcallbackdeprecated)是回调对象，返回鉴权结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| authType | string | 是 | 鉴权类型。 |
+| options | {[key: string]: any} | 是 | 鉴权所需的可选项。 |
+| callback | AuthenticatorCallback | 是 | 回调对象，返回鉴权结果。 |
 
 **示例：**
 
@@ -3518,13 +4304,19 @@ getOAuthToken(name: string, owner: string, authType: string, callback: AsyncCall
 
 获取指定应用账号的特定鉴权类型的授权令牌。使用callback异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[getAuthToken](#ZH-CN_TOPIC_0000002497605500__getauthtoken9)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[getAuthToken](#ZH-CN_TOPIC_0000002522241584__getauthtoken9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。ownerstring是应用账号所有者的包名。authTypestring是鉴权类型。callbackAsyncCallback<string>是回调函数。当获取成功时，err为null，data为授权令牌值；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| authType | string | 是 | 鉴权类型。 |
+| callback | AsyncCallback<string> | 是 | 回调函数。当获取成功时，err为null，data为授权令牌值；否则为错误对象。 |
 
 **示例：**
 
@@ -3547,17 +4339,24 @@ getOAuthToken(name: string, owner: string, authType: string): Promise<string>
 
 获取指定应用账号的特定鉴权类型的授权令牌。使用Promise异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[getAuthToken](#ZH-CN_TOPIC_0000002497605500__getauthtoken9-1)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[getAuthToken](#ZH-CN_TOPIC_0000002522241584__getauthtoken9-1)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。ownerstring是应用账号所有者的包名。authTypestring是鉴权类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| authType | string | 是 | 鉴权类型。 |
 
 **返回值：**
 
-类型说明Promise<string>Promise对象，返回授权令牌。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回授权令牌。 |
 
 **示例：**
 
@@ -3577,13 +4376,19 @@ setOAuthToken(name: string, authType: string, token: string, callback: AsyncCall
 
 为指定应用账号设置特定鉴权类型的授权令牌。使用callback异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[setAuthToken](#ZH-CN_TOPIC_0000002497605500__setauthtoken9)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[setAuthToken](#ZH-CN_TOPIC_0000002522241584__setauthtoken9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。authTypestring是鉴权类型。tokenstring是授权令牌。callbackAsyncCallback<void>是回调函数。当设置成功时，err为null；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| authType | string | 是 | 鉴权类型。 |
+| token | string | 是 | 授权令牌。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置成功时，err为null；否则为错误对象。 |
 
 **示例：**
 
@@ -3605,17 +4410,24 @@ setOAuthToken(name: string, authType: string, token: string): Promise<void>
 
 为指定应用账号设置特定鉴权类型的授权令牌。使用Promise异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[setAuthToken](#ZH-CN_TOPIC_0000002497605500__setauthtoken9-1)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[setAuthToken](#ZH-CN_TOPIC_0000002522241584__setauthtoken9-1)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。authTypestring是鉴权类型。tokenstring是授权令牌。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| authType | string | 是 | 鉴权类型。 |
+| token | string | 是 | 授权令牌。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -3635,13 +4447,20 @@ deleteOAuthToken(name: string, owner: string, authType: string, token: string, c
 
 删除指定应用账号的特定鉴权类型的授权令牌。使用callback异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[deleteAuthToken](#ZH-CN_TOPIC_0000002497605500__deleteauthtoken9)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[deleteAuthToken](#ZH-CN_TOPIC_0000002522241584__deleteauthtoken9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。ownerstring是应用账号所有者的包名。authTypestring是鉴权类型。tokenstring是授权令牌。callbackAsyncCallback<void>是回调函数。当删除成功时，err为null；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| authType | string | 是 | 鉴权类型。 |
+| token | string | 是 | 授权令牌。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当删除成功时，err为null；否则为错误对象。 |
 
 **示例：**
 
@@ -3664,17 +4483,25 @@ deleteOAuthToken(name: string, owner: string, authType: string, token: string): 
 
 删除指定应用账号的特定鉴权类型的授权令牌。使用Promise异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[deleteAuthToken](#ZH-CN_TOPIC_0000002497605500__deleteauthtoken9-1)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[deleteAuthToken](#ZH-CN_TOPIC_0000002522241584__deleteauthtoken9-1)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。ownerstring是应用账号所有者的包名。authTypestring是鉴权类型。tokenstring是授权令牌。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| authType | string | 是 | 鉴权类型。 |
+| token | string | 是 | 授权令牌。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -3694,13 +4521,20 @@ setOAuthTokenVisibility(name: string, authType: string, bundleName: string, isVi
 
 设置指定账号的特定鉴权类型的授权令牌对指定应用的可见性。使用callback异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[setAuthTokenVisibility](#ZH-CN_TOPIC_0000002497605500__setauthtokenvisibility9)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[setAuthTokenVisibility](#ZH-CN_TOPIC_0000002522241584__setauthtokenvisibility9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。authTypestring是鉴权类型。bundleNamestring是被设置可见性的应用包名。isVisibleboolean是是否可见。true表示可见，false表示不可见。callbackAsyncCallback<void>是回调函数。当设置成功时，err为null；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| authType | string | 是 | 鉴权类型。 |
+| bundleName | string | 是 | 被设置可见性的应用包名。 |
+| isVisible | boolean | 是 | 是否可见。true表示可见，false表示不可见。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置成功时，err为null；否则为错误对象。 |
 
 **示例：**
 
@@ -3723,17 +4557,25 @@ setOAuthTokenVisibility(name: string, authType: string, bundleName: string, isVi
 
 设置指定账号的特定鉴权类型的授权令牌对指定应用的可见性。使用Promise异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[setAuthTokenVisibility](#ZH-CN_TOPIC_0000002497605500__setauthtokenvisibility9-1)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[setAuthTokenVisibility](#ZH-CN_TOPIC_0000002522241584__setauthtokenvisibility9-1)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。authTypestring是鉴权类型。bundleNamestring是被设置可见性的应用包名。isVisibleboolean是是否可见。true表示可见，false表示不可见。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| authType | string | 是 | 鉴权类型。 |
+| bundleName | string | 是 | 被设置可见性的应用包名。 |
+| isVisible | boolean | 是 | 是否可见。true表示可见，false表示不可见。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -3753,13 +4595,19 @@ checkOAuthTokenVisibility(name: string, authType: string, bundleName: string, ca
 
 检查指定应用账号的特定鉴权类型的授权令牌对指定应用的可见性。使用callback异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[checkAuthTokenVisibility](#ZH-CN_TOPIC_0000002497605500__checkauthtokenvisibility9)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[checkAuthTokenVisibility](#ZH-CN_TOPIC_0000002522241584__checkauthtokenvisibility9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。authTypestring是鉴权类型。bundleNamestring是检查可见性的应用包名。callbackAsyncCallback<boolean>是回调函数。当检查成功时，err为null，data为true表示可见，data为false表示不可见；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| authType | string | 是 | 鉴权类型。 |
+| bundleName | string | 是 | 检查可见性的应用包名。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当检查成功时，err为null，data为true表示可见，data为false表示不可见；否则为错误对象。 |
 
 **示例：**
 
@@ -3782,17 +4630,24 @@ checkOAuthTokenVisibility(name: string, authType: string, bundleName: string): P
 
 检查指定应用账号的特定鉴权类型的授权令牌对指定应用的可见性。使用Promise异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[checkAuthTokenVisibility](#ZH-CN_TOPIC_0000002497605500__checkauthtokenvisibility9-1)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[checkAuthTokenVisibility](#ZH-CN_TOPIC_0000002522241584__checkauthtokenvisibility9-1)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。authTypestring是鉴权类型。bundleNamestring是用于检查可见性的应用包名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| authType | string | 是 | 鉴权类型。 |
+| bundleName | string | 是 | 用于检查可见性的应用包名。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示指定鉴权类型的OAuth令牌对特定应用的可见，返回false表示不可见。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示指定鉴权类型的OAuth令牌对特定应用的可见，返回false表示不可见。 |
 
 **示例：**
 
@@ -3813,13 +4668,18 @@ getAllOAuthTokens(name: string, owner: string, callback: AsyncCallback<Array<OAu
 
 获取指定账号对调用方可见的所有授权令牌。使用callback异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[getAllAuthTokens](#ZH-CN_TOPIC_0000002497605500__getallauthtokens9)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[getAllAuthTokens](#ZH-CN_TOPIC_0000002522241584__getallauthtokens9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。ownerstring是应用账号所有者的包名。callbackAsyncCallback<Array<[OAuthTokenInfo](#ZH-CN_TOPIC_0000002497605500__oauthtokeninfodeprecated)>>是回调函数。当获取成功时，err为null，data为授权令牌数组；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| callback | AsyncCallback<Array<OAuthTokenInfo>> | 是 | 回调函数。当获取成功时，err为null，data为授权令牌数组；否则为错误对象。 |
 
 **示例：**
 
@@ -3842,17 +4702,23 @@ getAllOAuthTokens(name: string, owner: string): Promise<Array<OAuthTokenInfo>>
 
 获取指定账号对调用方可见的所有授权令牌。使用Promise异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[getAllAuthTokens](#ZH-CN_TOPIC_0000002497605500__getallauthtokens9-1)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[getAllAuthTokens](#ZH-CN_TOPIC_0000002522241584__getallauthtokens9-1)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。ownerstring是应用账号所有者的包名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| owner | string | 是 | 应用账号所有者的包名。 |
 
 **返回值：**
 
-类型说明Promise<Array< [OAuthTokenInfo](#ZH-CN_TOPIC_0000002497605500__oauthtokeninfodeprecated)>>Promise对象，返回授权令牌数组。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array< OAuthTokenInfo>> | Promise对象，返回授权令牌数组。 |
 
 **示例：**
 
@@ -3871,15 +4737,20 @@ appAccountManager.getAllOAuthTokens('LiSi', 'com.example.accountjsdemo').then((
 
 getOAuthList(name: string, authType: string, callback: AsyncCallback<Array<string>>): void
 
-获取指定应用账号的特定鉴权类型的授权列表，即被授权的包名数组（令牌的授权列表通过[setOAuthTokenVisibility](#ZH-CN_TOPIC_0000002497605500__setoauthtokenvisibilitydeprecated)来设置）。使用callback异步回调。
+获取指定应用账号的特定鉴权类型的授权列表，即被授权的包名数组（令牌的授权列表通过[setOAuthTokenVisibility](#ZH-CN_TOPIC_0000002522241584__setoauthtokenvisibilitydeprecated)来设置）。使用callback异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[getAuthList](#ZH-CN_TOPIC_0000002497605500__getauthlist9)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[getAuthList](#ZH-CN_TOPIC_0000002522241584__getauthlist9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。authTypestring是鉴权类型。callbackAsyncCallback<Array<string>>是回调函数。当获取成功时，err为null，data为被授权的包名数组；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| authType | string | 是 | 鉴权类型。 |
+| callback | AsyncCallback<Array<string>> | 是 | 回调函数。当获取成功时，err为null，data为被授权的包名数组；否则为错误对象。 |
 
 **示例：**
 
@@ -3899,19 +4770,25 @@ appAccountManager.getOAuthList('LiSi', 'getSocialData', (err: BusinessError, dat
 
 getOAuthList(name: string, authType: string): Promise<Array<string>>
 
-获取指定应用账号的特定鉴权类型的授权列表，即被授权的包名数组（令牌的授权列表通过[setOAuthTokenVisibility](#ZH-CN_TOPIC_0000002497605500__setoauthtokenvisibilitydeprecated)来设置）。使用Promise异步回调。
+获取指定应用账号的特定鉴权类型的授权列表，即被授权的包名数组（令牌的授权列表通过[setOAuthTokenVisibility](#ZH-CN_TOPIC_0000002522241584__setoauthtokenvisibilitydeprecated)来设置）。使用Promise异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[getAuthList](#ZH-CN_TOPIC_0000002497605500__getauthlist9-1)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[getAuthList](#ZH-CN_TOPIC_0000002522241584__getauthlist9-1)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。authTypestring是鉴权类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| authType | string | 是 | 鉴权类型。 |
 
 **返回值：**
 
-类型说明Promise<Array<string>>Promise对象，返回被授权的包名数组。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<string>> | Promise对象，返回被授权的包名数组。 |
 
 **示例：**
 
@@ -3931,13 +4808,17 @@ getAuthenticatorCallback(sessionId: string, callback: AsyncCallback<Authenticato
 
 获取鉴权会话的认证器回调。使用callback异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[getAuthCallback](#ZH-CN_TOPIC_0000002497605500__getauthcallback9)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[getAuthCallback](#ZH-CN_TOPIC_0000002522241584__getauthcallback9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明sessionIdstring是鉴权会话的标识。callbackAsyncCallback<[AuthenticatorCallback](#ZH-CN_TOPIC_0000002497605500__authenticatorcallbackdeprecated)>是回调函数。当获取鉴权会话的认证器回调函数成功时，err为null，data为认证器回调函数；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sessionId | string | 是 | 鉴权会话的标识。 |
+| callback | AsyncCallback<AuthenticatorCallback> | 是 | 回调函数。当获取鉴权会话的认证器回调函数成功时，err为null，data为认证器回调函数；否则为错误对象。 |
 
 **示例：**
 
@@ -3960,8 +4841,6 @@ export default class EntryAbility extends UIAbility {
           authType: 'getSocialData',
           token: 'xxxxxx'
         });
-      });
-  }
 }
 ```
 
@@ -3971,17 +4850,22 @@ getAuthenticatorCallback(sessionId: string): Promise<AuthenticatorCallback>
 
 获取鉴权会话的认证器回调。使用Promise异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[getAuthCallback](#ZH-CN_TOPIC_0000002497605500__getauthcallback9-1)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[getAuthCallback](#ZH-CN_TOPIC_0000002522241584__getauthcallback9-1)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明sessionIdstring是鉴权会话的标识。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sessionId | string | 是 | 鉴权会话的标识。 |
 
 **返回值：**
 
-类型说明Promise<[AuthenticatorCallback](#ZH-CN_TOPIC_0000002497605500__authenticatorcallbackdeprecated)>Promise对象，返回鉴权会话的认证器回调对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AuthenticatorCallback> | Promise对象，返回鉴权会话的认证器回调对象。 |
 
 **示例：**
 
@@ -4004,7 +4888,6 @@ export default class EntryAbility extends UIAbility {
       console.error(`getAuthenticatorCallback err: code is ${err.code}, message is ${err.message}`);
     });
   }
-}
 ```
 
 #### getAuthenticatorInfo(deprecated)
@@ -4013,13 +4896,17 @@ getAuthenticatorInfo(owner: string, callback: AsyncCallback<AuthenticatorInfo>):
 
 获取指定应用的认证器信息。使用callback异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[queryAuthenticatorInfo](#ZH-CN_TOPIC_0000002497605500__queryauthenticatorinfo9)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[queryAuthenticatorInfo](#ZH-CN_TOPIC_0000002522241584__queryauthenticatorinfo9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明ownerstring是应用账号所有者的包名。callbackAsyncCallback<[AuthenticatorInfo](#ZH-CN_TOPIC_0000002497605500__authenticatorinfo8)>是回调函数。当获取成功时，err为null，data为认证器信息对象；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| owner | string | 是 | 应用账号所有者的包名。 |
+| callback | AsyncCallback<AuthenticatorInfo> | 是 | 回调函数。当获取成功时，err为null，data为认证器信息对象；否则为错误对象。 |
 
 **示例：**
 
@@ -4042,17 +4929,22 @@ getAuthenticatorInfo(owner: string): Promise<AuthenticatorInfo>
 
 获取指定应用的认证器信息。使用Promise异步回调。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[queryAuthenticatorInfo](#ZH-CN_TOPIC_0000002497605500__queryauthenticatorinfo9-1)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[queryAuthenticatorInfo](#ZH-CN_TOPIC_0000002522241584__queryauthenticatorinfo9-1)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明ownerstring是应用账号所有者的包名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| owner | string | 是 | 应用账号所有者的包名。 |
 
 **返回值：**
 
-类型说明Promise<[AuthenticatorInfo](#ZH-CN_TOPIC_0000002497605500__authenticatorinfo8)>Promise对象，返回指定应用的认证器信息对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AuthenticatorInfo> | Promise对象，返回指定应用的认证器信息对象。 |
 
 **示例：**
 
@@ -4073,7 +4965,10 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 **系统能力：** SystemCapability.Account.AppAccount
 
-名称类型只读可选说明ownerstring否否应用账号所有者的包名。namestring否否应用账号的名称。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| owner | string | 否 | 否 | 应用账号所有者的包名。 |
+| name | string | 否 | 否 | 应用账号的名称。 |
 
 #### AuthTokenInfo9+
 
@@ -4081,17 +4976,25 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 **系统能力：** SystemCapability.Account.AppAccount
 
-名称类型只读可选说明authTypestring否否令牌的鉴权类型。tokenstring否否令牌的取值。account[AppAccountInfo](#ZH-CN_TOPIC_0000002497605500__appaccountinfo)否是令牌所属的账号信息，默认为空。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| authType | string | 否 | 否 | 令牌的鉴权类型。 |
+| token | string | 否 | 否 | 令牌的取值。 |
+| account | AppAccountInfo | 否 | 是 | 令牌所属的账号信息，默认为空。 |
 
 #### OAuthTokenInfo(deprecated)
 
 表示OAuth令牌信息。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[AuthTokenInfo](#ZH-CN_TOPIC_0000002497605500__authtokeninfo9)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[AuthTokenInfo](#ZH-CN_TOPIC_0000002522241584__authtokeninfo9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
-名称类型只读可选说明authTypestring否否令牌的鉴权类型。tokenstring否否令牌的取值。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| authType | string | 否 | 否 | 令牌的鉴权类型。 |
+| token | string | 否 | 否 | 令牌的取值。 |
 
 #### AuthenticatorInfo8+
 
@@ -4099,7 +5002,11 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 **系统能力：** SystemCapability.Account.AppAccount
 
-名称类型只读可选说明ownerstring否否认证器的所有者的包名。iconIdnumber否否认证器的图标标识。labelIdnumber否否认证器的标签标识。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| owner | string | 否 | 否 | 认证器的所有者的包名。 |
+| iconId | number | 否 | 否 | 认证器的图标标识。 |
+| labelId | number | 否 | 否 | 认证器的标签标识。 |
 
 #### AuthResult9+
 
@@ -4107,7 +5014,10 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 **系统能力：** SystemCapability.Account.AppAccount
 
-名称类型只读可选说明account[AppAccountInfo](#ZH-CN_TOPIC_0000002497605500__appaccountinfo)否是令牌所属的账号信息，默认为空。tokenInfo[AuthTokenInfo](#ZH-CN_TOPIC_0000002497605500__authtokeninfo9)否是令牌信息，默认为空。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| account | AppAccountInfo | 否 | 是 | 令牌所属的账号信息，默认为空。 |
+| tokenInfo | AuthTokenInfo | 否 | 是 | 令牌信息，默认为空。 |
 
 #### CreateAccountOptions9+
 
@@ -4115,7 +5025,9 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 **系统能力：** SystemCapability.Account.AppAccount
 
-名称类型只读可选说明customDataRecord<string, string>否是自定义数据，默认为空。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| customData | Record<string, string> | 否 | 是 | 自定义数据，默认为空。 |
 
 #### CreateAccountImplicitlyOptions9+
 
@@ -4123,7 +5035,11 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 **系统能力：** SystemCapability.Account.AppAccount
 
-名称类型只读可选说明requiredLabelsArray<string>否是所需的标签，默认为空。authTypestring否是鉴权类型，默认为空。parametersRecord<string, Object>否是自定义参数对象，默认为空。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| requiredLabels | Array<string> | 否 | 是 | 所需的标签，默认为空。 |
+| authType | string | 否 | 是 | 鉴权类型，默认为空。 |
+| parameters | Record<string, Object> | 否 | 是 | 自定义参数对象，默认为空。 |
 
 #### SelectAccountsOptions9+
 
@@ -4131,7 +5047,11 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 **系统能力：** SystemCapability.Account.AppAccount
 
-名称类型只读可选说明allowedAccountsArray<[AppAccountInfo](#ZH-CN_TOPIC_0000002497605500__appaccountinfo)>否是允许的账号数组，默认为空。allowedOwnersArray<string>否是允许的账号所有者数组，默认为空。requiredLabelsArray<string>否是认证器的标签标识，默认为空。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| allowedAccounts | Array<AppAccountInfo> | 否 | 是 | 允许的账号数组，默认为空。 |
+| allowedOwners | Array<string> | 否 | 是 | 允许的账号所有者数组，默认为空。 |
+| requiredLabels | Array<string> | 否 | 是 | 认证器的标签标识，默认为空。 |
 
 #### VerifyCredentialOptions9+
 
@@ -4139,7 +5059,11 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 **系统能力：** SystemCapability.Account.AppAccount
 
-名称类型只读可选说明credentialTypestring否是凭据类型，默认为空。credentialstring否是凭据取值，默认为空。parametersRecord<string, Object>否是自定义参数对象，默认为空。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| credentialType | string | 否 | 是 | 凭据类型，默认为空。 |
+| credential | string | 否 | 是 | 凭据取值，默认为空。 |
+| parameters | Record<string, Object> | 否 | 是 | 自定义参数对象，默认为空。 |
 
 #### SetPropertiesOptions9+
 
@@ -4147,7 +5071,10 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 **系统能力：** SystemCapability.Account.AppAccount
 
-名称类型只读可选说明propertiesRecord<string, Object>否是属性对象，默认为空。parametersRecord<string, Object>否是自定义参数对象，默认为空。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| properties | Record<string, Object> | 否 | 是 | 属性对象，默认为空。 |
+| parameters | Record<string, Object> | 否 | 是 | 自定义参数对象，默认为空。 |
 
 #### Constants8+
 
@@ -4155,29 +5082,56 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 **系统能力：** SystemCapability.Account.AppAccount
 
-名称值说明ACTION_ADD_ACCOUNT_IMPLICITLY(deprecated)'addAccountImplicitly'
-
-表示操作，隐式添加账号。
-
-**说明：**从API version 8开始支持，从API version 9开始废弃，建议使用ACTION_CREATE_ACCOUNT_IMPLICITLY替代。
-
-ACTION_AUTHENTICATE(deprecated)'authenticate'
-
-表示操作，鉴权。
-
-**说明：**从API version 8开始支持，从API version 9开始废弃，建议使用ACTION_AUTH替代。
-
-ACTION_CREATE_ACCOUNT_IMPLICITLY9+'createAccountImplicitly'表示操作，隐式创建账号。ACTION_AUTH9+'auth'表示操作，鉴权。ACTION_VERIFY_CREDENTIAL9+'verifyCredential'表示操作，验证凭据。ACTION_SET_AUTHENTICATOR_PROPERTIES9+'setAuthenticatorProperties'表示操作，设置认证器属性。KEY_NAME'name'表示键名，应用账号的名称。KEY_OWNER'owner'表示键名，应用账号所有者的包名。KEY_TOKEN'token'表示键名，令牌。KEY_ACTION'action'表示键名，操作。KEY_AUTH_TYPE'authType'表示键名，鉴权类型。KEY_SESSION_ID'sessionId'表示键名，会话标识。KEY_CALLER_PID'callerPid'表示键名，调用方PID。KEY_CALLER_UID'callerUid'表示键名，调用方UID。KEY_CALLER_BUNDLE_NAME'callerBundleName'表示键名，调用方包名。KEY_REQUIRED_LABELS9+'requiredLabels'表示键名，必需的标签。KEY_BOOLEAN_RESULT9+'booleanResult'表示键名，布尔返回值。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ACTION_ADD_ACCOUNT_IMPLICITLY(deprecated) | 'addAccountImplicitly' | 表示操作，隐式添加账号。 **说明：**从API version 8开始支持，从API version 9开始废弃，建议使用ACTION_CREATE_ACCOUNT_IMPLICITLY替代。 |
+| ACTION_AUTHENTICATE(deprecated) | 'authenticate' | 表示操作，鉴权。 **说明：**从API version 8开始支持，从API version 9开始废弃，建议使用ACTION_AUTH替代。 |
+| ACTION_CREATE_ACCOUNT_IMPLICITLY9+ | 'createAccountImplicitly' | 表示操作，隐式创建账号。 |
+| ACTION_AUTH9+ | 'auth' | 表示操作，鉴权。 |
+| ACTION_VERIFY_CREDENTIAL9+ | 'verifyCredential' | 表示操作，验证凭据。 |
+| ACTION_SET_AUTHENTICATOR_PROPERTIES9+ | 'setAuthenticatorProperties' | 表示操作，设置认证器属性。 |
+| KEY_NAME | 'name' | 表示键名，应用账号的名称。 |
+| KEY_OWNER | 'owner' | 表示键名，应用账号所有者的包名。 |
+| KEY_TOKEN | 'token' | 表示键名，令牌。 |
+| KEY_ACTION | 'action' | 表示键名，操作。 |
+| KEY_AUTH_TYPE | 'authType' | 表示键名，鉴权类型。 |
+| KEY_SESSION_ID | 'sessionId' | 表示键名，会话标识。 |
+| KEY_CALLER_PID | 'callerPid' | 表示键名，调用方PID。 |
+| KEY_CALLER_UID | 'callerUid' | 表示键名，调用方UID。 |
+| KEY_CALLER_BUNDLE_NAME | 'callerBundleName' | 表示键名，调用方包名。 |
+| KEY_REQUIRED_LABELS9+ | 'requiredLabels' | 表示键名，必需的标签。 |
+| KEY_BOOLEAN_RESULT9+ | 'booleanResult' | 表示键名，布尔返回值。 |
 
 #### ResultCode(deprecated)
 
 表示返回码的枚举。
 
-从API version 8开始支持，从API version 9开始废弃。相关信息建议查看[错误码文档](../../errors/账号管理错误码.md)替代。
+
+从API version 8开始支持，从API version 9开始废弃。相关信息建议查看[错误码文档](账号管理错误码.md)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
-名称值说明SUCCESS0表示操作成功。ERROR_ACCOUNT_NOT_EXIST10001表示应用账号不存在。ERROR_APP_ACCOUNT_SERVICE_EXCEPTION10002表示应用账号服务异常。ERROR_INVALID_PASSWORD10003表示密码无效。ERROR_INVALID_REQUEST10004表示请求无效。ERROR_INVALID_RESPONSE10005表示响应无效。ERROR_NETWORK_EXCEPTION10006表示网络异常。ERROR_OAUTH_AUTHENTICATOR_NOT_EXIST10007表示认证器不存在。ERROR_OAUTH_CANCELED10008表示鉴权取消。ERROR_OAUTH_LIST_TOO_LARGE10009表示开放授权列表过大。ERROR_OAUTH_SERVICE_BUSY10010表示开放授权服务忙碌。ERROR_OAUTH_SERVICE_EXCEPTION10011表示开放授权服务异常。ERROR_OAUTH_SESSION_NOT_EXIST10012表示鉴权会话不存在。ERROR_OAUTH_TIMEOUT10013表示鉴权超时。ERROR_OAUTH_TOKEN_NOT_EXIST10014表示开放授权令牌不存在。ERROR_OAUTH_TOKEN_TOO_MANY10015表示开放授权令牌过多。ERROR_OAUTH_UNSUPPORT_ACTION10016表示不支持的鉴权操作。ERROR_OAUTH_UNSUPPORT_AUTH_TYPE10017表示不支持的鉴权类型。ERROR_PERMISSION_DENIED10018表示权限不足。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SUCCESS | 0 | 表示操作成功。 |
+| ERROR_ACCOUNT_NOT_EXIST | 10001 | 表示应用账号不存在。 |
+| ERROR_APP_ACCOUNT_SERVICE_EXCEPTION | 10002 | 表示应用账号服务异常。 |
+| ERROR_INVALID_PASSWORD | 10003 | 表示密码无效。 |
+| ERROR_INVALID_REQUEST | 10004 | 表示请求无效。 |
+| ERROR_INVALID_RESPONSE | 10005 | 表示响应无效。 |
+| ERROR_NETWORK_EXCEPTION | 10006 | 表示网络异常。 |
+| ERROR_OAUTH_AUTHENTICATOR_NOT_EXIST | 10007 | 表示认证器不存在。 |
+| ERROR_OAUTH_CANCELED | 10008 | 表示鉴权取消。 |
+| ERROR_OAUTH_LIST_TOO_LARGE | 10009 | 表示开放授权列表过大。 |
+| ERROR_OAUTH_SERVICE_BUSY | 10010 | 表示开放授权服务忙碌。 |
+| ERROR_OAUTH_SERVICE_EXCEPTION | 10011 | 表示开放授权服务异常。 |
+| ERROR_OAUTH_SESSION_NOT_EXIST | 10012 | 表示鉴权会话不存在。 |
+| ERROR_OAUTH_TIMEOUT | 10013 | 表示鉴权超时。 |
+| ERROR_OAUTH_TOKEN_NOT_EXIST | 10014 | 表示开放授权令牌不存在。 |
+| ERROR_OAUTH_TOKEN_TOO_MANY | 10015 | 表示开放授权令牌过多。 |
+| ERROR_OAUTH_UNSUPPORT_ACTION | 10016 | 表示不支持的鉴权操作。 |
+| ERROR_OAUTH_UNSUPPORT_AUTH_TYPE | 10017 | 表示不支持的鉴权类型。 |
+| ERROR_PERMISSION_DENIED | 10018 | 表示权限不足。 |
 
 #### AuthCallback9+
 
@@ -4193,7 +5147,10 @@ onResult: (code: number, result?: AuthResult) => void
 
 **参数：**
 
-参数名类型必填说明codenumber是鉴权结果码。result[AuthResult](#ZH-CN_TOPIC_0000002497605500__authresult9)否鉴权结果，默认为空，表示不接收认证结果信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 鉴权结果码。 |
+| result | AuthResult | 否 | 鉴权结果，默认为空，表示不接收认证结果信息。 |
 
 **示例：**
 
@@ -4229,7 +5186,9 @@ onRequestRedirected: (request: Want) => void
 
 **参数：**
 
-参数名类型必填说明request[Want](@ohos.app.ability.Want (Want).md)是用于跳转的请求信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| request | Want | 是 | 用于跳转的请求信息。 |
 
 **示例：**
 
@@ -4260,7 +5219,6 @@ class MyAuthenticator extends appAccount.Authenticator {
     };
     callback.onResult(appAccount.ResultCode.SUCCESS, result);
   }
-}
 ```
 
 #### onRequestContinued9+
@@ -4291,7 +5249,8 @@ appAccountManager.getAuthCallback(sessionId).then((callback: appAccount.AuthCall
 
 OAuth认证器回调接口。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[AuthCallback](#ZH-CN_TOPIC_0000002497605500__authcallback9)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[AuthCallback](#ZH-CN_TOPIC_0000002522241584__authcallback9)替代。
 
 #### onResult(deprecated)
 
@@ -4299,13 +5258,17 @@ onResult: (code: number, result: {[key: string]: any;}) => void
 
 通知请求结果。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[onResult](#ZH-CN_TOPIC_0000002497605500__onresult9)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[onResult](#ZH-CN_TOPIC_0000002522241584__onresult9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明codenumber是鉴权结果码。result{[key: string]: any}是鉴权结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 鉴权结果码。 |
+| result | {[key: string]: any} | 是 | 鉴权结果。 |
 
 **示例：**
 
@@ -4332,13 +5295,16 @@ onRequestRedirected: (request: Want) => void
 
 通知请求被跳转。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[onRequestRedirected](#ZH-CN_TOPIC_0000002497605500__onrequestredirected9)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[onRequestRedirected](#ZH-CN_TOPIC_0000002522241584__onrequestredirected9)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明request[Want](@ohos.app.ability.Want (Want).md)是用于跳转的请求信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| request | Want | 是 | 用于跳转的请求信息。 |
 
 **示例：**
 
@@ -4363,7 +5329,6 @@ class MyAuthenticator extends appAccount.Authenticator {
       token: 'xxxxxx'
     });
   }
-}
 ```
 
 #### Authenticator8+
@@ -4380,7 +5345,10 @@ createAccountImplicitly(options: CreateAccountImplicitlyOptions, callback: AuthC
 
 **参数：**
 
-参数名类型必填说明options[CreateAccountImplicitlyOptions](#ZH-CN_TOPIC_0000002497605500__createaccountimplicitlyoptions9)是隐式创建账号的选项。callback[AuthCallback](#ZH-CN_TOPIC_0000002497605500__authcallback9)是认证器回调对象，用于返回创建结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | CreateAccountImplicitlyOptions | 是 | 隐式创建账号的选项。 |
+| callback | AuthCallback | 是 | 认证器回调对象，用于返回创建结果。 |
 
 #### addAccountImplicitly(deprecated)
 
@@ -4388,13 +5356,19 @@ addAccountImplicitly(authType: string, callerBundleName: string, options: {[key:
 
 根据指定的鉴权类型和可选项，隐式地添加应用账号。使用callback异步回调。
 
-从API version 8开始支持, 从API version 9开始废弃。建议使用[createAccountImplicitly](#ZH-CN_TOPIC_0000002497605500__createaccountimplicitly9-2)替代。
+
+从API version 8开始支持, 从API version 9开始废弃。建议使用[createAccountImplicitly](#ZH-CN_TOPIC_0000002522241584__createaccountimplicitly9-2)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明authTypestring是应用账号的鉴权类型。callerBundleNamestring是鉴权请求方的包名。options{[key: string]: any}是鉴权所需要的可选项。callback[AuthenticatorCallback](#ZH-CN_TOPIC_0000002497605500__authenticatorcallbackdeprecated)是认证器回调，用于返回鉴权结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| authType | string | 是 | 应用账号的鉴权类型。 |
+| callerBundleName | string | 是 | 鉴权请求方的包名。 |
+| options | {[key: string]: any} | 是 | 鉴权所需要的可选项。 |
+| callback | AuthenticatorCallback | 是 | 认证器回调，用于返回鉴权结果。 |
 
 #### auth9+
 
@@ -4406,7 +5380,12 @@ auth(name: string, authType: string, options: Record<string, Object>, callback: 
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。authTypestring是应用账号的鉴权类型。optionsRecord<string, Object>是鉴权所需要的可选项。callback[AuthCallback](#ZH-CN_TOPIC_0000002497605500__authcallback9)是回调对象，用于返回鉴权结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| authType | string | 是 | 应用账号的鉴权类型。 |
+| options | Record<string, Object> | 是 | 鉴权所需要的可选项。 |
+| callback | AuthCallback | 是 | 回调对象，用于返回鉴权结果。 |
 
 #### authenticate(deprecated)
 
@@ -4414,13 +5393,20 @@ authenticate(name: string, authType: string, callerBundleName: string, options: 
 
 对应用账号进行鉴权，获取OAuth令牌。使用callback异步回调。
 
-从API version 8开始支持, 从API version 9开始废弃。建议使用[auth](#ZH-CN_TOPIC_0000002497605500__auth9-2)替代。
+
+从API version 8开始支持, 从API version 9开始废弃。建议使用[auth](#ZH-CN_TOPIC_0000002522241584__auth9-2)替代。
 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。authTypestring是应用账号的鉴权类型。callerBundleNamestring是鉴权请求方的包名。options{[key: string]: any}是鉴权所需要的可选项。callback[AuthenticatorCallback](#ZH-CN_TOPIC_0000002497605500__authenticatorcallbackdeprecated)是认证器回调，用于返回鉴权结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| authType | string | 是 | 应用账号的鉴权类型。 |
+| callerBundleName | string | 是 | 鉴权请求方的包名。 |
+| options | {[key: string]: any} | 是 | 鉴权所需要的可选项。 |
+| callback | AuthenticatorCallback | 是 | 认证器回调，用于返回鉴权结果。 |
 
 #### verifyCredential9+
 
@@ -4432,11 +5418,15 @@ verifyCredential(name: string, options: VerifyCredentialOptions, callback: AuthC
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。options[VerifyCredentialOptions](#ZH-CN_TOPIC_0000002497605500__verifycredentialoptions9)是验证凭据的可选项。callback[AuthCallback](#ZH-CN_TOPIC_0000002497605500__authcallback9)是认证器回调，用于返回验证结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| options | VerifyCredentialOptions | 是 | 验证凭据的可选项。 |
+| callback | AuthCallback | 是 | 认证器回调，用于返回验证结果。 |
 
 **示例：**
 
-接口需组合使用，请查看[getRemoteObject](#ZH-CN_TOPIC_0000002497605500__getremoteobject9)中的示例。
+接口需组合使用，请查看[getRemoteObject](#ZH-CN_TOPIC_0000002522241584__getremoteobject9)中的示例。
 
 #### setProperties9+
 
@@ -4448,11 +5438,14 @@ setProperties(options: SetPropertiesOptions, callback: AuthCallback): void
 
 **参数：**
 
-参数名类型必填说明options[SetPropertiesOptions](#ZH-CN_TOPIC_0000002497605500__setpropertiesoptions9)是设置属性的可选项。callback[AuthCallback](#ZH-CN_TOPIC_0000002497605500__authcallback9)是认证器回调，用于返回设置结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | SetPropertiesOptions | 是 | 设置属性的可选项。 |
+| callback | AuthCallback | 是 | 认证器回调，用于返回设置结果。 |
 
 **示例：**
 
-接口需组合使用，请查看[getRemoteObject](#ZH-CN_TOPIC_0000002497605500__getremoteobject9)中的示例。
+接口需组合使用，请查看[getRemoteObject](#ZH-CN_TOPIC_0000002522241584__getremoteobject9)中的示例。
 
 #### checkAccountLabels9+
 
@@ -4464,11 +5457,15 @@ checkAccountLabels(name: string, labels: Array<string>, callback: AuthCallback):
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。labelsArray<string>是标签数组。callback[AuthCallback](#ZH-CN_TOPIC_0000002497605500__authcallback9)是认证器回调，用于返回检查结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| labels | Array<string> | 是 | 标签数组。 |
+| callback | AuthCallback | 是 | 认证器回调，用于返回检查结果。 |
 
 **示例：**
 
-接口需组合使用，请查看[getRemoteObject](#ZH-CN_TOPIC_0000002497605500__getremoteobject9)中的示例。
+接口需组合使用，请查看[getRemoteObject](#ZH-CN_TOPIC_0000002522241584__getremoteobject9)中的示例。
 
 #### checkAccountRemovable9+
 
@@ -4480,11 +5477,14 @@ checkAccountRemovable(name: string, callback: AuthCallback): void
 
 **参数：**
 
-参数名类型必填说明namestring是应用账号的名称。callback[AuthCallback](#ZH-CN_TOPIC_0000002497605500__authcallback9)是认证器回调，用于返回判断结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 应用账号的名称。 |
+| callback | AuthCallback | 是 | 认证器回调，用于返回判断结果。 |
 
 **示例：**
 
-接口需组合使用，请查看[getRemoteObject](#ZH-CN_TOPIC_0000002497605500__getremoteobject9)中的示例。
+接口需组合使用，请查看[getRemoteObject](#ZH-CN_TOPIC_0000002522241584__getremoteobject9)中的示例。
 
 #### getRemoteObject9+
 
@@ -4496,11 +5496,13 @@ getRemoteObject(): rpc.RemoteObject
 
 **返回值：**
 
-类型说明[rpc.RemoteObject](@ohos.rpc (RPC通信).md#ZH-CN_TOPIC_0000002529445269__remoteobject)认证器Authenticator的远程对象。用于跨进程通信。
+| 类型 | 说明 |
+| --- | --- |
+| rpc.RemoteObject | 认证器Authenticator的远程对象。用于跨进程通信。 |
 
 **示例：**
 
-接口需组合使用，请查看[getRemoteObject](#ZH-CN_TOPIC_0000002497605500__getremoteobject9)中的示例。
+接口需组合使用，请查看[getRemoteObject](#ZH-CN_TOPIC_0000002522241584__getremoteobject9)中的示例。
 
 **示例：**
 
@@ -4539,12 +5541,10 @@ class MyAuthenticator extends appAccount.Authenticator {
   checkAccountRemovable(name: string, callback: appAccount.AuthCallback) {
     callback.onResult(0);
   }
-}
 
 export default {
   onConnect(want: Want): rpc.RemoteObject { // serviceAbility 生命周期函数, 需要放在serviceAbility中
     let authenticator = new MyAuthenticator();
     return authenticator.getRemoteObject();
   }
-}
 ```

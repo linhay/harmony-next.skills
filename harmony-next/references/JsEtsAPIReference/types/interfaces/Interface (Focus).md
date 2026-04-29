@@ -13,13 +13,13 @@ Focus 继承自 [FocusQuery](Interface (FocusQuery).md)。
 import { camera } from '@kit.CameraKit';
 ```
 
-#### setFocusMode11+
+#### set[FocusMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__focusmode)11+
 
-setFocusMode(afMode: FocusMode): void
+set[FocusMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__focusmode)(afMode: FocusMode): void
 
 设置对焦模式。
 
-进行设置之前，需要先检查设备是否支持指定的焦距模式，可使用方法[isFocusModeSupported](Interface (FocusQuery).md#ZH-CN_TOPIC_0000002529285775__isfocusmodesupported11)。
+进行设置之前，需要先检查设备是否支持指定的焦距模式，可使用方法[isFocusModeSupported](Interface (FocusQuery).md#ZH-CN_TOPIC_0000002522241908__isfocusmodesupported11)。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -27,13 +27,17 @@ setFocusMode(afMode: FocusMode): void
 
 **参数：**
 
-参数名类型必填说明afMode[FocusMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__focusmode)是指定的焦距模式。传参为null或者undefined，作为0处理，手动对焦模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| afMode | [FocusMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__focusmode) | 是 | 指定的焦距模式。传参为null或者undefined，作为0处理，手动对焦模式。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码]([Camera错误码](../../errors/Camera错误码.md).md)。
 
-错误码ID错误信息7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
 
 **示例：**
 
@@ -48,12 +52,11 @@ function setFocusMode(photoSession: camera.PhotoSession): void {
     let err = error as BusinessError;
     console.error(`The setFocusMode call failed. error code: ${err.code}`);
   }
-}
 ```
 
-#### getFocusMode11+
+#### get[FocusMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__focusmode)11+
 
-getFocusMode(): FocusMode
+get[FocusMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__focusmode)(): FocusMode
 
 获取当前的对焦模式。
 
@@ -63,13 +66,17 @@ getFocusMode(): FocusMode
 
 **返回值：**
 
-类型说明[FocusMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__focusmode)获取当前设备的焦距模式。接口调用失败会抛出相应错误码并返回undefined，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 类型 | 说明 |
+| --- | --- |
+| [FocusMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__focusmode) | 获取当前设备的焦距模式。接口调用失败会抛出相应错误码并返回undefined，错误码类型CameraErrorCode。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
 
 **示例：**
 
@@ -103,13 +110,17 @@ setFocusPoint(point: Point): void
 
 **参数：**
 
-参数名类型必填说明point[Point](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__point)是焦点。x、y设置范围应在[0，1]之内，超过范围，如果小于0设置0，大于1设置1。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| point | Point | 是 | 焦点。x、y设置范围应在[0，1]之内，超过范围，如果小于0设置0，大于1设置1。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
 
 **示例：**
 
@@ -125,7 +136,6 @@ function setFocusPoint(photoSession: camera.PhotoSession): void {
     let err = error as BusinessError;
     console.error(`The setFocusPoint call failed. error code: ${err.code}`);
   }
-}
 ```
 
 #### getFocusPoint11+
@@ -140,13 +150,17 @@ getFocusPoint(): Point
 
 **返回值：**
 
-类型说明[Point](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__point)用于获取当前的焦点。接口调用失败会返回相应错误码，错误码类型为[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 类型 | 说明 |
+| --- | --- |
+| Point | 用于获取当前的焦点。接口调用失败会返回相应错误码，错误码类型为[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
 
 **示例：**
 
@@ -178,13 +192,17 @@ getFocalLength(): number
 
 **返回值：**
 
-类型说明number用于获取当前焦距，单位mm。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 类型 | 说明 |
+| --- | --- |
+| number | 用于获取当前焦距，单位mm。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
 
 **示例：**
 

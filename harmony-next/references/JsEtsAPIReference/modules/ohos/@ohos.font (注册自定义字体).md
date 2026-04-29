@@ -8,11 +8,11 @@
 
 -
 
-本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的地方使用，参见[UIContext](../../types/classes/Class (UIContext).md)说明。
+本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的地方使用，参见[UIContext](Class (UIContext).md)说明。
 
 -
 
-推荐使用字体引擎的[loadFontSync](@ohos.graphics.text (文本模块).md#ZH-CN_TOPIC_0000002497605988__loadfontsync)接口注册自定义字体。
+推荐使用字体引擎的[loadFontSync](@ohos.graphics.text (文本模块).md#ZH-CN_TOPIC_0000002553362061__loadfontsync)接口注册自定义字体。
 
 #### 导入模块
 
@@ -28,13 +28,14 @@ registerFont(options: FontOptions): void
 
 该接口为异步接口，不支持并发调用。
 
--
-
-从API version 9开始支持，从API version 18开始废弃，建议使用[UIContext](../../types/classes/Class (UIContext).md)中的[getFont](../../types/classes/Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getfont)获取[Font](../../types/classes/Class (Font).md)实例，再通过此实例调用替代方法[registerFont](../../types/classes/Class (Font).md#ZH-CN_TOPIC_0000002497604778__registerfont)。
 
 -
 
-从API version 10开始，可以通过使用[UIContext](../../types/classes/Class (UIContext).md)中的[getFont](../../types/classes/Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getfont)方法获取当前UI上下文关联的[Font](../../types/classes/Class (Font).md)对象。
+从API version 9开始支持，从API version 18开始废弃，建议使用[registerFont](Class (Font).md#ZH-CN_TOPIC_0000002553200691__registerfont)替代。registerFont需要先通过[UIContext](Class (UIContext).md)中的[getFont](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfont)方法获取[Font](Class (Font).md)对象，然后通过该对象进行调用。且直接使用registerFont可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题。
+
+-
+
+从API version 10开始，可以通过使用[UIContext](Class (UIContext).md)中的[getFont](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfont)方法获取当前UI上下文关联的[Font](Class (Font).md)对象。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -42,7 +43,9 @@ registerFont(options: FontOptions): void
 
 **参数：**
 
-参数名类型必填说明options[FontOptions](#ZH-CN_TOPIC_0000002497444810__fontoptions)是注册的自定义字体信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | FontOptions | 是 | 注册的自定义字体信息。 |
 
 #### FontOptions
 
@@ -52,15 +55,13 @@ registerFont(options: FontOptions): void
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明familyNamestring | [Resource](../../topics/misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)10+否否设置注册的字体名称。familySrcstring | [Resource](../../topics/misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)10+否否
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| familyName | string | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)10+ | 否 | 否 | 设置注册的字体名称。 |
+| familySrc | string | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)10+ | 否 | 否 | 设置注册字体文件的路径。 说明： 读取系统沙箱路径内的资源时，建议使用file://路径前缀的字符串，需要确保沙箱目录路径下的文件存在并且有可读权限。 |
 
-设置注册字体文件的路径。
 
-**说明：**
-
-读取系统沙箱路径内的资源时，建议使用file://路径前缀的字符串，需要确保沙箱目录路径下的文件存在并且有可读权限。
-
-直接使用font可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，推荐通过使用[UIContext](../../types/classes/Class (UIContext).md)中的[getFont](../../types/classes/Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getfont)方法获取当前UI上下文关联的[Font](../../types/classes/Class (Font).md)对象。
+直接使用font可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，推荐通过使用[UIContext](Class (UIContext).md)中的[getFont](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfont)方法获取当前UI上下文关联的[Font](Class (Font).md)对象。
 
 **示例：**
 
@@ -121,10 +122,10 @@ struct FontExample {
         .fontFamily('iconFont')
     }.width('100%')
   }
-}
 ```
 
-应用若需全局使用自定义字体，请在EntryAbility.ets文件的[onWindowStageCreate](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onwindowstagecreate)生命周期中，通过[windowStage.loadContent](../../types/interfaces/Interface (Window).md#ZH-CN_TOPIC_0000002497604802__loadcontent9)回调注册。
+
+应用若需全局使用自定义字体，请在EntryAbility.ets文件的[onWindowStageCreate](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onwindowstagecreate)生命周期中，通过[windowStage.loadContent](Interface (Window).md#ZH-CN_TOPIC_0000002522080752__loadcontent9)回调注册。
 
 在HSP工程中，不推荐采用相对路径的方式注册自定义字体，详见[通过$r访问HSP中的资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/in-app-hsp)。
 
@@ -132,15 +133,20 @@ struct FontExample {
 
 getSystemFontList(): Array<string>
 
-获取风格字体列表。
+获取系统字体列表。
 
 该接口仅在PC/2in1设备上生效，在其他设备上返回空数组。
 
-推荐使用[getSystemFontFullNamesByType](@ohos.graphics.text (文本模块).md#ZH-CN_TOPIC_0000002497605988__textgetsystemfontfullnamesbytype14)接口获取系统最新支持的字体列表数据。
+推荐使用[getSystemFontFullNamesByType](@ohos.graphics.text (文本模块).md#ZH-CN_TOPIC_0000002553362061__textgetsystemfontfullnamesbytype14)接口获取系统最新支持的字体列表数据。
 
-从API version 10开始支持，从API version 18开始废弃，建议使用[UIContext](../../types/classes/Class (UIContext).md)中的[getFont](../../types/classes/Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getfont)获取[Font](../../types/classes/Class (Font).md)实例，再通过此实例调用替代方法[getSystemFontList](../../types/classes/Class (Font).md#ZH-CN_TOPIC_0000002497604778__getsystemfontlist)。
 
-从API version 10开始，可以通过使用[UIContext](../../types/classes/Class (UIContext).md)中的[getFont](../../types/classes/Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getfont)方法获取当前UI上下文关联的[Font](../../types/classes/Class (Font).md)对象。
+-
+
+从API version 10开始支持，从API version 18开始废弃，建议使用[getSystemFontList](Class (Font).md#ZH-CN_TOPIC_0000002553200691__getsystemfontlist)替代。getSystemFontList需要先通过[UIContext](Class (UIContext).md)中的[getFont](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfont)方法获取[Font](Class (Font).md)对象，然后通过该对象进行调用。且直接使用getSystemFontList可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题。
+
+-
+
+从API version 10开始，可以通过使用[UIContext](Class (UIContext).md)中的[getFont](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfont)方法获取当前UI上下文关联的[Font](Class (Font).md)对象。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -148,9 +154,12 @@ getSystemFontList(): Array<string>
 
 **返回值：**
 
-类型说明Array<string>系统的字体名列表。
+| 类型 | 说明 |
+| --- | --- |
+| Array<string> | 系统的字体名列表。 |
 
-直接使用font可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，推荐通过使用[UIContext](../../types/classes/Class (UIContext).md)中的[getFont](../../types/classes/Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getfont)方法获取当前UI上下文关联的[Font](../../types/classes/Class (Font).md)对象。
+
+直接使用font可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，推荐通过使用[UIContext](Class (UIContext).md)中的[getFont](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfont)方法获取当前UI上下文关联的[Font](Class (Font).md)对象。
 
 **示例：**
 
@@ -173,7 +182,6 @@ struct FontExample {
         })
     }.width('100%')
   }
-}
 ```
 
 #### font.getFontByName(deprecated)
@@ -182,9 +190,14 @@ getFontByName(fontName: string): FontInfo
 
 根据传入的系统字体名称获取系统字体的相关信息。
 
-从API version 10开始支持，从API version 18开始废弃，建议使用[UIContext](../../types/classes/Class (UIContext).md)中的[getFont](../../types/classes/Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getfont)获取[Font](../../types/classes/Class (Font).md)实例，再通过此实例调用替代方法[getFontByName](../../types/classes/Class (Font).md#ZH-CN_TOPIC_0000002497604778__getfontbyname)。
 
-从API version 10开始，可以通过使用[UIContext](../../types/classes/Class (UIContext).md)中的[getFont](../../types/classes/Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getfont)方法获取当前UI上下文关联的[Font](../../types/classes/Class (Font).md)对象。
+-
+
+从API version 10开始支持，从API version 18开始废弃，建议使用[getFontByName](Class (Font).md#ZH-CN_TOPIC_0000002553200691__getfontbyname)替代。getFontByName需要先通过[UIContext](Class (UIContext).md)中的[getFont](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfont)方法获取[Font](Class (Font).md)对象，然后通过该对象进行调用。且直接使用getFontByName可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题。
+
+-
+
+从API version 10开始，可以通过使用[UIContext](Class (UIContext).md)中的[getFont](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfont)方法获取当前UI上下文关联的[Font](Class (Font).md)对象。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -192,11 +205,15 @@ getFontByName(fontName: string): FontInfo
 
 **参数：**
 
-参数名类型必填说明fontNamestring是系统的字体名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fontName | string | 是 | 系统的字体名。 |
 
 **返回值：**
 
-类型说明FontInfo字体的详细信息。
+| 类型 | 说明 |
+| --- | --- |
+| FontInfo | 字体的详细信息。 |
 
 #### FontInfo10+
 
@@ -206,47 +223,23 @@ getFontByName(fontName: string): FontInfo
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明pathstring否否系统字体的文件路径。postScriptNamestring否否系统字体的postScript名称。fullNamestring否否系统字体的名称。familystring否否系统字体的字体家族。subfamilystring否否系统字体的子字体家族。weightnumber否否
-
-系统字体的字重。
-
-取值范围：[100,900]，取值间隔为100，分别对应[FontWeight](@ohos.graphics.text (文本模块).md#ZH-CN_TOPIC_0000002497605988__fontweight)枚举中的值。
-
-默认值：100
-
-widthnumber否否
-
-系统字体的宽度。
-
-取值范围：[1,9]，取值间隔为1，分别对应[FontWidth](@ohos.graphics.text (文本模块).md#ZH-CN_TOPIC_0000002497605988__fontwidth)枚举中的值。
-
-italicboolean否否
-
-系统字体是否倾斜。
-
-默认值：false
-
-值为true，表示斜体字体，值为false，表示非斜体字体。
-
-monoSpaceboolean否否
-
-系统字体是否等宽。
-
-默认值：false
-
-值为true，表示等宽字体，值为false，表示非等宽字体。
-
-symbolicboolean否否
-
-系统字体是否支持符号字体。
-
-默认值：false
-
-值为true，表示支持符号字体，值为false，表示不支持符号字体。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| path | string | 否 | 否 | 系统字体的文件路径。 |
+| postScriptName | string | 否 | 否 | 系统字体的postScript名称。 |
+| fullName | string | 否 | 否 | 系统字体的名称。 |
+| family | string | 否 | 否 | 系统字体的字体家族。 |
+| subfamily | string | 否 | 否 | 系统字体的子字体家族。 |
+| weight | number | 否 | 否 | 系统字体的字重。 取值范围：[100,900]，取值间隔为100，分别对应FontWeight枚举中的值。 默认值：100 |
+| width | number | 否 | 否 | 系统字体的宽度。 取值范围：[1,9]，取值间隔为1，分别对应FontWidth枚举中的值。 |
+| italic | boolean | 否 | 否 | 系统字体是否倾斜。 默认值：false 值为true，表示斜体字体，值为false，表示非斜体字体。 |
+| monoSpace | boolean | 否 | 否 | 系统字体是否等宽。 默认值：false 值为true，表示等宽字体，值为false，表示非等宽字体。 |
+| symbolic | boolean | 否 | 否 | 系统字体是否支持符号字体。 默认值：false 值为true，表示支持符号字体，值为false，表示不支持符号字体。 |
 
 **示例：**
 
-直接使用font可能导致实例不明确的问题，推荐通过使用[UIContext](../../types/classes/Class (UIContext).md)中的[getFont](../../types/classes/Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getfont)方法获取当前UI上下文关联的[Font](../../types/classes/Class (Font).md)对象。
+
+直接使用font可能导致实例不明确的问题，推荐通过使用[UIContext](Class (UIContext).md)中的[getFont](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfont)方法获取当前UI上下文关联的[Font](Class (Font).md)对象。
 
 ```ets
 // xxx.ets
@@ -278,14 +271,15 @@ struct FontExample {
         })
     }.width('100%')
   }
-}
 ```
 
 #### font.getUIFontConfig11+
 
 getUIFontConfig() : UIFontConfig
 
-获取系统的UI字体配置。
+获取系统字体配置文件的UI字体配置信息。
+
+该接口仅支持获取配置文件内的信息以及当UI上下文不明确时可能返回undefined，如果想要获取全量的字体配置信息，推荐使用字体引擎的[getSystemFontFullNamesByType](@ohos.graphics.text (文本模块).md#ZH-CN_TOPIC_0000002553362061__textgetsystemfontfullnamesbytype14)接口。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -293,7 +287,9 @@ getUIFontConfig() : UIFontConfig
 
 **返回值：**
 
-类型说明[UIFontConfig](#ZH-CN_TOPIC_0000002497444810__uifontconfig11)系统的UI字体配置信息。
+| 类型 | 说明 |
+| --- | --- |
+| UIFontConfig | 系统的UI字体配置信息。 |
 
 #### UIFontConfig11+
 
@@ -303,7 +299,11 @@ getUIFontConfig() : UIFontConfig
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明fontDirArray<string>否否系统字体文件所在的路径。genericArray<[UIFontGenericInfo](#ZH-CN_TOPIC_0000002497444810__uifontgenericinfo11)>否否系统所支持的通用字体集列表。fallbackGroupsArray<[UIFontFallbackGroupInfo](#ZH-CN_TOPIC_0000002497444810__uifontfallbackgroupinfo11)>否否备用字体集。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| fontDir | Array<string> | 否 | 否 | 系统字体文件所在的路径。 |
+| generic | Array<UIFontGenericInfo> | 否 | 否 | 系统所支持的通用字体集列表。 |
+| fallbackGroups | Array<UIFontFallbackGroupInfo> | 否 | 否 | 备用字体集。 |
 
 #### UIFontGenericInfo11+
 
@@ -313,7 +313,11 @@ getUIFontConfig() : UIFontConfig
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明familystring否否字体集名，字体文件中指定的"family"值。aliasArray<[UIFontAliasInfo](#ZH-CN_TOPIC_0000002497444810__uifontaliasinfo11)>否否别名列表。adjustArray<[UIFontAdjustInfo](#ZH-CN_TOPIC_0000002497444810__uifontadjustinfo11)>否否字体原本的weight值对应需显示的值。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| family | string | 否 | 否 | 字体集名，字体文件中指定的"family"值。 |
+| alias | Array<UIFontAliasInfo> | 否 | 否 | 别名列表。 |
+| adjust | Array<UIFontAdjustInfo> | 否 | 否 | 字体原本的weight值对应需显示的值。 |
 
 #### UIFontFallbackGroupInfo11+
 
@@ -323,7 +327,10 @@ getUIFontConfig() : UIFontConfig
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明fontSetNamestring否否备用字体集所对应的字体集名称。fallbackArray<[UIFontFallbackInfo](#ZH-CN_TOPIC_0000002497444810__uifontfallbackinfo11)>否否表示以下列表为该字体集的备用字体，如果fontSetName为""，表示可以作为所有字体集的备用字体。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| fontSetName | string | 否 | 否 | 备用字体集所对应的字体集名称。 |
+| fallback | Array<UIFontFallbackInfo> | 否 | 否 | 表示以下列表为该字体集的备用字体，如果fontSetName为""，表示可以作为所有字体集的备用字体。 |
 
 #### UIFontAliasInfo11+
 
@@ -333,11 +340,10 @@ getUIFontConfig() : UIFontConfig
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明namestring否否别名名称。weightnumber否否
-
-当weight>0时表示此字体集只包含所指定weight的字体，当weight=0时，表示此字体集包含所有字体。
-
-可返回的值有0、100、400、700、900。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | string | 否 | 否 | 别名名称。 |
+| weight | number | 否 | 否 | 当weight>0时表示此字体集只包含所指定weight的字体，当weight=0时，表示此字体集包含所有字体。 可返回的值有0、100、400、700、900。 |
 
 #### UIFontAdjustInfo11+
 
@@ -347,17 +353,10 @@ getUIFontConfig() : UIFontConfig
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明weightnumber否否
-
-字体原本的weight值。
-
-可返回的值有50、80、100、200。
-
-tonumber否否
-
-字体在应用中显示的weight值。
-
-可返回的值有100、400、700、900。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| weight | number | 否 | 否 | 字体原本的weight值。 可返回的值有50、80、100、200。 |
+| to | number | 否 | 否 | 字体在应用中显示的weight值。 可返回的值有100、400、700、900。 |
 
 #### UIFontFallbackInfo11+
 
@@ -367,7 +366,10 @@ tonumber否否
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明languagestring否否字体集所支持的语言类型，语言格式为bcp47。familystring否否字体集名，字体文件中指定的"family"值。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| language | string | 否 | 否 | 字体集所支持的语言类型，语言格式为bcp47。 |
+| family | string | 否 | 否 | 字体集名，字体文件中指定的"family"值。 |
 
 **示例：**
 
@@ -399,7 +401,6 @@ struct FontExample {
             for (let j = 0; j < fontConfig.generic[i].adjust.length; j++) {
               console.info(fontConfig.generic[i].adjust[j].weight + " " + fontConfig.generic[i].adjust[j].to);
             }
-          }
           console.info("fallback------------" + String(fontConfig.fallbackGroups.length));
           for (let i = 0; i < fontConfig.fallbackGroups.length; i++) {
             console.info("fontSetName:" + fontConfig.fallbackGroups[i].fontSetName);
@@ -407,9 +408,7 @@ struct FontExample {
               console.info("language:" + fontConfig.fallbackGroups[i].fallback[j].language + " family:" +
               fontConfig.fallbackGroups[i].fallback[j].family);
             }
-          }
         })
     }.width('100%')
   }
-}
 ```

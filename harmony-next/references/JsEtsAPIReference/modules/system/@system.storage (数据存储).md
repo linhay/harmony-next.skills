@@ -2,7 +2,11 @@
 
 -
 
-从API Version 6开始，该模块不再维护，可以使用模块[@ohos.data.storage](../ohos/@ohos.data.storage (轻量级存储).md)。在API Version 9后，推荐使用新模块[@ohos.data.preferences](../ohos/@ohos.data.preferences (用户首选项).md)。
+模块维护策略：
+
+  - 对于Lite Wearable设备类型，该模块长期维护，可正常使用。
+
+  - 对于支持该模块的其他设备类型，该模块从API version 6开始不再维护，可以使用模块[@ohos.data.storage](@ohos.data.storage (轻量级存储).md)。在API version 9后，推荐使用新模块[@ohos.data.preferences](@ohos.data.preferences (用户首选项).md)。
 
 -
 
@@ -28,7 +32,9 @@ get(options: GetStorageOptions): void
 
 **参数：**
 
-参数名类型必填说明options[GetStorageOptions](#ZH-CN_TOPIC_0000002497444714__getstorageoptions)是接口配置信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | GetStorageOptions | 是 | 接口配置信息。 |
 
 **示例：**
 
@@ -48,7 +54,6 @@ export default {
       },
     });
   }
-}
 ```
 
 #### storage.set
@@ -61,7 +66,9 @@ set(options: SetStorageOptions): void
 
 **参数：**
 
-参数名类型必填说明options[SetStorageOptions](#ZH-CN_TOPIC_0000002497444714__setstorageoptions)是接口配置信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | SetStorageOptions | 是 | 接口配置信息。 |
 
 **示例：**
 
@@ -79,7 +86,6 @@ export default {
       },
     });
   }
-}
 ```
 
 #### storage.clear
@@ -92,7 +98,9 @@ clear(options?: ClearStorageOptions): void
 
 **参数：**
 
-参数名类型必填说明options[ClearStorageOptions](#ZH-CN_TOPIC_0000002497444714__clearstorageoptions)否接口配置信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | ClearStorageOptions | 否 | 接口配置信息。 |
 
 **示例：**
 
@@ -108,7 +116,6 @@ export default {
       },
     });
   }
-}
 ```
 
 #### storage.delete
@@ -121,7 +128,9 @@ delete(options: DeleteStorageOptions): void
 
 **参数：**
 
-参数名类型必填说明options[DeleteStorageOptions](#ZH-CN_TOPIC_0000002497444714__deletestorageoptions)是接口配置信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | DeleteStorageOptions | 是 | 接口配置信息。 |
 
 **示例：**
 
@@ -138,29 +147,49 @@ export default {
       },
     });
   }
-}
 ```
 
 #### GetStorageOptions
 
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core.Lite
 
-名称类型必填说明keystring是内容索引。defaultstring否key不存在则返回的默认值。success(data: any) => void否接口调用成功的回调函数，data为返回key对应的value。fail(data: string, code: number) => void否接口调用失败的回调函数，data为错误信息，code为错误码。complete() => void否接口调用结束的回调函数。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 内容索引。 |
+| default | string | 否 | key不存在则返回的默认值。 |
+| success | (data: any) => void | 否 | 接口调用成功的回调函数，data为返回key对应的value。 |
+| fail | (data: string, code: number) => void | 否 | 接口调用失败的回调函数，data为错误信息，code为错误码。 |
+| complete | () => void | 否 | 接口调用结束的回调函数。 |
 
 #### SetStorageOptions
 
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core.Lite
 
-名称类型必填说明keystring是要修改的存储值的索引。valuestring是新值。长度需小于128字节。success() => void否接口调用成功的回调函数。fail(data: string, code: number) => void否接口调用失败的回调函数，data为错误信息，code为错误码。complete() => void否接口调用结束的回调函数。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要修改的存储值的索引。 |
+| value | string | 是 | 新值。长度需小于128字节。 |
+| success | () => void | 否 | 接口调用成功的回调函数。 |
+| fail | (data: string, code: number) => void | 否 | 接口调用失败的回调函数，data为错误信息，code为错误码。 |
+| complete | () => void | 否 | 接口调用结束的回调函数。 |
 
 #### ClearStorageOptions
 
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core.Lite
 
-名称类型必填说明success() => void否接口调用成功的回调函数。fail(data: string, code: number) => void否接口调用失败的回调函数，data为错误信息，code为错误码。complete() => void否接口调用结束的回调函数。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| success | () => void | 否 | 接口调用成功的回调函数。 |
+| fail | (data: string, code: number) => void | 否 | 接口调用失败的回调函数，data为错误信息，code为错误码。 |
+| complete | () => void | 否 | 接口调用结束的回调函数。 |
 
 #### DeleteStorageOptions
 
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core.Lite
 
-名称类型必填说明keystring是内容索引。success() => void否接口调用成功的回调函数。fail(data: string, code: number) => void否接口调用失败的回调函数，data为错误信息，code为错误码。complete() => void否接口调用结束的回调函数。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 内容索引。 |
+| success | () => void | 否 | 接口调用成功的回调函数。 |
+| fail | (data: string, code: number) => void | 否 | 接口调用失败的回调函数，data为错误信息，code为错误码。 |
+| complete | () => void | 否 | 接口调用结束的回调函数。 |

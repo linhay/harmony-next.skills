@@ -2,7 +2,8 @@
 
 用于播放动态照片文件并控制其播放状态的组件。
 
-该组件从API Version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+
+该组件从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 当前不支持在预览器中使用MovingPhotoView组件。
 
@@ -26,39 +27,30 @@ import { MovingPhotoView, MovingPhotoViewController } from '@kit.MediaLibraryKit
 #### MovingPhotoView
 
 - 当前不支持动态属性设置。
-- 当前不支持ArkUI通用属性ComponentOptions中expandSafeArea属性设置。
+- 当前不支持ArkUI[通用属性](../../topics/misc/通用属性.md)ComponentOptions中expandSafeArea属性设置。
 - 该组件长按触发播放时组件区域放大为1.1倍。
-- 该组件使用[AVPlayer](../../types/interfaces/Interface (AVPlayer).md)进行播放，同时开启的AVPlayer个数不建议超过3个，超过3个可能会出现视频播放卡顿现象。
+
+- 该组件使用[AVPlayer](Interface (AVPlayer).md)进行播放，同时开启的AVPlayer个数不建议超过3个，超过3个可能会出现视频播放卡顿现象。
 
 MovingPhotoView(options: MovingPhotoViewOptions)
 
 **参数：**
 
-参数名参数类型必填参数描述options[MovingPhotoViewOptions](#ZH-CN_TOPIC_0000002529285949__movingphotoviewoptions)是动态照片信息。
+| 参数名 | 参数类型 | 必填 | 参数描述 |
+| --- | --- | --- | --- |
+| options | MovingPhotoViewOptions | 是 | 动态照片信息。 |
 
 #### MovingPhotoViewOptions
 
-名称类型只读可选说明movingPhoto[photoAccessHelper.MovingPhoto](../../types/interfaces/Interface (MovingPhoto).md)否否
-
-支持媒体库MovingPhoto数据源，具体信息详见[MovingPhoto说明](../../types/interfaces/Interface (MovingPhoto).md)。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-controller[MovingPhotoViewController](#ZH-CN_TOPIC_0000002529285949__movingphotoviewcontroller)否是
-
-设置动态照片控制器，可以控制动态照片的播放状态。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-imageAIOptions18+[ImageAIOptions](../../topics/misc/图像类型定义.md#ZH-CN_TOPIC_0000002497604902__imageaioptions12)否是
-
-设置动态照片AI分析选项，可配置分析类型或绑定一个分析控制器。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| movingPhoto | photoAccessHelper.MovingPhoto | 否 | 否 | 支持媒体库MovingPhoto数据源，具体信息详见MovingPhoto说明。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| controller | MovingPhotoViewController | 否 | 是 | 设置动态照片控制器，可以控制动态照片的播放状态。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| imageAIOptions18+ | [ImageAIOptions](../../topics/components/图像类型定义.md#ZH-CN_TOPIC_0000002497604902__imageaioptions12) | 否 | 是 | 设置动态照片AI分析选项，可配置分析类型或绑定一个分析控制器。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 
 #### 属性
 
-除支持[通用属性](../../topics/misc/通用属性.md)外，还支持以下属性：
+除支持[通用属性](通用属性.md)外，还支持以下属性：
 
 #### muted
 
@@ -72,19 +64,13 @@ muted(isMuted: boolean)
 
 **参数：**
 
-参数名类型必填说明isMutedboolean是
-
-是否静音。
-
-默认值：false。
-
-false：非静音。
-
-true：静音。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isMuted | boolean | 是 | 是否静音。 默认值：false。 false：非静音。 true：静音。 |
 
 #### objectFit
 
-objectFit(value: ImageFit)
+objectFit(value: [ImageFit](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__imagefit))
 
 设置动态照片显示模式。
 
@@ -94,11 +80,9 @@ objectFit(value: ImageFit)
 
 **参数：**
 
-参数名类型必填说明value[ImageFit](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__imagefit)是
-
-视频显示模式。
-
-默认值：Cover。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [ImageFit](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__imagefit) | 是 | 视频显示模式。 默认值：Cover。 |
 
 #### autoPlayPeriod13+
 
@@ -106,7 +90,7 @@ autoPlayPeriod(startTime: number, endTime: number)
 
 设置自动播放区间，附属于autoPlay的子配置项。
 
-在调用此方法前，需将[autoPlay](#ZH-CN_TOPIC_0000002529285949__autoplay13)设置为true，设置自动播放，否则指定的视频区间(startTime, endTime)无法生效。
+在调用此方法前，需将[autoPlay](#ZH-CN_TOPIC_0000002522082098__autoplay13)设置为true，设置自动播放，否则指定的视频区间(startTime, endTime)无法生效。
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
@@ -114,17 +98,10 @@ autoPlayPeriod(startTime: number, endTime: number)
 
 **参数：**
 
-参数名类型必填说明startTimenumber是
-
-区间播放开始时间，单位：ms。
-
-取值范围：大于等于0。
-
-endTimenumber是
-
-区间播放结束时间，单位：ms。
-
-取值范围：大于startTime。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| startTime | number | 是 | 区间播放开始时间，单位：ms。 取值范围：大于等于0。 |
+| endTime | number | 是 | 区间播放结束时间，单位：ms。 取值范围：大于startTime。 |
 
 #### autoPlay13+
 
@@ -140,15 +117,9 @@ autoPlay(isAutoPlay: boolean)
 
 **参数：**
 
-参数名类型必填说明isAutoPlayboolean是
-
-是否自动播放。
-
-false：不自动播放。
-
-true：自动播放。
-
-默认值：false。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isAutoPlay | boolean | 是 | 是否自动播放。 false：不自动播放。 true：自动播放。 默认值：false。 |
 
 #### repeatPlay13+
 
@@ -162,15 +133,9 @@ repeatPlay(isRepeatPlay: boolean)
 
 **参数：**
 
-参数名类型必填说明isRepeatPlayboolean是
-
-是否循环播放。
-
-false：不循环播放。
-
-true：循环播放。
-
-默认值：false。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isRepeatPlay | boolean | 是 | 是否循环播放。 false：不循环播放。 true：循环播放。 默认值：false。 |
 
 #### enableAnalyzer18+
 
@@ -184,25 +149,19 @@ enableAnalyzer(enabled: boolean)
 
 **参数：**
 
-参数名类型必填说明enabledboolean是
-
-是否开启AI分析。
-
-false：不开启AI分析。
-
-true：开启AI分析。
-
-默认值：true。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enabled | boolean | 是 | 是否开启AI分析。 false：不开启AI分析。 true：开启AI分析。 默认值：true。 |
 
 #### 事件
 
-除支持[通用事件](../../topics/misc/通用事件.md)外，还支持以下事件：
+除支持[通用事件]([通用事件](../../topics/misc/通用事件.md).md)外，还支持以下事件：
 
 #### onComplete13+
 
 onComplete(callback: MovingPhotoViewEventCallback)
 
-动态照片加载完成图片时触发该事件。
+动态照片加载完成图片时触发该事件。使用callback异步回调。
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
@@ -210,13 +169,15 @@ onComplete(callback: MovingPhotoViewEventCallback)
 
 **参数：**
 
-参数名类型必填说明callback[MovingPhotoViewEventCallback](#ZH-CN_TOPIC_0000002529285949__movingphotovieweventcallback)是动态照片加载完成图片的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | MovingPhotoViewEventCallback | 是 | 动态照片加载完成图片的回调。 |
 
 #### onStart
 
 onStart(callback: MovingPhotoViewEventCallback)
 
-播放时触发该事件。
+播放时触发该事件。使用callback异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -224,13 +185,15 @@ onStart(callback: MovingPhotoViewEventCallback)
 
 **参数：**
 
-参数名类型必填说明callback[MovingPhotoViewEventCallback](#ZH-CN_TOPIC_0000002529285949__movingphotovieweventcallback)是动态照片开始播放时触发的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | MovingPhotoViewEventCallback | 是 | 动态照片开始播放时触发的回调。 |
 
 #### onPause
 
 onPause(callback: MovingPhotoViewEventCallback)
 
-播放暂停时触发该事件。
+播放暂停时触发该事件。使用callback异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -238,13 +201,15 @@ onPause(callback: MovingPhotoViewEventCallback)
 
 **参数：**
 
-参数名类型必填说明callback[MovingPhotoViewEventCallback](#ZH-CN_TOPIC_0000002529285949__movingphotovieweventcallback)是动态照片播放暂停时触发的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | MovingPhotoViewEventCallback | 是 | 动态照片播放暂停时触发的回调。 |
 
 #### onFinish
 
 onFinish(callback: MovingPhotoViewEventCallback)
 
-播放结束时触发该事件。
+播放结束时触发该事件。使用callback异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -252,13 +217,15 @@ onFinish(callback: MovingPhotoViewEventCallback)
 
 **参数：**
 
-参数名类型必填说明callback[MovingPhotoViewEventCallback](#ZH-CN_TOPIC_0000002529285949__movingphotovieweventcallback)是动态照片播放结束时触发的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | MovingPhotoViewEventCallback | 是 | 动态照片播放结束时触发的回调。 |
 
 #### onError
 
 onError(callback: MovingPhotoViewEventCallback)
 
-播放失败时触发该事件。
+播放失败时触发该事件。使用callback异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -266,13 +233,15 @@ onError(callback: MovingPhotoViewEventCallback)
 
 **参数：**
 
-参数名类型必填说明callback[MovingPhotoViewEventCallback](#ZH-CN_TOPIC_0000002529285949__movingphotovieweventcallback)是动态照片播放失败时触发的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | MovingPhotoViewEventCallback | 是 | 动态照片播放失败时触发的回调。 |
 
 #### onStop
 
 onStop(callback: MovingPhotoViewEventCallback)
 
-播放停止时触发该事件(当stop()方法被调用后触发)。
+播放停止时触发该事件(当stop()方法被调用后触发)。使用callback异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -280,13 +249,15 @@ onStop(callback: MovingPhotoViewEventCallback)
 
 **参数：**
 
-参数名类型必填说明callback[MovingPhotoViewEventCallback](#ZH-CN_TOPIC_0000002529285949__movingphotovieweventcallback)是动态照片停止播放时触发的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | MovingPhotoViewEventCallback | 是 | 动态照片停止播放时触发的回调。 |
 
 #### onPrepared20+
 
 onPrepared(callback: MovingPhotoViewEventCallback)
 
-动态照片准备播放时触发该事件。
+动态照片准备播放时触发该事件。使用callback异步回调。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -294,7 +265,9 @@ onPrepared(callback: MovingPhotoViewEventCallback)
 
 **参数：**
 
-参数名类型必填说明callback[MovingPhotoViewEventCallback](#ZH-CN_TOPIC_0000002529285949__movingphotovieweventcallback)是动态照片准备播放时的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | MovingPhotoViewEventCallback | 是 | 动态照片准备播放时的回调。 |
 
 #### MovingPhotoViewEventCallback
 
@@ -308,7 +281,7 @@ declare type MovingPhotoViewEventCallback = () => void
 
 #### MovingPhotoViewController
 
-一个MovingPhotoViewController对象可以控制一个MovingPhotoView，可用视频播放实例请参考[@ohos.multimedia.media](../../guides/模块描述.md)。
+一个MovingPhotoViewController对象可以控制一个MovingPhotoView，可用视频播放实例请参考[@ohos.multimedia.media](模块描述.md)。
 
 #### constructor
 
@@ -439,7 +412,6 @@ struct MovingPhotoViewDemo {
               console.error('onError')
             })
         }
-      }
       .height('70%')
 
       Row() {
@@ -463,7 +435,6 @@ struct MovingPhotoViewDemo {
       .justifyContent(FlexAlign.Center)
       .height('15%')
     }
-  }
 
   async handlePickerResult(context: Context, uri: string, handler: photoAccessHelper.MediaAssetDataHandler<photoAccessHelper.MovingPhoto>): Promise<void> {
     let uriPredicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
@@ -483,8 +454,6 @@ struct MovingPhotoViewDemo {
     } catch (err) {
       console.error("request error: ", err)
     }
-  }
-}
 
 class MediaDataHandlerMovingPhoto implements photoAccessHelper.MediaAssetDataHandler<photoAccessHelper.MovingPhoto> {
   async onDataPrepared(movingPhoto: photoAccessHelper.MovingPhoto) {
@@ -494,7 +463,6 @@ class MediaDataHandlerMovingPhoto implements photoAccessHelper.MediaAssetDataHan
       priority: emitter.EventPriority.IMMEDIATE,
     }, {
     })
-  }
 }
 ```
 
@@ -516,7 +484,6 @@ async function loading(context: Context) {
     console.info('load moving photo successfully');
   } catch (err) {
     console.error(`load moving photo failed with error: ${err.code}, ${err.message}`);
-  }
 }
 @Entry
 @Component
@@ -585,10 +552,6 @@ struct Index {
             .onClick(() => {
               this.flag = false
             })
-        }
-      }
-    }
-  }
 }
 ```
 
@@ -687,7 +650,6 @@ struct MovingPhotoViewDemo {
               console.log('onError')
             })
         }
-      }
       .height('70%')
 
       Row() {
@@ -711,7 +673,6 @@ struct MovingPhotoViewDemo {
       .justifyContent(FlexAlign.Center)
       .height('15%')
     }
-  }
 
   async handlePickerResult(context: Context, uri: string, handler: photoAccessHelper.MediaAssetDataHandler<photoAccessHelper.MovingPhoto>): Promise<void> {
     let uriPredicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
@@ -731,8 +692,6 @@ struct MovingPhotoViewDemo {
     } catch (err) {
       console.error("request error: ", err)
     }
-  }
-}
 
 class MediaDataHandlerMovingPhoto implements photoAccessHelper.MediaAssetDataHandler<photoAccessHelper.MovingPhoto> {
   async onDataPrepared(movingPhoto: photoAccessHelper.MovingPhoto) {
@@ -743,5 +702,6 @@ class MediaDataHandlerMovingPhoto implements photoAccessHelper.MediaAssetDataHan
     }, {
     })
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553366035.webp)

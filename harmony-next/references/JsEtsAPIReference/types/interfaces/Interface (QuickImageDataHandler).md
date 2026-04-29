@@ -19,13 +19,19 @@ onDataPrepared(data: T, imageSource: image.ImageSource, map: Map<string, string>
 
 map支持返回的信息：
 
-map键名值说明'quality'图片质量。高质量为'high'，低质量为'low'。
+| map键名 | 值说明 |
+| --- | --- |
+| 'quality' | 图片质量。高质量为'high'，低质量为'low'。 |
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **参数：**
 
-参数名类型必填说明dataT是已就绪的图片资源数据。泛型，支持[Picture](Interface (Picture).md)数据类型。imageSourceimage.ImageSource是已就绪的图片资源数据。map13+Map<string, string>是用于获取图片资源的额外信息，如图片质量。仅支持'quality'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | T | 是 | 已就绪的图片资源数据。泛型，支持Picture数据类型。 |
+| imageSource | image.ImageSource | 是 | 已就绪的图片资源数据。 |
+| map13+ | Map<string, string> | 是 | 用于获取图片资源的额外信息，如图片质量。仅支持'quality'。 |
 
 **示例：**
 
@@ -36,5 +42,4 @@ class MediaHandler implements photoAccessHelper.QuickImageDataHandler<image.Pict
   onDataPrepared(data: image.Picture, imageSource: image.ImageSource, map: Map<string, string>) {
     console.info('on image data prepared');
   }
-}
 ```

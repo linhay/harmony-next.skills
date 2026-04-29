@@ -20,7 +20,9 @@ import { VpnExtensionAbility } from '@kit.NetworkKit';
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称类型只读可选说明context[VpnExtensionContext](../../topics/graphics/VpnExtensionContext.md)否否VpnExtension的上下文环境，继承自ExtensionContext。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| context | [VpnExtensionContext](../../topics/networking/VpnExtensionContext.md) | 否 | 否 | VpnExtension的上下文环境，继承自ExtensionContext。 |
 
 #### VpnExtensionAbility.onCreate
 
@@ -28,11 +30,16 @@ onCreate(want: Want): void
 
 在启动三方VPN进行初始化时回调。
 
+
+ 建议配对调用[onDestroy](#ZH-CN_TOPIC_0000002553361407__vpnextensionabilityondestroy)监听三方VPN的销毁，执行资源清理等操作。
+
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
 **参数**：
 
-参数名类型必填说明want[Want](@ohos.app.ability.Want (Want).md)是指示要启动的信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | Want | 是 | 指示要启动的信息。 |
 
 **示例：**
 
@@ -43,7 +50,6 @@ import { Want } from '@kit.AbilityKit';
 class MyVpnExtAbility extends VpnExtensionAbility {
     onCreate(want: Want) {
        console.info('MyVpnExtAbility onCreate');
-    }
 }
 ```
 
@@ -64,5 +70,4 @@ class MyVpnExtAbility extends VpnExtensionAbility {
     onDestroy() {
        console.info('MyVpnExtAbility onDestroy');
     }
-}
 ```

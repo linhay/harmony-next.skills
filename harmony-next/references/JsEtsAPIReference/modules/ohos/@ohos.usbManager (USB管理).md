@@ -12,25 +12,25 @@ import { usbManager } from '@kit.BasicServicesKit';
 
 #### 使用说明
 
-凡是参数类型为[USBDevicePipe](#ZH-CN_TOPIC_0000002497445526__usbdevicepipe)的接口,都需要执行如下操作：
+凡是参数类型为[USBDevicePipe](#ZH-CN_TOPIC_0000002553201555__usbdevicepipe)的接口,都需要执行如下操作：
 
 **在使用接口前：**
 
 1.
 
-调用[usbManager.getDevices](#ZH-CN_TOPIC_0000002497445526__usbmanagergetdevices)获取设备列表。
+调用[usbManager.getDevices](#ZH-CN_TOPIC_0000002553201555__usbmanagergetdevices)获取设备列表。
 
 1.
 
-调用[usbManager.requestRight](#ZH-CN_TOPIC_0000002497445526__usbmanagerrequestright)获取请求权限。
+调用[usbManager.requestRight](#ZH-CN_TOPIC_0000002553201555__usbmanagerrequestright)获取请求权限。
 
 1.
 
-调用[usbManager.connectDevice](#ZH-CN_TOPIC_0000002497445526__usbmanagerconnectdevice)得到USBDevicePipe作为参数。
+调用[usbManager.connectDevice](#ZH-CN_TOPIC_0000002553201555__usbmanagerconnectdevice)得到USBDevicePipe作为参数。
 
 **在使用接口后：**
 
-调用[usbManager.closePipe](#ZH-CN_TOPIC_0000002497445526__usbmanagerclosepipe)关闭设备消息控制通道。
+调用[usbManager.closePipe](#ZH-CN_TOPIC_0000002553201555__usbmanagerclosepipe)关闭设备消息控制通道。
 
 #### usbManager.getDevices
 
@@ -48,13 +48,17 @@ getDevices(): Array<Readonly<USBDevice>>
 
 **返回值：**
 
-类型说明Array<Readonly<[USBDevice](#ZH-CN_TOPIC_0000002497445526__usbdevice)>>设备信息列表。
+| 类型 | 说明 |
+| --- | --- |
+| Array<Readonly<USBDevice>> | 设备信息列表。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -120,24 +124,33 @@ connectDevice(device: USBDevice): Readonly<USBDevicePipe>
 
 根据getDevices()返回的设备信息打开USB设备。如果USB服务异常，可能返回undefined，注意需要对接口返回值做判空处理。
 
-1. 需要调用[usbManager.getDevices](#ZH-CN_TOPIC_0000002497445526__usbmanagergetdevices)获取设备信息以及device;
-1. 调用[usbManager.requestRight](#ZH-CN_TOPIC_0000002497445526__usbmanagerrequestright)请求使用该设备的权限。
+1. 需要调用[usbManager.getDevices](#ZH-CN_TOPIC_0000002553201555__usbmanagergetdevices)获取设备信息以及device;
+
+1. 调用[usbManager.requestRight](#ZH-CN_TOPIC_0000002553201555__usbmanagerrequestright)请求使用该设备的权限。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
 
-参数名类型必填说明device[USBDevice](#ZH-CN_TOPIC_0000002497445526__usbdevice)是USB设备信息，用getDevices获取的busNum和devAddress确定设备，当前其他属性不做处理。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| device | USBDevice | 是 | USB设备信息，用getDevices获取的busNum和devAddress确定设备，当前其他属性不做处理。 |
 
 **返回值：**
 
-类型说明Readonly<[USBDevicePipe](#ZH-CN_TOPIC_0000002497445526__usbdevicepipe)>指定的传输通道对象。
+| 类型 | 说明 |
+| --- | --- |
+| Readonly<USBDevicePipe> | 指定的传输通道对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍参见[通用错误码](通用错误码.md)和[USB服务错误码]([USB服务错误码](../../errors/USB服务错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.14400001Access right denied. Call requestRight to get the USBDevicePipe access right first.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
+| 14400001 | Access right denied. Call requestRight to get the USBDevicePipe access right first. |
 
 **示例：**
 
@@ -168,17 +181,24 @@ hasRight(deviceName: string): boolean
 
 **参数：**
 
-参数名类型必填说明deviceNamestring是设备名称，来自getDevices获取的设备列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceName | string | 是 | 设备名称，来自getDevices获取的设备列表。 |
 
 **返回值：**
 
-类型说明booleantrue表示有访问设备的权限，false表示没有访问设备的权限。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true表示有访问设备的权限，false表示没有访问设备的权限。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -208,17 +228,24 @@ requestRight(deviceName: string): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明deviceNamestring是设备名称，来自getDevices获取的设备列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceName | string | 是 | 设备名称，来自getDevices获取的设备列表。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象，返回临时权限的申请结果。返回true表示临时权限申请成功；返回false则表示临时权限申请失败。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象，返回临时权限的申请结果。返回true表示临时权限申请成功；返回false则表示临时权限申请失败。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -247,17 +274,24 @@ removeRight(deviceName: string): boolean
 
 **参数：**
 
-参数名类型必填说明deviceNamestring是设备名称，来自getDevices获取的设备列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceName | string | 是 | 设备名称，来自getDevices获取的设备列表。 |
 
 **返回值：**
 
-类型说明boolean返回权限移除结果。返回true表示权限移除成功；返回false则表示权限移除失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回权限移除结果。返回true表示权限移除成功；返回false则表示权限移除失败。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -292,27 +326,26 @@ claimInterface(pipe: USBDevicePipe, iface: USBInterface, force ?: boolean): numb
 
 **参数：**
 
-参数名类型必填说明pipe[USBDevicePipe](#ZH-CN_TOPIC_0000002497445526__usbdevicepipe)是用于确定总线号和设备地址，需要调用connectDevice获取。iface[USBInterface](#ZH-CN_TOPIC_0000002497445526__usbinterface)是用于确定需要获取接口的索引，需要调用getDevices获取设备信息并通过id确定唯一接口。forceboolean否可选参数，是否强制获取。默认值为false ，表示不强制获取，用户按需选择。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pipe | USBDevicePipe | 是 | 用于确定总线号和设备地址，需要调用connectDevice获取。 |
+| iface | USBInterface | 是 | 用于确定需要获取接口的索引，需要调用getDevices获取设备信息并通过id确定唯一接口。 |
+| force | boolean | 否 | 可选参数，是否强制获取。默认值为false ，表示不强制获取，用户按需选择。 |
 
 **返回值：**
 
-类型说明number
-
-claim通信接口成功返回0；claim通信接口失败返回其他错误码如下：
-
-- 88080389：服务未启动，可能原因：1.无设备插入；2.服务异常退出。
-
-- 88080486：服务初始化中，请稍后重试。
-
-- 88080488：无设备访问权限，请先调用requestRight接口申请授权。
-
-- -1：驱动异常。
+| 类型 | 说明 |
+| --- | --- |
+| number | claim通信接口成功返回0；claim通信接口失败返回其他错误码如下： - 88080389：服务未启动，可能原因：1.无设备插入；2.服务异常退出。 - 88080486：服务初始化中，请稍后重试。 - 88080488：无设备访问权限，请先调用requestRight接口申请授权。 - -1：驱动异常。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -339,33 +372,32 @@ releaseInterface(pipe: USBDevicePipe, iface: USBInterface): number
 
 释放claim过的通信接口。
 
-在调用该接口前需要通过[usbManager.claimInterface](#ZH-CN_TOPIC_0000002497445526__usbmanagerclaiminterface)claim通信接口。
+
+在调用该接口前需要通过[usbManager.claimInterface](#ZH-CN_TOPIC_0000002553201555__usbmanagerclaiminterface)claim通信接口。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
 
-参数名类型必填说明pipe[USBDevicePipe](#ZH-CN_TOPIC_0000002497445526__usbdevicepipe)是用于确定总线号和设备地址，需要调用connectDevice获取。iface[USBInterface](#ZH-CN_TOPIC_0000002497445526__usbinterface)是用于确定需要释放接口的索引，需要调用getDevices获取设备信息并通过id确定唯一接口。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pipe | USBDevicePipe | 是 | 用于确定总线号和设备地址，需要调用connectDevice获取。 |
+| iface | USBInterface | 是 | 用于确定需要释放接口的索引，需要调用getDevices获取设备信息并通过id确定唯一接口。 |
 
 **返回值：**
 
-类型说明number
-
-释放接口成功返回0；释放接口失败返回其他错误码如下：
-
-- 88080389：服务未启动，可能原因：1.无设备插入；2.服务异常退出。
-
-- 88080486：服务初始化中，请稍后重试。
-
-- 88080488：无设备访问权限，请先调用requestRight接口申请授权。
-
-- -1：驱动异常。
+| 类型 | 说明 |
+| --- | --- |
+| number | 释放接口成功返回0；释放接口失败返回其他错误码如下： - 88080389：服务未启动，可能原因：1.无设备插入；2.服务异常退出。 - 88080486：服务初始化中，请稍后重试。 - 88080488：无设备访问权限，请先调用requestRight接口申请授权。 - -1：驱动异常。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified.2.Incorrect parameter types.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified.2.Incorrect parameter types. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -397,29 +429,25 @@ setConfiguration(pipe: USBDevicePipe, config: USBConfiguration): number
 
 **参数：**
 
-参数名类型必填说明pipe[USBDevicePipe](#ZH-CN_TOPIC_0000002497445526__usbdevicepipe)是用于确定总线号和设备地址，需要调用connectDevice获取。config[USBConfiguration](#ZH-CN_TOPIC_0000002497445526__usbconfiguration)是用于确定需要设置的配置，需要调用getDevices获取设备信息并通过id用于确定唯一设置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pipe | USBDevicePipe | 是 | 用于确定总线号和设备地址，需要调用connectDevice获取。 |
+| config | USBConfiguration | 是 | 用于确定需要设置的配置，需要调用getDevices获取设备信息并通过id用于确定唯一设置。 |
 
 **返回值：**
 
-类型说明number
-
-设置设备配置成功返回0；设置设备配置失败返回其他错误码如下：
-
-- 88080389：服务未启动，可能原因：1.无设备插入；2.服务异常退出。
-
-- 88080486：服务初始化中，请稍后重试。
-
-- 88080488：无设备访问权限，请先调用requestRight接口申请授权。
-
-- -1：驱动异常。
-
-- -17：I/O失败。
+| 类型 | 说明 |
+| --- | --- |
+| number | 设置设备配置成功返回0；设置设备配置失败返回其他错误码如下： - 88080389：服务未启动，可能原因：1.无设备插入；2.服务异常退出。 - 88080486：服务初始化中，请稍后重试。 - 88080488：无设备访问权限，请先调用requestRight接口申请授权。 - -1：驱动异常。 - -17：I/O失败。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -448,33 +476,31 @@ setInterface(pipe: USBDevicePipe, iface: USBInterface): number
 
 一个USB接口可能存在多重选择模式，支持动态切换。使用的场景：数据传输时，通过该接口可重新设置端点，使端点与传输类型匹配。
 
-在调用该接口前需要通过[usbManager.claimInterface](#ZH-CN_TOPIC_0000002497445526__usbmanagerclaiminterface)claim通信接口。
+在调用该接口前需要通过[usbManager.claimInterface](#ZH-CN_TOPIC_0000002553201555__usbmanagerclaiminterface)claim通信接口。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
 
-参数名类型必填说明pipe[USBDevicePipe](#ZH-CN_TOPIC_0000002497445526__usbdevicepipe)是用于确定总线号和设备地址，需要调用connectDevice获取。iface[USBInterface](#ZH-CN_TOPIC_0000002497445526__usbinterface)是用于确定需要设置的接口，需要调用getDevices获取设备信息并通过id和alternateSetting确定唯一接口。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pipe | USBDevicePipe | 是 | 用于确定总线号和设备地址，需要调用connectDevice获取。 |
+| iface | USBInterface | 是 | 用于确定需要设置的接口，需要调用getDevices获取设备信息并通过id和alternateSetting确定唯一接口。 |
 
 **返回值：**
 
-类型说明number
-
-设置设备接口成功返回0；设置设备接口失败返回其他错误码如下：
-
-- 88080389：服务未启动，可能原因：1.无设备插入；2.服务异常退出。
-
-- 88080486：服务初始化中，请稍后重试。
-
-- 88080488：无设备访问权限，请先调用requestRight接口申请授权。
-
-- -1：驱动异常 。
+| 类型 | 说明 |
+| --- | --- |
+| number | 设置设备接口成功返回0；设置设备接口失败返回其他错误码如下： - 88080389：服务未启动，可能原因：1.无设备插入；2.服务异常退出。 - 88080486：服务初始化中，请稍后重试。 - 88080488：无设备访问权限，请先调用requestRight接口申请授权。 - -1：驱动异常 。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -506,17 +532,24 @@ getRawDescriptor(pipe: USBDevicePipe): Uint8Array
 
 **参数：**
 
-参数名类型必填说明pipe[USBDevicePipe](#ZH-CN_TOPIC_0000002497445526__usbdevicepipe)是用于确定总线号和设备地址，需要调用connectDevice获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pipe | USBDevicePipe | 是 | 用于确定总线号和设备地址，需要调用connectDevice获取。 |
 
 **返回值：**
 
-类型说明Uint8Array返回获取的原始数据；失败返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| Uint8Array | 返回获取的原始数据；失败返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -544,17 +577,24 @@ getFileDescriptor(pipe: USBDevicePipe): number
 
 **参数：**
 
-参数名类型必填说明pipe[USBDevicePipe](#ZH-CN_TOPIC_0000002497445526__usbdevicepipe)是用于确定总线号和设备地址，需要调用connectDevice获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pipe | USBDevicePipe | 是 | 用于确定总线号和设备地址，需要调用connectDevice获取。 |
 
 **返回值：**
 
-类型说明number返回设备对应的文件描述符，失败返回负数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回设备对应的文件描述符，失败返回负数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -581,27 +621,32 @@ controlTransfer(pipe: USBDevicePipe, controlparam: USBControlParams, timeout ?: 
 
 控制传输。使用Promise异步回调。
 
-从 API version 9开始支持，从API version 12开始废弃。建议使用 [usbControlTransfer](#ZH-CN_TOPIC_0000002497445526__usbmanagerusbcontroltransfer12) 替代。
+
+从 API version 9开始支持，从API version 12开始废弃。建议使用 [usbControlTransfer](#ZH-CN_TOPIC_0000002553201555__usbmanagerusbcontroltransfer12) 替代。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
 
-参数名类型必填说明pipe[USBDevicePipe](#ZH-CN_TOPIC_0000002497445526__usbdevicepipe)是用于确定设备，需要调用connectDevice获取。controlparam[USBControlParams](#ZH-CN_TOPIC_0000002497445526__usbcontrolparamsdeprecated)是控制传输参数，按需设置参数，参数传参类型请参考USB协议。timeoutnumber否超时时间（单位：ms），可选参数，默认为0不超时，用户按需选择。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pipe | USBDevicePipe | 是 | 用于确定设备，需要调用connectDevice获取。 |
+| controlparam | USBControlParams | 是 | 控制传输参数，按需设置参数，参数传参类型请参考USB协议。 |
+| timeout | number | 否 | 超时时间（单位：ms），可选参数，指定时间内等待控制传输完成，若在指定时间内传输完成则正常返回，否则返回超时；默认为0时无限等待直到传输完成。用户按需选择。 |
 
 **返回值：**
 
-类型说明Promise<number>
-
-Promise对象，获取传输或接收到的数据块大小。失败返回其他错误码如下：
-
-- -1：驱动异常。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，获取传输或接收到的数据块大小。失败返回其他错误码如下： - -1：驱动异常。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -649,21 +694,26 @@ usbControlTransfer(pipe: USBDevicePipe, requestparam: USBDeviceRequestParams, ti
 
 **参数：**
 
-参数名类型必填说明pipe[USBDevicePipe](#ZH-CN_TOPIC_0000002497445526__usbdevicepipe)是用于确定设备。requestparam[USBDeviceRequestParams](#ZH-CN_TOPIC_0000002497445526__usbdevicerequestparams12)是控制传输参数，按需设置参数，参数传参类型请参考USB协议。timeoutnumber否超时时间（单位：ms），可选参数，默认为0不超时。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pipe | USBDevicePipe | 是 | 用于确定设备。 |
+| requestparam | USBDeviceRequestParams | 是 | 控制传输参数，按需设置参数，参数传参类型请参考USB协议。 |
+| timeout | number | 否 | 超时时间（单位：ms），可选参数，指定时间内等待控制传输完成，若在指定时间内传输完成则正常返回，否则返回超时；默认为0时无限等待直到传输完成。用户按需选择。 |
 
 **返回值：**
 
-类型说明Promise<number>
-
-Promise对象，获取传输或接收到的数据块大小。失败返回其他错误码如下：
-
-- -1：驱动异常。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，获取传输或接收到的数据块大小。失败返回其他错误码如下： - -1：驱动异常。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified.2.Incorrect parameter types.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified.2.Incorrect parameter types. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -710,29 +760,36 @@ bulkTransfer(pipe: USBDevicePipe, endpoint: USBEndpoint, buffer: Uint8Array, tim
 
 单次批量传输的传输数据总量（包括pipe、endpoint、buffer、timeout）请控制在200KB以下。
 
-在调用接口前需要通过[usbManager.claimInterface](#ZH-CN_TOPIC_0000002497445526__usbmanagerclaiminterface)claim通信接口。
+在调用接口前需要通过[usbManager.claimInterface](#ZH-CN_TOPIC_0000002553201555__usbmanagerclaiminterface)claim通信接口。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
 
-参数名类型必填说明pipe[USBDevicePipe](#ZH-CN_TOPIC_0000002497445526__usbdevicepipe)是用于确定设备，需要调用connectDevice获取。endpoint[USBEndpoint](#ZH-CN_TOPIC_0000002497445526__usbendpoint)是用于确定传输的端口，需要调用getDevices获取设备信息列表以及endpoint，address用于确定端点地址，direction用于确定端点的方向，interfaceId用于确定所属接口，当前其他属性不做处理。bufferUint8Array是用于写入或读取数据的缓冲区。timeoutnumber否超时时间（单位：ms），可选参数，默认为0不超时，用户按需选择。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pipe | USBDevicePipe | 是 | 用于确定设备，需要调用connectDevice获取。 |
+| endpoint | USBEndpoint | 是 | 用于确定传输的端口，需要调用getDevices获取设备信息列表以及endpoint，address用于确定端点地址，direction用于确定端点的方向，interfaceId用于确定所属接口，当前其他属性不做处理。 |
+| buffer | Uint8Array | 是 | 用于写入或读取数据的缓冲区。 |
+| timeout | number | 否 | 超时时间（单位：ms），可选参数，指定时间内等待批量传输完成，若在指定时间内传输完成则正常返回，否则返回超时；默认为0时无限等待直到传输完成。用户按需选择。 |
 
 **返回值：**
 
-类型说明Promise<number>
-
-Promise对象，获取传输或接收到的数据块大小。失败返回其他错误码如下：
-
-- -1：驱动异常。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，获取传输或接收到的数据块大小。失败返回其他错误码如下： - -1：驱动异常。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
 
 **示例：**
+
 
 以下示例代码只是调用bulkTransfer接口的必要流程，实际调用时，设备开发者需要遵循设备相关协议进行调用，确保数据的正确传输和设备的兼容性。
 
@@ -761,8 +818,6 @@ function bulkTransfer() {
         console.info(`bulkTransfer = ${ret}`);
       });
     }
-  }
-}
 ```
 
 #### usbManager.usbSubmitTransfer18+
@@ -773,19 +828,28 @@ usbSubmitTransfer(transfer: UsbDataTransferParams): void
 
 本接口为异步接口，调用后立刻返回，实际读写操作的结果以回调的方式返回。
 
-在调用该接口前需要通过[usbManager.claimInterface](#ZH-CN_TOPIC_0000002497445526__usbmanagerclaiminterface)claim通信接口。
+在调用该接口前需要通过[usbManager.claimInterface](#ZH-CN_TOPIC_0000002553201555__usbmanagerclaiminterface)claim通信接口。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
 
-参数名类型必填说明transfer[UsbDataTransferParams](#ZH-CN_TOPIC_0000002497445526__usbdatatransferparams18)是作为通用USB数据传输接口，客户端需要填充这个对象中的参数，用以发起传输请求。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| transfer | UsbDataTransferParams | 是 | 作为通用USB数据传输接口，客户端需要填充这个对象中的参数，用以发起传输请求。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[USB服务错误码](USB服务错误码.md)。
 
-错误码ID错误信息801Capability not supported.14400001Access right denied. Call requestRight to get the USBDevicePipe access right first.14400007Resource busy. Possible causes: 1. The transfer has already been submitted. 2. The interface is claimed by another program or driver.14400008No such device (it may have been disconnected).14400009Insufficient memory. Possible causes: 1. Memory allocation failed.14400012Transmission I/O error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 14400001 | Access right denied. Call requestRight to get the USBDevicePipe access right first. |
+| 14400007 | Resource busy. Possible causes: 1. The transfer has already been submitted. 2. The interface is claimed by another program or driver. |
+| 14400008 | No such device (it may have been disconnected). |
+| 14400009 | Insufficient memory. Possible causes: 1. Memory allocation failed. |
+| 14400012 | Transmission I/O error. |
 
 **示例：**
 
@@ -833,7 +897,6 @@ function usbSubmitTransfer() {
   } catch (error) {
     console.error('USB transfer failed:', error);
   }
-}
 ```
 
 #### usbManager.usbCancelTransfer18+
@@ -844,27 +907,30 @@ usbCancelTransfer(transfer: UsbDataTransferParams): void
 
 该接口的主要作用是主动取消尚未完成的USB数据传输请求（如usbSubmitTransfer提交的传输）。
 
-在调用该接口前需要通过[usbManager.claimInterface](#ZH-CN_TOPIC_0000002497445526__usbmanagerclaiminterface)claim通信接口。
+在调用该接口前需要通过[usbManager.claimInterface](#ZH-CN_TOPIC_0000002553201555__usbmanagerclaiminterface)claim通信接口。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
 
-参数名类型必填说明transfer[UsbDataTransferParams](#ZH-CN_TOPIC_0000002497445526__usbdatatransferparams18)是在取消传输的接口中，只需要填充[USBDevicePipe](#ZH-CN_TOPIC_0000002497445526__usbdevicepipe)和[USBEndpoint](#ZH-CN_TOPIC_0000002497445526__usbendpoint)即可。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| transfer | UsbDataTransferParams | 是 | 在取消传输的接口中，只需要填充USBDevicePipe和USBEndpoint即可。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[USB服务错误码](USB服务错误码.md)。
 
-错误码ID错误信息801Capability not supported.14400001Access right denied. Call requestRight to get the USBDevicePipe access right first.14400008No such device (it may have been disconnected).14400010
-
-Other USB error. Possible causes:
-
-1.Unrecognized discard error code.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 14400001 | Access right denied. Call requestRight to get the USBDevicePipe access right first. |
+| 14400008 | No such device (it may have been disconnected). |
+| 14400010 | Other USB error. Possible causes: 1.Unrecognized discard error code. |
 14400011The transfer is not in progress, or is already complete or cancelled.
 
 **示例：**
+
 
 以下示例代码需要放入具体的方法中执行，只是调用usbCancelTransfer接口的必要流程，实际调用时，设备开发者需要遵循设备相关协议进行调用，确保数据的正确传输和设备的兼容性。
 
@@ -910,7 +976,6 @@ function usbCancelTransfer() {
   } catch (error) {
     console.error('USB transfer failed:', error);
   }
-}
 ```
 
 #### usbManager.closePipe
@@ -919,29 +984,34 @@ closePipe(pipe: USBDevicePipe): number
 
 关闭设备消息控制通道。
 
-1. 需要调用[usbManager.getDevices](#ZH-CN_TOPIC_0000002497445526__usbmanagergetdevices)获取设备列表；
-1. 调用[usbManager.requestRight](#ZH-CN_TOPIC_0000002497445526__usbmanagerrequestright)获取设备请求权限；
-1. 调用[usbManager.connectDevice](#ZH-CN_TOPIC_0000002497445526__usbmanagerconnectdevice)得到devicepipe作为参数。
+1. 需要调用[usbManager.getDevices](#ZH-CN_TOPIC_0000002553201555__usbmanagergetdevices)获取设备列表；
+
+1. 调用[usbManager.requestRight](#ZH-CN_TOPIC_0000002553201555__usbmanagerrequestright)获取设备请求权限；
+
+1. 调用[usbManager.connectDevice](#ZH-CN_TOPIC_0000002553201555__usbmanagerconnectdevice)得到devicepipe作为参数。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
 
-参数名类型必填说明pipe[USBDevicePipe](#ZH-CN_TOPIC_0000002497445526__usbdevicepipe)是用于确定USB设备消息控制通道，需要调用connectDevice获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pipe | USBDevicePipe | 是 | 用于确定USB设备消息控制通道，需要调用connectDevice获取。 |
 
 **返回值：**
 
-类型说明number
-
-关闭设备消息控制通道成功返回0；关闭设备消息控制通道失败返回其他错误码如下：
-
-- 22：服务异常。
+| 类型 | 说明 |
+| --- | --- |
+| number | 关闭设备消息控制通道成功返回0；关闭设备消息控制通道失败返回其他错误码如下： - 22：服务异常。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -966,23 +1036,33 @@ hasAccessoryRight(accessory: USBAccessory): boolean
 
 检查应用程序是否有权访问USB配件。
 
-需要调用[usbManager.getAccessoryList](#ZH-CN_TOPIC_0000002497445526__usbmanagergetaccessorylist14)获取配件列表，得到[USBAccessory](#ZH-CN_TOPIC_0000002497445526__usbaccessory14)作为参数。
+需要调用[usbManager.getAccessoryList](#ZH-CN_TOPIC_0000002553201555__usbmanagergetaccessorylist14)获取配件列表，得到[USBAccessory](#ZH-CN_TOPIC_0000002553201555__usbaccessory14)作为参数。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
 
-参数名类型必填说明accessory[USBAccessory](#ZH-CN_TOPIC_0000002497445526__usbaccessory14)是USB配件，需要通过[getAccessoryList](#ZH-CN_TOPIC_0000002497445526__usbmanagergetaccessorylist14)获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| accessory | USBAccessory | 是 | USB配件，需要通过getAccessoryList获取。 |
 
 **返回值：**
 
-类型说明booleantrue表示应用程序有权访问USB配件，false表示应用程序无权访问USB配件。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true表示应用程序有权访问USB配件，false表示应用程序无权访问USB配件。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[USB服务错误码](USB服务错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.14400004Service exception. Possible causes: 1. No accessory is plugged in.14400005Database operation exception.14401001The target USBAccessory not matched.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
+| 14400004 | Service exception. Possible causes: 1. No accessory is plugged in. |
+| 14400005 | Database operation exception. |
+| 14401001 | The target USBAccessory not matched. |
 
 **示例：**
 
@@ -1003,23 +1083,33 @@ requestAccessoryRight(accessory: USBAccessory): Promise<boolean>
 
 为指定应用程序申请访问USB配件的访问权限。使用Promise异步回调。
 
-需要调用[usbManager.getAccessoryList](#ZH-CN_TOPIC_0000002497445526__usbmanagergetaccessorylist14)获取配件列表，得到[USBAccessory](#ZH-CN_TOPIC_0000002497445526__usbaccessory14)作为参数。
+需要调用[usbManager.getAccessoryList](#ZH-CN_TOPIC_0000002553201555__usbmanagergetaccessorylist14)获取配件列表，得到[USBAccessory](#ZH-CN_TOPIC_0000002553201555__usbaccessory14)作为参数。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
 
-参数名类型必填说明accessory[USBAccessory](#ZH-CN_TOPIC_0000002497445526__usbaccessory14)是USB配件，需要通过[getAccessoryList](#ZH-CN_TOPIC_0000002497445526__usbmanagergetaccessorylist14)获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| accessory | USBAccessory | 是 | USB配件，需要通过getAccessoryList获取。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象，返回应用程序访问配件权限的申请结果。返回true表示权限申请成功；返回false表示权限申请失败。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象，返回应用程序访问配件权限的申请结果。返回true表示权限申请成功；返回false表示权限申请失败。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[USB服务错误码](USB服务错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.14400004Service exception. Possible causes: 1. No accessory is plugged in.14400005Database operation exception.14401001The target USBAccessory not matched.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
+| 14400004 | Service exception. Possible causes: 1. No accessory is plugged in. |
+| 14400005 | Database operation exception. |
+| 14401001 | The target USBAccessory not matched. |
 
 **示例：**
 
@@ -1040,19 +1130,27 @@ cancelAccessoryRight(accessory: USBAccessory): void
 
 取消当前应用程序访问USB配件的权限。
 
-需要调用[usbManager.getAccessoryList](#ZH-CN_TOPIC_0000002497445526__usbmanagergetaccessorylist14)获取配件列表，得到[USBAccessory](#ZH-CN_TOPIC_0000002497445526__usbaccessory14)作为参数。
+需要调用[usbManager.getAccessoryList](#ZH-CN_TOPIC_0000002553201555__usbmanagergetaccessorylist14)获取配件列表，得到[USBAccessory](#ZH-CN_TOPIC_0000002553201555__usbaccessory14)作为参数。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
 
-参数名类型必填说明accessory[USBAccessory](#ZH-CN_TOPIC_0000002497445526__usbaccessory14)是USB配件，需要通过[getAccessoryList](#ZH-CN_TOPIC_0000002497445526__usbmanagergetaccessorylist14)获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| accessory | USBAccessory | 是 | USB配件，需要通过getAccessoryList获取。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[USB服务错误码](USB服务错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.14400004Service exception. Possible causes: 1. No accessory is plugged in.14400005Database operation exception.14401001The target USBAccessory not matched.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
+| 14400004 | Service exception. Possible causes: 1. No accessory is plugged in. |
+| 14400005 | Database operation exception. |
+| 14401001 | The target USBAccessory not matched. |
 
 **示例：**
 
@@ -1078,13 +1176,18 @@ getAccessoryList(): Array<Readonly<USBAccessory>>
 
 **返回值：**
 
-类型说明Array<Readonly<[USBAccessory](#ZH-CN_TOPIC_0000002497445526__usbaccessory14)>>只读的USB配件列表。当前仅支持列表中包含1个USB配件。
+| 类型 | 说明 |
+| --- | --- |
+| Array<Readonly<USBAccessory>> | 只读的USB配件列表。当前仅支持列表中包含1个USB配件。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[USB服务错误码](USB服务错误码.md)。
 
-错误码ID错误信息801Capability not supported.14400004Service exception. Possible causes: 1. No accessory is plugged in.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 14400004 | Service exception. Possible causes: 1. No accessory is plugged in. |
 
 **示例：**
 
@@ -1104,23 +1207,35 @@ openAccessory(accessory: USBAccessory): USBAccessoryHandle
 
 获取配件句柄并打开配件文件描述符。之后可以通过CoreFileKit提供的read/write接口和配件进行通信。
 
-需要调用[usbManager.getAccessoryList](#ZH-CN_TOPIC_0000002497445526__usbmanagergetaccessorylist14)获取配件列表，得到[USBAccessory](#ZH-CN_TOPIC_0000002497445526__usbaccessory14)作为参数。
+需要调用[usbManager.getAccessoryList](#ZH-CN_TOPIC_0000002553201555__usbmanagergetaccessorylist14)获取配件列表，得到[USBAccessory](#ZH-CN_TOPIC_0000002553201555__usbaccessory14)作为参数。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
 
-参数名类型必填说明accessory[USBAccessory](#ZH-CN_TOPIC_0000002497445526__usbaccessory14)是USB配件，需要通过[getAccessoryList](#ZH-CN_TOPIC_0000002497445526__usbmanagergetaccessorylist14)获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| accessory | USBAccessory | 是 | USB配件，需要通过getAccessoryList获取。 |
 
 **返回值：**
 
-类型说明[USBAccessoryHandle](#ZH-CN_TOPIC_0000002497445526__usbaccessoryhandle14)USB配件句柄。
+| 类型 | 说明 |
+| --- | --- |
+| USBAccessoryHandle | USB配件句柄。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[USB服务错误码](USB服务错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.14400001Access right denied. Call requestRight to get the USBDevicePipe access right first.14400004Service exception. Possible causes: 1. No accessory is plugged in.14401001The target USBAccessory not matched.14401002Failed to open the native accessory node.14401003Cannot reopen the accessory.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
+| 14400001 | Access right denied. Call requestRight to get the USBDevicePipe access right first. |
+| 14400004 | Service exception. Possible causes: 1. No accessory is plugged in. |
+| 14401001 | The target USBAccessory not matched. |
+| 14401002 | Failed to open the native accessory node. |
+| 14401003 | Cannot reopen the accessory. |
 
 **示例：**
 
@@ -1146,19 +1261,25 @@ closeAccessory(accessoryHandle: USBAccessoryHandle): void
 
 关闭配件文件描述符。
 
-需要调用[usbManager.openAccessory](#ZH-CN_TOPIC_0000002497445526__usbmanageropenaccessory14)获取配件列表，得到[USBAccessoryHandle](#ZH-CN_TOPIC_0000002497445526__usbaccessoryhandle14)作为参数。
+需要调用[usbManager.openAccessory](#ZH-CN_TOPIC_0000002553201555__usbmanageropenaccessory14)获取配件列表，得到[USBAccessoryHandle](#ZH-CN_TOPIC_0000002553201555__usbaccessoryhandle14)作为参数。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
 
-参数名类型必填说明accessoryHandle[USBAccessoryHandle](#ZH-CN_TOPIC_0000002497445526__usbaccessoryhandle14)是USB配件句柄。需要通过[openAccessory](#ZH-CN_TOPIC_0000002497445526__usbmanageropenaccessory14)获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| accessoryHandle | USBAccessoryHandle | 是 | USB配件句柄。需要通过openAccessory获取。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[USB服务错误码](USB服务错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.14400004Service exception. Possible causes: 1. No accessory is plugged in.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
+| 14400004 | Service exception. Possible causes: 1. No accessory is plugged in. |
 
 **示例：**
 
@@ -1187,29 +1308,28 @@ resetUsbDevice(pipe: USBDevicePipe): boolean
 
 **参数：**
 
-参数名类型必填说明pipe[USBDevicePipe](#ZH-CN_TOPIC_0000002497445526__usbdevicepipe)是用于确定总线号和设备地址，需要调用connectDevice获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pipe | USBDevicePipe | 是 | 用于确定总线号和设备地址，需要调用connectDevice获取。 |
 
 **返回值：**
 
-类型说明booleantrue表示重置设备成功，false表示重置设备失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true表示重置设备成功，false表示重置设备失败。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[USB服务错误码](USB服务错误码.md)。
 
-错误码ID错误信息801Capability not supported.14400001Access right denied. Call requestRight to get the USBDevicePipe access right first.14400004Service exception. Possible causes: 1. No accessory is plugged in.14400008No such device (it may have been disconnected).14400010
-
-Other USB error. Possible causes:
-
-1.Unrecognized discard error code.
-
-14400013
-
-The USBDevicePipe validity check failed. Possible causes:
-
-1. The input parameters fail the validation check.
-
-2. The call chain used to obtain the input parameters is not reasonable.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 14400001 | Access right denied. Call requestRight to get the USBDevicePipe access right first. |
+| 14400004 | Service exception. Possible causes: 1. No accessory is plugged in. |
+| 14400008 | No such device (it may have been disconnected). |
+| 14400010 | Other USB error. Possible causes: 1.Unrecognized discard error code. |
+| 14400013 | The USBDevicePipe validity check failed. Possible causes: 1. The input parameters fail the validation check. 2. The call chain used to obtain the input parameters is not reasonable. |
 
 **示例：**
 
@@ -1229,12 +1349,12 @@ function resetUsbDevice() {
   } catch (err) {
     console.error(`resetUsbDevice failed: ` + err);
   }
-}
 ```
 
 #### USBEndpoint
 
-通过USB发送和接收数据的端口。通过[USBInterface](#ZH-CN_TOPIC_0000002497445526__usbinterface)获取。
+通过USB发送和接收数据的端口。通过[USBInterface](#ZH-CN_TOPIC_0000002553201555__usbinterface)获取。
+
 
 主机控制器按照Endpoint类型调度。
 
@@ -1242,23 +1362,48 @@ function resetUsbDevice() {
 
 **系统能力：** SystemCapability.USB.USBManager
 
-名称类型只读可选说明addressnumber否否端点地址。attributesnumber否否端点属性。intervalnumber否否端点间隔。maxPacketSizenumber否否端点最大数据包大小。direction[USBRequestDirection](#ZH-CN_TOPIC_0000002497445526__usbrequestdirection)否是端点的方向。numbernumber否是端点号。typenumber否是端点类型。取值见[UsbEndpointTransferType](#ZH-CN_TOPIC_0000002497445526__usbendpointtransfertype18)interfaceIdnumber否是端点所属的接口的唯一标识。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| address | number | 否 | 否 | 端点地址。 |
+| attributes | number | 否 | 否 | 端点属性。 |
+| interval | number | 否 | 否 | 端点间隔。 |
+| maxPacketSize | number | 否 | 否 | 端点最大数据包大小。 |
+| direction | USBRequestDirection | 否 | 否 | 端点的方向。 |
+| number | number | 否 | 否 | 端点号。 |
+| type | number | 否 | 否 | 端点类型。取值见UsbEndpointTransferType |
+| interfaceId | number | 否 | 否 | 端点所属的接口的唯一标识。 |
 
 #### USBInterface
 
-一个[USBConfiguration](#ZH-CN_TOPIC_0000002497445526__usbconfiguration)中可以含有多个USBInterface，每个USBInterface提供一个功能。
+一个[USBConfiguration](#ZH-CN_TOPIC_0000002553201555__usbconfiguration)中可以含有多个USBInterface，每个USBInterface提供一个功能。
 
 **系统能力：** SystemCapability.USB.USBManager
 
-名称类型只读可选说明idnumber否否接口的唯一标识。protocolnumber否否接口的协议。clazznumber否否设备类型。subClassnumber否否设备子类。alternateSettingnumber否否在同一个接口中的多个描述符中进行切换设置。值的大小表示支持可选模式个数，其中0表示不支持可选模式。namestring否否接口名称。endpointsArray<[USBEndpoint](#ZH-CN_TOPIC_0000002497445526__usbendpoint)>否否当前接口所包含的端点。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| id | number | 否 | 否 | 接口的唯一标识。 |
+| protocol | number | 否 | 否 | 接口的协议。 |
+| clazz | number | 否 | 否 | 设备类型。 |
+| subClass | number | 否 | 否 | 设备子类。 |
+| alternateSetting | number | 否 | 否 | 在同一个接口中的多个描述符中进行切换设置。值的大小表示支持可选模式个数，其中0表示不支持可选模式。 |
+| name | string | 否 | 否 | 接口名称。 |
+| endpoints | Array<USBEndpoint> | 否 | 否 | 当前接口所包含的端点。 |
 
 #### USBConfiguration
 
-USB配置，一个[USBDevice](#ZH-CN_TOPIC_0000002497445526__usbdevice)中可以含有多个配置。
+USB配置，一个[USBDevice](#ZH-CN_TOPIC_0000002553201555__usbdevice)中可以含有多个配置。
 
 **系统能力：** SystemCapability.USB.USBManager
 
-名称类型只读可选说明idnumber否否配置的唯一标识。attributesnumber否否配置的属性。maxPowernumber否否最大功耗，以毫安为单位。namestring否否配置的名称，可以为空。isRemoteWakeupboolean否否检查当前配置是否支持远程唤醒。true表示支持，false表示不支持。isSelfPoweredboolean否否检查当前配置是否支持独立电源。true表示支持，false表示不支持。interfacesArray <[USBInterface](#ZH-CN_TOPIC_0000002497445526__usbinterface)>否否配置支持的接口属性。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| id | number | 否 | 否 | 配置的唯一标识。 |
+| attributes | number | 否 | 否 | 配置的属性。 |
+| maxPower | number | 否 | 否 | 最大功耗，以毫安为单位。 |
+| name | string | 否 | 否 | 配置的名称，可以为空。 |
+| isRemoteWakeup | boolean | 否 | 否 | 检查当前配置是否支持远程唤醒。true表示支持，false表示不支持。 |
+| isSelfPowered | boolean | 否 | 否 | 检查当前配置是否支持独立电源。true表示支持，false表示不支持。 |
+| interfaces | Array <USBInterface> | 否 | 否 | 配置支持的接口属性。 |
 
 #### USBDevice
 
@@ -1266,7 +1411,21 @@ USB设备信息。
 
 **系统能力：** SystemCapability.USB.USBManager
 
-名称类型只读可选说明busNumnumber否是总线地址。devAddressnumber否是设备地址。serialstring否是序列号。namestring否是设备名字。manufacturerNamestring否是产商信息。productNamestring否是产品信息。versionstring否是版本。vendorIdnumber否是厂商ID。productIdnumber否是产品ID。clazznumber否是设备类。subClassnumber否是设备子类。protocolnumber否是设备协议码。configsArray<[USBConfiguration](#ZH-CN_TOPIC_0000002497445526__usbconfiguration)>否是设备配置描述符信息。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| busNum | number | 否 | 否 | 总线地址。 |
+| devAddress | number | 否 | 否 | 设备地址。 |
+| serial | string | 否 | 否 | 序列号。 |
+| name | string | 否 | 否 | 设备名字。 |
+| manufacturerName | string | 否 | 否 | 产商信息。 |
+| productName | string | 否 | 否 | 产品信息。 |
+| version | string | 否 | 否 | 版本。 |
+| vendorId | number | 否 | 否 | 厂商ID。 |
+| productId | number | 否 | 否 | 产品ID。 |
+| clazz | number | 否 | 否 | 设备类。 |
+| subClass | number | 否 | 否 | 设备子类。 |
+| protocol | number | 否 | 否 | 设备协议码。 |
+| configs | Array<USBConfiguration> | 否 | 否 | 设备配置描述符信息。 |
 
 #### USBDevicePipe
 
@@ -1274,17 +1433,28 @@ USB设备消息传输通道，用于确定设备。
 
 **系统能力：** SystemCapability.USB.USBManager
 
-名称类型只读可选说明busNumnumber否否总线地址。devAddressnumber否否设备地址。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| busNum | number | 否 | 否 | 总线地址。 |
+| devAddress | number | 否 | 否 | 设备地址。 |
 
 #### USBControlParams(deprecated)
 
 控制传输参数。
 
-从 API version 9开始支持，从API version 18开始废弃。建议使用 [USBDeviceRequestParams](#ZH-CN_TOPIC_0000002497445526__usbdevicerequestparams12) 替代。
+
+从 API version 9开始支持，从API version 18开始废弃。建议使用 [USBDeviceRequestParams](#ZH-CN_TOPIC_0000002553201555__usbdevicerequestparams12) 替代。
 
 **系统能力：** SystemCapability.USB.USBManager
 
-名称类型只读可选说明requestnumber否否请求类型。target[USBRequestTargetType](#ZH-CN_TOPIC_0000002497445526__usbrequesttargettype)否否请求目标类型。reqType[USBControlRequestType](#ZH-CN_TOPIC_0000002497445526__usbcontrolrequesttype)否否请求控制类型。valuenumber否否请求参数。indexnumber否否请求参数value对应的索引值。dataUint8Array否否用于写入或读取的缓冲区。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| request | number | 否 | 否 | 请求类型。 |
+| target | USBRequestTargetType | 否 | 否 | 请求目标类型。 |
+| reqType | USBControlRequestType | 否 | 否 | 请求控制类型。 |
+| value | number | 否 | 否 | 请求参数。 |
+| index | number | 否 | 否 | 请求参数value对应的索引值。 |
+| data | Uint8Array | 否 | 否 | 用于写入或读取的缓冲区。 |
 
 #### USBDeviceRequestParams12+
 
@@ -1292,7 +1462,14 @@ USB设备消息传输通道，用于确定设备。
 
 **系统能力：** SystemCapability.USB.USBManager
 
-名称类型只读可选说明bmRequestTypenumber否否请求控制类型。bRequestnumber否否请求类型。wValuenumber否否请求参数。wIndexnumber否否请求参数value对应的索引值。wLengthnumber否否请求数据的长度。dataUint8Array否否用于写入或读取的缓冲区。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| bmRequestType | number | 否 | 否 | 请求控制类型。 |
+| bRequest | number | 否 | 否 | 请求类型。 |
+| wValue | number | 否 | 否 | 请求参数。 |
+| wIndex | number | 否 | 否 | 请求参数value对应的索引值。 |
+| wLength | number | 否 | 否 | 请求数据的长度。 |
+| data | Uint8Array | 否 | 否 | 用于写入或读取的缓冲区。 |
 
 #### USBRequestTargetType
 
@@ -1300,7 +1477,12 @@ USB设备消息传输通道，用于确定设备。
 
 **系统能力：** SystemCapability.USB.USBManager
 
-名称值说明USB_REQUEST_TARGET_DEVICE0设备。USB_REQUEST_TARGET_INTERFACE1接口。USB_REQUEST_TARGET_ENDPOINT2端点。USB_REQUEST_TARGET_OTHER3其他。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| USB_REQUEST_TARGET_DEVICE | 0 | 设备。 |
+| USB_REQUEST_TARGET_INTERFACE | 1 | 接口。 |
+| USB_REQUEST_TARGET_ENDPOINT | 2 | 端点。 |
+| USB_REQUEST_TARGET_OTHER | 3 | 其他。 |
 
 #### USBControlRequestType
 
@@ -1308,7 +1490,11 @@ USB设备消息传输通道，用于确定设备。
 
 **系统能力：** SystemCapability.USB.USBManager
 
-名称值说明USB_REQUEST_TYPE_STANDARD0标准。USB_REQUEST_TYPE_CLASS1类。USB_REQUEST_TYPE_VENDOR2厂商。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| USB_REQUEST_TYPE_STANDARD | 0 | 标准。 |
+| USB_REQUEST_TYPE_CLASS | 1 | 类。 |
+| USB_REQUEST_TYPE_VENDOR | 2 | 厂商。 |
 
 #### USBRequestDirection
 
@@ -1316,7 +1502,10 @@ USB设备消息传输通道，用于确定设备。
 
 **系统能力：** SystemCapability.USB.USBManager
 
-名称值说明USB_REQUEST_DIR_TO_DEVICE0写数据，主设备往从设备。USB_REQUEST_DIR_FROM_DEVICE0x80读数据，从设备往主设备。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| USB_REQUEST_DIR_TO_DEVICE | 0 | 写数据，主设备往从设备。 |
+| USB_REQUEST_DIR_FROM_DEVICE | 0x80 | 读数据，从设备往主设备。 |
 
 #### USBAccessory14+
 
@@ -1324,7 +1513,13 @@ USB配件信息。
 
 **系统能力：** SystemCapability.USB.USBManager
 
-名称类型只读可选说明manufacturerstring否否配件的生产厂商。productstring否否配件的产品类型。descriptionstring否否配件的描述。versionstring否否配件的版本。serialNumberstring否否配件的SN号。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| manufacturer | string | 否 | 否 | 配件的生产厂商。 |
+| product | string | 否 | 否 | 配件的产品类型。 |
+| description | string | 否 | 否 | 配件的描述。 |
+| version | string | 否 | 否 | 配件的版本。 |
+| serialNumber | string | 否 | 否 | 配件的SN号。 |
 
 #### USBAccessoryHandle14+
 
@@ -1332,7 +1527,9 @@ USB配件句柄。
 
 **系统能力：** SystemCapability.USB.USBManager
 
-名称类型只读可选说明accessoryFdnumber否否配件文件描述符。合法的accessoryFd是正整数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| accessoryFd | number | 否 | 否 | 配件文件描述符。合法的accessoryFd是正整数。 |
 
 #### UsbDataTransferParams18+
 
@@ -1340,7 +1537,18 @@ USB配件句柄。
 
 **系统能力：** SystemCapability.USB.USBManager
 
-名称类型只读可选说明devPipe[USBDevicePipe](#ZH-CN_TOPIC_0000002497445526__usbdevicepipe)否否用于确定总线号和设备地址，需要调用connectDevice获取。flags[UsbTransferFlags](#ZH-CN_TOPIC_0000002497445526__usbtransferflags18)否否USB传输标志。endpointnumber否否端点地址，正整数。type[UsbEndpointTransferType](#ZH-CN_TOPIC_0000002497445526__usbendpointtransfertype18)否否传输类型。timeoutnumber否否超时时间，单位为毫秒。lengthnumber否否数据缓冲区的长度，必须是非负数（期望长度），单位为字节。callbackAsyncCallback<[SubmitTransferCallback](#ZH-CN_TOPIC_0000002497445526__submittransfercallback18)>否否传输完成时的回调信息。userDataUint8Array否否用户上下文数据。bufferUint8Array否否用于存储读或者写请求时的数据。isoPacketCountnumber否否实时传输时数据包的数量，仅用于具有实时传输端点的I/O。必须是非负数，单位为个数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| devPipe | USBDevicePipe | 否 | 否 | 用于确定总线号和设备地址，需要调用connectDevice获取。 |
+| flags | UsbTransferFlags | 否 | 否 | USB传输标志。 |
+| endpoint | number | 否 | 否 | 端点地址，正整数。 |
+| type | UsbEndpointTransferType | 否 | 否 | 传输类型。 |
+| timeout | number | 否 | 否 | 超时时间，单位为毫秒。 |
+| length | number | 否 | 否 | 数据缓冲区的长度，必须是非负数（期望长度），单位为字节。 |
+| callback | AsyncCallback<SubmitTransferCallback> | 否 | 否 | 传输完成时的回调信息。 |
+| userData | Uint8Array | 否 | 否 | 用户上下文数据。 |
+| buffer | Uint8Array | 否 | 否 | 用于存储读或者写请求时的数据。 |
+| isoPacketCount | number | 否 | 否 | 实时传输时数据包的数量，仅用于具有实时传输端点的I/O。必须是非负数，单位为个数。 |
 
 #### UsbTransferFlags18+
 
@@ -1348,7 +1556,12 @@ USB传输标志。
 
 **系统能力：** SystemCapability.USB.USBManager
 
-名称值说明USB_TRANSFER_SHORT_NOT_OK0将短帧报告为错误。USB_TRANSFER_FREE_BUFFER1自动释放传输缓冲区。USB_TRANSFER_FREE_TRANSFER2完成回调后自动传输。USB_TRANSFER_ADD_ZERO_PACKET3传输将增加一个额外的数据包。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| USB_TRANSFER_SHORT_NOT_OK | 0 | 将短帧报告为错误。 |
+| USB_TRANSFER_FREE_BUFFER | 1 | 自动释放传输缓冲区。 |
+| USB_TRANSFER_FREE_TRANSFER | 2 | 完成回调后自动传输。 |
+| USB_TRANSFER_ADD_ZERO_PACKET | 3 | 传输将增加一个额外的数据包。 |
 
 #### UsbEndpointTransferType18+
 
@@ -1356,7 +1569,11 @@ Usb传输类型。
 
 **系统能力：** SystemCapability.USB.USBManager
 
-名称值说明TRANSFER_TYPE_ISOCHRONOUS0x1实时传输。TRANSFER_TYPE_BULK0x2批量传输。TRANSFER_TYPE_INTERRUPT0x3中断传输。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| TRANSFER_TYPE_ISOCHRONOUS | 0x1 | 实时传输。 |
+| TRANSFER_TYPE_BULK | 0x2 | 批量传输。 |
+| TRANSFER_TYPE_INTERRUPT | 0x3 | 中断传输。 |
 
 #### SubmitTransferCallback18+
 
@@ -1364,7 +1581,11 @@ Usb异步传输回调。
 
 **系统能力：** SystemCapability.USB.USBManager
 
-名称类型只读可选说明actualLengthnumber否否读写操作的实际长度值，单位为字节。status[UsbTransferStatus](#ZH-CN_TOPIC_0000002497445526__usbtransferstatus18)否否读写操作完成的状态。isoPacketDescsArray<Readonly<[UsbIsoPacketDescriptor](#ZH-CN_TOPIC_0000002497445526__usbisopacketdescriptor18)>>否否实时传输的分包信息。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| actualLength | number | 否 | 否 | 读写操作的实际长度值，单位为字节。 |
+| status | UsbTransferStatus | 否 | 否 | 读写操作完成的状态。 |
+| isoPacketDescs | Array<Readonly<UsbIsoPacketDescriptor>> | 否 | 否 | 实时传输的分包信息。 |
 
 #### UsbTransferStatus18+
 
@@ -1372,7 +1593,15 @@ Usb异步传输回调。
 
 **系统能力：** SystemCapability.USB.USBManager
 
-名称值说明TRANSFER_COMPLETED0传输完成。TRANSFER_ERROR1传输失败。TRANSFER_TIMED_OUT2传输超时。TRANSFER_CANCELED3传输已被取消。TRANSFER_STALL4检测到暂停（批量/中断端点）。TRANSFER_NO_DEVICE5设备已断开。TRANSFER_OVERFLOW6设备发送的数据比请求的多。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| TRANSFER_COMPLETED | 0 | 传输完成。 |
+| TRANSFER_ERROR | 1 | 传输失败。 |
+| TRANSFER_TIMED_OUT | 2 | 传输超时。 |
+| TRANSFER_CANCELED | 3 | 传输已被取消。 |
+| TRANSFER_STALL | 4 | 检测到暂停（批量/中断端点）。 |
+| TRANSFER_NO_DEVICE | 5 | 设备已断开。 |
+| TRANSFER_OVERFLOW | 6 | 设备发送的数据比请求的多。 |
 
 #### UsbIsoPacketDescriptor18+
 
@@ -1380,4 +1609,8 @@ Usb异步传输回调。
 
 **系统能力：** SystemCapability.USB.USBManager
 
-名称类型只读可选说明lengthnumber否否读写操作的期望长度值，单位为字节。actualLengthnumber否否读写操作的实际长度值，单位为字节。status[UsbTransferStatus](#ZH-CN_TOPIC_0000002497445526__usbtransferstatus18)否否实时传输分包的状态码。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| length | number | 否 | 否 | 读写操作的期望长度值，单位为字节。 |
+| actualLength | number | 否 | 否 | 读写操作的实际长度值，单位为字节。 |
+| status | UsbTransferStatus | 否 | 否 | 实时传输分包的状态码。 |

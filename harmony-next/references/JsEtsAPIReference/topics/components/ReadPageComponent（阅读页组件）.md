@@ -14,9 +14,18 @@ import { ReadPageComponent } from '@kit.ReaderKit';
 
 阅读页组件，支持对书籍排版内容的显示、多种翻页交互和翻页动效，以及翻页阅读过程中阅读器所需要的进度、行为感知能力。
 
-- 支持根据阅读排版设置[ReaderSetting](../misc/readerCore（阅读核心能力）.md#section13615732174218)对书籍内容进行按页进行排版、渲染。
+
+-
+
+支持根据阅读排版设置[ReaderSetting](readerCore（阅读核心能力）.md#ZH-CN_TOPIC_0000002522082532__readersetting)对书籍内容进行按页进行排版、渲染。
+
+-
+
 - 支持适配不同的设备屏幕尺寸（Phone、PC/2in1、Tablet，包括横竖屏适配），并在此基础上支持通过点击、滑动的方式进行阅读交互，支持仿真、横滑翻页方式（包括翻页过程动效）。
-- 支持排版结果通知能力，打开书籍或者触发翻页后按页提供当前页的排版结果信息[PageDataInfo](../misc/readerCore（阅读核心能力）.md#section1064382518239)。
+
+-
+
+支持排版结果通知能力，打开书籍或者触发翻页后按页提供当前页的排版结果信息[PageDataInfo](readerCore（阅读核心能力）.md#ZH-CN_TOPIC_0000002522082532__pagedatainfo)。
 
 **装饰器类型：**@Component
 
@@ -28,29 +37,10 @@ import { ReadPageComponent } from '@kit.ReaderKit';
 
 **参数：**
 
-参数名
-
-类型
-
-装饰器类型
-
-说明
-
-controller
-
-[ReaderComponentController](../misc/readerCore（阅读核心能力）.md#section1917812014110)
-
-_
-
-ReadPageComponent控制器。
-
-readerCallback
-
-AsyncCallback<readerCore.[ReaderComponentController](../misc/readerCore（阅读核心能力）.md#section1917812014110)>
-
-_
-
-回调函数。
+| 参数名 | 类型 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- |
+| controller | [ReaderComponentController](../misc/readerCore（阅读核心能力）.md#section1917812014110) | _ | ReadPageComponent控制器。 |
+| readerCallback | AsyncCallback<readerCore.[ReaderComponentController](../misc/readerCore（阅读核心能力）.md#section1917812014110)> | _ | 回调函数。 |
 
 #### build
 
@@ -83,7 +73,7 @@ struct Reader {
 
   private async init() {
     try {
-      // 通过提前导入到[应用沙箱目录](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-sandbox-directory)中的书籍文件，初始化书籍解析器
+      // 通过提前导入到应用沙箱目录中的书籍文件，初始化书籍解析器
       let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
       let filePath: string = `${context.filesDir}/abc.epub`;
       let bookParserHandler: bookParser.BookParserHandler = await bookParser.getDefaultHandler(filePath);
@@ -97,7 +87,6 @@ struct Reader {
       hilog.info(0x0000, 'testTag', `startPlay succeeded`);
     } catch (err) {
       hilog.error(0x0000, 'testTag', `failed to startPlay, Code is ${err.code}, message is ${err.message}`);
-    }
   }
 
   aboutToDisappear(): void {
@@ -116,5 +105,4 @@ struct Reader {
       // 支持在此实现点击拉起菜单栏功能
     })
   }
-}
 ```

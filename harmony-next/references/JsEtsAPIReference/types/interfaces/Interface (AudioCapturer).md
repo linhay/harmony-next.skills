@@ -2,7 +2,8 @@
 
 提供音频采集的相关接口。
 
-在使用AudioCapturer的接口之前，需先通过[createAudioCapturer](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529285689__audiocreateaudiocapturer8)获取AudioCapturer实例。
+在使用AudioCapturer的接口之前，需先通过[createAudioCapturer](Functions.md#ZH-CN_TOPIC_0000002553201779__audiocreateaudiocapturer8)获取AudioCapturer实例。
+
 
 - 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 - 本Interface首批接口从API version 8开始支持。
@@ -17,7 +18,9 @@ import { audio } from '@kit.AudioKit';
 
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
-名称类型只读可选说明state8+[AudioState](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiostate8)是否音频采集器状态。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| state8+ | [AudioState](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiostate8) | 是 | 否 | 音频采集器状态。 |
 
 **示例：**
 
@@ -37,7 +40,9 @@ getCapturerInfo(callback: AsyncCallback<AudioCapturerInfo>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[AudioCapturerInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiocapturerinfo8)>是回调函数。当获取音频采集器信息成功，err为undefined，data为获取到的音频采集器信息；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<AudioCapturerInfo> | 是 | 回调函数。当获取音频采集器信息成功，err为undefined，data为获取到的音频采集器信息；否则为错误对象。 |
 
 **示例：**
 
@@ -65,7 +70,9 @@ getCapturerInfo(): Promise<AudioCapturerInfo>
 
 **返回值：**
 
-类型说明Promise<[AudioCapturerInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiocapturerinfo8)>Promise对象，返回音频采集器信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AudioCapturerInfo> | Promise对象，返回音频采集器信息。 |
 
 **示例：**
 
@@ -96,7 +103,9 @@ getCapturerInfoSync(): AudioCapturerInfo
 
 **返回值：**
 
-类型说明[AudioCapturerInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiocapturerinfo8)返回音频采集器信息。
+| 类型 | 说明 |
+| --- | --- |
+| AudioCapturerInfo | 返回音频采集器信息。 |
 
 **示例：**
 
@@ -123,7 +132,9 @@ getStreamInfo(callback: AsyncCallback<AudioStreamInfo>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[AudioStreamInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiostreaminfo8)>是回调函数。当获取音频采集器流信息成功，err为undefined，data为获取到的音频采集器流信息；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<AudioStreamInfo> | 是 | 回调函数。当获取音频采集器流信息成功，err为undefined，data为获取到的音频采集器流信息；否则为错误对象。 |
 
 **示例：**
 
@@ -153,7 +164,9 @@ getStreamInfo(): Promise<AudioStreamInfo>
 
 **返回值：**
 
-类型说明Promise<[AudioStreamInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiostreaminfo8)>Promise对象，返回音频流信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AudioStreamInfo> | Promise对象，返回音频流信息。 |
 
 **示例：**
 
@@ -181,7 +194,9 @@ getStreamInfoSync(): AudioStreamInfo
 
 **返回值：**
 
-类型说明[AudioStreamInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiostreaminfo8)返回音频流信息。
+| 类型 | 说明 |
+| --- | --- |
+| AudioStreamInfo | 返回音频流信息。 |
 
 **示例：**
 
@@ -210,7 +225,9 @@ getAudioStreamId(callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是回调函数。当获取音频流id成功，err为undefined，data为获取到的音频流id；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 回调函数。当获取音频流id成功，err为undefined，data为获取到的音频流id；否则为错误对象。 |
 
 **示例：**
 
@@ -232,7 +249,9 @@ getAudioStreamId(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回音频流id。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回音频流id。 |
 
 **示例：**
 
@@ -256,7 +275,9 @@ getAudioStreamIdSync(): number
 
 **返回值：**
 
-类型说明number返回音频流id。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回音频流id。 |
 
 **示例：**
 
@@ -282,11 +303,9 @@ start(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是
-
-回调函数。当启动音频采集器成功，err为undefined，否则为错误对象。异常将返回error对象：
-
-错误码6800301：表示包含状态检查异常、焦点抢占失败、系统处理异常（具体错误查看系统日志）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当启动音频采集器成功，err为undefined，否则为错误对象。异常将返回error对象： 错误码6800301：表示包含状态检查异常、焦点抢占失败、系统处理异常（具体错误查看系统日志）。 |
 
 **示例：**
 
@@ -312,11 +331,9 @@ start(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>
-
-Promise对象，成功表示启动音频采集器成功。异常将返回error对象：
-
-错误码6800301：表示包含状态检查异常、焦点抢占失败、系统处理异常（具体错误查看系统日志）。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，成功表示启动音频采集器成功。异常将返回error对象： 错误码6800301：表示包含状态检查异常、焦点抢占失败、系统处理异常（具体错误查看系统日志）。 |
 
 **示例：**
 
@@ -343,7 +360,9 @@ stop(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当停止音频采集成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当停止音频采集成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -369,7 +388,9 @@ stop(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -396,7 +417,9 @@ release(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当释放音频采集器成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当释放音频采集器成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -422,7 +445,9 @@ release(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -448,7 +473,9 @@ getAudioTime(callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是回调函数。当获取时间戳成功，err为undefined，data为获取到的时间戳；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 回调函数。当获取时间戳成功，err为undefined，data为获取到的时间戳；否则为错误对象。 |
 
 **示例：**
 
@@ -470,7 +497,9 @@ getAudioTime(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回时间戳（从1970年1月1日开始），单位为纳秒。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回时间戳（从1970年1月1日开始），单位为纳秒。 |
 
 **示例：**
 
@@ -494,7 +523,9 @@ getAudioTimeSync(): number
 
 **返回值：**
 
-类型说明number返回时间戳。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回时间戳。 |
 
 **示例：**
 
@@ -522,13 +553,17 @@ getAudioTimestampInfo(): Promise<AudioTimestampInfo>
 
 **返回值：**
 
-类型说明Promise<[AudioTimestampInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiotimestampinfo19)>Promise对象，返回音频流时间戳和当前数据帧位置信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AudioTimestampInfo> | Promise对象，返回音频流时间戳和当前数据帧位置信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码]([Audio错误码](../../errors/Audio错误码.md).md)。
 
-错误码ID错误信息6800103Operation not permit at current state.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800103 | Operation not permit at current state. |
 
 **示例：**
 
@@ -552,13 +587,17 @@ getAudioTimestampInfoSync(): AudioTimestampInfo
 
 **返回值：**
 
-类型说明[AudioTimestampInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiotimestampinfo19)返回音频流时间戳和当前数据帧位置信息。
+| 类型 | 说明 |
+| --- | --- |
+| AudioTimestampInfo | 返回音频流时间戳和当前数据帧位置信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800103Operation not permit at current state.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800103 | Operation not permit at current state. |
 
 **示例：**
 
@@ -584,7 +623,9 @@ getBufferSize(callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是回调函数。当获取采集器合理的最小缓冲区大小成功，err为undefined，data为获取到的采集器合理的最小缓冲区大小；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 回调函数。当获取采集器合理的最小缓冲区大小成功，err为undefined，data为获取到的采集器合理的最小缓冲区大小；否则为错误对象。 |
 
 **示例：**
 
@@ -610,7 +651,9 @@ getBufferSize(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回缓冲区大小。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回缓冲区大小。 |
 
 **示例：**
 
@@ -634,7 +677,9 @@ getBufferSizeSync(): number
 
 **返回值：**
 
-类型说明number返回缓冲区大小。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回缓冲区大小。 |
 
 **示例：**
 
@@ -652,7 +697,7 @@ try {
 
 #### getCurrentInputDevices11+
 
-getCurrentInputDevices(): AudioDeviceDescriptors
+getCurrentInputDevices(): [AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)
 
 获取录音流输入设备信息。同步返回结果。
 
@@ -660,7 +705,9 @@ getCurrentInputDevices(): AudioDeviceDescriptors
 
 **返回值：**
 
-类型说明[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)同步接口，返回设备属性数组类型数据。
+| 类型 | 说明 |
+| --- | --- |
+| [AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors) | 同步接口，返回设备属性数组类型数据。 |
 
 **示例：**
 
@@ -689,7 +736,9 @@ getCurrentAudioCapturerChangeInfo(): AudioCapturerChangeInfo
 
 **返回值：**
 
-类型说明[AudioCapturerChangeInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiocapturerchangeinfo9)同步接口，返回描述音频采集器更改信息。
+| 类型 | 说明 |
+| --- | --- |
+| AudioCapturerChangeInfo | 同步接口，返回描述音频采集器更改信息。 |
 
 **示例：**
 
@@ -719,19 +768,25 @@ on(type: 'audioInterrupt', callback: Callback<InterruptEvent>): void
 
 AudioCapturer对象在start事件时获取焦点，在pause、stop等事件时释放焦点，无需开发者主动申请。
 
-调用此方法后，如果AudioCapturer对象获取焦点失败或发生中断事件（如被其他音频打断等），会收到[InterruptEvent](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__interruptevent9)。建议应用根据InterruptEvent的信息进行进一步处理。更多信息请参阅文档[音频焦点和音频会话介绍](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-playback-concurrency)。
+调用此方法后，如果AudioCapturer对象获取焦点失败或发生中断事件（如被其他音频打断等），会收到[InterruptEvent](Interfaces (其他).md#ZH-CN_TOPIC_0000002522241818__interruptevent9)。建议应用根据InterruptEvent的信息进行进一步处理。更多信息请参阅文档[音频焦点和音频会话介绍](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-playback-concurrency)。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Interrupt
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'audioInterrupt'，当音频焦点状态发生变化时，触发该事件。callbackCallback<[InterruptEvent](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__interruptevent9)>是回调函数，返回中断事件信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'audioInterrupt'，当音频焦点状态发生变化时，触发该事件。 |
+| callback | Callback<InterruptEvent> | 是 | 回调函数，返回中断事件信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -775,7 +830,6 @@ audioCapturer.on('audioInterrupt', (interruptEvent: audio.InterruptEvent) => {
         console.info('Invalid interruptEvent');
         break;
     }
-  }
 });
 ```
 
@@ -789,13 +843,18 @@ off(type: 'audioInterrupt'): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'audioInterrupt'，当取消监听音频中断事件时，触发该事件。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'audioInterrupt'，当取消监听音频中断事件时，触发该事件。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -805,7 +864,7 @@ audioCapturer.off('audioInterrupt');
 
 #### on('inputDeviceChange')11+
 
-on(type: 'inputDeviceChange', callback: Callback<AudioDeviceDescriptors>): void
+on(type: 'inputDeviceChange', callback: Callback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>): void
 
 监听音频输入设备变化事件（当音频输入设备发生变化时触发）。使用callback异步回调。
 
@@ -813,13 +872,19 @@ on(type: 'inputDeviceChange', callback: Callback<AudioDeviceDescriptors>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'inputDeviceChange'，当音频输入设备发生变化时，触发该事件。callbackCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors) >是回调函数，返回监听的音频输入设备变化(返回数据为切换后的设备信息)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'inputDeviceChange'，当音频输入设备发生变化时，触发该事件。 |
+| callback | Callback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors) > | 是 | 回调函数，返回变化后的音频输入设备信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -833,7 +898,7 @@ audioCapturer.on('inputDeviceChange', (deviceChangeInfo: audio.AudioDeviceDescri
 
 #### off('inputDeviceChange')11+
 
-off(type: 'inputDeviceChange', callback?: Callback<AudioDeviceDescriptors>): void
+off(type: 'inputDeviceChange', callback?: Callback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>): void
 
 取消监听音频输入设备更改事件。使用callback异步回调。
 
@@ -841,13 +906,19 @@ off(type: 'inputDeviceChange', callback?: Callback<AudioDeviceDescriptors>): voi
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'inputDeviceChange'，当取消监听音频输入设备更改事件时，触发该事件。callbackCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors) >否回调函数，返回监听的音频输入设备信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'inputDeviceChange'，当取消监听音频输入设备更改事件时，触发该事件。 |
+| callback | Callback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors) > | 否 | 回调函数，返回音频输入设备信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -877,13 +948,19 @@ on(type: 'audioCapturerChange', callback: Callback<AudioCapturerChangeInfo>): vo
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'audioCapturerChange'，当音频录制流状态变化、设备变化时，触发该事件。callbackCallback<[AudioCapturerChangeInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiocapturerchangeinfo9)>是回调函数，录音流配置或状态变化时返回监听的录音流当前配置和状态信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'audioCapturerChange'，当音频录制流状态变化、设备变化时，触发该事件。 |
+| callback | Callback<AudioCapturerChangeInfo> | 是 | 回调函数，录音流配置或状态变化时返回监听的录音流当前配置和状态信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -903,13 +980,19 @@ off(type: 'audioCapturerChange', callback?: Callback<AudioCapturerChangeInfo>): 
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'audioCapturerChange'，当取消监听录音流配置变化事件时，触发该事件。callbackCallback<[AudioCapturerChangeInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiocapturerchangeinfo9)>否回调函数，返回取消监听的录音流配置或状态变化。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'audioCapturerChange'，当取消监听录音流配置变化事件时，触发该事件。 |
+| callback | Callback<AudioCapturerChangeInfo> | 否 | 回调函数，返回取消监听的录音流配置或状态变化。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -939,7 +1022,11 @@ on(type: 'markReach', frame: number, callback: Callback<number>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'markReach'，当采集的帧数达到frame参数的值时，触发该事件。framenumber是触发事件的帧数。该值必须大于0。callbackCallback<number>是回调函数，返回frame参数的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'markReach'，当采集的帧数达到frame参数的值时，触发该事件。 |
+| frame | number | 是 | 触发事件的帧数。该值必须大于0。 |
+| callback | Callback<number> | 是 | 回调函数，返回frame参数的值。 |
 
 **示例：**
 
@@ -961,7 +1048,10 @@ off(type: 'markReach', callback?: Callback<number>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'markReach'，当取消监听标记到达事件时，触发该事件。callback18+Callback<number>否回调函数，返回frame参数的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'markReach'，当取消监听标记到达事件时，触发该事件。 |
+| callback18+ | Callback<number> | 否 | 回调函数，返回frame参数的值。 |
 
 **示例：**
 
@@ -993,7 +1083,11 @@ on(type: 'periodReach', frame: number, callback: Callback<number>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'periodReach'，当采集的帧数达到frame参数的值时，触发该事件。framenumber是触发事件的帧数。该值必须大于0。callbackCallback<number>是回调函数，返回frame参数的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'periodReach'，当采集的帧数达到frame参数的值时，触发该事件。 |
+| frame | number | 是 | 触发事件的帧数。该值必须大于0。 |
+| callback | Callback<number> | 是 | 回调函数，返回frame参数的值。 |
 
 **示例：**
 
@@ -1015,7 +1109,10 @@ off(type: 'periodReach', callback?: Callback<number>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'periodReach'，当取消监听标记到达事件时，触发该事件。callback18+Callback<number>否回调函数，返回frame参数的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'periodReach'，当取消监听标记到达事件时，触发该事件。 |
+| callback18+ | Callback<number> | 否 | 回调函数，返回frame参数的值。 |
 
 **示例：**
 
@@ -1037,7 +1134,7 @@ audioCapturer.off('periodReach', periodReachCallback);
 
 #### on('stateChange')8+
 
-on(type: 'stateChange', callback: Callback<AudioState>): void
+on(type: 'stateChange', callback: Callback<[AudioState](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiostate8)>): void
 
 监听状态变化事件（当AudioCapturer状态发生变化时触发）。使用callback异步回调。
 
@@ -1045,7 +1142,10 @@ on(type: 'stateChange', callback: Callback<AudioState>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'stateChange'，当AudioCapturer状态发生变化时，触发该事件。callbackCallback<[AudioState](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiostate8)>是回调函数，返回当前音频的状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'stateChange'，当AudioCapturer状态发生变化时，触发该事件。 |
+| callback | Callback<[AudioState](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiostate8)> | 是 | 回调函数，返回当前音频的状态。 |
 
 **示例：**
 
@@ -1062,21 +1162,26 @@ audioCapturer.on('stateChange', (state: audio.AudioState) => {
 
 #### off('stateChange')18+
 
-off(type: 'stateChange', callback?: Callback<AudioState>): void
+off(type: 'stateChange', callback?: Callback<[AudioState](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiostate8)>): void
 
-取消监听到达标记事件。使用callback异步回调。
+取消监听状态变化事件。使用callback异步回调。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'stateChange'，当取消监听到达标记事件时，触发该事件。callbackCallback<[AudioState](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiostate8)>否回调函数，返回当前音频的状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'stateChange'，当取消监听状态变化事件时，触发该事件。 |
+| callback | Callback<[AudioState](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiostate8)> | 否 | 回调函数，返回当前音频的状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -1111,13 +1216,19 @@ on(type: 'readData', callback: Callback<ArrayBuffer>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'readData'，当需要读取音频流数据时，触发该事件。callbackCallback<ArrayBuffer>是回调函数，返回读到的数据缓冲区。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'readData'，当需要读取音频流数据时，触发该事件。 |
+| callback | Callback<ArrayBuffer> | 是 | 回调函数，返回读到的数据缓冲区。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -1167,13 +1278,19 @@ off(type: 'readData', callback?: Callback<ArrayBuffer>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'readData'，当取消监听音频数据读取回调事件时，触发该事件。callbackCallback<ArrayBuffer>否回调函数，返回读到的数据缓冲区。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'readData'，当取消监听音频数据读取回调事件时，触发该事件。 |
+| callback | Callback<ArrayBuffer> | 否 | 回调函数，返回读到的数据缓冲区。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -1201,7 +1318,9 @@ getOverflowCount(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回音频流的过载音频帧数量。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回音频流的过载音频帧数量。 |
 
 **示例：**
 
@@ -1225,7 +1344,9 @@ getOverflowCountSync(): number
 
 **返回值：**
 
-类型说明number返回音频流的过载音频帧数量。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回音频流的过载音频帧数量。 |
 
 **示例：**
 
@@ -1251,17 +1372,23 @@ setWillMuteWhenInterrupted(muteWhenInterrupted: boolean): Promise<void>
 
 **参数：**
 
-参数名类型必填说明muteWhenInterruptedboolean是设置当前录制音频流是否启用静音打断模式, true表示启用，false表示不启用，保持为默认打断模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| muteWhenInterrupted | boolean | 是 | 设置当前录制音频流是否启用静音打断模式, true表示启用，false表示不启用，保持为默认打断模式。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800103Operation not permitted at current state.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800103 | Operation not permitted at current state. |
 
 **示例：**
 
@@ -1281,13 +1408,18 @@ read(size: number, isBlockingRead: boolean, callback: AsyncCallback<ArrayBuffer>
 
 读入缓冲区。使用callback异步回调。
 
-从API version 8开始支持，从API version 11开始废弃，建议使用[on('readData')](#ZH-CN_TOPIC_0000002529445663__onreaddata11)替代。
+
+从API version 8开始支持，从API version 11开始废弃，建议使用[on('readData')](#ZH-CN_TOPIC_0000002522081818__onreaddata11)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
 
-参数名类型必填说明sizenumber是读入的字节数。isBlockingReadboolean是是否阻塞读操作。true表示阻塞，false表示不阻塞。callbackAsyncCallback<ArrayBuffer>是回调函数。当读入缓冲区成功，err为undefined，data为获取到的缓冲区；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | number | 是 | 读入的字节数。 |
+| isBlockingRead | boolean | 是 | 是否阻塞读操作。true表示阻塞，false表示不阻塞。 |
+| callback | AsyncCallback<ArrayBuffer> | 是 | 回调函数。当读入缓冲区成功，err为undefined，data为获取到的缓冲区；否则为错误对象。 |
 
 **示例：**
 
@@ -1314,17 +1446,23 @@ read(size: number, isBlockingRead: boolean): Promise<ArrayBuffer>
 
 读入缓冲区。使用Promise异步回调。
 
-从API version 8开始支持，从API version 11开始废弃，建议使用[on('readData')](#ZH-CN_TOPIC_0000002529445663__onreaddata11)替代。
+
+从API version 8开始支持，从API version 11开始废弃，建议使用[on('readData')](#ZH-CN_TOPIC_0000002522081818__onreaddata11)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
 
-参数名类型必填说明sizenumber是读入的字节数。isBlockingReadboolean是是否阻塞读操作。true表示阻塞，false表示不阻塞。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | number | 是 | 读入的字节数。 |
+| isBlockingRead | boolean | 是 | 是否阻塞读操作。true表示阻塞，false表示不阻塞。 |
 
 **返回值：**
 
-类型说明Promise<ArrayBuffer>Promise对象，返回读取的缓冲区数据。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<ArrayBuffer> | Promise对象，返回读取的缓冲区数据。 |
 
 **示例：**
 

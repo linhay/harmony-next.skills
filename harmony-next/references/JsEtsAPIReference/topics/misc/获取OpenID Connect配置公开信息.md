@@ -2,7 +2,7 @@
 
 为了更安全的网络访问，请务必使用TLS1.2协议及规定内的加密套件。若使用协议是TLS1.0、TLS1.1或规定外的加密套件，可能无法正常访问华为账号服务。
 
-关于TLS1.2协议及规定内加密套件的信息，可以点击这里进行详细了解：[TLS协议及加密套件](../../guides/公共说明.md#section1329115361128)。
+关于TLS1.2协议及规定内加密套件的信息，可以点击这里进行详细了解：[TLS协议及加密套件](公共说明.md#ZH-CN_TOPIC_0000002553202251__tls协议及加密套件)。
 
 #### 功能介绍
 
@@ -18,19 +18,21 @@
 
 #### 接口原型
 
-**承载协议**
+-
 
-HTTPS POST/GET
+承载协议： HTTPS POST/GET
 
-**接口方向**
+-
 
-开发者服务器->华为账号服务器
+接口方向： 开发者服务器->华为账号服务器
 
-**接口URL**
+-
 
-https://oauth-login.cloud.huawei.com/.well-known/openid-configuration
+接口URL： https://oauth-login.cloud.huawei.com/.well-known/openid-configuration
 
-**数据格式**
+-
+
+数据格式：
 
 响应消息：Content-Type: application/json
 
@@ -58,162 +60,27 @@ Host: oauth-login.cloud.huawei.com
 
 #### Response Header
 
-参数
-
-是否必选
-
-参数类型
-
-描述
-
-Content-Type
-
-是
-
-String
-
-取值为：application/json。
+| 参数 | 是否必选 | 参数类型 | 描述 |
+| --- | --- | --- | --- |
+| Content-Type | 是 | String | 取值为：application/json。 |
 
 #### Response Body
 
-**参数**
-
-是否必选
-
-参数类型
-
-描述
-
-issuer
-
-是
-
-String
-
-发行方。
-
-authorization_endpoint
-
-是
-
-String
-
-授权接入地址。
-
-token_endpoint
-
-是
-
-String
-
-获取Token接入地址。
-
-revocation_endpoint
-
-是
-
-String
-
-取消授权接入地址。
-
-jwks_uri
-
-是
-
-String
-
-获取JWT公钥信息接入地址。
-
-response_modes_supported
-
-是
-
-String[]
-
-获取身份验证的响应模式。
-
-固定返回["form_post"]，表示使用HTTP GET/POST表单提交方式返回授权码。
-
-response_types_supported
-
-是
-
-String[]
-
-支持的授权类型。固定返回["code"]，表示支持授权码模式。
-
-subject_types_supported
-
-是
-
-String[]
-
-支持的主题类型。
-
-固定返回["pairwise"]，表示OP（OpenID Provider）会为每个RP（Relying Party）提供不同的sub值，从而在不同的RP（Relying Party）之间保护用户的唯一性。
-
-id_token_signing_alg_values_supported
-
-是
-
-String[]
-
-ID Token签名支持的算法。
-
-- RS256
-- PS256
-
-scopes_supported
-
-是
-
-String[]
-
-支持的授权范围，当前支持的scope如下：
-
-- openid
-- email
-- profile
-
-token_endpoint_auth_methods_supported
-
-是
-
-String[]
-
-获取token接入地址支持的客户端身份验证方法列表。
-
-固定返回["client_secret_post"]，表示使用HTTP POST方法将Client ID和Client Secret作为表单参数传递给授权服务器。
-
-claims_supported
-
-是
-
-String[]
-
-支持的声明类型。
-
-- aud：Client ID
-- email：用户邮箱
-- email_verified：是否已邮箱验证
-- exp：ID Token的过期时间
-- family_name：用户姓氏
-- given_name：用户名字（不包括姓氏）
-- iat：ID Token的签发时间
-- iss：ID Token的签发者
-- locale：用户的首选语言和地区
-- name：用户完整姓名
-- picture：用户头像URL
-- sub：用户的唯一标识（UnionID）
-- display_name：用户昵称
-
-code_challenge_methods_supported
-
-是
-
-String[]
-
-PKCE模式授权时，支持对code_verifier进行编码的方法。固定["S256"]，表示使用SHA-256算法对码值进行加密。
+| 参数 | 是否必选 | 参数类型 | 描述 |
+| --- | --- | --- | --- |
+| issuer | 是 | String | 发行方。 |
+| authorization_endpoint | 是 | String | 授权接入地址。 |
+| token_endpoint | 是 | String | 获取Token接入地址。 |
+| revocation_endpoint | 是 | String | 取消授权接入地址。 |
+| jwks_uri | 是 | String | 获取JWT公钥信息接入地址。 |
+| response_modes_supported | 是 | String[] | 获取身份验证的响应模式。 固定返回["form_post"]，表示使用HTTP GET/POST表单提交方式返回授权码。 |
+| response_types_supported | 是 | String[] | 支持的授权类型。固定返回["code"]，表示支持授权码模式。 |
+| subject_types_supported | 是 | String[] | 支持的主题类型。 固定返回["pairwise"]，表示OP（OpenID Provider）会为每个RP（Relying Party）提供不同的sub值，从而在不同的RP（Relying Party）之间保护用户的唯一性。 |
+| id_token_signing_alg_values_supported | 是 | String[] | ID Token签名支持的算法。 - RS256 - PS256 |
+| scopes_supported | 是 | String[] | 支持的授权范围，当前支持的scope如下： - openid - email - profile |
+| token_endpoint_auth_methods_supported | 是 | String[] | 获取token接入地址支持的客户端身份验证方法列表。 固定返回["client_secret_post"]，表示使用HTTP POST方法将Client ID和Client Secret作为表单参数传递给授权服务器。 |
+| claims_supported | 是 | String[] | 支持的声明类型。 - aud：Client ID - email：用户邮箱 - email_verified：是否已邮箱验证 - exp：ID Token的过期时间 - family_name：用户姓氏 - given_name：用户名字（不包括姓氏） - iat：ID Token的签发时间 - iss：ID Token的签发者 - locale：用户的首选语言和地区 - name：用户完整姓名 - picture：用户头像URL - sub：用户的唯一标识（UnionID） - display_name：用户昵称 |
+| code_challenge_methods_supported | 是 | String[] | PKCE模式授权时，支持对code_verifier进行编码的方法。固定["S256"]，表示使用SHA-256算法对码值进行加密。 |
 
 #### 响应示例
 
@@ -271,7 +138,7 @@ Content-Type: application/json
 
 #### 示例代码
 
-Java示例代码如下，运行前需要进行[示例代码环境配置](../../guides/公共说明.md#section444143185314)（请将此示例代码与工具类CallUtils放于同一路径下，如不在同一路径，请手动添加import）
+Java示例代码如下，运行前需要进行[示例代码环境配置](公共说明.md#ZH-CN_TOPIC_0000002553202251__示例代码环境配置)（请将此示例代码与工具类CallUtils放于同一路径下，如不在同一路径，请手动添加import）
 
 ```ets
 import com.alibaba.fastjson2.JSONArray;
@@ -317,67 +184,18 @@ public class GetOpenIdConnect {
         // 解析获取code_challenge_methods_supported
         JSONArray codeChallengeMethodsSupported = result.getJSONArray("code_challenge_methods_supported");
     }
-}
 ```
 
 #### 错误码
 
-HTTP响应码
-
-描述
-
-解决方法
-
-200
-
-成功。
-
--
-
-403
-
-无权限访问。
-
-通常是调用方网络安全策略阻止了访问，请检查网络环境配置。若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
-
-404
-
-找不到服务。
-
-请检查请求URI是否正确。
-
-405
-
-不支持的http请求method。
-
-请检查http请求method是否与接口说明一致。
-
-500
-
-服务内部错误。
-
-请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
-
-502
-
-请求连接异常，常见于网络状况不稳定。
-
-建议稍后重试，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
-
-503
-
-系统流控。
-
-触发系统流控，请稍后重试。
-
-504
-
-请求连接超时，常见于网络状况不稳定。
-
-建议稍后重试，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
-
-590
-
-服务内部错误。
-
-请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
+| HTTP响应码 | 描述 | 解决方法 |
+| --- | --- | --- |
+| 200 | 成功。 | - |
+| 403 | 无权限访问。 | 通常是调用方网络安全策略阻止了访问，请检查网络环境配置。若仍无法解决，请通过在线提单提交问题。 |
+| 404 | 找不到服务。 | 请检查请求URI是否正确。 |
+| 405 | 不支持的http请求method。 | 请检查http请求method是否与接口说明一致。 |
+| 500 | 服务内部错误。 | 请通过在线提单提交问题。 |
+| 502 | 请求连接异常，常见于网络状况不稳定。 | 建议稍后重试，若仍无法解决，请通过在线提单提交问题。 |
+| 503 | 系统流控。 | 触发系统流控，请稍后重试。 |
+| 504 | 请求连接超时，常见于网络状况不稳定。 | 建议稍后重试，若仍无法解决，请通过在线提单提交问题。 |
+| 590 | 服务内部错误。 | 请通过在线提单提交问题。 |

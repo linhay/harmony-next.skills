@@ -1,8 +1,9 @@
 # @ohos.app.ability.InsightIntentEntryExecutor (@InsightIntentEntry的意图执行基类)
 
-本模块提供[@InsightIntentEntry](@ohos.app.ability.InsightIntentDecorator (意图装饰器定义).md#ZH-CN_TOPIC_0000002497604590__insightintententry)装饰器的意图执行基类，必须与@InsightIntentEntry装饰器联合使用。
+本模块提供[@InsightIntentEntry](@ohos.app.ability.InsightIntentDecorator (意图装饰器定义).md#ZH-CN_TOPIC_0000002522240536__insightintententry)装饰器的意图执行基类，必须与@InsightIntentEntry装饰器联合使用。
 
-开发者需要在继承该基类的子类中，实现[onExecute()](#ZH-CN_TOPIC_0000002497444612__onexecute)意图执行回调，并使用@InsightIntentEntry装饰器来装饰子类。
+开发者需要在继承该基类的子类中，实现[onExecute()](#ZH-CN_TOPIC_0000002553200501__onexecute)意图执行回调，并使用@InsightIntentEntry装饰器来装饰子类。
+
 
 本模块首批接口从API version 20开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -22,7 +23,12 @@ import { InsightIntentEntryExecutor } from '@kit.AbilityKit';
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明executeMode[insightIntent.ExecuteMode](@ohos.app.ability.insightIntent (意图框架基础定义).md#ZH-CN_TOPIC_0000002529284581__executemode)否否表示意图执行模式。即拉起绑定的Ability组件时支持的执行模式。context[InsightIntentContext](@ohos.app.ability.InsightIntentContext (意图执行上下文).md)否否表示意图执行上下文。windowStage[window.WindowStage](../../types/interfaces/Interface (WindowStage).md)否是表示windowStage实例对象，和[onWindowStageCreate](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onwindowstagecreate)接口的windowStage实例是同一个，可用于加载意图执行的页面。仅当executeMode字段取值为UI_ABILITY_FOREGROUND（即意图执行需要将UIAbility显示在前台时），该属性生效。uiExtensionSession[UIExtensionContentSession](@ohos.app.ability.UIExtensionContentSession (UIExtensionAbility界面操作类).md)否是表示UIExtensionContentSession实例对象，和[onSessionCreate](@ohos.app.ability.UIExtensionAbility (带界面的ExtensionAbility组件).md#ZH-CN_TOPIC_0000002497604594__onsessioncreate)接口的UIExtensionContentSession实例是同一个，可用于加载意图执行的页面。仅当executeMode字段取值为UI_EXTENSION_ABILITY（即意图执行需要拉起UIExtensionAbility时），该属性生效。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| executeMode | insightIntent.ExecuteMode | 否 | 否 | 表示意图执行模式。即拉起绑定的Ability组件时支持的执行模式。 |
+| context | InsightIntentContext | 否 | 否 | 表示意图执行上下文。 |
+| windowStage | window.WindowStage | 否 | 是 | 表示windowStage实例对象，和onWindowStageCreate接口的windowStage实例是同一个，可用于加载意图执行的页面。仅当executeMode字段取值为UI_ABILITY_FOREGROUND（即意图执行需要将UIAbility显示在前台时），该属性生效。 |
+| uiExtensionSession | UIExtensionContentSession | 否 | 是 | 表示UIExtensionContentSession实例对象，和onSessionCreate接口的UIExtensionContentSession实例是同一个，可用于加载意图执行的页面。仅当executeMode字段取值为UI_EXTENSION_ABILITY（即意图执行需要拉起UIExtensionAbility时），该属性生效。 |
 
 #### onExecute
 
@@ -33,30 +39,10 @@ onExecute(): Promise<insightIntent.IntentResult<T>>
 该接口的调用时机与意图执行模式的对应关系如下：
 
 意图执行模式接口调用时机和顺序
-
-[UI_ABILITY_FOREGROUND](@ohos.app.ability.insightIntent (意图框架基础定义).md#ZH-CN_TOPIC_0000002529284581__executemode)
-
-UIAbility前台模式
-
-- 若UIAbility冷启动，意图执行时UIAbility生命周期触发顺序：[onCreate](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__oncreate)、[onWindowStageCreate](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onwindowstagecreate)、onExecute、[onForeground](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onforeground)。
-
-- 若UIAbility热启动，且启动时UIAbility处于后台，意图执行时UIAbility生命周期触发顺序：[onNewWant](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onnewwant)、onExecute、[onForeground](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onforeground)。
-
-- 若UIAbility热启动，且启动时UIAbility处于前台，意图执行时UIAbility生命周期触发顺序：onExecute。
-
-[UI_ABILITY_BACKGROUND](@ohos.app.ability.insightIntent (意图框架基础定义).md#ZH-CN_TOPIC_0000002529284581__executemode)
-
-UIAbility后台模式
-
-- 若UIAbility冷启动，意图执行时UIAbility生命周期触发顺序：[onCreate](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__oncreate)、onExecute、[onBackground](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onbackground)。
-
-- 若UIAbility热启动，意图执行时UIAbility生命周期触发顺序：onExecute。
-
-[UI_EXTENSION_ABILITY](@ohos.app.ability.insightIntent (意图框架基础定义).md#ZH-CN_TOPIC_0000002529284581__executemode)
-
-UIExtension模式
-
-意图执行时UIExtensionAbility生命周期触发顺序：[onCreate](@ohos.app.ability.UIExtensionAbility (带界面的ExtensionAbility组件).md#ZH-CN_TOPIC_0000002497604594__oncreate)、[onSessionCreate](@ohos.app.ability.UIExtensionAbility (带界面的ExtensionAbility组件).md#ZH-CN_TOPIC_0000002497604594__onsessioncreate)、onExecute、[onForeground](@ohos.app.ability.UIExtensionAbility (带界面的ExtensionAbility组件).md#ZH-CN_TOPIC_0000002497604594__onforeground)。
+| --- | --- |
+| UI_ABILITY_FOREGROUND UIAbility前台模式 | - 若UIAbility冷启动，意图执行时UIAbility生命周期触发顺序：onCreate、onWindowStageCreate、onExecute、onForeground。 - 若UIAbility热启动，且启动时UIAbility处于后台，意图执行时UIAbility生命周期触发顺序：onNewWant、onExecute、onForeground。 - 若UIAbility热启动，且启动时UIAbility处于前台，意图执行时UIAbility生命周期触发顺序：onExecute。 |
+| UI_ABILITY_BACKGROUND UIAbility后台模式 | - 若UIAbility冷启动，意图执行时UIAbility生命周期触发顺序：onCreate、onExecute、onBackground。 - 若UIAbility热启动，意图执行时UIAbility生命周期触发顺序：onExecute。 |
+| UI_EXTENSION_ABILITY UIExtension模式 | 意图执行时UIExtensionAbility生命周期触发顺序：onCreate、onSessionCreate、onExecute、onForeground。 |
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.AbilityCore
 
@@ -64,7 +50,9 @@ UIExtension模式
 
 **返回值：**
 
-类型说明Promise<insightIntent.IntentResult<T>>Promise对象。返回[insightIntent.IntentResult<T>](@ohos.app.ability.insightIntent (意图框架基础定义).md#ZH-CN_TOPIC_0000002529284581__intentresultt20)对象，表示意图执行结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<insightIntent.IntentResult<T>> | Promise对象。返回insightIntent.IntentResult<T>对象，表示意图执行结果。 |
 
 **示例**
 
@@ -124,5 +112,4 @@ export default class PlayMusicDemo extends InsightIntentEntryExecutor<string> {
     // 以Promise的方式返回意图执行结果
     return Promise.reject(result);
   }
-}
 ```

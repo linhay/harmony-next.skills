@@ -24,17 +24,23 @@ getPhotoAccessHelper(context: Context): PhotoAccessHelper
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是传入Ability实例的Context。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 传入Ability实例的Context。 |
 
 **返回值：**
 
-类型说明[PhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__photoaccesshelper)相册管理模块的实例。
+| 类型 | 说明 |
+| --- | --- |
+| PhotoAccessHelper | 相册管理模块的实例。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -55,7 +61,6 @@ struct Index {
     }
     .height('90%')
   }
-}
 ```
 
 #### PhotoAccessHelper
@@ -64,31 +69,39 @@ struct Index {
 
 getAssets(options: photoAccessHelper.FetchOptions): Promise<FetchResult<PhotoAsset>>
 
-获取图片和视频资源，使用Promise方式返回结果。
+获取图片和视频资源。使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **需要权限**：ohos.permission.READ_IMAGEVIDEO
 
-对于未申请'ohos.permission.READ_IMAGEVIDEO'权限的应用，可以通过picker的方式调用该接口来查询指定uri对应的图片或视频资源，详情请参考[开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker#指定uri获取图片或视频资源)。
+对于未申请'ohos.permission.READ_IMAGEVIDEO'权限的应用，可以通过picker的方式调用该接口来查询指定URI对应的图片或视频资源，详情请参考[指定URI获取图片或视频资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker#指定uri获取图片或视频资源)。
 
 **参数：**
 
-参数名类型必填说明options[photoAccessHelper.FetchOptions](../../types/interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529285945__fetchoptions)是图片和视频检索选项。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | photoAccessHelper.FetchOptions | 是 | 图片和视频检索选项。 |
 
 **返回值：**
 
-类型说明Promise<[FetchResult](#ZH-CN_TOPIC_0000002497445976__fetchresult)<[PhotoAsset](#ZH-CN_TOPIC_0000002497445976__photoasset)>>Promise对象，返回图片和视频数据结果集。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<FetchResult<PhotoAsset>> | Promise对象，返回图片和视频数据结果集。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码]([文件管理错误码](../../errors/文件管理错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.201Permission denied.14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 201 | Permission denied. |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -109,18 +122,16 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
       if (photoAsset !== undefined) {
         console.info('photoAsset.displayName :' + photoAsset.displayName);
       }
-    }
   } catch (err) {
     console.error(`getAssets failed, error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### getBurstAssets
 
 getBurstAssets(burstKey: string, options: photoAccessHelper.FetchOptions): Promise<FetchResult<PhotoAsset>>
 
-获取连拍照片资源，使用Promise方式返回结果。
+获取连拍照片资源。使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -128,21 +139,30 @@ getBurstAssets(burstKey: string, options: photoAccessHelper.FetchOptions): Promi
 
 **参数：**
 
-参数名类型必填说明burstKeystring是一组连拍照片的唯一标识：uuid(可传入[PhotoKeys](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445919__photokeys)的BURST_KEY)。字符串长度为36。options[photoAccessHelper.FetchOptions](../../types/interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529285945__fetchoptions)是连拍照片检索选项。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| burstKey | string | 是 | 一组连拍照片的唯一标识：uuid(可传入[PhotoKeys](../../types/enums/Enums.md#ZH-CN_TOPIC_0000002529445919__photokeys)的BURST_KEY)。字符串长度为36。 |
+| options | photoAccessHelper.FetchOptions | 是 | 连拍照片检索选项。 |
 
 **返回值：**
 
-类型说明Promise<[FetchResult](#ZH-CN_TOPIC_0000002497445976__fetchresult)<[PhotoAsset](#ZH-CN_TOPIC_0000002497445976__photoasset)>>Promise对象，返回连拍照片数据结果集。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<FetchResult<PhotoAsset>> | Promise对象，返回连拍照片数据结果集。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
@@ -171,21 +191,18 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
         if (photoAsset !== undefined) {
           console.info('photoAsset.displayName :' + photoAsset.displayName);
         }
-      }
     } catch (err) {
       console.error(`getBurstAssets failed, error: ${err.code}, ${err.message}`);
     }
-  }
-}
 ```
 
 #### createAsset
 
 createAsset(photoType: PhotoType, extension: string, options?: photoAccessHelper.CreateOptions): Promise<string>
 
-指定文件类型、后缀和创建选项，创建图片或视频资源，使用Promise方式返回结果。
+指定文件类型、后缀和创建选项，创建图片或视频资源。使用Promise异步回调。
 
-此接口在未申请相册管理模块权限'ohos.permission.WRITE_IMAGEVIDEO'时，可以使用安全控件创建媒体资源，详情请参考[开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-savebutton)。
+此接口在未申请相册管理模块权限'ohos.permission.WRITE_IMAGEVIDEO'时，可以使用安全控件创建媒体资源，详情请参考[保存媒体库资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-savebutton)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -195,29 +212,31 @@ createAsset(photoType: PhotoType, extension: string, options?: photoAccessHelper
 
 **参数：**
 
-参数名类型必填说明photoType[PhotoType](#ZH-CN_TOPIC_0000002497445976__phototype)是创建的文件类型，IMAGE或者VIDEO类型。extensionstring是文件名后缀参数，例如：'jpg'。字符串长度为1~255。options[photoAccessHelper.CreateOptions](../../types/interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529285945__createoptions)否
-
-创建选项，例如{title: 'testPhoto'}。
-
-文件名中不允许出现非法英文字符。
-
-API18开始，非法字符包括： \ / : * ? " < > |
-
-API10-17，非法字符包括：. .. \ / : * ? " ' ` < > | { } [ ]
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| photoType | PhotoType | 是 | 创建的文件类型，IMAGE或者VIDEO类型。 |
+| extension | string | 是 | 文件名后缀参数，例如：'jpg'。字符串长度为1~255。 |
+| options | photoAccessHelper.CreateOptions | 否 | 创建选项，例如{title: 'testPhoto'}。 文件名中不允许出现非法英文字符。 API18开始，非法字符包括： \ / : * ? " < > | API10-17，非法字符包括：. .. \ / : * ? " ' ` < > | { } [ ] |
 
 **返回值：**
 
-类型说明Promise<string>Promise对象，返回创建的图片和视频的uri。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回创建的图片和视频的uri。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.201Permission denied.14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 201 | Permission denied. |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
@@ -236,14 +255,13 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
   } catch (err) {
     console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### getAlbums
 
 getAlbums(type: AlbumType, subtype: AlbumSubtype, options?: photoAccessHelper.FetchOptions): Promise<FetchResult<Album>>
 
-根据检索选项和相册类型获取相册，使用Promise方式返回结果。
+根据检索选项和相册类型获取相册。使用Promise异步回调。
 
 获取相册前需先保证相册存在。
 
@@ -253,21 +271,31 @@ getAlbums(type: AlbumType, subtype: AlbumSubtype, options?: photoAccessHelper.Fe
 
 **参数：**
 
-参数名类型必填说明type[AlbumType](#ZH-CN_TOPIC_0000002497445976__albumtype)是相册类型。subtype[AlbumSubtype](#ZH-CN_TOPIC_0000002497445976__albumsubtype)是相册子类型。options[photoAccessHelper.FetchOptions](../../types/interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529285945__fetchoptions)否检索选项，不填时默认根据相册类型检索。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | AlbumType | 是 | 相册类型。 |
+| subtype | AlbumSubtype | 是 | 相册子类型。 |
+| options | photoAccessHelper.FetchOptions | 否 | 检索选项，不填时默认根据相册类型检索。 |
 
 **返回值：**
 
-类型说明Promise<[FetchResult](#ZH-CN_TOPIC_0000002497445976__fetchresult)<[Album](#ZH-CN_TOPIC_0000002497445976__album)>>Promise对象，返回获取相册的结果集。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<FetchResult<Album>> | Promise对象，返回获取相册的结果集。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.201Permission denied.14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 201 | Permission denied. |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -301,7 +329,7 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 getAlbums(options: photoAccessHelper.FetchOptions): Promise<FetchResult<Album>>
 
-根据检索选项获取相册，使用Promise方式返回结果。
+根据检索选项获取相册。使用Promise异步回调。
 
 获取相册前需先保证相册存在。
 
@@ -311,21 +339,29 @@ getAlbums(options: photoAccessHelper.FetchOptions): Promise<FetchResult<Album>>
 
 **参数：**
 
-参数名类型必填说明options[photoAccessHelper.FetchOptions](../../types/interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529285945__fetchoptions)是检索选项。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | photoAccessHelper.FetchOptions | 是 | 检索选项。 |
 
 **返回值：**
 
-类型说明Promise<[FetchResult](#ZH-CN_TOPIC_0000002497445976__fetchresult)<[Album](#ZH-CN_TOPIC_0000002497445976__album)>>Promise对象，返回获取相册的结果集。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<FetchResult<Album>> | Promise对象，返回获取相册的结果集。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.201Permission denied.14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 201 | Permission denied. |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -359,25 +395,27 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 release(): Promise<void>
 
-释放PhotoAccessHelper实例，使用Promise方式返回结果。
-
-当后续不需要使用PhotoAccessHelper 实例中的方法时调用。
+释放PhotoAccessHelper实例，当后续不需要使用PhotoAccessHelper实例中的方法时调用。使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，返回void。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper) {
@@ -393,8 +431,6 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
       } catch(e){
           console.error(`release error :${e}`);
       }
-  }
-}
 ```
 
 #### PhotoAsset
@@ -405,13 +441,11 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
-名称类型只读可选说明uri12+string是否
-
-媒体文件资源uri（如：file://media/Photo/1/IMG_datetime_0001/displayName.jpg），详情参见用户文件uri介绍中的[媒体文件uri](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri-intro#媒体文件uri)。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-photoType[PhotoType](#ZH-CN_TOPIC_0000002497445976__phototype)是否媒体文件类型。displayNamestring是否显示文件名，包含后缀名。字符串长度为1~255。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uri12+ | string | 是 | 否 | 媒体文件资源URI（如：file://media/Photo/1/IMG_datetime_0001/displayName.jpg），详情参见用户文件URI介绍中的媒体文件URI。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| photoType | PhotoType | 是 | 否 | 媒体文件类型。 |
+| displayName | string | 是 | 否 | 显示文件名，包含后缀名。字符串长度为1~255。 |
 
 #### convertToPhotoAsset
 
@@ -423,17 +457,22 @@ convertToPhotoAsset(): photoAccessHelper.PhotoAsset
 
 **返回值：**
 
-类型说明photoAccessHelper.PhotoAsset返回非Sendable类型的[PhotoAsset](../../types/interfaces/Interface (PhotoAsset).md)。
+| 类型 | 说明 |
+| --- | --- |
+| photoAccessHelper.PhotoAsset | 返回非Sendable类型的PhotoAsset。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息201Permission denied.14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -454,12 +493,11 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
   } catch (err) {
     console.error(`convertToPhotoAsset failed. error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### get
 
-get(member: string): photoAccessHelper.MemberType
+get(member: string): [photoAccessHelper.MemberType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605956__membertype)
 
 获取PhotoAsset成员参数。
 
@@ -467,21 +505,27 @@ get(member: string): photoAccessHelper.MemberType
 
 **参数：**
 
-参数名类型必填说明memberstring是成员参数名称，在get时，除了'uri'、'media_type'、'subtype'和'display_name'四个属性之外，其他的属性都需要在fetchColumns中填入需要get的[PhotoKeys](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445919__photokeys)，例如：get title属性fetchColumns: ['title']。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| member | string | 是 | 成员参数名称，在get时，除了'uri'、'media_type'、'subtype'和'display_name'四个属性之外，其他的属性都需要在fetchColumns中填入需要get的[PhotoKeys](../../types/enums/Enums.md#ZH-CN_TOPIC_0000002529445919__photokeys)，例如：get title属性fetchColumns: ['title']。 |
 
 **返回值：**
 
-类型说明[photoAccessHelper.MemberType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605956__membertype)获取PhotoAsset成员参数的值。
+| 类型 | 说明 |
+| --- | --- |
+| [photoAccessHelper.MemberType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605956__membertype) | 获取PhotoAsset成员参数的值。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -507,7 +551,6 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
   } catch (err) {
     console.error(`get failed. error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### set
@@ -520,25 +563,22 @@ set(member: string, value: string): void
 
 **参数：**
 
-参数名类型必填说明memberstring是成员参数名称例如：[PhotoKeys](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445919__photokeys).TITLE。字符串长度为1~255。valuestring是
-
-设置成员参数名称，只能修改[PhotoKeys](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445919__photokeys).TITLE的值。title的参数规格为：
-
-- 不应包含扩展名。
-
-- 文件名字符串长度为1~255（资产文件名为标题+扩展名）。
-
-- 不允许出现的非法英文字符，包括：. \ / : * ? " ' ` < > | { } [ ]
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| member | string | 是 | 成员参数名称例如：[PhotoKeys](../../types/enums/Enums.md#ZH-CN_TOPIC_0000002529445919__photokeys).TITLE。字符串长度为1~255。 |
+| value | string | 是 | 设置成员参数名称，只能修改[PhotoKeys](../../types/enums/Enums.md#ZH-CN_TOPIC_0000002529445919__photokeys).TITLE的值。title的参数规格为： - 不应包含扩展名。 - 文件名字符串长度为1~255（资产文件名为标题+扩展名）。 - 不允许出现的非法英文字符，包括：. \ / : * ? " ' ` < > | { } [ ] |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -559,14 +599,13 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
   } catch (err) {
     console.error(`set failed. error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### commitModify
 
 commitModify(): Promise<void>
 
-修改文件的元数据，使用Promise方式返回异步结果。
+修改文件的元数据。使用Promise异步回调。
 
 **需要权限**：ohos.permission.WRITE_IMAGEVIDEO
 
@@ -576,17 +615,23 @@ commitModify(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，返回void。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.201Permission denied.14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -612,14 +657,13 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
   } catch (err) {
     console.error(`commitModify failed. error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### getThumbnail
 
 getThumbnail(size?: image.Size): Promise<image.PixelMap>
 
-获取文件的缩略图，传入缩略图尺寸，使用Promise方式返回异步结果。
+获取文件的缩略图，传入缩略图尺寸。使用Promise异步回调。
 
 **需要权限**：ohos.permission.READ_IMAGEVIDEO
 
@@ -627,21 +671,29 @@ getThumbnail(size?: image.Size): Promise<image.PixelMap>
 
 **参数：**
 
-参数名类型必填说明size[image.Size](../../types/interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002497445866__size)否缩略图尺寸。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | image.Size | 否 | 缩略图尺寸。 |
 
 **返回值：**
 
-类型说明Promise<[image.PixelMap](../../types/interfaces/Interface (PixelMap).md)>Promise对象，返回缩略图的PixelMap。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<image.PixelMap> | Promise对象，返回缩略图的PixelMap。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.201Permission denied.14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 201 | Permission denied. |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -686,17 +738,21 @@ getCount(): number
 
 **返回值：**
 
-类型说明number检索到的文件总数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 检索到的文件总数。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -725,17 +781,21 @@ isAfterLast(): boolean
 
 **返回值：**
 
-类型说明boolean当读到最后一条记录后，后续没有记录返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 当读到最后一条记录后，后续没有记录返回true，否则返回false。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -756,7 +816,6 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
   } else {
     console.info('photoAsset not isAfterLast.');
   }
-}
 ```
 
 #### close
@@ -769,13 +828,15 @@ close(): void
 
 **错误码：**
 
-详细错误码请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+详细错误码请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -795,30 +856,33 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
   } catch (err) {
     console.error(`close fail. error: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### getFirstObject
 
 getFirstObject(): Promise<T>
 
-获取文件检索结果中的第一个文件资产。此方法使用Promise方式来异步返回。
+获取文件检索结果中的第一个文件资产。使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **返回值：**
 
-类型说明Promise<T>Promise对象，返回结果集中第一个对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<T> | Promise对象，返回结果集中第一个对象。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -841,25 +905,29 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 getNextObject(): Promise<T>
 
-获取文件检索结果中的下一个文件资产。此方法使用Promise方式来异步返回。
+获取文件检索结果中的下一个文件资产。使用Promise异步回调。
 
-在调用此方法之前，必须使用[isAfterLast()](#ZH-CN_TOPIC_0000002497445976__isafterlast)来检查当前位置是否为最后一行。
+在调用此方法之前，必须使用[isAfterLast()](#ZH-CN_TOPIC_0000002553202057__isafterlast)来检查当前位置是否为最后一行。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **返回值：**
 
-类型说明Promise<T>Promise对象，返回结果集中下一个对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<T> | Promise对象，返回结果集中下一个对象。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -883,23 +951,27 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 getLastObject(): Promise<T>
 
-获取文件检索结果中的最后一个文件资产。此方法使用Promise方式来返回。
+获取文件检索结果中的最后一个文件资产。使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **返回值：**
 
-类型说明Promise<T>Promise对象，返回结果集中最后一个对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<T> | Promise对象，返回结果集中最后一个对象。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -922,27 +994,34 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 getObjectByPosition(index: number): Promise<T>
 
-获取文件检索结果中具有指定索引的文件资产。此方法使用Promise形式返回文件Asset。
+获取文件检索结果中具有指定索引的文件资产。使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **参数：**
 
-参数名类型必填说明indexnumber是要获取的文件的索引，从0开始。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 要获取的文件的索引，从0开始。 |
 
 **返回值：**
 
-类型说明Promise<T>Promise对象，返回结果集中指定索引的一个对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<T> | Promise对象，返回结果集中指定索引的一个对象。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -965,23 +1044,27 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 getAllObjects(): Promise<Array<T>>
 
-获取文件检索结果中的所有文件资产。此方法使用Promise方式来异步返回。
+获取文件检索结果中的所有文件资产。使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **返回值：**
 
-类型说明Promise<Array<T>>Promise对象，返回结果集中所有文件资产数组。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<T>> | Promise对象，返回结果集中所有文件资产数组。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -1008,7 +1091,16 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
-名称类型只读可选说明albumType[AlbumType](#ZH-CN_TOPIC_0000002497445976__albumtype)是否相册类型。albumSubtype[AlbumSubtype](#ZH-CN_TOPIC_0000002497445976__albumsubtype)是否相册子类型。albumNamestring用户相册可写，预置相册不可写否相册名称。albumUristring是否相册Uri。countnumber是否相册中文件数量。coverUristring是否封面文件Uri。imageCountnumber是是相册中图片数量。videoCountnumber是是相册中视频数量。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| albumType | AlbumType | 是 | 否 | 相册类型。 |
+| albumSubtype | AlbumSubtype | 是 | 否 | 相册子类型。 |
+| albumName | string | 用户相册可写，预置相册不可写 | 否 | 相册名称。 |
+| albumUri | string | 是 | 否 | 相册Uri。 |
+| count | number | 是 | 否 | 相册中文件数量。 |
+| coverUri | string | 是 | 否 | 封面文件Uri。 |
+| imageCount | number | 是 | 是 | 相册中图片数量。 |
+| videoCount | number | 是 | 是 | 相册中视频数量。 |
 
 #### convertToPhotoAlbum
 
@@ -1020,17 +1112,22 @@ convertToPhotoAlbum(): photoAccessHelper.Album
 
 **返回值：**
 
-类型说明[photoAccessHelper.Album](../../types/interfaces/Interface (Album).md)返回非Sendable类型的Album。
+| 类型 | 说明 |
+| --- | --- |
+| photoAccessHelper.Album | 返回非Sendable类型的Album。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息201Permission denied.14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -1061,9 +1158,9 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 #### getAssets
 
-getAssets(options: FetchOptions): Promise<FetchResult<PhotoAsset>>
+getAssets(options: photoAccessHelper.FetchOptions): Promise<FetchResult<PhotoAsset>>
 
-获取相册中的文件。该方法使用Promise来返回文件。
+获取相册中的文件。使用Promise异步回调。
 
 **需要权限**：ohos.permission.READ_IMAGEVIDEO
 
@@ -1071,21 +1168,29 @@ getAssets(options: FetchOptions): Promise<FetchResult<PhotoAsset>>
 
 **参数：**
 
-参数名类型必填说明options[FetchOptions](../../types/interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529285945__fetchoptions)是检索选项。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | photoAccessHelper.FetchOptions | 是 | 检索选项。 |
 
 **返回值：**
 
-类型说明Promise<[FetchResult](#ZH-CN_TOPIC_0000002497445976__fetchresult)<[PhotoAsset](#ZH-CN_TOPIC_0000002497445976__photoasset)>>Promise对象，返回图片和视频数据结果集。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<FetchResult<PhotoAsset>> | Promise对象，返回图片和视频数据结果集。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.201Permission denied.13900020Invalid argument.14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -1117,7 +1222,7 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 commitModify(): Promise<void>
 
-更新相册属性修改到数据库中。该方法使用Promise来返回结果。
+更新相册属性修改到数据库中。使用Promise异步回调。
 
 **需要权限**：ohos.permission.WRITE_IMAGEVIDEO
 
@@ -1125,17 +1230,22 @@ commitModify(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，返回void。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息201Permission denied.14000011Internal system error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 14000011 | Internal system error. |
 
 **示例：**
 
-phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002497445976__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[sendablePhotoAccessHelper.getPhotoAccessHelper](#ZH-CN_TOPIC_0000002553202057__sendablephotoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -1168,17 +1278,24 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
-名称值说明IMAGE1图片。VIDEO2视频。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| IMAGE | 1 | 图片。 |
+| VIDEO | 2 | 视频。 |
 
 #### PhotoSubtype14+
 
-枚举，不同[PhotoAsset](#ZH-CN_TOPIC_0000002497445976__photoasset)的类型。
+枚举，不同[PhotoAsset](#ZH-CN_TOPIC_0000002553202057__photoasset)的类型。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
-名称值说明DEFAULT0默认照片类型。MOVING_PHOTO3动态照片文件类型。BURST4连拍照片文件类型。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DEFAULT | 0 | 默认照片类型。 |
+| MOVING_PHOTO | 3 | 动态照片文件类型。 |
+| BURST | 4 | 连拍照片文件类型。 |
 
 #### DynamicRangeType14+
 
@@ -1186,7 +1303,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 **系统能力**: SystemCapability.FileManagement.PhotoAccessHelper.Core
 
-名称值说明SDR0标准动态范围类型。HDR1高动态范围类型。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SDR | 0 | 标准动态范围类型。 |
+| HDR | 1 | 高动态范围类型。 |
 
 #### AlbumType
 
@@ -1194,7 +1314,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
-名称值说明USER0用户相册。SYSTEM1024系统预置相册。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| USER | 0 | 用户相册。 |
+| SYSTEM | 1024 | 系统预置相册。 |
 
 #### AlbumSubtype
 
@@ -1202,4 +1325,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
-名称值说明USER_GENERIC1用户相册。FAVORITE1025收藏夹。VIDEO1026视频相册。IMAGE1031图片相册。ANY2147483647任意相册。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| USER_GENERIC | 1 | 用户相册。 |
+| FAVORITE | 1025 | 收藏夹。 |
+| VIDEO | 1026 | 视频相册。 |
+| IMAGE | 1031 | 图片相册。 |
+| ANY | 2147483647 | 任意相册。 |

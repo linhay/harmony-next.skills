@@ -38,9 +38,9 @@ UserAuthIcon({
 
  widgetParam: userAuth.WidgetParam,
 
- iconHeight?: Dimension,
+ iconHeight?: [Dimension](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10),
 
- iconColor?: ResourceColor,
+ iconColor?: [ResourceColor](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor),
 
  onIconClick?: ()=>void,
 
@@ -56,11 +56,14 @@ UserAuthIcon({
 
 **参数：**
 
-名称类型必填说明authParam[userAuth.AuthParam](@ohos.userIAM.userAuth (用户认证).md#ZH-CN_TOPIC_0000002529445377__authparam10)是用户认证相关参数。widgetParam[userAuth.WidgetParam](@ohos.userIAM.userAuth (用户认证).md#ZH-CN_TOPIC_0000002529445377__widgetparam10)是用户认证界面配置相关参数。iconHeight[Dimension](../../topics/misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10)否设置icon的高度，宽高比1:1，默认64。iconColor[ResourceColor](../../topics/misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)否设置icon的颜色，默认值：$r('sys.color.ohos_id_color_activated')。onIconClick()=>void否用户点击icon回调接口。onAuthResult(result: [userAuth.UserAuthResult](@ohos.userIAM.userAuth (用户认证).md#ZH-CN_TOPIC_0000002529445377__userauthresult10))=>void是
-
-用户认证结果信息回调接口。
-
-应用需要申请ohos.permission.ACCESS_BIOMETRIC权限，否则应用将仅展示图标，无法正常拉起身份认证控件。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| authParam | userAuth.AuthParam | 是 | 用户认证相关参数。 |
+| widgetParam | userAuth.WidgetParam | 是 | 用户认证界面配置相关参数。 |
+| iconHeight | [Dimension](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10) | 否 | 设置icon的高度，宽高比1:1，默认64。 |
+| iconColor | [ResourceColor](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 否 | 设置icon的颜色，默认值：$r('sys.color.ohos_id_color_activated')。 |
+| onIconClick | ()=>void | 否 | 用户点击icon回调接口。 |
+| onAuthResult | (result: userAuth.UserAuthResult)=>void | 是 | 用户认证结果信息回调接口。 应用需要申请ohos.permission.ACCESS_BIOMETRIC权限，否则应用将仅展示图标，无法正常拉起身份认证控件。 |
 
 #### 事件
 
@@ -103,12 +106,9 @@ struct Index {
           }
         })
       }
-    }
-  }
-}
 ```
 
-调用onAuthResult可能会抛出错误码，错误码详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[用户认证错误码](../../errors/用户认证错误码.md)。
+调用onAuthResult可能会抛出错误码，错误码详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[用户认证错误码]([用户认证错误码](../../errors/用户认证错误码.md).md)。
 
 **人脸认证图例：**
 

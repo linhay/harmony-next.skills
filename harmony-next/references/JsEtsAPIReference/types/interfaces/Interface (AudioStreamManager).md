@@ -2,7 +2,8 @@
 
 音频流管理。
 
-在使用AudioStreamManager的接口之前，需先通过[getStreamManager](Interface (AudioManager).md#ZH-CN_TOPIC_0000002497605698__getstreammanager9)获取AudioStreamManager实例。
+在使用AudioStreamManager的接口之前，需先通过[getStreamManager](Interface (AudioManager).md#ZH-CN_TOPIC_0000002553361737__getstreammanager9)获取AudioStreamManager实例。
+
 
 - 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 - 本Interface首批接口从API version 9开始支持。
@@ -15,7 +16,7 @@ import { audio } from '@kit.AudioKit';
 
 #### getCurrentAudioRendererInfoArray9+
 
-getCurrentAudioRendererInfoArray(callback: AsyncCallback<AudioRendererChangeInfoArray>): void
+getCurrentAudioRendererInfoArray(callback: AsyncCallback<[AudioRendererChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererchangeinfoarray9)>): void
 
 获取当前音频渲染器的信息。使用callback异步回调。
 
@@ -23,7 +24,9 @@ getCurrentAudioRendererInfoArray(callback: AsyncCallback<AudioRendererChangeInfo
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[AudioRendererChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererchangeinfoarray9)>是回调函数。当获取当前音频渲染器的信息成功，err为undefined，data为获取到的当前音频渲染器的信息；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<[AudioRendererChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererchangeinfoarray9)> | 是 | 回调函数。当获取当前音频渲染器的信息成功，err为undefined，data为获取到的当前音频渲染器的信息；否则为错误对象。 |
 
 **示例：**
 
@@ -41,7 +44,7 @@ audioStreamManager.getCurrentAudioRendererInfoArray((err: BusinessError, audioRe
 
 #### getCurrentAudioRendererInfoArray9+
 
-getCurrentAudioRendererInfoArray(): Promise<AudioRendererChangeInfoArray>
+getCurrentAudioRendererInfoArray(): Promise<[AudioRendererChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererchangeinfoarray9)>
 
 获取当前音频渲染器的信息。使用Promise异步回调。
 
@@ -49,7 +52,9 @@ getCurrentAudioRendererInfoArray(): Promise<AudioRendererChangeInfoArray>
 
 **返回值：**
 
-类型说明Promise<[AudioRendererChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererchangeinfoarray9)>Promise对象，返回当前音频渲染器信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AudioRendererChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererchangeinfoarray9)> | Promise对象，返回当前音频渲染器信息。 |
 
 **示例：**
 
@@ -65,7 +70,7 @@ audioStreamManager.getCurrentAudioRendererInfoArray().then((audioRendererChangeI
 
 #### getCurrentAudioRendererInfoArraySync10+
 
-getCurrentAudioRendererInfoArraySync(): AudioRendererChangeInfoArray
+getCurrentAudioRendererInfoArraySync(): [AudioRendererChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererchangeinfoarray9)
 
 获取当前音频渲染器的信息。同步返回结果。
 
@@ -73,7 +78,9 @@ getCurrentAudioRendererInfoArraySync(): AudioRendererChangeInfoArray
 
 **返回值：**
 
-类型说明[AudioRendererChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererchangeinfoarray9)返回当前音频渲染器信息。
+| 类型 | 说明 |
+| --- | --- |
+| [AudioRendererChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererchangeinfoarray9) | 返回当前音频渲染器信息。 |
 
 **示例：**
 
@@ -91,7 +98,7 @@ try {
 
 #### getCurrentAudioCapturerInfoArray9+
 
-getCurrentAudioCapturerInfoArray(callback: AsyncCallback<AudioCapturerChangeInfoArray>): void
+getCurrentAudioCapturerInfoArray(callback: AsyncCallback<[AudioCapturerChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiocapturerchangeinfoarray9)>): void
 
 获取当前音频采集器的信息。使用callback异步回调。
 
@@ -99,7 +106,9 @@ getCurrentAudioCapturerInfoArray(callback: AsyncCallback<AudioCapturerChangeInfo
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[AudioCapturerChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiocapturerchangeinfoarray9)>是回调函数。当获取当前音频采集器的信息成功，err为undefined，data为获取到的当前音频采集器的信息；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<[AudioCapturerChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiocapturerchangeinfoarray9)> | 是 | 回调函数。当获取当前音频采集器的信息成功，err为undefined，data为获取到的当前音频采集器的信息；否则为错误对象。 |
 
 **示例：**
 
@@ -117,7 +126,7 @@ audioStreamManager.getCurrentAudioCapturerInfoArray((err: BusinessError, audioCa
 
 #### getCurrentAudioCapturerInfoArray9+
 
-getCurrentAudioCapturerInfoArray(): Promise<AudioCapturerChangeInfoArray>
+getCurrentAudioCapturerInfoArray(): Promise<[AudioCapturerChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiocapturerchangeinfoarray9)>
 
 获取当前音频采集器的信息。使用Promise异步回调。
 
@@ -125,7 +134,9 @@ getCurrentAudioCapturerInfoArray(): Promise<AudioCapturerChangeInfoArray>
 
 **返回值：**
 
-类型说明Promise<[AudioCapturerChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiocapturerchangeinfoarray9)>Promise对象，返回当前音频采集器信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AudioCapturerChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiocapturerchangeinfoarray9)> | Promise对象，返回当前音频采集器信息。 |
 
 **示例：**
 
@@ -141,7 +152,7 @@ audioStreamManager.getCurrentAudioCapturerInfoArray().then((audioCapturerChangeI
 
 #### getCurrentAudioCapturerInfoArraySync10+
 
-getCurrentAudioCapturerInfoArraySync(): AudioCapturerChangeInfoArray
+getCurrentAudioCapturerInfoArraySync(): [AudioCapturerChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiocapturerchangeinfoarray9)
 
 获取当前音频采集器的信息。同步返回结果。
 
@@ -149,7 +160,9 @@ getCurrentAudioCapturerInfoArraySync(): AudioCapturerChangeInfoArray
 
 **返回值：**
 
-类型说明[AudioCapturerChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiocapturerchangeinfoarray9)返回当前音频采集器信息。
+| 类型 | 说明 |
+| --- | --- |
+| [AudioCapturerChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiocapturerchangeinfoarray9) | 返回当前音频采集器信息。 |
 
 **示例：**
 
@@ -167,7 +180,7 @@ try {
 
 #### on('audioRendererChange')9+
 
-on(type: 'audioRendererChange', callback: Callback<AudioRendererChangeInfoArray>): void
+on(type: 'audioRendererChange', callback: Callback<[AudioRendererChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererchangeinfoarray9)>): void
 
 监听音频渲染器更改事件（当音频播放流状态变化或设备变化时触发）。使用callback异步回调。
 
@@ -175,13 +188,19 @@ on(type: 'audioRendererChange', callback: Callback<AudioRendererChangeInfoArray>
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'audioRendererChange'，当音频播放流状态变化或设备变化时，触发该事件。callbackCallback<[AudioRendererChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererchangeinfoarray9)>是回调函数，返回当前音频渲染器信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'audioRendererChange'，当音频播放流状态变化或设备变化时，触发该事件。 |
+| callback | Callback<[AudioRendererChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererchangeinfoarray9)> | 是 | 回调函数，返回当前音频渲染器信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码]([Audio错误码](../../errors/Audio错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -193,7 +212,7 @@ audioStreamManager.on('audioRendererChange',  (audioRendererChangeInfoArray: aud
 
 #### off('audioRendererChange')9+
 
-off(type: 'audioRendererChange', callback?: Callback<AudioRendererChangeInfoArray>): void
+off(type: 'audioRendererChange', callback?: Callback<[AudioRendererChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererchangeinfoarray9)>): void
 
 取消监听音频渲染器更改事件。使用callback异步回调。
 
@@ -201,13 +220,18 @@ off(type: 'audioRendererChange', callback?: Callback<AudioRendererChangeInfoArra
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'audioRendererChange'，当取消监听音频渲染器更改事件时，触发该事件。callback18+Callback<[AudioRendererChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererchangeinfoarray9)>否回调函数，返回当前音频渲染器信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'audioRendererChange'，当取消监听音频渲染器更改事件时，触发该事件。 |
+| callback18+ | Callback<[AudioRendererChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererchangeinfoarray9)> | 否 | 回调函数，返回当前音频渲染器信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -225,7 +249,7 @@ audioStreamManager.off('audioRendererChange', audioRendererChangeCallback);
 
 #### on('audioCapturerChange')9+
 
-on(type: 'audioCapturerChange', callback: Callback<AudioCapturerChangeInfoArray>): void
+on(type: 'audioCapturerChange', callback: Callback<[AudioCapturerChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiocapturerchangeinfoarray9)>): void
 
 监听音频采集器更改事件（当音频录制流状态变化或设备变化时触发）。使用callback异步回调。
 
@@ -233,13 +257,19 @@ on(type: 'audioCapturerChange', callback: Callback<AudioCapturerChangeInfoArray>
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'audioCapturerChange'，当音频录制流状态变化或设备变化时，触发该事件。callbackCallback<[AudioCapturerChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiocapturerchangeinfoarray9)>是回调函数，返回当前音频采集器信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'audioCapturerChange'，当音频录制流状态变化或设备变化时，触发该事件。 |
+| callback | Callback<[AudioCapturerChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiocapturerchangeinfoarray9)> | 是 | 回调函数，返回当前音频采集器信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -251,7 +281,7 @@ audioStreamManager.on('audioCapturerChange', (audioCapturerChangeInfoArray: audi
 
 #### off('audioCapturerChange')9+
 
-off(type: 'audioCapturerChange', callback?: Callback<AudioCapturerChangeInfoArray>): void
+off(type: 'audioCapturerChange', callback?: Callback<[AudioCapturerChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiocapturerchangeinfoarray9)>): void
 
 取消监听音频采集器更改事件。使用callback异步回调。
 
@@ -259,13 +289,18 @@ off(type: 'audioCapturerChange', callback?: Callback<AudioCapturerChangeInfoArra
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'audioCapturerChange'，当取消监听音频采集器更改事件时，触发该事件。callback18+Callback<[AudioCapturerChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiocapturerchangeinfoarray9)>否回调函数，返回当前音频采集器信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'audioCapturerChange'，当取消监听音频采集器更改事件时，触发该事件。 |
+| callback18+ | Callback<[AudioCapturerChangeInfoArray](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiocapturerchangeinfoarray9)> | 否 | 回调函数，返回当前音频采集器信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -283,17 +318,21 @@ audioStreamManager.off('audioCapturerChange', audioCapturerChangeCallback);
 
 #### isActive(deprecated)
 
-isActive(volumeType: AudioVolumeType, callback: AsyncCallback<boolean>): void
+isActive(volumeType: [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype), callback: AsyncCallback<boolean>): void
 
 获取指定音频流活跃状态。使用callback异步回调。
 
-从API version 9开始支持，从API version 20开始废弃，建议使用[isStreamActive](Interface (AudioStreamManager).md#ZH-CN_TOPIC_0000002497445722__isstreamactive20)替代。
+
+从API version 9开始支持，从API version 20开始废弃，建议使用[isStreamActive](Interface (AudioStreamManager).md#ZH-CN_TOPIC_0000002522241816__isstreamactive20)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
 
-参数名类型必填说明volumeType[AudioVolumeType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)是音频流类型。callbackAsyncCallback<boolean>是回调函数。当获取指定音频流活跃状态成功，err为undefined，data为true表示活跃，false表示不活跃；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volumeType | [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype) | 是 | 音频流类型。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当获取指定音频流活跃状态成功，err为undefined，data为true表示活跃，false表示不活跃；否则为错误对象。 |
 
 **示例：**
 
@@ -311,21 +350,26 @@ if (err) {
 
 #### isActive(deprecated)
 
-isActive(volumeType: AudioVolumeType): Promise<boolean>
+isActive(volumeType: [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)): Promise<boolean>
 
 获取指定音频流是否为活跃状态。使用Promise异步回调。
 
-从API version 9开始支持，从API version 20开始废弃，建议使用[isStreamActive](Interface (AudioStreamManager).md#ZH-CN_TOPIC_0000002497445722__isstreamactive20)替代。
+
+从API version 9开始支持，从API version 20开始废弃，建议使用[isStreamActive](Interface (AudioStreamManager).md#ZH-CN_TOPIC_0000002522241816__isstreamactive20)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
 
-参数名类型必填说明volumeType[AudioVolumeType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)是音频流类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volumeType | [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype) | 是 | 音频流类型。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示流状态为活跃；返回false表示流状态不活跃。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示流状态为活跃；返回false表示流状态不活跃。 |
 
 **示例：**
 
@@ -337,27 +381,35 @@ audioStreamManager.isActive(audio.AudioVolumeType.MEDIA).then((value: boolean) =
 
 #### isActiveSync(deprecated)
 
-isActiveSync(volumeType: AudioVolumeType): boolean
+isActiveSync(volumeType: [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)): boolean
 
 获取指定音频流是否为活跃状态。同步返回结果。
 
-从API version 10开始支持，从API version 20开始废弃，建议使用[isStreamActive](Interface (AudioStreamManager).md#ZH-CN_TOPIC_0000002497445722__isstreamactive20)替代。
+
+从API version 10开始支持，从API version 20开始废弃，建议使用[isStreamActive](Interface (AudioStreamManager).md#ZH-CN_TOPIC_0000002522241816__isstreamactive20)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
 
-参数名类型必填说明volumeType[AudioVolumeType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype)是音频流类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volumeType | [AudioVolumeType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiovolumetype) | 是 | 音频流类型。 |
 
 **返回值：**
 
-类型说明boolean流的活跃状态。返回true表示活跃，返回false表示不活跃。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 流的活跃状态。返回true表示活跃，返回false表示不活跃。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -375,7 +427,7 @@ try {
 
 #### isStreamActive20+
 
-isStreamActive(streamUsage: StreamUsage): boolean
+isStreamActive(streamUsage: [StreamUsage](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage)): boolean
 
 获取指定音频流是否为活跃状态。同步返回结果。
 
@@ -383,17 +435,23 @@ isStreamActive(streamUsage: StreamUsage): boolean
 
 **参数：**
 
-参数名类型必填说明streamUsage[StreamUsage](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage)是音频流使用类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| streamUsage | [StreamUsage](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage) | 是 | 音频流使用类型。 |
 
 **返回值：**
 
-类型说明boolean流是否处于活跃状态。返回true表示活跃，返回false表示不活跃。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 流是否处于活跃状态。返回true表示活跃，返回false表示不活跃。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -411,7 +469,7 @@ try {
 
 #### getAudioEffectInfoArray10+
 
-getAudioEffectInfoArray(usage: StreamUsage, callback: AsyncCallback<AudioEffectInfoArray>): void
+getAudioEffectInfoArray(usage: [StreamUsage](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage), callback: AsyncCallback<AudioEffectInfoArray>): void
 
 获取当前音效模式的信息。使用callback异步回调。
 
@@ -419,13 +477,19 @@ getAudioEffectInfoArray(usage: StreamUsage, callback: AsyncCallback<AudioEffectI
 
 **参数：**
 
-参数名类型必填说明usage[StreamUsage](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage)是音频流使用类型。callbackAsyncCallback<[AudioEffectInfoArray](Interface (AudioStreamManager).md#ZH-CN_TOPIC_0000002497445722__getaudioeffectinfoarray10)>是回调函数。当获取当前音效模式的信息成功，err为undefined，data为获取到的当前音效模式的信息；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| usage | [StreamUsage](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage) | 是 | 音频流使用类型。 |
+| callback | AsyncCallback<AudioEffectInfoArray> | 是 | 回调函数。当获取当前音效模式的信息成功，err为undefined，data为获取到的当前音效模式的信息；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed. Return by callback.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. Return by callback. |
 
 **示例：**
 
@@ -443,7 +507,7 @@ audioStreamManager.getAudioEffectInfoArray(audio.StreamUsage.STREAM_USAGE_MUSIC,
 
 #### getAudioEffectInfoArray10+
 
-getAudioEffectInfoArray(usage: StreamUsage): Promise<AudioEffectInfoArray>
+getAudioEffectInfoArray(usage: [StreamUsage](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage)): Promise<AudioEffectInfoArray>
 
 获取当前音效模式的信息。使用Promise异步回调。
 
@@ -451,17 +515,24 @@ getAudioEffectInfoArray(usage: StreamUsage): Promise<AudioEffectInfoArray>
 
 **参数：**
 
-参数名类型必填说明usage[StreamUsage](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage)是音频流使用类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| usage | [StreamUsage](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage) | 是 | 音频流使用类型。 |
 
 **返回值：**
 
-类型说明Promise<[AudioEffectInfoArray](Interface (AudioStreamManager).md#ZH-CN_TOPIC_0000002497445722__getaudioeffectinfoarray10)>Promise对象，返回当前音效模式的信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AudioEffectInfoArray> | Promise对象，返回当前音效模式的信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. Return by promise. |
 
 **示例：**
 
@@ -477,7 +548,7 @@ audioStreamManager.getAudioEffectInfoArray(audio.StreamUsage.STREAM_USAGE_MUSIC)
 
 #### getAudioEffectInfoArraySync10+
 
-getAudioEffectInfoArraySync(usage: StreamUsage): AudioEffectInfoArray
+getAudioEffectInfoArraySync(usage: [StreamUsage](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage)): AudioEffectInfoArray
 
 获取当前音效模式的信息。同步返回结果。
 
@@ -485,17 +556,24 @@ getAudioEffectInfoArraySync(usage: StreamUsage): AudioEffectInfoArray
 
 **参数：**
 
-参数名类型必填说明usage[StreamUsage](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage)是音频流使用类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| usage | [StreamUsage](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage) | 是 | 音频流使用类型。 |
 
 **返回值：**
 
-类型说明[AudioEffectInfoArray](Interface (AudioStreamManager).md#ZH-CN_TOPIC_0000002497445722__getaudioeffectinfoarray10)返回当前音效模式的信息。
+| 类型 | 说明 |
+| --- | --- |
+| AudioEffectInfoArray | 返回当前音效模式的信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -513,7 +591,7 @@ try {
 
 #### isAcousticEchoCancelerSupported20+
 
-isAcousticEchoCancelerSupported(sourceType: SourceType): boolean
+isAcousticEchoCancelerSupported(sourceType: [SourceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__sourcetype8)): boolean
 
 查询指定的source type是否支持回声消除。
 
@@ -521,17 +599,23 @@ isAcousticEchoCancelerSupported(sourceType: SourceType): boolean
 
 **参数：**
 
-参数名类型必填说明sourceType[SourceType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__sourcetype8)是音源类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sourceType | [SourceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__sourcetype8) | 是 | 音源类型。 |
 
 **返回值：**
 
-类型说明boolean是否支持回声消除。true表示支持回声消除，false表示不支持回声消除。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否支持回声消除。true表示支持回声消除，false表示不支持回声消除。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -549,7 +633,7 @@ try {
 
 #### isAudioLoopbackSupported20+
 
-isAudioLoopbackSupported(mode: AudioLoopbackMode): boolean
+isAudioLoopbackSupported(mode: [AudioLoopbackMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackmode20)): boolean
 
 查询当前系统是否支持指定的音频返听模式。
 
@@ -557,17 +641,23 @@ isAudioLoopbackSupported(mode: AudioLoopbackMode): boolean
 
 **参数：**
 
-参数名类型必填说明mode[AudioLoopbackMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackmode20)是音频返听模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mode | [AudioLoopbackMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackmode20) | 是 | 音频返听模式。 |
 
 **返回值：**
 
-类型说明boolean是否支持指定的音频返听模式。true表示支持，false表示不支持。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否支持指定的音频返听模式。true表示支持，false表示不支持。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -593,21 +683,23 @@ isRecordingAvailable(capturerInfo: AudioCapturerInfo): boolean
 
 **参数：**
 
-参数名类型必填说明capturerInfo[AudioCapturerInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiocapturerinfo8)是音频采集器信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| capturerInfo | AudioCapturerInfo | 是 | 音频采集器信息。 |
 
 **返回值：**
 
-类型说明boolean
-
-代表录制是否可以启动成功。true表示成功，false表示失败。
-
-仅检测是否可以获取音频采集器信息中音源类型的焦点。通常在音频录制启动前调用，否则已存在的录制流可能会拒绝其启动。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 代表录制是否可以启动成功。true表示成功，false表示失败。 仅检测是否可以获取音频采集器信息中音源类型的焦点。通常在音频录制启动前调用，否则已存在的录制流可能会拒绝其启动。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -643,13 +735,12 @@ audio.createAudioCapturer(audioCapturerOptions, (err: BusinessError, audioCaptur
       let error = err as BusinessError;
       console.error(`Failed to use isRecordingAvailable function. code: ${error.code}, message: ${error.message}`);
     }
-  }
 });
 ```
 
 #### isIntelligentNoiseReductionEnabledForCurrentDevice21+
 
-isIntelligentNoiseReductionEnabledForCurrentDevice(sourceType: SourceType): boolean
+isIntelligentNoiseReductionEnabledForCurrentDevice(sourceType: [SourceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__sourcetype8)): boolean
 
 查询指定的音源类型智能降噪开关是否打开。
 
@@ -657,17 +748,23 @@ isIntelligentNoiseReductionEnabledForCurrentDevice(sourceType: SourceType): bool
 
 **参数：**
 
-参数名类型必填说明sourceType[SourceType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__sourcetype8)是表示音源类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sourceType | [SourceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__sourcetype8) | 是 | 表示音源类型。 |
 
 **返回值：**
 
-类型说明boolean智能降噪开关的状态。true表示打开，false表示关闭。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 智能降噪开关的状态。true表示打开，false表示关闭。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 

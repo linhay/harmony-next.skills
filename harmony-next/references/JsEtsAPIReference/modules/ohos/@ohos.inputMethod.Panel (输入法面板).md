@@ -16,13 +16,10 @@ import { PanelInfo, PanelType, PanelFlag } from '@kit.IMEKit';
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
-名称类型只读可选说明type[PanelType](#ZH-CN_TOPIC_0000002497605288__paneltype)否否输入法面板类型。flag[PanelFlag](#ZH-CN_TOPIC_0000002497605288__panelflag)否是
-
-输入法面板状态类型。
-
-- 默认值为固定态。
-
-- 当前仅用于描述软键盘类型的面板的状态。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| type | PanelType | 否 | 否 | 输入法面板类型。 |
+| flag | PanelFlag | 否 | 是 | 输入法面板状态类型。 - 默认值为固定态。 - 当前仅用于描述软键盘类型的面板的状态。 |
 
 #### PanelType
 
@@ -30,18 +27,22 @@ import { PanelInfo, PanelType, PanelFlag } from '@kit.IMEKit';
 
 **系统能力**：SystemCapability.MiscServices.InputMethodFramework
 
-名称值说明SOFT_KEYBOARD0软键盘类型。STATUS_BAR1状态栏类型。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SOFT_KEYBOARD | 0 | 软键盘类型。 |
+| STATUS_BAR | 1 | 状态栏类型。 |
 
 #### PanelFlag
 
 输入法面板状态类型枚举。
 
+
+目前仅用于SOFT_KEYBOARD类型的面板。
+
 **系统能力**：SystemCapability.MiscServices.InputMethodFramework
 
-名称值说明FLAG_FIXED0固定态面板类型。FLAG_FLOATING1悬浮态面板类型。FLAG_CANDIDATE2
-
-候选词态面板类型。
-
-- 当输入面板为候选词态时，面板为显示用户输入候选词的窗口。
-
-- 输入法服务不会主动控制候选词态面板的显示和隐藏，需要开发者根据情况自行控制。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| FLAG_FIXED | 0 | 固定态面板类型。 |
+| FLAG_FLOATING | 1 | 悬浮态面板类型。 |
+| FLAG_CANDIDATE | 2 | 候选词态面板类型。 - 当输入面板为候选词态时，面板为显示用户输入候选词的窗口。 - 输入法服务不会主动控制候选词态面板的显示和隐藏，需要开发者根据情况自行控制。 |

@@ -18,137 +18,33 @@ import { uri } from '@kit.ArkTS';
 
 **系统能力：** SystemCapability.Utils.Lang
 
-名称类型只读可选说明schemestring否否
-
-获取和设置URI的协议部分，若无此部分则返回null对象。
-
-此属性在API version 19之前为只读属性，不可写，修改此属性会报错。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-userInfostring否否
-
-获取和设置URI的用户信息部分，若无此部分则返回null对象。
-
-此属性在API version 19之前为只读属性，不可写，修改此属性会报错。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-hoststring是否
-
-获取URI的主机名部分（不带端口），若无此部分则返回null对象。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-portstring是否
-
-获取URI的端口部分。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-pathstring否否
-
-获取和设置URI的路径部分，若无此部分则返回null对象。
-
-此属性在API version 19之前为只读属性，不可写，修改此属性会报错。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-querystring否否
-
-获取和设置URI的查询部分，若无此部分则返回null对象。
-
-此属性在API version 19之前为只读属性，不可写，修改此属性会报错。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-fragmentstring否否
-
-获取和设置URI的片段部分，若无此部分则返回null对象。
-
-此属性在API version 19之前为只读属性，不可写，修改此属性会报错。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-authoritystring否否
-
-获取和设置此URI的解码权限组件部分，若无此部分则返回null对象。
-
-此属性在API version 19之前为只读属性，不可写，修改此属性会报错。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-sspstring否否
-
-获取和设置URI的解码方案特定部分，方案特定部分是URI的一部分，它包含了特定于协议或方案的信息。
-
-此属性在API version 19之前为只读属性，不可写，修改此属性会报错。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-encodedUserInfo12+string否否
-
-获取和设置URI的编码用户信息部分，若无此部分则返回null对象。
-
-此属性在API version 19之前为只读属性，不可写，修改此属性会报错。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-encodedPath12+string否否
-
-获取和设置URI的编码路径部分，若无此部分则返回null对象。
-
-此属性在API version 19之前为只读属性，不可写，修改此属性会报错。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-encodedQuery12+string否否
-
-获取和设置URI的编码查询部分，若无此部分则返回null对象。
-
-此属性在API version 19之前为只读属性，不可写，修改此属性会报错。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-encodedFragment12+string否否
-
-获取和设置URI的编码片段部分，若无此部分则返回null对象。
-
-此属性在API version 19之前为只读属性，不可写，修改此属性会报错。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-encodedAuthority12+string否否
-
-获取和设置URI的编码权限组件部分，若无此部分则返回null对象。
-
-此属性在API version 19之前为只读属性，不可写，修改此属性会报错。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-encodedSSP12+string否否
-
-获取和设置URI的编码方案特定部分。
-
-此属性在API version 19之前为只读属性，不可写，修改此属性会报错。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| scheme | string | 否 | 否 | 获取和设置URI的协议部分，若无此部分则返回null对象。  此属性在API version 19之前为只读属性，不可写，修改此属性会报错。  元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| userInfo | string | 否 | 否 | 获取和设置URI的用户信息部分，若无此部分则返回null对象。  此属性在API version 19之前为只读属性，不可写，修改此属性会报错。  元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| host | string | 是 | 否 | 获取URI的主机名部分（不带端口），若无此部分则返回null对象。  元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| port | string | 是 | 否 | 获取URI的端口部分。  元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| path | string | 否 | 否 | 获取和设置URI的路径部分，若无此部分则返回null对象。  此属性在API version 19之前为只读属性，不可写，修改此属性会报错。  元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| query | string | 否 | 否 | 获取和设置URI的查询部分，若无此部分则返回null对象。  此属性在API version 19之前为只读属性，不可写，修改此属性会报错。  元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| fragment | string | 否 | 否 | 获取和设置URI的片段部分，若无此部分则返回null对象。  此属性在API version 19之前为只读属性，不可写，修改此属性会报错。  元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| authority | string | 否 | 否 | 获取和设置此URI的解码权限组件部分，若无此部分则返回null对象。  此属性在API version 19之前为只读属性，不可写，修改此属性会报错。  元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| ssp | string | 否 | 否 | 获取和设置URI的解码方案特定部分，方案特定部分是URI的一部分，它包含了特定于协议或方案的信息。 此属性在API version 19之前为只读属性，不可写，修改此属性会报错。  元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| encodedUserInfo12+ | string | 否 | 否 | 获取和设置URI的编码用户信息部分，若无此部分则返回null对象。  此属性在API version 19之前为只读属性，不可写，修改此属性会报错。  元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| encodedPath12+ | string | 否 | 否 | 获取和设置URI的编码路径部分，若无此部分则返回null对象。  此属性在API version 19之前为只读属性，不可写，修改此属性会报错。  元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| encodedQuery12+ | string | 否 | 否 | 获取和设置URI的编码查询部分，若无此部分则返回null对象。  此属性在API version 19之前为只读属性，不可写，修改此属性会报错。  元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| encodedFragment12+ | string | 否 | 否 | 获取和设置URI的编码片段部分，若无此部分则返回null对象。  此属性在API version 19之前为只读属性，不可写，修改此属性会报错。  元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| encodedAuthority12+ | string | 否 | 否 | 获取和设置URI的编码权限组件部分，若无此部分则返回null对象。  此属性在API version 19之前为只读属性，不可写，修改此属性会报错。  元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| encodedSSP12+ | string | 否 | 否 | 获取和设置URI的编码方案特定部分。 此属性在API version 19之前为只读属性，不可写，修改此属性会报错。  元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 
 #### 命名规则
 
 **命名形式：**
 
-标准URI定义主要由以下三个部分组成：
+标准URI定义主要由以下三个部分组成：[scheme:]scheme-specific-part[#fragment]。
 
-[scheme:]scheme-specific-part[#fragment]。
+细化URI格式，可以将其分为：[scheme:][//authority][path][?query][#fragment]。
 
-细化URI格式，可以将其分为：
-
-[scheme:][//authority][path][?query][#fragment]。
-
-将URI格式进一步细化，可以分为：
-
-[scheme:][//[user-info@]host[:port]][path][?query][#fragment]。
+将URI格式进一步细化，可以分为：[scheme:][//[user-info@]host[:port]][path][?query][#fragment]。
 
 - scheme: 协议名，与scheme-specific-part以:进行分隔，包含scheme部分的URI为绝对URI，不包含scheme部分的URI为相对URI，根据需要填写。例如http、https、ftp、datashare等。
 - scheme-specific-part: URI的特定解码方案特定部分，位于[scheme:]和[#fragment]之间由[//][authority][path][?query]组成，此部分以/开头的为分层URI，不以/开头的为不透明URI，根据需要填写。
@@ -244,13 +140,18 @@ constructor(uri: string)
 
 **参数：**
 
-参数名类型必填说明uristring是入参对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 入参对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[语言基础类库错误码]([语言基础类库错误码](../../errors/语言基础类库错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.10200002Invalid uri string.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 10200002 | Invalid uri string. |
 
 **示例：**
 
@@ -275,7 +176,9 @@ toString(): string
 
 **返回值：**
 
-类型说明string返回URI的字符串序列化。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回URI的字符串序列化。 |
 
 **示例：**
 
@@ -296,17 +199,23 @@ equalsTo(other: URI): boolean
 
 **参数：**
 
-参数名类型必填说明other[URI](#ZH-CN_TOPIC_0000002529284745__uri)是需要比较的URI对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| other | URI | 是 | 需要比较的URI对象。 |
 
 **返回值：**
 
-类型说明boolean返回true表示相等，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示相等，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -328,7 +237,9 @@ checkIsAbsolute(): boolean
 
 **返回值：**
 
-类型说明boolean如果是绝对URI返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果是绝对URI返回true，否则返回false。 |
 
 **示例：**
 
@@ -359,7 +270,9 @@ normalize(): URI
 
 **返回值：**
 
-类型说明[URI](#ZH-CN_TOPIC_0000002529284745__uri)返回一个path被规范化后的URI对象。
+| 类型 | 说明 |
+| --- | --- |
+| URI | 返回一个path被规范化后的URI对象。 |
 
 **示例：**
 
@@ -388,7 +301,9 @@ checkRelative(): boolean
 
 **返回值：**
 
-类型说明boolean如果是相对URI返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果是相对URI返回true，否则返回false。 |
 
 **示例：**
 
@@ -411,7 +326,9 @@ checkOpaque(): boolean
 
 **返回值：**
 
-类型说明boolean如果是不透明的URI返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果是不透明的URI返回true，否则返回false。 |
 
 **示例：**
 
@@ -434,7 +351,9 @@ checkHierarchical(): boolean
 
 **返回值：**
 
-类型说明boolean如果是分层的URI返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果是分层的URI返回true，否则返回false。 |
 
 **示例：**
 
@@ -459,17 +378,23 @@ getQueryValue(key:string): string
 
 **参数：**
 
-参数名类型必填说明keystring是此URI查询参数的名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 此URI查询参数的名称。 |
 
 **返回值：**
 
-类型说明string返回经解码处理后的URI查询参数的第一个值，若未找到对应值则返回null对象。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回经解码处理后的URI查询参数的第一个值，若未找到对应值则返回null对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -493,17 +418,24 @@ addQueryValue(key:string, value:string): URI
 
 **参数：**
 
-参数名类型必填说明keystring是需要添加查询参数的名称。valuestring是需要添加查询参数的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 需要添加查询参数的名称。 |
+| value | string | 是 | 需要添加查询参数的值。 |
 
 **返回值：**
 
-类型说明[URI](#ZH-CN_TOPIC_0000002529284745__uri)返回添加查询部分后的URI对象。
+| 类型 | 说明 |
+| --- | --- |
+| URI | 返回添加查询部分后的URI对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -525,17 +457,23 @@ addSegment(pathSegment:string): URI
 
 **参数：**
 
-参数名类型必填说明pathSegmentstring是需要追加到路径部分的字段。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pathSegment | string | 是 | 需要追加到路径部分的字段。 |
 
 **返回值：**
 
-类型说明[URI](#ZH-CN_TOPIC_0000002529284745__uri)返回已追加字段的URI对象。
+| 类型 | 说明 |
+| --- | --- |
+| URI | 返回已追加字段的URI对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -557,17 +495,23 @@ addEncodedSegment(pathSegment:string): URI
 
 **参数：**
 
-参数名类型必填说明pathSegmentstring是需要追加到路径部分的编码字段。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pathSegment | string | 是 | 需要追加到路径部分的编码字段。 |
 
 **返回值：**
 
-类型说明[URI](#ZH-CN_TOPIC_0000002529284745__uri)返回已追加字段的URI对象。
+| 类型 | 说明 |
+| --- | --- |
+| URI | 返回已追加字段的URI对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -589,7 +533,9 @@ getQueryNames(): string[]
 
 **返回值：**
 
-类型说明string[]返回URI查询部分中所有不重复的已解码参数名集合。
+| 类型 | 说明 |
+| --- | --- |
+| string[] | 返回URI查询部分中所有不重复的已解码参数名集合。 |
 
 **示例：**
 
@@ -613,17 +559,23 @@ getQueryValues(key:string): string[]
 
 **参数：**
 
-参数名类型必填说明keystring是指定键的名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 指定键的名称。 |
 
 **返回值：**
 
-类型说明string[]返回此URI中查询参数内指定键对应所有值的集合，若没有找到则返回一个空字符串数组[]。
+| 类型 | 说明 |
+| --- | --- |
+| string[] | 返回此URI中查询参数内指定键对应所有值的集合，若没有找到则返回一个空字符串数组[]。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -645,17 +597,24 @@ getBooleanQueryValue(key:string,defaultValue:boolean): boolean
 
 **参数：**
 
-参数名类型必填说明keystring是要获取的查询参数的名称。defaultValueboolean是设置查询参数中未包含指定键时返回的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要获取的查询参数的名称。 |
+| defaultValue | boolean | 是 | 设置查询参数中未包含指定键时返回的值。 |
 
 **返回值：**
 
-类型说明boolean如果指定的查询参数不存在，则返回defaultValue的值；查询参数对应第一个值为“false”或者“0”返回false，否则返回true。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果指定的查询参数不存在，则返回defaultValue的值；查询参数对应第一个值为“false”或者“0”返回false，否则返回true。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -684,7 +643,9 @@ clearQuery(): URI
 
 **返回值：**
 
-类型说明[URI](#ZH-CN_TOPIC_0000002529284745__uri)返回一个已被清除查询部分的URI对象。
+| 类型 | 说明 |
+| --- | --- |
+| URI | 返回一个已被清除查询部分的URI对象。 |
 
 **示例：**
 
@@ -705,7 +666,9 @@ getLastSegment(): string
 
 **返回值：**
 
-类型说明string返回此URI路径中的最后一个段，如果路径为空则返回null。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回此URI路径中的最后一个段，如果路径为空则返回null。 |
 
 **示例：**
 
@@ -726,7 +689,9 @@ getSegment(): string[]
 
 **返回值：**
 
-类型说明string[]返回此URI中已解码的所有路径段，各段前后均不含 “/”。
+| 类型 | 说明 |
+| --- | --- |
+| string[] | 返回此URI中已解码的所有路径段，各段前后均不含 “/”。 |
 
 **示例：**
 
@@ -747,17 +712,25 @@ createFromParts(scheme: string, ssp: string, fragment: string): URI
 
 **参数：**
 
-参数名类型必填说明schemestring是此URI协议部分。该参数需符合URI协议标准。sspstring是此URI的方案特定部分，即位于协议分隔符“:”和片段分隔符“#”之间的所有内容，这部分将被编码。fragmentstring是此URI的片段部分，即“#”符号后面的内容，如果未定义则为空，这部分也将被编码。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| scheme | string | 是 | 此URI协议部分。该参数需符合URI协议标准。 |
+| ssp | string | 是 | 此URI的方案特定部分，即位于协议分隔符“:”和片段分隔符“#”之间的所有内容，这部分将被编码。 |
+| fragment | string | 是 | 此URI的片段部分，即“#”符号后面的内容，如果未定义则为空，这部分也将被编码。 |
 
 **返回值：**
 
-类型说明[URI](#ZH-CN_TOPIC_0000002529284745__uri)返回由给定协议、协议特定部分和片段创建的URI对象。
+| 类型 | 说明 |
+| --- | --- |
+| URI | 返回由给定协议、协议特定部分和片段创建的URI对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -772,17 +745,22 @@ equals(other: URI): boolean
 
 判断此URI是否与其他URI对象相等。
 
-从API version 8开始支持，从API version 9开始废弃，建议使用[equalsTo9+](#ZH-CN_TOPIC_0000002529284745__equalsto9)替代。
+
+从API version 8开始支持，从API version 9开始废弃，建议使用[equalsTo9+](#ZH-CN_TOPIC_0000002522080702__equalsto9)替代。
 
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
 
-参数名类型必填说明other[URI](#ZH-CN_TOPIC_0000002529284745__uri)是需要比较的URI对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| other | URI | 是 | 需要比较的URI对象。 |
 
 **返回值：**
 
-类型说明boolean返回true表示相等，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示相等，否则返回false。 |
 
 **示例：**
 

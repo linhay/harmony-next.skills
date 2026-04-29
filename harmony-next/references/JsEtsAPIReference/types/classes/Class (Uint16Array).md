@@ -20,7 +20,13 @@ import { collections } from '@kit.ArkTS';
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明bufferArrayBuffer是否ArkTS Uint16Array底层使用的buffer。byteLengthnumber是否ArkTS Uint16Array的所占的字节数。byteOffsetnumber是否ArkTS Uint16Array距离其ArrayBuffer起始位置的偏移。lengthnumber是否ArkTS Uint16Array元素个数。BYTES_PER_ELEMENTnumber是否ArkTS Uint16Array中每个元素所占用的字节数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| buffer | ArrayBuffer | 是 | 否 | ArkTS Uint16Array底层使用的buffer。 |
+| byteLength | number | 是 | 否 | ArkTS Uint16Array的所占的字节数。 |
+| byteOffset | number | 是 | 否 | ArkTS Uint16Array距离其ArrayBuffer起始位置的偏移。 |
+| length | number | 是 | 否 | ArkTS Uint16Array元素个数。 |
+| BYTES_PER_ELEMENT | number | 是 | 否 | ArkTS Uint16Array中每个元素所占用的字节数。 |
 
 #### constructor
 
@@ -34,9 +40,11 @@ constructor()
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码]([语言基础类库错误码](../../errors/语言基础类库错误码.md).md)。
 
-错误码ID错误信息10200012The Uint16Array's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200012 | The Uint16Array's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -56,13 +64,18 @@ constructor(length: number)
 
 **参数：**
 
-参数名类型必填说明lengthnumber是用于指定ArkTS Uint16Array的长度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| length | number | 是 | 用于指定ArkTS Uint16Array的长度。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200012The Uint16Array's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200012 | The Uint16Array's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -83,13 +96,18 @@ constructor(elements: Iterable<number>)
 
 **参数：**
 
-参数名类型必填说明elementsIterable<number>是可迭代数字集合，用于构造ArkTS Uint16Array对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| elements | Iterable<number> | 是 | 可迭代数字集合，用于构造ArkTS Uint16Array对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200012The Uint16Array's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200012 | The Uint16Array's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -112,13 +130,18 @@ constructor(array: ArrayLike<number> | ArrayBuffer)
 
 **参数：**
 
-参数名类型必填说明arrayArrayLike<number> | ArrayBuffer是用于构造ArkTS Uint16Array的对象。当参数类型是ArrayBuffer时buffer所占的字节数须是4的整数倍。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| array | ArrayLike<number> | ArrayBuffer | 是 | 用于构造ArkTS Uint16Array的对象。当参数类型是ArrayBuffer时buffer所占的字节数须是4的整数倍。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200012The Uint16Array's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200012 | The Uint16Array's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -155,13 +178,20 @@ constructor(buffer: ArrayBuffer, byteOffset?: number, length?: number)
 
 **参数：**
 
-参数名类型必填说明bufferArrayBuffer是用于构造ArkTS Uint16Array的ArrayBuffer对象。buffer所占的字节数须是4的整数倍。byteOffsetnumber否指定buffer的字节偏移，从0开始，默认为0。lengthnumber否指定ArkTS Uint16Array的长度，默认为0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| buffer | ArrayBuffer | 是 | 用于构造ArkTS Uint16Array的ArrayBuffer对象。buffer所占的字节数须是4的整数倍。 |
+| byteOffset | number | 否 | 指定buffer的字节偏移，从0开始，默认为0。 |
+| length | number | 否 | 指定ArkTS Uint16Array的长度，默认为0。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200012The Uint16Array's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200012 | The Uint16Array's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -185,17 +215,23 @@ static from(arrayLike: ArrayLike<number>): Uint16Array
 
 **参数：**
 
-参数名类型必填说明arrayLikeArrayLike<number>是用于构造ArkTS Uint16Array的ArrayLike对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| arrayLike | ArrayLike<number> | 是 | 用于构造ArkTS Uint16Array的ArrayLike对象。 |
 
 **返回值：**
 
-类型说明Uint16Array新创建的ArkTS Uint16Array对象。
+| 类型 | 说明 |
+| --- | --- |
+| Uint16Array | 新创建的ArkTS Uint16Array对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
 
 **示例：**
 
@@ -206,7 +242,7 @@ let array: collections.Uint16Array = collections.Uint16Array.from(arrayLike); //
 
 #### from
 
-static from<T>(arrayLike: ArrayLike<T>, mapFn: TypedArrayFromMapFn<T, number>): Uint16Array
+static from<T>(arrayLike: ArrayLike<T>, mapFn: [TypedArrayFromMapFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayfrommapfn)<T, number>): Uint16Array
 
 从一个ArrayLike中创建一个ArkTS Uint16Array对象。
 
@@ -216,17 +252,24 @@ static from<T>(arrayLike: ArrayLike<T>, mapFn: TypedArrayFromMapFn<T, number>): 
 
 **参数：**
 
-参数名类型必填说明arrayLikeArrayLike<T>是用于构造ArrayLike对象。mapFn[TypedArrayFromMapFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayfrommapfn)<T, number>是映射函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| arrayLike | ArrayLike<T> | 是 | 用于构造ArrayLike对象。 |
+| mapFn | [TypedArrayFromMapFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayfrommapfn)<T, number> | 是 | 映射函数。 |
 
 **返回值：**
 
-类型说明Uint16Array新创建的ArkTS Uint16Array对象。
+| 类型 | 说明 |
+| --- | --- |
+| Uint16Array | 新创建的ArkTS Uint16Array对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
 
 **示例：**
 
@@ -253,7 +296,7 @@ let array: collections.Uint16Array = collections.Uint16Array.from<string>(
 
 #### from
 
-static from(arrayLike: Iterable<number>, mapFn?: TypedArrayFromMapFn<number, number>): Uint16Array
+static from(arrayLike: Iterable<number>, mapFn?: [TypedArrayFromMapFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayfrommapfn)<number, number>): Uint16Array
 
 从一个可迭代对象中创建一个ArkTS Uint16Array对象。
 
@@ -263,17 +306,24 @@ static from(arrayLike: Iterable<number>, mapFn?: TypedArrayFromMapFn<number, num
 
 **参数：**
 
-参数名类型必填说明arrayLikeIterable<number>是用于构造的可迭代对象。mapFn[TypedArrayFromMapFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayfrommapfn)<number, number>否映射函数。如果省略，则不对元素进行加工处理。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| arrayLike | Iterable<number> | 是 | 用于构造的可迭代对象。 |
+| mapFn | [TypedArrayFromMapFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayfrommapfn)<number, number> | 否 | 映射函数。如果省略，则不对元素进行加工处理。 |
 
 **返回值：**
 
-类型说明Uint16Array新创建的ArkTS Uint16Array对象。
+| 类型 | 说明 |
+| --- | --- |
+| Uint16Array | 新创建的ArkTS Uint16Array对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
 
 **示例：**
 
@@ -304,17 +354,23 @@ static of(...items: number[]): Uint16Array
 
 **参数：**
 
-参数名类型必填说明itemsnumber[]否用于创建数组的元素，参数个数可以是0个、1个或者多个。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| items | number[] | 否 | 用于创建数组的元素，参数个数可以是0个、1个或者多个。 |
 
 **返回值：**
 
-类型说明Uint16Array新的ArkTS Uint16Array实例。
+| 类型 | 说明 |
+| --- | --- |
+| Uint16Array | 新的ArkTS Uint16Array实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例：**
 
@@ -335,13 +391,18 @@ ArkTS Uint16Array转换为字符串。
 
 **返回值：**
 
-类型说明string一个包含数组所有元素的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 一个包含数组所有元素的字符串。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The toString method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The toString method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -363,13 +424,18 @@ toLocaleString(): string
 
 **返回值：**
 
-类型说明string一个包含数组所有元素的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 一个包含数组所有元素的字符串。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The toLocaleString method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The toLocaleString method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -392,17 +458,27 @@ copyWithin(target: number, start: number, end?: number): Uint16Array
 
 **参数：**
 
-参数名类型必填说明targetnumber是目标起始位置的下标，如果target < 0，则会从target + array.length位置开始。startnumber是源起始位置下标，如果start < 0，则会从start + Uint16Array.length位置开始。endnumber否源终止位置下标（不包含end位置的元素），如果end < 0，则会从end + Uint16Array.length位置终止。默认为ArkTS Uint16Array的长度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| target | number | 是 | 目标起始位置的下标，如果target < 0，则会从target + array.length位置开始。 |
+| start | number | 是 | 源起始位置下标，如果start < 0，则会从start + Uint16Array.length位置开始。 |
+| end | number | 否 | 源终止位置下标（不包含end位置的元素），如果end < 0，则会从end + Uint16Array.length位置终止。默认为ArkTS Uint16Array的长度。 |
 
 **返回值：**
 
-类型说明Uint16Array修改后的Uint16Array。
+| 类型 | 说明 |
+| --- | --- |
+| Uint16Array | 修改后的Uint16Array。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The copyWithin method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The copyWithin method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -414,7 +490,7 @@ let copied: collections.Uint16Array = array.copyWithin(3, 1, 3);
 
 #### some
 
-some(predicate: TypedArrayPredicateFn<number, Uint16Array>): boolean
+some(predicate: [TypedArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraypredicatefn)<number, Uint16Array>): boolean
 
 测试ArkTS Uint16Array中的是否存在元素满足指定条件。
 
@@ -424,17 +500,25 @@ some(predicate: TypedArrayPredicateFn<number, Uint16Array>): boolean
 
 **参数：**
 
-参数名类型必填说明predicate[TypedArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraypredicatefn)<number, Uint16Array>是用于测试的断言函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| predicate | [TypedArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraypredicatefn)<number, Uint16Array> | 是 | 用于测试的断言函数。 |
 
 **返回值：**
 
-类型说明boolean如果存在元素满足指定条件返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果存在元素满足指定条件返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The some method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The some method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -446,7 +530,7 @@ uint16Array.some((element: number) => element < 1); // false
 
 #### every
 
-every(predicate: TypedArrayPredicateFn<number, Uint16Array>): boolean
+every(predicate: [TypedArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraypredicatefn)<number, Uint16Array>): boolean
 
 测试ArkTS Uint16Array中的所有元素是否满足指定条件。
 
@@ -456,17 +540,25 @@ every(predicate: TypedArrayPredicateFn<number, Uint16Array>): boolean
 
 **参数：**
 
-参数名类型必填说明predicate[TypedArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraypredicatefn)<number, Uint16Array>是用于测试的断言函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| predicate | [TypedArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraypredicatefn)<number, Uint16Array> | 是 | 用于测试的断言函数。 |
 
 **返回值：**
 
-类型说明boolean如果所有元素都满足指定条件则返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果所有元素都满足指定条件则返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The every method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The every method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -488,17 +580,27 @@ fill(value: number, start?: number, end?: number): Uint16Array
 
 **参数：**
 
-参数名类型必填说明valuenumber是待填充的值。startnumber否开始填充的索引，如果start < 0，则会从start + Uint16Array.length位置开始。默认值为0。endnumber否结束填充的索引（不包括该元素），如果end < 0，则会到end + Uint16Array.length位置结束。默认为ArkTS Uint16Array的长度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 待填充的值。 |
+| start | number | 否 | 开始填充的索引，如果start < 0，则会从start + Uint16Array.length位置开始。默认值为0。 |
+| end | number | 否 | 结束填充的索引（不包括该元素），如果end < 0，则会到end + Uint16Array.length位置结束。默认为ArkTS Uint16Array的长度。 |
 
 **返回值：**
 
-类型说明Uint16Array填充后的Uint16Array。
+| 类型 | 说明 |
+| --- | --- |
+| Uint16Array | 填充后的Uint16Array。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The fill method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The fill method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -511,7 +613,7 @@ new collections.Uint16Array(arrayLike).fill(4, 1, 2); // Uint16Array [1, 4, 3]
 
 #### filter
 
-filter(predicate: TypedArrayPredicateFn<number, Uint16Array>): Uint16Array
+filter(predicate: [TypedArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraypredicatefn)<number, Uint16Array>): Uint16Array
 
 返回一个新ArkTS Uint16Array，其包含满足指定条件的所有元素。
 
@@ -521,17 +623,25 @@ filter(predicate: TypedArrayPredicateFn<number, Uint16Array>): Uint16Array
 
 **参数：**
 
-参数名类型必填说明predicate[TypedArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraypredicatefn)<number, Uint16Array>是用于元素过滤的断言函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| predicate | [TypedArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraypredicatefn)<number, Uint16Array> | 是 | 用于元素过滤的断言函数。 |
 
 **返回值：**
 
-类型说明Uint16Array过滤后的ArkTS Uint16Array对象。
+| 类型 | 说明 |
+| --- | --- |
+| Uint16Array | 过滤后的ArkTS Uint16Array对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The filter method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The filter method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -543,7 +653,7 @@ let filtered: collections.Uint16Array = array.filter((element: number) => elemen
 
 #### find
 
-find(predicate: TypedArrayPredicateFn<number, Uint16Array>): number | undefined
+find(predicate: [TypedArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraypredicatefn)<number, Uint16Array>): number | undefined
 
 返回ArkTS Uint16Array中第一个满足指定条件的元素的值，如果所有元素都不满足，则返回undefined。
 
@@ -553,17 +663,25 @@ find(predicate: TypedArrayPredicateFn<number, Uint16Array>): number | undefined
 
 **参数：**
 
-参数名类型必填说明predicate[TypedArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraypredicatefn)<number, Uint16Array>是用于元素查找的断言函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| predicate | [TypedArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraypredicatefn)<number, Uint16Array> | 是 | 用于元素查找的断言函数。 |
 
 **返回值：**
 
-类型说明number | undefined第一个满足条件的元素的值；如果所有元素都不满足条件，则返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| number | undefined | 第一个满足条件的元素的值；如果所有元素都不满足条件，则返回undefined。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The find method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The find method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -575,7 +693,7 @@ array.find((element: number) => element > 4); // undefined
 
 #### findIndex
 
-findIndex(predicate: TypedArrayPredicateFn<number, Uint16Array>): number
+findIndex(predicate: [TypedArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraypredicatefn)<number, Uint16Array>): number
 
 返回ArkTS Uint16Array中第一个满足指定条件的元素索引，如果所有元素都不满足，则返回-1。
 
@@ -585,17 +703,25 @@ findIndex(predicate: TypedArrayPredicateFn<number, Uint16Array>): number
 
 **参数：**
 
-参数名类型必填说明predicate[TypedArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraypredicatefn)<number, Uint16Array>是用于元素查找的断言函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| predicate | [TypedArrayPredicateFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraypredicatefn)<number, Uint16Array> | 是 | 用于元素查找的断言函数。 |
 
 **返回值：**
 
-类型说明number第一个满足条件的元素索引；如果所有元素都不满足条件，则返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 第一个满足条件的元素索引；如果所有元素都不满足条件，则返回-1。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The findIndex method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The findIndex method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -606,7 +732,7 @@ let foundIndex: number = array.findIndex((element: number) => element % 2 === 0)
 
 #### forEach
 
-forEach(callbackFn: TypedArrayForEachCallback<number, Uint16Array>): void
+forEach(callbackFn: [TypedArrayForEachCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayforeachcallback)<number, Uint16Array>): void
 
 对ArkTS Uint16Array中的每个元素执行提供的回调函数。
 
@@ -616,13 +742,19 @@ forEach(callbackFn: TypedArrayForEachCallback<number, Uint16Array>): void
 
 **参数：**
 
-参数名类型必填说明callbackFn[TypedArrayForEachCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayforeachcallback)<number, Uint16Array>是用于对每个元素执行的回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | [TypedArrayForEachCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayforeachcallback)<number, Uint16Array> | 是 | 用于对每个元素执行的回调函数。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The forEach method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The forEach method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -645,17 +777,26 @@ indexOf(searchElement: number, fromIndex?: number): number
 
 **参数：**
 
-参数名类型必填说明searchElementnumber是待索引的值。fromIndexnumber否搜索的起始下标。默认值为0。如果下标大于等于ArkTS Uint16Array的长度，则返回-1。如果提供的下标值是负数，则被当做距离数组尾部的偏移，从前到后搜索。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| searchElement | number | 是 | 待索引的值。 |
+| fromIndex | number | 否 | 搜索的起始下标。默认值为0。如果下标大于等于ArkTS Uint16Array的长度，则返回-1。如果提供的下标值是负数，则被当做距离数组尾部的偏移，从前到后搜索。 |
 
 **返回值：**
 
-类型说明number数组中元素的第一个索引；没有找到，则返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 数组中元素的第一个索引；没有找到，则返回-1。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The indexOf method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The indexOf method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -679,17 +820,25 @@ lastIndexOf(searchElement: number, fromIndex?: number): number
 
 **参数：**
 
-参数名类型必填说明searchElementnumber是待索引的值。fromIndexnumber否搜索的起始下标。默认值为0。如果下标大于等于ArkTS Uint16Array的长度，则返回-1。如果提供的下标值是负数，则被当做距离数组尾部的偏移，从后到前搜索。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| searchElement | number | 是 | 待索引的值。 |
+| fromIndex | number | 否 | 搜索的起始下标。默认值为0。如果下标大于等于ArkTS Uint16Array的长度，则返回-1。如果提供的下标值是负数，则被当做距离数组尾部的偏移，从后到前搜索。 |
 
 **返回值：**
 
-类型说明number数组中给定元素的最后一个索引；没有找到，则返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 数组中给定元素的最后一个索引；没有找到，则返回-1。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The lastIndexOf method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The lastIndexOf method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -713,17 +862,25 @@ join(separator?: string): string
 
 **参数：**
 
-参数名类型必填说明separatorstring否分隔字符串。如果省略，则使用逗号分隔。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| separator | string | 否 | 分隔字符串。如果省略，则使用逗号分隔。 |
 
 **返回值：**
 
-类型说明string包含所有元素拼接成的字符串。如果ArkTS Uint16Array为空，则返回空字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 包含所有元素拼接成的字符串。如果ArkTS Uint16Array为空，则返回空字符串。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The join method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The join method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -734,7 +891,7 @@ let joined: string = array.join('-'); // "1-2-3-4-5"
 
 #### map
 
-map(callbackFn: TypedArrayMapCallback<number, Uint16Array>): Uint16Array
+map(callbackFn: [TypedArrayMapCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraymapcallback)<number, Uint16Array>): Uint16Array
 
 对ArkTS Uint16Array中的每个元素应用指定的回调函数，并使用结果创建一个新的ArkTS Uint16Array对象。
 
@@ -744,17 +901,25 @@ map(callbackFn: TypedArrayMapCallback<number, Uint16Array>): Uint16Array
 
 **参数：**
 
-参数名类型必填说明callbackFn[TypedArrayMapCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraymapcallback)<number, Uint16Array>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | [TypedArrayMapCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraymapcallback)<number, Uint16Array> | 是 | 回调函数。 |
 
 **返回值：**
 
-类型说明Uint16Array新ArkTS Uint16Array对象。
+| 类型 | 说明 |
+| --- | --- |
+| Uint16Array | 新ArkTS Uint16Array对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The map method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The map method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -765,7 +930,7 @@ const mapped: collections.Uint16Array = array.map(Math.sqrt); // Uint16Array [5,
 
 #### reduce
 
-reduce(callbackFn: TypedArrayReduceCallback<number, number, Uint16Array>): number
+reduce(callbackFn: [TypedArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayreducecallback)<number, number, Uint16Array>): number
 
 对ArkTS Uint16Array中的每个元素执行归约函数，并返回最终的归约结果。
 
@@ -775,17 +940,25 @@ reduce(callbackFn: TypedArrayReduceCallback<number, number, Uint16Array>): numbe
 
 **参数：**
 
-参数名类型必填说明callbackFn[TypedArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayreducecallback)<number, number, Uint16Array>是归约函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | [TypedArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayreducecallback)<number, number, Uint16Array> | 是 | 归约函数。 |
 
 **返回值：**
 
-类型说明number由归约函数返回的结果。
+| 类型 | 说明 |
+| --- | --- |
+| number | 由归约函数返回的结果。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The reduce method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The reduce method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -797,7 +970,7 @@ let reducedValue: number = array.reduce((accumulator: number, value: number) => 
 
 #### reduceRight18+
 
-reduceRight(callbackFn: TypedArrayReduceCallback<number, number, Uint16Array>): number
+reduceRight(callbackFn: [TypedArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayreducecallback)<number, number, Uint16Array>): number
 
 反向遍历ArkTS Uint16Array，对ArkTS Uint16Array中的每个元素执行归约函数，并返回最终的归约结果。
 
@@ -807,17 +980,25 @@ reduceRight(callbackFn: TypedArrayReduceCallback<number, number, Uint16Array>): 
 
 **参数：**
 
-参数名类型必填说明callbackFn[TypedArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayreducecallback)<number, number, Uint16Array>是归约函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | [TypedArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayreducecallback)<number, number, Uint16Array> | 是 | 归约函数。 |
 
 **返回值：**
 
-类型说明number由归约函数返回的结果。
+| 类型 | 说明 |
+| --- | --- |
+| number | 由归约函数返回的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.10200011The reduceRight method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 10200011 | The reduceRight method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -829,7 +1010,7 @@ console.info(reducedValue + ''); // 预期输出： 15
 
 #### reduce
 
-reduce(callbackFn: TypedArrayReduceCallback<number, number, Uint16Array>, initialValue: number): number
+reduce(callbackFn: [TypedArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayreducecallback)<number, number, Uint16Array>, initialValue: number): number
 
 对ArkTS Uint16Array中的每个元素执行归约函数，且接收一个初始值作为归约函数首次调用的参数，并返回最终的归约结果。
 
@@ -839,17 +1020,26 @@ reduce(callbackFn: TypedArrayReduceCallback<number, number, Uint16Array>, initia
 
 **参数：**
 
-参数名类型必填说明callbackFn[TypedArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayreducecallback)<number, number, Uint16Array>是归约函数。initialValuenumber是初始值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | [TypedArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayreducecallback)<number, number, Uint16Array> | 是 | 归约函数。 |
+| initialValue | number | 是 | 初始值。 |
 
 **返回值：**
 
-类型说明number由归约函数返回的结果。
+| 类型 | 说明 |
+| --- | --- |
+| number | 由归约函数返回的结果。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The reduce method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The reduce method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -861,7 +1051,7 @@ let reducedValue: number = array.reduce((accumulator: number, value: number) => 
 
 #### reduceRight18+
 
-reduceRight<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Uint16Array>, initialValue: U): U
+reduceRight<U = number>(callbackFn: [TypedArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayreducecallback)<U, number, Uint16Array>, initialValue: U): U
 
 反向遍历ArkTS Uint16Array，对ArkTS Uint16Array中的每个元素执行归约函数，且接收一个初始值作为归约函数首次调用的参数，并返回最终的归约结果。
 
@@ -871,17 +1061,26 @@ reduceRight<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Uint16Ar
 
 **参数：**
 
-参数名类型必填说明callbackFn[TypedArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayreducecallback)<U, number, Uint16Array>是归约函数。initialValueU是初始值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | [TypedArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayreducecallback)<U, number, Uint16Array> | 是 | 归约函数。 |
+| initialValue | U | 是 | 初始值。 |
 
 **返回值：**
 
-类型说明U由归约函数返回的结果。
+| 类型 | 说明 |
+| --- | --- |
+| U | 由归约函数返回的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.10200011The reduceRight method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 10200011 | The reduceRight method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -893,7 +1092,7 @@ console.info(reducedValue + ''); // 预期输出： 16
 
 #### reduce
 
-reduce<U>(callbackFn: TypedArrayReduceCallback<U, number, Uint16Array>, initialValue: U): U
+reduce<U>(callbackFn: [TypedArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayreducecallback)<U, number, Uint16Array>, initialValue: U): U
 
 对ArkTS Uint16Array中的每个元素执行归约函数，且接收一个初始值作为归约函数首次调用的参数，并返回最终的归约结果。
 
@@ -903,17 +1102,26 @@ reduce<U>(callbackFn: TypedArrayReduceCallback<U, number, Uint16Array>, initialV
 
 **参数：**
 
-参数名类型必填说明callbackFn[TypedArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayreducecallback)<U, number, Uint16Array>是归约函数。initialValueU是初始值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | [TypedArrayReduceCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarrayreducecallback)<U, number, Uint16Array> | 是 | 归约函数。 |
+| initialValue | U | 是 | 初始值。 |
 
 **返回值：**
 
-类型说明U由归约函数返回的结果。
+| 类型 | 说明 |
+| --- | --- |
+| U | 由归约函数返回的结果。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The reduce method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The reduce method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -935,13 +1143,18 @@ reverse(): Uint16Array
 
 **返回值：**
 
-类型说明Uint16Array反转后的ArkTS Uint16Array对象。
+| 类型 | 说明 |
+| --- | --- |
+| Uint16Array | 反转后的ArkTS Uint16Array对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The reverse method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The reverse method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -962,13 +1175,20 @@ set(array: ArrayLike<number>, offset?: number): void
 
 **参数：**
 
-参数名类型必填说明arrayArrayLike<number>是用于设置的ArrayLike对象。offsetnumber否写入的起始位置。默认为0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| array | ArrayLike<number> | 是 | 用于设置的ArrayLike对象。 |
+| offset | number | 否 | 写入的起始位置。默认为0。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The set method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The set method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -990,17 +1210,26 @@ slice(start?: number, end?: number): Uint16Array
 
 **参数：**
 
-参数名类型必填说明startnumber否开始索引，如果start < 0，则会从start + Uint16Array.length位置开始。默认为0。endnumber否结束索引（不包括该元素），如果end < 0，则会到end + Uint16Array.length位置结束。默认为ArkTS Uint16Array的长度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| start | number | 否 | 开始索引，如果start < 0，则会从start + Uint16Array.length位置开始。默认为0。 |
+| end | number | 否 | 结束索引（不包括该元素），如果end < 0，则会到end + Uint16Array.length位置结束。默认为ArkTS Uint16Array的长度。 |
 
 **返回值：**
 
-类型说明Uint16Array新的ArkTS Uint16Array对象。
+| 类型 | 说明 |
+| --- | --- |
+| Uint16Array | 新的ArkTS Uint16Array对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The slice method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The slice method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1013,7 +1242,7 @@ array.slice(-2); // Uint16Array [4, 5]
 
 #### sort
 
-sort(compareFn?: TypedArrayCompareFn<number>): Uint16Array
+sort(compareFn?: [TypedArrayCompareFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraycomparefn)<number>): Uint16Array
 
 对ArkTS Uint16Array进行排序，并返回排序后的ArkTS Uint16Array对象。
 
@@ -1023,17 +1252,25 @@ sort(compareFn?: TypedArrayCompareFn<number>): Uint16Array
 
 **参数：**
 
-参数名类型必填说明compareFn[TypedArrayCompareFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraycomparefn)<number>否用于确定元素顺序的函数。默认使用升序排序。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| compareFn | [TypedArrayCompareFn](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497604746__typedarraycomparefn)<number> | 否 | 用于确定元素顺序的函数。默认使用升序排序。 |
 
 **返回值：**
 
-类型说明Uint16Array排序后的ArkTS Uint16Array对象。
+| 类型 | 说明 |
+| --- | --- |
+| Uint16Array | 排序后的ArkTS Uint16Array对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The sort method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The sort method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1056,17 +1293,26 @@ subarray(begin?: number, end?: number): Uint16Array
 
 **参数：**
 
-参数名类型必填说明beginnumber否开始索引，如果begin < 0，则会从begin + Uint16Array.length位置开始。默认值为0。endnumber否结束索引（不包括该元素），如果end < 0，则会到end + Uint16Array.length位置结束。默认为ArkTS Uint16Array的长度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| begin | number | 否 | 开始索引，如果begin < 0，则会从begin + Uint16Array.length位置开始。默认值为0。 |
+| end | number | 否 | 结束索引（不包括该元素），如果end < 0，则会到end + Uint16Array.length位置结束。默认为ArkTS Uint16Array的长度。 |
 
 **返回值：**
 
-类型说明Uint16Array新的ArkTS Uint16Array对象。
+| 类型 | 说明 |
+| --- | --- |
+| Uint16Array | 新的ArkTS Uint16Array对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The subarray method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The subarray method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1088,17 +1334,25 @@ at(index: number): number | undefined
 
 **参数：**
 
-参数名类型必填说明indexnumber是要返回的Array元素的索引（从零开始），取值为整数。如果index < 0，则会访问index + Uint16Array.length位置的元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 要返回的Array元素的索引（从零开始），取值为整数。如果index < 0，则会访问index + Uint16Array.length位置的元素。 |
 
 **返回值：**
 
-类型说明number | undefined指定下标的元素；如果不存在，则返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| number | undefined | 指定下标的元素；如果不存在，则返回undefined。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The at method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The at method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1121,17 +1375,26 @@ includes(searchElement: number, fromIndex?: number): boolean
 
 **参数：**
 
-参数名类型必填说明searchElementnumber是待搜索的元素。fromIndexnumber否开始搜索的索引，如果fromIndex < 0，则会从fromIndex + Uint16Array.length位置开始。默认值为0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| searchElement | number | 是 | 待搜索的元素。 |
+| fromIndex | number | 否 | 开始搜索的索引，如果fromIndex < 0，则会从fromIndex + Uint16Array.length位置开始。默认值为0。 |
 
 **返回值：**
 
-类型说明boolean如果ArkTS Uint16Array包含指定的元素，则返回true；否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果ArkTS Uint16Array包含指定的元素，则返回true；否则返回false。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The includes method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The includes method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1154,13 +1417,18 @@ entries(): IterableIterator<[number, number]>
 
 **返回值：**
 
-类型说明IterableIterator<[number, number]>新的迭代器对象。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<[number, number]> | 新的迭代器对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The entries method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The entries method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1184,13 +1452,18 @@ keys(): IterableIterator<number>
 
 **返回值：**
 
-类型说明IterableIterator<number>新的迭代器对象。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<number> | 新的迭代器对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The keys method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The keys method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1214,13 +1487,18 @@ values(): IterableIterator<number>
 
 **返回值：**
 
-类型说明IterableIterator<number>新的迭代器对象。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<number> | 新的迭代器对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The values method cannot be bound.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The values method cannot be bound. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -1246,13 +1524,17 @@ for (const value of iterator) {
 
 **返回值：**
 
-类型说明IterableIterator<number>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<number> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The Symbol.iterator method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The Symbol.iterator method cannot be bound. |
 
 **示例：**
 
@@ -1276,11 +1558,15 @@ for (let item of uint16Array) {
 
 **参数：**
 
-参数名类型必填说明indexnumber是所需代码单元的从零开始的索引。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 所需代码单元的从零开始的索引。 |
 
 **返回值：**
 
-类型说明number返回number数据类型。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回number数据类型。 |
 
 **示例：**
 

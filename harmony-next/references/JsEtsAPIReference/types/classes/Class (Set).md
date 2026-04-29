@@ -24,7 +24,9 @@ import { collections } from '@kit.ArkTS';
 
 **系统能力：** SystemCapability.Utils.Lang
 
-名称类型只读可选说明sizenumber是否Set的元素个数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| size | number | 是 | 否 | Set的元素个数。 |
 
 #### constructor
 
@@ -38,13 +40,18 @@ constructor(values?: readonly T[] | null)
 
 **参数：**
 
-参数名类型必填说明valuesreadonly T[] | null否数组或其它可迭代对象。默认值为null，创建一个空Set对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| values | readonly T[] | null | 否 | 数组或其它可迭代对象。默认值为null，创建一个空Set对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[语言基础类库错误码]([语言基础类库错误码](../../errors/语言基础类库错误码.md).md)。
 
-错误码ID错误信息401Parameter error.10200012The ArkTS Set's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200012 | The ArkTS Set's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -64,7 +71,6 @@ const mySet = new collections.Set<number>([1, 2, 3, 4, 5]);
 class SharedClass {
   constructor() {
   }
-}
 
 let sObj = new SharedClass();
 const mySet1: collections.Set<number|SharedClass> = new collections.Set<number|SharedClass>([1, sObj]);
@@ -85,13 +91,18 @@ constructor(iterable: Iterable<T>)
 
 **参数：**
 
-参数名类型必填说明iterableIterable<T>是用于构造ArkTS Set的对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| iterable | Iterable<T> | 是 | 用于构造ArkTS Set的对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200012The ArkTS Set's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200012 | The ArkTS Set's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -117,13 +128,18 @@ entries(): IterableIterator<[T, T]>
 
 **返回值：**
 
-类型说明IterableIterator<[T, T]>返回一个Set迭代器对象，该对象包含了此Set中每个元素的键值对。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<[T, T]> | 返回一个Set迭代器对象，该对象包含了此Set中每个元素的键值对。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The entries method cannot be bound with non-sendable.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The entries method cannot be bound with non-sendable. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -149,13 +165,18 @@ keys(): IterableIterator<T>
 
 **返回值：**
 
-类型说明IterableIterator<T>返回一个Set迭代器对象，该对象包含了此Set中每个元素的键。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<T> | 返回一个Set迭代器对象，该对象包含了此Set中每个元素的键。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The keys method cannot be bound with non-sendable.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The keys method cannot be bound with non-sendable. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -181,13 +202,18 @@ values(): IterableIterator<T>
 
 **返回值：**
 
-类型说明IterableIterator<T>返回一个Set迭代器对象，该对象包含了此Set中每个元素的值。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<T> | 返回一个Set迭代器对象，该对象包含了此Set中每个元素的值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The values method cannot be bound with non-sendable.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The values method cannot be bound with non-sendable. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -211,7 +237,6 @@ for (let value of valueIter) {
     if (value % 2 == 0) {
         mySet.delete(value);
     }
-}
 
 // Expected output: 2
 console.info("size:" + mySet.size);
@@ -229,9 +254,12 @@ clear(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The clear method cannot be bound with non-sendable.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The clear method cannot be bound with non-sendable. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -256,17 +284,24 @@ delete(value: T): boolean
 
 **参数：**
 
-参数名类型必填说明valueT是待删除元素的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | T | 是 | 待删除元素的值。 |
 
 **返回值：**
 
-类型说明boolean成功删除返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 成功删除返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The delete method cannot be bound with non-sendable.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The delete method cannot be bound with non-sendable. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -292,17 +327,27 @@ forEach(callbackFn: (value: T, value2: T, set: Set<T>) => void): void
 
 **参数：**
 
-参数名类型必填说明callbackFn(value: T, value2: T, set: Set<T>) => void是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | (value: T, value2: T, set: Set<T>) => void | 是 | 回调函数。 |
 
 callbackFn的参数说明：
 
-参数名类型必填说明valueT否当前遍历到的元素键值对的值。value2T否当前遍历到的元素键值对的键。setSet<T>否当前set实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | T | 否 | 当前遍历到的元素键值对的值。 |
+| value2 | T | 否 | 当前遍历到的元素键值对的键。 |
+| set | Set<T> | 否 | 当前set实例对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The forEach method cannot be bound with non-sendable.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The forEach method cannot be bound with non-sendable. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -333,17 +378,25 @@ has(value: T): boolean
 
 **参数：**
 
-参数名类型必填说明valueT是待查找元素的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | T | 是 | 待查找元素的值。 |
 
 **返回值：**
 
-类型说明boolean如果存在指定元素，则返回true；否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果存在指定元素，则返回true；否则返回false。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The has method cannot be bound with non-sendable.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The has method cannot be bound with non-sendable. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -367,17 +420,24 @@ add(value: T): Set<T>
 
 **参数：**
 
-参数名类型必填说明valueT是待插入元素的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | T | 是 | 待插入元素的值。 |
 
 **返回值：**
 
-类型说明Set<T>Set对象。
+| 类型 | 说明 |
+| --- | --- |
+| Set<T> | Set对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The add method cannot be bound with non-sendable.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The add method cannot be bound with non-sendable. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -409,13 +469,17 @@ mySet.add(obj);
 
 **返回值：**
 
-类型说明IterableIterator<T>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<T> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The Symbol.iterator method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The Symbol.iterator method cannot be bound. |
 
 **示例：**
 

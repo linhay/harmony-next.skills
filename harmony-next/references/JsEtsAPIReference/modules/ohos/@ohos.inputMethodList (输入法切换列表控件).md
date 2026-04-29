@@ -2,7 +2,8 @@
 
 本模块主要面向系统应用和输入法应用，提供输入法切换列表控件，控件中显示默认输入法子类型和三方输入法应用列表，对于默认输入法应用，提供模式切换入口。
 
-该组件从API Version 11开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+
+该组件从API version 11开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 #### 导入模块
 
@@ -16,7 +17,7 @@ import { InputMethodListDialog } from '@kit.IMEKit';
 
 #### 属性
 
-不支持[通用属性](../../topics/misc/通用属性.md)
+不支持[通用属性]([通用属性](../../topics/misc/通用属性.md).md)
 
 #### InputMethodListDialog
 
@@ -30,23 +31,33 @@ InputMethodListDialog({controller: CustomDialogController, patternOptions?: Patt
 
 **参数：**
 
-名称类型必填装饰器类型说明controller[CustomDialogController](../../topics/components/自定义弹窗 (CustomDialog).md#ZH-CN_TOPIC_0000002497444956__customdialogcontroller)是-输入法切换列表弹窗控制器。patternOptions[PatternOptions](#ZH-CN_TOPIC_0000002497605290__patternoptions)否-输入法模式选项（仅系统预置输入法支持）。
+| 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- |
+| controller | CustomDialogController | 是 | - | 输入法切换列表弹窗控制器。 |
+| patternOptions | PatternOptions | 否 | - | 输入法模式选项（仅系统预置输入法支持）。 |
 
 #### PatternOptions
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
-名称类型只读可选说明defaultSelectednumber否是非必填。默认选择的模式。patternsArray<[Pattern](#ZH-CN_TOPIC_0000002497605290__pattern)>否否必填。模式选项的资源。action(index: number) => void否否必填。模式选项改变时的回调。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| defaultSelected | number | 否 | 是 | 非必填。默认选择的模式。 |
+| patterns | Array<Pattern> | 否 | 否 | 必填。模式选项的资源。 |
+| action | (index: number) => void | 否 | 否 | 必填。模式选项改变时的回调。 |
 
 #### Pattern
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
-名称类型只读可选说明icon[Resource](../../topics/misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)否否必填。默认图片资源。selectedIcon[Resource](../../topics/misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)否否必填。选中时的图片资源。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| icon | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 否 | 否 | 必填。默认图片资源。 |
+| selectedIcon | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 否 | 否 | 必填。选中时的图片资源。 |
 
 #### 事件
 
-不支持[通用事件](../../topics/misc/通用事件.md)
+不支持[通用事件]([通用事件](../../topics/misc/通用事件.md).md)
 
 #### 示例
 
@@ -90,14 +101,12 @@ struct SettingsItem {
         alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
         Text("输入法切换列表").fontSize(20)
       }
-    }
     .width("13%")
     .id('bindInputMethod')
     .onClick((event?: ClickEvent) => {
       this.listController.open();
     })
   }
-}
 ```
 
 示例效果图：

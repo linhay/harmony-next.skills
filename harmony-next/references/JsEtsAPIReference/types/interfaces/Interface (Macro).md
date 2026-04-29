@@ -19,7 +19,8 @@ enableMacro(enabled: boolean): void
 
 使能当前的微距能力。
 
-使用该接口前，需要先通过[isMacroSupported](Interface (MacroQuery).md#ZH-CN_TOPIC_0000002497605784__ismacrosupported19)接口查询当前设备是否支持微距能力。
+
+使用该接口前，需要先通过[isMacroSupported](Interface (MacroQuery).md#ZH-CN_TOPIC_0000002522081914__ismacrosupported19)接口查询当前设备是否支持微距能力。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -27,13 +28,18 @@ enableMacro(enabled: boolean): void
 
 **参数：**
 
-参数名类型必填说明enabledboolean是是否开启微距能力。true表示开启微距能力，false表示关闭微距能力。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enabled | boolean | 是 | 是否开启微距能力。true表示开启微距能力，false表示关闭微距能力。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码]([Camera错误码](../../errors/Camera错误码.md).md)。
 
-错误码ID错误信息7400102Operation not allowed.7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400102 | Operation not allowed. |
+| 7400103 | Session not config. |
 
 **示例：**
 
@@ -43,5 +49,4 @@ function enableMacro(photoSession: camera.PhotoSession): void {
   if (isSupported) {
     photoSession.enableMacro(true);
   }
-}
 ```

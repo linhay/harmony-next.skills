@@ -12,4 +12,4 @@ HTTP请求或者是响应中的标头。
 
 **相关模块：**[netstack](Netstack.md)
 
-**所在头文件：**[net_http_type.h](../../capi/headers/net_http_type.h.md)
+**所在头文件：**[net_http_type.h](../../topics/networking/[net_http_type.h](net_http_type.h.md).md)

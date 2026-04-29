@@ -10,10 +10,14 @@ union Rdb_KeyData { ... }
 
 **相关模块：**[RDB](RDB.md)
 
-**所在头文件：**[relational_store.h](../../capi/headers/relational_store.h.md)
+所在头文件： [relational_store.h](relational_store.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述uint64_t integer存放uint64_t类型的数据。double real存放double类型的数据。const char* text存放char类型的数据。
+| 名称 | 描述 |
+| --- | --- |
+| uint64_t integer | 存放uint64_t类型的数据。 |
+| double real | 存放double类型的数据。 |
+| const char* text | 存放char类型的数据。 |

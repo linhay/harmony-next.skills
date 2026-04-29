@@ -24,7 +24,11 @@ type Value = string | number | Decimal
 
 **系统能力**：SystemCapability.Utils.Lang
 
-类型说明string表示值类型为字符串，可取任意值。number表示值类型为数字，可取任意值。[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)表示值类型为Decimal类型。
+| 类型 | 说明 |
+| --- | --- |
+| string | 表示值类型为字符串，可取任意值。 |
+| number | 表示值类型为数字，可取任意值。 |
+| Decimal | 表示值类型为Decimal类型。 |
 
 #### Rounding
 
@@ -38,7 +42,17 @@ type Rounding = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
 
 **系统能力**：SystemCapability.Utils.Lang
 
-类型说明0向远离零的方向舍入。与[Decimal.ROUND_UP](#ZH-CN_TOPIC_0000002529284739__常量)一致。1向靠近零的方向舍入。与[Decimal.ROUND_DOWN](#ZH-CN_TOPIC_0000002529284739__常量)一致。2向正无穷方向舍入。与[Decimal.ROUND_CEILING](#ZH-CN_TOPIC_0000002529284739__常量)一致。3向负无穷方向舍入。与[Decimal.ROUND_FLOOR](#ZH-CN_TOPIC_0000002529284739__常量)一致。4向最近的邻值舍入。如果距离相等，则远离零方向舍入。与[Decimal.ROUND_HALF_UP](#ZH-CN_TOPIC_0000002529284739__常量)一致。5向最近的邻值舍入。如果距离相等，则靠近零方向舍入。与[Decimal.ROUND_HALF_DOWN](#ZH-CN_TOPIC_0000002529284739__常量)一致。6向最近的邻值舍入。如果距离相等，则向偶数邻值舍入。与[Decimal.ROUND_HALF_EVEN](#ZH-CN_TOPIC_0000002529284739__常量)一致。7向最近的邻值舍入。如果距离相等，则向正无穷方向舍入。与[Decimal.ROUND_HALF_CEILING](#ZH-CN_TOPIC_0000002529284739__常量)一致。8向最近的邻值舍入。如果距离相等，则向负无穷方向舍入。与[Decimal.ROUND_HALF_FLOOR](#ZH-CN_TOPIC_0000002529284739__常量)一致。
+| 类型 | 说明 |
+| --- | --- |
+| 0 | 向远离零的方向舍入。与Decimal.ROUND_UP一致。 |
+| 1 | 向靠近零的方向舍入。与Decimal.ROUND_DOWN一致。 |
+| 2 | 向正无穷方向舍入。与Decimal.ROUND_CEILING一致。 |
+| 3 | 向负无穷方向舍入。与Decimal.ROUND_FLOOR一致。 |
+| 4 | 向最近的邻值舍入。如果距离相等，则远离零方向舍入。与Decimal.ROUND_HALF_UP一致。 |
+| 5 | 向最近的邻值舍入。如果距离相等，则靠近零方向舍入。与Decimal.ROUND_HALF_DOWN一致。 |
+| 6 | 向最近的邻值舍入。如果距离相等，则向偶数邻值舍入。与Decimal.ROUND_HALF_EVEN一致。 |
+| 7 | 向最近的邻值舍入。如果距离相等，则向正无穷方向舍入。与Decimal.ROUND_HALF_CEILING一致。 |
+| 8 | 向最近的邻值舍入。如果距离相等，则向负无穷方向舍入。与Decimal.ROUND_HALF_FLOOR一致。 |
 
 #### Modulo
 
@@ -52,11 +66,14 @@ type Modulo = Rounding | 9
 
 **系统能力**：SystemCapability.Utils.Lang
 
-类型说明[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)模运算下的舍入类型。与[Rounding](#ZH-CN_TOPIC_0000002529284739__常量)表示的舍入模式相同。9余模运算下，余数始终为正。欧几里得除法，与[Decimal.EUCLIDEAN](#ZH-CN_TOPIC_0000002529284739__常量)一致。
+| 类型 | 说明 |
+| --- | --- |
+| Rounding | 模运算下的舍入类型。与Rounding表示的舍入模式相同。 |
+| 9 | 余模运算下，余数始终为正。欧几里得除法，与Decimal.EUCLIDEAN一致。 |
 
 #### DecimalConfig
 
-用于设置Decimal的配置属性，可使用[Decimal.set](#ZH-CN_TOPIC_0000002529284739__set)方法进行配置。
+用于设置Decimal的配置属性，可使用[Decimal.set](#ZH-CN_TOPIC_0000002522080696__set)方法进行配置。
 
 #### 属性
 
@@ -64,7 +81,17 @@ type Modulo = Rounding | 9
 
 **系统能力**：SystemCapability.Utils.Lang
 
-名称类型只读可选说明precisionnumber否是运算结果的最大有效位数，取值范围为[1, 1e9]，默认值为20。rounding[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)否是舍入模式，取值范围为0到8的整数，默认值为4。toExpNegnumber否是指数表示法的负指数值的极限值，若Decimal的负指数小于等于该值时，使用科学计数法表示，[toString](#ZH-CN_TOPIC_0000002529284739__tostring)方法中使用，取值范围为[-9e15, 0]，默认值为-7。toExpPosnumber否是指数表示法的正指数值的极限值，若Decimal的正指数大于等于该值时，使用科学计数法表示，[toString](#ZH-CN_TOPIC_0000002529284739__tostring)方法中使用，取值范围为[0, 9e15]，默认值为21。minEnumber否是负指数极限，若Decimal的指数值小于该值，会下溢到零，取值范围为[-9e15, 0]，默认值为-9e15。maxEnumber否是正指数极限，若Decimal的指数值大于该值，会溢出至无穷大，取值范围为[0, 9e15]，默认值为9e15。cryptoboolean否是确定是否使用加密安全伪随机数生成的值，true表示使用加密安全伪随机数，false表示不使用，默认值为false。该能力不支持使用，报错的错误码为：10200061。modulo[Modulo](#ZH-CN_TOPIC_0000002529284739__modulo)否是模计算时使用的舍入模式，取值范围为0到9的整数，默认值为1。defaultsboolean否是表示未指定的属性是否被设置为默认值，true表示使用默认值，false表示不使用默认值，默认值为true。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| precision | number | 否 | 是 | 运算结果的最大有效位数，取值范围为[1, 1e9]，默认值为20。 |
+| rounding | Rounding | 否 | 是 | 舍入模式，取值范围为0到8的整数，默认值为4。 |
+| toExpNeg | number | 否 | 是 | 指数表示法的负指数值的极限值，若Decimal的负指数小于等于该值时，使用科学计数法表示，toString方法中使用，取值范围为[-9e15, 0]，默认值为-7。 |
+| toExpPos | number | 否 | 是 | 指数表示法的正指数值的极限值，若Decimal的正指数大于等于该值时，使用科学计数法表示，toString方法中使用，取值范围为[0, 9e15]，默认值为21。 |
+| minE | number | 否 | 是 | 负指数极限，若Decimal的指数值小于该值，会下溢到零，取值范围为[-9e15, 0]，默认值为-9e15。 |
+| maxE | number | 否 | 是 | 正指数极限，若Decimal的指数值大于该值，会溢出至无穷大，取值范围为[0, 9e15]，默认值为9e15。 |
+| crypto | boolean | 否 | 是 | 确定是否使用加密安全伪随机数生成的值，true表示使用加密安全伪随机数，false表示不使用，默认值为false。该能力不支持使用，报错的错误码为：10200061。 |
+| modulo | Modulo | 否 | 是 | 模计算时使用的舍入模式，取值范围为0到9的整数，默认值为1。 |
+| defaults | boolean | 否 | 是 | 表示未指定的属性是否被设置为默认值，true表示使用默认值，false表示不使用默认值，默认值为true。 |
 
 #### Decimal
 
@@ -76,7 +103,11 @@ type Modulo = Rounding | 9
 
 **系统能力**：SystemCapability.Utils.Lang
 
-名称类型只读可选说明dnumber[]是否digits：表示Decimal数整数部分和小数部分的数组。enumber是否exponent：表示Decimal数的十进制指数。snumber是否sign：表示Decimal数的符号位，0表示正数，1表示负数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| d | number[] | 是 | 否 | digits：表示Decimal数整数部分和小数部分的数组。 |
+| e | number | 是 | 否 | exponent：表示Decimal数的十进制指数。 |
+| s | number | 是 | 否 | sign：表示Decimal数的符号位，0表示正数，1表示负数。 |
 
 #### 常量
 
@@ -84,7 +115,18 @@ type Modulo = Rounding | 9
 
 **系统能力**：SystemCapability.Utils.Lang
 
-名称类型值说明ROUND_UPnumber0向远离零的方向舍入。模运算下，如果被除数为负，则余数为正，否则为负。ROUND_DOWNnumber1向靠近零的方向舍入。模运算下，余数与被除数的符号相同，使用截断除法。ROUND_CEILINGnumber2向正无穷方向舍入。ROUND_FLOORnumber3向负无穷方向舍入。模运算下，余数与除数的符号相同。ROUND_HALF_UPnumber4向最近的邻值舍入。如果距离相等，则向远离零的方向舍入。ROUND_HALF_DOWNnumber5向最近的邻值舍入。如果距离相等，则向靠近零方向舍入。ROUND_HALF_EVENnumber6向最近的邻值舍入。如果距离相等，则向偶数邻值舍入。模运算下，IEEE 754 求余函数。ROUND_HALF_CEILINGnumber7向最近的邻值舍入。如果距离相等，则向正无穷方向舍入。ROUND_HALF_FLOORnumber8向最近的邻值舍入。如果距离相等，则向负无穷方向舍入。EUCLIDEANnumber9模运算下，余数始终为正。使用欧几里得除法：q = sign(x) * floor(a / abs(x))。
+| 名称 | 类型 | 值 | 说明 |
+| --- | --- | --- | --- |
+| ROUND_UP | number | 0 | 向远离零的方向舍入。模运算下，如果被除数为负，则余数为正，否则为负。 |
+| ROUND_DOWN | number | 1 | 向靠近零的方向舍入。模运算下，余数与被除数的符号相同，使用截断除法。 |
+| ROUND_CEILING | number | 2 | 向正无穷方向舍入。 |
+| ROUND_FLOOR | number | 3 | 向负无穷方向舍入。模运算下，余数与除数的符号相同。 |
+| ROUND_HALF_UP | number | 4 | 向最近的邻值舍入。如果距离相等，则向远离零的方向舍入。 |
+| ROUND_HALF_DOWN | number | 5 | 向最近的邻值舍入。如果距离相等，则向靠近零方向舍入。 |
+| ROUND_HALF_EVEN | number | 6 | 向最近的邻值舍入。如果距离相等，则向偶数邻值舍入。模运算下，IEEE 754 求余函数。 |
+| ROUND_HALF_CEILING | number | 7 | 向最近的邻值舍入。如果距离相等，则向正无穷方向舍入。 |
+| ROUND_HALF_FLOOR | number | 8 | 向最近的邻值舍入。如果距离相等，则向负无穷方向舍入。 |
+| EUCLIDEAN | number | 9 | 模运算下，余数始终为正。使用欧几里得除法：q = sign(x) * floor(a / abs(x))。 |
 
 #### constructor
 
@@ -98,13 +140,17 @@ Decimal的构造函数。
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是构造Decimal时的初始值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 构造Decimal时的初始值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -125,7 +171,9 @@ abs(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回绝对值运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回绝对值运算后的Decimal对象实例。 |
 
 **示例：**
 
@@ -146,7 +194,9 @@ floor(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回舍入之后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回舍入之后的Decimal对象实例。 |
 
 **示例：**
 
@@ -167,7 +217,9 @@ ceil(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回舍入之后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回舍入之后的Decimal对象实例。 |
 
 **示例：**
 
@@ -188,7 +240,9 @@ trunc(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回截断之后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回截断之后的Decimal对象实例。 |
 
 **示例：**
 
@@ -209,17 +263,25 @@ clamp(min: Value, max: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明min[Value](#ZH-CN_TOPIC_0000002529284739__value)是限制的最小值。包含该值。max[Value](#ZH-CN_TOPIC_0000002529284739__value)是限制的最大值。包含该值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| min | Value | 是 | 限制的最小值。包含该值。 |
+| max | Value | 是 | 限制的最大值。包含该值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回符合范围内的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回符合范围内的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码]([语言基础类库错误码](../../errors/语言基础类库错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200001The value of `min` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200001 | The value of `min` is out of range. |
 
 **示例：**
 
@@ -240,7 +302,7 @@ add(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是将此Decimal的值加上n。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -248,17 +310,23 @@ add(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是加法运算的加数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 加法运算的加数。 |
 
 **返回值**：
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回加法运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回加法运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -273,7 +341,7 @@ sub(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是将此Decimal的值减去n。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -281,17 +349,23 @@ sub(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是减法运算的减数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 减法运算的减数。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回减法运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回减法运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -306,7 +380,7 @@ mul(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是将此Decimal的值乘以n。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -314,17 +388,23 @@ mul(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是乘法运算的乘数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 乘法运算的乘数。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回乘法运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回乘法运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -339,7 +419,7 @@ div(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是将此Decimal的值除以n。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -347,17 +427,23 @@ div(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是除法运算的除数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 除法运算的除数。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回除法运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回除法运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -372,7 +458,7 @@ mod(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是将此Decimal的值除以n后的模。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -380,17 +466,23 @@ mod(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是取模运算的除数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 取模运算的除数。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回取模运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回取模运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -405,7 +497,7 @@ sqrt(): Decimal
 
 返回一个新的Decimal对象，其值是当前Decimal的平方根。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -413,7 +505,9 @@ sqrt(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回平方根运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回平方根运算后的Decimal对象实例。 |
 
 **示例：**
 
@@ -428,7 +522,7 @@ cbrt(): Decimal
 
 返回一个新的Decimal对象，其值是当前Decimal对象的立方根。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -436,7 +530,9 @@ cbrt(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回立方根运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回立方根运算后的Decimal对象实例。 |
 
 **示例：**
 
@@ -451,7 +547,7 @@ pow(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是这个Decimal值的n次幂。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -459,17 +555,24 @@ pow(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是幂运算的幂的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 幂运算的幂的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回幂运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回幂运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -484,7 +587,7 @@ exp(): Decimal
 
 返回一个新的Decimal对象，其值是此Decimal值的自然指数。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -492,13 +595,17 @@ exp(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回自然指数运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回自然指数运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -513,7 +620,7 @@ log(n: Value): Decimal
 
 返回一个对数运算后的Decimal对象，其值是以n为底的对数值。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -521,17 +628,24 @@ log(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是对数计算的底数值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 对数计算的底数值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回对数运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回对数运算后的Decimal对象实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -546,7 +660,7 @@ ln(): Decimal
 
 返回一个新的Decimal对象，其值是此Decimal值的自然对数。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -554,13 +668,17 @@ ln(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回自然对数运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回自然对数运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -581,7 +699,9 @@ cos(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回计算余弦值的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回计算余弦值的Decimal对象实例。 |
 
 **示例：**
 
@@ -602,7 +722,9 @@ sin(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回计算正弦值的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回计算正弦值的Decimal对象实例。 |
 
 **示例：**
 
@@ -623,7 +745,9 @@ tan(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回计算正切值的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回计算正切值的Decimal对象实例。 |
 
 **示例：**
 
@@ -644,7 +768,9 @@ cosh(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回计算双曲余弦值的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回计算双曲余弦值的Decimal对象实例。 |
 
 **示例：**
 
@@ -665,7 +791,9 @@ sinh(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回计算双曲正弦值的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回计算双曲正弦值的Decimal对象实例。 |
 
 **示例：**
 
@@ -686,7 +814,9 @@ tanh(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回计算双曲正切值的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回计算双曲正切值的Decimal对象实例。 |
 
 **示例：**
 
@@ -707,13 +837,17 @@ acos(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回计算反余弦值的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回计算反余弦值的Decimal对象实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -734,13 +868,17 @@ asin(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回计算反正弦值的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回计算反正弦值的Decimal对象实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -761,13 +899,17 @@ atan(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回计算反正切值的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回计算反正切值的Decimal对象实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -788,13 +930,17 @@ acosh(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回计算双曲余弦的倒数值的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回计算双曲余弦的倒数值的Decimal对象实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -815,13 +961,17 @@ asinh(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回计算双曲正弦的倒数值的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回计算双曲正弦的倒数值的Decimal对象实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -842,13 +992,17 @@ atanh(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回计算双曲正切的倒数值的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回计算双曲正切的倒数值的Decimal对象实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -869,27 +1023,23 @@ Decimal的比较方法。
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是待比较的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 待比较的值。 |
 
 **返回值：**
 
-类型说明number
-
-返回该Decimal与n的比较结果：
-
-1:该Decimal大于比较值。
-
--1:该Decimal小于比较值。
-
-0:该Decimal等于比较值。
-
-NaN:该Decimal与比较值有一个值为NaN。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回该Decimal与n的比较结果： 1:该Decimal大于比较值。 -1:该Decimal小于比较值。 0:该Decimal等于比较值。 NaN:该Decimal与比较值有一个值为NaN。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -915,17 +1065,23 @@ equals(n: Value): boolean
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是待比较的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 待比较的值。 |
 
 **返回值：**
 
-类型说明booleantrue表示该Decimal与比较值相等，其余情况为false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true表示该Decimal与比较值相等，其余情况为false。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -947,17 +1103,23 @@ greaterThan(n: Value): boolean
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是待比较的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 待比较的值。 |
 
 **返回值：**
 
-类型说明booleantrue表示该Decimal大于比较值，其余情况为false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true表示该Decimal大于比较值，其余情况为false。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -979,17 +1141,23 @@ greaterThanOrEqualTo(n: Value): boolean
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是待比较的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 待比较的值。 |
 
 **返回值：**
 
-类型说明booleantrue表示该Decimal大于等于比较值，其余情况为false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true表示该Decimal大于等于比较值，其余情况为false。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -1011,17 +1179,23 @@ lessThan(n: Value): boolean
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是待比较的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 待比较的值。 |
 
 **返回值：**
 
-类型说明booleantrue表示该Decimal小于比较值，其余情况为false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true表示该Decimal小于比较值，其余情况为false。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -1043,17 +1217,23 @@ lessThanOrEqualTo(n: Value): boolean
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是待比较的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 待比较的值。 |
 
 **返回值：**
 
-类型说明booleantrue表示该Decimal小于等于比较值，其余情况为false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true表示该Decimal小于等于比较值，其余情况为false。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -1075,7 +1255,9 @@ isFinite(): boolean
 
 **返回值：**
 
-类型说明booleantrue表示该Decimal为有限值，其余情况为false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true表示该Decimal为有限值，其余情况为false。 |
 
 **示例：**
 
@@ -1097,7 +1279,9 @@ isInteger(): boolean
 
 **返回值：**
 
-类型说明booleantrue表示该Decimal为整数，其余情况为false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true表示该Decimal为整数，其余情况为false。 |
 
 **示例：**
 
@@ -1119,7 +1303,9 @@ isNaN(): boolean
 
 **返回值：**
 
-类型说明booleantrue表示该Decimal为NaN，其余情况为false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true表示该Decimal为NaN，其余情况为false。 |
 
 **示例：**
 
@@ -1141,7 +1327,9 @@ isNegative(): boolean
 
 **返回值：**
 
-类型说明booleantrue表示该Decimal为负数，其余情况为false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true表示该Decimal为负数，其余情况为false。 |
 
 **示例：**
 
@@ -1167,7 +1355,9 @@ isPositive(): boolean
 
 **返回值：**
 
-类型说明booleantrue表示该Decimal为正数，其余情况为false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true表示该Decimal为正数，其余情况为false。 |
 
 **示例：**
 
@@ -1193,7 +1383,9 @@ isZero(): boolean
 
 **返回值：**
 
-类型说明booleantrue表示该Decimal为0或是-0，其余情况为false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true表示该Decimal为0或是-0，其余情况为false。 |
 
 **示例：**
 
@@ -1209,7 +1401,7 @@ dividedToIntegerBy(n: Value): Decimal
 
 返回该Decimal除以n后获得的整数部分。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1217,17 +1409,23 @@ dividedToIntegerBy(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是除法的除数值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 除法的除数值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回一个Decimal对象，其值是将此Decimal的值除以n值的整数部分。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回一个Decimal对象，其值是将此Decimal的值除以n值的整数部分。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -1250,7 +1448,9 @@ negate(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回一个Decimal对象，其值将此Decimal的值乘以-1。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回一个Decimal对象，其值将此Decimal的值乘以-1。 |
 
 **示例：**
 
@@ -1266,7 +1466,7 @@ toBinary(): string
 
 将Decimal转换为二进制表示的字符串。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1274,7 +1474,9 @@ toBinary(): string
 
 **返回值：**
 
-类型说明string返回二进制表示的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回二进制表示的字符串。 |
 
 **示例：**
 
@@ -1290,7 +1492,7 @@ toBinary(significantDigits: number): string
 
 将Decimal转换为二进制表示的字符串，并可按照significantDigits设置有效数字。
 
-使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1298,17 +1500,23 @@ toBinary(significantDigits: number): string
 
 **参数：**
 
-参数名类型必填说明significantDigitsnumber是转换时保留的有效数字，取值范围为[1, 1e9]的整数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
 
 **返回值：**
 
-类型说明string返回二进制表示的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回二进制表示的字符串。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of `significantDigits` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of `significantDigits` is out of range. |
 
 **示例：**
 
@@ -1330,17 +1538,24 @@ toBinary(significantDigits: number, rounding: Rounding): string
 
 **参数：**
 
-参数名类型必填说明significantDigitsnumber是转换时保留的有效数字，取值范围为[1, 1e9]的整数。rounding[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)是转换时使用的舍入模式，取值范围参考[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
+| rounding | Rounding | 是 | 转换时使用的舍入模式，取值范围参考Rounding。 |
 
 **返回值：**
 
-类型说明string返回二进制表示的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回二进制表示的字符串。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of `significantDigits | rounding` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of `significantDigits | rounding` is out of range. |
 
 **示例：**
 
@@ -1356,7 +1571,7 @@ toOctal(): string
 
 转换为八进制表示的字符串。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1364,7 +1579,9 @@ toOctal(): string
 
 **返回值：**
 
-类型说明string返回八进制表示的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回八进制表示的字符串。 |
 
 **示例：**
 
@@ -1380,7 +1597,7 @@ toOctal(significantDigits: number): string
 
 转换为八进制表示的字符串，可按照significantDigits设置有效数字。
 
-使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1388,17 +1605,23 @@ toOctal(significantDigits: number): string
 
 **参数：**
 
-参数名类型必填说明significantDigitsnumber是转换时保留的有效数字，取值范围为[1, 1e9]的整数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
 
 **返回值：**
 
-类型说明string返回八进制表示的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回八进制表示的字符串。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of `significantDigits` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of `significantDigits` is out of range. |
 
 **示例：**
 
@@ -1420,17 +1643,24 @@ toOctal(significantDigits: number, rounding: Rounding): string
 
 **参数：**
 
-参数名类型必填说明significantDigitsnumber是转换时保留的有效数字，取值范围为[1, 1e9]的整数。rounding[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)是转换时使用的舍入模式，取值范围参考[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
+| rounding | Rounding | 是 | 转换时使用的舍入模式，取值范围参考Rounding。 |
 
 **返回值：**
 
-类型说明string返回八进制表示的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回八进制表示的字符串。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of `significantDigits | rounding` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of `significantDigits | rounding` is out of range. |
 
 **示例：**
 
@@ -1446,7 +1676,7 @@ toHexadecimal(): string
 
 转换为十六进制表示的字符串。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1454,7 +1684,9 @@ toHexadecimal(): string
 
 **返回值：**
 
-类型说明string返回十六进制表示的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回十六进制表示的字符串。 |
 
 **示例：**
 
@@ -1470,7 +1702,7 @@ toHexadecimal(significantDigits: number): string
 
 转换为十六进制表示的字符串，可按照significantDigits设置有效数字。
 
-使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1478,17 +1710,23 @@ toHexadecimal(significantDigits: number): string
 
 **参数：**
 
-参数名类型必填说明significantDigitsnumber是转换时保留的有效数字，取值范围为[1, 1e9]的整数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
 
 **返回值：**
 
-类型说明string返回十六进制表示的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回十六进制表示的字符串。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of `significantDigits` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of `significantDigits` is out of range. |
 
 **示例：**
 
@@ -1510,17 +1748,24 @@ toHexadecimal(significantDigits: number, rounding: Rounding): string
 
 **参数：**
 
-参数名类型必填说明significantDigitsnumber是转换时保留的有效数字，取值范围为[1, 1e9]的整数。rounding[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)是转换时使用的舍入模式，取值范围参考[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
+| rounding | Rounding | 是 | 转换时使用的舍入模式，取值范围参考Rounding。 |
 
 **返回值：**
 
-类型说明string返回十六进制表示的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回十六进制表示的字符串。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of `significantDigits | rounding` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of `significantDigits | rounding` is out of range. |
 
 **示例：**
 
@@ -1542,7 +1787,9 @@ toDecimalPlaces(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回一个Decimal对象保留小数点后指定位数。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回一个Decimal对象保留小数点后指定位数。 |
 
 **示例：**
 
@@ -1558,7 +1805,7 @@ toDecimalPlaces(decimalPlaces: number): Decimal
 
 返回一个保留小数点后指定位数的Decimal对象，可按照decimalPlaces设置小数位数。
 
-使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1566,17 +1813,23 @@ toDecimalPlaces(decimalPlaces: number): Decimal
 
 **参数：**
 
-参数名类型必填说明decimalPlacesnumber是转换时保留的小数点后有效位数，取值范围为[0, 1e9]的整数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| decimalPlaces | number | 是 | 转换时保留的小数点后有效位数，取值范围为[0, 1e9]的整数。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回一个Decimal对象保留小数点后指定位数。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回一个Decimal对象保留小数点后指定位数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of `decimalPlaces` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of `decimalPlaces` is out of range. |
 
 **示例：**
 
@@ -1598,17 +1851,24 @@ toDecimalPlaces(decimalPlaces: number, rounding: Rounding): Decimal
 
 **参数：**
 
-参数名类型必填说明decimalPlacesnumber是转换时保留的小数点后有效位数，取值范围为[0, 1e9]的整数。rounding[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)是转换时使用的舍入模式。取值范围参考[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| decimalPlaces | number | 是 | 转换时保留的小数点后有效位数，取值范围为[0, 1e9]的整数。 |
+| rounding | Rounding | 是 | 转换时使用的舍入模式。取值范围参考Rounding。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回一个Decimal对象保留小数点后指定位数。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回一个Decimal对象保留小数点后指定位数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of `decimalPlaces | rounding` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of `decimalPlaces | rounding` is out of range. |
 
 **示例：**
 
@@ -1631,7 +1891,9 @@ toExponential(): string
 
 **返回值：**
 
-类型说明string返回按照指数表示法显示的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回按照指数表示法显示的字符串。 |
 
 **示例：**
 
@@ -1647,7 +1909,7 @@ toExponential(decimalPlaces: number): string
 
 将数值转换为按照指数表示法显示的字符串，可按照decimalPlaces设置小数位数。
 
-使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1655,17 +1917,23 @@ toExponential(decimalPlaces: number): string
 
 **参数：**
 
-参数名类型必填说明decimalPlacesnumber是转换时保留的小数点后有效位数，取值范围为[0, 1e9]的整数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| decimalPlaces | number | 是 | 转换时保留的小数点后有效位数，取值范围为[0, 1e9]的整数。 |
 
 **返回值：**
 
-类型说明string返回按照指数表示法显示的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回按照指数表示法显示的字符串。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of `decimalPlaces` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of `decimalPlaces` is out of range. |
 
 **示例：**
 
@@ -1689,17 +1957,24 @@ toExponential(decimalPlaces: number, rounding: Rounding): string
 
 **参数：**
 
-参数名类型必填说明decimalPlacesnumber是转换时保留的小数点后有效位数，取值范围为[0, 1e9]的整数。rounding[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)是转换时使用的舍入模式，取值范围参考[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| decimalPlaces | number | 是 | 转换时保留的小数点后有效位数，取值范围为[0, 1e9]的整数。 |
+| rounding | Rounding | 是 | 转换时使用的舍入模式，取值范围参考Rounding。 |
 
 **返回值：**
 
-类型说明string返回按照指数表示法显示的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回按照指数表示法显示的字符串。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of `decimalPlaces | rounding` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of `decimalPlaces | rounding` is out of range. |
 
 **示例：**
 
@@ -1721,7 +1996,9 @@ toFixed(): string
 
 **返回值：**
 
-类型说明string返回按照正常模式（十进制定点模式）表示的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回按照正常模式（十进制定点模式）表示的字符串。 |
 
 **示例：**
 
@@ -1737,7 +2014,7 @@ toFixed(decimalPlaces: number): string
 
 将数组转换为十进制定点模式表示的字符串，可按照decimalPlaces设置小数位数。
 
-使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1745,17 +2022,23 @@ toFixed(decimalPlaces: number): string
 
 **参数：**
 
-参数名类型必填说明decimalPlacesnumber是转换时保留的小数点后有效位数，取值范围为[0, 1e9]的整数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| decimalPlaces | number | 是 | 转换时保留的小数点后有效位数，取值范围为[0, 1e9]的整数。 |
 
 **返回值：**
 
-类型说明string返回按照正常模式（十进制定点模式）表示的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回按照正常模式（十进制定点模式）表示的字符串。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of `decimalPlaces` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of `decimalPlaces` is out of range. |
 
 **示例：**
 
@@ -1779,17 +2062,24 @@ toFixed(decimalPlaces: number, rounding: Rounding): string
 
 **参数：**
 
-参数名类型必填说明decimalPlacesnumber是转换时保留的小数点后有效位数，取值范围为[0, 1e9]的整数。rounding[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)是转换时使用的舍入模式，取值范围参考[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| decimalPlaces | number | 是 | 转换时保留的小数点后有效位数，取值范围为[0, 1e9]的整数。 |
+| rounding | Rounding | 是 | 转换时使用的舍入模式，取值范围参考Rounding。 |
 
 **返回值：**
 
-类型说明string返回按照正常模式（十进制定点模式）表示的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回按照正常模式（十进制定点模式）表示的字符串。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of `decimalPlaces | rounding` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of `decimalPlaces | rounding` is out of range. |
 
 **示例：**
 
@@ -1811,7 +2101,9 @@ toFraction(): Decimal[]
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)[]返回一个Decimal数组，该数组长度固定为2，其值表示为具有整数分子和整数分母的简单分数。且分子在前，分母在后。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal[] | 返回一个Decimal数组，该数组长度固定为2，其值表示为具有整数分子和整数分母的简单分数。且分子在前，分母在后。 |
 
 **示例：**
 
@@ -1833,17 +2125,23 @@ toFraction(maxDenominator: Value): Decimal[]
 
 **参数：**
 
-参数名类型必填说明maxDenominator[Value](#ZH-CN_TOPIC_0000002529284739__value)是分母的最大值。包含该值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| maxDenominator | Value | 是 | 分母的最大值。包含该值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)[]返回一个Decimal数组，该数组长度固定为2，其值表示为具有整数分子和整数分母的简单分数。且分子在前，分母在后。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal[] | 返回一个Decimal数组，该数组长度固定为2，其值表示为具有整数分子和整数分母的简单分数。且分子在前，分母在后。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -1869,17 +2167,23 @@ toNearest(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是参考的指定值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 参考的指定值。 |
 
 **返回值：**
 
-类型说明Decimal返回一个Decimal对象，为最接近原值的指定值的倍数值。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回一个Decimal对象，为最接近原值的指定值的倍数值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -1901,17 +2205,25 @@ toNearest(n: Value, rounding: Rounding): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是参考的指定值。rounding[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)是转换时使用的舍入模式，取值范围参考[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 参考的指定值。 |
+| rounding | Rounding | 是 | 转换时使用的舍入模式，取值范围参考Rounding。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回一个Decimal对象，为最接近原值的指定值的倍数值。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回一个Decimal对象，为最接近原值的指定值的倍数值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200001The value of `rounding` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200001 | The value of `rounding` is out of range. |
 
 **示例：**
 
@@ -1927,7 +2239,7 @@ toPrecision(): string
 
 将Decimal对象转换为字符串。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1935,7 +2247,9 @@ toPrecision(): string
 
 **返回值：**
 
-类型说明string返回一个表示Decimal对象的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回一个表示Decimal对象的字符串。 |
 
 **示例：**
 
@@ -1951,7 +2265,7 @@ toPrecision(significantDigits: number): string
 
 将数值转换为字符串，可按照significantDigits设置有效数字。
 
-使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1959,17 +2273,23 @@ toPrecision(significantDigits: number): string
 
 **参数：**
 
-参数名类型必填说明significantDigitsnumber是转换时保留的有效数字。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| significantDigits | number | 是 | 转换时保留的有效数字。 |
 
 **返回值：**
 
-类型说明string返回一个表示Decimal对象的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回一个表示Decimal对象的字符串。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of `significantDigits` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of `significantDigits` is out of range. |
 
 **示例：**
 
@@ -1992,17 +2312,24 @@ toPrecision(significantDigits: number, rounding: Rounding): string
 
 **参数：**
 
-参数名类型必填说明significantDigitsnumber是转换时保留的有效数字，取值范围为[1, 1e9]的整数。rounding[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)是转换时使用的舍入模式，取值范围参考[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
+| rounding | Rounding | 是 | 转换时使用的舍入模式，取值范围参考Rounding。 |
 
 **返回值：**
 
-类型说明string返回一个表示Decimal对象的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回一个表示Decimal对象的字符串。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of `significantDigits | rounding` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of `significantDigits | rounding` is out of range. |
 
 **示例：**
 
@@ -2018,7 +2345,7 @@ toSignificantDigits(): Decimal
 
 返回一个按照保留有效数字的转换的Decimal对象。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2026,7 +2353,9 @@ toSignificantDigits(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回一个保留有效数字后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回一个保留有效数字后的Decimal对象实例。 |
 
 **示例：**
 
@@ -2042,7 +2371,7 @@ toSignificantDigits(significantDigits: number): Decimal
 
 返回一个按照保留有效数字的转换的Decimal对象，可按照significantDigits设置有效数字。
 
-使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2050,17 +2379,23 @@ toSignificantDigits(significantDigits: number): Decimal
 
 **参数：**
 
-参数名类型必填说明significantDigitsnumber是转换时保留的有效数字。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| significantDigits | number | 是 | 转换时保留的有效数字。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回一个保留有效数字后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回一个保留有效数字后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of `significantDigits` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of `significantDigits` is out of range. |
 
 **示例：**
 
@@ -2082,17 +2417,24 @@ toSignificantDigits(significantDigits: number, rounding: Rounding): Decimal
 
 **参数：**
 
-参数名类型必填说明significantDigitsnumber是转换时保留的有效数字，取值范围为[1, 1e9]的整数。rounding[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)是转换时使用的舍入模式，取值范围参考[Rounding](#ZH-CN_TOPIC_0000002529284739__rounding)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
+| rounding | Rounding | 是 | 转换时使用的舍入模式，取值范围参考Rounding。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回一个保留有效数字后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回一个保留有效数字后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of `significantDigits | rounding` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of `significantDigits | rounding` is out of range. |
 
 **示例：**
 
@@ -2114,7 +2456,9 @@ toNumber(): number
 
 **返回值：**
 
-类型说明number返回一个表示Decimal的number值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回一个表示Decimal的number值。 |
 
 **示例：**
 
@@ -2128,7 +2472,7 @@ console.info("test Decimal toNumber:" + data1.toString()); // 'test Decimal toNu
 
 toString(): string
 
-返回一个字符串，表示此 Decimal 的值，如果此 Decimal 的正指数等于或大于[toExpPos](#ZH-CN_TOPIC_0000002529284739__decimalconfig)，或负指数等于或小于[toExpNeg](#ZH-CN_TOPIC_0000002529284739__decimalconfig)，则将返回指数表示法。
+返回一个字符串，表示此 Decimal 的值，如果此 Decimal 的正指数等于或大于[toExpPos](#ZH-CN_TOPIC_0000002522080696__decimalconfig)，或负指数等于或小于[toExpNeg](#ZH-CN_TOPIC_0000002522080696__decimalconfig)，则将返回指数表示法。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2136,7 +2480,9 @@ toString(): string
 
 **返回值：**
 
-类型说明string返回一个表示Decimal的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回一个表示Decimal的字符串。 |
 
 **示例：**
 
@@ -2167,7 +2513,9 @@ valueOf(): string
 
 **返回值：**
 
-类型说明string返回一个表示Decimal的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回一个表示Decimal的字符串。 |
 
 **示例：**
 
@@ -2189,7 +2537,9 @@ decimalPlaces(): number
 
 **返回值：**
 
-类型说明number返回Decimal对象的小数位数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回Decimal对象的小数位数。 |
 
 **示例：**
 
@@ -2211,7 +2561,9 @@ precision(): number
 
 **返回值：**
 
-类型说明number返回Decimal对象的有效位数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回Decimal对象的有效位数。 |
 
 **示例：**
 
@@ -2233,17 +2585,23 @@ precision(includeZeros: boolean | number): number
 
 **参数：**
 
-参数名类型必填说明includeZerosboolean | number是是否计算整数部分尾随零。true或1表示计算整数部分尾随零，false或0表示不计算整数部分尾随零。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| includeZeros | boolean | number | 是 | 是否计算整数部分尾随零。true或1表示计算整数部分尾随零，false或0表示不计算整数部分尾随零。 |
 
 **返回值：**
 
-类型说明number返回Decimal对象的有效位数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回Decimal对象的有效位数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of `includeZeros` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of `includeZeros` is out of range. |
 
 **示例：**
 
@@ -2266,17 +2624,23 @@ static abs(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是取绝对值的参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 取绝对值的参数。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回一个值为参数n的绝对值的Decimal。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回一个值为参数n的绝对值的Decimal。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -2297,17 +2661,23 @@ static floor(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是需要舍入的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 需要舍入的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回舍入之后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回舍入之后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -2328,17 +2698,23 @@ static ceil(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是需要舍入的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 需要舍入的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回舍入之后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回舍入之后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -2359,17 +2735,23 @@ static trunc(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是需要截断的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 需要截断的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回截断之后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回截断之后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -2390,17 +2772,26 @@ static clamp(n: Value, min: Value, max: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是需要被限制的值。min[Value](#ZH-CN_TOPIC_0000002529284739__value)是限制的最小值。包含该值。max[Value](#ZH-CN_TOPIC_0000002529284739__value)是限制的最大值。包含该值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 需要被限制的值。 |
+| min | Value | 是 | 限制的最小值。包含该值。 |
+| max | Value | 是 | 限制的最大值。包含该值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回符合范围的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回符合范围的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200001The value of `min` is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200001 | The value of `min` is out of range. |
 
 **示例：**
 
@@ -2415,7 +2806,7 @@ static add(x: Value, y: Value): Decimal
 
 返回一个值为x加y的和的Decimal对象。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2423,17 +2814,24 @@ static add(x: Value, y: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明x[Value](#ZH-CN_TOPIC_0000002529284739__value)是加法的一个加数。y[Value](#ZH-CN_TOPIC_0000002529284739__value)是加法的另一个加数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| x | Value | 是 | 加法的一个加数。 |
+| y | Value | 是 | 加法的另一个加数。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回加法运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回加法运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -2448,7 +2846,7 @@ static sum(...n: Value[]): Decimal
 
 返回一个值为数组元素和的Decimal对象。该接口用于对参数求和，当无入参时会抛出运行时异常。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2456,17 +2854,23 @@ static sum(...n: Value[]): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)[]否加数的序列。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value[] | 否 | 加数的序列。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回加法运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回加法运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -2481,7 +2885,7 @@ static sub(x: Value, y: Value): Decimal
 
 返回一个值为x减y的差的Decimal对象。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2489,17 +2893,24 @@ static sub(x: Value, y: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明x[Value](#ZH-CN_TOPIC_0000002529284739__value)是减法的被减数。y[Value](#ZH-CN_TOPIC_0000002529284739__value)是减法的减数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| x | Value | 是 | 减法的被减数。 |
+| y | Value | 是 | 减法的减数。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回减法运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回减法运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -2514,7 +2925,7 @@ static mul(x: Value, y: Value): Decimal
 
 返回一个值为x乘以y的积的Decimal对象。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2522,17 +2933,24 @@ static mul(x: Value, y: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明x[Value](#ZH-CN_TOPIC_0000002529284739__value)是乘法的被乘数。y[Value](#ZH-CN_TOPIC_0000002529284739__value)是乘法的乘数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| x | Value | 是 | 乘法的被乘数。 |
+| y | Value | 是 | 乘法的乘数。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回乘法运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回乘法运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -2547,7 +2965,7 @@ static div(x: Value, y: Value): Decimal
 
 返回一个值为x除以y的商的Decimal对象。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2555,17 +2973,24 @@ static div(x: Value, y: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明x[Value](#ZH-CN_TOPIC_0000002529284739__value)是除法的被除数。y[Value](#ZH-CN_TOPIC_0000002529284739__value)是除法的除数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| x | Value | 是 | 除法的被除数。 |
+| y | Value | 是 | 除法的除数。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回除法运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回除法运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -2580,7 +3005,7 @@ static mod(x: Value, y: Value): Decimal
 
 返回一个新的Decimal对象，其值是x除以y的模。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2588,17 +3013,24 @@ static mod(x: Value, y: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明x[Value](#ZH-CN_TOPIC_0000002529284739__value)是模除运算的被除数。y[Value](#ZH-CN_TOPIC_0000002529284739__value)是模除运算的除数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| x | Value | 是 | 模除运算的被除数。 |
+| y | Value | 是 | 模除运算的除数。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回模除运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回模除运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -2613,7 +3045,7 @@ static sqrt(n: Value): Decimal
 
 返回一个值为n的平方根的Decimal对象。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2621,17 +3053,23 @@ static sqrt(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是取平方根的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 取平方根的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回平方根运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回平方根运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -2646,7 +3084,7 @@ static cbrt(n: Value): Decimal
 
 返回一个值为n的立方根的Decimal对象。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2654,17 +3092,23 @@ static cbrt(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是取立方根的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 取立方根的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回立方根运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回立方根运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -2677,7 +3121,7 @@ console.info("test Decimal cbrt:" + data.toString()); // 'test Decimal cbrt:1.44
 
 static pow(base: Value, exponent: Value): Decimal
 
-返回一个值为base的exponent次幂的Decimal对象，按照[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)设置有效位数，按照[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)设置舍入模式。
+返回一个值为base的exponent次幂的Decimal对象，按照[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)设置有效位数，按照[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2685,17 +3129,25 @@ static pow(base: Value, exponent: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明base[Value](#ZH-CN_TOPIC_0000002529284739__value)是幂运算的底数的值。exponent[Value](#ZH-CN_TOPIC_0000002529284739__value)是幂运算的幂的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| base | Value | 是 | 幂运算的底数的值。 |
+| exponent | Value | 是 | 幂运算的幂的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回幂运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回幂运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -2710,7 +3162,7 @@ static exp(n: Value): Decimal
 
 返回一个值为n的自然指数的Decimal对象。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2718,17 +3170,24 @@ static exp(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是需要求自然指数的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 需要求自然指数的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回自然指数运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回自然指数运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -2743,7 +3202,7 @@ static log(n: Value, base: Value): Decimal
 
 返回一个以base为底n的对数的Decimal对象。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2751,17 +3210,25 @@ static log(n: Value, base: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是对数运算的真数。base[Value](#ZH-CN_TOPIC_0000002529284739__value)是对数运算的底数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 对数运算的真数。 |
+| base | Value | 是 | 对数运算的底数。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回对数运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回对数运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -2776,7 +3243,7 @@ static ln(n: Value): Decimal
 
 返回一个值为n的自然对数的Decimal对象。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2784,17 +3251,24 @@ static ln(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是对数运算的真数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 对数运算的真数。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回自然对数运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回自然对数运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -2809,7 +3283,7 @@ static log2(n: Value): Decimal
 
 返回一个以2为底n的对数的Decimal对象。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2817,17 +3291,24 @@ static log2(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是对数运算的真数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 对数运算的真数。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回以2为底的对数运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回以2为底的对数运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -2842,7 +3323,7 @@ static log10(n: Value): Decimal
 
 返回一个以10为底n的对数的Decimal对象。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2850,17 +3331,24 @@ static log10(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是对数运算的真数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 对数运算的真数。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回以10为底的对数运算后的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回以10为底的对数运算后的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -2875,7 +3363,7 @@ static cos(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的余弦值。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2883,17 +3371,23 @@ static cos(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是要求余弦值的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 要求余弦值的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回n的余弦值对应的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回n的余弦值对应的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -2908,7 +3402,7 @@ static sin(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的正弦值。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2916,17 +3410,23 @@ static sin(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是要求正弦值的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 要求正弦值的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回n的正弦值对应的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回n的正弦值对应的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -2941,7 +3441,7 @@ static tan(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的正切值。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2949,17 +3449,23 @@ static tan(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是要求的正切值的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 要求的正切值的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回n的正切值对应的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回n的正切值对应的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -2974,7 +3480,7 @@ static cosh(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的双曲余弦值。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2982,17 +3488,23 @@ static cosh(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是需要求的双曲余弦值的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 需要求的双曲余弦值的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回n的双曲余弦值对应的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回n的双曲余弦值对应的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -3007,7 +3519,7 @@ static sinh(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的双曲正弦值。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3015,17 +3527,23 @@ static sinh(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是需要求的双曲正弦值的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 需要求的双曲正弦值的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回n的双曲正弦值对应的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回n的双曲正弦值对应的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -3040,7 +3558,7 @@ static tanh(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的双曲正切值。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3048,17 +3566,23 @@ static tanh(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是需要求双曲正切值的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 需要求双曲正切值的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回n的双曲正切值对应的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回n的双曲正切值对应的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -3073,7 +3597,7 @@ static acos(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的反余弦值。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3081,17 +3605,24 @@ static acos(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是需要求反余弦值的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 需要求反余弦值的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回n的反余弦值对应的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回n的反余弦值对应的Decimal对象实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -3106,7 +3637,7 @@ static asin(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的反正弦值。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3114,17 +3645,24 @@ static asin(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是需要求反正弦值的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 需要求反正弦值的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回n的反正弦值对应的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回n的反正弦值对应的Decimal对象实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -3139,7 +3677,7 @@ static atan(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的反正切值。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3147,17 +3685,24 @@ static atan(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是需要求反正切值的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 需要求反正切值的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回n的反正切值对应的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回n的反正切值对应的Decimal对象实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -3172,7 +3717,7 @@ static acosh(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的双曲余弦值的倒数。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3180,17 +3725,24 @@ static acosh(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是需要求的双曲余弦的倒数的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 需要求的双曲余弦的倒数的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回n的双曲余弦的倒数对应的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回n的双曲余弦的倒数对应的Decimal对象实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -3205,7 +3757,7 @@ static asinh(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的双曲正弦值的倒数。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3213,17 +3765,24 @@ static asinh(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是需要求双曲正弦的倒数的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 需要求双曲正弦的倒数的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回n的双曲正弦的倒数对应的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回n的双曲正弦的倒数对应的Decimal对象实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -3238,7 +3797,7 @@ static atanh(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的双曲正切值的倒数。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3246,17 +3805,24 @@ static atanh(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是需要求双曲正切的倒数的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 需要求双曲正切的倒数的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回n的双曲正切的倒数对应的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回n的双曲正切的倒数对应的Decimal对象实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -3271,7 +3837,7 @@ static atan2(y: Value, x: Value): Decimal
 
 返回一个新的Decimal对象，其值是为-π到π范围内的y/x反正切值。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3279,17 +3845,25 @@ static atan2(y: Value, x: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明y[Value](#ZH-CN_TOPIC_0000002529284739__value)是除法的被除数。x[Value](#ZH-CN_TOPIC_0000002529284739__value)是除法的除数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| y | Value | 是 | 除法的被除数。 |
+| x | Value | 是 | 除法的除数。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回-pi 到 pi 范围内的"y/x"反正切值对应的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回-pi 到 pi 范围内的"y/x"反正切值对应的Decimal对象实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200060Precision limit exceeded.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200060 | Precision limit exceeded. |
 
 **示例：**
 
@@ -3304,7 +3878,7 @@ static hypot(...n: Value[]): Decimal
 
 返回一个新的Decimal对象，其值是参数平方和的平方根。无入参时默认返回0。
 
-使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)的值设置舍入模式。
+使用[DecimalConfig.precision](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3312,17 +3886,23 @@ static hypot(...n: Value[]): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)[]否需要求平方和的序列。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value[] | 否 | 需要求平方和的序列。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回值为所有参数平方和的平方根的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回值为所有参数平方和的平方根的Decimal对象实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -3343,17 +3923,23 @@ static max(...n: Value[]): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)[]否需要求最大值的序列。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value[] | 否 | 需要求最大值的序列。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回所有参数中的最大值的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回所有参数中的最大值的Decimal对象实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -3374,17 +3960,23 @@ static min(...n: Value[]): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)[]否需要求最小值的序列。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value[] | 否 | 需要求最小值的序列。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回所有参数中的最小值的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回所有参数中的最小值的Decimal对象实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -3405,13 +3997,17 @@ static random(): Decimal
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)大于等于0小于1的随机值的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 大于等于0小于1的随机值的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200061Crypto unavailable.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200061 | Crypto unavailable. |
 
 **示例：**
 
@@ -3431,17 +4027,24 @@ static random(significantDigits: number): Decimal
 
 **参数：**
 
-参数名类型必填说明significantDigitsnumber是随机值保留的有效数字。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| significantDigits | number | 是 | 随机值保留的有效数字。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)大于等于0小于1的随机值的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 大于等于0小于1的随机值的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200061Crypto unavailable.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200061 | Crypto unavailable. |
 
 **示例：**
 
@@ -3461,17 +4064,23 @@ static sign(n: Value): number
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是需要判断的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 需要判断的值。 |
 
 **返回值：**
 
-类型说明number根据参数的值进行判断返回对应的值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 根据参数的值进行判断返回对应的值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -3505,7 +4114,7 @@ console.info("test Decimal sign:" + data8); // 'test Decimal sign:NaN'
 
 static round(n: Value): Decimal
 
-返回一个新的Decimal对象，其值是使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002529284739__decimalconfig)模式舍入为整数的n。
+返回一个新的Decimal对象，其值是使用[DecimalConfig.rounding](#ZH-CN_TOPIC_0000002522080696__decimalconfig)模式舍入为整数的n。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3513,17 +4122,23 @@ static round(n: Value): Decimal
 
 **参数：**
 
-参数名类型必填说明n[Value](#ZH-CN_TOPIC_0000002529284739__value)是需要舍入的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| n | Value | 是 | 需要舍入的值。 |
 
 **返回值：**
 
-类型说明[Decimal](#ZH-CN_TOPIC_0000002529284739__decimal)返回舍入之后的整数对应的Decimal对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Decimal | 返回舍入之后的整数对应的Decimal对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
 
 **示例：**
 
@@ -3545,13 +4160,19 @@ static set(config: DecimalConfig):void
 
 **参数：**
 
-参数名类型必填说明config[DecimalConfig](#ZH-CN_TOPIC_0000002529284739__decimalconfig)是需要配置的属性集合。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | DecimalConfig | 是 | 需要配置的属性集合。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed.10200001The value of `DecimalConfig.properties` is out of range.10200061Crypto unavailable.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes:1. Incorrect parameter types;2. Parameter verification failed. |
+| 10200001 | The value of `DecimalConfig.properties` is out of range. |
+| 10200061 | Crypto unavailable. |
 
 **示例1：**
 

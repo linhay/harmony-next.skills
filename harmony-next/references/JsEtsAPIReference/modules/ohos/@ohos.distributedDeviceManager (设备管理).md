@@ -28,17 +28,23 @@ createDeviceManager(bundleName: string): DeviceManager
 
 **参数：**
 
-参数名类型必填说明bundleNamestring是指示应用程序的Bundle名称。长度范围1~255字符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| bundleName | string | 是 | 指示应用程序的Bundle名称。长度范围1~255字符。 |
 
 **返回值：**
 
-类型说明[DeviceManager](#ZH-CN_TOPIC_0000002529285429__devicemanager)返回设备管理器对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| DeviceManager | 返回设备管理器对象实例。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -64,13 +70,18 @@ releaseDeviceManager(deviceManager: DeviceManager): void
 
 **参数：**
 
-参数名类型必填说明deviceManager[DeviceManager](#ZH-CN_TOPIC_0000002529285429__devicemanager)是设备管理器对象实例。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceManager | DeviceManager | 是 | 设备管理器对象实例。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[设备管理错误码](../../errors/设备管理错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)和[设备管理错误码]([设备管理错误码](../../errors/设备管理错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.11600101Failed to execute the function.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 11600101 | Failed to execute the function. |
 
 **示例：**
 
@@ -93,7 +104,12 @@ try {
 
 **系统能力**：以下各项对应的系统能力均为SystemCapability.DistributedHardware.DeviceManager
 
-名称类型只读可选说明deviceIdstring否否设备标识符。实际值为udid-hash与appid和盐值基于sha256方式进行混淆后的值。deviceNamestring否否设备名称。deviceTypestring否否[设备类型](#ZH-CN_TOPIC_0000002529285429__getdevicetype)。networkIdstring否是设备网络标识。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| deviceId | string | 否 | 否 | 设备标识符。实际值为udid-hash与appid和盐值基于sha256方式进行混淆后的值。 |
+| deviceName | string | 否 | 否 | 设备名称。 |
+| deviceType | string | 否 | 否 | 设备类型。 |
+| networkId | string | 否 | 是 | 设备网络标识。 |
 
 #### DeviceStateChange
 
@@ -101,7 +117,11 @@ try {
 
 **系统能力**：以下各项对应的系统能力均为SystemCapability.DistributedHardware.DeviceManager
 
-名称值说明UNKNOWN0设备物理上线，此时状态未知，在状态更改为可用之前，分布式业务无法使用。AVAILABLE1设备可用状态，表示设备间信息已在分布式数据中同步完成，可以运行分布式业务。UNAVAILABLE2设备物理下线，此时状态未知。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| UNKNOWN | 0 | 设备物理上线，此时状态未知，在状态更改为可用之前，分布式业务无法使用。 |
+| AVAILABLE | 1 | 设备可用状态，表示设备间信息已在分布式数据中同步完成，可以运行分布式业务。 |
+| UNAVAILABLE | 2 | 设备物理下线，此时状态未知。 |
 
 #### DeviceManager
 
@@ -119,13 +139,18 @@ getAvailableDeviceListSync(): Array<DeviceBasicInfo>
 
 **返回值：**
 
-类型说明Array<[DeviceBasicInfo](#ZH-CN_TOPIC_0000002529285429__devicebasicinfo)>返回可信设备列表。
+| 类型 | 说明 |
+| --- | --- |
+| Array<DeviceBasicInfo> | 返回可信设备列表。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[设备管理错误码](../../errors/设备管理错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)和[设备管理错误码](设备管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.11600101Failed to execute the function.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 11600101 | Failed to execute the function. |
 
 **示例：**
 
@@ -154,13 +179,18 @@ getAvailableDeviceList(callback:AsyncCallback<Array<DeviceBasicInfo>>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<Array<[DeviceBasicInfo](#ZH-CN_TOPIC_0000002529285429__devicebasicinfo)>>是获取所有可信设备列表的回调，返回设备信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<DeviceBasicInfo>> | 是 | 获取所有可信设备列表的回调，返回设备信息。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[设备管理错误码](../../errors/设备管理错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)和[设备管理错误码](设备管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.11600101Failed to execute the function.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 11600101 | Failed to execute the function. |
 
 **示例：**
 
@@ -195,13 +225,18 @@ getAvailableDeviceList(): Promise<Array<DeviceBasicInfo>>
 
 **返回值：**
 
-类型说明Promise<Array<[DeviceBasicInfo](#ZH-CN_TOPIC_0000002529285429__devicebasicinfo)>>Promise实例，用于获取异步返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<DeviceBasicInfo>> | Promise实例，用于获取异步返回结果。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[设备管理错误码](../../errors/设备管理错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)和[设备管理错误码](设备管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.11600101Failed to execute the function.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 11600101 | Failed to execute the function. |
 
 **示例：**
 
@@ -229,13 +264,18 @@ getLocalDeviceNetworkId(): string
 
 **返回值：**
 
-类型说明string返回本地设备网络标识。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回本地设备网络标识。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[设备管理错误码](../../errors/设备管理错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)和[设备管理错误码](设备管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.11600101Failed to execute the function.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 11600101 | Failed to execute the function. |
 
 **示例：**
 
@@ -265,13 +305,18 @@ getLocalDeviceName(): string
 
 **返回值：**
 
-类型说明string返回本地设备名称。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回本地设备名称。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[设备管理错误码](../../errors/设备管理错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)和[设备管理错误码](设备管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.11600101Failed to execute the function.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 11600101 | Failed to execute the function. |
 
 **示例：**
 
@@ -301,33 +346,18 @@ getLocalDeviceType(): number
 
 **返回值：**
 
-类型说明number
-
-返回本地设备类型。目前仅支持以下设备类型：
-
--0: UNKNOWN。
-
--14: PHONE。
-
--17: TABLET。
-
--156: TV。
-
--131: CAR。
-
--109: WATCH。
-
--8: WiFiCamera。
-
--2562: SMART_DISPLAY。
-
--2607: 2IN1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回本地设备类型。目前仅支持以下设备类型： -0: UNKNOWN。 -14: PHONE。 -17: PAD。 -156: TV。 -131: CAR。 -109: WATCH。 -8: WiFiCamera。 -2562: SMART_DISPLAY。 -2607: 2IN1。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[设备管理错误码](../../errors/设备管理错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)和[设备管理错误码](设备管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.11600101Failed to execute the function.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 11600101 | Failed to execute the function. |
 
 **示例：**
 
@@ -357,13 +387,18 @@ getLocalDeviceId(): string
 
 **返回值：**
 
-类型说明string返回本地设备id。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回本地设备id。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[设备管理错误码](../../errors/设备管理错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)和[设备管理错误码](设备管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.11600101Failed to execute the function.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 11600101 | Failed to execute the function. |
 
 **示例：**
 
@@ -393,17 +428,25 @@ getDeviceName(networkId: string): string
 
 **参数：**
 
-参数名类型必填说明networkIdstring是设备的网络标识。长度范围1~255字符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| networkId | string | 是 | 设备的网络标识。长度范围1~255字符。 |
 
 **返回值：**
 
-类型说明string返回指定设备名称。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回指定设备名称。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[设备管理错误码](../../errors/设备管理错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)和[设备管理错误码](设备管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified networkId is greater than 255.11600101Failed to execute the function.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified networkId is greater than 255. |
+| 11600101 | Failed to execute the function. |
 
 **示例：**
 
@@ -435,37 +478,25 @@ getDeviceType(networkId: string): number
 
 **参数：**
 
-参数名类型必填说明networkIdstring是设备的网络标识。长度范围1~255字符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| networkId | string | 是 | 设备的网络标识。长度范围1~255字符。 |
 
 **返回值：**
 
-类型说明number
-
-返回指定设备类型。目前仅支持以下设备类型：
-
--0: UNKNOWN。
-
--14: PHONE。
-
--17: TABLET。
-
--156: TV。
-
--131: CAR。
-
--109: WATCH。
-
--8: WiFiCamera。
-
--2562: SMART_DISPLAY。
-
--2607: 2IN1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回指定设备类型。目前仅支持以下设备类型： -0: UNKNOWN。 -14: PHONE。 -17: PAD。 -156: TV。 -131: CAR。 -109: WATCH。 -8: WiFiCamera。 -2562: SMART_DISPLAY。 -2607: 2IN1。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[设备管理错误码](../../errors/设备管理错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)和[设备管理错误码](设备管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified networkId is greater than 255.11600101Failed to execute the function.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified networkId is greater than 255. |
+| 11600101 | Failed to execute the function. |
 
 **示例：**
 
@@ -497,43 +528,21 @@ startDiscovering(discoverParam: {[key: string]: Object;} , filterOptions?: {[key
 
 **参数：**
 
-参数名类型必填说明discoverParam{[key: string]: Object;}是
-
-发现标识。 标识发现的目标类型。
-
-discoverTargetType: 发现目标默认为设备，值为1。
-
-filterOptions{[key: string]: Object;}否
-
-发现设备过滤信息。可选，默认为undefined，发现未上线设备。会携带以下key值：
-
-availableStatus(0-1)：仅发现设备可信，值为0表示设备不可信。
-
--0：设备离线，客户端需要通过调用bindTarget绑定设备。
-
--1：设备已在线，客户可以进行连接。
-
-discoverDistance(0-100)：发现距离本地一定距离内的设备，单位为cm。wifi场景不传该参数。
-
-authenticationStatus(0-1)：根据不同的认证状态发现设备：
-
--0：设备未认证。
-
--1：设备已认证。
-
-authorizationType(0-2)：根据不同的授权类型发现设备：
-
--0：根据临时协商的会话密钥认证的设备。
-
--1：基于同账号密钥进行身份验证的设备。
-
--2：基于不同账号凭据密钥认证的设备。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| discoverParam | {[key: string]: Object;} | 是 | 发现标识。 标识发现的目标类型。 discoverTargetType: 发现目标默认为设备，值为1。 |
+| filterOptions | {[key: string]: Object;} | 否 | 发现设备过滤信息。可选，默认为undefined，发现未上线设备。会携带以下key值： availableStatus(0-1)：仅发现设备可信，值为0表示设备不可信。 -0：设备离线，客户端需要通过调用bindTarget绑定设备。 -1：设备已在线，客户端可以进行连接。 discoverDistance(0-100)：发现距离本地一定距离内的设备，单位为cm。wifi场景不传该参数。  authenticationStatus(0-1)：根据不同的认证状态发现设备： -0：设备未认证。 -1：设备已认证。 authorizationType(0-2)：根据不同的授权类型发现设备： -0：根据临时协商的会话密钥认证的设备。 -1：基于同账号密钥进行身份验证的设备。 -2：基于不同账号凭据密钥认证的设备。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[设备管理错误码](../../errors/设备管理错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)和[设备管理错误码](设备管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed.11600101Failed to execute the function.11600104Discovery unavailable.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed. |
+| 11600101 | Failed to execute the function. |
+| 11600104 | Discovery unavailable. |
 
 **示例：**
 
@@ -580,9 +589,12 @@ stopDiscovering(): void
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[设备管理错误码](../../errors/设备管理错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)和[设备管理错误码](设备管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.11600101Failed to execute the function.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 11600101 | Failed to execute the function. |
 
 **示例：**
 
@@ -611,29 +623,22 @@ bindTarget(deviceId: string, bindParam: {[key: string]: Object;} , callback: Asy
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是设备标识。长度范围1~255字符。bindParam{[key: string]: Object;}是
-
-认证参数。由开发者自行决定传入的键值对。默认会携带以下key值：
-
-bindType 此值是绑定的类型，必填。
-
--1：PIN码。
-
-targetPkgName 绑定目标的包名。
-
-appName 尝试绑定目标的应用程序名称。
-
-appOperation 应用程序要绑定目标的原因。
-
-customDescription 操作的详细说明。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 设备标识。长度范围1~255字符。 |
+| bindParam | {[key: string]: Object;} | 是 | 认证参数。由开发者自行决定传入的键值对。默认会携带以下key值： bindType 此值是绑定的类型，必填。 -1：PIN码。 targetPkgName 绑定目标的包名。 appName 尝试绑定目标的应用程序名称。 appOperation 应用程序要绑定目标的原因。 customDescription 操作的详细说明。 |
 callbackAsyncCallback<{deviceId: string; }>是认证结果回调。
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[设备管理错误码](../../errors/设备管理错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)和[设备管理错误码](设备管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified deviceId is greater than 255.11600101Failed to execute the function.11600103Authentication unavailable.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified deviceId is greater than 255. |
+| 11600101 | Failed to execute the function. |
+| 11600103 | Authentication unavailable. |
 
 **示例：**
 
@@ -682,13 +687,19 @@ unbindTarget(deviceId: string): void
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是设备标识。长度范围1~255字符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 设备标识。长度范围1~255字符。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[设备管理错误码](../../errors/设备管理错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)和[设备管理错误码](设备管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified deviceId is greater than 255.11600101Failed to execute the function.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified deviceId is greater than 255. |
+| 11600101 | Failed to execute the function. |
 
 **示例：**
 
@@ -718,13 +729,19 @@ on(type: 'deviceStateChange', callback: Callback<{ action: DeviceStateChange; de
 
 **参数：**
 
-参数名类型必填说明typestring是注册设备状态回调，固定为deviceStateChange。callbackCallback<{ action: [DeviceStateChange](#ZH-CN_TOPIC_0000002529285429__devicestatechange); device: [DeviceBasicInfo](#ZH-CN_TOPIC_0000002529285429__devicebasicinfo); }>是指示要注册的设备状态回调，返回设备状态和设备信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 注册设备状态回调，固定为deviceStateChange。 |
+| callback | Callback<{ action: DeviceStateChange; device: DeviceBasicInfo; }> | 是 | 指示要注册的设备状态回调，返回设备状态和设备信息。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255. |
 
 **示例：**
 
@@ -765,13 +782,19 @@ off(type: 'deviceStateChange', callback?: Callback<{ action: DeviceStateChange; 
 
 **参数：**
 
-参数名类型必填说明typestring是根据应用程序的包名取消注册设备状态回调，固定为deviceStateChange。callbackCallback<{ action: [DeviceStateChange](#ZH-CN_TOPIC_0000002529285429__devicestatechange); device: [DeviceBasicInfo](#ZH-CN_TOPIC_0000002529285429__devicebasicinfo); }>否指示要取消注册的设备状态回调，返回设备状态和设备信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 根据应用程序的包名取消注册设备状态回调，固定为deviceStateChange。 |
+| callback | Callback<{ action: DeviceStateChange; device: DeviceBasicInfo; }> | 否 | 指示要取消注册的设备状态回调，返回设备状态和设备信息。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255. |
 
 **示例：**
 
@@ -812,13 +835,19 @@ on(type: 'discoverSuccess', callback: Callback<{ device: DeviceBasicInfo; }>): v
 
 **参数：**
 
-参数名类型必填说明typestring是注册设备发现回调，以便在发现周边设备时通知应用程序，固定为discoverSuccess。callbackCallback<{ device: [DeviceBasicInfo](#ZH-CN_TOPIC_0000002529285429__devicebasicinfo); }>是注册设备发现的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 注册设备发现回调，以便在发现周边设备时通知应用程序，固定为discoverSuccess。 |
+| callback | Callback<{ device: DeviceBasicInfo; }> | 是 | 注册设备发现的回调方法。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255. |
 
 **示例：**
 
@@ -858,13 +887,19 @@ off(type: 'discoverSuccess', callback?: Callback<{ device: DeviceBasicInfo; }>):
 
 **参数：**
 
-参数名类型必填说明typestring是取消注册设备发现回调，固定为discoverSuccess。callbackCallback<{ device: [DeviceBasicInfo](#ZH-CN_TOPIC_0000002529285429__devicebasicinfo); }>否指示要取消注册的设备发现回调，返回设备状态和设备信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消注册设备发现回调，固定为discoverSuccess。 |
+| callback | Callback<{ device: DeviceBasicInfo; }> | 否 | 指示要取消注册的设备发现回调，返回设备状态和设备信息。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255. |
 
 **示例：**
 
@@ -904,13 +939,19 @@ on(type: 'deviceNameChange', callback: Callback<{ deviceName: string; }>): void
 
 **参数：**
 
-参数名类型必填说明typestring是注册设备名称改变回调，以便在设备名称改变时通知应用程序，固定为deviceNameChange。callbackCallback<{ deviceName: string;}>是注册设备名称改变的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 注册设备名称改变回调，以便在设备名称改变时通知应用程序，固定为deviceNameChange。 |
+| callback | Callback<{ deviceName: string;}> | 是 | 注册设备名称改变的回调方法。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255. |
 
 **示例：**
 
@@ -945,13 +986,19 @@ off(type: 'deviceNameChange', callback?: Callback<{ deviceName: string; }>): voi
 
 **参数：**
 
-参数名类型必填说明typestring是取消注册设备名称改变回调，固定为deviceNameChange。callbackCallback<{ deviceName: string;}>否指示要取消注册设备名称改变的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消注册设备名称改变回调，固定为deviceNameChange。 |
+| callback | Callback<{ deviceName: string;}> | 否 | 指示要取消注册设备名称改变的回调方法。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255. |
 
 **示例：**
 
@@ -986,13 +1033,19 @@ on(type: 'discoverFailure', callback: Callback<{ reason: number; }>): void
 
 **参数：**
 
-参数名类型必填说明typestring是注册设备发现失败回调，以便在发现周边设备失败时通知应用程序，固定为discoverFailure。callbackCallback<{ reason: number; }>是注册设备发现失败的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 注册设备发现失败回调，以便在发现周边设备失败时通知应用程序，固定为discoverFailure。 |
+| callback | Callback<{ reason: number; }> | 是 | 注册设备发现失败的回调方法。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255. |
 
 **示例：**
 
@@ -1027,13 +1080,19 @@ off(type: 'discoverFailure', callback?: Callback<{ reason: number; }>): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消注册设备发现失败回调，固定为discoverFailure。callbackCallback<{ reason: number; }>否指示要取消注册的设备发现失败回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消注册设备发现失败回调，固定为discoverFailure。 |
+| callback | Callback<{ reason: number; }> | 否 | 指示要取消注册的设备发现失败回调。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255. |
 
 **示例：**
 
@@ -1068,13 +1127,19 @@ on(type: 'serviceDie', callback?: Callback<{}>): void
 
 **参数：**
 
-参数名类型必填说明typestring是注册serviceDie回调，以便在devicemanager服务异常终止时通知应用程序，固定为serviceDie。callbackCallback<{}>否注册serviceDie的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 注册serviceDie回调，以便在devicemanager服务异常终止时通知应用程序，固定为serviceDie。 |
+| callback | Callback<{}> | 否 | 注册serviceDie的回调方法。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255. |
 
 **示例：**
 
@@ -1105,13 +1170,19 @@ off(type: 'serviceDie', callback?: Callback<{}>): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消注册serviceDie回调，以便在devicemanager服务异常终止时通知应用程序，固定为serviceDie。callbackCallback<{}>否取消注册serviceDie的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消注册serviceDie回调，以便在devicemanager服务异常终止时通知应用程序，固定为serviceDie。 |
+| callback | Callback<{}> | 否 | 取消注册serviceDie的回调方法。 |
 
 **错误码：**
 
-以下的错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下的错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255. |
 
 **示例：**
 

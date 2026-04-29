@@ -17,25 +17,32 @@ import { dialogRequest } from '@kit.AbilityKit';
 
 getRequestInfo(want: Want): RequestInfo
 
- 该接口可以在ServiceExtensionAbility下使用，如果ServiceExtensionAbility实现了模态弹框，则能从Want中获取请求方的RequestInfo。其他场景使用该接口，均无法获取返回值。
-
 从Want中获取请求方的RequestInfo。
+
+
+ 该接口可以在ServiceExtensionAbility下使用，如果ServiceExtensionAbility实现了模态弹框，则能从Want中获取请求方的RequestInfo。其他场景使用该接口，均无法获取返回值。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
 
-参数名类型必填说明want[Want](@ohos.app.ability.Want (Want).md)是表示发起方请求弹框时传入的want信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | Want | 是 | 表示发起方请求弹框时传入的want信息。 |
 
 **返回值：**
 
-类型说明[RequestInfo](#ZH-CN_TOPIC_0000002529444575__requestinfo)请求方RequestInfo，用于绑定模态窗口。
+| 类型 | 说明 |
+| --- | --- |
+| RequestInfo | 请求方RequestInfo，用于绑定模态窗口。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -49,8 +56,6 @@ export default class EntryAbility extends UIAbility {
     } catch (err) {
       console.error(`getRequestInfo err= ${JSON.stringify(err)}`);
     }
-  }
-}
 ```
 
 #### dialogRequest.getRequestCallback
@@ -65,17 +70,23 @@ getRequestCallback(want: Want): RequestCallback
 
 **参数：**
 
-参数名类型必填说明want[Want](@ohos.app.ability.Want (Want).md)是表示发起方请求弹框时传入的want信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | Want | 是 | 表示发起方请求弹框时传入的want信息。 |
 
 **返回值：**
 
-类型说明[RequestCallback](#ZH-CN_TOPIC_0000002529444575__requestcallback)请求方RequestCallback，用于设置返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| RequestCallback | 请求方RequestCallback，用于设置返回结果。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -89,8 +100,6 @@ export default class EntryAbility extends UIAbility {
     } catch(err) {
       console.error(`getRequestInfo err= ${JSON.stringify(err)}`);
     }
-  }
-}
 ```
 
 #### WindowRect10+
@@ -101,7 +110,12 @@ export default class EntryAbility extends UIAbility {
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称类型只读可选说明leftnumber否否弹框边框的左上角的X坐标。topnumber否否弹框边框的左上角的Y坐标。widthnumber否否弹框的宽度，单位为px。heightnumber否否弹框的高度，单位为px。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| left | number | 否 | 否 | 弹框边框的左上角的X坐标。 |
+| top | number | 否 | 否 | 弹框边框的左上角的Y坐标。 |
+| width | number | 否 | 否 | 弹框的宽度，单位为px。 |
+| height | number | 否 | 否 | 弹框的高度，单位为px。 |
 
 #### RequestInfo
 
@@ -111,7 +125,9 @@ export default class EntryAbility extends UIAbility {
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称类型只读可选说明windowRect10+[WindowRect](#ZH-CN_TOPIC_0000002529444575__windowrect10)否是表示模态弹框的位置属性。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| windowRect10+ | WindowRect | 否 | 是 | 表示模态弹框的位置属性。 |
 
 **示例：**
 
@@ -126,8 +142,6 @@ export default class EntryAbility extends UIAbility {
     } catch(err) {
       console.error(`getRequestInfo err= ${JSON.stringify(err)}`);
     }
-  }
-}
 ```
 
 #### ResultCode
@@ -136,7 +150,10 @@ export default class EntryAbility extends UIAbility {
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称值说明RESULT_OK0表示成功。RESULT_CANCEL1表示失败。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| RESULT_OK | 0 | 表示成功。 |
+| RESULT_CANCEL | 1 | 表示失败。 |
 
 #### RequestResult
 
@@ -148,7 +165,10 @@ export default class EntryAbility extends UIAbility {
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称类型只读可选说明result[ResultCode](#ZH-CN_TOPIC_0000002529444575__resultcode)否否表示结果码。want10+[Want](@ohos.app.ability.Want (Want).md)否是表示Want类型信息，如ability名称，包名等。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| result | ResultCode | 否 | 否 | 表示结果码。 |
+| want10+ | Want | 否 | 是 | 表示Want类型信息，如ability名称，包名等。 |
 
 #### RequestCallback
 
@@ -168,13 +188,17 @@ setRequestResult(result: RequestResult): void
 
 **参数：**
 
-参数名类型必填说明result[RequestResult](#ZH-CN_TOPIC_0000002529444575__requestresult)是模态弹框请求结果信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| result | RequestResult | 是 | 模态弹框请求结果信息。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -192,6 +216,4 @@ export default class EntryAbility extends UIAbility {
     } catch(err) {
       console.error(`getRequestInfo err= ${JSON.stringify(err)}`);
     }
-  }
-}
 ```

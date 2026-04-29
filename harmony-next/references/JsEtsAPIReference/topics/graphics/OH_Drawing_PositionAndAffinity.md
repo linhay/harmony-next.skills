@@ -12,4 +12,4 @@ typedef struct OH_Drawing_PositionAndAffinity OH_Drawing_PositionAndAffinity
 
 **相关模块：**[Drawing](Drawing.md)
 
-**所在头文件：**[drawing_text_declaration.h](../../capi/headers/drawing_text_declaration.h.md)
+**所在头文件：**[drawing_text_declaration.h](../../topics/graphics/[drawing_text_declaration.h](drawing_text_declaration.h.md).md)

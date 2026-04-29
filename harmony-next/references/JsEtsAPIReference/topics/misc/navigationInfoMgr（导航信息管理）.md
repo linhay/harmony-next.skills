@@ -18,107 +18,16 @@ import { navigationInfoMgr } from '@kit.CarKit';
 
 **起始版本：**4.1.0(11)
 
-**名称**
-
-**类型**
-
-只读
-
-可选
-
-**说明**
-
-status
-
-[MapStatus](#section66501518181418)
-
-否
-
-否
-
-地图状态。
-
-naviType
-
-[NaviType](#section12883193118184)
-
-否
-
-否
-
-导航类型。
-
-destLocation
-
-[Location](#section546213416209)
-
-否
-
-否
-
-目的地。不同status对应的目的地信息不一样，具体如下：
-
-当status是MapStatus.NAVIGATION时，该字段表示目的地地址。
-
-当status是MapStatus.POI时，该字段表示POI信息。
-
-当status是MapStatus.CRUISE时，该字段表示CRUISE信息。
-
-当status是MapStatus.IDLE时，该字段无实际意义。
-
-当status是MapStatus.ROUTE时，该字段表示目的地地址。
-
-当status是MapStatus.UNAVAILABLE时，该字段无实际意义。
-
-passPoint
-
-[Location](#section546213416209)[]
-
-否
-
-否
-
-途经点数组。
-
-routeIndex
-
-number
-
-否
-
-否
-
-路线编号，大于等于0的整数。
-
-routePreference
-
-[RoutePreference](#section1697318441154)[]
-
-否
-
-否
-
-路线偏好。
-
-theme
-
-[ThemeType](#section129109467221)
-
-否
-
-否
-
-地图主题色。
-
-customData
-
-String
-
-否
-
-否
-
-自定义数据。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| status | MapStatus | 否 | 否 | 地图状态。 |
+| naviType | NaviType | 否 | 否 | 导航类型。 |
+| destLocation | Location | 否 | 否 | 目的地。不同status对应的目的地信息不一样，具体如下： 当status是MapStatus.NAVIGATION时，该字段表示目的地地址。 当status是MapStatus.POI时，该字段表示POI信息。 当status是MapStatus.CRUISE时，该字段表示CRUISE信息。 当status是MapStatus.IDLE时，该字段无实际意义。 当status是MapStatus.ROUTE时，该字段表示目的地地址。 当status是MapStatus.UNAVAILABLE时，该字段无实际意义。 |
+| passPoint | Location[] | 否 | 否 | 途经点数组。 |
+| routeIndex | number | 否 | 否 | 路线编号，大于等于0的整数。 |
+| routePreference | RoutePreference[] | 否 | 否 | 路线偏好。 |
+| theme | ThemeType | 否 | 否 | 地图主题色。 |
+| customData | String | 否 | 否 | 自定义数据。 |
 
 #### MapStatus
 
@@ -128,47 +37,14 @@ String
 
 **起始版本：**4.1.0(11)
 
-**名称**
-
-**值**
-
-**说明**
-
-IDLE
-
-0
-
-地图处于空闲态，地图应用未启动时，默认为该值。
-
-NAVIGATION
-
-1
-
-地图处于导航中。
-
-CRUISE
-
-2
-
-地图处于巡航中。
-
-POI
-
-3
-
-地图处于地图选点状态。
-
-ROUTE
-
-4
-
-地图处于路线选择状态。
-
-UNAVAILABLE
-
-5
-
-地图服务不可用，地图应用内部错误无法提供服务时，设置该值。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| IDLE | 0 | 地图处于空闲态，地图应用未启动时，默认为该值。 |
+| NAVIGATION | 1 | 地图处于导航中。 |
+| CRUISE | 2 | 地图处于巡航中。 |
+| POI | 3 | 地图处于地图选点状态。 |
+| ROUTE | 4 | 地图处于路线选择状态。 |
+| UNAVAILABLE | 5 | 地图服务不可用，地图应用内部错误无法提供服务时，设置该值。 |
 
 #### NaviType
 
@@ -178,35 +54,12 @@ UNAVAILABLE
 
 **起始版本：**4.1.0(11)
 
-**名称**
-
-**值**
-
-**说明**
-
-DRIVING
-
-0
-
-驾车类型。
-
-MOTORCYCLE
-
-1
-
-摩托车类型。
-
-CYCLING
-
-2
-
-骑行类型。
-
-WALKING
-
-3
-
-步行类型。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DRIVING | 0 | 驾车类型。 |
+| MOTORCYCLE | 1 | 摩托车类型。 |
+| CYCLING | 2 | 骑行类型。 |
+| WALKING | 3 | 步行类型。 |
 
 #### Location
 
@@ -216,65 +69,13 @@ WALKING
 
 **起始版本：**4.1.0(11)
 
-**名称**
-
-**类型**
-
-只读
-
-可选
-
-**说明**
-
-name
-
-string
-
-否
-
-否
-
-地址名称，地址名称的长度：[0, 1024]字节。
-
-coordType
-
-[LocationCoordType](#section18414131420206)
-
-否
-
-否
-
-地理位置坐标系编码。
-
-longitude
-
-number
-
-否
-
-否
-
-目的地经度，结合coordType使用，取值范围：[-180, 180]。
-
-latitude
-
-number
-
-否
-
-否
-
-目的地纬度，结合coordType使用，取值范围：[-90, 90]。
-
-altitude
-
-number
-
-否
-
-否
-
-目的地海拔高度，单位：m，默认值：0。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | string | 否 | 否 | 地址名称，地址名称的长度：[0, 1024]字节。 |
+| coordType | LocationCoordType | 否 | 否 | 地理位置坐标系编码。 |
+| longitude | number | 否 | 否 | 目的地经度，结合coordType使用，取值范围：[-180, 180]。 |
+| latitude | number | 否 | 否 | 目的地纬度，结合coordType使用，取值范围：[-90, 90]。 |
+| altitude | number | 否 | 否 | 目的地海拔高度，单位：m，默认值：0。 |
 
 #### LocationCoordType
 
@@ -284,23 +85,10 @@ number
 
 **起始版本：**4.1.0(11)
 
-**名称**
-
-值
-
-**说明**
-
-GCJ02
-
-0
-
-国内坐标编码。
-
-WGS84
-
-1
-
-国际坐标编码。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| GCJ02 | 0 | 国内坐标编码。 |
+| WGS84 | 1 | 国际坐标编码。 |
 
 #### RoutePreference
 
@@ -310,53 +98,15 @@ WGS84
 
 **起始版本：**4.1.0(11)
 
-**名称**
-
-值
-
-**说明**
-
-INTELLIGENT_RECOMMENDATION
-
-0
-
-智能推荐。
-
-HIGHWAY_FIRST
-
-1
-
-高速优先。
-
-AVOID_HIGHWAY
-
-2
-
-不走高速。
-
-AVOID_CONGESTION
-
-3
-
-躲避拥堵。
-
-LESS_CHARGE
-
-4
-
-少收费。
-
-MAIN_ROAD_FIRST
-
-5
-
-大路优先。
-
-TIME_FIRST
-
-6
-
-时间优先。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| INTELLIGENT_RECOMMENDATION | 0 | 智能推荐。 |
+| HIGHWAY_FIRST | 1 | 高速优先。 |
+| AVOID_HIGHWAY | 2 | 不走高速。 |
+| AVOID_CONGESTION | 3 | 躲避拥堵。 |
+| LESS_CHARGE | 4 | 少收费。 |
+| MAIN_ROAD_FIRST | 5 | 大路优先。 |
+| TIME_FIRST | 6 | 时间优先。 |
 
 #### ThemeType
 
@@ -366,23 +116,10 @@ TIME_FIRST
 
 **起始版本：**4.1.0(11)
 
-**名称**
-
-值
-
-**说明**
-
-LIGHT
-
-0
-
-地图是浅色主题。
-
-DARK
-
-1
-
-地图是深色主题。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| LIGHT | 0 | 地图是浅色主题。 |
+| DARK | 1 | 地图是深色主题。 |
 
 #### NavigationMetadata
 
@@ -392,189 +129,25 @@ DARK
 
 **起始版本：**4.1.0(11)
 
-**名称**
-
-**类型**
-
-只读
-
-可选
-
-**说明**
-
-naviTurnMode
-
-number
-
-否
-
-否
-
-导航转向模式，十六进制，取值范围0~3E7，参考[naviTurnMode](naviTurnMode.md)，按照16进制的格式传递。
-
-segmentLeftDis
-
-number
-
-否
-
-否
-
-下一次动作剩余距离，即引导距离，单位：m。
-
-currentRoadName
-
-string
-
-否
-
-否
-
-当前道路名，道路名的长度：[0, 1024]字节。
-
-nextRoadName
-
-string
-
-否
-
-否
-
-下一次进入的道路名，道路名的长度：[0, 1024]字节。
-
-intersectionView
-
-string
-
-否
-
-否
-
-路口放大图。
-
-图片的Base64字节编码值 。
-
-viewWidth
-
-number
-
-否
-
-否
-
-路口放大图片宽度，单位：pixel。
-
-viewHeight
-
-number
-
-否
-
-否
-
-路口放大图片高度，单位：pixel。
-
-trafficLane
-
-string
-
-否
-
-否
-
-车道线，从最左边到最右边按序排列。通讯以四位为一个单元进行解析，每个单元对应一个车道线，根据需求可以传多个车道线，图标编码为枚举值，具体参考[trafficLane](trafficLane.md)。
-
-cameraSpeedLimitValid
-
-boolean
-
-否
-
-否
-
-电子眼限速有效位。true表示有效，false表示无效。
-
-cameraSpeedLimit
-
-number
-
-否
-
-否
-
-电子眼限速值，单位：m/s。
-
-naviSpeedLimitValid
-
-boolean
-
-否
-
-否
-
-导航限速有效位。true表示有效，false表示无效。
-
-naviSpeedLimit
-
-number
-
-否
-
-否
-
-导航限速值，单位：m/s。
-
-currentSpeed
-
-number
-
-否
-
-否
-
-当前车速，单位：m/s。
-
-naviBearing
-
-number
-
-否
-
-否
-
-导航方向角度，即相对正北方的角度。
-
-totalLeftDis
-
-number
-
-否
-
-否
-
-全程剩余距离，单位：m。
-
-remainingTime
-
-number
-
-否
-
-否
-
-剩余时间，单位：min。
-
-customData
-
-Record<string, Object>
-
-否
-
-是
-
-按自定义模式传递导航元数据。
-
-**起始版本：**5.0.0(12)
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| [naviTurnMode](naviTurnMode.md) | number | 否 | 否 | 导航转向模式，十六进制，取值范围0~3E7，参考naviTurnMode，按照16进制的格式传递。 |
+| segmentLeftDis | number | 否 | 否 | 下一次动作剩余距离，即引导距离，单位：m。 |
+| currentRoadName | string | 否 | 否 | 当前道路名，道路名的长度：[0, 1024]字节。 |
+| nextRoadName | string | 否 | 否 | 下一次进入的道路名，道路名的长度：[0, 1024]字节。 |
+| intersectionView | string | 否 | 否 | 路口放大图。 图片的Base64字节编码值 。 |
+| viewWidth | number | 否 | 否 | 路口放大图片宽度，单位：pixel。 |
+| viewHeight | number | 否 | 否 | 路口放大图片高度，单位：pixel。 |
+| [trafficLane](trafficLane.md) | string | 否 | 否 | 车道线，从最左边到最右边按序排列。通讯以四位为一个单元进行解析，每个单元对应一个车道线，根据需求可以传多个车道线，图标编码为枚举值，具体参考trafficLane。 |
+| cameraSpeedLimitValid | boolean | 否 | 否 | 电子眼限速有效位。true表示有效，false表示无效。 |
+| cameraSpeedLimit | number | 否 | 否 | 电子眼限速值，单位：m/s。 |
+| naviSpeedLimitValid | boolean | 否 | 否 | 导航限速有效位。true表示有效，false表示无效。 |
+| naviSpeedLimit | number | 否 | 否 | 导航限速值，单位：m/s。 |
+| currentSpeed | number | 否 | 否 | 当前车速，单位：m/s。 |
+| naviBearing | number | 否 | 否 | 导航方向角度，即相对正北方的角度。 |
+| totalLeftDis | number | 否 | 否 | 全程剩余距离，单位：m。 |
+| remainingTime | number | 否 | 否 | 剩余时间，单位：min。 |
+| customData | Record<string, Object> | 否 | 是 | 按自定义模式传递导航元数据。 起始版本： 5.0.0(12) |
 
 #### SystemNavigationListener
 
@@ -598,43 +171,20 @@ onQueryNavigationInfo(query: QueryType, args: Record<string, Object>): Promise<R
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-query
-
-[QueryType](#section5929173314151)
-
-是
-
-查询命令。
-
-args
-
-Record<string, Object>
-
-是
-
-query参数的附加参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | QueryType | 是 | 查询命令。 |
+| args | Record<string, Object> | 是 | query参数的附加参数。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<[ResultData](#section268420482562)>
-
-Promise对象，返回查询导航信息的结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<ResultData> | Promise对象，返回查询导航信息的结果。 |
 
 **示例：**
 
-回调方法，具体代码示例见[registerSystemNavigationListener](#section66695411419)示例。
+回调方法，具体代码示例见[registerSystemNavigationListener](#ZH-CN_TOPIC_0000002553361625__registersystemnavigationlistener)示例。
 
 #### onReceiveNavigationCmd
 
@@ -650,59 +200,20 @@ onReceiveNavigationCmd(command: CommandType, args: Record<string, Object>): Prom
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-command
-
-[CommandType](#section1255014591510)
-
-是
-
-系统服务需要应用执行的命令。
-
-args
-
-Record<string, Object>
-
-是
-
-命令的参数。其取值与具体的command有关，具体如下：
-
-当command为START_NAVIGATION时，
-
-其取值为"destLocation"：导航目的地，其参数类型为Location。
-
-当command为START_MAP_LAYER或STOP_MAP_LAYER时，
-
-其取值为"mapLayerDisplayId"：将地图图层启动到屏幕的displayId。
-
-当command为CHANGE_THEME时，
-
-其取值为"newTheme"：通知应用改变新主题，如浅色深色切换。
-
-当command为SEARCH_POI时，
-
-其取值为"address": 通知应用搜索对应的地址。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| command | CommandType | 是 | 系统服务需要应用执行的命令。 |
+| args | Record<string, Object> | 是 | 命令的参数。其取值与具体的command有关，具体如下： 当command为START_NAVIGATION时， 其取值为"destLocation"：导航目的地，其参数类型为Location。 当command为START_MAP_LAYER或STOP_MAP_LAYER时， 其取值为"mapLayerDisplayId"：将地图图层启动到屏幕的displayId。 当command为CHANGE_THEME时， 其取值为"newTheme"：通知应用改变新主题，如浅色深色切换。 当command为SEARCH_POI时， 其取值为"address": 通知应用搜索对应的地址。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<[ResultData](#section268420482562)>
-
-Promise对象，返回发送指令的结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<ResultData> | Promise对象，返回发送指令的结果。 |
 
 **示例：**
 
-回调方法，具体代码示例见[registerSystemNavigationListener](#section66695411419)示例。
+回调方法，具体代码示例见[registerSystemNavigationListener](#ZH-CN_TOPIC_0000002553361625__registersystemnavigationlistener)示例。
 
 #### QueryType
 
@@ -712,23 +223,10 @@ Promise对象，返回发送指令的结果。
 
 **起始版本：**4.1.0(11)
 
-名称
-
-值
-
-说明
-
-NAVIGATION_STATUS
-
-navigationStatus
-
-查看导航状态，callback返回数据为[NavigationStatus](#section153711644737)。
-
-NAVIGATION_METADATA
-
-navigationMetadata
-
-查看导航TBT信息，callback返回数据为[NavigationMetadata](#section12118327148)。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NAVIGATION_STATUS | navigationStatus | 查看导航状态，callback返回数据为NavigationStatus。 |
+| NAVIGATION_METADATA | navigationMetadata | 查看导航TBT信息，callback返回数据为NavigationMetadata。 |
 
 #### CommandType
 
@@ -738,89 +236,20 @@ navigationMetadata
 
 **起始版本：**4.1.0(11)
 
-名称
-
-值
-
-说明
-
-START_NAVIGATION
-
-startNavigation
-
-发起导航接口。
-
-STOP_NAVIGATION
-
-stopNavigation
-
-停止导航接口。
-
-GO_HOME
-
-goHome
-
-导航回家。
-
-GO_TO_COMPANY
-
-goToCompany
-
-导航去公司。
-
-START_MAP_LAYER
-
-startMapLayer
-
-启动地图图层到其他屏幕。
-
-STOP_MAP_LAYER
-
-stopMapLayer
-
-销毁其他屏幕上的地图图层。
-
-ZOOM_IN_MAP
-
-zoomInMap
-
-放大地图。
-
-ZOOM_OUT_MAP
-
-zoomOutMap
-
-缩小地图。
-
-CHANGE_THEME
-
-changeTheme
-
-更改主题。
-
-START_UPDATE_NAVIGATION_STATUS
-
-startUpdateNavigationStatus
-
-开始更新导航状态。
-
-**起始版本：**5.0.0(12)
-
-STOP_UPDATE_NAVIGATION_STATUS
-
-stopUpdateNavigationStatus
-
-停止更新导航状态。
-
-**起始版本：**5.0.0(12)
-
-SEARCH_POI
-
-searchPOI
-
-POI搜索。
-
-**起始版本：**5.1.0(18)
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| START_NAVIGATION | startNavigation | 发起导航接口。 |
+| STOP_NAVIGATION | stopNavigation | 停止导航接口。 |
+| GO_HOME | goHome | 导航回家。 |
+| GO_TO_COMPANY | goToCompany | 导航去公司。 |
+| START_MAP_LAYER | startMapLayer | 启动地图图层到其他屏幕。 |
+| STOP_MAP_LAYER | stopMapLayer | 销毁其他屏幕上的地图图层。 |
+| ZOOM_IN_MAP | zoomInMap | 放大地图。 |
+| ZOOM_OUT_MAP | zoomOutMap | 缩小地图。 |
+| CHANGE_THEME | changeTheme | 更改主题。 |
+| START_UPDATE_NAVIGATION_STATUS | startUpdateNavigationStatus | 开始更新导航状态。 起始版本： 5.0.0(12) |
+| STOP_UPDATE_NAVIGATION_STATUS | stopUpdateNavigationStatus | 停止更新导航状态。 起始版本： 5.0.0(12) |
+| SEARCH_POI | searchPOI | POI搜索。 起始版本： 5.1.0(18) |
 
 #### ResultData
 
@@ -830,51 +259,11 @@ POI搜索。
 
 **起始版本：**4.1.0(11)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-code
-
-number
-
-否
-
-否
-
-错误码，0表示执行成功，非0表示执行失败（非0以三方地图应用传递的值为准）。
-
-message
-
-string
-
-否
-
-否
-
-错误信息，需结合code确定具体的错误信息：
-
-当code为0时表示执行成功的信息，如execute success。
-
-当code为非0时表示执行失败的信息，如 execute fail。
-
-具体以地图应用传递的值为准。
-
-data
-
-{ [key: string]: object }
-
-否
-
-否
-
-附加信息，应用可以根据实际需要以键值对的形式返回给系统。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| code | number | 否 | 否 | 错误码，0表示执行成功，非0表示执行失败（非0以三方地图应用传递的值为准）。 |
+| message | string | 否 | 否 | 错误信息，需结合code确定具体的错误信息： 当code为0时表示执行成功的信息，如execute success。 当code为非0时表示执行失败的信息，如 execute fail。 具体以地图应用传递的值为准。 |
+| data | { [key: string]: object } | 否 | 否 | 附加信息，应用可以根据实际需要以键值对的形式返回给系统。 |
 
 #### getNavigationController
 
@@ -884,7 +273,7 @@ getNavigationController(): NavigationController
 
 **系统能力：**SystemCapability.CarService.NavigationInfo
 
-**设备行为差异**：该接口在Phone中可正常调用，在其他设备类型中返回801错误码。
+设备行为差异：对于6.0.0(22)及之前的版本，该接口在Phone中可正常使用，在其他设备类型中返回801错误码。在6.1.0(23)及之后版本该接口在Phone、Tablet中均可正常使用。
 
 **需要权限：**ohos.permission.ACCESS_SERVICE_NAVIGATION_INFO
 
@@ -892,29 +281,18 @@ getNavigationController(): NavigationController
 
 **返回值：**
 
-类型
-
-说明
-
-[NavigationController](#section5525718748)
-
-导航信息服务的控制器。
+| 类型 | 说明 |
+| --- | --- |
+| NavigationController | 导航信息服务的控制器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码]([ArkTS API错误码](../../errors/ArkTS API错误码.md).md)。
 
-错误码ID
-
-错误信息
-
-201
-
-Permission denied.
-
-801
-
-Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -936,11 +314,11 @@ let navInfoController: navigationInfoMgr.NavigationController = navigationInfoMg
 
 updateNavigationStatus(navigationStatus: NavigationStatus): void
 
-设置导航状态，包含地图状态、导航类型、导航目的地、导航途径点、路线、地图和主题等。
+设置导航状态，包含地图状态、导航类型、导航目的地、导航途经点、路线、地图和主题等。
 
 **系统能力：**SystemCapability.CarService.NavigationInfo
 
-**设备行为差异**：该接口在Phone中可正常调用，在其他设备类型中返回801错误码。
+设备行为差异：对于6.0.0(22)及之前的版本，该接口在Phone中可正常使用，在其他设备类型中返回801错误码。在6.1.0(23)及之后版本该接口在Phone、Tablet中均可正常使用。
 
 **需要权限：**ohos.permission.ACCESS_SERVICE_NAVIGATION_INFO
 
@@ -948,45 +326,20 @@ updateNavigationStatus(navigationStatus: NavigationStatus): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-navigationStatus
-
-[NavigationStatus](#section153711644737)
-
-是
-
-导航状态，包含地图状态、导航类型、导航目的地、导航途径点、路线、地图和主题等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| navigationStatus | NavigationStatus | 是 | 导航状态，包含地图状态、导航类型、导航目的地、导航途经点、路线、地图和主题等。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](ArkTS API错误码.md)。
 
-错误码ID
-
-错误信息
-
-201
-
-Permission denied.
-
-801
-
-Capability not supported.
-
-1003810001
-
-Invalid parameter value.
-
-1003810002
-
-The total size of all parameters exceeds the limit.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 1003810001 | Invalid parameter value. |
+| 1003810002 | The total size of all parameters exceeds the limit. |
 
 **示例：**
 
@@ -1050,7 +403,7 @@ updateNavigationMetadata(navigationMetadata: NavigationMetadata): void
 
 **系统能力：**SystemCapability.CarService.NavigationInfo
 
-**设备行为差异**：该接口在Phone中可正常调用，在其他设备类型中返回801错误码。
+设备行为差异：对于6.0.0(22)及之前的版本，该接口在Phone中可正常使用，在其他设备类型中返回801错误码。在6.1.0(23)及之后版本该接口在Phone、Tablet中均可正常使用。
 
 **需要权限：**ohos.permission.ACCESS_SERVICE_NAVIGATION_INFO
 
@@ -1058,45 +411,20 @@ updateNavigationMetadata(navigationMetadata: NavigationMetadata): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-navigationMetadata
-
-[NavigationMetadata](#section12118327148)
-
-是
-
-导航数据，包含导航转向模式、引导距离、当前道路名、下一次进入道路名等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| navigationMetadata | NavigationMetadata | 是 | 导航数据，包含导航转向模式、引导距离、当前道路名、下一次进入道路名等。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](ArkTS API错误码.md)。
 
-错误码ID
-
-错误信息
-
-201
-
-Permission denied.
-
-801
-
-Capability not supported.
-
-1003810001
-
-Invalid parameter value.
-
-1003810002
-
-The total size of all parameters exceeds the limit.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 1003810001 | Invalid parameter value. |
+| 1003810002 | The total size of all parameters exceeds the limit. |
 
 **示例：**
 
@@ -1143,7 +471,7 @@ registerSystemNavigationListener(listener: SystemNavigationListener): void
 
 **系统能力：**SystemCapability.CarService.NavigationInfo
 
-**设备行为差异**：该接口在Phone中可正常调用，在其他设备类型中返回801错误码。
+设备行为差异：对于6.0.0(22)及之前的版本，该接口在Phone中可正常使用，在其他设备类型中返回801错误码。在6.1.0(23)及之后版本该接口在Phone、Tablet中均可正常使用。
 
 **需要权限：**ohos.permission.ACCESS_SERVICE_NAVIGATION_INFO
 
@@ -1151,41 +479,19 @@ registerSystemNavigationListener(listener: SystemNavigationListener): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-listener
-
-[SystemNavigationListener](#section12455103872013)
-
-是
-
-注册监听系统导航信息和指令。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| listener | SystemNavigationListener | 是 | 注册监听系统导航信息和指令。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](ArkTS API错误码.md)。
 
-错误码ID
-
-错误信息
-
-201
-
-Permission denied.
-
-801
-
-Capability not supported.
-
-1003810001
-
-Invalid parameter value.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 1003810001 | Invalid parameter value. |
 
 **示例：**
 
@@ -1218,7 +524,6 @@ class Listener implements navigationInfoMgr.SystemNavigationListener {
       resolve(ret);
     })
   }
-}
 
 try {
   // 获取 NavigationController
@@ -1238,7 +543,7 @@ unregisterSystemNavigationListener(): void
 
 **系统能力：**SystemCapability.CarService.NavigationInfo
 
-**设备行为差异**：该接口在Phone中可正常调用，在其他设备类型中返回801错误码。
+设备行为差异：对于6.0.0(22)及之前的版本，该接口在Phone中可正常使用，在其他设备类型中返回801错误码。在6.1.0(23)及之后版本该接口在Phone、Tablet中均可正常使用。
 
 **需要权限：**ohos.permission.ACCESS_SERVICE_NAVIGATION_INFO
 
@@ -1246,19 +551,12 @@ unregisterSystemNavigationListener(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](ArkTS API错误码.md)。
 
-错误码ID
-
-错误信息
-
-201
-
-Permission denied.
-
-801
-
-Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
 
 **示例：**
 

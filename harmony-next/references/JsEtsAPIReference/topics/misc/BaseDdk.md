@@ -8,4 +8,7 @@
 
 #### 文件汇总
 
-名称描述[ddk_api.h](../../capi/headers/ddk_api.h.md)声明主机侧访问的Base DDK接口。[ddk_types.h](../../capi/headers/ddk_types.h.md)提供基础DDK接口所使用的Base DDK类型，宏定义，枚举值和数据结构。
+| 名称 | 描述 |
+| --- | --- |
+| [ddk_api.h](ddk_api.h.md) | 声明主机侧访问的Base DDK接口。 |
+| [ddk_types.h](ddk_types.h.md) | 提供基础DDK接口所使用的Base DDK类型，宏定义，枚举值和数据结构。 |

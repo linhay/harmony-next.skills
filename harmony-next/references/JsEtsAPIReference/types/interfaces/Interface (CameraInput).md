@@ -24,13 +24,19 @@ open(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当打开相机成功，err为undefined，否则为错误对象，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当打开相机成功，err为undefined，否则为错误对象，错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码]([Camera错误码](../../errors/Camera错误码.md).md)。
 
-错误码ID错误信息7400107Can not use camera cause of conflict.7400108Camera disabled cause of security reason.7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400107 | Can not use camera cause of conflict. |
+| 7400108 | Camera disabled cause of security reason. |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -60,13 +66,20 @@ open(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400102Operation not allowed.7400107Can not use camera cause of conflict.7400108Camera disabled cause of security reason.7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400102 | Operation not allowed. |
+| 7400107 | Can not use camera cause of conflict. |
+| 7400108 | Camera disabled cause of security reason. |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -94,17 +107,25 @@ open(isSecureEnabled: boolean): Promise<bigint>
 
 **参数：**
 
-参数名类型必填说明isSecureEnabledboolean是设置true为使能以安全的方式打开相机，设置false则反之。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isSecureEnabled | boolean | 是 | 设置true为使能以安全的方式打开相机，设置false则反之。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **返回值：**
 
-类型说明Promise<bigint>Promise对象，返回安全相机的句柄。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<bigint> | Promise对象，返回安全相机的句柄。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400107Can not use camera cause of conflict.7400108Camera disabled cause of security reason.7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400107 | Can not use camera cause of conflict. |
+| 7400108 | Camera disabled cause of security reason. |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -122,7 +143,7 @@ function openCameraInput(cameraInput: camera.CameraInput): void {
 
 #### open18+
 
-open(type: CameraConcurrentType): Promise<void>
+open(type: [CameraConcurrentType](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraconcurrenttype18)): Promise<void>
 
 以指定的并发类型打开相机。使用Promise异步回调。
 
@@ -132,17 +153,26 @@ open(type: CameraConcurrentType): Promise<void>
 
 **参数：**
 
-参数名类型必填说明type[CameraConcurrentType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraconcurrenttype18)是以指定的并发类型打开相机。接口调用失败会返回相应错误码。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | [CameraConcurrentType](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraconcurrenttype18) | 是 | 以指定的并发类型打开相机。接口调用失败会返回相应错误码。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400102Operation not allowed.7400107Can not use camera cause of conflict.7400108Camera disabled cause of security reason.7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400102 | Operation not allowed. |
+| 7400107 | Can not use camera cause of conflict. |
+| 7400108 | Camera disabled cause of security reason. |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -170,13 +200,17 @@ close(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当关闭相机成功，err为undefined，否则为错误对象。错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当关闭相机成功，err为undefined，否则为错误对象。错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -206,13 +240,17 @@ close(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -242,7 +280,11 @@ on(type: 'error', camera: CameraDevice, callback: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'error'，CameraInput对象创建成功可监听。相机设备出错情况下可触发该事件并返回结果，比如设备不可用或者冲突等返回对应错误信息。camera[CameraDevice](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__cameradevice)是CameraDevice对象。callback[ErrorCallback](../../modules/ohos/@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__errorcallback)是回调函数，用于获取结果。返回错误码，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'error'，CameraInput对象创建成功可监听。相机设备出错情况下可触发该事件并返回结果，比如设备不可用或者冲突等返回对应错误信息。 |
+| camera | CameraDevice | 是 | CameraDevice对象。 |
+| callback | ErrorCallback | 是 | 回调函数，用于获取结果。返回错误码，错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **示例：**
 
@@ -270,7 +312,11 @@ off(type: 'error', camera: CameraDevice, callback?: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'error'，CameraInput对象创建成功可监听。相机设备出错情况下可触发该事件并返回结果，比如设备不可用或者冲突等返回对应错误信息。camera[CameraDevice](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__cameradevice)是CameraDevice对象。callback[ErrorCallback](../../modules/ohos/@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__errorcallback)否回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'error'，CameraInput对象创建成功可监听。相机设备出错情况下可触发该事件并返回结果，比如设备不可用或者冲突等返回对应错误信息。 |
+| camera | CameraDevice | 是 | CameraDevice对象。 |
+| callback | ErrorCallback | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不能是匿名函数），否则取消所有callback。 |
 
 **示例：**
 
@@ -292,7 +338,9 @@ isPhysicalCameraOrientationVariable(): boolean
 
 **返回值：**
 
-类型说明boolean查询设备不同折叠状态下，相机物理镜头角度是否可变。true表示可变，false表示不可变。若接口调用失败，返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 查询设备不同折叠状态下，相机物理镜头角度是否可变。true表示可变，false表示不可变。若接口调用失败，返回undefined。 |
 
 **示例：**
 
@@ -315,7 +363,9 @@ getPhysicalCameraOrientation(): number
 
 **返回值：**
 
-类型说明number返回设备当前折叠状态下的物理镜头角度。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回设备当前折叠状态下的物理镜头角度。 |
 
 **示例：**
 
@@ -338,13 +388,18 @@ usePhysicalCameraOrientation(isUsed: boolean): void
 
 **参数：**
 
-参数名类型必填说明isUsedboolean是选择是否使用物理镜头角度。true表示使用，false表示不使用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isUsed | boolean | 是 | 选择是否使用物理镜头角度。true表示使用，false表示不使用。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400102Operation not allowed.7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400102 | Operation not allowed. |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -358,5 +413,89 @@ function usePhysicalCameraOrientation(cameraInput: camera.CameraInput, isUsed: b
     let err = error as BusinessError;
     console.error(`The usePhysicalCameraOrientation call failed. error code: ${err.code}`);
   }
+```
+
+**on('cameraOcclusionDetection')23+**
+
+on(type: 'cameraOcclusionDetection', callback: AsyncCallback<CameraOcclusionDetectionResult>): void
+
+监听CameraInput的镜头遮挡或脏污事件，通过注册回调函数获取结果。使用callback异步回调。
+
+
+当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.Multimedia.Camera.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'cameraOcclusionDetection'，CameraInput对象创建成功可监听。相机镜头被遮挡或有脏污可触发该事件并返回结果。 |
+| callback | AsyncCallback<CameraOcclusionDetectionResult> | 是 | 回调函数，用于获取结果。返回遮挡状态。 |
+
+示例：
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function callback(err: BusinessError, result: camera.CameraOcclusionDetectionResult): void {
+  if (err !== undefined && err.code !== 0) {
+      console.error('cameraOcclusionDetection with errorCode = ' + err.code);
+      return;
+}
+  if (!result) {
+      console.error(`cameraOcclusionDetection result: undefined`);
+      return;
+  }
+  console.info(`onCameraOcclusionDetection isCameraOccluded: ${result.isCameraOccluded}`);
+  console.info(`onCameraOcclusionDetection isCameraLensDirty: ${result.isCameraLensDirty}`);
+}
+
+function registerCameraOcclusionDetection(cameraInput: camera.CameraInput): void {
+  cameraInput.on('cameraOcclusionDetection', callback);
+}
+```
+
+**off('cameraOcclusionDetection')23+**
+
+off(type: 'cameraOcclusionDetection', callback?: AsyncCallback<CameraOcclusionDetectionResult>): void
+
+注销监听CameraInput的镜头遮挡或脏污事件。使用callback异步回调。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.Multimedia.Camera.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'cameraOcclusionDetection'，CameraInput对象创建成功可监听。相机镜头被遮挡或有脏污可触发该事件并返回结果。 |
+| callback | AsyncCallback<CameraOcclusionDetectionResult> | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。 |
+
+示例：
+
+```ets
+function callback(err: BusinessError, result: camera.CameraOcclusionDetectionResult): void {
+  if (err !== undefined && err.code !== 0) {
+      console.error('cameraOcclusionDetection with errorCode = ' + err.code);
+      return;
+  }
+  if (!result) {
+      console.error(`cameraOcclusionDetection result: undefined`);
+      return;
+  }
+  console.info(`onCameraOcclusionDetection isCameraOccluded: ${result.isCameraOccluded}`);
+  console.info(`onCameraOcclusionDetection isCameraLensDirty: ${result.isCameraLensDirty}`);
+}
+
+function unregisterCameraOcclusionDetection(cameraInput: camera.CameraInput): void {
+    cameraInput.off('cameraOcclusionDetection', callback);
+}
+
+function unregisterAllCameraOcclusionDetection(cameraInput: camera.CameraInput): void {
+    cameraInput.off('cameraOcclusionDetection');
 }
 ```

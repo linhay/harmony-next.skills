@@ -18,29 +18,11 @@ import { openFileBoost } from '@kit.PreviewKit';
 
 **起始版本：**5.0.5(17)
 
-名称
-
-值
-
-说明
-
-NOT_PRELOADED
-
-0
-
-文件未预加载
-
-PRELOADING
-
-1
-
-文件预加载中
-
-PRELOADED
-
-2
-
-文件预加载完成
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NOT_PRELOADED | 0 | 文件未预加载 |
+| PRELOADING | 1 | 文件预加载中 |
+| PRELOADED | 2 | 文件预加载完成 |
 
 #### FilePreloadStatusInfo
 
@@ -50,45 +32,11 @@ PRELOADED
 
 **起始版本：**5.0.5(17)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-sandboxPath
-
-string
-
-否
-
-否
-
-文件的沙箱路径
-
-progress
-
-number
-
-否
-
-否
-
-文件预加载进度
-
-state
-
-[FilePreloadState](#section1081123302517)
-
-否
-
-否
-
-文件预加载状态
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| sandboxPath | string | 否 | 否 | 文件的沙箱路径 |
+| progress | number | 否 | 否 | 文件预加载进度 |
+| state | FilePreloadState | 否 | 否 | 文件预加载状态 |
 
 #### openFileBoost.on('filePreloadStateChanged')
 
@@ -102,49 +50,20 @@ on(type: 'filePreloadStateChanged', callback: Callback<FilePreloadStatusInfo>): 
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-type
-
-string
-
-是
-
-事件回调类型，固定为'filePreloadStateChanged'，每当预加载文件状态变化时都会触发该事件并返回对应信息。
-
-callback
-
-Callback<[FilePreloadStatusInfo](#section2913441120)>
-
-是
-
-回调函数，用于应用获取预加载文件状态变化信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，固定为'filePreloadStateChanged'，每当预加载文件状态变化时都会触发该事件并返回对应信息。 |
+| callback | Callback<FilePreloadStatusInfo> | 是 | 回调函数，用于应用获取预加载文件状态变化信息。 |
 
 **错误码：**
 
-通用错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[模块错误码](../../errors/ArkTS API错误码 (preview-arkts-errcode).md)。
+通用错误码的详细介绍请参见和[模块错误码](ArkTS API错误码.md)。
 
-错误码ID
-
-错误信息
-
-401
-
-参数检查失败
-
-1017220001
-
-内部失败
-
-1017220002
-
-服务不可用
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | 参数检查失败 |
+| 1017220001 | 内部失败 |
+| 1017220002 | 服务不可用 |
 
 **示例：**
 
@@ -166,7 +85,6 @@ function  callback(filePreloadStatusInfo: openFileBoost.FilePreloadStatusInfo): 
     // 没有预加载，应用可以不显示任何额外UX
     hilog.info(0x0000, 'testTag', `file is UNPRELOADED, suggest do not show animation `);
   }
-}
 
 function register(): void {
   try {
@@ -176,7 +94,6 @@ function register(): void {
     let message = (error as BusinessError).message;
     hilog.error(0x0000, 'testTag', `on filePreloadStateChanged failed, error code: ${code}, message: ${message}.`);
   }
-}
 ```
 
 #### openFileBoost.off('filePreloadStateChanged')
@@ -191,49 +108,20 @@ off(type: 'filePreloadStateChanged', callback?: Callback<FilePreloadStatusInfo>)
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-type
-
-string
-
-是
-
-事件回调用类型，固定为'filePreloadStateChanged'，当预加载文件状态变化时会触发该事件并返回对应信息。
-
-callback
-
-Callback<[FilePreloadStatusInfo](#section2913441120)>
-
-否
-
-回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调用类型，固定为'filePreloadStateChanged'，当预加载文件状态变化时会触发该事件并返回对应信息。 |
+| callback | Callback<FilePreloadStatusInfo> | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。 |
 
 **错误码：**
 
-通用错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[模块错误码](../../errors/ArkTS API错误码 (preview-arkts-errcode).md)。
+通用错误码的详细介绍请参见和[模块错误码](ArkTS API错误码.md)。
 
-错误码ID
-
-错误信息
-
-401
-
-参数检查失败
-
-1017220001
-
-内部失败
-
-1017220002
-
-服务不可用
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | 参数检查失败 |
+| 1017220001 | 内部失败 |
+| 1017220002 | 服务不可用 |
 
 **示例：**
 
@@ -266,7 +154,6 @@ function testUnregister(): void {
     let message = (error as BusinessError).message;
     hilog.error(0x0000, 'testTag', `off filePreloadStateChanged failed, error code: ${code}, message: ${message}.`);
   }
-}
 ```
 
 #### openFileBoost.addFile
@@ -275,11 +162,16 @@ addFile(file: string): void
 
 监听一个文件的预加载状态，应用传入文件路径后系统开始监听该文件的预加载状态。后续该文件状态有变化时系统通过'filePreloadStateChanged'事件回调向应用返回文件预加载状态变化。
 
-1. 需要先调用[openFileBoost.on('filePreloadStateChanged')](#section298512619713)接口后再调用该接口添加文件预加载状态监听。
 
-2. 当前一个应用最多添加50个文件监听。
+1.
 
-当前支持加速的文件类型见[文件打开加速支持的文件类型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preview-introduction#section7910758192912)，不支持的文件类型默认为未预加载状态，不需要调用该接口监听文件预加载状态变更。
+需要先调用[openFileBoost.on('filePreloadStateChanged')](#ZH-CN_TOPIC_0000002553362431__openfileboostonfilepreloadstatechanged)接口后再调用该接口添加文件预加载状态监听。
+
+1.
+
+当前一个应用最多添加50个文件监听。
+
+当前支持加速的文件类型见[文件打开加速支持的文件类型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preview-introduction#文件打开加速支持的文件类型)，不支持的文件类型默认为未预加载状态，不需要调用该接口监听文件预加载状态变更。
 
 **系统能力：** SystemCapability.PCService.OpenFileBoost
 
@@ -287,45 +179,20 @@ addFile(file: string): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-file
-
-string
-
-是
-
-文件的沙箱路径
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| file | string | 是 | 文件的沙箱路径 |
 
 **错误码：**
 
-通用错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[模块错误码](../../errors/ArkTS API错误码 (preview-arkts-errcode).md)。
+通用错误码的详细介绍请参见和[模块错误码](ArkTS API错误码.md)。
 
-错误码ID
-
-错误信息
-
-401
-
-参数检查失败
-
-1017220001
-
-内部失败
-
-1017220002
-
-服务不可用
-
-1017220003
-
-添加的文件个数超过上限
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | 参数检查失败 |
+| 1017220001 | 内部失败 |
+| 1017220002 | 服务不可用 |
+| 1017220003 | 添加的文件个数超过上限 |
 
 **示例：**
 
@@ -348,7 +215,6 @@ function testAddFile(): void {
     let message = (error as BusinessError).message;
     hilog.error(0x0000, 'testTag', `addFile failed, error code: ${code}, message: ${message}.`);
   }
-}
 ```
 
 #### openFileBoost.removeFile
@@ -363,41 +229,19 @@ removeFile(file: string): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-file
-
-string
-
-是
-
-文件的沙箱路径
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| file | string | 是 | 文件的沙箱路径 |
 
 **错误码：**
 
-通用错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[模块错误码](../../errors/ArkTS API错误码 (preview-arkts-errcode).md)。
+通用错误码的详细介绍请参见和[模块错误码](ArkTS API错误码.md)。
 
-错误码ID
-
-错误信息
-
-401
-
-参数检查失败
-
-1017220001
-
-内部失败
-
-1017220002
-
-服务不可用
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | 参数检查失败 |
+| 1017220001 | 内部失败 |
+| 1017220002 | 服务不可用 |
 
 **示例：**
 
@@ -428,51 +272,25 @@ queryFilePreloadStatusInfo(file: string): FilePreloadStatusInfo
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-file
-
-string
-
-是
-
-文件的沙箱路径
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| file | string | 是 | 文件的沙箱路径 |
 
 **返回值：**
 
-类型
-
-说明
-
-[FilePreloadStatusInfo](#section2913441120)
-
-文件预加载状态信息
+| 类型 | 说明 |
+| --- | --- |
+| FilePreloadStatusInfo | 文件预加载状态信息 |
 
 **错误码：**
 
-通用错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[模块错误码](../../errors/ArkTS API错误码 (preview-arkts-errcode).md)。
+通用错误码的详细介绍请参见和[模块错误码](ArkTS API错误码.md)。
 
-错误码ID
-
-错误信息
-
-401
-
-参数检查失败
-
-1017220001
-
-内部失败
-
-1017220002
-
-服务不可用
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | 参数检查失败 |
+| 1017220001 | 内部失败 |
+| 1017220002 | 服务不可用 |
 
 **示例：**
 

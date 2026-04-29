@@ -18,11 +18,14 @@ import { abilityDelegatorRegistry } from '@kit.TestKit';
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称类型只读可选说明stdResultstring否否Shell命令的标准输出内容。exitCodenumber否否Shell命令的结果码。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| stdResult | string | 否 | 否 | Shell命令的标准输出内容。 |
+| exitCode | number | 否 | 否 | Shell命令的结果码。 |
 
 #### 使用说明
 
-通过abilityDelegator中的[executeShellCommand](../system-services/AbilityDelegator.md#ZH-CN_TOPIC_0000002497445712__executeshellcommand)方法来获取。
+通过abilityDelegator中的[executeShellCommand](AbilityDelegator.md#ZH-CN_TOPIC_0000002522241804__executeshellcommand)方法来获取。
 
 **示例：**
 

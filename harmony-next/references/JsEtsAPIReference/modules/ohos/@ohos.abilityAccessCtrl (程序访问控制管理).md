@@ -22,7 +22,9 @@ createAtManager(): AtManager
 
 **返回值：**
 
-类型说明[AtManager](#ZH-CN_TOPIC_0000002529284597__atmanager)获取程序访问控制模块的实例。
+| 类型 | 说明 |
+| --- | --- |
+| AtManager | 获取程序访问控制模块的实例。 |
 
 **示例：**
 
@@ -46,17 +48,25 @@ checkAccessToken(tokenID: number, permissionName: Permissions): Promise<GrantSta
 
 **参数：**
 
-参数名类型必填说明tokenIDnumber是要校验的目标应用的身份标识，可通过应用的[ApplicationInfo](../../topics/system-services/ApplicationInfo.md)的accessTokenId字段获得。permissionName[Permissions](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)是需要校验的权限名称，合法的权限名取值可在[应用权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)中查询。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| tokenID | number | 是 | 要校验的目标应用的身份标识，可通过应用的[ApplicationInfo](../../topics/misc/ApplicationInfo.md)的accessTokenId字段获得。 |
+| permissionName | Permissions | 是 | 需要校验的权限名称，合法的权限名取值可在应用权限列表中查询。 |
 
 **返回值：**
 
-类型说明Promise<[GrantStatus](#ZH-CN_TOPIC_0000002529284597__grantstatus)>Promise对象，返回授权状态结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<GrantStatus> | Promise对象，返回授权状态结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[访问控制错误码](../../errors/访问控制错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[访问控制错误码]([访问控制错误码](../../errors/访问控制错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.12100001Invalid parameter. The tokenID is 0, or the permissionName exceeds 256 characters.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 12100001 | Invalid parameter. The tokenID is 0, or the permissionName exceeds 256 characters. |
 
 **示例：**
 
@@ -85,17 +95,25 @@ checkAccessTokenSync(tokenID: number, permissionName: Permissions): GrantStatus
 
 **参数：**
 
-参数名类型必填说明tokenIDnumber是要校验应用的身份标识，可通过应用的[ApplicationInfo](../../topics/system-services/ApplicationInfo.md)的accessTokenId字段获得。permissionName[Permissions](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)是需要校验的权限名称，合法的权限名取值可在[应用权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)中查询。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| tokenID | number | 是 | 要校验的目标应用的身份标识，可通过应用的[ApplicationInfo](../../topics/misc/ApplicationInfo.md)的accessTokenId字段获得。 |
+| permissionName | Permissions | 是 | 需要校验的权限名称，合法的权限名取值可在应用权限列表中查询。 |
 
 **返回值：**
 
-类型说明[GrantStatus](#ZH-CN_TOPIC_0000002529284597__grantstatus)枚举实例，返回授权状态。
+| 类型 | 说明 |
+| --- | --- |
+| GrantStatus | 枚举实例，返回授权状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[访问控制错误码](../../errors/访问控制错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[访问控制错误码](访问控制错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.12100001Invalid parameter. The tokenID is 0, or the permissionName exceeds 256 characters.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 12100001 | Invalid parameter. The tokenID is 0, or the permissionName exceeds 256 characters. |
 
 **示例：**
 
@@ -129,13 +147,23 @@ on(type: 'selfPermissionStateChange', permissionList: Array<Permissions>, callba
 
 **参数：**
 
-参数名类型必填说明typestring是订阅事件类型，固定为'selfPermissionStateChange'，自身权限状态变更事件。permissionListArray<[Permissions](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)>是订阅的权限名列表，如果为空，则表示订阅所有的权限状态变化，合法的权限名取值可在[应用权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)中查询。callbackCallback<[PermissionStateChangeInfo](#ZH-CN_TOPIC_0000002529284597__permissionstatechangeinfo18)>是回调函数，返回订阅指定权限名状态变更事件的结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 订阅事件类型，固定为'selfPermissionStateChange'，自身权限状态变更事件。 |
+| permissionList | Array<Permissions> | 是 | 订阅的权限名列表，如果为空，则表示订阅所有的权限状态变化，合法的权限名取值可在应用权限列表中查询。 |
+| callback | Callback<PermissionStateChangeInfo> | 是 | 回调函数，返回订阅指定权限名状态变更事件的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[访问控制错误码](../../errors/访问控制错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[访问控制错误码](访问控制错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.12100001Invalid parameter. Possible causes: 1. The permissionList exceeds the size limit; 2. The permissionNames in the list are all invalid.12100004The API is used repeatedly with the same input.12100005The registration time has exceeded the limit.12100007The service is abnormal.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 12100001 | Invalid parameter. Possible causes: 1. The permissionList exceeds the size limit; 2. The permissionNames in the list are all invalid. |
+| 12100004 | The API is used repeatedly with the same input. |
+| 12100005 | The registration time has exceeded the limit. |
+| 12100007 | The service is abnormal. |
 
 **示例：**
 
@@ -167,13 +195,21 @@ off(type: 'selfPermissionStateChange', permissionList: Array<Permissions>, callb
 
 **参数：**
 
-参数名类型必填说明typestring是订阅事件类型，固定为'selfPermissionStateChange'，权限状态变更事件。permissionListArray<[Permissions](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)>是取消订阅的权限名列表，为空时表示取消订阅所有的权限状态变化，必须与on的输入一致，合法的权限名取值可在[应用权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)中查询。callbackCallback<[PermissionStateChangeInfo](#ZH-CN_TOPIC_0000002529284597__permissionstatechangeinfo18)>否回调函数，返回取消订阅指定tokenID与指定权限名状态变更事件的结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 订阅事件类型，固定为'selfPermissionStateChange'，权限状态变更事件。 |
+| permissionList | Array<Permissions> | 是 | 取消订阅的权限名列表，为空时表示取消订阅所有的权限状态变化，必须与on的输入一致，合法的权限名取值可在应用权限列表中查询。 |
+| callback | Callback<PermissionStateChangeInfo> | 否 | 回调函数，返回取消订阅指定tokenID与指定权限名状态变更事件的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[访问控制错误码](../../errors/访问控制错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[访问控制错误码](访问控制错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.12100001Invalid parameter. The permissionNames in the list are all invalid.12100004The API is not used in pair with 'on'.12100007The service is abnormal.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 12100004 | The API is not used in pair with "on". |
+| 12100007 | The service is abnormal. |
 
 **示例：**
 
@@ -191,11 +227,13 @@ try {
 
 #### requestPermissionsFromUser9+
 
-requestPermissionsFromUser(context: Context, permissionList: Array<Permissions>, requestCallback: AsyncCallback<PermissionRequestResult>): void
+requestPermissionsFromUser(context: Context, permissionList: Array<Permissions>, requestCallback: AsyncCallback<[PermissionRequestResult](../../topics/misc/PermissionRequestResult.md)>): void
 
 用于UIAbility/UIExtensionAbility拉起弹框请求[用户授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-authorization)。使用callback异步回调。
 
-如果用户拒绝授权，将无法再次拉起弹框，需要用户在系统应用“设置”的界面中，手动授予权限，或是调用[requestPermissionOnSetting](#ZH-CN_TOPIC_0000002529284597__requestpermissiononsetting12)，拉起权限设置弹框，引导用户授权。
+如果用户拒绝授权，将无法再次拉起弹框，需要用户在系统应用“设置”的界面中，手动授予权限，或是调用[requestPermissionOnSetting](#ZH-CN_TOPIC_0000002553360477__requestpermissiononsetting12)，拉起权限设置弹框，引导用户授权。
+
+![image](public_sys-resources/zh-cn_image_0000002553204627.webp)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -205,13 +243,21 @@ requestPermissionsFromUser(context: Context, permissionList: Array<Permissions>,
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是请求权限的UIAbility/UIExtensionAbility的Context。permissionListArray<[Permissions](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)>是权限名列表，合法的权限名取值可在[应用权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)中查询。requestCallbackAsyncCallback<[PermissionRequestResult](../../topics/security/PermissionRequestResult.md)>是回调函数。当拉起权限请求弹框成功，err为undefined，data为获取到的PermissionRequestResult；否则err为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 请求权限的UIAbility/UIExtensionAbility的Context。 |
+| permissionList | Array<Permissions> | 是 | 权限名列表，合法的权限名取值可在应用权限列表中查询。 |
+| requestCallback | AsyncCallback<[PermissionRequestResult](../../topics/misc/PermissionRequestResult.md)> | 是 | 回调函数。当拉起权限请求弹框成功，err为undefined，data为获取到的PermissionRequestResult；否则err为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[访问控制错误码](../../errors/访问控制错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[访问控制错误码](访问控制错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.12100001Invalid parameter. The context is invalid when it does not belong to the application itself.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 12100001 | (Deprecated in 12) Invalid parameter. The context is invalid when it does not belong to the application itself. |
+| 12100009 | Common inner error. An error occurs when creating the pop-up window or obtaining user operation results. |
 
 **示例：**
 
@@ -224,6 +270,7 @@ import { abilityAccessCtrl, Context, PermissionRequestResult, common } from '@ki
 import { BusinessError } from '@kit.BasicServicesKit';
 
 let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+// 请在组件内获取context
 let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA'], (err: BusinessError, data: PermissionRequestResult) => {
   if (err) {
@@ -240,11 +287,11 @@ atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA'], (err: 
 
 #### requestPermissionsFromUser9+
 
-requestPermissionsFromUser(context: Context, permissionList: Array<Permissions>): Promise<PermissionRequestResult>
+requestPermissionsFromUser(context: Context, permissionList: Array<Permissions>): Promise<[PermissionRequestResult](../../topics/misc/PermissionRequestResult.md)>
 
 用于UIAbility/UIExtensionAbility拉起弹框请求[用户授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-authorization)。使用Promise异步回调。
 
-如果用户拒绝授权，将无法再次拉起弹框，需要用户在系统应用“设置”的界面中，手动授予权限，或是调用[requestPermissionOnSetting](#ZH-CN_TOPIC_0000002529284597__requestpermissiononsetting12)，拉起权限设置弹框，引导用户授权。
+如果用户拒绝授权，将无法再次拉起弹框，需要用户在系统应用“设置”的界面中，手动授予权限，或是调用[requestPermissionOnSetting](#ZH-CN_TOPIC_0000002553360477__requestpermissiononsetting12)，拉起权限设置弹框，引导用户授权。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -254,17 +301,26 @@ requestPermissionsFromUser(context: Context, permissionList: Array<Permissions>)
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是请求权限的UIAbility/UIExtensionAbility的Context。permissionListArray<[Permissions](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)>是需要校验的权限名称，合法的权限名取值可在[应用权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)中查询。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 请求权限的UIAbility/UIExtensionAbility的Context。 |
+| permissionList | Array<Permissions> | 是 | 权限名列表，合法的权限名取值可在应用权限列表中查询。 |
 
 **返回值：**
 
-类型说明Promise<[PermissionRequestResult](../../topics/security/PermissionRequestResult.md)>Promise对象，返回接口的结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[PermissionRequestResult](../../topics/misc/PermissionRequestResult.md)> | Promise对象，返回接口的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[访问控制错误码](../../errors/访问控制错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[访问控制错误码](访问控制错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.12100001Invalid parameter. The context is invalid when it does not belong to the application itself.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 12100001 | (Deprecated in 12) Invalid parameter. The context is invalid when it does not belong to the application itself. |
+| 12100009 | Common inner error. An error occurs when creating the pop-up window or obtaining user operation results. |
 
 **示例：**
 
@@ -277,6 +333,7 @@ import { abilityAccessCtrl, Context, PermissionRequestResult, common } from '@ki
 import { BusinessError } from '@kit.BasicServicesKit';
 
 let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+// 请在组件内获取context
 let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA']).then((data: PermissionRequestResult) => {
   console.info(`requestPermissionsFromUser success, result: ${data}`);
@@ -293,9 +350,11 @@ atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA']).then((
 
 requestPermissionOnSetting(context: Context, permissionList: Array<Permissions>): Promise<Array<GrantStatus>>
 
-用于[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__uiability)/[UIExtensionAbility](@ohos.app.ability.UIExtensionAbility (带界面的ExtensionAbility组件).md#ZH-CN_TOPIC_0000002497604594__uiextensionability)二次拉起权限设置弹框。使用Promise异步回调。
+用于[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__uiability)/[UIExtensionAbility](@ohos.app.ability.UIExtensionAbility (带界面的ExtensionAbility组件).md#ZH-CN_TOPIC_0000002553200505__uiextensionability)二次拉起权限设置弹框。使用Promise异步回调。
 
-在调用此接口前，应用需要先调用[requestPermissionsFromUser](#ZH-CN_TOPIC_0000002529284597__requestpermissionsfromuser9)，如果用户在首次弹窗授权时已授权，调用当前接口将无法拉起弹窗。
+在调用此接口前，应用需要先调用[requestPermissionsFromUser](#ZH-CN_TOPIC_0000002553360477__requestpermissionsfromuser9)，如果用户在首次弹窗授权时已授权，调用当前接口将无法拉起弹窗。
+
+![image](public_sys-resources/zh-cn_image_0000002522084674.webp)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -305,27 +364,28 @@ requestPermissionOnSetting(context: Context, permissionList: Array<Permissions>)
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是请求权限的UIAbility/UIExtensionAbility的Context。permissionListArray<[Permissions](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)>是权限名列表，合法的权限名取值可在[应用权限组列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permission-group-list)中查询。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 请求权限的UIAbility/UIExtensionAbility的Context。 |
+| permissionList | Array<Permissions> | 是 | 权限名列表，合法的权限名取值可在应用权限组列表中查询。 |
 
 **返回值：**
 
-类型说明Promise<Array<[GrantStatus](#ZH-CN_TOPIC_0000002529284597__grantstatus)>>Promise对象，返回授权状态结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<GrantStatus>> | Promise对象，返回授权状态结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[访问控制错误码](../../errors/访问控制错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[访问控制错误码](访问控制错误码.md)。
 
-错误码ID错误信息12100001
-
-Invalid parameter. Possible causes:
-
-1. The context is invalid because it does not belong to the application itself;
-
-2. The permission list contains the permission that is not declared in the module.json file;
-
-3. The permission list is invalid because the permissions in it do not belong to the same permission group.
-
-12100011All permissions in the permission list have been granted.12100012The permission list contains the permission that has not been revoked by the user.12100014Unexpected permission. You cannot request this type of permission from users via a pop-up window.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12100001 | Invalid parameter. Possible causes: 1. The context is invalid because it does not belong to the application itself; 2. The permission list contains the permission that is not declared in the module.json file; 3. The permission list is invalid because the permissions in it do not belong to the same permission group; 4. The permission list contains one or more system_grant permissions. |
+| 12100009 | Common inner error. An error occurs when creating the pop-up window or obtaining user operation result. |
+| 12100011 | All permissions in the permission list have been granted. |
+| 12100012 | The permission list contains the permission that has not been revoked by the user. |
+| 12100014 | Unexpected permission. You cannot request this type of permission from users via a pop-up window. |
 
 **示例：**
 
@@ -336,6 +396,7 @@ import { abilityAccessCtrl, Context, common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+// 请在组件内获取context
 let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 atManager.requestPermissionOnSetting(context, ['ohos.permission.CAMERA']).then((data: Array<abilityAccessCtrl.GrantStatus>) => {
   console.info(`requestPermissionOnSetting success, result: ${data}`);
@@ -352,6 +413,8 @@ requestGlobalSwitch(context: Context, type: SwitchType): Promise<boolean>
 
 在某些情况下，如果录音、拍照等功能被禁用，应用可拉起此弹框请求用户同意开启对应功能。如果当前全局开关的状态为开启，则不拉起弹框。
 
+![image](public_sys-resources/zh-cn_image_0000002553364587.webp)
+
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -360,17 +423,27 @@ requestGlobalSwitch(context: Context, type: SwitchType): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是请求权限的UIAbility/UIExtensionAbility的Context。type[SwitchType](#ZH-CN_TOPIC_0000002529284597__switchtype12)是全局开关类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 请求权限的UIAbility/UIExtensionAbility的Context。 |
+| type | SwitchType | 是 | 全局开关类型。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true，表示全局开关状态为开启。返回false，表示全局开关状态为关闭。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true，表示全局开关状态为开启。返回false，表示全局开关状态为关闭。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[访问控制错误码](../../errors/访问控制错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[访问控制错误码](访问控制错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.12100001Invalid parameter. Possible causes: 1. The context is invalid because it does not belong to the application itself; 2. The type of global switch is not support.12100010The request already exists.12100013The specific global switch is already open.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 12100001 | Invalid parameter. Possible causes: 1. The context is invalid because it does not belong to the application itself; 2. The type of global switch is not support. |
+| 12100009 | Common inner error. An error occurs when creating the pop-up window or obtaining user operation result. |
+| 12100013 | The specific global switch is already open. |
 
 **示例：**
 
@@ -381,6 +454,7 @@ import { abilityAccessCtrl, Context, common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+// 请在组件内获取context
 let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 atManager.requestGlobalSwitch(context, abilityAccessCtrl.SwitchType.CAMERA).then((data: Boolean) => {
   console.info(`requestGlobalSwitch success, result: ${data}`);
@@ -401,17 +475,24 @@ getSelfPermissionStatus(permissionName: Permissions): PermissionStatus
 
 **参数：**
 
-参数名类型必填说明permissionName[Permissions](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)是需要校验的权限名称，合法的权限名取值可在[应用权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)中查询。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| permissionName | Permissions | 是 | 需要校验的权限名称，合法的权限名取值可在应用权限列表中查询。 |
 
 **返回值：**
 
-类型说明[PermissionStatus](#ZH-CN_TOPIC_0000002529284597__permissionstatus20)枚举实例，返回权限状态。
+| 类型 | 说明 |
+| --- | --- |
+| PermissionStatus | 枚举实例，返回权限状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[访问控制错误码](../../errors/访问控制错误码.md)。
+以下错误码的详细介绍请参见[访问控制错误码](访问控制错误码.md)。
 
-错误码ID错误信息12100001Invalid parameter. The permissionName is empty or exceeds 256 characters.12100007The service is abnormal.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12100001 | Invalid parameter. The permissionName is empty or exceeds 256 characters. |
+| 12100007 | The service is abnormal. |
 
 **示例：**
 
@@ -432,7 +513,7 @@ try {
 
 openPermissionOnSetting(context: Context, permission: Permissions): Promise<SelectedResult>
 
-用于[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__uiability)/[UIExtensionAbility](@ohos.app.ability.UIExtensionAbility (带界面的ExtensionAbility组件).md#ZH-CN_TOPIC_0000002497604594__uiextensionability)拉起跳转设置页的弹窗。使用Promise异步回调。
+用于[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__uiability)/[UIExtensionAbility](@ohos.app.ability.UIExtensionAbility (带界面的ExtensionAbility组件).md#ZH-CN_TOPIC_0000002553200505__uiextensionability)拉起跳转设置页的弹窗。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -440,25 +521,26 @@ openPermissionOnSetting(context: Context, permission: Permissions): Promise<Sele
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是请求权限的UIAbility/UIExtensionAbility的Context。permission[Permissions](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)是权限名，只支持授权方式为[manual_settings](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permission-mgmt-overview#manual_settings手动设置授权)类型的权限。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 请求权限的UIAbility/UIExtensionAbility的Context。 |
+| permission | Permissions | 是 | 权限名，只支持授权方式为manual_settings类型的权限。 |
 
 **返回值：**
 
-类型说明Promise<[SelectedResult](#ZH-CN_TOPIC_0000002529284597__selectedresult22)>Promise对象，返回跳转设置页弹窗结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<SelectedResult> | Promise对象，返回跳转设置页弹窗结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[访问控制错误码](../../errors/访问控制错误码.md)。
+以下错误码的详细介绍请参见[访问控制错误码](访问控制错误码.md)。
 
-错误码ID错误信息12100001
-
-Invalid parameter. Possible causes:
-
-1. The context is invalid because it does not belong to the application itself;
-
-2. The permission is invalid or not declared in the module.json file.
-
-12100009Common inner error. An error occurs when creating the pop-up window or obtaining user operation result.12100014Unexpected permission. The permission is not a manual_settings permission.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12100001 | Invalid parameter. Possible causes: 1. The context is invalid because it does not belong to the application itself; 2. The permission is invalid or not declared in the module.json file. |
+| 12100009 | Common inner error. An error occurs when creating the pop-up window or obtaining user operation result. |
+| 12100014 | Unexpected permission. The permission is not a manual_settings permission. |
 
 **示例：**
 
@@ -469,6 +551,7 @@ import { abilityAccessCtrl, Context, common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+// 请在组件内获取context
 let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 atManager.openPermissionOnSetting(context, 'ohos.permission.HOOK_KEY_EVENT').then((data: abilityAccessCtrl.SelectedResult) => {
   console.info(`openPermissionOnSetting success, result: ${data}`);
@@ -487,17 +570,25 @@ verifyAccessTokenSync(tokenID: number, permissionName: Permissions): GrantStatus
 
 **参数：**
 
-参数名类型必填说明tokenIDnumber是要校验应用的身份标识，可通过应用的[ApplicationInfo](../../topics/system-services/ApplicationInfo.md)的accessTokenId字段获得。permissionName[Permissions](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)是需要校验的权限名称，合法的权限名取值可在[应用权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)中查询。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| tokenID | number | 是 | 要校验的目标应用的身份标识，可通过应用的[ApplicationInfo](../../topics/misc/ApplicationInfo.md)的accessTokenId字段获得。 |
+| permissionName | Permissions | 是 | 需要校验的权限名称，合法的权限名取值可在应用权限列表中查询。 |
 
 **返回值：**
 
-类型说明[GrantStatus](#ZH-CN_TOPIC_0000002529284597__grantstatus)枚举实例，返回授权状态。
+| 类型 | 说明 |
+| --- | --- |
+| GrantStatus | 枚举实例，返回授权状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[访问控制错误码](../../errors/访问控制错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[访问控制错误码](访问控制错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.12100001Invalid parameter. The tokenID is 0, or the permissionName exceeds 256 characters.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 12100001 | Invalid parameter. The tokenID is 0, or the permissionName exceeds 256 characters. |
 
 **示例：**
 
@@ -520,17 +611,23 @@ verifyAccessToken(tokenID: number, permissionName: Permissions): Promise<GrantSt
 
 校验应用是否被授予权限。使用Promise异步回调。
 
-建议使用[checkAccessToken](#ZH-CN_TOPIC_0000002529284597__checkaccesstoken9)替代。
+
+建议使用[checkAccessToken](#ZH-CN_TOPIC_0000002553360477__checkaccesstoken9)替代。
 
 **系统能力：** SystemCapability.Security.AccessToken
 
 **参数：**
 
-参数名类型必填说明tokenIDnumber是要校验的目标应用的身份标识，可通过应用的[ApplicationInfo](../../topics/system-services/ApplicationInfo.md)的accessTokenId字段获得。permissionName[Permissions](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)是需要校验的权限名称，合法的权限名取值可在[应用权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)中查询。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| tokenID | number | 是 | 要校验的目标应用的身份标识，可通过应用的[ApplicationInfo](../../topics/misc/ApplicationInfo.md)的accessTokenId字段获得。 |
+| permissionName | Permissions | 是 | 需要校验的权限名称，合法的权限名取值可在应用权限列表中查询。 |
 
 **返回值：**
 
-类型说明Promise<[GrantStatus](#ZH-CN_TOPIC_0000002529284597__grantstatus)>Promise对象，返回授权状态结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<GrantStatus> | Promise对象，返回授权状态结果。 |
 
 **示例：**
 
@@ -554,17 +651,23 @@ verifyAccessToken(tokenID: number, permissionName: string): Promise<GrantStatus>
 
 校验应用是否被授予权限。使用Promise异步回调。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[checkAccessToken](#ZH-CN_TOPIC_0000002529284597__checkaccesstoken9)替代。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[checkAccessToken](#ZH-CN_TOPIC_0000002553360477__checkaccesstoken9)替代。
 
 **系统能力：** SystemCapability.Security.AccessToken
 
 **参数：**
 
-参数名类型必填说明tokenIDnumber是要校验的目标应用的身份标识，可通过应用的[ApplicationInfo](../../topics/system-services/ApplicationInfo.md)的accessTokenId字段获得。permissionNamestring是需要校验的权限名称，合法的权限名取值可在[应用权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)中查询。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| tokenID | number | 是 | 要校验的目标应用的身份标识，可通过应用的[ApplicationInfo](../../topics/misc/ApplicationInfo.md)的accessTokenId字段获得。 |
+| permissionName | string | 是 | 需要校验的权限名称，合法的权限名取值可在应用权限列表中查询。 |
 
 **返回值：**
 
-类型说明Promise<[GrantStatus](#ZH-CN_TOPIC_0000002529284597__grantstatus)>Promise对象，返回授权状态结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<GrantStatus> | Promise对象，返回授权状态结果。 |
 
 **示例：**
 
@@ -589,7 +692,10 @@ atManager.verifyAccessToken(tokenID, 'ohos.permission.GRANT_SENSITIVE_PERMISSION
 
 **系统能力：** SystemCapability.Security.AccessToken
 
-名称值说明PERMISSION_DENIED-1表示未授权。PERMISSION_GRANTED0表示已授权。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PERMISSION_DENIED | -1 | 表示未授权。 |
+| PERMISSION_GRANTED | 0 | 表示已授权。 |
 
 #### SwitchType12+
 
@@ -599,7 +705,11 @@ atManager.verifyAccessToken(tokenID, 'ohos.permission.GRANT_SENSITIVE_PERMISSION
 
 **系统能力：** SystemCapability.Security.AccessToken
 
-名称值说明CAMERA0表示相机全局开关。MICROPHONE1表示麦克风全局开关。LOCATION2表示位置全局开关。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CAMERA | 0 | 表示相机全局开关。 |
+| MICROPHONE | 1 | 表示麦克风全局开关。 |
+| LOCATION | 2 | 表示位置全局开关。 |
 
 #### PermissionStateChangeType18+
 
@@ -609,7 +719,10 @@ atManager.verifyAccessToken(tokenID, 'ohos.permission.GRANT_SENSITIVE_PERMISSION
 
 **系统能力：** SystemCapability.Security.AccessToken
 
-名称值说明PERMISSION_REVOKED_OPER0表示权限取消操作。PERMISSION_GRANTED_OPER1表示权限授予操作。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PERMISSION_REVOKED_OPER | 0 | 表示权限取消操作。 |
+| PERMISSION_GRANTED_OPER | 1 | 表示权限授予操作。 |
 
 #### PermissionStateChangeInfo18+
 
@@ -619,11 +732,15 @@ atManager.verifyAccessToken(tokenID, 'ohos.permission.GRANT_SENSITIVE_PERMISSION
 
 **系统能力：** SystemCapability.Security.AccessToken
 
-名称类型只读可选说明change[PermissionStateChangeType](#ZH-CN_TOPIC_0000002529284597__permissionstatechangetype18)否否权限授权状态变化类型。tokenIDnumber否否被订阅的应用身份标识，可通过应用的[ApplicationInfo](../../topics/system-services/ApplicationInfo.md)的accessTokenId字段获得。permissionName[Permissions](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)否否当前授权状态发生变化的权限名，合法的权限名取值可在[应用权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissions)中查询。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| change | PermissionStateChangeType | 否 | 否 | 权限授权状态变化类型。 |
+| tokenID | number | 否 | 否 | 被订阅的应用身份标识，可通过应用的[ApplicationInfo](../../topics/misc/ApplicationInfo.md)的accessTokenId字段获得。 |
+| permissionName | Permissions | 否 | 否 | 当前授权状态发生变化的权限名，合法的权限名取值可在应用权限列表中查询。 |
 
-#### PermissionRequestResult10+
+#### [PermissionRequestResult](../../topics/misc/PermissionRequestResult.md)10+
 
-type PermissionRequestResult = _PermissionRequestResult
+type [PermissionRequestResult](../../topics/misc/PermissionRequestResult.md) = [_PermissionRequestResult](../../topics/misc/PermissionRequestResult.md)
 
 权限请求结果对象。
 
@@ -633,7 +750,9 @@ type PermissionRequestResult = _PermissionRequestResult
 
 **系统能力：** SystemCapability.Security.AccessToken
 
-类型说明[_PermissionRequestResult](../../topics/security/PermissionRequestResult.md)权限请求结果对象。
+| 类型 | 说明 |
+| --- | --- |
+| _[PermissionRequestResult](../../topics/misc/PermissionRequestResult.md) | 权限请求结果对象。 |
 
 #### Context10+
 
@@ -647,7 +766,9 @@ type Context = _Context
 
 **系统能力：** SystemCapability.Security.AccessToken
 
-类型说明[_Context](../../topics/graphics/Context (Stage模型的上下文基类).md)提供了ability或application的上下文的能力，包括访问特定应用程序的资源等。
+| 类型 | 说明 |
+| --- | --- |
+| _Context | 提供了ability或application的上下文的能力，包括访问特定应用程序的资源等。 |
 
 #### PermissionStatus20+
 
@@ -657,7 +778,13 @@ type Context = _Context
 
 **系统能力：** SystemCapability.Security.AccessToken
 
-名称值说明DENIED-1表示用户未授权。GRANTED0表示已授权。NOT_DETERMINED1表示未操作。应用声明[用户授权权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all-user)，暂未调用[requestPermissionsFromUser](#ZH-CN_TOPIC_0000002529284597__requestpermissionsfromuser9)接口请求用户授权时，或用户在设置中将权限状态修改为每次询问时，查询权限状态将返回此值。INVALID2表示无效。应用未[声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions)或当前无法处理。例如：当模糊位置权限的状态为NOT_DETERMINED时，查询精确位置权限状态，返回此值。RESTRICTED3表示受限。用户未同意隐私声明（仅系统应用会返回此状态）。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DENIED | -1 | 表示用户未授权。 |
+| GRANTED | 0 | 表示已授权。 |
+| NOT_DETERMINED | 1 | 表示未操作。应用声明用户授权权限，暂未调用requestPermissionsFromUser接口请求用户授权时，或用户在设置中将权限状态修改为每次询问时，查询权限状态将返回此值。 |
+| INVALID | 2 | 表示无效。应用未声明权限或当前无法处理。例如：当模糊位置权限的状态为NOT_DETERMINED时，查询精确位置权限状态，返回此值。 |
+| RESTRICTED | 3 | 表示受限。用户未同意隐私声明（仅系统应用会返回此状态）。 |
 
 #### SelectedResult22+
 
@@ -665,4 +792,8 @@ type Context = _Context
 
 **系统能力：** SystemCapability.Security.AccessToken
 
-名称值说明REJECTED-1表示用户选择不允许前往设置。OPENED0表示用户选择前往设置。GRANTED1表示权限已授权，无需弹窗。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| REJECTED | -1 | 表示用户选择不允许前往设置。 |
+| OPENED | 0 | 表示用户选择前往设置。 |
+| GRANTED | 1 | 表示权限已授权，无需弹窗。 |

@@ -13,16 +13,17 @@ Flash 继承自 [FlashQuery](Interface (FlashQuery).md)。
 import { camera } from '@kit.CameraKit';
 ```
 
-#### setFlashMode11+
+#### set[FlashMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__flashmode)11+
 
-setFlashMode(flashMode: FlashMode): void
+set[FlashMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__flashmode)(flashMode: FlashMode): void
 
 设置闪光灯模式。
 
 进行设置之前，需要先检查：
 
-1. 设备是否支持闪光灯，可使用方法[hasFlash](Interface (FlashQuery).md#ZH-CN_TOPIC_0000002497605782__hasflash11)。
-1. 设备是否支持指定的闪光灯模式，可使用方法[isFlashModeSupported](Interface (FlashQuery).md#ZH-CN_TOPIC_0000002497605782__isflashmodesupported11)。
+1. 设备是否支持闪光灯，可使用方法[hasFlash](Interface (FlashQuery).md#ZH-CN_TOPIC_0000002522081912__hasflash11)。
+
+1. 设备是否支持指定的闪光灯模式，可使用方法[isFlashModeSupported](Interface (FlashQuery).md#ZH-CN_TOPIC_0000002522081912__isflashmodesupported11)。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -30,13 +31,17 @@ setFlashMode(flashMode: FlashMode): void
 
 **参数：**
 
-参数名类型必填说明flashMode[FlashMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__flashmode)是指定闪光灯模式。传参为null或者undefined，作为0处理，闪光灯关闭。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| flashMode | [FlashMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__flashmode) | 是 | 指定闪光灯模式。传参为null或者undefined，作为0处理，闪光灯关闭。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码]([Camera错误码](../../errors/Camera错误码.md).md)。
 
-错误码ID错误信息7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
 
 **示例：**
 
@@ -51,12 +56,11 @@ function setFlashMode(photoSession: camera.PhotoSession): void {
     let err = error as BusinessError;
     console.error(`The setFlashMode call failed. error code: ${err.code}`);
   }
-}
 ```
 
-#### getFlashMode11+
+#### get[FlashMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__flashmode)11+
 
-getFlashMode(): FlashMode
+get[FlashMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__flashmode)(): FlashMode
 
 获取当前设备的闪光灯模式。
 
@@ -66,13 +70,17 @@ getFlashMode(): FlashMode
 
 **返回值：**
 
-类型说明[FlashMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__flashmode)获取当前设备的闪光灯模式。接口调用失败会抛出相应错误码并返回undefined，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 类型 | 说明 |
+| --- | --- |
+| [FlashMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__flashmode) | 获取当前设备的闪光灯模式。接口调用失败会抛出相应错误码并返回undefined，错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
 
 **示例：**
 

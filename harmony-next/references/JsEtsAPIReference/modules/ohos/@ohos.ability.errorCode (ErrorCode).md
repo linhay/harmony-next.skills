@@ -16,4 +16,9 @@ import { ErrorCode } from '@kit.AbilityKit';
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称值说明NO_ERROR0没有异常。INVALID_PARAMETER-1无效的参数。ABILITY_NOT_FOUND-2找不到Ability。PERMISSION_DENY-3权限拒绝。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NO_ERROR | 0 | 启动成功，无错误。 |
+| INVALID_PARAMETER | -1 | 无效的参数。 |
+| ABILITY_NOT_FOUND | -2 | 找不到Ability。 |
+| PERMISSION_DENY | -3 | 权限拒绝。 |

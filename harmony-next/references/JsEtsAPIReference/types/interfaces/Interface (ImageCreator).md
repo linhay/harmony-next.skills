@@ -2,9 +2,10 @@
 
 ImageCreator类，用于请求图像数据区域，并开放给应用编译图像数据的能力。
 
-在调用以下方法前需要先通过[image.createImageCreator](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445805__imagecreateimagecreator11)创建ImageCreator实例，ImageCreator不支持多线程。
+在调用以下方法前需要先通过[image.createImageCreator](Functions.md#ZH-CN_TOPIC_0000002522241966__imagecreateimagecreator11)创建ImageCreator实例，ImageCreator不支持多线程。
 
-由于图片占用内存较大，所以当ImageCreator实例使用完成后，应主动调用[release](#ZH-CN_TOPIC_0000002529285833__release9)方法及时释放内存。释放时应确保该实例的所有异步方法均执行完成，且后续不再使用该实例。
+由于图片占用内存较大，所以当ImageCreator实例使用完成后，应主动调用[release](#ZH-CN_TOPIC_0000002553361891__release9)方法及时释放内存。释放时应确保该实例的所有异步方法均执行完成，且后续不再使用该实例。
+
 
 - 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 - 本Interface首批接口从API version 9开始支持。
@@ -19,7 +20,10 @@ import { image } from '@kit.ImageKit';
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageCreator
 
-名称类型只读可选说明capacity9+number是否同时访问的图像数。该参数仅作为期望值，实际capacity由设备硬件决定。format9+[ImageFormat](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285837__imageformat9)是否图像格式。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| capacity9+ | number | 是 | 否 | 同时访问的图像数。该参数仅作为期望值，实际capacity由设备硬件决定。 |
+| format9+ | [ImageFormat](../enums/Enums.md#ZH-CN_TOPIC_0000002529285837__imageformat9) | 是 | 否 | 图像格式。 |
 
 #### dequeueImage9+
 
@@ -31,7 +35,9 @@ dequeueImage(callback: AsyncCallback<Image>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[Image](Interface (Image).md)>是回调函数，当获取最新图片成功，err为undefined，data为获取到的最新图片；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Image> | 是 | 回调函数，当获取最新图片成功，err为undefined，data为获取到的最新图片；否则为错误对象。 |
 
 **示例：**
 
@@ -59,7 +65,9 @@ dequeueImage(): Promise<Image>
 
 **返回值：**
 
-类型说明Promise<[Image](Interface (Image).md)>Promise对象，返回最新图片。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Image> | Promise对象，返回最新图片。 |
 
 **示例：**
 
@@ -85,7 +93,10 @@ queueImage(image: Image, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明image[Image](Interface (Image).md)是绘制好的buffer图像。callbackAsyncCallback<void>是回调函数，当将图片放入队列成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| image | Image | 是 | 绘制好的buffer图像。 |
+| callback | AsyncCallback<void> | 是 | 回调函数，当将图片放入队列成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -111,7 +122,6 @@ async function QueueImage(creator : image.ImageCreator) {
         console.info('Succeeded in queuing the Image.');
       }
     })
-  })
 }
 ```
 
@@ -125,11 +135,15 @@ queueImage(image: Image): Promise<void>
 
 **参数：**
 
-参数名类型必填说明image[Image](Interface (Image).md)是绘制好的buffer图像。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| image | Image | 是 | 绘制好的buffer图像。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -153,7 +167,6 @@ async function QueueImage(creator : image.ImageCreator) {
     }).catch((error: BusinessError) => {
       console.error(`Failed to queue the Image.code ${error.code},message is ${error.message}`);
     })
-  })
 }
 ```
 
@@ -167,7 +180,10 @@ on(type: 'imageRelease', callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件类型，如'imageRelease'。callbackAsyncCallback<void>是回调函数，当监听事件触发成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件类型，如'imageRelease'。 |
+| callback | AsyncCallback<void> | 是 | 回调函数，当监听事件触发成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -195,7 +211,10 @@ off(type: 'imageRelease', callback?: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件类型，如'imageRelease'。callbackAsyncCallback<void>否回调函数。当移除注册成功时，err返回null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件类型，如'imageRelease'。 |
+| callback | AsyncCallback<void> | 否 | 回调函数。当移除注册成功时，err返回null，否则为错误对象。 |
 
 **示例：**
 
@@ -223,7 +242,9 @@ release(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数，当图像释放成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数，当图像释放成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -255,7 +276,9 @@ release(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 

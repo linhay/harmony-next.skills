@@ -8,4 +8,6 @@
 
 #### 文件汇总
 
-名称描述[oh_environment.h](../../capi/headers/oh_environment.h.md)environment模块接口定义，使用environment提供的native接口，获取公共文件根目录的沙箱路径。
+| 名称 | 描述 |
+| --- | --- |
+| [oh_environment.h](oh_environment.h.md) | environment模块接口定义，使用environment提供的native接口，获取公共文件根目录的沙箱路径。 |

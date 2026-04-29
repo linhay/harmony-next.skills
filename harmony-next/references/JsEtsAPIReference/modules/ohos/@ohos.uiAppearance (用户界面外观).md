@@ -16,7 +16,10 @@ import { uiAppearance } from '@kit.ArkUI';
 
 **系统能力：** SystemCapability.ArkUI.UiAppearance
 
-名称值说明ALWAYS_DARK0系统始终为深色。ALWAYS_LIGHT1系统始终为浅色。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ALWAYS_DARK | 0 | 系统始终为深色。 |
+| ALWAYS_LIGHT | 1 | 系统始终为浅色。 |
 
 #### uiAppearance.getDarkMode
 
@@ -28,13 +31,17 @@ getDarkMode(): DarkMode
 
 **返回值：**
 
-类型说明[DarkMode](#ZH-CN_TOPIC_0000002497604792__darkmode)系统当前的深色模式配置。
+| 类型 | 说明 |
+| --- | --- |
+| DarkMode | 系统当前的深色模式配置。 |
 
 **错误码：**
 
-错误码详细介绍请参考[errcode-uiappearance](../../errors/用户界面外观服务错误码.md)。
+错误码详细介绍请参考[errcode-uiappearance](用户界面外观服务错误码.md)。
 
-错误码ID错误信息500001Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 500001 | Internal error. |
 
 **示例：**
 
@@ -61,13 +68,17 @@ getFontScale(): number
 
 **返回值：**
 
-类型说明number系统当前的字体大小缩放比例。
+| 类型 | 说明 |
+| --- | --- |
+| number | 系统当前的字体大小缩放比例。 |
 
 **错误码：**
 
-错误码详细介绍请参考[errcode-uiappearance](../../errors/用户界面外观服务错误码.md)。
+错误码详细介绍请参考[errcode-uiappearance](用户界面外观服务错误码.md)。
 
-错误码ID错误信息500001Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 500001 | Internal error. |
 
 **示例：**
 
@@ -94,13 +105,17 @@ getFontWeightScale(): number
 
 **返回值：**
 
-类型说明number系统当前的字体粗细缩放比例。
+| 类型 | 说明 |
+| --- | --- |
+| number | 系统当前的字体粗细缩放比例。 |
 
 **错误码：**
 
-错误码详细介绍请参考[errcode-uiappearance](../../errors/用户界面外观服务错误码.md)。
+错误码详细介绍请参考[errcode-uiappearance](用户界面外观服务错误码.md)。
 
-错误码ID错误信息500001Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 500001 | Internal error. |
 
 **示例：**
 

@@ -18,7 +18,12 @@ import { certificateManagerDialog } from '@kit.DeviceCertificateKit';
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-名称值说明PAGE_MAIN1证书管理应用主页面。PAGE_CA_CERTIFICATE2CA证书列表页面。PAGE_CREDENTIAL3凭据列表页面。PAGE_INSTALL_CERTIFICATE4安装证书页面。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PAGE_MAIN | 1 | 证书管理应用主页面。 |
+| PAGE_CA_CERTIFICATE | 2 | CA证书列表页面。 |
+| PAGE_CREDENTIAL | 3 | 凭据列表页面。 |
+| PAGE_INSTALL_CERTIFICATE | 4 | 安装证书页面。 |
 
 #### CertificateType14+
 
@@ -28,7 +33,13 @@ import { certificateManagerDialog } from '@kit.DeviceCertificateKit';
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-名称值说明CA_CERT1CA证书。CREDENTIAL_USER22+2用户公共凭据。CREDENTIAL_APP22+3应用私有凭据。CREDENTIAL_UKEY22+4USB凭据。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CA_CERT | 1 | CA证书。 |
+| CREDENTIAL_USER22+ | 2 | 用户公共凭据。 |
+| CREDENTIAL_APP22+ | 3 | 应用私有凭据。 |
+| CREDENTIAL_UKEY22+ | 4 | USB凭据。 |
+| CREDENTIAL_SYSTEM23+ | 5 | 系统凭据。 |
 
 #### CertificateScope14+
 
@@ -38,7 +49,11 @@ import { certificateManagerDialog } from '@kit.DeviceCertificateKit';
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-名称值说明NOT_SPECIFIED18+0未指定用户。CURRENT_USER1当前用户。GLOBAL_USER18+2公共目录。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NOT_SPECIFIED18+ | 0 | 未指定用户。 |
+| CURRENT_USER | 1 | 当前用户。 |
+| GLOBAL_USER18+ | 2 | 公共目录。 |
 
 #### CertificateDialogErrorCode
 
@@ -48,12 +63,14 @@ import { certificateManagerDialog } from '@kit.DeviceCertificateKit';
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-名称值说明ERROR_GENERIC29700001表示调用接口时发生内部错误。ERROR_OPERATION_CANCELED14+29700002表示调用接口时用户取消操作。ERROR_OPERATION_FAILED14+29700003表示调用接口时安装证书失败。ERROR_DEVICE_NOT_SUPPORTED14+29700004表示调用接口时设备类型不支持。ERROR_NOT_COMPLY_SECURITY_POLICY18+29700005表示调用接口时不符合设备安全策略。ERROR_PARAMETER_VALIDATION_FAILED22+29700006
-
-表示调用接口时参数校验失败。
-
-例如：参数格式不正确、参数范围无效
-
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ERROR_GENERIC | 29700001 | 表示调用接口时发生内部错误。 |
+| ERROR_OPERATION_CANCELED14+ | 29700002 | 表示调用接口时用户取消操作。 |
+| ERROR_OPERATION_FAILED14+ | 29700003 | 表示调用接口时安装证书失败。 |
+| ERROR_DEVICE_NOT_SUPPORTED14+ | 29700004 | 表示调用接口时设备类型不支持。 |
+| ERROR_NOT_COMPLY_SECURITY_POLICY18+ | 29700005 | 表示调用接口时不符合设备安全策略。 |
+| ERROR_PARAMETER_VALIDATION_FAILED22+ | 29700006 | 表示调用接口时参数校验失败。 例如：参数格式不正确、参数范围无效 |
 ERROR_NO_AVAILABLE_CERTIFICATE22+29700007表示没有可用证书。
 
 #### CertificateDialogProperty18+
@@ -64,7 +81,9 @@ ERROR_NO_AVAILABLE_CERTIFICATE22+29700007表示没有可用证书。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-名称类型只读可选说明showInstallButtonboolean否否表示是否显示安装证书的按钮，true为显示，false为不显示。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| showInstallButton | boolean | 否 | 否 | 表示是否显示安装证书的按钮，true为显示，false为不显示。 |
 
 #### CertReference22+
 
@@ -74,7 +93,10 @@ ERROR_NO_AVAILABLE_CERTIFICATE22+29700007表示没有可用证书。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-名称类型只读可选说明certType[CertificateType](#ZH-CN_TOPIC_0000002497605384__certificatetype14)否否表示证书类型。keyUristring否否表示证书凭据的唯一标识符，长度限制256字节以内。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| certType | CertificateType | 否 | 否 | 表示证书类型。 |
+| keyUri | string | 否 | 否 | 表示证书凭据的唯一标识符，长度限制256字节以内。 |
 
 #### UkeyAuthRequest22+
 
@@ -84,7 +106,9 @@ USB证书凭据授权请求信息。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-名称类型只读可选说明keyUristring否否表示USB证书凭据的唯一标识符，长度限制256字节以内。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| keyUri | string | 否 | 否 | 表示USB证书凭据的唯一标识符，长度限制256字节以内。 |
 
 #### AuthorizeRequest22+
 
@@ -94,11 +118,10 @@ USB证书凭据授权请求信息。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-名称类型只读可选说明certTypesArray<[CertificateType](#ZH-CN_TOPIC_0000002497605384__certificatetype14)>否否表示证书类型的列表。certPurpose[certificateManager.CertificatePurpose](@ohos.security.certManager (证书管理模块).md#ZH-CN_TOPIC_0000002529445349__certificatepurpose22)否是
-
-表示证书用途。
-
-若certTypes参数中存在CertificateType.CREDENTIAL_UKEY类型，则certPurpose参数生效。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| certTypes | Array<CertificateType> | 否 | 否 | 表示证书类型的列表。 |
+| certPurpose | certificateManager.CertificatePurpose | 否 | 是 | 表示证书用途。 若certTypes参数中存在CertificateType.CREDENTIAL_UKEY类型，则certPurpose参数生效。 |
 
 #### certificateManagerDialog.openCertificateManagerDialog
 
@@ -114,17 +137,26 @@ openCertificateManagerDialog(context: common.Context, pageType: CertificateDialo
 
 **参数**：
 
-参数名类型必填说明context[common.Context](@ohos.app.ability.common (Ability公共模块).md)是表示应用的上下文信息。pageType[CertificateDialogPageType](#ZH-CN_TOPIC_0000002497605384__certificatedialogpagetype)是表示页面类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | common.Context | 是 | 表示应用的上下文信息。 |
+| pageType | CertificateDialogPageType | 是 | 表示页面类型。 |
 
 **返回值**：
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理对话框错误码](../../errors/证书管理对话框错误码.md)。
+以下错误码的详细介绍请参见[证书管理对话框错误码]([证书管理对话框错误码](../../errors/证书管理对话框错误码.md).md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.29700001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 29700001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
 
 **示例**：
 
@@ -159,23 +191,38 @@ openInstallCertificateDialog(context: common.Context, certType: CertificateType,
 
 **系统能力：** SystemCapability.Security.CertificateManagerDialog
 
-**设备行为差异：** 该接口在PC/2in1设备可正常调用，在其他设备中返回29700004错误码。
+设备行为差异： 该接口在PC/2in1设备可正常调用，在其他设备中certType传入CA_CERT时返回29700004错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数**：
 
-参数名类型必填说明context[common.Context](@ohos.app.ability.common (Ability公共模块).md)是表示应用的上下文信息。certType[CertificateType](#ZH-CN_TOPIC_0000002497605384__certificatetype14)是表示安装证书类型。certScope[CertificateScope](#ZH-CN_TOPIC_0000002497605384__certificatescope14)是表示安装证书的使用范围。certUint8Array是表示安装证书数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | common.Context | 是 | 表示应用的上下文信息。 |
+| certType | CertificateType | 是 | 表示安装证书类型，目前支持CA_CERT、CREDENTIAL_USER、CREDENTIAL_SYSTEM。 |
+| certScope | CertificateScope | 是 | 表示安装证书的使用范围，目前支持CURRENT_USER、NOT_SPECIFIED。 |
+| cert | Uint8Array | 是 | 表示安装证书数据。 |
 
 **返回值**：
 
-类型说明Promise<string>Promise对象。表示返回证书uri的结果，最大长度为256字节。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象。表示返回证书uri的结果，最大长度为256字节。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理对话框错误码](../../errors/证书管理对话框错误码.md)。
+以下错误码的详细介绍请参见[证书管理对话框错误码](证书管理对话框错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.29700001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.29700002The user cancels the installation operation.29700003The user install certificate failed in the certificate manager dialog, such as the certificate is in an invalid format.29700004The API is not supported on this device.29700005The operation does not comply with the device security policy, such as the device does not allow users to manage the ca certificate of the global user.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 29700001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 29700002 | The user cancels the installation operation. |
+| 29700003 | The user install certificate failed in the certificate manager dialog, such as the certificate is in an invalid format. |
+| 29700004 | The API is not supported on this device. |
+| 29700005 | The operation does not comply with the device security policy, such as the device does not allow users to manage the ca certificate of the global user. |
 
 **示例**：
 
@@ -222,17 +269,31 @@ openUninstallCertificateDialog(context: common.Context, certType: CertificateTyp
 
 **参数**：
 
-参数名类型必填说明context[common.Context](@ohos.app.ability.common (Ability公共模块).md)是表示应用的上下文信息。certType[CertificateType](#ZH-CN_TOPIC_0000002497605384__certificatetype14)是表示删除证书类型。certUristring是表示待删除证书的唯一标识符，最大长度为256字节。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | common.Context | 是 | 表示应用的上下文信息。 |
+| certType | CertificateType | 是 | 表示删除证书类型。 |
+| certUri | string | 是 | 表示待删除证书的唯一标识符，最大长度为256字节。 |
 
 **返回值**：
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理对话框错误码](../../errors/证书管理对话框错误码.md)。
+以下错误码的详细介绍请参见[证书管理对话框错误码](证书管理对话框错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.29700001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.29700002The user cancels the uninstallation operation.29700003The user uninstall certificate failed in the certificate manager dialog, such as the certificate uri is not exist.29700004The API is not supported on this device.29700005The operation does not comply with the device security policy, such as the device does not allow users to manage the ca certificate of the global user.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 29700001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 29700002 | The user cancels the uninstallation operation. |
+| 29700003 | The user uninstall certificate failed in the certificate manager dialog, such as the certificate uri is not exist. |
+| 29700004 | The API is not supported on this device. |
+| 29700005 | The operation does not comply with the device security policy, such as the device does not allow users to manage the ca certificate of the global user. |
 
 **示例**：
 
@@ -275,17 +336,29 @@ openCertificateDetailDialog(context: common.Context, cert: Uint8Array, property:
 
 **参数**：
 
-参数名类型必填说明context[common.Context](@ohos.app.ability.common (Ability公共模块).md)是表示应用的上下文信息。certUint8Array是表示安装证书数据。property[CertificateDialogProperty](#ZH-CN_TOPIC_0000002497605384__certificatedialogproperty18)是表示拉起证书管理对话框的属性。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | common.Context | 是 | 表示应用的上下文信息。 |
+| cert | Uint8Array | 是 | 表示安装证书数据。 |
+| property | CertificateDialogProperty | 是 | 表示拉起证书管理对话框的属性。 |
 
 **返回值**：
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理对话框错误码](../../errors/证书管理对话框错误码.md)。
+以下错误码的详细介绍请参见[证书管理对话框错误码](证书管理对话框错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.29700001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.29700003Show the certificate detail dialog failed, such as the certificate is in an invalid format.29700004The API is not supported on this device.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 29700001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 29700003 | Show the certificate detail dialog failed, such as the certificate is in an invalid format. |
+| 29700004 | The API is not supported on this device. |
 
 **示例**：
 
@@ -329,17 +402,26 @@ openAuthorizeDialog(context: common.Context): Promise<string>
 
 **参数**：
 
-参数名类型必填说明context[common.Context](@ohos.app.ability.common (Ability公共模块).md)是表示应用的上下文信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | common.Context | 是 | 表示应用的上下文信息。 |
 
 **返回值**：
 
-类型说明Promise<string>Promise对象。表示返回授权证书uri的结果，最大长度为256字节。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象。表示返回授权证书uri的结果，最大长度为256字节。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理对话框错误码](../../errors/证书管理对话框错误码.md)。
+以下错误码的详细介绍请参见[证书管理对话框错误码](证书管理对话框错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Invalid parameter. Possible causes: 1. A mandatory parameter is left unspecified. 2. Incorrect parameter type. 3. Parameter verification failed.29700001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.29700002The user cancels the authorization.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Invalid parameter. Possible causes: 1. A mandatory parameter is left unspecified. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 29700001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 29700002 | The user cancels the authorization. |
 
 **示例**：
 
@@ -379,17 +461,29 @@ openAuthorizeDialog(context: common.Context, authorizeRequest: AuthorizeRequest)
 
 **参数**：
 
-参数名类型必填说明context[common.Context](@ohos.app.ability.common (Ability公共模块).md)是表示应用的上下文信息。authorizeRequest[AuthorizeRequest](#ZH-CN_TOPIC_0000002497605384__authorizerequest22)是表示授权请求信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | common.Context | 是 | 表示应用的上下文信息。 |
+| authorizeRequest | AuthorizeRequest | 是 | 表示授权请求信息。 |
 
 **返回值**：
 
-类型说明Promise<[CertReference](#ZH-CN_TOPIC_0000002497605384__certreference22)>Promise对象，返回授权证书引用的结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<CertReference> | Promise对象，返回授权证书引用的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[证书管理对话框错误码](../../errors/证书管理对话框错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[证书管理对话框错误码](证书管理对话框错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.801Capability not supported.29700001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error;ration error; 4. Call other service failed. Please try again.29700002The user cancels the authorization.29700006Indicates that the input parameters validation failed. for example, the parameter format is incorrect or the value range is invalid.29700007No available certificate for authorization
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. |
+| 29700001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error; 4. Call other service failed. Please try again. |
+| 29700002 | The user cancels the authorization. |
+| 29700006 | Indicates that the input parameters validation failed. for example, the parameter format is incorrect or the value range is invalid. |
+| 29700007 | No available certificate for authorization |
 
 **示例**：
 
@@ -437,17 +531,29 @@ openUkeyAuthDialog(context: common.Context, ukeyAuthRequest: UkeyAuthRequest): P
 
 **参数**：
 
-参数名类型必填说明context[common.Context](@ohos.app.ability.common (Ability公共模块).md)是表示应用的上下文信息。ukeyAuthRequest[UkeyAuthRequest](#ZH-CN_TOPIC_0000002497605384__ukeyauthrequest22)是表示USB凭据授权请求信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | common.Context | 是 | 表示应用的上下文信息。 |
+| ukeyAuthRequest | UkeyAuthRequest | 是 | 表示USB凭据授权请求信息。 |
 
 **返回值**：
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[证书管理对话框错误码](../../errors/证书管理对话框错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[证书管理对话框错误码](证书管理对话框错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.801Capability not supported.29700001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.29700002The user cancels the authentication operation.29700003The authentication operation failed, such as the USB key certificate does not exist, the USB key status is abnormal.29700006Indicates that the input parameters validation failed. For example, the parameter format is incorrect or the value range is invalid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. |
+| 29700001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 29700002 | The user cancels the authentication operation. |
+| 29700003 | The authentication operation failed, such as the USB key certificate does not exist, the USB key status is abnormal. |
+| 29700006 | Indicates that the input parameters validation failed. For example, the parameter format is incorrect or the value range is invalid. |
 
 **示例**：
 

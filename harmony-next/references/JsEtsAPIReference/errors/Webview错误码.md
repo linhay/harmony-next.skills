@@ -12,12 +12,15 @@ Init error. The WebviewController must be associated with a Web component.
 
 WebviewController还没有和具体的Web组件关联，无法进行相应的操作。
 
+**可能原因**
+
+WebviewController还没有和具体的Web组件关联。
+
 **处理步骤**
 
-请检查WebviewController对象是否已与Web组件关联，可以通过[onControllerAttached()](../topics/misc/事件.md#ZH-CN_TOPIC_0000002497445228__oncontrollerattached10)接口进行检查。详情可以参考[Web组件调用WebviewController相关接口报17100001错误定位指南](https://developer.huawei.com/consumer/cn/doc/architecture-guides/educate-v1_1-ts_18-0000002334531357)。
+请检查WebviewController对象是否已与Web组件关联，可以通过[onControllerAttached()](事件.md#ZH-CN_TOPIC_0000002522081170__oncontrollerattached10)接口进行检查。详情可以参考[Web组件调用WebviewController相关接口报17100001错误定位指南](https://developer.huawei.com/consumer/cn/doc/architecture-guides/educate-v1_1-ts_18-0000002334531357)。
 
 #### 17100002 Url格式错误
-
 **错误信息**
 
 URL error. Possible causes: 1. No valid cookie found for the specified URL. 2. The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.
@@ -25,6 +28,16 @@ URL error. Possible causes: 1. No valid cookie found for the specified URL. 2. T
 **错误描述**
 
 URL错误，可能原因：
+
+1.
+
+未找到指定URL的有效Cookie。
+
+1.
+
+该URL对应的网页无效，或URL长度超过2*1024*1024。
+
+**可能原因**
 
 1.
 
@@ -65,6 +78,10 @@ Function not enabled.
 **错误描述**
 
 功能开关未打开。
+
+**可能原因**
+
+相关功能未设置或开关未打开。
 
 **处理步骤**
 
@@ -374,8 +391,8 @@ The errorCode is either ARKWEB_NET_OK or outside the range of error codes in Web
 
 **可能原因**
 
-使用的错误码不在[WebNetErrorList](../modules/ohos/@ohos.web.netErrorList (ArkWeb网络协议栈错误列表).md#ZH-CN_TOPIC_0000002497445224__webneterrorlist)范围内，或者调用didFail接口时使用了NET_OK错误码。
+使用的错误码不在[WebNetErrorList](@ohos.web.netErrorList (ArkWeb网络协议栈错误列表).md#ZH-CN_TOPIC_0000002522081166__webneterrorlist)范围内，或者调用didFail接口时使用了NET_OK错误码。
 
 **处理步骤**
 
-检查使用的错误码是否在[WebNetErrorList](../modules/ohos/@ohos.web.netErrorList (ArkWeb网络协议栈错误列表).md#ZH-CN_TOPIC_0000002497445224__webneterrorlist)范围内，或者调用difFail时是否使用了NET_OK错误码。
+检查使用的错误码是否在[WebNetErrorList](@ohos.web.netErrorList (ArkWeb网络协议栈错误列表).md#ZH-CN_TOPIC_0000002522081166__webneterrorlist)范围内，或者调用didFail时是否使用了NET_OK错误码。

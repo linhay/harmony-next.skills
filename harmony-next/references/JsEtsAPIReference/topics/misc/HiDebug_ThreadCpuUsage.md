@@ -1,4 +1,4 @@
-# HiDebug_ThreadCpuUsage
+# [HiDebug_ThreadCpuUsage](HiDebug_ThreadCpuUsage.md)
 
 ```ets
 typedef struct HiDebug_ThreadCpuUsage {...} HiDebug_ThreadCpuUsage
@@ -12,10 +12,14 @@ typedef struct HiDebug_ThreadCpuUsage {...} HiDebug_ThreadCpuUsage
 
 **相关模块：**[HiDebug](HiDebug.md)
 
-**所在头文件：**[hidebug_type.h](../../capi/headers/hidebug_type.h.md)
+所在头文件： [hidebug_type.h](hidebug_type.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述uint32_t threadId线程ID。double cpuUsage线程CPU使用率百分比。struct [HiDebug_ThreadCpuUsage](HiDebug_ThreadCpuUsage.md) *next下一个线程的使用率信息。
+| 名称 | 描述 |
+| --- | --- |
+| uint32_t threadId | 线程ID。 |
+| double cpuUsage | 线程CPU使用率百分比。 |
+| struct [HiDebug_ThreadCpuUsage](HiDebug_ThreadCpuUsage.md) *next | 下一个线程的使用率信息。 |

@@ -12,10 +12,15 @@ typedef struct {...} Scan_ScannerOptions
 
 **相关模块：**[OH_Scan](OH_Scan.md)
 
-**所在头文件：**[ohscan.h](../../capi/headers/ohscan.h.md)
+所在头文件： [ohscan.h](ohscan.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述char** titles选项标题char** descriptions选项描述char** ranges选项可设置的范围int32_t optionCount可设置的参数选项数量
+| 名称 | 描述 |
+| --- | --- |
+| char** titles | 选项标题 |
+| char** descriptions | 选项描述 |
+| char** ranges | 选项可设置的范围 |
+| int32_t optionCount | 可设置的参数选项数量 |

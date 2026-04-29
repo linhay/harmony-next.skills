@@ -18,7 +18,9 @@ type NetBearType = connection.NetBearType
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
-类型说明[connection.NetBearType](@ohos.net.connection (网络连接管理).md#ZH-CN_TOPIC_0000002497605446__netbeartype)网络类型。
+| 类型 | 说明 |
+| --- | --- |
+| connection.NetBearType | 网络类型。 |
 
 #### policy.showAppNetPolicySettings22+
 
@@ -34,11 +36,15 @@ showAppNetPolicySettings(context: Context): Promise<void>
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是Stage模型的应用上下文（仅支持UIAbilityContext和ExtensionContext）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | Stage模型的应用上下文（仅支持UIAbilityContext和ExtensionContext）。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -46,7 +52,6 @@ showAppNetPolicySettings(context: Context): Promise<void>
 
 ```ets
 import { policy } from '@kit.NetworkKit';
-import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
 
 let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;

@@ -12,7 +12,7 @@ Web组件地理位置权限管理对象。
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 -
 
@@ -26,7 +26,7 @@ import { webview } from '@kit.ArkWeb';
 
 #### 需要权限
 
-访问地理位置时需添加权限：ohos.permission.LOCATION、ohos.permission.APPROXIMATELY_LOCATION、ohos.permission.LOCATION_IN_BACKGROUND，具体权限说明请参考[位置服务](../../modules/ohos/@ohos.geolocation (位置服务).md)。
+访问地理位置时需添加权限：ohos.permission.LOCATION、ohos.permission.APPROXIMATELY_LOCATION、ohos.permission.LOCATION_IN_BACKGROUND，具体权限说明请参考[位置服务](@ohos.geolocation (位置服务).md)。
 
 #### allowGeolocation
 
@@ -38,19 +38,19 @@ static allowGeolocation(origin: string, incognito?: boolean): void
 
 **参数：**
 
-参数名类型必填说明originstring是指定源的字符串索引incognito11+boolean否
-
-true表示隐私模式下允许指定来源使用地理位置，false表示正常非隐私模式下允许指定来源使用地理位置。
-
-默认值：false。
-
-传入null或undefined时为false。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| origin | string | 是 | 指定源的字符串索引。 |
+| incognito11+ | boolean | 否 | true表示隐私模式下允许指定来源使用地理位置，false表示正常非隐私模式下允许指定来源使用地理位置。 默认值：false。 传入null或undefined时为false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)、[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码]([Webview错误码](../../errors/Webview错误码.md).md)、[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息17100011Invalid origin.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100011 | Invalid origin. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -77,8 +77,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### deleteGeolocation
@@ -91,19 +89,19 @@ static deleteGeolocation(origin: string, incognito?: boolean): void
 
 **参数：**
 
-参数名类型必填说明originstring是指定源的字符串索引incognito11+boolean否
-
-true表示隐私模式下清除指定来源的地理位置权限状态，false表示正常非隐私模式下清除指定来源的地理位置权限状态。
-
-默认值：false。
-
-传入null或undefined时为false。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| origin | string | 是 | 指定源的字符串索引。 |
+| incognito11+ | boolean | 否 | true表示隐私模式下清除指定来源的地理位置权限状态，false表示正常非隐私模式下清除指定来源的地理位置权限状态。 默认值：false。 传入null或undefined时为false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)、[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码](Webview错误码.md)、[通用错误码](通用错误码.md)。
 
-错误码ID错误信息17100011Invalid origin.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100011 | Invalid origin. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -130,8 +128,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### getAccessibleGeolocation
@@ -144,25 +140,20 @@ static getAccessibleGeolocation(origin: string, callback: AsyncCallback<boolean>
 
 **参数：**
 
-参数名类型必填说明originstring是指定源的字符串索引callbackAsyncCallback<boolean>是
-
-返回指定源的地理位置权限状态。
-
-获取成功，true表示已授权，false表示拒绝访问。
-
-获取失败，表示不存在指定源的权限状态。
-
-incognito11+boolean否
-
-true表示获取隐私模式下以回调方式异步获取指定源的地理位置权限状态，false表示正常非隐私模式下以回调方式异步获取指定源的地理位置权限状态。
-
-默认值：false。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| origin | string | 是 | 指定源的字符串索引。 |
+| callback | AsyncCallback<boolean> | 是 | 返回指定源的地理位置权限状态。 获取成功，true表示已授权，false表示拒绝访问。 获取失败，表示不存在指定源的权限状态。 |
+| incognito11+ | boolean | 否 | true表示获取隐私模式下以回调方式异步获取指定源的地理位置权限状态，false表示正常非隐私模式下以回调方式异步获取指定源的地理位置权限状态。 默认值：false。 传入null或undefined时会抛出异常错误码401。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)、[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码](Webview错误码.md)、[通用错误码](通用错误码.md)。
 
-错误码ID错误信息17100011Invalid origin.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100011 | Invalid origin. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -195,8 +186,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### getAccessibleGeolocation
@@ -209,27 +198,25 @@ static getAccessibleGeolocation(origin: string, incognito?: boolean): Promise<bo
 
 **参数：**
 
-参数名类型必填说明originstring是指定源的字符串索引。incognito11+boolean否
-
-true表示获取隐私模式下以Promise方式异步获取指定源的地理位置权限状态，false表示正常非隐私模式下以Promise方式异步获取指定源的地理位置权限状态。
-
-默认值：false。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| origin | string | 是 | 指定源的字符串索引。 |
+| incognito11+ | boolean | 否 | true表示获取隐私模式下以Promise方式异步获取指定源的地理位置权限状态，false表示正常非隐私模式下以Promise方式异步获取指定源的地理位置权限状态。 默认值：false。 传入null或undefined时会抛出异常错误码401。 |
 
 **返回值：**
 
-类型说明Promise<boolean>
-
-Promise实例，用于获取指定源的权限状态。
-
-获取成功，true表示已授权，false表示拒绝访问。
-
-获取失败，表示不存在指定源的权限状态。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise实例，用于获取指定源的权限状态。 获取成功，true表示已授权，false表示拒绝访问。 获取失败，表示不存在指定源的权限状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)、[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码](Webview错误码.md)、[通用错误码](通用错误码.md)。
 
-错误码ID错误信息17100011Invalid origin.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100011 | Invalid origin. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -261,8 +248,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### getStoredGeolocation
@@ -275,17 +260,18 @@ static getStoredGeolocation(callback: AsyncCallback<Array<string>>, incognito?: 
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<Array<string>>是返回已存储地理位置权限状态的所有源信息。incognito11+boolean否
-
-true表示获取隐私模式下以回调方式异步获取已存储地理位置权限状态的所有源信息，false表示正常非隐私模式下以回调方式异步获取已存储地理位置权限状态的所有源信息。
-
-默认值：false。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<string>> | 是 | 返回已存储地理位置权限状态的所有源信息。 |
+| incognito11+ | boolean | 否 | true表示获取隐私模式下以回调方式异步获取已存储地理位置权限状态的所有源信息，false表示正常非隐私模式下以回调方式异步获取已存储地理位置权限状态的所有源信息。 默认值：false。 传入null或undefined时会抛出异常错误码401。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -318,8 +304,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### getStoredGeolocation
@@ -332,21 +316,23 @@ static getStoredGeolocation(incognito?: boolean): Promise<Array<string>>
 
 **参数：**
 
-参数名类型必填说明incognito11+boolean否
-
-true表示获取隐私模式下以Promise方式异步获取已存储地理位置权限状态的所有源信息，false表示正常非隐私模式下以Promise方式异步获取已存储地理位置权限状态的所有源信息。
-
-默认值：false。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| incognito11+ | boolean | 否 | true表示获取隐私模式下以Promise方式异步获取已存储地理位置权限状态的所有源信息，false表示正常非隐私模式下以Promise方式异步获取已存储地理位置权限状态的所有源信息。 默认值：false。 传入null或undefined时会抛出异常错误码401。 |
 
 **返回值：**
 
-类型说明Promise<Array<string>>Promise实例，用于获取已存储地理位置权限状态的所有源信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<string>> | Promise实例，用于获取已存储地理位置权限状态的所有源信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -378,8 +364,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### deleteAllGeolocation
@@ -392,13 +376,9 @@ static deleteAllGeolocation(incognito?: boolean): void
 
 **参数：**
 
-参数名类型必填说明incognito11+boolean否
-
-true表示获取隐私模式下清除所有来源的地理位置权限状态，false表示正常非隐私模式下清除所有来源的地理位置权限状态。
-
-默认值：false。
-
-传入null或undefined时为false。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| incognito11+ | boolean | 否 | true表示获取隐私模式下清除所有来源的地理位置权限状态，false表示正常非隐私模式下清除所有来源的地理位置权限状态。 默认值：false。 传入null或undefined时为false。 |
 
 **示例：**
 
@@ -424,6 +404,4 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```

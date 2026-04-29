@@ -16,4 +16,6 @@
 
 #### 文件汇总
 
-名称描述[oh_file_uri.h](../../capi/headers/oh_file_uri.h.md)提供uri和路径path之间的相互转换，目录uri获取，以及uri的有效性校验的方法。
+| 名称 | 描述 |
+| --- | --- |
+| [oh_file_uri.h](oh_file_uri.h.md) | 提供uri和路径path之间的相互转换，目录uri获取，以及uri的有效性校验的方法。 |

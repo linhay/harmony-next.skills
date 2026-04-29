@@ -10,4 +10,6 @@
 
 #### 文件汇总
 
-名称描述[ipc_cskeleton.h](../../capi/headers/ipc_cskeleton.h.md)提供IPC框架token ID、凭据、PID/UID、线程池配置等等功能C接口。
+| 名称 | 描述 |
+| --- | --- |
+| [ipc_cskeleton.h](ipc_cskeleton.h.md) | 提供IPC框架token ID、凭据、PID/UID、线程池配置等等功能C接口。 |

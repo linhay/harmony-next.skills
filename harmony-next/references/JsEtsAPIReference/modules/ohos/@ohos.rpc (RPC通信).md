@@ -22,15 +22,41 @@ import { rpc } from '@kit.IPCKit';
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
-名称值说明CHECK_PARAM_ERROR401检查参数失败。OS_MMAP_ERROR1900001执行系统调用mmap失败。OS_IOCTL_ERROR1900002在共享内存文件描述符上执行系统调用ioctl失败。WRITE_TO_ASHMEM_ERROR1900003向共享内存写数据失败。READ_FROM_ASHMEM_ERROR1900004从共享内存读数据失败。ONLY_PROXY_OBJECT_PERMITTED_ERROR1900005只有proxy对象允许该操作。ONLY_REMOTE_OBJECT_PERMITTED_ERROR1900006只有remote对象允许该操作。COMMUNICATION_ERROR1900007和远端对象进行进程间通信失败。PROXY_OR_REMOTE_OBJECT_INVALID_ERROR1900008非法的代理对象或者远端对象。WRITE_DATA_TO_MESSAGE_SEQUENCE_ERROR1900009向MessageSequence写数据失败。READ_DATA_FROM_MESSAGE_SEQUENCE_ERROR1900010读取MessageSequence数据失败。PARCEL_MEMORY_ALLOC_ERROR1900011序列化过程中内存分配失败。CALL_JS_METHOD_ERROR1900012执行JS回调方法失败。OS_DUP_ERROR1900013执行系统调用dup失败。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CHECK_PARAM_ERROR | 401 | 检查参数失败。 |
+| OS_MMAP_ERROR | 1900001 | 执行系统调用mmap失败。 |
+| OS_IOCTL_ERROR | 1900002 | 在共享内存文件描述符上执行系统调用ioctl失败。 |
+| WRITE_TO_ASHMEM_ERROR | 1900003 | 向共享内存写数据失败。 |
+| READ_FROM_ASHMEM_ERROR | 1900004 | 从共享内存读数据失败。 |
+| ONLY_PROXY_OBJECT_PERMITTED_ERROR | 1900005 | 只有proxy对象允许该操作。 |
+| ONLY_REMOTE_OBJECT_PERMITTED_ERROR | 1900006 | 只有remote对象允许该操作。 |
+| COMMUNICATION_ERROR | 1900007 | 和远端对象进行进程间通信失败。 |
+| PROXY_OR_REMOTE_OBJECT_INVALID_ERROR | 1900008 | 非法的代理对象或者远端对象。 |
+| WRITE_DATA_TO_MESSAGE_SEQUENCE_ERROR | 1900009 | 向MessageSequence写数据失败。 |
+| READ_DATA_FROM_MESSAGE_SEQUENCE_ERROR | 1900010 | 读取MessageSequence数据失败。 |
+| PARCEL_MEMORY_ALLOC_ERROR | 1900011 | 序列化过程中内存分配失败。 |
+| CALL_JS_METHOD_ERROR | 1900012 | 执行JS回调方法失败。 |
+| OS_DUP_ERROR | 1900013 | 执行系统调用dup失败。 |
 
 #### TypeCode12+
 
-从API version 12起，IPC新增[writeArrayBuffer](#ZH-CN_TOPIC_0000002529445269__writearraybuffer12)和[readArrayBuffer](#ZH-CN_TOPIC_0000002529445269__readarraybuffer12)方法传递ArrayBuffer数据，传递数据时通过具体类型值来分辨业务是以哪一种TypedArray去进行数据的读写。类型码对应数值及含义如下。
+从API version 12起，IPC新增[writeArrayBuffer](#ZH-CN_TOPIC_0000002553201241__writearraybuffer12)和[readArrayBuffer](#ZH-CN_TOPIC_0000002553201241__readarraybuffer12)方法传递ArrayBuffer数据，传递数据时通过具体类型值来分辨业务是以哪一种TypedArray去进行数据的读写。类型码对应数值及含义如下。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
-名称值说明INT8_ARRAY0TypedArray类型为INT8_ARRAY。UINT8_ARRAY1TypedArray类型为UINT8_ARRAY。INT16_ARRAY2TypedArray类型为INT16_ARRAY。UINT16_ARRAY3TypedArray类型为UINT16_ARRAY。INT32_ARRAY4TypedArray类型为INT32_ARRAY。UINT32_ARRAY5TypedArray类型为UINT32_ARRAY。FLOAT32_ARRAY6TypedArray类型为FLOAT32_ARRAY。FLOAT64_ARRAY7TypedArray类型为FLOAT64_ARRAY。BIGINT64_ARRAY8TypedArray类型为BIGINT64_ARRAY。BIGUINT64_ARRAY9TypedArray类型为BIGUINT64_ARRAY。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| INT8_ARRAY | 0 | TypedArray类型为INT8_ARRAY。 |
+| UINT8_ARRAY | 1 | TypedArray类型为UINT8_ARRAY。 |
+| INT16_ARRAY | 2 | TypedArray类型为INT16_ARRAY。 |
+| UINT16_ARRAY | 3 | TypedArray类型为UINT16_ARRAY。 |
+| INT32_ARRAY | 4 | TypedArray类型为INT32_ARRAY。 |
+| UINT32_ARRAY | 5 | TypedArray类型为UINT32_ARRAY。 |
+| FLOAT32_ARRAY | 6 | TypedArray类型为FLOAT32_ARRAY。 |
+| FLOAT64_ARRAY | 7 | TypedArray类型为FLOAT64_ARRAY。 |
+| BIGINT64_ARRAY | 8 | TypedArray类型为BIGINT64_ARRAY。 |
+| BIGUINT64_ARRAY | 9 | TypedArray类型为BIGUINT64_ARRAY。 |
 
 #### MessageSequence9+
 
@@ -46,7 +72,9 @@ static create(): MessageSequence
 
 **返回值：**
 
-类型说明[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)返回创建的MessageSequence对象。
+| 类型 | 说明 |
+| --- | --- |
+| MessageSequence | 返回创建的MessageSequence对象。 |
 
 **示例：**
 
@@ -97,27 +125,25 @@ try {
 
 writeRemoteObject(obj: IRemoteObject): void
 
-序列化远程对象并将其写入[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)对象。
+序列化远程对象并将其写入[MessageSequence](#ZH-CN_TOPIC_0000002553201241__messagesequence9)对象。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明obj[IRemoteObject](#ZH-CN_TOPIC_0000002529445269__iremoteobject)是要序列化并写入MessageSequence的远程对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| obj | IRemoteObject | 是 | 要序列化并写入MessageSequence的远程对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
-1900008The proxy or remote object is invalid.1900009Failed to write data to the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
+| 1900008 | The proxy or remote object is invalid. |
+| 1900009 | Failed to write data to the message sequence. |
 
 **示例：**
 
@@ -134,7 +160,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     option: rpc.MessageOption): boolean | Promise<boolean> {
     // 根据业务实际逻辑，进行相应处理
     return true;
-  }
 }
 
 try {
@@ -158,13 +183,18 @@ readRemoteObject(): IRemoteObject
 
 **返回值：**
 
-类型说明[IRemoteObject](#ZH-CN_TOPIC_0000002529445269__iremoteobject)读取到的远程对象。
+| 类型 | 说明 |
+| --- | --- |
+| IRemoteObject | 读取到的远程对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900008The proxy or remote object is invalid.1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900008 | The proxy or remote object is invalid. |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -181,7 +211,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     option: rpc.MessageOption): boolean | Promise<boolean> {
     // 根据业务实际逻辑，进行相应处理
     return true;
-  }
 }
 
 try {
@@ -207,24 +236,17 @@ writeInterfaceToken(token: string): void
 
 **参数：**
 
-参数名类型必填说明tokenstring是字符串类型描述符，其长度应小于40960字节。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| token | string | 是 | 字符串类型描述符，其长度应小于40960字节。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.The string length exceeds 40960 bytes;
-
-4.The number of bytes copied to the buffer is different from the length of the obtained string.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The string length is greater than or equal to 40960 bytes; 4.The number of bytes copied to the buffer is different from the length of the obtained string. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -254,13 +276,17 @@ readInterfaceToken(): string
 
 **返回值：**
 
-类型说明string返回读取到的接口描述符。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回读取到的接口描述符。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -291,7 +317,9 @@ getSize(): number
 
 **返回值：**
 
-类型说明number获取的MessageSequence实例的数据大小。以字节为单位。
+| 类型 | 说明 |
+| --- | --- |
+| number | 获取的MessageSequence实例的数据大小。以字节为单位。 |
 
 **示例：**
 
@@ -321,7 +349,9 @@ getCapacity(): number
 
 **返回值：**
 
-类型说明number获取的MessageSequence实例的容量大小。以字节为单位。
+| 类型 | 说明 |
+| --- | --- |
+| number | 获取的MessageSequence实例的容量大小。以字节为单位。 |
 
 **示例：**
 
@@ -351,20 +381,17 @@ setSize(size: number): void
 
 **参数：**
 
-参数名类型必填说明sizenumber是MessageSequence实例的数据大小。以字节为单位。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | number | 是 | MessageSequence实例的数据大小。以字节为单位。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -395,21 +422,19 @@ setCapacity(size: number): void
 
 **参数：**
 
-参数名类型必填说明sizenumber是MessageSequence实例的存储容量。以字节为单位。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | number | 是 | MessageSequence实例的存储容量。以字节为单位。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
-1900009Failed to write data to the message sequence.1900011Memory allocation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
+| 1900009 | Failed to write data to the message sequence. |
+| 1900011 | Memory allocation failed. |
 
 **示例：**
 
@@ -438,7 +463,9 @@ getWritableBytes(): number
 
 **返回值：**
 
-类型说明number获取到的MessageSequence实例的可写字节空间。以字节为单位。
+| 类型 | 说明 |
+| --- | --- |
+| number | 获取到的MessageSequence实例的可写字节空间。以字节为单位。 |
 
 **示例：**
 
@@ -469,7 +496,9 @@ getReadableBytes(): number
 
 **返回值：**
 
-类型说明number获取到的MessageSequence实例的可读字节空间。以字节为单位。
+| 类型 | 说明 |
+| --- | --- |
+| number | 获取到的MessageSequence实例的可读字节空间。以字节为单位。 |
 
 **示例：**
 
@@ -500,7 +529,9 @@ getReadPosition(): number
 
 **返回值：**
 
-类型说明number返回MessageSequence实例中的当前读取位置。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回MessageSequence实例中的当前读取位置。 |
 
 **示例：**
 
@@ -531,7 +562,9 @@ getWritePosition(): number
 
 **返回值：**
 
-类型说明number返回MessageSequence实例中的当前写入位置。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回MessageSequence实例中的当前写入位置。 |
 
 **示例：**
 
@@ -562,20 +595,17 @@ rewindRead(pos: number): void
 
 **参数：**
 
-参数名类型必填说明posnumber是开始读取数据的目标位置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pos | number | 是 | 开始读取数据的目标位置。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 1900010Failed to read data from the message sequence.
 
 **示例：**
@@ -611,20 +641,17 @@ rewindWrite(pos: number): void
 
 **参数：**
 
-参数名类型必填说明posnumber是开始写入数据的目标位置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pos | number | 是 | 开始写入数据的目标位置。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -658,20 +685,17 @@ writeByte(val: number): void
 
 **参数：**
 
-参数名类型必填说明valnumber是要写入的字节值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | number | 是 | 要写入的字节值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -701,13 +725,17 @@ readByte(): number
 
 **返回值：**
 
-类型说明number返回字节值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回字节值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -738,20 +766,17 @@ writeShort(val: number): void
 
 **参数：**
 
-参数名类型必填说明valnumber是要写入的短整数值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | number | 是 | 要写入的短整数值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -781,13 +806,17 @@ readShort(): number
 
 **返回值：**
 
-类型说明number返回短整数值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回短整数值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -818,20 +847,17 @@ writeInt(val: number): void
 
 **参数：**
 
-参数名类型必填说明valnumber是要写入的整数值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | number | 是 | 要写入的整数值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -861,13 +887,17 @@ readInt(): number
 
 **返回值：**
 
-类型说明number返回整数值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回整数值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -898,20 +928,17 @@ writeLong(val: number): void
 
 **参数：**
 
-参数名类型必填说明valnumber是要写入的长整数值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | number | 是 | 要写入的长整数值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -941,13 +968,17 @@ readLong(): number
 
 **返回值：**
 
-类型说明number返回长整数值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回长整数值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -978,20 +1009,17 @@ writeFloat(val: number): void
 
 **参数：**
 
-参数名类型必填说明valnumber是要写入的双精度浮点值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | number | 是 | 要写入的双精度浮点值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -1021,13 +1049,17 @@ readFloat(): number
 
 **返回值：**
 
-类型说明number返回双精度浮点值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回双精度浮点值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -1058,20 +1090,17 @@ writeDouble(val: number): void
 
 **参数：**
 
-参数名类型必填说明valnumber是要写入的双精度浮点值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | number | 是 | 要写入的双精度浮点值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -1101,13 +1130,17 @@ readDouble(): number
 
 **返回值：**
 
-类型说明number返回双精度浮点值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回双精度浮点值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -1138,20 +1171,17 @@ writeBoolean(val: boolean): void
 
 **参数：**
 
-参数名类型必填说明valboolean是要写入的布尔值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | boolean | 是 | 要写入的布尔值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -1181,13 +1211,17 @@ readBoolean(): boolean
 
 **返回值：**
 
-类型说明boolean返回读取到的布尔值。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回读取到的布尔值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -1218,20 +1252,17 @@ writeChar(val: number): void
 
 **参数：**
 
-参数名类型必填说明valnumber是要写入的单个字符值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | number | 是 | 要写入的单个字符值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -1261,13 +1292,17 @@ readChar(): number
 
 **返回值：**
 
-类型说明number返回单个字符值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回单个字符值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -1298,24 +1333,17 @@ writeString(val: string): void
 
 **参数：**
 
-参数名类型必填说明valstring是要写入的字符串值，其长度应小于40960字节。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | string | 是 | 要写入的字符串值，其长度应小于40960字节。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.The string length exceeds 40960 bytes;
-
-4.The number of bytes copied to the buffer is different from the length of the obtained string.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The string length is greater than or equal to 40960 bytes; 4.The number of bytes copied to the buffer is different from the length of the obtained string. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -1345,13 +1373,17 @@ readString(): string
 
 **返回值：**
 
-类型说明string返回字符串值。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回字符串值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -1382,20 +1414,17 @@ writeParcelable(val: Parcelable): void
 
 **参数：**
 
-参数名类型必填说明val[Parcelable](#ZH-CN_TOPIC_0000002529445269__parcelable9)是要写入的可序列对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | Parcelable | 是 | 要写入的可序列对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -1422,7 +1451,6 @@ class MyParcelable implements rpc.Parcelable {
     this.str = messageSequence.readString();
     return true;
   }
-}
 
 try {
   let parcelable = new MyParcelable(1, "aaa");
@@ -1445,19 +1473,19 @@ readParcelable(dataIn: Parcelable): void
 
 **参数：**
 
-参数名类型必填说明dataIn[Parcelable](#ZH-CN_TOPIC_0000002529445269__parcelable9)是需要从MessageSequence读取成员变量的对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | Parcelable | 是 | 需要从MessageSequence读取成员变量的对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect.
-
-1900010Failed to read data from the message sequence.1900012Failed to call the JS callback function.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect. |
+| 1900010 | Failed to read data from the message sequence. |
+| 1900012 | Failed to call the JS callback function. |
 
 **示例：**
 
@@ -1483,7 +1511,6 @@ class MyParcelable implements rpc.Parcelable {
     this.str = messageSequence.readString();
     return true;
   }
-}
 
 try {
   let parcelable = new MyParcelable(1, "aaa");
@@ -1508,26 +1535,17 @@ writeByteArray(byteArray: number[]): void
 
 **参数：**
 
-参数名类型必填说明byteArraynumber[]是要写入的字节数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| byteArray | number[] | 是 | 要写入的字节数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match;
-
-4.The element does not exist in the array.
-
-5.The type of the element in the array is incorrect.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The element does not exist in the array. 5.The type of the element in the array is incorrect. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -1558,22 +1576,17 @@ readByteArray(dataIn: number[]): void
 
 **参数：**
 
-参数名类型必填说明dataInnumber[]是要读取的字节数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | number[] | 是 | 要读取的字节数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match. |
 1900010Failed to read data from the message sequence.
 
 **示例：**
@@ -1607,13 +1620,17 @@ readByteArray(): number[]
 
 **返回值：**
 
-类型说明number[]返回字节数组。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | 返回字节数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -1645,26 +1662,17 @@ writeShortArray(shortArray: number[]): void
 
 **参数：**
 
-参数名类型必填说明shortArraynumber[]是要写入的短整数数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| shortArray | number[] | 是 | 要写入的短整数数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match;
-
-4.The element does not exist in the array;
-
-5.The type of the element in the array is incorrect.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The element does not exist in the array; 5.The type of the element in the array is incorrect. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -1694,22 +1702,17 @@ readShortArray(dataIn: number[]): void
 
 **参数：**
 
-参数名类型必填说明dataInnumber[]是要读取的短整数数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | number[] | 是 | 要读取的短整数数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match. |
 1900010Failed to read data from the message sequence.
 
 **示例：**
@@ -1742,13 +1745,17 @@ readShortArray(): number[]
 
 **返回值：**
 
-类型说明number[]返回短整数数组。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | 返回短整数数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -1779,26 +1786,17 @@ writeIntArray(intArray: number[]): void
 
 **参数：**
 
-参数名类型必填说明intArraynumber[]是要写入的整数数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| intArray | number[] | 是 | 要写入的整数数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match;
-
-4.The element does not exist in the array;
-
-5.The type of the element in the array is incorrect.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The element does not exist in the array; 5.The type of the element in the array is incorrect. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -1828,22 +1826,17 @@ readIntArray(dataIn: number[]): void
 
 **参数：**
 
-参数名类型必填说明dataInnumber[]是要读取的整数数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | number[] | 是 | 要读取的整数数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match. |
 1900010Failed to read data from the message sequence.
 
 **示例：**
@@ -1876,13 +1869,17 @@ readIntArray(): number[]
 
 **返回值：**
 
-类型说明number[]返回整数数组。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | 返回整数数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -1913,26 +1910,17 @@ writeLongArray(longArray: number[]): void
 
 **参数：**
 
-参数名类型必填说明longArraynumber[]是要写入的长整数数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| longArray | number[] | 是 | 要写入的长整数数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match;
-
-4.The element does not exist in the array;
-
-5.The type of the element in the array is incorrect.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The element does not exist in the array; 5.The type of the element in the array is incorrect. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -1962,22 +1950,17 @@ readLongArray(dataIn: number[]): void
 
 **参数：**
 
-参数名类型必填说明dataInnumber[]是要读取的长整数数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | number[] | 是 | 要读取的长整数数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match. |
 1900010Failed to read data from the message sequence.
 
 **示例：**
@@ -2010,13 +1993,17 @@ readLongArray(): number[]
 
 **返回值：**
 
-类型说明number[]返回长整数数组。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | 返回长整数数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -2047,26 +2034,17 @@ writeFloatArray(floatArray: number[]): void
 
 **参数：**
 
-参数名类型必填说明floatArraynumber[]是要写入的双精度浮点数组。由于系统内部对float类型的数据是按照double处理的，使用时对于数组所占的总字节数应按照double类型来计算。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| floatArray | number[] | 是 | 要写入的双精度浮点数组。由于系统内部对float类型的数据是按照double处理的，使用时对于数组所占的总字节数应按照double类型来计算。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match;
-
-4.The element does not exist in the array;
-
-5.The type of the element in the array is incorrect.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The element does not exist in the array; 5.The type of the element in the array is incorrect. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -2096,22 +2074,17 @@ readFloatArray(dataIn: number[]): void
 
 **参数：**
 
-参数名类型必填说明dataInnumber[]是要读取的双精度浮点数组。由于系统内部对float类型的数据是按照double处理的，使用时对于数组所占的总字节数应按照double类型来计算。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | number[] | 是 | 要读取的双精度浮点数组。由于系统内部对float类型的数据是按照double处理的，使用时对于数组所占的总字节数应按照double类型来计算。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match. |
 1900010Failed to read data from the message sequence.
 
 **示例：**
@@ -2144,13 +2117,17 @@ readFloatArray(): number[]
 
 **返回值：**
 
-类型说明number[]返回双精度浮点数组。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | 返回双精度浮点数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -2181,26 +2158,17 @@ writeDoubleArray(doubleArray: number[]): void
 
 **参数：**
 
-参数名类型必填说明doubleArraynumber[]是要写入的双精度浮点数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| doubleArray | number[] | 是 | 要写入的双精度浮点数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match;
-
-4.The element does not exist in the array;
-
-5.The type of the element in the array is incorrect.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The element does not exist in the array; 5.The type of the element in the array is incorrect. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -2230,22 +2198,17 @@ readDoubleArray(dataIn: number[]): void
 
 **参数：**
 
-参数名类型必填说明dataInnumber[]是要读取的双精度浮点数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | number[] | 是 | 要读取的双精度浮点数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match. |
 1900010Failed to read data from the message sequence.
 
 **示例：**
@@ -2278,13 +2241,17 @@ readDoubleArray(): number[]
 
 **返回值：**
 
-类型说明number[]返回双精度浮点数组。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | 返回双精度浮点数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -2315,24 +2282,17 @@ writeBooleanArray(booleanArray: boolean[]): void
 
 **参数：**
 
-参数名类型必填说明booleanArrayboolean[]是要写入的布尔数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| booleanArray | boolean[] | 是 | 要写入的布尔数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match;
-
-4.The element does not exist in the array.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The element does not exist in the array. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -2362,22 +2322,17 @@ readBooleanArray(dataIn: boolean[]): void
 
 **参数：**
 
-参数名类型必填说明dataInboolean[]是要读取的布尔数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | boolean[] | 是 | 要读取的布尔数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match. |
 1900010Failed to read data from the message sequence.
 
 **示例：**
@@ -2410,13 +2365,17 @@ readBooleanArray(): boolean[]
 
 **返回值：**
 
-类型说明boolean[]返回布尔数组。
+| 类型 | 说明 |
+| --- | --- |
+| boolean[] | 返回布尔数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -2447,24 +2406,17 @@ writeCharArray(charArray: number[]): void
 
 **参数：**
 
-参数名类型必填说明charArraynumber[]是要写入的单个字符数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| charArray | number[] | 是 | 要写入的单个字符数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match;
-
-4.The element does not exist in the array.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The element does not exist in the array. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -2494,22 +2446,17 @@ readCharArray(dataIn: number[]): void
 
 **参数：**
 
-参数名类型必填说明dataInnumber[]是要读取的单个字符数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | number[] | 是 | 要读取的单个字符数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match. |
 1900010Failed to read data from the message sequence.
 
 **示例：**
@@ -2542,13 +2489,17 @@ readCharArray(): number[]
 
 **返回值：**
 
-类型说明number[]返回单个字符数组。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | 返回单个字符数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -2579,26 +2530,17 @@ writeStringArray(stringArray: string[]): void
 
 **参数：**
 
-参数名类型必填说明stringArraystring[]是要写入的字符串数组，数组单个元素的长度应小于40960字节。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| stringArray | string[] | 是 | 要写入的字符串数组，数组单个元素的长度应小于40960字节。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match;
-
-4.The string length exceeds 40960 bytes;
-
-5.The number of bytes copied to the buffer is different from the length of the obtained string.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The string length is greater than or equal to 40960 bytes; 5.The number of bytes copied to the buffer is different from the length of the obtained string. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -2628,22 +2570,17 @@ readStringArray(dataIn: string[]): void
 
 **参数：**
 
-参数名类型必填说明dataInstring[]是要读取的字符串数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | string[] | 是 | 要读取的字符串数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match. |
 1900010Failed to read data from the message sequence.
 
 **示例：**
@@ -2676,13 +2613,17 @@ readStringArray(): string[]
 
 **返回值：**
 
-类型说明string[]返回字符串数组。
+| 类型 | 说明 |
+| --- | --- |
+| string[] | 返回字符串数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -2713,9 +2654,11 @@ writeNoException(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900009Failed to write data to the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900009 | Failed to write data to the message sequence. |
 
 **示例：**
 
@@ -2744,8 +2687,6 @@ class TestRemoteObject extends rpc.RemoteObject {
       hilog.error(0x0000, 'testTag', 'RpcServer: unknown code: ' + code);
       return false;
     }
-  }
-}
 ```
 
 #### readException9+
@@ -2758,9 +2699,11 @@ readException(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -2825,7 +2768,7 @@ try {
           hilog.error(0x0000, 'testTag', 'sendMessageRequest failed, errCode: ' + result.errCode);
         }
       }).catch((e: Error) => {
-        hilog.error(0x0000, 'testTag', 'sendMessageRequest got exception: ' + e);
+        hilog.error(0x0000, 'testTag', 'sendMessageRequest got exception: ' + JSON.stringify(e));
       }).finally (() => {
         hilog.info(0x0000, 'testTag', 'sendMessageRequest ends, reclaim parcel');
         data.reclaim();
@@ -2849,24 +2792,17 @@ writeParcelableArray(parcelableArray: Parcelable[]): void
 
 **参数：**
 
-参数名类型必填说明parcelableArray[Parcelable](#ZH-CN_TOPIC_0000002529445269__parcelable9)[]是要写入的可序列化对象数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| parcelableArray | Parcelable[] | 是 | 要写入的可序列化对象数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match;
-
-4.The element does not exist in the array.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The element does not exist in the array. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -2893,7 +2829,6 @@ class MyParcelable implements rpc.Parcelable {
     this.str = messageSequence.readString();
     return true;
   }
-}
 
 try {
   let parcelable = new MyParcelable(1, "aaa");
@@ -2919,27 +2854,19 @@ readParcelableArray(parcelableArray: Parcelable[]): void
 
 **参数：**
 
-参数名类型必填说明parcelableArray[Parcelable](#ZH-CN_TOPIC_0000002529445269__parcelable9)[]是要读取的可序列化对象数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| parcelableArray | Parcelable[] | 是 | 要读取的可序列化对象数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match;
-
-4.The length of the array passed when reading is not equal to the length passed when writing to the array;
-
-5.The element does not exist in the array.
-
-1900010Failed to read data from the message sequence.1900012Failed to call the JS callback function.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The length of the array passed when reading is not equal to the length passed when writing to the array; 5.The element does not exist in the array. |
+| 1900010 | Failed to read data from the message sequence. |
+| 1900012 | Failed to call the JS callback function. |
 
 **示例：**
 
@@ -2965,7 +2892,6 @@ class MyParcelable implements rpc.Parcelable {
     this.str = messageSequence.readString();
     return true;
   }
-}
 
 try {
   let parcelable = new MyParcelable(1, "aaa");
@@ -2993,26 +2919,17 @@ writeRemoteObjectArray(objectArray: IRemoteObject[]): void
 
 **参数：**
 
-参数名类型必填说明objectArray[IRemoteObject](#ZH-CN_TOPIC_0000002529445269__iremoteobject)[]是要写入MessageSequence的IRemoteObject对象数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| objectArray | IRemoteObject[] | 是 | 要写入MessageSequence的IRemoteObject对象数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match;
-
-4.The element does not exist in the array;
-
-5.The obtained remoteObject is null.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The element does not exist in the array; 5.The obtained remoteObject is null. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -3031,7 +2948,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     // 根据业务实际逻辑，进行相应处理
     return true;
   }
-}
 
 try {
   let a = [new TestRemoteObject("testObject1"), new TestRemoteObject("testObject2"), new TestRemoteObject("testObject3")];
@@ -3054,24 +2970,17 @@ readRemoteObjectArray(objects: IRemoteObject[]): void
 
 **参数：**
 
-参数名类型必填说明objects[IRemoteObject](#ZH-CN_TOPIC_0000002529445269__iremoteobject)[]是从MessageSequence读取的IRemoteObject对象数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| objects | IRemoteObject[] | 是 | 从MessageSequence读取的IRemoteObject对象数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match;
-
-4.The length of the array passed when reading is not equal to the length passed when writing to the array.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The length of the array passed when reading is not equal to the length passed when writing to the array. |
 1900010Failed to read data from the message sequence.
 
 **示例：**
@@ -3089,7 +2998,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     option: rpc.MessageOption): boolean | Promise<boolean> {
     // 根据业务实际逻辑，进行相应处理
     return true;
-  }
 }
 
 try {
@@ -3116,13 +3024,17 @@ readRemoteObjectArray(): IRemoteObject[]
 
 **返回值：**
 
-类型说明[IRemoteObject](#ZH-CN_TOPIC_0000002529445269__iremoteobject)[]返回IRemoteObject对象数组；当写入的是空数组时，返回的是null。
+| 类型 | 说明 |
+| --- | --- |
+| IRemoteObject[] | 返回IRemoteObject对象数组；当写入的是空数组时，返回的是null。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -3139,7 +3051,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     option: rpc.MessageOption): boolean | Promise<boolean> {
     // 根据业务实际逻辑，进行相应处理
     return true;
-  }
 }
 
 try {
@@ -3164,19 +3075,17 @@ static closeFileDescriptor(fd: number): void
 
 **参数：**
 
-参数名类型必填说明fdnumber是要关闭的文件描述符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fd | number | 是 | 要关闭的文件描述符。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 
 **示例：**
 
@@ -3207,24 +3116,23 @@ static dupFileDescriptor(fd: number): number
 
 **参数：**
 
-参数名类型必填说明fdnumber是表示已存在的文件描述符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fd | number | 是 | 表示已存在的文件描述符。 |
 
 **返回值：**
 
-类型说明number返回新的文件描述符。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回新的文件描述符。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 1900013Failed to call dup.
 
 **示例：**
@@ -3256,7 +3164,9 @@ containFileDescriptors(): boolean
 
 **返回值：**
 
-类型说明booleantrue：包含文件描述符，false：不包含文件描述符。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：包含文件描述符，false：不包含文件描述符。 |
 
 **示例：**
 
@@ -3289,20 +3199,17 @@ writeFileDescriptor(fd: number): void
 
 **参数：**
 
-参数名类型必填说明fdnumber是文件描述符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fd | number | 是 | 文件描述符。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -3335,13 +3242,17 @@ readFileDescriptor(): number
 
 **返回值：**
 
-类型说明number返回文件描述符。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回文件描述符。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -3375,20 +3286,17 @@ writeAshmem(ashmem: Ashmem): void
 
 **参数：**
 
-参数名类型必填说明ashmem[Ashmem](#ZH-CN_TOPIC_0000002529445269__ashmem8)是要写入MessageSequence的匿名共享对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ashmem | Ashmem | 是 | 要写入MessageSequence的匿名共享对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter is not an instance of the Ashmem object.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter is not an instance of the Ashmem object. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -3431,13 +3339,17 @@ readAshmem(): Ashmem
 
 **返回值：**
 
-类型说明[Ashmem](#ZH-CN_TOPIC_0000002529445269__ashmem8)返回匿名共享对象。
+| 类型 | 说明 |
+| --- | --- |
+| Ashmem | 返回匿名共享对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900010Failed to read data from the message sequence.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -3489,7 +3401,9 @@ getRawDataCapacity(): number
 
 **返回值：**
 
-类型说明number返回MessageSequence可以容纳的最大原始数据量，即128MB。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回MessageSequence可以容纳的最大原始数据量，即128MB。 |
 
 **示例：**
 
@@ -3515,7 +3429,8 @@ writeRawData(rawData: number[], size: number): void
 
 将原始数据写入MessageSequence对象。
 
-从API version 9 开始支持，API version 11 开始废弃，建议使用[writeRawDataBuffer](#ZH-CN_TOPIC_0000002529445269__writerawdatabuffer11)替代。
+
+从API version 9 开始支持，API version 11 开始废弃，建议使用[writeRawDataBuffer](#ZH-CN_TOPIC_0000002553201241__writerawdatabuffer11)替代。
 
 该接口是一次性接口，不允许在一次parcel通信中多次调用该接口。
 
@@ -3525,34 +3440,18 @@ writeRawData(rawData: number[], size: number): void
 
 **参数：**
 
-参数名类型必填说明rawDatanumber[]是要写入的原始数据，大小不能超过128MB。sizenumber是发送的原始数据大小，以字节为单位。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rawData | number[] | 是 | 要写入的原始数据，大小不能超过128MB。 |
+| size | number | 是 | 发送的原始数据大小，以字节为单位。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match;
-
-4.The transferred size cannot be obtained;
-
-5.The transferred size is less than or equal to 0;
-
-6.The element does not exist in the array;
-
-7.Failed to obtain typedArray information;
-
-8.The array is not of type int32;
-
-9.The length of typedarray is smaller than the size of the original data sent.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The transferred size cannot be obtained; 5.The transferred size is less than or equal to 0; 6.The element does not exist in the array; 7.Failed to obtain typedArray information; 8.The array is not of type int32; 9.The length of typedarray is smaller than the size of the original data sent. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -3587,28 +3486,18 @@ writeRawDataBuffer(rawData: ArrayBuffer, size: number): void
 
 **参数：**
 
-参数名类型必填说明rawDataArrayBuffer是要写入的原始数据，大小不能超过128MB。sizenumber是发送的原始数据大小，以字节为单位。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rawData | ArrayBuffer | 是 | 要写入的原始数据，大小不能超过128MB。 |
+| size | number | 是 | 发送的原始数据大小，以字节为单位。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.Failed to obtain arrayBuffer information;
-
-4.The transferred size cannot be obtained;
-
-5.The transferred size is less than or equal to 0;
-
-6.The transferred size is greater than the byte length of ArrayBuffer.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.Failed to obtain arrayBuffer information; 4.The transferred size cannot be obtained; 5.The transferred size is less than or equal to 0; 6.The transferred size is greater than the byte length of ArrayBuffer. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -3640,30 +3529,30 @@ readRawData(size: number): number[]
 
 从MessageSequence读取原始数据。
 
-从API version 9 开始支持，API version 11 开始废弃，建议使用[readRawDataBuffer](#ZH-CN_TOPIC_0000002529445269__readrawdatabuffer11)替代。
+
+从API version 9 开始支持，API version 11 开始废弃，建议使用[readRawDataBuffer](#ZH-CN_TOPIC_0000002553201241__readrawdatabuffer11)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明sizenumber是要读取的原始数据的大小。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | number | 是 | 要读取的原始数据的大小。 |
 
 **返回值：**
 
-类型说明number[]返回原始数据（以字节为单位）。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | 返回原始数据（以字节为单位）。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 1900010Failed to read data from the message sequence.
 
 **示例：**
@@ -3697,24 +3586,23 @@ readRawDataBuffer(size: number): ArrayBuffer
 
 **参数：**
 
-参数名类型必填说明sizenumber是要读取的原始数据的大小。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | number | 是 | 要读取的原始数据的大小。 |
 
 **返回值：**
 
-类型说明ArrayBuffer返回原始数据（以字节为单位）。
+| 类型 | 说明 |
+| --- | --- |
+| ArrayBuffer | 返回原始数据（以字节为单位）。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 1900010Failed to read data from the message sequence.
 
 **示例：**
@@ -3753,26 +3641,18 @@ writeArrayBuffer(buf: ArrayBuffer, typeCode: TypeCode): void
 
 **参数：**
 
-参数名类型必填说明bufArrayBuffer是要写入的ArrayBuffer数据。typeCode[TypeCode](#ZH-CN_TOPIC_0000002529445269__typecode12)是ArrayBuffer数据具体是以哪一种TypedArray来访问和操作(会根据业务传递的类型枚举值去决定底层的写入方式，需要业务正确传递枚举值。)
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| buf | ArrayBuffer | 是 | 要写入的ArrayBuffer数据。 |
+| typeCode | TypeCode | 是 | ArrayBuffer数据具体是以哪一种TypedArray来访问和操作(会根据业务传递的类型枚举值去决定底层的写入方式，需要业务正确传递枚举值。) |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The parameter is an empty array;
-
-2.The number of parameters is incorrect;
-
-3.The parameter type does not match;
-
-4.The obtained value of typeCode is incorrect;
-
-5.Failed to obtain arrayBuffer information.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The obtained value of typeCode is incorrect; 5.Failed to obtain arrayBuffer information. |
 1900009Failed to write data to the message sequence.
 
 **示例：**
@@ -3808,26 +3688,23 @@ readArrayBuffer(typeCode: TypeCode): ArrayBuffer
 
 **参数：**
 
-参数名类型必填说明typeCode[TypeCode](#ZH-CN_TOPIC_0000002529445269__typecode12)是ArrayBuffer数据具体是以哪一种TypedArray来访问和操作(会根据业务传递的类型枚举值去决定底层的读取方式，需要业务正确传递枚举值，读写枚举值不匹配会导致数据异常。)
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| typeCode | TypeCode | 是 | ArrayBuffer数据具体是以哪一种TypedArray来访问和操作(会根据业务传递的类型枚举值去决定底层的读取方式，需要业务正确传递枚举值，读写枚举值不匹配会导致数据异常。) |
 
 **返回值：**
 
-类型说明ArrayBuffer返回ArrayBuffer类型数据（以字节为单位）。
+| 类型 | 说明 |
+| --- | --- |
+| ArrayBuffer | 返回ArrayBuffer类型数据（以字节为单位）。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.The obtained value of typeCode is incorrect;
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The obtained value of typeCode is incorrect; |
 1900010Failed to read data from the message sequence.
 
 **示例：**
@@ -3860,7 +3737,10 @@ try {
 
 在RPC过程中，发送方可以使用MessageParcel提供的写方法，将待发送的数据以特定格式写入该对象。接收方可以使用MessageParcel提供的读方法从该对象中读取特定格式的数据。数据格式包括：基础类型及数组、IPC对象、接口描述符和自定义序列化对象。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[MessageSequence](#ZH-CN_TOPIC_0000002553201241__messagesequence9)替代。
+
+**系统能力：**SystemCapability.Communication.IPC.Core
 
 #### create(deprecated)
 
@@ -3868,13 +3748,16 @@ static create(): MessageParcel
 
 静态方法，创建MessageParcel对象。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[create](#ZH-CN_TOPIC_0000002529445269__create9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[create](#ZH-CN_TOPIC_0000002553201241__create9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)返回创建的MessageParcel对象。
+| 类型 | 说明 |
+| --- | --- |
+| MessageParcel | 返回创建的MessageParcel对象。 |
 
 **示例：**
 
@@ -3899,7 +3782,8 @@ reclaim(): void
 
 释放不再使用的MessageParcel对象。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[reclaim](#ZH-CN_TOPIC_0000002529445269__reclaim9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[reclaim](#ZH-CN_TOPIC_0000002553201241__reclaim9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
@@ -3923,17 +3807,22 @@ writeRemoteObject(object: IRemoteObject): boolean
 
 序列化远程对象并将其写入MessageParcel对象。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeRemoteObject](#ZH-CN_TOPIC_0000002529445269__writeremoteobject9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeRemoteObject](#ZH-CN_TOPIC_0000002553201241__writeremoteobject9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明object[IRemoteObject](#ZH-CN_TOPIC_0000002529445269__iremoteobject)是要序列化并写入MessageParcel的远程对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| object | IRemoteObject | 是 | 要序列化并写入MessageParcel的远程对象。 |
 
 **返回值：**
 
-类型说明booleantrue：操作成功，false：操作失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：操作成功，false：操作失败。 |
 
 **示例：**
 
@@ -3949,7 +3838,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     // 根据业务实际逻辑，进行相应处理
     return true;
   }
-}
 
 try {
   let data = rpc.MessageParcel.create();
@@ -3966,13 +3854,16 @@ readRemoteObject(): IRemoteObject
 
 从MessageParcel读取远程对象。此方法用于反序列化MessageParcel对象以生成IRemoteObject。远程对象按写入MessageParcel的顺序读取。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readRemoteObject](#ZH-CN_TOPIC_0000002529445269__readremoteobject9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readRemoteObject](#ZH-CN_TOPIC_0000002553201241__readremoteobject9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明[IRemoteObject](#ZH-CN_TOPIC_0000002529445269__iremoteobject)读取到的远程对象。
+| 类型 | 说明 |
+| --- | --- |
+| IRemoteObject | 读取到的远程对象。 |
 
 **示例：**
 
@@ -3989,7 +3880,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     // 根据业务实际逻辑，进行相应处理
     return true;
   }
-}
 
 try {
   let data = rpc.MessageParcel.create();
@@ -4008,17 +3898,22 @@ writeInterfaceToken(token: string): boolean
 
 将接口描述符写入MessageParcel对象，远端对象可使用该信息校验本次通信。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeInterfaceToken](#ZH-CN_TOPIC_0000002529445269__writeinterfacetoken9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeInterfaceToken](#ZH-CN_TOPIC_0000002553201241__writeinterfacetoken9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明tokenstring是字符串类型描述符，其长度应小于40960字节。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| token | string | 是 | 字符串类型描述符，其长度应小于40960字节。 |
 
 **返回值：**
 
-类型说明booleantrue：操作成功，false：操作失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：操作成功，false：操作失败。 |
 
 **示例：**
 
@@ -4041,13 +3936,16 @@ readInterfaceToken(): string
 
 从MessageParcel中读取接口描述符，接口描述符按写入MessageParcel的顺序读取，本地对象可使用该信息检验本次通信。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readInterfaceToken](#ZH-CN_TOPIC_0000002529445269__readinterfacetoken9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readInterfaceToken](#ZH-CN_TOPIC_0000002553201241__readinterfacetoken9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明string返回读取到的接口描述符。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回读取到的接口描述符。 |
 
 **示例：**
 
@@ -4071,13 +3969,16 @@ getSize(): number
 
 获取当前MessageParcel的数据大小。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[getSize](#ZH-CN_TOPIC_0000002529445269__getsize9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[getSize](#ZH-CN_TOPIC_0000002553201241__getsize9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number获取的MessageParcel的数据大小。以字节为单位。
+| 类型 | 说明 |
+| --- | --- |
+| number | 获取的MessageParcel的数据大小。以字节为单位。 |
 
 **示例：**
 
@@ -4101,13 +4002,16 @@ getCapacity(): number
 
 获取当前MessageParcel的容量。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[getCapacity](#ZH-CN_TOPIC_0000002529445269__getcapacity9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[getCapacity](#ZH-CN_TOPIC_0000002553201241__getcapacity9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number获取的MessageParcel的容量大小。以字节为单位。
+| 类型 | 说明 |
+| --- | --- |
+| number | 获取的MessageParcel的容量大小。以字节为单位。 |
 
 **示例：**
 
@@ -4116,7 +4020,6 @@ import { rpc } from '@kit.IPCKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 
 try {
-  let data = rpc.MessageParcel.create();
   let data = rpc.MessageParcel.create();
   let result = data.getCapacity();
   hilog.info(0x0000, 'testTag', 'capacity is ' + result);
@@ -4131,17 +4034,22 @@ setSize(size: number): boolean
 
 设置MessageParcel实例中包含的数据大小。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[setSize](#ZH-CN_TOPIC_0000002529445269__setsize9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[setSize](#ZH-CN_TOPIC_0000002553201241__setsize9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明sizenumber是MessageParcel实例的数据大小。以字节为单位。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | number | 是 | MessageParcel实例的数据大小。以字节为单位。 |
 
 **返回值：**
 
-类型说明booleantrue：设置成功，false：设置失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：设置成功，false：设置失败。 |
 
 **示例：**
 
@@ -4164,17 +4072,22 @@ setCapacity(size: number): boolean
 
 设置MessageParcel实例的存储容量。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[setCapacity](#ZH-CN_TOPIC_0000002529445269__setcapacity9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[setCapacity](#ZH-CN_TOPIC_0000002553201241__setcapacity9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明sizenumber是MessageParcel实例的存储容量。以字节为单位。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | number | 是 | MessageParcel实例的存储容量。以字节为单位。 |
 
 **返回值：**
 
-类型说明booleantrue：设置成功，false：设置失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：设置成功，false：设置失败。 |
 
 **示例：**
 
@@ -4197,13 +4110,16 @@ getWritableBytes(): number
 
 获取MessageParcel的可写字节空间。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[getWritableBytes](#ZH-CN_TOPIC_0000002529445269__getwritablebytes9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[getWritableBytes](#ZH-CN_TOPIC_0000002553201241__getwritablebytes9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number获取到的MessageParcel的可写字节空间。以字节为单位。
+| 类型 | 说明 |
+| --- | --- |
+| number | 获取到的MessageParcel的可写字节空间。以字节为单位。 |
 
 **示例：**
 
@@ -4227,13 +4143,16 @@ getReadableBytes(): number
 
 获取MessageParcel的可读字节空间。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[getReadableBytes](#ZH-CN_TOPIC_0000002529445269__getreadablebytes9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[getReadableBytes](#ZH-CN_TOPIC_0000002553201241__getreadablebytes9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number获取到的MessageParcel的可读字节空间。以字节为单位。
+| 类型 | 说明 |
+| --- | --- |
+| number | 获取到的MessageParcel的可读字节空间。以字节为单位。 |
 
 **示例：**
 
@@ -4257,13 +4176,16 @@ getReadPosition(): number
 
 获取MessageParcel的读位置。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[getReadPosition](#ZH-CN_TOPIC_0000002529445269__getreadposition9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[getReadPosition](#ZH-CN_TOPIC_0000002553201241__getreadposition9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number返回MessageParcel实例中的当前读取位置。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回MessageParcel实例中的当前读取位置。 |
 
 **示例：**
 
@@ -4286,13 +4208,16 @@ getWritePosition(): number
 
 获取MessageParcel的写位置。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[getWritePosition](#ZH-CN_TOPIC_0000002529445269__getwriteposition9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[getWritePosition](#ZH-CN_TOPIC_0000002553201241__getwriteposition9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number返回MessageParcel实例中的当前写入位置。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回MessageParcel实例中的当前写入位置。 |
 
 **示例：**
 
@@ -4316,17 +4241,22 @@ rewindRead(pos: number): boolean
 
 重新偏移读取位置到指定的位置。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[rewindRead](#ZH-CN_TOPIC_0000002529445269__rewindread9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[rewindRead](#ZH-CN_TOPIC_0000002553201241__rewindread9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明posnumber是开始读取数据的目标位置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pos | number | 是 | 开始读取数据的目标位置。 |
 
 **返回值：**
 
-类型说明booleantrue：读取位置发生更改，false：读取位置未发生更改。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：读取位置发生更改，false：读取位置未发生更改。 |
 
 **示例：**
 
@@ -4354,17 +4284,22 @@ rewindWrite(pos: number): boolean
 
 重新偏移写位置到指定的位置。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[reWindWrite](#ZH-CN_TOPIC_0000002529445269__rewindwrite9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[reWindWrite](#ZH-CN_TOPIC_0000002553201241__rewindwrite9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明posnumber是开始写入数据的目标位置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pos | number | 是 | 开始写入数据的目标位置。 |
 
 **返回值：**
 
-类型说明booleantrue：写入位置发生更改，false：写入位置未发生更改。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入位置发生更改，false：写入位置未发生更改。 |
 
 **示例：**
 
@@ -4390,17 +4325,22 @@ writeByte(val: number): boolean
 
 将字节值写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeByte](#ZH-CN_TOPIC_0000002529445269__writebyte9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeByte](#ZH-CN_TOPIC_0000002553201241__writebyte9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明valnumber是要写入的字节值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | number | 是 | 要写入的字节值。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -4423,13 +4363,16 @@ readByte(): number
 
 从MessageParcel实例中读取字节值。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readByte](#ZH-CN_TOPIC_0000002529445269__readbyte9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readByte](#ZH-CN_TOPIC_0000002553201241__readbyte9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number返回字节值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回字节值。 |
 
 **示例：**
 
@@ -4454,17 +4397,22 @@ writeShort(val: number): boolean
 
 将短整数值写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeShort](#ZH-CN_TOPIC_0000002529445269__writeshort9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeShort](#ZH-CN_TOPIC_0000002553201241__writeshort9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明valnumber是要写入的短整数值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | number | 是 | 要写入的短整数值。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -4487,13 +4435,16 @@ readShort(): number
 
 从MessageParcel实例中读取短整数值。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readShort](#ZH-CN_TOPIC_0000002529445269__readshort9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readShort](#ZH-CN_TOPIC_0000002553201241__readshort9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number返回短整数值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回短整数值。 |
 
 **示例：**
 
@@ -4518,17 +4469,22 @@ writeInt(val: number): boolean
 
 将整数值写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeInt](#ZH-CN_TOPIC_0000002529445269__writeint9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeInt](#ZH-CN_TOPIC_0000002553201241__writeint9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明valnumber是要写入的整数值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | number | 是 | 要写入的整数值。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -4551,13 +4507,16 @@ readInt(): number
 
 从MessageParcel实例中读取整数值。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readInt](#ZH-CN_TOPIC_0000002529445269__readint9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readInt](#ZH-CN_TOPIC_0000002553201241__readint9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number返回整数值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回整数值。 |
 
 **示例：**
 
@@ -4582,17 +4541,22 @@ writeLong(val: number): boolean
 
 将长整数值写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeLong](#ZH-CN_TOPIC_0000002529445269__writelong9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeLong](#ZH-CN_TOPIC_0000002553201241__writelong9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明valnumber是要写入的长整数值
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | number | 是 | 要写入的长整数值 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -4615,13 +4579,16 @@ readLong(): number
 
 从MessageParcel实例中读取长整数值。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readLong](#ZH-CN_TOPIC_0000002529445269__readlong9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readLong](#ZH-CN_TOPIC_0000002553201241__readlong9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number返回长整数值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回长整数值。 |
 
 **示例：**
 
@@ -4646,17 +4613,22 @@ writeFloat(val: number): boolean
 
 将双精度浮点值写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeFloat](#ZH-CN_TOPIC_0000002529445269__writefloat9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeFloat](#ZH-CN_TOPIC_0000002553201241__writefloat9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明valnumber是要写入的双精度浮点值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | number | 是 | 要写入的双精度浮点值。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -4679,13 +4651,16 @@ readFloat(): number
 
 从MessageParcel实例中读取双精度浮点值。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readFloat](#ZH-CN_TOPIC_0000002529445269__readfloat9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readFloat](#ZH-CN_TOPIC_0000002553201241__readfloat9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number返回双精度浮点值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回双精度浮点值。 |
 
 **示例：**
 
@@ -4710,17 +4685,22 @@ writeDouble(val: number): boolean
 
 将双精度浮点值写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeDouble](#ZH-CN_TOPIC_0000002529445269__writedouble9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeDouble](#ZH-CN_TOPIC_0000002553201241__writedouble9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明valnumber是要写入的双精度浮点值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | number | 是 | 要写入的双精度浮点值。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -4743,13 +4723,16 @@ readDouble(): number
 
 从MessageParcel实例中读取双精度浮点值。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readDouble](#ZH-CN_TOPIC_0000002529445269__readdouble9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readDouble](#ZH-CN_TOPIC_0000002553201241__readdouble9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number返回双精度浮点值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回双精度浮点值。 |
 
 **示例：**
 
@@ -4774,17 +4757,22 @@ writeBoolean(val: boolean): boolean
 
 将布尔值写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeBoolean](#ZH-CN_TOPIC_0000002529445269__writeboolean9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeBoolean](#ZH-CN_TOPIC_0000002553201241__writeboolean9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明valboolean是要写入的布尔值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | boolean | 是 | 要写入的布尔值。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -4807,13 +4795,16 @@ readBoolean(): boolean
 
 从MessageParcel实例中读取布尔值。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readBoolean](#ZH-CN_TOPIC_0000002529445269__readboolean9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readBoolean](#ZH-CN_TOPIC_0000002553201241__readboolean9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明boolean返回读取到的布尔值。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回读取到的布尔值。 |
 
 **示例：**
 
@@ -4838,17 +4829,22 @@ writeChar(val: number): boolean
 
 将单个字符值写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeChar](#ZH-CN_TOPIC_0000002529445269__writechar9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeChar](#ZH-CN_TOPIC_0000002553201241__writechar9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明valnumber是要写入的单个字符值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | number | 是 | 要写入的单个字符值。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -4871,13 +4867,16 @@ readChar(): number
 
 从MessageParcel实例中读取单个字符值。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readChar](#ZH-CN_TOPIC_0000002529445269__readchar9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readChar](#ZH-CN_TOPIC_0000002553201241__readchar9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number返回单个字符值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回单个字符值。 |
 
 **示例：**
 
@@ -4902,17 +4901,22 @@ writeString(val: string): boolean
 
 将字符串值写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeString](#ZH-CN_TOPIC_0000002529445269__writestring9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeString](#ZH-CN_TOPIC_0000002553201241__writestring9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明valstring是要写入的字符串值，其长度应小于40960字节。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | string | 是 | 要写入的字符串值，其长度应小于40960字节。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -4935,13 +4939,16 @@ readString(): string
 
 从MessageParcel实例中读取字符串值。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readString](#ZH-CN_TOPIC_0000002529445269__readstring9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readString](#ZH-CN_TOPIC_0000002553201241__readstring9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明string返回字符串值。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回字符串值。 |
 
 **示例：**
 
@@ -4966,17 +4973,22 @@ writeSequenceable(val: Sequenceable): boolean
 
 将自定义序列化对象写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeParcelable](#ZH-CN_TOPIC_0000002529445269__writeparcelable9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeParcelable](#ZH-CN_TOPIC_0000002553201241__writeparcelable9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明val[Sequenceable](#ZH-CN_TOPIC_0000002529445269__sequenceabledeprecated)是要写入的可序列对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| val | Sequenceable | 是 | 要写入的可序列对象。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -5001,7 +5013,6 @@ class MySequenceable implements rpc.Sequenceable {
     this.str = messageParcel.readString();
     return true;
   }
-}
 
 try {
   let sequenceable = new MySequenceable(1, "aaa");
@@ -5019,17 +5030,22 @@ readSequenceable(dataIn: Sequenceable): boolean
 
 从MessageParcel实例中读取成员变量到指定的对象（dataIn）。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readParcelable](#ZH-CN_TOPIC_0000002529445269__readparcelable9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readParcelable](#ZH-CN_TOPIC_0000002553201241__readparcelable9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明dataIn[Sequenceable](#ZH-CN_TOPIC_0000002529445269__sequenceabledeprecated)是需要从MessageParcel读取成员变量的对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | Sequenceable | 是 | 需要从MessageParcel读取成员变量的对象。 |
 
 **返回值：**
 
-类型说明booleantrue：反序列化成功，false：反序列化失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：反序列化成功，false：反序列化失败。 |
 
 **示例：**
 
@@ -5054,7 +5070,6 @@ class MySequenceable implements rpc.Sequenceable {
     this.str = messageParcel.readString();
     return true;
   }
-}
 
 try {
   let sequenceable = new MySequenceable(1, "aaa");
@@ -5075,17 +5090,22 @@ writeByteArray(byteArray: number[]): boolean
 
 将字节数组写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeByteArray](#ZH-CN_TOPIC_0000002529445269__writebytearray9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeByteArray](#ZH-CN_TOPIC_0000002553201241__writebytearray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明byteArraynumber[]是要写入的字节数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| byteArray | number[] | 是 | 要写入的字节数组。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -5109,13 +5129,16 @@ readByteArray(dataIn: number[]): void
 
 从MessageParcel实例中读取字节数组，并将其写入到创建的空数组中。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readByteArray](#ZH-CN_TOPIC_0000002529445269__readbytearray9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readByteArray](#ZH-CN_TOPIC_0000002553201241__readbytearray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明dataInnumber[]是要读取的字节数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | number[] | 是 | 要读取的字节数组。 |
 
 **示例：**
 
@@ -5141,13 +5164,16 @@ readByteArray(): number[]
 
 从MessageParcel实例中读取字节数组。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readByteArray](#ZH-CN_TOPIC_0000002529445269__readbytearray9-1)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readByteArray](#ZH-CN_TOPIC_0000002553201241__readbytearray9-1)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number[]返回字节数组。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | 返回字节数组。 |
 
 **示例：**
 
@@ -5173,17 +5199,22 @@ writeShortArray(shortArray: number[]): boolean
 
 将短整数数组写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeShortArray](#ZH-CN_TOPIC_0000002529445269__writeshortarray9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeShortArray](#ZH-CN_TOPIC_0000002553201241__writeshortarray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明shortArraynumber[]是要写入的短整数数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| shortArray | number[] | 是 | 要写入的短整数数组。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -5206,13 +5237,16 @@ readShortArray(dataIn: number[]): void
 
 从MessageParcel实例中读取短整数数组，并将其写入到创建的空数组中。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readShortArray](#ZH-CN_TOPIC_0000002529445269__readshortarray9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readShortArray](#ZH-CN_TOPIC_0000002553201241__readshortarray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明dataInnumber[]是要读取的短整数数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | number[] | 是 | 要读取的短整数数组。 |
 
 **示例：**
 
@@ -5238,13 +5272,16 @@ readShortArray(): number[]
 
 从MessageParcel实例中读取短整数数组。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readShortArray](#ZH-CN_TOPIC_0000002529445269__readshortarray9-1)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readShortArray](#ZH-CN_TOPIC_0000002553201241__readshortarray9-1)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number[]返回短整数数组。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | 返回短整数数组。 |
 
 **示例：**
 
@@ -5269,17 +5306,22 @@ writeIntArray(intArray: number[]): boolean
 
 将整数数组写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeIntArray](#ZH-CN_TOPIC_0000002529445269__writeintarray9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeIntArray](#ZH-CN_TOPIC_0000002553201241__writeintarray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明intArraynumber[]是要写入的整数数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| intArray | number[] | 是 | 要写入的整数数组。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -5302,13 +5344,16 @@ readIntArray(dataIn: number[]): void
 
 从MessageParcel实例中读取整数数组，并将其写入到创建的空数组中。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readIntArray](#ZH-CN_TOPIC_0000002529445269__readintarray9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readIntArray](#ZH-CN_TOPIC_0000002553201241__readintarray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明dataInnumber[]是要读取的整数数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | number[] | 是 | 要读取的整数数组。 |
 
 **示例：**
 
@@ -5334,13 +5379,16 @@ readIntArray(): number[]
 
 从MessageParcel实例中读取整数数组。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readIntArray](#ZH-CN_TOPIC_0000002529445269__readintarray9-1)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readIntArray](#ZH-CN_TOPIC_0000002553201241__readintarray9-1)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number[]返回整数数组。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | 返回整数数组。 |
 
 **示例：**
 
@@ -5365,17 +5413,22 @@ writeLongArray(longArray: number[]): boolean
 
 将长整数数组写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeLongArray](#ZH-CN_TOPIC_0000002529445269__writelongarray9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeLongArray](#ZH-CN_TOPIC_0000002553201241__writelongarray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明longArraynumber[]是要写入的长整数数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| longArray | number[] | 是 | 要写入的长整数数组。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -5398,13 +5451,16 @@ readLongArray(dataIn: number[]): void
 
 从MessageParcel实例中读取长整数数组，并将其写入到创建的空数组中。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readLongArray](#ZH-CN_TOPIC_0000002529445269__readlongarray9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readLongArray](#ZH-CN_TOPIC_0000002553201241__readlongarray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明dataInnumber[]是要读取的长整数数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | number[] | 是 | 要读取的长整数数组。 |
 
 **示例：**
 
@@ -5430,13 +5486,16 @@ readLongArray(): number[]
 
 从MessageParcel实例中读取长整数数组。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readLongArray](#ZH-CN_TOPIC_0000002529445269__readlongarray9-1)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readLongArray](#ZH-CN_TOPIC_0000002553201241__readlongarray9-1)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number[]返回长整数数组。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | 返回长整数数组。 |
 
 **示例：**
 
@@ -5461,17 +5520,22 @@ writeFloatArray(floatArray: number[]): boolean
 
 将双精度浮点数组写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeFloatArray](#ZH-CN_TOPIC_0000002529445269__writefloatarray9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeFloatArray](#ZH-CN_TOPIC_0000002553201241__writefloatarray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明floatArraynumber[]是要写入的双精度浮点数组。由于系统内部对float类型的数据是按照double处理的，使用时对于数组所占的总字节数应按照double类型来计算。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| floatArray | number[] | 是 | 要写入的双精度浮点数组。由于系统内部对float类型的数据是按照double处理的，使用时对于数组所占的总字节数应按照double类型来计算。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -5494,13 +5558,16 @@ readFloatArray(dataIn: number[]): void
 
 从MessageParcel实例中读取双精度浮点数组，并将其写入到创建的空数组中。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readFloatArray](#ZH-CN_TOPIC_0000002529445269__readfloatarray9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readFloatArray](#ZH-CN_TOPIC_0000002553201241__readfloatarray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明dataInnumber[]是要读取的双精度浮点数组。由于系统内部对float类型的数据是按照double处理的，使用时对于数组所占的总字节数应按照double类型来计算。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | number[] | 是 | 要读取的双精度浮点数组。由于系统内部对float类型的数据是按照double处理的，使用时对于数组所占的总字节数应按照double类型来计算。 |
 
 **示例：**
 
@@ -5526,13 +5593,16 @@ readFloatArray(): number[]
 
 从MessageParcel实例中读取双精度浮点数组。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readFloatArray](#ZH-CN_TOPIC_0000002529445269__readfloatarray9-1)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readFloatArray](#ZH-CN_TOPIC_0000002553201241__readfloatarray9-1)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number[]返回双精度浮点数组。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | 返回双精度浮点数组。 |
 
 **示例：**
 
@@ -5557,17 +5627,22 @@ writeDoubleArray(doubleArray: number[]): boolean
 
 将双精度浮点数组写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeDoubleArray](#ZH-CN_TOPIC_0000002529445269__writedoublearray9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeDoubleArray](#ZH-CN_TOPIC_0000002553201241__writedoublearray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明doubleArraynumber[]是要写入的双精度浮点数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| doubleArray | number[] | 是 | 要写入的双精度浮点数组。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -5590,13 +5665,16 @@ readDoubleArray(dataIn: number[]): void
 
 从MessageParcel实例中读取双精度浮点数组，并将其写入到创建的空数组中。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readDoubleArray](#ZH-CN_TOPIC_0000002529445269__readdoublearray9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readDoubleArray](#ZH-CN_TOPIC_0000002553201241__readdoublearray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明dataInnumber[]是要读取的双精度浮点数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | number[] | 是 | 要读取的双精度浮点数组。 |
 
 **示例：**
 
@@ -5622,13 +5700,16 @@ readDoubleArray(): number[]
 
 从MessageParcel实例中读取双精度浮点数组。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readDoubleArray](#ZH-CN_TOPIC_0000002529445269__readdoublearray9-1)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readDoubleArray](#ZH-CN_TOPIC_0000002553201241__readdoublearray9-1)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number[]返回双精度浮点数组。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | 返回双精度浮点数组。 |
 
 **示例：**
 
@@ -5653,17 +5734,22 @@ writeBooleanArray(booleanArray: boolean[]): boolean
 
 将布尔数组写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeBooleanArray](#ZH-CN_TOPIC_0000002529445269__writebooleanarray9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeBooleanArray](#ZH-CN_TOPIC_0000002553201241__writebooleanarray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明booleanArrayboolean[]是要写入的布尔数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| booleanArray | boolean[] | 是 | 要写入的布尔数组。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -5686,13 +5772,16 @@ readBooleanArray(dataIn: boolean[]): void
 
 从MessageParcel实例中读取布尔数组，并将其写入到创建的空数组中。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readBooleanArray](#ZH-CN_TOPIC_0000002529445269__readbooleanarray9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readBooleanArray](#ZH-CN_TOPIC_0000002553201241__readbooleanarray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明dataInboolean[]是要读取的布尔数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | boolean[] | 是 | 要读取的布尔数组。 |
 
 **示例：**
 
@@ -5718,13 +5807,16 @@ readBooleanArray(): boolean[]
 
 从MessageParcel实例中读取布尔数组。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readBooleanArray](#ZH-CN_TOPIC_0000002529445269__readbooleanarray9-1)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readBooleanArray](#ZH-CN_TOPIC_0000002553201241__readbooleanarray9-1)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明boolean[]返回布尔数组。
+| 类型 | 说明 |
+| --- | --- |
+| boolean[] | 返回布尔数组。 |
 
 **示例：**
 
@@ -5749,17 +5841,22 @@ writeCharArray(charArray: number[]): boolean
 
 将单个字符数组写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeCharArray](#ZH-CN_TOPIC_0000002529445269__writechararray9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeCharArray](#ZH-CN_TOPIC_0000002553201241__writechararray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明charArraynumber[]是要写入的单个字符数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| charArray | number[] | 是 | 要写入的单个字符数组。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -5782,13 +5879,16 @@ readCharArray(dataIn: number[]): void
 
 从MessageParcel实例中读取单个字符数组，并将其写入到创建的空数组中。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readCharArray](#ZH-CN_TOPIC_0000002529445269__readchararray9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readCharArray](#ZH-CN_TOPIC_0000002553201241__readchararray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明dataInnumber[]是要读取的单个字符数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | number[] | 是 | 要读取的单个字符数组。 |
 
 **示例：**
 
@@ -5814,13 +5914,16 @@ readCharArray(): number[]
 
 从MessageParcel实例中读取单个字符数组。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readCharArray](#ZH-CN_TOPIC_0000002529445269__readchararray9-1)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readCharArray](#ZH-CN_TOPIC_0000002553201241__readchararray9-1)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number[]返回单个字符数组。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | 返回单个字符数组。 |
 
 **示例：**
 
@@ -5845,17 +5948,22 @@ writeStringArray(stringArray: string[]): boolean
 
 将字符串数组写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeStringArray](#ZH-CN_TOPIC_0000002529445269__writestringarray9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeStringArray](#ZH-CN_TOPIC_0000002553201241__writestringarray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明stringArraystring[]是要写入的字符串数组，数组单个元素的长度应小于40960字节。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| stringArray | string[] | 是 | 要写入的字符串数组，数组单个元素的长度应小于40960字节。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -5878,13 +5986,16 @@ readStringArray(dataIn: string[]): void
 
 从MessageParcel实例中读取字符串数组，并将其写入到创建的空数组中。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readStringArray](#ZH-CN_TOPIC_0000002529445269__readstringarray9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readStringArray](#ZH-CN_TOPIC_0000002553201241__readstringarray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明dataInstring[]是要读取的字符串数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | string[] | 是 | 要读取的字符串数组。 |
 
 **示例：**
 
@@ -5910,13 +6021,16 @@ readStringArray(): string[]
 
 从MessageParcel实例中读取字符串数组。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[readStringArray](#ZH-CN_TOPIC_0000002529445269__readstringarray9-1)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[readStringArray](#ZH-CN_TOPIC_0000002553201241__readstringarray9-1)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明string[]返回字符串数组。
+| 类型 | 说明 |
+| --- | --- |
+| string[] | 返回字符串数组。 |
 
 **示例：**
 
@@ -5941,7 +6055,8 @@ writeNoException(): void
 
 向MessageParcel写入“指示未发生异常”的信息。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[writeNoException](#ZH-CN_TOPIC_0000002529445269__writenoexception9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[writeNoException](#ZH-CN_TOPIC_0000002553201241__writenoexception9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
@@ -5954,7 +6069,6 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 class MyDeathRecipient implements rpc.DeathRecipient {
   onRemoteDied() {
     hilog.info(0x0000, 'testTag', 'server died');
-  }
 }
 class TestRemoteObject extends rpc.RemoteObject {
   constructor(descriptor: string) {
@@ -5970,8 +6084,6 @@ onRemoteRequest(code: number, data: rpc.MessageParcel, reply: rpc.MessageParcel,
       hilog.error(0x0000, 'testTag', 'RpcServer: unknown code: ' + code);
       return false;
     }
-  }
-}
 ```
 
 #### readException(deprecated)
@@ -5980,11 +6092,13 @@ readException(): void
 
 从MessageParcel中读取异常。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[readException](#ZH-CN_TOPIC_0000002529445269__readexception9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[readException](#ZH-CN_TOPIC_0000002553201241__readexception9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **示例：**
+
 
 在本文档的示例中，通过this.getUIContext().getHostContext()来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需要在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
 
@@ -6047,7 +6161,7 @@ try {
         hilog.error(0x0000, 'testTag', 'sendRequest failed, errCode: ' + result.errCode);
       }
     }).catch((e: Error) => {
-      hilog.error(0x0000, 'testTag', 'sendRequest got exception: ' + e);
+      hilog.error(0x0000, 'testTag', 'sendRequest got exception: ' + JSON.stringify(e));
     }).finally (() => {
       hilog.info(0x0000, 'testTag', 'sendRequest ends, reclaim parcel');
       data.reclaim();
@@ -6065,17 +6179,22 @@ writeSequenceableArray(sequenceableArray: Sequenceable[]): boolean
 
 将可序列化对象数组写入MessageParcel实例。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[writeParcelableArray](#ZH-CN_TOPIC_0000002529445269__writeparcelablearray9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[writeParcelableArray](#ZH-CN_TOPIC_0000002553201241__writeparcelablearray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明sequenceableArray[Sequenceable](#ZH-CN_TOPIC_0000002529445269__sequenceabledeprecated)[]是要写入的可序列化对象数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sequenceableArray | Sequenceable[] | 是 | 要写入的可序列化对象数组。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -6100,7 +6219,6 @@ class MySequenceable implements rpc.Sequenceable {
     this.str = messageParcel.readString();
     return true;
   }
-}
 
 try {
   let sequenceable = new MySequenceable(1, "aaa");
@@ -6121,13 +6239,16 @@ readSequenceableArray(sequenceableArray: Sequenceable[]): void
 
 从MessageParcel实例中读取可序列化对象数组。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[readParcelableArray](#ZH-CN_TOPIC_0000002529445269__readparcelablearray9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[readParcelableArray](#ZH-CN_TOPIC_0000002553201241__readparcelablearray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明sequenceableArray[Sequenceable](#ZH-CN_TOPIC_0000002529445269__sequenceabledeprecated)[]是要读取的可序列化对象数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sequenceableArray | Sequenceable[] | 是 | 要读取的可序列化对象数组。 |
 
 **示例：**
 
@@ -6152,7 +6273,6 @@ class MySequenceable implements rpc.Sequenceable {
     this.str = messageParcel.readString();
     return true;
   }
-}
 
 try {
   let sequenceable = new MySequenceable(1, "aaa");
@@ -6175,17 +6295,22 @@ writeRemoteObjectArray(objectArray: IRemoteObject[]): boolean
 
 将IRemoteObject对象数组写入MessageParcel。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[writeRemoteObjectArray](#ZH-CN_TOPIC_0000002529445269__writeremoteobjectarray9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[writeRemoteObjectArray](#ZH-CN_TOPIC_0000002553201241__writeremoteobjectarray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明objectArray[IRemoteObject](#ZH-CN_TOPIC_0000002529445269__iremoteobject)[]是要写入MessageParcel的IRemoteObject对象数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| objectArray | IRemoteObject[] | 是 | 要写入MessageParcel的IRemoteObject对象数组。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -6202,7 +6327,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     // 具体处理由业务决定
     return true;
   }
-}
 
 try {
   let a = [new TestRemoteObject("testObject1"), new TestRemoteObject("testObject2"), new TestRemoteObject("testObject3")];
@@ -6220,13 +6344,16 @@ readRemoteObjectArray(objects: IRemoteObject[]): void
 
 从MessageParcel读取IRemoteObject对象数组，并将其写入到创建的空数组中。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[readRemoteObjectArray](#ZH-CN_TOPIC_0000002529445269__readremoteobjectarray9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[readRemoteObjectArray](#ZH-CN_TOPIC_0000002553201241__readremoteobjectarray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明objects[IRemoteObject](#ZH-CN_TOPIC_0000002529445269__iremoteobject)[]是从MessageParcel读取的IRemoteObject对象数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| objects | IRemoteObject[] | 是 | 从MessageParcel读取的IRemoteObject对象数组。 |
 
 **示例：**
 
@@ -6242,7 +6369,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     option: rpc.MessageOption): boolean {
     // 具体处理由业务决定
     return true;
-  }
 }
 
 try {
@@ -6264,13 +6390,16 @@ readRemoteObjectArray(): IRemoteObject[]
 
 从MessageParcel读取IRemoteObject对象数组。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[readRemoteObjectArray](#ZH-CN_TOPIC_0000002529445269__readremoteobjectarray9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[readRemoteObjectArray](#ZH-CN_TOPIC_0000002553201241__readremoteobjectarray9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明[IRemoteObject](#ZH-CN_TOPIC_0000002529445269__iremoteobject)[]返回IRemoteObject对象数组。
+| 类型 | 说明 |
+| --- | --- |
+| IRemoteObject[] | 返回IRemoteObject对象数组。 |
 
 **示例：**
 
@@ -6286,7 +6415,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     option: rpc.MessageOption): boolean {
     // 具体处理由业务决定
     return true;
-  }
 }
 
 try {
@@ -6308,13 +6436,16 @@ static closeFileDescriptor(fd: number): void
 
 静态方法，关闭给定的文件描述符。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[closeFileDescriptor](#ZH-CN_TOPIC_0000002529445269__closefiledescriptor9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[closeFileDescriptor](#ZH-CN_TOPIC_0000002553201241__closefiledescriptor9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明fdnumber是要关闭的文件描述符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fd | number | 是 | 要关闭的文件描述符。 |
 
 **示例：**
 
@@ -6338,17 +6469,22 @@ static dupFileDescriptor(fd: number) :number
 
 静态方法，复制给定的文件描述符。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[dupFileDescriptor](#ZH-CN_TOPIC_0000002529445269__dupfiledescriptor9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[dupFileDescriptor](#ZH-CN_TOPIC_0000002553201241__dupfiledescriptor9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明fdnumber是表示已存在的文件描述符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fd | number | 是 | 表示已存在的文件描述符。 |
 
 **返回值：**
 
-类型说明number返回新的文件描述符。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回新的文件描述符。 |
 
 **示例：**
 
@@ -6372,13 +6508,16 @@ containFileDescriptors(): boolean
 
 检查此MessageParcel对象是否包含文件描述符。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[containFileDescriptors](#ZH-CN_TOPIC_0000002529445269__containfiledescriptors9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[containFileDescriptors](#ZH-CN_TOPIC_0000002553201241__containfiledescriptors9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明booleantrue：包含文件描述符，false：未包含文件描述符。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：包含文件描述符，false：未包含文件描述符。 |
 
 **示例：**
 
@@ -6406,17 +6545,22 @@ writeFileDescriptor(fd: number): boolean
 
 写入文件描述符到MessageParcel。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[writeFileDescriptor](#ZH-CN_TOPIC_0000002529445269__writefiledescriptor9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[writeFileDescriptor](#ZH-CN_TOPIC_0000002553201241__writefiledescriptor9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明fdnumber是文件描述符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fd | number | 是 | 文件描述符。 |
 
 **返回值：**
 
-类型说明booleantrue：操作成功，false：操作失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：操作成功，false：操作失败。 |
 
 **示例：**
 
@@ -6442,13 +6586,16 @@ readFileDescriptor(): number
 
 从MessageParcel中读取文件描述符。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[readFileDescriptor](#ZH-CN_TOPIC_0000002529445269__readfiledescriptor9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[readFileDescriptor](#ZH-CN_TOPIC_0000002553201241__readfiledescriptor9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number返回文件描述符。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回文件描述符。 |
 
 **示例：**
 
@@ -6475,17 +6622,22 @@ writeAshmem(ashmem: Ashmem): boolean
 
 将指定的匿名共享对象写入此MessageParcel。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[writeAshmem](#ZH-CN_TOPIC_0000002529445269__writeashmem9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[writeAshmem](#ZH-CN_TOPIC_0000002553201241__writeashmem9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明ashmem[Ashmem](#ZH-CN_TOPIC_0000002529445269__ashmem8)是要写入MessageParcel的匿名共享对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ashmem | Ashmem | 是 | 要写入MessageParcel的匿名共享对象。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -6509,13 +6661,16 @@ readAshmem(): Ashmem
 
 从MessageParcel读取匿名共享对象。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[readAshmem](#ZH-CN_TOPIC_0000002529445269__readashmem9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[readAshmem](#ZH-CN_TOPIC_0000002553201241__readashmem9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明[Ashmem](#ZH-CN_TOPIC_0000002529445269__ashmem8)返回匿名共享对象。
+| 类型 | 说明 |
+| --- | --- |
+| Ashmem | 返回匿名共享对象。 |
 
 **示例：**
 
@@ -6541,13 +6696,16 @@ getRawDataCapacity(): number
 
 获取MessageParcel可以容纳的最大原始数据量。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[getRawDataCapacity](#ZH-CN_TOPIC_0000002529445269__getrawdatacapacity9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[getRawDataCapacity](#ZH-CN_TOPIC_0000002553201241__getrawdatacapacity9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明number返回MessageParcel可以容纳的最大原始数据量，即128MB。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回MessageParcel可以容纳的最大原始数据量，即128MB。 |
 
 **示例：**
 
@@ -6570,17 +6728,23 @@ writeRawData(rawData: number[], size: number): boolean
 
 将原始数据写入MessageParcel对象。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[writeRawDataBuffer](#ZH-CN_TOPIC_0000002529445269__writerawdatabuffer11)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[writeRawDataBuffer](#ZH-CN_TOPIC_0000002553201241__writerawdatabuffer11)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明rawDatanumber[]是要写入的原始数据，大小不能超过128MB。sizenumber是发送的原始数据大小，以字节为单位。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rawData | number[] | 是 | 要写入的原始数据，大小不能超过128MB。 |
+| size | number | 是 | 发送的原始数据大小，以字节为单位。 |
 
 **返回值：**
 
-类型说明booleantrue：写入成功，false：写入失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：写入成功，false：写入失败。 |
 
 **示例：**
 
@@ -6604,17 +6768,22 @@ readRawData(size: number): number[]
 
 从MessageParcel读取原始数据。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[readRawDataBuffer](#ZH-CN_TOPIC_0000002529445269__readrawdatabuffer11)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[readRawDataBuffer](#ZH-CN_TOPIC_0000002553201241__readrawdatabuffer11)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明sizenumber是要读取的原始数据的大小。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | number | 是 | 要读取的原始数据的大小。 |
 
 **返回值：**
 
-类型说明number[]返回原始数据（以字节为单位）。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | 返回原始数据（以字节为单位）。 |
 
 **示例：**
 
@@ -6638,6 +6807,8 @@ try {
 
 在进程间通信（IPC）期间，将类的对象写入MessageSequence并从MessageSequence中恢复它们。
 
+**系统能力：**SystemCapability.Communication.IPC.Core
+
 #### marshalling9+
 
 marshalling(dataOut: MessageSequence): boolean
@@ -6648,11 +6819,15 @@ marshalling(dataOut: MessageSequence): boolean
 
 **参数：**
 
-参数名类型必填说明dataOut[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)是可序列对象将被封送到的MessageSequence对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataOut | MessageSequence | 是 | 可序列对象将被封送到的MessageSequence对象。 |
 
 **返回值：**
 
-类型说明booleantrue：封送成功，false：封送失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：封送成功，false：封送失败。 |
 
 **示例：**
 
@@ -6678,7 +6853,6 @@ class MyParcelable implements rpc.Parcelable {
     hilog.info(0x0000, 'testTag', 'readInt is ' + this.num + ' readString is ' + this.str);
     return true;
   }
-}
 
 try {
   let parcelable = new MyParcelable(1, "aaa");
@@ -6701,11 +6875,15 @@ unmarshalling(dataIn: MessageSequence): boolean
 
 **参数：**
 
-参数名类型必填说明dataIn[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)是已将可序列对象封送到其中的MessageSequence对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | MessageSequence | 是 | 已将可序列对象封送到其中的MessageSequence对象。 |
 
 **返回值：**
 
-类型说明booleantrue：反序列化成功，false：反序列化失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：反序列化成功，false：反序列化失败。 |
 
 **示例：**
 
@@ -6731,7 +6909,6 @@ class MyParcelable implements rpc.Parcelable {
     hilog.info(0x0000, 'testTag', 'readInt is ' + this.num + ' readString is ' + this.str);
     return true;
   }
-}
 
 try {
   let parcelable = new MyParcelable(1, "aaa");
@@ -6748,7 +6925,10 @@ try {
 
 在进程间通信（IPC）期间，将类的对象写入MessageParcel并从MessageParcel中恢复它们。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[Parcelable](#ZH-CN_TOPIC_0000002529445269__parcelable9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[Parcelable](#ZH-CN_TOPIC_0000002553201241__parcelable9)替代。
+
+**系统能力：**SystemCapability.Communication.IPC.Core
 
 #### marshalling(deprecated)
 
@@ -6756,17 +6936,22 @@ marshalling(dataOut: MessageParcel): boolean
 
 将此可序列对象封送到MessageParcel中。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[marshalling](#ZH-CN_TOPIC_0000002529445269__marshalling9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[marshalling](#ZH-CN_TOPIC_0000002553201241__marshalling9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明dataOut[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是可序列对象将被封送到的MessageParcel对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataOut | MessageParcel | 是 | 可序列对象将被封送到的MessageParcel对象。 |
 
 **返回值：**
 
-类型说明booleantrue：封送成功，false：封送失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：封送成功，false：封送失败。 |
 
 **示例：**
 
@@ -6791,7 +6976,6 @@ class MySequenceable implements rpc.Sequenceable {
     this.str = messageParcel.readString();
     return true;
   }
-}
 
 try {
   let sequenceable = new MySequenceable(1, "aaa");
@@ -6812,17 +6996,22 @@ unmarshalling(dataIn: MessageParcel): boolean
 
 从MessageParcel中解封此可序列对象。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[unmarshalling](#ZH-CN_TOPIC_0000002529445269__unmarshalling9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[unmarshalling](#ZH-CN_TOPIC_0000002553201241__unmarshalling9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明dataIn[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是已将可序列对象封送到其中的MessageParcel对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataIn | MessageParcel | 是 | 已将可序列对象封送到其中的MessageParcel对象。 |
 
 **返回值：**
 
-类型说明booleantrue：反序列化成功，false：反序列化失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：反序列化成功，false：反序列化失败。 |
 
 **示例：**
 
@@ -6847,7 +7036,6 @@ class MySequenceable implements rpc.Sequenceable {
     this.str = messageParcel.readString();
     return true;
   }
-}
 
 try {
   let sequenceable = new MySequenceable(1, "aaa");
@@ -6866,6 +7054,8 @@ try {
 
 远端对象的代理持有者。用于获取代理对象。
 
+**系统能力：**SystemCapability.Communication.IPC.Core
+
 #### asObject
 
 asObject(): IRemoteObject
@@ -6876,7 +7066,9 @@ asObject(): IRemoteObject
 
 **返回值：**
 
-类型说明[IRemoteObject](#ZH-CN_TOPIC_0000002529445269__iremoteobject)如果调用者是RemoteObject对象，则直接返回本身；如果调用者是[RemoteProxy](#ZH-CN_TOPIC_0000002529445269__remoteproxy)对象，则返回它的持有者[IRemoteObject](#ZH-CN_TOPIC_0000002529445269__iremoteobject)。
+| 类型 | 说明 |
+| --- | --- |
+| IRemoteObject | 如果调用者是RemoteObject对象，则直接返回本身；如果调用者是RemoteProxy对象，则返回它的持有者IRemoteObject。 |
 
 **示例：**
 
@@ -6886,7 +7078,6 @@ import { rpc } from '@kit.IPCKit';
 class TestAbility extends rpc.RemoteObject {
   asObject() {
     return this;
-  }
 }
 let remoteObject = new TestAbility("testObject").asObject();
 ```
@@ -6942,7 +7133,6 @@ class TestProxy {
   asObject() {
     return this.remote;
   }
-}
 if (proxy != undefined) {
   let iRemoteObject = new TestProxy(proxy).asObject();
 }
@@ -6950,7 +7140,9 @@ if (proxy != undefined) {
 
 #### DeathRecipient
 
-用于订阅远端对象的死亡通知。当被订阅该通知的远端对象死亡时，本端可收到消息，调用[onRemoteDied](#ZH-CN_TOPIC_0000002529445269__onremotedied)接口。远端对象死亡可以为远端对象所在进程死亡，远端对象所在设备关机或重启，当远端对象与本端对象属于不同设备时，也可为远端对象离开组网时。
+用于订阅远端对象的死亡通知。当被订阅该通知的远端对象死亡时，本端可收到消息，调用[onRemoteDied](#ZH-CN_TOPIC_0000002553201241__onremotedied)接口。远端对象死亡可以为远端对象所在进程死亡，远端对象所在设备关机或重启，当远端对象与本端对象属于不同设备时，也可为远端对象离开组网时。
+
+**系统能力：**SystemCapability.Communication.IPC.Core
 
 #### onRemoteDied
 
@@ -6970,7 +7162,6 @@ class MyDeathRecipient implements rpc.DeathRecipient {
   onRemoteDied() {
     hilog.info(0x0000, 'testTag', 'server died');
   }
-}
 ```
 
 #### RequestResult9+
@@ -6979,21 +7170,49 @@ class MyDeathRecipient implements rpc.DeathRecipient {
 
 **系统能力**：以下各项对应的系统能力均为SystemCapability.Communication.IPC.Core。
 
-名称类型只读可选说明errCodenumber否否错误码。codenumber否否消息代码。data[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)否否发送给对端进程的MessageSequence对象。reply[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)否否对端进程返回的MessageSequence对象。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| errCode | number | 否 | 否 | 错误码。 |
+| code | number | 否 | 否 | 消息代码。 |
+| data | MessageSequence | 否 | 否 | 发送给对端进程的MessageSequence对象。 |
+| reply | MessageSequence | 否 | 否 | 对端进程返回的MessageSequence对象。 |
 
 #### SendRequestResult(deprecated)
 
 发送请求的响应结果。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[RequestResult](#ZH-CN_TOPIC_0000002529445269__requestresult9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[RequestResult](#ZH-CN_TOPIC_0000002553201241__requestresult9)替代。
 
 **系统能力**：以下各项对应的系统能力均为SystemCapability.Communication.IPC.Core。
 
-名称类型只读可选说明errCodenumber否否错误码。codenumber否否消息代码。data[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)否否发送给对端进程的MessageParcel对象。reply[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)否否对端进程返回的MessageParcel对象。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| errCode | number | 否 | 否 | 错误码。 |
+| code | number | 否 | 否 | 消息代码。 |
+| data | MessageParcel | 否 | 否 | 发送给对端进程的MessageParcel对象。 |
+| reply | MessageParcel | 否 | 否 | 对端进程返回的MessageParcel对象。 |
+
+**CallingInfo23+**
+
+IPC上下文信息，包括PID和UID、本端和对端设备ID、检查接口调用是否在同一设备上。
+
+**系统能力：**以下各项对应的系统能力均为SystemCapability.Communication.IPC.Core。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| callerPid | number | 是 | 否 | 调用者的PID。 |
+| callerUid | number | 是 | 否 | 调用者的UID。 |
+| callerTokenId | number | 是 | 否 | 调用者的TokenId。 |
+| remoteDeviceId | string | 是 | 否 | 对端设备的设备ID，仅RPC场景有效。 |
+| localDeviceId | string | 是 | 否 | 本端设备的设备ID，仅RPC场景有效。 |
+| isLocalCalling | boolean | 是 | 否 | 当前通信对端是否为本设备进程。true：调用在同一台设备，false：调用未在同一台设备。 |
 
 #### IRemoteObject
 
 该接口可用于查询或获取接口描述符、添加或删除死亡通知、转储对象状态到特定文件、发送消息。
+
+**系统能力：**SystemCapability.Communication.IPC.Core
 
 #### getLocalInterface9+
 
@@ -7005,27 +7224,23 @@ getLocalInterface(descriptor: string): IRemoteBroker
 
 **参数：**
 
-参数名类型必填说明descriptorstring是接口描述符的字符串。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| descriptor | string | 是 | 接口描述符的字符串。 |
 
 **返回值：**
 
-类型说明[IRemoteBroker](#ZH-CN_TOPIC_0000002529445269__iremotebroker)返回绑定到指定接口描述符的IRemoteBroker对象。
+| 类型 | 说明 |
+| --- | --- |
+| IRemoteBroker | 返回绑定到指定接口描述符的IRemoteBroker对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.The string length exceeds 40960 bytes;
-
-4.The number of bytes copied to the buffer is different from the length of the obtained string.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The string length is greater than or equal to 40960 bytes; 4.The number of bytes copied to the buffer is different from the length of the obtained string. |
 
 #### queryLocalInterface(deprecated)
 
@@ -7033,17 +7248,22 @@ queryLocalInterface(descriptor: string): IRemoteBroker
 
 查询接口描述符的字符串。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[getLocalInterface](#ZH-CN_TOPIC_0000002529445269__getlocalinterface9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[getLocalInterface](#ZH-CN_TOPIC_0000002553201241__getlocalinterface9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明descriptorstring是接口描述符的字符串。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| descriptor | string | 是 | 接口描述符的字符串。 |
 
 **返回值：**
 
-类型说明[IRemoteBroker](#ZH-CN_TOPIC_0000002529445269__iremotebroker)返回绑定到指定接口描述符的IRemoteBroker对象。
+| 类型 | 说明 |
+| --- | --- |
+| IRemoteBroker | 返回绑定到指定接口描述符的IRemoteBroker对象。 |
 
 #### sendRequest(deprecated)
 
@@ -7051,17 +7271,25 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 以同步或异步方式向对端进程发送MessageParcel消息。如果为选项设置了异步模式，则期约立即兑现，reply报文里没有内容。如果为选项设置了同步模式，则期约将在sendRequest返回时兑现，回复内容在reply报文里。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[sendMessageRequest](#ZH-CN_TOPIC_0000002529445269__sendmessagerequest9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[sendMessageRequest](#ZH-CN_TOPIC_0000002553201241__sendmessagerequest9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明codenumber是本次请求调用的消息码（1-16777215），由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。data[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是保存待发送数据的MessageParcel对象。reply[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是接收应答数据的MessageParcel对象。options[MessageOption](#ZH-CN_TOPIC_0000002529445269__messageoption)是本次请求的同异步模式，默认同步调用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
+| data | MessageParcel | 是 | 保存待发送数据的MessageParcel对象。 |
+| reply | MessageParcel | 是 | 接收应答数据的MessageParcel对象。 |
+| options | MessageOption | 是 | 本次请求的同异步模式，默认同步调用。 |
 
 **返回值：**
 
-类型说明booleantrue：发送成功，false：发送失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：发送成功，false：发送失败。 |
 
 #### sendMessageRequest9+
 
@@ -7073,25 +7301,26 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 **参数：**
 
-参数名类型必填说明codenumber是本次请求调用的消息码（1-16777215），由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。data[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)是保存待发送数据的MessageSequence对象。reply[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)是接收应答数据的MessageSequence对象。options[MessageOption](#ZH-CN_TOPIC_0000002529445269__messageoption)是本次请求的同异步模式，默认同步调用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
+| data | MessageSequence | 是 | 保存待发送数据的MessageSequence对象。 |
+| reply | MessageSequence | 是 | 接收应答数据的MessageSequence对象。 |
+| options | MessageOption | 是 | 本次请求的同异步模式，默认同步调用。 |
 
 **返回值：**
 
-类型说明Promise<[RequestResult](#ZH-CN_TOPIC_0000002529445269__requestresult9)>返回一个期约，兑现值是requestResult实例。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<RequestResult> | 返回一个期约，兑现值是requestResult实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.Failed to obtain the passed object instance.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.Failed to obtain the passed object instance. |
 
 #### sendRequest(deprecated)
 
@@ -7099,17 +7328,25 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 以同步或异步方式向对端进程发送MessageParcel消息。如果为选项设置了异步模式，则期约立即兑现，reply报文里没有内容，具体回复需要在业务侧的回调中获取。如果为选项设置了同步模式，则期约将在sendRequest返回时兑现，回复内容在reply报文里。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[sendMessageRequest](#ZH-CN_TOPIC_0000002529445269__sendmessagerequest9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[sendMessageRequest](#ZH-CN_TOPIC_0000002553201241__sendmessagerequest9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明codenumber是本次请求调用的消息码（1-16777215），由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。data[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是保存待发送数据的MessageParcel对象。reply[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是接收应答数据的MessageParcel对象。options[MessageOption](#ZH-CN_TOPIC_0000002529445269__messageoption)是本次请求的同异步模式，默认同步调用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
+| data | MessageParcel | 是 | 保存待发送数据的MessageParcel对象。 |
+| reply | MessageParcel | 是 | 接收应答数据的MessageParcel对象。 |
+| options | MessageOption | 是 | 本次请求的同异步模式，默认同步调用。 |
 
 **返回值：**
 
-类型说明Promise<[SendRequestResult](#ZH-CN_TOPIC_0000002529445269__sendrequestresultdeprecated)>返回一个期约，兑现值是sendRequestResult实例。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<SendRequestResult> | 返回一个期约，兑现值是sendRequestResult实例。 |
 
 #### sendMessageRequest9+
 
@@ -7121,21 +7358,21 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 **参数：**
 
-参数名类型必填说明codenumber是本次请求调用的消息码（1-16777215），由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。data[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)是保存待发送数据的MessageSequence对象。reply[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)是接收应答数据的MessageSequence对象。options[MessageOption](#ZH-CN_TOPIC_0000002529445269__messageoption)是本次请求的同异步模式，默认同步调用。callbackAsyncCallback<[RequestResult](#ZH-CN_TOPIC_0000002529445269__requestresult9)>是接收发送结果的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
+| data | MessageSequence | 是 | 保存待发送数据的MessageSequence对象。 |
+| reply | MessageSequence | 是 | 接收应答数据的MessageSequence对象。 |
+| options | MessageOption | 是 | 本次请求的同异步模式，默认同步调用。 |
+| callback | AsyncCallback<RequestResult> | 是 | 接收发送结果的回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.Failed to obtain the passed object instance.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.Failed to obtain the passed object instance. |
 
 #### sendRequest(deprecated)
 
@@ -7143,59 +7380,69 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 以同步或异步方式向对端进程发送MessageParcel消息。如果为选项设置了异步模式，则立即收到回调，reply报文里没有内容，具体回复需要在业务侧的回调中获取。如果为选项设置了同步模式，则将在sendRequest返回时收到回调，回复内容在reply报文里。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[sendMessageRequest](#ZH-CN_TOPIC_0000002529445269__sendmessagerequest9-1)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[sendMessageRequest](#ZH-CN_TOPIC_0000002553201241__sendmessagerequest9-1)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明codenumber是本次请求调用的消息码（1-16777215），由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。data[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是保存待发送数据的MessageParcel对象。reply[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是接收应答数据的MessageParcel对象。options[MessageOption](#ZH-CN_TOPIC_0000002529445269__messageoption)是本次请求的同异步模式，默认同步调用。callbackAsyncCallback<[SendRequestResult](#ZH-CN_TOPIC_0000002529445269__sendrequestresultdeprecated)>是接收发送结果的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
+| data | MessageParcel | 是 | 保存待发送数据的MessageParcel对象。 |
+| reply | MessageParcel | 是 | 接收应答数据的MessageParcel对象。 |
+| options | MessageOption | 是 | 本次请求的同异步模式，默认同步调用。 |
+| callback | AsyncCallback<SendRequestResult> | 是 | 接收发送结果的回调。 |
 
 #### registerDeathRecipient9+
 
 registerDeathRecipient(recipient: DeathRecipient, flags: number): void
 
-注册用于接收远程对象死亡通知的回调。如果与RemoteProxy对象匹配的远程对象进程死亡，则调用此方法。
+注册用于接收远程对象死亡通知的回调。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明recipient[DeathRecipient](#ZH-CN_TOPIC_0000002529445269__deathrecipient)是要注册的回调。flagsnumber是死亡通知标志。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| recipient | DeathRecipient | 是 | 要注册的回调。 |
+| flags | number | 是 | 死亡通知标志。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.The callback used to receive remote object death notifications is empty.
-
-1900005Operation allowed only for the proxy object.1900008The proxy or remote object is invalid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The callback used to receive remote object death notifications is empty. |
+| 1900005 | Operation allowed only for the proxy object. |
+| 1900008 | The proxy or remote object is invalid. |
 
 #### addDeathRecipient(deprecated)
 
 addDeathRecipient(recipient: DeathRecipient, flags: number): boolean
 
-注册用于接收远程对象死亡通知的回调。如果与RemoteProxy对象匹配的远程对象进程死亡，则调用此方法。
+注册用于接收远程对象死亡通知的回调。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[registerDeathRecipient](#ZH-CN_TOPIC_0000002529445269__registerdeathrecipient9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[registerDeathRecipient](#ZH-CN_TOPIC_0000002553201241__registerdeathrecipient9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明recipient[DeathRecipient](#ZH-CN_TOPIC_0000002529445269__deathrecipient)是要注册的回调。flagsnumber是死亡通知标志。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| recipient | DeathRecipient | 是 | 要注册的回调。 |
+| flags | number | 是 | 死亡通知标志。 |
 
 **返回值：**
 
-类型说明booleantrue：回调注册成功，false：回调注册失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：回调注册成功，false：回调注册失败。 |
 
 #### unregisterDeathRecipient9+
 
@@ -7207,23 +7454,20 @@ unregisterDeathRecipient(recipient: DeathRecipient, flags: number): void
 
 **参数：**
 
-参数名类型必填说明recipient[DeathRecipient](#ZH-CN_TOPIC_0000002529445269__deathrecipient)是要注销的回调。flagsnumber是死亡通知标志。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| recipient | DeathRecipient | 是 | 要注销的回调。 |
+| flags | number | 是 | 死亡通知标志。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.The callback used to receive remote object death notifications is empty.
-
-1900005Operation allowed only for the proxy object.1900008The proxy or remote object is invalid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The callback used to receive remote object death notifications is empty. |
+| 1900005 | Operation allowed only for the proxy object. |
+| 1900008 | The proxy or remote object is invalid. |
 
 #### removeDeathRecipient(deprecated)
 
@@ -7231,17 +7475,23 @@ removeDeathRecipient(recipient: DeathRecipient, flags: number): boolean
 
 注销用于接收远程对象死亡通知的回调。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[unregisterDeathRecipient](#ZH-CN_TOPIC_0000002529445269__unregisterdeathrecipient9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[unregisterDeathRecipient](#ZH-CN_TOPIC_0000002553201241__unregisterdeathrecipient9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明recipient[DeathRecipient](#ZH-CN_TOPIC_0000002529445269__deathrecipient)是要注销的回调。flagsnumber是死亡通知标志。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| recipient | DeathRecipient | 是 | 要注销的回调。 |
+| flags | number | 是 | 死亡通知标志。 |
 
 **返回值：**
 
-类型说明booleantrue：回调注销成功，false：回调注销失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：回调注销成功，false：回调注销失败。 |
 
 #### getDescriptor9+
 
@@ -7253,13 +7503,17 @@ getDescriptor(): string
 
 **返回值：**
 
-类型说明string返回接口描述符。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回接口描述符。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900008The proxy or remote object is invalid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900008 | The proxy or remote object is invalid. |
 
 #### getInterfaceDescriptor(deprecated)
 
@@ -7267,13 +7521,16 @@ getInterfaceDescriptor(): string
 
 获取对象的接口描述符，接口描述符为字符串。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[getDescriptor](#ZH-CN_TOPIC_0000002529445269__getdescriptor9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[getDescriptor](#ZH-CN_TOPIC_0000002553201241__getdescriptor9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明string返回接口描述符。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回接口描述符。 |
 
 #### isObjectDead
 
@@ -7285,17 +7542,27 @@ isObjectDead(): boolean
 
 **返回值：**
 
-类型说明booleantrue：对象死亡，false：对象未死亡。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：对象死亡，false：对象未死亡。 |
 
 #### RemoteProxy
 
 实现IRemoteObject代理对象。
 
+**系统能力：**SystemCapability.Communication.IPC.Core
+
 #### 属性
 
 **系统能力**：以下各项对应的系统能力均为SystemCapability.Communication.IPC.Core。
 
-名称类型只读可选说明PING_TRANSACTIONnumber是否内部指令码，用于测试IPC服务是否正常。DUMP_TRANSACTIONnumber是否内部指令码，获取IPC服务相关的状态信息。INTERFACE_TRANSACTIONnumber是否内部指令码，获取对端接口描述符。MIN_TRANSACTION_IDnumber是否最小有效指令码。MAX_TRANSACTION_IDnumber是否最大有效指令码。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| PING_TRANSACTION | number | 是 | 否 | 内部指令码，用于测试IPC服务是否正常。 |
+| DUMP_TRANSACTION | number | 是 | 否 | 内部指令码，获取IPC服务相关的状态信息。 |
+| INTERFACE_TRANSACTION | number | 是 | 否 | 内部指令码，获取对端接口描述符。 |
+| MIN_TRANSACTION_ID | number | 是 | 否 | 最小有效指令码。 |
+| MAX_TRANSACTION_ID | number | 是 | 否 | 最大有效指令码。 |
 
 #### sendRequest(deprecated)
 
@@ -7303,19 +7570,28 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 以同步或异步方式向对端进程发送MessageParcel消息。如果为选项设置了异步模式，则期约立即兑现，reply报文里没有内容，具体回复需要在业务侧的回调中获取。如果为选项设置了同步模式，则期约将在sendRequest返回时兑现，回复内容在reply报文里。
 
-从API version 7 开始支持，API version 8 开始废弃，建议使用[sendMessageRequest](#ZH-CN_TOPIC_0000002529445269__sendmessagerequest9-2)替代。
+
+从API version 7 开始支持，API version 8 开始废弃，建议使用[sendMessageRequest](#ZH-CN_TOPIC_0000002553201241__sendmessagerequest9-2)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明codenumber是本次请求调用的消息码（1-16777215），由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。data[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是保存待发送数据的MessageParcel对象。reply[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是接收应答数据的MessageParcel对象。options[MessageOption](#ZH-CN_TOPIC_0000002529445269__messageoption)是本次请求的同异步模式，默认同步调用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
+| data | MessageParcel | 是 | 保存待发送数据的MessageParcel对象。 |
+| reply | MessageParcel | 是 | 接收应答数据的MessageParcel对象。 |
+| options | MessageOption | 是 | 本次请求的同异步模式，默认同步调用。 |
 
 **返回值：**
 
-类型说明booleantrue：发送成功，false：发送失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：发送成功，false：发送失败。 |
 
 **示例：**
+
 
 在本文档的示例中，通过this.getUIContext().getHostContext()来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需要在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
 
@@ -7393,27 +7669,29 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 **参数：**
 
-参数名类型必填说明codenumber是本次请求调用的消息码（1-16777215），由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。data[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)是保存待发送数据的MessageSequence对象。reply[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)是接收应答数据的MessageSequence对象。options[MessageOption](#ZH-CN_TOPIC_0000002529445269__messageoption)是本次请求的同异步模式，默认同步调用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
+| data | MessageSequence | 是 | 保存待发送数据的MessageSequence对象。 |
+| reply | MessageSequence | 是 | 接收应答数据的MessageSequence对象。 |
+| options | MessageOption | 是 | 本次请求的同异步模式，默认同步调用。 |
 
 **返回值：**
 
-类型说明Promise<[RequestResult](#ZH-CN_TOPIC_0000002529445269__requestresult9)>返回一个期约，兑现值是requestResult实例。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<RequestResult> | 返回一个期约，兑现值是requestResult实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.Failed to obtain the passed object instance.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.Failed to obtain the passed object instance. |
 
 **示例：**
+
 
 在本文档的示例中，通过this.getUIContext().getHostContext()来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需要在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
 
@@ -7476,7 +7754,7 @@ try {
         hilog.error(0x0000, 'testTag', 'sendMessageRequest failed, errCode: ' + result.errCode);
       }
     }).catch((e: Error) => {
-      hilog.error(0x0000, 'testTag', 'sendMessageRequest failed, error: ' + e);
+      hilog.error(0x0000, 'testTag', 'sendMessageRequest failed, error: ' + JSON.stringify(e));
     }).finally (() => {
       hilog.info(0x0000, 'testTag', 'sendMessageRequest ends, reclaim parcel');
       data.reclaim();
@@ -7494,19 +7772,28 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 以同步或异步方式向对端进程发送MessageParcel消息。如果为选项设置了异步模式，则期约立即兑现，reply报文里没有内容，具体回复需要在业务侧的回调中获取。如果为选项设置了同步模式，则期约将在sendRequest返回时兑现，回复内容在reply报文里。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[sendMessageRequest](#ZH-CN_TOPIC_0000002529445269__sendmessagerequest9-2)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[sendMessageRequest](#ZH-CN_TOPIC_0000002553201241__sendmessagerequest9-2)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明codenumber是本次请求调用的消息码（1-16777215），由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。data[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是保存待发送数据的MessageParcel对象。reply[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是接收应答数据的MessageParcel对象。options[MessageOption](#ZH-CN_TOPIC_0000002529445269__messageoption)是本次请求的同异步模式，默认同步调用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
+| data | MessageParcel | 是 | 保存待发送数据的MessageParcel对象。 |
+| reply | MessageParcel | 是 | 接收应答数据的MessageParcel对象。 |
+| options | MessageOption | 是 | 本次请求的同异步模式，默认同步调用。 |
 
 **返回值：**
 
-类型说明Promise<[SendRequestResult](#ZH-CN_TOPIC_0000002529445269__sendrequestresultdeprecated)>返回一个期约，兑现值是sendRequestResult实例。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<SendRequestResult> | 返回一个期约，兑现值是sendRequestResult实例。 |
 
 **示例：**
+
 
 在本文档的示例中，通过this.getUIContext().getHostContext()来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需要在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
 
@@ -7570,7 +7857,7 @@ try {
         hilog.error(0x0000, 'testTag', 'sendRequest failed, errCode: ' + result.errCode);
       }
     }).catch((e: Error) => {
-      hilog.error(0x0000, 'testTag', 'sendRequest failed, error: ' + e);
+      hilog.error(0x0000, 'testTag', 'sendRequest failed, error: ' + JSON.stringify(e));
     }).finally (() => {
       hilog.info(0x0000, 'testTag', 'sendRequest ends, reclaim parcel');
       data.reclaim();
@@ -7592,21 +7879,21 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 **参数：**
 
-参数名类型必填说明codenumber是本次请求调用的消息码（1-16777215），由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。data[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)是保存待发送数据的MessageSequence对象。reply[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)是接收应答数据的MessageSequence对象。options[MessageOption](#ZH-CN_TOPIC_0000002529445269__messageoption)是本次请求的同异步模式，默认同步调用。callbackAsyncCallback<[RequestResult](#ZH-CN_TOPIC_0000002529445269__requestresult9)>是接收发送结果的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
+| data | MessageSequence | 是 | 保存待发送数据的MessageSequence对象。 |
+| reply | MessageSequence | 是 | 接收应答数据的MessageSequence对象。 |
+| options | MessageOption | 是 | 本次请求的同异步模式，默认同步调用。 |
+| callback | AsyncCallback<RequestResult> | 是 | 接收发送结果的回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.Failed to obtain the passed object instance.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.Failed to obtain the passed object instance. |
 
 #### sendRequest(deprecated)
 
@@ -7614,17 +7901,24 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 以同步或异步方式向对端进程发送MessageParcel消息。如果为选项设置了异步模式，则立即收到回调，reply报文里没有内容，具体回复需要在业务侧的回调中获取。如果为选项设置了同步模式，则将在sendRequest返回时收到回调，回复内容在reply报文里。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[sendMessageRequest](#ZH-CN_TOPIC_0000002529445269__sendmessagerequest9-3)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[sendMessageRequest](#ZH-CN_TOPIC_0000002553201241__sendmessagerequest9-3)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明codenumber是本次请求调用的消息码（1-16777215），由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。data[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是保存待发送数据的MessageParcel对象。reply[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是接收应答数据的MessageParcel对象。options[MessageOption](#ZH-CN_TOPIC_0000002529445269__messageoption)是本次请求的同异步模式，默认同步调用。callbackAsyncCallback<[SendRequestResult](#ZH-CN_TOPIC_0000002529445269__sendrequestresultdeprecated)>是接收发送结果的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
+| data | MessageParcel | 是 | 保存待发送数据的MessageParcel对象。 |
+| reply | MessageParcel | 是 | 接收应答数据的MessageParcel对象。 |
+| options | MessageOption | 是 | 本次请求的同异步模式，默认同步调用。 |
+| callback | AsyncCallback<SendRequestResult> | 是 | 接收发送结果的回调。 |
 
 #### getLocalInterface9+
 
-getLocalInterface(interface: string): IRemoteBroker
+getLocalInterface(interfaceDes: string): IRemoteBroker
 
 查询并获取当前接口描述符对应的本地接口对象。
 
@@ -7632,17 +7926,24 @@ getLocalInterface(interface: string): IRemoteBroker
 
 **参数：**
 
-参数名类型必填说明interfacestring是需要查询的接口描述符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| interfaceDes | string | 是 | 需要查询的接口描述符。 |
 
 **返回值：**
 
-类型说明[IRemoteBroker](#ZH-CN_TOPIC_0000002529445269__iremotebroker)默认返回Null，标识该接口是一个代理侧接口。
+| 类型 | 说明 |
+| --- | --- |
+| IRemoteBroker | 默认返回Null，标识该接口是一个代理侧接口。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401check param failed1900006Operation allowed only for the remote object.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | check param failed |
+| 1900006 | Operation allowed only for the remote object. |
 
 **示例：**
 
@@ -7698,7 +7999,6 @@ if (proxy != undefined) {
     hilog.error(0x0000, 'testTag', 'rpc get local interface fail, errorCode ' + e.code);
     hilog.error(0x0000, 'testTag', 'rpc get local interface fail, errorMessage ' + e.message);
   }
-}
 ```
 
 #### queryLocalInterface(deprecated)
@@ -7707,19 +8007,25 @@ queryLocalInterface(interface: string): IRemoteBroker
 
 查询并获取当前接口描述符对应的本地接口对象。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[getLocalInterface](#ZH-CN_TOPIC_0000002529445269__getlocalinterface9-1)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[getLocalInterface](#ZH-CN_TOPIC_0000002553201241__getlocalinterface9-1)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明interfacestring是需要查询的接口描述符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| interface | string | 是 | 需要查询的接口描述符。 |
 
 **返回值：**
 
-类型说明[IRemoteBroker](#ZH-CN_TOPIC_0000002529445269__iremotebroker)默认返回Null，标识该接口是一个代理侧接口。
+| 类型 | 说明 |
+| --- | --- |
+| IRemoteBroker | 默认返回Null，标识该接口是一个代理侧接口。 |
 
 **示例：**
+
 
 在本文档的示例中，通过this.getUIContext().getHostContext()来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需要在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
 
@@ -7773,31 +8079,28 @@ if (proxy != undefined) {
 
 registerDeathRecipient(recipient: DeathRecipient, flags: number): void
 
-注册用于接收远程对象死亡通知的回调。如果与RemoteProxy对象匹配的远程对象进程死亡，则调用此方法。
+注册用于接收远程对象死亡通知的回调。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明recipient[DeathRecipient](#ZH-CN_TOPIC_0000002529445269__deathrecipient)是要注册的回调。flagsnumber是死亡通知标志。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| recipient | DeathRecipient | 是 | 要注册的回调。 |
+| flags | number | 是 | 死亡通知标志。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.The callback used to receive remote object death notifications is empty.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The callback used to receive remote object death notifications is empty. |
 1900008The proxy or remote object is invalid.
 
 **示例：**
+
 
 在本文档的示例中，通过this.getUIContext().getHostContext()来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需要在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
 
@@ -7846,7 +8149,6 @@ class MyDeathRecipient implements rpc.DeathRecipient {
   onRemoteDied() {
     hilog.info(0x0000, 'testTag', 'server died');
   }
-}
 if (proxy != undefined) {
   try {
     let deathRecipient = new MyDeathRecipient();
@@ -7856,28 +8158,34 @@ if (proxy != undefined) {
     hilog.error(0x0000, 'testTag', 'proxy register deathRecipient fail, errorCode ' + e.code);
     hilog.error(0x0000, 'testTag', 'proxy register deathRecipient fail, errorMessage ' + e.message);
   }
-}
 ```
 
 #### addDeathRecipient(deprecated)
 
 addDeathRecipient(recipient: DeathRecipient, flags: number): boolean
 
-注册用于接收远程对象死亡通知的回调，增加proxy对象上的死亡通知。
+注册用于接收远程对象死亡通知的回调。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[registerDeathRecipient](#ZH-CN_TOPIC_0000002529445269__registerdeathrecipient9-1)类替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[registerDeathRecipient](#ZH-CN_TOPIC_0000002553201241__registerdeathrecipient9-1)类替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明recipient[DeathRecipient](#ZH-CN_TOPIC_0000002529445269__deathrecipient)是收件人表示要注册的回调。flagsnumber是死亡通知标志。保留参数。设置为0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| recipient | DeathRecipient | 是 | 收件人表示要注册的回调。 |
+| flags | number | 是 | 死亡通知标志。保留参数。设置为0。 |
 
 **返回值：**
 
-类型说明booleantrue：回调注册成功，false：回调注册失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：回调注册成功，false：回调注册失败。 |
 
 **示例：**
+
 
 在本文档的示例中，通过this.getUIContext().getHostContext()来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需要在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
 
@@ -7925,7 +8233,6 @@ class MyDeathRecipient implements rpc.DeathRecipient {
   onRemoteDied() {
     hilog.info(0x0000, 'testTag', 'server died');
   }
-}
 if (proxy != undefined) {
   let deathRecipient = new MyDeathRecipient();
   proxy.addDeathRecipient(deathRecipient, 0);
@@ -7942,25 +8249,22 @@ unregisterDeathRecipient(recipient: DeathRecipient, flags: number): void
 
 **参数：**
 
-参数名类型必填说明recipient[DeathRecipient](#ZH-CN_TOPIC_0000002529445269__deathrecipient)是要注销的回调。flagsnumber是死亡通知标志。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| recipient | DeathRecipient | 是 | 要注销的回调。 |
+| flags | number | 是 | 死亡通知标志。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.The callback used to receive remote object death notifications is empty.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The callback used to receive remote object death notifications is empty. |
 1900008The proxy or remote object is invalid.
 
 **示例：**
+
 
 在本文档的示例中，通过this.getUIContext().getHostContext()来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需要在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
 
@@ -8009,7 +8313,6 @@ class MyDeathRecipient implements rpc.DeathRecipient {
   onRemoteDied() {
     hilog.info(0x0000, 'testTag', 'server died');
   }
-}
 if (proxy != undefined) {
   try {
     let deathRecipient = new MyDeathRecipient();
@@ -8020,7 +8323,6 @@ if (proxy != undefined) {
     hilog.error(0x0000, 'testTag', 'proxy unregister deathRecipient fail, errorCode ' + e.code);
     hilog.error(0x0000, 'testTag', 'proxy unregister deathRecipient fail, errorMessage ' + e.message);
   }
-}
 ```
 
 #### removeDeathRecipient(deprecated)
@@ -8029,19 +8331,26 @@ removeDeathRecipient(recipient: DeathRecipient, flags: number): boolean
 
 注销用于接收远程对象死亡通知的回调。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[unregisterDeathRecipient](#ZH-CN_TOPIC_0000002529445269__unregisterdeathrecipient9-1)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[unregisterDeathRecipient](#ZH-CN_TOPIC_0000002553201241__unregisterdeathrecipient9-1)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明recipient[DeathRecipient](#ZH-CN_TOPIC_0000002529445269__deathrecipient)是要注销的死亡回调。flagsnumber是死亡通知标志。保留参数。设置为0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| recipient | DeathRecipient | 是 | 要注销的死亡回调。 |
+| flags | number | 是 | 死亡通知标志。保留参数。设置为0。 |
 
 **返回值：**
 
-类型说明booleantrue：回调注销成功，false：回调注销失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：回调注销成功，false：回调注销失败。 |
 
 **示例：**
+
 
 在本文档的示例中，通过this.getUIContext().getHostContext()来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需要在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
 
@@ -8089,7 +8398,6 @@ class MyDeathRecipient implements rpc.DeathRecipient {
   onRemoteDied() {
     hilog.info(0x0000, 'testTag', 'server died');
   }
-}
 if (proxy != undefined) {
   let deathRecipient = new MyDeathRecipient();
   proxy.addDeathRecipient(deathRecipient, 0);
@@ -8107,13 +8415,18 @@ getDescriptor(): string
 
 **返回值：**
 
-类型说明string返回接口描述符。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回接口描述符。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900007communication failed.1900008The proxy or remote object is invalid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900007 | communication failed. |
+| 1900008 | The proxy or remote object is invalid. |
 
 **示例：**
 
@@ -8169,7 +8482,6 @@ if (proxy != undefined) {
     hilog.error(0x0000, 'testTag', 'rpc get interface descriptor fail, errorCode ' + e.code);
     hilog.error(0x0000, 'testTag', 'rpc get interface descriptor fail, errorMessage ' + e.message);
   }
-}
 ```
 
 #### getInterfaceDescriptor(deprecated)
@@ -8178,15 +8490,19 @@ getInterfaceDescriptor(): string
 
 查询当前代理对象接口的描述符。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[getDescriptor](#ZH-CN_TOPIC_0000002529445269__getdescriptor9-1)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[getDescriptor](#ZH-CN_TOPIC_0000002553201241__getdescriptor9-1)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明string当前的接口描述符。
+| 类型 | 说明 |
+| --- | --- |
+| string | 当前的接口描述符。 |
 
 **示例：**
+
 
 在本文档的示例中，通过this.getUIContext().getHostContext()来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需要在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
 
@@ -8246,7 +8562,9 @@ isObjectDead(): boolean
 
 **返回值：**
 
-类型说明booleantrue：对应的对象已经死亡，false：对应的对象未死亡。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：对应的对象已经死亡，false：对应的对象未死亡。 |
 
 **示例：**
 
@@ -8302,11 +8620,18 @@ if (proxy != undefined) {
 
 公共消息选项，使用指定的标志类型，构造指定的MessageOption对象。
 
+**系统能力：**SystemCapability.Communication.IPC.Core
+
 #### 属性
 
 **系统能力**：以下各项对应的系统能力均为SystemCapability.Communication.IPC.Core。
 
-名称类型只读可选说明TF_SYNCnumber是否同步调用标识。TF_ASYNCnumber是否异步调用标识。TF_ACCEPT_FDSnumber是否指示sendMessageRequest9+接口可以传递文件描述符。TF_WAIT_TIMEnumber是否RPC等待时间(单位/秒)，IPC场景下无效。默认等待为8秒（不建议修改等待时间）。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| TF_SYNC | number | 是 | 否 | 同步调用标识。 |
+| TF_ASYNC | number | 是 | 否 | 异步调用标识。 |
+| TF_ACCEPT_FDS | number | 是 | 否 | 指示sendMessageRequest9+接口可以传递文件描述符。 |
+| TF_WAIT_TIME | number | 是 | 否 | RPC等待时间(单位/秒)，IPC场景下无效。默认等待为8秒（不建议修改等待时间）。 |
 
 #### constructor9+
 
@@ -8318,7 +8643,9 @@ MessageOption构造函数。
 
 **参数：**
 
-参数名类型必填说明asyncboolean否true：表示异步调用标志，false：表示同步调用标志。默认同步调用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| async | boolean | 否 | true：表示异步调用标志，false：表示同步调用标志。默认同步调用。 |
 
 **示例：**
 
@@ -8329,7 +8656,6 @@ class TestRemoteObject extends rpc.MessageOption {
   constructor(async: boolean) {
     super(async);
   }
-}
 ```
 
 #### constructor
@@ -8342,7 +8668,10 @@ MessageOption构造函数。
 
 **参数：**
 
-参数名类型必填说明syncFlagsnumber否同步调用或异步调用标志，同步调用标志：0；异步调用标志：1。默认同步调用。waitTimenumber否调用rpc最长等待时间。默认TF_WAIT_TIME。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| syncFlags | number | 否 | 同步调用或异步调用标志，同步调用标志：0；异步调用标志：1。默认同步调用。 |
+| waitTime | number | 否 | 调用rpc最长等待时间。默认TF_WAIT_TIME。 |
 
 **示例：**
 
@@ -8353,7 +8682,6 @@ class TestRemoteObject extends rpc.MessageOption {
   constructor(syncFlags?: number,waitTime?: number) {
     super(syncFlags,waitTime);
   }
-}
 ```
 
 #### isAsync9+
@@ -8366,7 +8694,9 @@ isAsync(): boolean
 
 **返回值：**
 
-类型说明booleantrue：异步调用成功，false：同步调用成功。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：异步调用成功，false：同步调用成功。 |
 
 **示例：**
 
@@ -8392,7 +8722,9 @@ setAsync(isAsync: boolean): void
 
 **参数：**
 
-参数名类型必填说明isAsyncboolean是true：表示异步调用标志，false：表示同步调用标志。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isAsync | boolean | 是 | true：表示异步调用标志，false：表示同步调用标志。 |
 
 **示例：**
 
@@ -8418,7 +8750,9 @@ getFlags(): number
 
 **返回值：**
 
-类型说明number调用成功返回同步调用或异步调用标志。同步调用标志：0，异步调用标志：1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 调用成功返回同步调用或异步调用标志。同步调用标志：0，异步调用标志：1。 |
 
 **示例：**
 
@@ -8450,7 +8784,9 @@ setFlags(flags: number): void
 
 **参数：**
 
-参数名类型必填说明flagsnumber是同步调用或异步调用标志。同步调用标志：0；异步调用标志：1
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| flags | number | 是 | 同步调用或异步调用标志。同步调用标志：0；异步调用标志：1 |
 
 **示例：**
 
@@ -8479,7 +8815,9 @@ getWaitTime(): number
 
 **返回值：**
 
-类型说明numberrpc最长等待时间。默认TF_WAIT_TIME。
+| 类型 | 说明 |
+| --- | --- |
+| number | rpc最长等待时间。默认TF_WAIT_TIME。 |
 
 **示例：**
 
@@ -8509,7 +8847,9 @@ setWaitTime(waitTime: number): void
 
 **参数：**
 
-参数名类型必填说明waitTimenumber是rpc调用最长等待时间，上限为3000秒。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| waitTime | number | 是 | rpc调用最长等待时间，上限为3000秒。 |
 
 **示例：**
 
@@ -8531,6 +8871,8 @@ try {
 
 用于获取IPC上下文信息，包括获取UID和PID、获取本端和对端设备ID、检查接口调用是否在同一设备上。
 
+**系统能力：**SystemCapability.Communication.IPC.Core
+
 #### getContextObject
 
 static getContextObject(): IRemoteObject
@@ -8541,7 +8883,9 @@ static getContextObject(): IRemoteObject
 
 **返回值：**
 
-类型说明[IRemoteObject](#ZH-CN_TOPIC_0000002529445269__iremoteobject)返回系统能力管理者。
+| 类型 | 说明 |
+| --- | --- |
+| IRemoteObject | 返回系统能力管理者。 |
 
 **示例：**
 
@@ -8567,7 +8911,9 @@ static getCallingPid(): number
 
 **返回值：**
 
-类型说明number返回调用者的PID。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回调用者的PID。 |
 
 **示例：**
 
@@ -8586,7 +8932,6 @@ class Stub extends rpc.RemoteObject {
     }
     return true;
   }
-}
 ```
 
 #### getCallingUid
@@ -8599,7 +8944,9 @@ static getCallingUid(): number
 
 **返回值：**
 
-类型说明number返回调用者的UID。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回调用者的UID。 |
 
 **示例：**
 
@@ -8618,7 +8965,6 @@ class Stub extends rpc.RemoteObject {
     }
     return true;
   }
-}
 ```
 
 #### getCallingTokenId8+
@@ -8631,7 +8977,9 @@ static getCallingTokenId(): number
 
 **返回值：**
 
-类型说明number返回调用者的TokenId。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回调用者的TokenId。 |
 
 **示例：**
 
@@ -8650,7 +8998,6 @@ class Stub extends rpc.RemoteObject {
     }
     return true;
   }
-}
 ```
 
 #### getCallingDeviceID
@@ -8663,7 +9010,9 @@ static getCallingDeviceID(): string
 
 **返回值：**
 
-类型说明string返回调用者进程所在的设备ID。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回调用者进程所在的设备ID。 |
 
 **示例：**
 
@@ -8682,7 +9031,6 @@ class Stub extends rpc.RemoteObject {
     }
     return true;
   }
-}
 ```
 
 #### getLocalDeviceID
@@ -8695,7 +9043,9 @@ static getLocalDeviceID(): string
 
 **返回值：**
 
-类型说明string返回本地设备的ID。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回本地设备的ID。 |
 
 **示例：**
 
@@ -8714,7 +9064,6 @@ class Stub extends rpc.RemoteObject {
     }
     return true;
   }
-}
 ```
 
 #### isLocalCalling
@@ -8727,7 +9076,9 @@ static isLocalCalling(): boolean
 
 **返回值：**
 
-类型说明booleantrue：调用在同一台设备，false：调用未在同一台设备。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：调用在同一台设备，false：调用未在同一台设备。 |
 
 **示例：**
 
@@ -8746,7 +9097,6 @@ class Stub extends rpc.RemoteObject {
     }
     return true;
   }
-}
 ```
 
 #### flushCmdBuffer9+
@@ -8759,19 +9109,17 @@ static flushCmdBuffer(object: IRemoteObject): void
 
 **参数：**
 
-参数名类型必填说明object[IRemoteObject](#ZH-CN_TOPIC_0000002529445269__iremoteobject)是指定的RemoteProxy。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| object | IRemoteObject | 是 | 指定的RemoteProxy。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 
 **示例：**
 
@@ -8789,7 +9137,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     // 根据业务实际逻辑，进行相应处理
     return true;
   }
-}
 try {
   let remoteObject = new TestRemoteObject("aaa");
   rpc.IPCSkeleton.flushCmdBuffer(remoteObject);
@@ -8806,17 +9153,22 @@ static flushCommands(object: IRemoteObject): number
 
 静态方法，将所有挂起的命令从指定的RemoteProxy刷新到相应的RemoteObject。建议在任何时间执行敏感操作之前调用此方法。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[flushCmdBuffer](#ZH-CN_TOPIC_0000002529445269__flushcmdbuffer9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[flushCmdBuffer](#ZH-CN_TOPIC_0000002553201241__flushcmdbuffer9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明object[IRemoteObject](#ZH-CN_TOPIC_0000002529445269__iremoteobject)是指定的RemoteProxy。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| object | IRemoteObject | 是 | 指定的RemoteProxy。 |
 
 **返回值：**
 
-类型说明number如果操作成功，返回0；如果输入对象为空或RemoteObject，或者操作失败，返回错误代码。
+| 类型 | 说明 |
+| --- | --- |
+| number | 如果操作成功，返回0；如果输入对象为空或RemoteObject，或者操作失败，返回错误代码。 |
 
 **示例：**
 
@@ -8832,7 +9184,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     option: rpc.MessageOption): boolean | Promise<boolean> {
     // 根据业务实际逻辑，进行相应处理
     return true;
-  }
 }
 try {
   let remoteObject = new TestRemoteObject("aaa");
@@ -8855,7 +9206,9 @@ static resetCallingIdentity(): string
 
 **返回值：**
 
-类型说明string返回包含远程用户的UID和PID的字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回包含远程用户的UID和PID的字符串。 |
 
 **示例：**
 
@@ -8874,7 +9227,6 @@ class Stub extends rpc.RemoteObject {
     }
     return true;
   }
-}
 ```
 
 #### restoreCallingIdentity9+
@@ -8887,23 +9239,17 @@ static restoreCallingIdentity(identity: string): void
 
 **参数：**
 
-参数名类型必填说明identitystring是标识表示包含远程用户UID和PID的字符串，其长度应小于40960字节。由resetCallingIdentity返回。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| identity | string | 是 | 标识表示包含远程用户UID和PID的字符串，其长度应小于40960字节。由resetCallingIdentity返回。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.The string length exceeds 40960 bytes;
-
-4.The number of bytes copied to the buffer is different from the length of the obtained string.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The string length is greater than or equal to 40960 bytes; 4.The number of bytes copied to the buffer is different from the length of the obtained string. |
 
 **示例：**
 
@@ -8923,7 +9269,6 @@ class Stub extends rpc.RemoteObject {
     }
     return true;
   }
-}
 ```
 
 #### setCallingIdentity(deprecated)
@@ -8932,17 +9277,22 @@ static setCallingIdentity(identity: string): boolean
 
 静态方法，将UID和PID恢复为远程用户的UID和PID。它通常在使用resetCallingIdentity后调用，需要resetCallingIdentity返回的远程用户的UID和PID。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[restoreCallingIdentity](#ZH-CN_TOPIC_0000002529445269__restorecallingidentity9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[restoreCallingIdentity](#ZH-CN_TOPIC_0000002553201241__restorecallingidentity9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明identitystring是标识表示包含远程用户UID和PID的字符串。由resetCallingIdentity返回。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| identity | string | 是 | 标识表示包含远程用户UID和PID的字符串。由resetCallingIdentity返回。 |
 
 **返回值：**
 
-类型说明booleantrue：设置成功，false：设置失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：设置成功，false：设置失败。 |
 
 **示例：**
 
@@ -8963,12 +9313,13 @@ class Stub extends rpc.RemoteObject {
     }
     return true;
   }
-}
 ```
 
 #### RemoteObject
 
 实现远程对象。服务提供者必须继承此类。
+
+**系统能力：**SystemCapability.Communication.IPC.Core
 
 #### constructor
 
@@ -8980,7 +9331,9 @@ RemoteObject构造函数。
 
 **参数：**
 
-参数名类型必填说明descriptorstring是接口描述符，其长度应小于40960字节。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| descriptor | string | 是 | 接口描述符，其长度应小于40960字节。 |
 
 **示例：**
 
@@ -8991,7 +9344,6 @@ class TestRemoteObject extends rpc.RemoteObject {
   constructor(descriptor: string) {
     super(descriptor);
   }
-}
 ```
 
 #### sendRequest(deprecated)
@@ -9000,17 +9352,25 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 以同步或异步方式向对端进程发送MessageParcel消息。如果为选项设置了异步模式，则期约立即兑现，reply报文里没有内容，具体回复需要在业务侧的回调中获取。如果为选项设置了同步模式，则期约将在sendRequest返回时兑现，回复内容在reply报文里。
 
-从API version 7 开始支持，API version 8 开始废弃，建议使用[sendMessageRequest](#ZH-CN_TOPIC_0000002529445269__sendmessagerequest9-4)替代。
+
+从API version 7 开始支持，API version 8 开始废弃，建议使用[sendMessageRequest](#ZH-CN_TOPIC_0000002553201241__sendmessagerequest9-4)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明codenumber是本次请求调用的消息码（1-16777215），由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。data[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是保存待发送数据的MessageParcel对象。reply[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是接收应答数据的MessageParcel对象。options[MessageOption](#ZH-CN_TOPIC_0000002529445269__messageoption)是本次请求的同异步模式，默认同步调用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
+| data | MessageParcel | 是 | 保存待发送数据的MessageParcel对象。 |
+| reply | MessageParcel | 是 | 接收应答数据的MessageParcel对象。 |
+| options | MessageOption | 是 | 本次请求的同异步模式，默认同步调用。 |
 
 **返回值：**
 
-类型说明booleantrue：发送成功，false：发送失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：发送成功，false：发送失败。 |
 
 **示例：**
 
@@ -9023,7 +9383,6 @@ class testRemoteObject extends rpc.RemoteObject {
     option: rpc.MessageOption): boolean {
     // 根据业务实际逻辑，进行相应处理
     return true;
-  }
 }
 try {
   let testRemoteObject = new TestRemoteObject("testObject");
@@ -9058,25 +9417,26 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 **参数：**
 
-参数名类型必填说明codenumber是本次请求调用的消息码（1-16777215），由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。data[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)是保存待发送数据的MessageSequence对象。reply[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)是接收应答数据的MessageSequence对象。options[MessageOption](#ZH-CN_TOPIC_0000002529445269__messageoption)是本次请求的同异步模式，默认同步调用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
+| data | MessageSequence | 是 | 保存待发送数据的MessageSequence对象。 |
+| reply | MessageSequence | 是 | 接收应答数据的MessageSequence对象。 |
+| options | MessageOption | 是 | 本次请求的同异步模式，默认同步调用。 |
 
 **返回值：**
 
-类型说明Promise<[RequestResult](#ZH-CN_TOPIC_0000002529445269__requestresult9)>返回一个期约，兑现值是RequestResult实例。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<RequestResult> | 返回一个期约，兑现值是RequestResult实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.Failed to obtain the passed object instance.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.Failed to obtain the passed object instance. |
 
 **示例：**
 
@@ -9092,7 +9452,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     option: rpc.MessageOption): boolean | Promise<boolean> {
     // 根据业务实际逻辑，进行相应处理
     return true;
-  }
 }
 try {
   let testRemoteObject = new TestRemoteObject("testObject");
@@ -9113,7 +9472,7 @@ try {
         hilog.error(0x0000, 'testTag', 'sendMessageRequest failed, errCode: ' + result.errCode);
       }
     }).catch((e: Error) => {
-      hilog.error(0x0000, 'testTag', 'sendMessageRequest failed, error: ' + e);
+      hilog.error(0x0000, 'testTag', 'sendMessageRequest failed, error: ' + JSON.stringify(e));
     }).finally (() => {
       hilog.info(0x0000, 'testTag', 'sendMessageRequest ends, reclaim parcel');
       data.reclaim();
@@ -9130,17 +9489,25 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 以同步或异步方式向对端进程发送MessageParcel消息。如果为选项设置了异步模式，则期约立即兑现，reply报文里没有内容，具体回复需要在业务侧的回调中获取。如果为选项设置了同步模式，则期约将在sendRequest返回时兑现，回复内容在reply报文里。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[sendMessageRequest](#ZH-CN_TOPIC_0000002529445269__sendmessagerequest9-4)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[sendMessageRequest](#ZH-CN_TOPIC_0000002553201241__sendmessagerequest9-4)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明codenumber是本次请求调用的消息码（1-16777215），由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。data[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是保存待发送数据的MessageParcel对象。reply[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是接收应答数据的MessageParcel对象。options[MessageOption](#ZH-CN_TOPIC_0000002529445269__messageoption)是本次请求的同异步模式，默认同步调用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
+| data | MessageParcel | 是 | 保存待发送数据的MessageParcel对象。 |
+| reply | MessageParcel | 是 | 接收应答数据的MessageParcel对象。 |
+| options | MessageOption | 是 | 本次请求的同异步模式，默认同步调用。 |
 
 **返回值：**
 
-类型说明Promise<[SendRequestResult](#ZH-CN_TOPIC_0000002529445269__sendrequestresultdeprecated)>返回一个期约，兑现值是sendRequestResult实例。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<SendRequestResult> | 返回一个期约，兑现值是sendRequestResult实例。 |
 
 **示例：**
 
@@ -9155,7 +9522,6 @@ class TestRemoteObject extends rpc.RemoteObject {
   onRemoteRequest(code: number, data: rpc.MessageParcel, reply: rpc.MessageParcel, option: rpc.MessageOption): boolean {
     // 根据业务实际逻辑，进行相应处理
     return true;
-  }
 }
 try {
   let testRemoteObject = new TestRemoteObject("testObject");
@@ -9177,7 +9543,7 @@ try {
       hilog.error(0x0000, 'testTag', 'sendRequest failed, errCode: ' + result.errCode);
     }
   }).catch((e: Error) => {
-    hilog.error(0x0000, 'testTag', 'sendRequest failed, error: ' + e);
+    hilog.error(0x0000, 'testTag', 'sendRequest failed, error: ' + JSON.stringify(e));
   }).finally (() => {
     hilog.info(0x0000, 'testTag', 'sendRequest ends, reclaim parcel');
     data.reclaim();
@@ -9198,21 +9564,21 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 **参数：**
 
-参数名类型必填说明codenumber是本次请求调用的消息码（1-16777215），由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。data[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)是保存待发送数据的MessageSequence对象。reply[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)是接收应答数据的MessageSequence对象。options[MessageOption](#ZH-CN_TOPIC_0000002529445269__messageoption)是本次请求的同异步模式，默认同步调用。callbackAsyncCallback<[RequestResult](#ZH-CN_TOPIC_0000002529445269__requestresult9)>是接收发送结果的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
+| data | MessageSequence | 是 | 保存待发送数据的MessageSequence对象。 |
+| reply | MessageSequence | 是 | 接收应答数据的MessageSequence对象。 |
+| options | MessageOption | 是 | 本次请求的同异步模式，默认同步调用。 |
+| callback | AsyncCallback<RequestResult> | 是 | 接收发送结果的回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.Failed to obtain the passed object instance.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.Failed to obtain the passed object instance. |
 
 #### sendRequest(deprecated)
 
@@ -9220,37 +9586,49 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 以同步或异步方式向对端进程发送MessageParcel消息。如果为选项设置了异步模式，则立即收到回调，reply报文里没有内容，具体回复需要在业务侧的回调中获取。如果为选项设置了同步模式，则将在sendRequest返回时收到回调，回复内容在reply报文里。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[sendMessageRequest](#ZH-CN_TOPIC_0000002529445269__sendmessagerequest9-5)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[sendMessageRequest](#ZH-CN_TOPIC_0000002553201241__sendmessagerequest9-5)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明codenumber是本次请求调用的消息码（1-16777215），由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。data[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是保存待发送数据的MessageParcel对象。reply[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是接收应答数据的MessageParcel对象。options[MessageOption](#ZH-CN_TOPIC_0000002529445269__messageoption)是本次请求的同异步模式，默认同步调用。callbackAsyncCallback<[SendRequestResult](#ZH-CN_TOPIC_0000002529445269__sendrequestresultdeprecated)>是接收发送结果的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
+| data | MessageParcel | 是 | 保存待发送数据的MessageParcel对象。 |
+| reply | MessageParcel | 是 | 接收应答数据的MessageParcel对象。 |
+| options | MessageOption | 是 | 本次请求的同异步模式，默认同步调用。 |
+| callback | AsyncCallback<SendRequestResult> | 是 | 接收发送结果的回调。 |
 
-#### onRemoteMessageRequest9+
+**onRemoteMessageRequest23+**
 
-onRemoteMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, options: MessageOption): boolean | Promise<boolean>
+onRemoteMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, options: MessageOption, callingInfo?: CallingInfo): boolean | Promise<boolean>
 
-开发者应优先选择重载onRemoteMessageRequest方法，其中可以自由实现同步和异步的消息处理。
+sendMessageRequest请求的响应处理函数，服务端在该函数里同步或异步地处理请求，回复结果，该接口可从入参callingInfo中获取IPC上下文信息。
+
+
+开发者应优先选择重载带有CallingInfo参数的onRemoteMessageRequest方法，其中可以自由实现同步和异步的消息处理。
 
 开发者同时重载onRemoteRequest和onRemoteMessageRequest方法时，仅onRemoteMessageRequest方法生效。
 
-sendMessageRequest请求的响应处理函数，服务端在该函数里同步或异步地处理请求，回复结果。
-
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明codenumber是对端发送的服务请求码。data[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)是携带客户端调用参数的MessageSequence对象。reply[MessageSequence](#ZH-CN_TOPIC_0000002529445269__messagesequence9)是写入结果的MessageSequence对象。options[MessageOption](#ZH-CN_TOPIC_0000002529445269__messageoption)是指示操作是同步还是异步。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 对端发送的服务请求码。 |
+| data | MessageSequence | 是 | 携带客户端调用参数的MessageSequence对象。 |
+| reply | MessageSequence | 是 | 写入结果的MessageSequence对象。 |
+| options | MessageOption | 是 | 指示操作是同步还是异步。 |
+| callingInfo | CallingInfo | 否 | 获取IPC上下文信息。 |
 
 **返回值：**
 
-类型说明boolean | Promise<boolean>
-
-- 若在onRemoteMessageRequest中同步处理请求，则返回一个布尔值。返回true表示操作成功，返回false表示操作失败。
-
-- 若在onRemoteMessageRequest中异步处理请求，则返回一个Promise对象。返回true表示操作成功，返回false表示操作失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | Promise<boolean> | - 若在onRemoteMessageRequest中同步处理请求，则返回一个布尔值。返回true表示操作成功，返回false表示操作失败。 - 若在onRemoteMessageRequest中异步处理请求，则返回一个Promise对象。返回true表示操作成功，返回false表示操作失败。 |
 
 **重载onRemoteMessageRequest方法同步处理请求示例：**
 
@@ -9264,7 +9642,56 @@ class TestRemoteObject extends rpc.RemoteObject {
   }
 
   onRemoteMessageRequest(code: number, data: rpc.MessageSequence, reply: rpc.MessageSequence,
-    option: rpc.MessageOption): boolean | Promise<boolean> {
+    option: rpc.MessageOption, callingInfo?: rpc.CallingInfo): boolean | Promise<boolean> {
+    if (code === 1) {
+      hilog.info(0x0000, 'testTag', 'RpcServer: sync onRemoteMessageRequest is called');
+      let pid = callingInfo?.callerPid;
+      return true;
+    } else {
+      hilog.error(0x0000, 'testTag', 'RpcServer: unknown code: ' + code);
+      return false;
+    }
+```
+
+重载onRemoteMessageRequest方法异步处理请求示例：
+
+```ets
+import { rpc } from '@kit.IPCKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+class TestRemoteObject extends rpc.RemoteObject {
+  constructor(descriptor: string) {
+    super(descriptor);
+  }
+
+  async onRemoteMessageRequest(code: number, data: rpc.MessageSequence, reply: rpc.MessageSequence,
+    option: rpc.MessageOption, callingInfo?: rpc.CallingInfo): Promise<boolean> {
+    if (code === 1) {
+      hilog.info(0x0000, 'testTag', 'RpcServer: async onRemoteMessageRequest is called');
+      let pid = callingInfo?.callerPid;
+    } else {
+      hilog.error(0x0000, 'testTag', 'RpcServer: unknown code: ' + code);
+      return false;
+    }
+    await new Promise((resolve: (data: rpc.RequestResult) => void) => {
+      setTimeout(resolve, 100);
+    })
+    return true;
+  }
+```
+
+同时重载onRemoteMessageRequest和onRemoteRequest方法同步处理请求示例：
+
+```ets
+import { rpc } from '@kit.IPCKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+class TestRemoteObject extends rpc.RemoteObject {
+  constructor(descriptor: string) {
+    super(descriptor);
+  }
+
+  onRemoteRequest(code: number, data: rpc.MessageParcel, reply: rpc.MessageParcel, option: rpc.MessageOption): boolean {
     if (code === 1) {
       hilog.info(0x0000, 'testTag', 'RpcServer: sync onRemoteMessageRequest is called');
       return true;
@@ -9272,7 +9699,67 @@ class TestRemoteObject extends rpc.RemoteObject {
       hilog.error(0x0000, 'testTag', 'RpcServer: unknown code: ' + code);
       return false;
     }
+    // 同时调用仅会执行onRemoteMessageRequest
+  onRemoteMessageRequest(code: number, data: rpc.MessageSequence, reply: rpc.MessageSequence,
+    option: rpc.MessageOption, callingInfo?: rpc.CallingInfo): boolean | Promise<boolean> {
+    if (code === 1) {
+      hilog.info(0x0000, 'testTag', 'RpcServer: async onRemoteMessageRequest is called');
+      let pid = callingInfo?.callerPid;
+    } else {
+      hilog.error(0x0000, 'testTag', 'RpcServer: unknown code: ' + code);
+      return false;
   }
+    return true;
+  }
+```
+
+**onRemoteMessageRequest9+**
+
+onRemoteMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, options: MessageOption): boolean | Promise<boolean>
+
+sendMessageRequest请求的响应处理函数，服务端在该函数里同步或异步地处理请求，回复结果。
+
+
+开发者应优先选择重载onRemoteMessageRequest方法，其中可以自由实现同步和异步的消息处理。
+
+开发者同时重载onRemoteRequest和onRemoteMessageRequest方法时，仅onRemoteMessageRequest方法生效。
+
+**系统能力：**SystemCapability.Communication.IPC.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 对端发送的服务请求码。 |
+| data | MessageSequence | 是 | 携带客户端调用参数的MessageSequence对象。 |
+| reply | MessageSequence | 是 | 写入结果的MessageSequence对象。 |
+| options | MessageOption | 是 | 指示操作是同步还是异步。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | Promise<boolean> | - 若在onRemoteMessageRequest中同步处理请求，则返回一个布尔值。返回true表示操作成功，返回false表示操作失败。 - 若在onRemoteMessageRequest中异步处理请求，则返回一个Promise对象。返回true表示操作成功，返回false表示操作失败。 |
+
+重载onRemoteMessageRequest方法同步处理请求示例：
+
+```ets
+import { rpc } from '@kit.IPCKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+class TestRemoteObject extends rpc.RemoteObject {
+  constructor(descriptor: string) {
+    super(descriptor);
+  }
+
+  onRemoteMessageRequest(code: number, data: rpc.MessageSequence, reply: rpc.MessageSequence,
+    option: rpc.MessageOption): boolean {
+    if (code === 1) {
+      hilog.info(0x0000, 'testTag', 'RpcServer: sync onRemoteMessageRequest is called');
+      return true;
+    } else {
+      hilog.error(0x0000, 'testTag', 'RpcServer: unknown code: ' + code);
+      return false;
 }
 ```
 
@@ -9300,7 +9787,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     })
     return true;
   }
-}
 ```
 
 **同时重载onRemoteMessageRequest和onRemoteRequest方法同步处理请求示例：**
@@ -9322,7 +9808,6 @@ class TestRemoteObject extends rpc.RemoteObject {
         hilog.error(0x0000, 'testTag', 'RpcServer: unknown code: ' + code);
         return false;
      }
-  }
     // 同时调用仅会执行onRemoteMessageRequest
   onRemoteMessageRequest(code: number, data: rpc.MessageSequence, reply: rpc.MessageSequence,
     option: rpc.MessageOption): boolean | Promise<boolean> {
@@ -9334,44 +9819,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     }
     return true;
   }
-}
-```
-
-**同时重载onRemoteMessageRequest和onRemoteRequest方法异步处理请求示例：**
-
-```ets
-import { rpc } from '@kit.IPCKit';
-import { hilog } from '@kit.PerformanceAnalysisKit';
-
-class TestRemoteObject extends rpc.RemoteObject {
-  constructor(descriptor: string) {
-    super(descriptor);
-  }
-
-  onRemoteRequest(code: number, data: rpc.MessageParcel, reply: rpc.MessageParcel, option: rpc.MessageOption): boolean {
-    if (code === 1) {
-      hilog.info(0x0000, 'testTag', 'RpcServer: sync onRemoteRequest is called');
-      return true;
-    } else {
-      hilog.error(0x0000, 'testTag', 'RpcServer: unknown code: ' + code);
-      return false;
-    }
-  }
-  // 同时调用仅会执行onRemoteMessageRequest
-  async onRemoteMessageRequest(code: number, data: rpc.MessageSequence, reply: rpc.MessageSequence,
-    option: rpc.MessageOption): Promise<boolean> {
-    if (code === 1) {
-      hilog.info(0x0000, 'testTag', 'RpcServer: async onRemoteMessageRequest is called');
-    } else {
-      hilog.error(0x0000, 'testTag', 'RpcServer: unknown code: ' + code);
-      return false;
-    }
-    await new Promise((resolve: (data: rpc.RequestResult) => void) => {
-      setTimeout(resolve, 100);
-    })
-    return true;
-  }
-}
 ```
 
 #### onRemoteRequest(deprecated)
@@ -9380,17 +9827,25 @@ onRemoteRequest(code: number, data: MessageParcel, reply: MessageParcel, options
 
 sendRequest请求的响应处理函数，服务端在该函数里处理请求，回复结果。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[onRemoteMessageRequest](#ZH-CN_TOPIC_0000002529445269__onremotemessagerequest9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[onRemoteMessageRequest](#ZH-CN_TOPIC_0000002553201241__onremotemessagerequest9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明codenumber是对端发送的服务请求码。data[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是携带客户端调用参数的MessageParcel对象。reply[MessageParcel](#ZH-CN_TOPIC_0000002529445269__messageparceldeprecated)是写入结果的MessageParcel对象。options[MessageOption](#ZH-CN_TOPIC_0000002529445269__messageoption)是指示操作是同步还是异步。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 对端发送的服务请求码。 |
+| data | MessageParcel | 是 | 携带客户端调用参数的MessageParcel对象。 |
+| reply | MessageParcel | 是 | 写入结果的MessageParcel对象。 |
+| options | MessageOption | 是 | 指示操作是同步还是异步。 |
 
 **返回值：**
 
-类型说明booleantrue：操作成功，false：操作失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：操作成功，false：操作失败。 |
 
 **示例：**
 
@@ -9410,8 +9865,6 @@ class TestRemoteObject extends rpc.RemoteObject {
       hilog.error(0x0000, 'testTag', 'RpcServer: unknown code: ' + code);
       return false;
     }
-  }
-}
 ```
 
 #### getCallingUid
@@ -9424,7 +9877,9 @@ getCallingUid(): number
 
 **返回值：**
 
-类型说明number返回通信对端的进程Uid。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回通信对端的进程Uid。 |
 
 **示例：**
 
@@ -9441,7 +9896,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     // 根据业务实际逻辑，进行相应处理
     return true;
   }
-}
 try {
   let testRemoteObject = new TestRemoteObject("testObject");
   hilog.info(0x0000, 'testTag', 'RpcServer: getCallingUid: ' + testRemoteObject.getCallingUid());
@@ -9460,7 +9914,9 @@ getCallingPid(): number
 
 **返回值：**
 
-类型说明number返回通信对端的进程Pid。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回通信对端的进程Pid。 |
 
 **示例：**
 
@@ -9477,7 +9933,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     // 根据业务实际逻辑，进行相应处理
     return true;
   }
-}
 try {
   let testRemoteObject = new TestRemoteObject("testObject");
   hilog.info(0x0000, 'testTag', 'RpcServer: getCallingPid: ' + testRemoteObject.getCallingPid());
@@ -9496,27 +9951,23 @@ getLocalInterface(descriptor: string): IRemoteBroker
 
 **参数：**
 
-参数名类型必填说明descriptorstring是接口描述符的字符串，其长度应小于40960字节。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| descriptor | string | 是 | 接口描述符的字符串，其长度应小于40960字节。 |
 
 **返回值：**
 
-类型说明[IRemoteBroker](#ZH-CN_TOPIC_0000002529445269__iremotebroker)返回绑定到指定接口描述符的IRemoteBroker对象。
+| 类型 | 说明 |
+| --- | --- |
+| IRemoteBroker | 返回绑定到指定接口描述符的IRemoteBroker对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.The string length exceeds 40960 bytes;
-
-4.The number of bytes copied to the buffer is different from the length of the obtained string.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The string length is greater than or equal to 40960 bytes; 4.The number of bytes copied to the buffer is different from the length of the obtained string. |
 
 **示例：**
 
@@ -9534,7 +9985,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     // 根据业务实际逻辑，进行相应处理
     return true;
   }
-}
 try {
   let testRemoteObject = new TestRemoteObject("testObject");
   testRemoteObject.getLocalInterface("testObject");
@@ -9551,17 +10001,22 @@ queryLocalInterface(descriptor: string): IRemoteBroker
 
 查询并获取当前接口描述符对应的远端对象是否已经存在。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[getLocalInterface](#ZH-CN_TOPIC_0000002529445269__getlocalinterface9-2)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[getLocalInterface](#ZH-CN_TOPIC_0000002553201241__getlocalinterface9-2)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明descriptorstring是需要查询的接口描述符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| descriptor | string | 是 | 需要查询的接口描述符。 |
 
 **返回值：**
 
-类型说明[IRemoteBroker](#ZH-CN_TOPIC_0000002529445269__iremotebroker)如果接口描述符对应的远端对象存在，则返回该远端对象，否则返回Null。
+| 类型 | 说明 |
+| --- | --- |
+| IRemoteBroker | 如果接口描述符对应的远端对象存在，则返回该远端对象，否则返回Null。 |
 
 **示例：**
 
@@ -9578,7 +10033,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     // 根据业务实际逻辑，进行相应处理
     return true;
   }
-}
 try {
   let testRemoteObject = new TestRemoteObject("testObject");
   testRemoteObject.queryLocalInterface("testObject");
@@ -9597,13 +10051,17 @@ getDescriptor(): string
 
 **返回值：**
 
-类型说明string返回接口描述符。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回接口描述符。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900008The proxy or remote object is invalid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900008 | The proxy or remote object is invalid. |
 
 **示例：**
 
@@ -9621,7 +10079,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     // 根据业务实际逻辑，进行相应处理
     return true;
   }
-}
 try {
   let testObject = new TestRemoteObject("ipcTest");
   let descriptor = testObject.getDescriptor();
@@ -9639,13 +10096,16 @@ getInterfaceDescriptor(): string
 
 查询接口描述符。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[getDescriptor](#ZH-CN_TOPIC_0000002529445269__getdescriptor9-2)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[getDescriptor](#ZH-CN_TOPIC_0000002553201241__getdescriptor9-2)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明string返回接口描述符。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回接口描述符。 |
 
 **示例：**
 
@@ -9662,7 +10122,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     // 根据业务实际逻辑，进行相应处理
     return true;
   }
-}
 
 try {
   let testRemoteObject = new TestRemoteObject("testObject");
@@ -9683,23 +10142,18 @@ modifyLocalInterface(localInterface: IRemoteBroker, descriptor: string): void
 
 **参数：**
 
-参数名类型必填说明localInterface[IRemoteBroker](#ZH-CN_TOPIC_0000002529445269__iremotebroker)是将与描述符绑定的IRemoteBroker对象。descriptorstring是用于与IRemoteBroker对象绑定的描述符，其长度应小于40960字节。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| localInterface | IRemoteBroker | 是 | 将与描述符绑定的IRemoteBroker对象。 |
+| descriptor | string | 是 | 用于与IRemoteBroker对象绑定的描述符，其长度应小于40960字节。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.The string length exceeds 40960 bytes;
-
-4.The number of bytes copied to the buffer is different from the length of the obtained string.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The string length is greater than or equal to 40960 bytes; 4.The number of bytes copied to the buffer is different from the length of the obtained string. |
 
 **示例：**
 
@@ -9711,7 +10165,6 @@ import { BusinessError } from '@kit.BasicServicesKit';
 class MyDeathRecipient implements rpc.DeathRecipient {
   onRemoteDied() {
     hilog.info(0x0000, 'testTag', 'server died');
-  }
 }
 class TestRemoteObject extends rpc.RemoteObject {
   constructor(descriptor: string) {
@@ -9723,14 +10176,12 @@ class TestRemoteObject extends rpc.RemoteObject {
       hilog.error(0x0000, 'testTag', 'errorCode ' + e.code);
       hilog.error(0x0000, 'testTag', 'errorMessage ' + e.message);
     }
-  }
   registerDeathRecipient(recipient: MyDeathRecipient, flags: number) {
     // 方法逻辑需开发者根据业务需要实现
   }
   unregisterDeathRecipient(recipient: MyDeathRecipient, flags: number) {
     // 方法逻辑需开发者根据业务需要实现
   }
-}
 let testRemoteObject = new TestRemoteObject("testObject");
 ```
 
@@ -9740,13 +10191,17 @@ attachLocalInterface(localInterface: IRemoteBroker, descriptor: string): void
 
 此接口用于把接口描述符和IRemoteBroker对象绑定。
 
-从API version 7 开始支持，API version 9 开始废弃，建议使用[modifyLocalInterface](#ZH-CN_TOPIC_0000002529445269__modifylocalinterface9)替代。
+
+从API version 7 开始支持，API version 9 开始废弃，建议使用[modifyLocalInterface](#ZH-CN_TOPIC_0000002553201241__modifylocalinterface9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明localInterface[IRemoteBroker](#ZH-CN_TOPIC_0000002529445269__iremotebroker)是将与描述符绑定的IRemoteBroker对象。descriptorstring是用于与IRemoteBroker对象绑定的描述符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| localInterface | IRemoteBroker | 是 | 将与描述符绑定的IRemoteBroker对象。 |
+| descriptor | string | 是 | 用于与IRemoteBroker对象绑定的描述符。 |
 
 **示例：**
 
@@ -9757,7 +10212,6 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 class MyDeathRecipient implements rpc.DeathRecipient {
   onRemoteDied() {
     hilog.info(0x0000, 'testTag', 'server died');
-  }
 }
 class TestRemoteObject extends rpc.RemoteObject {
   constructor(descriptor: string) {
@@ -9772,7 +10226,6 @@ class TestRemoteObject extends rpc.RemoteObject {
     // 方法逻辑需开发者根据业务需要实现
     return true;
   }
-}
 let testRemoteObject = new TestRemoteObject("testObject");
 ```
 
@@ -9782,11 +10235,18 @@ let testRemoteObject = new TestRemoteObject("testObject");
 
 共享内存只适用与本设备内跨进程通信。
 
+**系统能力：**SystemCapability.Communication.IPC.Core
+
 #### 属性
 
 **系统能力**：以下各项对应的系统能力均为SystemCapability.Communication.IPC.Core。
 
-名称类型只读可选说明PROT_EXECnumber是否映射内存保护类型，代表映射的内存可执行。PROT_NONEnumber是否映射内存保护类型，代表映射的内存不可访问。PROT_READnumber是否映射内存保护类型，代表映射的内存可读。PROT_WRITEnumber是否映射内存保护类型，代表映射的内存可写。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| PROT_EXEC | number | 是 | 否 | 映射内存保护类型，代表映射的内存可执行。 |
+| PROT_NONE | number | 是 | 否 | 映射内存保护类型，代表映射的内存不可访问。 |
+| PROT_READ | number | 是 | 否 | 映射内存保护类型，代表映射的内存可读。 |
+| PROT_WRITE | number | 是 | 否 | 映射内存保护类型，代表映射的内存可写。 |
 
 #### create9+
 
@@ -9798,27 +10258,24 @@ static create(name: string, size: number): Ashmem
 
 **参数：**
 
-参数名类型必填说明namestring是Ashmem名称，用于查询Ashmem信息，其长度不能为0。sizenumber是Ashmem的大小，其大小应大于0，以字节为单位。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | Ashmem名称，用于查询Ashmem信息，其长度不能为0。 |
+| size | number | 是 | Ashmem的大小，其大小应大于0，以字节为单位。 |
 
 **返回值：**
 
-类型说明[Ashmem](#ZH-CN_TOPIC_0000002529445269__ashmem8)返回创建的Ashmem对象；如果创建失败，返回null。
+| 类型 | 说明 |
+| --- | --- |
+| Ashmem | 返回创建的Ashmem对象；如果创建失败，返回null。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.The Ashmem name passed is empty;
-
-4.The Ashmem size passed is less than or equal to 0.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The Ashmem name passed is empty; 4.The Ashmem size passed is less than or equal to 0. |
 
 **示例：**
 
@@ -9845,17 +10302,23 @@ static createAshmem(name: string, size: number): Ashmem
 
 静态方法，根据指定的名称和大小创建Ashmem对象。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[create](#ZH-CN_TOPIC_0000002529445269__create9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[create](#ZH-CN_TOPIC_0000002553201241__create9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明namestring是名称，用于查询Ashmem信息。sizenumber是Ashmem的大小，以字节为单位。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 名称，用于查询Ashmem信息。 |
+| size | number | 是 | Ashmem的大小，以字节为单位。 |
 
 **返回值：**
 
-类型说明[Ashmem](#ZH-CN_TOPIC_0000002529445269__ashmem8)返回创建的Ashmem对象；如果创建失败，返回null。
+| 类型 | 说明 |
+| --- | --- |
+| Ashmem | 返回创建的Ashmem对象；如果创建失败，返回null。 |
 
 **示例：**
 
@@ -9883,25 +10346,23 @@ static create(ashmem: Ashmem): Ashmem
 
 **参数：**
 
-参数名类型必填说明ashmem[Ashmem](#ZH-CN_TOPIC_0000002529445269__ashmem8)是已存在的Ashmem对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ashmem | Ashmem | 是 | 已存在的Ashmem对象。 |
 
 **返回值：**
 
-类型说明[Ashmem](#ZH-CN_TOPIC_0000002529445269__ashmem8)返回创建的Ashmem对象。
+| 类型 | 说明 |
+| --- | --- |
+| Ashmem | 返回创建的Ashmem对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The passed parameter is not an Ahmem object;
-
-3.The ashmem instance for obtaining packaging is empty.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The passed parameter is not an Ashmem object; 3.The ashmem instance for obtaining packaging is empty. |
 
 **示例：**
 
@@ -9928,17 +10389,22 @@ static createAshmemFromExisting(ashmem: Ashmem): Ashmem
 
 静态方法，通过复制现有Ashmem对象的文件描述符(fd)来创建Ashmem对象。两个Ashmem对象指向同一个共享内存区域。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[create](#ZH-CN_TOPIC_0000002529445269__create9-1)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[create](#ZH-CN_TOPIC_0000002553201241__create9-1)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明ashmem[Ashmem](#ZH-CN_TOPIC_0000002529445269__ashmem8)是已存在的Ashmem对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ashmem | Ashmem | 是 | 已存在的Ashmem对象。 |
 
 **返回值：**
 
-类型说明[Ashmem](#ZH-CN_TOPIC_0000002529445269__ashmem8)返回创建的Ashmem对象。
+| 类型 | 说明 |
+| --- | --- |
+| Ashmem | 返回创建的Ashmem对象。 |
 
 **示例：**
 
@@ -10012,7 +10478,9 @@ getAshmemSize(): number
 
 **返回值：**
 
-类型说明number返回Ashmem对象的内存大小。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回Ashmem对象的内存大小。 |
 
 **示例：**
 
@@ -10039,22 +10507,17 @@ mapTypedAshmem(mapType: number): void
 
 **参数：**
 
-参数名类型必填说明mapTypenumber是指定映射的内存区域的保护等级。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mapType | number | 是 | 指定映射的内存区域的保护等级。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.The passed mapType exceeds the maximum protection level.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The passed mapType exceeds the maximum protection level. |
 1900001Failed to call mmap.
 
 **示例：**
@@ -10080,17 +10543,22 @@ mapAshmem(mapType: number): boolean
 
 在此进程的虚拟地址空间上创建共享文件映射，映射区域大小由此Ashmem对象指定。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[mapTypedAshmem](#ZH-CN_TOPIC_0000002529445269__maptypedashmem9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[mapTypedAshmem](#ZH-CN_TOPIC_0000002553201241__maptypedashmem9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明mapTypenumber是指定映射的内存区域的保护等级。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mapType | number | 是 | 指定映射的内存区域的保护等级。 |
 
 **返回值：**
 
-类型说明booleantrue：映射成功，false：映射失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：映射成功，false：映射失败。 |
 
 **示例：**
 
@@ -10117,9 +10585,11 @@ mapReadWriteAshmem(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900001Failed to call mmap.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900001 | Failed to call mmap. |
 
 **示例：**
 
@@ -10144,13 +10614,16 @@ mapReadAndWriteAshmem(): boolean
 
 在此进程虚拟地址空间上创建可读写的共享文件映射。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[mapReadWriteAshmem](#ZH-CN_TOPIC_0000002529445269__mapreadwriteashmem9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[mapReadWriteAshmem](#ZH-CN_TOPIC_0000002553201241__mapreadwriteashmem9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明booleantrue：映射成功，false：映射失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：映射成功，false：映射失败。 |
 
 **示例：**
 
@@ -10177,9 +10650,11 @@ mapReadonlyAshmem(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息1900001Failed to call mmap.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1900001 | Failed to call mmap. |
 
 **示例：**
 
@@ -10204,13 +10679,16 @@ mapReadOnlyAshmem(): boolean
 
 在此进程虚拟地址空间上创建只读的共享文件映射。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[mapReadonlyAshmem](#ZH-CN_TOPIC_0000002529445269__mapreadonlyashmem9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[mapReadonlyAshmem](#ZH-CN_TOPIC_0000002553201241__mapreadonlyashmem9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **返回值：**
 
-类型说明booleantrue：映射成功，false：映射失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：映射成功，false：映射失败。 |
 
 **示例：**
 
@@ -10237,20 +10715,17 @@ setProtectionType(protectionType: number): void
 
 **参数：**
 
-参数名类型必填说明protectionTypenumber是要设置的保护类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| protectionType | number | 是 | 要设置的保护类型。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 1900002Failed to call ioctl.
 
 **示例：**
@@ -10276,17 +10751,22 @@ setProtection(protectionType: number): boolean
 
 设置映射内存区域的保护等级。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[setProtectionType](#ZH-CN_TOPIC_0000002529445269__setprotectiontype9)替代。
+
+从API version 8 开始支持，API version 9 开始废弃，建议使用[setProtectionType](#ZH-CN_TOPIC_0000002553201241__setprotectiontype9)替代。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明protectionTypenumber是要设置的保护类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| protectionType | number | 是 | 要设置的保护类型。 |
 
 **返回值：**
 
-类型说明booleantrue：设置成功，false：设置失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：设置成功，false：设置失败。 |
 
 **示例：**
 
@@ -10310,28 +10790,26 @@ writeDataToAshmem(buf: ArrayBuffer, size: number, offset: number): void
 
 将数据写入此Ashmem对象关联的共享文件。
 
-对Ashmem对象进行写操作时，需要先调用[mapReadWriteAshmem](#ZH-CN_TOPIC_0000002529445269__mapreadwriteashmem9)进行映射。
+
+对Ashmem对象进行写操作时，需要先调用[mapReadWriteAshmem](#ZH-CN_TOPIC_0000002553201241__mapreadwriteashmem9)进行映射。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明bufArrayBuffer是写入Ashmem对象的数据。sizenumber是要写入的数据大小。offsetnumber是要写入的数据在此Ashmem对象关联的内存区间的起始位置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| buf | ArrayBuffer | 是 | 写入Ashmem对象的数据。 |
+| size | number | 是 | 要写入的数据大小。 |
+| offset | number | 是 | 要写入的数据在此Ashmem对象关联的内存区间的起始位置。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.Failed to obtain arrayBuffer information.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.Failed to obtain arrayBuffer information. |
 1900003Failed to write data to the shared memory.
 
 **示例：**
@@ -10364,30 +10842,28 @@ writeAshmem(buf: number[], size: number, offset: number): void
 
 将数据写入此Ashmem对象关联的共享文件。
 
-从API version 9 开始支持，API version 11 开始废弃，建议使用[writeDataToAshmem](#ZH-CN_TOPIC_0000002529445269__writedatatoashmem11)替代。
 
-对Ashmem对象进行写操作时，需要先调用[mapReadWriteAshmem](#ZH-CN_TOPIC_0000002529445269__mapreadwriteashmem9)进行映射。
+从API version 9 开始支持，API version 11 开始废弃，建议使用[writeDataToAshmem](#ZH-CN_TOPIC_0000002553201241__writedatatoashmem11)替代。
+
+对Ashmem对象进行写操作时，需要先调用[mapReadWriteAshmem](#ZH-CN_TOPIC_0000002553201241__mapreadwriteashmem9)进行映射。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明bufnumber[]是写入Ashmem对象的数据。sizenumber是要写入的数据大小。offsetnumber是要写入的数据在此Ashmem对象关联的内存区间的起始位置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| buf | number[] | 是 | 写入Ashmem对象的数据。 |
+| size | number | 是 | 要写入的数据大小。 |
+| offset | number | 是 | 要写入的数据在此Ashmem对象关联的内存区间的起始位置。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match;
-
-3.The element does not exist in the array.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The element does not exist in the array. |
 1900003Failed to write data to the shared memory.
 
 **示例：**
@@ -10415,19 +10891,26 @@ writeToAshmem(buf: number[], size: number, offset: number): boolean
 
 将数据写入此Ashmem对象关联的共享文件。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[writeDataToAshmem](#ZH-CN_TOPIC_0000002529445269__writedatatoashmem11)替代。
 
-对Ashmem对象进行写操作时，需要先调用[mapReadWriteAshmem](#ZH-CN_TOPIC_0000002529445269__mapreadwriteashmem9)进行映射。
+从API version 8 开始支持，API version 9 开始废弃，建议使用[writeDataToAshmem](#ZH-CN_TOPIC_0000002553201241__writedatatoashmem11)替代。
+
+对Ashmem对象进行写操作时，需要先调用[mapReadWriteAshmem](#ZH-CN_TOPIC_0000002553201241__mapreadwriteashmem9)进行映射。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明bufnumber[]是写入Ashmem对象的数据。sizenumber是要写入的数据大小。offsetnumber是要写入的数据在此Ashmem对象关联的内存区间的起始位置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| buf | number[] | 是 | 写入Ashmem对象的数据。 |
+| size | number | 是 | 要写入的数据大小。 |
+| offset | number | 是 | 要写入的数据在此Ashmem对象关联的内存区间的起始位置。 |
 
 **返回值：**
 
-类型说明booleantrue：如果数据写入成功，false：在其他情况下，如数据写入越界或未获得写入权限。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：如果数据写入成功，false：在其他情况下，如数据写入越界或未获得写入权限。 |
 
 **示例：**
 
@@ -10453,30 +10936,31 @@ readDataFromAshmem(size: number, offset: number): ArrayBuffer
 
 从此Ashmem对象关联的共享文件中读取数据。
 
-对Ashmem对象进行写操作时，需要先调用[mapReadWriteAshmem](#ZH-CN_TOPIC_0000002529445269__mapreadwriteashmem9)进行映射。
+
+对Ashmem对象进行写操作时，需要先调用[mapReadWriteAshmem](#ZH-CN_TOPIC_0000002553201241__mapreadwriteashmem9)进行映射。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明sizenumber是要读取的数据的大小。offsetnumber是要读取的数据在此Ashmem对象关联的内存区间的起始位置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | number | 是 | 要读取的数据的大小。 |
+| offset | number | 是 | 要读取的数据在此Ashmem对象关联的内存区间的起始位置。 |
 
 **返回值：**
 
-类型说明ArrayBuffer返回读取的数据。
+| 类型 | 说明 |
+| --- | --- |
+| ArrayBuffer | 返回读取的数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 1900004Failed to read data from the shared memory.
 
 **示例：**
@@ -10512,32 +10996,33 @@ readAshmem(size: number, offset: number): number[]
 
 从此Ashmem对象关联的共享文件中读取数据。
 
-从API version 9 开始支持，API version 11 开始废弃，建议使用[readDataFromAshmem](#ZH-CN_TOPIC_0000002529445269__readdatafromashmem11)替代。
 
-对Ashmem对象进行写操作时，需要先调用[mapReadWriteAshmem](#ZH-CN_TOPIC_0000002529445269__mapreadwriteashmem9)进行映射。
+从API version 9 开始支持，API version 11 开始废弃，建议使用[readDataFromAshmem](#ZH-CN_TOPIC_0000002553201241__readdatafromashmem11)替代。
+
+对Ashmem对象进行写操作时，需要先调用[mapReadWriteAshmem](#ZH-CN_TOPIC_0000002553201241__mapreadwriteashmem9)进行映射。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明sizenumber是要读取的数据的大小。offsetnumber是要读取的数据在此Ashmem对象关联的内存区间的起始位置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | number | 是 | 要读取的数据的大小。 |
+| offset | number | 是 | 要读取的数据在此Ashmem对象关联的内存区间的起始位置。 |
 
 **返回值：**
 
-类型说明number[]返回读取的数据。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | 返回读取的数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.rpc错误码](../../errors/RPC错误码.md)
+以下错误码的详细介绍请参见[ohos.rpc错误码](RPC错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.The number of parameters is incorrect;
-
-2.The parameter type does not match.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
 1900004Failed to read data from the shared memory.
 
 **示例：**
@@ -10567,19 +11052,25 @@ readFromAshmem(size: number, offset: number): number[]
 
 从此Ashmem对象关联的共享文件中读取数据。
 
-从API version 8 开始支持，API version 9 开始废弃，建议使用[readDataFromAshmem](#ZH-CN_TOPIC_0000002529445269__readdatafromashmem11)替代。
 
-对Ashmem对象进行写操作时，需要先调用[mapReadWriteAshmem](#ZH-CN_TOPIC_0000002529445269__mapreadwriteashmem9)进行映射。
+从API version 8 开始支持，API version 9 开始废弃，建议使用[readDataFromAshmem](#ZH-CN_TOPIC_0000002553201241__readdatafromashmem11)替代。
+
+对Ashmem对象进行写操作时，需要先调用[mapReadWriteAshmem](#ZH-CN_TOPIC_0000002553201241__mapreadwriteashmem9)进行映射。
 
 **系统能力**：SystemCapability.Communication.IPC.Core
 
 **参数：**
 
-参数名类型必填说明sizenumber是要读取的数据的大小。offsetnumber是要读取的数据在此Ashmem对象关联的内存区间的起始位置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | number | 是 | 要读取的数据的大小。 |
+| offset | number | 是 | 要读取的数据在此Ashmem对象关联的内存区间的起始位置。 |
 
 **返回值：**
 
-类型说明number[]返回读取的数据。
+| 类型 | 说明 |
+| --- | --- |
+| number[] | 返回读取的数据。 |
 
 **示例：**
 

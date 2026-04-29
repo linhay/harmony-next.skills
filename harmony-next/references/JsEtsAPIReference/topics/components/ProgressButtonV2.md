@@ -2,9 +2,20 @@
 
 文本下载按钮，可显示具体的下载进度。
 
-该组件基于[状态管理V2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-overview#状态管理v2)实现，相较于[状态管理V1](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-overview#状态管理v1)，状态管理V2增强了对数据对象的深度观察与管理能力，不再局限于组件层级。借助状态管理V2，开发者可以通过该组件更灵活地控制文本下载按钮的数据和状态，实现更高效的用户界面刷新。
+该组件基于[状态管理（V2）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-overview#状态管理v2)实现，相较于[状态管理（V1）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-overview#状态管理v1)，状态管理（V2）增强了对数据对象的深度观察与管理能力，不再局限于组件层级。借助状态管理（V2），开发者可以通过该组件更灵活地控制文本下载按钮的数据和状态，实现更高效的用户界面刷新。
+
+
+-
 
 - 该组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+
+-
+
+该组件仅可在Stage模型下使用。
+
+-
+
+如果ProgressButtonV2设置[通用属性](通用属性.md)和[通用事件](通用事件.md)，编译工具链会额外生成节点__Common__，并将通用属性或通用事件挂载在__Common__上，而不是直接应用到ProgressButtonV2本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ProgressButtonV2设置通用属性和通用事件。
 
 #### 导入模块
 
@@ -14,9 +25,7 @@ import { ColorMetrics, LengthMetrics, ProgressButtonV2,  ProgressButtonV2Color }
 
 #### ProgressButtonV2
 
-ProgressButtonV2({progress: number, content: ResourceStr, progressButtonWidth?: LengthMetrics, onClicked: ClickCallback,
-
-isEnabled: boolean, colorOptions?: ProgressButtonColorOptions, progressButtonRadius?: LengthMetrics})
+ProgressButtonV2({progress: number, content: [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr), progressButtonWidth?: LengthMetrics, onClicked: ClickCallback, isEnabled: boolean, colorOptions?: ProgressButtonColorOptions, progressButtonRadius?: LengthMetrics})
 
 文本下载按钮，可显示具体下载进度。
 
@@ -28,55 +37,19 @@ isEnabled: boolean, colorOptions?: ProgressButtonColorOptions, progressButtonRad
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
-名称类型必填装饰器类型说明progressnumber是
-
-@Require
-
-@Param
-
-下载按钮的当前进度值。
-
-取值范围：[0,100]。设置小于0的数值时置为0，设置大于100的数值置为100。
-
-默认值：0
-
-content[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)是
-
-@Require
-
-@Param
-
-下载按钮的文本。progressButtonWidth[LengthMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetrics12)否
-
-@Param
-
-@Once
-
-下载按钮的宽度。
-
-默认值：44vp
-
-onClicked[ClickCallback](#ZH-CN_TOPIC_0000002529444927__clickcallback)是@Param下载按钮的点击回调。isEnabledboolean是@Param
-
-下载按钮是否可以点击。
-
-isEnabled为true时，表示可以点击。
-
-isEnabled为false时，表示不可点击。
-
-colorOptions[ProgressButtonV2Color](#ZH-CN_TOPIC_0000002529444927__progressbuttonv2color)否@Param下载按钮颜色选项。progressButtonRadius18+[LengthMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetrics12)否@Param
-
-下载按钮的圆角（不支持百分比设置）。
-
-取值范围：[0, height/2]
-
-默认值：height/2
-
-设置非法数值时，按照默认值处理。
+| 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- |
+| progress | number | 是 | @Require @Param | 下载按钮的当前进度值。 取值范围：[0,100]。设置小于0的数值时置为0，设置大于100的数值置为100。 默认值：0 |
+| content | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 是 | @Require @Param | 下载按钮的文本。 |
+| progressButtonWidth | [LengthMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetrics12) | 否 | @Param @Once | 下载按钮的宽度。 默认值：44vp |
+| onClicked | ClickCallback | 是 | @Param | 下载按钮的点击回调。 |
+| isEnabled | boolean | 是 | @Param | 下载按钮是否可以点击。 isEnabled为true时，表示可以点击。 isEnabled为false时，表示不可点击。 |
+| colorOptions | ProgressButtonV2Color | 否 | @Param | 下载按钮颜色选项。 |
+| progressButtonRadius18+ | [LengthMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetrics12) | 否 | @Param | 下载按钮的圆角（不支持百分比设置）。 取值范围：[0, height/2] 默认值：height/2 设置非法数值时，按照默认值处理。 |
 
 #### 属性
 
-不支持[通用属性](../misc/通用属性.md)。
+不支持[通用属性]([通用属性](../misc/通用属性.md).md)。
 
 #### ClickCallback
 
@@ -104,37 +77,12 @@ type ClickCallback = () => void
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
-名称类型只读可选说明progressColor[ColorMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)否是
-
-进度条颜色。
-
-默认值：#330A59F7
-
-装饰器类型：@Trace
-
-borderColor[ColorMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)否是
-
-按钮描边颜色。
-
-默认值：#330A59F7
-
-装饰器类型：@Trace
-
-textColor[ColorMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)否是
-
-按钮文本颜色。
-
-默认值：系统默认值，#CE000000
-
-装饰器类型：@Trace
-
-backgroundColor[ColorMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)否是
-
-按钮背景颜色。
-
-默认值：$r('sys.color.ohos_id_color_foreground_contrary')
-
-装饰器类型：@Trace
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| progressColor | [ColorMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12) | 否 | 是 | 进度条颜色。 默认值：#330A59F7 装饰器类型：@Trace |
+| borderColor | [ColorMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12) | 否 | 是 | 按钮描边颜色。 默认值：#330A59F7 装饰器类型：@Trace |
+| textColor | [ColorMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12) | 否 | 是 | 按钮文本颜色。 默认值：系统默认值，#CE000000 装饰器类型：@Trace |
+| backgroundColor | [ColorMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12) | 否 | 是 | 按钮背景颜色。 默认值：$r('sys.color.ohos_id_color_foreground_contrary') 装饰器类型：@Trace |
 
 #### constructor
 
@@ -150,7 +98,9 @@ constructor(options: ProgressButtonV2ColorOptions);
 
 **参数：**
 
-参数名类型必填说明options[ProgressButtonV2ColorOptions](#ZH-CN_TOPIC_0000002529444927__progressbuttonv2coloroptions)是色彩信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | ProgressButtonV2ColorOptions | 是 | 色彩信息。 |
 
 #### ProgressButtonV2ColorOptions
 
@@ -162,33 +112,16 @@ constructor(options: ProgressButtonV2ColorOptions);
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
-名称类型只读可选说明progressColor[ColorMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)否是
-
-进度条颜色。
-
-默认值：#330A59F7
-
-borderColor[ColorMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)否是
-
-按钮描边颜色。
-
-默认值：#330A59F7
-
-textColor[ColorMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)否是
-
-按钮文本颜色。
-
-默认值：系统默认值(#CE000000)
-
-backgroundColor[ColorMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12)否是
-
-按钮背景颜色。
-
-默认值：$r('sys.color.ohos_id_color_foreground_contrary')
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| progressColor | [ColorMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12) | 否 | 是 | 进度条颜色。 默认值：#330A59F7 |
+| borderColor | [ColorMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12) | 否 | 是 | 按钮描边颜色。 默认值：#330A59F7 |
+| textColor | [ColorMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12) | 否 | 是 | 按钮文本颜色。 默认值：系统默认值(#CE000000) |
+| backgroundColor | [ColorMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__colormetrics12) | 否 | 是 | 按钮背景颜色。 默认值：$r('sys.color.ohos_id_color_foreground_contrary') |
 
 #### 事件
 
-不支持[通用事件](../misc/通用事件.md)。
+不支持[通用事件]([通用事件](../misc/通用事件.md).md)。
 
 #### 示例
 
@@ -230,7 +163,6 @@ struct Index {
                       this.textState = '已完成';
                       this.enableState = false;
                     }
-                  }
                 } else {
                   clearInterval(timer);
                 }
@@ -239,7 +171,6 @@ struct Index {
           })
         }.alignItems(HorizontalAlign.Center).width('100%').margin({ top: 20 });
       }
-    }
-  }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522085392.webp)

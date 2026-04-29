@@ -18,7 +18,13 @@ import { appManager } from '@kit.AbilityKit';
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称值说明STATE_CREATE0进程创建完成。STATE_FOREGROUND1进程处于前台。STATE_ACTIVE2进程中至少有一个窗口获焦。STATE_BACKGROUND3进程处于后台。STATE_DESTROY4进程销毁完成。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| STATE_CREATE | 0 | 进程创建完成。 |
+| STATE_FOREGROUND | 1 | 进程处于前台。 |
+| STATE_ACTIVE | 2 | 进程中至少有一个窗口获焦。 |
+| STATE_BACKGROUND | 3 | 进程处于后台。 |
+| STATE_DESTROY | 4 | 进程销毁完成。 |
 
 #### appManager.isRunningInStabilityTest
 
@@ -34,17 +40,18 @@ isRunningInStabilityTest(callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<boolean>是
-
-回调函数。当接口调用成功，err为undefined，data为当前系统是否处于稳定性测试场景的结果；否则为错误对象。可进行错误处理或其他自定义处理。
-
-返回true表示系统处于稳定性测试场景；返回false表示系统不处于稳定性测试场景。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当接口调用成功，err为undefined，data为当前系统是否处于稳定性测试场景的结果；否则为错误对象。可进行错误处理或其他自定义处理。 返回true表示系统处于稳定性测试场景；返回false表示系统不处于稳定性测试场景。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[元能力子系统错误码]([元能力子系统错误码](../../errors/元能力子系统错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.16000050Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 16000050 | Internal error. |
 
 **示例：**
 
@@ -74,17 +81,17 @@ isRunningInStabilityTest(): Promise<boolean>
 
 **返回值：**
 
-类型说明Promise<boolean>
-
-以Promise方式返回接口运行结果及当前是否处于稳定性测试场景，可进行错误处理或其他自定义处理。
-
-返回true表示系统处于稳定性测试场景；返回false表示系统不处于稳定性测试场景。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | 以Promise方式返回接口运行结果及当前是否处于稳定性测试场景，可进行错误处理或其他自定义处理。 返回true表示系统处于稳定性测试场景；返回false表示系统不处于稳定性测试场景。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息16000050Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16000050 | Internal error. |
 
 **示例：**
 
@@ -111,17 +118,17 @@ isRamConstrainedDevice(): Promise<boolean>
 
 **返回值：**
 
-类型说明Promise<boolean>
-
-以Promise方式返回接口运行结果及当前设备是否为RAM受限设备，可进行错误处理或其他自定义处理。
-
-返回true表示当前设备为RAM受限设备；返回false表示当前设备为非RAM受限设备。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | 以Promise方式返回接口运行结果及当前设备是否为RAM受限设备，可进行错误处理或其他自定义处理。 返回true表示当前设备为RAM受限设备；返回false表示当前设备为非RAM受限设备。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息16000050Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16000050 | Internal error. |
 
 **示例：**
 
@@ -148,17 +155,18 @@ isRamConstrainedDevice(callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<boolean>是
-
-回调函数。当接口调用成功，err为undefined，data为当前设备是否为RAM受限设备的结果；否则为错误对象。可进行错误处理或其他自定义处理。
-
-返回true表示当前设备为RAM受限设备；返回false表示当前设备为非RAM受限设备。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当接口调用成功，err为undefined，data为当前设备是否为RAM受限设备的结果；否则为错误对象。可进行错误处理或其他自定义处理。 返回true表示当前设备为RAM受限设备；返回false表示当前设备为非RAM受限设备。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.16000050Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 16000050 | Internal error. |
 
 **示例：**
 
@@ -186,13 +194,17 @@ getAppMemorySize(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>当前应用程序可以使用的最大内存（RAM）值，可根据此值进行错误处理或其他自定义处理，单位是M。使用Promise异步回调。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 当前应用程序可以使用的最大内存（RAM）值，可根据此值进行错误处理或其他自定义处理，单位是M。使用Promise异步回调。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息16000050Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16000050 | Internal error. |
 
 **示例：**
 
@@ -219,13 +231,18 @@ getAppMemorySize(callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是回调函数。当接口调用成功，err为undefined，data为当前应用程序可以使用的最大内存（RAM）值，单位是M；否则为错误对象。可根据此值进行错误处理或其他自定义处理。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 回调函数。当接口调用成功，err为undefined，data为当前应用程序可以使用的最大内存（RAM）值，单位是M；否则为错误对象。可根据此值进行错误处理或其他自定义处理。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.16000050Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 16000050 | Internal error. |
 
 **示例：**
 
@@ -241,9 +258,9 @@ appManager.getAppMemorySize((err, data) => {
 });
 ```
 
-#### appManager.getRunningProcessInformation
+#### appManager.getRunning[ProcessInformation](../../topics/misc/ProcessInformation.md)
 
-getRunningProcessInformation(): Promise<Array<ProcessInformation>>
+getRunning[ProcessInformation](../../topics/misc/ProcessInformation.md)(): Promise<Array<ProcessInformation>>
 
 获取当前应用运行进程的相关信息。使用Promise异步回调。
 
@@ -256,13 +273,17 @@ getRunningProcessInformation(): Promise<Array<ProcessInformation>>
 
 **返回值：**
 
-类型说明Promise<Array<[ProcessInformation](../../topics/system-services/ProcessInformation.md)>>Promise对象，返回接口运行结果及有关运行进程的信息，可进行错误处理或其他自定义处理。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<[ProcessInformation](../../topics/misc/ProcessInformation.md)>> | Promise对象，返回接口运行结果及有关运行进程的信息，可进行错误处理或其他自定义处理。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息16000050Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16000050 | Internal error. |
 
 **示例：**
 
@@ -277,9 +298,9 @@ appManager.getRunningProcessInformation().then((data) => {
 });
 ```
 
-#### appManager.getRunningProcessInformation
+#### appManager.getRunning[ProcessInformation](../../topics/misc/ProcessInformation.md)
 
-getRunningProcessInformation(callback: AsyncCallback<Array<ProcessInformation>>): void
+getRunning[ProcessInformation](../../topics/misc/ProcessInformation.md)(callback: AsyncCallback<Array<ProcessInformation>>): void
 
 获取当前应用运行进程的相关信息。使用callback异步回调。
 
@@ -292,13 +313,18 @@ getRunningProcessInformation(callback: AsyncCallback<Array<ProcessInformation>>)
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<Array<[ProcessInformation](../../topics/system-services/ProcessInformation.md)>>是回调函数。当接口调用成功，err为undefined，data为当前应用运行进程的信息；否则为错误对象。可进行错误处理或其他自定义处理。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<[ProcessInformation](../../topics/misc/ProcessInformation.md)>> | 是 | 回调函数。当接口调用成功，err为undefined，data为当前应用运行进程的信息；否则为错误对象。可进行错误处理或其他自定义处理。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.16000050Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 16000050 | Internal error. |
 
 **示例：**
 
@@ -316,7 +342,7 @@ appManager.getRunningProcessInformation((err, data) => {
 
 #### appManager.on('applicationState')14+
 
-on(type: 'applicationState', observer: ApplicationStateObserver): number
+on(type: 'applicationState', observer: [ApplicationStateObserver](../../topics/misc/ApplicationStateObserver.md)): number
 
 注册所有应用程序的状态监听器。
 
@@ -326,17 +352,26 @@ on(type: 'applicationState', observer: ApplicationStateObserver): number
 
 **参数：**
 
-参数名类型必填说明typestring是调用接口类型，固定填'applicationState'字符串。observer[ApplicationStateObserver](../../topics/system-services/ApplicationStateObserver.md)是应用状态监听器，用于监听应用的生命周期变化。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 调用接口类型，固定填'applicationState'字符串。 |
+| observer | [ApplicationStateObserver](../../topics/misc/ApplicationStateObserver.md) | 是 | 应用状态监听器，用于监听应用的生命周期变化。 |
 
 **返回值：**
 
-类型说明number已注册监听器ID，调用方可以通过[off('applicationState')](#ZH-CN_TOPIC_0000002497444628__appmanageroffapplicationstate14)传入该监听器ID来注销监听器。
+| 类型 | 说明 |
+| --- | --- |
+| number | 已注册监听器ID，调用方可以通过off('applicationState')传入该监听器ID来注销监听器。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.16000050Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 16000050 | Internal error. |
 
 **示例：**
 
@@ -380,7 +415,7 @@ try {
 
 #### appManager.on('applicationState')14+
 
-on(type: 'applicationState', observer: ApplicationStateObserver, bundleNameList: Array<string>): number
+on(type: 'applicationState', observer: [ApplicationStateObserver](../../topics/misc/ApplicationStateObserver.md), bundleNameList: Array<string>): number
 
 注册指定应用程序的状态监听器。
 
@@ -390,17 +425,27 @@ on(type: 'applicationState', observer: ApplicationStateObserver, bundleNameList:
 
 **参数：**
 
-参数名类型必填说明typestring是调用接口类型，固定填'applicationState'字符串。observer[ApplicationStateObserver](../../topics/system-services/ApplicationStateObserver.md)是应用状态监听器，用于监听应用的生命周期变化。bundleNameListArray<string>是表示需要注册监听的bundleName数组。最大值128。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 调用接口类型，固定填'applicationState'字符串。 |
+| observer | [ApplicationStateObserver](../../topics/misc/ApplicationStateObserver.md) | 是 | 应用状态监听器，用于监听应用的生命周期变化。 |
+| bundleNameList | Array<string> | 是 | 表示需要注册监听的bundleName数组。最大值128。 |
 
 **返回值：**
 
-类型说明number已注册监听器ID，调用方可以通过[off('applicationState')](#ZH-CN_TOPIC_0000002497444628__appmanageroffapplicationstate14)传入该监听器ID来注销监听器。
+| 类型 | 说明 |
+| --- | --- |
+| number | 已注册监听器ID，调用方可以通过off('applicationState')传入该监听器ID来注销监听器。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.16000050Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 16000050 | Internal error. |
 
 **示例：**
 
@@ -456,17 +501,26 @@ off(type: 'applicationState', observerId: number): Promise<void>
 
 **参数：**
 
-参数名类型必填说明typestring是调用接口类型，固定填'applicationState'字符串。observerIdnumber是注册的应用状态监听器ID，即[on('applicationState')](#ZH-CN_TOPIC_0000002497444628__appmanageronapplicationstate14)返回的监听器ID。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 调用接口类型，固定填'applicationState'字符串。 |
+| observerId | number | 是 | 注册的应用状态监听器ID，即on('applicationState')返回的监听器ID。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.16000050Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 16000050 | Internal error. |
 
 **示例：**
 
@@ -536,13 +590,21 @@ off(type: 'applicationState', observerId: number, callback: AsyncCallback<void>)
 
 **参数：**
 
-参数名类型必填说明typestring是调用接口类型，固定填'applicationState'字符串。observerIdnumber是注册的应用状态监听器ID，即[on('applicationState')](#ZH-CN_TOPIC_0000002497444628__appmanageronapplicationstate14)返回的监听器ID。callbackAsyncCallback<void>是回调函数。当取消注册应用程序状态观测器成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 调用接口类型，固定填'applicationState'字符串。 |
+| observerId | number | 是 | 注册的应用状态监听器ID，即on('applicationState')返回的监听器ID。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当取消注册应用程序状态观测器成功，err为undefined，否则为错误对象。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.16000050Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 16000050 | Internal error. |
 
 **示例：**
 
@@ -592,7 +654,6 @@ function offCallback(err: BusinessError) {
   } else {
     console.info(`appmanager.off success.`);
   }
-}
 
 // 2.注销应用状态监听器
 try {
@@ -616,17 +677,27 @@ killProcessesByBundleName(bundleName: string, clearPageStack: boolean, appIndex?
 
 **参数：**
 
-参数名类型必填说明bundleNamestring是表示需要终止进程的应用包名。clearPageStackboolean是表示是否清除页面堆栈。true表示清除，false表示不清除。appIndexnumber否应用分身Id，默认值为0。取值为0时，表示终止主应用的所有进程。取值大于0时，表示终止指定分身应用的所有进程。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| bundleName | string | 是 | 表示需要终止进程的应用包名。 |
+| clearPageStack | boolean | 是 | 表示是否清除页面堆栈。true表示清除，false表示不清除。 |
+| appIndex | number | 否 | 应用分身Id，默认值为0。取值为0时，表示终止主应用的所有进程。取值大于0时，表示终止指定分身应用的所有进程。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.401If the input parameter is not valid parameter.16000050Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | If the input parameter is not valid parameter. |
+| 16000050 | Internal error. |
 
 **示例：**
 
@@ -665,17 +736,27 @@ isAppRunning(bundleName: string, appCloneIndex?: number): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明bundleNamestring是查询的应用包名。appCloneIndexnumber否分身应用索引。 取值范围：0~1000。取值为0时表示主应用；取值大于0时表示指定分身应用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| bundleName | string | 是 | 查询的应用包名。 |
+| appCloneIndex | number | 否 | 分身应用索引。 取值范围：0~1000。取值为0时表示主应用；取值大于0时表示指定分身应用。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示至少存在一个用户正在运行指定包名和分身应用索引的应用，返回false表示所有用户下指定包名和分身应用索引的应用都没有运行。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示至少存在一个用户正在运行指定包名和分身应用索引的应用，返回false表示所有用户下指定包名和分身应用索引的应用都没有运行。 |
 
 **错误码**：
 
- 以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+ 以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.16000050Internal error.16000073The app clone index is invalid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed. |
+| 16000050 | Internal error. |
+| 16000073 | The app clone index is invalid. |
 
 **示例：**
 
@@ -698,37 +779,43 @@ try {
 
 #### AbilityStateData14+
 
-type AbilityStateData = _AbilityStateData.default
+type AbilityStateData = [_AbilityStateData.default](../../topics/misc/AbilityStateData.md)
 
 Ability状态信息。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-类型说明[_AbilityStateData.default](../../topics/system-services/AbilityStateData.md)Ability状态信息。
+| 类型 | 说明 |
+| --- | --- |
+| [_AbilityStateData.default](../../topics/misc/AbilityStateData.md) | Ability状态信息。 |
 
 #### AppStateData14+
 
-type AppStateData = _AppStateData.default
+type AppStateData = [_AppStateData.default](../../topics/misc/AppStateData.md)
 
 应用状态信息。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-类型说明[_AppStateData.default](../../topics/system-services/AppStateData.md)应用状态信息。
+| 类型 | 说明 |
+| --- | --- |
+| [_AppStateData.default](../../topics/misc/AppStateData.md) | 应用状态信息。 |
 
-#### ApplicationStateObserver14+
+#### [ApplicationStateObserver](../../topics/misc/ApplicationStateObserver.md)14+
 
-type ApplicationStateObserver = _ApplicationStateObserver.default
+type [ApplicationStateObserver](../../topics/misc/ApplicationStateObserver.md) = [_ApplicationStateObserver.default](../../topics/misc/ApplicationStateObserver.md)
 
 应用状态监听器。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-类型说明[_ApplicationStateObserver.default](../../topics/system-services/ApplicationStateObserver.md)应用状态监听器。
+| 类型 | 说明 |
+| --- | --- |
+| _[ApplicationStateObserver](../../topics/misc/ApplicationStateObserver.md).default | 应用状态监听器。 |
 
-#### ProcessInformation
+#### [ProcessInformation](../../topics/misc/ProcessInformation.md)
 
-type ProcessInformation = _ProcessInformation
+type [ProcessInformation](../../topics/misc/ProcessInformation.md) = [_ProcessInformation](../../topics/misc/ProcessInformation.md)
 
 进程信息。
 
@@ -736,14 +823,18 @@ type ProcessInformation = _ProcessInformation
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-类型说明[_ProcessInformation](../../topics/system-services/ProcessInformation.md)进程信息。
+| 类型 | 说明 |
+| --- | --- |
+| _[ProcessInformation](../../topics/misc/ProcessInformation.md) | 进程信息。 |
 
 #### ProcessData14+
 
-type ProcessData = _ProcessData.default
+type ProcessData = [_ProcessData.default](../../topics/misc/ProcessData.md)
 
 进程数据。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-类型说明[_ProcessData.default](../../topics/system-services/ProcessData.md)进程数据。
+| 类型 | 说明 |
+| --- | --- |
+| [_ProcessData.default](../../topics/misc/ProcessData.md) | 进程数据。 |

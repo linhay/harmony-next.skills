@@ -19,11 +19,15 @@ choose(types?: string[]): Promise<string>
 
 **参数：**
 
-参数名类型必填说明typesstring[]否限定文件选择的类型
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| types | string[] | 否 | 限定文件选择的类型 |
 
 **返回值：**
 
-类型说明Promise<string>异步返回文件URI（注：当前返回错误码）
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | 异步返回文件URI（注：当前返回错误码） |
 
 **示例：**
 
@@ -42,7 +46,9 @@ choose(callback:AsyncCallback<string>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<string>是异步获取对应文件URI（注：当前返回错误码）
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<string> | 是 | 异步获取对应文件URI（注：当前返回错误码） |
 
 **示例：**
 
@@ -63,7 +69,10 @@ choose(types:string[], callback:AsyncCallback<string>): void
 
 **参数：**
 
-参数名类型必填说明typesstring[]是限定选择文件的类型callbackAsyncCallback<string>是异步获取对应文件URI（注：当前返回错误码）
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| types | string[] | 是 | 限定选择文件的类型 |
+| callback | AsyncCallback<string> | 是 | 异步获取对应文件URI（注：当前返回错误码） |
 
 **示例：**
 
@@ -85,11 +94,16 @@ show(uri:string, type:string):Promise<void>
 
 **参数：**
 
-参数名类型必填说明uristring是待打开的文件URItypestring是待打开文件的类型
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 待打开的文件URI |
+| type | string | 是 | 待打开文件的类型 |
 
 **返回值：**
 
-类型说明Promise<void>Promise回调返回void表示成功打开文件（注：当前返回错误码）
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise回调返回void表示成功打开文件（注：当前返回错误码） |
 
 **示例：**
 
@@ -109,7 +123,11 @@ show(uri:string, type:string, callback:AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明uristring是待打开的文件URItypestring是待打开文件的类型callbackAsyncCallback<void>是异步打开uri对应文件（注：当前返回错误码）
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 待打开的文件URI |
+| type | string | 是 | 待打开文件的类型 |
+| callback | AsyncCallback<void> | 是 | 异步打开uri对应文件（注：当前返回错误码） |
 
 **示例：**
 

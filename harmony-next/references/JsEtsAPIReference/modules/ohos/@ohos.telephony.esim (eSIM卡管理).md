@@ -20,23 +20,25 @@ isSupported(slotId: number): boolean
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明boolean返回指定卡槽是否支持eSIM功能，如果支持返回true。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回指定卡槽是否支持eSIM功能，如果支持返回true。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)。
 
-错误码ID错误信息401Invalid parameter value.3120001Service connection failed.3120002System internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 3120001 | Service connection failed. |
+| 3120002 | System internal error. |
 
 **示例：**
 
@@ -59,17 +61,27 @@ addProfile(profile: DownloadableProfile): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明profile[DownloadableProfile](#ZH-CN_TOPIC_0000002497605490__downloadableprofile)是可下载的配置文件信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| profile | DownloadableProfile | 是 | 可下载的配置文件信息。 |
 
 **返回值：**
 
-类型说明Promise<boolean>以Promise形式返回最终用户添加单个配置文件的结果。返回true为成功，false为失败。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | 以Promise形式返回最终用户添加单个配置文件的结果。返回true为成功，false为失败。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.401Invalid parameter value.801Capability not supported.3120001Service connection failed.3120002System internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 801 | Capability not supported. |
+| 3120001 | Service connection failed. |
+| 3120002 | System internal error. |
 
 **示例：**
 
@@ -101,7 +113,12 @@ eSIM.addProfile(profile).then(() => {
 
 **系统能力**：SystemCapability.Telephony.CoreService.Esim
 
-名称类型只读可选说明activationCodestring否否激活码。对于不基于激活码的配置文件，可能为空。confirmationCodestring否是确认码。carrierNamestring否是订阅名称。accessRulesArray<[AccessRule](#ZH-CN_TOPIC_0000002497605490__accessrule20)>否是访问规则数组。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| activationCode | string | 否 | 否 | 激活码。对于不基于激活码的配置文件，可能为空。 |
+| confirmationCode | string | 否 | 是 | 确认码。 |
+| carrierName | string | 否 | 是 | 订阅名称。 |
+| accessRules | Array<AccessRule> | 否 | 是 | 访问规则数组。 |
 
 #### AccessRule20+
 
@@ -109,4 +126,8 @@ eSIM.addProfile(profile).then(() => {
 
 **系统能力**：SystemCapability.Telephony.CoreService.Esim
 
-名称类型只读可选说明certificateHashHexStrstring否否证书哈希的十六进制字符串。packageNamestring否否规则适用的程序包名称。accessTypenumber否否规则的类型。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| certificateHashHexStr | string | 否 | 否 | 证书哈希的十六进制字符串。 |
+| packageName | string | 否 | 否 | 规则适用的程序包名称。 |
+| accessType | number | 否 | 否 | 规则的类型。 |

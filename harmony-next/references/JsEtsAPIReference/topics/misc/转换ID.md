@@ -10,23 +10,24 @@
 
 #### 接口原型
 
-承载协议
+-
 
-HTTPS POST
+承载协议：HTTPS POST
 
-接口方向
+-
 
-开发者服务器->华为游戏服务器
+接口方向：开发者服务器->华为游戏服务器
 
-接口URL
+-
 
-https://jos-open-api.cloud.huawei.com/gameservice/api/gbClientApi
+接口URL：[https://jos-open-api.cloud.huawei.com/gameservice/api/gbClientApi](https://jos-open-api.cloud.huawei.com/gameservice/api/gbClientApi)
 
- 说明：
 
 请使用TLS 1.2协议或以上版本。
 
-数据格式
+-
+
+数据格式：
 
 请求：Content-Type: application/x-www-form-urlencoded（表单方式）
 
@@ -34,45 +35,12 @@ https://jos-open-api.cloud.huawei.com/gameservice/api/gbClientApi
 
 #### 请求参数
 
-参数
-
-是否必选
-
-类型
-
-描述
-
-method
-
-是
-
-String
-
-固定传入“external.hms.gs.player.transfer.convertId”。
-
-accessToken
-
-是
-
-String
-
-游戏调用华为账号的[获取用户级凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-obtain-user-token)接口获取到的Access Token。
-
-appId
-
-是
-
-String
-
-HarmonyOS 5.0及以上游戏的APP ID，获取方法请参见[查看应用信息](https://developer.huawei.com/consumer/cn/doc/app/agc-help-view-app-info-0000002282674569)。
-
-gamePlayerId
-
-是
-
-String
-
-HarmonyOS 5.0及以上游戏的玩家标识，通过调用[unionLogin](gamePlayer（基础游戏服务）.md#section157848375136)接口返回。
+| 参数 | 是否必选 | 类型 | 描述 |
+| --- | --- | --- | --- |
+| method | 是 | String | 固定传入“external.hms.gs.player.transfer.convertId”。 |
+| accessToken | 是 | String | 游戏调用华为账号的获取用户级凭证接口获取到的Access Token。 |
+| appId | 是 | String | HarmonyOS 5.0及以上游戏的APP ID，获取方法请参见查看应用信息。 |
+| gamePlayerId | 是 | String | HarmonyOS 5.0及以上游戏的玩家标识，通过调用[unionLogin](gamePlayer（基础游戏服务）.md#section157848375136)接口返回。 |
 
 #### 请求示例
 
@@ -91,59 +59,13 @@ method=external.hms.gs.player.transfer.convertId&accessToken=******&appId=xxxxxx
 
 #### 响应参数
 
-参数
-
-是否必选
-
-类型
-
-描述
-
-rtnCode
-
-是
-
-int
-
-服务端结果说明。
-
-- 0：获取成功
-- -1：获取失败
-- 2：accessToken无效
-- 3001：参数错误
-- 3101：应用ID与鉴权应用不一致
-
-playerId
-
-是
-
-String
-
-HarmonyOS系统下，华为游戏服务器给华为账号封装处理后的对外开放的游戏玩家标识。
-
-openId
-
-是
-
-String
-
-HarmonyOS系统下，由华为账号和应用唯一标识组合加密起来的玩家标识。
-
-unionId
-
-否
-
-String
-
-HarmonyOS系统下，由华为账号和开发者账号组合加密起来的玩家标识。
-
-errMsg
-
-否
-
-String
-
-异常场景下返回错误码的描述。
+| 参数 | 是否必选 | 类型 | 描述 |
+| --- | --- | --- | --- |
+| rtnCode | 是 | int | 服务端结果说明。 0：获取成功 -1：获取失败 2：accessToken无效 3001：参数错误 3101：应用ID与鉴权应用不一致 |
+| playerId | 是 | String | HarmonyOS系统下，华为游戏服务器给华为账号封装处理后的对外开放的游戏玩家标识。 |
+| openId | 是 | String | HarmonyOS系统下，由华为账号和应用唯一标识组合加密起来的玩家标识。 |
+| unionId | 否 | String | HarmonyOS系统下，由华为账号和开发者账号组合加密起来的玩家标识。 |
+| errMsg | 否 | String | 异常场景下返回错误码的描述。 |
 
 #### 响应示例
 
@@ -166,7 +88,7 @@ Server: elb
 #### 调用示例
 
 ```ets
-“Java”
+Java
 package okhttp.com.post;
 import com.alibaba.fastjson.JSONObject;
 import okhttp3.*;
@@ -208,16 +130,13 @@ public class ConvertIdTest {
                     System.out.println("rtnCode: " + object.get("rtnCode"));
                     System.out.println("rtnMsg: " + object.get("errMsg"));
                 }
-            }
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-}
 ```
 
 ```ets
-“C#”
+C#
 using System;
 using System.IO;
 using System.Net;
@@ -263,12 +182,10 @@ namespace cXdemo
             reader.Close();
             response.Close();
         }
-    }
-}
 ```
 
 ```ets
-“PHP”
+PHP
 class convert_id
 {
     /**
@@ -307,7 +224,6 @@ class convert_id
         $result = json_decode($response, true);
         var_dump($result);
     }
-}
 $convert_id = new convert_id();
 $method = "external.hms.gs.player.transfer.convertId"; // 固定传入
 $accessToken = "xxxxx"; // 请使用客户端Player对象中的AccessToken
@@ -317,7 +233,7 @@ $convert_id->call_https($method, $accessToken, $appId, $gamePlayerId);
 ```
 
 ```ets
-“Python”
+Python
 from typing import Any
 import requests
 import urllib.parse
@@ -341,7 +257,7 @@ if __name__ == "__main__":
     input_method = 'external.hms.gs.player.transfer.convertId'
     # 请使用客户端Player对象中的AccessToken
     input_accessToken = 'xxx'
-	# HarmonyOS 5.0及以上游戏的APP ID
+    # HarmonyOS 5.0及以上系统下游戏的APP ID
     input_appId = 'xxx'
 	# 通过Access Token到华为服务器上获取到的玩家的gamePlayerId
     input_gamePlayerId = 'xxx'

@@ -12,13 +12,20 @@ typedef struct HiDebug_MallocDispatch {...} HiDebug_MallocDispatch
 
 **相关模块：**[HiDebug](HiDebug.md)
 
-**所在头文件：**[hidebug_type.h](../../capi/headers/hidebug_type.h.md)
+所在头文件： [hidebug_type.h](hidebug_type.h.md)
 
 #### 汇总
 
 #### 成员函数
 
-名称描述[void* (*malloc)(size_t)](#ZH-CN_TOPIC_0000002497445702__malloc)开发者自定义malloc函数指针。[void* (*calloc)(size_t, size_t)](#ZH-CN_TOPIC_0000002497445702__calloc)开发者自定义calloc函数指针。[void* (*realloc)(void*, size_t)](#ZH-CN_TOPIC_0000002497445702__realloc)开发者自定义realloc函数指针。[void (*free)(void*)](#ZH-CN_TOPIC_0000002497445702__free)开发者自定义free函数指针。[void* (*mmap)(void*, size_t, int, int, int, off_t)](#ZH-CN_TOPIC_0000002497445702__mmap)开发者自定义mmap函数指针。[int (*munmap)(void*, size_t)](#ZH-CN_TOPIC_0000002497445702__munmap)开发者自定义munmap函数指针。
+| 名称 | 描述 |
+| --- | --- |
+| void* (*malloc)(size_t) | 开发者自定义malloc函数指针。 |
+| void* (*calloc)(size_t, size_t) | 开发者自定义calloc函数指针。 |
+| void* (*realloc)(void*, size_t) | 开发者自定义realloc函数指针。 |
+| void (*free)(void*) | 开发者自定义free函数指针。 |
+| void* (*mmap)(void*, size_t, int, int, int, off_t) | 开发者自定义mmap函数指针。 |
+| int (*munmap)(void*, size_t) | 开发者自定义munmap函数指针。 |
 
 #### 成员函数说明
 

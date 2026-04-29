@@ -12,7 +12,7 @@ Web组件数据库管理对象。
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 -
 
@@ -34,17 +34,24 @@ static getHttpAuthCredentials(host: string, realm: string): Array<string>
 
 **参数：**
 
-参数名类型必填说明hoststring是HTTP身份验证凭据应用的主机。realmstring是HTTP身份验证凭据应用的域。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| host | string | 是 | HTTP身份验证凭据应用的主机。 |
+| realm | string | 是 | HTTP身份验证凭据应用的域。 |
 
 **返回值：**
 
-类型说明Array<string>包含用户名和密码的数组，检索失败返回空数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<string> | 包含用户名和密码的数组，检索失败返回空数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -74,8 +81,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### saveHttpAuthCredentials
@@ -88,13 +93,20 @@ static saveHttpAuthCredentials(host: string, realm: string, username: string, pa
 
 **参数：**
 
-参数名类型必填说明hoststring是HTTP身份验证凭据应用的主机。realmstring是HTTP身份验证凭据应用的域。usernamestring是用户名。passwordstring是密码。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| host | string | 是 | HTTP身份验证凭据应用的主机。 |
+| realm | string | 是 | HTTP身份验证凭据应用的域。 |
+| username | string | 是 | 用户名。 |
+| password | string | 是 | 密码。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -122,8 +134,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### existHttpAuthCredentials
@@ -136,11 +146,9 @@ static existHttpAuthCredentials(): boolean
 
 **返回值：**
 
-类型说明boolean
-
-是否存在任何已保存的HTTP身份验证凭据。
-
-存在返回true，不存在返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否存在任何已保存的HTTP身份验证凭据。 存在返回true，不存在返回false。 |
 
 **示例：**
 
@@ -165,8 +173,6 @@ struct WebComponent {
           }
         })
       Web({ src: 'www.example.com', controller: this.controller })
-    }
-  }
 }
 ```
 
@@ -202,6 +208,4 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```

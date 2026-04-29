@@ -12,10 +12,13 @@ typedef struct {...} NativeDisplayManager_DisplayHdrFormat
 
 **相关模块：**[OH_DisplayManager](OH_DisplayManager.md)
 
-**所在头文件：**[oh_display_info.h](../../capi/headers/oh_display_info.h.md)
+所在头文件： [oh_display_info.h](oh_display_info.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述uint32_t hdrFormatLength显示设备的HDR格式长度。uint32_t* hdrFormats显示设备的HDR格式数据。
+| 名称 | 描述 |
+| --- | --- |
+| uint32_t hdrFormatLength | 显示设备的HDR格式长度。 |
+| uint32_t* hdrFormats | 显示设备的HDR格式数据。 |

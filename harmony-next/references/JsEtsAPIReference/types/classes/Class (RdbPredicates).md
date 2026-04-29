@@ -20,13 +20,17 @@ constructor(name: string)
 
 **参数：**
 
-参数名类型必填说明namestring是数据库表名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 数据库表名。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -40,7 +44,8 @@ inDevices(devices: Array<string>): RdbPredicates
 
 同步分布式数据库时连接到组网内指定的远程设备。
 
-其中devices通过调用[deviceManager.getAvailableDeviceListSync](../../modules/ohos/@ohos.distributedDeviceManager (设备管理).md#ZH-CN_TOPIC_0000002529285429__getavailabledevicelistsync)方法得到。
+
+其中devices通过调用[deviceManager.getAvailableDeviceListSync](@ohos.distributedDeviceManager (设备管理).md#ZH-CN_TOPIC_0000002522081466__getavailabledevicelistsync)方法得到。
 
 数据库同步时调用Sync接口，需要在入参谓词中调用inDevices接口选择设备。如果不调用inDevices接口即默认连接组网内所有的设备。
 
@@ -48,17 +53,23 @@ inDevices(devices: Array<string>): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明devicesArray<string>是指定的组网内的远程设备ID。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| devices | Array<string> | 是 | 指定的组网内的远程设备ID。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -95,7 +106,9 @@ inAllDevices(): RdbPredicates
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -106,7 +119,7 @@ predicates.inAllDevices();
 
 #### equalTo
 
-equalTo(field: string, value: ValueType): RdbPredicates
+equalTo(field: string, value: [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)): RdbPredicates
 
 配置谓词以匹配数据表的field列中值为value的字段。
 
@@ -114,17 +127,24 @@ equalTo(field: string, value: ValueType): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。value[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype) | 是 | 指示要与谓词匹配的值。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -136,7 +156,7 @@ predicates.equalTo("NAME", "Lisa");
 
 #### notEqualTo
 
-notEqualTo(field: string, value: ValueType): RdbPredicates
+notEqualTo(field: string, value: [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)): RdbPredicates
 
 配置谓词以匹配数据表的field列中值不为value的字段。
 
@@ -144,17 +164,24 @@ notEqualTo(field: string, value: ValueType): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。value[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype) | 是 | 指示要与谓词匹配的值。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -174,7 +201,9 @@ beginWrap(): RdbPredicates
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回带有左括号的Rdb谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回带有左括号的Rdb谓词。 |
 
 **示例：**
 
@@ -198,7 +227,9 @@ endWrap(): RdbPredicates
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回带有右括号的Rdb谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回带有右括号的Rdb谓词。 |
 
 **示例：**
 
@@ -222,7 +253,9 @@ or(): RdbPredicates
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回带有或条件的Rdb谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回带有或条件的Rdb谓词。 |
 
 **示例：**
 
@@ -244,7 +277,9 @@ and(): RdbPredicates
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回带有和条件的Rdb谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回带有和条件的Rdb谓词。 |
 
 **示例：**
 
@@ -266,17 +301,24 @@ contains(field: string, value: string): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。valuestring是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | string | 是 | 指示要与谓词匹配的值。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -296,17 +338,24 @@ beginsWith(field: string, value: string): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。valuestring是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | string | 是 | 指示要与谓词匹配的值。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -326,17 +375,24 @@ endsWith(field: string, value: string): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。valuestring是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | string | 是 | 指示要与谓词匹配的值。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -356,17 +412,23 @@ isNull(field: string): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
@@ -385,17 +447,23 @@ isNotNull(field: string): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -414,17 +482,24 @@ like(field: string, value: string): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。valuestring是指定模糊匹配条件，通常配合通配符使用，%表示任意长度任意字符，_表示单个字符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | string | 是 | 指定模糊匹配条件，通常配合通配符使用，%表示任意长度任意字符，_表示单个字符。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -444,21 +519,24 @@ glob(field: string, value: string): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。valuestring是
-
-指示要与谓词匹配的值。
-
-支持通配符，*表示0个、1个或多个数字或字符，?表示1个数字或字符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | string | 是 | 指示要与谓词匹配的值。 支持通配符，*表示0个、1个或多个数字或字符，?表示1个数字或字符。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -470,7 +548,7 @@ predicates.glob("NAME", "?h*g");
 
 #### between
 
-between(field: string, low: ValueType, high: ValueType): RdbPredicates
+between(field: string, low: [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype), high: ValueType): RdbPredicates
 
 配置谓词以匹配数据表的field列中值在给定范围内的字段（包含范围边界）。
 
@@ -478,17 +556,25 @@ between(field: string, low: ValueType, high: ValueType): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。low[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)是指示与谓词匹配的最小值。high[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)是指示与谓词匹配的最大值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| low | [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype) | 是 | 指示与谓词匹配的最小值。 |
+| high | [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype) | 是 | 指示与谓词匹配的最大值。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -500,7 +586,7 @@ predicates.between("AGE", 10, 50);
 
 #### notBetween
 
-notBetween(field: string, low: ValueType, high: ValueType): RdbPredicates
+notBetween(field: string, low: [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype), high: ValueType): RdbPredicates
 
 配置谓词以匹配数据表的field列中值超出给定范围的字段（不包含范围边界）。
 
@@ -508,17 +594,25 @@ notBetween(field: string, low: ValueType, high: ValueType): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。low[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)是指示与谓词匹配的最小值。high[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)是指示要与谓词匹配的最大值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| low | [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype) | 是 | 指示与谓词匹配的最小值。 |
+| high | [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype) | 是 | 指示要与谓词匹配的最大值。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -530,7 +624,7 @@ predicates.notBetween("AGE", 10, 50);
 
 #### greaterThan
 
-greaterThan(field: string, value: ValueType): RdbPredicates
+greaterThan(field: string, value: [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)): RdbPredicates
 
 配置谓词以匹配数据表的field列中值大于value的字段。
 
@@ -538,17 +632,24 @@ greaterThan(field: string, value: ValueType): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。value[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype) | 是 | 指示要与谓词匹配的值。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -560,7 +661,7 @@ predicates.greaterThan("AGE", 18);
 
 #### lessThan
 
-lessThan(field: string, value: ValueType): RdbPredicates
+lessThan(field: string, value: [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)): RdbPredicates
 
 配置谓词以匹配数据表的field列中值小于value的字段。
 
@@ -568,17 +669,24 @@ lessThan(field: string, value: ValueType): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。value[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype) | 是 | 指示要与谓词匹配的值。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -590,7 +698,7 @@ predicates.lessThan("AGE", 20);
 
 #### greaterThanOrEqualTo
 
-greaterThanOrEqualTo(field: string, value: ValueType): RdbPredicates
+greaterThanOrEqualTo(field: string, value: [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)): RdbPredicates
 
 配置谓词以匹配数据表的field列中值大于或者等于value的字段。
 
@@ -598,17 +706,24 @@ greaterThanOrEqualTo(field: string, value: ValueType): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。value[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype) | 是 | 指示要与谓词匹配的值。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -620,7 +735,7 @@ predicates.greaterThanOrEqualTo("AGE", 18);
 
 #### lessThanOrEqualTo
 
-lessThanOrEqualTo(field: string, value: ValueType): RdbPredicates
+lessThanOrEqualTo(field: string, value: [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)): RdbPredicates
 
 配置谓词以匹配数据表的field列中值小于或者等于value的字段。
 
@@ -628,17 +743,24 @@ lessThanOrEqualTo(field: string, value: ValueType): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。value[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype) | 是 | 指示要与谓词匹配的值。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -658,17 +780,23 @@ orderByAsc(field: string): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -687,17 +815,23 @@ orderByDesc(field: string): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -716,7 +850,9 @@ distinct(): RdbPredicates
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回可用于过滤重复记录的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回可用于过滤重复记录的谓词。 |
 
 **示例：**
 
@@ -735,17 +871,23 @@ limitAs(value: number): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明valuenumber是最大数据记录数，取值应为正整数，传入值小于等于0时，不会限制记录数量。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 最大数据记录数，取值应为正整数，传入值小于等于0时，不会限制记录数量。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回可用于设置最大数据记录数的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回可用于设置最大数据记录数的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -764,17 +906,23 @@ offsetAs(rowOffset: number): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明rowOffsetnumber是指定查询结果的起始位置，默认初始位置为结果集的最前端。当rowOffset为负数时，起始位置为结果集的最前端。当rowOffset超出结果集最后位置时，查询结果为空。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rowOffset | number | 是 | 指定查询结果的起始位置，默认初始位置为结果集的最前端。当rowOffset为负数时，起始位置为结果集的最前端。当rowOffset超出结果集最后位置时，查询结果为空。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回具有指定返回结果起始位置的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回具有指定返回结果起始位置的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -793,17 +941,23 @@ groupBy(fields: Array<string>): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldsArray<string>是指定分组依赖的列名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fields | Array<string> | 是 | 指定分组依赖的列名。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回分组查询列的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回分组查询列的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -822,17 +976,23 @@ indexedBy(field: string): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是索引列的名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 索引列的名称。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回具有指定索引列的RdbPredicates。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回具有指定索引列的RdbPredicates。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -843,7 +1003,7 @@ predicates.indexedBy("SALARY");
 
 #### in
 
-in(field: string, value: Array<ValueType>): RdbPredicates
+in(field: string, value: Array<[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)>): RdbPredicates
 
 配置谓词条件，表示字段field的值必须在给定的value集合内。
 
@@ -853,17 +1013,24 @@ value集合不能为空。如果传入空集，此条件将失效，导致操作
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。valueArray<[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)>是以ValueType型数组形式指定的要匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | Array<[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)> | 是 | 以ValueType型数组形式指定的要匹配的值。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -875,25 +1042,32 @@ predicates.in("AGE", [18, 20]);
 
 #### notIn
 
-notIn(field: string, value: Array<ValueType>): RdbPredicates
+notIn(field: string, value: Array<[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)>): RdbPredicates
 
-将谓词配置为匹配数据字段为ValueType且值超出给定范围的指定字段。
+将谓词配置为匹配数据字段为[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)且值超出给定范围的指定字段。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。valueArray<[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)>是以ValueType数组形式指定的要匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | Array<[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)> | 是 | 以ValueType数组形式指定的要匹配的值。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -913,17 +1087,24 @@ notContains(field: string, value: string): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。valuestring是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | string | 是 | 指示要与谓词匹配的值。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -943,17 +1124,24 @@ notLike(field: string, value: string): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。valuestring是指定**不包含**的模糊匹配条件，通常配合通配符使用，%表示任意长度任意字符，_表示单个字符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | string | 是 | 指定不包含的模糊匹配条件，通常配合通配符使用，%表示任意长度任意字符，_表示单个字符。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -965,7 +1153,7 @@ predicates.notLike("NAME", "%os%");
 
 #### having20+
 
-having(conditions:string, args?: Array<ValueType>): RdbPredicates
+having(conditions:string, args?: Array<[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)>): RdbPredicates
 
 筛选符合条件的分组数据。
 
@@ -973,17 +1161,24 @@ having(conditions:string, args?: Array<ValueType>): RdbPredicates
 
 **参数：**
 
-参数名类型必填说明conditionsstring是用于过滤使用[groupBy](#ZH-CN_TOPIC_0000002529444651__groupby)获得的数据，不能为空且必须与[groupBy](#ZH-CN_TOPIC_0000002529444651__groupby)配合使用。argsArray<[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)>否条件中使用的参数，用来替换条件语句中的占位符，不传时默认为空数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| conditions | string | 是 | 用于过滤使用groupBy获得的数据，不能为空且必须与groupBy配合使用。 |
+| args | Array<[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)> | 否 | 条件中使用的参数，用来替换条件语句中的占位符，不传时默认为空数组。 |
 
 **返回值**：
 
-类型说明[RdbPredicates](Class (RdbPredicates).md)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| RdbPredicates | 返回与指定字段匹配的谓词。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关系型数据库错误码](../../errors/关系型数据库错误码.md)。
+以下错误码的详细介绍请参见[关系型数据库错误码]([关系型数据库错误码](../../errors/关系型数据库错误码.md).md)。
 
-**错误码ID****错误信息**14800001Invalid arguments. Possible causes: 1. Parameter is out of valid range; 2. Missing GROUP BY clause.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14800001 | Invalid arguments. Possible causes: 1. Parameter is out of valid range; 2. Missing GROUP BY clause. |
 
 **示例1：**
 

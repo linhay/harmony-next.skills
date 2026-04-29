@@ -22,7 +22,9 @@ DataPanel(options: DataPanelOptions)
 
 **参数：**
 
-参数名类型必填说明options[DataPanelOptions](#ZH-CN_TOPIC_0000002497604906__datapaneloptions对象说明)是数据面板组件参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | DataPanelOptions | 是 | 数据面板组件参数。 |
 
 #### DataPanelOptions对象说明
 
@@ -34,19 +36,11 @@ DataPanel(options: DataPanelOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明valuesnumber[]否否数据值列表，最多包含9个数据，大于9个数据则取前9个数据。若数据值小于0则置为0。maxnumber否是
-
-- max大于0时，表示数据的最大值。
-
-- max小于等于0时，max等于value数组各项的和，按比例显示。
-
-默认值：100
-
-type8+[DataPanelType](#ZH-CN_TOPIC_0000002497604906__datapaneltype8枚举说明)否是
-
-数据面板的类型（不支持动态修改）。
-
-默认值：DataPanelType.Circle
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| values | number[] | 否 | 否 | 数据值列表，最多包含9个数据，大于9个数据则取前9个数据。若数据值小于0则置为0。 |
+| max | number | 否 | 是 | - max大于0时，表示数据的最大值。 - max小于等于0时，max等于value数组各项的和，按比例显示。 默认值：100 |
+| type8+ | DataPanelType | 否 | 是 | 数据面板的类型（不支持动态修改）。 默认值：DataPanelType.Circle |
 
 #### DataPanelType8+枚举说明
 
@@ -58,17 +52,20 @@ type8+[DataPanelType](#ZH-CN_TOPIC_0000002497604906__datapaneltype8枚举说明)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称值说明Line-线型数据面板。Circle-环形数据面板。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| Line | 0 | 线型数据面板。 |
+| Circle | 4 | 环形数据面板。 |
 
 #### 属性
 
-除支持[通用属性](../misc/通用属性.md)外，还支持以下属性：
+除支持[通用属性]([通用属性](../misc/通用属性.md).md)外，还支持以下属性：
 
 #### closeEffect
 
 closeEffect(value: boolean)
 
-设置是否关闭数据占比图表旋转动效和投影效果。若未设置[trackShadow](#ZH-CN_TOPIC_0000002497604906__trackshadow10)属性，则由该属性控制投影效果的开关，开启投影的效果为投影的默认效果。若设置了trackShadow属性，则由trackShadow属性值控制投影效果的开关。
+设置是否关闭数据占比图表旋转动效和投影效果。若未设置[trackShadow](#ZH-CN_TOPIC_0000002522080858__trackshadow10)属性，则由该属性控制投影效果的开关，开启投影的效果为投影的默认效果。若设置了trackShadow属性，则由trackShadow属性值控制投影效果的开关。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -78,15 +75,13 @@ closeEffect(value: boolean)
 
 **参数：**
 
-参数名类型必填说明valueboolean是
-
-关闭数据占比图表旋转动效和投影效果。
-
-默认值：false，false表示开启数据占比图表旋转动效和投影效果，true表示关闭数据占比图表旋转动效和投影效果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | boolean | 是 | 关闭数据占比图表旋转动效和投影效果。 默认值：false，false表示开启数据占比图表旋转动效和投影效果，true表示关闭数据占比图表旋转动效和投影效果。 |
 
 #### valueColors10+
 
-valueColors(value: Array<ResourceColor | LinearGradient>)
+valueColors(value: Array<[ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | LinearGradient>)
 
 设置各数据段颜色。
 
@@ -96,11 +91,13 @@ valueColors(value: Array<ResourceColor | LinearGradient>)
 
 **参数：**
 
-参数名类型必填说明valueArray<[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | [LinearGradient](#ZH-CN_TOPIC_0000002497604906__lineargradient10)>是各数据段颜色，ResourceColor为纯色，LinearGradient为渐变色。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | Array<[ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | LinearGradient> | 是 | 各数据段颜色，ResourceColor为纯色，LinearGradient为渐变色。默认渐变色，其九段数据段默认颜色：[{ color: '#F7CE00', offset: 0 }, { color: '#F99B11', offset: 1 }]、[{ color: '#F76223', offset: 0 }, { color: '#F2400A', offset: 1 }]、[{ color: '#F772AC', offset: 0 }, { color: '#E65392', offset: 1 }]、[{ color: '#A575EB', offset: 0 }, { color: '#A12DF7', offset: 1 }]、[{ color: '#7B79F7', offset: 0 }, { color: '#4B48F7', offset: 1 }]、[{ color: '#4B8AF3', offset: 0 }, { color: '#007DFF', offset: 1 }]、[{ color: '#73C1E6', offset: 0 }, { color: '#4FB4E3', offset: 1 }]、[{ color: '#A5D61D', offset: 0 }, { color: '#69D14F', offset: 1 }]、[{ color: '#A2A2B0', offset: 0 }, { color: '#8E8E93', offset: 1 }] |
 
 #### trackBackgroundColor10+
 
-trackBackgroundColor(value: ResourceColor)
+trackBackgroundColor(value: [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor))
 
 设置底板颜色。
 
@@ -110,15 +107,13 @@ trackBackgroundColor(value: ResourceColor)
 
 **参数：**
 
-参数名类型必填说明value[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)是
-
-底板颜色。
-
-默认值：'#08182431'，格式为十六进制ARGB值，前两位代表透明度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 是 | 底板颜色。 默认值：'#08182431'，格式为十六进制ARGB值，前两位代表透明度。 |
 
 #### strokeWidth10+
 
-strokeWidth(value: Length)
+strokeWidth(value: [Length](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__length))
 
 设置圆环粗细。数据面板的类型为DataPanelType.Line时该属性不生效。
 
@@ -128,21 +123,9 @@ strokeWidth(value: Length)
 
 **参数：**
 
-参数名类型必填说明value[Length](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__length)是
-
-圆环粗细。
-
-默认值：24
-
-单位：vp
-
-设置字符串类型参数时，如果不指定单位，默认单位为px，例如'10'，等同于'10px'。
-
-**说明：**
-
-设置小于0的值时，按默认值显示。
-
-请合理设置圆环粗细，当value大于圆环半径时，圆环粗细会自动设置为圆环半径的12%。如果value过大，圆环可能会消失。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [Length](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__length) | 是 | 圆环粗细。 默认值：24 单位：vp 设置字符串类型参数时，如果不指定单位，默认单位为px，例如'10'，等同于'10px'。 说明： 设置小于0的值时，按默认值显示。 请合理设置圆环粗细，当value大于圆环半径时，圆环粗细会自动设置为圆环半径的12%。如果value过大，圆环可能会消失。 |
 
 #### trackShadow10+
 
@@ -156,13 +139,9 @@ trackShadow(value: DataPanelShadowOptions)
 
 **参数：**
 
-参数名类型必填说明value[DataPanelShadowOptions](#ZH-CN_TOPIC_0000002497604906__datapanelshadowoptions10对象说明)是
-
-投影样式。
-
-**说明：**
-
-设置为null时，不开启投影。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | DataPanelShadowOptions | 是 | 投影样式。 说明：  设置为null时，不开启投影。 |
 
 #### contentModifier12+
 
@@ -176,31 +155,21 @@ contentModifier(modifier: ContentModifier<DataPanelConfiguration>)
 
 **参数：**
 
-参数名类型必填说明modifier[ContentModifier<DataPanelConfiguration>](#ZH-CN_TOPIC_0000002497604906__datapanelconfiguration12对象说明)是
-
-在DataPanel组件上，定制内容区的方法。
-
-modifier： 内容修改器，开发者需要自定义class实现ContentModifier接口。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| modifier | ContentModifier<DataPanelConfiguration> | 是 | 在DataPanel组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
 
 #### DataPanelShadowOptions10+对象说明
 
-DataPanelShadowOptions继承自[MultiShadowOptions](../misc/信息展示公共接口.md#ZH-CN_TOPIC_0000002497444932__multishadowoptions)，具有MultiShadowOptions的全部属性。
+DataPanelShadowOptions继承自[MultiShadowOptions](信息展示公共接口.md#ZH-CN_TOPIC_0000002553360785__multishadowoptions)，具有[MultiShadowOptions](信息展示公共接口.md#ZH-CN_TOPIC_0000002497444932__multishadowoptions)的全部属性。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明colorsArray<[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | [LinearGradient](#ZH-CN_TOPIC_0000002497604906__lineargradient10)>否是
-
-各数据段投影的颜色。
-
-默认值：与valueColors值相同
-
-**说明：**
-
-若设置的投影颜色的个数少于数据段个数时，则显示的投影颜色的个数和设置的投影颜色个数一致。
-
-若设置的投影颜色的个数多于数据段个数时，则显示的投影颜色的个数和数据段个数一致。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| colors | Array<[ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | LinearGradient> | 否 | 是 | 各数据段投影的颜色。  默认值：与valueColors值相同  说明：  若设置的投影颜色的个数少于数据段个数时，则显示的投影颜色的个数和设置的投影颜色个数一致。 若设置的投影颜色的个数多于数据段个数时，则显示的投影颜色的个数和数据段个数一致。 |
 
 #### LinearGradient10+
 
@@ -216,7 +185,9 @@ constructor(colorStops: ColorStop[])
 
 **参数：**
 
-参数名类型必填说明colorStops[ColorStop](#ZH-CN_TOPIC_0000002497604906__colorstop10)[]是存储渐变颜色和渐变点。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| colorStops | ColorStop[] | 是 | 存储渐变颜色和渐变点。 |
 
 #### ColorStop10+
 
@@ -226,45 +197,29 @@ constructor(colorStops: ColorStop[])
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明color[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)否否渐变色断点处的颜色值。offset[Length](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__length)否否
-
-渐变色断点（0~1之间的比例值，若数据值小于0则置为0，若数据值大于1则置为1）。
-
-**说明：**
-
-若传入字符串类型且内容为数字，则转换为对应的数值。
-
-例如'10vp'转换为10，'10%'转换为0.1。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| color | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 否 | 否 | 渐变色断点处的颜色值。 |
+| offset | [Length](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__length) | 否 | 否 | 渐变色断点（0~1之间的比例值，若数据值小于0则置为0，若数据值大于1则置为1）。 说明：  若传入字符串类型且内容为数字，则转换为对应的数值。 例如'10vp'转换为10，'10%'转换为0.1。 |
 
 #### DataPanelConfiguration12+对象说明
 
-开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](../misc/自定义内容.md#ZH-CN_TOPIC_0000002497444874__commonconfigurationt)。
+开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](自定义内容.md#ZH-CN_TOPIC_0000002553360727__commonconfigurationt)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明valuesnumber[]否否
-
-当前DataPanel的数据值。
-
-取值范围：[0, 9]，若数据值小于0，则置为0。
-
-maxValuenumber否否
-
-DataPanel显示的最大值。
-
-默认值：100。
-
-**说明：**
-
-如果小于或等于0，maxValue将被设为values数组中所有项的总和，并按比例显示。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| values | number[] | 否 | 否 | 当前DataPanel的数据值。 数组长度范围是[0, 9]。 说明： 如果数组长度大于9，则取前9项。 |
+| maxValue | number | 否 | 否 | DataPanel显示的最大值。 默认值：100。 说明：  如果小于或等于0，maxValue将被设为values数组中所有项的总和，并按比例显示。 |
 
 #### 示例
 
 #### 示例1（设置数据面板类型）
 
-该示例通过[DataPanelOptions](#ZH-CN_TOPIC_0000002497604906__datapaneloptions对象说明)的type属性，实现了设置数据面板的类型的功能。
+该示例通过[DataPanelOptions](#ZH-CN_TOPIC_0000002522080858__datapaneloptions对象说明)的type属性，实现了设置数据面板的类型的功能。
 
 ```ets
 // xxx.ets
@@ -313,12 +268,13 @@ struct DataPanelExample {
       DataPanel({ values: this.valueArr, max: 100, type: DataPanelType.Line }).width(300).height(20)
     }.width('100%').margin({ top: 5 })
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553365089.webp)
 
 #### 示例2（设置渐变色和阴影）
 
-该示例通过[valueColors](#ZH-CN_TOPIC_0000002497604906__valuecolors10)和[trackShadow](#ZH-CN_TOPIC_0000002497604906__trackshadow10)接口设置[LinearGradient](#ZH-CN_TOPIC_0000002497604906__lineargradient10)颜色，实现了设置渐变色效果和阴影效果。
+该示例通过[valueColors](#ZH-CN_TOPIC_0000002522080858__valuecolors10)和[trackShadow](#ZH-CN_TOPIC_0000002522080858__trackshadow10)接口设置[LinearGradient](#ZH-CN_TOPIC_0000002522080858__lineargradient10)颜色，实现了设置渐变色效果和阴影效果。
 
 ```ets
 // xxx.ets
@@ -370,12 +326,13 @@ struct LinearGradientDataPanelExample {
         .trackBackgroundColor(this.bgColor)
     }.width('100%').margin({ top: 5 })
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522245166.webp)
 
 #### 示例3（设置关闭动画和阴影）
 
-该示例通过[closeEffect](#ZH-CN_TOPIC_0000002497604906__closeeffect)接口，实现了关闭数据面板动画和阴影的功能。
+该示例通过[closeEffect](#ZH-CN_TOPIC_0000002522080858__closeeffect)接口，实现了关闭数据面板动画和阴影的功能。
 
 ```ets
 // xxx.ets
@@ -422,18 +379,18 @@ struct LinearGradientDataPanelExample {
         .trackBackgroundColor(this.bgColor)
     }.width('100%').margin({ top: 5 })
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553205127.webp)
 
 #### 示例4（设置定制内容区）
 
-该示例通过[contentModifier](#ZH-CN_TOPIC_0000002497604906__contentmodifier12)接口，实现了定制数据面板内容区的功能。
+该示例通过[contentModifier](#ZH-CN_TOPIC_0000002522080858__contentmodifier12)接口，实现了定制数据面板内容区的功能。
 
 ```ets
 // xxx.ets
 @Builder
 function buildDataPanel(config: DataPanelConfiguration) {
-  Column() {
     Column() {
       ForEach(config.values, (item: number, index: number) => {
         ChildItem({ item: item, index: index, max: config.maxValue })
@@ -448,8 +405,6 @@ function buildDataPanel(config: DataPanelConfiguration) {
       Text('Length=' + config.values.length + '    ').margin({ left: 10 }).align(Alignment.Start)
       Text('Max=' + config.maxValue).margin({ left: 10 }).align(Alignment.Start)
     }
-  }
-}
 
 class DataPanelBuilder implements ContentModifier<DataPanelConfiguration> {
   constructor() {
@@ -457,7 +412,6 @@ class DataPanelBuilder implements ContentModifier<DataPanelConfiguration> {
 
   applyContent(): WrappedBuilder<[DataPanelConfiguration]> {
     return wrapBuilder(buildDataPanel)
-  }
 }
 
 @Entry
@@ -474,8 +428,6 @@ struct Index {
           .padding({ top: 10 })
           .contentModifier(new DataPanelBuilder())
       }.margin(15).backgroundColor('#fff5f5f5')
-    }
-  }
 }
 
 @Component
@@ -506,5 +458,6 @@ struct ChildItem {
       }
     }.height(28)
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522085174.webp)

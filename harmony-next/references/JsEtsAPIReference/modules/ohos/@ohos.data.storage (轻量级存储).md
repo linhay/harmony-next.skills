@@ -20,7 +20,10 @@ import data_storage from '@ohos.data.storage';
 
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.DistributedDataManager.Preferences.Core
 
-名称类型可读可写说明MAX_KEY_LENGTHnumber是否key的最大长度限制为80字节。MAX_VALUE_LENGTHnumber是否value的最大长度限制为8192字节。
+| 名称 | 类型 | 可读 | 可写 | 说明 |
+| --- | --- | --- | --- | --- |
+| MAX_KEY_LENGTH | number | 是 | 否 | key的最大长度限制为80字节。 |
+| MAX_VALUE_LENGTH | number | 是 | 否 | value的最大长度限制为16MB。 |
 
 #### data_storage.getStorageSync
 
@@ -32,11 +35,15 @@ getStorageSync(path: string): Storage
 
 **参数：**
 
-参数名类型必填说明pathstring是应用程序内部数据存储路径。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 应用程序内部数据存储路径。 |
 
 **返回值：**
 
-类型说明[Storage](#ZH-CN_TOPIC_0000002497604692__storage)获取到要操作的Storage实例，用于进行数据存储操作。
+| 类型 | 说明 |
+| --- | --- |
+| Storage | 获取到要操作的Storage实例，用于进行数据存储操作。 |
 
 **示例：**
 
@@ -65,7 +72,10 @@ getStorage(path: string, callback: AsyncCallback<Storage>): void
 
 **参数：**
 
-参数名类型必填说明pathstring是应用程序内部数据存储路径。callbackAsyncCallback<[Storage](#ZH-CN_TOPIC_0000002497604692__storage)>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 应用程序内部数据存储路径。 |
+| callback | AsyncCallback<Storage> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -99,11 +109,15 @@ getStorage(path: string): Promise<Storage>
 
 **参数：**
 
-参数名类型必填说明pathstring是应用程序内部数据存储路径。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 应用程序内部数据存储路径。 |
 
 **返回值：**
 
-类型说明Promise<[Storage](#ZH-CN_TOPIC_0000002497604692__storage)>Promise实例，用于异步获取结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Storage> | Promise实例，用于异步获取结果。 |
 
 **示例：**
 
@@ -136,7 +150,9 @@ deleteStorageSync(path: string): void
 
 **参数：**
 
-参数名类型必填说明pathstring是应用程序内部数据存储路径。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 应用程序内部数据存储路径。 |
 
 **示例：**
 
@@ -163,7 +179,10 @@ deleteStorage(path: string, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明pathstring是应用程序内部数据存储路径。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 应用程序内部数据存储路径。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -196,11 +215,15 @@ deleteStorage(path: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明pathstring是应用程序内部数据存储路径。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 应用程序内部数据存储路径。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise实例，用于异步获取结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise实例，用于异步获取结果。 |
 
 **示例：**
 
@@ -232,7 +255,9 @@ removeStorageFromCacheSync(path: string): void
 
 **参数：**
 
-参数名类型必填说明pathstring是应用程序内部数据存储路径。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 应用程序内部数据存储路径。 |
 
 **示例：**
 
@@ -259,7 +284,10 @@ removeStorageFromCache(path: string, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明pathstring是应用程序内部数据存储路径。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 应用程序内部数据存储路径。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -292,11 +320,15 @@ removeStorageFromCache(path: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明pathstring是应用程序内部数据存储路径。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 应用程序内部数据存储路径。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise实例，用于异步获取结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise实例，用于异步获取结果。 |
 
 **示例：**
 
@@ -322,7 +354,7 @@ context.getFilesDir().then((filePath) => {
 
 提供获取和修改存储数据的接口。
 
-下列接口都需先使用[data_storage.getStorage](#ZH-CN_TOPIC_0000002497604692__data_storagegetstorage)或[data_storage.getStorageSync](#ZH-CN_TOPIC_0000002497604692__data_storagegetstoragesync)获取到Storage实例，再通过此实例调用对应接口。
+下列接口都需先使用[data_storage.getStorage](#ZH-CN_TOPIC_0000002553360565__data_storagegetstorage)或[data_storage.getStorageSync](#ZH-CN_TOPIC_0000002553360565__data_storagegetstoragesync)获取到Storage实例，再通过此实例调用对应接口。
 
 #### getSync
 
@@ -334,11 +366,16 @@ getSync(key: string, defValue: ValueType): ValueType
 
 **参数：**
 
-参数名类型必填说明keystring是要获取的存储key名称，不能为空。defValue[ValueType](#ZH-CN_TOPIC_0000002497604692__valuetype)是给定key的存储不存在，则要返回的默认值。支持number、string、boolean。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要获取的存储key名称，不能为空。 |
+| defValue | ValueType | 是 | 给定key的存储不存在，则要返回的默认值。支持number、string、boolean。 |
 
 **返回值：**
 
-类型说明ValueType键对应的值，如果值为null或者非默认值类型，返回默认数据。
+| 类型 | 说明 |
+| --- | --- |
+| ValueType | 键对应的值，如果值为null或者非默认值类型，返回默认数据。 |
 
 **示例：**
 
@@ -357,7 +394,11 @@ get(key: string, defValue: ValueType, callback: AsyncCallback<ValueType>): void
 
 **参数：**
 
-参数名类型必填说明keystring是要获取的存储key名称，不能为空。defValue[ValueType](#ZH-CN_TOPIC_0000002497604692__valuetype)是默认返回值。支持number、string、boolean。callbackAsyncCallback<ValueType>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要获取的存储key名称，不能为空。 |
+| defValue | ValueType | 是 | 默认返回值。支持number、string、boolean。 |
+| callback | AsyncCallback<ValueType> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -381,11 +422,16 @@ get(key: string, defValue: ValueType): Promise<ValueType>
 
 **参数：**
 
-参数名类型必填说明keystring是要获取的存储key名称，不能为空。defValue[ValueType](#ZH-CN_TOPIC_0000002497604692__valuetype)是默认返回值。支持number、string、boolean。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要获取的存储key名称，不能为空。 |
+| defValue | ValueType | 是 | 默认返回值。支持number、string、boolean。 |
 
 **返回值：**
 
-类型说明Promise<ValueType>Promise实例，用于异步获取结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<ValueType> | Promise实例，用于异步获取结果。 |
 
 **示例：**
 
@@ -408,7 +454,10 @@ putSync(key: string, value: ValueType): void
 
 **参数：**
 
-参数名类型必填说明keystring是要修改的存储的key，不能为空。value[ValueType](#ZH-CN_TOPIC_0000002497604692__valuetype)是存储的新值。支持number、string、boolean。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要修改的存储的key，不能为空。 |
+| value | ValueType | 是 | 存储的新值。支持number、string、boolean。 |
 
 **示例：**
 
@@ -426,7 +475,11 @@ put(key: string, value: ValueType, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明keystring是要修改的存储的key，不能为空。value[ValueType](#ZH-CN_TOPIC_0000002497604692__valuetype)是存储的新值。支持number、string、boolean。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要修改的存储的key，不能为空。 |
+| value | ValueType | 是 | 存储的新值。支持number、string、boolean。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -450,11 +503,16 @@ put(key: string, value: ValueType): Promise<void>
 
 **参数：**
 
-参数名类型必填说明keystring是要修改的存储的key，不能为空。value[ValueType](#ZH-CN_TOPIC_0000002497604692__valuetype)是存储的新值。支持number、string、boolean。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要修改的存储的key，不能为空。 |
+| value | ValueType | 是 | 存储的新值。支持number、string、boolean。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise实例，用于异步处理。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise实例，用于异步处理。 |
 
 **示例：**
 
@@ -477,11 +535,15 @@ hasSync(key: string): boolean
 
 **参数：**
 
-参数名类型必填说明keystring是要获取的存储key名称，不能为空。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要获取的存储key名称，不能为空。 |
 
 **返回值：**
 
-类型说明booleantrue 表示存在，false表示不存在。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true 表示存在，false表示不存在。 |
 
 **示例：**
 
@@ -502,11 +564,16 @@ has(key: string, callback: AsyncCallback<boolean>): boolean
 
 **参数：**
 
-参数名类型必填说明keystring是要获取的存储key名称，不能为空。callbackAsyncCallback<boolean>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要获取的存储key名称，不能为空。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。 |
 
 **返回值：**
 
-类型说明booleantrue表示存在，false表示不存在。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true表示存在，false表示不存在。 |
 
 **示例：**
 
@@ -532,11 +599,15 @@ has(key: string): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明keystring是要获取的存储key名称，不能为空。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要获取的存储key名称，不能为空。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise实例，用于异步处理。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise实例，用于异步处理。 |
 
 **示例：**
 
@@ -561,7 +632,9 @@ deleteSync(key: string): void
 
 **参数：**
 
-参数名类型必填说明keystring是要获取的存储key名称。它不能为空。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要获取的存储key名称。它不能为空。 |
 
 **示例：**
 
@@ -579,7 +652,10 @@ delete(key: string, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明keystring是要获取的存储key名称，不能为空。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要获取的存储key名称，不能为空。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -603,11 +679,15 @@ delete(key: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明keystring是要获取的存储key名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要获取的存储key名称。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise实例，用于异步处理。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise实例，用于异步处理。 |
 
 **示例：**
 
@@ -644,7 +724,9 @@ flush(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -668,7 +750,9 @@ flush(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise实例，用于异步处理。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise实例，用于异步处理。 |
 
 **示例：**
 
@@ -705,7 +789,9 @@ clear(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -729,7 +815,9 @@ clear(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise实例，用于异步处理。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise实例，用于异步处理。 |
 
 **示例：**
 
@@ -752,7 +840,10 @@ on(type: 'change', callback: Callback<StorageObserver>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件类型，固定值'change'，表示数据变更。callbackCallback<[StorageObserver](#ZH-CN_TOPIC_0000002497604692__storageobserver)>是回调对象实例。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件类型，固定值'change'，表示数据变更。 |
+| callback | Callback<StorageObserver> | 是 | 回调对象实例。 |
 
 **示例：**
 
@@ -775,7 +866,10 @@ off(type: 'change', callback: Callback<StorageObserver>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件类型，固定值'change'，表示数据变更。callbackCallback<[StorageObserver](#ZH-CN_TOPIC_0000002497604692__storageobserver)>是需要取消的回调对象实例。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件类型，固定值'change'，表示数据变更。 |
+| callback | Callback<StorageObserver> | 是 | 需要取消的回调对象实例。 |
 
 **示例：**
 
@@ -790,7 +884,9 @@ storage.off('change', observer);
 
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core
 
-名称类型必填说明keystring是变更的数据内容。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 变更的数据内容。 |
 
 #### ValueType
 
@@ -800,4 +896,8 @@ type ValueType = number | string | boolean
 
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core
 
-类型说明number表示值类型为数字。string表示值类型为字符。boolean表示值类型为布尔值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 表示值类型为数字。 |
+| string | 表示值类型为字符。 |
+| boolean | 表示值类型为布尔值。 |

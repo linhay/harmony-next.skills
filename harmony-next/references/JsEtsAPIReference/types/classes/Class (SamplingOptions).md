@@ -28,7 +28,7 @@ import { drawing } from '@kit.ArkGraphics2D';
 
 constructor()
 
-构造一个新的采样选项对象，[FilterMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__filtermode12)的默认值为FILTER_MODE_NEAREST。
+构造一个新的采样选项对象，[FilterMode](Enums.md#ZH-CN_TOPIC_0000002553202101__filtermode12)的默认值为FILTER_MODE_NEAREST。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
@@ -44,12 +44,11 @@ class DrawingRenderNode extends RenderNode {
     const pen = new drawing.Pen();
     let samplingOptions = new drawing.SamplingOptions();
   }
-}
 ```
 
 #### constructor12+
 
-constructor(filterMode: FilterMode)
+constructor(filterMode: [FilterMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__filtermode12))
 
 构造一个新的采样选项对象。
 
@@ -57,13 +56,17 @@ constructor(filterMode: FilterMode)
 
 **参数：**
 
-参数名类型必填说明filterMode[FilterMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__filtermode12)是过滤模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| filterMode | [FilterMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__filtermode12) | 是 | 过滤模式。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -76,5 +79,4 @@ class DrawingRenderNode extends RenderNode {
     const canvas = context.canvas;
     let samplingOptions = new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_NEAREST);
   }
-}
 ```

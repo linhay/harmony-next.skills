@@ -16,15 +16,15 @@
 
 -
 
-本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的地方使用，参见[UIContext](../../types/classes/Class (UIContext).md)说明。
+本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的地方使用，参见[UIContext](Class (UIContext).md)说明。
 
 -
 
-自定义组件中一般会持有一个[create](#ZH-CN_TOPIC_0000002497604768__create18)接口返回的[AnimatorResult](#ZH-CN_TOPIC_0000002497604768__animatorresult)对象，以保证动画对象不在动画过程中析构，而这个对象也通过回调捕获了自定义组件对象。则需要在自定义组件销毁时的[aboutToDisappear](../../topics/misc/自定义组件的生命周期.md#ZH-CN_TOPIC_0000002529444913__abouttodisappear)中释放动画对象，来避免因为循环依赖导致内存泄漏，详细示例可参考：[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002497604768__基于arkts扩展的声明式开发范式)。
+自定义组件中一般会持有一个[createAnimator](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__createanimator)接口返回的[AnimatorResult](#ZH-CN_TOPIC_0000002553200681__animatorresult)对象，以保证动画对象不在动画过程中析构，而这个对象也通过回调捕获了自定义组件对象。则需要在自定义组件销毁时的[aboutToDisappear](自定义组件的生命周期.md#ZH-CN_TOPIC_0000002553200861__abouttodisappear)中释放动画对象，来避免因为循环依赖导致内存泄漏，详细示例可参考：[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002553200681__基于arkts扩展的声明式开发范式)。
 
 -
 
-Animator对象析构或主动调用[cancel](#ZH-CN_TOPIC_0000002497604768__cancel)、[finish](#ZH-CN_TOPIC_0000002497604768__finish)都会有一次额外的[onFrame](#ZH-CN_TOPIC_0000002497604768__属性)，返回值是动画终点的值。所以如果在动画过程中调用[cancel](#ZH-CN_TOPIC_0000002497604768__cancel)、[finish](#ZH-CN_TOPIC_0000002497604768__finish)会一帧跳变到终点，如果希望在中途停止，可以先将onFrame设置为空函数，再调用[finish](#ZH-CN_TOPIC_0000002497604768__finish)。
+Animator对象析构或主动调用[cancel](#ZH-CN_TOPIC_0000002553200681__cancel)、[finish](#ZH-CN_TOPIC_0000002553200681__finish)都会有一次额外的[onFrame](#ZH-CN_TOPIC_0000002553200681__属性)，返回值是动画终点的值。所以如果在动画过程中调用[cancel](#ZH-CN_TOPIC_0000002553200681__cancel)、[finish](#ZH-CN_TOPIC_0000002553200681__finish)会一帧跳变到终点，如果希望在中途停止，可以先将onFrame设置为空函数，再调用[finish](#ZH-CN_TOPIC_0000002553200681__finish)。
 
 -
 
@@ -50,13 +50,14 @@ create(options: AnimatorOptions): AnimatorResult
 
 创建animator动画结果对象（AnimatorResult）。
 
--
-
-从API version 9开始支持，从API version 18开始废弃，建议使用[createAnimator](../../types/classes/Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__createanimator)替代。
 
 -
 
-从API version 10开始，可以通过使用[UIContext](../../types/classes/Class (UIContext).md)中的[createAnimator](../../types/classes/Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__createanimator)来明确UI的执行上下文。
+从API version 9开始支持，从API version 18开始废弃，建议使用[createAnimator](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__createanimator)替代。
+
+-
+
+从API version 10开始，可以通过使用[UIContext](Class (UIContext).md)中的[createAnimator](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__createanimator)来明确UI的执行上下文。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -64,23 +65,30 @@ create(options: AnimatorOptions): AnimatorResult
 
 **参数：**
 
-参数名类型必填说明options[AnimatorOptions](#ZH-CN_TOPIC_0000002497604768__animatoroptions)是定义动画选项。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | AnimatorOptions | 是 | 定义动画选项。 |
 
 **返回值：**
 
-类型说明[AnimatorResult](#ZH-CN_TOPIC_0000002497604768__animatorresult)Animator结果接口。
+| 类型 | 说明 |
+| --- | --- |
+| AnimatorResult | Animator结果接口。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
 
 **示例：**
 
-完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002497604768__基于arkts扩展的声明式开发范式)。
+完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002553200681__基于arkts扩展的声明式开发范式)。
 
-推荐通过使用[UIContext](../../types/classes/Class (UIContext).md)中的[createAnimator](../../types/classes/Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__createanimator)接口明确UI上下文。
+
+推荐通过使用[UIContext](Class (UIContext).md)中的[createAnimator](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__createanimator)接口明确UI上下文。
 
 ```ets
 import { Animator as animator, AnimatorOptions } from '@kit.ArkUI';
@@ -102,7 +110,7 @@ animator.create(options); // 建议使用 UIContext.createAnimator()接口
 
 create(options: AnimatorOptions | SimpleAnimatorOptions): AnimatorResult
 
-创建animator动画结果对象（AnimatorResult）。与[create](#ZH-CN_TOPIC_0000002497604768__createdeprecated)相比，新增对[SimpleAnimatorOptions](#ZH-CN_TOPIC_0000002497604768__simpleanimatoroptions18)类型入参的支持。
+创建animator动画结果对象（AnimatorResult）。与[create](#ZH-CN_TOPIC_0000002553200681__createdeprecated)相比，新增对[SimpleAnimatorOptions](#ZH-CN_TOPIC_0000002553200681__simpleanimatoroptions18)类型入参的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -110,23 +118,30 @@ create(options: AnimatorOptions | SimpleAnimatorOptions): AnimatorResult
 
 **参数：**
 
-参数名类型必填说明options[AnimatorOptions](#ZH-CN_TOPIC_0000002497604768__animatoroptions) | [SimpleAnimatorOptions](#ZH-CN_TOPIC_0000002497604768__simpleanimatoroptions18)是定义动画参数选项。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | AnimatorOptions | SimpleAnimatorOptions | 是 | 定义动画参数选项。 |
 
 **返回值：**
 
-类型说明[AnimatorResult](#ZH-CN_TOPIC_0000002497604768__animatorresult)Animator结果接口。
+| 类型 | 说明 |
+| --- | --- |
+| AnimatorResult | Animator结果接口。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
 
 **示例：**
 
-完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002497604768__基于arkts扩展的声明式开发范式)。
+完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002553200681__基于arkts扩展的声明式开发范式)。
 
-推荐通过使用[UIContext](../../types/classes/Class (UIContext).md)中的[createAnimator](../../types/classes/Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__createanimator)接口明确UI上下文。
+
+推荐通过使用[UIContext](Class (UIContext).md)中的[createAnimator](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__createanimator)接口明确UI上下文。
 
 ```ets
 import { Animator as animator, SimpleAnimatorOptions } from '@kit.ArkUI';
@@ -138,23 +153,28 @@ animator.create(options);// 建议使用 UIContext.createAnimator()接口
 
 createAnimator(options: AnimatorOptions): AnimatorResult
 
-创建动画
+创建动画。
 
-从API version 6开始支持，从API version 9开始废弃，建议使用[create](#ZH-CN_TOPIC_0000002497604768__createdeprecated)替代。
+
+从API version 6开始支持，从API version 9开始废弃，建议使用[create](#ZH-CN_TOPIC_0000002553200681__createdeprecated)替代。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
-参数名类型必填说明options[AnimatorOptions](#ZH-CN_TOPIC_0000002497604768__animatoroptions)是定义动画选项。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | AnimatorOptions | 是 | 定义动画选项。 |
 
 **返回值：**
 
-类型说明[AnimatorResult](#ZH-CN_TOPIC_0000002497604768__animatorresult)Animator结果接口。
+| 类型 | 说明 |
+| --- | --- |
+| AnimatorResult | Animator结果接口。 |
 
 **示例：**
 
-完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002497604768__基于arkts扩展的声明式开发范式)。
+完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002553200681__基于arkts扩展的声明式开发范式)。
 
 ```ets
 import { Animator as animator } from '@kit.ArkUI';
@@ -181,63 +201,16 @@ this.animator = animator.createAnimator(options);
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明onFrame12+(progress: number) => void否否
-
-接收到帧时回调。
-
-progress表示动画的当前值。取值范围为[AnimatorOptions](#ZH-CN_TOPIC_0000002497604768__animatoroptions)定义的[begin, end]，默认取值范围为[0, 1]。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-onFinish12+() => void否否
-
-动画完成时回调。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-onCancel12+() => void否否
-
-动画被取消时回调。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-onRepeat12+() => void否否
-
-动画重复时回调。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-onframe(deprecated)(progress: number) => void否否
-
-接收到帧时回调。
-
-**说明:** 从API version 6开始支持，从API version 12开始废弃，推荐使用onFrame。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-onfinish(deprecated)() => void否否
-
-动画完成时回调。
-
-**说明:** 从API version 6开始支持，从API version 12开始废弃，推荐使用onFinish。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-oncancel(deprecated)() => void否否
-
-动画被取消时回调。
-
-**说明:** 从API version 6开始支持，从API version 12开始废弃，推荐使用onCancel。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-onrepeat(deprecated)() => void否否
-
-动画重复时回调。
-
-**说明:** 从API version 6开始支持，从API version 12开始废弃，推荐使用onRepeat。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| onFrame12+ | (progress: number) => void | 否 | 否 | 接收到帧时回调。 progress表示动画的当前值。取值范围为AnimatorOptions定义的[begin, end]，默认取值范围为[0, 1]。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| onFinish12+ | () => void | 否 | 否 | 动画完成时回调。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| onCancel12+ | () => void | 否 | 否 | 动画被取消时回调。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| onRepeat12+ | () => void | 否 | 否 | 动画重复时回调。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| onframe(deprecated) | (progress: number) => void | 否 | 否 | 接收到帧时回调。 说明: 从API version 6开始支持，从API version 12开始废弃，推荐使用onFrame。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| onfinish(deprecated) | () => void | 否 | 否 | 动画完成时回调。 说明: 从API version 6开始支持，从API version 12开始废弃，推荐使用onFinish。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| oncancel(deprecated) | () => void | 否 | 否 | 动画被取消时回调。 说明: 从API version 6开始支持，从API version 12开始废弃，推荐使用onCancel。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| onrepeat(deprecated) | () => void | 否 | 否 | 动画重复时回调。 说明: 从API version 6开始支持，从API version 12开始废弃，推荐使用onRepeat。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 
 #### reset9+
 
@@ -251,13 +224,18 @@ reset(options: AnimatorOptions): void
 
 **参数：**
 
-参数名类型必填说明options[AnimatorOptions](#ZH-CN_TOPIC_0000002497604768__animatoroptions)是定义动画选项。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | AnimatorOptions | 是 | 定义动画选项。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)
+以下错误码的详细介绍请参考[通用错误码](通用错误码.md)和[接口调用异常错误码]([接口调用异常错误码](../../errors/接口调用异常错误码.md).md)
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.100001The specified page is not found or the object property list is not obtained.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 100001 | The specified page is not found or the object property list is not obtained. |
 
 **示例：**
 
@@ -295,14 +273,13 @@ struct AnimatorTest {
   build() {
     // ......
   }
-}
 ```
 
 #### reset18+
 
 reset(options: AnimatorOptions | SimpleAnimatorOptions): void
 
-重置当前animator动画参数。与[reset](#ZH-CN_TOPIC_0000002497604768__reset9)相比，新增对[SimpleAnimatorOptions](#ZH-CN_TOPIC_0000002497604768__simpleanimatoroptions18)类型入参的支持。
+重置当前animator动画参数。与[reset](#ZH-CN_TOPIC_0000002553200681__reset9)相比，新增对[SimpleAnimatorOptions](#ZH-CN_TOPIC_0000002553200681__simpleanimatoroptions18)类型入参的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -310,17 +287,22 @@ reset(options: AnimatorOptions | SimpleAnimatorOptions): void
 
 **参数：**
 
-参数名类型必填说明options[AnimatorOptions](#ZH-CN_TOPIC_0000002497604768__animatoroptions) | [SimpleAnimatorOptions](#ZH-CN_TOPIC_0000002497604768__simpleanimatoroptions18)是定义动画选项。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | AnimatorOptions | SimpleAnimatorOptions | 是 | 定义动画选项。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)。
+以下错误码的详细介绍请参考[通用错误码](通用错误码.md)和[接口调用异常错误码](接口调用异常错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.100001The specified page is not found or the object property list is not obtained.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 100001 | The specified page is not found or the object property list is not obtained. |
 
 **示例：**
 
-完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002497604768__基于arkts扩展的声明式开发范式)。
+完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002553200681__基于arkts扩展的声明式开发范式)。
 
 ```ets
 import { Animator as animator, AnimatorResult, AnimatorOptions, SimpleAnimatorOptions } from '@kit.ArkUI';
@@ -355,7 +337,7 @@ play(): void
 
 **示例：**
 
-完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002497604768__基于arkts扩展的声明式开发范式)。
+完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002553200681__基于arkts扩展的声明式开发范式)。
 
 ```ets
 animator.play();
@@ -365,7 +347,7 @@ animator.play();
 
 finish(): void
 
-结束动画，会触发[onFinish](#ZH-CN_TOPIC_0000002497604768__属性)回调。
+结束动画，会触发[onFinish](#ZH-CN_TOPIC_0000002553200681__属性)回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -373,7 +355,7 @@ finish(): void
 
 **示例：**
 
-完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002497604768__基于arkts扩展的声明式开发范式)。
+完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002553200681__基于arkts扩展的声明式开发范式)。
 
 ```ets
 animator.finish();
@@ -391,7 +373,7 @@ pause(): void
 
 **示例：**
 
-完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002497604768__基于arkts扩展的声明式开发范式)。
+完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002553200681__基于arkts扩展的声明式开发范式)。
 
 ```ets
 animator.pause();
@@ -401,7 +383,7 @@ animator.pause();
 
 cancel(): void
 
-取消动画，会触发[onCancel](#ZH-CN_TOPIC_0000002497604768__属性)回调。此接口和[finish](#ZH-CN_TOPIC_0000002497604768__finish)接口功能上没有区别，仅触发的回调不同，建议使用finish接口结束动画。
+取消动画，会触发[onCancel](#ZH-CN_TOPIC_0000002553200681__属性)回调。此接口和[finish](#ZH-CN_TOPIC_0000002553200681__finish)接口功能上没有区别，仅触发的回调不同，建议使用finish接口结束动画。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -409,7 +391,7 @@ cancel(): void
 
 **示例：**
 
-完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002497604768__基于arkts扩展的声明式开发范式)。
+完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002553200681__基于arkts扩展的声明式开发范式)。
 
 ```ets
 animator.cancel();
@@ -427,7 +409,7 @@ reverse(): void
 
 **示例：**
 
-完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002497604768__基于arkts扩展的声明式开发范式)。
+完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002553200681__基于arkts扩展的声明式开发范式)。
 
 ```ets
 animator.reverse();
@@ -445,7 +427,10 @@ setExpectedFrameRateRange(rateRange: ExpectedFrameRateRange): void
 
 **参数：**
 
-参数名类型必填说明rateRange[ExpectedFrameRateRange](../../topics/misc/显式动画 (animateTo).md#ZH-CN_TOPIC_0000002497444950__expectedframeraterange11)是设置期望的帧率范围。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rateRange | ExpectedFrameRateRange | 是 | 设置期望的帧率范围。 |
+
 
 开发者通过设置有效的期望帧率后，系统会收集设置的请求帧率，进行决策和分发，在渲染管线上进行分频，尽量能够满足开发者的期望帧率。开发者设置的期望帧率值不能代表最终实际效果，会受限于系统能力和屏幕刷新率。
 
@@ -482,7 +467,6 @@ struct AnimatorTest {
   build() {
     // ......
   }
-}
 ```
 
 #### update(deprecated)
@@ -491,17 +475,20 @@ update(options: AnimatorOptions): void
 
 更新当前动画器。
 
-从API version 6开始支持，从API version 9开始废弃。建议使用[reset](#ZH-CN_TOPIC_0000002497604768__reset9)替代。
+
+从API version 6开始支持，从API version 9开始废弃。建议使用[reset](#ZH-CN_TOPIC_0000002553200681__reset9)替代。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
-参数名类型必填说明options[AnimatorOptions](#ZH-CN_TOPIC_0000002497604768__animatoroptions)是定义动画选项。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | AnimatorOptions | 是 | 定义动画选项。 |
 
 **示例：**
 
-完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002497604768__基于arkts扩展的声明式开发范式)。
+完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002553200681__基于arkts扩展的声明式开发范式)。
 
 ```ets
 animator.update(options);
@@ -517,85 +504,37 @@ animator.update(options);
 
 #### 属性
 
-名称类型只读可选说明durationnumber否否
-
-动画播放的时长，单位毫秒。
-
-取值范围：[0, +∞)
-
-默认值：0
-
-easingstring否否
-
-动画插值曲线，支持的曲线类型可参考表1。
-
-非法字符串时取:"ease"。
-
-delaynumber否否
-
-动画延时播放时长，单位毫秒，设置为0时，表示不延时。设置为负数时动画提前播放，如果提前播放的时长大于动画总时长，动画直接过渡到终点。
-
-默认值：0
-
-fill'none' | 'forwards' | 'backwards' | 'both'否否
-
-动画执行后是否恢复到初始状态，动画执行后，动画结束时的状态（在最后一个关键帧中定义）将保留。
-
-'none'：在动画执行之前和之后都不会应用任何样式到目标上。
-
-'forwards'：在动画结束后，目标将保留动画结束时的状态（在最后一个关键帧中定义）。
-
-'backwards'：动画将在[AnimatorOptions](#ZH-CN_TOPIC_0000002497604768__animatoroptions)中的delay期间应用第一个关键帧中定义的值。当[AnimatorOptions](#ZH-CN_TOPIC_0000002497604768__animatoroptions)中的direction为'normal'或'alternate'时应用from关键帧中的值，当[AnimatorOptions](#ZH-CN_TOPIC_0000002497604768__animatoroptions)中的direction为'reverse'或'alternate-reverse'时应用to关键帧中的值。
-
-'both'：动画将遵循forwards和backwards的规则，从而在两个方向上扩展动画属性。
-
-direction'normal' | 'reverse' | 'alternate' | 'alternate-reverse'否否
-
-动画播放模式。
-
-'normal'： 动画正向循环播放。
-
-'reverse'： 动画反向循环播放。
-
-'alternate'：动画交替循环播放，奇数次正向播放，偶数次反向播放。
-
-'alternate-reverse'：动画反向交替循环播放，奇数次反向播放，偶数次正向播放。
-
-默认值：'normal'
-
-iterationsnumber否否
-
-动画播放次数。设置为0时不播放，设置为-1时无限次播放，设置大于0时为播放次数。
-
-**说明:** 设置为除-1外其他负数视为无效取值，无效取值动画默认播放1次。
-
-beginnumber否否
-
-动画插值起点。
-
-**说明:** 会影响[onFrame](#ZH-CN_TOPIC_0000002497604768__属性)回调的入参值。
-
-默认值：0
-
-endnumber否否
-
-动画插值终点。
-
-**说明:** 会影响[onFrame](#ZH-CN_TOPIC_0000002497604768__属性)回调的入参值。
-
-默认值：1
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| duration | number | 否 | 否 | 动画播放的时长，单位毫秒。 取值范围：[0, +∞) 默认值：0 |
+| easing | string | 否 | 否 | 动画插值曲线，支持的曲线类型可参考表1。 非法字符串时取:"ease"。 |
+| delay | number | 否 | 否 | 动画延时播放时长，单位毫秒，设置为0时，表示不延时。设置为负数时动画提前播放，如果提前播放的时长大于动画总时长，动画直接过渡到终点。 默认值：0 |
+| fill | 'none' | 'forwards' | 'backwards' | 'both' | 否 | 否 | 动画执行后是否恢复到初始状态，动画执行后，动画结束时的状态（在最后一个关键帧中定义）将保留。 'none'：在动画执行之前和之后都不会应用任何样式到目标上。 'forwards'：在动画结束后，目标将保留动画结束时的状态（在最后一个关键帧中定义）。 'backwards'：动画将在AnimatorOptions中的delay期间应用第一个关键帧中定义的值。当AnimatorOptions中的direction为'normal'或'alternate'时应用from关键帧中的值，当AnimatorOptions中的direction为'reverse'或'alternate-reverse'时应用to关键帧中的值。 'both'：动画将遵循forwards和backwards的规则，从而在两个方向上扩展动画属性。 |
+| direction | 'normal' | 'reverse' | 'alternate' | 'alternate-reverse' | 否 | 否 | 动画播放模式。 'normal'： 动画正向循环播放。 'reverse'： 动画反向循环播放。 'alternate'：动画交替循环播放，奇数次正向播放，偶数次反向播放。 'alternate-reverse'：动画反向交替循环播放，奇数次反向播放，偶数次正向播放。 默认值：'normal' |
+| iterations | number | 否 | 否 | 动画播放次数。设置为0时不播放，设置为-1时无限次播放，设置大于0时为播放次数。 说明: 设置为除-1外其他负数视为无效取值，无效取值动画默认播放1次。 |
+| begin | number | 否 | 否 | 动画插值起点。 说明: 会影响onFrame回调的入参值。 默认值：0 |
+| end | number | 否 | 否 | 动画插值终点。 说明: 会影响onFrame回调的入参值。 默认值：1 |
 
 **表1 支持的曲线类型：**
 
-类型说明"linear"动画线性变化。"ease"动画开始和结束时的速度较慢，cubic-bezier(0.25, 0.1, 0.25, 1.0)。"ease-in"动画播放速度先慢后快，cubic-bezier(0.42, 0.0, 1.0, 1.0)。"ease-out"动画播放速度先快后慢，cubic-bezier(0.0, 0.0, 0.58, 1.0)。"ease-in-out"动画播放速度先加速后减速，cubic-bezier(0.42, 0.0, 0.58, 1.0)。"fast-out-slow-in"标准曲线，cubic-bezier(0.4, 0.0, 0.2, 1.0)。"linear-out-slow-in"减速曲线，cubic-bezier(0.0, 0.0, 0.2, 1.0)。"fast-out-linear-in"加速曲线，cubic-bezier(0.4, 0.0, 1.0, 1.0)。"friction"阻尼曲线，cubic-bezier(0.2, 0.0, 0.2, 1.0)。"extreme-deceleration"急缓曲线，cubic-bezier(0.0, 0.0, 0.0, 1.0)。"rhythm"节奏曲线，cubic-bezier(0.7, 0.0, 0.2, 1.0)。"sharp"锐利曲线，cubic-bezier(0.33, 0.0, 0.67, 1.0)。"smooth"平滑曲线，cubic-bezier(0.4, 0.0, 0.4, 1.0)。"cubic-bezier(x1, y1, x2, y2)"三次贝塞尔曲线，x1、x2的值必须处于0-1之间。例如"cubic-bezier(0.42, 0.0, 0.58, 1.0)"。"steps(number, step-position)"阶梯曲线，number必须设置，为正整数，step-position参数可选，支持设置start或end，默认值为end。例如"steps(3, start)"。interpolating-spring(velocity, mass, stiffness, damping)
-
-插值弹簧曲线。
-
-velocity、mass、stiffness、damping都是数值类型，且mass、stiffness、damping参数均应该大于0，具体参数含义参考[插值弹簧曲线](@ohos.curves (插值计算).md#ZH-CN_TOPIC_0000002497604788__curvesinterpolatingspring10)。
-
-使用interpolating-spring时，duration不生效，由弹簧参数决定；fill、direction、iterations设置无效，fill固定设置为"forwards"，direction固定设置为"normal"，iterations固定设置为1，且对animator的[reverse](#ZH-CN_TOPIC_0000002497604768__reverse)函数调用无效。即animator使用interpolating-spring时只能正向播放1次。
-
-从API version 11开始支持且仅在ArkTS中支持使用。
+| 类型 | 说明 |
+| --- | --- |
+| "linear" | 动画线性变化。 |
+| "ease" | 动画开始和结束时的速度较慢，cubic-bezier(0.25, 0.1, 0.25, 1.0)。 |
+| "ease-in" | 动画播放速度先慢后快，cubic-bezier(0.42, 0.0, 1.0, 1.0)。 |
+| "ease-out" | 动画播放速度先快后慢，cubic-bezier(0.0, 0.0, 0.58, 1.0)。 |
+| "ease-in-out" | 动画播放速度先加速后减速，cubic-bezier(0.42, 0.0, 0.58, 1.0)。 |
+| "fast-out-slow-in" | 标准曲线，cubic-bezier(0.4, 0.0, 0.2, 1.0)。 |
+| "linear-out-slow-in" | 减速曲线，cubic-bezier(0.0, 0.0, 0.2, 1.0)。 |
+| "fast-out-linear-in" | 加速曲线，cubic-bezier(0.4, 0.0, 1.0, 1.0)。 |
+| "friction" | 阻尼曲线，cubic-bezier(0.2, 0.0, 0.2, 1.0)。 |
+| "extreme-deceleration" | 急缓曲线，cubic-bezier(0.0, 0.0, 0.0, 1.0)。 |
+| "rhythm" | 节奏曲线，cubic-bezier(0.7, 0.0, 0.2, 1.0)。 |
+| "sharp" | 锐利曲线，cubic-bezier(0.33, 0.0, 0.67, 1.0)。 |
+| "smooth" | 平滑曲线，cubic-bezier(0.4, 0.0, 0.4, 1.0)。 |
+| "cubic-bezier(x1, y1, x2, y2)" | 三次贝塞尔曲线，x1、x2的值必须处于0-1之间。例如"cubic-bezier(0.42, 0.0, 0.58, 1.0)"。 |
+| "steps(number, step-position)" | 阶梯曲线，number必须设置，为正整数，step-position参数可选，支持设置start或end，默认值为end。例如"steps(3, start)"。 |
+| interpolating-spring(velocity, mass, stiffness, damping) | 插值弹簧曲线。 velocity、mass、stiffness、damping都是数值类型，且mass、stiffness、damping参数均应该大于0，具体参数含义参考插值弹簧曲线。 使用interpolating-spring时，duration不生效，由弹簧参数决定；fill、direction、iterations设置无效，fill固定设置为"forwards"，direction固定设置为"normal"，iterations固定设置为1，且对animator的reverse函数调用无效。即animator使用interpolating-spring时只能正向播放1次。 从API version 11开始支持且仅在ArkTS中支持使用。 |
 
 #### SimpleAnimatorOptions18+
 
@@ -613,11 +552,14 @@ SimpleAnimatorOptions的构造函数。
 
 **参数：**
 
-参数名类型必填说明beginnumber是动画插值起点。endnumber是动画插值终点。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| begin | number | 是 | 动画插值起点。 |
+| end | number | 是 | 动画插值终点。 |
 
 **示例：**
 
-完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002497604768__基于arkts扩展的声明式开发范式)。
+完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002553200681__基于arkts扩展的声明式开发范式)。
 
 ```ets
 import { AnimatorResult, SimpleAnimatorOptions } from '@kit.ArkUI';
@@ -635,7 +577,6 @@ struct AnimatorTest {
   build() {
     // ......
   }
-}
 ```
 
 #### duration18+
@@ -650,19 +591,19 @@ duration(duration: number): SimpleAnimatorOptions
 
 **参数：**
 
-参数名类型必填说明durationnumber是
-
-设置动画时长，单位毫秒。
-
-默认值：1000
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| duration | number | 是 | 设置动画时长，单位毫秒。 默认值：1000 |
 
 **返回值：**
 
-类型说明[SimpleAnimatorOptions](#ZH-CN_TOPIC_0000002497604768__simpleanimatoroptions18)Animator简易动画参数对象。
+| 类型 | 说明 |
+| --- | --- |
+| SimpleAnimatorOptions | Animator简易动画参数对象。 |
 
 **示例：**
 
-完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002497604768__基于arkts扩展的声明式开发范式)。
+完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002553200681__基于arkts扩展的声明式开发范式)。
 
 ```ets
 import { AnimatorResult, SimpleAnimatorOptions } from '@kit.ArkUI';
@@ -680,7 +621,6 @@ struct AnimatorTest {
   build() {
     // ......
   }
-}
 ```
 
 #### easing18+
@@ -695,19 +635,19 @@ easing(curve: string): SimpleAnimatorOptions
 
 **参数：**
 
-参数名类型必填说明curvestring是
-
-设置animator动画插值曲线，具体说明参考[AnimatorOptions](#ZH-CN_TOPIC_0000002497604768__animatoroptions)。
-
-默认值：“ease”
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| curve | string | 是 | 设置animator动画插值曲线，具体说明参考AnimatorOptions。 默认值：“ease” |
 
 **返回值：**
 
-类型说明[SimpleAnimatorOptions](#ZH-CN_TOPIC_0000002497604768__simpleanimatoroptions18)Animator简易动画参数对象。
+| 类型 | 说明 |
+| --- | --- |
+| SimpleAnimatorOptions | Animator简易动画参数对象。 |
 
 **示例：**
 
-完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002497604768__基于arkts扩展的声明式开发范式)。
+完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002553200681__基于arkts扩展的声明式开发范式)。
 
 ```ets
 import { AnimatorResult, SimpleAnimatorOptions } from '@kit.ArkUI';
@@ -725,7 +665,6 @@ struct AnimatorTest {
   build() {
     // ......
   }
-}
 ```
 
 #### delay18+
@@ -740,19 +679,19 @@ delay(delay: number): SimpleAnimatorOptions
 
 **参数：**
 
-参数名类型必填说明delaynumber是
-
-设置animator动画播放时延，单位毫秒，设置为0时，表示不延时。设置为负数时动画提前播放，如果提前播放的时长大于动画总时长，动画直接过渡到终点。
-
-默认值：0
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| delay | number | 是 | 设置animator动画播放时延，单位毫秒，设置为0时，表示不延时。设置为负数时动画提前播放，如果提前播放的时长大于动画总时长，动画直接过渡到终点。 默认值：0 |
 
 **返回值：**
 
-类型说明[SimpleAnimatorOptions](#ZH-CN_TOPIC_0000002497604768__simpleanimatoroptions18)Animator简易动画参数对象。
+| 类型 | 说明 |
+| --- | --- |
+| SimpleAnimatorOptions | Animator简易动画参数对象。 |
 
 **示例：**
 
-完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002497604768__基于arkts扩展的声明式开发范式)。
+完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002553200681__基于arkts扩展的声明式开发范式)。
 
 ```ets
 import { AnimatorResult, SimpleAnimatorOptions } from '@kit.ArkUI';
@@ -770,12 +709,11 @@ struct AnimatorTest {
   build() {
     // ......
   }
-}
 ```
 
 #### fill18+
 
-fill(fillMode: [FillMode](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__fillmode)): SimpleAnimatorOptions
+fill(fillMode: [FillMode](枚举说明.md#ZH-CN_TOPIC_0000002553200889__fillmode)): SimpleAnimatorOptions
 
 设置animator动画填充方式。
 
@@ -785,19 +723,19 @@ fill(fillMode: [FillMode](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284
 
 **参数：**
 
-参数名类型必填说明fillMode[FillMode](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__fillmode)是
-
-设置animator动画填充方式，影响动画delay期间和结束时的表现。
-
-默认值：FillMode.Forwards
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fillMode | [FillMode](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__fillmode) | 是 | 设置animator动画填充方式，影响动画delay期间和结束时的表现。 默认值：FillMode.Forwards |
 
 **返回值：**
 
-类型说明[SimpleAnimatorOptions](#ZH-CN_TOPIC_0000002497604768__simpleanimatoroptions18)Animator简易动画参数对象。
+| 类型 | 说明 |
+| --- | --- |
+| SimpleAnimatorOptions | Animator简易动画参数对象。 |
 
 **示例：**
 
-完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002497604768__基于arkts扩展的声明式开发范式)。
+完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002553200681__基于arkts扩展的声明式开发范式)。
 
 ```ets
 import { AnimatorResult, SimpleAnimatorOptions } from '@kit.ArkUI';
@@ -815,12 +753,11 @@ struct AnimatorTest {
   build() {
     // ......
   }
-}
 ```
 
 #### direction18+
 
-direction(direction: [PlayMode](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__playmode)): SimpleAnimatorOptions
+direction(direction: [PlayMode](枚举说明.md#ZH-CN_TOPIC_0000002553200889__playmode)): SimpleAnimatorOptions
 
 设置animator动画播放方向。
 
@@ -830,19 +767,19 @@ direction(direction: [PlayMode](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002
 
 **参数：**
 
-参数名类型必填说明direction[PlayMode](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__playmode)是
-
-设置animator动画播放方向。
-
-默认值：PlayMode.Normal
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| direction | [PlayMode](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__playmode) | 是 | 设置animator动画播放方向。 默认值：PlayMode.Normal |
 
 **返回值：**
 
-类型说明[SimpleAnimatorOptions](#ZH-CN_TOPIC_0000002497604768__simpleanimatoroptions18)Animator简易动画参数对象。
+| 类型 | 说明 |
+| --- | --- |
+| SimpleAnimatorOptions | Animator简易动画参数对象。 |
 
 **示例：**
 
-完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002497604768__基于arkts扩展的声明式开发范式)。
+完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002553200681__基于arkts扩展的声明式开发范式)。
 
 ```ets
 import { AnimatorResult, SimpleAnimatorOptions } from '@kit.ArkUI';
@@ -860,7 +797,6 @@ struct AnimatorTest {
   build() {
     // ......
   }
-}
 ```
 
 #### iterations18+
@@ -875,19 +811,19 @@ iterations(iterations: number): SimpleAnimatorOptions
 
 **参数：**
 
-参数名类型必填说明iterationsnumber是
-
-设置animator动画播放次数，设置为0时不播放，设置为-1时无限次播放。
-
-默认值：1
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| iterations | number | 是 | 设置animator动画播放次数，设置为0时不播放，设置为-1时无限次播放。 默认值：1 |
 
 **返回值：**
 
-类型说明[SimpleAnimatorOptions](#ZH-CN_TOPIC_0000002497604768__simpleanimatoroptions18)Animator简易动画参数对象。
+| 类型 | 说明 |
+| --- | --- |
+| SimpleAnimatorOptions | Animator简易动画参数对象。 |
 
 **示例：**
 
-完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002497604768__基于arkts扩展的声明式开发范式)。
+完整示例请参考[基于ArkTS扩展的声明式开发范式](#ZH-CN_TOPIC_0000002553200681__基于arkts扩展的声明式开发范式)。
 
 ```ets
 import { AnimatorResult, SimpleAnimatorOptions } from '@kit.ArkUI';
@@ -905,7 +841,6 @@ struct AnimatorTest {
   build() {
     // ......
   }
-}
 ```
 
 #### 完整示例
@@ -916,7 +851,6 @@ struct AnimatorTest {
 <!-- hml -->
 <div class="container">
   <div class="Animation" style="height: {{divHeight}}px; width: {{divWidth}}px; background-color: red;" onclick="Show">
-  </div>
 </div>
 ```
 
@@ -935,7 +869,6 @@ class Tmp {
   onInit: Function = () => {
   }
   Show: Function = () => {
-  }
 }
 
 class DateT {
@@ -997,14 +930,16 @@ class DateT {
         };
         DataTmp.animator.play();
       }
-    }
   })
 }
 ```
 
+![image](public_sys-resources/zh-cn_image_0000002522084676.webp)
+
 #### 基于ArkTS扩展的声明式开发范式
 
-推荐通过使用[UIContext](../../types/classes/Class (UIContext).md)中的[createAnimator](../../types/classes/Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__createanimator)接口明确UI上下文。
+
+推荐通过使用[UIContext](Class (UIContext).md)中的[createAnimator](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__createanimator)接口明确UI上下文。
 
 ```ets
 import { AnimatorResult } from '@kit.ArkUI';
@@ -1044,7 +979,6 @@ struct AnimatorTest {
       this.columnWidth = value
       this.columnHeight = value
     }
-  }
 
   aboutToDisappear() {
     // 自定义组件消失时调用finish使未完成的动画结束，避免动画继续运行。
@@ -1055,7 +989,6 @@ struct AnimatorTest {
   }
 
   build() {
-    Column() {
       Column() {
         Column()
           .width(this.columnWidth)
@@ -1165,9 +1098,6 @@ struct AnimatorTest {
         }
         .padding(10)
       }
-    }
-  }
-}
 ```
 
 #### 位移动画示例（简易入参）
@@ -1194,7 +1124,6 @@ struct AnimatorTest {
     this.backAnimator.onFrame = (value:number)=> {
       this.translate_ = value
     }
-  }
 
   aboutToDisappear() {
     // 自定义组件消失时调用finish使未完成的动画结束，避免动画继续运行。
@@ -1206,7 +1135,6 @@ struct AnimatorTest {
 
   build() {
     Column() {
-      Column() {
         Column()
           .width(100)
           .height(100)
@@ -1216,7 +1144,6 @@ struct AnimatorTest {
       .width('100%')
       .height(300)
 
-      Column() {
         Column() {
           Button('create')
             .fontSize(30)
@@ -1264,7 +1191,6 @@ struct AnimatorTest {
         }
         .padding(10)
       }
-    }
-  }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553364589.webp)

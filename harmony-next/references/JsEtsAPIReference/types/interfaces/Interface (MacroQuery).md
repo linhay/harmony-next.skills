@@ -15,7 +15,7 @@ import { camera } from '@kit.CameraKit';
 
 isMacroSupported(): boolean
 
-检测当前状态下是否支持微距能力，需要在CaptureSession调用[commitConfig](Interface (Session).md#ZH-CN_TOPIC_0000002529445753__commitconfig11)之后进行调用。
+检测当前状态下是否支持微距能力，需要在CaptureSession调用[commitConfig](Interface (Session).md#ZH-CN_TOPIC_0000002553201879__commitconfig11)之后进行调用。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -23,7 +23,9 @@ isMacroSupported(): boolean
 
 **返回值：**
 
-类型说明boolean返回是否支持微距能力。true表示支持，false表示不支持。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回是否支持微距能力。true表示支持，false表示不支持。 |
 
 **示例：**
 

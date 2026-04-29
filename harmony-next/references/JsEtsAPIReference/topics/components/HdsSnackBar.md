@@ -32,21 +32,9 @@ constructor(uiContext: UIContext)
 
 **起始版本：**6.0.0(20)
 
-参数名
-
-类型
-
-必填
-
-说明
-
-uiContext
-
-[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)
-
-是
-
-应用的UIContext。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uiContext | UIContext | 是 | 应用的UIContext。 |
 
 #### show
 
@@ -60,45 +48,12 @@ show(icon: SnackBarIconOptions, message: SnackBarMessageOptions, operation: Snac
 
 **起始版本：**6.0.0(20)
 
-参数名
-
-类型
-
-必填
-
-说明
-
-icon
-
-[SnackBarIconOptions](#section1980950306)
-
-是
-
-HdsSnackBar图标区的配置信息。
-
-message
-
-[SnackBarMessageOptions](#section193581154513)
-
-是
-
-HdsSnackBar中间内容区文本的配置信息。
-
-operation
-
-[SnackBarOperationOptions](#section20215133710214)
-
-是
-
-HdsSnackBar操作区的配置信息。
-
-style
-
-[SnackBarStyleOptions](#section460519981419)
-
-否
-
-HdsSnackBar样式的配置信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| icon | SnackBarIconOptions | 是 | HdsSnackBar图标区的配置信息。 |
+| message | SnackBarMessageOptions | 是 | HdsSnackBar中间内容区文本的配置信息。 |
+| operation | SnackBarOperationOptions | 是 | HdsSnackBar操作区的配置信息。 |
+| style | SnackBarStyleOptions | 否 | HdsSnackBar样式的配置信息。 |
 
 #### dismiss
 
@@ -122,57 +77,12 @@ dismiss(): void
 
 **起始版本：**6.0.0(20)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-icon
-
-[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)
-
-否
-
-是
-
-HdsSnackBar的图标，支持SymbolGlyph和Image。
-
-iconType
-
-[SnackBarIconType](#section997613107164)
-
-否
-
-是
-
-HdsSnackBar的图标类型。
-
-默认值：SnackBarIconType.SMALL。
-
-iconModifier
-
-[ImageModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#自定义modifier)
-
-否
-
-是
-
-HdsSnackBar的Image图片的modifier。
-
-iconSymbolModifier
-
-[SymbolGlyphModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#自定义modifier)
-
-否
-
-是
-
-HdsSnackBar的SymbolGlyph图标的modifier。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| icon | ResourceStr | 否 | 是 | HdsSnackBar的图标，支持SymbolGlyph和Image。 |
+| iconType | SnackBarIconType | 否 | 是 | HdsSnackBar的图标类型。 默认值：SnackBarIconType.SMALL。 |
+| iconModifier | ImageModifier | 否 | 是 | HdsSnackBar的Image图片的modifier。 |
+| iconSymbolModifier | SymbolGlyphModifier | 否 | 是 | HdsSnackBar的SymbolGlyph图标的modifier。 |
 
 #### SnackBarMessageOptions
 
@@ -184,55 +94,12 @@ HdsSnackBar的SymbolGlyph图标的modifier。
 
 **起始版本：**6.0.0(20)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-title
-
-[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)
-
-否
-
-是
-
-HdsSnackBar的中间文本的标题。
-
-titleColor
-
-[ColorMetrics](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#colormetrics12)
-
-否
-
-是
-
-HdsSnackBar的中间文本的标题颜色。
-
-content
-
-[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)
-
-否
-
-是
-
-HdsSnackBar的中间文本的内容。
-
-contentColor
-
-[ColorMetrics](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#colormetrics12)
-
-否
-
-是
-
-HdsSnackBar的中间文本的内容颜色。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| title | ResourceStr | 否 | 是 | HdsSnackBar的中间文本的标题。 |
+| titleColor | ColorMetrics | 否 | 是 | HdsSnackBar的中间文本的标题颜色。 |
+| content | ResourceStr | 否 | 是 | HdsSnackBar的中间文本的内容。 |
+| contentColor | ColorMetrics | 否 | 是 | HdsSnackBar的中间文本的内容颜色。 |
 
 #### SnackBarOperationOptions
 
@@ -244,233 +111,28 @@ HdsSnackBar的中间文本的内容颜色。
 
 **起始版本：**6.0.0(20)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-operationType
-
-[SnackBarOperationType](#section1436118313346)
-
-否
-
-是
-
-HdsSnackBar的右侧操作区域元素样式。
-
-content
-
-[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)
-
-否
-
-是
-
-HdsSnackBar的右侧区域文本按钮的文本内容。
-
- 说明：
-
-当右侧操作区是关闭按钮（即operationType为CLOSE_BUTTON_ONLY）时，该参数不生效。
-
-contentColor
-
-[ColorMetrics](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#colormetrics12)
-
-否
-
-是
-
-HdsSnackBar的右侧区域文本按钮的文本颜色。
-
- 说明：
-
-当右侧操作区是关闭按钮（即operationType为CLOSE_BUTTON_ONLY）时，该参数不生效。
-
-onContentClick
-
-[Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#callback12)<void>
-
-否
-
-是
-
-HdsSnackBar的右侧区域文本按钮的点击事件。
-
- 说明：
-
-当右侧操作区是关闭按钮或者带有右箭头的文本按钮（即operationType为CLOSE_BUTTON_ONLY或者TEXT_WITH_ARROW）时，该参数不生效。
-
-contentAccessibilityText
-
-[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)
-
-否
-
-是
-
-HdsSnackBar的右侧区域文本按钮的无障碍文本属性。当组件不包含文本属性时，屏幕朗读选中此组件时不播报，使用者无法清楚地知道当前选中了什么组件。为了解决此场景，开发人员可为不包含文字信息的组件设置无障碍文本，当屏幕朗读选中此组件时播报无障碍文本的内容，帮助屏幕朗读的使用者清楚地知道自己选中了什么组件。
-
-默认值：""。
-
- 说明：
-
-当右侧操作区是关闭按钮（即operationType为CLOSE_BUTTON_ONLY）时，该参数不生效。
-
-contentAccessibilityDescription
-
-[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)
-
-否
-
-是
-
-HdsSnackBar的右侧区域文本按钮的无障碍描述。此描述用于向用户详细解释当前组件，开发人员应为组件的这一属性提供较为详尽的文本说明，以协助用户理解即将执行的操作及其可能产生的后果。特别是当这些后果无法仅从组件的属性和无障碍文本中直接获知时。如果组件同时具备文本属性和无障碍说明属性，当组件被选中时，系统将首先播报组件的文本属性，随后播报无障碍说明属性的内容。
-
-默认值："单指双击即可执行"。
-
- 说明：
-
-当右侧操作区是关闭按钮（即operationType为CLOSE_BUTTON_ONLY）时，该参数不生效。
-
-onCloseButtonClick
-
-[Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#callback12)<void>
-
-否
-
-是
-
-HdsSnackBar的右侧区域关闭按钮的点击事件。
-
- 说明：
-
-当右侧操作区是文本按钮或者带有右箭头的文本按钮（即operationType为TEXT_ONLY或者TEXT_WITH_ARROW）时，该参数不生效。
-
-closeButtonAccessibilityText
-
-[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)
-
-否
-
-是
-
-HdsSnackBar的右侧区域关闭按钮的无障碍文本属性。当组件不包含文本属性时，屏幕朗读选中此组件时不播报，使用者无法清楚地知道当前选中了什么组件。为了解决此场景，开发人员可为不包含文字信息的组件设置无障碍文本，当屏幕朗读选中此组件时播报无障碍文本的内容，帮助屏幕朗读的使用者清楚地知道自己选中了什么组件。
-
-默认值：""。
-
- 说明：
-
-当右侧操作区是文本按钮或者带有右箭头的文本按钮（即operationType为TEXT_ONLY或者TEXT_WITH_ARROW）时，该参数不生效。
-
-closeButtonAccessibilityDescription
-
-[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)
-
-否
-
-是
-
-HdsSnackBar的右侧区域关闭按钮的无障碍描述。此描述用于向用户详细解释当前组件，开发人员应为组件的这一属性提供较为详尽的文本说明，以协助用户理解即将执行的操作及其可能产生的后果。特别是当这些后果无法仅从组件的属性和无障碍文本中直接获知时。如果组件同时具备文本属性和无障碍说明属性，当组件被选中时，系统将首先播报组件的文本属性，随后播报无障碍说明属性的内容。
-
-默认值："单指双击即可执行"。
-
- 说明：
-
-当右侧操作区是文本按钮或者带有右箭头的文本按钮（即operationType为TEXT_ONLY或者TEXT_WITH_ARROW）时，该参数不生效。
-
-arrowColor
-
-[ColorMetrics](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#colormetrics12)[]
-
-否
-
-是
-
-HdsSnackBar的右侧区域的右箭头颜色。
-
- 说明：
-
-当右侧操作区是带有右箭头的文本按钮（即operationType为TEXT_WITH_ARROW）时，该参数生效。
-
-onArrowClick
-
-[Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#callback12)<void>
-
-否
-
-是
-
-HdsSnackBar的右侧区域的带有右箭头的文本按钮的点击事件。
-
- 说明：
-
-当右侧操作区是带有右箭头的文本按钮（即operationType为TEXT_WITH_ARROW）时，该参数生效。
-
-highlightBackBoardColor
-
-[ColorMetrics](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#colormetrics12)
-
-否
-
-是
-
-HdsSnackBar的右侧区域的高亮文本按钮的背板颜色。
-
- 说明：
-
-当右侧操作区是带有关闭按钮的高亮按钮（即operationType为HIGHLIGHT_TEXT_WITH_CLOSE）时，该参数生效。
-
-textButtonId
-
-string
-
-否
-
-是
-
-HdsSnackBar的文本按钮或者高亮文本按钮的id。
-
- 说明：
-
-当右侧操作区是关闭按钮或者带有右箭头的文本按钮（即operationType为CLOSE_BUTTON_ONLY或者TEXT_WITH_ARROW）时，该参数不生效。
-
-cancelButtonId
-
-string
-
-否
-
-是
-
-HdsSnackBar的关闭按钮的id。
-
- 说明：
-
-当右侧操作区是文本按钮或者带有右箭头的文本按钮（即operationType为TEXT_ONLY或者TEXT_WITH_ARROW）时，该参数不生效。
-
-arrowButtonId
-
-string
-
-否
-
-是
-
-HdsSnackBar的带有右箭头的文本按钮的id。
-
- 说明：
-
-当右侧操作区是带有右箭头的文本按钮（即operationType为TEXT_WITH_ARROW）时，该参数生效。
-
-1、当operationType设置成TEXT_WITH_ARROW的枚举类型，onArrowClick点击热区是整个SnackBar容器，因此不需要设置onContentClick点击事件。
-
-2、textButtonId、cancelButtonId、arrowButtonId用来作为走焦id。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| operationType | SnackBarOperationType | 否 | 是 | HdsSnackBar的右侧操作区域元素样式。 |
+| content | ResourceStr | 否 | 是 | HdsSnackBar的右侧区域文本按钮的文本内容。 说明：当右侧操作区是关闭按钮（即operationType为CLOSE_BUTTON_ONLY）时，该参数不生效。 |
+| contentColor | ColorMetrics | 否 | 是 | HdsSnackBar的右侧区域文本按钮的文本颜色。 说明：当右侧操作区是关闭按钮（即operationType为CLOSE_BUTTON_ONLY）时，该参数不生效。 |
+| onContentClick | Callback<void> | 否 | 是 | HdsSnackBar的右侧区域文本按钮的点击事件。 说明：当右侧操作区是关闭按钮或者带有右箭头的文本按钮（即operationType为CLOSE_BUTTON_ONLY或者TEXT_WITH_ARROW）时，该参数不生效。 |
+| contentAccessibilityText | ResourceStr | 否 | 是 | HdsSnackBar的右侧区域文本按钮的无障碍文本属性。当组件不包含文本属性时，屏幕朗读选中此组件时不播报，使用者无法清楚地知道当前选中了什么组件。为了解决此场景，开发人员可为不包含文字信息的组件设置无障碍文本，当屏幕朗读选中此组件时播报无障碍文本的内容，帮助屏幕朗读的使用者清楚地知道自己选中了什么组件。 默认值：""。 说明：当右侧操作区是关闭按钮（即operationType为CLOSE_BUTTON_ONLY）时，该参数不生效。 |
+| contentAccessibilityDescription | ResourceStr | 否 | 是 | HdsSnackBar的右侧区域文本按钮的无障碍描述。此描述用于向用户详细解释当前组件，开发人员应为组件的这一属性提供较为详尽的文本说明，以协助用户理解即将执行的操作及其可能产生的后果。特别是当这些后果无法仅从组件的属性和无障碍文本中直接获知时。如果组件同时具备文本属性和无障碍说明属性，当组件被选中时，系统将首先播报组件的文本属性，随后播报无障碍说明属性的内容。 默认值："单指双击即可执行"。 说明：当右侧操作区是关闭按钮（即operationType为CLOSE_BUTTON_ONLY）时，该参数不生效。 |
+| onCloseButtonClick | Callback<void> | 否 | 是 | HdsSnackBar的右侧区域关闭按钮的点击事件。 说明：当右侧操作区是文本按钮或者带有右箭头的文本按钮（即operationType为TEXT_ONLY或者TEXT_WITH_ARROW）时，该参数不生效。 |
+| closeButtonAccessibilityText | ResourceStr | 否 | 是 | HdsSnackBar的右侧区域关闭按钮的无障碍文本属性。当组件不包含文本属性时，屏幕朗读选中此组件时不播报，使用者无法清楚地知道当前选中了什么组件。为了解决此场景，开发人员可为不包含文字信息的组件设置无障碍文本，当屏幕朗读选中此组件时播报无障碍文本的内容，帮助屏幕朗读的使用者清楚地知道自己选中了什么组件。 默认值：""。 说明：当右侧操作区是文本按钮或者带有右箭头的文本按钮（即operationType为TEXT_ONLY或者TEXT_WITH_ARROW）时，该参数不生效。 |
+| closeButtonAccessibilityDescription | ResourceStr | 否 | 是 | HdsSnackBar的右侧区域关闭按钮的无障碍描述。此描述用于向用户详细解释当前组件，开发人员应为组件的这一属性提供较为详尽的文本说明，以协助用户理解即将执行的操作及其可能产生的后果。特别是当这些后果无法仅从组件的属性和无障碍文本中直接获知时。如果组件同时具备文本属性和无障碍说明属性，当组件被选中时，系统将首先播报组件的文本属性，随后播报无障碍说明属性的内容。 默认值："单指双击即可执行"。 说明：当右侧操作区是文本按钮或者带有右箭头的文本按钮（即operationType为TEXT_ONLY或者TEXT_WITH_ARROW）时，该参数不生效。 |
+| arrowColor | ColorMetrics[] | 否 | 是 | HdsSnackBar的右侧区域的右箭头颜色。 说明：当右侧操作区是带有右箭头的文本按钮（即operationType为TEXT_WITH_ARROW）时，该参数生效。 |
+| onArrowClick | Callback<void> | 否 | 是 | HdsSnackBar的右侧区域的带有右箭头的文本按钮的点击事件。 说明：当右侧操作区是带有右箭头的文本按钮（即operationType为TEXT_WITH_ARROW）时，该参数生效。 |
+| highlightBackBoardColor | ColorMetrics | 否 | 是 | HdsSnackBar的右侧区域的高亮文本按钮的背板颜色。 说明：当右侧操作区是带有关闭按钮的高亮按钮（即operationType为HIGHLIGHT_TEXT_WITH_CLOSE）时，该参数生效。 |
+| textButtonId | string | 否 | 是 | HdsSnackBar的文本按钮或者高亮文本按钮的id。 说明：当右侧操作区是关闭按钮或者带有右箭头的文本按钮（即operationType为CLOSE_BUTTON_ONLY或者TEXT_WITH_ARROW）时，该参数不生效。 |
+| cancelButtonId | string | 否 | 是 | HdsSnackBar的关闭按钮的id。 说明：当右侧操作区是文本按钮或者带有右箭头的文本按钮（即operationType为TEXT_ONLY或者TEXT_WITH_ARROW）时，该参数不生效。 |
+| arrowButtonId | string | 否 | 是 | HdsSnackBar的带有右箭头的文本按钮的id。 说明：当右侧操作区是带有右箭头的文本按钮（即operationType为TEXT_WITH_ARROW）时，该参数生效。 |
+
+
+- 当operationType设置成TEXT_WITH_ARROW的枚举类型，onArrowClick点击热区是整个SnackBar容器，因此不需要设置onContentClick点击事件。
+
+- textButtonId、cancelButtonId、arrowButtonId用来作为走焦id。
 
 #### SnackBarStyleOptions
 
@@ -482,135 +144,20 @@ HdsSnackBar的带有右箭头的文本按钮的id。
 
 **起始版本：**6.0.0(20)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-width
-
-[LengthMetrics](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#lengthmetrics12)
-
-否
-
-是
-
-HdsSnackBar的宽度。
-
-backgroundColor
-
-[ColorMetrics](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#colormetrics12)
-
-否
-
-是
-
-HdsSnackBar的背景颜色。
-
-backgroundBlurStyle
-
-[BlurStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-background#blurstyle9)
-
-否
-
-是
-
-HdsSnackBar的背板背景模糊效果。
-
-duration
-
-number
-
-否
-
-是
-
-HdsSnackBar定时显示时的定时消失时间。
-
-默认值：5000。
-
-单位：ms。
-
-取值范围：(-∞, +∞)。
-
-如果用户设置成小于等于0的表示snackBar不会定时消失，常驻。
-
-keyboardDownAvoidHeight
-
-[LengthMetrics](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#lengthmetrics12)
-
-否
-
-是
-
-HdsSnackBar键盘收起时的避让高度。
-
-keyboardUpAvoidHeight
-
-[LengthMetrics](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#lengthmetrics12)
-
-否
-
-是
-
-HdsSnackBar键盘抬起时的避让高度。
-
-nextFocusId
-
-string
-
-否
-
-是
-
-HdsSnackBar走焦到下一个组件的id。
-
-theme
-
-[Theme](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-theme#theme) | [CustomTheme](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-theme#customtheme)
-
-否
-
-是
-
-HdsSnackBar的主题。
-
-themeColorMode
-
-[ThemeColorMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-foreground-blur-style#themecolormode枚举说明)
-
-否
-
-是
-
-HdsSnackBar的主题色。
-
-pressBackCallback
-
-[Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#callback12)<void>
-
-否
-
-是
-
-HdsSnackBar弹窗出现后，左滑屏幕，应用可以自定义返回到上一页的回调函数。
-
-blurStrategy
-
-[BlurStrategy](../misc/HdsNavigation.md#section1086755971212)
-
-否
-
-是
-
-HdsSnackBar的模糊生效策略。
-
-默认值：BlurStrategy.ADAPTIVE。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| width | LengthMetrics | 否 | 是 | HdsSnackBar的宽度。 |
+| backgroundColor | ColorMetrics | 否 | 是 | HdsSnackBar的背景颜色。 |
+| backgroundBlurStyle | BlurStyle | 否 | 是 | HdsSnackBar的背板背景模糊效果。 |
+| duration | number | 否 | 是 | HdsSnackBar定时显示时的定时消失时间。 默认值：5000。 单位：ms。 取值范围：(-∞, +∞)。 如果用户设置成小于等于0的表示snackBar不会定时消失，常驻。 |
+| keyboardDownAvoidHeight | LengthMetrics | 否 | 是 | HdsSnackBar键盘收起时的避让高度。 |
+| keyboardUpAvoidHeight | LengthMetrics | 否 | 是 | HdsSnackBar键盘抬起时的避让高度。 |
+| nextFocusId | string | 否 | 是 | HdsSnackBar走焦到下一个组件的id。 |
+| theme | Theme | CustomTheme | 否 | 是 | HdsSnackBar的主题。 |
+| themeColorMode | ThemeColorMode | 否 | 是 | HdsSnackBar的主题色。 |
+| pressBackCallback | Callback<void> | 否 | 是 | HdsSnackBar弹窗出现后，左滑屏幕，应用可以自定义返回到上一页的回调函数。 |
+| blurStrategy | [BlurStrategy](HdsNavigation.md#section1086755971212) | 否 | 是 | HdsSnackBar的模糊生效策略。 默认值：BlurStrategy.ADAPTIVE。 |
+| isHeightAdaptive | boolean | 否 | 是 | HdsSnackBar的背板高度是否随组件内文本内容自适应变化。 true：背板高度会随组件内文本内容自适应变化。 false：背板高度不会随组件内文本内容自适应变化。 默认值：false。 起始版本： 6.1.0(23)。 |
 
 #### SnackBarOperationType
 
@@ -622,41 +169,13 @@ HdsSnackBar的模糊生效策略。
 
 **起始版本：**6.0.0(20)
 
-名称
-
-值
-
-说明
-
-TEXT_ONLY
-
-0
-
-文本按钮。
-
-CLOSE_BUTTON_ONLY
-
-1
-
-关闭按钮。
-
-TEXT_WITH_ARROW
-
-2
-
-带有右箭头的文本按钮。
-
-TEXT_WITH_CLOSE
-
-3
-
-带有关闭按钮的文本按钮。
-
-HIGHLIGHT_TEXT_WITH_CLOSE
-
-4
-
-带有关闭按钮的高亮文本按钮。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| TEXT_ONLY | 0 | 文本按钮。 |
+| CLOSE_BUTTON_ONLY | 1 | 关闭按钮。 |
+| TEXT_WITH_ARROW | 2 | 带有右箭头的文本按钮。 |
+| TEXT_WITH_CLOSE | 3 | 带有关闭按钮的文本按钮。 |
+| HIGHLIGHT_TEXT_WITH_CLOSE | 4 | 带有关闭按钮的高亮文本按钮。 |
 
 #### SnackBarIconType
 
@@ -668,23 +187,10 @@ HIGHLIGHT_TEXT_WITH_CLOSE
 
 **起始版本：**6.0.0(20)
 
-名称
-
-值
-
-说明
-
-SMALL
-
-0
-
-小图标。
-
-NORMAL
-
-1
-
-普通图标。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SMALL | 0 | 小图标。 |
+| NORMAL | 1 | 普通图标。 |
 
 #### 示例
 
@@ -742,7 +248,6 @@ struct TestSnackBar {
     .height('100%')
     .backgroundColor(0xF1F3F5)
   }
-}
 ```
 
 效果图：

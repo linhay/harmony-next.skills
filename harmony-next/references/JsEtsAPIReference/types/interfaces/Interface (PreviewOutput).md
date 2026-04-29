@@ -24,7 +24,10 @@ on(type: 'frameStart', callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'frameStart'，previewOutput创建成功可监听。底层第一次开始曝光时触发该事件并返回。callbackAsyncCallback<void>是回调函数，用于获取结果。只要有该事件返回就证明预览开始。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'frameStart'，previewOutput创建成功可监听。底层第一次开始曝光时触发该事件并返回。 |
+| callback | AsyncCallback<void> | 是 | 回调函数，用于获取结果。只要有该事件返回就证明预览开始。 |
 
 **示例：**
 
@@ -56,7 +59,10 @@ off(type: 'frameStart', callback?: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'frameStart'，previewOutput创建成功可监听。callbackAsyncCallback<void>否回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'frameStart'，previewOutput创建成功可监听。 |
+| callback | AsyncCallback<void> | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。 |
 
 **示例：**
 
@@ -80,7 +86,10 @@ on(type: 'frameEnd', callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'frameEnd'，previewOutput创建成功可监听。预览完全结束最后一帧时触发该事件并返回。callbackAsyncCallback<void>是回调函数，用于获取结果。只要有该事件返回就证明预览结束。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'frameEnd'，previewOutput创建成功可监听。预览完全结束最后一帧时触发该事件并返回。 |
+| callback | AsyncCallback<void> | 是 | 回调函数，用于获取结果。只要有该事件返回就证明预览结束。 |
 
 **示例：**
 
@@ -112,7 +121,10 @@ off(type: 'frameEnd', callback?: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'frameEnd'，previewOutput创建成功可监听。callbackAsyncCallback<void>否回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'frameEnd'，previewOutput创建成功可监听。 |
+| callback | AsyncCallback<void> | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。 |
 
 **示例：**
 
@@ -136,7 +148,10 @@ on(type: 'error', callback: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'error'，previewOutput创建成功可监听。预览接口使用错误时触发该事件，比如调用[Session.start](Interface (Session).md#ZH-CN_TOPIC_0000002529445753__start11-1)，[CameraOutput.release](Interface (CameraOutput).md#ZH-CN_TOPIC_0000002529285771__release-1)等接口发生错误时返回对应错误信息。callback[ErrorCallback](../../modules/ohos/@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__errorcallback)是回调函数，用于获取错误信息。返回错误码，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'error'，previewOutput创建成功可监听。预览接口使用错误时触发该事件，比如调用Session.start，CameraOutput.release等接口发生错误时返回对应错误信息。 |
+| callback | ErrorCallback | 是 | 回调函数，用于获取错误信息。返回错误码，错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **示例：**
 
@@ -164,7 +179,10 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'error'，previewOutput创建成功可监听。callback[ErrorCallback](../../modules/ohos/@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__errorcallback)否回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'error'，previewOutput创建成功可监听。 |
+| callback | ErrorCallback | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。 |
 
 **示例：**
 
@@ -186,7 +204,9 @@ function unregisterPreviewOutputError(previewOutput: camera.PreviewOutput): void
 
 **返回值：**
 
-类型说明Array<[FrameRateRange](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__frameraterange)>支持的帧率范围列表。若接口调用失败，返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| Array<FrameRateRange> | 支持的帧率范围列表。若接口调用失败，返回undefined。 |
 
 **示例：**
 
@@ -203,7 +223,8 @@ setFrameRate(minFps: number, maxFps: number): void
 
 设置预览流帧率范围，设置的范围必须在支持的帧率范围内。
 
-进行设置前，可通过[getSupportedFrameRates](#ZH-CN_TOPIC_0000002497445808__getsupportedframerates12)接口查询支持的帧率范围。
+进行设置前，可通过[getSupportedFrameRates](#ZH-CN_TOPIC_0000002553361835__getsupportedframerates12)接口查询支持的帧率范围。
+
 
 仅在[PhotoSession](Interface (PhotoSession).md)或[VideoSession](Interface (VideoSession).md)模式下支持。
 
@@ -213,13 +234,19 @@ setFrameRate(minFps: number, maxFps: number): void
 
 **参数：**
 
-参数名类型必填说明minFpsnumber是最小帧率（单位：fps），当传入的最大值小于最小值时，传参异常，接口不生效。maxFpsnumber是最大帧率（单位：fps），当传入的最小值大于最大值时，传参异常，接口不生效。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| minFps | number | 是 | 最小帧率（单位：fps），当传入的最大值小于最小值时，传参异常，接口不生效。 |
+| maxFps | number | 是 | 最大帧率（单位：fps），当传入的最小值大于最大值时，传参异常，接口不生效。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码]([Camera错误码](../../errors/Camera错误码.md).md)。
 
-错误码ID错误信息7400101Parameter missing or parameter type incorrect.7400110Unresolved conflicts with current configurations.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400101 | Parameter missing or parameter type incorrect. |
+| 7400110 | Unresolved conflicts with current configurations. |
 
 **示例：**
 
@@ -235,7 +262,7 @@ getActiveFrameRate(): FrameRateRange
 
 获取已设置的帧率范围。
 
-使用[setFrameRate](#ZH-CN_TOPIC_0000002497445808__setframerate12)接口对预览流设置过帧率后可查询。
+使用[setFrameRate](#ZH-CN_TOPIC_0000002553361835__setframerate12)接口对预览流设置过帧率后可查询。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -243,7 +270,9 @@ getActiveFrameRate(): FrameRateRange
 
 **返回值：**
 
-类型说明[FrameRateRange](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__frameraterange)帧率范围
+| 类型 | 说明 |
+| --- | --- |
+| FrameRateRange | 帧率范围 |
 
 **示例：**
 
@@ -266,13 +295,17 @@ getActiveProfile(): Profile
 
 **返回值：**
 
-类型说明[Profile](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__profile)当前生效的配置信息
+| 类型 | 说明 |
+| --- | --- |
+| Profile | 当前生效的配置信息 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -294,13 +327,17 @@ function testGetActiveProfile(previewOutput: camera.PreviewOutput): camera.Profi
 
 #### getPreviewRotation12+
 
-getPreviewRotation(displayRotation: number): ImageRotation
+getPreviewRotation(displayRotation?: number): [ImageRotation](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__imagerotation)
 
 获取预览旋转角度。
 
-- 设备自然方向：设备默认使用方向，手机为竖屏（充电口向下）。
-- 相机镜头角度：值等于相机图像顺时针旋转到设备自然方向的角度，手机后置相机传感器是横屏安装的，所以需要顺时针旋转90度到设备自然方向。
-- 屏幕显示方向：需要屏幕显示的图片左上角为第一个像素点为坐标原点。锁屏时与自然方向一致。
+- 设备自然方向：设备默认使用方向。例如，直板机默认使用方向为竖屏（充电口向下）。
+
+- 相机镜头角度：值等于相机图像顺时针旋转到设备自然方向的角度。例如，直板机后置相机传感器是横屏安装的，所以需要顺时针旋转90度到设备自然方向。
+
+- [屏幕旋转角度](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-device-window-direction#section15598121101615)：显示设备的屏幕顺时针旋转角度。
+
+模型约束： 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -308,17 +345,23 @@ getPreviewRotation(displayRotation: number): ImageRotation
 
 **参数：**
 
-参数名类型必填说明displayRotationnumber是显示设备的屏幕旋转角度，通过[display.getDefaultDisplaySync](../../modules/ohos/@ohos.display (屏幕属性).md#ZH-CN_TOPIC_0000002529284797__displaygetdefaultdisplaysync9)获得。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| displayRotation | number | 否 | 显示设备的屏幕旋转角度，通过display.getDefaultDisplaySync获得。  从API version 23开始，入参displayRotation为可选参数，当不传入参数时，由系统获取displayRotation进行预览旋转角度计算。 |
 
 **返回值：**
 
-类型说明[ImageRotation](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__imagerotation)获取预览旋转角度。若接口调用失败，返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| [ImageRotation](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__imagerotation) | 返回预览旋转角度。若接口调用失败，返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400101Parameter missing or parameter type incorrect.7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -337,11 +380,24 @@ function testGetPreviewRotation(previewOutput: camera.PreviewOutput, imageRotati
   }
   return previewRotation;
 }
+
+function testGetPreviewRotationWithOutParam(previewOutput: camera.PreviewOutput): camera.ImageRotation {
+  let previewRotation: camera.ImageRotation = camera.ImageRotation.ROTATION_0;
+  try {
+    previewRotation = previewOutput.getPreviewRotation();
+    console.info(`Preview rotation is: ${previewRotation}`);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The previewOutput.testGetPreviewRotationWithOutParam call failed. error code: ${err.code}`);
+  }
+  return previewRotation;
+}
 ```
 
 #### setPreviewRotation12+
 
-setPreviewRotation(previewRotation: ImageRotation, isDisplayLocked?: boolean): void
+setPreviewRotation(previewRotation: [ImageRotation](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__imagerotation), isDisplayLocked?: boolean): void
 
 设置预览旋转角度。
 
@@ -351,13 +407,19 @@ setPreviewRotation(previewRotation: ImageRotation, isDisplayLocked?: boolean): v
 
 **参数：**
 
-参数名类型必填说明previewRotation[ImageRotation](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__imagerotation)是预览旋转角度isDisplayLockedboolean否Surface在屏幕旋转时是否锁定方向，未设置时默认取值为false，即不锁定方向。true表示锁定方向，false表示不锁定方向。详情请参考[SurfaceRotationOptions](../../topics/components/XComponent.md#ZH-CN_TOPIC_0000002529444889__surfacerotationoptions12对象说明)
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| previewRotation | [ImageRotation](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__imagerotation) | 是 | 预览旋转角度 |
+| isDisplayLocked | boolean | 否 | Surface在屏幕旋转时是否锁定方向，未设置时默认取值为false，即不锁定方向。true表示锁定方向，false表示不锁定方向。详情请参考[SurfaceRotationOptions](../../topics/components/XComponent.md#ZH-CN_TOPIC_0000002529444889__surfacerotationoptions12对象说明) |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400101Parameter missing or parameter type incorrect.7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400101 | Parameter missing or parameter type incorrect. |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -382,19 +444,24 @@ start(callback: AsyncCallback<void>): void
 
 开始输出预览流，通过注册回调函数获取结果。使用callback异步回调。
 
-从 API version 10开始支持，从API version 11开始废弃。建议使用[Session.start](Interface (Session).md#ZH-CN_TOPIC_0000002529445753__start11)替代。
+
+从 API version 10开始支持，从API version 11开始废弃。建议使用[Session.start](Interface (Session).md#ZH-CN_TOPIC_0000002553201879__start11)替代。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当开始输出预览流成功，err为undefined，否则为错误对象。错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当开始输出预览流成功，err为undefined，否则为错误对象。错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
 
 **示例：**
 
@@ -418,19 +485,24 @@ start(): Promise<void>
 
 开始输出预览流。使用Promise异步回调。
 
-从 API version 10开始支持，从API version 11开始废弃。建议使用[Session.start](Interface (Session).md#ZH-CN_TOPIC_0000002529445753__start11-1)替代。
+
+从 API version 10开始支持，从API version 11开始废弃。建议使用[Session.start](Interface (Session).md#ZH-CN_TOPIC_0000002553201879__start11-1)替代。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
 
 **示例：**
 
@@ -452,13 +524,16 @@ stop(callback: AsyncCallback<void>): void
 
 停止输出预览流，通过注册回调函数获取结果。使用callback异步回调。
 
-从 API version 10开始支持，从API version 11开始废弃。建议使用[Session.stop](Interface (Session).md#ZH-CN_TOPIC_0000002529445753__stop11)替代。
+
+从 API version 10开始支持，从API version 11开始废弃。建议使用[Session.stop](Interface (Session).md#ZH-CN_TOPIC_0000002553201879__stop11)替代。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当停止输出预览流成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当停止输出预览流成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -482,13 +557,16 @@ stop(): Promise<void>
 
 停止输出预览流。使用Promise异步回调。
 
-从 API version 10开始支持，从API version 11开始废弃。建议使用[Session.stop](Interface (Session).md#ZH-CN_TOPIC_0000002529445753__stop11-1)替代。
+
+从 API version 10开始支持，从API version 11开始废弃。建议使用[Session.stop](Interface (Session).md#ZH-CN_TOPIC_0000002553201879__stop11-1)替代。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **示例：**
 
@@ -502,4 +580,84 @@ function stopPreviewOutput(previewOutput: camera.PreviewOutput): void {
     console.error(`Failed to preview output stop, error code: ${error.code}.`);
   });
 }
+```
+
+**isBandwidthCompressionSupported23+**
+
+isBandwidthCompressionSupported(): boolean
+
+检查是否支持预览带宽压缩（指通过编码减少数据量，降低其在传输链路中的带宽占用）。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.Multimedia.Camera.Core
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否支持预览带宽压缩。true表示支持，false表示不支持。 |
+
+示例：
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function isBandwidthCompressionSupported(previewOutput: camera.PreviewOutput): boolean {
+  let supported: boolean = false;
+  try {
+    supported = previewOutput.isBandwidthCompressionSupported();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The previewOutput.isBandwidthCompressionSupported call failed. error code: ${err.code}`);
+  }
+  return supported;
+}
+```
+
+**enableBandwidthCompression23+**
+
+enableBandwidthCompression(enabled: boolean): void
+
+使能预览带宽压缩。
+
+使能之前，可先使用方法[isBandwidthCompressionSupported](#ZH-CN_TOPIC_0000002553361835__isbandwidthcompressionsupported23)对设备是否支持预览带宽压缩进行检查。
+
+
+该接口只能在使用[Session.commitConfig](Interface (Session).md#ZH-CN_TOPIC_0000002553201879__commitconfig11)接口之前调用，否则会影响预览流出流格式。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.Multimedia.Camera.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enabled | boolean | 是 | 是否使能预览带宽压缩。true表示使能，false表示不使能。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400102 | Operation not allowed. |
+| 7400103 | Session not config. |
+| 7400201 | Camera service fatal error. |
+
+示例：
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function enableBandwidthCompression(previewOutput: camera.PreviewOutput, enabled: boolean): void {
+  try {
+    previewOutput.enableBandwidthCompression(enabled);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The previewOutput.enableBandwidthCompression call failed. error code: ${err.code}`);
+  }
 ```

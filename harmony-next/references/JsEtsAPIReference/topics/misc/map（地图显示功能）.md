@@ -1,16 +1,16 @@
 # map（地图显示功能）
 
-- **[模块描述](../../guides/模块描述.md)**
+- [模块描述](模块描述.md)
 
-- **[MapComponentController](../components/MapComponentController.md)**
+- [MapComponentController](MapComponentController.md)
 
 - **[BaseOverlay](BaseOverlay.md)**
 
-- **[Marker](../media/Marker.md)**
+- [Marker](Marker.md)
 
-- **[MapPolyline](../graphics/MapPolyline.md)**
+- [MapPolyline](MapPolyline.md)
 
-- **[MapPolygon](../system-services/MapPolygon.md)**
+- [MapPolygon](MapPolygon.md)
 
 - **[MapCircle](MapCircle.md)**
 
@@ -20,7 +20,7 @@
 
 - **[Bubble](Bubble.md)**
 
-- **[CameraUpdate](../media/CameraUpdate.md)**
+- [CameraUpdate](CameraUpdate.md)
 
 - **[Projection](Projection.md)**
 
@@ -38,33 +38,33 @@
 
 - **[FontSizeAnimation](FontSizeAnimation.md)**
 
-- **[PlayImageAnimation](../graphics/PlayImageAnimation.md)**
+- [PlayImageAnimation](PlayImageAnimation.md)
 
 - **[AnimationSet](AnimationSet.md)**
 
 - **[ClusterOverlay](ClusterOverlay.md)**
 
-- **[ImageOverlay](../graphics/ImageOverlay.md)**
+- [ImageOverlay]([ImageOverlay](../../types/interfaces/ImageOverlay.md).md)
 
 - **[BuildingOverlay](BuildingOverlay.md)**
 
 - **[TraceOverlay](TraceOverlay.md)**
 
-- **[MapArc](../components/MapArc.md)**
+- [MapArc](MapArc.md)
 
 - **[SpatialRelationUtil](SpatialRelationUtil.md)**
 
 - **[AnimateResult](AnimateResult.md)**
 
-- **[MarkerDelegate](../media/MarkerDelegate.md)**
+- [MarkerDelegate](MarkerDelegate.md)
 
 - **[MapEventManager](MapEventManager.md)**
 
-- **[MarkerClusterInfo](../media/MarkerClusterInfo.md)**
+- [MarkerClusterInfo](MarkerClusterInfo.md)
 
 - **[TileOverlay](TileOverlay.md)**
 
-- **[IndoorMapInfo](../networking/IndoorMapInfo.md)**
+- [IndoorMapInfo]([IndoorMapInfo](../../types/interfaces/IndoorMapInfo.md).md)
 
 - **[Heatmap](Heatmap.md)**
 
@@ -80,17 +80,13 @@
 
 - **[AnimationRepeatMode](AnimationRepeatMode.md)**
 
-- **[newCameraPosition](../media/newCameraPosition.md)**
+- [newCameraPosition](newCameraPosition.md)
 
 - **[newLatLng](newLatLng.md)**
 
 - **[newLatLngBounds](newLatLngBounds.md)**
 
-- **[newLatLngBounds](newLatLngBounds.md)**
-
-- **[newLatLngBounds](newLatLngBounds.md)**
-
-- **[scrollBy](../components/scrollBy.md)**
+- [scrollBy](scrollBy.md)
 
 - **[zoomBy](zoomBy.md)**
 

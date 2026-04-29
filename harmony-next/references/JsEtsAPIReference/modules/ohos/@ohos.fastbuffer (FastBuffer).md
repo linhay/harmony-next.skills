@@ -26,7 +26,19 @@ type BufferEncoding = 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' | 'ucs-2' 
 
 **系统能力：** SystemCapability.Utils.Lang
 
-类型说明'ascii'表示ascii格式。'utf8'表示utf8格式。'utf-8'表示utf8格式。'utf16le'表示utf16小端序格式。'ucs2'utf16le格式的别名。'ucs-2'utf16le格式的别名。'base64'表示base64格式。'base64url'表示base64url格式。'latin1'iso-8859-1的别名，向下兼容ascii格式。'binary'表示二进制格式。'hex'表示十六进制格式。
+| 类型 | 说明 |
+| --- | --- |
+| 'ascii' | 表示ascii格式。 |
+| 'utf8' | 表示utf8格式。 |
+| 'utf-8' | 表示utf8格式。 |
+| 'utf16le' | 表示utf16小端序格式。 |
+| 'ucs2' | utf16le格式的别名。 |
+| 'ucs-2' | utf16le格式的别名。 |
+| 'base64' | 表示base64格式。 |
+| 'base64url' | 表示base64url格式。 |
+| 'latin1' | iso-8859-1的别名，向下兼容ascii格式。 |
+| 'binary' | 表示二进制格式。 |
+| 'hex' | 表示十六进制格式。 |
 
 #### fastbuffer.alloc
 
@@ -40,11 +52,17 @@ alloc(size: number, fill?: string | FastBuffer | number, encoding?: BufferEncodi
 
 **参数：**
 
-参数名类型必填说明sizenumber是指定的FastBuffer对象长度，单位：字节。取值范围：0 <= size <= UINT32_MAX。fillstring | FastBuffer | number否填充至新缓存区的值，默认值：0。encoding[BufferEncoding](#ZH-CN_TOPIC_0000002529444717__bufferencoding)否编码格式（当fill为string时，才有意义）。默认值：'utf8'。传入无法识别的encoding会抛出TypeError。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | number | 是 | 指定的FastBuffer对象长度，单位：字节。取值范围：0 <= size <= UINT32_MAX。 |
+| fill | string | FastBuffer | number | 否 | 填充至新缓存区的值，默认值：0。 |
+| encoding | BufferEncoding | 否 | 编码格式（当fill为string时，才有意义）。默认值：'utf8'。传入无法识别的encoding会抛出TypeError。 |
 
 **返回值：**
 
-类型说明[FastBuffer](#ZH-CN_TOPIC_0000002529444717__fastbuffer)返回一个FastBuffer对象。
+| 类型 | 说明 |
+| --- | --- |
+| FastBuffer | 返回一个FastBuffer对象。 |
 
 **示例：**
 
@@ -64,7 +82,7 @@ console.info(buf3.toString());
 
 allocUninitializedFromPool(size: number): FastBuffer
 
-从缓冲池中创建指定大小未初始化的FastBuffer对象，需要使用[fill](#ZH-CN_TOPIC_0000002529444717__fill)函数来初始化FastBuffer对象。
+从缓冲池中创建指定大小未初始化的FastBuffer对象，需要使用[fill](#ZH-CN_TOPIC_0000002553360625__fill)函数来初始化FastBuffer对象。
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
@@ -72,11 +90,15 @@ allocUninitializedFromPool(size: number): FastBuffer
 
 **参数：**
 
-参数名类型必填说明sizenumber是指定的FastBuffer对象长度，单位：字节。取值范围：0 <= size <= UINT32_MAX。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | number | 是 | 指定的FastBuffer对象长度，单位：字节。取值范围：0 <= size <= UINT32_MAX。 |
 
 **返回值：**
 
-类型说明[FastBuffer](#ZH-CN_TOPIC_0000002529444717__fastbuffer)未初始化的Buffer实例。
+| 类型 | 说明 |
+| --- | --- |
+| FastBuffer | 未初始化的Buffer实例。 |
 
 **示例：**
 
@@ -92,7 +114,7 @@ buf.fill(0);
 
 allocUninitialized(size: number): FastBuffer
 
-创建指定大小未初始化的FastBuffer对象，需要使用[fill](#ZH-CN_TOPIC_0000002529444717__fill)函数来初始化FastBuffer对象。
+创建指定大小未初始化的FastBuffer对象，需要使用[fill](#ZH-CN_TOPIC_0000002553360625__fill)函数来初始化FastBuffer对象。
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
@@ -100,11 +122,15 @@ allocUninitialized(size: number): FastBuffer
 
 **参数：**
 
-参数名类型必填说明sizenumber是指定的FastBuffer对象长度，单位：字节。取值范围：0 <= size <= UINT32_MAX。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | number | 是 | 指定的FastBuffer对象长度，单位：字节。取值范围：0 <= size <= UINT32_MAX。 |
 
 **返回值：**
 
-类型说明[FastBuffer](#ZH-CN_TOPIC_0000002529444717__fastbuffer)未初始化的FastBuffer实例。
+| 类型 | 说明 |
+| --- | --- |
+| FastBuffer | 未初始化的FastBuffer实例。 |
 
 **示例：**
 
@@ -128,11 +154,16 @@ byteLength(value: string | FastBuffer | TypedArray | DataView | ArrayBuffer | Sh
 
 **参数：**
 
-参数名类型必填说明valuestring | FastBuffer | TypedArray | DataView | ArrayBuffer | SharedArrayBuffer是指定字符串。encoding[BufferEncoding](#ZH-CN_TOPIC_0000002529444717__bufferencoding)否编码格式。默认值：'utf8'。传入无法识别的encoding会抛出TypeError。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | string | FastBuffer | TypedArray | DataView | ArrayBuffer | SharedArrayBuffer | 是 | 指定字符串。 |
+| encoding | BufferEncoding | 否 | 编码格式。默认值：'utf8'。传入无法识别的encoding会抛出TypeError。 |
 
 **返回值：**
 
-类型说明number返回指定字符串的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回指定字符串的字节数。 |
 
 **示例：**
 
@@ -160,23 +191,24 @@ compare(buf1: FastBuffer | Uint8Array, buf2: FastBuffer | Uint8Array): -1 | 0 | 
 
 **参数：**
 
-参数名类型必填说明buf1[FastBuffer](#ZH-CN_TOPIC_0000002529444717__fastbuffer) | Uint8Array是待比较的第一个对象。buf2[FastBuffer](#ZH-CN_TOPIC_0000002529444717__fastbuffer) | Uint8Array是待比较的第二个对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| buf1 | FastBuffer | Uint8Array | 是 | 待比较的第一个对象。 |
+| buf2 | FastBuffer | Uint8Array | 是 | 待比较的第二个对象。 |
 
 **返回值：**
 
-类型说明-1 | 0 | 1
-
-如果buf1与buf2相同，则返回0。
-
-如果排序时buf1位于buf2之后，则返回1。
-
-如果排序时buf1位于buf2之前，则返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| -1 | 0 | 1 | 如果buf1与buf2相同，则返回0。 如果排序时buf1位于buf2之后，则返回1。 如果排序时buf1位于buf2之前，则返回-1。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息10200068The underlying ArrayBuffer is null or detach.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200068 | The underlying ArrayBuffer is null or detach. |
 
 **示例：**
 
@@ -207,17 +239,24 @@ concat(list: FastBuffer[] | Uint8Array[], totalLength?: number): FastBuffer
 
 **参数：**
 
-参数名类型必填说明list[FastBuffer](#ZH-CN_TOPIC_0000002529444717__fastbuffer)[] | Uint8Array[]是实例数组。totalLengthnumber否需要复制的总字节长度，默认值为0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| list | FastBuffer[] | Uint8Array[] | 是 | 实例数组。 |
+| totalLength | number | 否 | 需要复制的总字节长度，默认值为0。 |
 
 **返回值：**
 
-类型说明[FastBuffer](#ZH-CN_TOPIC_0000002529444717__fastbuffer)返回新的FastBuffer对象。
+| 类型 | 说明 |
+| --- | --- |
+| FastBuffer | 返回新的FastBuffer对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码]([语言基础类库错误码](../../errors/语言基础类库错误码.md).md)。
 
-错误码ID错误信息10200001Range error. Possible causes: The value of the parameter is not within the specified range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | Range error. Possible causes: The value of the parameter is not within the specified range. |
 
 **示例：**
 
@@ -243,11 +282,15 @@ from(array: number[]): FastBuffer
 
 **参数：**
 
-参数名类型必填说明arraynumber[]是指定数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| array | number[] | 是 | 指定数组。 |
 
 **返回值：**
 
-类型说明[FastBuffer](#ZH-CN_TOPIC_0000002529444717__fastbuffer)新的FastBuffer对象。
+| 类型 | 说明 |
+| --- | --- |
+| FastBuffer | 新的FastBuffer对象。 |
 
 **示例：**
 
@@ -271,17 +314,26 @@ from(arrayBuffer: ArrayBuffer | SharedArrayBuffer, byteOffset?: number, length?:
 
 **参数：**
 
-参数名类型必填说明arrayBufferArrayBuffer | SharedArrayBuffer是实例对象。byteOffsetnumber否字节偏移量，默认值：0。lengthnumber否字节长度， 默认值:（arrayBuffer.byteLength - byteOffset）。取值范围：0 <= length <= arrayBuffer.byteLength - byteOffset
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| arrayBuffer | ArrayBuffer | SharedArrayBuffer | 是 | 实例对象。 |
+| byteOffset | number | 否 | 字节偏移量，默认值：0。 |
+| length | number | 否 | 字节长度， 默认值:（arrayBuffer.byteLength - byteOffset）。取值范围：0 <= length <= arrayBuffer.byteLength - byteOffset |
 
 **返回值：**
 
-类型说明[FastBuffer](#ZH-CN_TOPIC_0000002529444717__fastbuffer)返回一个FastBuffer对象，该对象与入参对象arrayBuffer共享相同的内存区域。
+| 类型 | 说明 |
+| --- | --- |
+| FastBuffer | 返回一个FastBuffer对象，该对象与入参对象arrayBuffer共享相同的内存区域。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001Range error. Possible causes: The value of the parameter is not within the specified range.10200068The underlying ArrayBuffer is null or detach.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | Range error. Possible causes: The value of the parameter is not within the specified range. |
+| 10200068 | The underlying ArrayBuffer is null or detach. |
 
 **示例：**
 
@@ -308,17 +360,23 @@ from(buffer: FastBuffer | Uint8Array): FastBuffer
 
 **参数：**
 
-参数名类型必填说明buffer[FastBuffer](#ZH-CN_TOPIC_0000002529444717__fastbuffer) | Uint8Array是对象数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| buffer | FastBuffer | Uint8Array | 是 | 对象数据。 |
 
 **返回值：**
 
-类型说明[FastBuffer](#ZH-CN_TOPIC_0000002529444717__fastbuffer)返回新的FastBuffer对象。
+| 类型 | 说明 |
+| --- | --- |
+| FastBuffer | 返回新的FastBuffer对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息10200068The underlying ArrayBuffer is null or detach.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200068 | The underlying ArrayBuffer is null or detach. |
 
 **示例：**
 
@@ -351,11 +409,16 @@ from(value: string, encoding?: BufferEncoding): FastBuffer
 
 **参数：**
 
-参数名类型必填说明valuestring是字符串。encoding[BufferEncoding](#ZH-CN_TOPIC_0000002529444717__bufferencoding)否编码格式。默认值：'utf8'。传入无法识别的encoding会抛出TypeError。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | string | 是 | 字符串。 |
+| encoding | BufferEncoding | 否 | 编码格式。默认值：'utf8'。传入无法识别的encoding会抛出TypeError。 |
 
 **返回值：**
 
-类型说明[FastBuffer](#ZH-CN_TOPIC_0000002529444717__fastbuffer)返回新的FastBuffer对象。
+| 类型 | 说明 |
+| --- | --- |
+| FastBuffer | 返回新的FastBuffer对象。 |
 
 **示例：**
 
@@ -383,11 +446,15 @@ isBuffer(obj: Object): boolean
 
 **参数：**
 
-参数名类型必填说明objObject是判断对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| obj | Object | 是 | 判断对象。 |
 
 **返回值：**
 
-类型说明boolean如果obj是FastBuffer，则返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果obj是FastBuffer，则返回true，否则返回false。 |
 
 **示例：**
 
@@ -423,11 +490,15 @@ isEncoding(encoding: string): boolean
 
 **参数：**
 
-参数名类型必填说明encodingstring是编码格式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| encoding | string | 是 | 编码格式。 |
 
 **返回值：**
 
-类型说明boolean是支持的编码格式返回true，反之则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是支持的编码格式返回true，反之则返回false。 |
 
 **示例：**
 
@@ -458,11 +529,17 @@ fastbuffer.transcode支持的编码：'ascii' | 'utf8' | 'utf16le'| 'ucs2' | 'la
 
 **参数：**
 
-参数名类型必填说明source[FastBuffer](#ZH-CN_TOPIC_0000002529444717__fastbuffer) | Uint8Array是实例对象。fromEncstring是当前编码。 支持的格式范围为[BufferEncoding](#ZH-CN_TOPIC_0000002529444717__bufferencoding)。toEncstring是目标编码。 支持的格式范围为[BufferEncoding](#ZH-CN_TOPIC_0000002529444717__bufferencoding)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| source | FastBuffer | Uint8Array | 是 | 实例对象。 |
+| fromEnc | string | 是 | 当前编码。 支持的格式范围为BufferEncoding。 |
+| toEnc | string | 是 | 目标编码。 支持的格式范围为BufferEncoding。 |
 
 **返回值：**
 
-类型说明[FastBuffer](#ZH-CN_TOPIC_0000002529444717__fastbuffer)将当前编码转换成目标编码，并返回一个新的FastBuffer对象。
+| 类型 | 说明 |
+| --- | --- |
+| FastBuffer | 将当前编码转换成目标编码，并返回一个新的FastBuffer对象。 |
 
 **示例：**
 
@@ -482,7 +559,11 @@ console.info("newBuf = " + newBuf.toString('ascii'));
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明lengthnumber是否FastBuffer对象的字节长度。bufferArrayBuffer是否ArrayBuffer对象。byteOffsetnumber是否当前Buffer所在内存池的偏移量。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| length | number | 是 | 否 | FastBuffer对象的字节长度。 |
+| buffer | ArrayBuffer | 是 | 否 | ArrayBuffer对象。 |
+| byteOffset | number | 是 | 否 | 当前Buffer所在内存池的偏移量。 |
 
 **示例：**
 
@@ -511,25 +592,28 @@ compare(target: FastBuffer | Uint8Array, targetStart?: number, targetEnd?: numbe
 
 **参数：**
 
-参数名类型必填说明target[FastBuffer](#ZH-CN_TOPIC_0000002529444717__fastbuffer) | Uint8Array是要比较的实例对象。targetStartnumber否target实例中开始的偏移量。默认值：0。 0 <= targetStart <= target.length。targetEndnumber否target实例中结束的偏移量（不包含结束位置）。默认值：目标对象的字节长度。取值范围：0 <= targetEnd <= target.length。sourceStartnumber否this实例中开始的偏移量。默认值：0。取值范围：0 <= sourceStart <= this.length。sourceEndnumber否this实例中结束的偏移量（不包含结束位置）。默认值：当前对象的字节长度。取值范围：0 <= sourceEnd <= this.length。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| target | FastBuffer | Uint8Array | 是 | 要比较的实例对象。 |
+| targetStart | number | 否 | target实例中开始的偏移量。默认值：0。 0 <= targetStart <= target.length。 |
+| targetEnd | number | 否 | target实例中结束的偏移量（不包含结束位置）。默认值：目标对象的字节长度。取值范围：0 <= targetEnd <= target.length。 |
+| sourceStart | number | 否 | this实例中开始的偏移量。默认值：0。取值范围：0 <= sourceStart <= this.length。 |
+| sourceEnd | number | 否 | this实例中结束的偏移量（不包含结束位置）。默认值：当前对象的字节长度。取值范围：0 <= sourceEnd <= this.length。 |
 
 **返回值：**
 
-类型说明-1 | 0 | 1
-
-返回比较结果。
-
--1：当前排列在目标前；
-
-0：当前与目标相同；
-
-1：当前排列在目标后。
+| 类型 | 说明 |
+| --- | --- |
+| -1 | 0 | 1 | 返回比较结果。 -1：当前排列在目标前； 0：当前与目标相同； 1：当前排列在目标后。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001Range error. Possible causes: The value of the parameter is not within the specified range.10200068The underlying ArrayBuffer is null or detach.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | Range error. Possible causes: The value of the parameter is not within the specified range. |
+| 10200068 | The underlying ArrayBuffer is null or detach. |
 
 **示例：**
 
@@ -559,17 +643,27 @@ copy(target: FastBuffer| Uint8Array, targetStart?: number, sourceStart?: number,
 
 **参数：**
 
-参数名类型必填说明target[FastBuffer](#ZH-CN_TOPIC_0000002529444717__fastbuffer) | Uint8Array是要复制到的Buffer或Uint8Array实例。targetStartnumber否target实例中开始写入的偏移量。默认值：0。取值范围：0 <= targetStart <= UINT32_MAX。sourceStartnumber否this实例中开始复制的偏移量。默认值: 0。取值范围：0 <= sourceStart <= UINT32_MAX。sourceEndnumber否this实例中结束复制的偏移量（不包含结束位置）。默认值：当前对象的字节长度。取值范围：0 <= sourceEnd <= this.length。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| target | FastBuffer | Uint8Array | 是 | 要复制到的Buffer或Uint8Array实例。 |
+| targetStart | number | 否 | target实例中开始写入的偏移量。默认值：0。取值范围：0 <= targetStart <= UINT32_MAX。 |
+| sourceStart | number | 否 | this实例中开始复制的偏移量。默认值: 0。取值范围：0 <= sourceStart <= UINT32_MAX。 |
+| sourceEnd | number | 否 | this实例中结束复制的偏移量（不包含结束位置）。默认值：当前对象的字节长度。取值范围：0 <= sourceEnd <= this.length。 |
 
 **返回值：**
 
-类型说明number复制的字节总长度。
+| 类型 | 说明 |
+| --- | --- |
+| number | 复制的字节总长度。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001Range error. Possible causes: The value of the parameter is not within the specified range.10200068The underlying ArrayBuffer is null or detach.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | Range error. Possible causes: The value of the parameter is not within the specified range. |
+| 10200068 | The underlying ArrayBuffer is null or detach. |
 
 **示例：**
 
@@ -600,7 +694,9 @@ entries(): IterableIterator<[number, number]>
 
 **返回值：**
 
-类型说明IterableIterator<[number, number]>包含key和value的迭代器，同时两者皆为number类型。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<[number, number]> | 包含key和value的迭代器，同时两者皆为number类型。 |
 
 **示例：**
 
@@ -636,17 +732,23 @@ equals(otherBuffer: Uint8Array | FastBuffer): boolean
 
 **参数：**
 
-参数名类型必填说明otherBufferUint8Array | FastBuffer是比较的目标对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| otherBuffer | Uint8Array | FastBuffer | 是 | 比较的目标对象。 |
 
 **返回值：**
 
-类型说明boolean若this和otherBuffer逐字节相等则返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 若this和otherBuffer逐字节相等则返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息10200068The underlying ArrayBuffer is null or detach.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200068 | The underlying ArrayBuffer is null or detach. |
 
 **示例：**
 
@@ -675,17 +777,27 @@ fill(value: string | FastBuffer | Uint8Array | number, offset?: number, end?: nu
 
 **参数：**
 
-参数名类型必填说明valuestring | FastBuffer | Uint8Array | number是用于填充的值。offsetnumber否起始偏移量。默认值：0。取值范围：0 <= offset <= this.length。endnumber否结束偏移量（不包含结束位置）。 默认值：当前对象的字节长度。取值范围：0 <= end <= this.length。encoding[BufferEncoding](#ZH-CN_TOPIC_0000002529444717__bufferencoding)否字符编码格式（value为string才有意义）。默认值：'utf8'。传入无法识别的encoding会抛出TypeError。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | string | FastBuffer | Uint8Array | number | 是 | 用于填充的值。 |
+| offset | number | 否 | 起始偏移量。默认值：0。取值范围：0 <= offset <= this.length。 |
+| end | number | 否 | 结束偏移量（不包含结束位置）。 默认值：当前对象的字节长度。取值范围：0 <= end <= this.length。 |
+| encoding | BufferEncoding | 否 | 字符编码格式（value为string才有意义）。默认值：'utf8'。传入无法识别的encoding会抛出TypeError。 |
 
 **返回值：**
 
-类型说明[FastBuffer](#ZH-CN_TOPIC_0000002529444717__fastbuffer)返回填充后的FastBuffer对象。
+| 类型 | 说明 |
+| --- | --- |
+| FastBuffer | 返回填充后的FastBuffer对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001Range error. Possible causes: The value of the parameter is not within the specified range.10200068The underlying ArrayBuffer is null or detach.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | Range error. Possible causes: The value of the parameter is not within the specified range. |
+| 10200068 | The underlying ArrayBuffer is null or detach. |
 
 **示例：**
 
@@ -713,11 +825,17 @@ includes(value: string | number | FastBuffer | Uint8Array, byteOffset?: number, 
 
 **参数：**
 
-参数名类型必填说明valuestring | number | FastBuffer | Uint8Array是要搜索的内容。byteOffsetnumber否字节偏移量。若为正数，则从0开始计算偏移量；若byteOffset为正数，则从0开始计算偏移量；如果为负数，则从末尾开始计算偏移量。默认值：0。encoding[BufferEncoding](#ZH-CN_TOPIC_0000002529444717__bufferencoding)否字符编码格式。默认值：'utf8'。传入无法识别的encoding会抛出TypeError。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | string | number | FastBuffer | Uint8Array | 是 | 要搜索的内容。 |
+| byteOffset | number | 否 | 字节偏移量。若为正数，则从0开始计算偏移量；若byteOffset为正数，则从0开始计算偏移量；如果为负数，则从末尾开始计算偏移量。默认值：0。 |
+| encoding | BufferEncoding | 否 | 字符编码格式。默认值：'utf8'。传入无法识别的encoding会抛出TypeError。 |
 
 **返回值：**
 
-类型说明boolean若FastBuffer对象包含value值时返回true，否则为false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 若FastBuffer对象包含value值时返回true，否则为false。 |
 
 **示例：**
 
@@ -747,11 +865,17 @@ indexOf(value: string | number | FastBuffer | Uint8Array, byteOffset?: number, e
 
 **参数：**
 
-参数名类型必填说明valuestring | number | FastBuffer | Uint8Array是要查找的内容。byteOffsetnumber否字节偏移量。若byteOffset为正数，则从0开始计算偏移量；如果为负数，则从末尾开始计算偏移量。默认值：0。encoding[BufferEncoding](#ZH-CN_TOPIC_0000002529444717__bufferencoding)否字符编码格式。默认值：'utf8'。传入无法识别的encoding会抛出TypeError。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | string | number | FastBuffer | Uint8Array | 是 | 要查找的内容。 |
+| byteOffset | number | 否 | 字节偏移量。若byteOffset为正数，则从0开始计算偏移量；如果为负数，则从末尾开始计算偏移量。默认值：0。 |
+| encoding | BufferEncoding | 否 | 字符编码格式。默认值：'utf8'。传入无法识别的encoding会抛出TypeError。 |
 
 **返回值：**
 
-类型说明number返回第一次出现的位置。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回第一次出现的位置。 |
 
 **示例**
 
@@ -777,7 +901,9 @@ keys(): IterableIterator<number>
 
 **返回值：**
 
-类型说明IterableIterator<number>返回一个包含key值的迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<number> | 返回一个包含key值的迭代器。 |
 
 **示例：**
 
@@ -811,7 +937,9 @@ values(): IterableIterator<number>
 
 **返回值：**
 
-类型说明IterableIterator<number>迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<number> | 迭代器。 |
 
 **示例：**
 
@@ -826,7 +954,6 @@ while (!next.done) {
   /*
   输出结果：98
            117
-           102
            102
            101
            114
@@ -851,11 +978,17 @@ lastIndexOf(value: string | number | FastBuffer | Uint8Array, byteOffset?: numbe
 
 **参数：**
 
-参数名类型必填说明valuestring | number | FastBuffer | Uint8Array是要搜索的内容。byteOffsetnumber否字节偏移量。若byteOffset为正数，则从0开始计算偏移量；如果为负数，则从末尾开始计算偏移量。默认值：this.length - 1。encoding[BufferEncoding](#ZH-CN_TOPIC_0000002529444717__bufferencoding)否字符编码格式。默认值：'utf8'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | string | number | FastBuffer | Uint8Array | 是 | 要搜索的内容。 |
+| byteOffset | number | 否 | 字节偏移量。若byteOffset为正数，则从0开始计算偏移量；如果为负数，则从末尾开始计算偏移量。默认值：this.length - 1。 |
+| encoding | BufferEncoding | 否 | 字符编码格式。默认值：'utf8'。 |
 
 **返回值：**
 
-类型说明number最后一次出现value值的索引。
+| 类型 | 说明 |
+| --- | --- |
+| number | 最后一次出现value值的索引。 |
 
 **示例：**
 
@@ -881,17 +1014,23 @@ readBigInt64BE(offset?: number): bigint
 
 **参数：**
 
-参数名类型必填说明offsetnumber否偏移量。默认值：0。取值范围：0 <= offset <= this.length - 8。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - 8。 |
 
 **返回值：**
 
-类型说明bigint读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| bigint | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset].
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]. |
 
 **示例：**
 
@@ -916,17 +1055,23 @@ readBigInt64LE(offset?: number): bigint
 
 **参数：**
 
-参数名类型必填说明offsetnumber否偏移量。取值范围：0 <= offset <= this.length - 8，默认值：0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 8，默认值：0。 |
 
 **返回值：**
 
-类型说明bigint读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| bigint | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset].
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]. |
 
 **示例：**
 
@@ -951,17 +1096,23 @@ readBigUInt64BE(offset?: number): bigint
 
 **参数：**
 
-参数名类型必填说明offsetnumber否偏移量。取值范围：0 <= offset <= this.length - 8，默认值：0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 8，默认值：0。 |
 
 **返回值：**
 
-类型说明bigint读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| bigint | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset].
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]. |
 
 **示例：**
 
@@ -986,17 +1137,23 @@ readBigUInt64LE(offset?: number): bigint
 
 **参数：**
 
-参数名类型必填说明offsetnumber否偏移量。取值范围：0 <= offset <= this.length - 8，默认值：0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 8，默认值：0。 |
 
 **返回值：**
 
-类型说明bigint读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| bigint | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset].
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]. |
 
 **示例：**
 
@@ -1021,17 +1178,23 @@ readDoubleBE(offset?: number): number
 
 **参数：**
 
-参数名类型必填说明offsetnumber否偏移量。取值范围：0 <= offset <= this.length - 8，默认值：0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 8，默认值：0。 |
 
 **返回值：**
 
-类型说明number读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| number | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset].
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]. |
 
 **示例：**
 
@@ -1055,17 +1218,23 @@ readDoubleLE(offset?: number): number
 
 **参数：**
 
-参数名类型必填说明offsetnumber否偏移量。取值范围：0 <= offset <= this.length - 8，默认值：0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 8，默认值：0。 |
 
 **返回值：**
 
-类型说明number读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| number | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset].
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]. |
 
 **示例：**
 
@@ -1089,17 +1258,23 @@ readFloatBE(offset?: number): number
 
 **参数：**
 
-参数名类型必填说明offsetnumber否偏移量。取值范围：0 <= offset <= this.length - 4，默认值：0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 4，默认值：0。 |
 
 **返回值：**
 
-类型说明number读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| number | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset].
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]. |
 
 **示例：**
 
@@ -1123,17 +1298,23 @@ readFloatLE(offset?: number): number
 
 **参数：**
 
-参数名类型必填说明offsetnumber否偏移量。取值范围：0 <= offset <= this.length - 4，默认值：0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 4，默认值：0。 |
 
 **返回值：**
 
-类型说明number读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| number | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset].
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]. |
 
 **示例：**
 
@@ -1157,17 +1338,23 @@ readInt8(offset?: number): number
 
 **参数：**
 
-参数名类型必填说明offsetnumber否偏移量。取值范围：0 <= offset <= this.length - 1，默认值：0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 1，默认值：0。 |
 
 **返回值：**
 
-类型说明number读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| number | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 1. Received value is: [offset].
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 1. Received value is: [offset]. |
 
 **示例：**
 
@@ -1193,17 +1380,23 @@ readInt16BE(offset?: number): number
 
 **参数：**
 
-参数名类型必填说明offsetnumber否偏移量。取值范围：0 <= offset <= this.length - 2，默认值：0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 2，默认值：0。 |
 
 **返回值：**
 
-类型说明number读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| number | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset].
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]. |
 
 **示例：**
 
@@ -1227,17 +1420,23 @@ readInt16LE(offset?: number): number
 
 **参数：**
 
-参数名类型必填说明offsetnumber否偏移量。取值范围：0 <= offset <= this.length - 2，默认值：0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 2，默认值：0。 |
 
 **返回值：**
 
-类型说明number读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| number | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset].
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]. |
 
 **示例：**
 
@@ -1261,17 +1460,23 @@ readInt32BE(offset?: number): number
 
 **参数：**
 
-参数名类型必填说明offsetnumber否偏移量。取值范围：0 <= offset <= this.length - 4，默认值：0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 4，默认值：0。 |
 
 **返回值：**
 
-类型说明number读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| number | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset].
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]. |
 
 **示例：**
 
@@ -1295,17 +1500,23 @@ readInt32LE(offset?: number): number
 
 **参数：**
 
-参数名类型必填说明offsetnumber否偏移量。取值范围：0 <= offset <= this.length - 4，默认值：0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 4，默认值：0。 |
 
 **返回值：**
 
-类型说明number读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| number | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset].
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]. |
 
 **示例：**
 
@@ -1329,17 +1540,24 @@ readIntBE(offset: number, byteLength: number): number
 
 **参数：**
 
-参数名类型必填说明offsetnumber是偏移量。取值范围：0 <= offset <= this.length - byteLength，默认值：0。byteLengthnumber是读取的字节数。取值范围：1 <= byteLength <= 6。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 是 | 偏移量。取值范围：0 <= offset <= this.length - byteLength，默认值：0。 |
+| byteLength | number | 是 | 读取的字节数。取值范围：1 <= byteLength <= 6。 |
 
 **返回值：**
 
-类型说明number读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| number | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -1364,17 +1582,24 @@ readIntLE(offset: number, byteLength: number): number
 
 **参数：**
 
-参数名类型必填说明offsetnumber是偏移量。取值范围：0 <= offset <= this.length - byteLength，默认值：0。byteLengthnumber是读取的字节数。取值范围：1 <= byteLength <= 6。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 是 | 偏移量。取值范围：0 <= offset <= this.length - byteLength，默认值：0。 |
+| byteLength | number | 是 | 读取的字节数。取值范围：1 <= byteLength <= 6。 |
 
 **返回值：**
 
-类型说明number读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| number | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -1398,17 +1623,23 @@ readUInt8(offset?: number): number
 
 **参数：**
 
-参数名类型必填说明offsetnumber否偏移量。取值范围：0 <= offset <= this.length - 1，默认值：0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 1，默认值：0。 |
 
 **返回值：**
 
-类型说明number读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| number | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 1. Received value is: [offset].
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 1. Received value is: [offset]. |
 
 **示例：**
 
@@ -1434,17 +1665,23 @@ readUInt16BE(offset?: number): number
 
 **参数：**
 
-参数名类型必填说明offsetnumber否偏移量。取值范围：0 <= offset <= this.length - 2，默认值：0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 2，默认值：0。 |
 
 **返回值：**
 
-类型说明number读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| number | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset].
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]. |
 
 **示例：**
 
@@ -1470,17 +1707,23 @@ readUInt16LE(offset?: number): number
 
 **参数：**
 
-参数名类型必填说明offsetnumber否偏移量。取值范围：0 <= offset <= this.length - 2，默认值：0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 2，默认值：0。 |
 
 **返回值：**
 
-类型说明number读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| number | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset].
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]. |
 
 **示例：**
 
@@ -1506,17 +1749,23 @@ readUInt32BE(offset?: number): number
 
 **参数：**
 
-参数名类型必填说明offsetnumber否偏移量。取值范围：0 <= offset <= this.length - 4，默认值：0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 4，默认值：0。 |
 
 **返回值：**
 
-类型说明number读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| number | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset].
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]. |
 
 **示例：**
 
@@ -1540,17 +1789,23 @@ readUInt32LE(offset?: number): number
 
 **参数：**
 
-参数名类型必填说明offsetnumber否偏移量。取值范围：0 <= offset <= this.length - 4，默认值：0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 4，默认值：0。 |
 
 **返回值：**
 
-类型说明number读取出的内容。
+| 类型 | 说明 |
+| --- | --- |
+| number | 读取出的内容。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset].
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]. |
 
 **示例：**
 
@@ -1574,17 +1829,24 @@ readUIntBE(offset: number, byteLength: number): number
 
 **参数：**
 
-参数名类型必填说明offsetnumber是偏移量。取值范围：0 <= offset <= this.length - byteLength，默认值：0。byteLengthnumber是要读取的字节数。读取的字节数。取值范围：1 <= byteLength <= 6。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 是 | 偏移量。取值范围：0 <= offset <= this.length - byteLength，默认值：0。 |
+| byteLength | number | 是 | 要读取的字节数。读取的字节数。取值范围：1 <= byteLength <= 6。 |
 
 **返回值：**
 
-类型说明number读取出的内容。当offset为小数时，返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| number | 读取出的内容。当offset为小数时，返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -1608,17 +1870,24 @@ readUIntLE(offset: number, byteLength: number): number
 
 **参数：**
 
-参数名类型必填说明offsetnumber是偏移量。取值范围：0 <= offset <= this.length - byteLength，默认值：0。byteLengthnumber是读取的字节数。取值范围：1 <= byteLength <= 6。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 是 | 偏移量。取值范围：0 <= offset <= this.length - byteLength，默认值：0。 |
+| byteLength | number | 是 | 读取的字节数。取值范围：1 <= byteLength <= 6。 |
 
 **返回值：**
 
-类型说明number读取出的内容。当offset为小数时，返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| number | 读取出的内容。当offset为小数时，返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -1642,11 +1911,16 @@ subarray(start?: number, end?: number): FastBuffer
 
 **参数：**
 
-参数名类型必填说明startnumber否截取开始位置。默认值：0。endnumber否截取结束位置（不包含结束位置）。默认值：当前对象的字节长度。取值范围：start <= end <= this.length
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| start | number | 否 | 截取开始位置。默认值：0。 |
+| end | number | 否 | 截取结束位置（不包含结束位置）。默认值：当前对象的字节长度。取值范围：start <= end <= this.length |
 
 **返回值：**
 
-类型说明FastBuffer返回新的FastBuffer对象。
+| 类型 | 说明 |
+| --- | --- |
+| FastBuffer | 返回新的FastBuffer对象。 |
 
 **示例：**
 
@@ -1675,13 +1949,17 @@ swap16(): FastBuffer
 
 **返回值：**
 
-类型说明FastBuffer交换之后的FastBuffer对象。
+| 类型 | 说明 |
+| --- | --- |
+| FastBuffer | 交换之后的FastBuffer对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200009The fastbuffer size must be a multiple of 16-bits.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200009 | The fastbuffer size must be a multiple of 16-bits. |
 
 **示例：**
 
@@ -1708,13 +1986,17 @@ swap32(): FastBuffer
 
 **返回值：**
 
-类型说明FastBuffer交换之后的FastBuffer对象。
+| 类型 | 说明 |
+| --- | --- |
+| FastBuffer | 交换之后的FastBuffer对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200009The fastbuffer size must be a multiple of 32-bits.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200009 | The fastbuffer size must be a multiple of 32-bits. |
 
 **示例：**
 
@@ -1741,13 +2023,17 @@ swap64(): FastBuffer
 
 **返回值：**
 
-类型说明FastBuffer交换之后的FastBuffer对象。
+| 类型 | 说明 |
+| --- | --- |
+| FastBuffer | 交换之后的FastBuffer对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200009The fastbuffer size must be a multiple of 64-bits.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200009 | The fastbuffer size must be a multiple of 64-bits. |
 
 **示例：**
 
@@ -1774,7 +2060,9 @@ toJSON(): Object
 
 **返回值：**
 
-类型说明ObjectJSON对象。
+| 类型 | 说明 |
+| --- | --- |
+| Object | JSON对象。 |
 
 **示例：**
 
@@ -1799,17 +2087,25 @@ toString(encoding?: string, start?: number, end?: number): string
 
 **参数：**
 
-参数名类型必填说明encodingstring否字符编码格式。默认值：'utf8'。startnumber否开始位置。默认值：0。endnumber否结束位置。默认值：Buffer.length。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| encoding | string | 否 | 字符编码格式。默认值：'utf8'。 |
+| start | number | 否 | 开始位置。默认值：0。 |
+| end | number | 否 | 结束位置。默认值：Buffer.length。 |
 
 **返回值：**
 
-类型说明string字符串。当start >= this.length或start > end时返回空字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 字符串。当start >= this.length或start > end时返回空字符串。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息10200068The underlying ArrayBuffer is null or detach.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200068 | The underlying ArrayBuffer is null or detach. |
 
 **示例：**
 
@@ -1836,17 +2132,27 @@ write(str: string, offset?: number, length?: number, encoding?: string): number
 
 **参数：**
 
-参数名类型必填说明strstring是要写入Buffer的字符串。offsetnumber否偏移量。默认值：0。lengthnumber否最大字节长度。默认值：(this.length - offset)。encodingstring否字符编码。默认值：'utf8'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| str | string | 是 | 要写入Buffer的字符串。 |
+| offset | number | 否 | 偏移量。默认值：0。 |
+| length | number | 否 | 最大字节长度。默认值：(this.length - offset)。 |
+| encoding | string | 否 | 字符编码。默认值：'utf8'。 |
 
 **返回值：**
 
-类型说明number写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001Range error. Possible causes: The value of the parameter is not within the specified range.10200068The underlying ArrayBuffer is null or detach.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | Range error. Possible causes: The value of the parameter is not within the specified range. |
+| 10200068 | The underlying ArrayBuffer is null or detach. |
 
 **示例：**
 
@@ -1876,17 +2182,24 @@ writeBigInt64BE(value: bigint, offset?: number): number
 
 **参数：**
 
-参数名类型必填说明valuebigint是写入Buffer的数据。取值范围：-INT64_MAX <= value <= INT64_MAX。offsetnumber否偏移量。默认值：0。取值范围：0 <= offset <= this.length - 8。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | bigint | 是 | 写入Buffer的数据。取值范围：-INT64_MAX <= value <= INT64_MAX。 |
+| offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - 8。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -1911,17 +2224,24 @@ writeBigInt64LE(value: bigint, offset?: number): number
 
 **参数：**
 
-参数名类型必填说明valuebigint是写入Buffer的数据。取值范围：-INT64_MAX <= value <= INT64_MAX。offsetnumber否偏移量。默认值：0。取值范围：0 <= offset <= this.length - 8。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | bigint | 是 | 写入Buffer的数据。取值范围：-INT64_MAX <= value <= INT64_MAX。 |
+| offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - 8。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -1946,17 +2266,24 @@ writeBigUInt64BE(value: bigint, offset?: number): number
 
 **参数：**
 
-参数名类型必填说明valuebigint是写入Buffer的数据。取值范围：0 <= value <= UINT64_MAX。offsetnumber否偏移量。默认值：0。取值范围：0 <= offset <= this.length - 8。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | bigint | 是 | 写入Buffer的数据。取值范围：0 <= value <= UINT64_MAX。 |
+| offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - 8。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -1981,17 +2308,24 @@ writeBigUInt64LE(value: bigint, offset?: number): number
 
 **参数：**
 
-参数名类型必填说明valuebigint是写入Buffer的数据。取值范围：0 <= value <= UINT64_MAX。offsetnumber否偏移量。默认值：0。取值范围：0 <= offset <= this.length - 8。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | bigint | 是 | 写入Buffer的数据。取值范围：0 <= value <= UINT64_MAX。 |
+| offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - 8。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -2016,17 +2350,24 @@ writeDoubleBE(value: number, offset?: number): number
 
 **参数：**
 
-参数名类型必填说明valuenumber是写入Buffer的数据。取值范围：-DOUBLE_MAX <= value <= DOUBLE_MAX。offsetnumber否偏移量。默认值：0。取值范围：0 <= offset <= this.length - 8。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 写入Buffer的数据。取值范围：-DOUBLE_MAX <= value <= DOUBLE_MAX。 |
+| offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - 8。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset] |
 
 **示例：**
 
@@ -2051,17 +2392,24 @@ writeDoubleLE(value: number, offset?: number): number
 
 **参数：**
 
-参数名类型必填说明valuenumber是写入Buffer的数据。取值范围：-DOUBLE_MAX <= value <= DOUBLE_MAX。offsetnumber否偏移量。默认值：0。取值范围：0 <= offset <= this.length - 8。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 写入Buffer的数据。取值范围：-DOUBLE_MAX <= value <= DOUBLE_MAX。 |
+| offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - 8。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset] |
 
 **示例：**
 
@@ -2086,17 +2434,24 @@ writeFloatBE(value: number, offset?: number): number
 
 **参数：**
 
-参数名类型必填说明valuenumber是写入Buffer的数据。取值范围：-FLOAT_MAX <= value <= FLOAT_MAX。offsetnumber否偏移量。默认值：0。取值范围：0 <= offset <= this.length - 4。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 写入Buffer的数据。取值范围：-FLOAT_MAX <= value <= FLOAT_MAX。 |
+| offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - 4。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset] |
 
 **示例：**
 
@@ -2121,17 +2476,24 @@ writeFloatLE(value: number, offset?: number): number
 
 **参数：**
 
-参数名类型必填说明valuenumber是写入Buffer的数据。取值范围：-FLOAT_MAX <= value <= FLOAT_MAX。offsetnumber否偏移量。默认值：0。取值范围：0 <= offset <= this.length - 4。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 写入Buffer的数据。取值范围：-FLOAT_MAX <= value <= FLOAT_MAX。 |
+| offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - 4。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset] |
 
 **示例：**
 
@@ -2156,17 +2518,24 @@ writeInt8(value: number, offset?: number): number
 
 **参数：**
 
-参数名类型必填说明valuenumber是写入Buffer的数据。取值范围：-INT8_MAX <= value <= INT8_MAX。offsetnumber否偏移量。默认值：0。取值范围：0 <= offset <= this.length - 1。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 写入Buffer的数据。取值范围：-INT8_MAX <= value <= INT8_MAX。 |
+| offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - 1。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -2194,17 +2563,24 @@ writeInt16BE(value: number, offset?: number): number
 
 **参数：**
 
-参数名类型必填说明valuenumber是写入Buffer的数据。取值范围：-INT16_MAX <= value <= INT16_MAX。offsetnumber否偏移量。默认值：0。取值范围：0 <= offset <= this.length - 2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 写入Buffer的数据。取值范围：-INT16_MAX <= value <= INT16_MAX。 |
+| offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - 2。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -2229,17 +2605,24 @@ writeInt16LE(value: number, offset?: number): number
 
 **参数：**
 
-参数名类型必填说明valuenumber是写入Buffer的数据。取值范围：-INT16_MAX <= value <= INT16_MAX。offsetnumber否偏移量。默认值：0。取值范围：0 <= offset <= this.length - 2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 写入Buffer的数据。取值范围：-INT16_MAX <= value <= INT16_MAX。 |
+| offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - 2。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -2264,17 +2647,24 @@ writeInt32BE(value: number, offset?: number): number
 
 **参数：**
 
-参数名类型必填说明valuenumber是写入Buffer的数据。取值范围：-INT32_MAX <= value <= INT32_MAX。offsetnumber否偏移量。默认值：0。取值范围：0 <= offset <= this.length - 4。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 写入Buffer的数据。取值范围：-INT32_MAX <= value <= INT32_MAX。 |
+| offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - 4。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -2299,17 +2689,24 @@ writeInt32LE(value: number, offset?: number): number
 
 **参数：**
 
-参数名类型必填说明valuenumber是写入Buffer的数据。取值范围：-INT32_MAX <= value <= INT32_MAX。offsetnumber否偏移量。默认值：0。取值范围：0 <= offset <= this.length - 4。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 写入Buffer的数据。取值范围：-INT32_MAX <= value <= INT32_MAX。 |
+| offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - 4。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -2334,17 +2731,25 @@ writeIntBE(value: number, offset: number, byteLength: number): number
 
 **参数：**
 
-参数名类型必填说明valuenumber是写入Buffer的数据。取值范围取决于byteLength。offsetnumber是偏移量。默认值：0。取值范围：0 <= offset <= this.length - byteLength。byteLengthnumber是要写入的字节数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 写入Buffer的数据。取值范围取决于byteLength。 |
+| offset | number | 是 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - byteLength。 |
+| byteLength | number | 是 | 要写入的字节数。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -2369,17 +2774,25 @@ writeIntLE(value: number, offset: number, byteLength: number): number
 
 **参数：**
 
-参数名类型必填说明valuenumber是写入Buffer的数据。取值范围取决于byteLength。offsetnumber是偏移量。默认值：0。取值范围：0 <= offset <= this.length - byteLength。byteLengthnumber是要写入的字节数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 写入Buffer的数据。取值范围取决于byteLength。 |
+| offset | number | 是 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - byteLength。 |
+| byteLength | number | 是 | 要写入的字节数。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -2404,17 +2817,24 @@ writeUInt8(value: number, offset?: number): number
 
 **参数：**
 
-参数名类型必填说明valuenumber是写入Buffer的数据。取值范围：0 <= value <= UINT8_MAX。offsetnumber否偏移量。默认值：0。取值范围：0 <= offset <= this.length - 1。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 写入Buffer的数据。取值范围：0 <= value <= UINT8_MAX。 |
+| offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - 1。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -2448,17 +2868,24 @@ writeUInt16BE(value: number, offset?: number): number
 
 **参数：**
 
-参数名类型必填说明valuenumber是写入Buffer的数据。取值范围：0 <= value <= UINT16_MAX。offsetnumber否偏移量。默认值为0。取值范围：0 <= offset <= this.length - 2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 写入Buffer的数据。取值范围：0 <= value <= UINT16_MAX。 |
+| offset | number | 否 | 偏移量。默认值为0。取值范围：0 <= offset <= this.length - 2。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -2486,17 +2913,24 @@ writeUInt16LE(value: number, offset?: number): number
 
 **参数：**
 
-参数名类型必填说明valuenumber是写入Buffer的数据。取值范围：0 <= value <= UINT16_MAX。offsetnumber否偏移量。默认值：0。取值范围：0 <= offset <= this.length - 2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 写入Buffer的数据。取值范围：0 <= value <= UINT16_MAX。 |
+| offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - 2。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -2524,17 +2958,24 @@ writeUInt32BE(value: number, offset?: number): number
 
 **参数：**
 
-参数名类型必填说明valuenumber是写入Buffer的数据。取值范围：0 <= value <= UINT32_MAX。offsetnumber否偏移量。默认值：0。取值范围：0 <= offset <= this.length - 4。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 写入Buffer的数据。取值范围：0 <= value <= UINT32_MAX。 |
+| offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - 4。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -2559,17 +3000,24 @@ writeUInt32LE(value: number, offset?: number): number
 
 **参数：**
 
-参数名类型必填说明valuenumber是写入FastBuffer对象的数据。取值范围：0 <= value <= UINT32_MAX。offsetnumber否偏移量。默认值：0。取值范围：0 <= offset <= this.length - 4。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 写入FastBuffer对象的数据。取值范围：0 <= value <= UINT32_MAX。 |
+| offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - 4。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -2594,17 +3042,25 @@ writeUIntBE(value: number, offset: number, byteLength: number): number
 
 **参数：**
 
-参数名类型必填说明valuenumber是写入Buffer的数据。取值范围取决于byteLength。offsetnumber是偏移量。默认值：0。取值范围：0 <= offset <= this.length - byteLength。byteLengthnumber是要写入的字节数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 写入Buffer的数据。取值范围取决于byteLength。 |
+| offset | number | 是 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - byteLength。 |
+| byteLength | number | 是 | 要写入的字节数。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
@@ -2629,17 +3085,25 @@ writeUIntLE(value: number, offset: number, byteLength: number): number
 
 **参数：**
 
-参数名类型必填说明valuenumber是写入Buffer的数据。取值范围取决于byteLength。offsetnumber是偏移量。默认值：0。取值范围：0 <= offset <= this.length - byteLength。byteLengthnumber是要写入的字节数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 写入Buffer的数据。取值范围取决于byteLength。 |
+| offset | number | 是 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - byteLength。 |
+| byteLength | number | 是 | 要写入的字节数。 |
 
 **返回值：**
 
-类型说明number偏移量offset加上写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 偏移量offset加上写入的字节数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200001The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 

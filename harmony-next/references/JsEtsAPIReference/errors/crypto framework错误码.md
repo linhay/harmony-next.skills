@@ -2,15 +2,14 @@
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](通用错误码.md)。
 
-#### 17620001 内存错误
-
+#### 17620001 内存操作失败
 **错误信息**
 
-Memory error.
+Memory operation failed.
 
 **错误描述**
 
-内存错误。
+内存操作失败。
 
 **可能原因**
 
@@ -21,15 +20,14 @@ Memory error.
 1. 检查当前系统功能是否正常。
 1. 业务检查数据是否超长，导致系统无法分配内存。
 
-#### 17620002 运行时错误
-
+#### 17620002 ArkTS和C之间转换参数失败
 **错误信息**
 
-Runtime error.
+Failed to convert parameters between arkts and c.
 
 **错误描述**
 
-运行时外部错误。
+ArkTS和C之间转换参数失败。
 
 **可能原因**
 
@@ -55,5 +53,6 @@ Crypto operation error.
 
 **处理步骤**
 
-1. 检查输入参数的正确性。
-1. 检查三方算法库功能是否正常。
+检查该接口或相关联接口输入参数的正确性。
+
+AES解密失败可参考[AES解密失败返回17630001](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-aes-decryption-error-faq)。

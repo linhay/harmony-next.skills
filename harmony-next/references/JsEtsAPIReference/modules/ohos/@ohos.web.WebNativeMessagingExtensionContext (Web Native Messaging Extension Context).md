@@ -28,17 +28,45 @@ startAbility(want: Want, options?: StartOptions): Promise<void>
 
 **参数:**
 
-参数名类型必填说明want[Want](@ohos.app.ability.Want (Want).md)是表示需要启动的Ability的信息。options[StartOptions](@ohos.app.ability.StartOptions (startAbility的可选参数).md)否启动选项。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | Want | 是 | 表示需要启动的Ability的信息。 |
+| options | StartOptions | 否 | 启动选项。 |
 
 **返回值:**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码:**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[元能力子系统错误码]([元能力子系统错误码](../../errors/元能力子系统错误码.md).md)。
 
-错误码ID错误信息201The application does not have permission to call the interface.16000001The specified ability does not exist.16000002Incorrect ability type.16000004Cannot start an invisible component.16000005The specified process does not have the permission.16000008The crowdtesting application expires.16000009An ability cannot be started or stopped in Wukong mode.16000010The call with the continuation and prepare continuation flag is forbidden.16000011The context does not exist.16000012The application is controlled.16000013The application is controlled by EDM.16000019No matching ability is found.16000050Internal error. Possible causes: 1. Failed to connect to the system service; 2. The system service failed to communicate with dependency module.16000055Installation-free timed out.16000071App clone is not supported.16000072App clone or multi-instance is not supported.16000073The app clone index is invalid.16000076The app instance key is invalid.16000077The number of app instances reaches the limit.16000078The multi-instance is not supported.16000079The APP_INSTANCE_KEY cannot be specified.16000080Creating a new instance is not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | The application does not have permission to call the interface. |
+| 16000001 | The specified ability does not exist. |
+| 16000002 | Incorrect ability type. |
+| 16000004 | Cannot start an invisible component. |
+| 16000005 | The specified process does not have the permission. |
+| 16000008 | The crowdtesting application expires. |
+| 16000009 | An ability cannot be started or stopped in Wukong mode. |
+| 16000010 | The call with the continuation and prepare continuation flag is forbidden. |
+| 16000011 | The context does not exist. |
+| 16000012 | The application is controlled. |
+| 16000013 | The application is controlled by EDM. |
+| 16000019 | No matching ability is found. |
+| 16000050 | Internal error. Possible causes: 1. Failed to connect to the system service; 2. The system service failed to communicate with dependency module. |
+| 16000055 | Installation-free timed out. |
+| 16000071 | App clone is not supported. |
+| 16000072 | App clone or multi-instance is not supported. |
+| 16000073 | The app clone index is invalid. |
+| 16000076 | The app instance key is invalid. |
+| 16000077 | The number of app instances reaches the limit. |
+| 16000078 | The multi-instance is not supported. |
+| 16000079 | The APP_INSTANCE_KEY cannot be specified. |
+| 16000080 | Creating a new instance is not supported. |
 
 **示例:**
 
@@ -59,8 +87,6 @@ export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAb
     } catch (err) {
         console.error(`Failed to start ability. Code: ${err.code}, Message: ${err.message}`);
     }
-  }
-}
 ```
 
 #### terminateSelf
@@ -75,13 +101,19 @@ terminateSelf(): Promise<void>
 
 **返回值:**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码:**
 
-以下错误码详细介绍请参考[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息16000009An ability cannot be started or stopped in Wukong mode.16000011The context does not exist.16000050Internal error. Possible causes: 1. Failed to connect to the system service; 2. The system service failed to communicate with dependency module.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16000009 | An ability cannot be started or stopped in Wukong mode. |
+| 16000011 | The context does not exist. |
+| 16000050 | Internal error. Possible causes: 1. Failed to connect to the system service; 2. The system service failed to communicate with dependency module. |
 
 **示例:**
 
@@ -97,8 +129,6 @@ export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAb
     } catch (err) {
         console.error(`Failed to terminate extension. Code: ${err.code}, Message: ${err.message}`);
     }
-  }
-}
 ```
 
 #### stopNativeConnection
@@ -113,17 +143,25 @@ stopNativeConnection(connectionId: number): Promise<void>
 
 **参数:**
 
-参数名类型必填说明connectionIdnumber是要停止的连接ID。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| connectionId | number | 是 | 要停止的连接ID。 |
 
 **返回值:**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码:**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201The application does not have permission to call the interface.16000011The context does not exist.16000050Internal error. Possible causes: 1. Failed to connect to the system service; 2. The system service failed to communicate with dependency module.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | The application does not have permission to call the interface. |
+| 16000011 | The context does not exist. |
+| 16000050 | Internal error. Possible causes: 1. Failed to connect to the system service; 2. The system service failed to communicate with dependency module. |
 
 **示例:**
 
@@ -140,6 +178,4 @@ export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAb
     } catch (err) {
         console.error(`Failed to stop native connection. Code: ${err.code}, Message: ${err.message}`);
     }
-  }
-}
 ```

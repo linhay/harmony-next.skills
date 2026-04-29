@@ -1,12 +1,13 @@
 # DrawingRenderingContext
 
-使用DrawingRenderingContext在Canvas组件上进行绘制，绘制对象可以是矩形、文本、图片等。
+DrawingRenderingContext对象与Canvas组件绑定后，可在Canvas组件上进行绘制，绘制对象可以是形状、文本、图片等。
+
 
 从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 #### constructor
 
-constructor(unit?: LengthMetricsUnit)
+constructor(unit?: [LengthMetricsUnit](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetricsunit12))
 
 构造使用drawing接口进行绘制的Canvas画布对象，支持配置DrawingRenderingContext对象的单位模式。
 
@@ -16,13 +17,9 @@ constructor(unit?: LengthMetricsUnit)
 
 **参数：**
 
-参数名类型必填说明unit[LengthMetricsUnit](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetricsunit12)否
-
-用来配置DrawingRenderingContext对象的单位模式，配置后无法更改，配置方法同[CanvasRenderingContext2D](CanvasRenderingContext2D.md)。
-
-异常值undefined、NaN和Infinity按默认值处理。
-
-默认值：DEFAULT
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| unit | [LengthMetricsUnit](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetricsunit12) | 否 | 用来配置DrawingRenderingContext对象的单位模式，配置后无法更改，配置方法同[CanvasRenderingContext2D](CanvasRenderingContext2D.md)。 异常值undefined、NaN和Infinity按默认值处理。 默认值：DEFAULT |
 
 #### size
 
@@ -36,7 +33,9 @@ get size(): Size
 
 **返回值：**
 
-类型说明[Size](#ZH-CN_TOPIC_0000002529284907__size-1)DrawingRenderingContext的尺寸信息。
+| 类型 | 说明 |
+| --- | --- |
+| Size | DrawingRenderingContext的尺寸信息。 |
 
 #### canvas
 
@@ -50,7 +49,9 @@ get canvas(): DrawingCanvas
 
 **返回值：**
 
-类型说明[DrawingCanvas](#ZH-CN_TOPIC_0000002529284907__drawingcanvas12对象说明)绘制内容的画布对象。
+| 类型 | 说明 |
+| --- | --- |
+| DrawingCanvas | 绘制内容的画布对象。 |
 
 #### invalidate
 
@@ -72,7 +73,9 @@ type DrawingCanvas = Canvas
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-类型说明[Canvas](../../types/classes/Class (Canvas).md)返回一个Canvas对象。
+| 类型 | 说明 |
+| --- | --- |
+| Canvas | 返回一个Canvas对象。 |
 
 #### Size
 
@@ -82,7 +85,10 @@ DrawingRenderingContext的尺寸信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明widthnumber否否获取DrawingRenderingContext的宽度，其值为关联的Canvas组件的宽度。heightnumber否否获取DrawingRenderingContext的高度，其值为关联的Canvas组件的高度。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| width | number | 否 | 否 | 获取DrawingRenderingContext的宽度，其值为关联的Canvas组件的宽度。 |
+| height | number | 否 | 否 | 获取DrawingRenderingContext的高度，其值为关联的Canvas组件的高度。 |
 
 #### 示例
 
@@ -137,16 +143,17 @@ struct CanvasExample {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 图1 绘制圆心为(200, 200)，半径为100的圆，填充色为RGBA(39, 135, 217, 255)
 
 图2 点击Clear按钮清空画布
 
+ ![image](public_sys-resources/zh-cn_image_0000002553205193.webp)
+
 #### 示例2（绘制文本）
 
-该示例实现了通过[makeFromRawFile](../../types/classes/Class (Typeface).md#ZH-CN_TOPIC_0000002529445949__makefromrawfile18)（从API version 18开始）加载自定义字体。并使用[drawTextBlob](../../types/classes/Class (Canvas).md#ZH-CN_TOPIC_0000002497605976__drawtextblob)绘制文本，drawing接口绘制自定义文字时，不需要调用this.uiContext.getFont().[registerFont](../../types/classes/Class (Font).md#ZH-CN_TOPIC_0000002497604778__registerfont)或者fontCollection.[loadFontSync](../../modules/ohos/@ohos.graphics.text (文本模块).md#ZH-CN_TOPIC_0000002497605988__loadfontsync)提前注册字体，而是通过drawing.Typeface.[makeFromRawFile](../../types/classes/Class (Typeface).md#ZH-CN_TOPIC_0000002529445949__makefromrawfile18)（从API version 18开始）传入rawfile目录下的自定义字体文件。
+该示例实现了通过[makeFromRawFile](Class (Typeface).md#ZH-CN_TOPIC_0000002522082138__makefromrawfile18)（从API version 18开始）加载自定义字体。并使用[drawTextBlob](Class (Canvas).md#ZH-CN_TOPIC_0000002553362049__drawtextblob)绘制文本，drawing接口绘制自定义文字时，不需要调用this.uiContext.getFont().[registerFont](Class (Font).md#ZH-CN_TOPIC_0000002553200691__registerfont)或者fontCollection.[loadFontSync](@ohos.graphics.text (文本模块).md#ZH-CN_TOPIC_0000002553362061__loadfontsync)提前注册字体，而是通过drawing.Typeface.[makeFromRawFile](Class (Typeface).md#ZH-CN_TOPIC_0000002522082138__makefromrawfile18)（从API version 18开始）传入rawfile目录下的自定义字体文件。
 
 ```ets
 import { drawing } from '@kit.ArkGraphics2D';
@@ -178,5 +185,6 @@ struct CanvasExample {
     .width('100%')
     .height('100%')
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522085238.webp)

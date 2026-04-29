@@ -18,7 +18,9 @@ type LinkAddress = connection.LinkAddress
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
-类型说明[connection.LinkAddress](@ohos.net.connection (网络连接管理).md#ZH-CN_TOPIC_0000002497605446__linkaddress)网络链路信息。
+| 类型 | 说明 |
+| --- | --- |
+| connection.LinkAddress | 网络链路信息。 |
 
 #### RouteInfo
 
@@ -28,12 +30,16 @@ type RouteInfo = connection.RouteInfo
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
-类型说明[connection.RouteInfo](@ohos.net.connection (网络连接管理).md#ZH-CN_TOPIC_0000002497605446__routeinfo)网络路由信息。
+| 类型 | 说明 |
+| --- | --- |
+| connection.RouteInfo | 网络路由信息。 |
 
 #### AbilityContext
 
-type AbilityContext = _AbilityContext
+type AbilityContext = [_AbilityContext](../../topics/misc/UIAbilityContext.md)
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-类型说明[_AbilityContext](../../topics/graphics/UIAbilityContext.md)需要保存状态的UIAbility所对应的context，继承自[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)，提供UIAbility的相关配置信息以及操作UIAbility和ServiceExtensionAbility的方法。
+| 类型 | 说明 |
+| --- | --- |
+| [_AbilityContext](../../topics/misc/UIAbilityContext.md) | 需要保存状态的UIAbility所对应的context，继承自Context，提供UIAbility的相关配置信息以及操作UIAbility和ServiceExtensionAbility的方法。 |

@@ -32,7 +32,7 @@ Operation not allowed.
 
 **可能原因**
 
-接口执行顺序错误，比如未beginConfig就开始进行commitConfig操作等。
+接口执行顺序错误，比如在未调用[beginConfig](Interface (Session).md#ZH-CN_TOPIC_0000002553201879__beginconfig11)前就开始进行[commitConfig](Interface (Session).md#ZH-CN_TOPIC_0000002553201879__commitconfig11)操作等。
 
 **处理步骤**
 
@@ -50,7 +50,7 @@ Session not config.
 
 **可能原因**
 
-会话配置前，调用[start](../types/interfaces/Interface (Session).md#ZH-CN_TOPIC_0000002529445753__start11-1)操作等。
+会话配置前，调用[start](Interface (Session).md#ZH-CN_TOPIC_0000002553201879__start11-1)操作等。
 
 **处理步骤**
 
@@ -68,7 +68,7 @@ Session not running.
 
 **可能原因**
 
-会话运行前，调用[capture](../types/interfaces/Interface (PhotoOutput).md#ZH-CN_TOPIC_0000002529445751__capture)操作等。
+会话运行前，调用[capture](Interface (PhotoOutput).md#ZH-CN_TOPIC_0000002553201877__capture)操作等。
 
 **处理步骤**
 

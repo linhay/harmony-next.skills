@@ -20,13 +20,9 @@ getDefaultCellularDataSlotId(callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是
-
-以callback形式异步返回结果。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 以callback形式异步返回结果。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **示例：**
 
@@ -53,13 +49,9 @@ getDefaultCellularDataSlotId(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>
-
-以Promise形式返回获取默认移动数据的SIM卡。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 以Promise形式返回获取默认移动数据的SIM卡。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **示例：**
 
@@ -84,13 +76,9 @@ getDefaultCellularDataSlotIdSync(): number
 
 **返回值：**
 
-类型说明number
-
-获取默认移动数据的SIM卡。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 类型 | 说明 |
+| --- | --- |
+| number | 获取默认移动数据的SIM卡。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **示例：**
 
@@ -112,13 +100,17 @@ getCellularDataFlowType(callback: AsyncCallback<DataFlowType>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[DataFlowType](#ZH-CN_TOPIC_0000002529445455__dataflowtype)>是以callback形式异步返回结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<DataFlowType> | 是 | 以callback形式异步返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)说明文档。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)说明文档。
 
-错误码ID错误信息201Permission denied.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
 
 **示例：**
 
@@ -147,13 +139,17 @@ getCellularDataFlowType(): Promise<DataFlowType>
 
 **返回值：**
 
-类型说明Promise<[DataFlowType](#ZH-CN_TOPIC_0000002529445455__dataflowtype)>以Promise形式返回获取蜂窝数据业务的上下行状态。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<DataFlowType> | 以Promise形式返回获取蜂窝数据业务的上下行状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)说明文档。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)说明文档。
 
-错误码ID错误信息201Permission denied.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
 
 **示例：**
 
@@ -180,13 +176,17 @@ getCellularDataState(callback: AsyncCallback<DataConnectState>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[DataConnectState](#ZH-CN_TOPIC_0000002529445455__dataconnectstate)>是以callback形式异步返回结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<DataConnectState> | 是 | 以callback形式异步返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)说明文档。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)说明文档。
 
-错误码ID错误信息201Permission denied.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
 
 **示例：**
 
@@ -215,13 +215,17 @@ getCellularDataState(): Promise<DataConnectState>
 
 **返回值：**
 
-类型说明Promise<[DataConnectState](#ZH-CN_TOPIC_0000002529445455__dataconnectstate)>以Promise形式返回获取PS域的连接状态。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<DataConnectState> | 以Promise形式返回获取PS域的连接状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)说明文档。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)说明文档。
 
-错误码ID错误信息201Permission denied.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
 
 **示例：**
 
@@ -248,19 +252,22 @@ isCellularDataEnabled(callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<boolean>是
-
-以callback形式异步返回结果。
-
-true：蜂窝数据业务已启用。
-
-false：蜂窝数据业务已禁用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<boolean> | 是 | 以callback形式异步返回结果。 true：蜂窝数据业务已启用。 false：蜂窝数据业务已禁用。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)说明文档和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)说明文档和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Internal error. |
 
 **示例：**
 
@@ -289,19 +296,20 @@ isCellularDataEnabled(): Promise<boolean>
 
 **返回值：**
 
-类型说明Promise<boolean>
-
-以Promise形式返回检查蜂窝数据业务是否启用。
-
-true：蜂窝数据业务已启用。
-
-false：蜂窝数据业务已禁用。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | 以Promise形式返回检查蜂窝数据业务是否启用。 true：蜂窝数据业务已启用。 false：蜂窝数据业务已禁用。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)说明文档和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)说明文档和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.8300002Service connection failed.8300003System internal error.8300999Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Internal error. |
 
 **示例：**
 
@@ -328,19 +336,20 @@ isCellularDataEnabledSync(): boolean
 
 **返回值：**
 
-类型说明boolean
-
-用来返回检查蜂窝数据业务是否启用。
-
-true：蜂窝数据业务已启用。
-
-false：蜂窝数据业务已禁用。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 用来返回检查蜂窝数据业务是否启用。 true：蜂窝数据业务已启用。 false：蜂窝数据业务已禁用。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)说明文档和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)说明文档和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.8300002Operation failed. Cannot connect to service.8300003System internal error.8300999Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 8300002 | Operation failed. Cannot connect to service. |
+| 8300003 | System internal error. |
+| 8300999 | Internal error. |
 
 **示例：**
 
@@ -367,27 +376,23 @@ isCellularDataRoamingEnabled(slotId: number, callback: AsyncCallback<boolean>): 
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
-
-callbackAsyncCallback<boolean>是
-
-以callback形式异步返回结果。
-
-true：蜂窝数据业务已启用漫游。
-
-false：蜂窝数据业务已禁用漫游。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
+| callback | AsyncCallback<boolean> | 是 | 以callback形式异步返回结果。 true：蜂窝数据业务已启用漫游。 false：蜂窝数据业务已禁用漫游。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)说明文档和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)说明文档和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Internal error. |
 
 **示例：**
 
@@ -416,29 +421,28 @@ isCellularDataRoamingEnabled(slotId: number): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明Promise<boolean>
-
-以Promise形式返回检查蜂窝数据业务是否启用漫游。
-
-true：蜂窝数据业务已启用漫游。
-
-false：蜂窝数据业务已禁用漫游。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | 以Promise形式返回检查蜂窝数据业务是否启用漫游。 true：蜂窝数据业务已启用漫游。 false：蜂窝数据业务已禁用漫游。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)说明文档和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)说明文档和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Internal error. |
 
 **示例：**
 
@@ -465,29 +469,28 @@ isCellularDataRoamingEnabledSync(slotId: number): boolean
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明boolean
-
-用来返回检查蜂窝数据业务是否启用漫游。
-
-true：蜂窝数据业务已启用漫游。
-
-false：蜂窝数据业务已禁用漫游。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 用来返回检查蜂窝数据业务是否启用漫游。 true：蜂窝数据业务已启用漫游。 false：蜂窝数据业务已禁用漫游。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)说明文档和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)说明文档和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.8300001Invalid parameter value.8300002Operation failed. Cannot connect to service.8300003System internal error.8300999Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Operation failed. Cannot connect to service. |
+| 8300003 | System internal error. |
+| 8300999 | Internal error. |
 
 **示例：**
 
@@ -512,11 +515,9 @@ getDefaultCellularDataSimId(): number
 
 **返回值：**
 
-类型说明number
-
-获取默认移动数据的SIM卡ID。
-
-与SIM卡绑定，从1开始递增。
+| 类型 | 说明 |
+| --- | --- |
+| number | 获取默认移动数据的SIM卡ID。 与SIM卡绑定，从1开始递增。 |
 
 **示例：**
 
@@ -538,13 +539,17 @@ queryAllApns(): Promise<Array<ApnInfo>>
 
 **返回值：**
 
-类型说明Promise<Array<[ApnInfo](#ZH-CN_TOPIC_0000002529445455__apninfo16)>>Promise对象，返回默认移动数据的SIM卡的APN信息列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<ApnInfo>> | Promise对象，返回默认移动数据的SIM卡的APN信息列表。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)说明文档。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)说明文档。
 
-错误码ID错误信息201Permission denied.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
 
 **示例：**
 
@@ -571,17 +576,23 @@ queryApnIds(apnInfo: ApnInfo): Promise<Array<number>>
 
 **参数：**
 
-参数名类型必填说明apnInfo[ApnInfo](#ZH-CN_TOPIC_0000002529445455__apninfo16)是要查询的APN参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| apnInfo | ApnInfo | 是 | 要查询的APN参数。 |
 
 **返回值：**
 
-类型说明Promise<Array<number>>Promise对象，返回传入的ApnInfo对应的ApnId信息列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<number>> | Promise对象，返回传入的ApnInfo对应的ApnId信息列表。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)说明文档。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)说明文档。
 
-错误码ID错误信息201Permission denied.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
 
 **示例：**
 
@@ -620,17 +631,23 @@ setPreferredApn(apnId: number): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明apnIdnumber是要设置的apnId，可以通过[queryApnIds](#ZH-CN_TOPIC_0000002529445455__dataqueryapnids16)查询。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| apnId | number | 是 | 要设置的apnId，可以通过queryApnIds查询。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象，返回设置的结果，在未插卡时会返回fasle。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象，返回设置的结果，在未插卡时会返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)说明文档。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)说明文档。
 
-错误码ID错误信息201Permission denied.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
 
 **示例：**
 
@@ -658,13 +675,17 @@ getActiveApnName(): Promise<string>
 
 **返回值：**
 
-类型说明Promise<string>Promise对象，返回默认移动数据SIM卡对应的处于激活状态的数据业务APN name信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回默认移动数据SIM卡对应的处于激活状态的数据业务APN name信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)说明文档。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)说明文档。
 
-错误码ID错误信息201Permission denied.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
 
 **示例：**
 
@@ -685,7 +706,13 @@ data.getActiveApnName().then((apn: string) => {
 
 **系统能力**：SystemCapability.Telephony.CellularData
 
-名称值说明DATA_FLOW_TYPE_NONE0表示没有上行或下行数据。DATA_FLOW_TYPE_DOWN1表示只有下行数据。DATA_FLOW_TYPE_UP2表示只有上行数据。DATA_FLOW_TYPE_UP_DOWN3表示有上下行数据。DATA_FLOW_TYPE_DORMANT4表示没有上下行数据，底层链路处于休眠状态。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DATA_FLOW_TYPE_NONE | 0 | 表示没有上行或下行数据。 |
+| DATA_FLOW_TYPE_DOWN | 1 | 表示只有下行数据。 |
+| DATA_FLOW_TYPE_UP | 2 | 表示只有上行数据。 |
+| DATA_FLOW_TYPE_UP_DOWN | 3 | 表示有上下行数据。 |
+| DATA_FLOW_TYPE_DORMANT | 4 | 表示没有上下行数据，底层链路处于休眠状态。 |
 
 #### DataConnectState
 
@@ -693,7 +720,13 @@ data.getActiveApnName().then((apn: string) => {
 
 **系统能力**：SystemCapability.Telephony.CellularData
 
-名称值说明DATA_STATE_UNKNOWN-1表示蜂窝数据链路未知。DATA_STATE_DISCONNECTED0表示蜂窝数据链路断开。DATA_STATE_CONNECTING1表示正在连接蜂窝数据链路。DATA_STATE_CONNECTED2表示蜂窝数据链路已连接。DATA_STATE_SUSPENDED3表示蜂窝数据链路被挂起。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DATA_STATE_UNKNOWN | -1 | 表示蜂窝数据链路未知。 |
+| DATA_STATE_DISCONNECTED | 0 | 表示蜂窝数据链路断开。 |
+| DATA_STATE_CONNECTING | 1 | 表示正在连接蜂窝数据链路。 |
+| DATA_STATE_CONNECTED | 2 | 表示蜂窝数据链路已连接。 |
+| DATA_STATE_SUSPENDED | 3 | 表示蜂窝数据链路被挂起。 |
 
 #### ApnInfo16+
 
@@ -701,4 +734,13 @@ APN信息。
 
 **系统能力**：SystemCapability.Telephony.CellularData
 
-名称类型只读可选说明apnNamestring否否APN名称。apnstring否否APN。mccstring否否Sim卡的mcc。mncstring否否Sim卡的mnc。userstring否是用户名。typestring否是APN类型。proxystring否是代理地址。mmsproxystring否是彩信代理。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| apnName | string | 否 | 否 | APN名称。 |
+| apn | string | 否 | 否 | APN。 |
+| mcc | string | 否 | 否 | Sim卡的mcc。 |
+| mnc | string | 否 | 否 | Sim卡的mnc。 |
+| user | string | 否 | 是 | 用户名。 |
+| type | string | 否 | 是 | APN类型。 |
+| proxy | string | 否 | 是 | 代理地址。 |
+| mmsproxy | string | 否 | 是 | 彩信代理。 |

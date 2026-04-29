@@ -16,7 +16,7 @@ SecurityAntivirus模块用于管理三方病毒防护服务应用。
 
 描述
 
-[security_antivirus.h](../../capi/headers/security_antivirus.h.md)
+[security_antivirus.h](../../topics/security/[security_antivirus.h](security_antivirus.h.md).md)
 
 定义病毒防护服务应用调用的API接口。
 

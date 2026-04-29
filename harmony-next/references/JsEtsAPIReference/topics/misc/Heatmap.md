@@ -8,7 +8,7 @@ import { map, mapCommon } from '@kit.MapKit';
 
 #### Heatmap
 
-热力图管理对象。在调用map.[MapComponentController](../components/MapComponentController.md)类的[addHeatmap](../components/MapComponentController.md#section849314585910)方法时会返回该类型的实例。
+热力图管理对象。在调用map.[MapComponentController](MapComponentController.md)类的[addHeatmap](MapComponentController.md#ZH-CN_TOPIC_0000002553362311__addheatmap)方法时会返回该类型的实例。
 
 **模型约束：**此接口仅可在Stage模型下使用。
 
@@ -41,12 +41,12 @@ let heatMapOptions: mapCommon.HeatmapParams = {
     8: 10
   },
 }
-await this.mapController.addHeatmap(heatMapOptions)
+let heatMap = await this.mapController.addHeatmap(heatMapOptions)
 ```
 
 #### setData
 
-setData(data: mapCommon.WeightedLatLng[]): void
+setData(data: [mapCommon.WeightedLatLng](mapCommon（地图属性模型）.md#section14151459134817)[]): void
 
 更新热力图数据。
 
@@ -60,21 +60,9 @@ setData(data: mapCommon.WeightedLatLng[]): void
 
 **参数：**
 
-**参数名**
-
-**类型**
-
-必填
-
-**说明**
-
-data
-
-[mapCommon.WeightedLatLng](mapCommon（地图属性模型）.md#section14151459134817)[]
-
-是
-
-热力图数据（建议数据量小于10000条）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | [mapCommon.WeightedLatLng](mapCommon（地图属性模型）.md#section14151459134817)[] | 是 | 热力图数据（建议数据量小于10000条）。 |
 
 **示例：**
 
@@ -93,7 +81,7 @@ heatMap.setData(data);
 
 #### getData
 
-getData(): mapCommon.WeightedLatLng[]
+getData(): [mapCommon.WeightedLatLng](mapCommon（地图属性模型）.md#section14151459134817)[]
 
 获取热力图数据。
 
@@ -107,13 +95,9 @@ getData(): mapCommon.WeightedLatLng[]
 
 **返回值：**
 
-类型
-
-说明
-
-[mapCommon.WeightedLatLng](mapCommon（地图属性模型）.md#section14151459134817)[]
-
-热力图数据。
+| 类型 | 说明 |
+| --- | --- |
+| [mapCommon.WeightedLatLng](mapCommon（地图属性模型）.md#section14151459134817)[] | 热力图数据。 |
 
 **示例：**
 
@@ -137,26 +121,9 @@ setColor(color: Record<number, number>): void
 
 **参数：**
 
-**参数名**
-
-**类型**
-
-必填
-
-**说明**
-
-color
-
-Record<number, number>
-
-是
-
-热力图颜色。
-
-- key：数据密度，取值范围[0，1]。
-- value：颜色渐变值，ARGB格式。
-
-如果入参非法，不做处理。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| color | Record<number, number> | 是 | 热力图颜色。 - key：数据密度，取值范围[0，1]。 - value：颜色渐变值，ARGB格式。 如果入参非法，不做处理。 |
 
 **示例：**
 
@@ -190,18 +157,9 @@ getColor(): Record<number, number>
 
 **返回值：**
 
-类型
-
-说明
-
-Record<number, number>
-
-热力图颜色。
-
-- key：数据密度，取值范围[0，1]。
-- value：颜色渐变值，ARGB格式。
-
-如果用户没有设置过，返回默认值。
+| 类型 | 说明 |
+| --- | --- |
+| Record<number, number> | 热力图颜色。 - key：数据密度，取值范围[0，1]。 - value：颜色渐变值，ARGB格式。 如果用户没有设置过，返回默认值。 |
 
 **示例：**
 
@@ -225,26 +183,9 @@ setIntensity(intensity: number | Record<number, number>): void
 
 **参数：**
 
-**参数名**
-
-**类型**
-
-必填
-
-**说明**
-
-intensity
-
-number | Record<number, number>
-
-是
-
-热力图强度，如果是number类型，所有层级使用同一个强度。
-
-- key：层级，取值范围[2，20]。
-- value：热力图强度，取值范围(0，+∞)。
-
-如果入参非法，不做处理。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| intensity | number | Record<number, number> | 是 | 热力图强度，如果是number类型，所有层级使用同一个强度。 - key：层级，取值范围[2，20]。 - value：热力图强度，取值范围(0，+∞)。 如果入参非法，不做处理。 |
 
 **示例：**
 
@@ -273,18 +214,9 @@ getIntensity(): number | Record<number, number>
 
 **返回值：**
 
-类型
-
-说明
-
-number | Record<number, number>
-
-热力图强度，如果是number类型，所有层级使用同一个强度。
-
-- key：层级，取值范围[2，20]。
-- value：热力图强度，取值范围(0，+∞)。
-
-如果用户没有设置过，返回默认值。
+| 类型 | 说明 |
+| --- | --- |
+| number | Record<number, number> | 热力图强度，如果是number类型，所有层级使用同一个强度。 - key：层级，取值范围[2，20]。 - value：热力图强度，取值范围(0，+∞)。 如果用户没有设置过，返回默认值。 |
 
 **示例：**
 
@@ -308,26 +240,9 @@ setOpacity(opacity: number | Record<number, number>): void
 
 **参数：**
 
-**参数名**
-
-**类型**
-
-必填
-
-**说明**
-
-opacity
-
-number | Record<number, number>
-
-是
-
-热力图透明度，如果是number类型，所有层级使用同一个透明度。
-
-- key：层级，取值范围[2，20]。
-- value：热力图透明度，取值范围[0，1]，0表示完全不透明，1表示完全透明。
-
-如果入参非法，不做处理。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| opacity | number | Record<number, number> | 是 | 热力图透明度，如果是number类型，所有层级使用同一个透明度。 - key：层级，取值范围[2，20]。 - value：热力图透明度，取值范围[0，1]，0表示完全不透明，1表示完全透明。 如果入参非法，不做处理。 |
 
 **示例：**
 
@@ -356,18 +271,9 @@ getOpacity(): number | Record<number, number>
 
 **返回值：**
 
-类型
-
-说明
-
-number | Record<number, number>
-
-热力图透明度，如果是number类型，所有层级使用同一个透明度。
-
-- key：热力图颜色渐变层级，取值范围[2，20]。
-- value：热力图透明度，取值范围[0，1]，0表示完全不透明，1表示完全透明。
-
-如果用户没有设置过，返回默认值。
+| 类型 | 说明 |
+| --- | --- |
+| number | Record<number, number> | 热力图透明度，如果是number类型，所有层级使用同一个透明度。 - key：热力图颜色渐变层级，取值范围[2，20]。 - value：热力图透明度，取值范围[0，1]，0表示完全不透明，1表示完全透明。 如果用户没有设置过，返回默认值。 |
 
 **示例：**
 
@@ -391,26 +297,9 @@ setRadius(radius: number | Record<number, number>): void
 
 **参数：**
 
-**参数名**
-
-**类型**
-
-必填
-
-**说明**
-
-radius
-
-number | Record<number, number>
-
-是
-
-热力图半径，如果是number类型，所有层级使用同一个半径。
-
-- key：层级，取值范围[2，20]。
-- value：热力图半径，取值范围：[1，+∞)。
-
-如果入参非法，不做处理。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| radius | number | Record<number, number> | 是 | 热力图半径，如果是number类型，所有层级使用同一个半径。 - key：层级，取值范围[2，20]。 - value：热力图半径，取值范围：[1，+∞)。 如果入参非法，不做处理。 |
 
 **示例：**
 
@@ -434,18 +323,9 @@ getRadius(): number | Record<number, number>
 
 **返回值：**
 
-类型
-
-说明
-
-number | Record<number, number>
-
-热力图半径，如果是number类型，所有层级使用同一个半径。
-
-- key：层级，取值范围[2，20]。
-- value：热力图半径，取值范围：[1，+∞)。
-
-如果用户没有设置过，返回默认值。
+| 类型 | 说明 |
+| --- | --- |
+| number | Record<number, number> | 热力图半径，如果是number类型，所有层级使用同一个半径。 - key：层级，取值范围[2，20]。 - value：热力图半径，取值范围：[1，+∞)。 如果用户没有设置过，返回默认值。 |
 
 **示例：**
 
@@ -455,7 +335,7 @@ let radius: number | Record<number, number> = heatMap.getRadius();
 
 #### setRadiusUnit
 
-setRadiusUnit(radiusUnit: mapCommon.RadiusUnit): void
+setRadiusUnit(radiusUnit: [mapCommon.RadiusUnit](mapCommon（地图属性模型）.md#section117031317134216)): void
 
 更新热力图半径的单位。
 
@@ -469,21 +349,9 @@ setRadiusUnit(radiusUnit: mapCommon.RadiusUnit): void
 
 **参数：**
 
-**参数名**
-
-**类型**
-
-必填
-
-**说明**
-
-radiusUnit
-
-[mapCommon.RadiusUnit](mapCommon（地图属性模型）.md#section117031317134216)
-
-是
-
-热力图半径单位。如果入参非法，不做处理。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| radiusUnit | [mapCommon.RadiusUnit](mapCommon（地图属性模型）.md#section117031317134216) | 是 | 热力图半径单位。如果入参非法，不做处理。 |
 
 **示例：**
 
@@ -493,7 +361,7 @@ heatMap.setRadiusUnit(mapCommon.RadiusUnit.PIXEL_UNIT);
 
 #### getRadiusUnit
 
-getRadiusUnit(): mapCommon.RadiusUnit
+getRadiusUnit(): [mapCommon.RadiusUnit](mapCommon（地图属性模型）.md#section117031317134216)
 
 获取热力图半径单位。
 
@@ -507,13 +375,9 @@ getRadiusUnit(): mapCommon.RadiusUnit
 
 **返回值：**
 
-类型
-
-说明
-
-[mapCommon.RadiusUnit](mapCommon（地图属性模型）.md#section117031317134216)
-
-热力图半径单位。如果用户没有设置过，返回默认值。
+| 类型 | 说明 |
+| --- | --- |
+| [mapCommon.RadiusUnit](mapCommon（地图属性模型）.md#section117031317134216) | 热力图半径单位。如果用户没有设置过，返回默认值。 |
 
 **示例：**
 
@@ -537,26 +401,9 @@ setVisible(visible: boolean): void
 
 **参数：**
 
-**参数名**
-
-**类型**
-
-必填
-
-**说明**
-
-visible
-
-boolean
-
-是
-
-热力图是否可见。
-
-- true：可见。
-- false：不可见。
-
-如果入参非法，不做处理。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| visible | boolean | 是 | 热力图是否可见。 - true：可见。 - false：不可见。 如果入参非法，不做处理。 |
 
 **示例：**
 
@@ -580,18 +427,9 @@ isVisible(): boolean
 
 **返回值：**
 
-类型
-
-说明
-
-boolean
-
-热力图是否可见。
-
-- true：可见。
-- false：不可见。
-
-如果用户没有设置过，返回默认值。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 热力图是否可见。 - true：可见。 - false：不可见。 如果用户没有设置过，返回默认值。 |
 
 **示例：**
 

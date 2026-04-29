@@ -18,6 +18,6 @@ Picture为多图对象结构体，包含主图、辅助图和元数据。
 
 **起始版本：** 13
 
-**相关模块：**[Image_NativeModule](../graphics/Image_NativeModule.md)
+**相关模块：**[Image_NativeModule](../graphics/[Image_NativeModule](../../types/interfaces/Image_NativeModule.md).md)
 
-**所在头文件：**[picture_native.h](../../capi/headers/picture_native.h.md)
+**所在头文件：**[picture_native.h](../../topics/media/[picture_native.h](picture_native.h.md).md)

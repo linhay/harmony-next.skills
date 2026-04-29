@@ -12,4 +12,4 @@ typedef struct JSVM_EscapableHandleScope__* JSVM_EscapableHandleScope
 
 **相关模块：**[JSVM](JSVM.md)
 
-**所在头文件：**[jsvm_types.h](../../capi/headers/jsvm_types.h.md)
+**所在头文件：**[jsvm_types.h](../../topics/misc/[jsvm_types.h](jsvm_types.h.md).md)

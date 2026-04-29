@@ -10,7 +10,7 @@
 
 **相关模块：**[HandWrite](HandWrite.md)
 
-**所在头文件：**[native_handwrite_api.h](../../capi/headers/native_handwrite_api.h.md)
+**所在头文件：**[native_handwrite_api.h](../../topics/misc/[native_handwrite_api.h](native_handwrite_api.h.md).md)
 
 #### 汇总
 

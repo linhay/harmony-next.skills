@@ -13,13 +13,14 @@ AutoExposure 继承自 [AutoExposureQuery](Interface (AutoExposureQuery).md)。
 import { camera } from '@kit.CameraKit';
 ```
 
-#### getExposureMode11+
+#### get[ExposureMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__exposuremode)11+
 
-getExposureMode(): ExposureMode
+get[ExposureMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__exposuremode)(): ExposureMode
 
 获取当前曝光模式。
 
-若未通过[setExposureMode](Interface (AutoExposure).md#ZH-CN_TOPIC_0000002529285769__setexposuremode11)接口进行设置，直接调用该接口查询当前曝光模式，会返回无效值。
+
+若未通过[setExposureMode](Interface (AutoExposure).md#ZH-CN_TOPIC_0000002553361825__setexposuremode11)接口进行设置，直接调用该接口查询当前曝光模式，会返回无效值。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -27,13 +28,17 @@ getExposureMode(): ExposureMode
 
 **返回值：**
 
-类型说明[ExposureMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__exposuremode)获取当前曝光模式。接口调用失败会抛出相应错误码并返回undefined，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 类型 | 说明 |
+| --- | --- |
+| [ExposureMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__exposuremode) | 获取当前曝光模式。接口调用失败会抛出相应错误码并返回undefined，错误码类型CameraErrorCode。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码]([Camera错误码](../../errors/Camera错误码.md).md)。
 
-错误码ID错误信息7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
 
 **示例：**
 
@@ -53,11 +58,11 @@ function getExposureMode(photoSession: camera.PhotoSession): camera.ExposureMode
 }
 ```
 
-#### setExposureMode11+
+#### set[ExposureMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__exposuremode)11+
 
-setExposureMode(aeMode: ExposureMode): void
+set[ExposureMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__exposuremode)(aeMode: ExposureMode): void
 
-设置曝光模式。进行设置之前，需要先检查设备是否支持指定的曝光模式，可使用方法[isExposureModeSupported](Interface (AutoExposureQuery).md#ZH-CN_TOPIC_0000002529445743__isexposuremodesupported11)。
+设置曝光模式。进行设置之前，需要先检查设备是否支持指定的曝光模式，可使用方法[isExposureModeSupported](Interface (AutoExposureQuery).md#ZH-CN_TOPIC_0000002522241902__isexposuremodesupported11)。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -65,13 +70,18 @@ setExposureMode(aeMode: ExposureMode): void
 
 **参数：**
 
-参数名类型必填说明aeMode[ExposureMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__exposuremode)是曝光模式。传参为null或者undefined，作为0处理，曝光锁定。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| aeMode | [ExposureMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__exposuremode) | 是 | 曝光模式。传参为null或者undefined，作为0处理，曝光锁定。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400102Operation not allowed.7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400102 | Operation not allowed. |
+| 7400103 | Session not config. |
 
 **示例：**
 
@@ -86,7 +96,6 @@ function setExposureMode(photoSession: camera.PhotoSession): void {
     let err = error as BusinessError;
     console.error(`The setExposureMode call failed. error code: ${err.code}`);
   }
-}
 ```
 
 #### getMeteringPoint11+
@@ -101,13 +110,17 @@ getMeteringPoint(): Point
 
 **返回值：**
 
-类型说明[Point](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__point)获取当前曝光点。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 类型 | 说明 |
+| --- | --- |
+| Point | 获取当前曝光点。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
 
 **示例：**
 
@@ -141,13 +154,17 @@ setMeteringPoint(point: Point): void
 
 **参数：**
 
-参数名类型必填说明point[Point](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__point)是曝光点，x、y设置范围应在[0，1]之内，超过范围，如果小于0设置0，大于1设置1。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| point | Point | 是 | 曝光点，x、y设置范围应在[0，1]之内，超过范围，如果小于0设置0，大于1设置1。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
 
 **示例：**
 
@@ -163,7 +180,6 @@ function setMeteringPoint(photoSession: camera.PhotoSession): void {
     let err = error as BusinessError;
     console.error(`The setMeteringPoint call failed. error code: ${err.code}`);
   }
-}
 ```
 
 #### setExposureBias11+
@@ -172,7 +188,7 @@ setExposureBias(exposureBias: number): void
 
 设置曝光补偿，曝光补偿值（EV）。
 
-进行设置之前，建议先通过方法[getExposureBiasRange](Interface (AutoExposureQuery).md#ZH-CN_TOPIC_0000002529445743__getexposurebiasrange11)查询支持的范围。
+进行设置之前，建议先通过方法[getExposureBiasRange](Interface (AutoExposureQuery).md#ZH-CN_TOPIC_0000002522241902__getexposurebiasrange11)查询支持的范围。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -180,19 +196,18 @@ setExposureBias(exposureBias: number): void
 
 **参数：**
 
-参数名类型必填说明exposureBiasnumber是
-
-曝光补偿，[getExposureBiasRange](Interface (AutoExposureQuery).md#ZH-CN_TOPIC_0000002529445743__getexposurebiasrange11)查询支持的范围，如果设置超过支持范围的值，自动匹配到就近临界点。
-
-曝光补偿存在步长，由于设备差异，步长也存在差异。例如步长为0.5，则设置1.2时，获取到实际生效曝光补偿为1.0。
-
-接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| exposureBias | number | 是 | 曝光补偿，getExposureBiasRange查询支持的范围，如果设置超过支持范围的值，自动匹配到就近临界点。 曝光补偿存在步长，由于设备差异，步长也存在差异。例如步长为0.5，则设置1.2时，获取到实际生效曝光补偿为1.0。 接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400102Operation not allowed.7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400102 | Operation not allowed. |
+| 7400103 | Session not config. |
 
 **示例：**
 
@@ -209,8 +224,6 @@ function setExposureBias(photoSession: camera.PhotoSession, biasRangeArray: Arra
       let err = error as BusinessError;
       console.error(`The setExposureBias call failed. error code: ${err.code}`);
     }
-  }
-}
 ```
 
 #### getExposureValue11+
@@ -225,17 +238,17 @@ getExposureValue(): number
 
 **返回值：**
 
-类型说明number
-
-获取曝光值。曝光补偿存在步长，如步长为0.5。则设置1.2时，获取到实际生效曝光补偿为1.0。
-
-接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 类型 | 说明 |
+| --- | --- |
+| number | 获取曝光值。曝光补偿存在步长，如步长为0.5。则设置1.2时，获取到实际生效曝光补偿为1.0。 接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
 
 **示例：**
 

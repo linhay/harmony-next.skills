@@ -18,7 +18,9 @@ MenuItemGroup(value?: MenuItemGroupOptions)
 
 **参数：**
 
-参数名类型必填说明value[MenuItemGroupOptions](#ZH-CN_TOPIC_0000002497444948__menuitemgroupoptions对象说明)否包含设置MenuItemGroup的标题和尾部显示信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | MenuItemGroupOptions | 否 | 包含设置MenuItemGroup的标题和尾部显示信息。 |
 
 #### MenuItemGroupOptions对象说明
 
@@ -28,8 +30,11 @@ MenuItemGroup(value?: MenuItemGroupOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明header[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | [CustomBuilder](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__custombuilder8)否是设置对应group的标题显示信息。footer[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | [CustomBuilder](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__custombuilder8)否是设置对应group的尾部显示信息。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| header | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | [CustomBuilder](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__custombuilder8) | 否 | 是 | 设置对应group的标题显示信息。 |
+| footer | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | CustomBuilder | 否 | 是 | 设置对应group的尾部显示信息。 |
 
 #### 示例
 
-详见[Menu组件示例](menu.md#ZH-CN_TOPIC_0000002529444891__示例)。
+详见[Menu组件示例](Menu.md#ZH-CN_TOPIC_0000002553200839__示例)。

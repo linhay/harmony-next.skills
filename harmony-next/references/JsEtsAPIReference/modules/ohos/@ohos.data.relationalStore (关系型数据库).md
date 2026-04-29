@@ -1,19 +1,21 @@
 # @ohos.data.relationalStore (关系型数据库)
 
-- **[模块描述](../../guides/模块描述.md)**
+- [模块描述](模块描述.md)
 
-- **[Functions](../../topics/misc/Functions.md)**
+- [Functions]([Functions](../../topics/misc/Functions.md).md)
 
-- **[Interface (RdbStore)](../../types/interfaces/Interface (RdbStore).md)**
+- [Interface (RdbStore)](Interface (RdbStore).md)
 
-- **[Interface (ResultSet)](../../types/interfaces/Interface (ResultSet).md)**
+- [Interface (ResultSet)](Interface (ResultSet).md)
 
-- **[Interface (Transaction)](../../types/interfaces/Interface (Transaction).md)**
+- [Class (LiteResultSet)](Class (LiteResultSet).md)
 
-- **[Interfaces (其他)](../../types/interfaces/Interfaces (其他).md)**
+- [Interface (Transaction)](Interface (Transaction).md)
 
-- **[Class (RdbPredicates)](../../types/classes/Class (RdbPredicates).md)**
+- [Interfaces (其他)](Interfaces (其他).md)
 
-- **[Enums](../../topics/misc/Enums.md)**
+- [Class (RdbPredicates)](Class (RdbPredicates).md)
 
-- **[Types](../../topics/misc/Types.md)**
+- [Enums]([Enums](../../types/enums/Enums.md).md)
+
+- [Types]([Types](../../topics/misc/Types.md).md)

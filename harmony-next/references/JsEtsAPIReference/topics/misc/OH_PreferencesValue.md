@@ -12,4 +12,4 @@ typedef struct OH_PreferencesValue OH_PreferencesValue
 
 **相关模块：**[Preferences](Preferences.md)
 
-**所在头文件：**[oh_preferences_value.h](../../capi/headers/oh_preferences_value.h.md)
+**所在头文件：**[oh_preferences_value.h](../../topics/misc/[oh_preferences_value.h](oh_preferences_value.h.md).md)

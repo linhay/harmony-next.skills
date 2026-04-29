@@ -21,7 +21,7 @@ import hiAppEvent from '@ohos.hiAppEvent';
 
 **事件类型**
 
-事件类型为[EventType](#ZH-CN_TOPIC_0000002529285655__eventtype)枚举类型。
+事件类型为[EventType](#ZH-CN_TOPIC_0000002553201745__eventtype)枚举类型。
 
 **事件参数**
 
@@ -52,12 +52,18 @@ write(eventName: string, eventType: EventType, keyValues: object, callback: Asyn
 
 **参数：**
 
-参数名类型必填说明eventNamestring是事件名称。eventType[EventType](#ZH-CN_TOPIC_0000002529285655__eventtype)是事件类型。keyValuesobject是事件参数。callbackAsyncCallback<void>是事件回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| eventName | string | 是 | 事件名称。 |
+| eventType | EventType | 是 | 事件类型。 |
+| keyValues | object | 是 | 事件参数。 |
+| callback | AsyncCallback<void> | 是 | 事件回调函数。 |
 
 **示例：**
 
 ```ets
-import { BusinessError } from '@ohos.base'
+import { BusinessError } from '@ohos.base';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 let eventParams: Record<string, number | string> = {
   "int_data": 100,
@@ -66,11 +72,11 @@ let eventParams: Record<string, number | string> = {
 hiAppEvent.write("test_event", hiAppEvent.EventType.FAULT, eventParams, (err: BusinessError) => {
   if (err) {
     // 事件写入异常：事件存在异常参数时忽略异常参数后继续写入，或者事件校验失败时不执行写入
-    console.error(`failed to write event, code=${err.code}`);
+    hilog.error(0x0000, 'hiAppEvent', `failed to write event, code: ${err.code}, message: ${err.message}`);
     return;
   }
   // 事件写入正常
-  console.log(`success to write event`);
+  hilog.info(0x0000, 'hiAppEvent', `success to write event`);
 });
 ```
 
@@ -84,16 +90,23 @@ write(eventName: string, eventType: EventType, keyValues: object): Promise<void>
 
 **参数：**
 
-参数名类型必填说明eventNamestring是事件名称。eventType[EventType](#ZH-CN_TOPIC_0000002529285655__eventtype)是事件类型。keyValuesobject是事件参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| eventName | string | 是 | 事件名称。 |
+| eventType | EventType | 是 | 事件类型。 |
+| keyValues | object | 是 | 事件参数。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，可以在其then()、catch()方法中分别对事件写入成功、写入异常的情况进行异步处理。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，可以在其then()、catch()方法中分别对事件写入成功、写入异常的情况进行异步处理。 |
 
 **示例：**
 
 ```ets
-import { BusinessError } from '@ohos.base'
+import { BusinessError } from '@ohos.base';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 let eventParams: Record<string, number | string> = {
   "int_data": 100,
@@ -101,10 +114,10 @@ let eventParams: Record<string, number | string> = {
 };
 hiAppEvent.write("test_event", hiAppEvent.EventType.FAULT, eventParams).then(() => {
   // 事件写入正常
-  console.log(`success to write event`);
+  hilog.info(0x0000, 'hiAppEvent', `success to write event`);
 }).catch((err: BusinessError) => {
   // 事件写入异常：事件存在异常参数时忽略异常参数后继续写入，或者事件校验失败时不执行写入
-  console.error(`failed to write event, code=${err.code}`);
+  hilog.error(0x0000, 'hiAppEvent', `code: ${err.code}, message: ${err.message}`);
 });
 ```
 
@@ -118,11 +131,15 @@ configure(config: ConfigOption): boolean
 
 **参数：**
 
-参数名类型必填说明config[ConfigOption](#ZH-CN_TOPIC_0000002529285655__configoption)是应用事件打点配置项对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | ConfigOption | 是 | 应用事件打点配置项对象。 |
 
 **返回值：**
 
-类型说明boolean配置结果，true 表示配置成功，false 表示配置失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 配置结果，true 表示配置成功，false 表示配置失败。 |
 
 **示例：**
 
@@ -146,7 +163,10 @@ hiAppEvent.configure(config2);
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-名称类型只读可选说明disableboolean否是应用打点功能开关。配置值为true表示关闭打点功能，false表示不关闭打点功能。maxStoragestring否是打点数据本地存储文件所在目录的配额大小，默认限额为“10M”。所在目录大小超出限额后会对目录进行清理操作，会按从旧到新的顺序逐个删除打点数据文件，直到目录大小不超出限额时停止。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| disable | boolean | 否 | 是 | 应用打点功能开关。配置值为true表示关闭打点功能，false表示不关闭打点功能。 |
+| maxStorage | string | 否 | 是 | 打点数据本地存储文件所在目录的配额大小，默认限额为“10M”。所在目录大小超出限额后会对目录进行清理操作，会按从旧到新的顺序逐个删除打点数据文件，直到目录大小不超出限额时停止。 |
 
 #### EventType
 
@@ -154,7 +174,12 @@ hiAppEvent.configure(config2);
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-名称值说明FAULT1故障类型事件。STATISTIC2统计类型事件。SECURITY3安全类型事件。BEHAVIOR4行为类型事件。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| FAULT | 1 | 故障类型事件。 |
+| STATISTIC | 2 | 统计类型事件。 |
+| SECURITY | 3 | 安全类型事件。 |
+| BEHAVIOR | 4 | 行为类型事件。 |
 
 #### Event
 
@@ -162,7 +187,11 @@ hiAppEvent.configure(config2);
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-名称类型可读可写说明USER_LOGINstring是否用户登录事件。USER_LOGOUTstring是否用户登出事件。DISTRIBUTED_SERVICE_STARTstring是否分布式服务启动事件。
+| 名称 | 类型 | 可读 | 可写 | 说明 |
+| --- | --- | --- | --- | --- |
+| USER_LOGIN | string | 是 | 否 | 用户登录事件。 |
+| USER_LOGOUT | string | 是 | 否 | 用户登出事件。 |
+| DISTRIBUTED_SERVICE_START | string | 是 | 否 | 分布式服务启动事件。 |
 
 #### Param
 
@@ -170,4 +199,8 @@ hiAppEvent.configure(config2);
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-名称类型可读可写说明USER_IDstring是否用户自定义ID。DISTRIBUTED_SERVICE_NAMEstring是否分布式服务名称。DISTRIBUTED_SERVICE_INSTANCE_IDstring是否分布式服务实例ID。
+| 名称 | 类型 | 可读 | 可写 | 说明 |
+| --- | --- | --- | --- | --- |
+| USER_ID | string | 是 | 否 | 用户自定义ID。 |
+| DISTRIBUTED_SERVICE_NAME | string | 是 | 否 | 分布式服务名称。 |
+| DISTRIBUTED_SERVICE_INSTANCE_ID | string | 是 | 否 | 分布式服务实例ID。 |

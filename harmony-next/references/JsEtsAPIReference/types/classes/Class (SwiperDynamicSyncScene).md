@@ -20,7 +20,9 @@ SwiperDynamicSyncScene继承自[DynamicSyncScene](Class (DynamicSyncScene).md)�
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明type12+[SwiperDynamicSyncSceneType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497604786__swiperdynamicsyncscenetype12)是否Swiper的动态帧率场景。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| type12+ | [SwiperDynamicSyncSceneType](../enums/Enums.md#ZH-CN_TOPIC_0000002497604786__swiperdynamicsyncscenetype12) | 是 | 否 | Swiper的动态帧率场景。 |
 
 **示例：**
 
@@ -71,6 +73,4 @@ struct Frame {
           });
         })
     }
-  }
-}
 ```

@@ -2,8 +2,10 @@
 
 本模块提供组件效果的一些基础能力，包括模糊、边缘像素扩展、提亮等。效果被分为Filter和VisualEffect大类，同类效果可以级联在一个效果大类的实例下。在实际开发中，模糊可用于背景虚化，提亮可用于亮屏显示等。
 
-- [Filter](#ZH-CN_TOPIC_0000002497446008__filter)：用于添加指定Filter效果到组件上。
-- [VisualEffect](#ZH-CN_TOPIC_0000002497446008__visualeffect)：用于添加指定VisualEffect效果到组件上。
+- [Filter](#ZH-CN_TOPIC_0000002522242136__filter)：用于添加指定Filter效果到组件上。
+
+- [VisualEffect](#ZH-CN_TOPIC_0000002522242136__visualeffect)：用于添加指定VisualEffect效果到组件上。
+
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -23,7 +25,9 @@ createFilter(): Filter
 
 **返回值：**
 
-类型说明[Filter](#ZH-CN_TOPIC_0000002497446008__filter)返回Filter的头节点。
+| 类型 | 说明 |
+| --- | --- |
+| Filter | 返回Filter的头节点。 |
 
 **示例：**
 
@@ -41,7 +45,9 @@ createEffect(): VisualEffect
 
 **返回值：**
 
-类型说明[VisualEffect](#ZH-CN_TOPIC_0000002497446008__visualeffect)返回VisualEffect的头节点。
+| 类型 | 说明 |
+| --- | --- |
+| VisualEffect | 返回VisualEffect的头节点。 |
 
 **示例：**
 
@@ -51,7 +57,7 @@ let visualEffect : uiEffect.VisualEffect = uiEffect.createEffect()
 
 #### Filter
 
-Filter效果类，用于将相应的效果添加到指定的组件上。在调用Filter的方法前，需要先通过[createFilter](#ZH-CN_TOPIC_0000002497446008__uieffectcreatefilter)创建一个Filter实例。
+Filter效果类，用于将相应的效果添加到指定的组件上。在调用Filter的方法前，需要先通过[createFilter](#ZH-CN_TOPIC_0000002522242136__uieffectcreatefilter)创建一个Filter实例。
 
 #### blur
 
@@ -63,17 +69,15 @@ blur(blurRadius: number): Filter
 
 **参数：**
 
-参数名类型必填说明blurRadiusnumber是
-
-模糊半径。
-
-取值需大于等于0，模糊半径越大，模糊效果越强。
-
-模糊半径为0时无模糊效果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| blurRadius | number | 是 | 模糊半径。 取值需大于等于0，模糊半径越大，模糊效果越强。 模糊半径为0时无模糊效果。 |
 
 **返回值：**
 
-类型说明[Filter](#ZH-CN_TOPIC_0000002497446008__filter)返回挂载了模糊效果的Filter。
+| 类型 | 说明 |
+| --- | --- |
+| Filter | 返回挂载了模糊效果的Filter。 |
 
 **示例：**
 
@@ -101,9 +105,8 @@ struct UIEffectFilterExample {
         .height('100%')
         .width('100%')
     }
-}
 ```
 
 #### VisualEffect
 
-VisualEffect效果类，用于将相应的效果添加到指定的组件上。在调用VisualEffect的方法前，需要先通过[createEffect](#ZH-CN_TOPIC_0000002497446008__uieffectcreateeffect)创建一个VisualEffect实例。
+VisualEffect效果类，用于将相应的效果添加到指定的组件上。在调用VisualEffect的方法前，需要先通过[createEffect](#ZH-CN_TOPIC_0000002522242136__uieffectcreateeffect)创建一个VisualEffect实例。

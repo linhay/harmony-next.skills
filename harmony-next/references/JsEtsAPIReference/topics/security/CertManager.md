@@ -8,4 +8,6 @@ CertManager向应用提供证书管理能力，支持证书凭据的管理和操
 
 #### 文件汇总
 
-名称描述[cm_native_api.h](../../capi/headers/cm_native_api.h.md)声明用于获取特定类型证书详情的接口。
+| 名称 | 描述 |
+| --- | --- |
+| [cm_native_api.h](cm_native_api.h.md) | 声明用于获取特定类型证书详情的接口。 |

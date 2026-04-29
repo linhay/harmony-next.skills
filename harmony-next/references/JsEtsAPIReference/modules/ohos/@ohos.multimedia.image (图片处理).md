@@ -1,29 +1,37 @@
 # @ohos.multimedia.image (图片处理)
 
-- **[模块描述](../../guides/模块描述.md)**
+- [模块描述](模块描述.md)
 
-- **[Functions](../../topics/misc/Functions.md)**
+- [Functions]([Functions](../../topics/misc/Functions.md).md)
 
-- **[Interface (AuxiliaryPicture)](../../types/interfaces/Interface (AuxiliaryPicture).md)**
+- [Interface (AuxiliaryPicture)](Interface (AuxiliaryPicture).md)
 
-- **[Interface (Image)](../../types/interfaces/Interface (Image).md)**
+- [Interface (Image)](Interface (Image).md)
 
-- **[Interface (ImageCreator)](../../types/interfaces/Interface (ImageCreator).md)**
+- [Interface (ImageCreator)](Interface (ImageCreator).md)
 
-- **[Interface (ImagePacker)](../../types/interfaces/Interface (ImagePacker).md)**
+- [Interface (ImagePacker)](Interface (ImagePacker).md)
 
-- **[Interface (ImageReceiver)](../../types/interfaces/Interface (ImageReceiver).md)**
+- [Interface (ImageReceiver)](Interface (ImageReceiver).md)
 
-- **[Interface (ImageSource)](../../types/interfaces/Interface (ImageSource).md)**
+- [Interface (ImageSource)](Interface (ImageSource).md)
 
-- **[Interface (Metadata)](../../types/interfaces/Interface (Metadata).md)**
+- [Interface (Metadata)](Interface (Metadata).md)
 
-- **[Interface (Picture)](../../types/interfaces/Interface (Picture).md)**
+- [class (ExifMetadata)](class (ExifMetadata).md)
 
-- **[Interface (PixelMap)](../../types/interfaces/Interface (PixelMap).md)**
+- [class (MakerNoteHuaweiMetadata)](class (MakerNoteHuaweiMetadata).md)
 
-- **[Interfaces (其他)](../../types/interfaces/Interfaces (其他).md)**
+- [class (HeifsMetadata)](class (HeifsMetadata).md)
 
-- **[Enums](../../topics/misc/Enums.md)**
+- [Interface (Picture)](Interface (Picture).md)
 
-- **[Types](../../topics/misc/Types.md)**
+- [Interface (PixelMap)](Interface (PixelMap).md)
+
+- [Interfaces (其他)](Interfaces (其他).md)
+
+- [Enums]([Enums](../../types/enums/Enums.md).md)
+
+- [Types]([Types](../../topics/misc/Types.md).md)
+
+- [Constants](Constants.md)

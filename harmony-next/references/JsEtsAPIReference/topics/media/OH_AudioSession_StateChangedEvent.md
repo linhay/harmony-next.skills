@@ -12,10 +12,12 @@ typedef struct OH_AudioSession_StateChangedEvent {...} OH_AudioSession_StateChan
 
 **相关模块：**[OHAudio](OHAudio.md)
 
-**所在头文件：**[native_audio_session_manager.h](../../capi/headers/native_audio_session_manager.h.md)
+所在头文件： [native_audio_session_manager.h](native_audio_session_manager.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述[OH_AudioSession_StateChangeHint](../../capi/headers/native_audio_session_manager.h.md#ZH-CN_TOPIC_0000002497605710__oh_audiosession_statechangehint) stateChangeHint音频会话停用的具体原因。
+| 名称 | 描述 |
+| --- | --- |
+| [OH_AudioSession_StateChangeHint](native_audio_session_manager.h.md#ZH-CN_TOPIC_0000002497605710__oh_audiosession_statechangehint) stateChangeHint | 音频会话停用的具体原因。 |

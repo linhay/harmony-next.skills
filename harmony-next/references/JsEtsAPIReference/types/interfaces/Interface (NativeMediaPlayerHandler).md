@@ -1,6 +1,7 @@
 # Interface (NativeMediaPlayerHandler)
 
-[CreateNativeMediaPlayerCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605202__createnativemediaplayercallback12)回调函数的参数。应用通过该对象，将播放器的状态报告给ArkWeb内核。
+[CreateNativeMediaPlayerCallback](Types.md#ZH-CN_TOPIC_0000002553201127__createnativemediaplayercallback12)回调函数的参数。应用通过该对象，将播放器的状态报告给ArkWeb内核。
+
 
 -
 
@@ -12,11 +13,11 @@
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### handleStatusChanged12+
 
-handleStatusChanged(status: PlaybackStatus): void
+handleStatusChanged(status: [PlaybackStatus](../enums/Enums.md#ZH-CN_TOPIC_0000002529445167__playbackstatus12)): void
 
 当播放器的播放状态发生变化时，调用该方法将播放状态通知给 ArkWeb 内核。
 
@@ -24,11 +25,13 @@ handleStatusChanged(status: PlaybackStatus): void
 
 **参数：**
 
-参数名类型必填说明status[PlaybackStatus](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445167__playbackstatus12)是播放器的播放状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| status | [PlaybackStatus](../enums/Enums.md#ZH-CN_TOPIC_0000002529445167__playbackstatus12) | 是 | 播放器的播放状态。 |
 
 **示例：**
 
-完整示例代码参考[onCreateNativeMediaPlayer](../classes/Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__oncreatenativemediaplayer12)。
+完整示例代码参考[onCreateNativeMediaPlayer](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__oncreatenativemediaplayer12)。
 
 #### handleVolumeChanged12+
 
@@ -40,11 +43,13 @@ handleVolumeChanged(volume: number): void
 
 **参数：**
 
-参数名类型必填说明volumenumber是播放器的音量，取值范围：[0, 1.0]。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volume | number | 是 | 播放器的音量，取值范围：[0, 1.0]。 |
 
 **示例：**
 
-完整示例代码参考[onCreateNativeMediaPlayer](../classes/Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__oncreatenativemediaplayer12)。
+完整示例代码参考[onCreateNativeMediaPlayer](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__oncreatenativemediaplayer12)。
 
 #### handleMutedChanged12+
 
@@ -56,15 +61,13 @@ handleMutedChanged(muted: boolean): void
 
 **参数：**
 
-参数名类型必填说明mutedboolean是
-
-当前播放器是否静音。
-
-true表示当前播放器静音，false表示当前播放器未静音。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| muted | boolean | 是 | 当前播放器是否静音。 true表示当前播放器静音，false表示当前播放器未静音。 |
 
 **示例：**
 
-完整示例代码参考[onCreateNativeMediaPlayer](../classes/Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__oncreatenativemediaplayer12)。
+完整示例代码参考[onCreateNativeMediaPlayer](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__oncreatenativemediaplayer12)。
 
 #### handlePlaybackRateChanged12+
 
@@ -76,11 +79,13 @@ handlePlaybackRateChanged(playbackRate: number): void
 
 **参数：**
 
-参数名类型必填说明playbackRatenumber是播放速率，取值范围：[0, +∞)
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| playbackRate | number | 是 | 播放速率，取值范围：[0, +∞) |
 
 **示例：**
 
-完整示例代码参考[onCreateNativeMediaPlayer](../classes/Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__oncreatenativemediaplayer12)。
+完整示例代码参考[onCreateNativeMediaPlayer](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__oncreatenativemediaplayer12)。
 
 #### handleDurationChanged12+
 
@@ -92,15 +97,13 @@ handleDurationChanged(duration: number): void
 
 **参数：**
 
-参数名类型必填说明durationnumber是
-
-媒体的总时长。
-
-单位：秒，取值范围：[0, +∞)
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| duration | number | 是 | 媒体的总时长。 单位：秒，取值范围：[0, +∞) |
 
 **示例：**
 
-完整示例代码参考[onCreateNativeMediaPlayer](../classes/Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__oncreatenativemediaplayer12)。
+完整示例代码参考[onCreateNativeMediaPlayer](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__oncreatenativemediaplayer12)。
 
 #### handleTimeUpdate12+
 
@@ -112,15 +115,13 @@ handleTimeUpdate(currentPlayTime: number): void
 
 **参数：**
 
-参数名类型必填说明currentPlayTimenumber是
-
-当前播放时间。
-
-单位：秒，取值范围：[0, duration]
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| currentPlayTime | number | 是 | 当前播放时间。 单位：秒，取值范围：[0, duration] |
 
 **示例：**
 
-完整示例代码参考[onCreateNativeMediaPlayer](../classes/Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__oncreatenativemediaplayer12)。
+完整示例代码参考[onCreateNativeMediaPlayer](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__oncreatenativemediaplayer12)。
 
 #### handleBufferedEndTimeChanged12+
 
@@ -132,15 +133,13 @@ handleBufferedEndTimeChanged(bufferedEndTime: number): void
 
 **参数：**
 
-参数名类型必填说明bufferedEndTimenumber是
-
-媒体缓冲的时长。
-
-单位：秒，取值范围：[0, duration]
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| bufferedEndTime | number | 是 | 媒体缓冲的时长。 单位：秒，取值范围：[0, duration] |
 
 **示例：**
 
-完整示例代码参考[onCreateNativeMediaPlayer](../classes/Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__oncreatenativemediaplayer12)。
+完整示例代码参考[onCreateNativeMediaPlayer](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__oncreatenativemediaplayer12)。
 
 #### handleEnded12+
 
@@ -152,11 +151,11 @@ handleEnded(): void
 
 **示例：**
 
-完整示例代码参考[onCreateNativeMediaPlayer](../classes/Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__oncreatenativemediaplayer12)。
+完整示例代码参考[onCreateNativeMediaPlayer](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__oncreatenativemediaplayer12)。
 
-#### handleNetworkStateChanged12+
+#### handle[NetworkState](../enums/Enums.md#ZH-CN_TOPIC_0000002529445167__networkstate12)Changed12+
 
-handleNetworkStateChanged(state: NetworkState): void
+handle[NetworkState](../enums/Enums.md#ZH-CN_TOPIC_0000002529445167__networkstate12)Changed(state: NetworkState): void
 
 当播放器的网络状态发生变化时，调用该方法将播放器的网络状态通知给 ArkWeb 内核。
 
@@ -164,15 +163,17 @@ handleNetworkStateChanged(state: NetworkState): void
 
 **参数：**
 
-参数名类型必填说明state[NetworkState](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445167__networkstate12)是播放器的网络状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| state | [NetworkState](../enums/Enums.md#ZH-CN_TOPIC_0000002529445167__networkstate12) | 是 | 播放器的网络状态。 |
 
 **示例：**
 
-完整示例代码参考[onCreateNativeMediaPlayer](../classes/Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__oncreatenativemediaplayer12)。
+完整示例代码参考[onCreateNativeMediaPlayer](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__oncreatenativemediaplayer12)。
 
-#### handleReadyStateChanged12+
+#### handle[ReadyState](../enums/Enums.md#ZH-CN_TOPIC_0000002529445167__readystate12)Changed12+
 
-handleReadyStateChanged(state: ReadyState): void
+handle[ReadyState](../enums/Enums.md#ZH-CN_TOPIC_0000002529445167__readystate12)Changed(state: ReadyState): void
 
 当播放器的缓存状态发生变化时，调用该方法将播放器的缓存状态通知给 ArkWeb 内核。
 
@@ -180,11 +181,13 @@ handleReadyStateChanged(state: ReadyState): void
 
 **参数：**
 
-参数名类型必填说明state[ReadyState](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445167__readystate12)是播放器的缓存状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| state | [ReadyState](../enums/Enums.md#ZH-CN_TOPIC_0000002529445167__readystate12) | 是 | 播放器的缓存状态。 |
 
 **示例：**
 
-完整示例代码参考[onCreateNativeMediaPlayer](../classes/Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__oncreatenativemediaplayer12)。
+完整示例代码参考[onCreateNativeMediaPlayer](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__oncreatenativemediaplayer12)。
 
 #### handleFullscreenChanged12+
 
@@ -196,15 +199,13 @@ handleFullscreenChanged(fullscreen: boolean): void
 
 **参数：**
 
-参数名类型必填说明fullscreenboolean是
-
-是否全屏。
-
-true表示全屏，false表示未全屏。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fullscreen | boolean | 是 | 是否全屏。 true表示全屏，false表示未全屏。 |
 
 **示例：**
 
-完整示例代码参考[onCreateNativeMediaPlayer](../classes/Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__oncreatenativemediaplayer12)。
+完整示例代码参考[onCreateNativeMediaPlayer](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__oncreatenativemediaplayer12)。
 
 #### handleSeeking12+
 
@@ -216,7 +217,7 @@ handleSeeking(): void
 
 **示例：**
 
-完整示例代码参考[onCreateNativeMediaPlayer](../classes/Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__oncreatenativemediaplayer12)。
+完整示例代码参考[onCreateNativeMediaPlayer](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__oncreatenativemediaplayer12)。
 
 #### handleSeekFinished12+
 
@@ -228,11 +229,11 @@ handleSeekFinished(): void
 
 **示例：**
 
-完整示例代码参考[onCreateNativeMediaPlayer](../classes/Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__oncreatenativemediaplayer12)。
+完整示例代码参考[onCreateNativeMediaPlayer](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__oncreatenativemediaplayer12)。
 
 #### handleError12+
 
-handleError(error: MediaError, errorMessage: string): void
+handleError(error: [MediaError](../enums/Enums.md#ZH-CN_TOPIC_0000002529445167__mediaerror12), errorMessage: string): void
 
 当播放器发生错误时， 调用该方法通知 ArkWeb 内核。
 
@@ -240,11 +241,14 @@ handleError(error: MediaError, errorMessage: string): void
 
 **参数：**
 
-参数名类型必填说明error[MediaError](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445167__mediaerror12)是错误类型。errorMessagestring是错误的详细描述。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| error | [MediaError](../enums/Enums.md#ZH-CN_TOPIC_0000002529445167__mediaerror12) | 是 | 错误类型。 |
+| errorMessage | string | 是 | 错误的详细描述。 |
 
 **示例：**
 
-完整示例代码参考[onCreateNativeMediaPlayer](../classes/Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__oncreatenativemediaplayer12)。
+完整示例代码参考[onCreateNativeMediaPlayer](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__oncreatenativemediaplayer12)。
 
 #### handleVideoSizeChanged12+
 
@@ -256,8 +260,11 @@ handleVideoSizeChanged(width: number, height: number): void
 
 **参数：**
 
-参数名类型必填说明widthnumber是视频的宽，单位为像素，取值范围：[0, +∞)heightnumber是视频的高，单位为像素，取值范围：[0, +∞)
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| width | number | 是 | 视频的宽，单位为像素，取值范围：[0, +∞) |
+| height | number | 是 | 视频的高，单位为像素，取值范围：[0, +∞) |
 
 **示例：**
 
-完整示例代码参考[onCreateNativeMediaPlayer](../classes/Class (WebviewController).md#ZH-CN_TOPIC_0000002497605192__oncreatenativemediaplayer12)。
+完整示例代码参考[onCreateNativeMediaPlayer](Class (WebviewController).md#ZH-CN_TOPIC_0000002553201117__oncreatenativemediaplayer12)。

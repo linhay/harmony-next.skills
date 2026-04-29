@@ -24,7 +24,12 @@ ARGB格式的颜色描述。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
-名称类型只读可选说明alphanumber否否颜色的A分量（透明度），值是0~255的整数。rednumber否否颜色的R分量（红色），值是0~255的整数。greennumber否否颜色的G分量（绿色），值是0~255的整数。bluenumber否否颜色的B分量（蓝色），值是0~255的整数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| alpha | number | 否 | 否 | 颜色的A分量（透明度），值是0~255的整数。 |
+| red | number | 否 | 否 | 颜色的R分量（红色），值是0~255的整数。 |
+| green | number | 否 | 否 | 颜色的G分量（绿色），值是0~255的整数。 |
+| blue | number | 否 | 否 | 颜色的B分量（蓝色），值是0~255的整数。 |
 
 #### Rect
 
@@ -34,7 +39,12 @@ ARGB格式的颜色描述。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
-名称类型只读可选说明leftnumber否否矩形区域的左上角横坐标，浮点数。topnumber否否矩形区域的左上角纵坐标，浮点数。rightnumber否否矩形区域的右下角横坐标，浮点数。bottomnumber否否矩形区域的右下角纵坐标，浮点数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| left | number | 否 | 否 | 矩形区域的左上角横坐标，浮点数。 |
+| top | number | 否 | 否 | 矩形区域的左上角纵坐标，浮点数。 |
+| right | number | 否 | 否 | 矩形区域的右下角横坐标，浮点数。 |
+| bottom | number | 否 | 否 | 矩形区域的右下角纵坐标，浮点数。 |
 
 #### Point12+
 
@@ -44,7 +54,10 @@ ARGB格式的颜色描述。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
-名称类型只读可选说明xnumber否否横坐标，浮点数。ynumber否否纵坐标，浮点数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| x | number | 否 | 否 | 横坐标，浮点数。 |
+| y | number | 否 | 否 | 纵坐标，浮点数。 |
 
 #### Color4f20+
 
@@ -52,12 +65,19 @@ ARGB格式的颜色描述。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
-名称类型只读可选说明alphanumber否否颜色的A分量（透明度），值是0.0~1.0的浮点数。rednumber否否颜色的R分量（红色），值是0.0~1.0的浮点数。greennumber否否颜色的G分量（绿色），值是0.0~1.0的浮点数。bluenumber否否颜色的B分量（蓝色），值是0.0~1.0的浮点数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| alpha | number | 否 | 否 | 颜色的A分量（透明度），值是0.0~1.0的浮点数。 |
+| red | number | 否 | 否 | 颜色的R分量（红色），值是0.0~1.0的浮点数。 |
+| green | number | 否 | 否 | 颜色的G分量（绿色），值是0.0~1.0的浮点数。 |
+| blue | number | 否 | 否 | 颜色的B分量（蓝色），值是0.0~1.0的浮点数。 |
 
 #### Point3d12+
 
-三维的坐标点。继承自[Point](#ZH-CN_TOPIC_0000002529445937__point12)。
+三维的坐标点。继承自[Point](#ZH-CN_TOPIC_0000002522082126__point12)。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
-名称类型只读可选说明znumber否否z轴坐标，浮点数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| z | number | 否 | 否 | z轴坐标，浮点数。 |

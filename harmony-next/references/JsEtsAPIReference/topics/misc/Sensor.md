@@ -8,4 +8,7 @@
 
 #### 文件汇总
 
-名称描述[oh_sensor.h](../../capi/headers/oh_sensor.h.md)声明操作传感器的API，包括获取传感器信息和订阅取消订阅传感器数据。[oh_sensor_type.h](../../capi/headers/oh_sensor_type.h.md)定义常用传感器属性。
+| 名称 | 描述 |
+| --- | --- |
+| [oh_sensor.h](oh_sensor.h.md) | 声明操作传感器的API，包括获取传感器信息和订阅取消订阅传感器数据。 |
+| [oh_sensor_type.h](oh_sensor_type.h.md) | 定义常用传感器属性。 |

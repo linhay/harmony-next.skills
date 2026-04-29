@@ -2,7 +2,8 @@
 
 WantAgent模块封装了[Want](@ohos.app.ability.Want (Want).md)对象，允许应用程序在未来的某个时间点触发WantAgent实例执行指定操作（如启动Ability、发送公共事件等）。
 
-该模块提供了创建WantAgent实例、获取WantAgent实例所属应用的包名、获取WantAgent实例所属应用的UID、主动触发WantAgent实例、判断两个WantAgent实例是否相等等功能。WantAgent的一个典型应用场景是通知处理。例如，当用户点击通知时，会触发WantAgent的[trigger](#ZH-CN_TOPIC_0000002529444577__wantagenttrigger)接口，并拉起目标应用。具体使用请参考[通知模块](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-with-wantagent)。
+该模块提供了创建WantAgent实例、获取WantAgent实例所属应用的包名、获取WantAgent实例所属应用的UID、主动触发WantAgent实例、判断两个WantAgent实例是否相等等功能。WantAgent的一个典型应用场景是通知处理。例如，当用户点击通知时，会触发WantAgent的[trigger](#ZH-CN_TOPIC_0000002522240560__wantagenttrigger)接口，并拉起目标应用。具体使用请参考[通知模块](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-with-wantagent)。
+
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -14,7 +15,7 @@ import { wantAgent } from '@kit.AbilityKit';
 
 #### wantAgent.getWantAgent
 
-getWantAgent(info: WantAgentInfo, callback: AsyncCallback<WantAgent>): void
+getWantAgent(info: [WantAgentInfo](../../topics/misc/WantAgentInfo.md), callback: AsyncCallback<WantAgent>): void
 
 创建WantAgent，使用callback异步回调。创建成功返回WantAgent对象，创建失败返回空值。
 
@@ -24,13 +25,20 @@ getWantAgent(info: WantAgentInfo, callback: AsyncCallback<WantAgent>): void
 
 **参数：**
 
-参数名类型必填说明info[WantAgentInfo](../../topics/payment/WantAgentInfo.md)是表示创建WantAgent所需的配置信息，包括目标UIAbility、操作类型、请求码等。三方应用在WantAgentInfo中只能设置本应用的UIAbility。callbackAsyncCallback<WantAgent>是回调函数。当创建WantAgent成功，err中code为0，data为创建的WantAgent；否则err会返回对应的错误码和错误信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| info | [WantAgentInfo](../../topics/misc/WantAgentInfo.md) | 是 | 表示创建WantAgent所需的配置信息，包括目标UIAbility、操作类型、请求码等。三方应用在WantAgentInfo中只能设置本应用的UIAbility。 |
+| callback | AsyncCallback<WantAgent> | 是 | 回调函数。当创建WantAgent成功，err中code为0，data为创建的WantAgent；否则err会返回对应的错误码和错误信息。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[元能力子系统错误码]([元能力子系统错误码](../../errors/元能力子系统错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.16000007Service busy. There are concurrent tasks. Try again later.16000151Invalid wantAgent object.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 16000007 | Service busy. There are concurrent tasks. Try again later. |
+| 16000151 | Invalid wantAgent object. |
 
 **示例：**
 
@@ -76,7 +84,6 @@ function getWantAgentCallback(err: BusinessError, data: WantAgent) {
   } else {
     wantAgentData = data;
   }
-}
 
 try {
   wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
@@ -87,7 +94,7 @@ try {
 
 #### wantAgent.getWantAgent
 
-getWantAgent(info: WantAgentInfo): Promise<WantAgent>
+getWantAgent(info: [WantAgentInfo](../../topics/misc/WantAgentInfo.md)): Promise<WantAgent>
 
 创建WantAgent。使用Promise异步回调。创建成功返回WantAgent对象，创建失败返回空值。
 
@@ -97,17 +104,25 @@ getWantAgent(info: WantAgentInfo): Promise<WantAgent>
 
 **参数：**
 
-参数名类型必填说明info[WantAgentInfo](../../topics/payment/WantAgentInfo.md)是表示创建WantAgent所需的配置信息，包括目标UIAbility、操作类型、请求码等。三方应用在WantAgentInfo中只能设置本应用的UIAbility。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| info | [WantAgentInfo](../../topics/misc/WantAgentInfo.md) | 是 | 表示创建WantAgent所需的配置信息，包括目标UIAbility、操作类型、请求码等。三方应用在WantAgentInfo中只能设置本应用的UIAbility。 |
 
 **返回值：**
 
-类型说明Promise<[WantAgent](#ZH-CN_TOPIC_0000002529444577__wantagent)>Promise对象，返回创建的WantAgent。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<WantAgent> | Promise对象，返回创建的WantAgent。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.16000007Service busy. There are concurrent tasks. Try again later.16000151Invalid wantAgent object.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 16000007 | Service busy. There are concurrent tasks. Try again later. |
+| 16000151 | Invalid wantAgent object. |
 
 **示例：**
 
@@ -168,13 +183,20 @@ getBundleName(agent: WantAgent, callback: AsyncCallback<string>): void
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。callbackAsyncCallback<string>是回调函数。当获取包名成功，err为undefined，data为创建的WantAgent；否则err会返回对应的错误码和错误信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
+| callback | AsyncCallback<string> | 是 | 回调函数。当获取包名成功，err为undefined，data为创建的WantAgent；否则err会返回对应的错误码和错误信息。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.16000007Service busy. There are concurrent tasks. Try again later.16000151Invalid wantAgent object.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 16000007 | Service busy. There are concurrent tasks. Try again later. |
+| 16000151 | Invalid wantAgent object. |
 
 **示例：**
 
@@ -227,12 +249,10 @@ function getWantAgentCallback(err: BusinessError, data: WantAgent) {
     } else {
       console.info(`getBundleName ok! ${JSON.stringify(data)}`);
     }
-  }
   try {
     wantAgent.getBundleName(wantAgentData, getBundleNameCallback);
   } catch (err) {
     console.error(`getBundleName failed! ${err.code} ${err.message}`);
-  }
 }
 
 try {
@@ -254,17 +274,25 @@ getBundleName(agent: WantAgent): Promise<string>
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
 
 **返回值：**
 
-类型说明Promise<string>Promise对象，返回获取WantAgent实例的包名。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回获取WantAgent实例的包名。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.16000007Service busy. There are concurrent tasks. Try again later.16000151Invalid wantAgent object.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 16000007 | Service busy. There are concurrent tasks. Try again later. |
+| 16000151 | Invalid wantAgent object. |
 
 **示例：**
 
@@ -319,7 +347,6 @@ function getWantAgentCallback(err: BusinessError, data: WantAgent) {
   } catch(err){
     console.error(`getBundleName failed! ${err.code} ${err.message}`);
   }
-}
 try {
   wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
 } catch(err) {
@@ -339,13 +366,20 @@ getUid(agent: WantAgent, callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。callbackAsyncCallback<number>是获取WantAgent实例所属应用的UID的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
+| callback | AsyncCallback<number> | 是 | 获取WantAgent实例所属应用的UID的回调方法。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.16000007Service busy. There are concurrent tasks. Try again later.16000151Invalid wantAgent object.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 16000007 | Service busy. There are concurrent tasks. Try again later. |
+| 16000151 | Invalid wantAgent object. |
 
 **示例：**
 
@@ -398,14 +432,12 @@ function getWantAgentCallback(err: BusinessError, data: WantAgent) {
     } else {
       console.info(`getUid ok, data: ${JSON.stringify(data)}.`);
     }
-  }
   try {
     wantAgent.getUid(wantAgentData, getUidCallback);
   } catch (err) {
     let code = (err as BusinessError).code;
     let msg = (err as BusinessError).message;
     console.error(`getUid failed, err code: ${code}, err msg: ${msg}.`);
-  }
 }
 
 try {
@@ -429,17 +461,25 @@ getUid(agent: WantAgent): Promise<number>
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回获取WantAgent实例所属应用的UID。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回获取WantAgent实例所属应用的UID。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.16000007Service busy. There are concurrent tasks. Try again later.16000151Invalid wantAgent object.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 16000007 | Service busy. There are concurrent tasks. Try again later. |
+| 16000151 | Invalid wantAgent object. |
 
 **示例：**
 
@@ -496,7 +536,6 @@ function getWantAgentCallback(err: BusinessError, data: WantAgent) {
     let msg = (err as BusinessError).message;
     console.error(`getUid failed, err code: ${code}, err msg: ${msg}.`);
   }
-}
 
 try {
   wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
@@ -519,13 +558,20 @@ cancel(agent: WantAgent, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。callbackAsyncCallback<void>是取消WantAgent实例的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
+| callback | AsyncCallback<void> | 是 | 取消WantAgent实例的回调方法。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.16000007Service busy. There are concurrent tasks. Try again later.16000151Invalid wantAgent object.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 16000007 | Service busy. There are concurrent tasks. Try again later. |
+| 16000151 | Invalid wantAgent object. |
 
 **示例：**
 
@@ -578,14 +624,12 @@ function getWantAgentCallback(err: BusinessError, data: WantAgent) {
     } else {
       console.info(`cancel sucecss.`);
     }
-  }
   try {
     wantAgent.cancel(wantAgentData, cancelCallback);
   } catch (err) {
     let code = (err as BusinessError).code;
     let msg = (err as BusinessError).message;
     console.error(`cancel failed, err code: ${code}, err msg: ${msg}.`);
-  }
 }
 
 try {
@@ -609,17 +653,25 @@ cancel(agent: WantAgent): Promise<void>
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.16000007Service busy. There are concurrent tasks. Try again later.16000151Invalid wantAgent object.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 16000007 | Service busy. There are concurrent tasks. Try again later. |
+| 16000151 | Invalid wantAgent object. |
 
 **示例：**
 
@@ -676,7 +728,6 @@ function getWantAgentCallback(err: BusinessError, data: WantAgent) {
     let msg = (err as BusinessError).message;
     console.error(`cancel failed, err code: ${code}, err msg: ${msg}.`);
   }
-}
 
 try {
   wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
@@ -689,11 +740,11 @@ try {
 
 #### wantAgent.trigger
 
-trigger(agent: WantAgent, triggerInfo: TriggerInfo, callback?: AsyncCallback<CompleteData>): void
+trigger(agent: WantAgent, triggerInfo: [TriggerInfo](../../topics/misc/TriggerInfo.md), callback?: AsyncCallback<CompleteData>): void
 
 触发WantAgent实例，执行指定的操作（启动Ability、发送公共事件等）。使用callback异步回调。
 
-这里所执行的操作类型，是在创建WantAgent实例时通过[WantAgentInfo](../../topics/payment/WantAgentInfo.md)参数中的actionType属性指定的。
+这里所执行的操作类型，是在创建WantAgent实例时通过[WantAgentInfo](WantAgentInfo.md)参数中的actionType属性指定的。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -701,13 +752,19 @@ trigger(agent: WantAgent, triggerInfo: TriggerInfo, callback?: AsyncCallback<Com
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。triggerInfo[TriggerInfo](../../topics/misc/TriggerInfo.md)是表示触发WantAgent实例时携带的信息，如自定义的extraInfos。callbackAsyncCallback<[CompleteData](#ZH-CN_TOPIC_0000002529444577__completedata)>否主动激发WantAgent实例的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
+| triggerInfo | [TriggerInfo](../../topics/misc/TriggerInfo.md) | 是 | 表示触发WantAgent实例时携带的信息，如自定义的extraInfos。 |
+| callback | AsyncCallback<CompleteData> | 否 | 主动激发WantAgent实例的回调方法。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -764,14 +821,12 @@ function getWantAgentCallback(err: BusinessError, data: WantAgent) {
     } else {
       console.info(`trigger success, data: ${JSON.stringify(data)}`);
     }
-  }
   try {
     wantAgent.trigger(wantAgentData, triggerInfo, triggerCallback);
   } catch (err) {
     let code = (err as BusinessError).code;
     let msg = (err as BusinessError).message;
     console.error(`trigger failed, code: ${code}, message: ${msg}.`);
-  }
 }
 
 try {
@@ -789,7 +844,7 @@ equal(agent: WantAgent, otherAgent: WantAgent, callback: AsyncCallback<boolean>)
 
 判断两个WantAgent实例是否相等，使用callback异步回调，以此来确定是否是来自同一应用的相同操作。
 
-当两个WantAgent实例由当前用户下的同一应用使用相同的[WantAgentInfo](../../topics/payment/WantAgentInfo.md)信息创建，并且实例未被[cancel](#ZH-CN_TOPIC_0000002529444577__wantagentcancel)取消，这两个实例相等。在通知（携带WantAgent实例）场景，通知更新时会比较2个通知中的WantAgent实例，不相等时会把旧通知的WantAgent实例删除。
+当两个WantAgent实例由当前用户下的同一应用使用相同的[WantAgentInfo](WantAgentInfo.md)信息创建，并且实例未被[cancel](#ZH-CN_TOPIC_0000002522240560__wantagentcancel)取消，这两个实例相等。在通知（携带WantAgent实例）场景，通知更新时会比较2个通知中的WantAgent实例，不相等时会把旧通知的WantAgent实例删除。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -797,13 +852,19 @@ equal(agent: WantAgent, otherAgent: WantAgent, callback: AsyncCallback<boolean>)
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。otherAgentWantAgent是WantAgent对象。callbackAsyncCallback<boolean>是判断两个WantAgent实例是否相等的回调方法。返回true表示两个WantAgent实例相等，false表示两个WantAgent实例不相等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
+| otherAgent | WantAgent | 是 | WantAgent对象。 |
+| callback | AsyncCallback<boolean> | 是 | 判断两个WantAgent实例是否相等的回调方法。返回true表示两个WantAgent实例相等，false表示两个WantAgent实例不相等。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -858,12 +919,10 @@ function getWantAgentCallback(err: BusinessError, data: WantAgent) {
     } else {
       console.info(`equal ok! ${JSON.stringify(data)}`);
     }
-  }
   try {
     wantAgent.equal(wantAgent1, wantAgent2, equalCallback);
   } catch (err) {
     console.error(`equal failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
-  }
 }
 
 try {
@@ -879,7 +938,7 @@ equal(agent: WantAgent, otherAgent: WantAgent): Promise<boolean>
 
 判断两个WantAgent实例是否相等，使用Promise异步回调，以此来确定是否是来自同一应用的相同操作。
 
-当两个WantAgent实例由当前用户下的同一应用使用相同的[WantAgentInfo](../../topics/payment/WantAgentInfo.md)信息创建，并且实例未被[cancel](#ZH-CN_TOPIC_0000002529444577__wantagentcancel)取消，这两个实例相等。在通知（携带WantAgent实例）场景，通知更新时会比较2个通知中的WantAgent实例，不相等时会把就旧通知的WantAgent实例删除。
+当两个WantAgent实例由当前用户下的同一应用使用相同的[WantAgentInfo](WantAgentInfo.md)信息创建，并且实例未被[cancel](#ZH-CN_TOPIC_0000002522240560__wantagentcancel)取消，这两个实例相等。在通知（携带WantAgent实例）场景，通知更新时会比较2个通知中的WantAgent实例，不相等时会把就旧通知的WantAgent实例删除。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -887,17 +946,24 @@ equal(agent: WantAgent, otherAgent: WantAgent): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。otherAgentWantAgent是WantAgent对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
+| otherAgent | WantAgent | 是 | WantAgent对象。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象，返回获取判断两个WantAgent实例是否相等的结果。返回true表示两个WantAgent实例相等，false表示两个WantAgent实例不相等。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象，返回获取判断两个WantAgent实例是否相等的结果。返回true表示两个WantAgent实例相等，false表示两个WantAgent实例不相等。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -954,7 +1020,6 @@ function getWantAgentCallback(err: BusinessError, data: WantAgent) {
   } catch (err) {
     console.error(`equal failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
   }
-}
 
 try {
   wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
@@ -967,7 +1032,7 @@ try {
 
 getOperationType(agent: WantAgent, callback: AsyncCallback<number>): void
 
-获取一个WantAgent实例的[OperationType](#ZH-CN_TOPIC_0000002529444577__operationtype)信息，使用callback异步回调。
+获取一个WantAgent实例的[OperationType](#ZH-CN_TOPIC_0000002522240560__operationtype)信息，使用callback异步回调。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -975,13 +1040,21 @@ getOperationType(agent: WantAgent, callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。callbackAsyncCallback<number>是获取一个WantAgent的OperationType信息的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
+| callback | AsyncCallback<number> | 是 | 获取一个WantAgent的OperationType信息的回调方法。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.16000007Service busy. There are concurrent tasks. Try again later.16000015Service timeout.16000151Invalid wantAgent object.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 16000007 | Service busy. There are concurrent tasks. Try again later. |
+| 16000015 | Service timeout. |
+| 16000151 | Invalid wantAgent object. |
 
 **示例：**
 
@@ -1034,12 +1107,10 @@ function getWantAgentCallback(err: BusinessError, data: WantAgent) {
     } else {
       console.info(`getOperationType ok! ${JSON.stringify(data)}`);
     }
-  }
   try {
     wantAgent.getOperationType(wantAgentData, getOperationTypeCallback);
   } catch (err) {
     console.error(`getOperationTypeCallback failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
-  }
 }
 
 try {
@@ -1053,7 +1124,7 @@ try {
 
 getOperationType(agent: WantAgent): Promise<number>
 
-获取一个WantAgent实例的[OperationType](#ZH-CN_TOPIC_0000002529444577__operationtype)信息。使用Promise异步回调。
+获取一个WantAgent实例的[OperationType](#ZH-CN_TOPIC_0000002522240560__operationtype)信息。使用Promise异步回调。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -1061,17 +1132,26 @@ getOperationType(agent: WantAgent): Promise<number>
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回OperationType的结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回OperationType的结果。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.16000007Service busy. There are concurrent tasks. Try again later.16000015Service timeout.16000151Invalid wantAgent object.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 16000007 | Service busy. There are concurrent tasks. Try again later. |
+| 16000015 | Service timeout. |
+| 16000151 | Invalid wantAgent object. |
 
 **示例：**
 
@@ -1126,7 +1206,6 @@ function getWantAgentCallback(err: BusinessError, data: WantAgent) {
   } catch (err) {
     console.error(`getOperationType failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
   }
-}
 
 try {
   wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
@@ -1143,7 +1222,18 @@ try {
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称值说明ONE_TIME_FLAG0WantAgent仅能使用一次，trigger触发后自动cancel取消。NO_BUILD_FLAG1如果描述WantAgent对象不存在，则不创建它，直接返回null。CANCEL_PRESENT_FLAG2在生成一个新的WantAgent对象前取消已存在的一个WantAgent对象。UPDATE_PRESENT_FLAG3使用新的WantAgent的额外数据替换已存在的WantAgent中的额外数据。CONSTANT_FLAG4WantAgent是不可变的。REPLACE_ELEMENT5当前Want中的element属性可被WantAgent.trigger()中Want的element属性取代。当前版本暂不支持。REPLACE_ACTION6当前Want中的action属性可被WantAgent.trigger()中Want的action属性取代。当前版本暂不支持。REPLACE_URI7当前Want中的uri属性可被WantAgent.trigger()中Want的uri属性取代。当前版本暂不支持。REPLACE_ENTITIES8当前Want中的entities属性可被WantAgent.trigger()中Want的entities属性取代。当前版本暂不支持。REPLACE_BUNDLE9当前Want中的bundleName属性可被WantAgent.trigger()中Want的bundleName属性取代。当前版本暂不支持。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ONE_TIME_FLAG | 0 | WantAgent仅能使用一次，trigger触发后自动cancel取消。 |
+| NO_BUILD_FLAG | 1 | 如果描述WantAgent对象不存在，则不创建它，直接返回null。 |
+| CANCEL_PRESENT_FLAG | 2 | 在生成一个新的WantAgent对象前取消已存在的一个WantAgent对象。 |
+| UPDATE_PRESENT_FLAG | 3 | 使用新的WantAgent的额外数据替换已存在的WantAgent中的额外数据。 |
+| CONSTANT_FLAG | 4 | WantAgent是不可变的。 |
+| REPLACE_ELEMENT | 5 | 当前Want中的element属性可被WantAgent.trigger()中Want的element属性取代。当前版本暂不支持。 |
+| REPLACE_ACTION | 6 | 当前Want中的action属性可被WantAgent.trigger()中Want的action属性取代。当前版本暂不支持。 |
+| REPLACE_URI | 7 | 当前Want中的uri属性可被WantAgent.trigger()中Want的uri属性取代。当前版本暂不支持。 |
+| REPLACE_ENTITIES | 8 | 当前Want中的entities属性可被WantAgent.trigger()中Want的entities属性取代。当前版本暂不支持。 |
+| REPLACE_BUNDLE | 9 | 当前Want中的bundleName属性可被WantAgent.trigger()中Want的bundleName属性取代。当前版本暂不支持。 |
 
 #### OperationType
 
@@ -1153,7 +1243,13 @@ try {
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称值说明UNKNOWN_TYPE0不识别的类型。START_ABILITY1开启一个有页面的Ability。START_ABILITIES2开启多个有页面的Ability。START_SERVICE3开启一个无页面的Ability（仅在FA模型下生效）。SEND_COMMON_EVENT4发送一个公共事件。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| UNKNOWN_TYPE | 0 | 不识别的类型。 |
+| START_ABILITY | 1 | 开启一个有页面的Ability。 |
+| START_ABILITIES | 2 | 开启多个有页面的Ability。 |
+| START_SERVICE | 3 | 开启一个无页面的Ability（仅在FA模型下生效）。 |
+| SEND_COMMON_EVENT | 4 | 发送一个公共事件。 |
 
 #### CompleteData
 
@@ -1163,31 +1259,41 @@ try {
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称类型只读可选说明infoWantAgent否否触发的wantAgent。want[Want](@ohos.app.ability.Want (Want).md)否否触发wantAgent时实际使用的want信息。finalCodenumber否否触发wantAgent的返回码。finalDatastring否否触发wantAgent的返回数据。返回"canceled"时表示触发失败，WantAgent实例已经被取消。extraInfoRecord<string, Object>否是额外数据。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| info | WantAgent | 否 | 否 | 触发的wantAgent。 |
+| want | Want | 否 | 否 | 触发wantAgent时实际使用的want信息。 |
+| finalCode | number | 否 | 否 | 触发wantAgent的返回码。 |
+| finalData | string | 否 | 否 | 触发wantAgent的返回数据。返回"canceled"时表示触发失败，WantAgent实例已经被取消。 |
+| extraInfo | Record<string, Object> | 否 | 是 | 额外数据。 |
 
-#### TriggerInfo
+#### [TriggerInfo](../../topics/misc/TriggerInfo.md)
 
-type TriggerInfo = _TriggerInfo
+type [TriggerInfo](../../topics/misc/TriggerInfo.md) = [_TriggerInfo](../../topics/misc/TriggerInfo.md)
 
-TriggerInfo对象。
-
-**元服务API**：从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力**：SystemCapability.Ability.AbilityRuntime.Core
-
-类型说明[_TriggerInfo](../../topics/misc/TriggerInfo.md)TriggerInfo对象。
-
-#### WantAgentInfo
-
-type WantAgentInfo = _WantAgentInfo
-
-WantAgentInfo对象。
+[TriggerInfo](../../topics/misc/TriggerInfo.md)对象。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-类型说明[_WantAgentInfo](../../topics/payment/WantAgentInfo.md)WantAgentInfo对象。
+| 类型 | 说明 |
+| --- | --- |
+| _[TriggerInfo](../../topics/misc/TriggerInfo.md) | TriggerInfo对象。 |
+
+#### [WantAgentInfo](../../topics/misc/WantAgentInfo.md)
+
+type [WantAgentInfo](../../topics/misc/WantAgentInfo.md) = [_WantAgentInfo](../../topics/misc/WantAgentInfo.md)
+
+[WantAgentInfo](../../topics/misc/WantAgentInfo.md)对象。
+
+**元服务API**：从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
+| 类型 | 说明 |
+| --- | --- |
+| _[WantAgentInfo](../../topics/misc/WantAgentInfo.md) | WantAgentInfo对象。 |
 
 #### WantAgent
 
@@ -1197,4 +1303,6 @@ WantAgent对象。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-类型说明objectWantAgent对象。
+| 类型 | 说明 |
+| --- | --- |
+| object | WantAgent对象。 |

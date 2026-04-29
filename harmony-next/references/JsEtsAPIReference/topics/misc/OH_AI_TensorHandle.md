@@ -12,4 +12,4 @@ typedef void *OH_AI_TensorHandle
 
 **相关模块：**[MindSpore](MindSpore.md)
 
-**所在头文件：**[tensor.h](../../capi/headers/tensor.h.md)
+**所在头文件：**[tensor.h](../../topics/misc/[tensor.h](tensor.h.md).md)

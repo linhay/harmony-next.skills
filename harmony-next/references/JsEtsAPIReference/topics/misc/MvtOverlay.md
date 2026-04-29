@@ -8,7 +8,7 @@ import { map, mapCommon } from '@kit.MapKit';
 
 #### MvtOverlay
 
-矢量图层的管理对象。在调用map.[MapComponentController](../components/MapComponentController.md)类的[addMvtOverlay](../components/MapComponentController.md#section10177450104116)方法时会返回该类型的实例，继承[BaseOverlay](BaseOverlay.md)。
+矢量图层的管理对象。在调用map.[MapComponentController](MapComponentController.md)类的[addMvtOverlay](MapComponentController.md#ZH-CN_TOPIC_0000002553362311__addmvtoverlay)方法时会返回该类型的实例，继承[BaseOverlay](BaseOverlay.md)。
 
 **模型约束：**此接口仅可在Stage模型下使用。
 
@@ -42,7 +42,6 @@ let params: mapCommon.MvtOverlayParams = {
         operator: mapCommon.Operator.GET,
         args: 'fill-opacity'
       }
-    }
   }]
 };
 let mvtOverlay = this.mapController?.addMvtOverlay(params);
@@ -50,7 +49,7 @@ let mvtOverlay = this.mapController?.addMvtOverlay(params);
 
 #### addLayers
 
-addLayers(layers: mapCommon.MvtLayer[]): void
+addLayers(layers: [mapCommon.MvtLayer](mapCommon（地图属性模型）.md#section14599124818)[]): void
 
 添加新矢量图层。
 
@@ -64,21 +63,9 @@ addLayers(layers: mapCommon.MvtLayer[]): void
 
 **参数：**
 
-**参数名**
-
-**类型**
-
-必填
-
-**说明**
-
-layers
-
-[mapCommon.MvtLayer](mapCommon（地图属性模型）.md#section14599124818)[]
-
-是
-
-矢量图层。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| layers | [mapCommon.MvtLayer](mapCommon（地图属性模型）.md#section14599124818)[] | 是 | 矢量图层。 |
 
 **示例：**
 
@@ -99,8 +86,6 @@ for (let index = 0; index < staticLayerIds.length; index++) {
         operator: mapCommon.Operator.GET,
         args: 'fill-opacity'
       }
-    }
-  }
   renderLayers.push(layer)
 };
 
@@ -123,21 +108,9 @@ removeLayers(layerIds: string[]): void
 
 **参数：**
 
-**参数名**
-
-**类型**
-
-必填
-
-**说明**
-
-layerIds
-
-string[]
-
-是
-
-需要删除的图层ID。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| layerIds | string[] | 是 | 需要删除的图层ID。 |
 
 **示例：**
 
@@ -148,7 +121,7 @@ mvtOverlay.removeLayers(layerIds);
 
 #### changeLayers
 
-changeLayers(addedLayers: mapCommon.MvtLayer[], removedLayerIds: string[]): void
+changeLayers(addedLayers: [mapCommon.MvtLayer](mapCommon（地图属性模型）.md#section14599124818)[], removedLayerIds: string[]): void
 
 新增矢量图层，根据图层ID删除图层。
 
@@ -162,29 +135,10 @@ changeLayers(addedLayers: mapCommon.MvtLayer[], removedLayerIds: string[]): void
 
 **参数：**
 
-**参数名**
-
-**类型**
-
-必填
-
-**说明**
-
-addedLayers
-
-[mapCommon.MvtLayer](mapCommon（地图属性模型）.md#section14599124818)[]
-
-是
-
-矢量图层。
-
-removedLayerIds
-
-string[]
-
-是
-
-需要删除的图层ID。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| addedLayers | [mapCommon.MvtLayer](mapCommon（地图属性模型）.md#section14599124818)[] | 是 | 矢量图层。 |
+| removedLayerIds | string[] | 是 | 需要删除的图层ID。 |
 
 **示例：**
 
@@ -205,8 +159,6 @@ for (let index = 0; index < staticLayerIds.length; index++) {
         operator: mapCommon.Operator.GET,
         args: 'fill-opacity'
       }
-    }
-  }
   renderLayers.push(layer)
 }
 let layerIds = ['111'];
@@ -218,7 +170,7 @@ mvtOverlay.changeLayers(renderLayers, layerIds);
 
 setBlur(blurIntensity: number | Record<number, number>): void
 
-更新矢量图层的模糊强度。
+更新矢量图层的模糊度。
 
 **模型约束：**此接口仅可在Stage模型下使用。
 
@@ -230,27 +182,9 @@ setBlur(blurIntensity: number | Record<number, number>): void
 
 **参数：**
 
-**参数名**
-
-**类型**
-
-必填
-
-**说明**
-
-blurIntensity
-
-number | Record<number, number>
-
-是
-
-矢量图层的模糊强度。
-
-模糊度范围：[0, 20]，小数向下取整，默认值为0，异常值按默认值处理。
-
-若传数字，表示所有缩放层级按同一模糊度处理。
-
-若传键值对，key为缩放层级，value为模糊度，有效层级范围：[2，20]，层级异常值大于20取20，小于2取2。例如：{ 5: 5, 10: 8, 18: 15 }，2到4层级为0，默认不模糊，5到9层级模糊度为5，10到17层级模糊度为8，18到20层级模糊度为15。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| blurIntensity | number | Record<number, number> | 是 | 矢量图层的模糊度，不支持3D地球。 模糊度范围：[0, 20]，小数向下取整，默认值为0，异常值按默认值处理。 若传数字，表示所有缩放层级按同一模糊度处理。 若传键值对，key为缩放层级，value为模糊度，有效层级范围：[2，20]，层级异常值大于20取20，小于2取2。例如：{ 5: 5, 10: 8, 18: 15 }，2到4层级为0，默认不模糊，5到9层级模糊度为5，10到17层级模糊度为8，18到20层级模糊度为15。 |
 
 **示例：**
 
@@ -262,7 +196,7 @@ mvtOverlay.setBlur(8);
 
 getBlur(): number | Record<number, number>
 
-获取矢量图层的模糊强度。
+获取矢量图层的模糊度。
 
 **模型约束：**此接口仅可在Stage模型下使用。
 
@@ -274,13 +208,9 @@ getBlur(): number | Record<number, number>
 
 **返回值：**
 
-类型
-
-说明
-
-number | Record<number, number>
-
-矢量图层的模糊强度。
+| 类型 | 说明 |
+| --- | --- |
+| number | Record<number, number> | 矢量图层的模糊度。 |
 
 **示例：**
 

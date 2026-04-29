@@ -1,6 +1,7 @@
-# @ohos.app.ability.abilityDelegatorRegistry (AbilityDelegatorRegistry)
+# @ohos.app.ability.abilityDelegatorRegistry ([AbilityDelegator](../../topics/misc/AbilityDelegator.md)Registry)
 
-AbilityDelegatorRegistry是自动化测试框架使用指南模块，该模块用于获取[AbilityDelegator](../../topics/system-services/AbilityDelegator.md)和[AbilityDelegatorArgs](../../topics/system-services/AbilityDelegatorArgs.md)对象，其中[AbilityDelegator](../../topics/system-services/AbilityDelegator.md)对象提供添加用于监视指定ability的生命周期状态更改的[AbilityMonitor](../../topics/system-services/AbilityMonitor.md#ZH-CN_TOPIC_0000002497604618__abilitymonitor-1)对象的能力，[AbilityDelegatorArgs](../../topics/system-services/AbilityDelegatorArgs.md)对象提供获取当前测试参数的能力。
+AbilityDelegatorRegistry是自动化测试框架使用指南模块，该模块用于获取[AbilityDelegator](AbilityDelegator.md)和[AbilityDelegatorArgs]([AbilityDelegatorArgs](../../topics/misc/AbilityDelegatorArgs.md).md)对象，其中[AbilityDelegator](AbilityDelegator.md)对象提供添加用于监视指定ability的生命周期状态更改的[AbilityMonitor](AbilityMonitor.md#ZH-CN_TOPIC_0000002553200531__abilitymonitor-1)对象的能力，[AbilityDelegatorArgs](AbilityDelegatorArgs.md)对象提供获取当前测试参数的能力。
+
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -14,19 +15,25 @@ import { abilityDelegatorRegistry } from '@kit.TestKit';
 
 #### AbilityLifecycleState
 
-Ability生命周期状态，该类型为枚举，可配合[AbilityDelegator](../../topics/system-services/AbilityDelegator.md)的[getAbilityState(ability)](../../topics/system-services/AbilityDelegator.md#ZH-CN_TOPIC_0000002497445712__getabilitystate9)方法返回不同ability生命周期。
+Ability生命周期状态，该类型为枚举，可配合[AbilityDelegator](AbilityDelegator.md)的[getAbilityState(ability)](AbilityDelegator.md#ZH-CN_TOPIC_0000002522241804__getabilitystate9)方法返回不同ability生命周期。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力** ：以下各项对应的系统能力均为SystemCapability.Ability.AbilityRuntime.Core
 
-名称值说明UNINITIALIZED0表示Ability处于无效状态。CREATE1表示Ability处于已创建状态。FOREGROUND2表示Ability处于前台状态。BACKGROUND3表示Ability处于后台状态。DESTROY4表示Ability处于已销毁状态。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| UNINITIALIZED | 0 | 表示Ability处于无效状态。 |
+| CREATE | 1 | 表示Ability处于已创建状态。 |
+| FOREGROUND | 2 | 表示Ability处于前台状态。 |
+| BACKGROUND | 3 | 表示Ability处于后台状态。 |
+| DESTROY | 4 | 表示Ability处于已销毁状态。 |
 
-#### abilityDelegatorRegistry.getAbilityDelegator
+#### abilityDelegatorRegistry.get[AbilityDelegator](../../topics/misc/AbilityDelegator.md)
 
-getAbilityDelegator(): AbilityDelegator
+get[AbilityDelegator](../../topics/misc/AbilityDelegator.md)(): AbilityDelegator
 
-获取应用程序的[AbilityDelegator](../../topics/system-services/AbilityDelegator.md)对象，该对象能够使用调度测试框架的相关功能。
+获取应用程序的[AbilityDelegator](AbilityDelegator.md)对象，该对象能够使用调度测试框架的相关功能。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -34,7 +41,9 @@ getAbilityDelegator(): AbilityDelegator
 
 **返回值：**
 
-类型说明[AbilityDelegator](../../topics/system-services/AbilityDelegator.md)[AbilityDelegator](../../topics/system-services/AbilityDelegator.md)对象。可以用来调度测试框架相关功能。
+| 类型 | 说明 |
+| --- | --- |
+| [AbilityDelegator](../../topics/misc/AbilityDelegator.md) | AbilityDelegator对象。可以用来调度测试框架相关功能。 |
 
 **示例：**
 
@@ -59,9 +68,9 @@ abilityDelegator.startAbility(want, (err) => {
 
 #### abilityDelegatorRegistry.getArguments
 
-getArguments(): AbilityDelegatorArgs
+getArguments(): [AbilityDelegator](../../topics/misc/AbilityDelegator.md)Args
 
-获取单元测试参数[AbilityDelegatorArgs](../../topics/system-services/AbilityDelegatorArgs.md)对象。
+获取单元测试参数[AbilityDelegatorArgs](AbilityDelegatorArgs.md)对象。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -69,7 +78,9 @@ getArguments(): AbilityDelegatorArgs
 
 **返回值：**
 
-类型说明[AbilityDelegatorArgs](../../topics/system-services/AbilityDelegatorArgs.md)[AbilityDelegatorArgs](../../topics/system-services/AbilityDelegatorArgs.md)对象。可以用来获取测试参数。
+| 类型 | 说明 |
+| --- | --- |
+| [AbilityDelegator](../../topics/misc/AbilityDelegator.md)Args | AbilityDelegatorArgs对象。可以用来获取测试参数。 |
 
 **示例：**
 
@@ -83,45 +94,51 @@ console.info(`getArguments testCaseNames: ${args.testCaseNames}`);
 console.info(`getArguments testRunnerClassName: ${args.testRunnerClassName}`);
 ```
 
-#### AbilityDelegator
+#### [AbilityDelegator](../../topics/misc/AbilityDelegator.md)
 
-type AbilityDelegator = _AbilityDelegator
+type [AbilityDelegator](../../topics/misc/AbilityDelegator.md) = [_AbilityDelegator](../../topics/misc/AbilityDelegator.md)
 
-AbilityDelegator模块。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.Ability.AbilityRuntime.Core
-
-类型说明[_AbilityDelegator](../../topics/system-services/AbilityDelegator.md)AbilityDelegator模块。
-
-#### AbilityDelegatorArgs
-
-type AbilityDelegatorArgs = _AbilityDelegatorArgs
-
-AbilityDelegatorArgs模块。
+[AbilityDelegator](../../topics/misc/AbilityDelegator.md)模块。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
-类型说明[_AbilityDelegatorArgs](../../topics/system-services/AbilityDelegatorArgs.md)AbilityDelegatorArgs模块。
+| 类型 | 说明 |
+| --- | --- |
+| _[AbilityDelegator](../../topics/misc/AbilityDelegator.md) | AbilityDelegator模块。 |
 
-#### AbilityMonitor
+#### [AbilityDelegator](../../topics/misc/AbilityDelegator.md)Args
 
-type AbilityMonitor = _AbilityMonitor
+type [AbilityDelegator](../../topics/misc/AbilityDelegator.md)Args = [_AbilityDelegatorArgs](../../topics/misc/AbilityDelegatorArgs.md)
 
-AbilityMonitor模块。
+[AbilityDelegator](../../topics/misc/AbilityDelegator.md)Args模块。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
-类型说明[_AbilityMonitor](../../topics/system-services/AbilityMonitor.md)AbilityMonitor模块。
+| 类型 | 说明 |
+| --- | --- |
+| _[AbilityDelegator](../../topics/misc/AbilityDelegator.md)Args | AbilityDelegatorArgs模块。 |
+
+#### [AbilityMonitor](../../topics/misc/AbilityMonitor.md#ZH-CN_TOPIC_0000002497604618__abilitymonitor-1)
+
+type [AbilityMonitor](../../topics/misc/AbilityMonitor.md#ZH-CN_TOPIC_0000002497604618__abilitymonitor-1) = [_AbilityMonitor](../../topics/misc/AbilityMonitor.md)
+
+[AbilityMonitor](../../topics/misc/AbilityMonitor.md#ZH-CN_TOPIC_0000002497604618__abilitymonitor-1)模块。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Ability.AbilityRuntime.Core
+
+| 类型 | 说明 |
+| --- | --- |
+| _[AbilityMonitor](../../topics/misc/AbilityMonitor.md#ZH-CN_TOPIC_0000002497604618__abilitymonitor-1) | AbilityMonitor模块。 |
 
 #### ShellCmdResult
 
-type ShellCmdResult = _ShellCmdResult
+type ShellCmdResult = [_ShellCmdResult](../../topics/misc/ShellCmdResult.md)
 
 ShellCmdResult模块。
 
@@ -129,11 +146,13 @@ ShellCmdResult模块。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
-类型说明[_ShellCmdResult](../../topics/misc/ShellCmdResult.md)ShellCmdResult模块。
+| 类型 | 说明 |
+| --- | --- |
+| [_ShellCmdResult](../../topics/misc/ShellCmdResult.md) | ShellCmdResult模块。 |
 
 #### AbilityStageMonitor14+
 
-type AbilityStageMonitor = _AbilityStageMonitor
+type AbilityStageMonitor = [_AbilityStageMonitor](../../topics/misc/AbilityStageMonitor.md)
 
 AbilityStageMonitor模块。
 
@@ -141,4 +160,6 @@ AbilityStageMonitor模块。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
-类型说明[_AbilityStageMonitor](../../topics/system-services/AbilityStageMonitor.md)AbilityStageMonitor模块。
+| 类型 | 说明 |
+| --- | --- |
+| [_AbilityStageMonitor](../../topics/misc/AbilityStageMonitor.md) | AbilityStageMonitor模块。 |

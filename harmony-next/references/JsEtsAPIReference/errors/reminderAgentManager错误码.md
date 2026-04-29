@@ -19,7 +19,8 @@ Notification is not enabled.
 
 **处理步骤**
 
-1. 申请通知使能权限弹窗[Notification.requestEnableNotification](../modules/ohos/@ohos.notification (Notification模块).md#ZH-CN_TOPIC_0000002529286111__notificationrequestenablenotification8)。
+1. 申请通知使能权限弹窗[Notification.requestEnableNotification](@ohos.notification (Notification模块).md#ZH-CN_TOPIC_0000002522082432__notificationrequestenablenotification8)。
+
 1. 通知设置里开启应用通知开关。
 
 #### 1700002 提醒数量超出限制

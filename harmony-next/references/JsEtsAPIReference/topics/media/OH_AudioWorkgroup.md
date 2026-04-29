@@ -12,4 +12,4 @@ typedef struct OH_AudioWorkgroup OH_AudioWorkgroup
 
 **相关模块：**[OHAudio](OHAudio.md)
 
-**所在头文件：**[native_audio_resource_manager.h](../../capi/headers/native_audio_resource_manager.h.md)
+**所在头文件：**[native_audio_resource_manager.h](../../topics/media/[native_audio_resource_manager.h](native_audio_resource_manager.h.md).md)

@@ -1,6 +1,7 @@
 # Class (JsResult)
 
-Web组件返回的弹窗确认或弹窗取消功能对象。示例代码参考[onAlert事件](../../topics/misc/事件.md#ZH-CN_TOPIC_0000002497445228__onalert)。
+Web组件返回的弹窗确认或弹窗取消功能对象。示例代码参考[onAlert事件](事件.md#ZH-CN_TOPIC_0000002522081170__onalert)。
+
 
 -
 
@@ -12,7 +13,7 @@ Web组件返回的弹窗确认或弹窗取消功能对象。示例代码参考[o
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### constructor
 
@@ -48,4 +49,6 @@ handlePromptConfirm(result: string): void
 
 **参数：**
 
-参数名类型必填说明resultstring是用户输入的对话框内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| result | string | 是 | 用户输入的对话框内容。 |

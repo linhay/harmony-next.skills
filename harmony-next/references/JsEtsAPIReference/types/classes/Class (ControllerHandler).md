@@ -1,6 +1,7 @@
 # Class (ControllerHandler)
 
-设置用户新建Web组件的WebviewController对象。示例代码参考[onWindowNew事件](../../topics/misc/事件.md#ZH-CN_TOPIC_0000002497445228__onwindownew9)。
+设置用户新建Web组件的WebviewController对象。示例代码参考[onWindowNew事件](事件.md#ZH-CN_TOPIC_0000002522081170__onwindownew9)。
+
 
 -
 
@@ -12,9 +13,7 @@
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
-
-**系统能力：** SystemCapability.Web.Webview.Core
+示例效果请以真机运行为准。
 
 #### constructor9+
 
@@ -34,4 +33,6 @@ setWebController(controller: WebviewController): void
 
 **参数：**
 
-参数名类型必填说明controller[WebviewController](Class (WebviewController).md)是新建Web组件的WebviewController对象，如果不需要打开新窗口请设置为null。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| controller | WebviewController | 是 | 新建Web组件的WebviewController对象，如果不需要打开新窗口请设置为null。 |

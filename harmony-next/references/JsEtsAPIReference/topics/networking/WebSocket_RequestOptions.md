@@ -12,10 +12,12 @@ webSocket客户端和服务端建立连接的参数。
 
 **相关模块：**[netstack](Netstack.md)
 
-**所在头文件：**[net_websocket_type.h](../../capi/headers/net_websocket_type.h.md)
+所在头文件： [net_websocket_type.h](net_websocket_type.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述WebSocket_Header * headersheader头信息。
+| 名称 | 描述 |
+| --- | --- |
+| struct WebSocket_Header *headers | header头信息。 |

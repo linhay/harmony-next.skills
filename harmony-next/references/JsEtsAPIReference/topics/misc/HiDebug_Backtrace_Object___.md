@@ -12,4 +12,4 @@ typedef struct HiDebug_Backtrace_Object__* HiDebug_Backtrace_Object
 
 **相关模块：**[HiDebug](HiDebug.md)
 
-**所在头文件：**[hidebug_type.h](../../capi/headers/hidebug_type.h.md)
+**所在头文件：**[hidebug_type.h](../../topics/misc/[hidebug_type.h](hidebug_type.h.md).md)

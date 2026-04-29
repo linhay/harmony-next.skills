@@ -2,13 +2,14 @@
 
 本模块提供了跟踪进程轨迹，度量程序执行性能的打点能力。本模块打点的数据供hiTraceMeter工具分析使用。
 
-详细开发流程请参考：[性能打点跟踪开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracemeter-guidelines-arkts)。
+详细开发流程请参考：[使用HiTraceMeter跟踪性能（ArkTS）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracemeter-guidelines-arkts)。
+
 
 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-建议使用API version 19的性能打点接口，后续性能打点接口[startTrace()](#ZH-CN_TOPIC_0000002529445625__hitracemeterstarttrace)、[finishTrace()](#ZH-CN_TOPIC_0000002529445625__hitracemeterfinishtrace)、[traceByValue()](#ZH-CN_TOPIC_0000002529445625__hitracemetertracebyvalue)将逐步废弃。
+建议使用API version 19的性能打点接口，后续性能打点接口[startTrace()](#ZH-CN_TOPIC_0000002522081780__hitracemeterstarttrace)、[finishTrace()](#ZH-CN_TOPIC_0000002522081780__hitracemeterfinishtrace)、[traceByValue()](#ZH-CN_TOPIC_0000002522081780__hitracemetertracebyvalue)将逐步废弃。
 
-性能打点接口[startTrace()](#ZH-CN_TOPIC_0000002529445625__hitracemeterstarttrace)、[finishTrace()](#ZH-CN_TOPIC_0000002529445625__hitracemeterfinishtrace)、[traceByValue()](#ZH-CN_TOPIC_0000002529445625__hitracemetertracebyvalue)无法指定跟踪输出级别，默认均为COMMERCIAL级别性能打点。
+性能打点接口[startTrace()](#ZH-CN_TOPIC_0000002522081780__hitracemeterstarttrace)、[finishTrace()](#ZH-CN_TOPIC_0000002522081780__hitracemeterfinishtrace)、[traceByValue()](#ZH-CN_TOPIC_0000002522081780__hitracemetertracebyvalue)无法指定跟踪输出级别，默认均为COMMERCIAL级别性能打点。
 
 [用户态trace格式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracemeter-view#用户态trace格式说明)使用竖线 | 作为分隔符，所以通过性能打点接口传递的字符串类型参数应避免包含该字符，防止trace解析异常。
 
@@ -28,9 +29,9 @@ startTrace(name: string, taskId: number): void
 
 如果有多个相同name的任务需要跟踪或者对同一个任务要跟踪多次，并且任务同时被执行，则开发者每次调用startTrace传入的taskId需不同。
 
-如果具有相同name的任务是串行执行的，则taskId可以相同。具体示例可参考[finishTrace()](#ZH-CN_TOPIC_0000002529445625__hitracemeterfinishtrace)中的示例。
+如果具有相同name的任务是串行执行的，则taskId可以相同。具体示例可参考[finishTrace()](#ZH-CN_TOPIC_0000002522081780__hitracemeterfinishtrace)中的示例。
 
-从API version 19开始，建议使用[startAsyncTrace()](#ZH-CN_TOPIC_0000002529445625__hitracemeterstartasynctrace19)接口（需与[finishAsyncTrace()](#ZH-CN_TOPIC_0000002529445625__hitracemeterfinishasynctrace19)接口配套使用），以便分级控制跟踪输出与跟踪聚类。
+从API version 19开始，建议使用[startAsyncTrace()](#ZH-CN_TOPIC_0000002522081780__hitracemeterstartasynctrace19)接口（需与[finishAsyncTrace()](#ZH-CN_TOPIC_0000002522081780__hitracemeterfinishasynctrace19)接口配套使用），以便分级控制跟踪输出与跟踪聚类。
 
 **元服务API**：从API version 19开始，该接口支持在元服务中使用。
 
@@ -38,7 +39,10 @@ startTrace(name: string, taskId: number): void
 
 **参数：**
 
-参数名类型必填说明namestring是要跟踪的任务名称。taskIdnumber是任务id。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 要跟踪的任务名称。 |
+| taskId | number | 是 | 任务id。 |
 
 **示例：**
 
@@ -52,9 +56,9 @@ finishTrace(name: string, taskId: number): void
 
 标记一个异步跟踪耗时任务的结束。
 
-finishTrace的name和taskId必须与流程开始的[startTrace()](#ZH-CN_TOPIC_0000002529445625__hitracemeterstarttrace)对应参数值一致。
+finishTrace的name和taskId必须与流程开始的[startTrace()](#ZH-CN_TOPIC_0000002522081780__hitracemeterstarttrace)对应参数值一致。
 
-从API version 19开始，建议使用[finishAsyncTrace()](#ZH-CN_TOPIC_0000002529445625__hitracemeterfinishasynctrace19)接口（需与[startAsyncTrace()](#ZH-CN_TOPIC_0000002529445625__hitracemeterstartasynctrace19)接口配套使用）。
+从API version 19开始，建议使用[finishAsyncTrace()](#ZH-CN_TOPIC_0000002522081780__hitracemeterfinishasynctrace19)接口（需与[startAsyncTrace()](#ZH-CN_TOPIC_0000002522081780__hitracemeterstartasynctrace19)接口配套使用）。
 
 **元服务API**：从API version 19开始，该接口支持在元服务中使用。
 
@@ -62,7 +66,10 @@ finishTrace的name和taskId必须与流程开始的[startTrace()](#ZH-CN_TOPIC_0
 
 **参数：**
 
-参数名类型必填说明namestring是要跟踪的任务名称。taskIdnumber是任务id。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 要跟踪的任务名称。 |
+| taskId | number | 是 | 任务id。 |
 
 **示例：**
 
@@ -98,7 +105,7 @@ traceByValue(name: string, count: number): void
 
 用来标记一个跟踪的整数变量，该变量的数值会不断变化。
 
-从API version 19开始，建议使用[traceByValue19+()](#ZH-CN_TOPIC_0000002529445625__hitracemetertracebyvalue19)接口，以便分级控制跟踪输出。
+从API version 19开始，建议使用[traceByValue19+()](#ZH-CN_TOPIC_0000002522081780__hitracemetertracebyvalue19)接口，以便分级控制跟踪输出。
 
 **元服务API**：从API version 19开始，该接口支持在元服务中使用。
 
@@ -106,7 +113,10 @@ traceByValue(name: string, count: number): void
 
 **参数：**
 
-参数名类型必填说明namestring是要跟踪的整数变量名称。countnumber是整数变量的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 要跟踪的整数变量名称。 |
+| count | number | 是 | 整数变量的值。 |
 
 **示例：**
 
@@ -128,7 +138,13 @@ hiTraceMeter.traceByValue("myTestCount", traceCount);
 
 **系统能力**：SystemCapability.HiviewDFX.HiTrace
 
-名称值说明DEBUG0仅用于调试的输出级别，优先级最低。INFO1用于log版本的输出级别。CRITICAL2用于log版本的输出级别，优先级高于INFO。COMMERCIAL3用于nolog版本的输出级别，优先级最高。MAX3输出级别范围限制，MAX = COMMERCIAL。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DEBUG | 0 | 仅用于调试的输出级别，优先级最低。 |
+| INFO | 1 | 用于log版本的输出级别。 |
+| CRITICAL | 2 | 用于log版本的输出级别，优先级高于INFO。 |
+| COMMERCIAL | 3 | 用于nolog版本的输出级别，优先级最高。 |
+| MAX | 3 | 输出级别范围限制，MAX = COMMERCIAL。 |
 
 #### hiTraceMeter.startAsyncTrace19+
 
@@ -138,7 +154,7 @@ startAsyncTrace(level: HiTraceOutputLevel, name: string, taskId: number, customC
 
 如果有多个相同name的任务需要跟踪或者对同一个任务要跟踪多次，并且任务同时被执行，则开发者每次调用startAsyncTrace传入的taskId需不同。
 
-如果具有相同name的任务是串行执行的，则taskId可以相同。具体示例可参考[finishAsyncTrace()](#ZH-CN_TOPIC_0000002529445625__hitracemeterfinishasynctrace19)中的示例。
+如果具有相同name的任务是串行执行的，则taskId可以相同。具体示例可参考[finishAsyncTrace()](#ZH-CN_TOPIC_0000002522081780__hitracemeterfinishasynctrace19)中的示例。
 
 **元服务API**：从API version 19开始，该接口支持在元服务中使用。
 
@@ -146,11 +162,13 @@ startAsyncTrace(level: HiTraceOutputLevel, name: string, taskId: number, customC
 
 **参数：**
 
-参数名类型必填说明level[HiTraceOutputLevel](#ZH-CN_TOPIC_0000002529445625__hitraceoutputlevel19)是跟踪输出级别。namestring是要跟踪的任务名称。taskIdnumber是任务id。customCategorystring是自定义聚类名称，用于聚合同一类异步跟踪打点。customArgsstring否
-
-自定义键值对，格式key=value，多个键值对用逗号分隔。
-
-不传入该参数等同于传入空字符串。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| level | HiTraceOutputLevel | 是 | 跟踪输出级别。 |
+| name | string | 是 | 要跟踪的任务名称。 |
+| taskId | number | 是 | 任务id。 |
+| customCategory | string | 是 | 自定义聚类名称，用于聚合同一类异步跟踪打点。 |
+| customArgs | string | 否 | 自定义键值对，格式key=value，多个键值对用逗号分隔。 不传入该参数等同于传入空字符串。 |
 
 **示例：**
 
@@ -171,7 +189,7 @@ finishAsyncTrace(level: HiTraceOutputLevel, name: string, taskId: number): void
 
 标记一个异步跟踪耗时任务的结束，分级控制跟踪输出。
 
-finishAsyncTrace的level、name和taskId必须与流程开始的[startAsyncTrace()](#ZH-CN_TOPIC_0000002529445625__hitracemeterstartasynctrace19)对应参数值一致。
+finishAsyncTrace的level、name和taskId必须与流程开始的[startAsyncTrace()](#ZH-CN_TOPIC_0000002522081780__hitracemeterstartasynctrace19)对应参数值一致。
 
 **元服务API**：从API version 19开始，该接口支持在元服务中使用。
 
@@ -179,7 +197,11 @@ finishAsyncTrace的level、name和taskId必须与流程开始的[startAsyncTrace
 
 **参数：**
 
-参数名类型必填说明level[HiTraceOutputLevel](#ZH-CN_TOPIC_0000002529445625__hitraceoutputlevel19)是跟踪输出级别。namestring是要跟踪的任务名称。taskIdnumber是任务id。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| level | HiTraceOutputLevel | 是 | 跟踪输出级别。 |
+| name | string | 是 | 要跟踪的任务名称。 |
+| taskId | number | 是 | 任务id。 |
 
 **示例：**
 
@@ -224,7 +246,7 @@ hiTraceMeter.finishAsyncTrace(COMMERCIAL, "myTestFunc", 1);
 
 startSyncTrace(level: HiTraceOutputLevel, name: string, customArgs?: string): void
 
-标记一个同步跟踪耗时任务的开始，分级控制跟踪输出。具体示例可参考[finishSyncTrace()](#ZH-CN_TOPIC_0000002529445625__hitracemeterfinishsynctrace19)中的示例。
+标记一个同步跟踪耗时任务的开始，分级控制跟踪输出。具体示例可参考[finishSyncTrace()](#ZH-CN_TOPIC_0000002522081780__hitracemeterfinishsynctrace19)中的示例。
 
 **元服务API**：从API version 19开始，该接口支持在元服务中使用。
 
@@ -232,11 +254,11 @@ startSyncTrace(level: HiTraceOutputLevel, name: string, customArgs?: string): vo
 
 **参数：**
 
-参数名类型必填说明level[HiTraceOutputLevel](#ZH-CN_TOPIC_0000002529445625__hitraceoutputlevel19)是跟踪输出级别。namestring是要跟踪的任务名称。customArgsstring否
-
-键值对，格式key=value，多个键值对用逗号分隔。
-
-不传入该参数等同于传入空字符串。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| level | HiTraceOutputLevel | 是 | 跟踪输出级别。 |
+| name | string | 是 | 要跟踪的任务名称。 |
+| customArgs | string | 否 | 键值对，格式key=value，多个键值对用逗号分隔。 不传入该参数等同于传入空字符串。 |
 
 **示例：**
 
@@ -256,7 +278,7 @@ finishSyncTrace(level: HiTraceOutputLevel): void
 
 标记一个同步跟踪耗时任务的结束，分级控制跟踪输出。
 
-finishSyncTrace的level必须与流程开始的[startSyncTrace()](#ZH-CN_TOPIC_0000002529445625__hitracemeterstartsynctrace19)对应参数值一致。
+finishSyncTrace的level必须与流程开始的[startSyncTrace()](#ZH-CN_TOPIC_0000002522081780__hitracemeterstartsynctrace19)对应参数值一致。
 
 **元服务API**：从API version 19开始，该接口支持在元服务中使用。
 
@@ -264,7 +286,9 @@ finishSyncTrace的level必须与流程开始的[startSyncTrace()](#ZH-CN_TOPIC_0
 
 **参数：**
 
-参数名类型必填说明level[HiTraceOutputLevel](#ZH-CN_TOPIC_0000002529445625__hitraceoutputlevel19)是跟踪输出级别。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| level | HiTraceOutputLevel | 是 | 跟踪输出级别。 |
 
 **示例：**
 
@@ -301,7 +325,11 @@ traceByValue(level: HiTraceOutputLevel, name: string, count: number): void
 
 **参数：**
 
-参数名类型必填说明level[HiTraceOutputLevel](#ZH-CN_TOPIC_0000002529445625__hitraceoutputlevel19)是跟踪输出级别。namestring是要跟踪的整数变量名称。countnumber是整数变量的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| level | HiTraceOutputLevel | 是 | 跟踪输出级别。 |
+| name | string | 是 | 要跟踪的整数变量名称。 |
+| count | number | 是 | 整数变量的值。 |
 
 **示例：**
 
@@ -326,7 +354,9 @@ isTraceEnabled(): boolean
 
 **返回值：**
 
-类型说明boolean使用[hitrace](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitrace)命令行工具等方式开启采集时返回true。未开启采集或停止采集后返回false，此时调用HiTraceMeter性能跟踪打点接口无效。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 使用hitrace命令行工具等方式开启采集时返回true。未开启采集或停止采集后返回false，此时调用HiTraceMeter性能跟踪打点接口无效。 |
 
 **示例：**
 
@@ -350,11 +380,9 @@ type TraceEventListener = (traceStatus: boolean) => void
 
 **参数：**
 
-参数名类型必填说明traceStatusboolean是
-
-当前应用trace捕获开关状态。
-
-true：开启；false：关闭。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| traceStatus | boolean | 是 | 当前应用trace捕获开关状态。 true：开启；false：关闭。 |
 
 #### hiTraceMeter.registerTraceListener22+
 
@@ -376,19 +404,15 @@ registerTraceListener(callback: TraceEventListener): number
 
 **参数：**
 
-参数名类型必填说明callback[TraceEventListener](#ZH-CN_TOPIC_0000002529445625__traceeventlistener22)是注册的回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | TraceEventListener | 是 | 注册的回调函数。 |
 
 **返回值：**
 
-类型说明number
-
-回调注册状态。
-
->= 0：注册成功，返回用于注销的回调索引，索引范围0到9；
-
--1：已达到最大回调函数注册数量；
-
--2：无效参数，参数非TraceEventListener类型。
+| 类型 | 说明 |
+| --- | --- |
+| number | 回调注册状态。 >= 0：注册成功，返回用于注销的回调索引，索引范围0到9； -1：已达到最大回调函数注册数量； -2：无效参数，参数非TraceEventListener类型。 |
 
 **示例：**
 
@@ -415,7 +439,7 @@ unregisterTraceListener(index: number): number
 
 注销应用trace捕获开关通知回调。
 
-使用[registerTraceListener()](#ZH-CN_TOPIC_0000002529445625__hitracemeterregistertracelistener22)返回的回调索引，注销该索引关联的回调函数。
+使用[registerTraceListener()](#ZH-CN_TOPIC_0000002522081780__hitracemeterregistertracelistener22)返回的回调索引，注销该索引关联的回调函数。
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
@@ -423,19 +447,15 @@ unregisterTraceListener(index: number): number
 
 **参数：**
 
-参数名类型必填说明indexnumber是已注册回调函数索引。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 已注册回调函数索引。 |
 
 **返回值：**
 
-类型说明number
-
-回调注销状态。
-
-0：注销成功；
-
--1：目标索引的回调函数未注册；
-
--2：无效索引，参数index值不在0到9的范围内。
+| 类型 | 说明 |
+| --- | --- |
+| number | 回调注销状态。 0：注销成功； -1：目标索引的回调函数未注册； -2：无效索引，参数index值不在0到9的范围内。 |
 
 **示例：**
 

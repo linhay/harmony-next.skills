@@ -1,10 +1,11 @@
 # @ohos.hiviewdfx.hiAppEvent (应用事件打点)
 
-本模块提供应用打点和事件订阅能力，包括事件存储、事件订阅、事件清理、打点配置等功能。HiAppEvent将应用运行过程中触发的事件信息统一归纳到[AppEventInfo](#ZH-CN_TOPIC_0000002529285653__appeventinfo)中，并将事件分为系统事件和应用事件两类。
+本模块提供应用打点和事件订阅能力，包括事件存储、事件订阅、事件清理、打点配置等功能。HiAppEvent将应用运行过程中触发的事件信息统一归纳到[AppEventInfo](#ZH-CN_TOPIC_0000002553201743__appeventinfo)中，并将事件分为系统事件和应用事件两类。
 
 系统事件来源于系统服务，是系统预先定义的事件，这类事件信息中的事件参数对象params包含的字段已由各系统事件定义，具体字段含义在各系统事件指南的介绍中，例如[崩溃事件介绍](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-crash-events)。
 
-应用事件来源于应用，是应用开发者自己定义的事件，这类事件信息支持自定义后通过[Write](#ZH-CN_TOPIC_0000002529285653__hiappeventwrite-1)打点接口进行配置设定，具体字段含义可结合开发者需求展开。
+应用事件来源于应用，是应用开发者自己定义的事件，这类事件信息支持自定义后通过[Write](#ZH-CN_TOPIC_0000002553201743__hiappeventwrite-1)打点接口进行配置设定，具体字段含义可结合开发者需求展开。
+
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -26,23 +27,35 @@ addWatcher(watcher: Watcher): AppEventPackageHolder
 
 **参数：**
 
-参数名类型必填说明watcher[Watcher](#ZH-CN_TOPIC_0000002529285653__watcher)是事件观察者。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| watcher | Watcher | 是 | 事件观察者。 |
 
 **返回值：**
 
-类型说明[AppEventPackageHolder](#ZH-CN_TOPIC_0000002529285653__appeventpackageholder)订阅数据持有者。订阅失败时返回null。
+| 类型 | 说明 |
+| --- | --- |
+| AppEventPackageHolder | 订阅数据持有者。订阅失败时返回null。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[应用事件打点错误码](../../errors/应用事件打点错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[应用事件打点错误码]([应用事件打点错误码](../../errors/应用事件打点错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.11102001Invalid watcher name. Possible causes: 1. Contain invalid characters; 2. Length is invalid.11102002Invalid filtering event domain. Possible causes: 1. Contain invalid characters; 2. Length is invalid.11102003Invalid row value. Possible caused by the row value is less than zero.11102004Invalid size value. Possible caused by the size value is less than zero.11102005Invalid timeout value. Possible caused by the timeout value is less than zero.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 11102001 | Invalid watcher name. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
+| 11102002 | Invalid filtering event domain. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
+| 11102003 | Invalid row value. Possible caused by the row value is less than zero. |
+| 11102004 | Invalid size value. Possible caused by the size value is less than zero. |
+| 11102005 | Invalid timeout value. Possible caused by the timeout value is less than zero. |
+
 
 addWatcher接口涉及I/O操作。在对性能敏感的业务场景中，开发者应根据实际需要确定该接口是在主线程还是在子线程中调用。
 
 如果选择在子线程中调用addWatcher，需要确保该子线程在整个接口使用周期内不会被销毁，以免影响接口的正常工作。
 
-可参考[多线程并发概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-thread-concurrency-overview)，以实现在子线程中调用接口。
+可参考[Worker简介](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/worker-introduction)，以实现在子线程中调用接口。
 
 订阅接口addWatcher传入的名称name是唯一的，相同的name，后一次调用会覆盖前一次的订阅。
 
@@ -85,8 +98,6 @@ hiAppEvent.addWatcher({
       for (const eventInfo of eventPkg.data) {
         hilog.info(0x0000, 'hiAppEvent', `eventPkg.data=${eventInfo}`);
       }
-    }
-  }
 });
 ```
 
@@ -119,8 +130,6 @@ if (holder != null) {
     for (const eventInfo of eventPkg.data) {
       hilog.info(0x0000, 'hiAppEvent', `eventPkg.data=${eventInfo}`);
     }
-  }
-}
 ```
 
 方法三：实现onReceive()回调，当监听的事件发生后实时触发回调。
@@ -145,8 +154,6 @@ hiAppEvent.addWatcher({
       for (const eventInfo of eventGroup.appEventInfos) {
         hilog.info(0x0000, 'hiAppEvent', `event=${JSON.stringify(eventInfo)}`, );
       }
-    }
-  }
 });
 ```
 
@@ -162,13 +169,18 @@ removeWatcher(watcher: Watcher): void
 
 **参数：**
 
-参数名类型必填说明watcher[Watcher](#ZH-CN_TOPIC_0000002529285653__watcher)是事件观察者。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| watcher | Watcher | 是 | 事件观察者。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[应用事件打点错误码](../../errors/应用事件打点错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[应用事件打点错误码](应用事件打点错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.11102001Invalid watcher name. Possible causes: 1. Contain invalid characters; 2. Length is invalid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 11102001 | Invalid watcher name. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
 
 **示例：**
 
@@ -197,37 +209,31 @@ setEventParam(params: Record<string, ParamType>, domain: string, name?: string):
 
 **参数：**
 
-参数名类型必填说明paramsRecord<string, [ParamType](#ZH-CN_TOPIC_0000002529285653__paramtype12)>是
-
-事件自定义参数对象。参数名和参数值规格定义如下：
-
-- 参数名为string类型，首字符必须为字母字符或$字符。中间字符必须为数字字符、字母字符或下划线字符。结尾字符必须为数字字符或字母字符。长度非空且不超过32个字符。
-
-- 参数值为[ParamType](#ZH-CN_TOPIC_0000002529285653__paramtype12)类型，参数值长度需在1024个字符以内。
-
-- 参数个数需在64个以内。
-
-domainstring是事件领域。事件领域可支持关联应用事件和系统事件（hiAppEvent.domain.OS）。namestring否
-
-事件名称。默认为空字符串，空字符串表示关联事件领域下的所有事件名称。事件名称可支持关联应用事件和系统事件，其中系统事件仅支持关联：
-
-- [崩溃事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-crash-events)（hiAppEvent.event.APP_CRASH）
-
-- [应用冻屏事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-freeze-events)（hiAppEvent.event.APP_FREEZE）
-
-- [资源泄漏事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-resourceleak-events)（hiAppEvent.event.RESOURCE_OVERLIMIT）。
-
-**注意**：从API version 20开始，支持[资源泄漏事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-resourceleak-events)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| params | Record<string, ParamType> | 是 | 事件自定义参数对象。参数名和参数值规格定义如下： - 参数名为string类型，首字符必须为字母字符或$字符。中间字符必须为数字字符、字母字符或下划线字符。结尾字符必须为数字字符或字母字符。长度非空且不超过32个字符。 - 参数值为ParamType类型，参数值长度需在1024个字符以内。 - 参数个数需在64个以内。 |
+| domain | string | 是 | 事件领域。事件领域可支持关联应用事件和系统事件（hiAppEvent.domain.OS）。 |
+| name | string | 否 | 事件名称。默认为空字符串，空字符串表示关联事件领域下的所有事件名称。事件名称可支持关联应用事件和系统事件，其中系统事件仅支持关联： - 崩溃事件（hiAppEvent.event.APP_CRASH） - 应用冻屏事件（hiAppEvent.event.APP_FREEZE） - 资源泄漏事件（hiAppEvent.event.RESOURCE_OVERLIMIT）。 注意：从API version 20开始，支持资源泄漏事件。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[应用事件打点错误码](../../errors/应用事件打点错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[应用事件打点错误码](应用事件打点错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.11100001Function disabled. Possible caused by the param disable in ConfigOption is true.11101001Invalid event domain. Possible causes: 1. Contain invalid characters; 2. Length is invalid.11101002Invalid event name. Possible causes: 1. Contain invalid characters; 2. Length is invalid.11101004Invalid string length of the event parameter.11101005Invalid event parameter name. Possible causes: 1. Contain invalid characters; 2. Length is invalid.11101007The number of parameter keys exceeds the limit.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 11100001 | Function disabled. Possible caused by the param disable in ConfigOption is true. |
+| 11101001 | Invalid event domain. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
+| 11101002 | Invalid event name. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
+| 11101004 | Invalid string length of the event parameter. |
+| 11101005 | Invalid event parameter name. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
+| 11101007 | The number of parameter keys exceeds the limit. |
 
 **示例：**
 
@@ -266,23 +272,24 @@ setEventConfig(name: string, config: Record<string, ParamType>): Promise<void>
 
 **参数：**
 
-参数名类型必填说明namestring是事件名称。configRecord<string, [ParamType](#ZH-CN_TOPIC_0000002529285653__paramtype12)>是
-
-事件自定义参数对象。参数名和参数值规格定义如下：
-
-- 参数名为string类型，要求非空，且参数名长度需在1024个字符以内。
-
-- 参数值为ParamType类型，参数值长度需在1024个字符以内。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 事件名称。 |
+| config | Record<string, ParamType> | 是 | 事件自定义参数对象。参数名和参数值规格定义如下： - 参数名为string类型，要求非空，且参数名长度需在1024个字符以内。 - 参数值为ParamType类型，参数值长度需在1024个字符以内。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3.Parameter verification failed. |
 
 **示例：**
 
@@ -320,19 +327,15 @@ configEventPolicy(policy: EventPolicy): Promise<void>
 
 **参数：**
 
-参数名类型必填说明policy[EventPolicy](#ZH-CN_TOPIC_0000002529285653__eventpolicy22)是系统事件配置策略。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| policy | EventPolicy | 是 | 系统事件配置策略。 |
 
 **返回值：**
 
-类型说明Promise<void>
-
-Promise对象，无返回结果。
-
-各个事件的事件配置策略，详细规格见[EventPolicy](#ZH-CN_TOPIC_0000002529285653__eventpolicy22)类型说明。若配置策略设置有误，会导致接口返回失败。
-
-- 参数类型设置有误，则返回401通用错误信息；
-
-- 参数规格设置有误，则在hilog日志输出相关错误信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 各个事件的事件配置策略，详细规格见EventPolicy类型说明。若配置策略设置有误，会导致接口返回失败。 - 参数类型设置有误，则返回401通用错误信息； - 参数规格设置有误，则在hilog日志输出相关错误信息。 |
 
 **示例：**
 
@@ -367,45 +370,45 @@ hiAppEvent.configEventPolicy(policy).then(() => {
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-名称类型只读可选说明namestring否否观察者名称，用于唯一标识观察者。首字符必须为字母字符，中间字符必须为数字字符、字母字符或下划线字符，结尾字符必须为数字字符或字母字符，长度非空且不超过32个字符。如testName1、crash_Watcher等。triggerCondition[TriggerCondition](#ZH-CN_TOPIC_0000002529285653__triggercondition)否是订阅回调触发条件，需要与回调函数onTrigger一同传入才会生效。默认不触发。appEventFilters[AppEventFilter](#ZH-CN_TOPIC_0000002529285653__appeventfilter)[]否是订阅过滤条件，在需要对订阅事件进行过滤时传入。默认不过滤事件。onTrigger(curRow: number, curSize: number, holder: [AppEventPackageHolder](#ZH-CN_TOPIC_0000002529285653__appeventpackageholder)) => void否是
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | string | 否 | 否 | 观察者名称，用于唯一标识观察者。首字符必须为字母字符，中间字符必须为数字字符、字母字符或下划线字符，结尾字符必须为数字字符或字母字符，长度非空且不超过32个字符。如testName1、crash_Watcher等。 |
+| triggerCondition | TriggerCondition | 否 | 是 | 订阅回调触发条件，需要与回调函数onTrigger一同传入才会生效。默认不触发。 |
+| appEventFilters | AppEventFilter[] | 否 | 是 | 订阅过滤条件，在需要对订阅事件进行过滤时传入。默认不过滤事件。 |
+| onTrigger | (curRow: number, curSize: number, holder: AppEventPackageHolder) => void | 否 | 是 | 订阅回调函数，需要与回调触发条件triggerCondition一同传入才会生效，函数入参说明如下： curRow：在本次回调触发时的订阅事件总数量； curSize：在本次回调触发时的订阅事件总大小，单位为byte； holder：订阅数据持有者对象，可以通过其对订阅事件进行处理。 |
+| onReceive11+ | (domain: string, appEventGroups: Array<AppEventGroup>) => void | 否 | 是 | 订阅实时回调函数，与回调函数onTrigger同时存在时，只触发此回调，函数入参说明如下： domain：回调事件的领域名称； appEventGroups：回调事件集合。 |
 
-订阅回调函数，需要与回调触发条件triggerCondition一同传入才会生效，函数入参说明如下：
 
-curRow：在本次回调触发时的订阅事件总数量；
-
-curSize：在本次回调触发时的订阅事件总大小，单位为byte；
-
-holder：订阅数据持有者对象，可以通过其对订阅事件进行处理。
-
-onReceive11+(domain: string, appEventGroups: Array<[AppEventGroup](#ZH-CN_TOPIC_0000002529285653__appeventgroup11)>) => void否是
-
-订阅实时回调函数，与回调函数onTrigger同时存在时，只触发此回调，函数入参说明如下：
-
-domain：回调事件的领域名称；
-
-appEventGroups：回调事件集合。
-
-不建议在回调函数中执行[移除观察者](#ZH-CN_TOPIC_0000002529285653__hiappeventremovewatcher)的操作，watcher一旦被移除，则其原有的订阅回调功能也会随之失效，可能会造成某些事件发生后无订阅回调情况。
+不建议在回调函数中执行[移除观察者](#ZH-CN_TOPIC_0000002553201743__hiappeventremovewatcher)的操作，watcher一旦被移除，则其原有的订阅回调功能也会随之失效，可能会造成某些事件发生后无订阅回调情况。
 
 #### TriggerCondition
 
-提供设置[Watcher](#ZH-CN_TOPIC_0000002529285653__watcher)的onTrigger回调触发条件的参数选项。
+提供设置[Watcher](#ZH-CN_TOPIC_0000002553201743__watcher)的onTrigger回调触发条件的参数选项。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-名称类型只读可选说明rownumber否是满足触发回调的事件总数量，正整数。默认值0，不触发回调。传入负值时，会被置为默认值。sizenumber否是满足触发回调的事件总大小，正整数，单位为byte。默认值0，不触发回调。传入负值时，会被置为默认值。timeOutnumber否是满足触发回调的超时时长，正整数，单位为30s。默认值0，不触发回调。传入负值时，会被置为默认值。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| row | number | 否 | 是 | 满足触发回调的事件总数量，正整数。默认值0，不触发回调。传入负值时，会被置为默认值。 |
+| size | number | 否 | 是 | 满足触发回调的事件总大小，正整数，单位为byte。默认值0，不触发回调。传入负值时，会被置为默认值。 |
+| timeOut | number | 否 | 是 | 满足触发回调的超时时长，正整数，单位为30s。默认值0，不触发回调。传入负值时，会被置为默认值。 |
 
 #### AppEventFilter
 
-提供设置[Watcher](#ZH-CN_TOPIC_0000002529285653__watcher)的订阅过滤条件的参数选项。用于在事件观察者中设置事件过滤条件，确保只有满足过滤条件的事件才会被监听处理。
+提供设置[Watcher](#ZH-CN_TOPIC_0000002553201743__watcher)的订阅过滤条件的参数选项。用于在事件观察者中设置事件过滤条件，确保只有满足过滤条件的事件才会被监听处理。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-名称类型只读可选说明domainstring否否需要订阅的事件领域。可以是系统事件领域（hiAppEvent.domain.OS）或开发者在使用[Write](#ZH-CN_TOPIC_0000002529285653__hiappeventwrite-1)接口时传入的自定义事件信息（[AppEventInfo](#ZH-CN_TOPIC_0000002529285653__appeventinfo)）中的事件领域。eventTypes[EventType](#ZH-CN_TOPIC_0000002529285653__eventtype)[]否是需要订阅的事件类型集合。默认不进行过滤。names11+string[]否是需要订阅的事件名称集合。默认不进行过滤。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| domain | string | 否 | 否 | 需要订阅的事件领域。可以是系统事件领域（hiAppEvent.domain.OS）或开发者在使用Write接口时传入的自定义事件信息（AppEventInfo）中的事件领域。 |
+| eventTypes | EventType[] | 否 | 是 | 需要订阅的事件类型集合。默认不进行过滤。 |
+| names11+ | string[] | 否 | 是 | 需要订阅的事件名称集合。默认不进行过滤。 |
+
 
 不同类型应用上，系统事件的订阅规格不同，具体规格可参见[HiAppEvent约束与限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-intro#约束与限制)。
 
@@ -417,7 +420,7 @@ appEventGroups：回调事件集合。
 
 constructor(watcherName: string)
 
-类构造函数，用于创建订阅数据持有者实例。先通过[addWatcher](#ZH-CN_TOPIC_0000002529285653__hiappeventaddwatcher)添加事件观察者，再通过观察者名称关联到应用内已添加的观察者对象。
+类构造函数，用于创建订阅数据持有者实例。先通过[addWatcher](#ZH-CN_TOPIC_0000002553201743__hiappeventaddwatcher)添加事件观察者，再通过观察者名称关联到应用内已添加的观察者对象。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -425,7 +428,9 @@ constructor(watcherName: string)
 
 **参数：**
 
-参数名类型必填说明watcherNamestring是已通过[addWatcher](#ZH-CN_TOPIC_0000002529285653__hiappeventaddwatcher)添加的事件观察者名称。若未通过addWatcher添加，则默认无数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| watcherName | string | 是 | 已通过addWatcher添加的事件观察者名称。若未通过addWatcher添加，则默认无数据。 |
 
 **示例：**
 
@@ -456,13 +461,18 @@ setSize(size: number): void
 
 **参数：**
 
-参数名类型必填说明sizenumber是数据大小阈值，单位为byte。取值范围[0, 2^31-1]，超出范围会抛异常。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | number | 是 | 数据大小阈值，单位为byte。取值范围[0, 2^31-1]，超出范围会抛异常。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[应用事件打点错误码](../../errors/应用事件打点错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[应用事件打点错误码](应用事件打点错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.11104001Invalid size value. Possible caused by the size value is less than or equal to zero.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 11104001 | Invalid size value. Possible caused by the size value is less than or equal to zero. |
 
 **示例：**
 
@@ -485,13 +495,18 @@ setRow(size: number): void
 
 **参数：**
 
-参数名类型必填说明sizenumber是事件条数，单位为条。取值范围(0, 2^31-1]，超出范围会抛异常。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | number | 是 | 事件条数，单位为条。取值范围(0, 2^31-1]，超出范围会抛异常。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[应用事件打点错误码](../../errors/应用事件打点错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[应用事件打点错误码](应用事件打点错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.11104001Invalid size value. Possible caused by the size value is less than or equal to zero.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 11104001 | Invalid size value. Possible caused by the size value is less than or equal to zero. |
 
 **示例：**
 
@@ -518,7 +533,9 @@ takeNext(): AppEventPackage
 
 **返回值：**
 
-类型说明[AppEventPackage](#ZH-CN_TOPIC_0000002529285653__appeventpackage)取出的事件包对象，订阅事件数据被全部取出后会返回null。
+| 类型 | 说明 |
+| --- | --- |
+| AppEventPackage | 取出的事件包对象，订阅事件数据被全部取出后会返回null。 |
 
 **示例：**
 
@@ -537,67 +554,45 @@ let eventPkg: hiAppEvent.AppEventPackage | null = holder4.takeNext();
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-名称类型只读可选说明domainstring否否事件领域。事件领域名称支持数字、字母、下划线字符，需要以字母开头且不能以下划线结尾，长度非空且不超过32个字符。namestring否否事件名称。首字符必须为字母字符或$字符，中间字符必须为数字字符、字母字符或下划线字符，结尾字符必须为数字字符或字母字符，长度非空且不超过48个字符。eventType[EventType](#ZH-CN_TOPIC_0000002529285653__eventtype)否否事件类型。paramsobject否否
-
-事件参数对象，包含每个事件参数的参数名和参数值。**系统事件中params包含的字段已由各系统事件定义，具体字段含义在各类系统事件指南的介绍中，例如[崩溃事件介绍](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-crash-events)。** 针对应用事件，[Write](#ZH-CN_TOPIC_0000002529285653__hiappeventwrite-1)打点写入的参数由开发者定义，其规格如下：
-
-- 参数名为string类型，首字符必须为字母字符或$字符，中间字符必须为数字字符、字母字符或下划线字符，结尾字符必须为数字字符或字母字符，长度非空且不超过32个字符。如testName、$123_name等。
-
-- 参数值支持string、number、boolean、数组类型。string类型参数长度需在8*1024个字符以内，超出后会和对应的参数名一同被丢弃；number类型参数取值需在Number.MIN_SAFE_INTEGER~Number.MAX_SAFE_INTEGER范围内，超出可能会产生不确定值；数组类型参数中的元素类型只能全为string、number、boolean中的一种，且元素个数需在100以内，超出部分即从第101个元素开始会被丢弃。
-
-- 参数个数需在32个以内，超出的参数会做丢弃处理。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| domain | string | 否 | 否 | 事件领域。事件领域名称支持数字、字母、下划线字符，需要以字母开头且不能以下划线结尾，长度非空且不超过32个字符。 |
+| name | string | 否 | 否 | 事件名称。首字符必须为字母字符或$字符，中间字符必须为数字字符、字母字符或下划线字符，结尾字符必须为数字字符或字母字符，长度非空且不超过48个字符。 |
+| eventType | EventType | 否 | 否 | 事件类型。 |
+| params | object | 否 | 否 | 事件参数对象，包含每个事件参数的参数名和参数值。系统事件中params包含的字段已由各系统事件定义，具体字段含义在各类系统事件指南的介绍中，例如崩溃事件介绍。 针对应用事件，Write打点写入的参数由开发者定义，其规格如下： - 参数名为string类型，首字符必须为字母字符或$字符，中间字符必须为数字字符、字母字符或下划线字符，结尾字符必须为数字字符或字母字符，长度非空且不超过32个字符。如testName、$123_name等。 - 参数值支持string、number、boolean、数组类型。string类型参数长度需在8*1024个字符以内，超出后会和对应的参数名一同被丢弃；number类型参数取值需在Number.MIN_SAFE_INTEGER~Number.MAX_SAFE_INTEGER范围内，超出可能会产生不确定值；数组类型参数中的元素类型只能全为string、number、boolean中的一种，且元素个数需在100以内，超出部分即从第101个元素开始会被丢弃。 - 参数个数需在32个以内，超出的参数会做丢弃处理。 |
 
 #### AppEventPackage
 
-提供订阅返回的事件包的参数定义。可用于获取事件包的详细信息，事件包由[takeNext](#ZH-CN_TOPIC_0000002529285653__takenext)接口获得。
+提供订阅返回的事件包的参数定义。可用于获取事件包的详细信息，事件包由[takeNext](#ZH-CN_TOPIC_0000002553201743__takenext)接口获得。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-名称类型只读可选说明packageIdnumber否否
-
-事件包ID，从0开始自动递增。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-rownumber否否
-
-事件包的事件数量。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-sizenumber否否
-
-事件包的事件大小，单位为byte。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-datastring[]否否
-
-事件包的事件信息。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-appEventInfos12+Array<[AppEventInfo](#ZH-CN_TOPIC_0000002529285653__appeventinfo)>否否
-
-事件对象集合。
-
-**元服务API：** 从API version 12开始，该参数支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| packageId | number | 否 | 否 | 事件包ID，从0开始自动递增。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| row | number | 否 | 否 | 事件包的事件数量。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| size | number | 否 | 否 | 事件包的事件大小，单位为byte。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| data | string[] | 否 | 否 | 事件包的事件信息。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| appEventInfos12+ | Array<AppEventInfo> | 否 | 否 | 事件对象集合。 元服务API： 从API version 12开始，该参数支持在元服务中使用。 |
 
 #### AppEventGroup11+
 
-提供订阅返回的事件组的参数定义。可用于获取事件组的详细信息，事件组常在[Watcher](#ZH-CN_TOPIC_0000002529285653__watcher)的onReceive回调中使用。
+提供订阅返回的事件组的参数定义。可用于获取事件组的详细信息，事件组常在[Watcher](#ZH-CN_TOPIC_0000002553201743__watcher)的onReceive回调中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-名称类型只读可选说明namestring否否事件名称。appEventInfosArray<[AppEventInfo](#ZH-CN_TOPIC_0000002529285653__appeventinfo)>否否事件对象集合。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | string | 否 | 否 | 事件名称。 |
+| appEventInfos | Array<AppEventInfo> | 否 | 否 | 事件对象集合。 |
 
 #### hiAppEvent.write
 
 write(info: AppEventInfo, callback: AsyncCallback<void>): void
 
-应用事件打点方法，将AppEventInfo类型的事件进行存储，使用callback方式作为异步回调。通过此接口写入的事件对象是开发者自定义的对象，为了避免与系统事件产生冲突混淆，不建议写入系统事件（[Event](#ZH-CN_TOPIC_0000002529285653__hiappeventevent)中定义的系统事件名称常量）。此接口写入的事件可通过订阅事件观察者（[addWatcher](#ZH-CN_TOPIC_0000002529285653__hiappeventaddwatcher)）进行订阅。
+应用事件打点方法，将AppEventInfo类型的事件进行存储，使用callback方式作为异步回调。通过此接口写入的事件对象是开发者自定义的对象，为了避免与系统事件产生冲突混淆，不建议写入系统事件（[Event](#ZH-CN_TOPIC_0000002553201743__hiappeventevent)中定义的系统事件名称常量）。此接口写入的事件可通过订阅事件观察者（[addWatcher](#ZH-CN_TOPIC_0000002553201743__hiappeventaddwatcher)）进行订阅。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -605,13 +600,26 @@ write(info: AppEventInfo, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明info[AppEventInfo](#ZH-CN_TOPIC_0000002529285653__appeventinfo)是应用事件对象。其内部定义的事件名称建议避免与[Event](#ZH-CN_TOPIC_0000002529285653__hiappeventevent)中定义的系统事件名称常量产生冲突。callbackAsyncCallback<void>是打点回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| info | AppEventInfo | 是 | 应用事件对象。其内部定义的事件名称建议避免与Event中定义的系统事件名称常量产生冲突。 |
+| callback | AsyncCallback<void> | 是 | 打点回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[应用事件打点错误码](../../errors/应用事件打点错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[应用事件打点错误码](应用事件打点错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.11100001Function disabled. Possible caused by the param disable in ConfigOption is true.11101001Invalid event domain. Possible causes: 1. Contain invalid characters; 2. Length is invalid.11101002Invalid event name. Possible causes: 1. Contain invalid characters; 2. Length is invalid.11101003Invalid number of event parameters. Possible caused by the number of parameters is over 32.11101004Invalid string length of the event parameter.11101005Invalid event parameter name. Possible causes: 1. Contain invalid characters; 2. Length is invalid.11101006Invalid array length of the event parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 11100001 | Function disabled. Possible caused by the param disable in ConfigOption is true. |
+| 11101001 | Invalid event domain. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
+| 11101002 | Invalid event name. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
+| 11101003 | Invalid number of event parameters. Possible caused by the number of parameters is over 32. |
+| 11101004 | Invalid string length of the event parameter. |
+| 11101005 | Invalid event parameter name. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
+| 11101006 | Invalid array length of the event parameter. |
+
 
 write接口涉及I/O操作，执行时间通常在毫秒级别。因此，开发者应根据实际业务需求，确定该接口是在主线程还是在子线程中调用。
 
@@ -647,7 +655,7 @@ hiAppEvent.write({
 
 write(info: AppEventInfo): Promise<void>
 
-应用事件打点方法，将AppEventInfo类型的事件进行存储，使用Promise方式作为异步回调。通过此接口写入的事件对象是开发者自定义的对象，为了避免与系统事件产生冲突混淆，不建议写入系统事件（[Event](#ZH-CN_TOPIC_0000002529285653__hiappeventevent)中定义的系统事件名称常量）。此接口写入的事件可通过订阅事件观察者（[addWatcher](#ZH-CN_TOPIC_0000002529285653__hiappeventaddwatcher)）进行处理。
+应用事件打点方法，将AppEventInfo类型的事件进行存储，使用Promise方式作为异步回调。通过此接口写入的事件对象是开发者自定义的对象，为了避免与系统事件产生冲突混淆，不建议写入系统事件（[Event](#ZH-CN_TOPIC_0000002553201743__hiappeventevent)中定义的系统事件名称常量）。此接口写入的事件可通过订阅事件观察者（[addWatcher](#ZH-CN_TOPIC_0000002553201743__hiappeventaddwatcher)）进行处理。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -655,17 +663,31 @@ write(info: AppEventInfo): Promise<void>
 
 **参数：**
 
-参数名类型必填说明info[AppEventInfo](#ZH-CN_TOPIC_0000002529285653__appeventinfo)是应用事件对象。其中的事件名称建议避免与[Event](#ZH-CN_TOPIC_0000002529285653__hiappeventevent)中定义的系统事件名称常量冲突混淆。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| info | AppEventInfo | 是 | 应用事件对象。其中的事件名称建议避免与Event中定义的系统事件名称常量冲突混淆。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[应用事件打点错误码](../../errors/应用事件打点错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[应用事件打点错误码](应用事件打点错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.11100001Function disabled. Possible caused by the param disable in ConfigOption is true.11101001Invalid event domain. Possible causes: 1. Contain invalid characters; 2. Length is invalid.11101002Invalid event name. Possible causes: 1. Contain invalid characters; 2. Length is invalid.11101003Invalid number of event parameters. Possible caused by the number of parameters is over 32.11101004Invalid string length of the event parameter.11101005Invalid event parameter name. Possible causes: 1. Contain invalid characters; 2. Length is invalid.11101006Invalid array length of the event parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 11100001 | Function disabled. Possible caused by the param disable in ConfigOption is true. |
+| 11101001 | Invalid event domain. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
+| 11101002 | Invalid event name. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
+| 11101003 | Invalid number of event parameters. Possible caused by the number of parameters is over 32. |
+| 11101004 | Invalid string length of the event parameter. |
+| 11101005 | Invalid event parameter name. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
+| 11101006 | Invalid array length of the event parameter. |
+
 
 write接口涉及I/O操作，执行时间通常在毫秒级别。因此，开发者应根据实际业务需求，确定该接口是在主线程还是在子线程中调用。
 
@@ -701,7 +723,7 @@ addProcessor(processor: Processor): number
 
 添加数据处理者配置信息，用于配置处理者接收的事件名等信息。事件发生后处理者可以接收事件。
 
-该接口为同步接口，包含耗时操作。为了确保性能，建议使用[addProcessorFromConfig](#ZH-CN_TOPIC_0000002529285653__hiappeventaddprocessorfromconfig20)异步接口或者交由子线程执行。
+该接口为同步接口，包含耗时操作。为了确保性能，建议使用[addProcessorFromConfig](#ZH-CN_TOPIC_0000002553201743__hiappeventaddprocessorfromconfig20)异步接口或者交由子线程执行。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -709,17 +731,23 @@ addProcessor(processor: Processor): number
 
 **参数：**
 
-参数名类型必填说明processor[Processor](#ZH-CN_TOPIC_0000002529285653__processor11)是上报事件的数据处理者。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| processor | Processor | 是 | 上报事件的数据处理者。 |
 
 **返回值：**
 
-类型说明number所添加上报事件数据处理者的ID，标识唯一数据处理者，可用于移除数据处理者。 添加失败返回-1，添加成功返回大于0的值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 所添加上报事件数据处理者的ID，标识唯一数据处理者，可用于移除数据处理者。 添加失败返回-1，添加成功返回大于0的值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -751,27 +779,24 @@ addProcessorFromConfig(processorName: string, configName?: string): Promise<numb
 
 **参数：**
 
-参数名类型必填说明processorNamestring是
-
-数据处理者的名称。名称只能包含大小写字母、数字、下划线和$，不能以数字开头，长度非空且不超过256个字符。
-
-当前取值仅支持“ha_app_event”，表示接口故障处理者。
-
-configNamestring否
-
-数据处理者的配置名称，系统会根据配置名称从系统预置的processor.json配置文件中自动加载对应的配置项。只能包含大小写字母、数字、下划线和$，不能以数字开头，长度非空且不超过256个字符。
-
-当前取值仅支持默认值“SDK_OCG”，用于配置“接口故障处理者”可处理的事件名称等信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| processorName | string | 是 | 数据处理者的名称。名称只能包含大小写字母、数字、下划线和$，不能以数字开头，长度非空且不超过256个字符。 当前取值仅支持“ha_app_event”，表示接口故障处理者。 |
+| configName | string | 否 | 数据处理者的配置名称，系统会根据配置名称从系统预置的processor.json配置文件中自动加载对应的配置项。只能包含大小写字母、数字、下划线和$，不能以数字开头，长度非空且不超过256个字符。 当前取值仅支持默认值“SDK_OCG”，用于配置“接口故障处理者”可处理的事件名称等信息。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象。返回添加的事件数据处理者的唯一ID，可用于移除该数据处理者。 添加失败返回11105001错误码。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象。返回添加的事件数据处理者的唯一ID，可用于移除该数据处理者。 添加失败返回11105001错误码。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[应用事件打点错误码](../../errors/应用事件打点错误码.md)。
+以下错误码的详细介绍请参见[应用事件打点错误码](应用事件打点错误码.md)。
 
-错误码ID错误信息11105001Invalid parameter value. Possible causes: 1. Incorrect parameter length; 2. Incorrect parameter format.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 11105001 | Invalid parameter value. Possible causes: 1. Incorrect parameter length; 2. Incorrect parameter format. |
 
 **示例：**
 
@@ -798,13 +823,17 @@ removeProcessor(id: number): void
 
 **参数：**
 
-参数名类型必填说明idnumber是上报事件数据处理者ID。值大于0。由调用[addProcessor](#ZH-CN_TOPIC_0000002529285653__hiappeventaddprocessor11)或[addProcessorFromConfig](#ZH-CN_TOPIC_0000002529285653__hiappeventaddprocessorfromconfig20)接口返回值所得。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | number | 是 | 上报事件数据处理者ID。值大于0。由调用addProcessor或addProcessorFromConfig接口返回值所得。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -827,7 +856,7 @@ try {
 
 setUserId(name: string, value: string): void
 
-设置用户ID值。用于在配置[Processor](#ZH-CN_TOPIC_0000002529285653__processor11)数据处理者时进行关联。
+设置用户ID值。用于在配置[Processor](#ZH-CN_TOPIC_0000002553201743__processor11)数据处理者时进行关联。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -835,13 +864,18 @@ setUserId(name: string, value: string): void
 
 **参数：**
 
-参数名类型必填说明namestring是用户ID的key。只能包含大小写字母、数字、下划线和 $，不能以数字开头，长度非空且不超过256个字符。valuestring是用户ID的值。长度不超过256，当值为null或空字符串时，则清除用户ID。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 用户ID的key。只能包含大小写字母、数字、下划线和 $，不能以数字开头，长度非空且不超过256个字符。 |
+| value | string | 是 | 用户ID的值。长度不超过256，当值为null或空字符串时，则清除用户ID。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -867,17 +901,23 @@ getUserId(name: string): string
 
 **参数：**
 
-参数名类型必填说明namestring是用户ID的key。只能包含大小写字母、数字、下划线和 $，不能以数字开头，长度非空且不超过256个字符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 用户ID的key。只能包含大小写字母、数字、下划线和 $，不能以数字开头，长度非空且不超过256个字符。 |
 
 **返回值：**
 
-类型说明string用户ID的值。没有查到返回空字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 用户ID的值。没有查到返回空字符串。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -897,7 +937,7 @@ try {
 
 setUserProperty(name: string, value: string): void
 
-设置用户属性值。用于在配置[Processor](#ZH-CN_TOPIC_0000002529285653__processor11)数据处理者时进行关联。
+设置用户属性值。用于在配置[Processor](#ZH-CN_TOPIC_0000002553201743__processor11)数据处理者时进行关联。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -905,13 +945,18 @@ setUserProperty(name: string, value: string): void
 
 **参数：**
 
-参数名类型必填说明namestring是用户属性的key。只能包含大小写字母、数字、下划线和 $，不能以数字开头，长度非空且不超过256个字符。valuestring是用户属性的值。长度不超过1024，当值为null或空字符串时，则清除用户属性。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 用户属性的key。只能包含大小写字母、数字、下划线和 $，不能以数字开头，长度非空且不超过256个字符。 |
+| value | string | 是 | 用户属性的值。长度不超过1024，当值为null或空字符串时，则清除用户属性。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -937,17 +982,23 @@ getUserProperty(name: string): string
 
 **参数：**
 
-参数名类型必填说明namestring是用户属性的key。只能包含大小写字母、数字、下划线和 $，不能以数字开头，长度非空且不超过256个字符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 用户属性的key。只能包含大小写字母、数字、下划线和 $，不能以数字开头，长度非空且不超过256个字符。 |
 
 **返回值：**
 
-类型说明string用户属性的值。没有查到返回空字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 用户属性的值。没有查到返回空字符串。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
@@ -991,13 +1042,18 @@ configure(config: ConfigOption): void
 
 **参数：**
 
-参数名类型必填说明config[ConfigOption](#ZH-CN_TOPIC_0000002529285653__configoption)是应用事件打点配置项对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | ConfigOption | 是 | 应用事件打点配置项对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[应用事件打点错误码](../../errors/应用事件打点错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[应用事件打点错误码](应用事件打点错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.11103001Invalid max storage quota value. Possible caused by incorrectly formatted.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 11103001 | Invalid max storage quota value. Possible caused by incorrectly formatted. |
 
 **示例：**
 
@@ -1023,27 +1079,23 @@ hiAppEvent.configure(config2);
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-名称类型只读可选说明disableboolean否是打点功能开关，默认值为false。true：关闭打点功能，false：开启打点功能。maxStoragestring否是
-
-打点数据存放目录的配额大小，默认值为“10M”。建议配额大小不超过10M，配额过大可能会影响接口效率。
-
-在目录大小超出配额后，下次打点会触发对目录的清理操作：按从旧到新的顺序逐个删除打点数据文件，直到目录大小不超出配额时结束。
-
-配额值字符串规格如下：
-
-- 配额值字符串只由数字字符和大小单位字符（单位字符支持[b|k|kb|m|mb|g|gb|t|tb]，不区分大小写）构成。
-
-- 配额值字符串必须以数字开头，后面可以选择不传单位字符（默认使用byte作为单位），或者以单位字符结尾。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| disable | boolean | 否 | 是 | 打点功能开关，默认值为false。true：关闭打点功能，false：开启打点功能。 |
+| maxStorage | string | 否 | 是 | 打点数据存放目录的配额大小，默认值为“10M”。建议配额大小不超过10M，配额过大可能会影响接口效率。 在目录大小超出配额后，下次打点会触发对目录的清理操作：按从旧到新的顺序逐个删除打点数据文件，直到目录大小不超出配额时结束。 配额值字符串规格如下： - 配额值字符串只由数字字符和大小单位字符（单位字符支持[b|k|kb|m|mb|g|gb|t|tb]，不区分大小写）构成。 - 配额值字符串必须以数字开头，后面可以选择不传单位字符（默认使用byte作为单位），或者以单位字符结尾。 |
 
 #### EventPolicy22+
 
-提供系统事件配置策略的定义，用于使用[configEventPolicy](#ZH-CN_TOPIC_0000002529285653__hiappeventconfigeventpolicy22)设置事件配置策略。
+提供系统事件配置策略的定义，用于使用[configEventPolicy](#ZH-CN_TOPIC_0000002553201743__hiappeventconfigeventpolicy22)设置事件配置策略。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-名称类型只读可选说明mainThreadJankPolicy[MainThreadJankPolicy](#ZH-CN_TOPIC_0000002529285653__mainthreadjankpolicy22)否是主线程超时事件配置策略。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| mainThreadJankPolicy | MainThreadJankPolicy | 否 | 是 | 主线程超时事件配置策略。 |
+| cpuUsageHighPolicy | CpuUsageHighPolicy | 否 | 是 | CPU高负载事件配置策略。 |
 
 #### MainThreadJankPolicy22+
 
@@ -1053,41 +1105,33 @@ hiAppEvent.configure(config2);
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-名称类型只读可选说明logTypenumber否是
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| logType | number | 否 | 是 | 采集日志的类型。默认值：0。 logType=0：其他选项均取默认值，主线程连续两次超时150ms~450ms，采集调用栈；主线程超时450ms，采集trace。 logType=1：仅采集调用栈，触发检测的阈值由用户自定义。 logType=2：仅采集trace。 说明： - logType=0时，仅需配置autoStopSampling参数，其他参数均取默认值，无需设置。 - logType=2时，其他参数均不生效，无需设置。 |
+| ignoreStartupTime | number | 否 | 是 | 应用启动期间忽略主线程超时检测的时间。单位：秒，默认值：10，最小值：3。 |
+| sampleInterval | number | 否 | 是 | 主线程超时检测间隔和采样间隔。单位：毫秒，默认值：150，取值范围：[50, 500]。 |
+| sampleCount | number | 否 | 是 | 主线程超时采样次数。单位：次，默认值：10，最小值：1。 最大值需要结合自定义的sampleInterval进行动态计算，计算公式：sampleCount <= (2500 / sampleInterval - 4)。 说明： - 2500的含义：根据系统规定，主线程超时事件从检测到上报的时间不可以超过2.5s（即：2500ms）。因此sampleCount的设置值不能超过系统按计算公式得出的最大值。 - 4的含义：第一次超时间隔检测时间 + 第二次超时间隔（系统提供两次再次发生超时事件的检测机会）时间 + 收集并上报堆栈信息的时间。 - 开发者要结合需求场景，进行合理的设置。 |
+| reportTimesPerApp | number | 否 | 是 | 同一个应用的PID一个生命周期内，主线程超时采样上报次数。一个生命周期内只能设置一次。 默认值：1，单位：次。 每分钟上报次数范围：[1, 3]。 |
+| autoStopSampling | boolean | 否 | 是 | 主线程超时结束时，是否自动停止采样主线程堆栈。 true: 超时结束或达到设置的采样次数，停止采样。 false：达到设置的采样次数时停止采样。 默认值：false。 |
 
-采集日志的类型。
+**CpuUsageHighPolicy22+**
 
-logType=0：默认值，主线程连续两次超时150ms~450ms，采集调用栈；主线程超时450ms，采集trace。
+提供CPU高负载事件配置策略的定义。
 
-logType=1：仅采集调用栈，触发检测的阈值用户自定义。
 
-logType=2：仅采集trace。
+该接口被调用后，会将设置值持久化。后续重复调用该接口时，若不设置对应参数，则取上一次系统取用的值。
 
-ignoreStartupTimenumber否是应用启动期间忽略主线程超时检测的时间。单位：秒，默认值：10，最小值：3。sampleIntervalnumber否是主线程超时检测间隔和采样间隔。单位：毫秒，默认值：150，取值范围：[50, 500]。sampleCountnumber否是
+元服务API： 从API version 22开始，该接口支持在应用中使用。
 
-主线程超时采样次数。单位：次，默认值：10，最小值：1。
+系统能力： SystemCapability.HiviewDFX.HiAppEvent
 
-最大值需要结合自定义的sampleInterval进行动态计算，计算公式：sampleCount <= (2500 / sampleInterval - 4)。
-
-reportTimesPerAppnumber否是
-
-同一个应用的PID一个生命周期内，主线程超时采样上报次数。一个生命周期内只能设置一次。
-
-默认值：1，单位：次。
-
-开发者选项打开，每小时上报次数范围：[1, 3]。
-
-开发者选项关闭，每分钟上报次数范围：[1, 3]。
-
-autoStopSamplingboolean否是
-
-主线程超时结束时，是否自动停止采样主线程堆栈。
-
-true: 超时结束或达到设置的采样次数，停止采样。
-
-false：达到设置的采样次数时停止采样。
-
-默认值：false。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| foregroundLoadThreshold | number | 否 | 是 | 应用前台CPU高负载异常阈值，阈值范围：[1, 100]，单位：%，默认值：30。若设置值在阈值范围外，系统将取用默认值30。 说明：建议取值小于30。 |
+| backgroundLoadThreshold | number | 否 | 是 | 应用后台CPU高负载异常阈值，阈值范围：[1, 100]，单位：%，默认值：10。若设置值在阈值范围外，系统将取用默认值10。 说明：建议取值小于10。 |
+| threadLoadThreshold | number | 否 | 是 | 应用线程CPU高负载异常阈值，阈值范围：[15, 100]，单位：%，默认值：70。若设置值在阈值范围外，系统将取用默认值70。 |
+| perfLogCaptureCount | number | 否 | 是 | 采样栈每日采集次数。一旦系统检测到当前异常日志的采集次数超过设置值，系统仍会正常上报事件，但异常事件中的external_log字段，将不再附加日志文件路径信息。 Debug版本应用，阈值范围：[-1, 100]； Release版本应用，阈值范围：[0, 20]。 单位：次，默认值：1。 若设置值在阈值范围外，系统将取用默认值1。 说明： 1. 值为-1，表示不限制采集日志次数。 2. 值为0，表示不采集日志。 3. 值大于0，表示每日采集次数上限。 |
+| threadLoadInterval | number | 否 | 是 | 应用线程CPU高负载异常检测周期，阈值范围：[5, 3600]，单位：秒，默认值：60。 若设置值在阈值范围外，系统将取用默认值60。 |
 
 #### Processor11+
 
@@ -1095,97 +1139,22 @@ false：达到设置的采样次数时停止采样。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-名称类型只读可选说明namestring否否
-
-数据处理者的名称。名称只能包含大小写字母、数字、下划线和 $，不能以数字开头，长度非空且不超过256个字符。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-debugModeboolean否是
-
-是否开启debug模式，默认值为false。配置值为true表示开启debug模式，false表示不开启debug模式。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-routeInfostring否是
-
-服务器位置信息，默认为空字符串。传入字符串长度不能超过8KB，超过时会被置为默认值。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-appIdstring否是
-
-应用id，默认为空字符串。传入字符串长度不能超过8KB，超过时会被置为默认值。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-onStartReportboolean否是
-
-数据处理者在启动时是否上报事件，默认值为false。配置值为true表示上报事件，false表示不上报事件。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-onBackgroundReportboolean否是
-
-当应用程序进入后台时是否上报事件，默认值为false。配置值为true表示上报事件，false表示不上报事件。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-periodReportnumber否是
-
-事件定时上报时间周期，单位为秒。传入数值必须大于或等于0，小于0时会被置为默认值0，不进行定时上报。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-batchReportnumber否是
-
-事件上报阈值，当事件条数达到阈值时上报事件。传入数值必须大于0且小于1000，不在数值范围内会被置为默认值0，不进行上报。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-userIdsstring[]否是
-
-数据处理者可以上报的用户ID的name数组。name对应[setUserId](#ZH-CN_TOPIC_0000002529285653__hiappeventsetuserid11)接口的name参数。默认为空数组。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-userPropertiesstring[]否是
-
-数据处理者可以上报的用户属性的name数组。name对应[setUserProperty](#ZH-CN_TOPIC_0000002529285653__hiappeventsetuserproperty11)接口的name参数。默认为空数组。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-eventConfigs[AppEventReportConfig](#ZH-CN_TOPIC_0000002529285653__appeventreportconfig11)[]否是
-
-数据处理者可以上报的事件描述配置数组。默认为空数组。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-configId12+number否是
-
-数据处理者配置id。传入数值必须大于或等于0，小于0时会被置为默认值0。传入的值大于0时，与数据处理者的名称name共同唯一标识数据处理者。
-
-**元服务API：** 从API version 12开始，该参数支持在元服务中使用。
-
-customConfigs12+Record<string, string>否是
-
-自定义扩展参数。传入参数名和参数值不符合规格会默认不配置扩展参数，其规格定义如下：
-
-- 参数名为string类型，首字符必须为字母字符或$字符，中间字符必须为数字字符、字母字符或下划线字符，结尾字符必须为数字字符或字母字符，长度非空且不超过32个字符。
-
-- 参数值为string类型，参数值长度需在1024个字符以内。
-
-- 参数个数需在32个以内。
-
-**元服务API：** 从API version 12开始，该参数支持在元服务中使用。
-
-configName20+string否是
-
-数据处理者的配置名称，系统会根据配置名称从系统预置的processor.json配置文件中自动加载对应的配置项。只能包含大小写字母、数字、下划线和$，不能以数字开头，长度非空且不超过256个字符。
-
-当前取值仅支持默认值“SDK_OCG”，用于配置“接口故障处理者”可处理的事件名称等信息。
-
-**元服务API：** 从API version 20开始，该参数支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | string | 否 | 否 | 数据处理者的名称。名称只能包含大小写字母、数字、下划线和 $，不能以数字开头，长度非空且不超过256个字符。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| debugMode | boolean | 否 | 是 | 是否开启debug模式，默认值为false。配置值为true表示开启debug模式，false表示不开启debug模式。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| routeInfo | string | 否 | 是 | 服务器位置信息，默认为空字符串。传入字符串长度不能超过8KB，超过时会被置为默认值。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| appId | string | 否 | 是 | 应用id，默认为空字符串。传入字符串长度不能超过8KB，超过时会被置为默认值。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| onStartReport | boolean | 否 | 是 | 数据处理者在启动时是否上报事件，默认值为false。配置值为true表示上报事件，false表示不上报事件。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| onBackgroundReport | boolean | 否 | 是 | 当应用程序进入后台时是否上报事件，默认值为false。配置值为true表示上报事件，false表示不上报事件。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| periodReport | number | 否 | 是 | 事件定时上报时间周期，单位为秒。传入数值必须大于或等于0，小于0时会被置为默认值0，不进行定时上报。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| batchReport | number | 否 | 是 | 事件上报阈值，当事件条数达到阈值时上报事件。传入数值必须大于0且小于1000，不在数值范围内会被置为默认值0，不进行上报。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| userIds | string[] | 否 | 是 | 数据处理者可以上报的用户ID的name数组。name对应setUserId接口的name参数。默认为空数组。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| userProperties | string[] | 否 | 是 | 数据处理者可以上报的用户属性的name数组。name对应setUserProperty接口的name参数。默认为空数组。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| eventConfigs | AppEventReportConfig[] | 否 | 是 | 数据处理者可以上报的事件描述配置数组。默认为空数组。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| configId12+ | number | 否 | 是 | 数据处理者配置id。传入数值必须大于或等于0，小于0时会被置为默认值0。传入的值大于0时，与数据处理者的名称name共同唯一标识数据处理者。 元服务API： 从API version 12开始，该参数支持在元服务中使用。 |
+| customConfigs12+ | Record<string, string> | 否 | 是 | 自定义扩展参数。传入参数名和参数值不符合规格会默认不配置扩展参数，其规格定义如下： - 参数名为string类型，首字符必须为字母字符或$字符，中间字符必须为数字字符、字母字符或下划线字符，结尾字符必须为数字字符或字母字符，长度非空且不超过32个字符。 - 参数值为string类型，参数值长度需在1024个字符以内。 - 参数个数需在32个以内。 元服务API： 从API version 12开始，该参数支持在元服务中使用。 |
+| configName20+ | string | 否 | 是 | 数据处理者的配置名称，默认为空，系统不从配置文件中加载配置项。当配置名称不为空时，系统会根据配置名称从系统预置的processor.json配置文件中自动加载对应的配置项。只能包含大小写字母、数字、下划线和$，不能以数字开头，长度非空且不超过256个字符。 当前取值仅支持“SDK_OCG”，用于配置“接口故障处理者”可处理的事件名称等信息。 元服务API： 从API version 20开始，该参数支持在元服务中使用。 |
 
 #### AppEventReportConfig11+
 
@@ -1195,7 +1164,11 @@ configName20+string否是
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-名称类型只读可选说明domainstring否是事件领域。默认为空字符串，事件领域名称支持数字、字母、下划线字符，需要以字母开头且不能以下划线结尾，长度非空且不超过32个字符。namestring否是事件名称。默认为空字符串，首字符必须为字母字符或$字符，中间字符必须为数字字符、字母字符或下划线字符，结尾字符必须为数字字符或字母字符，长度非空且不超过48个字符。isRealTimeboolean否是是否实时上报事件。默认值为false，配置值为true表示实时上报事件，false表示不实时上报事件。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| domain | string | 否 | 是 | 事件领域。默认为空字符串，事件领域名称支持数字、字母、下划线字符，需要以字母开头且不能以下划线结尾，长度非空且不超过32个字符。 |
+| name | string | 否 | 是 | 事件名称。默认为空字符串，首字符必须为字母字符或$字符，中间字符必须为数字字符、字母字符或下划线字符，结尾字符必须为数字字符或字母字符，长度非空且不超过48个字符。 |
+| isRealTime | boolean | 否 | 是 | 是否实时上报事件。默认值为false，配置值为true表示实时上报事件，false表示不实时上报事件。 |
 
 #### ParamType12+
 
@@ -1207,7 +1180,12 @@ type ParamType = number | string | boolean | Array<string>
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-类型说明number表示值类型为数字。string表示值类型为字符串。boolean表示值类型为布尔值。Array<string>表示值类型为字符串类型的数组。
+| 类型 | 说明 |
+| --- | --- |
+| number | 表示值类型为数字。 |
+| string | 表示值类型为字符串。 |
+| boolean | 表示值类型为布尔值。 |
+| Array<string> | 表示值类型为字符串类型的数组。 |
 
 #### EventType
 
@@ -1217,7 +1195,12 @@ type ParamType = number | string | boolean | Array<string>
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-名称值说明FAULT1故障类型事件。STATISTIC2统计类型事件。SECURITY3安全类型事件。BEHAVIOR4行为类型事件。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| FAULT | 1 | 故障类型事件。 |
+| STATISTIC | 2 | 统计类型事件。 |
+| SECURITY | 3 | 安全类型事件。 |
+| BEHAVIOR | 4 | 行为类型事件。 |
 
 #### hiAppEvent.domain11+
 
@@ -1227,103 +1210,34 @@ type ParamType = number | string | boolean | Array<string>
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-名称类型只读说明OSstring是系统领域。
+| 名称 | 类型 | 只读 | 说明 |
+| --- | --- | --- | --- |
+| OS | string | 是 | 系统领域。 |
 
 #### hiAppEvent.event
 
-提供事件名称常量。包含系统事件名称常量和应用事件名称常量，其中应用事件名称常量是为开发者在调用[Write](#ZH-CN_TOPIC_0000002529285653__hiappeventwrite-1)接口进行应用事件打点时预留的可选自定义事件名称。
+提供事件名称常量。包含系统事件名称常量和应用事件名称常量，其中应用事件名称常量是为开发者在调用[Write](#ZH-CN_TOPIC_0000002553201743__hiappeventwrite-1)接口进行应用事件打点时预留的可选自定义事件名称。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-名称类型只读说明USER_LOGINstring是
-
-用户登录事件。预留的应用事件名称常量。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-USER_LOGOUTstring是
-
-用户登出事件。预留的应用事件名称常量。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-DISTRIBUTED_SERVICE_STARTstring是
-
-分布式服务启动事件。预留的应用事件名称常量。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-APP_CRASH11+string是
-
-应用崩溃事件。系统事件名称常量。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-APP_FREEZE11+string是
-
-应用冻屏事件。系统事件名称常量。
-
-**元服务API：** 从API version 11开始，该参数支持在元服务中使用。
-
-APP_LAUNCH12+string是
-
-应用启动耗时事件。系统事件名称常量。
-
-**元服务API：** 从API version 12开始，该参数支持在元服务中使用。
-
-SCROLL_JANK12+string是
-
-应用滑动丢帧事件。系统事件名称常量。
-
-**元服务API：** 从API version 12开始，该参数支持在元服务中使用。
-
-CPU_USAGE_HIGH12+string是
-
-应用CPU高负载事件。系统事件名称常量。
-
-**元服务API：** 从API version 12开始，该参数支持在元服务中使用。
-
-BATTERY_USAGE12+string是
-
-应用24h功耗器件分解统计事件。系统事件名称常量。
-
-**元服务API：** 从API version 12开始，该参数支持在元服务中使用。
-
-RESOURCE_OVERLIMIT12+string是
-
-应用资源泄漏事件。系统事件名称常量。
-
-**元服务API：** 从API version 12开始，该参数支持在元服务中使用。
-
-ADDRESS_SANITIZER12+string是
-
-应用地址越界事件。系统事件名称常量。
-
-**元服务API：** 从API version 12开始，该参数支持在元服务中使用。
-
-MAIN_THREAD_JANK12+string是
-
-应用主线程超时事件。系统事件名称常量。
-
-**元服务API：** 从API version 12开始，该参数支持在元服务中使用。
-
-APP_KILLED20+string是
-
-应用终止事件。系统事件名称常量。
-
-**元服务API：** 从API version 20开始，该参数支持在元服务中使用。
-
-APP_HICOLLIE21+string是
-
-应用任务执行超时事件。系统事件名称常量。
-
-**元服务API：** 从API version 21开始，该参数支持在元服务中使用。
-
-AUDIO_JANK_FRAME21+string是
-
-应用音频卡顿事件。系统事件名称常量。
-
-**元服务API：** 从API version 21开始，该参数支持在元服务中使用。
+| 名称 | 类型 | 只读 | 说明 |
+| --- | --- | --- | --- |
+| USER_LOGIN | string | 是 | 用户登录事件。预留的应用事件名称常量。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| USER_LOGOUT | string | 是 | 用户登出事件。预留的应用事件名称常量。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| DISTRIBUTED_SERVICE_START | string | 是 | 分布式服务启动事件。预留的应用事件名称常量。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| APP_CRASH11+ | string | 是 | 应用崩溃事件。系统事件名称常量。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| APP_FREEZE11+ | string | 是 | 应用冻屏事件。系统事件名称常量。 元服务API： 从API version 11开始，该参数支持在元服务中使用。 |
+| APP_LAUNCH12+ | string | 是 | 应用启动耗时事件。系统事件名称常量。 元服务API： 从API version 12开始，该参数支持在元服务中使用。 |
+| SCROLL_JANK12+ | string | 是 | 应用滑动丢帧事件。系统事件名称常量。 元服务API： 从API version 12开始，该参数支持在元服务中使用。 |
+| CPU_USAGE_HIGH12+ | string | 是 | 应用CPU高负载事件。系统事件名称常量。 元服务API： 从API version 12开始，该参数支持在元服务中使用。 |
+| BATTERY_USAGE12+ | string | 是 | 应用24h功耗器件分解统计事件。系统事件名称常量。 元服务API： 从API version 12开始，该参数支持在元服务中使用。 |
+| RESOURCE_OVERLIMIT12+ | string | 是 | 应用资源泄漏事件。系统事件名称常量。 元服务API： 从API version 12开始，该参数支持在元服务中使用。 |
+| ADDRESS_SANITIZER12+ | string | 是 | 应用地址越界事件。系统事件名称常量。 元服务API： 从API version 12开始，该参数支持在元服务中使用。 |
+| MAIN_THREAD_JANK12+ | string | 是 | 应用主线程超时事件。系统事件名称常量。 元服务API： 从API version 12开始，该参数支持在元服务中使用。 |
+| APP_KILLED20+ | string | 是 | 应用终止事件。系统事件名称常量。 元服务API： 从API version 20开始，该参数支持在元服务中使用。 |
+| APP_HICOLLIE21+ | string | 是 | 应用任务执行超时事件。系统事件名称常量。 元服务API： 从API version 21开始，该参数支持在元服务中使用。 |
+| AUDIO_JANK_FRAME21+ | string | 是 | 应用音频卡顿事件。系统事件名称常量。 元服务API： 从API version 21开始，该参数支持在元服务中使用。 |
+| SCROLL_ARKWEB_FLING_JANK23+ | string | 是 | ArkWeb抛滑丢帧事件。系统事件名称常量。 元服务API： 从API version 23开始，该参数支持在元服务中使用。 |
 
 #### hiAppEvent.param
 
@@ -1333,4 +1247,8 @@ AUDIO_JANK_FRAME21+string是
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
-名称类型只读说明USER_IDstring是用户自定义ID。DISTRIBUTED_SERVICE_NAMEstring是分布式服务名称。DISTRIBUTED_SERVICE_INSTANCE_IDstring是分布式服务实例ID。
+| 名称 | 类型 | 只读 | 说明 |
+| --- | --- | --- | --- |
+| USER_ID | string | 是 | 用户自定义ID。 |
+| DISTRIBUTED_SERVICE_NAME | string | 是 | 分布式服务名称。 |
+| DISTRIBUTED_SERVICE_INSTANCE_ID | string | 是 | 分布式服务实例ID。 |

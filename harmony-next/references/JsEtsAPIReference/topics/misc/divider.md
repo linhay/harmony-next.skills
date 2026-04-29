@@ -1,266 +1,76 @@
-[]()[]()
+# divider
 
-# Divider
+分隔器组件，分隔不同内容块/内容元素。可用于列表或界面布局。
 
-提供分割线组件，分割不同内容块/内容元素。
 
- 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-
- 如果出现分割线粗细不一或者消失的问题，请参考[组件级像素取整常见问题](组件级像素取整.md#ZH-CN_TOPIC_0000002529284823__常见问题)。
-
-[]()[]()
-
-#### 子组件
-
-无
-
-[]()[]()
-
-#### 接口
-
-Divider()
-
-创建分割线组件。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-[]()[]()
+从API version 8 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 #### 属性
 
-除支持[通用属性](../components/通用属性 (ts-component-general-attributes).md)外，还支持以下属性：
+除支持[通用属性](通用属性.md)外，还支持如下属性：
 
-[]()[]()
+| 名称 | 类型 | 默认值 | 必填 | 描述 |
+| --- | --- | --- | --- | --- |
+| vertical | boolean | false | 否 | 使用水平分割线还是垂直分割线，默认水平分割线。 |
 
-#### vertical
+**样式**
 
-vertical(value: boolean)
+仅支持如下样式：
 
-设置分割线的方向，支持[attributeModifier](动态属性设置.md#ZH-CN_TOPIC_0000002529284843__attributemodifier)动态设置属性方法。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
-参数名类型必填说明valueboolean是
-
-使用水平分割线还是垂直分割线。
-
-false：水平分割线；true：垂直分割线。
-
-默认值：false
-
-非法值：按默认值处理。
-
-[]()[]()
-
-#### color
-
-color(value: ResourceColor)
-
-设置分割线的颜色，支持[attributeModifier](动态属性设置.md#ZH-CN_TOPIC_0000002529284843__attributemodifier)动态设置属性方法。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
-参数名类型必填说明value[ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)是
-
-分割线颜色。
-
-默认值：'#33182431'
-
-非法值：按默认值处理。
-
-支持通过[WithTheme](WithTheme.md)设置通用分割线颜色。
-
-[]()[]()
-
-#### strokeWidth
-
-strokeWidth(value: number | string)
-
-设置分割线的宽度，支持[attributeModifier](动态属性设置.md#ZH-CN_TOPIC_0000002529284843__attributemodifier)动态设置属性方法。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
-参数名类型必填说明valuenumber | string是
-
-分割线宽度。
-
-默认值：1px。
-
-非法值：按默认值处理
-
-单位：vp
-
-**说明：**
-
-分割线的宽度不支持百分比设置。优先级低于[height](尺寸设置.md#ZH-CN_TOPIC_0000002497444850__height)，超过通用属性设置大小时，按照通用属性进行裁切。部分设备硬件中存在1像素取整后分割线不显示问题，建议使用2像素。
-
-[]()[]()
-
-#### lineCap
-
-lineCap(value: LineCapStyle)
-
-设置分割线的端点样式，支持[attributeModifier](动态属性设置.md#ZH-CN_TOPIC_0000002529284843__attributemodifier)动态设置属性方法。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
-参数名类型必填说明value[LineCapStyle](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__linecapstyle)是
-
-分割线的端点样式。
-
-默认值：LineCapStyle.Butt
-
-非法值：按默认值处理。
-
-[]()[]()
+| 名称 | 类型 | 默认值 | 必填 | 描述 |
+| --- | --- | --- | --- | --- |
+| margin | <length> | 0 | 否 | 使用简写属性设置所有的外边距属性，该属性可以有1到4个值。 |
+| margin-[left|top|right|bottom] | <length> | 0 | 否 | 使用简写属性设置左、上、右、下外边距属性，类型length，单位px，默认值0。 |
+| color | <color> | - | 否 | 设置分割线颜色。 |
+| stroke-width | <length> | 1 | 否 | 设置分割线宽度。 |
+| display | string | flex | 否 | 确定分割线所产生的框的类型。值flex/none，默认值flex。 |
+| visibility | string | visible | 否 | 是否显示分割线，不可见的框会占用布局。visible代表显示元素，hidden代表不显示元素。 |
+| line-cap | string | butt | 否 | 设置分割线条的端点样式，默认为butt，可选值为： - "butt"：分割线两端为平行线。 - "round"：分割线两端额外添加半圆。 - "square"：分割线两端额外添加半方形。 "round"和"square"会额外增加一个线宽的分割线长度。 |
+| flex | number | - | 否 | 规定了分割线如何适应父组件中的可用空间。作为一个简写属性，用来设置组件的flex-grow。 仅父容器为<div>、<list-item>、<tabs>时生效。 |
+| flex-grow | number | 0 | 否 | 设置分割线的伸展因子，指定父组件容器主轴方向上剩余空间（容器本身大小减去所有flex项加起来的大小）的分配系数。0为不伸展。 仅父容器为<div>、<list-item>、<tabs>时生效。 |
+| flex-shrink | number | 1 | 否 | 设置分割线的收缩因子，flex元素仅在默认宽度之和大于容器的时候才会发生收缩，0为不收缩。 仅父容器为<div>、<list-item>、<tabs>时生效。 |
+| flex-basis | <length> | - | 否 | 设置分割线在主轴方向上的初始大小。 仅父容器为<div>、<list-item>、<tabs>时生效。 |
 
 #### 事件
 
-支持[通用事件](../components/通用事件 (ts-component-general-events).md)。
-
-[]()[]()
+不支持。
 
 #### 示例
 
-[]()[]()
-
-#### 示例1（定义Divider方向、颜色及宽度）
-
-该示例定义了Divider的样式，如方向、颜色及宽度。
+```ets
+<!-- xxx.hml -->
+<div class="container">
+  <div class="content">
+    <divider class="divider" vertical="false"></divider>
+  </div>
+```
 
 ```ets
-// xxx.ets
-@Entry
-@Component
-struct DividerExample {
-  build() {
-    Column() {
-      // 使用横向分割线场景
-      Text('Horizontal divider').fontSize(9).fontColor(0xCCCCCC)
-      List() {
-        ForEach([1, 2, 3], (item: number) => {
-          ListItem() {
-            Text('list' + item).width('100%').fontSize(14).fontColor('#182431').textAlign(TextAlign.Start)
-          }.width(244).height(48)
-        }, (item: number) => item.toString())
-      }.padding({ left: 24, bottom: 8 })
-
-      Divider().strokeWidth(8).color('#F1F3F5')
-      List() {
-        ForEach([4, 5], (item: number) => {
-          ListItem() {
-            Text('list' + item).width('100%').fontSize(14).fontColor('#182431').textAlign(TextAlign.Start)
-          }.width(244).height(48)
-        }, (item: number) => item.toString())
-      }.padding({ left: 24, top: 8 })
-
-      // 使用纵向分割线场景
-      Text('Vertical divider').fontSize(9).fontColor(0xCCCCCC)
-      Column() {
-        Column() {
-          Row().width(288).height(64).backgroundColor('#30C9F0').opacity(0.3)
-          Row() {
-            Button('Button')
-              .width(136)
-              .height(22)
-              .fontSize(16)
-              .fontColor('#007DFF')
-              .fontWeight(500)
-              .backgroundColor(Color.Transparent)
-            Divider()
-              .vertical(true)
-              .height(22)
-              .color('#182431')
-              .opacity(0.6)
-              .margin({ left: 8, right: 8 })
-            Button('Button')
-              .width(136)
-              .height(22)
-              .fontSize(16)
-              .fontColor('#007DFF')
-              .fontWeight(500)
-              .backgroundColor(Color.Transparent)
-          }.margin({ top: 17 })
+/* xxx.css */
+.container {
+  margin: 20px;
+  flex-direction:column;
+  width:100%;
+  height:100%;
+  align-items:center;
         }
-        .width(336)
-        .height(152)
-        .backgroundColor('#FFFFFF')
-        .borderRadius(24)
-        .padding(24)
+.content{
+  width:80%;
+  height:40%;
+  margin-top:100px;
+  border:1px solid #000000;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column;
       }
-      .width('100%')
-      .height(168)
-      .backgroundColor('#F1F3F5')
-      .justifyContent(FlexAlign.Center)
-      .margin({ top: 8 })
-    }.width('100%').padding({ top: 24 })
+.divider {
+  margin: 10px;
+  color: #ff0000ff;
+  stroke-width: 3px;
+  line-cap: round;
   }
-}
 ```
 
-[]()[]()
+4*4卡片
 
-#### 示例2（定义Divider的lineCap样式）
-
-该示例定义了Divider的lineCap样式。
-
-```ets
-// xxx.ets
-@Entry
-@Component
-struct DividerExample {
-  build() {
-    Column({space:30}) {
-      Text("LineCap:Butt")
-      Divider()
-        .strokeWidth(20)
-        .width("90%")
-        .color('#F1F3F5')
-        .lineCap(LineCapStyle.Butt)
-
-      Text("LineCap:Round")
-      Divider()
-        .strokeWidth(20)
-        .width("90%")
-        .color('#F1F3F5')
-        .lineCap(LineCapStyle.Round)
-
-      Text("LineCap:Square")
-      Divider()
-        .strokeWidth(20)
-        .width("90%")
-        .color('#F1F3F5')
-        .lineCap(LineCapStyle.Square)
-
-    }.width('100%').padding({ top: 24 })
-  }
-}
-```
+![image](public_sys-resources/zh-cn_image_0000002522085704.webp)

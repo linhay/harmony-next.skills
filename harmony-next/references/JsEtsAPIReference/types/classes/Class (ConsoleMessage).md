@@ -1,6 +1,7 @@
 # Class (ConsoleMessage)
 
-Web组件获取控制台信息对象。示例代码参考[onConsole事件](../../topics/misc/事件.md#ZH-CN_TOPIC_0000002497445228__onconsole)。
+Web组件获取控制台信息对象。示例代码参考[onConsole事件](事件.md#ZH-CN_TOPIC_0000002522081170__onconsole)。
+
 
 -
 
@@ -12,21 +13,27 @@ Web组件获取控制台信息对象。示例代码参考[onConsole事件](../..
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### constructor(deprecated)
 
-constructor(message: string, sourceId: string, lineNumber: number, messageLevel: MessageLevel)
+constructor(message: string, sourceId: string, lineNumber: number, messageLevel: [MessageLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002497605218__messagelevel))
 
 ConsoleMessage的构造函数。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[constructor](#ZH-CN_TOPIC_0000002529445173__constructor9)代替。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[constructor](#ZH-CN_TOPIC_0000002522241168__constructor9)代替。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
 
-参数名类型必填说明messagestring是ConsoleMessage的日志输出信息。sourceIdstring是网页源文件的路径和文件名。lineNumbernumber是ConsoleMessage的行号。messageLevel[MessageLevel](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497605218__messagelevel)是ConsoleMessage的日志级别。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| message | string | 是 | ConsoleMessage的日志输出信息。 |
+| sourceId | string | 是 | 网页源文件的路径和文件名。 |
+| lineNumber | number | 是 | ConsoleMessage的行号。 |
+| messageLevel | [MessageLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002497605218__messagelevel) | 是 | ConsoleMessage的日志级别。 |
 
 #### constructor9+
 
@@ -46,7 +53,9 @@ getLineNumber(): number
 
 **返回值：**
 
-类型说明number返回ConsoleMessage的行数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回ConsoleMessage的行数。 |
 
 #### getMessage
 
@@ -58,11 +67,13 @@ getMessage(): string
 
 **返回值：**
 
-类型说明string返回ConsoleMessage的日志信息。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回ConsoleMessage的日志信息。 |
 
-#### getMessageLevel
+#### get[MessageLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002497605218__messagelevel)
 
-getMessageLevel(): MessageLevel
+get[MessageLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002497605218__messagelevel)(): MessageLevel
 
 获取ConsoleMessage的信息级别。
 
@@ -70,7 +81,9 @@ getMessageLevel(): MessageLevel
 
 **返回值：**
 
-类型说明[MessageLevel](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497605218__messagelevel)返回ConsoleMessage的信息级别。
+| 类型 | 说明 |
+| --- | --- |
+| [MessageLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002497605218__messagelevel) | 返回ConsoleMessage的信息级别。 |
 
 #### getSourceId
 
@@ -82,4 +95,20 @@ getSourceId(): string
 
 **返回值：**
 
-类型说明string返回网页源文件路径和名字。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回网页源文件路径和名字。 |
+
+**getSource23+**
+
+getSource(): ConsoleMessageSource
+
+获取ConsoleMessage的日志来源。
+
+系统能力： SystemCapability.Web.Webview.Core
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| ConsoleMessageSource | 返回ConsoleMessage的日志来源。 |

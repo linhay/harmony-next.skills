@@ -20,15 +20,22 @@ getAutoStartupStatusForSelf(): Promise<boolean>
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
+设备行为差异：该接口仅在Phone、PC/2in1、Tablet和Wearable设备中可正常调用，在其他设备中返回801错误码。
+
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示当前应用已被用户设置为开机自启动，false表示当前应用未被用户设置为开机自启动。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示当前应用已被用户设置为开机自启动，false表示当前应用未被用户设置为开机自启动。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[元能力子系统错误码]([元能力子系统错误码](../../errors/元能力子系统错误码.md).md)。
 
-错误码ID错误信息801Capability not supported.16000050Internal error. Possible causes: 1. Connect to system service failed; 2.System service failed to communicate with dependency module.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 16000050 | Internal error. Possible causes: 1. Connect to system service failed; 2.System service failed to communicate with dependency module. |
 
 **示例**：
 
@@ -49,6 +56,4 @@ export default class EntryAbility extends UIAbility {
       let msg = (err as BusinessError).message;
       console.error(`getAutoStartupStatusForSelf failed, err code: ${code}, err msg: ${msg}.`);
     }
-  }
-}
 ```

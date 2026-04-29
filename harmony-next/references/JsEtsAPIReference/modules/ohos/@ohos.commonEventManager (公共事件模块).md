@@ -12,7 +12,7 @@ import { commonEventManager } from '@kit.BasicServicesKit';
 
 #### Support
 
-系统公共事件是指由系统服务或系统应用发布的事件，订阅这些公共事件需要特定的权限、使用相应的值，详见[系统定义的公共事件](../../topics/misc/系统定义的公共事件.md)。
+系统公共事件是指由系统服务或系统应用发布的事件，订阅这些公共事件需要特定的权限、使用相应的值，详见[系统定义的公共事件]([系统定义的公共事件](../../topics/misc/系统定义的公共事件.md).md)。
 
 #### commonEventManager.publish
 
@@ -26,13 +26,21 @@ publish(event: string, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明eventstring是表示要发送的公共事件。详见[系统公共事件定义](../../topics/misc/系统定义的公共事件.md)。callbackAsyncCallback<void>是回调函数。当公共事件发布成功时，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 表示要发送的公共事件。详见[系统公共事件定义](../../topics/misc/系统定义的公共事件.md)。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当公共事件发布成功时，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[事件错误码](../../errors/事件错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[事件错误码]([事件错误码](../../errors/事件错误码.md).md)。
 
-错误码ID错误信息1500003The common event sending frequency too high.1500007Failed to send the message to the common event service.1500008Failed to initialize the common event service.1500009Failed to obtain system parameters.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1500003 | The common event sending frequency too high. |
+| 1500007 | Failed to send the message to the common event service. |
+| 1500008 | Failed to initialize the common event service. |
+| 1500009 | Failed to obtain system parameters. |
 
 **示例：**
 
@@ -56,7 +64,7 @@ try {
 
 #### commonEventManager.publish
 
-publish(event: string, options: CommonEventPublishData, callback: AsyncCallback<void>): void
+publish(event: string, options: [CommonEventPublishData](../../topics/misc/CommonEventPublishData.md), callback: AsyncCallback<void>): void
 
 发布公共事件。使用callback异步回调。
 
@@ -66,13 +74,22 @@ publish(event: string, options: CommonEventPublishData, callback: AsyncCallback<
 
 **参数：**
 
-参数名类型必填说明eventstring是表示要发布的公共事件。详见[系统公共事件定义](../../topics/misc/系统定义的公共事件.md)。options[CommonEventPublishData](../../topics/misc/CommonEventPublishData.md)是表示发布公共事件的属性。callbackAsyncCallback<void>是回调函数。当公共事件发布成功时，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 表示要发布的公共事件。详见[系统公共事件定义](../../topics/misc/系统定义的公共事件.md)。 |
+| options | [CommonEventPublishData](../../topics/misc/CommonEventPublishData.md) | 是 | 表示发布公共事件的属性。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当公共事件发布成功时，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[事件错误码](../../errors/事件错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[事件错误码](事件错误码.md)。
 
-错误码ID错误信息1500003The common event sending frequency too high.1500007Failed to send the message to the common event service.1500008Failed to initialize the common event service.1500009Failed to obtain system parameters.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1500003 | The common event sending frequency too high. |
+| 1500007 | Failed to send the message to the common event service. |
+| 1500008 | Failed to initialize the common event service. |
+| 1500009 | Failed to obtain system parameters. |
 
 **示例：**
 
@@ -103,7 +120,7 @@ try {
 
 #### commonEventManager.createSubscriber
 
-createSubscriber(subscribeInfo: CommonEventSubscribeInfo, callback: AsyncCallback<CommonEventSubscriber>): void
+createSubscriber(subscribeInfo: [CommonEventSubscribeInfo](../../topics/misc/CommonEventSubscribeInfo.md), callback: AsyncCallback<CommonEventSubscriber>): void
 
 创建订阅者。使用callback异步回调。
 
@@ -113,21 +130,18 @@ createSubscriber(subscribeInfo: CommonEventSubscribeInfo, callback: AsyncCallbac
 
 **参数：**
 
-参数名类型必填说明subscribeInfo[CommonEventSubscribeInfo](../../topics/misc/CommonEventSubscribeInfo.md)是表示订阅信息。callbackAsyncCallback<[CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1)>是回调函数。当公共事件订阅者创建成功时，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| subscribeInfo | [CommonEventSubscribeInfo](../../topics/misc/CommonEventSubscribeInfo.md) | 是 | 表示订阅信息。 |
+| callback | AsyncCallback<[CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1)> | 是 | 回调函数。当公共事件订阅者创建成功时，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -135,7 +149,7 @@ Parameter error. Possible causes:
 import { BusinessError } from '@kit.BasicServicesKit';
 
 // 定义订阅者，用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
-let subscriber: commonEventManager.CommonEventSubscriber;
+let subscriber: commonEventManager.CommonEventSubscriber | null = null;
 // 订阅者信息
 let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
   events: ['event']
@@ -160,7 +174,7 @@ try {
 
 #### commonEventManager.createSubscriber
 
-createSubscriber(subscribeInfo: CommonEventSubscribeInfo): Promise<CommonEventSubscriber>
+createSubscriber(subscribeInfo: [CommonEventSubscribeInfo](../../topics/misc/CommonEventSubscribeInfo.md)): Promise<CommonEventSubscriber>
 
 创建订阅者。使用Promise异步回调。
 
@@ -170,25 +184,23 @@ createSubscriber(subscribeInfo: CommonEventSubscribeInfo): Promise<CommonEventSu
 
 **参数：**
 
-参数名类型必填说明subscribeInfo[CommonEventSubscribeInfo](../../topics/misc/CommonEventSubscribeInfo.md)是表示订阅信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| subscribeInfo | [CommonEventSubscribeInfo](../../topics/misc/CommonEventSubscribeInfo.md) | 是 | 表示订阅信息。 |
 
 **返回值：**
 
-类型说明Promise<[CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1)>以Promise形式返回订阅者对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1)> | Promise对象，返回创建成功的订阅者对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -196,7 +208,7 @@ Parameter error. Possible causes:
 import { BusinessError } from '@kit.BasicServicesKit';
 
 // 定义订阅者，用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
-let subscriber: commonEventManager.CommonEventSubscriber;
+let subscriber: commonEventManager.CommonEventSubscriber | null = null;
 // 订阅者信息
 let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
   events: ['event']
@@ -212,7 +224,7 @@ commonEventManager.createSubscriber(subscribeInfo).then((commonEventSubscriber: 
 
 #### commonEventManager.createSubscriberSync10+
 
-createSubscriberSync(subscribeInfo: CommonEventSubscribeInfo): CommonEventSubscriber
+createSubscriberSync(subscribeInfo: [CommonEventSubscribeInfo](../../topics/misc/CommonEventSubscribeInfo.md)): CommonEventSubscriber
 
 createSubscriber的同步接口。
 
@@ -222,25 +234,23 @@ createSubscriber的同步接口。
 
 **参数：**
 
-参数名类型必填说明subscribeInfo[CommonEventSubscribeInfo](../../topics/misc/CommonEventSubscribeInfo.md)是表示订阅信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| subscribeInfo | [CommonEventSubscribeInfo](../../topics/misc/CommonEventSubscribeInfo.md) | 是 | 表示订阅信息。 |
 
 **返回值：**
 
-类型说明[CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1)返回订阅者对象。
+| 类型 | 说明 |
+| --- | --- |
+| [CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1) | 返回订阅者对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -248,7 +258,7 @@ Parameter error. Possible causes:
 import { BusinessError } from '@kit.BasicServicesKit';
 
 // 定义订阅者，用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
-let subscriber: commonEventManager.CommonEventSubscriber;
+let subscriber: commonEventManager.CommonEventSubscriber | null = null;
 // 订阅者信息
 let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
   events: ['event']
@@ -264,7 +274,7 @@ try {
 
 #### commonEventManager.subscribe
 
-subscribe(subscriber: CommonEventSubscriber, callback: AsyncCallback<CommonEventData>): void
+subscribe(subscriber: [CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1), callback: AsyncCallback<CommonEventData>): void
 
 订阅公共事件。使用callback异步回调。
 
@@ -274,13 +284,21 @@ subscribe(subscriber: CommonEventSubscriber, callback: AsyncCallback<CommonEvent
 
 **参数：**
 
-参数名类型必填说明subscriber[CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1)是表示订阅者对象。callbackAsyncCallback<[CommonEventData](../../topics/misc/CommonEventData.md)>是回调函数。当公共事件订阅成功后，事件触发时执行的回调函数；否则订阅失败时，err为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| subscriber | [CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1) | 是 | 表示订阅者对象。 |
+| callback | AsyncCallback<[CommonEventData](../../topics/misc/CommonEventData.md)> | 是 | 回调函数。当公共事件订阅成功后，事件触发时执行的回调函数；否则订阅失败时，err为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[事件错误码](../../errors/事件错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[事件错误码](事件错误码.md)。
 
-错误码ID错误信息801capability not supported.1500007Failed to send the message to the common event service.1500008Failed to initialize the common event service.1500010The count of subscriber exceed system specification.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | capability not supported. |
+| 1500007 | Failed to send the message to the common event service. |
+| 1500008 | Failed to initialize the common event service. |
+| 1500010 | The count of subscriber exceed system specification. |
 
 **示例：**
 
@@ -288,7 +306,7 @@ subscribe(subscriber: CommonEventSubscriber, callback: AsyncCallback<CommonEvent
 import { BusinessError } from '@kit.BasicServicesKit';
 
 // 定义订阅者，用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
-let subscriber: commonEventManager.CommonEventSubscriber;
+let subscriber: commonEventManager.CommonEventSubscriber | null = null;
 // 订阅者信息
 let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
   events: ['event']
@@ -326,7 +344,7 @@ try {
 
 #### commonEventManager.unsubscribe
 
-unsubscribe(subscriber: CommonEventSubscriber, callback?: AsyncCallback<void>): void
+unsubscribe(subscriber: [CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1), callback?: AsyncCallback<void>): void
 
 取消订阅公共事件。使用callback异步回调。
 
@@ -336,23 +354,21 @@ unsubscribe(subscriber: CommonEventSubscriber, callback?: AsyncCallback<void>): 
 
 **参数：**
 
-参数名类型必填说明subscriber[CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1)是表示订阅者对象。callbackAsyncCallback<void>否回调函数。当取消公共事件订阅成功时，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| subscriber | [CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1) | 是 | 表示订阅者对象。 |
+| callback | AsyncCallback<void> | 否 | 回调函数。当取消公共事件订阅成功时，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[事件错误码](../../errors/事件错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[事件错误码](事件错误码.md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
-
-801capability not supported.1500007Failed to send the message to the common event service.1500008Failed to initialize the common event service.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 801 | capability not supported. |
+| 1500007 | Failed to send the message to the common event service. |
+| 1500008 | Failed to initialize the common event service. |
 
 **示例：**
 
@@ -360,7 +376,7 @@ Parameter error. Possible causes:
 import { BusinessError } from '@kit.BasicServicesKit';
 
 // 定义订阅者，用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
-let subscriber: commonEventManager.CommonEventSubscriber | undefined;
+let subscriber: commonEventManager.CommonEventSubscriber | null = null;
 // 订阅者信息
 let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
   events: ['event']
@@ -417,7 +433,7 @@ setTimeout(() => {
 
 #### commonEventManager.subscribeToEvent20+
 
-subscribeToEvent(subscriber: CommonEventSubscriber, callback: Callback<CommonEventData>): Promise<void>
+subscribeToEvent(subscriber: [CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1), callback: Callback<CommonEventData>): Promise<void>
 
 订阅公共事件，并返回订阅成功或失败信息。使用Promise异步回调。
 
@@ -427,17 +443,27 @@ subscribeToEvent(subscriber: CommonEventSubscriber, callback: Callback<CommonEve
 
 **参数：**
 
-参数名类型必填说明subscriber[CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1)是表示订阅者对象。callbackCallback<[CommonEventData](../../topics/misc/CommonEventData.md)>是表示接收公共事件数据的回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| subscriber | [CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1) | 是 | 表示订阅者对象。 |
+| callback | Callback<[CommonEventData](../../topics/misc/CommonEventData.md)> | 是 | 表示接收公共事件数据的回调函数。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[事件错误码](../../errors/事件错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[事件错误码](事件错误码.md)。
 
-错误码ID错误信息801Capability not supported.1500007Failed to send the message to the common event service.1500008Failed to initialize the common event service.1500010The count of subscriber exceed system specification.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 1500007 | Failed to send the message to the common event service. |
+| 1500008 | Failed to initialize the common event service. |
+| 1500010 | The count of subscriber exceed system specification. |
 
 **示例：**
 
@@ -445,7 +471,7 @@ subscribeToEvent(subscriber: CommonEventSubscriber, callback: Callback<CommonEve
 import { BusinessError } from '@kit.BasicServicesKit';
 
 // 定义订阅者，用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
-let subscriber: commonEventManager.CommonEventSubscriber;
+let subscriber: commonEventManager.CommonEventSubscriber | null = null;
 // 订阅者信息
 let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
   events: ["event"]
@@ -473,7 +499,6 @@ try {
           let err: BusinessError = error as BusinessError;
           console.error(`Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
         }
-      }
     });
 } catch (error) {
   let err: BusinessError = error as BusinessError;
@@ -481,9 +506,9 @@ try {
 }
 ```
 
-#### CommonEventData10+
+#### [CommonEventData](../../topics/misc/CommonEventData.md)10+
 
-type CommonEventData = _CommonEventData
+type [CommonEventData](../../topics/misc/CommonEventData.md) = [_CommonEventData](../../topics/misc/CommonEventData.md)
 
 表示公共事件的数据。
 
@@ -491,11 +516,13 @@ type CommonEventData = _CommonEventData
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
-类型说明[_CommonEventData](../../topics/misc/CommonEventData.md)表示公共事件的数据。
+| 类型 | 说明 |
+| --- | --- |
+| _[CommonEventData](../../topics/misc/CommonEventData.md) | 表示公共事件的数据。 |
 
-#### CommonEventSubscriber10+
+#### [CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1)10+
 
-type CommonEventSubscriber = _CommonEventSubscriber
+type [CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1) = [_CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1)
 
 描述公共事件的订阅者。
 
@@ -503,11 +530,13 @@ type CommonEventSubscriber = _CommonEventSubscriber
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
-类型说明[_CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1)描述公共事件的订阅者。
+| 类型 | 说明 |
+| --- | --- |
+| _[CommonEventSubscriber](../../topics/misc/commonEventSubscriber.md#ZH-CN_TOPIC_0000002529285505__commoneventsubscriber-1) | 描述公共事件的订阅者。 |
 
-#### CommonEventSubscribeInfo10+
+#### [CommonEventSubscribeInfo](../../topics/misc/CommonEventSubscribeInfo.md)10+
 
-type CommonEventSubscribeInfo = _CommonEventSubscribeInfo
+type [CommonEventSubscribeInfo](../../topics/misc/CommonEventSubscribeInfo.md) = [_CommonEventSubscribeInfo](../../topics/misc/CommonEventSubscribeInfo.md)
 
 用于表示订阅者的信息。
 
@@ -515,11 +544,13 @@ type CommonEventSubscribeInfo = _CommonEventSubscribeInfo
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
-类型说明[_CommonEventSubscribeInfo](../../topics/misc/CommonEventSubscribeInfo.md)用于表示订阅者的信息。
+| 类型 | 说明 |
+| --- | --- |
+| _[CommonEventSubscribeInfo](../../topics/misc/CommonEventSubscribeInfo.md) | 用于表示订阅者的信息。 |
 
-#### CommonEventPublishData10+
+#### [CommonEventPublishData](../../topics/misc/CommonEventPublishData.md)10+
 
-type CommonEventPublishData = _CommonEventPublishData
+type [CommonEventPublishData](../../topics/misc/CommonEventPublishData.md) = [_CommonEventPublishData](../../topics/misc/CommonEventPublishData.md)
 
 描述公共事件内容和属性。
 
@@ -527,4 +558,6 @@ type CommonEventPublishData = _CommonEventPublishData
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
-类型说明[_CommonEventPublishData](../../topics/misc/CommonEventPublishData.md)描述公共事件内容和属性。
+| 类型 | 说明 |
+| --- | --- |
+| _[CommonEventPublishData](../../topics/misc/CommonEventPublishData.md) | 描述公共事件内容和属性。 |

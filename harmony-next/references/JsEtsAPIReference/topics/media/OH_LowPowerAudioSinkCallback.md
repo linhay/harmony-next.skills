@@ -14,4 +14,4 @@ typedef struct OH_LowPowerAudioSinkCallback OH_LowPowerAudioSinkCallback
 
 **相关模块：**[LowPowerAudioSink](LowPowerAudioSink.md)
 
-**所在头文件：**[lowpower_audio_sink_base.h](../../capi/headers/lowpower_audio_sink_base.h.md)
+**所在头文件：**[lowpower_audio_sink_base.h](../../topics/media/[lowpower_audio_sink_base.h](lowpower_audio_sink_base.h.md).md)

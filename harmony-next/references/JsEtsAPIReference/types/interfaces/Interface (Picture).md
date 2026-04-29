@@ -1,8 +1,9 @@
 # Interface (Picture)
 
-Picture类，一些包含特殊信息的图片可以解码为Picture（也可以称为多图对象）。多图对象一般包含主图、辅助图和元数据。其中主图包含图像的大部分信息，主要用于显示图像内容；辅助图用于存储与主图相关但不同的数据，展示图像更丰富的信息；元数据一般用来存储关于图像文件的信息。多图对象类用于读取或写入多图对象。在调用Picture的方法前，需要先通过[image.createPicture](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445805__imagecreatepicture13)创建一个Picture实例。
+Picture类，一些包含特殊信息的图片可以解码为Picture（也可以称为多图对象）。多图对象一般包含主图、辅助图和元数据。其中主图包含图像的大部分信息，主要用于显示图像内容；辅助图用于存储与主图相关但不同的数据，展示图像更丰富的信息；元数据一般用来存储关于图像文件的信息。多图对象类用于读取或写入多图对象。在调用Picture的方法前，需要先通过[image.createPicture](Functions.md#ZH-CN_TOPIC_0000002522241966__imagecreatepicture13)创建一个Picture实例。
 
-由于图片占用内存较大，所以当Picture实例使用完成后，应主动调用[release](#ZH-CN_TOPIC_0000002529445809__release13)方法及时释放内存。释放时应确保该实例的所有异步方法均执行完成，且后续不再使用该实例。
+由于图片占用内存较大，所以当Picture实例使用完成后，应主动调用[release](#ZH-CN_TOPIC_0000002553361895__release13)方法及时释放内存。释放时应确保该实例的所有异步方法均执行完成，且后续不再使用该实例。
+
 
 - 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 - 本Interface首批接口从API version 13开始支持。
@@ -23,7 +24,9 @@ getMainPixelmap(): PixelMap
 
 **返回值：**
 
-类型说明[PixelMap](Interface (PixelMap).md)同步返回PixelMap对象。
+| 类型 | 说明 |
+| --- | --- |
+| PixelMap | 同步返回PixelMap对象。 |
 
 **示例：**
 
@@ -46,26 +49,30 @@ async function GetMainPixelmap(pictureObj : image.Picture) {
   } else {
     console.error('PictureObj is null');
   }
-}
 ```
 
 #### getHdrComposedPixelmap13+
 
 getHdrComposedPixelmap(): Promise<PixelMap>
 
-合成hdr图并获取hdr图的pixelmap。使用Promise异步回调。
+合成HDR图并获取HDR图的pixelmap。使用Promise异步回调。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
 
-类型说明Promise<[PixelMap](Interface (PixelMap).md)>Promise对象，返回PixelMap。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<PixelMap> | Promise对象，返回PixelMap。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Image错误码](../../errors/Image错误码.md)。
+以下错误码的详细介绍请参见[Image错误码]([Image错误码](../../errors/Image错误码.md).md)。
 
-错误码ID错误信息7600901Inner unknown error. Please check the logs for detailed information.7600201Unsupported operation. e.g.,1. The picture does not has a gainmap. 2. MainPixelMap's allocator type is not DMA.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7600901 | Inner unknown error. Please check the logs for detailed information. |
+| 7600201 | Unsupported operation. e.g.,1. The picture does not has a gainmap. 2. MainPixelMap's allocator type is not DMA. |
 
 **示例：**
 
@@ -88,6 +95,68 @@ async function GetHdrComposedPixelmap(pictureObj : image.Picture) {
   } else {
     console.error('PictureObj is null');
   }
+```
+
+**getHdrComposedPixelmapWithOptions23+**
+
+getHdrComposedPixelmapWithOptions(options?: HdrComposeOptions): Promise<PixelMap | undefined>
+
+合成HDR图像并返回HDR图像的PixelMap，支持传入合成参数（如PixelMapFormat等）。使用Promise异步回调。
+
+调用该接口的Picture对象中必须包含主图、增益图和元数据。
+
+模型约束：此接口仅可在Stage模型下使用。
+
+系统能力： SystemCapability.Multimedia.Image.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | HdrComposeOptions | 否 | 合成HDR的选项。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<PixelMap | undefined> | Promise对象，返回PixelMap或undefined。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[Image错误码](Image错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7600201 | Unsupported operation. |
+
+示例：
+
+```ets
+import { image } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+async function GetHdrComposedPixelmapWithOptions(picture : image.Picture) {
+  if (picture == null) {
+    console.error('picture is null');
+    return;
+  }
+
+  let opt: image.HdrComposeOptions = {
+    desiredPixelFormat: image.PixelMapFormat.RGBA_1010102
+  };
+  let hdrComposedPixelmap: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
+  if (hdrComposedPixelmap == null || hdrComposedPixelmap == undefined) {
+    console.error(`GetHdrComposedPixelmapWithOptions failed`);
+    return;
+  }
+
+  hdrComposedPixelmap.getImageInfo().then((imageInfo: image.ImageInfo) => {
+    if (imageInfo !== null) {
+      console.info(`GetHdrComposedPixelmapWithOptions information height:${imageInfo.size.height} width:${imageInfo.size.width}`);
+    }
+  }).catch((error: BusinessError) => {
+    console.error(`GetHdrComposedPixelmapWithOptions information failed error.code: ${error.code} ,error.message: ${error.message}`);
+  });
 }
 ```
 
@@ -101,7 +170,9 @@ getGainmapPixelmap(): PixelMap | null
 
 **返回值：**
 
-类型说明[PixelMap](Interface (PixelMap).md) | null返回Pixelmap对象，如果没有则返回null。
+| 类型 | 说明 |
+| --- | --- |
+| PixelMap | null | 返回Pixelmap对象，如果没有则返回null。 |
 
 **示例：**
 
@@ -128,12 +199,11 @@ async function GetGainmapPixelmap(pictureObj : image.Picture) {
   } else {
     console.error('PictureObj is null');
   }
-}
 ```
 
 #### setAuxiliaryPicture13+
 
-setAuxiliaryPicture(type: AuxiliaryPictureType, auxiliaryPicture: AuxiliaryPicture): void
+setAuxiliaryPicture(type: [AuxiliaryPictureType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285837__auxiliarypicturetype13), auxiliaryPicture: AuxiliaryPicture): void
 
 设置辅助图。
 
@@ -141,13 +211,18 @@ setAuxiliaryPicture(type: AuxiliaryPictureType, auxiliaryPicture: AuxiliaryPictu
 
 **参数：**
 
-参数名类型必填说明type[AuxiliaryPictureType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285837__auxiliarypicturetype13)是辅助图类型。auxiliaryPicture[AuxiliaryPicture](Interface (AuxiliaryPicture).md)是辅助图对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | [AuxiliaryPictureType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285837__auxiliarypicturetype13) | 是 | 辅助图类型。 |
+| auxiliaryPicture | AuxiliaryPicture | 是 | 辅助图对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Image错误码](../../errors/Image错误码.md)。
+以下错误码的详细介绍请参见[Image错误码](Image错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -173,13 +248,11 @@ async function SetAuxiliaryPicture(context: Context) {
     if (auxPictureObj != null) {
       pictureObj.setAuxiliaryPicture(type, auxPictureObj);
     }
-  }
-}
 ```
 
 #### getAuxiliaryPicture13+
 
-getAuxiliaryPicture(type: AuxiliaryPictureType): AuxiliaryPicture | null
+getAuxiliaryPicture(type: [AuxiliaryPictureType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285837__auxiliarypicturetype13)): AuxiliaryPicture | null
 
 根据类型获取辅助图。
 
@@ -187,17 +260,23 @@ getAuxiliaryPicture(type: AuxiliaryPictureType): AuxiliaryPicture | null
 
 **参数：**
 
-参数名类型必填说明type[AuxiliaryPictureType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285837__auxiliarypicturetype13)是辅助图类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | [AuxiliaryPictureType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285837__auxiliarypicturetype13) | 是 | 辅助图类型。 |
 
 **返回值：**
 
-类型说明[AuxiliaryPicture](Interface (AuxiliaryPicture).md) | null返回AuxiliaryPicture对象，如果没有则返回null。
+| 类型 | 说明 |
+| --- | --- |
+| AuxiliaryPicture | null | 返回AuxiliaryPicture对象，如果没有则返回null。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Image错误码](../../errors/Image错误码.md)。
+以下错误码的详细介绍请参见[Image错误码](Image错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -207,12 +286,11 @@ async function GetAuxiliaryPicture(pictureObj : image.Picture) {
     let type: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
     let auxPictureObj: image.AuxiliaryPicture | null = pictureObj.getAuxiliaryPicture(type);
   }
-}
 ```
 
 #### setMetadata13+
 
-setMetadata(metadataType: MetadataType, metadata: Metadata): Promise<void>
+setMetadata(metadataType: [MetadataType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285837__metadatatype13), metadata: Metadata): Promise<void>
 
 设置主图的元数据。使用Promise异步回调。
 
@@ -220,17 +298,25 @@ setMetadata(metadataType: MetadataType, metadata: Metadata): Promise<void>
 
 **参数：**
 
-参数名类型必填说明metadataType[MetadataType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285837__metadatatype13)是元数据类型。metadata[Metadata](Interface (Metadata).md)是元数据对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| metadataType | [MetadataType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285837__metadatatype13) | 是 | 元数据类型。 |
+| metadata | Metadata | 是 | 元数据对象。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Image错误码](../../errors/Image错误码.md)。
+以下错误码的详细介绍请参见[Image错误码](Image错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed.7600202Unsupported metadata. Possible causes: 1. Unsupported metadata type. 2. The metadata type does not match the auxiliary picture type.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 7600202 | Unsupported metadata. Possible causes: 1. Unsupported metadata type. 2. The metadata type does not match the auxiliary picture type. |
 
 **示例：**
 
@@ -263,12 +349,11 @@ async function SetPictureObjMetadata(exifContext: Context) {
   } else {
     console.error('exifPictureOb is null');
   }
-}
 ```
 
 #### getMetadata13+
 
-getMetadata(metadataType: MetadataType): Promise<Metadata>
+getMetadata(metadataType: [MetadataType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285837__metadatatype13)): Promise<Metadata>
 
 获取主图的元数据。使用Promise异步回调。
 
@@ -276,17 +361,24 @@ getMetadata(metadataType: MetadataType): Promise<Metadata>
 
 **参数：**
 
-参数名类型必填说明metadataType[MetadataType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285837__metadatatype13)是元数据类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| metadataType | [MetadataType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285837__metadatatype13) | 是 | 元数据类型。 |
 
 **返回值：**
 
-类型说明Promise<[Metadata](Interface (Metadata).md)>Promise对象。返回元数据。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Metadata> | Promise对象。返回元数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Image错误码](../../errors/Image错误码.md)。
+以下错误码的详细介绍请参见[Image错误码](Image错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed.7600202Unsupported metadata. Possible causes: 1. Unsupported metadata type. 2. The metadata type does not match the auxiliary picture type.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 7600202 | Unsupported metadata. Possible causes: 1. Unsupported metadata type. 2. The metadata type does not match the auxiliary picture type. |
 
 **示例：**
 
@@ -303,7 +395,6 @@ async function GetPictureObjMetadataProperties(pictureObj : image.Picture) {
   } else {
     console.error(" pictureObj is null");
   }
-}
 ```
 
 #### marshalling13+
@@ -316,13 +407,18 @@ marshalling(sequence: rpc.MessageSequence): void
 
 **参数：**
 
-参数名类型必填说明sequence[rpc.MessageSequence](../../modules/ohos/@ohos.rpc (RPC通信).md#ZH-CN_TOPIC_0000002529445269__messagesequence9)是新创建的MessageSequence。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sequence | rpc.MessageSequence | 是 | 新创建的MessageSequence。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Image错误码](../../errors/Image错误码.md)。
+以下错误码的详细介绍请参见[Image错误码](Image错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed.62980097IPC error. Possible cause: 1.IPC communication failed. 2. Image upload exception. 3. Decode process exception. 4. Insufficient memory.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 62980097 | IPC error. Possible cause: 1.IPC communication failed. 2. Image upload exception. 3. Decode process exception. 4. Insufficient memory. |
 
 **示例：**
 
@@ -344,7 +440,6 @@ class MySequence implements rpc.Parcelable {
       console.error('Marshalling failed !');
       return false;
     }
-  }
   unmarshalling(messageSequence : rpc.MessageSequence) {
     this.picture = image.createPictureFromParcel(messageSequence);
     this.picture.getMainPixelmap().getImageInfo().then((imageInfo : image.ImageInfo) => {
@@ -353,7 +448,6 @@ class MySequence implements rpc.Parcelable {
       console.error(`Unmarshalling failed error.code: ${error.code} ,error.message: ${error.message}`);
     });
     return true;
-  }
 }
 
 async function Marshalling_UnMarshalling(pictureObj : image.Picture) {
@@ -367,7 +461,6 @@ async function Marshalling_UnMarshalling(pictureObj : image.Picture) {
     data.readParcelable(ret);
   } else {
     console.error('PictureObj is null');
-  }
 }
 ```
 
@@ -398,5 +491,4 @@ async function Release(pictureObj : image.Picture) {
   } else {
     console.error('PictureObj is null');
   }
-}
 ```

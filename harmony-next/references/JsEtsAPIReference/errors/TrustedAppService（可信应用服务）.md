@@ -1,0 +1,395 @@
+# TrustedAppService（可信应用服务）
+
+  ![image](public_sys-resources/note_3.0-zh-cn.webp)
+
+以下仅介绍本模块客户端特有错误码及原因分析，若您的问题仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。
+
+**201 权限校验失败**
+
+错误信息
+
+permission denied.
+
+错误描述
+
+权限校验失败。
+
+可能原因
+
+1.
+
+应用未开通可信应用服务。
+
+1.
+
+应用未申请必要权限。
+
+处理步骤
+
+1.
+
+开通可信应用服务，请参考“[开通Device Security服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-deviceverify-activateservice)”。
+
+1.
+
+申请位置权限，请参考开发指南中安全地理位置[开发步骤](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-taas-securelocation#开发步骤)。
+
+**401 参数检查失败**
+
+错误信息
+
+argument is invalid.
+
+错误描述
+
+参数检查失败。
+
+可能原因
+
+1.
+
+未使用Kit提供的枚举值。
+
+1.
+
+userData参数长度不符合要求。
+
+处理步骤
+
+1.
+
+使用Kit中提供的枚举值作为传入参数。
+
+1.
+
+修改userData参数的内容，保证长度在16到127 Bytes之间。
+
+**1011500001 无效的算法参数**
+
+错误信息
+
+algorithm param is invalid.
+
+错误描述
+
+密钥参数不支持。
+
+可能原因
+
+传入的证明密钥的算法或密钥长度不支持。
+
+处理步骤
+
+使用Kit中提供的算法和密钥长度枚举值作为传入参数。
+
+**1011500002 参数传入不足**
+
+错误信息
+
+algorithm param is missing.
+
+错误描述
+
+传入参数内容不足。
+
+可能原因
+
+没有传入接口需要的所有参数。
+
+处理步骤
+
+参考接口描述，传入必要的参数。
+
+**1011500003 密钥生成失败**
+
+错误信息
+
+create attestation key failed.
+
+错误描述
+
+生成密钥失败。
+
+可能原因
+
+设备没有连接到网络。
+
+处理步骤
+
+将设备连接到网络。
+
+**1011500004 证书创建失败**
+
+错误信息
+
+create anonymous certificate failed.
+
+错误描述
+
+创建证书文件失败。
+
+可能原因
+
+证书文件存储路径与其他文件冲突。
+
+处理步骤
+
+修改造成冲突的文件存储路径或名称。
+
+**1011500005 文件操作失败**
+
+错误信息
+
+operate file failed.
+
+错误描述
+
+密钥文件操作失败。
+
+可能原因
+
+文件系统操作失败。
+
+处理步骤
+
+重新发起请求。如果您尝试重试仍未解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)申请帮助。
+
+**1011500006 IPC通信失败**
+
+错误信息
+
+ipc communication failed.
+
+错误描述
+
+IPC通信失败。
+
+可能原因
+
+可信应用服务的 SA 未被拉起。
+
+处理步骤
+
+重新发起请求。如果您尝试重试仍未解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)申请帮助。
+
+**1011500007 密钥不存在**
+
+错误信息
+
+item not found.
+
+错误描述
+
+查询的密钥不存在。
+
+可能原因
+
+初始化证明会话前未创建证明密钥。
+
+处理步骤
+
+创建证明密钥成功后再进行初始化证明会话，请参考“[开通Device Security服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-deviceverify-activateservice)”。
+
+**1011500008 证书校验失败**
+
+错误信息
+
+verify anonymous certificate failed.
+
+错误描述
+
+证书校验失败。
+
+可能原因
+
+证书文件被损坏。
+
+处理步骤
+
+销毁证明密钥后重新创建，再进行初始化证明会话。
+
+**1011500009 证书已过期**
+
+错误信息
+
+anonymous certificate has expired.
+
+错误描述
+
+证书已过期。
+
+可能原因
+
+证书已经超过有效期限。
+
+处理步骤
+
+销毁证明密钥后重新创建，再进行初始化证明会话。
+
+**1011500010 密钥不匹配**
+
+错误信息
+
+get attestation key failed.
+
+错误描述
+
+密钥不匹配。
+
+可能原因
+
+证书和密钥不匹配。
+
+处理步骤
+
+销毁证明密钥后重新创建，再进行初始化证明会话。
+
+**1011500011 安全相机初始化失败**
+
+错误信息
+
+initialize secure camera failed.
+
+错误描述。
+
+安全相机初始化失败。
+
+可能原因
+
+初始化证明会话中传入的设备序列号无效。
+
+处理步骤
+
+重新获取安全摄像头设备序列号，请参考“[Camera Kit开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-kit)”。
+
+**1011500012 证明会话上下文异常**
+
+错误信息
+
+attestation context not initialized.
+
+错误描述
+
+证明会话状态异常。
+
+可能原因
+
+在获取安全地理位置信息或者处理安全图像压缩、裁剪的时候证明会话被结束。
+
+处理步骤
+
+重新初始化证明会话，再去获取安全地理位置信息或者再执行安全图像的压缩、裁剪操作。
+
+**1011500013 密钥已过期**
+
+错误信息
+
+attestation key has expired.
+
+错误描述
+
+密钥已过期。
+
+可能原因
+
+密钥已经超过有效期限。
+
+处理步骤
+
+销毁证明密钥后重新创建，再进行初始化证明会话。
+
+**1011500014 位置服务不可用**
+
+错误信息
+
+location service is unavailable.
+
+错误描述
+
+位置服务不可用。
+
+可能原因
+
+位置服务异常。
+
+处理步骤
+
+重新发起请求。如果您尝试重试仍未解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)申请帮助。
+
+**1011500015 位置信息开关关闭**
+
+错误信息
+
+location switch is off.
+
+错误描述
+
+位置信息开关已关闭。
+
+可能原因
+
+设备未打开位置信息开关。
+
+处理步骤
+
+打开控制中心中的位置信息开关。
+
+**1011500016 位置信息获取失败**
+
+错误信息
+
+get secure location failed.
+
+错误描述
+
+获取位置信息失败。
+
+可能原因
+
+1.
+
+获取不到 GPS 信号。
+
+1.
+
+传感器故障。
+
+处理步骤
+
+重新发起请求。如果您尝试重试仍未解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)申请帮助。
+
+**1011500017 签名验签失败**
+
+错误信息
+
+signature verification failed.
+
+错误描述
+
+签名验签失败。
+
+可能原因
+
+签名文件被损坏。
+
+处理步骤
+
+重新获取安全图像数据或者安全地理位置数据，再发起新的处理请求。
+
+**1011500018 安全图像处理失败**
+
+错误信息
+
+secure image process failed.
+
+错误描述
+
+安全图像处理失败。
+
+可能原因
+
+安全图像的图像数据被破坏。
+
+处理步骤
+
+重新发起请求。如果您尝试重试仍未解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)申请帮助。

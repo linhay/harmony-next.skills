@@ -2,7 +2,8 @@
 
 音频路由管理。
 
-在使用AudioRoutingManager的接口之前，需先通过[getRoutingManager](Interface (AudioManager).md#ZH-CN_TOPIC_0000002497605698__getroutingmanager9)获取AudioRoutingManager实例。
+在使用AudioRoutingManager的接口之前，需先通过[getRoutingManager](Interface (AudioManager).md#ZH-CN_TOPIC_0000002553361737__getroutingmanager9)获取AudioRoutingManager实例。
+
 
 - 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 - 本Interface首批接口从API version 9开始支持。
@@ -15,7 +16,7 @@ import { audio } from '@kit.AudioKit';
 
 #### getDevices9+
 
-getDevices(deviceFlag: DeviceFlag, callback: AsyncCallback<AudioDeviceDescriptors>): void
+getDevices(deviceFlag: [DeviceFlag](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceflag), callback: AsyncCallback<AudioDeviceDescriptors>): void
 
 获取音频设备列表。使用callback异步回调。
 
@@ -23,7 +24,10 @@ getDevices(deviceFlag: DeviceFlag, callback: AsyncCallback<AudioDeviceDescriptor
 
 **参数：**
 
-参数名类型必填说明deviceFlag[DeviceFlag](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceflag)是音频设备类型。callbackAsyncCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>是回调函数。当获取音频设备列表成功，err为undefined，data为获取到的音频设备列表；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceFlag | [DeviceFlag](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceflag) | 是 | 音频设备类型。 |
+| callback | AsyncCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)> | 是 | 回调函数。当获取音频设备列表成功，err为undefined，data为获取到的音频设备列表；否则为错误对象。 |
 
 **示例：**
 
@@ -41,7 +45,7 @@ audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG, (err: Busin
 
 #### getDevices9+
 
-getDevices(deviceFlag: DeviceFlag): Promise<AudioDeviceDescriptors>
+getDevices(deviceFlag: [DeviceFlag](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceflag)): Promise<AudioDeviceDescriptors>
 
 获取音频设备列表。使用Promise异步回调。
 
@@ -49,11 +53,15 @@ getDevices(deviceFlag: DeviceFlag): Promise<AudioDeviceDescriptors>
 
 **参数：**
 
-参数名类型必填说明deviceFlag[DeviceFlag](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceflag)是音频设备类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceFlag | [DeviceFlag](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceflag) | 是 | 音频设备类型。 |
 
 **返回值：**
 
-类型说明Promise<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>Promise对象，返回设备列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)> | Promise对象，返回设备列表。 |
 
 **示例：**
 
@@ -69,7 +77,7 @@ audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG).then((audio
 
 #### getDevicesSync10+
 
-getDevicesSync(deviceFlag: DeviceFlag): AudioDeviceDescriptors
+getDevicesSync(deviceFlag: [DeviceFlag](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceflag)): AudioDeviceDescriptors
 
 获取音频设备列表。同步返回结果。
 
@@ -77,17 +85,24 @@ getDevicesSync(deviceFlag: DeviceFlag): AudioDeviceDescriptors
 
 **参数：**
 
-参数名类型必填说明deviceFlag[DeviceFlag](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceflag)是音频设备类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceFlag | [DeviceFlag](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceflag) | 是 | 音频设备类型。 |
 
 **返回值：**
 
-类型说明[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)返回设备列表。
+| 类型 | 说明 |
+| --- | --- |
+| [AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors) | 返回设备列表。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码]([Audio错误码](../../errors/Audio错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -113,7 +128,9 @@ isMicBlockDetectionSupported(): Promise<boolean>
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示支持；返回false表示不支持。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示支持；返回false表示不支持。 |
 
 **示例：**
 
@@ -135,13 +152,19 @@ on(type: 'micBlockStatusChanged', callback: Callback<DeviceBlockStatusInfo>): vo
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'micBlockStatusChanged'，当麦克风堵塞状态发生变化时，触发该事件。callbackCallback<[DeviceBlockStatusInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__deviceblockstatusinfo13)>是回调函数，返回麦克风被堵塞状态和设备信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'micBlockStatusChanged'，当麦克风堵塞状态发生变化时，触发该事件。 |
+| callback | Callback<DeviceBlockStatusInfo> | 是 | 回调函数，返回麦克风被堵塞状态和设备信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -167,13 +190,19 @@ off(type: 'micBlockStatusChanged', callback?: Callback<DeviceBlockStatusInfo>): 
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'micBlockStatusChanged'，当取消监听音频麦克风是否被堵塞变化事件时，触发该事件。callbackCallback<[DeviceBlockStatusInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__deviceblockstatusinfo13)>否回调函数，返回麦克风被堵塞状态和设备信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'micBlockStatusChanged'，当取消监听音频麦克风是否被堵塞变化事件时，触发该事件。 |
+| callback | Callback<DeviceBlockStatusInfo> | 否 | 回调函数，返回麦克风被堵塞状态和设备信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -193,7 +222,7 @@ audioRoutingManager.off('micBlockStatusChanged', micBlockStatusCallback);
 
 #### on('deviceChange')9+
 
-on(type: 'deviceChange', deviceFlag: DeviceFlag, callback: Callback<DeviceChangeAction>): void
+on(type: 'deviceChange', deviceFlag: [DeviceFlag](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceflag), callback: Callback<DeviceChangeAction>): void
 
 监听音频设备连接状态变化事件（当音频设备连接状态发生变化时触发）。使用callback异步回调。
 
@@ -201,13 +230,20 @@ on(type: 'deviceChange', deviceFlag: DeviceFlag, callback: Callback<DeviceChange
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'deviceChange'，当音频设备连接状态发生变化时，触发该事件。deviceFlag[DeviceFlag](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceflag)是音频设备类型。callbackCallback<[DeviceChangeAction](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__devicechangeaction)>是回调函数，返回设备更新详情。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'deviceChange'，当音频设备连接状态发生变化时，触发该事件。 |
+| deviceFlag | [DeviceFlag](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceflag) | 是 | 音频设备类型。 |
+| callback | Callback<DeviceChangeAction> | 是 | 回调函数，返回设备更新详情。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -230,13 +266,19 @@ off(type: 'deviceChange', callback?: Callback<DeviceChangeAction>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'deviceChange'，当取消监听音频设备连接变化事件时，触发该事件。callbackCallback<[DeviceChangeAction](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__devicechangeaction)>否回调函数，返回设备更新详情。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'deviceChange'，当取消监听音频设备连接变化事件时，触发该事件。 |
+| callback | Callback<DeviceChangeAction> | 否 | 回调函数，返回设备更新详情。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -259,7 +301,7 @@ audioRoutingManager.off('deviceChange', deviceChangeCallback);
 
 #### setCommunicationDevice9+
 
-setCommunicationDevice(deviceType: CommunicationDeviceType, active: boolean, callback: AsyncCallback<void>): void
+setCommunicationDevice(deviceType: [CommunicationDeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__communicationdevicetype9), active: boolean, callback: AsyncCallback<void>): void
 
 设置通信设备激活状态。使用callback异步回调。
 
@@ -271,7 +313,11 @@ setCommunicationDevice(deviceType: CommunicationDeviceType, active: boolean, cal
 
 **参数：**
 
-参数名类型必填说明deviceType[CommunicationDeviceType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__communicationdevicetype9)是音频设备类型。activeboolean是是否设置设备为激活状态。true表示激活，false表示未激活。callbackAsyncCallback<void>是回调函数。当设置通信设备激活状态成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceType | [CommunicationDeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__communicationdevicetype9) | 是 | 音频设备类型。 |
+| active | boolean | 是 | 是否设置设备为激活状态。true表示激活，false表示未激活。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置通信设备激活状态成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -289,7 +335,7 @@ audioRoutingManager.setCommunicationDevice(audio.CommunicationDeviceType.SPEAKER
 
 #### getAvailableDevices12+
 
-getAvailableDevices(deviceUsage: DeviceUsage): AudioDeviceDescriptors
+getAvailableDevices(deviceUsage: DeviceUsage): [AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)
 
 获取音频可选设备列表。同步返回结果。
 
@@ -297,17 +343,24 @@ getAvailableDevices(deviceUsage: DeviceUsage): AudioDeviceDescriptors
 
 **参数：**
 
-参数名类型必填说明deviceUsage[DeviceUsage](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceusage12)是音频设备类型（根据用途分类）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceUsage | [DeviceUsage](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceusage12) | 是 | 音频设备类型（根据用途分类）。 |
 
 **返回值：**
 
-类型说明[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)返回设备列表。
+| 类型 | 说明 |
+| --- | --- |
+| [AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors) | 返回设备列表。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -325,7 +378,7 @@ try {
 
 #### on('availableDeviceChange')12+
 
-on(type: 'availableDeviceChange', deviceUsage: DeviceUsage, callback: Callback<DeviceChangeAction>): void
+on(type: 'availableDeviceChange', deviceUsage: [DeviceUsage](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceusage12), callback: Callback<DeviceChangeAction>): void
 
 监听音频可选设备连接状态变化事件（当音频可选设备连接状态发生变化时触发）。使用callback异步回调。
 
@@ -333,13 +386,20 @@ on(type: 'availableDeviceChange', deviceUsage: DeviceUsage, callback: Callback<D
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'availableDeviceChange'，当音频可选设备连接状态发生变化时，触发该事件。deviceUsage[DeviceUsage](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceusage12)是音频设备类型（根据用途分类）。callbackCallback<[DeviceChangeAction](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__devicechangeaction)>是回调函数，返回设备更新详情。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'availableDeviceChange'，当音频可选设备连接状态发生变化时，触发该事件。 |
+| deviceUsage | [DeviceUsage](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__deviceusage12) | 是 | 音频设备类型（根据用途分类）。 |
+| callback | Callback<DeviceChangeAction> | 是 | 回调函数，返回设备更新详情。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -362,13 +422,19 @@ off(type: 'availableDeviceChange', callback?: Callback<DeviceChangeAction>): voi
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'availableDeviceChange'，当取消监听音频可选设备连接变化事件时，触发该事件。callbackCallback<[DeviceChangeAction](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__devicechangeaction)>否回调函数，返回可选设备更新详情。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'availableDeviceChange'，当取消监听音频可选设备连接变化事件时，触发该事件。 |
+| callback | Callback<DeviceChangeAction> | 否 | 回调函数，返回可选设备更新详情。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -391,7 +457,7 @@ audioRoutingManager.off('availableDeviceChange', availableDeviceChangeCallback);
 
 #### setCommunicationDevice9+
 
-setCommunicationDevice(deviceType: CommunicationDeviceType, active: boolean): Promise<void>
+setCommunicationDevice(deviceType: [CommunicationDeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__communicationdevicetype9), active: boolean): Promise<void>
 
 设置通信设备激活状态。使用Promise异步回调。
 
@@ -403,11 +469,16 @@ setCommunicationDevice(deviceType: CommunicationDeviceType, active: boolean): Pr
 
 **参数：**
 
-参数名类型必填说明deviceType[CommunicationDeviceType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__communicationdevicetype9)是活跃音频设备类型。activeboolean是是否设置设备为激活状态。true表示激活，false表示未激活。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceType | [CommunicationDeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__communicationdevicetype9) | 是 | 活跃音频设备类型。 |
+| active | boolean | 是 | 是否设置设备为激活状态。true表示激活，false表示未激活。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -419,7 +490,7 @@ audioRoutingManager.setCommunicationDevice(audio.CommunicationDeviceType.SPEAKER
 
 #### isCommunicationDeviceActive9+
 
-isCommunicationDeviceActive(deviceType: CommunicationDeviceType, callback: AsyncCallback<boolean>): void
+isCommunicationDeviceActive(deviceType: [CommunicationDeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__communicationdevicetype9), callback: AsyncCallback<boolean>): void
 
 获取指定通信设备的激活状态。使用callback异步回调。
 
@@ -427,7 +498,10 @@ isCommunicationDeviceActive(deviceType: CommunicationDeviceType, callback: Async
 
 **参数：**
 
-参数名类型必填说明deviceType[CommunicationDeviceType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__communicationdevicetype9)是活跃音频设备类型。callbackAsyncCallback<boolean>是回调函数。当获取指定通信设备的激活状态成功，err为undefined，data为true表示激活，false表示未激活；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceType | [CommunicationDeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__communicationdevicetype9) | 是 | 活跃音频设备类型。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当获取指定通信设备的激活状态成功，err为undefined，data为true表示激活，false表示未激活；否则为错误对象。 |
 
 **示例：**
 
@@ -445,7 +519,7 @@ audioRoutingManager.isCommunicationDeviceActive(audio.CommunicationDeviceType.SP
 
 #### isCommunicationDeviceActive9+
 
-isCommunicationDeviceActive(deviceType: CommunicationDeviceType): Promise<boolean>
+isCommunicationDeviceActive(deviceType: [CommunicationDeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__communicationdevicetype9)): Promise<boolean>
 
 获取指定通信设备的激活状态。使用Promise异步回调。
 
@@ -453,11 +527,15 @@ isCommunicationDeviceActive(deviceType: CommunicationDeviceType): Promise<boolea
 
 **参数：**
 
-参数名类型必填说明deviceType[CommunicationDeviceType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__communicationdevicetype9)是活跃音频设备类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceType | [CommunicationDeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__communicationdevicetype9) | 是 | 活跃音频设备类型。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示设备已激活；返回false表示设备未激活。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示设备已激活；返回false表示设备未激活。 |
 
 **示例：**
 
@@ -469,7 +547,7 @@ audioRoutingManager.isCommunicationDeviceActive(audio.CommunicationDeviceType.SP
 
 #### isCommunicationDeviceActiveSync10+
 
-isCommunicationDeviceActiveSync(deviceType: CommunicationDeviceType): boolean
+isCommunicationDeviceActiveSync(deviceType: [CommunicationDeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__communicationdevicetype9)): boolean
 
 获取指定通信设备的激活状态。同步返回结果。
 
@@ -477,17 +555,24 @@ isCommunicationDeviceActiveSync(deviceType: CommunicationDeviceType): boolean
 
 **参数：**
 
-参数名类型必填说明deviceType[CommunicationDeviceType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__communicationdevicetype9)是活跃音频设备类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceType | [CommunicationDeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__communicationdevicetype9) | 是 | 活跃音频设备类型。 |
 
 **返回值：**
 
-类型说明boolean设备是否处于激活状态。true表示处于激活状态，false表示处于未激活状态。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 设备是否处于激活状态。true表示处于激活状态，false表示处于未激活状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -505,7 +590,7 @@ try {
 
 #### getPreferOutputDeviceForRendererInfo10+
 
-getPreferOutputDeviceForRendererInfo(rendererInfo: AudioRendererInfo, callback: AsyncCallback<AudioDeviceDescriptors>): void
+getPreferOutputDeviceForRendererInfo(rendererInfo: AudioRendererInfo, callback: AsyncCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>): void
 
 根据音频信息，返回优先级最高的输出设备。使用callback异步回调。
 
@@ -513,13 +598,20 @@ getPreferOutputDeviceForRendererInfo(rendererInfo: AudioRendererInfo, callback: 
 
 **参数：**
 
-参数名类型必填说明rendererInfo[AudioRendererInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiorendererinfo8)是音频渲染器信息。callbackAsyncCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>是回调函数。当获取优先级最高的输出设备成功，err为undefined，data为获取到的优先级最高的输出设备信息；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rendererInfo | AudioRendererInfo | 是 | 音频渲染器信息。 |
+| callback | AsyncCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)> | 是 | 回调函数。当获取优先级最高的输出设备成功，err为undefined，data为获取到的优先级最高的输出设备信息；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed. Return by callback.6800301System error. Return by callback.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. Return by callback. |
+| 6800301 | System error. Return by callback. |
 
 **示例：**
 
@@ -542,7 +634,7 @@ audioRoutingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (err: Bus
 
 #### getPreferOutputDeviceForRendererInfo10+
 
-getPreferOutputDeviceForRendererInfo(rendererInfo: AudioRendererInfo): Promise<AudioDeviceDescriptors>
+getPreferOutputDeviceForRendererInfo(rendererInfo: AudioRendererInfo): Promise<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>
 
 根据音频信息，返回优先级最高的输出设备。使用Promise异步回调。
 
@@ -550,17 +642,25 @@ getPreferOutputDeviceForRendererInfo(rendererInfo: AudioRendererInfo): Promise<A
 
 **参数：**
 
-参数名类型必填说明rendererInfo[AudioRendererInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiorendererinfo8)是音频渲染器信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rendererInfo | AudioRendererInfo | 是 | 音频渲染器信息。 |
 
 **返回值：**
 
-类型说明Promise<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>Promise对象，返回优先级最高的输出设备信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)> | Promise对象，返回优先级最高的输出设备信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed. Return by promise.6800301System error. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. Return by promise. |
+| 6800301 | System error. Return by promise. |
 
 **示例：**
 
@@ -581,7 +681,7 @@ audioRoutingManager.getPreferOutputDeviceForRendererInfo(rendererInfo).then((aud
 
 #### getPreferredOutputDeviceForRendererInfoSync10+
 
-getPreferredOutputDeviceForRendererInfoSync(rendererInfo: AudioRendererInfo): AudioDeviceDescriptors
+getPreferredOutputDeviceForRendererInfoSync(rendererInfo: AudioRendererInfo): [AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)
 
 根据音频信息，返回优先级最高的输出设备。同步返回结果。
 
@@ -589,17 +689,24 @@ getPreferredOutputDeviceForRendererInfoSync(rendererInfo: AudioRendererInfo): Au
 
 **参数：**
 
-参数名类型必填说明rendererInfo[AudioRendererInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiorendererinfo8)是音频渲染器信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rendererInfo | AudioRendererInfo | 是 | 音频渲染器信息。 |
 
 **返回值：**
 
-类型说明[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)返回优先级最高的输出设备信息。
+| 类型 | 说明 |
+| --- | --- |
+| [AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors) | 返回优先级最高的输出设备信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -622,7 +729,7 @@ try {
 
 #### on('preferOutputDeviceChangeForRendererInfo')10+
 
-on(type: 'preferOutputDeviceChangeForRendererInfo', rendererInfo: AudioRendererInfo, callback: Callback<AudioDeviceDescriptors>): void
+on(type: 'preferOutputDeviceChangeForRendererInfo', rendererInfo: AudioRendererInfo, callback: Callback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>): void
 
 监听最高优先级输出设备变化事件（当最高优先级输出设备发生变化时触发）。使用callback异步回调。
 
@@ -630,13 +737,20 @@ on(type: 'preferOutputDeviceChangeForRendererInfo', rendererInfo: AudioRendererI
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'preferOutputDeviceChangeForRendererInfo'，当最高优先级输出设备发生变化时，触发该事件。rendererInfo[AudioRendererInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiorendererinfo8)是音频渲染器信息。callbackCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>是回调函数，返回优先级最高的输出设备信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'preferOutputDeviceChangeForRendererInfo'，当最高优先级输出设备发生变化时，触发该事件。 |
+| rendererInfo | AudioRendererInfo | 是 | 音频渲染器信息。 |
+| callback | Callback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)> | 是 | 回调函数，返回优先级最高的输出设备信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -653,7 +767,7 @@ audioRoutingManager.on('preferOutputDeviceChangeForRendererInfo', rendererInfo, 
 
 #### off('preferOutputDeviceChangeForRendererInfo')10+
 
-off(type: 'preferOutputDeviceChangeForRendererInfo', callback?: Callback<AudioDeviceDescriptors>): void
+off(type: 'preferOutputDeviceChangeForRendererInfo', callback?: Callback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>): void
 
 取消监听最高优先级输出音频设备变化事件。使用callback异步回调。
 
@@ -661,13 +775,19 @@ off(type: 'preferOutputDeviceChangeForRendererInfo', callback?: Callback<AudioDe
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'preferOutputDeviceChangeForRendererInfo'，当取消监听最高优先级输出音频设备变化事件时，触发该事件。callbackCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>否回调函数，返回优先级最高的输出设备信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'preferOutputDeviceChangeForRendererInfo'，当取消监听最高优先级输出音频设备变化事件时，触发该事件。 |
+| callback | Callback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)> | 否 | 回调函数，返回优先级最高的输出设备信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -689,7 +809,7 @@ audioRoutingManager.off('preferOutputDeviceChangeForRendererInfo', preferOutputD
 
 #### getPreferredInputDeviceForCapturerInfo10+
 
-getPreferredInputDeviceForCapturerInfo(capturerInfo: AudioCapturerInfo, callback: AsyncCallback<AudioDeviceDescriptors>): void
+getPreferredInputDeviceForCapturerInfo(capturerInfo: AudioCapturerInfo, callback: AsyncCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>): void
 
 根据音频信息，返回优先级最高的输入设备。使用callback异步回调。
 
@@ -697,13 +817,20 @@ getPreferredInputDeviceForCapturerInfo(capturerInfo: AudioCapturerInfo, callback
 
 **参数：**
 
-参数名类型必填说明capturerInfo[AudioCapturerInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiocapturerinfo8)是音频采集器信息。callbackAsyncCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>是回调函数。当获取优先级最高的输入设备成功，err为undefined，data为获取到的优先级最高的输入设备信息；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| capturerInfo | AudioCapturerInfo | 是 | 音频采集器信息。 |
+| callback | AsyncCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)> | 是 | 回调函数。当获取优先级最高的输入设备成功，err为undefined，data为获取到的优先级最高的输入设备信息；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed. Return by callback.6800301System error. Return by callback.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. Return by callback. |
+| 6800301 | System error. Return by callback. |
 
 **示例：**
 
@@ -726,7 +853,7 @@ audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo, (err: B
 
 #### getPreferredInputDeviceForCapturerInfo10+
 
-getPreferredInputDeviceForCapturerInfo(capturerInfo: AudioCapturerInfo): Promise<AudioDeviceDescriptors>
+getPreferredInputDeviceForCapturerInfo(capturerInfo: AudioCapturerInfo): Promise<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>
 
 根据音频信息，返回优先级最高的输入设备。使用Promise异步回调。
 
@@ -734,17 +861,25 @@ getPreferredInputDeviceForCapturerInfo(capturerInfo: AudioCapturerInfo): Promise
 
 **参数：**
 
-参数名类型必填说明capturerInfo[AudioCapturerInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiocapturerinfo8)是音频采集器信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| capturerInfo | AudioCapturerInfo | 是 | 音频采集器信息。 |
 
 **返回值：**
 
-类型说明Promise<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>Promise对象，返回优先级最高的输入设备信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)> | Promise对象，返回优先级最高的输入设备信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed. Return by promise.6800301System error. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. Return by promise. |
+| 6800301 | System error. Return by promise. |
 
 **示例：**
 
@@ -765,7 +900,7 @@ audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo).then((a
 
 #### getPreferredInputDeviceForCapturerInfoSync10+
 
-getPreferredInputDeviceForCapturerInfoSync(capturerInfo: AudioCapturerInfo): AudioDeviceDescriptors
+getPreferredInputDeviceForCapturerInfoSync(capturerInfo: AudioCapturerInfo): [AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)
 
 根据音频信息，返回优先级最高的输入设备。同步返回结果。
 
@@ -773,17 +908,24 @@ getPreferredInputDeviceForCapturerInfoSync(capturerInfo: AudioCapturerInfo): Aud
 
 **参数：**
 
-参数名类型必填说明capturerInfo[AudioCapturerInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiocapturerinfo8)是音频采集器信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| capturerInfo | AudioCapturerInfo | 是 | 音频采集器信息。 |
 
 **返回值：**
 
-类型说明[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)返回优先级最高的输入设备信息。
+| 类型 | 说明 |
+| --- | --- |
+| [AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors) | 返回优先级最高的输入设备信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -806,7 +948,7 @@ try {
 
 #### on('preferredInputDeviceChangeForCapturerInfo')10+
 
-on(type: 'preferredInputDeviceChangeForCapturerInfo', capturerInfo: AudioCapturerInfo, callback: Callback<AudioDeviceDescriptors>): void
+on(type: 'preferredInputDeviceChangeForCapturerInfo', capturerInfo: AudioCapturerInfo, callback: Callback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>): void
 
 监听最高优先级输入设备变化事件（当最高优先级输入设备发生变化时触发）。使用callback异步回调。
 
@@ -814,13 +956,20 @@ on(type: 'preferredInputDeviceChangeForCapturerInfo', capturerInfo: AudioCapture
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'preferredInputDeviceChangeForCapturerInfo'，当最高优先级输入设备发生变化时，触发该事件。capturerInfo[AudioCapturerInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiocapturerinfo8)是音频采集器信息。callbackCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>是回调函数，返回优先级最高的输入设备信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'preferredInputDeviceChangeForCapturerInfo'，当最高优先级输入设备发生变化时，触发该事件。 |
+| capturerInfo | AudioCapturerInfo | 是 | 音频采集器信息。 |
+| callback | Callback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)> | 是 | 回调函数，返回优先级最高的输入设备信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -837,7 +986,7 @@ audioRoutingManager.on('preferredInputDeviceChangeForCapturerInfo', capturerInfo
 
 #### off('preferredInputDeviceChangeForCapturerInfo')10+
 
-off(type: 'preferredInputDeviceChangeForCapturerInfo', callback?: Callback<AudioDeviceDescriptors>): void
+off(type: 'preferredInputDeviceChangeForCapturerInfo', callback?: Callback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>): void
 
 取消监听最高优先级输入音频设备变化事件。使用callback异步回调。
 
@@ -845,13 +994,19 @@ off(type: 'preferredInputDeviceChangeForCapturerInfo', callback?: Callback<Audio
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'preferredInputDeviceChangeForCapturerInfo'，当取消监听最高优先级输入音频设备变化事件时，触发该事件。callbackCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>否回调函数，返回优先级最高的输入设备信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'preferredInputDeviceChangeForCapturerInfo'，当取消监听最高优先级输入音频设备变化事件时，触发该事件。 |
+| callback | Callback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)> | 否 | 回调函数，返回优先级最高的输入设备信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 

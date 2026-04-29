@@ -12,4 +12,4 @@ typedef struct OH_NativeColorSpaceManager OH_NativeColorSpaceManager
 
 **相关模块：**[NativeColorSpaceManager](NativeColorSpaceManager.md)
 
-**所在头文件：**[native_color_space_manager.h](../../capi/headers/native_color_space_manager.h.md)
+**所在头文件：**[native_color_space_manager.h](../../topics/graphics/[native_color_space_manager.h](native_color_space_manager.h.md).md)

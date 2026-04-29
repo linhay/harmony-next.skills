@@ -14,17 +14,10 @@ import { userAuth } from '@kit.UserAuthenticationKit';
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称类型值说明MAX_ALLOWABLE_REUSE_DURATION12+number300000
-
-复用解锁认证结果最大有效时长，值为300000毫秒。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-PERMANENT_LOCKOUT_DURATION22+number0x7fffffff
-
-永久冻结时间，值为0x7fffffff毫秒。
-
-**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 值 | 说明 |
+| --- | --- | --- | --- |
+| MAX_ALLOWABLE_REUSE_DURATION12+ | number | 300000 | 复用解锁认证结果最大有效时长，值为300000毫秒。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| PERMANENT_LOCKOUT_DURATION22+ | number | 0x7fffffff | 永久冻结时间，值为0x7fffffff毫秒。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
 
 #### AuthLockState22+
 
@@ -34,11 +27,11 @@ PERMANENT_LOCKOUT_DURATION22+number0x7fffffff
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称类型只读可选说明isLockedboolean否否表示认证是否已被冻结。true表示已冻结；false表示未冻结。remainingAuthAttemptsnumber否否认证未被冻结时的剩余尝试次数，最大为5次。lockoutDurationnumber否否
-
-认证被冻结时的剩余冻结时间，单位为毫秒。
-
-当永久冻结时，值为PERMANENT_LOCKOUT_DURATION，需要PIN认证解锁。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| isLocked | boolean | 否 | 否 | 表示认证是否已被冻结。true表示已冻结；false表示未冻结。 |
+| remainingAuthAttempts | number | 否 | 否 | 认证未被冻结时的剩余尝试次数，最大为5次。 |
+| lockoutDuration | number | 否 | 否 | 认证被冻结时的剩余冻结时间，单位为毫秒。 当永久冻结时，值为PERMANENT_LOCKOUT_DURATION，需要PIN认证解锁。 |
 
 #### UserAuthTipCode20+
 
@@ -48,7 +41,15 @@ PERMANENT_LOCKOUT_DURATION22+number0x7fffffff
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称值说明COMPARE_FAILURE1认证失败。TIMEOUT2认证超时。TEMPORARILY_LOCKED3临时冻结。PERMANENTLY_LOCKED4永久冻结。WIDGET_LOADED5身份认证界面加载完毕。WIDGET_RELEASED6当前的身份认证界面退出，切换其他认证界面或身份认证控件关闭。COMPARE_FAILURE_WITH_FROZEN7认证失败并触发了认证冻结。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| COMPARE_FAILURE | 1 | 认证失败。 |
+| TIMEOUT | 2 | 认证超时。 |
+| TEMPORARILY_LOCKED | 3 | 临时冻结。 |
+| PERMANENTLY_LOCKED | 4 | 永久冻结。 |
+| WIDGET_LOADED | 5 | 身份认证界面加载完毕。 |
+| WIDGET_RELEASED | 6 | 当前的身份认证界面退出，切换其他认证界面或身份认证控件关闭。 |
+| COMPARE_FAILURE_WITH_FROZEN | 7 | 认证失败并触发了认证冻结。 |
 
 #### EnrolledState12+
 
@@ -58,7 +59,10 @@ PERMANENT_LOCKOUT_DURATION22+number0x7fffffff
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称类型只读可选说明credentialDigestnumber否否注册的凭据摘要，在凭据增加时随机生成。credentialCountnumber否否注册的凭据数量。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| credentialDigest | number | 否 | 否 | 注册的凭据摘要，在凭据增加时随机生成。 |
+| credentialCount | number | 否 | 否 | 注册的凭据数量。 |
 
 #### ReuseMode12+
 
@@ -66,29 +70,12 @@ PERMANENT_LOCKOUT_DURATION22+number0x7fffffff
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称值说明AUTH_TYPE_RELEVANT1
-
-与认证类型相关，只有当设备解锁认证结果在有效时间内，并且设备解锁的认证类型匹配上本次认证指定认证类型之一时，可以复用该结果。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-AUTH_TYPE_IRRELEVANT2
-
-与认证类型无关，设备解锁认证结果在有效时间内，可以重复使用。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-CALLER_IRRELEVANT_AUTH_TYPE_RELEVANT14+3
-
-与认证类型相关，任意身份认证（包括设备解锁）结果在有效时间内，并且身份认证的认证类型匹配上本次认证指定认证类型之一时，可以复用该结果。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-CALLER_IRRELEVANT_AUTH_TYPE_IRRELEVANT14+4
-
-与认证类型无关，任意身份认证（包括设备解锁）结果在有效时间内，可以重复使用。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| AUTH_TYPE_RELEVANT | 1 | 与认证类型相关，只有当设备解锁认证结果在有效时间内，并且设备解锁的认证类型匹配上本次认证指定认证类型之一时，可以复用该结果。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| AUTH_TYPE_IRRELEVANT | 2 | 与认证类型无关，设备解锁认证结果在有效时间内，可以重复使用。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| CALLER_IRRELEVANT_AUTH_TYPE_RELEVANT14+ | 3 | 与认证类型相关，任意身份认证（包括设备解锁）结果在有效时间内，并且身份认证的认证类型匹配上本次认证指定认证类型之一时，可以复用该结果。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| CALLER_IRRELEVANT_AUTH_TYPE_IRRELEVANT14+ | 4 | 与认证类型无关，任意身份认证（包括设备解锁）结果在有效时间内，可以重复使用。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
 
 #### ReuseUnlockResult12+
 
@@ -100,7 +87,10 @@ CALLER_IRRELEVANT_AUTH_TYPE_IRRELEVANT14+4
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称类型只读可选说明reuseMode[ReuseMode](#ZH-CN_TOPIC_0000002529445377__reusemode12)否否复用解锁认证结果的模式。reuseDurationnumber否否允许复用解锁认证结果的有效时长，有效时长的值应大于0，最大值为[MAX_ALLOWABLE_REUSE_DURATION](#ZH-CN_TOPIC_0000002529445377__常量)。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| reuseMode | ReuseMode | 否 | 否 | 复用解锁认证结果的模式。 |
+| reuseDuration | number | 否 | 否 | 允许复用解锁认证结果的有效时长，有效时长的值应大于0，最大值为MAX_ALLOWABLE_REUSE_DURATION。 |
 
 #### userAuth.getAuthLockState22+
 
@@ -116,17 +106,27 @@ getAuthLockState(authType: UserAuthType): Promise<AuthLockState>
 
 **参数：**
 
-参数名类型必填说明authType[UserAuthType](#ZH-CN_TOPIC_0000002529445377__userauthtype8)是认证类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| authType | UserAuthType | 是 | 认证类型。 |
 
 **返回值：**
 
-类型说明Promise<[AuthLockState](#ZH-CN_TOPIC_0000002529445377__authlockstate22)>Promise对象，当查询成功时，返回值为指定认证类型的身份认证冻结状态。失败时报错。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AuthLockState> | Promise对象，当查询成功时，返回值为指定认证类型的身份认证冻结状态。失败时报错。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[用户认证错误码](../../errors/用户认证错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[用户认证错误码]([用户认证错误码](../../errors/用户认证错误码.md).md)。
 
-错误码ID错误信息201Permission denied.12500002General operation error.12500005The authentication type is not supported.12500008The parameter is out of range.12500010The type of credential has not been enrolled.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 12500002 | General operation error. |
+| 12500005 | The authentication type is not supported. |
+| 12500008 | The parameter is out of range. |
+| 12500010 | The type of credential has not been enrolled. |
 
 **示例：**
 
@@ -165,23 +165,27 @@ getEnrolledState(authType: UserAuthType): EnrolledState
 
 **参数：**
 
-参数名类型必填说明authType[UserAuthType](#ZH-CN_TOPIC_0000002529445377__userauthtype8)是认证类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| authType | UserAuthType | 是 | 认证类型。 |
 
 **返回值：**
 
-类型说明[EnrolledState](#ZH-CN_TOPIC_0000002529445377__enrolledstate12)当查询成功时，返回值为用户注册凭据的状态。
+| 类型 | 说明 |
+| --- | --- |
+| EnrolledState | 当查询成功时，返回值为用户注册凭据的状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[用户认证错误码](../../errors/用户认证错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[用户认证错误码](用户认证错误码.md)。
 
-错误码ID错误信息201Permission denied.401
-
-Parameter error. Possible causes:
-
-1.Mandatory parameters are left unspecified.
-
-12500002General operation error.12500005The authentication type is not supported.12500010The type of credential has not been enrolled.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. |
+| 12500002 | General operation error. |
+| 12500005 | The authentication type is not supported. |
+| 12500010 | The type of credential has not been enrolled. |
 
 **示例：**
 
@@ -204,39 +208,13 @@ try {
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称类型只读可选说明challengeUint8Array否否
-
-随机挑战值，可用于防重放攻击。最大长度为32字节，可传Uint8Array([])。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-authType[UserAuthType](#ZH-CN_TOPIC_0000002529445377__userauthtype8)[]否否
-
-认证类型列表，用来指定用户认证界面提供的认证方法。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-authTrustLevel[AuthTrustLevel](#ZH-CN_TOPIC_0000002529445377__authtrustlevel8)否否
-
-期望达到的认证可信等级。典型操作需要的身份认证可信等级，以及身份认证可信等级的划分请参见[认证可信等级划分原则](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-authentication-overview#生物认证可信等级划分原则)。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-reuseUnlockResult12+[ReuseUnlockResult](#ZH-CN_TOPIC_0000002529445377__reuseunlockresult12)否是
-
-表示可以复用解锁认证的结果。默认为不复用。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-skipLockedBiometricAuth20+boolean否是
-
-是否跳过已禁用的认证方式自动切换至其它方式的认证。若无可切换的认证方式则关闭控件，返回认证冻结错误码。
-
-true表示生物认证冻结时，跳过倒计时界面直接切换到其他方式的认证；
-
-false表示不跳过；默认为false。
-
-**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| challenge | Uint8Array | 否 | 否 | 随机挑战值，可用于防重放攻击。最大长度为32字节，可传Uint8Array([])。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| authType | UserAuthType[] | 否 | 否 | 认证类型列表，用来指定用户认证界面提供的认证方法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| authTrustLevel | AuthTrustLevel | 否 | 否 | 期望达到的认证可信等级。典型操作需要的身份认证可信等级，以及身份认证可信等级的划分请参见认证可信等级划分原则。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| reuseUnlockResult12+ | ReuseUnlockResult | 否 | 是 | 表示可以复用解锁认证的结果。默认为不复用。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| skipLockedBiometricAuth20+ | boolean | 否 | 是 | 是否跳过已禁用的认证方式自动切换至其它方式的认证。若无可切换的认证方式则关闭控件，返回认证冻结错误码。 true表示生物认证冻结时，跳过倒计时界面直接切换到其他方式的认证； false表示不跳过；默认为false。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 
 #### WidgetParam10+
 
@@ -244,23 +222,11 @@ false表示不跳过；默认为false。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称类型只读可选说明titlestring否否
-
-用户认证界面的标题，建议传入认证目的，例如用于支付、登录应用等，不支持传空字串，最大长度为500字符。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-navigationButtonTextstring否是
-
-导航按键的说明文本，最大长度为60字符。在单指纹、单人脸场景下支持，从API 18开始，增加支持人脸+指纹场景。默认为不展示自定义导航按键。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-uiContext18+Context否是
-
-以模应用方式显示身份认证对话框，仅支持在2in1设备上使用，如果没有此参数或其他类型的设备，身份认证对话框将以模系统方式显示。 默认以模系统方式显示身份认证对话框。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| title | string | 否 | 否 | 用户认证界面的标题，建议传入认证目的，例如用于支付、登录应用等，不支持传空字串，最大长度为500字符。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| navigationButtonText | string | 否 | 是 | 导航按键的说明文本，最大长度为60字符。在单指纹、单人脸场景下支持，从API 18开始，增加支持人脸+指纹场景。默认为不展示自定义导航按键。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| uiContext18+ | Context | 否 | 是 | 以模应用方式显示身份认证对话框，仅支持在2in1设备上使用，如果没有此参数或其他类型的设备，身份认证对话框将以模系统方式显示。 默认以模系统方式显示身份认证对话框。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 
 #### UserAuthResult10+
 
@@ -270,7 +236,12 @@ uiContext18+Context否是
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称类型只读可选说明resultnumber否否用户认证结果。若成功返回SUCCESS，若失败返回相应错误码，参见[UserAuthResultCode](#ZH-CN_TOPIC_0000002529445377__userauthresultcode9)。tokenUint8Array否是认证成功时，返回认证成功的令牌信息。最大长度为1024字节。authType[UserAuthType](#ZH-CN_TOPIC_0000002529445377__userauthtype8)否是认证成功时，返回认证类型。enrolledState12+[EnrolledState](#ZH-CN_TOPIC_0000002529445377__enrolledstate12)否是认证成功时，返回注册凭据的状态。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| result | number | 否 | 否 | 用户认证结果。若成功返回SUCCESS，若失败返回相应错误码，参见UserAuthResultCode。 |
+| token | Uint8Array | 否 | 是 | 认证成功时，返回认证成功的令牌信息。最大长度为1024字节。 |
+| authType | UserAuthType | 否 | 是 | 认证成功时，返回认证类型。 |
+| enrolledState12+ | EnrolledState | 否 | 是 | 认证成功时，返回注册凭据的状态。 |
 
 #### IAuthCallback10+
 
@@ -288,7 +259,9 @@ onResult(result: UserAuthResult): void
 
 **参数：**
 
-参数名类型必填说明result[UserAuthResult](#ZH-CN_TOPIC_0000002529445377__userauthresult10)是认证结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| result | UserAuthResult | 是 | 认证结果。 |
 
 **示例1：**
 
@@ -456,7 +429,10 @@ try {
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称类型只读可选说明tipType[UserAuthType](#ZH-CN_TOPIC_0000002529445377__userauthtype8)否否中间状态对应的认证类型。tipCode[UserAuthTipCode](#ZH-CN_TOPIC_0000002529445377__userauthtipcode20)否否中间状态值。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| tipType | UserAuthType | 否 | 否 | 中间状态对应的认证类型。 |
+| tipCode | UserAuthTipCode | 否 | 否 | 中间状态值。 |
 
 #### AuthTipCallback20+
 
@@ -470,7 +446,9 @@ type AuthTipCallback = (authTipInfo: AuthTipInfo) => void
 
 **参数：**
 
-参数名类型必填说明authTipInfo[AuthTipInfo](#ZH-CN_TOPIC_0000002529445377__authtipinfo20)是认证中间状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| authTipInfo | AuthTipInfo | 是 | 认证中间状态。 |
 
 **示例：**
 
@@ -522,15 +500,16 @@ try {
 
 用于执行用户身份认证，并支持使用统一用户身份认证控件。
 
-使用以下接口前，需先通过[getUserAuthInstance](#ZH-CN_TOPIC_0000002529445377__userauthgetuserauthinstance10)方法获取UserAuthInstance对象。
+使用以下接口前，需先通过[getUserAuthInstance](#ZH-CN_TOPIC_0000002553361359__userauthgetuserauthinstance10)方法获取UserAuthInstance对象。
 
 #### on10+
 
 on(type: 'result', callback: IAuthCallback): void
 
-订阅用户身份认证的最终结果。通过该接口获取到的是用户在认证控件完成身份认证交互后的最终身份认证结果。认证控件消失前，用户中间的认证失败尝试并不会通过该接口返回。如果需要感知整个认证过程中用户的每一次认证失败尝试，请通过[on('authTip')](#ZH-CN_TOPIC_0000002529445377__on20)接口订阅。
+订阅用户身份认证的最终结果。通过该接口获取到的是用户在认证控件完成身份认证交互后的最终身份认证结果。认证控件消失前，用户中间的认证失败尝试并不会通过该接口返回。如果需要感知整个认证过程中用户的每一次认证失败尝试，请通过[on('authTip')](#ZH-CN_TOPIC_0000002553361359__on20)接口订阅。
 
-在PC/2in1设备上，应用如果使用模应用方式发起认证（即配置用户界面参数[widgetParam](#ZH-CN_TOPIC_0000002529445377__widgetparam10)时传入了有效的uiContext），收到认证结果后，若需弹出其他窗口，应先获取控件弹窗释放的标志消息，通过[on('authTip')](#ZH-CN_TOPIC_0000002529445377__on20)接口订阅控件释放消息（authTipInfo.tipCode = UserAuthTipCode.WIDGET_RELEASED）。
+
+在PC/2in1设备上，应用如果使用模应用方式发起认证（即配置用户界面参数[widgetParam](#ZH-CN_TOPIC_0000002553361359__widgetparam10)时传入了有效的uiContext），收到认证结果后，若需弹出其他窗口，应先获取控件弹窗释放的标志消息，通过[on('authTip')](#ZH-CN_TOPIC_0000002553361359__on20)接口订阅控件释放消息（authTipInfo.tipCode = UserAuthTipCode.WIDGET_RELEASED）。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -538,22 +517,18 @@ on(type: 'result', callback: IAuthCallback): void
 
 **参数：**
 
-参数名类型必填说明type'result'是订阅事件类型，表明该事件用来返回认证结果。callback[IAuthCallback](#ZH-CN_TOPIC_0000002529445377__iauthcallback10)是认证接口的回调函数，用于返回认证结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | 'result' | 是 | 订阅事件类型，表明该事件用来返回认证结果。 |
+| callback | IAuthCallback | 是 | 认证接口的回调函数，用于返回认证结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[用户认证错误码](../../errors/用户认证错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[用户认证错误码](用户认证错误码.md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.Mandatory parameters are left unspecified.
-
-2.Incorrect parameter types.
-
-3.Parameter verification failed.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
 12500002General operation error.
 
 **示例1：**
@@ -659,7 +634,6 @@ struct Index {
       const err: BusinessError = error as BusinessError;
       console.error(`auth catch error. Code is ${err?.code}, message is ${err?.message}`);
     }
-  }
 
   build() {
     Column() {
@@ -668,8 +642,6 @@ struct Index {
           this.modelApplicationAuth();
         })
     }
-  }
-}
 ```
 
 #### off10+
@@ -678,7 +650,8 @@ off(type: 'result', callback?: IAuthCallback): void
 
 取消订阅用户身份认证的结果。
 
-需要使用已经成功订阅事件的[UserAuthInstance](#ZH-CN_TOPIC_0000002529445377__userauthinstance10)对象调用该接口进行取消订阅。
+
+需要使用已经成功订阅事件的[UserAuthInstance](#ZH-CN_TOPIC_0000002553361359__userauthinstance10)对象调用该接口进行取消订阅。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -686,22 +659,18 @@ off(type: 'result', callback?: IAuthCallback): void
 
 **参数：**
 
-参数名类型必填说明type'result'是订阅事件类型，表明该事件用来返回认证结果。callback[IAuthCallback](#ZH-CN_TOPIC_0000002529445377__iauthcallback10)否认证接口的回调函数，用于返回认证结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | 'result' | 是 | 订阅事件类型，表明该事件用来返回认证结果。 |
+| callback | IAuthCallback | 否 | 认证接口的回调函数，用于返回认证结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[用户认证错误码](../../errors/用户认证错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[用户认证错误码](用户认证错误码.md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.Mandatory parameters are left unspecified.
-
-2.Incorrect parameter types.
-
-3.Parameter verification failed.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
 12500002General operation error.
 
 **示例：**
@@ -766,23 +735,20 @@ start(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[用户认证错误码](../../errors/用户认证错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[用户认证错误码](用户认证错误码.md)。
 
-错误码ID错误信息201
-
-Permission denied. Possible causes:
-
-1.No permission to access biometric.
-
-2.No permission to start authentication from background.
-
-401
-
-Parameter error. Possible causes:
-
-1.Incorrect parameter types.
-
-12500002General operation error.12500003Authentication canceled.12500005The authentication type is not supported.12500006The authentication trust level is not supported.12500009Authentication is locked out.12500010The type of credential has not been enrolled.12500011Switched to the customized authentication process.12500013Operation failed because of PIN expired.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. Possible causes: 1.No permission to access biometric. 2.No permission to start authentication from background. |
+| 401 | Parameter error. Possible causes: 1.Incorrect parameter types. |
+| 12500002 | General operation error. |
+| 12500003 | Authentication canceled. |
+| 12500005 | The authentication type is not supported. |
+| 12500006 | The authentication trust level is not supported. |
+| 12500009 | Authentication is locked out. |
+| 12500010 | The type of credential has not been enrolled. |
+| 12500011 | Switched to the customized authentication process. |
+| 12500013 | Operation failed because of PIN expired. |
 
 **示例：**
 
@@ -840,12 +806,10 @@ cancel(): void
 
 **错误码：**
 
-错误码ID错误信息201Permission denied.401
-
-Parameter error. Possible causes:
-
-1.Incorrect parameter types.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1.Incorrect parameter types. |
 12500002General operation error.
 
 **示例：**
@@ -897,7 +861,8 @@ on(type: 'authTip', callback: AuthTipCallback): void
 
 订阅身份认证过程中的提示信息。通过该接口可以获取到认证过程中控件的拉起和退出提示，以及认证过程中用户的每一次认证失败尝试。使用callback异步回调。
 
-在PC/2in1设备上，应用如果使用模应用方式发起认证（即配置用户界面参数[widgetParam](#ZH-CN_TOPIC_0000002529445377__widgetparam10)时传入了有效的uiContext），收到认证结果后，若需弹出其他窗口，应先获取控件弹窗释放的标志消息，通过[on('authTip')](#ZH-CN_TOPIC_0000002529445377__on20)接口订阅控件释放消息（authTipInfo.tipCode = UserAuthTipCode.WIDGET_RELEASED）。
+
+在PC/2in1设备上，应用如果使用模应用方式发起认证（即配置用户界面参数[widgetParam](#ZH-CN_TOPIC_0000002553361359__widgetparam10)时传入了有效的uiContext），收到认证结果后，若需弹出其他窗口，应先获取控件弹窗释放的标志消息，通过[on('authTip')](#ZH-CN_TOPIC_0000002553361359__on20)接口订阅控件释放消息（authTipInfo.tipCode = UserAuthTipCode.WIDGET_RELEASED）。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -905,13 +870,18 @@ on(type: 'authTip', callback: AuthTipCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是订阅事件类型，支持的事件为'authTip'，当[start()](#ZH-CN_TOPIC_0000002529445377__start10)调用完成，发起身份认证，触发该事件。callback[AuthTipCallback](#ZH-CN_TOPIC_0000002529445377__authtipcallback20)是认证接口的回调函数，用于返回认证中间状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 订阅事件类型，支持的事件为'authTip'，当start()调用完成，发起身份认证，触发该事件。 |
+| callback | AuthTipCallback | 是 | 认证接口的回调函数，用于返回认证中间状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[用户认证错误码](../../errors/用户认证错误码.md)。
+以下错误码的详细介绍请参见[用户认证错误码](用户认证错误码.md)。
 
-错误码ID错误信息12500002General operation error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12500002 | General operation error. |
 
 **示例：**
 
@@ -964,7 +934,8 @@ off(type: 'authTip', callback?: AuthTipCallback): void
 
 取消订阅用户身份认证中间状态。
 
-需要使用已经成功订阅事件的[UserAuthInstance](#ZH-CN_TOPIC_0000002529445377__userauthinstance10)对象调用该接口进行取消订阅。
+
+需要使用已经成功订阅事件的[UserAuthInstance](#ZH-CN_TOPIC_0000002553361359__userauthinstance10)对象调用该接口进行取消订阅。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -972,13 +943,18 @@ off(type: 'authTip', callback?: AuthTipCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是取消订阅的事件类型，支持的事件为'authTip'，当[start()](#ZH-CN_TOPIC_0000002529445377__start10)调用完成，发起身份认证并调用[on()](#ZH-CN_TOPIC_0000002529445377__on20)订阅该事件后，调用该方法可取消订阅，不会再触发该事件。callback[AuthTipCallback](#ZH-CN_TOPIC_0000002529445377__authtipcallback20)否认证接口的回调函数，用于返回认证中间状态。 当不传该参数时默认值为调用[on()](#ZH-CN_TOPIC_0000002529445377__on20)接口时传递的参数值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消订阅的事件类型，支持的事件为'authTip'，当start()调用完成，发起身份认证并调用on()订阅该事件后，调用该方法可取消订阅，不会再触发该事件。 |
+| callback | AuthTipCallback | 否 | 认证接口的回调函数，用于返回认证中间状态。 当不传该参数时默认值为调用on()接口时传递的参数值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[用户认证错误码](../../errors/用户认证错误码.md)。
+以下错误码的详细介绍请参见[用户认证错误码](用户认证错误码.md)。
 
-错误码ID错误信息12500002General operation error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12500002 | General operation error. |
 
 **示例：**
 
@@ -1026,7 +1002,8 @@ try {
 
 getUserAuthInstance(authParam: AuthParam, widgetParam: WidgetParam): UserAuthInstance
 
-获取[UserAuthInstance](#ZH-CN_TOPIC_0000002529445377__userauthinstance10)对象，执行用户身份认证，并支持使用统一用户身份认证控件。
+获取[UserAuthInstance](#ZH-CN_TOPIC_0000002553361359__userauthinstance10)对象，执行用户身份认证，并支持使用统一用户身份认证控件。
+
 
 每个UserAuthInstance只能进行一次认证，需要再次认证时，必须重新获取UserAuthInstance。
 
@@ -1036,27 +1013,27 @@ getUserAuthInstance(authParam: AuthParam, widgetParam: WidgetParam): UserAuthIns
 
 **参数：**
 
-参数名类型必填说明authParam[AuthParam](#ZH-CN_TOPIC_0000002529445377__authparam10)是用户认证相关参数。widgetParam[WidgetParam](#ZH-CN_TOPIC_0000002529445377__widgetparam10)是用户认证界面配置相关参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| authParam | AuthParam | 是 | 用户认证相关参数。 |
+| widgetParam | WidgetParam | 是 | 用户认证界面配置相关参数。 |
 
 **返回值：**
 
-类型说明[UserAuthInstance](#ZH-CN_TOPIC_0000002529445377__userauthinstance10)支持用户界面的认证器对象。
+| 类型 | 说明 |
+| --- | --- |
+| UserAuthInstance | 支持用户界面的认证器对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[用户认证错误码](../../errors/用户认证错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[用户认证错误码](用户认证错误码.md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1.Mandatory parameters are left unspecified.
-
-2.Incorrect parameter types.
-
-3.Parameter verification failed.
-
-12500002General operation error.12500005The authentication type is not supported.12500006The authentication trust level is not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 12500002 | General operation error. |
+| 12500005 | The authentication type is not supported. |
+| 12500006 | The authentication trust level is not supported. |
 
 **示例：**
 
@@ -1100,21 +1077,31 @@ try {
 
 表示认证结果信息，用于描述认证结果。
 
-从 API version 9 开始支持，从 API version 11 开始废弃，请使用[UserAuthResult](#ZH-CN_TOPIC_0000002529445377__userauthresult10)替代。
+
+从 API version 9 开始支持，从 API version 11 开始废弃，请使用[UserAuthResult](#ZH-CN_TOPIC_0000002553361359__userauthresult10)替代。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称类型只读可选说明resultnumber否否认证结果。tokenUint8Array否是用户身份认证通过的凭证。remainAttemptsnumber否是剩余的认证尝试次数。lockoutDurationnumber否是认证操作的锁定时长，时间单位为毫秒ms。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| result | number | 否 | 否 | 认证结果。 |
+| token | Uint8Array | 否 | 是 | 用户身份认证通过的凭证。 |
+| remainAttempts | number | 否 | 是 | 剩余的认证尝试次数。 |
+| lockoutDuration | number | 否 | 是 | 认证操作的锁定时长，时间单位为毫秒ms。 |
 
 #### TipInfo(deprecated)
 
 表示认证过程中的提示信息，用于提供认证过程的反馈。
 
-从 API version 9 开始支持，从 API version 11 开始废弃，请使用[AuthTipInfo](#ZH-CN_TOPIC_0000002529445377__authtipinfo20)替代。
+
+从 API version 9 开始支持，从 API version 11 开始废弃，请使用[AuthTipInfo](#ZH-CN_TOPIC_0000002553361359__authtipinfo20)替代。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称类型只读可选说明modulenumber否否发送提示信息的模块标识。tipnumber否否认证过程提示信息。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| module | number | 否 | 否 | 发送提示信息的模块标识。 |
+| tip | number | 否 | 否 | 认证过程提示信息。 |
 
 #### EventInfo(deprecated)
 
@@ -1124,17 +1111,21 @@ type EventInfo = AuthResultInfo | TipInfo
 
 该类型为下表类型取值中的联合类型。
 
-从 API version 9 开始支持，从 API version 11 开始废弃，请使用[UserAuthResult](#ZH-CN_TOPIC_0000002529445377__userauthresult10)替代。
+
+从 API version 9 开始支持，从 API version 11 开始废弃，请使用[UserAuthResult](#ZH-CN_TOPIC_0000002553361359__userauthresult10)替代。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-类型说明[AuthResultInfo](#ZH-CN_TOPIC_0000002529445377__authresultinfodeprecated)获取到的认证结果信息。[TipInfo](#ZH-CN_TOPIC_0000002529445377__tipinfodeprecated)认证过程中的提示信息。
+| 类型 | 说明 |
+| --- | --- |
+| AuthResultInfo | 获取到的认证结果信息。 |
+| TipInfo | 认证过程中的提示信息。 |
 
 #### AuthEventKey(deprecated)
 
 type AuthEventKey = 'result' | 'tip'
 
-表示认证事件类型的关键字，作为[on](#ZH-CN_TOPIC_0000002529445377__ondeprecated)接口的参数。
+表示认证事件类型的关键字，作为[on](#ZH-CN_TOPIC_0000002553361359__ondeprecated)接口的参数。
 
 该类型为下表类型取值中的联合类型。
 
@@ -1142,13 +1133,17 @@ type AuthEventKey = 'result' | 'tip'
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-类型说明'result'[on](#ZH-CN_TOPIC_0000002529445377__ondeprecated)接口第一个参数为"result"时，[callback](#ZH-CN_TOPIC_0000002529445377__callbackdeprecated)回调返回认证的结果信息。'tip'[on](#ZH-CN_TOPIC_0000002529445377__ondeprecated)接口第一个参数为"tip"时，[callback](#ZH-CN_TOPIC_0000002529445377__callbackdeprecated)回调返回认证操作中的提示信息。
+| 类型 | 说明 |
+| --- | --- |
+| 'result' | on接口第一个参数为"result"时，callback回调返回认证的结果信息。 |
+| 'tip' | on接口第一个参数为"tip"时，callback回调返回认证操作中的提示信息。 |
 
 #### AuthEvent(deprecated)
 
 认证接口的异步回调对象。
 
-从 API version 9 开始支持，从 API version 11 开始废弃，请使用[IAuthCallback](#ZH-CN_TOPIC_0000002529445377__iauthcallback10)替代。
+
+从 API version 9 开始支持，从 API version 11 开始废弃，请使用[IAuthCallback](#ZH-CN_TOPIC_0000002553361359__iauthcallback10)替代。
 
 #### callback(deprecated)
 
@@ -1156,13 +1151,16 @@ callback(result : EventInfo) : void
 
 通过该回调获取认证结果信息或认证过程中的提示信息。
 
-从 API version 9 开始支持，从 API version 11 开始废弃，请使用[onResult](#ZH-CN_TOPIC_0000002529445377__onresult10)替代。
+
+从 API version 9 开始支持，从 API version 11 开始废弃，请使用[onResult](#ZH-CN_TOPIC_0000002553361359__onresult10)替代。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
 **参数：**
 
-参数名类型必填说明result[EventInfo](#ZH-CN_TOPIC_0000002529445377__eventinfodeprecated)是返回的认证结果信息或提示信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| result | EventInfo | 是 | 返回的认证结果信息或提示信息。 |
 
 **示例：**
 
@@ -1204,7 +1202,6 @@ try {
         default:
           // do others.
       }
-    }
   } as userAuth.AuthEvent);
   auth.start();
   console.info('authV9 start success');
@@ -1218,7 +1215,8 @@ try {
 
 执行用户认证的对象。
 
-从 API version 9 开始支持，从 API version 10 开始废弃，请使用[UserAuthInstance](#ZH-CN_TOPIC_0000002529445377__userauthinstance10)替代。
+
+从 API version 9 开始支持，从 API version 10 开始废弃，请使用[UserAuthInstance](#ZH-CN_TOPIC_0000002553361359__userauthinstance10)替代。
 
 #### on(deprecated)
 
@@ -1226,21 +1224,28 @@ on : (name : AuthEventKey, callback : AuthEvent) => void
 
 订阅指定类型的用户认证事件。
 
-从 API version 9 开始支持，从 API version 10 开始废弃，请使用[on](#ZH-CN_TOPIC_0000002529445377__on10)替代。
 
-使用获取到的[AuthInstance](#ZH-CN_TOPIC_0000002529445377__authinstancedeprecated)对象调用该接口进行订阅。
+从 API version 9 开始支持，从 API version 10 开始废弃，请使用[on](#ZH-CN_TOPIC_0000002553361359__on10)替代。
+
+使用获取到的[AuthInstance](#ZH-CN_TOPIC_0000002553361359__authinstancedeprecated)对象调用该接口进行订阅。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
 **参数：**
 
-参数名类型必填说明name[AuthEventKey](#ZH-CN_TOPIC_0000002529445377__autheventkeydeprecated)是表示认证事件类型，取值为"result"时，回调函数返回认证结果；取值为"tip"时，回调函数返回认证过程中的提示信息。callback[AuthEvent](#ZH-CN_TOPIC_0000002529445377__autheventdeprecated)是认证接口的回调函数，用于返回认证结果或认证过程中的提示信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | AuthEventKey | 是 | 表示认证事件类型，取值为"result"时，回调函数返回认证结果；取值为"tip"时，回调函数返回认证过程中的提示信息。 |
+| callback | AuthEvent | 是 | 认证接口的回调函数，用于返回认证结果或认证过程中的提示信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[用户认证错误码](../../errors/用户认证错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[用户认证错误码](用户认证错误码.md)。
 
-错误码ID错误信息401Parameter error.12500002General operation error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 12500002 | General operation error. |
 
 **示例：**
 
@@ -1274,7 +1279,6 @@ try {
         default:
           // do others.
       }
-    }
   } as userAuth.AuthEvent);
   auth.start();
   console.info('authV9 start success');
@@ -1290,19 +1294,25 @@ off : (name : AuthEventKey) => void
 
 取消订阅特定类型的认证事件。
 
-从 API version 9 开始支持，从 API version 10 开始废弃，请使用[off](#ZH-CN_TOPIC_0000002529445377__off10)替代。
 
-需要使用已经成功订阅事件的[AuthInstance](#ZH-CN_TOPIC_0000002529445377__authinstancedeprecated)对象调用该接口进行取消订阅。
+从 API version 9 开始支持，从 API version 10 开始废弃，请使用[off](#ZH-CN_TOPIC_0000002553361359__off10)替代。
+
+需要使用已经成功订阅事件的[AuthInstance](#ZH-CN_TOPIC_0000002553361359__authinstancedeprecated)对象调用该接口进行取消订阅。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称类型必填说明name[AuthEventKey](#ZH-CN_TOPIC_0000002529445377__autheventkeydeprecated)是表示认证事件类型，取值为"result"时，取消订阅认证结果；取值为"tip"时，取消订阅认证过程中的提示信息。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | AuthEventKey | 是 | 表示认证事件类型，取值为"result"时，取消订阅认证结果；取值为"tip"时，取消订阅认证过程中的提示信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[用户认证错误码](../../errors/用户认证错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[用户认证错误码](用户认证错误码.md)。
 
-错误码ID错误信息401Parameter error.12500002General operation error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 12500002 | General operation error. |
 
 **示例：**
 
@@ -1338,9 +1348,10 @@ start : () => void
 
 开始认证。
 
-从 API version 9 开始支持，从 API version 10 开始废弃，请使用[start](#ZH-CN_TOPIC_0000002529445377__start10)替代。
 
-使用获取到的[AuthInstance](#ZH-CN_TOPIC_0000002529445377__authinstancedeprecated)对象调用该接口进行认证。
+从 API version 9 开始支持，从 API version 10 开始废弃，请使用[start](#ZH-CN_TOPIC_0000002553361359__start10)替代。
+
+使用获取到的[AuthInstance](#ZH-CN_TOPIC_0000002553361359__authinstancedeprecated)对象调用该接口进行认证。
 
 **需要权限：** ohos.permission.ACCESS_BIOMETRIC
 
@@ -1348,9 +1359,21 @@ start : () => void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[用户认证错误码](../../errors/用户认证错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[用户认证错误码](用户认证错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error.12500001Authentication failed.12500002General operation error.12500003The operation is canceled.12500004The operation is time-out.12500005The authentication type is not supported.12500006The authentication trust level is not supported.12500007The authentication task is busy.12500009The authenticator is locked.12500010The type of credential has not been enrolled.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. |
+| 12500001 | Authentication failed. |
+| 12500002 | General operation error. |
+| 12500003 | The operation is canceled. |
+| 12500004 | The operation is time-out. |
+| 12500005 | The authentication type is not supported. |
+| 12500006 | The authentication trust level is not supported. |
+| 12500007 | The authentication task is busy. |
+| 12500009 | The authenticator is locked. |
+| 12500010 | The type of credential has not been enrolled. |
 
 **示例：**
 
@@ -1376,9 +1399,10 @@ cancel : () => void
 
 取消认证。
 
-从 API version 9 开始支持，从 API version 10 开始废弃，请使用[cancel](#ZH-CN_TOPIC_0000002529445377__cancel10)替代。
 
-使用获取到的[AuthInstance](#ZH-CN_TOPIC_0000002529445377__authinstancedeprecated)对象调用该接口进行取消认证，此[AuthInstance](#ZH-CN_TOPIC_0000002529445377__authinstancedeprecated)需要是正在进行认证的对象。
+从 API version 9 开始支持，从 API version 10 开始废弃，请使用[cancel](#ZH-CN_TOPIC_0000002553361359__cancel10)替代。
+
+使用获取到的[AuthInstance](#ZH-CN_TOPIC_0000002553361359__authinstancedeprecated)对象调用该接口进行取消认证，此[AuthInstance](#ZH-CN_TOPIC_0000002553361359__authinstancedeprecated)需要是正在进行认证的对象。
 
 **需要权限：** ohos.permission.ACCESS_BIOMETRIC
 
@@ -1386,9 +1410,13 @@ cancel : () => void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[用户认证错误码](../../errors/用户认证错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[用户认证错误码](用户认证错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error.12500002General operation error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. |
+| 12500002 | General operation error. |
 
 **示例：**
 
@@ -1414,7 +1442,8 @@ getAuthInstance(challenge : Uint8Array, authType : UserAuthType, authTrustLevel 
 
 获取AuthInstance对象，用于执行用户身份认证。
 
-从 API version 9 开始支持，从 API version 10 开始废弃，请使用[getUserAuthInstance](#ZH-CN_TOPIC_0000002529445377__userauthgetuserauthinstance10)替代。
+
+从 API version 9 开始支持，从 API version 10 开始废弃，请使用[getUserAuthInstance](#ZH-CN_TOPIC_0000002553361359__userauthgetuserauthinstance10)替代。
 
 每个AuthInstance只能进行一次认证，若需要再次进行认证则需重新获取AuthInstance。
 
@@ -1422,17 +1451,28 @@ getAuthInstance(challenge : Uint8Array, authType : UserAuthType, authTrustLevel 
 
 **参数：**
 
-参数名类型必填说明challengeUint8Array是挑战值，最大长度为32字节，可以传Uint8Array([])。authType[UserAuthType](#ZH-CN_TOPIC_0000002529445377__userauthtype8)是认证类型，当前支持FACE和FINGERPRINT。authTrustLevel[AuthTrustLevel](#ZH-CN_TOPIC_0000002529445377__authtrustlevel8)是认证信任等级。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| challenge | Uint8Array | 是 | 挑战值，最大长度为32字节，可以传Uint8Array([])。 |
+| authType | UserAuthType | 是 | 认证类型，当前支持FACE和FINGERPRINT。 |
+| authTrustLevel | AuthTrustLevel | 是 | 认证信任等级。 |
 
 **返回值：**
 
-类型说明[AuthInstance](#ZH-CN_TOPIC_0000002529445377__authinstancedeprecated)认证器对象。
+| 类型 | 说明 |
+| --- | --- |
+| AuthInstance | 认证器对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[用户认证错误码](../../errors/用户认证错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[用户认证错误码](用户认证错误码.md)。
 
-错误码ID错误信息401Parameter error.12500002General operation error.12500005The authentication type is not supported.12500006The authentication trust level is not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 12500002 | General operation error. |
+| 12500005 | The authentication type is not supported. |
+| 12500006 | The authentication trust level is not supported. |
 
 **示例：**
 
@@ -1465,7 +1505,11 @@ getAvailableStatus(authType : UserAuthType, authTrustLevel : AuthTrustLevel): vo
 
 **参数：**
 
-参数名类型必填说明authType[UserAuthType](#ZH-CN_TOPIC_0000002529445377__userauthtype8)是认证类型。从 API version 11 开始支持PIN查询。authTrustLevel[AuthTrustLevel](#ZH-CN_TOPIC_0000002529445377__authtrustlevel8)是认证信任等级。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| authType | UserAuthType | 是 | 认证类型。从 API version 11 开始支持PIN查询。 |
+| authTrustLevel | AuthTrustLevel | 是 | 认证信任等级。 |
+
 
 如果未注册对应执行器，系统不支持该认证能力，需返回12500005。
 
@@ -1479,15 +1523,17 @@ getAvailableStatus(authType : UserAuthType, authTrustLevel : AuthTrustLevel): vo
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[用户认证错误码](../../errors/用户认证错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[用户认证错误码](用户认证错误码.md)。
 
-错误码ID错误信息201Permission denied.401
-
-Parameter error. Possible causes:
-
-1.Mandatory parameters are left unspecified.
-
-12500002General operation error.12500005The authentication type is not supported.12500006The authentication trust level is not supported.12500010The type of credential has not been enrolled.12500013Operation failed because of PIN expired.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. |
+| 12500002 | General operation error. |
+| 12500005 | The authentication type is not supported. |
+| 12500006 | The authentication trust level is not supported. |
+| 12500010 | The type of credential has not been enrolled. |
+| 12500013 | Operation failed because of PIN expired. |
 
 **示例：**
 
@@ -1508,83 +1554,21 @@ try {
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称值说明SUCCESS12500000
-
-执行成功。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-FAIL12500001
-
-认证失败。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-GENERAL_ERROR12500002
-
-操作通用错误。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-CANCELED12500003
-
-认证取消。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-TIMEOUT12500004
-
-认证超时。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-TYPE_NOT_SUPPORT12500005
-
-认证类型不支持。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-TRUST_LEVEL_NOT_SUPPORT12500006
-
-认证等级不支持。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-BUSY12500007
-
-系统繁忙。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-INVALID_PARAMETERS20+12500008
-
-参数校验失败。
-
-**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
-
-LOCKED12500009
-
-认证器已锁定。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-NOT_ENROLLED12500010
-
-用户未录入指定的系统身份认证凭据。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-CANCELED_FROM_WIDGET10+12500011
-
-用户取消了系统认证方式，选择应用自定义认证。需调用者拉起自定义认证界面。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-PIN_EXPIRED12+12500013
-
-当前的认证操作执行失败。返回这个错误码，表示系统锁屏口令过期。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SUCCESS | 12500000 | 执行成功。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| FAIL | 12500001 | 认证失败。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| GENERAL_ERROR | 12500002 | 操作通用错误。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| CANCELED | 12500003 | 认证取消。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| TIMEOUT | 12500004 | 认证超时。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| TYPE_NOT_SUPPORT | 12500005 | 认证类型不支持。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| TRUST_LEVEL_NOT_SUPPORT | 12500006 | 认证等级不支持。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| BUSY | 12500007 | 系统繁忙。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| INVALID_PARAMETERS20+ | 12500008 | 参数校验失败。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| LOCKED | 12500009 | 认证器已锁定。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| NOT_ENROLLED | 12500010 | 用户未录入指定的系统身份认证凭据。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| CANCELED_FROM_WIDGET10+ | 12500011 | 用户取消了系统认证方式，选择应用自定义认证。需调用者拉起自定义认证界面。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| PIN_EXPIRED12+ | 12500013 | 当前的认证操作执行失败。返回这个错误码，表示系统锁屏口令过期。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 
 #### UserAuth(deprecated)
 
@@ -1596,7 +1580,8 @@ constructor()
 
 创建认证器对象。
 
-从 API version 8 开始支持，从 API version 9 开始废弃，请使用[getAuthInstance](#ZH-CN_TOPIC_0000002529445377__userauthgetauthinstancedeprecated)替代。
+
+从 API version 8 开始支持，从 API version 9 开始废弃，请使用[getAuthInstance](#ZH-CN_TOPIC_0000002553361359__userauthgetauthinstancedeprecated)替代。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
@@ -1622,7 +1607,9 @@ getVersion() : number
 
 **返回值：**
 
-类型说明number认证器版本信息。
+| 类型 | 说明 |
+| --- | --- |
+| number | 认证器版本信息。 |
 
 **示例：**
 
@@ -1640,7 +1627,8 @@ getAvailableStatus(authType : UserAuthType, authTrustLevel : AuthTrustLevel) : n
 
 查询指定类型和等级的认证能力是否支持。
 
-从 API version 8 开始支持，从 API version 9 开始废弃，请使用[getAvailableStatus](#ZH-CN_TOPIC_0000002529445377__userauthgetavailablestatus9)替代。
+
+从 API version 8 开始支持，从 API version 9 开始废弃，请使用[getAvailableStatus](#ZH-CN_TOPIC_0000002553361359__userauthgetavailablestatus9)替代。
 
 **需要权限：** ohos.permission.ACCESS_BIOMETRIC
 
@@ -1648,11 +1636,16 @@ getAvailableStatus(authType : UserAuthType, authTrustLevel : AuthTrustLevel) : n
 
 **参数：**
 
-参数名类型必填说明authType[UserAuthType](#ZH-CN_TOPIC_0000002529445377__userauthtype8)是认证类型，当前支持FACE和FINGERPRINT。authTrustLevel[AuthTrustLevel](#ZH-CN_TOPIC_0000002529445377__authtrustlevel8)是认证信任等级。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| authType | UserAuthType | 是 | 认证类型，当前支持FACE和FINGERPRINT。 |
+| authTrustLevel | AuthTrustLevel | 是 | 认证信任等级。 |
 
 **返回值：**
 
-类型说明number查询结果，结果为SUCCESS时表示支持，其他返回值参见[ResultCode](#ZH-CN_TOPIC_0000002529445377__resultcodedeprecated)。
+| 类型 | 说明 |
+| --- | --- |
+| number | 查询结果，结果为SUCCESS时表示支持，其他返回值参见ResultCode。 |
 
 **示例：**
 
@@ -1674,7 +1667,8 @@ auth(challenge: Uint8Array, authType: UserAuthType, authTrustLevel: AuthTrustLev
 
 执行用户认证，使用回调函数返回结果。
 
-从 API version 8 开始支持，从 API version 9 开始废弃，请使用[start](#ZH-CN_TOPIC_0000002529445377__startdeprecated)代替。
+
+从 API version 8 开始支持，从 API version 9 开始废弃，请使用[start](#ZH-CN_TOPIC_0000002553361359__startdeprecated)代替。
 
 **需要权限：** ohos.permission.ACCESS_BIOMETRIC
 
@@ -1682,11 +1676,18 @@ auth(challenge: Uint8Array, authType: UserAuthType, authTrustLevel: AuthTrustLev
 
 **参数：**
 
-参数名类型必填说明challengeUint8Array是挑战值，可以传Uint8Array([])。authType[UserAuthType](#ZH-CN_TOPIC_0000002529445377__userauthtype8)是认证类型，当前支持FACE和FINGERPRINT。authTrustLevel[AuthTrustLevel](#ZH-CN_TOPIC_0000002529445377__authtrustlevel8)是认证信任等级。callback[IUserAuthCallback](#ZH-CN_TOPIC_0000002529445377__iuserauthcallbackdeprecated)是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| challenge | Uint8Array | 是 | 挑战值，可以传Uint8Array([])。 |
+| authType | UserAuthType | 是 | 认证类型，当前支持FACE和FINGERPRINT。 |
+| authTrustLevel | AuthTrustLevel | 是 | 认证信任等级。 |
+| callback | IUserAuthCallback | 是 | 回调函数。 |
 
 **返回值：**
 
-类型说明Uint8ArrayContextId，作为取消认证[cancelAuth](#ZH-CN_TOPIC_0000002529445377__cancelauthdeprecated)接口的入参。
+| 类型 | 说明 |
+| --- | --- |
+| Uint8Array | ContextId，作为取消认证cancelAuth接口的入参。 |
 
 **示例：**
 
@@ -1708,7 +1709,6 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
     } catch (error) {
       console.error(`auth onResult error = ${error}`);
     }
-  }
 });
 ```
 
@@ -1718,7 +1718,8 @@ cancelAuth(contextID : Uint8Array) : number
 
 表示通过contextID取消本次认证。
 
-从 API version 8 开始支持，从 API version 9 开始废弃，请使用[cancel](#ZH-CN_TOPIC_0000002529445377__canceldeprecated)代替。
+
+从 API version 8 开始支持，从 API version 9 开始废弃，请使用[cancel](#ZH-CN_TOPIC_0000002553361359__canceldeprecated)代替。
 
 **需要权限：** ohos.permission.ACCESS_BIOMETRIC
 
@@ -1726,11 +1727,15 @@ cancelAuth(contextID : Uint8Array) : number
 
 **参数：**
 
-参数名类型必填说明contextIDUint8Array是上下文的标识，通过[auth](#ZH-CN_TOPIC_0000002529445377__authdeprecated)接口获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| contextID | Uint8Array | 是 | 上下文的标识，通过auth接口获取。 |
 
 **返回值：**
 
-类型说明number取消认证的结果，结果为SUCCESS时表示取消成功，其他返回值参见[ResultCode](#ZH-CN_TOPIC_0000002529445377__resultcodedeprecated)。
+| 类型 | 说明 |
+| --- | --- |
+| number | 取消认证的结果，结果为SUCCESS时表示取消成功，其他返回值参见ResultCode。 |
 
 **示例：**
 
@@ -1752,7 +1757,8 @@ if (cancelCode == userAuth.ResultCode.SUCCESS) {
 
 返回认证结果的回调对象。
 
-从 API version 8 开始支持，从 API version 9 开始废弃，请使用[AuthEvent](#ZH-CN_TOPIC_0000002529445377__autheventdeprecated)代替。
+
+从 API version 8 开始支持，从 API version 9 开始废弃，请使用[AuthEvent](#ZH-CN_TOPIC_0000002553361359__autheventdeprecated)代替。
 
 #### onResult(deprecated)
 
@@ -1760,21 +1766,17 @@ onResult: (result : number, extraInfo : AuthResult) => void
 
 回调函数，返回认证结果。
 
-从 API version 8 开始支持，从 API version 9 开始废弃，请使用[callback](#ZH-CN_TOPIC_0000002529445377__callbackdeprecated)代替。
+
+从 API version 8 开始支持，从 API version 9 开始废弃，请使用[callback](#ZH-CN_TOPIC_0000002553361359__callbackdeprecated)代替。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
 **参数：**
 
-参数名类型必填说明resultnumber是认证结果，参见[ResultCode](#ZH-CN_TOPIC_0000002529445377__resultcodedeprecated)。extraInfo[AuthResult](#ZH-CN_TOPIC_0000002529445377__authresultdeprecated)是
-
-扩展信息，不同情况下的具体信息，
-
-如果身份验证通过，则在extraInfo中返回用户认证令牌，
-
-如果身份验证失败，则在extraInfo中返回剩余的用户认证次数，
-
-如果身份验证执行器被锁定，则在extraInfo中返回冻结时间。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| result | number | 是 | 认证结果，参见ResultCode。 |
+| extraInfo | AuthResult | 是 | 扩展信息，不同情况下的具体信息， 如果身份验证通过，则在extraInfo中返回用户认证令牌， 如果身份验证失败，则在extraInfo中返回剩余的用户认证次数， 如果身份验证执行器被锁定，则在extraInfo中返回冻结时间。 |
 
 **示例：**
 
@@ -1796,7 +1798,6 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
     } catch (error) {
       console.error(`auth onResult error = ${error}`);
     }
-  }
 });
 ```
 
@@ -1806,13 +1807,18 @@ onAcquireInfo ?: (module : number, acquire : number, extraInfo : any) => void
 
 回调函数，返回认证过程中的提示信息，非必须实现。
 
-从 API version 8 开始支持，从 API version 9 开始废弃，请使用[callback](#ZH-CN_TOPIC_0000002529445377__callbackdeprecated)代替。
+
+从 API version 8 开始支持，从 API version 9 开始废弃，请使用[callback](#ZH-CN_TOPIC_0000002553361359__callbackdeprecated)代替。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
 **参数：**
 
-参数名类型必填说明modulenumber是发送提示信息的模块标识。acquirenumber是认证执过程中的提示信息。extraInfoany是预留字段。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| module | number | 是 | 发送提示信息的模块标识。 |
+| acquire | number | 是 | 认证执过程中的提示信息。 |
+| extraInfo | any | 是 | 预留字段。 |
 
 **示例：**
 
@@ -1843,7 +1849,6 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
     } catch (error) {
       console.error(`auth onAcquireInfo error = ${error}`);
     }
-  }
 });
 ```
 
@@ -1851,21 +1856,39 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 表示认证结果的对象。
 
-从 API version 8 开始支持，从 API version 9 开始废弃，请使用[AuthResultInfo](#ZH-CN_TOPIC_0000002529445377__authresultinfodeprecated)代替。
+
+从 API version 8 开始支持，从 API version 9 开始废弃，请使用[AuthResultInfo](#ZH-CN_TOPIC_0000002553361359__authresultinfodeprecated)代替。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称类型只读可选说明tokenUint8Array否是认证成功的令牌信息。remainTimesnumber否是剩余的认证操作次数。freezingTimenumber否是认证操作的冻结时间。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| token | Uint8Array | 否 | 是 | 认证成功的令牌信息。 |
+| remainTimes | number | 否 | 是 | 剩余的认证操作次数。 |
+| freezingTime | number | 否 | 是 | 认证操作的冻结时间。 |
 
 #### ResultCode(deprecated)
 
 表示返回码的枚举。
 
-从 API version 9 开始废弃，请使用[UserAuthResultCode](#ZH-CN_TOPIC_0000002529445377__userauthresultcode9)代替。
+
+从 API version 8 开始支持，从 API version 9 开始废弃，请使用[UserAuthResultCode](#ZH-CN_TOPIC_0000002553361359__userauthresultcode9)代替。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称值说明SUCCESS0执行成功。FAIL1认证失败。GENERAL_ERROR2操作通用错误。CANCELED3操作取消。TIMEOUT4操作超时。TYPE_NOT_SUPPORT5不支持的认证类型。TRUST_LEVEL_NOT_SUPPORT6不支持的认证等级。BUSY7忙碌状态。INVALID_PARAMETERS8无效参数。LOCKED9认证器已锁定。NOT_ENROLLED10用户未录入认证信息。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SUCCESS | 0 | 执行成功。 |
+| FAIL | 1 | 认证失败。 |
+| GENERAL_ERROR | 2 | 操作通用错误。 |
+| CANCELED | 3 | 操作取消。 |
+| TIMEOUT | 4 | 操作超时。 |
+| TYPE_NOT_SUPPORT | 5 | 不支持的认证类型。 |
+| TRUST_LEVEL_NOT_SUPPORT | 6 | 不支持的认证等级。 |
+| BUSY | 7 | 忙碌状态。 |
+| INVALID_PARAMETERS | 8 | 无效参数。 |
+| LOCKED | 9 | 认证器已锁定。 |
+| NOT_ENROLLED | 10 | 用户未录入认证信息。 |
 
 #### FaceTips(deprecated)
 
@@ -1875,7 +1898,19 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称值说明FACE_AUTH_TIP_TOO_BRIGHT1光线太强，获取的图像太亮。FACE_AUTH_TIP_TOO_DARK2光线太暗，获取的图像太暗。FACE_AUTH_TIP_TOO_CLOSE3人脸距离设备过近。FACE_AUTH_TIP_TOO_FAR4人脸距离设备过远。FACE_AUTH_TIP_TOO_HIGH5设备太高，仅获取到人脸上部。FACE_AUTH_TIP_TOO_LOW6设备太低，仅获取到人脸下部。FACE_AUTH_TIP_TOO_RIGHT7设备太靠右，仅获取到人脸右部。FACE_AUTH_TIP_TOO_LEFT8设备太靠左，仅获取到人脸左部。FACE_AUTH_TIP_TOO_MUCH_MOTION9在图像采集过程中，用户人脸移动太快。FACE_AUTH_TIP_POOR_GAZE10没有正视摄像头。FACE_AUTH_TIP_NOT_DETECTED11没有检测到人脸信息。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| FACE_AUTH_TIP_TOO_BRIGHT | 1 | 光线太强，获取的图像太亮。 |
+| FACE_AUTH_TIP_TOO_DARK | 2 | 光线太暗，获取的图像太暗。 |
+| FACE_AUTH_TIP_TOO_CLOSE | 3 | 人脸距离设备过近。 |
+| FACE_AUTH_TIP_TOO_FAR | 4 | 人脸距离设备过远。 |
+| FACE_AUTH_TIP_TOO_HIGH | 5 | 设备太高，仅获取到人脸上部。 |
+| FACE_AUTH_TIP_TOO_LOW | 6 | 设备太低，仅获取到人脸下部。 |
+| FACE_AUTH_TIP_TOO_RIGHT | 7 | 设备太靠右，仅获取到人脸右部。 |
+| FACE_AUTH_TIP_TOO_LEFT | 8 | 设备太靠左，仅获取到人脸左部。 |
+| FACE_AUTH_TIP_TOO_MUCH_MOTION | 9 | 在图像采集过程中，用户人脸移动太快。 |
+| FACE_AUTH_TIP_POOR_GAZE | 10 | 没有正视摄像头。 |
+| FACE_AUTH_TIP_NOT_DETECTED | 11 | 没有检测到人脸信息。 |
 
 #### FingerprintTips(deprecated)
 
@@ -1885,7 +1920,14 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称值说明FINGERPRINT_AUTH_TIP_GOOD0获取的指纹图像良好。FINGERPRINT_AUTH_TIP_DIRTY1由于传感器上可疑或检测到的污垢，指纹图像噪音过大。FINGERPRINT_AUTH_TIP_INSUFFICIENT2由于检测到的情况，指纹图像噪声太大，无法处理。FINGERPRINT_AUTH_TIP_PARTIAL3仅检测到部分指纹图像。FINGERPRINT_AUTH_TIP_TOO_FAST4快速移动，指纹图像不完整。FINGERPRINT_AUTH_TIP_TOO_SLOW5缺少运动，指纹图像无法读取。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| FINGERPRINT_AUTH_TIP_GOOD | 0 | 获取的指纹图像良好。 |
+| FINGERPRINT_AUTH_TIP_DIRTY | 1 | 由于传感器上可疑或检测到的污垢，指纹图像噪音过大。 |
+| FINGERPRINT_AUTH_TIP_INSUFFICIENT | 2 | 由于检测到的情况，指纹图像噪声太大，无法处理。 |
+| FINGERPRINT_AUTH_TIP_PARTIAL | 3 | 仅检测到部分指纹图像。 |
+| FINGERPRINT_AUTH_TIP_TOO_FAST | 4 | 快速移动，指纹图像不完整。 |
+| FINGERPRINT_AUTH_TIP_TOO_SLOW | 5 | 缺少运动，指纹图像无法读取。 |
 
 #### UserAuthType8+
 
@@ -1895,7 +1937,11 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称值说明PIN10+1口令认证。FACE2人脸认证。FINGERPRINT4指纹认证。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PIN10+ | 1 | 口令认证。 |
+| FACE | 2 | 人脸认证。 |
+| FINGERPRINT | 4 | 指纹认证。 |
 
 #### AuthTrustLevel8+
 
@@ -1907,7 +1953,12 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称值说明ATL110000认证结果的信任等级级别1，表示该认证方案能够识别用户个体，具备一定的活体检测能力。适用于业务风控、一般个人数据查询等场景。ATL220000认证结果的信任等级级别2，表示该认证方案能够精确识别用户个体，具备一定的活体检测能力。适用于维持设备解锁状态、应用登录等场景。ATL330000认证结果的信任等级级别3，表示该认证方案能够精确识别用户个体，具备较强的活体检测能力。适用于设备解锁等场景。ATL440000认证结果的信任等级级别4，表示该认证方案能够高精度的识别用户个体，具备很强的活体检测能力。适用于小额支付等场景。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ATL1 | 10000 | 认证结果的信任等级级别1，表示该认证方案能够识别用户个体，具备一定的活体检测能力。适用于业务风控、一般个人数据查询等场景。 |
+| ATL2 | 20000 | 认证结果的信任等级级别2，表示该认证方案能够精确识别用户个体，具备一定的活体检测能力。适用于维持设备解锁状态、应用登录等场景。 |
+| ATL3 | 30000 | 认证结果的信任等级级别3，表示该认证方案能够精确识别用户个体，具备较强的活体检测能力。适用于设备解锁等场景。 |
+| ATL4 | 40000 | 认证结果的信任等级级别4，表示该认证方案能够高精度的识别用户个体，具备很强的活体检测能力。适用于小额支付等场景。 |
 
 #### SecureLevel(deprecated)
 
@@ -1915,21 +1966,14 @@ type SecureLevel = string
 
 表示认证的安全级别。
 
-从 API version 6 开始支持，从 API version 8 开始废弃，请使用[AuthTrustLevel](#ZH-CN_TOPIC_0000002529445377__authtrustlevel8)替代。
+
+从 API version 6 开始支持，从 API version 8 开始废弃，请使用[AuthTrustLevel](#ZH-CN_TOPIC_0000002553361359__authtrustlevel8)替代。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-类型说明string
-
-表示类型为字符，认证的安全级别包括：'S1' | 'S2'|'S3'|'S4'。
-
-- 'S1'：认证结果的信任等级级别1，代表该认证方案能够识别用户个体，有一定的活体检测能力。常用的业务场景有业务风控、一般个人数据查询等。
-
-- 'S2'：认证结果的信任等级级别2，代表该认证方案能够精确识别用户个体，有一定的活体检测能力。常用的业务场景有维持设备解锁状态，应用登录等。
-
-- 'S3'：认证结果的信任等级级别3，代表该认证方案能够精确识别用户个体，有较强的活体检测能力。常用的业务场景有设备解锁等。
-
-- 'S4'：认证结果的信任等级级别4，代表该认证方案能够高精度的识别用户个体，有很强的活体检测能力。常用的业务场景有小额支付等。
+| 类型 | 说明 |
+| --- | --- |
+| string | 表示类型为字符，认证的安全级别包括：'S1' | 'S2'|'S3'|'S4'。 - 'S1'：认证结果的信任等级级别1，代表该认证方案能够识别用户个体，有一定的活体检测能力。常用的业务场景有业务风控、一般个人数据查询等。 - 'S2'：认证结果的信任等级级别2，代表该认证方案能够精确识别用户个体，有一定的活体检测能力。常用的业务场景有维持设备解锁状态，应用登录等。 - 'S3'：认证结果的信任等级级别3，代表该认证方案能够精确识别用户个体，有较强的活体检测能力。常用的业务场景有设备解锁等。 - 'S4'：认证结果的信任等级级别4，代表该认证方案能够高精度的识别用户个体，有很强的活体检测能力。常用的业务场景有小额支付等。 |
 
 #### AuthType(deprecated)
 
@@ -1937,17 +1981,14 @@ type AuthType = string
 
 表示认证类型。
 
-从 API version 6 开始支持，从 API version 8 开始废弃，请使用[UserAuthType](#ZH-CN_TOPIC_0000002529445377__userauthtype8)替代。
+
+从 API version 6 开始支持，从 API version 8 开始废弃，请使用[UserAuthType](#ZH-CN_TOPIC_0000002553361359__userauthtype8)替代。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-类型说明string
-
-表示认证类型为字符，认证类型包括：'ALL'|'FACE_ONLY'。
-
-- 'ALL'：预留参数，当前版本暂不支持ALL类型的认证。
-
-- 'FACE_ONLY'：人脸认证。
+| 类型 | 说明 |
+| --- | --- |
+| string | 表示认证类型为字符，认证类型包括：'ALL'|'FACE_ONLY'。 - 'ALL'：预留参数，当前版本暂不支持ALL类型的认证。 - 'FACE_ONLY'：人脸认证。 |
 
 #### userAuth.getAuthenticator(deprecated)
 
@@ -1955,13 +1996,16 @@ getAuthenticator(): Authenticator
 
 获取Authenticator对象，用于执行用户身份认证。
 
-从 API version 6 开始支持，从 API version 8 开始废弃，请使用[constructor](#ZH-CN_TOPIC_0000002529445377__constructordeprecated)替代。
+
+从 API version 6 开始支持，从 API version 8 开始废弃，请使用[getAuthInstance](#ZH-CN_TOPIC_0000002553361359__userauthgetauthinstancedeprecated)替代。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
 **返回值：**
 
-类型说明[Authenticator](#ZH-CN_TOPIC_0000002529445377__authenticatordeprecated)认证器对象。
+| 类型 | 说明 |
+| --- | --- |
+| Authenticator | 认证器对象。 |
 
 **示例：**
 
@@ -1975,7 +2019,8 @@ let authenticator = userAuth.getAuthenticator();
 
 认证器对象。
 
-从 API version 8 开始废弃，请使用[UserAuth](#ZH-CN_TOPIC_0000002529445377__userauthdeprecated)替代。
+
+从 API version 6 开始支持，从 API version 8 开始废弃，请使用[AuthInstance](#ZH-CN_TOPIC_0000002553361359__authinstancedeprecated)替代。
 
 #### execute(deprecated)
 
@@ -1983,7 +2028,8 @@ execute(type: AuthType, level: SecureLevel, callback: AsyncCallback<number>): vo
 
 执行用户认证，使用callback方式作为异步方法。
 
-从 API version 6 开始支持，从 API version 8 开始废弃，请使用[auth](#ZH-CN_TOPIC_0000002529445377__authdeprecated)替代。
+
+从 API version 6 开始支持，从 API version 8 开始废弃，请使用[start](#ZH-CN_TOPIC_0000002553361359__startdeprecated)替代。
 
 **需要权限：** ohos.permission.ACCESS_BIOMETRIC
 
@@ -1991,21 +2037,11 @@ execute(type: AuthType, level: SecureLevel, callback: AsyncCallback<number>): vo
 
 **参数：**
 
-参数名类型必填说明typeAuthType是
-
-认证类型，当前只支持"FACE_ONLY"。
-
-ALL为预留参数。当前版本暂不支持ALL类型的认证。
-
-levelSecureLevel是
-
-安全级别，对应认证的安全级别，有效值为"S1"（最低）、"S2"、"S3"、"S4"（最高）。
-
-具备3D人脸识别能力的设备支持"S3"及以下安全级别的认证。
-
-具备2D人脸识别能力的设备支持"S2"及以下安全级别的认证。
-
-callbackAsyncCallback<number>是回调函数。number表示认证结果，参见[AuthenticationResult](#ZH-CN_TOPIC_0000002529445377__authenticationresultdeprecated)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | AuthType | 是 | 认证类型，当前只支持"FACE_ONLY"。 ALL为预留参数。当前版本暂不支持ALL类型的认证。 |
+| level | SecureLevel | 是 | 安全级别，对应认证的安全级别，有效值为"S1"（最低）、"S2"、"S3"、"S4"（最高）。 具备3D人脸识别能力的设备支持"S3"及以下安全级别的认证。 具备2D人脸识别能力的设备支持"S2"及以下安全级别的认证。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。number表示认证结果，参见AuthenticationResult。 |
 
 **示例：**
 
@@ -2028,7 +2064,8 @@ execute(type : AuthType, level : SecureLevel): Promise<number>
 
 执行用户认证，使用promise方式作为异步方法。
 
-从 API version 6 开始支持，从 API version 8 开始废弃，请使用[auth](#ZH-CN_TOPIC_0000002529445377__authdeprecated)替代。
+
+从 API version 6 开始支持，从 API version 8 开始废弃，请使用[start](#ZH-CN_TOPIC_0000002553361359__startdeprecated)替代。
 
 **需要权限：** ohos.permission.ACCESS_BIOMETRIC
 
@@ -2036,23 +2073,16 @@ execute(type : AuthType, level : SecureLevel): Promise<number>
 
 **参数：**
 
-参数名类型必填说明typeAuthType是
-
-认证类型，当前只支持"FACE_ONLY"。
-
-ALL为预留参数。当前版本暂不支持ALL类型的认证。
-
-levelSecureLevel是
-
-安全级别，对应认证的安全级别，有效值为"S1"（最低）、"S2"、"S3"、"S4"（最高）。
-
-具备3D人脸识别能力的设备支持"S3"及以下安全级别的认证。
-
-具备2D人脸识别能力的设备支持"S2"及以下安全级别的认证。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | AuthType | 是 | 认证类型，当前只支持"FACE_ONLY"。 ALL为预留参数。当前版本暂不支持ALL类型的认证。 |
+| level | SecureLevel | 是 | 安全级别，对应认证的安全级别，有效值为"S1"（最低）、"S2"、"S3"、"S4"（最高）。 具备3D人脸识别能力的设备支持"S3"及以下安全级别的认证。 具备2D人脸识别能力的设备支持"S2"及以下安全级别的认证。 |
 
 **返回值：**
 
-类型说明Promise<number>返回携带一个number的Promise。number 为认证结果，参见[AuthenticationResult](#ZH-CN_TOPIC_0000002529445377__authenticationresultdeprecated)。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 返回携带一个number的Promise。number 为认证结果，参见AuthenticationResult。 |
 
 **示例：**
 
@@ -2073,8 +2103,21 @@ try {
 
 表示认证结果的枚举。
 
-从 API version 8 开始废弃，请使用[ResultCode](#ZH-CN_TOPIC_0000002529445377__resultcodedeprecated)替代。
+
+从 API version 6 开始支持，从 API version 8 开始废弃，请使用[ResultCode](#ZH-CN_TOPIC_0000002553361359__resultcodedeprecated)替代。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
-名称值说明NO_SUPPORT-1设备不支持当前的认证方式。SUCCESS0认证成功。COMPARE_FAILURE1比对失败。CANCELED2用户取消认证。TIMEOUT3认证超时。CAMERA_FAIL4开启相机失败。BUSY5认证服务忙，请稍后重试。INVALID_PARAMETERS6认证参数无效。LOCKED7认证失败次数过多，已锁定。NOT_ENROLLED8未录入认证凭据。GENERAL_ERROR100其他错误。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NO_SUPPORT | -1 | 设备不支持当前的认证方式。 |
+| SUCCESS | 0 | 认证成功。 |
+| COMPARE_FAILURE | 1 | 比对失败。 |
+| CANCELED | 2 | 用户取消认证。 |
+| TIMEOUT | 3 | 认证超时。 |
+| CAMERA_FAIL | 4 | 开启相机失败。 |
+| BUSY | 5 | 认证服务忙，请稍后重试。 |
+| INVALID_PARAMETERS | 6 | 认证参数无效。 |
+| LOCKED | 7 | 认证失败次数过多，已锁定。 |
+| NOT_ENROLLED | 8 | 未录入认证凭据。 |
+| GENERAL_ERROR | 100 | 其他错误。 |

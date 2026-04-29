@@ -16,11 +16,11 @@
 
 -
 
-[@ohos.multimedia.audio(音频管理)](../../guides/模块描述.md)
+[@ohos.multimedia.audio(音频管理)](模块描述.md)
 
 -
 
-[@ohos.multimedia.camera(相机管理)](../../guides/模块描述.md)
+[@ohos.multimedia.camera(相机管理)](模块描述.md)
 
 -
 
@@ -40,7 +40,7 @@
 import { vpnExtension } from '@kit.NetworkKit';
 ```
 
-#### LinkAddress11+
+**LinkAddress**
 
 type LinkAddress = connection.LinkAddress
 
@@ -48,9 +48,11 @@ type LinkAddress = connection.LinkAddress
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
-类型说明[connection.LinkAddress](@ohos.net.connection (网络连接管理).md#ZH-CN_TOPIC_0000002497605446__linkaddress)网络链路信息。
+| 类型 | 说明 |
+| --- | --- |
+| connection.LinkAddress | 网络链路信息。 |
 
-#### RouteInfo11+
+**RouteInfo**
 
 type RouteInfo = connection.RouteInfo
 
@@ -58,17 +60,21 @@ type RouteInfo = connection.RouteInfo
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
-类型说明[connection.RouteInfo](@ohos.net.connection (网络连接管理).md#ZH-CN_TOPIC_0000002497605446__routeinfo)网络路由信息。
+| 类型 | 说明 |
+| --- | --- |
+| connection.RouteInfo | 网络路由信息。 |
 
-#### VpnExtensionContext11+
+**[VpnExtensionContext](../../topics/networking/VpnExtensionContext.md)**
 
-type VpnExtensionContext = _VpnExtensionContext
+type VpnExtensionContext = [_VpnExtensionContext](../../topics/networking/VpnExtensionContext.md)
 
 VPN扩展的上下文。它允许访问serviceExtension特定资源。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-类型说明[_VpnExtensionContext](../../topics/graphics/VpnExtensionContext.md)VPN扩展的上下文。
+| 类型 | 说明 |
+| --- | --- |
+| [_VpnExtensionContext](../../topics/networking/VpnExtensionContext.md) | VPN扩展的上下文。 |
 
 #### vpnExtension.startVpnExtensionAbility
 
@@ -82,21 +88,30 @@ startVpnExtensionAbility(want: Want): Promise<void>
 
 **参数：**
 
-参数名类型必填说明want[Want](@ohos.app.ability.Want (Want).md)是
-
-指示要启动的信息。
-
-**说明：** 从API version 22开始，支持在VPN首次启动时传递want中的parameters字段。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | Want | 是 | 指示要启动的信息。  说明： 从API version 22开始，支持在VPN首次启动时传递want中的parameters字段。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[元能力子系统错误码](../../errors/元能力子系统错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[元能力子系统错误码]([元能力子系统错误码](../../errors/元能力子系统错误码.md).md)和[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401If the input parameter is not valid parameter.16000001The specified ability does not exist.16000002Incorrect ability type.16000006Cross-user operations are not allowed.16000008The crowdtesting application expires.16000011The context does not exist.16000050Internal error.16200001The caller has been released.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | If the input parameter is not valid parameter. |
+| 16000001 | The specified ability does not exist. |
+| 16000002 | Incorrect ability type. |
+| 16000006 | Cross-user operations are not allowed. |
+| 16000008 | The crowdtesting application expires. |
+| 16000011 | The context does not exist. |
+| 16000050 | Internal error. |
+| 16200001 | The caller has been released. |
 
 **示例：**
 
@@ -136,7 +151,6 @@ struct Index {
       }.width('100%')
     }.height('100%')
   }
-}
 ```
 
 #### vpnExtension.stopVpnExtensionAbility
@@ -151,17 +165,29 @@ stopVpnExtensionAbility(want: Want): Promise<void>
 
 **参数：**
 
-参数名类型必填说明want[Want](@ohos.app.ability.Want (Want).md)是指示要启动的信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | Want | 是 | 指示要启动的信息。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[元能力子系统错误码](../../errors/元能力子系统错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[元能力子系统错误码](元能力子系统错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码 ID错误信息401If the input parameter is not valid parameter.16000001The specified ability does not exist.16000002Incorrect ability type.16000006Cross-user operations are not allowed.16000011The context does not exist.16000050Internal error.16200001The caller has been released.
+| 错误码 ID | 错误信息 |
+| --- | --- |
+| 401 | If the input parameter is not valid parameter. |
+| 16000001 | The specified ability does not exist. |
+| 16000002 | Incorrect ability type. |
+| 16000006 | Cross-user operations are not allowed. |
+| 16000011 | The context does not exist. |
+| 16000050 | Internal error. |
+| 16200001 | The caller has been released. |
 
 **示例：**
 
@@ -210,12 +236,11 @@ struct Index {
       }.width('100%')
     }.height('100%')
   }
-}
 ```
 
 #### vpnExtension.createVpnConnection
 
-createVpnConnection(context: VpnExtensionContext): VpnConnection
+createVpnConnection(context: [VpnExtensionContext](../../topics/networking/VpnExtensionContext.md)): VpnConnection
 
 创建一个三方VPN连接对象。
 
@@ -227,17 +252,23 @@ createVpnConnection(context: VpnExtensionContext): VpnConnection
 
 **参数：**
 
-参数名类型必填说明context[VpnExtensionContext](../../topics/graphics/VpnExtensionContext.md)是指定 context。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [VpnExtensionContext](../../topics/networking/VpnExtensionContext.md) | 是 | 指定 context。 |
 
 **返回值：**
 
-类型说明[VpnConnection](#ZH-CN_TOPIC_0000002497605450__vpnconnection)返回一个VPN连接对象。
+| 类型 | 说明 |
+| --- | --- |
+| VpnConnection | 返回一个VPN连接对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
 
 **示例：**
 
@@ -253,7 +284,6 @@ export default class MyVpnExtAbility extends VpnExtensionAbility {
     let vpnConnection : vpnExtension.VpnConnection = vpnExtension.createVpnConnection(context);
     console.info("VPN createVpnConnection: " + JSON.stringify(vpnConnection));
   }
-}
 ```
 
 #### VpnConnection
@@ -266,21 +296,35 @@ create(config: VpnConfig): Promise<number>
 
 使用config创建一个VPN网络。使用Promise异步回调。
 
+
+建议在不需要VPN网络的时候配对调用[destroy()](#ZH-CN_TOPIC_0000002553201445__destroy)或[destroy(vpnId: string)](#ZH-CN_TOPIC_0000002553201445__destroy20)接口销毁启动的VPN网络，并执行资源清理等操作。
+
 **系统能力**：SystemCapability.Communication.NetManager.Vpn
 
 **参数：**
 
-参数名类型必填说明config[VpnConfig](#ZH-CN_TOPIC_0000002497605450__vpnconfig)是指定VPN网络的配置信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | VpnConfig | 是 | 指定VPN网络的配置信息。 |
 
 **返回值：**
 
-类型说明Promise<number>以 Promise 形式返回获取结果，返回指定虚拟网卡的文件描述符 fd。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 以 Promise 形式返回获取结果，返回指定虚拟网卡的文件描述符 fd。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[VPN错误码](../../errors/VPN错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[VPN错误码]([VPN错误码](../../errors/VPN错误码.md).md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.2200001Invalid parameter value.2200002Operation failed. Cannot connect to service.2200003System internal error.2203001VPN creation denied, please check the user type.2203002VPN exist already, please execute destroy first.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 2200001 | Invalid parameter value. |
+| 2200002 | Operation failed. Cannot connect to service. |
+| 2200003 | System internal error. |
+| 2203001 | VPN creation denied, please check the user type. |
+| 2203002 | VPN exist already, please execute destroy first. |
 
 **示例：**
 
@@ -307,7 +351,6 @@ export default class MyVpnExtAbility extends VpnExtensionAbility {
                 this.address = address;
                 this.family = family;
             }
-        }
 
         class AddressWithPrefix {
             address: Address;
@@ -316,7 +359,6 @@ export default class MyVpnExtAbility extends VpnExtensionAbility {
             constructor(address: Address, prefixLength: number) {
                 this.address = address;
                 this.prefixLength = prefixLength;
-            }
         }
 
         class Config {
@@ -338,7 +380,6 @@ export default class MyVpnExtAbility extends VpnExtensionAbility {
                 this.trustedApplications = [];
                 this.blockedApplications = [blockedAppName];
             }
-        }
 
         let config = new Config(this.tunIp, this.blockedAppName);
 
@@ -350,8 +391,6 @@ export default class MyVpnExtAbility extends VpnExtensionAbility {
         } catch (error) {
             hilog.error(0x0000, 'developTag', 'VPN setUp fail: %{public}s', JSON.stringify(error) ?? '');
         }
-    }
-}
 ```
 
 #### protect
@@ -364,17 +403,27 @@ protect(socketFd: number): Promise<void>
 
 **参数：**
 
-参数名类型必填说明socketFdnumber是指定保护的 socketfd，该文件描述符通过[getSocketFd](@ohos.net.socket (Socket连接).md#ZH-CN_TOPIC_0000002497445470__getsocketfd10-1)获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| socketFd | number | 是 | 指定保护的 socketfd，该文件描述符通过getSocketFd获取。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[VPN错误码](../../errors/VPN错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[VPN错误码](VPN错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.2200001Invalid parameter value.2200002Operation failed. Cannot connect to service.2200003System internal error.2203004Invalid socket file descriptor.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 2200001 | Invalid parameter value. |
+| 2200002 | Operation failed. Cannot connect to service. |
+| 2200003 | System internal error. |
+| 2203004 | Invalid socket file descriptor. |
 
 **示例：**
 
@@ -405,7 +454,6 @@ export default class MyVpnExtAbility extends VpnExtensionAbility {
             hilog.error(0x0000, 'developTag', 'VPN Protect Failed %{public}s', JSON.stringify(err) ?? '');
         })
   }
-}
 ```
 
 #### destroy
@@ -418,13 +466,19 @@ destroy(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[VPN错误码](../../errors/VPN错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[VPN错误码](VPN错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.2200002Operation failed. Cannot connect to service.2200003System internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 2200002 | Operation failed. Cannot connect to service. |
+| 2200003 | System internal error. |
 
 **示例：**
 
@@ -444,7 +498,6 @@ export default class MyVpnExtAbility extends VpnExtensionAbility {
       console.error("destroy fail" + JSON.stringify(error));
     });
   }
-}
 ```
 
 #### destroy20+
@@ -457,17 +510,24 @@ destroy(vpnId: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明vpnIdstring是vpn唯一标识。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| vpnId | string | 是 | vpn唯一标识。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[VPN错误码](../../errors/VPN错误码.md)。
+以下错误码的详细介绍请参见[VPN错误码](VPN错误码.md)。
 
-错误码ID错误信息19900001Invalid parameter value.19900002System internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 19900001 | Invalid parameter value. |
+| 19900002 | System internal error. |
 
 **示例：**
 
@@ -487,7 +547,6 @@ export default class MyVpnExtAbility extends VpnExtensionAbility {
       console.error(`destroy fail, Code is ${error.code}, message is ${error.message}`);
     });
   }
-}
 ```
 
 #### generateVpnId20+
@@ -502,13 +561,18 @@ generateVpnId(): Promise<string>
 
 **返回值：**
 
-类型说明Promise<string>以Promise形式返回获取结果，返回vpnId。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | 以Promise形式返回获取结果，返回vpnId。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[VPN错误码](../../errors/VPN错误码.md)。
+以下错误码的详细介绍请参见[VPN错误码](VPN错误码.md)。
 
-错误码ID错误信息19900001Invalid parameter value.19900002System internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 19900001 | Invalid parameter value. |
+| 19900002 | System internal error. |
 
 **示例：**
 
@@ -527,7 +591,6 @@ export default class MyVpnExtAbility extends VpnExtensionAbility {
       console.error(`generateVpnId fail, Code is ${error.code}, message is ${error.message}`);
     });
   }
-}
 ```
 
 #### protectProcessNet22+
@@ -540,7 +603,9 @@ protectProcessNet(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **示例：**
 
@@ -568,7 +633,6 @@ export default class MyVpnExtAbility  extends VpnExtensionAbility {
       hilog.error(0x0000, 'developTag', 'vpn ProtectNetByProcess Failed %{public}s', JSON.stringify(err) ?? '');
     })
   }
-}
 ```
 
 #### VpnConfig
@@ -577,17 +641,20 @@ export default class MyVpnExtAbility  extends VpnExtensionAbility {
 
 **系统能力**：SystemCapability.Communication.NetManager.Vpn
 
-名称类型只读可选说明addressesArray<[LinkAddress](@ohos.net.connection (网络连接管理).md#ZH-CN_TOPIC_0000002497605446__linkaddress)>否否VPN虚拟网卡的IP地址。最多支持64个IP地址。vpnId20+string否是VPN唯一标识。routesArray<[RouteInfo](@ohos.net.connection (网络连接管理).md#ZH-CN_TOPIC_0000002497605446__routeinfo)>否是VPN虚拟网卡的路由信息（目前最多可配置1024条路由）。dnsAddressesArray<string>否是DNS服务器地址信息。当配置DNS服务器地址后，VPN启动状态下被代理的应用上网时，使用配置的DNS服务器做DNS查询。searchDomainsArray<string>否是DNS的搜索域列表。mtunumber否是最大传输单元MTU值（单位：字节）。取值范围：[576，1500]。isIPv4Acceptedboolean否是是否支持IPV4。true表示支持，false表示不支持, 默认值为true。isIPv6Acceptedboolean否是是否支持IPV6。true表示支持，false表示不支持, 默认值为false。isInternalboolean否是是否支持内置VPN。true表示支持，false表示不支持, 默认值为false。isBlockingboolean否是是否阻塞模式。true表示阻塞模式，false表示非阻塞模式, 默认值为false。trustedApplicationsArray<string>否是
-
-受信任的应用信息列表，string类型表示的包名。当配置该列表后，仅该列表中的应用数据才能根据routes被VPN代理。
-
-**注意**：trustedApplications和blockedApplications列表不能同时配置。
-
-blockedApplicationsArray<string>否是
-
-被阻止的应用信息列表，string类型表示的包名。当配置该列表后，该列表中的应用数据不会被VPN代理，其他应用可以根据routes配置被VPN代理。
-
-**注意**：trustedApplications和blockedApplications列表不能同时配置。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| addresses | Array<LinkAddress> | 否 | 否 | VPN虚拟网卡的IP地址。API version 23之前，最多支持64个IP地址；从API version 23开始，最多支持2000个IP地址。 |
+| vpnId20+ | string | 否 | 是 | VPN唯一标识。 |
+| routes | Array<RouteInfo> | 否 | 是 | VPN虚拟网卡的路由信息（API version 23前最多可配置1024条路由；从API version 23开始最多可配置10000条路由）。 |
+| dnsAddresses | Array<string> | 否 | 是 | DNS服务器地址信息。当配置DNS服务器地址后，VPN启动状态下被代理的应用上网时，使用配置的DNS服务器做DNS查询。 |
+| searchDomains | Array<string> | 否 | 是 | DNS的搜索域列表。 |
+| mtu | number | 否 | 是 | 最大传输单元MTU值（单位：字节）。取值范围：[576，1500]。 |
+| isIPv4Accepted | boolean | 否 | 是 | 是否支持IPv4。true表示支持，false表示不支持, 默认值为true。 注意：若支持IPv4功能，需要在addresses中配置IPv4类型的IP地址。 |
+| isIPv6Accepted | boolean | 否 | 是 | 是否支持IPv6。true表示支持，false表示不支持, 默认值为false。 注意：若支持IPv6功能，需要在addresses中配置IPv6类型的IP地址。 |
+| isInternal | boolean | 否 | 是 | 是否支持内置VPN。true表示支持，false表示不支持, 默认值为false。 |
+| isBlocking | boolean | 否 | 是 | 是否阻塞模式。true表示阻塞模式，false表示非阻塞模式, 默认值为false。 |
+| trustedApplications | Array<string> | 否 | 是 | 受信任的应用信息列表，string类型表示的包名。当配置该列表后，仅该列表中的应用数据才能根据routes被VPN代理。 注意：trustedApplications和blockedApplications列表不能同时配置。 |
+| blockedApplications | Array<string> | 否 | 是 | 被阻止的应用信息列表，string类型表示的包名。当配置该列表后，该列表中的应用数据不会被VPN代理，其他应用可以根据routes配置被VPN代理。 注意：trustedApplications和blockedApplications列表不能同时配置。 |
 
 **示例：**
 

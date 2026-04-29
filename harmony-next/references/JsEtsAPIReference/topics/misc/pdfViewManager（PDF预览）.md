@@ -48,39 +48,11 @@ setViewOffset(offsetX: number, offsetY: number, refreshView: boolean): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-offsetX
-
-number
-
-是
-
-X坐标偏移，范围0~1，含义是0%~100%的偏移，如果总宽度是1000px，要偏移X轴500px，值是0.5。
-
-offsetY
-
-number
-
-是
-
-Y坐标偏移，范围0~1，含义是0%~100%的偏移,
-
-如果总高度是1000px，要偏移Y轴500px，值是0.5。
-
-refreshView
-
-boolean
-
-是
-
-是否刷新可视区域，true：是（页面滚动时，页面清晰），false：否（页面滚动时，页面模糊）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offsetX | number | 是 | X坐标偏移，范围0 ~ 1，含义是0% ~ 100%的偏移如果总宽度是1000px，要偏移X轴500px，值是0.5。 |
+| offsetY | number | 是 | Y坐标偏移，范围0 ~ 1，含义是0% ~ 100%的偏移，如果总高度是1000px，要偏移Y轴500px，值是0.5。 |
+| refreshView | boolean | 是 | 是否刷新可视区域，true：是（页面滚动时，页面清晰），false：否（页面滚动时，页面模糊）。 |
 
 **示例：**
 
@@ -109,39 +81,16 @@ getPagePixelMap(pageIndex: number, isSync?: boolean): Promise<image.PixelMap>
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-pageIndex
-
-number
-
-是
-
-页面索引，0为起始页。
-
-isSync
-
-boolean
-
-否
-
-是否同步获取PDF页面的缩略图，true：是，false：否，默认值：false。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pageIndex | number | 是 | 页面索引，0为起始页。 |
+| isSync | boolean | 否 | 是否同步获取PDF页面的缩略图，true：是，false：否，默认值：false。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<[image.PixelMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap)>
-
-Promise对象，返回image.PixelMap类型。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<image.PixelMap> | Promise对象，返回image.PixelMap类型。 |
 
 **示例：**
 
@@ -170,21 +119,9 @@ registerScrollListener(listener: Callback<ScrollParam>): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-listener
-
-[Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base#callback)<[ScrollParam](#section132324279455)>
-
-是
-
-页面滚动回调函数监听，返回ScrollParam类型数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| listener | Callback<ScrollParam> | 是 | 页面滚动回调函数监听，返回ScrollParam类型数据。 |
 
 **示例：**
 
@@ -207,29 +144,10 @@ enablePageDrag(verticalEnabled: boolean, horizontalEnabled: boolean): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-verticalEnabled
-
-boolean
-
-是
-
-是否Y轴垂直拖动，true: 是，false: 否。
-
-horizontalEnabled
-
-boolean
-
-是
-
-是否X轴水平拖动，true: 是，false: 否。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| verticalEnabled | boolean | 是 | 是否Y轴垂直拖动，true: 是，false: 否。 |
+| horizontalEnabled | boolean | 是 | 是否X轴水平拖动，true: 是，false: 否。 |
 
 **示例：**
 
@@ -248,7 +166,7 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
 
 #### loadDocument
 
-loadDocument(path: string, password?: string, initPageIndex?: number, onProgress?: Callback<number>): Promise<pdfService.ParseResult>
+loadDocument(path: string, password?: string, initPageIndex?: number, onProgress?: Callback<number>): Promise<pdfService.[ParseResult](pdfService（PDF服务）.md#section913412299528)>
 
 加载文件并显示指定的页面，使用Promise异步回调。由于loadDocument不支持重复调用，因此在二次调用之前，必须先通过releaseDocument释放当前已加载的文档，以确保资源正确释放并避免潜在的冲突或异常。
 
@@ -258,55 +176,18 @@ loadDocument(path: string, password?: string, initPageIndex?: number, onProgress
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-path
-
-string
-
-是
-
-文档路径。
-
-password
-
-string
-
-否
-
-密码。默认值：空字符串
-
-initPageIndex
-
-number
-
-否
-
-要打开的文档初始化页面索引，0为初始页。默认值：0
-
-onProgress
-
-[Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base#callback)<number>
-
-否
-
-加载文档进度回调函数，返回number类型数据，传此参数返回文档加载进度，不传不返回文档加载进度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 文档路径。 |
+| password | string | 否 | 密码。默认值：空字符串 |
+| initPageIndex | number | 否 | 要打开的文档初始化页面索引，0为初始页。默认值：0 |
+| onProgress | Callback<number> | 否 | 加载文档进度回调函数，返回number类型数据，传此参数返回文档加载进度，不传不返回文档加载进度。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<pdfService.[ParseResult](../system-services/pdfService（PDF服务）.md#section913412299528)>
-
-Promise对象，返回ParseResult类型数据。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<pdfService.[ParseResult](pdfService（PDF服务）.md#section913412299528)> | Promise对象，返回ParseResult类型数据。 |
 
 **示例：**
 
@@ -357,29 +238,10 @@ setHighlightRects(rectArray: Array<PageRects>, color?: number): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-rectArray
-
-Array<[PageRects](#section165811065495)>
-
-是
-
-高亮块在页面的矩形区域。rect的left、right最小值为0，最大值为PDF的宽度，top、bottom最小值为0，最大值为PDF的高度。
-
-color
-
-number
-
-否
-
-高亮颜色(ARGB)，取值范围0x00000000 ~ 0xFFFFFFFF，默认值：0x00000000。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rectArray | Array<PageRects> | 是 | 高亮块在页面的矩形区域。rect的left、right最小值为0，最大值为PDF的宽度，top、bottom最小值为0，最大值为PDF的高度。 |
+| color | number | 否 | 高亮颜色(ARGB)，取值范围0x00000000 ~ 0xFFFFFFFF，默认值：0x00000000。 |
 
 **示例：**
 
@@ -405,7 +267,7 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
 
 setHighlightText(pageIndex: number, textArray: string[], color: number): void
 
-高亮选中文本，执行中的[searchKey](#section117864247160)会中断。
+高亮选中文本，执行中的[searchKey](#ZH-CN_TOPIC_0000002522242502__searchkey)会中断。
 
 **系统能力：**SystemCapability.OfficeService.PDFService.Core
 
@@ -413,37 +275,11 @@ setHighlightText(pageIndex: number, textArray: string[], color: number): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-pageIndex
-
-number
-
-是
-
-页面索引，0为起始页。
-
-textArray
-
-string[]
-
-是
-
-选中的文本。
-
-color
-
-number
-
-是
-
-高亮颜色(ARGB)，取值范围0x00000000 ~ 0xFFFFFFFF。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pageIndex | number | 是 | 页面索引，0为起始页。 |
+| textArray | string[] | 是 | 选中的文本。 |
+| color | number | 是 | 高亮颜色(ARGB)，取值范围0x00000000 ~ 0xFFFFFFFF。 |
 
 **示例：**
 
@@ -472,21 +308,9 @@ setPageZoom(zoom: number): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-zoom
-
-number
-
-是
-
-缩放比例 [0.1 ~ 10]。(大于10的时候取10，小于0.1的时候取0.1)
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| zoom | number | 是 | 缩放比例 [0.1 ~ 10]。(大于10的时候取10，小于0.1的时候取0.1) |
 
 **示例：**
 
@@ -515,13 +339,9 @@ getPageZoom(): number
 
 **返回值：**
 
-类型
-
-说明
-
-number
-
-获取视图的缩放比例 [0.1 ~ 10]。
+| 类型 | 说明 |
+| --- | --- |
+| number | 获取视图的缩放比例 [0.1 ~ 10]。 |
 
 **示例：**
 
@@ -538,9 +358,183 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
 }
 ```
 
-#### setPageLayout
+**setMaxZoom**
 
-setPageLayout(columnCount: pdfService.PageLayout): void
+setMaxZoom(maxZoom: number): boolean;
+
+设置视图的最大缩放比例。
+
+
+页面适配([PageFit](pdfService（PDF服务）.md#section655755325212))的优先级高于缩放比例(Zoom)，当同时执行了缩放比例设置与页面适配设置时，优先遵循设置的页面适配方式。
+
+系统能力： SystemCapability.OfficeService.PDFService.Core
+
+起始版本： 6.1.0(23)
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| maxZoom | number | 是 | 最大缩放比例[0.1 ~ 10](精度支持到小数点后第2位)。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否设置成功，true：是，false：否。 当传入的maxZoom小于当前的最小缩放比例、超出[0.1 ~ 10]的范围、输入值为空时，均会返回false。 |
+
+示例：
+
+```ets
+import { pdfViewManager, pdfService } from '@kit.PDFKit';
+import { common } from '@kit.AbilityKit';
+@Entry
+@Component
+struct PdfPage {
+  private pdfController: pdfViewManager.PdfController = new pdfViewManager.PdfController();
+  async aboutToAppear() {
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    let dir = context.filesDir;
+    let filePath = dir + `/input.pdf`;
+    let loadResult: pdfService.ParseResult = await this.pdfController.loadDocument(filePath);
+    if (loadResult !== undefined && pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
+      this.pdfController.setMaxZoom(10);
+    }
+  build() {
+    Column() {
+      // 组件
+    }
+```
+
+**getMaxZoom**
+
+getMaxZoom(): number;
+
+获取视图的最大缩放比例。
+
+系统能力： SystemCapability.OfficeService.PDFService.Core
+
+起始版本： 6.1.0(23)
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| number | 获取的视图最大缩放比例[0.1 ~ 10](精度支持到小数点后第2位)。 |
+
+示例：
+
+```ets
+import { pdfViewManager, pdfService } from '@kit.PDFKit';
+import { common } from '@kit.AbilityKit';
+@Entry
+@Component
+struct PdfPage {
+  private pdfController: pdfViewManager.PdfController = new pdfViewManager.PdfController();
+  async aboutToAppear() {
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    let dir = context.filesDir;
+    let filePath = dir + `/input.pdf`;
+    let loadResult: pdfService.ParseResult = await this.pdfController.loadDocument(filePath);
+    if (loadResult !== undefined && pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
+      this.pdfController.getMaxZoom();
+    }
+  build() {
+    Column() {
+      // 组件
+    }
+```
+
+**setMinZoom**
+
+setMinZoom(minZoom: number): boolean;
+
+设置视图的最小缩放比例。
+
+
+页面适配([PageFit](pdfService（PDF服务）.md#section655755325212))的优先级高于缩放比例(Zoom)，当同时执行了缩放比例设置与页面适配设置时，优先遵循设置的页面适配方式。
+
+系统能力： SystemCapability.OfficeService.PDFService.Core
+
+起始版本： 6.1.0(23)
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| minZoom | number | 是 | 最小缩放比例[0.1 ~ 10]（精度支持到小数点后第2位）。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否设置成功，true：是，false：否。 当传入的minZoom大于当前的最大缩放比例、超出[0.1 ~ 10]的范围、输入值为空时，均会返回false。 |
+
+示例：
+
+```ets
+import { pdfViewManager, pdfService } from '@kit.PDFKit';
+import { common } from '@kit.AbilityKit';
+@Entry
+@Component
+struct PdfPage {
+  private pdfController: pdfViewManager.PdfController = new pdfViewManager.PdfController();
+  async aboutToAppear() {
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    let dir = context.filesDir;
+    let filePath = dir + `/input.pdf`;
+    let loadResult: pdfService.ParseResult = await this.pdfController.loadDocument(filePath);
+    if (loadResult !== undefined && pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
+      this.pdfController.setMinZoom(0.1);
+    }
+  build() {
+    Column() {
+      // 组件
+    }
+```
+
+**getMinZoom**
+
+getMinZoom(): number;
+
+获取视图的最小缩放比例。
+
+系统能力： SystemCapability.OfficeService.PDFService.Core
+
+起始版本： 6.1.0(23)
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| number | 获取的视图最小缩放比例[0.1 ~ 10](精度支持到小数点后第2位)。 |
+
+示例：
+
+```ets
+import { pdfViewManager, pdfService } from '@kit.PDFKit';
+import { common } from '@kit.AbilityKit';
+@Entry
+@Component
+struct PdfPage {
+  private pdfController: pdfViewManager.PdfController = new pdfViewManager.PdfController();
+  async aboutToAppear() {
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    let dir = context.filesDir;
+    let filePath = dir + `/input.pdf`;
+    let loadResult: pdfService.ParseResult = await this.pdfController.loadDocument(filePath);
+    if (loadResult !== undefined && pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
+      this.pdfController.getMinZoom();
+    }
+  build() {
+    Column() {
+      // 组件
+    }
+```
+
+#### set[PageLayout](pdfService（PDF服务）.md#section1749384210523)
+
+set[PageLayout](pdfService（PDF服务）.md#section1749384210523)(columnCount: pdfService.PageLayout): void
 
 设置页面布局模式：单页面：1，双页面：2。
 
@@ -550,21 +544,9 @@ setPageLayout(columnCount: pdfService.PageLayout): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-columnCount
-
-pdfService.[PageLayout](../system-services/pdfService（PDF服务）.md#section1749384210523)
-
-是
-
-页面布局模式：单页面：1，双页面：2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnCount | pdfService.[PageLayout](pdfService（PDF服务）.md#section1749384210523) | 是 | 页面布局模式：单页面：1，双页面：2。 |
 
 **示例：**
 
@@ -581,9 +563,9 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
 }
 ```
 
-#### getPageLayout
+#### get[PageLayout](pdfService（PDF服务）.md#section1749384210523)
 
-getPageLayout(): pdfService.PageLayout
+get[PageLayout](pdfService（PDF服务）.md#section1749384210523)(): pdfService.PageLayout
 
 获取页面布局模式。
 
@@ -593,13 +575,9 @@ getPageLayout(): pdfService.PageLayout
 
 **返回值：**
 
-类型
-
-说明
-
-pdfService.[PageLayout](../system-services/pdfService（PDF服务）.md#section1749384210523)
-
-页面布局模式：单页面：1，双页面：2。
+| 类型 | 说明 |
+| --- | --- |
+| pdfService.[PageLayout](pdfService（PDF服务）.md#section1749384210523) | 页面布局模式：单页面：1，双页面：2。 |
 
 **示例：**
 
@@ -628,21 +606,9 @@ setPageContinuous(isContinuous: boolean): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-isContinuous
-
-boolean
-
-是
-
-滚动是否连续排列，true: 是，false: 否。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isContinuous | boolean | 是 | 滚动是否连续排列，true: 是，false: 否。 |
 
 **示例：**
 
@@ -671,13 +637,9 @@ isPageContinuous(): boolean
 
 **返回值：**
 
-类型
-
-说明
-
-boolean
-
-是否连续排列，true: 是，false: 否。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否连续排列，true: 是，false: 否。 |
 
 **示例：**
 
@@ -694,9 +656,9 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
 }
 ```
 
-#### setPageFit
+#### set[PageFit](pdfService（PDF服务）.md#section655755325212)
 
-setPageFit(pageFit: pdfService.PageFit): void
+set[PageFit](pdfService（PDF服务）.md#section655755325212)(pageFit: pdfService.PageFit): void
 
 设置页面的适配模式。
 
@@ -706,21 +668,9 @@ setPageFit(pageFit: pdfService.PageFit): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-pageFit
-
-pdfService.[PageFit](../system-services/pdfService（PDF服务）.md#section655755325212)
-
-是
-
-页面的适配模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pageFit | pdfService.[PageFit](pdfService（PDF服务）.md#section655755325212) | 是 | 页面的适配模式。 |
 
 **示例：**
 
@@ -737,9 +687,9 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
 }
 ```
 
-#### getPageFit
+#### get[PageFit](pdfService（PDF服务）.md#section655755325212)
 
-getPageFit(): pdfService.PageFit
+get[PageFit](pdfService（PDF服务）.md#section655755325212)(): pdfService.PageFit
 
 获取页面的适配模式。
 
@@ -749,13 +699,9 @@ getPageFit(): pdfService.PageFit
 
 **返回值：**
 
-类型
-
-说明
-
-pdfService.[PageFit](../system-services/pdfService（PDF服务）.md#section655755325212)
-
-页面的适配模式。
+| 类型 | 说明 |
+| --- | --- |
+| pdfService.[PageFit](pdfService（PDF服务）.md#section655755325212) | 页面的适配模式。 |
 
 **示例：**
 
@@ -784,29 +730,10 @@ setPageSpacing(horizontal: number, vertical?: number): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-horizontal
-
-number
-
-是
-
-双页模式下左右页面之间的间距，大于等于0，单位为vp。
-
-vertical
-
-number
-
-否
-
-连续滚动时上下页面的间距，大于等于0，单位为vp，默认值：10。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| horizontal | number | 是 | 双页模式下左右页面之间的间距，大于等于0，单位为px。 |
+| vertical | number | 否 | 连续滚动时上下页面的间距，大于等于0，单位为px，默认值：10。 |
 
 **示例：**
 
@@ -835,13 +762,9 @@ getPageHorizontalSpacing(): number
 
 **返回值：**
 
-类型
-
-说明
-
-number
-
-左右页面之间的间距，单位为vp。
+| 类型 | 说明 |
+| --- | --- |
+| number | 左右页面之间的间距，单位为vp。 |
 
 **示例：**
 
@@ -870,13 +793,9 @@ getPageVerticalSpacing(): number
 
 **返回值：**
 
-类型
-
-说明
-
-number
-
-上下页之间的间距，单位为vp。
+| 类型 | 说明 |
+| --- | --- |
+| number | 上下页之间的间距，单位为vp。 |
 
 **示例：**
 
@@ -905,13 +824,9 @@ getPageCount(): number
 
 **返回值：**
 
-类型
-
-说明
-
-number
-
-总页数，大于等于0。
+| 类型 | 说明 |
+| --- | --- |
+| number | 总页数，大于等于0。 |
 
 **示例：**
 
@@ -940,13 +855,9 @@ getPageIndex(): number
 
 **返回值：**
 
-类型
-
-说明
-
-number
-
-页面索引。
+| 类型 | 说明 |
+| --- | --- |
+| number | 页面索引。 |
 
 **示例：**
 
@@ -975,21 +886,9 @@ goToPage(pageIndex: number): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-pageIndex
-
-number
-
-是
-
-指定页索引，0为起始页，小于总页数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pageIndex | number | 是 | 指定页索引，0为起始页，小于总页数。 |
 
 **示例：**
 
@@ -1008,7 +907,7 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
 
 #### setPageRotation
 
-setPageRotation(pageIndex: number, angle: pdfService.RotationAngle): void
+setPageRotation(pageIndex: number, angle: pdfService.[RotationAngle](pdfService（PDF服务）.md#section554915414532)): void
 
 旋转指定页面（只旋转显示效果，不旋转内容）：0、90、180、270。
 
@@ -1018,29 +917,10 @@ setPageRotation(pageIndex: number, angle: pdfService.RotationAngle): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-pageIndex
-
-number
-
-是
-
-指定页索引，0为起始页，小于总页数。
-
-angle
-
-pdfService.[RotationAngle](../system-services/pdfService（PDF服务）.md#section554915414532)
-
-是
-
-指定页旋转角度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pageIndex | number | 是 | 指定页索引，0为起始页，小于总页数。 |
+| angle | pdfService.[RotationAngle](pdfService（PDF服务）.md#section554915414532) | 是 | 指定页旋转角度。 |
 
 **示例：**
 
@@ -1059,7 +939,7 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
 
 #### getPageRotation
 
-getPageRotation(pageIndex: number): pdfService.RotationAngle
+getPageRotation(pageIndex: number): pdfService.[RotationAngle](pdfService（PDF服务）.md#section554915414532)
 
 获取指定页面的旋转度数: 0、90、180、270。
 
@@ -1069,31 +949,15 @@ getPageRotation(pageIndex: number): pdfService.RotationAngle
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-pageIndex
-
-number
-
-是
-
-指定页索引，0为起始页，小于总页数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pageIndex | number | 是 | 指定页索引，0为起始页，小于总页数。 |
 
 **返回值：**
 
-类型
-
-说明
-
-pdfService.[RotationAngle](../system-services/pdfService（PDF服务）.md#section554915414532)
-
-指定页面的旋转角度。
+| 类型 | 说明 |
+| --- | --- |
+| pdfService.[RotationAngle](pdfService（PDF服务）.md#section554915414532) | 指定页面的旋转角度。 |
 
 **示例：**
 
@@ -1122,29 +986,10 @@ enableAnnotation(annotationType: SupportedAnnotationType, color?: number): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-annotationType
-
-[SupportedAnnotationType](#section16111165319147)
-
-是
-
-支持的批注类型。
-
-color
-
-number
-
-否
-
-颜色(ARGB)，范围0x00000000 - 0xFFFFFFFF，默认值：0xFFFFFFFF。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| annotationType | SupportedAnnotationType | 是 | 支持的批注类型。 |
+| color | number | 否 | 颜色(ARGB)，范围0x00000000 - 0xFFFFFFFF，默认值：0xFFFFFFFF。 |
 
 **示例：**
 
@@ -1165,7 +1010,7 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
 
 addMarkupAnnotation(annotationType: SupportedAnnotationType, selectedRects: Array<SelectedRects>, color: number): void
 
-在PDF注释层，以PDFView视图左上角(0,0)为原点，以像素点为单位，向下延展，添加文本批注，如通过registerAnnotationSelectedListener回调来高亮显示文本批注。
+在PDF注释层，以PDFView视图左上角(0,0)为原点，以像素点为单位，向下延展，添加文本批注，如通过[registerAnnotationSelectedListener](#ZH-CN_TOPIC_0000002522242502__registerannotationselectedlistener)回调来高亮显示文本批注。
 
 **系统能力：**SystemCapability.OfficeService.PDFService.Core
 
@@ -1173,37 +1018,11 @@ addMarkupAnnotation(annotationType: SupportedAnnotationType, selectedRects: Arra
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-annotationType
-
-[SupportedAnnotationType](#section16111165319147)
-
-是
-
-批注类型。
-
-selectedRects
-
-Array<[SelectedRects](#section11370716427)>
-
-是
-
-高亮显示的矩形区域。
-
-color
-
-number
-
-是
-
-颜色(ARGB)，范围0x00000000 - 0xFFFFFFFF。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| annotationType | SupportedAnnotationType | 是 | 批注类型。 |
+| selectedRects | Array<SelectedRects> | 是 | 高亮显示的矩形区域。 |
+| color | number | 是 | 颜色(ARGB)，范围0x00000000 - 0xFFFFFFFF。 |
 
 **示例：**
 
@@ -1259,29 +1078,10 @@ deleteSelectedAnnotation(annotationIndex: number, pageIndex: number): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-annotationIndex
-
-number
-
-是
-
-批注索引。
-
-pageIndex
-
-number
-
-是
-
-页面索引。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| annotationIndex | number | 是 | 批注索引。 |
+| pageIndex | number | 是 | 页面索引。 |
 
 **示例：**
 
@@ -1311,37 +1111,11 @@ updateMarkupAnnotation(annotationIndex: number, pageIndex: number, color: number
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-annotationIndex
-
-number
-
-是
-
-批注索引。
-
-pageIndex
-
-number
-
-是
-
-页面索引。
-
-color
-
-number
-
-是
-
-颜色（ARGB），范围0x00000000 - 0xFFFFFFFF。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| annotationIndex | number | 是 | 批注索引。 |
+| pageIndex | number | 是 | 页面索引。 |
+| color | number | 是 | 颜色（ARGB），范围0x00000000 - 0xFFFFFFFF。 |
 
 **示例：**
 
@@ -1373,39 +1147,16 @@ saveDocument(path: string, onProgress?: Callback<number>): Promise<number>
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-path
-
-string
-
-是
-
-文档的沙箱路径。
-
-onProgress
-
-[Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base#callback)<number>
-
-否
-
-保存文档回调函数进度，返回number类型数据，传此参数返回文档保存进度，不传不返回文档保存进度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 文档的沙箱路径。 |
+| onProgress | Callback<number> | 否 | 保存文档回调函数进度，返回number类型数据，传此参数返回文档保存进度，不传不返回文档保存进度。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<number>
-
-Promise对象，返回number类型，1: 成功, 0: 失败。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回number类型，1: 成功, 0: 失败。 |
 
 **示例：**
 
@@ -1443,21 +1194,9 @@ registerSelectedRectsChangedListener(listener: Callback<Array<SelectedRects>>): 
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-listener
-
-[Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base#callback)<Array<[SelectedRects](#section11370716427)>>
-
-是
-
-选中文本拖拽窗口变化回调函数监听，返回SelectedRects类型数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| listener | Callback<Array<SelectedRects>> | 是 | 选中文本拖拽窗口变化回调函数监听，返回SelectedRects类型数据。 |
 
 **示例：**
 
@@ -1468,9 +1207,9 @@ let pdfController = new pdfViewManager.PdfController();
 pdfController.registerSelectedRectsChangedListener((pageRects: Array<pdfViewManager.SelectedRects>) => {});
 ```
 
-#### registerPageFitChangedListener
+#### register[PageFit](pdfService（PDF服务）.md#section655755325212)ChangedListener
 
-registerPageFitChangedListener(listener: Callback<pdfService.PageFit>): void
+register[PageFit](pdfService（PDF服务）.md#section655755325212)ChangedListener(listener: Callback<pdfService.PageFit>): void
 
 注册页面适配变化的时候监听器。
 
@@ -1480,21 +1219,9 @@ registerPageFitChangedListener(listener: Callback<pdfService.PageFit>): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-listener
-
-[Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base#callback)<pdfService.[PageFit](../system-services/pdfService（PDF服务）.md#section655755325212)>
-
-是
-
-页面适配变化回调函数监听，返回PageFit类型数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| listener | Callback<pdfService.[PageFit](pdfService（PDF服务）.md#section655755325212)> | 是 | 页面适配变化回调函数监听，返回PageFit类型数据。 |
 
 **示例：**
 
@@ -1517,21 +1244,9 @@ registerPageChangedListener(listener: Callback<number>): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-listener
-
-[Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base#callback)<number>
-
-是
-
-页面索引变化回调函数监听，返回页面索引number类型数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| listener | Callback<number> | 是 | 页面索引变化回调函数监听，返回页面索引number类型数据。 |
 
 **示例：**
 
@@ -1554,21 +1269,9 @@ registerScaleChangedListener(listener: Callback<number>): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-listener
-
-[Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base#callback)<number>
-
-是
-
-页面缩放回调函数监听，返回缩放值number类型数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| listener | Callback<number> | 是 | 页面缩放回调函数监听，返回缩放值number类型数据。 |
 
 **示例：**
 
@@ -1591,21 +1294,9 @@ registerTextSelectedListener(listener: Callback<TextSelectedParam>): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-listener
-
-[Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base#callback)<[TextSelectedParam](#section1783113168551)>
-
-是
-
-页面文本被选中回调函数监听，返回选中文本TextSelectedParam类型数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| listener | Callback<TextSelectedParam> | 是 | 页面文本被选中回调函数监听，返回选中文本TextSelectedParam类型数据。 |
 
 **示例：**
 
@@ -1628,21 +1319,9 @@ registerAnnotationSelectedListener(listener: Callback<SelectedAnnotation>): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-listener
-
-[Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base#callback)<[SelectedAnnotation](#section11701105693313)>
-
-是
-
-页面批注被选中回调函数监听，返回选中批注SelectedAnnotation类型数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| listener | Callback<SelectedAnnotation> | 是 | 页面批注被选中回调函数监听，返回选中批注SelectedAnnotation类型数据。 |
 
 **示例：**
 
@@ -1665,21 +1344,9 @@ registerImageSelectedListener(listener: Callback<ImageSelectedParam>): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-listener
-
-[Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base#callback)<[ImageSelectedParam](#section9756124685916)>
-
-是
-
-页面图片被选中回调函数监听，返回选中图片ImageSelectedParam类型数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| listener | Callback<ImageSelectedParam> | 是 | 页面图片被选中回调函数监听，返回选中图片ImageSelectedParam类型数据。 |
 
 **示例：**
 
@@ -1702,21 +1369,9 @@ registerActionClickListener(listener: Callback<RedirectInfo>): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-listener
-
-[Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base#callback)<[RedirectInfo](#section1890741412)>
-
-是
-
-Click动作回调函数监听，返回RedirectInfo类型数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| listener | Callback<RedirectInfo> | 是 | Click动作回调函数监听，返回RedirectInfo类型数据。 |
 
 **示例：**
 
@@ -1739,21 +1394,9 @@ registerAnnotationChangedListener(listener: Callback<AnnotationChangedParam>): v
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-listener
-
-[Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base#callback)<[AnnotationChangedParam](#section629771801812)>
-
-是
-
-批注变化时回调函数监听，返回AnnotationChangedParam类型数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| listener | Callback<AnnotationChangedParam> | 是 | 批注变化时回调函数监听，返回AnnotationChangedParam类型数据。 |
 
 **示例：**
 
@@ -1776,21 +1419,9 @@ registerPageCountChangedListener(listener: Callback<number>): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-listener
-
-[Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base#callback)<number>
-
-是
-
-总页数变化回调函数监听，返回number类型总页数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| listener | Callback<number> | 是 | 总页数变化回调函数监听，返回number类型总页数。 |
 
 **示例：**
 
@@ -1805,7 +1436,7 @@ pdfController.registerPageCountChangedListener((pageCount: number) => {});
 
 searchKey(text: string, listener: Callback<number>): void
 
-搜索文本并返回匹配的总数，之前[setHighlightText](#section475716341213)执行结果会失效。
+搜索文本并返回匹配的总数，之前[setHighlightText](#ZH-CN_TOPIC_0000002522242502__sethighlighttext)执行结果会失效。
 
 **系统能力：**SystemCapability.OfficeService.PDFService.Core
 
@@ -1813,29 +1444,10 @@ searchKey(text: string, listener: Callback<number>): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-text
-
-string
-
-是
-
-搜索的文本。
-
-listener
-
-[Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base#callback)<number>
-
-是
-
-搜索文本回调函数监听，返回number类型的匹配总数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 搜索的文本。 |
+| listener | Callback<number> | 是 | 搜索文本回调函数监听，返回number类型的匹配总数。 |
 
 **示例：**
 
@@ -1889,13 +1501,9 @@ getSearchIndex(): number
 
 **返回值：**
 
-类型
-
-说明
-
-number
-
-匹配结果索引，大于等于0。
+| 类型 | 说明 |
+| --- | --- |
+| number | 匹配结果索引，大于等于0。 |
 
 **示例：**
 
@@ -1924,21 +1532,9 @@ setSearchIndex(index: number): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-index
-
-number
-
-是
-
-搜索结果索引。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 搜索结果索引。 |
 
 **示例：**
 
@@ -1967,21 +1563,9 @@ setDisplayDirection(displayDirection: DisplayDirection): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-displayDirection
-
-[DisplayDirection](#section1755014131618)
-
-是
-
-翻页的方向（默认竖直方向）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| displayDirection | DisplayDirection | 是 | 翻页的方向（默认竖直方向）。 |
 
 **示例：**
 
@@ -1998,6 +1582,60 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
 }
 ```
 
+**setNestedScroll**
+
+setNestedScroll(value: PdfNestedScrollOptions): void
+
+设置嵌套滑动选项。可以设置上下左右四个方向，实现与父组件的滑动联动。
+
+
+若PdfNestedScrollOptions中的PdfNestedScrollMode设置为SELF_FIRST，滑动到边缘后放手重新触发滑动才会滑动父组件。
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+系统能力： SystemCapability.OfficeService.PDFService.Core
+
+起始版本： 6.0.2(22)
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | PdfNestedScrollOptions | 是 | 可滚动组件滚动时的嵌套滑动选项，包括scrollUp、scrollDown、scrollLeft、scrollRight，默认值为PdfNestedScrollMode.SELF_ONLY。 |
+
+示例：
+
+```ets
+import { pdfViewManager, pdfService } from '@kit.PDFKit';
+import { common } from '@kit.AbilityKit';
+
+@Entry
+@Component
+struct PdfPage {
+  private pdfController: pdfViewManager.PdfController = new pdfViewManager.PdfController();
+
+  async aboutToAppear() {
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    let dir = context.filesDir;
+    let filePath = dir + `/input.pdf`;
+
+    let loadResult: pdfService.ParseResult = await this.pdfController.loadDocument(filePath);
+
+    if (loadResult !== undefined && pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
+      this.pdfController.setNestedScroll({
+        scrollUp: pdfViewManager.PdfNestedScrollMode.SELF_ONLY,
+        scrollDown: pdfViewManager.PdfNestedScrollMode.SELF_ONLY,
+        scrollLeft: pdfViewManager.PdfNestedScrollMode.SELF_ONLY,
+        scrollRight: pdfViewManager.PdfNestedScrollMode.SELF_ONLY
+      });
+    }
+
+  build() {
+    Column() {
+      // 组件
+    }
+```
+
 #### RedirectInfo
 
 PDF页面重定向信息类。
@@ -2008,35 +1646,10 @@ PDF页面重定向信息类。
 
 #### 属性
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-content
-
-string
-
-否
-
-否
-
-重定向信息内容。
-
-actionType
-
-[RedirectType](#section68484322217)
-
-否
-
-否
-
-重定向类型。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| content | string | 否 | 否 | 重定向信息内容。 |
+| actionType | RedirectType | 否 | 否 | 重定向类型。 |
 
 #### constructor
 
@@ -2048,29 +1661,10 @@ constructor(content: string, actionType: RedirectType)
 
 **起始版本：**5.0.0(12)
 
-参数名
-
-类型
-
-必填
-
-说明
-
-content
-
-string
-
-是
-
-重定向信息内容。
-
-actionType
-
-[RedirectType](#section68484322217)
-
-是
-
-重定向类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| content | string | 是 | 重定向信息内容。 |
+| actionType | RedirectType | 是 | 重定向类型。 |
 
 **示例：**
 
@@ -2088,75 +1682,14 @@ PDF选择的批注信息。
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-annotationIndex
-
-number
-
-是
-
-否
-
-批注索引。
-
-pageIndex
-
-number
-
-是
-
-否
-
-页码索引。
-
-annotationType
-
-[SupportedAnnotationType](#section16111165319147)
-
-是
-
-否
-
-批注类型。
-
-color
-
-number
-
-是
-
-否
-
-批注颜色(ARGB)，范围0x00000000 ~ 0xFFFFFFFF。
-
-rect
-
-Array<pdfService.[PdfRect](../system-services/pdfService（PDF服务）.md#section19829174815360)>
-
-是
-
-是
-
-批注矩形区域。
-
-points
-
-Array<pdfService.[PdfPoint](../system-services/pdfService（PDF服务）.md#section174855274363)>
-
-是
-
-是
-
-批注坐标。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| annotationIndex | number | 是 | 否 | 批注索引。 |
+| pageIndex | number | 是 | 否 | 页码索引。 |
+| annotationType | SupportedAnnotationType | 是 | 否 | 批注类型。 |
+| color | number | 是 | 否 | 批注颜色(ARGB)，范围0x00000000 ~ 0xFFFFFFFF。 |
+| rect | Array<pdfService.[PdfRect](pdfService（PDF服务）.md#section19829174815360)> | 是 | 是 | 批注矩形区域。 |
+| points | Array<pdfService.[PdfPoint](pdfService（PDF服务）.md#section174855274363)> | 是 | 是 | 批注坐标。 |
 
 #### PageRects
 
@@ -2168,39 +1701,14 @@ Array<pdfService.[PdfPoint](../system-services/pdfService（PDF服务）.md#sect
 
 #### 属性
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-pageIndex
-
-number
-
-否
-
-否
-
-页面索引。
-
-rectArray
-
-Array<pdfService.[PdfRect](../system-services/pdfService（PDF服务）.md#section19829174815360)>
-
-否
-
-否
-
-数组PdfRect类型。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| pageIndex | number | 否 | 否 | 页面索引。 |
+| rectArray | Array<pdfService.[PdfRect](pdfService（PDF服务）.md#section19829174815360)> | 否 | 否 | 数组PdfRect类型。 |
 
 #### constructor
 
-constructor(pageIndex: number, rectArray: Array<pdfService.PdfRect>)
+constructor(pageIndex: number, rectArray: Array<pdfService.[PdfRect](pdfService（PDF服务）.md#section19829174815360)>)
 
 用于创建页面中矩形区域类的对象。
 
@@ -2210,33 +1718,14 @@ constructor(pageIndex: number, rectArray: Array<pdfService.PdfRect>)
 
 **参数**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-pageIndex
-
-number
-
-是
-
-页面索引。
-
-rectArray
-
-Array<pdfService.[PdfRect](../system-services/pdfService（PDF服务）.md#section19829174815360)>
-
-是
-
-数组PdfRect类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pageIndex | number | 是 | 页面索引。 |
+| rectArray | Array<pdfService.[PdfRect](pdfService（PDF服务）.md#section19829174815360)> | 是 | 数组PdfRect类型。 |
 
 #### SelectedRects
 
-PDF页面中选定文本的矩形区域类，继承[PageRects](#section165811065495)。
+PDF页面中选定文本的矩形区域类，继承[PageRects](#ZH-CN_TOPIC_0000002522242502__pagerects)。
 
 **系统能力：**SystemCapability.OfficeService.PDFService.Core
 
@@ -2244,29 +1733,13 @@ PDF页面中选定文本的矩形区域类，继承[PageRects](#section165811065
 
 #### 属性
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-isRotated
-
-number
-
-否
-
-否
-
-是否支持旋转，0：否，1：是。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| isRotated | number | 否 | 否 | 是否支持旋转，0：否，1：是。 |
 
 #### constructor
 
-constructor(pageIndex: number, rectArray: Array<pdfService.PdfRect>, isRotated: number)
+constructor(pageIndex: number, rectArray: Array<pdfService.[PdfRect](pdfService（PDF服务）.md#section19829174815360)>, isRotated: number)
 
 用于创建PDF页面中选定文本的矩形区域类的对象。
 
@@ -2276,37 +1749,11 @@ constructor(pageIndex: number, rectArray: Array<pdfService.PdfRect>, isRotated: 
 
 **参数**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-pageIndex
-
-number
-
-是
-
-页面索引。
-
-rectArray
-
-Array<pdfService.[PdfRect](../system-services/pdfService（PDF服务）.md#section19829174815360)>
-
-是
-
-数组PdfRect类型。
-
-isRotated
-
-number
-
-是
-
-是否支持旋转，0：否，1：是。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pageIndex | number | 是 | 页面索引。 |
+| rectArray | Array<pdfService.[PdfRect](pdfService（PDF服务）.md#section19829174815360)> | 是 | 数组PdfRect类型。 |
+| isRotated | number | 是 | 是否支持旋转，0：否，1：是。 |
 
 **示例：**
 
@@ -2327,75 +1774,14 @@ PDF页面 registerScrollListener 监听函数回调参数。
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-offsetX
-
-number
-
-否
-
-否
-
-滚动X坐标偏移量，值：0~1，表示0%~100%。
-
-offsetY
-
-number
-
-否
-
-否
-
-滚动Y坐标偏移值，值：0~1，表示0%~100%。
-
-pdfWidth
-
-number
-
-否
-
-否
-
-PDF页面宽度，参数为缩放后的PDF总宽度，单位为px。
-
-pdfHeight
-
-number
-
-否
-
-否
-
-PDF页面高度，参数为缩放后的PDF总高度，单位为px。
-
-viewWidth
-
-number
-
-否
-
-否
-
-控件的宽度，单位为px。
-
-viewHeight
-
-number
-
-否
-
-否
-
-控件的高度，单位为px。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| offsetX | number | 否 | 否 | 滚动X坐标偏移量，值：01，表示0%100%。 |
+| offsetY | number | 否 | 否 | 滚动Y坐标偏移值，值：01，表示0%100%。 |
+| pdfWidth | number | 否 | 否 | PDF页面宽度，参数为缩放后的PDF总宽度，单位为px。 |
+| pdfHeight | number | 否 | 否 | PDF页面高度，参数为缩放后的PDF总高度，单位为px。 |
+| viewWidth | number | 否 | 否 | 控件的宽度，单位为px。 |
+| viewHeight | number | 否 | 否 | 控件的高度，单位为px。 |
 
 #### TextSelectedParam
 
@@ -2405,35 +1791,10 @@ PDF页面 registerTextSelectedListener 监听函数回调参数。
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-text
-
-string
-
-否
-
-否
-
-选中的文本内容。
-
-pdfRect
-
-Array<[SelectedRects](#section11370716427)>
-
-否
-
-否
-
-选中的文本在PDF页面的矩形区域。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| text | string | 否 | 否 | 选中的文本内容。 |
+| pdfRect | Array<SelectedRects> | 否 | 否 | 选中的文本在PDF页面的矩形区域。 |
 
 #### ImageSelectedParam
 
@@ -2443,55 +1804,12 @@ PDF页面 registerImageSelectedListener 监听函数回调参数。
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-imageType
-
-pdfService.[ImageFormat](../system-services/pdfService（PDF服务）.md#section1713111745313)
-
-否
-
-否
-
-选中的图片类型。
-
-buffer
-
-ArrayBuffer
-
-否
-
-是
-
-buffer参数是图像内容。如果缓冲区为空，则取消选择。
-
-pdfRect
-
-pdfService.[PdfRect](../system-services/pdfService（PDF服务）.md#section19829174815360)
-
-否
-
-是
-
-选中的图片在PDF页面的矩形区域。
-
-pageIndex
-
-number
-
-否
-
-是
-
-页码索引。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| imageType | pdfService.[ImageFormat](pdfService（PDF服务）.md#section1713111745313) | 否 | 否 | 选中的图片类型。 |
+| buffer | ArrayBuffer | 否 | 是 | buffer参数是图像内容。如果缓冲区为空，则取消选择。 |
+| pdfRect | pdfService.[PdfRect](pdfService（PDF服务）.md#section19829174815360) | 否 | 是 | 选中的图片在PDF页面的矩形区域。 |
+| pageIndex | number | 否 | 是 | 页码索引。 |
 
 #### AnnotationChangedParam
 
@@ -2501,55 +1819,12 @@ PDF页面 registerAnnotationChangedListener 监听函数回调参数。
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-color
-
-number
-
-否
-
-否
-
-颜色(ARGB)，范围0x00000000 ~ 0xFFFFFFFF。
-
-annotationType
-
-[SupportedAnnotationType](#section16111165319147)
-
-否
-
-否
-
-批注类型。
-
-pageIndexArray
-
-Array<number>
-
-否
-
-否
-
-批注在页面的的索引列表。
-
-controlType
-
-[AnnotationEditType](#section38961531196)
-
-否
-
-否
-
-批注编辑类型，0：添加，1：修改，2：删除。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| color | number | 否 | 否 | 颜色(ARGB)，范围0x00000000 ~ 0xFFFFFFFF。 |
+| annotationType | SupportedAnnotationType | 否 | 否 | 批注类型。 |
+| pageIndexArray | Array<number> | 否 | 否 | 批注在页面的的索引列表。 |
+| controlType | AnnotationEditType | 否 | 否 | 批注编辑类型，0：添加，1：修改，2：删除。 |
 
 #### SupportedAnnotationType
 
@@ -2559,65 +1834,17 @@ PDF页面支持的批注类型。
 
 **起始版本：**5.0.0(12)
 
-名称
-
-值
-
-说明
-
-UNKNOWN
-
-0
-
-未知类型。
-
-FREE_TEXT
-
-3
-
-自由字体。
-
-LINE
-
-4
-
-线。
-
-SQUARE
-
-5
-
-方形，包括长方形。
-
-OVAL
-
-6
-
-椭圆，包括圆。
-
-POLYGON
-
-7
-
-多边形。
-
-HIGHLIGHT
-
-9
-
-高亮。
-
-UNDERLINE
-
-10
-
-下划线。
-
-STRIKETHROUGH
-
-12
-
-删除线。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| UNKNOWN | 0 | 未知类型。 |
+| FREE_TEXT | 3 | 自由字体。 |
+| LINE | 4 | 线。 |
+| SQUARE | 5 | 方形，包括长方形。 |
+| OVAL | 6 | 椭圆，包括圆。 |
+| POLYGON | 7 | 多边形。 |
+| HIGHLIGHT | 9 | 高亮。 |
+| UNDERLINE | 10 | 下划线。 |
+| STRIKETHROUGH | 12 | 删除线。 |
 
 #### AnnotationEditType
 
@@ -2627,29 +1854,11 @@ PDF页面上支持的批注更改类型。
 
 **起始版本：**5.0.0(12)
 
-名称
-
-值
-
-说明
-
-ADD
-
-0
-
-添加。
-
-MODIFY
-
-1
-
-修改。
-
-DELETE
-
-2
-
-删除。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ADD | 0 | 添加。 |
+| MODIFY | 1 | 修改。 |
+| DELETE | 2 | 删除。 |
 
 #### RedirectType
 
@@ -2659,23 +1868,10 @@ DELETE
 
 **起始版本：**5.0.0(12)
 
-名称
-
-值
-
-说明
-
-URI
-
-6
-
-uri地址。
-
-LAUNCH
-
-4
-
-launch，本地文件路径。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| URI | 6 | uri地址。 |
+| LAUNCH | 4 | launch，本地文件路径。 |
 
 #### DisplayDirection
 
@@ -2685,20 +1881,39 @@ launch，本地文件路径。
 
 **起始版本：**6.0.0(20)
 
-名称
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| VERTICAL | 0 | 竖直方向翻页。 |
+| HORIZONTAL | 1 | 水平方向翻页。 |
 
-值
+**PdfNestedScrollOptions**
 
-说明
+可以设置上下左右四个方向的嵌套滑动规则。
 
-VERTICAL
+模型约束： 此接口仅可在Stage模型下使用。
 
-0
+系统能力： SystemCapability.OfficeService.PDFService.Core
 
-竖直方向翻页。
+起始版本： 6.0.2(22)
 
-HORIZONTAL
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| scrollUp | PdfNestedScrollMode | 否 | 是 | 可滑动组件往上滑动时的嵌套滑动选项。 默认值：PdfNestedScrollMode.SELF_ONLY。 |
+| scrollDown | PdfNestedScrollMode | 否 | 是 | 可滑动组件往下滑动时的嵌套滑动选项。 默认值：PdfNestedScrollMode.SELF_ONLY。 |
+| scrollLeft | PdfNestedScrollMode | 否 | 是 | 可滑动组件往左滑动时的嵌套滑动选项。 默认值：PdfNestedScrollMode.SELF_ONLY。 |
+| scrollRight | PdfNestedScrollMode | 否 | 是 | 可滑动组件往右滑动时的嵌套滑动选项。 默认值：PdfNestedScrollMode.SELF_ONLY。 |
 
-1
+**PdfNestedScrollMode**
 
-水平方向翻页。
+定义嵌套滑动组件中的嵌套模式。
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+系统能力： SystemCapability.OfficeService.PDFService.Core
+
+起始版本： 6.0.2(22)
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SELF_ONLY | 0 | 只自身滑动，不与父组件联动。 |
+| SELF_FIRST | 1 | 自身先滑动，自身滑动到边缘以后父组件滑动。如果父组件有边缘效果，在滑动到父组件边缘后，触发父组件边缘效果，否则触发子组件的边缘效果。 |

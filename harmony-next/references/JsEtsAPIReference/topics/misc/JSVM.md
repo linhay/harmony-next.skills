@@ -6,10 +6,13 @@
 
 使用平台：arm64平台。
 
-使用方法：链接SDK中的libjsvm.so，并在C++代码中包含ark_runtime/jsvm.h头文件。
+使用方法：链接SDK中的libjsvm.so，并在C++代码中包含ark_runtime/[jsvm.h](jsvm.h.md)头文件。
 
 **起始版本：** 11
 
 #### 文件汇总
 
-名称描述[jsvm.h](../../capi/headers/jsvm.h.md)提供JSVM-API接口定义。通过API接口为开发者提供独立、标准、完整的JavaScript引擎能力，包括管理引擎生命周期、编译运行JS代码、实现JS/C++跨语言调用、拍摄快照等。[jsvm_types.h](../../capi/headers/jsvm_types.h.md)提供JSVM-API类型定义。通过API接口为开发者提供独立、标准、完整的JavaScript引擎能力，包括管理引擎生命周期、编译运行JS代码、实现JS/C++跨语言调用、拍摄快照等。
+| 名称 | 描述 |
+| --- | --- |
+| [jsvm.h](jsvm.h.md) | 提供JSVM-API接口定义。通过API接口为开发者提供独立、标准、完整的JavaScript引擎能力，包括管理引擎生命周期、编译运行JS代码、实现JS/C++跨语言调用、拍摄快照等。 |
+| [jsvm_types.h](jsvm_types.h.md) | 提供JSVM-API类型定义。通过API接口为开发者提供独立、标准、完整的JavaScript引擎能力，包括管理引擎生命周期、编译运行JS代码、实现JS/C++跨语言调用、拍摄快照等。 |

@@ -12,10 +12,15 @@ typedef struct OH_AudioStreamInfo {...} OH_AudioStreamInfo
 
 **相关模块：**[OHAudio](OHAudio.md)
 
-**所在头文件：**[native_audiostream_base.h](../../capi/headers/native_audiostream_base.h.md)
+所在头文件： [native_audiostream_base.h](native_audiostream_base.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述int32_t samplingRate音频流采样率。[OH_AudioChannelLayout](../../capi/headers/native_audio_channel_layout.h.md#ZH-CN_TOPIC_0000002497445760__oh_audiochannellayout) channelLayout音频流声道布局。[OH_AudioStream_EncodingType](../../capi/headers/native_audiostream_base.h.md#ZH-CN_TOPIC_0000002529445679__oh_audiostream_encodingtype) encodingType音频流编码类型。[OH_AudioStream_SampleFormat](../../capi/headers/native_audiostream_base.h.md#ZH-CN_TOPIC_0000002529445679__oh_audiostream_sampleformat) sampleFormat音频流采样格式。
+| 名称 | 描述 |
+| --- | --- |
+| int32_t samplingRate | 音频流采样率。 |
+| [OH_AudioChannelLayout](native_audio_channel_layout.h.md#ZH-CN_TOPIC_0000002497445760__oh_audiochannellayout) channelLayout | 音频流声道布局。 |
+| [OH_AudioStream_EncodingType](native_audiostream_base.h.md#ZH-CN_TOPIC_0000002529445679__oh_audiostream_encodingtype) encodingType | 音频流编码类型。 |
+| [OH_AudioStream_SampleFormat](native_audiostream_base.h.md#ZH-CN_TOPIC_0000002529445679__oh_audiostream_sampleformat) sampleFormat | 音频流采样格式。 |

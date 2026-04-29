@@ -16,12 +16,15 @@ import { InputMethodSubtype } from '@kit.IMEKit';
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
-名称类型只读可选说明labelstring是是非必填。输入法子类型的标签。labelId10+number是是非必填。输入法子类型的标签资源号。namestring是否必填。输入法子类型所属应用的包名。idstring是否必填。输入法子类型的id。mode'upper' | 'lower'是是非必填。输入法子类型的模式，包括upper（大写）和lower（小写）。localestring是否必填。输入法子类型的方言版本。languagestring是否必填。 输入法子类型的语言。iconstring是是非必填。输入法子类型的图标，可以通过iconId查询获取。预留字段，暂不支持使用。iconIdnumber是是非必填。输入法子类型的图标id。extraobject否是
-
-必填。输入法子类型的其他信息。
-
-说明：
-
-- 从API version 10开始为非必填参数。
-
-- 预留字段，当前无具体含义，暂不支持使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| label | string | 是 | 是 | 非必填。输入法子类型的标签。 |
+| labelId10+ | number | 是 | 是 | 非必填。输入法子类型的标签资源号。 |
+| name | string | 是 | 否 | 必填。输入法子类型所属应用的包名。 |
+| id | string | 是 | 否 | 必填。输入法子类型的id。 |
+| mode | 'upper' | 'lower' | 是 | 是 | 非必填。输入法子类型的模式，包括upper（大写）和lower（小写）。 |
+| locale | string | 是 | 否 | 必填。输入法子类型的方言版本。 |
+| language | string | 是 | 否 | 必填。 输入法子类型的语言。 |
+| icon | string | 是 | 是 | 非必填。输入法子类型的图标，可以通过iconId查询获取。预留字段，暂不支持使用。 |
+| iconId | number | 是 | 是 | 非必填。输入法子类型的图标id。 |
+| extra | object | 否 | 是 | 必填。输入法子类型的其他信息。 说明： - 从API version 10开始为非必填参数。 - 预留字段，当前无具体含义，暂不支持使用。 |

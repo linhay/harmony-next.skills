@@ -14,7 +14,6 @@ import { networkSecurity } from '@kit.NetworkKit';
 
 ```ets
 import { networkSecurity } from '@kit.NetworkKit';
-import { BusinessError } from '@kit.BasicServicesKit';
 
 // Define certificate blobs
 const cert: networkSecurity.CertBlob = {
@@ -45,7 +44,10 @@ networkSecurity.certVerification(cert, caCert)
 
 **系统能力**: SystemCapability.Communication.NetStack
 
-名称值说明CERT_TYPE_PEM0PEM格式证书。CERT_TYPE_DER1DER格式证书。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CERT_TYPE_PEM | 0 | PEM格式证书。 |
+| CERT_TYPE_DER | 1 | DER格式证书。 |
 
 #### CertBlob
 
@@ -53,7 +55,10 @@ networkSecurity.certVerification(cert, caCert)
 
 **系统能力**: SystemCapability.Communication.NetStack
 
-名称类型只读可选说明typeCertType否否证书编码类型。datastring | ArrayBuffer否否证书内容。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| type | CertType | 否 | 否 | 证书编码类型。 |
+| data | string | ArrayBuffer | 否 | 否 | 证书内容。 |
 
 #### networkSecurity.certVerification
 
@@ -65,17 +70,42 @@ certVerification(cert: CertBlob, caCert?: CertBlob): Promise<number>
 
 **参数**
 
-参数名类型必填说明certCertBlob是被校验的证书。caCertCertBlob否传入自定义的CA证书。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| cert | CertBlob | 是 | 被校验的证书。 |
+| caCert | CertBlob | 否 | 传入自定义的CA证书。 |
 
 **返回值：**
 
-类型说明Promise<number>以promise形式返回一个数字，表示证书验证的结果。如果证书验证成功，则返回0； 否则验证失败。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 以promise形式返回一个数字，表示证书验证的结果。如果证书验证成功，则返回0； 否则验证失败。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[网络安全校验错误码](../../errors/网络安全校验错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[网络安全校验错误码]([网络安全校验错误码](../../errors/网络安全校验错误码.md).md)和[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error.2305001Unspecified error.2305002Unable to get issuer certificate.2305003Unable to get certificate revocation list (CRL).2305004Unable to decrypt certificate signature.2305005Unable to decrypt CRL signature.2305006Unable to decode issuer public key.2305007Certificate signature failure.2305008CRL signature failure.2305009Certificate is not yet valid.2305010Certificate has expired.2305011CRL is not yet valid.2305012CRL has expired.2305018Self-signed certificate.2305023Certificate has been revoked.2305024Invalid certificate authority (CA).2305027Certificate is untrusted.2305069Invalid certificate verification context.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 2305001 | Unspecified error. |
+| 2305002 | Unable to get issuer certificate. |
+| 2305003 | Unable to get certificate revocation list (CRL). |
+| 2305004 | Unable to decrypt certificate signature. |
+| 2305005 | Unable to decrypt CRL signature. |
+| 2305006 | Unable to decode issuer public key. |
+| 2305007 | Certificate signature failure. |
+| 2305008 | CRL signature failure. |
+| 2305009 | Certificate is not yet valid. |
+| 2305010 | Certificate has expired. |
+| 2305011 | CRL is not yet valid. |
+| 2305012 | CRL has expired. |
+| 2305018 | Self-signed certificate. |
+| 2305023 | Certificate has been revoked. |
+| 2305024 | Invalid certificate authority (CA). |
+| 2305027 | Certificate is untrusted. |
+| 2305069 | Invalid certificate verification context. |
+
 
 这些错误代码对应于证书验证过程中的各种失败。
 
@@ -83,7 +113,6 @@ certVerification(cert: CertBlob, caCert?: CertBlob): Promise<number>
 
 ```ets
 import { networkSecurity } from '@kit.NetworkKit';
-import { BusinessError } from '@kit.BasicServicesKit';
 
 // Define certificate blobs
 const cert:networkSecurity.CertBlob = {
@@ -118,17 +147,42 @@ certVerificationSync(cert: CertBlob, caCert?: CertBlob): number
 
 **参数**：
 
-参数名类型必填说明certCertBlob是被校验的证书。caCertCertBlob否传入自定义的CA证书。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| cert | CertBlob | 是 | 被校验的证书。 |
+| caCert | CertBlob | 否 | 传入自定义的CA证书。 |
 
 **返回值：**
 
-类型说明number表示证书验证的结果。如果证书验证成功，则返回0； 否则验证失败。
+| 类型 | 说明 |
+| --- | --- |
+| number | 表示证书验证的结果。如果证书验证成功，则返回0； 否则验证失败。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[网络安全校验错误码](../../errors/网络安全校验错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[网络安全校验错误码](网络安全校验错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.2305001Unspecified error.2305002Unable to get issuer certificate.2305003Unable to get certificate revocation list (CRL).2305004Unable to decrypt certificate signature.2305005Unable to decrypt CRL signature.2305006Unable to decode issuer public key.2305007Certificate signature failure.2305008CRL signature failure.2305009Certificate is not yet valid.2305010Certificate has expired.2305011CRL is not yet valid.2305012CRL has expired.2305018Self-signed certificate.2305023Certificate has been revoked.2305024Invalid certificate authority (CA).2305027Certificate is untrusted.2305069Invalid certificate verification context.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 2305001 | Unspecified error. |
+| 2305002 | Unable to get issuer certificate. |
+| 2305003 | Unable to get certificate revocation list (CRL). |
+| 2305004 | Unable to decrypt certificate signature. |
+| 2305005 | Unable to decrypt CRL signature. |
+| 2305006 | Unable to decode issuer public key. |
+| 2305007 | Certificate signature failure. |
+| 2305008 | CRL signature failure. |
+| 2305009 | Certificate is not yet valid. |
+| 2305010 | Certificate has expired. |
+| 2305011 | CRL is not yet valid. |
+| 2305012 | CRL has expired. |
+| 2305018 | Self-signed certificate. |
+| 2305023 | Certificate has been revoked. |
+| 2305024 | Invalid certificate authority (CA). |
+| 2305027 | Certificate is untrusted. |
+| 2305069 | Invalid certificate verification context. |
+
 
 这些错误代码对应于证书验证过程中的各种失败。
 
@@ -136,7 +190,6 @@ certVerificationSync(cert: CertBlob, caCert?: CertBlob): number
 
 ```ets
 import { networkSecurity } from '@kit.NetworkKit';
-import { BusinessError } from '@kit.BasicServicesKit';
 
 // Create certificate blobs
 const cert: networkSecurity.CertBlob = {
@@ -177,19 +230,22 @@ isCleartextPermitted(): boolean
 
 **返回值：**
 
-类型说明boolean整体明文HTTP是否允许。返回true表示允许访问明文HTTP，false表示不允许。默认返回true。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 整体明文HTTP是否允许。返回true表示允许访问明文HTTP，false表示不允许。默认返回true。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
 
 **示例：**
 
 ```ets
 import { networkSecurity } from '@kit.NetworkKit';
-import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
   let result: boolean = networkSecurity.isCleartextPermitted();
@@ -211,23 +267,28 @@ isCleartextPermittedByHostName(hostName: string): boolean
 
 **参数**：
 
-参数名类型必填说明hostNamestring是需要查询的主机名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| hostName | string | 是 | 需要查询的主机名。 |
 
 **返回值：**
 
-类型说明boolean按域名明文HTTP是否允许。返回true表示允许明文HTTP访问该主机，false表示不允许。默认返回true。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 按域名明文HTTP是否允许。返回true表示允许明文HTTP访问该主机，false表示不允许。默认返回true。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
 
 **示例：**
 
 ```ets
 import { networkSecurity } from '@kit.NetworkKit';
-import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
   let result: boolean = networkSecurity.isCleartextPermittedByHostName("xxx");

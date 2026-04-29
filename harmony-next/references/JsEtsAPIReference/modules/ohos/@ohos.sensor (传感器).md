@@ -2,7 +2,8 @@
 
 sensor模块提供了获取传感器数据的能力，包括获取传感器属性列表，订阅传感器数据，以及一些通用的传感器算法。
 
-本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。订阅前可使用[getSingleSensor](#ZH-CN_TOPIC_0000002529285633__sensorgetsinglesensor9)接口获取该传感器的信息，获取该传感器信息成功时可正常订阅传感器，异常情况详见[getSingleSensor](#ZH-CN_TOPIC_0000002529285633__sensorgetsinglesensor9)错误码说明，具体使用方法可参考[指南开发步骤](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sensor-guidelines#开发步骤)；订阅传感器数据时确保on订阅和off取消订阅成对出现。
+
+本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。订阅前可使用[getSingleSensor](#ZH-CN_TOPIC_0000002522081758__sensorgetsinglesensor9)接口获取该传感器的信息，获取该传感器信息成功时可正常订阅传感器，异常情况详见[getSingleSensor](#ZH-CN_TOPIC_0000002522081758__sensorgetsinglesensor9)错误码说明，具体使用方法可参考[指南开发步骤](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sensor-guidelines#开发步骤)；订阅传感器数据时确保on订阅和off取消订阅成对出现。
 
 #### 导入模块
 
@@ -26,13 +27,21 @@ on(type: SensorId.ACCELEROMETER, callback: Callback<AccelerometerResponse>, opti
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).ACCELEROMETER是传感器类型，该值固定为SensorId.ACCELEROMETER。callbackCallback<[AccelerometerResponse](#ZH-CN_TOPIC_0000002529285633__accelerometerresponse)>是回调函数，异步上报的传感器数据固定为AccelerometerResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.ACCELEROMETER | 是 | 传感器类型，该值固定为SensorId.ACCELEROMETER。 |
+| callback | Callback<AccelerometerResponse> | 是 | 回调函数，异步上报的传感器数据固定为AccelerometerResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码]([传感器错误码](../../errors/传感器错误码.md).md)和[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -66,13 +75,20 @@ on(type: SensorId.FUSION_PRESSURE, callback: Callback<FusionPressureResponse>, o
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).FUSION_PRESSURE是传感器类型，该值固定为SensorId.FUSION_PRESSUREcallbackCallback<[FusionPressureResponse](#ZH-CN_TOPIC_0000002529285633__fusionpressureresponse)>是回调函数，异步上报的传感器数据固定为FusionPressureResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.FUSION_PRESSURE | 是 | 传感器类型，该值固定为SensorId.FUSION_PRESSURE |
+| callback | Callback<FusionPressureResponse> | 是 | 回调函数，异步上报的传感器数据固定为FusionPressureResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -106,13 +122,21 @@ on(type: SensorId.ACCELEROMETER_UNCALIBRATED, callback: Callback<AccelerometerUn
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).ACCELEROMETER_UNCALIBRATED是传感器类型，该值固定为SensorId.ACCELEROMETER_UNCALIBRATED。callbackCallback<[AccelerometerUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__accelerometeruncalibratedresponse)>是回调函数，异步上报的传感器数据固定为AccelerometerUncalibratedResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.ACCELEROMETER_UNCALIBRATED | 是 | 传感器类型，该值固定为SensorId.ACCELEROMETER_UNCALIBRATED。 |
+| callback | Callback<AccelerometerUncalibratedResponse> | 是 | 回调函数，异步上报的传感器数据固定为AccelerometerUncalibratedResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -149,13 +173,20 @@ on(type: SensorId.AMBIENT_LIGHT, callback: Callback<LightResponse>, options?: Op
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).AMBIENT_LIGHT是传感器类型，该值固定为SensorId.AMBIENT_LIGHT。callbackCallback<[LightResponse](#ZH-CN_TOPIC_0000002529285633__lightresponse)>是回调函数，异步上报的传感器数据固定为LightResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.AMBIENT_LIGHT | 是 | 传感器类型，该值固定为SensorId.AMBIENT_LIGHT。 |
+| callback | Callback<LightResponse> | 是 | 回调函数，异步上报的传感器数据固定为LightResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -187,13 +218,20 @@ on(type: SensorId.AMBIENT_TEMPERATURE, callback: Callback<AmbientTemperatureResp
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).AMBIENT_TEMPERATURE是传感器类型，该值固定为SensorId.AMBIENT_TEMPERATURE。callbackCallback<[AmbientTemperatureResponse](#ZH-CN_TOPIC_0000002529285633__ambienttemperatureresponse)>是回调函数，异步上报的传感器数据固定为AmbientTemperatureResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.AMBIENT_TEMPERATURE | 是 | 传感器类型，该值固定为SensorId.AMBIENT_TEMPERATURE。 |
+| callback | Callback<AmbientTemperatureResponse> | 是 | 回调函数，异步上报的传感器数据固定为AmbientTemperatureResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -225,13 +263,20 @@ on(type: SensorId.BAROMETER, callback: Callback<BarometerResponse>, options?: Op
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).BAROMETER是传感器类型，该值固定为SensorId.BAROMETER。callbackCallback<[BarometerResponse](#ZH-CN_TOPIC_0000002529285633__barometerresponse)>是回调函数，异步上报的传感器数据固定为BarometerResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.BAROMETER | 是 | 传感器类型，该值固定为SensorId.BAROMETER。 |
+| callback | Callback<BarometerResponse> | 是 | 回调函数，异步上报的传感器数据固定为BarometerResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -263,13 +308,20 @@ on(type: SensorId.GRAVITY, callback: Callback<GravityResponse>, options?: Option
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).GRAVITY是传感器类型，该值固定为SensorId.GRAVITY。callbackCallback<[GravityResponse](#ZH-CN_TOPIC_0000002529285633__gravityresponse)>是回调函数，异步上报的传感器数据固定为GravityResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.GRAVITY | 是 | 传感器类型，该值固定为SensorId.GRAVITY。 |
+| callback | Callback<GravityResponse> | 是 | 回调函数，异步上报的传感器数据固定为GravityResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -307,13 +359,21 @@ on(type: SensorId.GYROSCOPE, callback: Callback<GyroscopeResponse>, options?: Op
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).GYROSCOPE是传感器类型，该值固定为SensorId.GYROSCOPE。callbackCallback<[GyroscopeResponse](#ZH-CN_TOPIC_0000002529285633__gyroscoperesponse)>是回调函数，异步上报的传感器数据固定为GyroscopeResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.GYROSCOPE | 是 | 传感器类型，该值固定为SensorId.GYROSCOPE。 |
+| callback | Callback<GyroscopeResponse> | 是 | 回调函数，异步上报的传感器数据固定为GyroscopeResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -351,13 +411,21 @@ on(type: SensorId.GYROSCOPE_UNCALIBRATED, callback: Callback<GyroscopeUncalibrat
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).GYROSCOPE_UNCALIBRATED是传感器类型，该值固定为SensorId.GYROSCOPE_UNCALIBRATED。callbackCallback<[GyroscopeUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__gyroscopeuncalibratedresponse)>是回调函数，异步上报的传感器数据固定为GyroscopeUncalibratedResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.GYROSCOPE_UNCALIBRATED | 是 | 传感器类型，该值固定为SensorId.GYROSCOPE_UNCALIBRATED。 |
+| callback | Callback<GyroscopeUncalibratedResponse> | 是 | 回调函数，异步上报的传感器数据固定为GyroscopeUncalibratedResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -394,13 +462,20 @@ on(type: SensorId.HALL, callback: Callback<HallResponse>, options?: Options): vo
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).HALL是传感器类型，该值固定为SensorId.HALL。callbackCallback<[HallResponse](#ZH-CN_TOPIC_0000002529285633__hallresponse)>是回调函数，异步上报的传感器数据固定为HallResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，默认值为200000000ns。当霍尔事件被触发的很频繁时，该参数用于限定事件上报的频率。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.HALL | 是 | 传感器类型，该值固定为SensorId.HALL。 |
+| callback | Callback<HallResponse> | 是 | 回调函数，异步上报的传感器数据固定为HallResponse。 |
+| options | Options | 否 | 可选参数列表，默认值为200000000ns。当霍尔事件被触发的很频繁时，该参数用于限定事件上报的频率。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -434,13 +509,21 @@ on(type: SensorId.HEART_RATE, callback: Callback<HeartRateResponse>, options?: O
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).HEART_RATE是传感器类型，该值固定为SensorId.HEART_RATE。callbackCallback<[HeartRateResponse](#ZH-CN_TOPIC_0000002529285633__heartrateresponse)>是回调函数，异步上报的传感器数据固定为HeartRateResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.HEART_RATE | 是 | 传感器类型，该值固定为SensorId.HEART_RATE。 |
+| callback | Callback<HeartRateResponse> | 是 | 回调函数，异步上报的传感器数据固定为HeartRateResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -472,13 +555,20 @@ on(type: SensorId.HUMIDITY, callback: Callback<HumidityResponse>, options?: Opti
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).HUMIDITY是传感器类型，该值固定为SensorId.HUMIDITY。callbackCallback<[HumidityResponse](#ZH-CN_TOPIC_0000002529285633__humidityresponse)>是回调函数，异步上报的传感器数据固定为HumidityResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.HUMIDITY | 是 | 传感器类型，该值固定为SensorId.HUMIDITY。 |
+| callback | Callback<HumidityResponse> | 是 | 回调函数，异步上报的传感器数据固定为HumidityResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -514,13 +604,21 @@ on(type: SensorId.LINEAR_ACCELEROMETER, callback: Callback<LinearAccelerometerRe
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).LINEAR_ACCELEROMETER是传感器类型，该值固定为SensorId.LINEAR_ACCELEROMETER。callbackCallback<[LinearAccelerometerResponse](#ZH-CN_TOPIC_0000002529285633__linearaccelerometerresponse)>是回调函数，异步上报的传感器数据固定为LinearAccelerometerResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.LINEAR_ACCELEROMETER | 是 | 传感器类型，该值固定为SensorId.LINEAR_ACCELEROMETER。 |
+| callback | Callback<LinearAccelerometerResponse> | 是 | 回调函数，异步上报的传感器数据固定为LinearAccelerometerResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -554,13 +652,20 @@ on(type: SensorId.MAGNETIC_FIELD, callback: Callback<MagneticFieldResponse>, opt
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).MAGNETIC_FIELD是传感器类型，该值固定为SensorId.MAGNETIC_FIELD。callbackCallback<[MagneticFieldResponse](#ZH-CN_TOPIC_0000002529285633__magneticfieldresponse)>是回调函数，异步上报的传感器数据固定为MagneticFieldResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.MAGNETIC_FIELD | 是 | 传感器类型，该值固定为SensorId.MAGNETIC_FIELD。 |
+| callback | Callback<MagneticFieldResponse> | 是 | 回调函数，异步上报的传感器数据固定为MagneticFieldResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -594,13 +699,20 @@ on(type: SensorId.MAGNETIC_FIELD_UNCALIBRATED, callback: Callback<MagneticFieldU
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).MAGNETIC_FIELD_UNCALIBRATED是传感器类型，该值固定为SensorId.MAGNETIC_FIELD_UNCALIBRATED。callbackCallback<[MagneticFieldUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__magneticfielduncalibratedresponse)>是回调函数，异步上报的传感器数据固定为MagneticFieldUncalibratedResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.MAGNETIC_FIELD_UNCALIBRATED | 是 | 传感器类型，该值固定为SensorId.MAGNETIC_FIELD_UNCALIBRATED。 |
+| callback | Callback<MagneticFieldUncalibratedResponse> | 是 | 回调函数，异步上报的传感器数据固定为MagneticFieldUncalibratedResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -641,13 +753,20 @@ on(type: SensorId.ORIENTATION, callback: Callback<OrientationResponse>, options?
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).ORIENTATION是传感器类型，该值固定为SensorId.ORIENTATION。callbackCallback<[OrientationResponse](#ZH-CN_TOPIC_0000002529285633__orientationresponse)>是回调函数，异步上报的传感器数据固定为OrientationResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.ORIENTATION | 是 | 传感器类型，该值固定为SensorId.ORIENTATION。 |
+| callback | Callback<OrientationResponse> | 是 | 回调函数，异步上报的传感器数据固定为OrientationResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -683,13 +802,21 @@ on(type: SensorId.PEDOMETER, callback: Callback<PedometerResponse>, options?: Op
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).PEDOMETER是传感器类型，该值固定为SensorId.PEDOMETER。callbackCallback<[PedometerResponse](#ZH-CN_TOPIC_0000002529285633__pedometerresponse)>是回调函数，异步上报的传感器数据固定为PedometerResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.PEDOMETER | 是 | 传感器类型，该值固定为SensorId.PEDOMETER。 |
+| callback | Callback<PedometerResponse> | 是 | 回调函数，异步上报的传感器数据固定为PedometerResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -725,13 +852,21 @@ on(type: SensorId.PEDOMETER_DETECTION, callback: Callback<PedometerDetectionResp
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).PEDOMETER_DETECTION是传感器类型，该值固定为SensorId.PEDOMETER_DETECTION。callbackCallback<[PedometerDetectionResponse](#ZH-CN_TOPIC_0000002529285633__pedometerdetectionresponse)>是回调函数，异步上报的传感器数据固定为PedometerDetectionResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.PEDOMETER_DETECTION | 是 | 传感器类型，该值固定为SensorId.PEDOMETER_DETECTION。 |
+| callback | Callback<PedometerDetectionResponse> | 是 | 回调函数，异步上报的传感器数据固定为PedometerDetectionResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -763,13 +898,20 @@ on(type: SensorId.PROXIMITY, callback: Callback<ProximityResponse>, options?: Op
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).PROXIMITY是传感器类型，该值固定为SensorId.PROXIMITY。callbackCallback<[ProximityResponse](#ZH-CN_TOPIC_0000002529285633__proximityresponse)>是回调函数，异步上报的传感器数据固定为ProximityResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，默认值为200000000ns。当接近光事件被触发的很频繁时，该参数用于限定事件上报的频率。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.PROXIMITY | 是 | 传感器类型，该值固定为SensorId.PROXIMITY。 |
+| callback | Callback<ProximityResponse> | 是 | 回调函数，异步上报的传感器数据固定为ProximityResponse。 |
+| options | Options | 否 | 可选参数列表，默认值为200000000ns。当接近光事件被触发的很频繁时，该参数用于限定事件上报的频率。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3.Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3.Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -793,9 +935,7 @@ try {
 
 #### ROTATION_VECTOR9+
 
-on(type: SensorId.ROTATION_VECTOR, callback: Callback<RotationVectorResponse>,
-
- options?: Options): void
+on(type: SensorId.ROTATION_VECTOR, callback: Callback<RotationVectorResponse>, options?: Options): void
 
 订阅旋转矢量传感器数据。
 
@@ -803,13 +943,20 @@ on(type: SensorId.ROTATION_VECTOR, callback: Callback<RotationVectorResponse>,
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).ROTATION_VECTOR是传感器类型，该值固定为SensorId.ROTATION_VECTOR。callbackCallback<[RotationVectorResponse](#ZH-CN_TOPIC_0000002529285633__rotationvectorresponse)>是回调函数，异步上报的传感器数据固定为RotationVectorResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.ROTATION_VECTOR | 是 | 传感器类型，该值固定为SensorId.ROTATION_VECTOR。 |
+| callback | Callback<RotationVectorResponse> | 是 | 回调函数，异步上报的传感器数据固定为RotationVectorResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3.Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3.Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -836,9 +983,7 @@ try {
 
 #### SIGNIFICANT_MOTION9+
 
-on(type: SensorId.SIGNIFICANT_MOTION, callback: Callback<SignificantMotionResponse>,
-
- options?: Options): void
+on(type: SensorId.SIGNIFICANT_MOTION, callback: Callback<SignificantMotionResponse>, options?: Options): void
 
 订阅有效运动传感器数据。
 
@@ -846,13 +991,20 @@ on(type: SensorId.SIGNIFICANT_MOTION, callback: Callback<SignificantMotionRespon
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).SIGNIFICANT_MOTION是传感器类型，该值固定为SensorId.SIGNIFICANT_MOTION。callbackCallback<[SignificantMotionResponse](#ZH-CN_TOPIC_0000002529285633__significantmotionresponse)>是回调函数，异步上报的传感器数据固定为SignificantMotionResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.SIGNIFICANT_MOTION | 是 | 传感器类型，该值固定为SensorId.SIGNIFICANT_MOTION。 |
+| callback | Callback<SignificantMotionResponse> | 是 | 回调函数，异步上报的传感器数据固定为SignificantMotionResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3.Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3.Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -886,13 +1038,20 @@ on(type: SensorId.WEAR_DETECTION, callback: Callback<WearDetectionResponse>,
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).WEAR_DETECTION是传感器类型，该值固定为SensorId.WEAR_DETECTION。callbackCallback<[WearDetectionResponse](#ZH-CN_TOPIC_0000002529285633__weardetectionresponse)>是回调函数，异步上报的传感器数据固定为WearDetectionResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.WEAR_DETECTION | 是 | 传感器类型，该值固定为SensorId.WEAR_DETECTION。 |
+| callback | Callback<WearDetectionResponse> | 是 | 回调函数，异步上报的传感器数据固定为WearDetectionResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3.Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3.Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -924,13 +1083,18 @@ on(type: 'sensorStatusChange', callback: Callback<SensorStatusEvent>): void
 
 **参数**：
 
-参数名类型必填说明type'sensorStatusChange'是固定传入'sensorStatusChange',状态监听固定参数。callbackCallback<[SensorStatusEvent](#ZH-CN_TOPIC_0000002529285633__sensorstatusevent19)>是回调函数，异步上报的传感器事件数据SensorStatusEvent。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | 'sensorStatusChange' | 是 | 固定传入'sensorStatusChange',状态监听固定参数。 |
+| callback | Callback<SensorStatusEvent> | 是 | 回调函数，异步上报的传感器事件数据SensorStatusEvent。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -966,13 +1130,20 @@ once(type: SensorId.ACCELEROMETER, callback: Callback<AccelerometerResponse>): v
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).ACCELEROMETER是传感器类型，该值固定为SensorId.ACCELEROMETER。callbackCallback<[AccelerometerResponse](#ZH-CN_TOPIC_0000002529285633__accelerometerresponse)>是回调函数，异步上报的传感器数据固定为AccelerometerResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.ACCELEROMETER | 是 | 传感器类型，该值固定为SensorId.ACCELEROMETER。 |
+| callback | Callback<AccelerometerResponse> | 是 | 回调函数，异步上报的传感器数据固定为AccelerometerResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1005,13 +1176,20 @@ once(type: SensorId.ACCELEROMETER_UNCALIBRATED, callback: Callback<Accelerometer
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).ACCELEROMETER_UNCALIBRATED是传感器类型，该值固定为SensorId.ACCELEROMETER_UNCALIBRATED。callbackCallback<[AccelerometerUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__accelerometeruncalibratedresponse)>是回调函数，异步上报的传感器数据固定为AccelerometerUncalibratedResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.ACCELEROMETER_UNCALIBRATED | 是 | 传感器类型，该值固定为SensorId.ACCELEROMETER_UNCALIBRATED。 |
+| callback | Callback<AccelerometerUncalibratedResponse> | 是 | 回调函数，异步上报的传感器数据固定为AccelerometerUncalibratedResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1045,13 +1223,19 @@ once(type: SensorId.AMBIENT_LIGHT, callback: Callback<LightResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).AMBIENT_LIGHT是传感器类型，该值固定为SensorId.AMBIENT_LIGHT。callbackCallback<[LightResponse](#ZH-CN_TOPIC_0000002529285633__lightresponse)>是回调函数，异步上报的传感器数据固定为LightResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.AMBIENT_LIGHT | 是 | 传感器类型，该值固定为SensorId.AMBIENT_LIGHT。 |
+| callback | Callback<LightResponse> | 是 | 回调函数，异步上报的传感器数据固定为LightResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1080,13 +1264,19 @@ once(type: SensorId.AMBIENT_TEMPERATURE, callback: Callback<AmbientTemperatureRe
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).AMBIENT_TEMPERATURE是传感器类型，该值固定为SensorId.AMBIENT_TEMPERATURE。callbackCallback<[AmbientTemperatureResponse](#ZH-CN_TOPIC_0000002529285633__ambienttemperatureresponse)>是回调函数，异步上报的传感器数据固定为AmbientTemperatureResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.AMBIENT_TEMPERATURE | 是 | 传感器类型，该值固定为SensorId.AMBIENT_TEMPERATURE。 |
+| callback | Callback<AmbientTemperatureResponse> | 是 | 回调函数，异步上报的传感器数据固定为AmbientTemperatureResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1115,13 +1305,19 @@ once(type: SensorId.BAROMETER, callback: Callback<BarometerResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).BAROMETER是传感器类型，该值固定为SensorId.BAROMETER。callbackCallback<[BarometerResponse](#ZH-CN_TOPIC_0000002529285633__barometerresponse)>是回调函数，异步上报的传感器数据固定为BarometerResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.BAROMETER | 是 | 传感器类型，该值固定为SensorId.BAROMETER。 |
+| callback | Callback<BarometerResponse> | 是 | 回调函数，异步上报的传感器数据固定为BarometerResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1150,13 +1346,19 @@ once(type: SensorId.GRAVITY, callback: Callback<GravityResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).GRAVITY是传感器类型，该值固定为SensorId.GRAVITY。callbackCallback<[GravityResponse](#ZH-CN_TOPIC_0000002529285633__gravityresponse)>是回调函数，异步上报的传感器数据固定为GravityResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.GRAVITY | 是 | 传感器类型，该值固定为SensorId.GRAVITY。 |
+| callback | Callback<GravityResponse> | 是 | 回调函数，异步上报的传感器数据固定为GravityResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1189,13 +1391,20 @@ once(type: SensorId.GYROSCOPE, callback: Callback<GyroscopeResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).GYROSCOPE是传感器类型，该值固定为SensorId.GYROSCOPE。callbackCallback<[GyroscopeResponse](#ZH-CN_TOPIC_0000002529285633__gyroscoperesponse)>是回调函数，异步上报的传感器数据固定为GyroscopeResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.GYROSCOPE | 是 | 传感器类型，该值固定为SensorId.GYROSCOPE。 |
+| callback | Callback<GyroscopeResponse> | 是 | 回调函数，异步上报的传感器数据固定为GyroscopeResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1228,13 +1437,20 @@ once(type: SensorId.GYROSCOPE_UNCALIBRATED, callback: Callback<GyroscopeUncalibr
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).GYROSCOPE_UNCALIBRATED是传感器类型，该值固定为SensorId.GYROSCOPE_UNCALIBRATED。callbackCallback<[GyroscopeUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__gyroscopeuncalibratedresponse)>是回调函数，异步上报的传感器数据固定为GyroscopeUncalibratedResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.GYROSCOPE_UNCALIBRATED | 是 | 传感器类型，该值固定为SensorId.GYROSCOPE_UNCALIBRATED。 |
+| callback | Callback<GyroscopeUncalibratedResponse> | 是 | 回调函数，异步上报的传感器数据固定为GyroscopeUncalibratedResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1268,13 +1484,19 @@ once(type: SensorId.HALL, callback: Callback<HallResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).HALL是传感器类型，该值固定为SensorId.HALL。callbackCallback<[HallResponse](#ZH-CN_TOPIC_0000002529285633__hallresponse)>是回调函数，异步上报的传感器数据固定为HallResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.HALL | 是 | 传感器类型，该值固定为SensorId.HALL。 |
+| callback | Callback<HallResponse> | 是 | 回调函数，异步上报的传感器数据固定为HallResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1305,13 +1527,20 @@ once(type: SensorId.HEART_RATE, callback: Callback<HeartRateResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).HEART_RATE是传感器类型，该值固定为SensorId.HEART_RATE。callbackCallback<[HeartRateResponse](#ZH-CN_TOPIC_0000002529285633__heartrateresponse)>是回调函数，异步上报的传感器数据固定为HeartRateResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.HEART_RATE | 是 | 传感器类型，该值固定为SensorId.HEART_RATE。 |
+| callback | Callback<HeartRateResponse> | 是 | 回调函数，异步上报的传感器数据固定为HeartRateResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1340,13 +1569,19 @@ once(type: SensorId.HUMIDITY, callback: Callback<HumidityResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).HUMIDITY是传感器类型，该值固定为SensorId.HUMIDITY。callbackCallback<[HumidityResponse](#ZH-CN_TOPIC_0000002529285633__humidityresponse)>是回调函数，异步上报的传感器数据固定为HumidityResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.HUMIDITY | 是 | 传感器类型，该值固定为SensorId.HUMIDITY。 |
+| callback | Callback<HumidityResponse> | 是 | 回调函数，异步上报的传感器数据固定为HumidityResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1377,13 +1612,20 @@ once(type: SensorId.LINEAR_ACCELEROMETER, callback: Callback<LinearAccelerometer
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).LINEAR_ACCELEROMETER是传感器类型，该值固定为SensorId.LINEAR_ACCELEROMETER。callbackCallback<[LinearAccelerometerResponse](#ZH-CN_TOPIC_0000002529285633__linearaccelerometerresponse)>是回调函数，异步上报的传感器数据固定为LinearAccelerometerResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.LINEAR_ACCELEROMETER | 是 | 传感器类型，该值固定为SensorId.LINEAR_ACCELEROMETER。 |
+| callback | Callback<LinearAccelerometerResponse> | 是 | 回调函数，异步上报的传感器数据固定为LinearAccelerometerResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1414,13 +1656,19 @@ once(type: SensorId.MAGNETIC_FIELD, callback: Callback<MagneticFieldResponse>): 
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).MAGNETIC_FIELD是传感器类型，该值固定为SensorId.MAGNETIC_FIELD。callbackCallback<[MagneticFieldResponse](#ZH-CN_TOPIC_0000002529285633__magneticfieldresponse)>是回调函数，异步上报的传感器数据固定为MagneticFieldResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.MAGNETIC_FIELD | 是 | 传感器类型，该值固定为SensorId.MAGNETIC_FIELD。 |
+| callback | Callback<MagneticFieldResponse> | 是 | 回调函数，异步上报的传感器数据固定为MagneticFieldResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1451,13 +1699,19 @@ once(type: SensorId.MAGNETIC_FIELD_UNCALIBRATED, callback: Callback<MagneticFiel
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).MAGNETIC_FIELD_UNCALIBRATED是传感器类型，该值固定为SensorId.MAGNETIC_FIELD_UNCALIBRATED。callbackCallback<[MagneticFieldUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__magneticfielduncalibratedresponse)>是回调函数，异步上报的传感器数据固定为MagneticFieldUncalibratedResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.MAGNETIC_FIELD_UNCALIBRATED | 是 | 传感器类型，该值固定为SensorId.MAGNETIC_FIELD_UNCALIBRATED。 |
+| callback | Callback<MagneticFieldUncalibratedResponse> | 是 | 回调函数，异步上报的传感器数据固定为MagneticFieldUncalibratedResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1491,13 +1745,19 @@ once(type: SensorId.ORIENTATION, callback: Callback<OrientationResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).ORIENTATION是传感器类型，该值固定为SensorId.ORIENTATION。callbackCallback<[OrientationResponse](#ZH-CN_TOPIC_0000002529285633__orientationresponse)>是回调函数，异步上报的传感器数据固定为OrientationResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.ORIENTATION | 是 | 传感器类型，该值固定为SensorId.ORIENTATION。 |
+| callback | Callback<OrientationResponse> | 是 | 回调函数，异步上报的传感器数据固定为OrientationResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1530,13 +1790,20 @@ once(type: SensorId.PEDOMETER, callback: Callback<PedometerResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).PEDOMETER是传感器类型，该值固定为SensorId.PEDOMETER。callbackCallback<[PedometerResponse](#ZH-CN_TOPIC_0000002529285633__pedometerresponse)>是回调函数，异步上报的传感器数据固定为PedometerResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.PEDOMETER | 是 | 传感器类型，该值固定为SensorId.PEDOMETER。 |
+| callback | Callback<PedometerResponse> | 是 | 回调函数，异步上报的传感器数据固定为PedometerResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1567,13 +1834,20 @@ once(type: SensorId.PEDOMETER_DETECTION, callback: Callback<PedometerDetectionRe
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).PEDOMETER_DETECTION是传感器类型，该值固定为SensorId.PEDOMETER_DETECTION。callbackCallback<[PedometerDetectionResponse](#ZH-CN_TOPIC_0000002529285633__pedometerdetectionresponse)>是回调函数，异步上报的传感器数据固定为PedometerDetectionResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.PEDOMETER_DETECTION | 是 | 传感器类型，该值固定为SensorId.PEDOMETER_DETECTION。 |
+| callback | Callback<PedometerDetectionResponse> | 是 | 回调函数，异步上报的传感器数据固定为PedometerDetectionResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1602,13 +1876,19 @@ once(type: SensorId.PROXIMITY, callback: Callback<ProximityResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).PROXIMITY是传感器类型，该值固定为SensorId.PROXIMITY。callbackCallback<[ProximityResponse](#ZH-CN_TOPIC_0000002529285633__proximityresponse)>是回调函数，异步上报的传感器数据固定为ProximityResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.PROXIMITY | 是 | 传感器类型，该值固定为SensorId.PROXIMITY。 |
+| callback | Callback<ProximityResponse> | 是 | 回调函数，异步上报的传感器数据固定为ProximityResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1637,13 +1917,19 @@ once(type: SensorId.ROTATION_VECTOR, callback: Callback<RotationVectorResponse>)
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).ROTATION_VECTOR是传感器类型，该值固定为SensorId.ROTATION_VECTOR。callbackCallback<[RotationVectorResponse](#ZH-CN_TOPIC_0000002529285633__rotationvectorresponse)>是回调函数，异步上报的传感器数据固定为RotationVectorResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.ROTATION_VECTOR | 是 | 传感器类型，该值固定为SensorId.ROTATION_VECTOR。 |
+| callback | Callback<RotationVectorResponse> | 是 | 回调函数，异步上报的传感器数据固定为RotationVectorResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1675,13 +1961,19 @@ once(type: SensorId.SIGNIFICANT_MOTION, callback: Callback<SignificantMotionResp
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).SIGNIFICANT_MOTION是传感器类型，该值固定为SensorId.SIGNIFICANT_MOTION。callbackCallback<[SignificantMotionResponse](#ZH-CN_TOPIC_0000002529285633__significantmotionresponse)>是回调函数，异步上报的传感器数据固定为SignificantMotionResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.SIGNIFICANT_MOTION | 是 | 传感器类型，该值固定为SensorId.SIGNIFICANT_MOTION。 |
+| callback | Callback<SignificantMotionResponse> | 是 | 回调函数，异步上报的传感器数据固定为SignificantMotionResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1710,13 +2002,19 @@ once(type: SensorId.WEAR_DETECTION, callback: Callback<WearDetectionResponse>): 
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).WEAR_DETECTION是传感器类型，该值固定为SensorId.WEAR_DETECTION。callbackCallback<[WearDetectionResponse](#ZH-CN_TOPIC_0000002529285633__weardetectionresponse)>是回调函数，异步上报的传感器数据固定为WearDetectionResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.WEAR_DETECTION | 是 | 传感器类型，该值固定为SensorId.WEAR_DETECTION。 |
+| callback | Callback<WearDetectionResponse> | 是 | 回调函数，异步上报的传感器数据固定为WearDetectionResponse。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1751,13 +2049,19 @@ off(type: SensorId.ACCELEROMETER, callback?: Callback<AccelerometerResponse>): v
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).ACCELEROMETER是传感器类型，该值固定为SensorId.ACCELEROMETER。callbackCallback<[AccelerometerResponse](#ZH-CN_TOPIC_0000002529285633__accelerometerresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.ACCELEROMETER | 是 | 传感器类型，该值固定为SensorId.ACCELEROMETER。 |
+| callback | Callback<AccelerometerResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -1801,13 +2105,20 @@ off(type: SensorId.ACCELEROMETER, sensorInfoParam?: SensorInfoParam, callback?: 
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).ACCELEROMETER是传感器类型，该值固定为SensorId.ACCELEROMETER。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[AccelerometerResponse](#ZH-CN_TOPIC_0000002529285633__accelerometerresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.ACCELEROMETER | 是 | 传感器类型，该值固定为SensorId.ACCELEROMETER。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<AccelerometerResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -1881,13 +2192,19 @@ off(type: SensorId.ACCELEROMETER_UNCALIBRATED, callback?: Callback<Accelerometer
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).ACCELEROMETER_UNCALIBRATED是传感器类型，该值固定为SensorId.ACCELEROMETER_UNCALIBRATED。callbackCallback<[AccelerometerUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__accelerometeruncalibratedresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.ACCELEROMETER_UNCALIBRATED | 是 | 传感器类型，该值固定为SensorId.ACCELEROMETER_UNCALIBRATED。 |
+| callback | Callback<AccelerometerUncalibratedResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -1927,13 +2244,20 @@ off(type: SensorId.FUSION_PRESSURE, sensorInfoParam?: SensorInfoParam, callback?
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).FUSION_PRESSURE是传感器类型，该值固定为SensorId.FUSION_PRESSURE。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[FusionPressureResponse](#ZH-CN_TOPIC_0000002529285633__fusionpressureresponse)>否取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.FUSION_PRESSURE | 是 | 传感器类型，该值固定为SensorId.FUSION_PRESSURE。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<FusionPressureResponse> | 否 | 取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -2007,13 +2331,20 @@ off(type: SensorId.ACCELEROMETER_UNCALIBRATED, sensorInfoParam?: SensorInfoParam
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).ACCELEROMETER_UNCALIBRATED是传感器类型，该值固定为SensorId.ACCELEROMETER_UNCALIBRATED。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[AccelerometerUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__accelerometeruncalibratedresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.ACCELEROMETER_UNCALIBRATED | 是 | 传感器类型，该值固定为SensorId.ACCELEROMETER_UNCALIBRATED。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<AccelerometerUncalibratedResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -2085,13 +2416,18 @@ off(type: SensorId.AMBIENT_LIGHT, callback?: Callback<LightResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).AMBIENT_LIGHT是传感器类型，该值固定为SensorId.AMBIENT_LIGHT。callbackCallback<[LightResponse](#ZH-CN_TOPIC_0000002529285633__lightresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.AMBIENT_LIGHT | 是 | 传感器类型，该值固定为SensorId.AMBIENT_LIGHT。 |
+| callback | Callback<LightResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -2131,13 +2467,19 @@ off(type: SensorId.AMBIENT_LIGHT, sensorInfoParam?: SensorInfoParam, callback?: 
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).AMBIENT_LIGHT是传感器类型，该值固定为SensorId.AMBIENT_LIGHT。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[LightResponse](#ZH-CN_TOPIC_0000002529285633__lightresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.AMBIENT_LIGHT | 是 | 传感器类型，该值固定为SensorId.AMBIENT_LIGHT。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<LightResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -2209,13 +2551,18 @@ off(type: SensorId.AMBIENT_TEMPERATURE, callback?: Callback<AmbientTemperatureRe
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).AMBIENT_TEMPERATURE是传感器类型，该值固定为SensorId.AMBIENT_TEMPERATURE。callbackCallback<[AmbientTemperatureResponse](#ZH-CN_TOPIC_0000002529285633__ambienttemperatureresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.AMBIENT_TEMPERATURE | 是 | 传感器类型，该值固定为SensorId.AMBIENT_TEMPERATURE。 |
+| callback | Callback<AmbientTemperatureResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -2255,13 +2602,19 @@ off(type: SensorId.AMBIENT_TEMPERATURE, sensorInfoParam?: SensorInfoParam, callb
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).AMBIENT_TEMPERATURE是传感器类型，该值固定为SensorId.AMBIENT_TEMPERATURE。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[AmbientTemperatureResponse](#ZH-CN_TOPIC_0000002529285633__ambienttemperatureresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.AMBIENT_TEMPERATURE | 是 | 传感器类型，该值固定为SensorId.AMBIENT_TEMPERATURE。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<AmbientTemperatureResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -2333,13 +2686,18 @@ off(type: SensorId.BAROMETER, callback?: Callback<BarometerResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).BAROMETER是传感器类型，该值固定为SensorId.BAROMETER。callbackCallback<[BarometerResponse](#ZH-CN_TOPIC_0000002529285633__barometerresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.BAROMETER | 是 | 传感器类型，该值固定为SensorId.BAROMETER。 |
+| callback | Callback<BarometerResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -2379,13 +2737,19 @@ off(type: SensorId.BAROMETER, sensorInfoParam?: SensorInfoParam, callback?: Call
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).BAROMETER是传感器类型，该值固定为SensorId.BAROMETER。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[BarometerResponse](#ZH-CN_TOPIC_0000002529285633__barometerresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.BAROMETER | 是 | 传感器类型，该值固定为SensorId.BAROMETER。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<BarometerResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -2457,13 +2821,18 @@ off(type: SensorId.GRAVITY, callback?: Callback<GravityResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).GRAVITY是传感器类型，该值固定为SensorId.GRAVITY。callbackCallback<[GravityResponse](#ZH-CN_TOPIC_0000002529285633__gravityresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.GRAVITY | 是 | 传感器类型，该值固定为SensorId.GRAVITY。 |
+| callback | Callback<GravityResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -2503,13 +2872,19 @@ off(type: SensorId.GRAVITY, sensorInfoParam?: SensorInfoParam, callback?: Callba
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).GRAVITY是传感器类型，该值固定为SensorId.GRAVITY。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[GravityResponse](#ZH-CN_TOPIC_0000002529285633__gravityresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.GRAVITY | 是 | 传感器类型，该值固定为SensorId.GRAVITY。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<GravityResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -2585,13 +2960,19 @@ off(type: SensorId.GYROSCOPE, callback?: Callback<GyroscopeResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).GYROSCOPE是传感器类型，该值固定为SensorId.GYROSCOPE。callbackCallback<[GyroscopeResponse](#ZH-CN_TOPIC_0000002529285633__gyroscoperesponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.GYROSCOPE | 是 | 传感器类型，该值固定为SensorId.GYROSCOPE。 |
+| callback | Callback<GyroscopeResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -2635,13 +3016,20 @@ off(type: SensorId.GYROSCOPE, sensorInfoParam?: SensorInfoParam, callback?: Call
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).GYROSCOPE是传感器类型，该值固定为SensorId.GYROSCOPE。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[GyroscopeResponse](#ZH-CN_TOPIC_0000002529285633__gyroscoperesponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.GYROSCOPE | 是 | 传感器类型，该值固定为SensorId.GYROSCOPE。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<GyroscopeResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[传感器错误码](../../errors/传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[传感器错误码](传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。。
 
-错误码ID错误信息201Permission denied.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -2715,13 +3103,19 @@ off(type: SensorId.GYROSCOPE_UNCALIBRATED, callback?: Callback<GyroscopeUncalibr
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).GYROSCOPE_UNCALIBRATED是传感器类型，该值固定为SensorId.GYROSCOPE_UNCALIBRATED。callbackCallback<[GyroscopeUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__gyroscopeuncalibratedresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.GYROSCOPE_UNCALIBRATED | 是 | 传感器类型，该值固定为SensorId.GYROSCOPE_UNCALIBRATED。 |
+| callback | Callback<GyroscopeUncalibratedResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -2763,13 +3157,20 @@ off(type: SensorId.GYROSCOPE_UNCALIBRATED, sensorInfoParam?: SensorInfoParam, ca
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).GYROSCOPE_UNCALIBRATED是传感器类型，该值固定为SensorId.GYROSCOPE_UNCALIBRATED。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[GyroscopeUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__gyroscopeuncalibratedresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.GYROSCOPE_UNCALIBRATED | 是 | 传感器类型，该值固定为SensorId.GYROSCOPE_UNCALIBRATED。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<GyroscopeUncalibratedResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[传感器错误码](../../errors/传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[传感器错误码](传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。。
 
-错误码ID错误信息201Permission denied.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -2841,13 +3242,18 @@ off(type: SensorId.HALL, callback?: Callback<HallResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).HALL是传感器类型，该值固定为SensorId.HALL。callbackCallback<[HallResponse](#ZH-CN_TOPIC_0000002529285633__hallresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.HALL | 是 | 传感器类型，该值固定为SensorId.HALL。 |
+| callback | Callback<HallResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -2887,13 +3293,19 @@ off(type: SensorId.HALL, sensorInfoParam?: SensorInfoParam, callback?: Callback<
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).HALL是传感器类型，该值固定为SensorId.HALL。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[HallResponse](#ZH-CN_TOPIC_0000002529285633__hallresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.HALL | 是 | 传感器类型，该值固定为SensorId.HALL。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<HallResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -2967,13 +3379,19 @@ off(type: SensorId.HEART_RATE, callback?: Callback<HeartRateResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).HEART_RATE是传感器类型，该值固定为SensorId.HEART_RATE。callbackCallback<[HeartRateResponse](#ZH-CN_TOPIC_0000002529285633__heartrateresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.HEART_RATE | 是 | 传感器类型，该值固定为SensorId.HEART_RATE。 |
+| callback | Callback<HeartRateResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -3015,13 +3433,20 @@ off(type: SensorId.HEART_RATE, sensorInfoParam?: SensorInfoParam, callback?: Cal
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).HEART_RATE是传感器类型，该值固定为SensorId.HEART_RATE。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[HeartRateResponse](#ZH-CN_TOPIC_0000002529285633__heartrateresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.HEART_RATE | 是 | 传感器类型，该值固定为SensorId.HEART_RATE。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<HeartRateResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -3093,13 +3518,18 @@ off(type: SensorId.HUMIDITY, callback?: Callback<HumidityResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).HUMIDITY是传感器类型，该值固定为SensorId.HUMIDITY。callbackCallback<[HumidityResponse](#ZH-CN_TOPIC_0000002529285633__humidityresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.HUMIDITY | 是 | 传感器类型，该值固定为SensorId.HUMIDITY。 |
+| callback | Callback<HumidityResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -3139,13 +3569,19 @@ off(type: SensorId.HUMIDITY, sensorInfoParam?: SensorInfoParam, callback?: Callb
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).HUMIDITY是传感器类型，该值固定为SensorId.HUMIDITY。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[HumidityResponse](#ZH-CN_TOPIC_0000002529285633__humidityresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.HUMIDITY | 是 | 传感器类型，该值固定为SensorId.HUMIDITY。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<HumidityResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -3219,13 +3655,19 @@ off(type: SensorId.LINEAR_ACCELEROMETER, callback?: Callback<LinearAccelerometer
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).LINEAR_ACCELEROMETER是传感器类型，该值固定为SensorId.LINEAR_ACCELERATION。callbackCallback<[LinearAccelerometerResponse](#ZH-CN_TOPIC_0000002529285633__linearaccelerometerresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.LINEAR_ACCELEROMETER | 是 | 传感器类型，该值固定为SensorId.LINEAR_ACCELERATION。 |
+| callback | Callback<LinearAccelerometerResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -3267,13 +3709,20 @@ off(type: SensorId.LINEAR_ACCELEROMETER, sensorInfoParam?: SensorInfoParam, call
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).LINEAR_ACCELEROMETER是传感器类型，该值固定为SensorId.LINEAR_ACCELERATION。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[LinearAccelerometerResponse](#ZH-CN_TOPIC_0000002529285633__linearaccelerometerresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.LINEAR_ACCELEROMETER | 是 | 传感器类型，该值固定为SensorId.LINEAR_ACCELERATION。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<LinearAccelerometerResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -3345,13 +3794,18 @@ off(type: SensorId.MAGNETIC_FIELD, callback?: Callback<MagneticFieldResponse>): 
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).MAGNETIC_FIELD是传感器类型，该值固定为SensorId.MAGNETIC_FIELD。callbackCallback<[MagneticFieldResponse](#ZH-CN_TOPIC_0000002529285633__magneticfieldresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.MAGNETIC_FIELD | 是 | 传感器类型，该值固定为SensorId.MAGNETIC_FIELD。 |
+| callback | Callback<MagneticFieldResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -3391,13 +3845,19 @@ off(type: SensorId.MAGNETIC_FIELD, sensorInfoParam?: SensorInfoParam, callback?:
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).MAGNETIC_FIELD是传感器类型，该值固定为SensorId.MAGNETIC_FIELD。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[MagneticFieldResponse](#ZH-CN_TOPIC_0000002529285633__magneticfieldresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.MAGNETIC_FIELD | 是 | 传感器类型，该值固定为SensorId.MAGNETIC_FIELD。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<MagneticFieldResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -3469,13 +3929,18 @@ off(type: SensorId.MAGNETIC_FIELD_UNCALIBRATED, callback?: Callback<MagneticFiel
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).MAGNETIC_FIELD_UNCALIBRATED是传感器类型，该值固定为SensorId.MAGNETIC_FIELD_UNCALIBRATED。callbackCallback<[MagneticFieldUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__magneticfielduncalibratedresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.MAGNETIC_FIELD_UNCALIBRATED | 是 | 传感器类型，该值固定为SensorId.MAGNETIC_FIELD_UNCALIBRATED。 |
+| callback | Callback<MagneticFieldUncalibratedResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -3515,13 +3980,19 @@ off(type: SensorId.MAGNETIC_FIELD_UNCALIBRATED, sensorInfoParam?: SensorInfoPara
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).MAGNETIC_FIELD_UNCALIBRATED是传感器类型，该值固定为SensorId.MAGNETIC_FIELD_UNCALIBRATED。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[MagneticFieldUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__magneticfielduncalibratedresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.MAGNETIC_FIELD_UNCALIBRATED | 是 | 传感器类型，该值固定为SensorId.MAGNETIC_FIELD_UNCALIBRATED。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<MagneticFieldUncalibratedResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -3595,13 +4066,18 @@ off(type: SensorId.ORIENTATION, callback?: Callback<OrientationResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).ORIENTATION是传感器类型，该值固定为SensorId.ORIENTATION。callbackCallback<[OrientationResponse](#ZH-CN_TOPIC_0000002529285633__orientationresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.ORIENTATION | 是 | 传感器类型，该值固定为SensorId.ORIENTATION。 |
+| callback | Callback<OrientationResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -3643,13 +4119,19 @@ off(type: SensorId.ORIENTATION, sensorInfoParam?: SensorInfoParam, callback?: Ca
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).ORIENTATION是传感器类型，该值固定为SensorId.ORIENTATION。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[OrientationResponse](#ZH-CN_TOPIC_0000002529285633__orientationresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.ORIENTATION | 是 | 传感器类型，该值固定为SensorId.ORIENTATION。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<OrientationResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -3723,13 +4205,19 @@ off(type: SensorId.PEDOMETER, callback?: Callback<PedometerResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).PEDOMETER是传感器类型，该值固定为SensorId.PEDOMETER。callbackCallback<[PedometerResponse](#ZH-CN_TOPIC_0000002529285633__pedometerresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.PEDOMETER | 是 | 传感器类型，该值固定为SensorId.PEDOMETER。 |
+| callback | Callback<PedometerResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -3771,13 +4259,20 @@ off(type: SensorId.PEDOMETER, sensorInfoParam?: SensorInfoParam, callback?: Call
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).PEDOMETER是传感器类型，该值固定为SensorId.PEDOMETER。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[PedometerResponse](#ZH-CN_TOPIC_0000002529285633__pedometerresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.PEDOMETER | 是 | 传感器类型，该值固定为SensorId.PEDOMETER。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<PedometerResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。。
 
-错误码ID错误信息201Permission denied.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -3851,13 +4346,19 @@ off(type: SensorId.PEDOMETER_DETECTION, callback?: Callback<PedometerDetectionRe
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).PEDOMETER_DETECTION是传感器类型，该值固定为SensorId.PEDOMETER_DETECTION。callbackCallback<[PedometerDetectionResponse](#ZH-CN_TOPIC_0000002529285633__pedometerdetectionresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.PEDOMETER_DETECTION | 是 | 传感器类型，该值固定为SensorId.PEDOMETER_DETECTION。 |
+| callback | Callback<PedometerDetectionResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -3899,13 +4400,20 @@ off(type: SensorId.PEDOMETER_DETECTION, sensorInfoParam?: SensorInfoParam, callb
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).PEDOMETER_DETECTION是传感器类型，该值固定为SensorId.PEDOMETER_DETECTION。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[PedometerDetectionResponse](#ZH-CN_TOPIC_0000002529285633__pedometerdetectionresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.PEDOMETER_DETECTION | 是 | 传感器类型，该值固定为SensorId.PEDOMETER_DETECTION。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<PedometerDetectionResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息201Permission denied.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -3977,13 +4485,18 @@ off(type: SensorId.PROXIMITY, callback?: Callback<ProximityResponse>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).PROXIMITY是传感器类型，该值固定为SensorId.PROXIMITY。callbackCallback<[ProximityResponse](#ZH-CN_TOPIC_0000002529285633__proximityresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.PROXIMITY | 是 | 传感器类型，该值固定为SensorId.PROXIMITY。 |
+| callback | Callback<ProximityResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -4023,13 +4536,19 @@ off(type: SensorId.PROXIMITY, sensorInfoParam?: SensorInfoParam, callback?: Call
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).PROXIMITY是传感器类型，该值固定为SensorId.PROXIMITY。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[ProximityResponse](#ZH-CN_TOPIC_0000002529285633__proximityresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.PROXIMITY | 是 | 传感器类型，该值固定为SensorId.PROXIMITY。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<ProximityResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -4101,13 +4620,18 @@ off(type: SensorId.ROTATION_VECTOR, callback?: Callback<RotationVectorResponse>)
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).ROTATION_VECTOR是传感器类型，该值固定为SensorId.ROTATION_VECTOR。callbackCallback<[RotationVectorResponse](#ZH-CN_TOPIC_0000002529285633__rotationvectorresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.ROTATION_VECTOR | 是 | 传感器类型，该值固定为SensorId.ROTATION_VECTOR。 |
+| callback | Callback<RotationVectorResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -4147,13 +4671,19 @@ off(type: SensorId.ROTATION_VECTOR, sensorInfoParam?: SensorInfoParam, callback?
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).ROTATION_VECTOR是传感器类型，该值固定为SensorId.ROTATION_VECTOR。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[RotationVectorResponse](#ZH-CN_TOPIC_0000002529285633__rotationvectorresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.ROTATION_VECTOR | 是 | 传感器类型，该值固定为SensorId.ROTATION_VECTOR。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<RotationVectorResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -4225,13 +4755,18 @@ off(type: SensorId.SIGNIFICANT_MOTION, callback?: Callback<SignificantMotionResp
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).SIGNIFICANT_MOTION是传感器类型，该值固定为SensorId.SIGNIFICANT_MOTION。callbackCallback<[SignificantMotionResponse](#ZH-CN_TOPIC_0000002529285633__significantmotionresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.SIGNIFICANT_MOTION | 是 | 传感器类型，该值固定为SensorId.SIGNIFICANT_MOTION。 |
+| callback | Callback<SignificantMotionResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -4271,13 +4806,19 @@ off(type: SensorId.SIGNIFICANT_MOTION, sensorInfoParam?: SensorInfoParam, callba
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).SIGNIFICANT_MOTION是传感器类型，该值固定为SensorId.SIGNIFICANT_MOTION。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[SignificantMotionResponse](#ZH-CN_TOPIC_0000002529285633__significantmotionresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.SIGNIFICANT_MOTION | 是 | 传感器类型，该值固定为SensorId.SIGNIFICANT_MOTION。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<SignificantMotionResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -4349,13 +4890,18 @@ off(type: SensorId.WEAR_DETECTION, callback?: Callback<WearDetectionResponse>): 
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).WEAR_DETECTION是传感器类型，该值固定为SensorId.WEAR_DETECTION。callbackCallback<[WearDetectionResponse](#ZH-CN_TOPIC_0000002529285633__weardetectionresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.WEAR_DETECTION | 是 | 传感器类型，该值固定为SensorId.WEAR_DETECTION。 |
+| callback | Callback<WearDetectionResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例**：
 
@@ -4395,13 +4941,19 @@ off(type: SensorId.WEAR_DETECTION, sensorInfoParam?: SensorInfoParam, callback?:
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9).WEAR_DETECTION是传感器类型，该值固定为SensorId.WEAR_DETECTION。sensorInfoParam[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否传感器传入设置参数，可指定deviceId、sensorIndexcallbackCallback<[WearDetectionResponse](#ZH-CN_TOPIC_0000002529285633__weardetectionresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId.WEAR_DETECTION | 是 | 传感器类型，该值固定为SensorId.WEAR_DETECTION。 |
+| sensorInfoParam | SensorInfoParam | 否 | 传感器传入设置参数，可指定deviceId、sensorIndex |
+| callback | Callback<WearDetectionResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -4473,13 +5025,18 @@ off(type: 'sensorStatusChange', callback?: Callback<SensorStatusEvent>): void
 
 **参数**：
 
-参数名类型必填说明type'sensorStatusChange'是固定传入'sensorStatusChange',状态监听固定参数。callbackCallback<[SensorStatusEvent](#ZH-CN_TOPIC_0000002529285633__sensorstatusevent19)>否sensor.on传入的回调函数，不传则取消所有监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | 'sensorStatusChange' | 是 | 固定传入'sensorStatusChange',状态监听固定参数。 |
+| callback | Callback<SensorStatusEvent> | 否 | sensor.on传入的回调函数，不传则取消所有监听。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -4523,11 +5080,15 @@ getSensorListByDeviceSync(deviceId?: number): Array<Sensor>
 
 **参数**：
 
-参数名类型必填说明deviceIdnumber否设备ID，默认为查询本地设备，默认值为-1，表示本地设备，设备ID需通过[getSensorList](#ZH-CN_TOPIC_0000002529285633__sensorgetsensorlist9)查询或者监听设备上下线接口[on](#ZH-CN_TOPIC_0000002529285633__sensorstatuschange19)获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | number | 否 | 设备ID，默认为查询本地设备，默认值为-1，表示本地设备，设备ID需通过getSensorList查询或者监听设备上下线接口on获取。 |
 
 **返回值**：
 
-类型说明Array<[Sensor](#ZH-CN_TOPIC_0000002529285633__sensor9)>传感器属性列表。
+| 类型 | 说明 |
+| --- | --- |
+| Array<Sensor> | 传感器属性列表。 |
 
 **示例**：
 
@@ -4557,11 +5118,16 @@ getSingleSensorByDeviceSync(type: SensorId, deviceId?: number): Array<Sensor>
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9)是指定传感器类型。deviceIdnumber否设备ID，默认为查询本地设备，默认值为-1，表示本地设备，设备ID需通过[getSensorList](#ZH-CN_TOPIC_0000002529285633__sensorgetsensorlist9)查询或者监听设备上下线接口[on](#ZH-CN_TOPIC_0000002529285633__sensorstatuschange19)获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId | 是 | 指定传感器类型。 |
+| deviceId | number | 否 | 设备ID，默认为查询本地设备，默认值为-1，表示本地设备，设备ID需通过getSensorList查询或者监听设备上下线接口on获取。 |
 
 **返回值**：
 
-类型说明Array<[Sensor](#ZH-CN_TOPIC_0000002529285633__sensor9)>传感器属性列表。
+| 类型 | 说明 |
+| --- | --- |
+| Array<Sensor> | 传感器属性列表。 |
 
 **示例**：
 
@@ -4591,13 +5157,20 @@ getGeomagneticInfo(locationOptions: LocationOptions, timeMillis: number, callbac
 
 **参数**：
 
-参数名类型必填说明locationOptions[LocationOptions](#ZH-CN_TOPIC_0000002529285633__locationoptions)是地理位置，包括经度、纬度和海拔高度。timeMillisnumber是获取磁偏角的时间，unix时间戳，单位毫秒。callbackAsyncCallback<[GeomagneticResponse](#ZH-CN_TOPIC_0000002529285633__geomagneticresponse)>是回调函数，异步返回地磁场信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| locationOptions | LocationOptions | 是 | 地理位置，包括经度、纬度和海拔高度。 |
+| timeMillis | number | 是 | 获取磁偏角的时间，unix时间戳，单位毫秒。 |
+| callback | AsyncCallback<GeomagneticResponse> | 是 | 回调函数，异步返回地磁场信息。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -4637,17 +5210,25 @@ getGeomagneticInfo(locationOptions: LocationOptions, timeMillis: number): Promis
 
 **参数**：
 
-参数名类型必填说明locationOptions[LocationOptions](#ZH-CN_TOPIC_0000002529285633__locationoptions)是地理位置，包括经度、纬度和海拔高度。timeMillisnumber是获取磁偏角的时间，unix时间戳，单位毫秒。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| locationOptions | LocationOptions | 是 | 地理位置，包括经度、纬度和海拔高度。 |
+| timeMillis | number | 是 | 获取磁偏角的时间，unix时间戳，单位毫秒。 |
 
 **返回值**：
 
-类型说明Promise<[GeomagneticResponse](#ZH-CN_TOPIC_0000002529285633__geomagneticresponse)>Promise对象，使用异步方式返回地磁场信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<GeomagneticResponse> | Promise对象，使用异步方式返回地磁场信息。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -4685,13 +5266,20 @@ getDeviceAltitude(seaPressure: number, currentPressure: number, callback: AsyncC
 
 **参数**：
 
-参数名类型必填说明seaPressurenumber是海平面气压值，单位为hPa。currentPressurenumber是指定的气压值，单位为hPa。callbackAsyncCallback<number>是回调函数，异步返回指定的气压值对应的海拔高度，单位为米。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| seaPressure | number | 是 | 海平面气压值，单位为hPa。 |
+| currentPressure | number | 是 | 指定的气压值，单位为hPa。 |
+| callback | AsyncCallback<number> | 是 | 回调函数，异步返回指定的气压值对应的海拔高度，单位为米。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -4726,17 +5314,25 @@ getDeviceAltitude(seaPressure: number, currentPressure: number): Promise<number>
 
 **参数**：
 
-参数名类型必填说明seaPressurenumber是海平面气压值，单位为hPa。currentPressurenumber是指定的气压值，单位为hPa。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| seaPressure | number | 是 | 海平面气压值，单位为hPa。 |
+| currentPressure | number | 是 | 指定的气压值，单位为hPa。 |
 
 **返回值**：
 
-类型说明Promise<number>Promise对象，使用异步方式返回指定的气压值对应的海拔高度，单位为米。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，使用异步方式返回指定的气压值对应的海拔高度，单位为米。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -4770,13 +5366,19 @@ getInclination(inclinationMatrix: Array<number>, callback: AsyncCallback<number>
 
 **参数**：
 
-参数名类型必填说明inclinationMatrixArray<number>是倾斜矩阵。callbackAsyncCallback<number>是回调函数，异步返回地磁倾角，单位为弧度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| inclinationMatrix | Array<number> | 是 | 倾斜矩阵。 |
+| callback | AsyncCallback<number> | 是 | 回调函数，异步返回地磁倾角，单位为弧度。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -4815,17 +5417,24 @@ try {
 
 **参数**：
 
-参数名类型必填说明inclinationMatrixArray<number>是倾斜矩阵。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| inclinationMatrix | Array<number> | 是 | 倾斜矩阵。 |
 
 **返回值**：
 
-类型说明Promise<number>Promise对象，使用异步方式返回地磁倾斜角，单位为弧度。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，使用异步方式返回地磁倾斜角，单位为弧度。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -4865,13 +5474,20 @@ try {
 
 **参数**：
 
-参数名类型必填说明currentRotationMatrixArray<number>是当前旋转矩阵。preRotationMatrixArray<number>是相对旋转矩阵。callbackAsyncCallback<Array<number>>是回调函数，异步返回绕z、x、y轴方向的旋转角度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| currentRotationMatrix | Array<number> | 是 | 当前旋转矩阵。 |
+| preRotationMatrix | Array<number> | 是 | 相对旋转矩阵。 |
+| callback | AsyncCallback<Array<number>> | 是 | 回调函数，异步返回绕z、x、y轴方向的旋转角度。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -4921,17 +5537,25 @@ getAngleVariation(currentRotationMatrix: Array<number>, preRotationMatrix: Array
 
 **参数**：
 
-参数名类型必填说明currentRotationMatrixArray<number>是当前旋转矩阵。preRotationMatrixArray<number>是相对旋转矩阵。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| currentRotationMatrix | Array<number> | 是 | 当前旋转矩阵。 |
+| preRotationMatrix | Array<number> | 是 | 相对旋转矩阵。 |
 
 **返回值**：
 
-类型说明Promise<Array<number>>Promise对象，使用异步方式返回绕z、x、y轴方向的旋转角度。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<number>> | Promise对象，使用异步方式返回绕z、x、y轴方向的旋转角度。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -4980,13 +5604,19 @@ getRotationMatrix(rotationVector: Array<number>, callback: AsyncCallback<Array<n
 
 **参数**：
 
-参数名类型必填说明rotationVectorArray<number>是旋转矢量。callbackAsyncCallback<Array<number>>是回调函数，异步返回3*3旋转矩阵。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rotationVector | Array<number> | 是 | 旋转矢量。 |
+| callback | AsyncCallback<Array<number>> | 是 | 回调函数，异步返回3*3旋转矩阵。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -5022,17 +5652,24 @@ getRotationMatrix(rotationVector: Array<number>): Promise<Array<number>>
 
 **参数**：
 
-参数名类型必填说明rotationVectorArray<number>是旋转矢量。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rotationVector | Array<number> | 是 | 旋转矢量。 |
 
 **返回值**：
 
-类型说明Promise<Array<number>>Promise对象，使用异步方式返回旋转矩阵。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<number>> | Promise对象，使用异步方式返回旋转矩阵。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -5069,13 +5706,20 @@ transformRotationMatrix(inRotationVector: Array<number>, coordinates: Coordinate
 
 **参数**：
 
-参数名类型必填说明inRotationVectorArray<number>是旋转矩阵。coordinates[CoordinatesOptions](#ZH-CN_TOPIC_0000002529285633__coordinatesoptions)是指定坐标系方向。callbackAsyncCallback<Array<number>>是回调函数，异步返回映射后的旋转矩阵。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| inRotationVector | Array<number> | 是 | 旋转矩阵。 |
+| coordinates | CoordinatesOptions | 是 | 指定坐标系方向。 |
+| callback | AsyncCallback<Array<number>> | 是 | 回调函数，异步返回映射后的旋转矩阵。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -5115,17 +5759,25 @@ transformRotationMatrix(inRotationVector: Array<number>, coordinates: Coordinate
 
 **参数**：
 
-参数名类型必填说明inRotationVectorArray<number>是旋转矩阵。coordinates[CoordinatesOptions](#ZH-CN_TOPIC_0000002529285633__coordinatesoptions)是指定坐标系方向。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| inRotationVector | Array<number> | 是 | 旋转矩阵。 |
+| coordinates | CoordinatesOptions | 是 | 指定坐标系方向。 |
 
 **返回值**：
 
-类型说明Promise<Array<number>>Promise对象，使用异步方式返回转换后的旋转矩阵。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<number>> | Promise对象，使用异步方式返回转换后的旋转矩阵。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例** ：
 
@@ -5164,13 +5816,19 @@ getQuaternion(rotationVector: Array<number>, callback: AsyncCallback<Array<numbe
 
 **参数**：
 
-参数名类型必填说明rotationVectorArray<number>是旋转矢量。callbackAsyncCallback<Array<number>>是回调函数，异步返回归一化四元数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rotationVector | Array<number> | 是 | 旋转矢量。 |
+| callback | AsyncCallback<Array<number>> | 是 | 回调函数，异步返回归一化四元数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -5206,17 +5864,24 @@ getQuaternion(rotationVector: Array<number>): Promise<Array<number>>
 
 **参数**：
 
-参数名类型必填说明rotationVectorArray<number>是旋转矢量。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rotationVector | Array<number> | 是 | 旋转矢量。 |
 
 **返回值**：
 
-类型说明Promise<Array<number>>Promise，使用异步方式对象返归一化回四元数。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<number>> | Promise，使用异步方式对象返归一化回四元数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -5251,13 +5916,19 @@ getOrientation(rotationMatrix: Array<number>, callback: AsyncCallback<Array<numb
 
 **参数**：
 
-参数名类型必填说明rotationMatrixArray<number>是旋转矩阵。callbackAsyncCallback<Array<number>>是回调函数，异步返回围绕z、x、y轴方向的旋转角度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rotationMatrix | Array<number> | 是 | 旋转矩阵。 |
+| callback | AsyncCallback<Array<number>> | 是 | 回调函数，异步返回围绕z、x、y轴方向的旋转角度。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -5300,17 +5971,24 @@ getOrientation(rotationMatrix: Array<number>): Promise<Array<number>>
 
 **参数**：
 
-参数名类型必填说明rotationMatrixArray<number>是旋转矩阵。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rotationMatrix | Array<number> | 是 | 旋转矩阵。 |
 
 **返回值**：
 
-类型说明Promise<Array<number>>Promise对象，使用异步方式返回围绕z、x、y轴方向的旋转角度。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<number>> | Promise对象，使用异步方式返回围绕z、x、y轴方向的旋转角度。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -5349,13 +6027,20 @@ getRotationMatrix(gravity: Array<number>, geomagnetic: Array<number>, callback: 
 
 **参数**：
 
-参数名类型必填说明gravityArray<number>是重力矢量。geomagneticArray<number>是地磁矢量。callbackAsyncCallback<[RotationMatrixResponse](#ZH-CN_TOPIC_0000002529285633__rotationmatrixresponse)>是回调函数，异步返回旋转矩阵。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| gravity | Array<number> | 是 | 重力矢量。 |
+| geomagnetic | Array<number> | 是 | 地磁矢量。 |
+| callback | AsyncCallback<RotationMatrixResponse> | 是 | 回调函数，异步返回旋转矩阵。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -5390,17 +6075,25 @@ getRotationMatrix(gravity: Array<number>, geomagnetic: Array<number>): Promise<R
 
 **参数**：
 
-参数名类型必填说明gravityArray<number>是重力向量。geomagneticArray<number>是地磁矢量。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| gravity | Array<number> | 是 | 重力向量。 |
+| geomagnetic | Array<number> | 是 | 地磁矢量。 |
 
 **返回值**：
 
-类型说明Promise<[RotationMatrixResponse](#ZH-CN_TOPIC_0000002529285633__rotationmatrixresponse)>Promise对象，使用异步方式返回旋转矩阵。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<RotationMatrixResponse> | Promise对象，使用异步方式返回旋转矩阵。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -5434,13 +6127,18 @@ getSensorList(callback: AsyncCallback<Array<Sensor>>): void
 
 **参数**：
 
-参数名类型必填说明callbackAsyncCallback<Array<[Sensor](#ZH-CN_TOPIC_0000002529285633__sensor9)>>是回调函数，异步返回传感器属性列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<Sensor>> | 是 | 回调函数，异步返回传感器属性列表。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -5475,13 +6173,18 @@ try {
 
 **返回值**：
 
-类型说明Promise<Array<[Sensor](#ZH-CN_TOPIC_0000002529285633__sensor9)>>Promise对象，使用异步方式返回传感器属性列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<Sensor>> | Promise对象，使用异步方式返回传感器属性列表。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -5514,13 +6217,17 @@ getSensorListSync(): Array<Sensor>
 
 **返回值**：
 
-类型说明Array<[Sensor](#ZH-CN_TOPIC_0000002529285633__sensor9)>使用同步方式返回传感器属性列表。
+| 类型 | 说明 |
+| --- | --- |
+| Array<Sensor> | 使用同步方式返回传感器属性列表。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
 
 **示例**：
 
@@ -5550,13 +6257,20 @@ getSingleSensor(type: SensorId, callback: AsyncCallback<Sensor>): void
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9)是指定传感器类型。callbackAsyncCallback<[Sensor](#ZH-CN_TOPIC_0000002529285633__sensor9)>是回调函数，异步返回指定传感器的属性信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId | 是 | 指定传感器类型。 |
+| callback | AsyncCallback<Sensor> | 是 | 回调函数，异步返回指定传感器的属性信息。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.14500102The sensor is not supported by the device.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
+| 14500102 | The sensor is not supported by the device. |
 
 **示例**：
 
@@ -5597,17 +6311,25 @@ try {
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9)是传感器类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId | 是 | 传感器类型。 |
 
 **返回值**：
 
-类型说明Promise<[Sensor](#ZH-CN_TOPIC_0000002529285633__sensor9)>使用异步方式返回传感器信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Sensor> | 使用异步方式返回传感器信息。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.14500102The sensor is not supported by the device.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
+| 14500102 | The sensor is not supported by the device. |
 
 **示例**：
 
@@ -5638,17 +6360,25 @@ getSingleSensorSync(type: SensorId): Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9)是传感器类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorId | 是 | 传感器类型。 |
 
 **返回值**：
 
-类型说明Sensor使用同步方式返回传感器信息。
+| 类型 | 说明 |
+| --- | --- |
+| Sensor | 使用同步方式返回传感器信息。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[传感器错误码](../../errors/传感器错误码.md)和[通用错误码](../../errors/通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+以下错误码的详细介绍请参见[传感器错误码](传感器错误码.md)和[通用错误码](通用错误码.md)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.14500101Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception.14500102The sensor is not supported by the device.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3.Sensor data channel exception. |
+| 14500102 | The sensor is not supported by the device. |
 
 **示例**：
 
@@ -5672,29 +6402,30 @@ try {
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称值说明ACCELEROMETER1
-
-加速度传感器。
-
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
-
-GYROSCOPE2
-
-陀螺仪传感器。
-
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
-
-AMBIENT_LIGHT5环境光传感器。MAGNETIC_FIELD6磁场传感器。BAROMETER8气压计传感器。HALL10霍尔传感器。PROXIMITY12接近光传感器。HUMIDITY13湿度传感器。ORIENTATION256
-
-方向传感器。
-
-**元服务API**：从API version 11开始，该接口在支持元服务中使用。
-
-GRAVITY257重力传感器。LINEAR_ACCELEROMETER258线性加速度传感器。ROTATION_VECTOR259旋转矢量传感器。AMBIENT_TEMPERATURE260环境温度传感器。MAGNETIC_FIELD_UNCALIBRATED261未校准磁场传感器。GYROSCOPE_UNCALIBRATED263未校准陀螺仪传感器。SIGNIFICANT_MOTION264有效运动传感器。PEDOMETER_DETECTION265计步检测传感器。PEDOMETER266计步传感器。HEART_RATE278心率传感器。WEAR_DETECTION280佩戴检测传感器。ACCELEROMETER_UNCALIBRATED281未校准加速度计传感器。FUSION_PRESSURE283
-
-融合压力传感器。
-
-仅智能表有该传感器
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ACCELEROMETER | 1 | 加速度传感器。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
+| GYROSCOPE | 2 | 陀螺仪传感器。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
+| AMBIENT_LIGHT | 5 | 环境光传感器。 |
+| MAGNETIC_FIELD | 6 | 磁场传感器。 |
+| BAROMETER | 8 | 气压计传感器。 |
+| HALL | 10 | 霍尔传感器。 |
+| PROXIMITY | 12 | 接近光传感器。 |
+| HUMIDITY | 13 | 湿度传感器。 |
+| ORIENTATION | 256 | 方向传感器。 元服务API：从API version 11开始，该接口在支持元服务中使用。 |
+| GRAVITY | 257 | 重力传感器。 |
+| LINEAR_ACCELEROMETER | 258 | 线性加速度传感器。 |
+| ROTATION_VECTOR | 259 | 旋转矢量传感器。 |
+| AMBIENT_TEMPERATURE | 260 | 环境温度传感器。 |
+| MAGNETIC_FIELD_UNCALIBRATED | 261 | 未校准磁场传感器。 |
+| GYROSCOPE_UNCALIBRATED | 263 | 未校准陀螺仪传感器。 |
+| SIGNIFICANT_MOTION | 264 | 有效运动传感器。 |
+| PEDOMETER_DETECTION | 265 | 计步检测传感器。 |
+| PEDOMETER | 266 | 计步传感器。 |
+| HEART_RATE | 278 | 心率传感器。 |
+| WEAR_DETECTION | 280 | 佩戴检测传感器。 |
+| ACCELEROMETER_UNCALIBRATED | 281 | 未校准加速度计传感器。 |
+| FUSION_PRESSURE22+ | 283 | 融合压力传感器。 仅智能表有该传感器 |
 
 #### SensorInfoParam19+
 
@@ -5704,17 +6435,10 @@ GRAVITY257重力传感器。LINEAR_ACCELEROMETER258线性加速度传感器。RO
 
 **元服务API**：从API version 19开始，该接口支持在元服务中使用。
 
-名称类型只读可选说明deviceIdnumber否是
-
-设备ID：默认值为-1，表示本地设备，设备ID需通过[getSensorList](#ZH-CN_TOPIC_0000002529285633__sensorgetsensorlist9)查询或者监听设备上下线接口[on](#ZH-CN_TOPIC_0000002529285633__sensorstatuschange19)获取。
-
-**元服务API**：从API version 19开始，该接口支持在元服务中使用。
-
-sensorIndexnumber否是
-
-传感器索引：默认值为0，为设备上的默认传感器，其它传感器ID需通过[getSensorList](#ZH-CN_TOPIC_0000002529285633__sensorgetsensorlist9)查询或者监听设备上下线接口[on](#ZH-CN_TOPIC_0000002529285633__sensorstatuschange19)获取。
-
-**元服务API**：从API version 19开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| deviceId | number | 否 | 是 | 设备ID：默认值为-1，表示本地设备，设备ID需通过getSensorList查询或者监听设备上下线接口on获取。 元服务API：从API version 19开始，该接口支持在元服务中使用。 |
+| sensorIndex | number | 否 | 是 | 传感器索引：默认值为0，为设备上的默认传感器，其它传感器ID需通过getSensorList查询或者监听设备上下线接口on获取。 元服务API：从API version 19开始，该接口支持在元服务中使用。 |
 
 #### SensorStatusEvent19+
 
@@ -5722,7 +6446,14 @@ sensorIndexnumber否是
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明timestampnumber否否事件发生的时间戳。sensorIdnumber否否传感器ID。sensorIndexnumber否否传感器索引。isSensorOnlineboolean否否传感器上线或者下线，true为上线，false为下线。deviceIdnumber否否设备ID。deviceNamestring否否设备名称。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| timestamp | number | 否 | 否 | 事件发生的时间戳。 |
+| sensorId | number | 否 | 否 | 传感器ID。 |
+| sensorIndex | number | 否 | 否 | 传感器索引。 |
+| isSensorOnline | boolean | 否 | 否 | 传感器上线或者下线，true为上线，false为下线。 |
+| deviceId | number | 否 | 否 | 设备ID。 |
+| deviceName | string | 否 | 否 | 设备名称。 |
 
 #### SensorAccuracy11+
 
@@ -5732,7 +6463,12 @@ sensorIndexnumber否是
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称值说明ACCURACY_UNRELIABLE0传感器数据不可信。ACCURACY_LOW1传感器低挡位精度。ACCURACY_MEDIUM2传感器中挡位精度。ACCURACY_HIGH3传感器高挡位精度。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ACCURACY_UNRELIABLE | 0 | 传感器数据不可信。 |
+| ACCURACY_LOW | 1 | 传感器低挡位精度。 |
+| ACCURACY_MEDIUM | 2 | 传感器中挡位精度。 |
+| ACCURACY_HIGH | 3 | 传感器高挡位精度。 |
 
 #### Response
 
@@ -5742,7 +6478,10 @@ sensorIndexnumber否是
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明timestampnumber否否传感器数据上报的时间戳。从设备开机开始计时到上报数据的时间，单位 : ns。accuracy11+[SensorAccuracy](#ZH-CN_TOPIC_0000002529285633__sensoraccuracy11)11+否否传感器数据上报的精度挡位值。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| timestamp | number | 否 | 否 | 传感器数据上报的时间戳。从设备开机开始计时到上报数据的时间，单位 : ns。 |
+| accuracy11+ | SensorAccuracy11+ | 否 | 否 | 传感器数据上报的精度挡位值。 |
 
 #### Sensor9+
 
@@ -5750,189 +6489,281 @@ sensorIndexnumber否是
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明sensorNamestring否否传感器名称。vendorNamestring否否传感器供应商。firmwareVersionstring否否传感器固件版本。hardwareVersionstring否否传感器硬件版本。sensorIdnumber否否传感器类型id。maxRangenumber否否传感器测量范围的最大值。minSamplePeriodnumber否否允许的最小采样周期。maxSamplePeriodnumber否否允许的最大采样周期。precisionnumber否否传感器精度。powernumber否否传感器功率的估计值，单位：mA。sensorIndex19+number否是传感器索引。deviceId19+number否是设备ID。deviceName19+string否是设备名称。isLocalSensor19+boolean否是是否本地传感器，true为本地传感器，false为非本地传感器。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| sensorName | string | 否 | 否 | 传感器名称。 |
+| vendorName | string | 否 | 否 | 传感器供应商。 |
+| firmwareVersion | string | 否 | 否 | 传感器固件版本。 |
+| hardwareVersion | string | 否 | 否 | 传感器硬件版本。 |
+| sensorId | number | 否 | 否 | 传感器类型id。 |
+| maxRange | number | 否 | 否 | 传感器测量范围的最大值。 |
+| minSamplePeriod | number | 否 | 否 | 允许的最小采样周期。 |
+| maxSamplePeriod | number | 否 | 否 | 允许的最大采样周期。 |
+| precision | number | 否 | 否 | 传感器精度。 |
+| power | number | 否 | 否 | 传感器功率的估计值，单位：mA。 |
+| sensorIndex19+ | number | 否 | 是 | 传感器索引。 |
+| deviceId19+ | number | 否 | 是 | 设备ID。 |
+| deviceName19+ | string | 否 | 是 | 设备名称。 |
+| isLocalSensor19+ | boolean | 否 | 是 | 是否本地传感器，true为本地传感器，false为非本地传感器。 |
+| isMockSensor23+ | boolean | 否 | 是 | 是否mock传感器，true为mock传感器，false为非mock传感器。 |
 
 #### AccelerometerResponse
 
-加速度传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+加速度传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明xnumber否否施加在设备x轴的加速度，单位 : m/s²；取值为实际上报物理量。ynumber否否施加在设备y轴的加速度，单位 : m/s²；取值为实际上报物理量。znumber否否施加在设备z轴的加速度，单位 : m/s²；取值为实际上报物理量。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| x | number | 否 | 否 | 施加在设备x轴的加速度，单位 : m/s²；取值为实际上报物理量。 |
+| y | number | 否 | 否 | 施加在设备y轴的加速度，单位 : m/s²；取值为实际上报物理量。 |
+| z | number | 否 | 否 | 施加在设备z轴的加速度，单位 : m/s²；取值为实际上报物理量。 |
 
 #### LinearAccelerometerResponse
 
-线性加速度传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+线性加速度传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明xnumber否否施加在设备x轴的线性加速度，单位 : m/s²。ynumber否否施加在设备y轴的线性加速度，单位 : m/s²。znumber否否施加在设备z轴的线性加速度，单位 : m/s²。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| x | number | 否 | 否 | 施加在设备x轴的线性加速度，单位 : m/s²。 |
+| y | number | 否 | 否 | 施加在设备y轴的线性加速度，单位 : m/s²。 |
+| z | number | 否 | 否 | 施加在设备z轴的线性加速度，单位 : m/s²。 |
 
 #### AccelerometerUncalibratedResponse
 
-未校准加速度计传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+未校准加速度计传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明xnumber否否施加在设备x轴未校准的加速度，单位 : m/s²。ynumber否否施加在设备y轴未校准的加速度，单位 : m/s²。znumber否否施加在设备z轴未校准的加速度，单位 : m/s²。biasXnumber否否施加在设备x轴未校准的加速度偏量，单位 : m/s²。biasYnumber否否施加在设备y轴未校准的加速度偏量，单位 : m/s²。biasZnumber否否施加在设备z轴未校准的加速度偏量，单位 : m/s²。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| x | number | 否 | 否 | 施加在设备x轴未校准的加速度，单位 : m/s²。 |
+| y | number | 否 | 否 | 施加在设备y轴未校准的加速度，单位 : m/s²。 |
+| z | number | 否 | 否 | 施加在设备z轴未校准的加速度，单位 : m/s²。 |
+| biasX | number | 否 | 否 | 施加在设备x轴未校准的加速度偏量，单位 : m/s²。 |
+| biasY | number | 否 | 否 | 施加在设备y轴未校准的加速度偏量，单位 : m/s²。 |
+| biasZ | number | 否 | 否 | 施加在设备z轴未校准的加速度偏量，单位 : m/s²。 |
 
-#### FusionPressureResponse
+**FusionPressureResponse22+**
 
-融合压力传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+融合压力传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明fusionPressurenumber否否施加在融合压力传感器上的压力值百分比，单位 : %
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| fusionPressure | number | 否 | 否 | 施加在融合压力传感器上的压力值百分比，单位 : % |
 
 #### GravityResponse
 
-重力传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+重力传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明xnumber否否施加在设备x轴的重力加速度，单位 : m/s²。ynumber否否施加在设备y轴的重力加速度，单位 : m/s²。znumber否否施加在设备z轴的重力加速度，单位 : m/s²。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| x | number | 否 | 否 | 施加在设备x轴的重力加速度，单位 : m/s²。 |
+| y | number | 否 | 否 | 施加在设备y轴的重力加速度，单位 : m/s²。 |
+| z | number | 否 | 否 | 施加在设备z轴的重力加速度，单位 : m/s²。 |
 
 #### OrientationResponse
 
-方向传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+方向传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明alphanumber否否设备围绕Z轴的旋转角度，单位：度；取值范围为0-360度。betanumber否否设备围绕X轴的旋转角度，单位：度；取值范围为0-±180度。gammanumber否否设备围绕Y轴的旋转角度，单位：度；取值范围为0-±90度。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| alpha | number | 否 | 否 | 设备围绕Z轴的旋转角度，单位：度；取值范围为0-360度。 |
+| beta | number | 否 | 否 | 设备围绕X轴的旋转角度，单位：度；取值范围为0-±180度。 |
+| gamma | number | 否 | 否 | 设备围绕Y轴的旋转角度，单位：度；取值范围为0-±90度。 |
 
 #### RotationVectorResponse
 
-旋转矢量传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+旋转矢量传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明xnumber否否旋转矢量x轴分量。ynumber否否旋转矢量y轴分量。znumber否否旋转矢量z轴分量。wnumber否否标量，描述设备相对于某个参考方向的旋转状态，单位：弧度。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| x | number | 否 | 否 | 旋转矢量x轴分量。 |
+| y | number | 否 | 否 | 旋转矢量y轴分量。 |
+| z | number | 否 | 否 | 旋转矢量z轴分量。 |
+| w | number | 否 | 否 | 标量，描述设备相对于某个参考方向的旋转状态，单位：弧度。 |
 
 #### GyroscopeResponse
 
-陀螺仪传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+陀螺仪传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明xnumber否否设备x轴的旋转角速度，单位rad/s；取值为实际上报物理量。ynumber否否设备y轴的旋转角速度，单位rad/s；取值为实际上报物理量。znumber否否设备z轴的旋转角速度，单位rad/s；取值为实际上报物理量。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| x | number | 否 | 否 | 设备x轴的旋转角速度，单位rad/s；取值为实际上报物理量。 |
+| y | number | 否 | 否 | 设备y轴的旋转角速度，单位rad/s；取值为实际上报物理量。 |
+| z | number | 否 | 否 | 设备z轴的旋转角速度，单位rad/s；取值为实际上报物理量。 |
 
 #### GyroscopeUncalibratedResponse
 
-未校准陀螺仪传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+未校准陀螺仪传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明xnumber否否设备x轴未校准的旋转角速度，单位rad/s。ynumber否否设备y轴未校准的旋转角速度，单位rad/s。znumber否否设备z轴未校准的旋转角速度，单位rad/s。biasXnumber否否设备x轴未校准的旋转角速度偏量，单位rad/s。biasYnumber否否设备y轴未校准的旋转角速度偏量，单位rad/s。biasZnumber否否设备z轴未校准的旋转角速度偏量，单位rad/s。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| x | number | 否 | 否 | 设备x轴未校准的旋转角速度，单位rad/s。 |
+| y | number | 否 | 否 | 设备y轴未校准的旋转角速度，单位rad/s。 |
+| z | number | 否 | 否 | 设备z轴未校准的旋转角速度，单位rad/s。 |
+| biasX | number | 否 | 否 | 设备x轴未校准的旋转角速度偏量，单位rad/s。 |
+| biasY | number | 否 | 否 | 设备y轴未校准的旋转角速度偏量，单位rad/s。 |
+| biasZ | number | 否 | 否 | 设备z轴未校准的旋转角速度偏量，单位rad/s。 |
 
 #### SignificantMotionResponse
 
-有效运动传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+有效运动传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明scalarnumber否否表示剧烈运动程度。测量三个物理轴（x、y 和 z）上，设备是否存在大幅度运动；若存在大幅度运动则数据上报为1。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| scalar | number | 否 | 否 | 表示剧烈运动程度。测量三个物理轴（x、y 和 z）上，设备是否存在大幅度运动；若存在大幅度运动则数据上报为1。 |
 
 #### ProximityResponse
 
-接近光传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+接近光传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明distancenumber否否可见物体与设备显示器的接近程度。0表示接近，大于0表示远离。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| distance | number | 否 | 否 | 可见物体与设备显示器的接近程度。0表示接近，大于0表示远离。 |
 
 #### LightResponse
 
-环境光传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+环境光传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明intensitynumber否否光强（单位：勒克斯）。colorTemperature12+number否是色温（单位：开尔文），可选参数，如果该参数不支持则返回固定值（固定值由传感器自定义），支持则返回正常数值。infraredLuminance12+number否是红外亮度（单位：cd/m²），可选参数，如果该参数不支持则返回固定值（固定值由传感器自定义），支持则返回正常数值。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| intensity | number | 否 | 否 | 光强（单位：勒克斯）。 |
+| colorTemperature12+ | number | 否 | 是 | 色温（单位：开尔文），可选参数，如果该参数不支持则返回固定值（固定值由传感器自定义），支持则返回正常数值。 |
+| infraredLuminance12+ | number | 否 | 是 | 红外亮度（单位：cd/m²），可选参数，如果该参数不支持则返回固定值（固定值由传感器自定义），支持则返回正常数值。 |
 
 #### HallResponse
 
-霍尔传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+霍尔传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明statusnumber否否显示霍尔状态。测量设备周围是否存在磁力吸引，0表示没有，大于0表示有。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| status | number | 否 | 否 | 显示霍尔状态。测量设备周围是否存在磁力吸引，0表示没有，大于0表示有。 |
 
 #### MagneticFieldResponse
 
-磁场传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+磁场传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明xnumber否否x轴环境磁场强度，单位 : μT。ynumber否否y轴环境磁场强度，单位 : μT。znumber否否z轴环境磁场强度，单位 : μT。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| x | number | 否 | 否 | x轴环境磁场强度，单位 : μT。 |
+| y | number | 否 | 否 | y轴环境磁场强度，单位 : μT。 |
+| z | number | 否 | 否 | z轴环境磁场强度，单位 : μT。 |
 
 #### MagneticFieldUncalibratedResponse
 
-未校准磁场传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+未校准磁场传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明xnumber否否x轴未校准环境磁场强度，单位 : μT。ynumber否否y轴未校准环境磁场强度，单位 : μT。znumber否否z轴未校准环境磁场强度，单位 : μT。biasXnumber否否x轴未校准环境磁场强度偏量，单位 : μT。biasYnumber否否y轴未校准环境磁场强度偏量，单位 : μT。biasZnumber否否z轴未校准环境磁场强度偏量，单位 : μT。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| x | number | 否 | 否 | x轴未校准环境磁场强度，单位 : μT。 |
+| y | number | 否 | 否 | y轴未校准环境磁场强度，单位 : μT。 |
+| z | number | 否 | 否 | z轴未校准环境磁场强度，单位 : μT。 |
+| biasX | number | 否 | 否 | x轴未校准环境磁场强度偏量，单位 : μT。 |
+| biasY | number | 否 | 否 | y轴未校准环境磁场强度偏量，单位 : μT。 |
+| biasZ | number | 否 | 否 | z轴未校准环境磁场强度偏量，单位 : μT。 |
 
 #### PedometerResponse
 
-计步传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+计步传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明stepsnumber否否用户的行走步数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| steps | number | 否 | 否 | 用户的行走步数。 |
 
 #### HumidityResponse
 
-湿度传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+湿度传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明humiditynumber否否湿度值。测量环境的相对湿度，以百分比 (%) 表示。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| humidity | number | 否 | 否 | 湿度值。测量环境的相对湿度，以百分比 (%) 表示。 |
 
 #### PedometerDetectionResponse
 
-计步检测传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+计步检测传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明scalarnumber否否计步器检测。检测用户的计步动作，如果取值为1则代表用户产生了计步行走的动作，取值为0则代表用户没有发生运动。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| scalar | number | 否 | 否 | 计步器检测。检测用户的计步动作，如果取值为1则代表用户产生了计步行走的动作，取值为0则代表用户没有发生运动。 |
 
 #### AmbientTemperatureResponse
 
-温度传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+温度传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明temperaturenumber否否环境温度（单位：摄氏度）。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| temperature | number | 否 | 否 | 环境温度（单位：摄氏度）。 |
 
 #### BarometerResponse
 
-气压计传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+气压计传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明pressurenumber否否压力值（单位：百帕）。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| pressure | number | 否 | 否 | 压力值（单位：百帕）。 |
 
 #### HeartRateResponse
 
-心率传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+心率传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明heartRatenumber否否心率值。测量用户的心率数值，单位：bpm。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| heartRate | number | 否 | 否 | 心率值。测量用户的心率数值，单位：bpm。 |
 
 #### WearDetectionResponse
 
-佩戴检测传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002529285633__response)。
+佩戴检测传感器数据，继承于[Response](#ZH-CN_TOPIC_0000002522081758__response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明valuenumber否否表示设备是否被穿戴（1表示已穿戴，0表示未穿戴）。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| value | number | 否 | 否 | 表示设备是否被穿戴（1表示已穿戴，0表示未穿戴）。 |
 
 #### Options
 
@@ -5942,11 +6773,10 @@ sensorIndexnumber否是
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明intervalnumber|[SensorFrequency](#ZH-CN_TOPIC_0000002529285633__sensorfrequency11)11+否是表示传感器的上报频率，默认值为200000000ns。该属性有最小值和最大值的限制，由硬件支持的上报频率决定，当设置频率大于最大值时以最大值上报数据，小于最小值时以最小值上报数据。sensorInfoParam19+[SensorInfoParam](#ZH-CN_TOPIC_0000002529285633__sensorinfoparam19)否是
-
-传感器传入设置参数，可指定deviceId、sensorIndex。
-
-**元服务API**：从API version 19开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| interval | number|SensorFrequency11+ | 否 | 是 | 表示传感器的上报频率，默认值为200000000ns。该属性有最小值和最大值的限制，由硬件支持的上报频率决定，当设置频率大于最大值时以最大值上报数据，小于最小值时以最小值上报数据。 |
+| sensorInfoParam19+ | SensorInfoParam | 否 | 是 | 传感器传入设置参数，可指定deviceId、sensorIndex。 元服务API：从API version 19开始，该接口支持在元服务中使用。 |
 
 #### SensorFrequency11+
 
@@ -5958,7 +6788,11 @@ type SensorFrequency = 'game' | 'ui' | 'normal'
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-类型说明'game'用于指定传感器上报频率，频率值为20000000ns，该频率被设置在硬件支持的频率范围内时会生效，值固定为'game'字符串。'ui'用于指定传感器上报频率，频率值为60000000ns，该频率被设置在硬件支持的频率范围内时会生效，值固定为'ui'字符串。'normal'用于指定传感器上报频率，频率值为200000000ns，该频率被设置在硬件支持的频率范围内时会生效，值固定为'normal'字符串。
+| 类型 | 说明 |
+| --- | --- |
+| 'game' | 用于指定传感器上报频率，频率值为20000000ns，该频率被设置在硬件支持的频率范围内时会生效，值固定为'game'字符串。 |
+| 'ui' | 用于指定传感器上报频率，频率值为60000000ns，该频率被设置在硬件支持的频率范围内时会生效，值固定为'ui'字符串。 |
+| 'normal' | 用于指定传感器上报频率，频率值为200000000ns，该频率被设置在硬件支持的频率范围内时会生效，值固定为'normal'字符串。 |
 
 #### RotationMatrixResponse
 
@@ -5966,7 +6800,10 @@ type SensorFrequency = 'game' | 'ui' | 'normal'
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明rotationArray<number>否否旋转矩阵。inclinationArray<number>否否倾斜矩阵。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| rotation | Array<number> | 否 | 否 | 旋转矩阵。 |
+| inclination | Array<number> | 否 | 否 | 倾斜矩阵。 |
 
 #### CoordinatesOptions
 
@@ -5974,7 +6811,10 @@ type SensorFrequency = 'game' | 'ui' | 'normal'
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明xnumber否否x坐标方向。ynumber否否y坐标方向。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| x | number | 否 | 否 | x坐标方向。 |
+| y | number | 否 | 否 | y坐标方向。 |
 
 #### GeomagneticResponse
 
@@ -5982,7 +6822,15 @@ type SensorFrequency = 'game' | 'ui' | 'normal'
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明xnumber否否地磁场的北分量。ynumber否否地磁场的东分量。znumber否否地磁场的垂直分量。geomagneticDipnumber否否地磁倾角，即地球磁场线与水平面的夹角。deflectionAnglenumber否否地磁偏角，即地磁北方向与正北方向在水平面上的角度。levelIntensitynumber否否地磁场的水平强度。totalIntensitynumber否否地磁场的总强度。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| x | number | 否 | 否 | 地磁场的北分量。 |
+| y | number | 否 | 否 | 地磁场的东分量。 |
+| z | number | 否 | 否 | 地磁场的垂直分量。 |
+| geomagneticDip | number | 否 | 否 | 地磁倾角，即地球磁场线与水平面的夹角。 |
+| deflectionAngle | number | 否 | 否 | 地磁偏角，即地磁北方向与正北方向在水平面上的角度。 |
+| levelIntensity | number | 否 | 否 | 地磁场的水平强度。 |
+| totalIntensity | number | 否 | 否 | 地磁场的总强度。 |
 
 #### LocationOptions
 
@@ -5990,7 +6838,11 @@ type SensorFrequency = 'game' | 'ui' | 'normal'
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称类型只读可选说明latitudenumber否否纬度。longitudenumber否否经度。altitudenumber否否海拔高度。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| latitude | number | 否 | 否 | 纬度。 |
+| longitude | number | 否 | 否 | 经度。 |
+| altitude | number | 否 | 否 | 海拔高度。 |
 
 #### sensor.on(deprecated)
 
@@ -6000,7 +6852,8 @@ on(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER, callback: Callback<Acceleromet
 
 监听加速度传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.ACCELEROMETER](#ZH-CN_TOPIC_0000002529285633__accelerometer9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.ACCELEROMETER](#ZH-CN_TOPIC_0000002522081758__accelerometer9)9+代替。
 
 **需要权限**：ohos.permission.ACCELEROMETER
 
@@ -6008,7 +6861,11 @@ on(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER, callback: Callback<Acceleromet
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_ACCELEROMETER是要订阅的加速度传感器类型为SENSOR_TYPE_ID_ACCELEROMETER。callbackCallback<[AccelerometerResponse](#ZH-CN_TOPIC_0000002529285633__accelerometerresponse)>是注册加速度传感器的回调函数，上报的数据类型为AccelerometerResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_ACCELEROMETER | 是 | 要订阅的加速度传感器类型为SENSOR_TYPE_ID_ACCELEROMETER。 |
+| callback | Callback<AccelerometerResponse> | 是 | 注册加速度传感器的回调函数，上报的数据类型为AccelerometerResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **示例**：
 
@@ -6030,7 +6887,8 @@ on(type: SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION,callback:Callback<LinearA
 
 监听线性加速度传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.LINEAR_ACCELEROMETER](#ZH-CN_TOPIC_0000002529285633__linear_accelerometer9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.LINEAR_ACCELEROMETER](#ZH-CN_TOPIC_0000002522081758__linear_accelerometer9)9+代替。
 
 **需要权限**：ohos.permission.ACCELEROMETER
 
@@ -6038,7 +6896,11 @@ on(type: SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION,callback:Callback<LinearA
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_LINEAR_ACCELERATION是要订阅的线性加速度传感器类型为SENSOR_TYPE_ID_LINEAR_ACCELERATION。callbackCallback<[LinearAccelerometerResponse](#ZH-CN_TOPIC_0000002529285633__linearaccelerometerresponse)>是注册线性加速度传感器的回调函数，上报的数据类型为LinearAccelerometerResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION | 是 | 要订阅的线性加速度传感器类型为SENSOR_TYPE_ID_LINEAR_ACCELERATION。 |
+| callback | Callback<LinearAccelerometerResponse> | 是 | 注册线性加速度传感器的回调函数，上报的数据类型为LinearAccelerometerResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 #### ACCELEROMETER_UNCALIBRATED(deprecated)
 
@@ -6046,7 +6908,8 @@ on(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED,callback: Callback
 
 监听未校准加速度计传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.ACCELEROMETER_UNCALIBRATED](#ZH-CN_TOPIC_0000002529285633__accelerometer_uncalibrated9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.ACCELEROMETER_UNCALIBRATED](#ZH-CN_TOPIC_0000002522081758__accelerometer_uncalibrated9)9+代替。
 
 **需要权限**：ohos.permission.ACCELEROMETER
 
@@ -6054,7 +6917,11 @@ on(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED,callback: Callback
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED是要订阅的未校准加速度计传感器类型为SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED。callbackCallback<[AccelerometerUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__accelerometeruncalibratedresponse)>是注册未校准加速度计传感器的回调函数，上报的数据类型为AccelerometerUncalibratedResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED | 是 | 要订阅的未校准加速度计传感器类型为SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED。 |
+| callback | Callback<AccelerometerUncalibratedResponse> | 是 | 注册未校准加速度计传感器的回调函数，上报的数据类型为AccelerometerUncalibratedResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **示例**：
 
@@ -6079,13 +6946,18 @@ on(type: SensorType.SENSOR_TYPE_ID_GRAVITY, callback: Callback<GravityResponse>,
 
 监听重力传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.GRAVITY](#ZH-CN_TOPIC_0000002529285633__gravity9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.GRAVITY](#ZH-CN_TOPIC_0000002522081758__gravity9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_GRAVITY是要订阅的重力传感器类型为SENSOR_TYPE_ID_GRAVITY。callbackCallback<[GravityResponse](#ZH-CN_TOPIC_0000002529285633__gravityresponse)>是注册重力传感器的回调函数，上报的数据类型为GravityResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_GRAVITY | 是 | 要订阅的重力传感器类型为SENSOR_TYPE_ID_GRAVITY。 |
+| callback | Callback<GravityResponse> | 是 | 注册重力传感器的回调函数，上报的数据类型为GravityResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **示例**：
 
@@ -6107,7 +6979,8 @@ on(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback: Callback<GyroscopeRespon
 
 监听陀螺仪传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.GYROSCOPE](#ZH-CN_TOPIC_0000002529285633__gyroscope9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.GYROSCOPE](#ZH-CN_TOPIC_0000002522081758__gyroscope9)9+代替。
 
 **需要权限**：ohos.permission.GYROSCOPE
 
@@ -6115,7 +6988,11 @@ on(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback: Callback<GyroscopeRespon
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_GYROSCOPE是要订阅的陀螺仪传感器类型为SENSOR_TYPE_ID_GYROSCOPE。callbackCallback<[GyroscopeResponse](#ZH-CN_TOPIC_0000002529285633__gyroscoperesponse)>是注册陀螺仪传感器的回调函数，上报的数据类型为GyroscopeResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_GYROSCOPE | 是 | 要订阅的陀螺仪传感器类型为SENSOR_TYPE_ID_GYROSCOPE。 |
+| callback | Callback<GyroscopeResponse> | 是 | 注册陀螺仪传感器的回调函数，上报的数据类型为GyroscopeResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **示例**：
 
@@ -6137,7 +7014,8 @@ on(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED,callback:Callback<Gyro
 
 监听未校准陀螺仪传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.GYROSCOPE_UNCALIBRATED](#ZH-CN_TOPIC_0000002529285633__gyroscope_uncalibrated9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.GYROSCOPE_UNCALIBRATED](#ZH-CN_TOPIC_0000002522081758__gyroscope_uncalibrated9)9+代替。
 
 **需要权限**：ohos.permission.GYROSCOPE
 
@@ -6145,7 +7023,11 @@ on(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED,callback:Callback<Gyro
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED是要订阅的未校准陀螺仪传感器类型为SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED。callbackCallback<[GyroscopeUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__gyroscopeuncalibratedresponse)>是注册未校准陀螺仪传感器的回调函数，上报的数据类型为GyroscopeUncalibratedResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED | 是 | 要订阅的未校准陀螺仪传感器类型为SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED。 |
+| callback | Callback<GyroscopeUncalibratedResponse> | 是 | 注册未校准陀螺仪传感器的回调函数，上报的数据类型为GyroscopeUncalibratedResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **示例**：
 
@@ -6170,13 +7052,18 @@ on(type: SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION, callback: Callback<Signif
 
 监听有效运动传感器数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.SIGNIFICANT_MOTION](#ZH-CN_TOPIC_0000002529285633__significant_motion9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.SIGNIFICANT_MOTION](#ZH-CN_TOPIC_0000002522081758__significant_motion9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_SIGNIFICANT_MOTION是要订阅的有效运动传感器类型为SENSOR_TYPE_ID_SIGNIFICANT_MOTION。callbackCallback<[SignificantMotionResponse](#ZH-CN_TOPIC_0000002529285633__significantmotionresponse)>是注册有效运动传感器的回调函数，上报的数据类型为SignificantMotionResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION | 是 | 要订阅的有效运动传感器类型为SENSOR_TYPE_ID_SIGNIFICANT_MOTION。 |
+| callback | Callback<SignificantMotionResponse> | 是 | 注册有效运动传感器的回调函数，上报的数据类型为SignificantMotionResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **示例**：
 
@@ -6196,7 +7083,8 @@ on(type: SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION, callback: Callback<Pedom
 
 监听计步检测传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.PEDOMETER_DETECTION](#ZH-CN_TOPIC_0000002529285633__pedometer_detection9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.PEDOMETER_DETECTION](#ZH-CN_TOPIC_0000002522081758__pedometer_detection9)9+代替。
 
 **需要权限**：ohos.permission.ACTIVITY_MOTION
 
@@ -6204,7 +7092,11 @@ on(type: SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION, callback: Callback<Pedom
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_PEDOMETER_DETECTION是要订阅的计步检测传感器类型为SENSOR_TYPE_ID_PEDOMETER_DETECTION。callbackCallback<[PedometerDetectionResponse](#ZH-CN_TOPIC_0000002529285633__pedometerdetectionresponse)>是注册计步检测传感器的回调函数，上报的数据类型为PedometerDetectionResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION | 是 | 要订阅的计步检测传感器类型为SENSOR_TYPE_ID_PEDOMETER_DETECTION。 |
+| callback | Callback<PedometerDetectionResponse> | 是 | 注册计步检测传感器的回调函数，上报的数据类型为PedometerDetectionResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **示例**：
 
@@ -6224,7 +7116,8 @@ on(type: SensorType.SENSOR_TYPE_ID_PEDOMETER, callback: Callback<PedometerRespon
 
 监听计步传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.PEDOMETER](#ZH-CN_TOPIC_0000002529285633__pedometer9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.PEDOMETER](#ZH-CN_TOPIC_0000002522081758__pedometer9)9+代替。
 
 **需要权限**：ohos.permission.ACTIVITY_MOTION
 
@@ -6232,7 +7125,11 @@ on(type: SensorType.SENSOR_TYPE_ID_PEDOMETER, callback: Callback<PedometerRespon
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_PEDOMETER是要订阅的计步传感器类型为SENSOR_TYPE_ID_PEDOMETER。callbackCallback<[PedometerResponse](#ZH-CN_TOPIC_0000002529285633__pedometerresponse)>是注册计步传感器的回调函数，上报的数据类型为PedometerResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_PEDOMETER | 是 | 要订阅的计步传感器类型为SENSOR_TYPE_ID_PEDOMETER。 |
+| callback | Callback<PedometerResponse> | 是 | 注册计步传感器的回调函数，上报的数据类型为PedometerResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **示例**：
 
@@ -6252,13 +7149,18 @@ on(type: SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE,callback:Callback<Ambient
 
 监听环境温度传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.AMBIENT_TEMPERATURE](#ZH-CN_TOPIC_0000002529285633__ambient_temperature9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.AMBIENT_TEMPERATURE](#ZH-CN_TOPIC_0000002522081758__ambient_temperature9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_AMBIENT_TEMPERATURE是要订阅的环境温度传感器类型为SENSOR_TYPE_ID_AMBIENT_TEMPERATURE。callbackCallback<[AmbientTemperatureResponse](#ZH-CN_TOPIC_0000002529285633__ambienttemperatureresponse)>是注册环境温度传感器的回调函数，上报的数据类型为AmbientTemperatureResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE | 是 | 要订阅的环境温度传感器类型为SENSOR_TYPE_ID_AMBIENT_TEMPERATURE。 |
+| callback | Callback<AmbientTemperatureResponse> | 是 | 注册环境温度传感器的回调函数，上报的数据类型为AmbientTemperatureResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **示例**：
 
@@ -6278,13 +7180,18 @@ on(type: SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback: Callback<MagneticFi
 
 监听磁场传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.MAGNETIC_FIELD](#ZH-CN_TOPIC_0000002529285633__magnetic_field9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.MAGNETIC_FIELD](#ZH-CN_TOPIC_0000002522081758__magnetic_field9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_MAGNETIC_FIELD是要订阅的磁场传感器类型为SENSOR_TYPE_ID_MAGNETIC_FIELD。callbackCallback<[MagneticFieldResponse](#ZH-CN_TOPIC_0000002529285633__magneticfieldresponse)>是注册磁场传感器的回调函数，上报的数据类型为MagneticFieldResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD | 是 | 要订阅的磁场传感器类型为SENSOR_TYPE_ID_MAGNETIC_FIELD。 |
+| callback | Callback<MagneticFieldResponse> | 是 | 注册磁场传感器的回调函数，上报的数据类型为MagneticFieldResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **示例**：
 
@@ -6306,13 +7213,18 @@ on(type: SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED,callback: Callbac
 
 监听未校准磁场传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.MAGNETIC_FIELD_UNCALIBRATED](#ZH-CN_TOPIC_0000002529285633__magnetic_field_uncalibrated9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.MAGNETIC_FIELD_UNCALIBRATED](#ZH-CN_TOPIC_0000002522081758__magnetic_field_uncalibrated9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED是要订阅的未校准磁场传感器类型为SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED。callbackCallback<[MagneticFieldUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__magneticfielduncalibratedresponse)>是注册未校准磁场传感器的回调函数，上报的数据类型为MagneticFieldUncalibratedResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED | 是 | 要订阅的未校准磁场传感器类型为SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED。 |
+| callback | Callback<MagneticFieldUncalibratedResponse> | 是 | 注册未校准磁场传感器的回调函数，上报的数据类型为MagneticFieldUncalibratedResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **示例**：
 
@@ -6337,13 +7249,18 @@ on(type: SensorType.SENSOR_TYPE_ID_PROXIMITY, callback: Callback<ProximityRespon
 
 监听接近光传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.PROXIMITY](#ZH-CN_TOPIC_0000002529285633__proximity9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.PROXIMITY](#ZH-CN_TOPIC_0000002522081758__proximity9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_PROXIMITY是要订阅的接近光传感器类型为SENSOR_TYPE_ID_PROXIMITY。callbackCallback<[ProximityResponse](#ZH-CN_TOPIC_0000002529285633__proximityresponse)>是注册接近光传感器的回调函数，上报的数据类型为ProximityResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，默认值为200000000ns。当接近光事件被触发的很频繁时，该参数用于限定事件上报的频率。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_PROXIMITY | 是 | 要订阅的接近光传感器类型为SENSOR_TYPE_ID_PROXIMITY。 |
+| callback | Callback<ProximityResponse> | 是 | 注册接近光传感器的回调函数，上报的数据类型为ProximityResponse。 |
+| options | Options | 否 | 可选参数列表，默认值为200000000ns。当接近光事件被触发的很频繁时，该参数用于限定事件上报的频率。 |
 
 **示例**：
 
@@ -6363,13 +7280,18 @@ on(type: SensorType.SENSOR_TYPE_ID_HUMIDITY, callback: Callback<HumidityResponse
 
 监听湿度传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.HUMIDITY](#ZH-CN_TOPIC_0000002529285633__humidity9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.HUMIDITY](#ZH-CN_TOPIC_0000002522081758__humidity9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_HUMIDITY是要订阅的湿度传感器类型为SENSOR_TYPE_ID_HUMIDITY。callbackCallback<[HumidityResponse](#ZH-CN_TOPIC_0000002529285633__humidityresponse)>是注册湿度传感器的回调函数，上报的数据类型为HumidityResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_HUMIDITY | 是 | 要订阅的湿度传感器类型为SENSOR_TYPE_ID_HUMIDITY。 |
+| callback | Callback<HumidityResponse> | 是 | 注册湿度传感器的回调函数，上报的数据类型为HumidityResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **示例**：
 
@@ -6389,13 +7311,18 @@ on(type: SensorType.SENSOR_TYPE_ID_BAROMETER, callback: Callback<BarometerRespon
 
 监听气压计传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.BAROMETER](#ZH-CN_TOPIC_0000002529285633__barometer9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.BAROMETER](#ZH-CN_TOPIC_0000002522081758__barometer9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_BAROMETER是要订阅的气压计传感器类型为SENSOR_TYPE_ID_BAROMETER。callbackCallback<[BarometerResponse](#ZH-CN_TOPIC_0000002529285633__barometerresponse)>是注册气压计传感器的回调函数，上报的数据类型为BarometerResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_BAROMETER | 是 | 要订阅的气压计传感器类型为SENSOR_TYPE_ID_BAROMETER。 |
+| callback | Callback<BarometerResponse> | 是 | 注册气压计传感器的回调函数，上报的数据类型为BarometerResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **示例**：
 
@@ -6415,13 +7342,18 @@ on(type: SensorType.SENSOR_TYPE_ID_HALL, callback: Callback<HallResponse>, optio
 
 监听霍尔传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.HALL](#ZH-CN_TOPIC_0000002529285633__hall9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.HALL](#ZH-CN_TOPIC_0000002522081758__hall9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_HALL是要订阅的霍尔传感器类型为SENSOR_TYPE_ID_HALL。callbackCallback<[HallResponse](#ZH-CN_TOPIC_0000002529285633__hallresponse)>是注册霍尔传感器的回调函数，上报的数据类型为 HallResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，默认值为200000000ns。当霍尔事件被触发的很频繁时，该参数用于限定事件上报的频率。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_HALL | 是 | 要订阅的霍尔传感器类型为SENSOR_TYPE_ID_HALL。 |
+| callback | Callback<HallResponse> | 是 | 注册霍尔传感器的回调函数，上报的数据类型为 HallResponse。 |
+| options | Options | 否 | 可选参数列表，默认值为200000000ns。当霍尔事件被触发的很频繁时，该参数用于限定事件上报的频率。 |
 
 **示例**：
 
@@ -6441,13 +7373,18 @@ on(type: SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT, callback: Callback<LightRespon
 
 监听环境光传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.AMBIENT_LIGHT](#ZH-CN_TOPIC_0000002529285633__ambient_light9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.AMBIENT_LIGHT](#ZH-CN_TOPIC_0000002522081758__ambient_light9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_AMBIENT_LIGHT是要订阅的环境光传感器类型为SENSOR_TYPE_ID_AMBIENT_LIGHT。callbackCallback<[LightResponse](#ZH-CN_TOPIC_0000002529285633__lightresponse)>是注册环境光传感器的回调函数，上报的数据类型为LightResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT | 是 | 要订阅的环境光传感器类型为SENSOR_TYPE_ID_AMBIENT_LIGHT。 |
+| callback | Callback<LightResponse> | 是 | 注册环境光传感器的回调函数，上报的数据类型为LightResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **示例**：
 
@@ -6467,13 +7404,18 @@ on(type: SensorType.SENSOR_TYPE_ID_ORIENTATION, callback: Callback<OrientationRe
 
 监听方向传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.ORIENTATION](#ZH-CN_TOPIC_0000002529285633__orientation9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.ORIENTATION](#ZH-CN_TOPIC_0000002522081758__orientation9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_ORIENTATION是要订阅的方向传感器类型为SENSOR_TYPE_ID_ORIENTATION。callbackCallback<[OrientationResponse](#ZH-CN_TOPIC_0000002529285633__orientationresponse)>是注册方向传感器的回调函数，上报的数据类型为OrientationResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_ORIENTATION | 是 | 要订阅的方向传感器类型为SENSOR_TYPE_ID_ORIENTATION。 |
+| callback | Callback<OrientationResponse> | 是 | 注册方向传感器的回调函数，上报的数据类型为OrientationResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **示例**：
 
@@ -6495,7 +7437,8 @@ on(type: SensorType.SENSOR_TYPE_ID_HEART_RATE, callback: Callback<HeartRateRespo
 
 监听心率传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.HEART_RATE](#ZH-CN_TOPIC_0000002529285633__heart_rate9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.HEART_RATE](#ZH-CN_TOPIC_0000002522081758__heart_rate9)9+代替。
 
 **需要权限**：ohos.permission.HEALTH_DATA
 
@@ -6503,7 +7446,11 @@ on(type: SensorType.SENSOR_TYPE_ID_HEART_RATE, callback: Callback<HeartRateRespo
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_HEART_RATE是要订阅的心率传感器类型为SENSOR_TYPE_ID_HEART_RATE。callbackCallback<[HeartRateResponse](#ZH-CN_TOPIC_0000002529285633__heartrateresponse)>是注册心率传感器的回调函数，上报的数据类型为HeartRateResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_HEART_RATE | 是 | 要订阅的心率传感器类型为SENSOR_TYPE_ID_HEART_RATE。 |
+| callback | Callback<HeartRateResponse> | 是 | 注册心率传感器的回调函数，上报的数据类型为HeartRateResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 #### ROTATION_VECTOR(deprecated)
 
@@ -6511,13 +7458,18 @@ on(type: SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR,callback: Callback<RotationVe
 
 监听旋转矢量传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.ROTATION_VECTOR](#ZH-CN_TOPIC_0000002529285633__rotation_vector9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.ROTATION_VECTOR](#ZH-CN_TOPIC_0000002522081758__rotation_vector9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_ROTATION_VECTOR是要订阅的旋转矢量传感器类型为SENSOR_TYPE_ID_ROTATION_VECTOR。callbackCallback<[RotationVectorResponse](#ZH-CN_TOPIC_0000002529285633__rotationvectorresponse)>是注册旋转矢量传感器的回调函数，上报的数据类型为RotationVectorResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR | 是 | 要订阅的旋转矢量传感器类型为SENSOR_TYPE_ID_ROTATION_VECTOR。 |
+| callback | Callback<RotationVectorResponse> | 是 | 注册旋转矢量传感器的回调函数，上报的数据类型为RotationVectorResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **示例**：
 
@@ -6540,13 +7492,18 @@ on(type: SensorType.SENSOR_TYPE_ID_WEAR_DETECTION, callback: Callback<WearDetect
 
 监听所佩戴的检测传感器的数据变化。如果多次调用该接口，仅最后一次调用生效。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.WEAR_DETECTION](#ZH-CN_TOPIC_0000002529285633__wear_detection9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.on.WEAR_DETECTION](#ZH-CN_TOPIC_0000002522081758__wear_detection9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_WEAR_DETECTION是要订阅的佩戴检测传感器类型为SENSOR_TYPE_ID_WEAR_DETECTION。callbackCallback<[WearDetectionResponse](#ZH-CN_TOPIC_0000002529285633__weardetectionresponse)>是注册佩戴检测传感器的回调函数，上报的数据类型为WearDetectionResponse。options[Options](#ZH-CN_TOPIC_0000002529285633__options)否可选参数列表，用于设置传感器上报频率，默认值为200000000ns。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_WEAR_DETECTION | 是 | 要订阅的佩戴检测传感器类型为SENSOR_TYPE_ID_WEAR_DETECTION。 |
+| callback | Callback<WearDetectionResponse> | 是 | 注册佩戴检测传感器的回调函数，上报的数据类型为WearDetectionResponse。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **示例**：
 
@@ -6568,7 +7525,8 @@ once(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER, callback: Callback<Accelerom
 
 监听加速度传感器的数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.ACCELEROMETER](#ZH-CN_TOPIC_0000002529285633__accelerometer9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.ACCELEROMETER](#ZH-CN_TOPIC_0000002522081758__accelerometer9-1)9+代替。
 
 **需要权限**：ohos.permission.ACCELEROMETER
 
@@ -6576,7 +7534,10 @@ once(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER, callback: Callback<Accelerom
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_ACCELEROMETER是加速度传感器类型为SENSOR_TYPE_ID_ACCELEROMETER。callbackCallback<[AccelerometerResponse](#ZH-CN_TOPIC_0000002529285633__accelerometerresponse)>是注册一次加速度传感器的回调函数，上报的数据类型为AccelerometerResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_ACCELEROMETER | 是 | 加速度传感器类型为SENSOR_TYPE_ID_ACCELEROMETER。 |
+| callback | Callback<AccelerometerResponse> | 是 | 注册一次加速度传感器的回调函数，上报的数据类型为AccelerometerResponse。 |
 
 **示例**：
 
@@ -6596,7 +7557,8 @@ once(type: SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION,callback:Callback<Linea
 
 监听线性加速度传感器数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.LINEAR_ACCELEROMETER](#ZH-CN_TOPIC_0000002529285633__linear_accelerometer9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.LINEAR_ACCELEROMETER](#ZH-CN_TOPIC_0000002522081758__linear_accelerometer9-1)9+代替。
 
 **需要权限**：ohos.permission.ACCELERATION
 
@@ -6604,7 +7566,10 @@ once(type: SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION,callback:Callback<Linea
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_LINEAR_ACCELERATION是线性加速度传感器类型为SENSOR_TYPE_ID_LINEAR_ACCELERATION。callbackCallback<[LinearAccelerometerResponse](#ZH-CN_TOPIC_0000002529285633__linearaccelerometerresponse)>是注册一次线性加速度传感器的回调函数，上报的数据类型为LinearAccelerometerResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION | 是 | 线性加速度传感器类型为SENSOR_TYPE_ID_LINEAR_ACCELERATION。 |
+| callback | Callback<LinearAccelerometerResponse> | 是 | 注册一次线性加速度传感器的回调函数，上报的数据类型为LinearAccelerometerResponse。 |
 
 #### ACCELEROMETER_UNCALIBRATED(deprecated)
 
@@ -6612,7 +7577,8 @@ once(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED,callback: Callba
 
 监听未校准加速度传感器的数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.ACCELEROMETER_UNCALIBRATED](#ZH-CN_TOPIC_0000002529285633__accelerometer_uncalibrated9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.ACCELEROMETER_UNCALIBRATED](#ZH-CN_TOPIC_0000002522081758__accelerometer_uncalibrated9-1)9+代替。
 
 **需要权限**：ohos.permission.ACCELEROMETER
 
@@ -6620,7 +7586,10 @@ once(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED,callback: Callba
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED是未校准加速度传感器类型为SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED。callbackCallback<[AccelerometerUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__accelerometeruncalibratedresponse)>是注册一次未校准加速度传感器的回调函数，上报的数据类型为AccelerometerUncalibratedResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED | 是 | 未校准加速度传感器类型为SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED。 |
+| callback | Callback<AccelerometerUncalibratedResponse> | 是 | 注册一次未校准加速度传感器的回调函数，上报的数据类型为AccelerometerUncalibratedResponse。 |
 
 **示例**：
 
@@ -6643,13 +7612,17 @@ once(type: SensorType.SENSOR_TYPE_ID_GRAVITY, callback: Callback<GravityResponse
 
 监听重力传感器的数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.GRAVITY](#ZH-CN_TOPIC_0000002529285633__gravity9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.GRAVITY](#ZH-CN_TOPIC_0000002522081758__gravity9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_GRAVITY是重力传感器类型为SENSOR_TYPE_ID_GRAVITY。callbackCallback<[GravityResponse](#ZH-CN_TOPIC_0000002529285633__gravityresponse)>是注册一次重力传感器的回调函数，上报的数据类型为GravityResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_GRAVITY | 是 | 重力传感器类型为SENSOR_TYPE_ID_GRAVITY。 |
+| callback | Callback<GravityResponse> | 是 | 注册一次重力传感器的回调函数，上报的数据类型为GravityResponse。 |
 
 **示例**：
 
@@ -6669,7 +7642,8 @@ once(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback: Callback<GyroscopeResp
 
 监听陀螺仪传感器的数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.GYROSCOPE](#ZH-CN_TOPIC_0000002529285633__gyroscope9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.GYROSCOPE](#ZH-CN_TOPIC_0000002522081758__gyroscope9-1)9+代替。
 
 **需要权限**：ohos.permission.GYROSCOPE
 
@@ -6677,7 +7651,10 @@ once(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback: Callback<GyroscopeResp
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_GYROSCOPE是陀螺仪传感器类型为SENSOR_TYPE_ID_GYROSCOPE。callbackCallback<[GyroscopeResponse](#ZH-CN_TOPIC_0000002529285633__gyroscoperesponse)>是注册一次陀螺仪传感器的回调函数，上报的数据类型为GyroscopeResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_GYROSCOPE | 是 | 陀螺仪传感器类型为SENSOR_TYPE_ID_GYROSCOPE。 |
+| callback | Callback<GyroscopeResponse> | 是 | 注册一次陀螺仪传感器的回调函数，上报的数据类型为GyroscopeResponse。 |
 
 **示例**：
 
@@ -6697,7 +7674,8 @@ once(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED,callback: Callback<G
 
 监听未校准陀螺仪传感器的数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.GYROSCOPE_UNCALIBRATED](#ZH-CN_TOPIC_0000002529285633__gyroscope_uncalibrated9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.GYROSCOPE_UNCALIBRATED](#ZH-CN_TOPIC_0000002522081758__gyroscope_uncalibrated9-1)9+代替。
 
 **需要权限**：ohos.permission.GYROSCOPE
 
@@ -6705,7 +7683,10 @@ once(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED,callback: Callback<G
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED是未校准陀螺仪传感器类型为SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED。callbackCallback<[GyroscopeUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__gyroscopeuncalibratedresponse)>是注册一次未校准陀螺仪传感器的回调函数，上报的数据类型为GyroscopeUncalibratedResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED | 是 | 未校准陀螺仪传感器类型为SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED。 |
+| callback | Callback<GyroscopeUncalibratedResponse> | 是 | 注册一次未校准陀螺仪传感器的回调函数，上报的数据类型为GyroscopeUncalibratedResponse。 |
 
 **示例**：
 
@@ -6728,13 +7709,17 @@ once(type: SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION,callback: Callback<Signi
 
 监听有效运动传感器的数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.SIGNIFICANT_MOTION](#ZH-CN_TOPIC_0000002529285633__significant_motion9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.SIGNIFICANT_MOTION](#ZH-CN_TOPIC_0000002522081758__significant_motion9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_SIGNIFICANT_MOTION是有效运动传感器类型为SENSOR_TYPE_ID_SIGNIFICANT_MOTION。callbackCallback<[SignificantMotionResponse](#ZH-CN_TOPIC_0000002529285633__significantmotionresponse)>是注册一次有效运动传感器的回调函数，上报的数据类型为SignificantMotionResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION | 是 | 有效运动传感器类型为SENSOR_TYPE_ID_SIGNIFICANT_MOTION。 |
+| callback | Callback<SignificantMotionResponse> | 是 | 注册一次有效运动传感器的回调函数，上报的数据类型为SignificantMotionResponse。 |
 
 **示例**：
 
@@ -6752,7 +7737,8 @@ once(type: SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION,callback: Callback<Pedo
 
 监听计步检测传感器数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.PEDOMETER_DETECTION](#ZH-CN_TOPIC_0000002529285633__pedometer_detection9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.PEDOMETER_DETECTION](#ZH-CN_TOPIC_0000002522081758__pedometer_detection9-1)9+代替。
 
 **需要权限**：ohos.permission.ACTIVITY_MOTION
 
@@ -6760,7 +7746,10 @@ once(type: SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION,callback: Callback<Pedo
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_PEDOMETER_DETECTION是计步检测传感器类型为SENSOR_TYPE_ID_PEDOMETER_DETECTION。callbackCallback<[PedometerDetectionResponse](#ZH-CN_TOPIC_0000002529285633__pedometerdetectionresponse)>是注册一次计步检测传感器的回调函数，上报的数据类型为PedometerDetectionResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION | 是 | 计步检测传感器类型为SENSOR_TYPE_ID_PEDOMETER_DETECTION。 |
+| callback | Callback<PedometerDetectionResponse> | 是 | 注册一次计步检测传感器的回调函数，上报的数据类型为PedometerDetectionResponse。 |
 
 **示例**：
 
@@ -6778,7 +7767,8 @@ once(type: SensorType.SENSOR_TYPE_ID_PEDOMETER, callback: Callback<PedometerResp
 
 监听计步器传感器数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.PEDOMETER](#ZH-CN_TOPIC_0000002529285633__pedometer9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.PEDOMETER](#ZH-CN_TOPIC_0000002522081758__pedometer9-1)9+代替。
 
 **需要权限**：ohos.permission.ACTIVITY_MOTION
 
@@ -6786,7 +7776,10 @@ once(type: SensorType.SENSOR_TYPE_ID_PEDOMETER, callback: Callback<PedometerResp
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_PEDOMETER是计步传感器类型为SENSOR_TYPE_ID_PEDOMETER。callbackCallback<[PedometerResponse](#ZH-CN_TOPIC_0000002529285633__pedometerresponse)>是注册一次计步传感器的回调函数，上报的数据类型为PedometerResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_PEDOMETER | 是 | 计步传感器类型为SENSOR_TYPE_ID_PEDOMETER。 |
+| callback | Callback<PedometerResponse> | 是 | 注册一次计步传感器的回调函数，上报的数据类型为PedometerResponse。 |
 
 **示例**：
 
@@ -6804,13 +7797,17 @@ once(type: SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE,callback: Callback<Ambi
 
 监听环境温度传感器数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.AMBIENT_TEMPERATURE](#ZH-CN_TOPIC_0000002529285633__ambient_temperature9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.AMBIENT_TEMPERATURE](#ZH-CN_TOPIC_0000002522081758__ambient_temperature9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_AMBIENT_TEMPERATURE是环境温度传感器类型为SENSOR_TYPE_ID_AMBIENT_TEMPERATURE。callbackCallback<[AmbientTemperatureResponse](#ZH-CN_TOPIC_0000002529285633__ambienttemperatureresponse)>是注册一次环境温度传感器的回调函数，上报的数据类型为AmbientTemperatureResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE | 是 | 环境温度传感器类型为SENSOR_TYPE_ID_AMBIENT_TEMPERATURE。 |
+| callback | Callback<AmbientTemperatureResponse> | 是 | 注册一次环境温度传感器的回调函数，上报的数据类型为AmbientTemperatureResponse。 |
 
 **示例**：
 
@@ -6828,13 +7825,17 @@ once(type: SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback: Callback<Magnetic
 
 监听磁场传感器数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.MAGNETIC_FIELD](#ZH-CN_TOPIC_0000002529285633__magnetic_field9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.MAGNETIC_FIELD](#ZH-CN_TOPIC_0000002522081758__magnetic_field9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_MAGNETIC_FIELD是磁场传感器类型为SENSOR_TYPE_ID_MAGNETIC_FIELD。callbackCallback<[MagneticFieldResponse](#ZH-CN_TOPIC_0000002529285633__magneticfieldresponse)>是注册一次磁场传感器的回调函数，上报的数据类型为MagneticFieldResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD | 是 | 磁场传感器类型为SENSOR_TYPE_ID_MAGNETIC_FIELD。 |
+| callback | Callback<MagneticFieldResponse> | 是 | 注册一次磁场传感器的回调函数，上报的数据类型为MagneticFieldResponse。 |
 
 **示例**：
 
@@ -6854,13 +7855,17 @@ once(type: SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED,callback: Callb
 
 监听未校准磁场传感器数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.MAGNETIC_FIELD_UNCALIBRATED](#ZH-CN_TOPIC_0000002529285633__magnetic_field_uncalibrated9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.MAGNETIC_FIELD_UNCALIBRATED](#ZH-CN_TOPIC_0000002522081758__magnetic_field_uncalibrated9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED是未校准磁场传感器类型为SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED。callbackCallback<[MagneticFieldUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__magneticfielduncalibratedresponse)>是注册一次未校准磁场传感器的回调函数，上报的数据类型为MagneticFieldUncalibratedResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED | 是 | 未校准磁场传感器类型为SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED。 |
+| callback | Callback<MagneticFieldUncalibratedResponse> | 是 | 注册一次未校准磁场传感器的回调函数，上报的数据类型为MagneticFieldUncalibratedResponse。 |
 
 **示例**：
 
@@ -6883,13 +7888,17 @@ once(type: SensorType.SENSOR_TYPE_ID_PROXIMITY, callback: Callback<ProximityResp
 
 监听接近光传感器数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.PROXIMITY](#ZH-CN_TOPIC_0000002529285633__proximity9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.PROXIMITY](#ZH-CN_TOPIC_0000002522081758__proximity9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_PROXIMITY是接近光传感器类型为SENSOR_TYPE_ID_PROXIMITY。callbackCallback<[ProximityResponse](#ZH-CN_TOPIC_0000002529285633__proximityresponse)>是注册一次接近光传感器的回调函数，上报的数据类型为ProximityResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_PROXIMITY | 是 | 接近光传感器类型为SENSOR_TYPE_ID_PROXIMITY。 |
+| callback | Callback<ProximityResponse> | 是 | 注册一次接近光传感器的回调函数，上报的数据类型为ProximityResponse。 |
 
 **示例**：
 
@@ -6908,13 +7917,17 @@ once(type: SensorType.SENSOR_TYPE_ID_HUMIDITY, callback: Callback<HumidityRespon
 
 监听湿度传感器数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.HUMIDITY](#ZH-CN_TOPIC_0000002529285633__humidity9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.HUMIDITY](#ZH-CN_TOPIC_0000002522081758__humidity9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_HUMIDITY是湿度传感器类型为SENSOR_TYPE_ID_HUMIDITY。callbackCallback<[HumidityResponse](#ZH-CN_TOPIC_0000002529285633__humidityresponse)>是注册一次湿度传感器的回调函数，上报的数据类型为HumidityResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_HUMIDITY | 是 | 湿度传感器类型为SENSOR_TYPE_ID_HUMIDITY。 |
+| callback | Callback<HumidityResponse> | 是 | 注册一次湿度传感器的回调函数，上报的数据类型为HumidityResponse。 |
 
 **示例**：
 
@@ -6932,13 +7945,17 @@ once(type: SensorType.SENSOR_TYPE_ID_BAROMETER, callback: Callback<BarometerResp
 
 监听气压计传感器数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.BAROMETER](#ZH-CN_TOPIC_0000002529285633__barometer9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.BAROMETER](#ZH-CN_TOPIC_0000002522081758__barometer9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_BAROMETER是气压计传感器类型为SENSOR_TYPE_ID_BAROMETER。callbackCallback<[BarometerResponse](#ZH-CN_TOPIC_0000002529285633__barometerresponse)>是注册一次气压计传感器的回调函数，上报的数据类型为BarometerResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_BAROMETER | 是 | 气压计传感器类型为SENSOR_TYPE_ID_BAROMETER。 |
+| callback | Callback<BarometerResponse> | 是 | 注册一次气压计传感器的回调函数，上报的数据类型为BarometerResponse。 |
 
 **示例**：
 
@@ -6956,13 +7973,17 @@ once(type: SensorType.SENSOR_TYPE_ID_HALL, callback: Callback<HallResponse>): vo
 
 监听霍尔传感器数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.HALL](#ZH-CN_TOPIC_0000002529285633__hall9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.HALL](#ZH-CN_TOPIC_0000002522081758__hall9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_HALL是霍尔传感器类型为SENSOR_TYPE_ID_HALL。callbackCallback<[HallResponse](#ZH-CN_TOPIC_0000002529285633__hallresponse)>是注册一次霍尔传感器的回调函数，上报的数据类型为HallResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_HALL | 是 | 霍尔传感器类型为SENSOR_TYPE_ID_HALL。 |
+| callback | Callback<HallResponse> | 是 | 注册一次霍尔传感器的回调函数，上报的数据类型为HallResponse。 |
 
 **示例**：
 
@@ -6980,13 +8001,17 @@ once(type: SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT, callback: Callback<LightResp
 
 监听环境光传感器数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.AMBIENT_LIGHT](#ZH-CN_TOPIC_0000002529285633__ambient_light9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.AMBIENT_LIGHT](#ZH-CN_TOPIC_0000002522081758__ambient_light9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_AMBIENT_LIGHT是环境光传感器类型为SENSOR_TYPE_ID_AMBIENT_LIGHT。callbackCallback<[LightResponse](#ZH-CN_TOPIC_0000002529285633__lightresponse)>是注册一次环境光传感器的回调函数，上报的数据类型为LightResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT | 是 | 环境光传感器类型为SENSOR_TYPE_ID_AMBIENT_LIGHT。 |
+| callback | Callback<LightResponse> | 是 | 注册一次环境光传感器的回调函数，上报的数据类型为LightResponse。 |
 
 **示例**：
 
@@ -7004,13 +8029,17 @@ once(type: SensorType.SENSOR_TYPE_ID_ORIENTATION, callback: Callback<Orientation
 
 监听方向传感器数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.ORIENTATION](#ZH-CN_TOPIC_0000002529285633__orientation9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.ORIENTATION](#ZH-CN_TOPIC_0000002522081758__orientation9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_ORIENTATION是方向传感器类型为SENSOR_TYPE_ID_ORIENTATION。callbackCallback<[OrientationResponse](#ZH-CN_TOPIC_0000002529285633__orientationresponse)>是注册一次方向传感器的回调函数，上报的数据类型为OrientationResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_ORIENTATION | 是 | 方向传感器类型为SENSOR_TYPE_ID_ORIENTATION。 |
+| callback | Callback<OrientationResponse> | 是 | 注册一次方向传感器的回调函数，上报的数据类型为OrientationResponse。 |
 
 **示例**：
 
@@ -7030,13 +8059,17 @@ once(type: SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback: Callback<Rotatio
 
 监听旋转矢量传感器数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.ROTATION_VECTOR](#ZH-CN_TOPIC_0000002529285633__rotation_vector9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.ROTATION_VECTOR](#ZH-CN_TOPIC_0000002522081758__rotation_vector9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_ROTATION_VECTOR是旋转矢量传感器类型为SENSOR_TYPE_ID_ROTATION_VECTOR。callbackCallback<[RotationVectorResponse](#ZH-CN_TOPIC_0000002529285633__rotationvectorresponse)>是注册一次旋转矢量传感器的回调函数，上报的数据类型为RotationVectorResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR | 是 | 旋转矢量传感器类型为SENSOR_TYPE_ID_ROTATION_VECTOR。 |
+| callback | Callback<RotationVectorResponse> | 是 | 注册一次旋转矢量传感器的回调函数，上报的数据类型为RotationVectorResponse。 |
 
 **示例**：
 
@@ -7057,7 +8090,8 @@ once(type: SensorType.SENSOR_TYPE_ID_HEART_RATE, callback: Callback<HeartRateRes
 
 监听心率传感器数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.HEART_RATE](#ZH-CN_TOPIC_0000002529285633__heart_rate9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.HEART_RATE](#ZH-CN_TOPIC_0000002522081758__heart_rate9-1)9+代替。
 
 **需要权限**：ohos.permission.HEART_RATE
 
@@ -7065,7 +8099,10 @@ once(type: SensorType.SENSOR_TYPE_ID_HEART_RATE, callback: Callback<HeartRateRes
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_HEART_RATE是心率传感器类型为SENSOR_TYPE_ID_HEART_RATE。callbackCallback<[HeartRateResponse](#ZH-CN_TOPIC_0000002529285633__heartrateresponse)>是注册一次心率传感器的回调函数，上报的数据类型为HeartRateResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_HEART_RATE | 是 | 心率传感器类型为SENSOR_TYPE_ID_HEART_RATE。 |
+| callback | Callback<HeartRateResponse> | 是 | 注册一次心率传感器的回调函数，上报的数据类型为HeartRateResponse。 |
 
 **示例**：
 
@@ -7083,13 +8120,17 @@ once(type: SensorType.SENSOR_TYPE_ID_WEAR_DETECTION, callback: Callback<WearDete
 
 监听所佩戴的检测传感器的数据变化一次。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.WEAR_DETECTION](#ZH-CN_TOPIC_0000002529285633__wear_detection9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.once.WEAR_DETECTION](#ZH-CN_TOPIC_0000002522081758__wear_detection9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_WEAR_DETECTION是佩戴检测传感器类型为SENSOR_TYPE_ID_WEAR_DETECTION。callbackCallback<[WearDetectionResponse](#ZH-CN_TOPIC_0000002529285633__weardetectionresponse)>是注册一次穿戴检测传感器的回调函数，上报的数据类型为WearDetectionResponse。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_WEAR_DETECTION | 是 | 佩戴检测传感器类型为SENSOR_TYPE_ID_WEAR_DETECTION。 |
+| callback | Callback<WearDetectionResponse> | 是 | 注册一次穿戴检测传感器的回调函数，上报的数据类型为WearDetectionResponse。 |
 
 **示例**：
 
@@ -7109,7 +8150,8 @@ off(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER, callback?: Callback<Accelerom
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.ACCELEROMETER9+](#ZH-CN_TOPIC_0000002529285633__accelerometer9-2)代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.ACCELEROMETER9+](#ZH-CN_TOPIC_0000002522081758__accelerometer9-2)代替。
 
 **需要权限**：ohos.permission.ACCELEROMETER
 
@@ -7117,7 +8159,10 @@ off(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER, callback?: Callback<Accelerom
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_ACCELEROMETER是要取消订阅的加速度传感器类型为SENSOR_TYPE_ID_ACCELEROMETER。callbackCallback<[AccelerometerResponse](#ZH-CN_TOPIC_0000002529285633__accelerometerresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_ACCELEROMETER | 是 | 要取消订阅的加速度传感器类型为SENSOR_TYPE_ID_ACCELEROMETER。 |
+| callback | Callback<AccelerometerResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7139,7 +8184,8 @@ off(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED, callback?: Callb
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.ACCELEROMETER_UNCALIBRATED](#ZH-CN_TOPIC_0000002529285633__accelerometer_uncalibrated9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.ACCELEROMETER_UNCALIBRATED](#ZH-CN_TOPIC_0000002522081758__accelerometer_uncalibrated9-2)9+代替。
 
 **需要权限**：ohos.permission.ACCELEROMETER
 
@@ -7147,7 +8193,10 @@ off(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED, callback?: Callb
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED是要取消订阅的未校准加速度计传感器类型为SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED。callbackCallback<[AccelerometerUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__accelerometeruncalibratedresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED | 是 | 要取消订阅的未校准加速度计传感器类型为SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED。 |
+| callback | Callback<AccelerometerUncalibratedResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7172,13 +8221,17 @@ off(type: SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT, callback?: Callback<LightResp
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.AMBIENT_LIGHT](#ZH-CN_TOPIC_0000002529285633__ambient_light9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.AMBIENT_LIGHT](#ZH-CN_TOPIC_0000002522081758__ambient_light9-2)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_AMBIENT_LIGHT是要取消订阅的环境光传感器类型为SENSOR_TYPE_ID_AMBIENT_LIGHT。callbackCallback<[LightResponse](#ZH-CN_TOPIC_0000002529285633__lightresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT | 是 | 要取消订阅的环境光传感器类型为SENSOR_TYPE_ID_AMBIENT_LIGHT。 |
+| callback | Callback<LightResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7198,13 +8251,17 @@ off(type: SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE, callback?: Callback<Amb
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.AMBIENT_TEMPERATURE](#ZH-CN_TOPIC_0000002529285633__ambient_temperature9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.AMBIENT_TEMPERATURE](#ZH-CN_TOPIC_0000002522081758__ambient_temperature9-2)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_AMBIENT_TEMPERATURE是要取消订阅的环境温度传感器类型为SENSOR_TYPE_ID_AMBIENT_TEMPERATURE。callbackCallback<[AmbientTemperatureResponse](#ZH-CN_TOPIC_0000002529285633__ambienttemperatureresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE | 是 | 要取消订阅的环境温度传感器类型为SENSOR_TYPE_ID_AMBIENT_TEMPERATURE。 |
+| callback | Callback<AmbientTemperatureResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7224,13 +8281,17 @@ off(type: SensorType.SENSOR_TYPE_ID_BAROMETER, callback?: Callback<BarometerResp
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.BAROMETER](#ZH-CN_TOPIC_0000002529285633__barometer9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.BAROMETER](#ZH-CN_TOPIC_0000002522081758__barometer9-2)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_BAROMETER是要取消订阅的气压计传感器类型为SENSOR_TYPE_ID_BAROMETER。callbackCallback<[BarometerResponse](#ZH-CN_TOPIC_0000002529285633__barometerresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_BAROMETER | 是 | 要取消订阅的气压计传感器类型为SENSOR_TYPE_ID_BAROMETER。 |
+| callback | Callback<BarometerResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7250,13 +8311,17 @@ off(type: SensorType.SENSOR_TYPE_ID_GRAVITY, callback?: Callback<GravityResponse
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.GRAVITY](#ZH-CN_TOPIC_0000002529285633__gravity9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.GRAVITY](#ZH-CN_TOPIC_0000002522081758__gravity9-2)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_GRAVITY是要取消订阅的重力传感器类型为SENSOR_TYPE_ID_GRAVITY。callbackCallback<[GravityResponse](#ZH-CN_TOPIC_0000002529285633__gravityresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_GRAVITY | 是 | 要取消订阅的重力传感器类型为SENSOR_TYPE_ID_GRAVITY。 |
+| callback | Callback<GravityResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7278,7 +8343,8 @@ off(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback?: Callback<GyroscopeResp
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.GYROSCOPE](#ZH-CN_TOPIC_0000002529285633__gyroscope9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.GYROSCOPE](#ZH-CN_TOPIC_0000002522081758__gyroscope9-2)9+代替。
 
 **需要权限**：ohos.permission.GYROSCOPE
 
@@ -7286,7 +8352,10 @@ off(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback?: Callback<GyroscopeResp
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_GYROSCOPE是要取消订阅的陀螺仪传感器类型为SENSOR_TYPE_ID_GYROSCOPE。callbackCallback<[GyroscopeResponse](#ZH-CN_TOPIC_0000002529285633__gyroscoperesponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_GYROSCOPE | 是 | 要取消订阅的陀螺仪传感器类型为SENSOR_TYPE_ID_GYROSCOPE。 |
+| callback | Callback<GyroscopeResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7308,7 +8377,8 @@ off(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED, callback?: Callback<
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.GYROSCOPE_UNCALIBRATED](#ZH-CN_TOPIC_0000002529285633__gyroscope_uncalibrated9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.GYROSCOPE_UNCALIBRATED](#ZH-CN_TOPIC_0000002522081758__gyroscope_uncalibrated9-2)9+代替。
 
 **需要权限**：ohos.permission.GYROSCOPE
 
@@ -7316,7 +8386,10 @@ off(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED, callback?: Callback<
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED是要取消订阅的未校准陀螺仪传感器类型为SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED。callbackCallback<[GyroscopeUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__gyroscopeuncalibratedresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED | 是 | 要取消订阅的未校准陀螺仪传感器类型为SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED。 |
+| callback | Callback<GyroscopeUncalibratedResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7338,13 +8411,17 @@ off(type: SensorType.SENSOR_TYPE_ID_HALL, callback?: Callback<HallResponse>): vo
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.HALL](#ZH-CN_TOPIC_0000002529285633__hall9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.HALL](#ZH-CN_TOPIC_0000002522081758__hall9-2)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_HALL是要取消订阅的霍尔传感器类型为SENSOR_TYPE_ID_HALL。callbackCallback<[HallResponse](#ZH-CN_TOPIC_0000002529285633__hallresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_HALL | 是 | 要取消订阅的霍尔传感器类型为SENSOR_TYPE_ID_HALL。 |
+| callback | Callback<HallResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7364,7 +8441,8 @@ off(type: SensorType.SENSOR_TYPE_ID_HEART_RATE, callback?: Callback<HeartRateRes
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.HEART_RATE](#ZH-CN_TOPIC_0000002529285633__heart_rate9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.HEART_RATE](#ZH-CN_TOPIC_0000002522081758__heart_rate9-2)9+代替。
 
 **需要权限**：ohos.permission.HEALTH_DATA
 
@@ -7372,7 +8450,10 @@ off(type: SensorType.SENSOR_TYPE_ID_HEART_RATE, callback?: Callback<HeartRateRes
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_HEART_RATE是要取消订阅的心率传感器类型为SENSOR_TYPE_ID_HEART_RATE。callbackCallback<[HeartRateResponse](#ZH-CN_TOPIC_0000002529285633__heartrateresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_HEART_RATE | 是 | 要取消订阅的心率传感器类型为SENSOR_TYPE_ID_HEART_RATE。 |
+| callback | Callback<HeartRateResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7392,13 +8473,17 @@ off(type: SensorType.SENSOR_TYPE_ID_HUMIDITY, callback?: Callback<HumidityRespon
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.HUMIDITY](#ZH-CN_TOPIC_0000002529285633__humidity9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.HUMIDITY](#ZH-CN_TOPIC_0000002522081758__humidity9-2)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_HUMIDITY是要取消订阅的湿度传感器类型为SENSOR_TYPE_ID_HUMIDITY。callbackCallback<[HumidityResponse](#ZH-CN_TOPIC_0000002529285633__humidityresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_HUMIDITY | 是 | 要取消订阅的湿度传感器类型为SENSOR_TYPE_ID_HUMIDITY。 |
+| callback | Callback<HumidityResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7418,7 +8503,8 @@ off(type: SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION, callback?: Callback<Lin
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.LINEAR_ACCELEROMETER](#ZH-CN_TOPIC_0000002529285633__linear_accelerometer9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.LINEAR_ACCELEROMETER](#ZH-CN_TOPIC_0000002522081758__linear_accelerometer9-2)9+代替。
 
 **需要权限**：ohos.permission.ACCELEROMETER
 
@@ -7426,7 +8512,10 @@ off(type: SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION, callback?: Callback<Lin
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_LINEAR_ACCELERATION是要取消订阅的线性加速度传感器类型为SENSOR_TYPE_ID_LINEAR_ACCELERATION。callbackCallback<[LinearAccelerometerResponse](#ZH-CN_TOPIC_0000002529285633__linearaccelerometerresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION | 是 | 要取消订阅的线性加速度传感器类型为SENSOR_TYPE_ID_LINEAR_ACCELERATION。 |
+| callback | Callback<LinearAccelerometerResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7448,13 +8537,17 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION, callback);
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.MAGNETIC_FIELD](#ZH-CN_TOPIC_0000002529285633__magnetic_field9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.MAGNETIC_FIELD](#ZH-CN_TOPIC_0000002522081758__magnetic_field9-2)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_MAGNETIC_FIELD是要取消订阅的磁场传感器类型为SENSOR_TYPE_ID_MAGNETIC_FIELD。callbackCallback<[MagneticFieldResponse](#ZH-CN_TOPIC_0000002529285633__magneticfieldresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD | 是 | 要取消订阅的磁场传感器类型为SENSOR_TYPE_ID_MAGNETIC_FIELD。 |
+| callback | Callback<MagneticFieldResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7476,13 +8569,17 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback);
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.MAGNETIC_FIELD_UNCALIBRATED](#ZH-CN_TOPIC_0000002529285633__magnetic_field_uncalibrated9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.MAGNETIC_FIELD_UNCALIBRATED](#ZH-CN_TOPIC_0000002522081758__magnetic_field_uncalibrated9-2)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED是要取消订阅的未校准磁场传感器类型为SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED。callbackCallback<[MagneticFieldUncalibratedResponse](#ZH-CN_TOPIC_0000002529285633__magneticfielduncalibratedresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED | 是 | 要取消订阅的未校准磁场传感器类型为SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED。 |
+| callback | Callback<MagneticFieldUncalibratedResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7507,13 +8604,17 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED, callbac
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.ORIENTATION](#ZH-CN_TOPIC_0000002529285633__orientation9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.ORIENTATION](#ZH-CN_TOPIC_0000002522081758__orientation9-2)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_ORIENTATION是要取消订阅的方向传感器类型为SENSOR_TYPE_ID_ORIENTATION。callbackCallback<[OrientationResponse](#ZH-CN_TOPIC_0000002529285633__orientationresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_ORIENTATION | 是 | 要取消订阅的方向传感器类型为SENSOR_TYPE_ID_ORIENTATION。 |
+| callback | Callback<OrientationResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7535,7 +8636,8 @@ off(type: SensorType.SENSOR_TYPE_ID_PEDOMETER, callback?: Callback<PedometerResp
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.PEDOMETER](#ZH-CN_TOPIC_0000002529285633__pedometer9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.PEDOMETER](#ZH-CN_TOPIC_0000002522081758__pedometer9-2)9+代替。
 
 **需要权限**：ohos.permission.ACTIVITY_MOTION
 
@@ -7543,7 +8645,10 @@ off(type: SensorType.SENSOR_TYPE_ID_PEDOMETER, callback?: Callback<PedometerResp
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_PEDOMETER是要取消订阅的计步传感器类型为SENSOR_TYPE_ID_PEDOMETER。callbackCallback<[PedometerResponse](#ZH-CN_TOPIC_0000002529285633__pedometerresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_PEDOMETER | 是 | 要取消订阅的计步传感器类型为SENSOR_TYPE_ID_PEDOMETER。 |
+| callback | Callback<PedometerResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7563,7 +8668,8 @@ off(type: SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION, callback?: Callback<Ped
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.PEDOMETER_DETECTION](#ZH-CN_TOPIC_0000002529285633__pedometer_detection9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.PEDOMETER_DETECTION](#ZH-CN_TOPIC_0000002522081758__pedometer_detection9-2)9+代替。
 
 **需要权限**：ohos.permission.ACTIVITY_MOTION
 
@@ -7571,7 +8677,10 @@ off(type: SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION, callback?: Callback<Ped
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_PEDOMETER_DETECTION是要取消订阅的计步检测传感器类型为SENSOR_TYPE_ID_PEDOMETER_DETECTION。callbackCallback<[PedometerDetectionResponse](#ZH-CN_TOPIC_0000002529285633__pedometerdetectionresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION | 是 | 要取消订阅的计步检测传感器类型为SENSOR_TYPE_ID_PEDOMETER_DETECTION。 |
+| callback | Callback<PedometerDetectionResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7591,13 +8700,17 @@ off(type: SensorType.SENSOR_TYPE_ID_PROXIMITY, callback?: Callback<ProximityResp
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.PROXIMITY](#ZH-CN_TOPIC_0000002529285633__proximity9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.PROXIMITY](#ZH-CN_TOPIC_0000002522081758__proximity9-2)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_PROXIMITY是要取消订阅的接近光传感器类型为SENSOR_TYPE_ID_PROXIMITY。callbackCallback<[ProximityResponse](#ZH-CN_TOPIC_0000002529285633__proximityresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_PROXIMITY | 是 | 要取消订阅的接近光传感器类型为SENSOR_TYPE_ID_PROXIMITY。 |
+| callback | Callback<ProximityResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7617,13 +8730,17 @@ off(type: SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback?: Callback<Rotatio
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.ROTATION_VECTOR](#ZH-CN_TOPIC_0000002529285633__rotation_vector9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.ROTATION_VECTOR](#ZH-CN_TOPIC_0000002522081758__rotation_vector9-2)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_ROTATION_VECTOR是要取消订阅的旋转矢量传感器类型为SENSOR_TYPE_ID_ROTATION_VECTOR。callbackCallback<[RotationVectorResponse](#ZH-CN_TOPIC_0000002529285633__rotationvectorresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR | 是 | 要取消订阅的旋转矢量传感器类型为SENSOR_TYPE_ID_ROTATION_VECTOR。 |
+| callback | Callback<RotationVectorResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7646,13 +8763,17 @@ off(type: SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION, callback?: Callback<Sign
 
 取消订阅有效运动传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.SIGNIFICANT_MOTION](#ZH-CN_TOPIC_0000002529285633__significant_motion9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.SIGNIFICANT_MOTION](#ZH-CN_TOPIC_0000002522081758__significant_motion9-2)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_SIGNIFICANT_MOTION是要取消订阅的有效运动传感器类型为SENSOR_TYPE_ID_SIGNIFICANT_MOTION。callbackCallback<[SignificantMotionResponse](#ZH-CN_TOPIC_0000002529285633__significantmotionresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION | 是 | 要取消订阅的有效运动传感器类型为SENSOR_TYPE_ID_SIGNIFICANT_MOTION。 |
+| callback | Callback<SignificantMotionResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7672,13 +8793,17 @@ off(type: SensorType.SENSOR_TYPE_ID_WEAR_DETECTION, callback?: Callback<WearDete
 
 取消订阅传感器数据。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.WEAR_DETECTION](#ZH-CN_TOPIC_0000002529285633__wear_detection9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.off.WEAR_DETECTION](#ZH-CN_TOPIC_0000002522081758__wear_detection9-2)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明type[SensorType](#ZH-CN_TOPIC_0000002529285633__sensortypedeprecated).SENSOR_TYPE_ID_WEAR_DETECTION是要取消订阅的佩戴检测传感器类型为SENSOR_TYPE_ID_WEAR_DETECTION。callbackCallback<[WearDetectionResponse](#ZH-CN_TOPIC_0000002529285633__weardetectionresponse)>否需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | SensorType.SENSOR_TYPE_ID_WEAR_DETECTION | 是 | 要取消订阅的佩戴检测传感器类型为SENSOR_TYPE_ID_WEAR_DETECTION。 |
+| callback | Callback<WearDetectionResponse> | 否 | 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **示例**：
 
@@ -7698,13 +8823,18 @@ transformCoordinateSystem(inRotationVector: Array<number>, coordinates: Coordina
 
 旋转提供的旋转矩阵，使其可以以不同的方式表示坐标系，使用Callback异步方式返回结果。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.transformRotationMatrix](#ZH-CN_TOPIC_0000002529285633__sensortransformrotationmatrix9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.transformRotationMatrix](#ZH-CN_TOPIC_0000002522081758__sensortransformrotationmatrix9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明inRotationVectorArray<number>是表示旋转矩阵。coordinates[CoordinatesOptions](#ZH-CN_TOPIC_0000002529285633__coordinatesoptions)是表示坐标系方向。callbackAsyncCallback<Array<number>>是异步返回转换后的旋转矩阵。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| inRotationVector | Array<number> | 是 | 表示旋转矩阵。 |
+| coordinates | CoordinatesOptions | 是 | 表示坐标系方向。 |
+| callback | AsyncCallback<Array<number>> | 是 | 异步返回转换后的旋转矩阵。 |
 
 **示例**：
 
@@ -7731,17 +8861,23 @@ transformCoordinateSystem(inRotationVector: Array<number>, coordinates: Coordina
 
 旋转提供的旋转矩阵，使其可以以不同的方式表示坐标系，使用Promise异步方式返回结果。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.transformRotationMatrix](#ZH-CN_TOPIC_0000002529285633__sensortransformrotationmatrix9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.transformRotationMatrix](#ZH-CN_TOPIC_0000002522081758__sensortransformrotationmatrix9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明inRotationVectorArray<number>是表示旋转矩阵。coordinates[CoordinatesOptions](#ZH-CN_TOPIC_0000002529285633__coordinatesoptions)是表示坐标系方向。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| inRotationVector | Array<number> | 是 | 表示旋转矩阵。 |
+| coordinates | CoordinatesOptions | 是 | 表示坐标系方向。 |
 
 **返回值**：
 
-类型说明Promise<Array<number>>使用异步方式返回转换后的旋转矩阵。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<number>> | 使用异步方式返回转换后的旋转矩阵。 |
 
 **示例**：
 
@@ -7766,13 +8902,18 @@ getGeomagneticField(locationOptions: LocationOptions, timeMillis: number, callba
 
 获取地球上特定位置的地磁场，使用callback异步方式返回结果。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getGeomagneticInfo](#ZH-CN_TOPIC_0000002529285633__sensorgetgeomagneticinfo9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getGeomagneticInfo](#ZH-CN_TOPIC_0000002522081758__sensorgetgeomagneticinfo9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明locationOptions[LocationOptions](#ZH-CN_TOPIC_0000002529285633__locationoptions)是地理位置。timeMillisnumber是表示获取磁偏角的时间，单位为毫秒。callbackAsyncCallback<[GeomagneticResponse](#ZH-CN_TOPIC_0000002529285633__geomagneticresponse)>是异步返回磁场信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| locationOptions | LocationOptions | 是 | 地理位置。 |
+| timeMillis | number | 是 | 表示获取磁偏角的时间，单位为毫秒。 |
+| callback | AsyncCallback<GeomagneticResponse> | 是 | 异步返回磁场信息。 |
 
 **示例**：
 
@@ -7798,17 +8939,23 @@ getGeomagneticField(locationOptions: LocationOptions, timeMillis: number): Promi
 
 获取地球上特定位置的地磁场，使用Promise异步方式返回结果。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getGeomagneticInfo](#ZH-CN_TOPIC_0000002529285633__sensorgetgeomagneticinfo9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getGeomagneticInfo](#ZH-CN_TOPIC_0000002522081758__sensorgetgeomagneticinfo9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明locationOptions[LocationOptions](#ZH-CN_TOPIC_0000002529285633__locationoptions)是地理位置。timeMillisnumber是表示获取磁偏角的时间，单位为毫秒。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| locationOptions | LocationOptions | 是 | 地理位置。 |
+| timeMillis | number | 是 | 表示获取磁偏角的时间，单位为毫秒。 |
 
 **返回值**：
 
-类型说明Promise<[GeomagneticResponse](#ZH-CN_TOPIC_0000002529285633__geomagneticresponse)>使用异步方式返回磁场信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<GeomagneticResponse> | 使用异步方式返回磁场信息。 |
 
 **示例**：
 
@@ -7832,13 +8979,18 @@ getAltitude(seaPressure: number, currentPressure: number, callback: AsyncCallbac
 
 根据气压值获取设备所在的海拔高度，使用Callback异步方式返回结果。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getDeviceAltitude](#ZH-CN_TOPIC_0000002529285633__sensorgetdevicealtitude9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getDeviceAltitude](#ZH-CN_TOPIC_0000002522081758__sensorgetdevicealtitude9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明seaPressurenumber是表示海平面气压值，单位为hPa。currentPressurenumber是表示设备所在高度的气压值，单位为hPa。callbackAsyncCallback<number>是异步返回设备所在的海拔高度，单位为米。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| seaPressure | number | 是 | 表示海平面气压值，单位为hPa。 |
+| currentPressure | number | 是 | 表示设备所在高度的气压值，单位为hPa。 |
+| callback | AsyncCallback<number> | 是 | 异步返回设备所在的海拔高度，单位为米。 |
 
 **示例**：
 
@@ -7861,17 +9013,23 @@ getAltitude(seaPressure: number, currentPressure: number): Promise<number>
 
 根据气压值获取设备所在的海拔高度，使用Promise异步方式返回结果。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getDeviceAltitude](#ZH-CN_TOPIC_0000002529285633__sensorgetdevicealtitude9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getDeviceAltitude](#ZH-CN_TOPIC_0000002522081758__sensorgetdevicealtitude9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明seaPressurenumber是表示海平面气压值，单位为hPa。currentPressurenumber是表示设备所在高度的气压值，单位为hPa。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| seaPressure | number | 是 | 表示海平面气压值，单位为hPa。 |
+| currentPressure | number | 是 | 表示设备所在高度的气压值，单位为hPa。 |
 
 **返回值**：
 
-类型说明Promise<number>使用异步方式返回设备所在的海拔高度（单位：米）。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 使用异步方式返回设备所在的海拔高度（单位：米）。 |
 
 **示例**：
 
@@ -7893,13 +9051,17 @@ getGeomagneticDip(inclinationMatrix: Array<number>, callback: AsyncCallback<numb
 
 根据倾斜矩阵计算地磁倾斜角，使用Callback异步方式返回结果。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getInclination](#ZH-CN_TOPIC_0000002529285633__sensorgetinclination9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getInclination](#ZH-CN_TOPIC_0000002522081758__sensorgetinclination9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明inclinationMatrixArray<number>是表示倾斜矩阵。callbackAsyncCallback<number>是异步返回地磁倾斜角，单位为弧度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| inclinationMatrix | Array<number> | 是 | 表示倾斜矩阵。 |
+| callback | AsyncCallback<number> | 是 | 异步返回地磁倾斜角，单位为弧度。 |
 
 **示例**：
 
@@ -7922,17 +9084,22 @@ getGeomagneticDip(inclinationMatrix: Array<number>): Promise<number>
 
 根据倾斜矩阵计算地磁倾斜角，使用Promise异步方式返回结果。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getInclination](#ZH-CN_TOPIC_0000002529285633__sensorgetinclination9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getInclination](#ZH-CN_TOPIC_0000002522081758__sensorgetinclination9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明inclinationMatrixArray<number>是表示倾斜矩阵。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| inclinationMatrix | Array<number> | 是 | 表示倾斜矩阵。 |
 
 **返回值**：
 
-类型说明Promise<number>使用异步方式返回地磁倾斜角，单位为弧度。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 使用异步方式返回地磁倾斜角，单位为弧度。 |
 
 **示例**：
 
@@ -7954,13 +9121,18 @@ getAngleModify(currentRotationMatrix: Array<number>, preRotationMatrix: Array<nu
 
 获取两个旋转矩阵之间的角度变化，使用Callback异步方式返回结果。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getAngleVariation](#ZH-CN_TOPIC_0000002529285633__sensorgetanglevariation9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getAngleVariation](#ZH-CN_TOPIC_0000002522081758__sensorgetanglevariation9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明currentRotationMatrixArray<number>是表示当前旋转矩阵。preRotationMatrixArray<number>是表示旋转矩阵。callbackAsyncCallback<Array<number>>是异步返回z、x、y轴方向的旋转角度变化。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| currentRotationMatrix | Array<number> | 是 | 表示当前旋转矩阵。 |
+| preRotationMatrix | Array<number> | 是 | 表示旋转矩阵。 |
+| callback | AsyncCallback<Array<number>> | 是 | 异步返回z、x、y轴方向的旋转角度变化。 |
 
 **示例**：
 
@@ -7986,17 +9158,23 @@ getAngleModify(currentRotationMatrix: Array<number>, preRotationMatrix: Array<nu
 
 获取两个旋转矩阵之间的角度变化，使用Promise异步方式返回结果。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getAngleVariation](#ZH-CN_TOPIC_0000002529285633__sensorgetanglevariation9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getAngleVariation](#ZH-CN_TOPIC_0000002522081758__sensorgetanglevariation9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明currentRotationMatrixArray<number>是表示当前旋转矩阵。preRotationMatrixArray<number>是表示旋转矩阵。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| currentRotationMatrix | Array<number> | 是 | 表示当前旋转矩阵。 |
+| preRotationMatrix | Array<number> | 是 | 表示旋转矩阵。 |
 
 **返回值**：
 
-类型说明Promise<Array<number>>使用异步方式返回z、x、y轴方向的旋转角度变化。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<number>> | 使用异步方式返回z、x、y轴方向的旋转角度变化。 |
 
 **示例**：
 
@@ -8022,13 +9200,17 @@ createRotationMatrix(rotationVector: Array<number>, callback: AsyncCallback<Arra
 
 将旋转矢量转换为旋转矩阵，使用Callback异步方式返回结果。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getRotationMatrix](#ZH-CN_TOPIC_0000002529285633__sensorgetrotationmatrix9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getRotationMatrix](#ZH-CN_TOPIC_0000002522081758__sensorgetrotationmatrix9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明rotationVectorArray<number>是表示旋转矢量。callbackAsyncCallback<Array<number>>是异步返回旋转矩阵。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rotationVector | Array<number> | 是 | 表示旋转矢量。 |
+| callback | AsyncCallback<Array<number>> | 是 | 异步返回旋转矩阵。 |
 
 **示例**：
 
@@ -8054,17 +9236,22 @@ createRotationMatrix(rotationVector: Array<number>): Promise<Array<number>>
 
 将旋转矢量转换为旋转矩阵，使用Promise异步方式返回结果。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getRotationMatrix](#ZH-CN_TOPIC_0000002529285633__sensorgetrotationmatrix9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getRotationMatrix](#ZH-CN_TOPIC_0000002522081758__sensorgetrotationmatrix9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明rotationVectorArray<number>是表示旋转矢量。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rotationVector | Array<number> | 是 | 表示旋转矢量。 |
 
 **返回值**：
 
-类型说明Promise<Array<number>>使用异步方式返回旋转矩阵。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<number>> | 使用异步方式返回旋转矩阵。 |
 
 **示例**：
 
@@ -8089,13 +9276,17 @@ createQuaternion(rotationVector: Array<number>, callback: AsyncCallback<Array<nu
 
 将旋转矢量转换为四元数，使用Callback异步方式返回结果。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getQuaternion](#ZH-CN_TOPIC_0000002529285633__sensorgetquaternion9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getQuaternion](#ZH-CN_TOPIC_0000002522081758__sensorgetquaternion9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明rotationVectorArray<number>是表示旋转矢量。callbackAsyncCallback<Array<number>>是异步返回四元数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rotationVector | Array<number> | 是 | 表示旋转矢量。 |
+| callback | AsyncCallback<Array<number>> | 是 | 异步返回四元数。 |
 
 **示例**：
 
@@ -8121,17 +9312,22 @@ createQuaternion(rotationVector: Array<number>): Promise<Array<number>>
 
 将旋转矢量转换为四元数，使用Promise异步方式返回结果。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getQuaternion](#ZH-CN_TOPIC_0000002529285633__sensorgetquaternion9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getQuaternion](#ZH-CN_TOPIC_0000002522081758__sensorgetquaternion9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明rotationVectorArray<number>是表示旋转矢量。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rotationVector | Array<number> | 是 | 表示旋转矢量。 |
 
 **返回值**：
 
-类型说明Promise<Array<number>>使用异步方式返回四元数。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<number>> | 使用异步方式返回四元数。 |
 
 **示例**：
 
@@ -8156,13 +9352,17 @@ getDirection(rotationMatrix: Array<number>, callback: AsyncCallback<Array<number
 
 根据旋转矩阵计算设备的方向，使用Callback异步方式返回结果。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getOrientation](#ZH-CN_TOPIC_0000002529285633__sensorgetorientation9)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getOrientation](#ZH-CN_TOPIC_0000002522081758__sensorgetorientation9)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明rotationMatrixArray<number>是表示旋转矩阵。callbackAsyncCallback<Array<number>>是异步返回围绕z、x、y轴方向的旋转角度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rotationMatrix | Array<number> | 是 | 表示旋转矩阵。 |
+| callback | AsyncCallback<Array<number>> | 是 | 异步返回围绕z、x、y轴方向的旋转角度。 |
 
 **示例**：
 
@@ -8188,17 +9388,22 @@ getDirection(rotationMatrix: Array<number>): Promise<Array<number>>
 
 根据旋转矩阵计算设备的方向，使用Promise异步方式返回结果。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getOrientation](#ZH-CN_TOPIC_0000002529285633__sensorgetorientation9-1)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getOrientation](#ZH-CN_TOPIC_0000002522081758__sensorgetorientation9-1)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明rotationMatrixArray<number>是表示旋转矩阵。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rotationMatrix | Array<number> | 是 | 表示旋转矩阵。 |
 
 **返回值**：
 
-类型说明Promise<Array<number>>使用异步方式返回围绕z、x、y轴方向的旋转角度。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<number>> | 使用异步方式返回围绕z、x、y轴方向的旋转角度。 |
 
 **示例**：
 
@@ -8223,13 +9428,18 @@ createRotationMatrix(gravity: Array<number>, geomagnetic: Array<number>, callbac
 
 根据重力矢量和地磁矢量计算旋转矩阵，使用Callback异步方式返回结果。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getRotationMatrix](#ZH-CN_TOPIC_0000002529285633__sensorgetrotationmatrix9-2)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getRotationMatrix](#ZH-CN_TOPIC_0000002522081758__sensorgetrotationmatrix9-2)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明gravityArray<number>是表示重力向量。geomagneticArray<number>是表示地磁矢量。callbackAsyncCallback<[RotationMatrixResponse](#ZH-CN_TOPIC_0000002529285633__rotationmatrixresponse)>是异步返回旋转矩阵。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| gravity | Array<number> | 是 | 表示重力向量。 |
+| geomagnetic | Array<number> | 是 | 表示地磁矢量。 |
+| callback | AsyncCallback<RotationMatrixResponse> | 是 | 异步返回旋转矩阵。 |
 
 **示例**：
 
@@ -8253,17 +9463,23 @@ createRotationMatrix(gravity: Array<number>, geomagnetic: Array<number>): Promis
 
 根据重力矢量和地磁矢量计算旋转矩阵，使用Promise异步方式返回结果。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getRotationMatrix](#ZH-CN_TOPIC_0000002529285633__sensorgetrotationmatrix9-3)9+代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[sensor.getRotationMatrix](#ZH-CN_TOPIC_0000002522081758__sensorgetrotationmatrix9-3)9+代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
-参数名类型必填说明gravityArray<number>是表示重力向量。geomagneticArray<number>是表示地磁矢量。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| gravity | Array<number> | 是 | 表示重力向量。 |
+| geomagnetic | Array<number> | 是 | 表示地磁矢量。 |
 
 **返回值**：
 
-类型说明Promise<[RotationMatrixResponse](#ZH-CN_TOPIC_0000002529285633__rotationmatrixresponse)>使用异步方式返回旋转矩阵。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<RotationMatrixResponse> | 使用异步方式返回旋转矩阵。 |
 
 **示例**：
 
@@ -8283,8 +9499,31 @@ promise.then((data: sensor.RotationMatrixResponse) => {
 
 表示要订阅或取消订阅的传感器类型。
 
-从API version 8 开始支持，从API version 9 开始废弃，建议使用[SensorId](#ZH-CN_TOPIC_0000002529285633__sensorid9)代替。
+
+从API version 8 开始支持，从API version 9 开始废弃，建议使用[SensorId](#ZH-CN_TOPIC_0000002522081758__sensorid9)代替。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
-名称值说明SENSOR_TYPE_ID_ACCELEROMETER1加速度传感器。SENSOR_TYPE_ID_GYROSCOPE2陀螺仪传感器。SENSOR_TYPE_ID_AMBIENT_LIGHT5环境光传感器。SENSOR_TYPE_ID_MAGNETIC_FIELD6磁场传感器。SENSOR_TYPE_ID_BAROMETER8气压计传感器。SENSOR_TYPE_ID_HALL10霍尔传感器。SENSOR_TYPE_ID_PROXIMITY12接近光传感器。SENSOR_TYPE_ID_HUMIDITY13湿度传感器。SENSOR_TYPE_ID_ORIENTATION256方向传感器。SENSOR_TYPE_ID_GRAVITY257重力传感器。SENSOR_TYPE_ID_LINEAR_ACCELERATION258线性加速度传感器。SENSOR_TYPE_ID_ROTATION_VECTOR259旋转矢量传感器。SENSOR_TYPE_ID_AMBIENT_TEMPERATURE260环境温度传感器。SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED261未校准磁场传感器。SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED263未校准陀螺仪传感器。SENSOR_TYPE_ID_SIGNIFICANT_MOTION264有效运动传感器。SENSOR_TYPE_ID_PEDOMETER_DETECTION265计步检测传感器。SENSOR_TYPE_ID_PEDOMETER266计步传感器。SENSOR_TYPE_ID_HEART_RATE278心率传感器。SENSOR_TYPE_ID_WEAR_DETECTION280佩戴检测传感器。SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED281未校准加速度计传感器。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SENSOR_TYPE_ID_ACCELEROMETER | 1 | 加速度传感器。 |
+| SENSOR_TYPE_ID_GYROSCOPE | 2 | 陀螺仪传感器。 |
+| SENSOR_TYPE_ID_AMBIENT_LIGHT | 5 | 环境光传感器。 |
+| SENSOR_TYPE_ID_MAGNETIC_FIELD | 6 | 磁场传感器。 |
+| SENSOR_TYPE_ID_BAROMETER | 8 | 气压计传感器。 |
+| SENSOR_TYPE_ID_HALL | 10 | 霍尔传感器。 |
+| SENSOR_TYPE_ID_PROXIMITY | 12 | 接近光传感器。 |
+| SENSOR_TYPE_ID_HUMIDITY | 13 | 湿度传感器。 |
+| SENSOR_TYPE_ID_ORIENTATION | 256 | 方向传感器。 |
+| SENSOR_TYPE_ID_GRAVITY | 257 | 重力传感器。 |
+| SENSOR_TYPE_ID_LINEAR_ACCELERATION | 258 | 线性加速度传感器。 |
+| SENSOR_TYPE_ID_ROTATION_VECTOR | 259 | 旋转矢量传感器。 |
+| SENSOR_TYPE_ID_AMBIENT_TEMPERATURE | 260 | 环境温度传感器。 |
+| SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED | 261 | 未校准磁场传感器。 |
+| SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED | 263 | 未校准陀螺仪传感器。 |
+| SENSOR_TYPE_ID_SIGNIFICANT_MOTION | 264 | 有效运动传感器。 |
+| SENSOR_TYPE_ID_PEDOMETER_DETECTION | 265 | 计步检测传感器。 |
+| SENSOR_TYPE_ID_PEDOMETER | 266 | 计步传感器。 |
+| SENSOR_TYPE_ID_HEART_RATE | 278 | 心率传感器。 |
+| SENSOR_TYPE_ID_WEAR_DETECTION | 280 | 佩戴检测传感器。 |
+| SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED | 281 | 未校准加速度计传感器。 |

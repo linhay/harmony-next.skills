@@ -12,10 +12,12 @@ typedef struct {...} ffrt_queue_attr_t
 
 **相关模块：**[FFRT](FFRT.md)
 
-**所在头文件：**[type_def.h](../../capi/headers/type_def.h.md)
+所在头文件： [type_def.h](type_def.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述uint32_t storage[(ffrt_queue_attr_storage_size + sizeof(uint32_t) - 1) / sizeof(uint32_t)]串行队列属性所占空间
+| 名称 | 描述 |
+| --- | --- |
+| uint32_t storage[(ffrt_queue_attr_storage_size + sizeof(uint32_t) - 1) / sizeof(uint32_t)] | 串行队列属性所占空间 |

@@ -12,7 +12,7 @@ import wantAgent from '@ohos.wantAgent';
 
 #### wantAgent.getWantAgent
 
-getWantAgent(info: WantAgentInfo, callback: AsyncCallback<WantAgent>): void
+getWantAgent(info: [WantAgentInfo](../../topics/misc/WantAgentInfo.md), callback: AsyncCallback<WantAgent>): void
 
 创建WantAgent。创建失败返回的WantAgent为空值。使用callback异步回调。
 
@@ -22,7 +22,10 @@ getWantAgent(info: WantAgentInfo, callback: AsyncCallback<WantAgent>): void
 
 **参数：**
 
-参数名类型必填说明info[WantAgentInfo](../../topics/payment/WantAgentInfo.md)是WantAgent信息。callbackAsyncCallback<WantAgent>是创建WantAgent的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| info | [WantAgentInfo](../../topics/misc/WantAgentInfo.md) | 是 | WantAgent信息。 |
+| callback | AsyncCallback<WantAgent> | 是 | 创建WantAgent的回调方法。 |
 
 **示例：**
 
@@ -36,7 +39,6 @@ function getWantAgentCallback(err: BusinessError, data: _WantAgent) {
         console.info('getWantAgent Callback err:' + JSON.stringify(err));
     } else {
         console.info('getWantAgent Callback success');
-    }
 }
 
 wantAgent.getWantAgent({
@@ -59,7 +61,6 @@ wantAgent.getWantAgent({
                 mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
                 mykey6: true,
             }
-        }
     ],
     operationType: wantAgent.OperationType.START_ABILITY,
     requestCode: 0,
@@ -69,7 +70,7 @@ wantAgent.getWantAgent({
 
 #### wantAgent.getWantAgent
 
-getWantAgent(info: WantAgentInfo): Promise<WantAgent>
+getWantAgent(info: [WantAgentInfo](../../topics/misc/WantAgentInfo.md)): Promise<WantAgent>
 
 创建WantAgent。创建失败返回的WantAgent为空值。使用Promise异步回调。
 
@@ -79,11 +80,15 @@ getWantAgent(info: WantAgentInfo): Promise<WantAgent>
 
 **参数：**
 
-参数名类型必填说明info[WantAgentInfo](../../topics/payment/WantAgentInfo.md)是WantAgent信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| info | [WantAgentInfo](../../topics/misc/WantAgentInfo.md) | 是 | WantAgent信息。 |
 
 **返回值：**
 
-类型说明Promise<WantAgent>以Promise形式返回WantAgent。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<WantAgent> | 以Promise形式返回WantAgent。 |
 
 **示例：**
 
@@ -110,7 +115,6 @@ wantAgent.getWantAgent({
                 mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
                 mykey6: true,
             }
-        }
     ],
     operationType: wantAgent.OperationType.START_ABILITY,
     requestCode: 0,
@@ -132,7 +136,10 @@ getBundleName(agent: WantAgent, callback: AsyncCallback<string>): void
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。callbackAsyncCallback<string>是获取WantAgent实例的包名的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
+| callback | AsyncCallback<string> | 是 | 获取WantAgent实例的包名的回调方法。 |
 
 **示例：**
 
@@ -180,7 +187,6 @@ wantAgent.getWantAgent({
                 mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
                 mykey6: true,
             }
-        }
     ],
     operationType: wantAgent.OperationType.START_ABILITY,
     requestCode: 0,
@@ -200,11 +206,15 @@ getBundleName(agent: WantAgent): Promise<string>
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
 
 **返回值：**
 
-类型说明Promise<string>以Promise形式返回获取WantAgent实例的Bundle名称。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | 以Promise形式返回获取WantAgent实例的Bundle名称。 |
 
 **示例：**
 
@@ -234,7 +244,6 @@ wantAgent.getWantAgent({
                 mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
                 mykey6: true,
             }
-        }
     ],
     operationType: wantAgent.OperationType.START_ABILITY,
     requestCode: 0,
@@ -262,7 +271,10 @@ getUid(agent: WantAgent, callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。callbackAsyncCallback<number>是获取WantAgent实例的用户ID的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
+| callback | AsyncCallback<number> | 是 | 获取WantAgent实例的用户ID的回调方法。 |
 
 **示例：**
 
@@ -310,7 +322,6 @@ wantAgent.getWantAgent({
                 mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
                 mykey6: true,
             }
-        }
     ],
     operationType: wantAgent.OperationType.START_ABILITY,
     requestCode: 0,
@@ -330,11 +341,15 @@ getUid(agent: WantAgent): Promise<number>
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
 
 **返回值：**
 
-类型说明Promise<number>以Promise形式返回获取WantAgent实例的用户ID。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 以Promise形式返回获取WantAgent实例的用户ID。 |
 
 **示例：**
 
@@ -364,7 +379,6 @@ wantAgent.getWantAgent({
                 mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
                 mykey6: true,
             }
-        }
     ],
     operationType: wantAgent.OperationType.START_ABILITY,
     requestCode: 0,
@@ -392,7 +406,10 @@ cancel(agent: WantAgent, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。callbackAsyncCallback<void>是取消WantAgent实例的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
+| callback | AsyncCallback<void> | 是 | 取消WantAgent实例的回调方法。 |
 
 **示例：**
 
@@ -440,7 +457,6 @@ wantAgent.getWantAgent({
                 mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
                 mykey6: true,
             }
-        }
     ],
     operationType: wantAgent.OperationType.START_ABILITY,
     requestCode: 0,
@@ -460,11 +476,15 @@ cancel(agent: WantAgent): Promise<void>
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
 
 **返回值：**
 
-类型说明Promise<void>以Promise形式获取异步返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 以Promise形式获取异步返回结果。 |
 
 **示例：**
 
@@ -495,7 +515,6 @@ wantAgent.getWantAgent({
             mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
             mykey6: true,
         }
-    }
 ],
     operationType: wantAgent.OperationType.START_ABILITY,
     requestCode: 0,
@@ -513,7 +532,7 @@ wantAgent.getWantAgent({
 
 #### wantAgent.trigger
 
-trigger(agent: WantAgent, triggerInfo: TriggerInfo, callback?: Callback<CompleteData>): void
+trigger(agent: WantAgent, triggerInfo: [TriggerInfo](../../topics/misc/TriggerInfo.md), callback?: Callback<CompleteData>): void
 
 主动激发WantAgent实例。使用callback异步回调。
 
@@ -523,7 +542,11 @@ trigger(agent: WantAgent, triggerInfo: TriggerInfo, callback?: Callback<Complete
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。triggerInfo[TriggerInfo](../../topics/misc/TriggerInfo.md)是TriggerInfo对象。callbackCallback<CompleteData>否主动激发WantAgent实例的回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
+| triggerInfo | [TriggerInfo](../../topics/misc/TriggerInfo.md) | 是 | TriggerInfo对象。 |
+| callback | Callback<CompleteData> | 否 | 主动激发WantAgent实例的回调方法。 |
 
 **示例：**
 
@@ -572,7 +595,6 @@ wantAgent.getWantAgent({
                 mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
                 mykey6: true,
             }
-        }
     ],
     operationType: wantAgent.OperationType.START_ABILITY,
     requestCode: 0,
@@ -592,7 +614,11 @@ equal(agent: WantAgent, otherAgent: WantAgent, callback: AsyncCallback<boolean>)
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。otherAgentWantAgent是WantAgent对象。callbackAsyncCallback<boolean>是判断两个WantAgent实例是否相等的回调方法。返回true表示两个WantAgent实例相等；返回false表示不相等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
+| otherAgent | WantAgent | 是 | WantAgent对象。 |
+| callback | AsyncCallback<boolean> | 是 | 判断两个WantAgent实例是否相等的回调方法。返回true表示两个WantAgent实例相等；返回false表示不相等。 |
 
 **示例：**
 
@@ -642,7 +668,6 @@ wantAgent.getWantAgent({
                 mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
                 mykey6: true,
             }
-        }
     ],
     operationType: wantAgent.OperationType.START_ABILITY,
     requestCode: 0,
@@ -662,11 +687,16 @@ equal(agent: WantAgent, otherAgent: WantAgent): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明agentWantAgent是WantAgent对象。otherAgentWantAgent是WantAgent对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| agent | WantAgent | 是 | WantAgent对象。 |
+| otherAgent | WantAgent | 是 | WantAgent对象。 |
 
 **返回值：**
 
-类型说明Promise<boolean>以Promise形式返回获取判断两个WantAgent实例是否相等的结果。返回true表示两个WantAgent实例相等；返回false表示不相等。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | 以Promise形式返回获取判断两个WantAgent实例是否相等的结果。返回true表示两个WantAgent实例相等；返回false表示不相等。 |
 
 **示例：**
 
@@ -697,7 +727,6 @@ wantAgent.getWantAgent({
                 mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
                 mykey6: true,
             }
-        }
     ],
     operationType: wantAgent.OperationType.START_ABILITY,
     requestCode: 0,
@@ -720,7 +749,18 @@ wantAgent.getWantAgent({
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称值说明ONE_TIME_FLAG0WantAgent仅能使用一次。NO_BUILD_FLAG1如果说明WantAgent对象不存在，则不创建它，直接返回null。CANCEL_PRESENT_FLAG2在生成一个新的WantAgent对象前取消已存在的一个WantAgent对象。UPDATE_PRESENT_FLAG3使用新的WantAgent的额外数据替换已存在的WantAgent中的额外数据。CONSTANT_FLAG4WantAgent是不可变的。REPLACE_ELEMENT5当前Want中的element属性可被WantAgent.trigger()中Want的element属性取代。REPLACE_ACTION6当前Want中的action属性可被WantAgent.trigger()中Want的action属性取代。REPLACE_URI7当前Want中的uri属性可被WantAgent.trigger()中Want的uri属性取代。REPLACE_ENTITIES8当前Want中的entities属性可被WantAgent.trigger()中Want的entities属性取代。REPLACE_BUNDLE9当前Want中的bundleName属性可被WantAgent.trigger()中Want的bundleName属性取代。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ONE_TIME_FLAG | 0 | WantAgent仅能使用一次。 |
+| NO_BUILD_FLAG | 1 | 如果指定WantAgent对象不存在，则不创建它，直接返回null。 |
+| CANCEL_PRESENT_FLAG | 2 | 在生成一个新的WantAgent对象前取消已存在的一个WantAgent对象。 |
+| UPDATE_PRESENT_FLAG | 3 | 使用新的WantAgent的额外数据替换已存在的WantAgent中的额外数据。 |
+| CONSTANT_FLAG | 4 | WantAgent是不可变的。 |
+| REPLACE_ELEMENT | 5 | 当前Want中的element属性可被WantAgent.trigger()中Want的element属性取代。 |
+| REPLACE_ACTION | 6 | 当前Want中的action属性可被WantAgent.trigger()中Want的action属性取代。 |
+| REPLACE_URI | 7 | 当前Want中的uri属性可被WantAgent.trigger()中Want的uri属性取代。 |
+| REPLACE_ENTITIES | 8 | 当前Want中的entities属性可被WantAgent.trigger()中Want的entities属性取代。 |
+| REPLACE_BUNDLE | 9 | 当前Want中的bundleName属性可被WantAgent.trigger()中Want的bundleName属性取代。 |
 
 #### OperationType
 
@@ -728,7 +768,13 @@ wantAgent.getWantAgent({
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称值说明UNKNOWN_TYPE0不识别的类型。START_ABILITY1开启一个有页面的Ability。START_ABILITIES2开启多个有页面的Ability。START_SERVICE3开启一个无页面的ability。SEND_COMMON_EVENT4发送一个公共事件。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| UNKNOWN_TYPE | 0 | 不识别的类型。 |
+| START_ABILITY | 1 | 开启一个有页面的Ability。 |
+| START_ABILITIES | 2 | 开启多个有页面的Ability。 |
+| START_SERVICE | 3 | 开启一个无页面的ability。 |
+| SEND_COMMON_EVENT | 4 | 发送一个公共事件。 |
 
 #### CompleteData
 
@@ -736,7 +782,13 @@ wantAgent.getWantAgent({
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称类型只读可选说明infoWantAgent否否触发的wantAgent。wantWant否否存在的被触发的want。finalCodenumber否否触发wantAgent的请求代码。finalDatastring否否公共事件收集的最终数据。extraInfo{ [key: string]: any }否是额外数据。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| info | WantAgent | 否 | 否 | 触发的wantAgent。 |
+| want | Want | 否 | 否 | 存在的被触发的want。 |
+| finalCode | number | 否 | 否 | 触发wantAgent的请求代码。 |
+| finalData | string | 否 | 否 | 公共事件收集的最终数据。 |
+| extraInfo | { [key: string]: any } | 否 | 是 | 额外数据。 |
 
 #### WantAgent
 
@@ -748,4 +800,6 @@ WantAgent对象。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-类型说明objectWantAgent对象。
+| 类型 | 说明 |
+| --- | --- |
+| object | WantAgent对象。 |

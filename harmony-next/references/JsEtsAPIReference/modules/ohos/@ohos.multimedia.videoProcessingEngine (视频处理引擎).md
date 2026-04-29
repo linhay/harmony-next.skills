@@ -2,7 +2,8 @@
 
 本模块提供图片内容的清晰度增强及缩放能力。
 
-本模块包含一个基础类：[ImageProcessor](#ZH-CN_TOPIC_0000002497445868__imageprocessor)类。
+本模块包含一个基础类：[ImageProcessor](#ZH-CN_TOPIC_0000002522081980__imageprocessor)类。
+
 
 本模块首批接口从API version 18开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -24,13 +25,20 @@ initializeEnvironment(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[视频处理引擎错误码](../../errors/视频处理引擎错误码.md)
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[视频处理引擎错误码]([视频处理引擎错误码](../../errors/视频处理引擎错误码.md).md)
 
-错误码ID错误信息801Capability not supported. Function initializeEnvironment can not work correctly due to limited device capabilities.29200002The global environment initialization for image processing failed, such as failure to initialize the GPU environment.29200006The operation is not permitted. This may be caused by incorrect status.29200007Out of memory.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. Function initializeEnvironment can not work correctly due to limited device capabilities. |
+| 29200002 | The global environment initialization for image processing failed, such as failure to initialize the GPU environment. |
+| 29200006 | The operation is not permitted. This may be caused by incorrect status. |
+| 29200007 | Out of memory. |
 
 **示例：**
 
@@ -54,13 +62,17 @@ deinitializeEnvironment(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[视频处理引擎错误码](../../errors/视频处理引擎错误码.md)
+以下错误码的详细介绍请参见[视频处理引擎错误码](视频处理引擎错误码.md)
 
-错误码ID错误信息29200006The operation is not permitted. This may be caused by incorrect status.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 29200006 | The operation is not permitted. This may be caused by incorrect status. |
 
 **示例：**
 
@@ -85,13 +97,19 @@ create(): ImageProcessor
 
 **返回值：**
 
-类型说明[ImageProcessor](#ZH-CN_TOPIC_0000002497445868__imageprocessor)图片处理模块实例。
+| 类型 | 说明 |
+| --- | --- |
+| ImageProcessor | 图片处理模块实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[视频处理引擎错误码](../../errors/视频处理引擎错误码.md)
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[视频处理引擎错误码](视频处理引擎错误码.md)
 
-错误码ID错误信息801Capability not supported. Function create can not work correctly due to limited device capabilities.29200003Failed to create image processing instance. For example, the number of instances exceeds the upper limit.29200007Out of memory.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. Function create can not work correctly due to limited device capabilities. |
+| 29200003 | Failed to create image processing instance. For example, the number of instances exceeds the upper limit. |
+| 29200007 | Out of memory. |
 
 **示例：**
 
@@ -125,35 +143,28 @@ enhanceDetail(sourceImage: image.PixelMap, width: number, height: number, level?
 
 **参数：**
 
-参数名类型必填说明sourceImage[image.PixelMap](../../types/interfaces/Interface (PixelMap).md)是输入图像，内存类型需为DMA内存，具体情况请参考[PixelMap的内存类型介绍](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type#内存类型介绍)。widthnumber是
-
-目标宽度，单位为像素（px）。
-
-当level为high时，支持范围[512, 2000]；当level为其他时，支持范围[32, 3000]。
-
-heightnumber是
-
-目标高度，单位为像素（px）。
-
-当level为high时，支持范围[512, 2000]；当level为其他时，支持范围[32, 3000]。
-
-level[QualityLevel](#ZH-CN_TOPIC_0000002497445868__qualitylevel)否算法档位（HIGH、MEDIUM、LOW、NONE），默认为NONE。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sourceImage | image.PixelMap | 是 | 输入图像，内存类型需为DMA内存，具体情况请参考PixelMap的内存类型介绍。 |
+| width | number | 是 | 目标宽度，单位为像素（px）。 当level为high时，支持范围[512, 2000]；当level为其他时，支持范围[32, 3000]。 |
+| height | number | 是 | 目标高度，单位为像素（px）。 当level为high时，支持范围[512, 2000]；当level为其他时，支持范围[32, 3000]。 |
+| level | QualityLevel | 否 | 算法档位（HIGH、MEDIUM、LOW、NONE），默认为NONE。 |
 
 **返回值：**
 
-类型说明Promise<[image.PixelMap](../../types/interfaces/Interface (PixelMap).md)>异步方法返回PixelMap的Promise实例。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<image.PixelMap> | 异步方法返回PixelMap的Promise实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[视频处理引擎错误码](../../errors/视频处理引擎错误码.md)
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[视频处理引擎错误码](视频处理引擎错误码.md)
 
-错误码ID错误信息801Capability not supported. Function enhanceDetail can not work correctly due to limited device capabilities.29200007Out of memory.29200009
-
-Input value is invalid. This error is returned for all of the following error conditions:
-
-1 - Invalid input or output image buffer - The image buffer width(height) is too large or colorspace is incorrect.
-
-2 - Invalid parameter - The parameter does not contain valid information, such as detail enhancer level is incorrect.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. Function enhanceDetail can not work correctly due to limited device capabilities. |
+| 29200007 | Out of memory. |
+| 29200009 | Input value is invalid. This error is returned for all of the following error conditions: 1 - Invalid input or output image buffer - The image buffer width(height) is too large or colorspace is incorrect. 2 - Invalid parameter - The parameter does not contain valid information, such as detail enhancer level is incorrect. |
 
 **示例：**
 
@@ -181,23 +192,27 @@ enhanceDetail(sourceImage: image.PixelMap, scale: number, level?: QualityLevel):
 
 **参数：**
 
-参数名类型必填说明sourceImage[image.PixelMap](../../types/interfaces/Interface (PixelMap).md)是输入图像，内存类型需为DMA内存，具体情况请参考[PixelMap的内存类型介绍](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type#内存类型介绍)。scalenumber是目标缩放比例。取值范围(0.0, 32.0]（在满足[上述分辨率范围](#ZH-CN_TOPIC_0000002497445868__enhancedetail)的前提下，最高支持32倍放大）。level[QualityLevel](#ZH-CN_TOPIC_0000002497445868__qualitylevel)否算法档位（HIGH、MEDIUM、LOW、NONE），默认为NONE。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sourceImage | image.PixelMap | 是 | 输入图像，内存类型需为DMA内存，具体情况请参考PixelMap的内存类型介绍。 |
+| scale | number | 是 | 目标缩放比例。取值范围(0.0, 32.0]（在满足上述分辨率范围的前提下，最高支持32倍放大）。 |
+| level | QualityLevel | 否 | 算法档位（HIGH、MEDIUM、LOW、NONE），默认为NONE。 |
 
 **返回值：**
 
-类型说明Promise<[image.PixelMap](../../types/interfaces/Interface (PixelMap).md)>异步方法返回PixelMap的Promise实例。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<image.PixelMap> | 异步方法返回PixelMap的Promise实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[视频处理引擎错误码](../../errors/视频处理引擎错误码.md)
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[视频处理引擎错误码](视频处理引擎错误码.md)
 
-错误码ID错误信息801Capability not supported. Function enhanceDetail can not work correctly due to limited device capabilities.29200007Out of memory.29200009
-
-Input value is invalid. This error is returned for all of the following error conditions:
-
-1 - Invalid input or output image buffer - The image buffer width(height) is too large or colorspace is incorrect.
-
-2 - Invalid parameter - The parameter does not contain valid information, such as detail enhancer level is incorrect.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. Function enhanceDetail can not work correctly due to limited device capabilities. |
+| 29200007 | Out of memory. |
+| 29200009 | Input value is invalid. This error is returned for all of the following error conditions: 1 - Invalid input or output image buffer - The image buffer width(height) is too large or colorspace is incorrect. 2 - Invalid parameter - The parameter does not contain valid information, such as detail enhancer level is incorrect. |
 
 **示例：**
 
@@ -225,35 +240,29 @@ enhanceDetailSync(sourceImage: image.PixelMap, width: number, height: number, le
 
 **参数：**
 
-参数名类型必填说明sourceImage[image.PixelMap](../../types/interfaces/Interface (PixelMap).md)是输入图像，内存类型需为DMA内存，具体情况请参考[PixelMap的内存类型介绍](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type#内存类型介绍)。widthnumber是
-
-目标宽度，单位为像素（px）。
-
-当level为high时，支持范围[512, 2000]；当level为其他时，支持范围[32, 3000]。
-
-heightnumber是
-
-目标高度，单位为像素（px）。
-
-当level为high时，支持范围[512, 2000]；当level为其他时，支持范围[32, 3000]。
-
-level[QualityLevel](#ZH-CN_TOPIC_0000002497445868__qualitylevel)否算法档位（HIGH、MEDIUM、LOW、NONE），默认为NONE。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sourceImage | image.PixelMap | 是 | 输入图像，内存类型需为DMA内存，具体情况请参考PixelMap的内存类型介绍。 |
+| width | number | 是 | 目标宽度，单位为像素（px）。 当level为high时，支持范围[512, 2000]；当level为其他时，支持范围[32, 3000]。 |
+| height | number | 是 | 目标高度，单位为像素（px）。 当level为high时，支持范围[512, 2000]；当level为其他时，支持范围[32, 3000]。 |
+| level | QualityLevel | 否 | 算法档位（HIGH、MEDIUM、LOW、NONE），默认为NONE。 |
 
 **返回值：**
 
-类型说明[image.PixelMap](../../types/interfaces/Interface (PixelMap).md)成功同步返回PixelMap对象。
+| 类型 | 说明 |
+| --- | --- |
+| image.PixelMap | 成功同步返回PixelMap对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[视频处理引擎错误码](../../errors/视频处理引擎错误码.md)
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[视频处理引擎错误码](视频处理引擎错误码.md)
 
-错误码ID错误信息801Capability not supported. Function enhanceDetailSync can not work correctly due to limited device capabilities.29200004Failed to process image buffer. For example, the processing times out.29200007Out of memory.29200009
-
-Input value is invalid. This error is returned for all of the following error conditions:
-
-1 - Invalid input or output image buffer - The image buffer width(height) is too large or colorspace is incorrect.
-
-2 - Invalid parameter - The parameter does not contain valid information, such as detail enhancer level is incorrect.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. Function enhanceDetailSync can not work correctly due to limited device capabilities. |
+| 29200004 | Failed to process image buffer. For example, the processing times out. |
+| 29200007 | Out of memory. |
+| 29200009 | Input value is invalid. This error is returned for all of the following error conditions: 1 - Invalid input or output image buffer - The image buffer width(height) is too large or colorspace is incorrect. 2 - Invalid parameter - The parameter does not contain valid information, such as detail enhancer level is incorrect. |
 
 **示例：**
 
@@ -281,23 +290,28 @@ enhanceDetailSync(sourceImage: image.PixelMap, scale: number, level?: QualityLev
 
 **参数：**
 
-参数名类型必填说明sourceImage[image.PixelMap](../../types/interfaces/Interface (PixelMap).md)是输入图像，内存类型需为DMA内存，具体情况请参考[PixelMap的内存类型介绍](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type#内存类型介绍)。scalenumber是目标缩放比例。取值范围(0.0, 32.0]（在满足[上述分辨率范围](#ZH-CN_TOPIC_0000002497445868__enhancedetail)的前提下，最高支持32倍放大）。level[QualityLevel](#ZH-CN_TOPIC_0000002497445868__qualitylevel)否算法档位（HIGH、MEDIUM、LOW、NONE），默认为NONE。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sourceImage | image.PixelMap | 是 | 输入图像，内存类型需为DMA内存，具体情况请参考PixelMap的内存类型介绍。 |
+| scale | number | 是 | 目标缩放比例。取值范围(0.0, 32.0]（在满足上述分辨率范围的前提下，最高支持32倍放大）。 |
+| level | QualityLevel | 否 | 算法档位（HIGH、MEDIUM、LOW、NONE），默认为NONE。 |
 
 **返回值：**
 
-类型说明[image.PixelMap](../../types/interfaces/Interface (PixelMap).md)成功同步返回PixelMap对象。
+| 类型 | 说明 |
+| --- | --- |
+| image.PixelMap | 成功同步返回PixelMap对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[视频处理引擎错误码](../../errors/视频处理引擎错误码.md)
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[视频处理引擎错误码](视频处理引擎错误码.md)
 
-错误码ID错误信息801Capability not supported. Function enhanceDetailSync can not work correctly due to limited device capabilities.29200004Failed to process image buffer. For example, the processing times out.29200007Out of memory.29200009
-
-Input value is invalid. This error is returned for all of the following error conditions:
-
-1 - Invalid input or output image buffer - The image buffer width(height) is too large or colorspace is incorrect.
-
-2 - Invalid parameter - The parameter does not contain valid information, such as detail enhancer level is incorrect.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. Function enhanceDetailSync can not work correctly due to limited device capabilities. |
+| 29200004 | Failed to process image buffer. For example, the processing times out. |
+| 29200007 | Out of memory. |
+| 29200009 | Input value is invalid. This error is returned for all of the following error conditions: 1 - Invalid input or output image buffer - The image buffer width(height) is too large or colorspace is incorrect. 2 - Invalid parameter - The parameter does not contain valid information, such as detail enhancer level is incorrect. |
 
 **示例：**
 
@@ -321,40 +335,9 @@ async function enhanceDetailSync(sourceImage: image.PixelMap, scale: number) {
 
 **系统能力：** SystemCapability.Multimedia.VideoProcessingEngine
 
-名称值说明NONE0
-
-仅适用于缩放场景，支持改变宽高比例。
-
-- 输入分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。
-
-- 输出分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。
-
-LOW1
-
-仅适用于缩放场景，支持改变宽高比例。
-
-- 输入分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。
-
-- 输出分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。
-
-MEDIUM2
-
-仅适用于缩放场景，支持改变宽高比例。
-
-- 输入分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。
-
-- 输出分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。
-
-HIGH3
-
-1. 缩放场景，不支持改变宽高比例。
-
-- 输入分辨率要求（单位为像素，px）：宽：(32，512) (2000，8192]，高：(32，512) (2000，8192]。
-
-- 输出分辨率要求（单位为像素，px）：宽：(32，512) (2000，8192]，高：(32，512) (2000，8192]。
-
-2. 清晰度增强、缩放场景，支持改变宽高比例。
-
-- 输入分辨率要求（单位为像素，px）：宽：[512，2000]，高：[512，2000]。
-
-- 输出分辨率要求（单位为像素，px）：宽：[512，2000]，高：[512，2000]。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NONE | 0 | 仅适用于缩放场景，支持改变宽高比例。 - 输入分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。 - 输出分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。 |
+| LOW | 1 | 仅适用于缩放场景，支持改变宽高比例。 - 输入分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。 - 输出分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。 |
+| MEDIUM | 2 | 仅适用于缩放场景，支持改变宽高比例。 - 输入分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。 - 输出分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。 |
+| HIGH | 3 | 1. 缩放场景，不支持改变宽高比例。 - 输入分辨率要求（单位为像素，px）：宽：(32，512) (2000，8192]，高：(32，512) (2000，8192]。 - 输出分辨率要求（单位为像素，px）：宽：(32，512) (2000，8192]，高：(32，512) (2000，8192]。 2. 清晰度增强、缩放场景，支持改变宽高比例。 - 输入分辨率要求（单位为像素，px）：宽：[512，2000]，高：[512，2000]。 - 输出分辨率要求（单位为像素，px）：宽：[512，2000]，高：[512，2000]。 |

@@ -12,4 +12,11 @@
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
-名称类型只读可选说明eventsArray<string>否否表示要订阅的公共事件。publisherPermissionstring否是表示发布者的权限，订阅方将只能接收到具有该权限的发送方发布的事件。publisherDeviceIdstring否是表示设备ID。通过[@ohos.deviceInfo](../../modules/ohos/@ohos.deviceInfo (设备信息).md)获取udid，作为订阅者的设备ID。预留能力，暂不支持。userIdnumber否是表示用户ID。此参数是可选的，默认值当前用户的ID。如果指定了此参数，则该值必须是系统中现有的用户ID。通过[getOsAccountLocalId](../../modules/ohos/@ohos.account.osAccount (系统账号管理).md#ZH-CN_TOPIC_0000002529285493__getosaccountlocalid9)获取系统账号ID，作为订阅者的用户ID。prioritynumber否是表示订阅者的优先级。值的范围是-100到1000，超过上下限的优先级将被设置为上下限值。publisherBundleName11+string否是表示要订阅的发布者的bundleName。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| events | Array<string> | 否 | 否 | 表示要订阅的公共事件。 |
+| publisherPermission | string | 否 | 是 | 表示发布者的权限，订阅方将只能接收到具有该权限的发送方发布的事件。 |
+| publisherDeviceId | string | 否 | 是 | 表示设备ID。通过@ohos.deviceInfo获取udid，作为订阅者的设备ID。预留能力，暂不支持。 |
+| userId | number | 否 | 是 | 表示用户ID。此参数是可选的，默认值当前用户的ID。如果指定了此参数，则该值必须是系统中现有的用户ID。通过getOsAccountLocalId获取系统账号ID，作为订阅者的用户ID。 |
+| priority | number | 否 | 是 | 表示订阅者的优先级。值的范围是-100到1000，超过上下限的优先级将被设置为上下限值。 |
+| publisherBundleName11+ | string | 否 | 是 | 表示要订阅的发布者的bundleName。 |

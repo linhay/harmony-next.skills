@@ -14,4 +14,6 @@ AudioDecoder模块提供用于音频解码功能的函数。
 
 #### 文件汇总
 
-名称描述[native_avcodec_audiodecoder.h](../../capi/headers/native_avcodec_audiodecoder.h.md)音频解码Native API的声明。
+| 名称 | 描述 |
+| --- | --- |
+| [native_avcodec_audiodecoder.h](native_avcodec_audiodecoder.h.md) | 音频解码Native API的声明。 |

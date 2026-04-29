@@ -8,21 +8,16 @@
 
 **相关模块：**[XEngine](XEngine.md)
 
+所在头文件： [xeg_vulkan_hps.h](xeg_vulkan_hps.h.md)
+
 #### 汇总
 
 #### 成员变量
 
-名称
-
-描述
-
-XEG_StructureType [sType](#ZH-CN_TOPIC_0000002362157645__stype)
-
-识别此结构的[XEG_StructureType](XEngine.md#ZH-CN_TOPIC_0000002328319196__xeg_structuretype)值，必须是[XEG_STRUCTURE_TYPE_HPS_RADIX_SORT](XEngine.md)。
-
-const void * [pNext](#ZH-CN_TOPIC_0000002362157645__pnext)
-
-指向扩展结构的指针。
+| 名称 | 描述 |
+| --- | --- |
+| [XEG_StructureType](XEngine.md#ZH-CN_TOPIC_0000002328319196__xeg_structuretype) sType | 识别此结构的XEG_StructureType值，必须是[XEG_STRUCTURE_TYPE_HPS_RADIX_SORT](XEngine.md)。 |
+| const void * pNext | 指向扩展结构的指针。 |
 
 #### 结构体成员变量说明
 
@@ -44,4 +39,4 @@ XEG_StructureType XEG_HPSRadixSort::sType
 
 **描述**
 
-识别此结构的[XEG_StructureType](XEngine.md#ZH-CN_TOPIC_0000002328319196__xeg_structuretype)值，必须是[XEG_STRUCTURE_TYPE_HPS_RADIX_SORT](XEngine.md)。
+识别此结构的[XEG_StructureType](XEngine.md#ZH-CN_TOPIC_0000002553202223__xeg_structuretype)值，必须是[XEG_STRUCTURE_TYPE_HPS_RADIX_SORT](XEngine.md)。

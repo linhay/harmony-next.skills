@@ -6,31 +6,21 @@
 
 **起始版本：** 6.0.0(20)
 
-**相关模块：**[FIDO2](../misc/通行密钥.md)
+相关模块： [FIDO2](通行密钥.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称
-
-描述
-
-[Uint8Buff](../misc/Uint8Buff.md)[id](FIDO2_PublicKeyCredentialUserEntity.md#ZH-CN_TOPIC_0000002491139802__a89acdc47998ced27b3e55b7f99c90797)
-
-凭据的标识符。
-
-char * [displayName](FIDO2_PublicKeyCredentialUserEntity.md#ZH-CN_TOPIC_0000002491139802__af3d18ba7f46b81ffe1d54660c0cfe4be)
-
-前台显示的用户名。
-
-char * [name](FIDO2_PublicKeyCredentialUserEntity.md#ZH-CN_TOPIC_0000002491139802__ae25422337bd8154afbfc7272698f3978)
-
-用户名。
+| 名称 | 描述 |
+| --- | --- |
+| [Uint8Buff](Uint8Buff.md) [id](FIDO2_PublicKeyCredentialUserEntity.md#ZH-CN_TOPIC_0000002491139802__a89acdc47998ced27b3e55b7f99c90797) | 凭据的标识符。 |
+| char * [displayName](FIDO2_PublicKeyCredentialUserEntity.md#ZH-CN_TOPIC_0000002491139802__af3d18ba7f46b81ffe1d54660c0cfe4be) | 前台显示的用户名。 |
+| char * [name](FIDO2_PublicKeyCredentialUserEntity.md#ZH-CN_TOPIC_0000002491139802__ae25422337bd8154afbfc7272698f3978) | 用户名。 |
 
 #### 结构体成员变量说明
 
-#### displayName
+#### [displayName](FIDO2_PublicKeyCredentialUserEntity.md#ZH-CN_TOPIC_0000002491139802__af3d18ba7f46b81ffe1d54660c0cfe4be)
 
 ```ets
 char* FIDO2_PublicKeyCredentialUserEntity::displayName
@@ -40,17 +30,17 @@ char* FIDO2_PublicKeyCredentialUserEntity::displayName
 
 前台显示的用户名。
 
-#### id
+#### [id](FIDO2_PublicKeyCredentialUserEntity.md#ZH-CN_TOPIC_0000002491139802__a89acdc47998ced27b3e55b7f99c90797)
 
 ```ets
-[Uint8Buff](../misc/Uint8Buff.md) FIDO2_PublicKeyCredentialUserEntity::id
+[Uint8Buff](Uint8Buff.md) FIDO2_PublicKeyCredentialUserEntity::id
 ```
 
 **描述**
 
 凭据的标识符。
 
-#### name
+#### [name](FIDO2_PublicKeyCredentialUserEntity.md#ZH-CN_TOPIC_0000002491139802__ae25422337bd8154afbfc7272698f3978)
 
 ```ets
 char* FIDO2_PublicKeyCredentialUserEntity::name

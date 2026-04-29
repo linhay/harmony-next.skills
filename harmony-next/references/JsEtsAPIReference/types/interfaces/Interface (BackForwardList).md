@@ -12,7 +12,7 @@
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### 导入模块
 
@@ -24,7 +24,10 @@ import { webview } from '@kit.ArkWeb';
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
-名称类型只读可选说明currentIndexnumber否否当前在页面历史列表中的索引。sizenumber否否历史列表中索引的数量，最多保存50条，超过时起始记录会被覆盖。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| currentIndex | number | 否 | 否 | 当前在页面历史列表中的索引。 |
+| size | number | 否 | 否 | 历史列表中索引的数量，最多保存50条，超过时起始记录会被覆盖。 |
 
 #### getItemAtIndex
 
@@ -36,17 +39,23 @@ getItemAtIndex(index: number): HistoryItem
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定历史列表中的索引。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定历史列表中的索引。 |
 
 **返回值：**
 
-类型说明[HistoryItem](Interfaces (其他).md#ZH-CN_TOPIC_0000002529285193__historyitem)历史记录项。
+| 类型 | 说明 |
+| --- | --- |
+| HistoryItem | 历史记录项。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -77,6 +86,4 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```

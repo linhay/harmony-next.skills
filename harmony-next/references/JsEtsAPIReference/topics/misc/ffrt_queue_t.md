@@ -12,4 +12,4 @@ typedef void* ffrt_queue_t
 
 **相关模块：**[FFRT](FFRT.md)
 
-**所在头文件：**[queue.h](../../capi/headers/queue.h.md)
+**所在头文件：**[queue.h](../../topics/misc/[queue.h](queue.h.md).md)

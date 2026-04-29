@@ -28,15 +28,27 @@ setPolicySync(admin: Want, appId: string, policyName: string, policyValue: strin
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。appIdstring是应用ID，用于指定浏览器。policyNamestring是浏览器子策略名。当此值为空字符串时，表示设置应用ID对应的浏览器策略。policyValuestring是浏览器子策略值。当此值为空字符串时，表示取消浏览器策略名对应浏览器子策略。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| appId | string | 是 | 应用ID，用于指定浏览器。 |
+| policyName | string | 是 | 浏览器子策略名。当此值为空字符串时，表示设置应用ID对应的浏览器策略。 |
+| policyValue | string | 是 | 浏览器子策略值。当此值为空字符串时，表示取消浏览器策略名对应浏览器子策略。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码]([企业设备管理错误码](../../errors/企业设备管理错误码.md).md)和[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -75,17 +87,25 @@ getPoliciesSync(admin: Want, appId: string): string
 
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。appIdstring是应用ID，用于指定浏览器。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| appId | string | 是 | 应用ID，用于指定浏览器。 |
 
 **返回值：**
 
-类型说明string浏览器策略。
+| 类型 | 说明 |
+| --- | --- |
+| string | 浏览器策略。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -114,7 +134,7 @@ try {
 
 setManagedBrowserPolicy(admin: Want, bundleName: string, policyName: string, policyValue: string): void
 
-为指定的浏览器设置浏览器策略，成功后会发布系统公共事件[COMMON_EVENT_MANAGED_BROWSER_POLICY_CHANGED](../../topics/misc/系统定义的公共事件.md#ZH-CN_TOPIC_0000002497605510__common_event_managed_browser_policy_changed)。
+为指定的浏览器设置浏览器策略，成功后会发布系统公共事件[COMMON_EVENT_MANAGED_BROWSER_POLICY_CHANGED](系统定义的公共事件.md#ZH-CN_TOPIC_0000002522241594__common_event_managed_browser_policy_changed)。
 
 **需要权限：** ohos.permission.ENTERPRISE_SET_BROWSER_POLICY
 
@@ -122,15 +142,27 @@ setManagedBrowserPolicy(admin: Want, bundleName: string, policyName: string, pol
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。bundleNamestring是应用包名，用于指定浏览器。policyNamestring是浏览器策略名。policyValuestring是浏览器策略值。当此值为空字符串时，表示取消浏览器策略名对应浏览器子策略。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| bundleName | string | 是 | 应用包名，用于指定浏览器。 |
+| policyName | string | 是 | 浏览器策略名。 |
+| policyValue | string | 是 | 浏览器策略值。当此值为空字符串时，表示取消浏览器策略名对应浏览器子策略。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -168,17 +200,25 @@ getManagedBrowserPolicy(admin: Want, bundleName: string): ArrayBuffer
 
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。bundleNamestring是应用包名，用于指定浏览器。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| bundleName | string | 是 | 应用包名，用于指定浏览器。 |
 
 **返回值：**
 
-类型说明ArrayBuffer浏览器策略。
+| 类型 | 说明 |
+| --- | --- |
+| ArrayBuffer | 浏览器策略。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -218,7 +258,9 @@ getSelfManagedBrowserPolicyVersion(): string
 
 **返回值：**
 
-类型说明string浏览器策略版本。
+| 类型 | 说明 |
+| --- | --- |
+| string | 浏览器策略版本。 |
 
 **示例：**
 
@@ -245,7 +287,9 @@ getSelfManagedBrowserPolicy(): ArrayBuffer
 
 **返回值：**
 
-类型说明ArrayBuffer浏览器策略。
+| 类型 | 说明 |
+| --- | --- |
+| ArrayBuffer | 浏览器策略。 |
 
 **示例：**
 

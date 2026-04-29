@@ -12,12 +12,10 @@
 
 除支持[通用属性](通用属性.md)外，还支持如下属性：
 
-名称类型必填描述contentstring是操作块文本内容。closableboolean否
-
-设置当前操作块是否显示删除图标，当显示删除图标时，点击删除图标会触发close事件。
-
-true表示显示删除图标，false表示不显示删除图标。默认为false。
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| content | string | 是 | 操作块文本内容。 |
+| closable | boolean | 否 | 设置当前操作块是否显示删除图标，当显示删除图标时，点击删除图标会触发close事件。 true表示显示删除图标，false表示不显示删除图标。默认为false。 |
 iconstring否操作块删除图标的url，支持本地路径。
 
 #### 样式
@@ -30,7 +28,9 @@ iconstring否操作块删除图标的url，支持本地路径。
 
 除支持[通用事件](通用事件.md)外，还支持如下事件：
 
-名称参数描述close-当piece组件点击删除图标触发，此时可以通过渲染属性if删除该组件。
+| 名称 | 参数 | 描述 |
+| --- | --- | --- |
+| close | - | 当piece组件点击删除图标触发，此时可以通过渲染属性if删除该组件。 |
 
 #### 方法
 
@@ -66,5 +66,6 @@ export default {
   closeSecond(e) {
     this.second = false;
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553365383.webp)

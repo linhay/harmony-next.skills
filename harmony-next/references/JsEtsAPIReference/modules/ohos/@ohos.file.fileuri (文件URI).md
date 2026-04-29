@@ -21,7 +21,6 @@ export default class EntryAbility extends UIAbility {
     let context = this.context;
     let pathDir = context.filesDir;
   }
-}
 ```
 
 #### FileUri10+
@@ -30,11 +29,10 @@ export default class EntryAbility extends UIAbility {
 
 **系统能力**：SystemCapability.FileManagement.AppFileService
 
-名称类型只读可选说明path10+string否否将uri转换成对应的沙箱路径path。 1、uri转path过程中会将uri中存在的ASCII码进行解码后拼接在原处，非系统接口生成的uri中可能存在ASCII码解析范围之外的字符，导致字符串无法正常拼接；2、转换处理为系统约定的字符串替换规则（规则随系统演进可能会发生变化），转换过程中不进行路径校验操作，无法保证转换结果的一定可以访问。name10+string是否
-
-通过传入的uri获取到对应的文件名称。（如果文件名中存在ASCII码将会被解码处理后拼接在原处）
-
-**元服务API**：从API version 15开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| path10+ | string | 否 | 否 | 将uri转换成对应的沙箱路径path。 1、uri转path过程中会将uri中存在的ASCII码进行解码后拼接在原处，非系统接口生成的uri中可能存在ASCII码解析范围之外的字符，导致字符串无法正常拼接；2、转换处理为系统约定的字符串替换规则（规则随系统演进可能会发生变化），转换过程中不进行路径校验操作，无法保证转换结果的一定可以访问。 |
+| name10+ | string | 是 | 否 | 通过传入的uri获取到对应的文件名称。（如果文件名中存在ASCII码将会被解码处理后拼接在原处） 元服务API：从API version 15开始，该接口支持在元服务中使用。 |
 
 #### constructor10+
 
@@ -48,21 +46,20 @@ constructor是FileUri的构造函数。
 
 **参数：**
 
-参数名类型必填说明uriOrPathstring是
-
-URI或路径。URI类型：
-
-- 应用沙箱URI：file://<bundleName>/<sandboxPath>
-
-- 公共目录文件类URI：file://docs/storage/Users/currentUser/<publicPath>
-
-- 公共目录媒体类URI：file://media/<mediaType>/IMG_DATATIME_ID/<displayName>
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uriOrPath | string | 是 | URI或路径。URI类型： - 应用沙箱URI：file://<bundleName>/<sandboxPath>  - 公共目录文件类URI：file://docs/storage/Users/currentUser/<publicPath>  - 公共目录媒体类URI：file://media/<mediaType>/IMG_DATETIME_ID/<displayName> |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息13900005I/O error13900042Unknown error13900020Invalid argument14300002Invalid uri
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900005 | I/O error |
+| 13900042 | Unknown error |
+| 13900020 | Invalid argument |
+| 14300002 | Invalid uri |
 
 **示例：**
 
@@ -83,7 +80,9 @@ toString(): string
 
 **返回值：**
 
-类型说明string返回字符串类型URI。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回字符串类型URI。 |
 
 **示例：**
 
@@ -109,13 +108,19 @@ getFullDirectoryUri(): string
 
 **返回值：**
 
-类型说明string获取所在路径URI，文件获取所在路径URI，目录获取当前路径URI。
+| 类型 | 说明 |
+| --- | --- |
+| string | 获取所在路径URI，文件获取所在路径URI，目录获取当前路径URI。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息13900002No such file or directory13900012Permission denied13900042Unknown error
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900002 | No such file or directory |
+| 13900012 | Permission denied |
+| 13900042 | Unknown error |
 
 **示例：**
 
@@ -143,17 +148,17 @@ isRemoteUri(): boolean
 
 **返回值：**
 
-类型说明boolean
-
-- 返回true，表示当前FileUri指向远端文件或目录，如xxx/example.txt?networkid=xxx。
-
-- 返回false，表示当前FileUri指向本地的文件或目录。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | - 返回true，表示当前FileUri指向远端文件或目录，如xxx/example.txt?networkid=xxx。 - 返回false，表示当前FileUri指向本地的文件或目录。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理子系统错误码](文件管理错误码.md)。
 
-错误码ID错误信息13900042Unknown error
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900042 | Unknown error |
 
 **示例：**
 
@@ -166,7 +171,6 @@ function isRemoteUriExample() {
   if (ret) {
       console.info(`It is a remote uri.`);
   }
-}
 ```
 
 #### fileUri.getUriFromPath
@@ -181,17 +185,23 @@ getUriFromPath(path: string): string
 
 **参数：**
 
-参数名类型必填说明pathstring是文件的沙箱路径。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 文件的沙箱路径。 |
 
 **返回值：**
 
-类型说明string通过传入的路径path生成应用自己的URI；将path转URI时，路径中的中文及非数字字母的特殊字符将会被编译成对应的ASCII码，拼接在URI中。
+| 类型 | 说明 |
+| --- | --- |
+| string | 通过传入的路径path生成应用自己的URI；将path转URI时，路径中的中文及非数字字母的特殊字符将会被编译成对应的ASCII码，拼接在URI中。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types |
 
 **示例：**
 

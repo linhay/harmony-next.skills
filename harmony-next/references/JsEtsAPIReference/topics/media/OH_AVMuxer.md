@@ -12,4 +12,4 @@ typedef struct OH_AVMuxer OH_AVMuxer
 
 **相关模块：**[AVMuxer](AVMuxer.md)
 
-**所在头文件：**[native_avmuxer.h](../../capi/headers/native_avmuxer.h.md)
+**所在头文件：**[native_avmuxer.h](../../topics/media/[native_avmuxer.h](native_avmuxer.h.md).md)

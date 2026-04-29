@@ -16,9 +16,10 @@ publishReminder(reminderReq: ReminderRequest, callback: AsyncCallback<number>): 
 
 发布后台代理提醒。使用callback异步回调。
 
-代理提醒发布成功后，当到达设置的提醒时间点时，通知中心会弹出相应的提醒，此时如果[ReminderRequest.ringDuration](#ZH-CN_TOPIC_0000002497445260__reminderrequest)参数值大于0，则设置的自定义铃声默认在闹钟通道上播放，如果值不大于0，则不播放自定义铃声。
+代理提醒发布成功后，当到达设置的提醒时间点时，通知中心会弹出相应的提醒，此时如果[ReminderRequest.ringDuration](#ZH-CN_TOPIC_0000002522081202__reminderrequest)参数值大于0，则设置的自定义铃声默认在闹钟通道上播放，如果值不大于0，则不播放自定义铃声。
 
-该接口需要申请通知弹窗权限[NotificationManager.requestEnableNotification](@ohos.notificationManager (NotificationManager模块).md#ZH-CN_TOPIC_0000002497446132__notificationmanagerrequestenablenotification10)后调用。
+
+该接口需要申请通知弹窗权限[notificationManager.requestEnableNotification](@ohos.notificationManager (NotificationManager模块).md#ZH-CN_TOPIC_0000002553202383__notificationmanagerrequestenablenotification10)后调用。
 
 为了防止代理提醒被滥用于广告、营销类提醒，影响用户体验，部分设备上代理提醒增加了管控机制。管控后的适配或申请权限的方法，请参考[约束与限制中的管控限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-powered-reminder#约束与限制)。
 
@@ -28,13 +29,20 @@ publishReminder(reminderReq: ReminderRequest, callback: AsyncCallback<number>): 
 
 **参数**：
 
-参数名类型必填说明reminderReq[ReminderRequest](#ZH-CN_TOPIC_0000002497445260__reminderrequest)是需要发布的代理提醒实例。callbackAsyncCallback<number>是回调函数，返回当前发布提醒的id。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| reminderReq | ReminderRequest | 是 | 需要发布的代理提醒实例。 |
+| callback | AsyncCallback<number> | 是 | 回调函数，返回当前发布提醒的id。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[reminderAgentManager错误码](../../errors/reminderAgentManager错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[reminderAgentManager错误码]([reminderAgentManager错误码](../../errors/reminderAgentManager错误码.md).md)和[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401If the input parameter is not valid parameter.1700001Notification is not enabled.1700002The number of reminders exceeds the limit.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | If the input parameter is not valid parameter. |
+| 1700001 | Notification is not enabled. |
+| 1700002 | The number of reminders exceeds the limit. |
 
 **示例**：
 
@@ -62,9 +70,10 @@ publishReminder(reminderReq: ReminderRequest): Promise<number>
 
 发布后台代理提醒。使用Promise异步回调。
 
-如果[ReminderRequest.ringDuration](#ZH-CN_TOPIC_0000002497445260__reminderrequest)参数值大于0，则自定义铃声默认在闹钟通道上播放，如果值不大于0，则无响铃。
+如果[ReminderRequest.ringDuration](#ZH-CN_TOPIC_0000002522081202__reminderrequest)参数值大于0，则自定义铃声默认在闹钟通道上播放，如果值不大于0，则无响铃。
 
-该接口需要申请通知弹窗权限[NotificationManager.requestEnableNotification](@ohos.notificationManager (NotificationManager模块).md#ZH-CN_TOPIC_0000002497446132__notificationmanagerrequestenablenotification10)后调用。
+
+该接口需要申请通知弹窗权限[notificationManager.requestEnableNotification](@ohos.notificationManager (NotificationManager模块).md#ZH-CN_TOPIC_0000002553202383__notificationmanagerrequestenablenotification10)后调用。
 
 为了防止代理提醒被滥用于广告、营销类提醒，影响用户体验，部分设备上代理提醒增加了管控机制。管控后的适配或申请权限的方法，请参考[约束与限制中的管控限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-powered-reminder#约束与限制)。
 
@@ -74,17 +83,25 @@ publishReminder(reminderReq: ReminderRequest): Promise<number>
 
 **参数**：
 
-参数名类型必填说明reminderReq[ReminderRequest](#ZH-CN_TOPIC_0000002497445260__reminderrequest)是需要发布的代理提醒实例。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| reminderReq | ReminderRequest | 是 | 需要发布的代理提醒实例。 |
 
 **返回值**：
 
-类型说明Promise<number>Promise对象，返回当前发布提醒的id。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回当前发布提醒的id。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[reminderAgentManager错误码](../../errors/reminderAgentManager错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[reminderAgentManager错误码](reminderAgentManager错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401If the input parameter is not valid parameter.1700001Notification is not enabled.1700002The number of reminders exceeds the limit.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | If the input parameter is not valid parameter. |
+| 1700001 | Notification is not enabled. |
+| 1700002 | The number of reminders exceeds the limit. |
 
 **示例**：
 
@@ -114,13 +131,20 @@ cancelReminder(reminderId: number, callback: AsyncCallback<void>): void
 
 **参数**：
 
-参数名类型必填说明reminderIdnumber是需要取消的代理提醒的id，代理提醒id会在[发布代理提醒](#ZH-CN_TOPIC_0000002497445260__reminderagentmanagerpublishreminder)时作为返回值返回。callbackAsyncCallback<void>是回调函数，取消代理提醒成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| reminderId | number | 是 | 需要取消的代理提醒的id，代理提醒id会在发布代理提醒时作为返回值返回。 |
+| callback | AsyncCallback<void> | 是 | 回调函数，取消代理提醒成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[reminderAgentManager错误码](../../errors/reminderAgentManager错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[reminderAgentManager错误码](reminderAgentManager错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401If the input parameter is not valid parameter.1700003The reminder does not exist.1700004The bundle name does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | If the input parameter is not valid parameter. |
+| 1700003 | The reminder does not exist. |
+| 1700004 | The bundle name does not exist. |
 
 **示例**：
 
@@ -148,17 +172,25 @@ cancelReminder(reminderId: number): Promise<void>
 
 **参数**：
 
-参数名类型必填说明reminderIdnumber是需要取消的代理提醒的id，代理提醒id会在[发布代理提醒](#ZH-CN_TOPIC_0000002497445260__reminderagentmanagerpublishreminder)时作为返回值返回。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| reminderId | number | 是 | 需要取消的代理提醒的id，代理提醒id会在发布代理提醒时作为返回值返回。 |
 
 **返回值**：
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[reminderAgentManager错误码](../../errors/reminderAgentManager错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[reminderAgentManager错误码](reminderAgentManager错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401If the input parameter is not valid parameter.1700003The reminder does not exist.1700004The bundle name does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | If the input parameter is not valid parameter. |
+| 1700003 | The reminder does not exist. |
+| 1700004 | The bundle name does not exist. |
 
 **示例**：
 
@@ -184,13 +216,18 @@ getValidReminders(callback: AsyncCallback<Array<ReminderRequest>>): void
 
 **参数**：
 
-参数名类型必填说明callbackAsyncCallback<Array<[ReminderRequest](#ZH-CN_TOPIC_0000002497445260__reminderrequest)>>是回调函数，返回当前应用设置的所有有效（未过期）的代理提醒。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<ReminderRequest>> | 是 | 回调函数，返回当前应用设置的所有有效（未过期）的代理提醒。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[reminderAgentManager错误码](../../errors/reminderAgentManager错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[reminderAgentManager错误码](reminderAgentManager错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401If the input parameter is not valid parameter.1700004The bundle name does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | If the input parameter is not valid parameter. |
+| 1700004 | The bundle name does not exist. |
 
 **示例**：
 
@@ -223,7 +260,6 @@ reminderAgentManager.getValidReminders((err: BusinessError, reminders: Array<rem
       console.info("getValidReminders, notificationId = " + reminders[i].notificationId);
       console.info("getValidReminders, slotType = " + reminders[i].slotType);
     }
-  }
 });
 ```
 
@@ -237,13 +273,18 @@ getValidReminders(): Promise<Array<ReminderRequest>>
 
 **返回值**：
 
-类型说明Promise<Array<[ReminderRequest](#ZH-CN_TOPIC_0000002497445260__reminderrequest)>>Promise对象，返回当前应用设置的所有有效（未过期）的代理提醒。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<ReminderRequest>> | Promise对象，返回当前应用设置的所有有效（未过期）的代理提醒。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[reminderAgentManager错误码](../../errors/reminderAgentManager错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[reminderAgentManager错误码](reminderAgentManager错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401If the input parameter is not valid parameter.1700004The bundle name does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | If the input parameter is not valid parameter. |
+| 1700004 | The bundle name does not exist. |
 
 **示例**：
 
@@ -288,13 +329,18 @@ cancelAllReminders(callback: AsyncCallback<void>): void
 
 **参数**：
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数，取消代理提醒成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数，取消代理提醒成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[reminderAgentManager错误码](../../errors/reminderAgentManager错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[reminderAgentManager错误码](reminderAgentManager错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401If the input parameter is not valid parameter.1700004The bundle name does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | If the input parameter is not valid parameter. |
+| 1700004 | The bundle name does not exist. |
 
 **示例**：
 
@@ -321,13 +367,18 @@ cancelAllReminders(): Promise<void>
 
 **返回值**：
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[reminderAgentManager错误码](../../errors/reminderAgentManager错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[reminderAgentManager错误码](reminderAgentManager错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401If the input parameter is not valid parameter.1700004The bundle name does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | If the input parameter is not valid parameter. |
+| 1700004 | The bundle name does not exist. |
 
 **示例**：
 
@@ -342,9 +393,9 @@ reminderAgentManager.cancelAllReminders().then(() => {
 });
 ```
 
-#### reminderAgentManager.addNotificationSlot
+#### reminderAgentManager.add[NotificationSlot](../../topics/misc/NotificationSlot.md#ZH-CN_TOPIC_0000002497446138__notificationslot-1)
 
-addNotificationSlot(slot: NotificationSlot, callback: AsyncCallback<void>): void
+add[NotificationSlot](../../topics/misc/NotificationSlot.md#ZH-CN_TOPIC_0000002497446138__notificationslot-1)(slot: NotificationSlot, callback: AsyncCallback<void>): void
 
 添加通知渠道。使用callback异步回调。
 
@@ -352,13 +403,18 @@ addNotificationSlot(slot: NotificationSlot, callback: AsyncCallback<void>): void
 
 **参数**：
 
-参数名类型必填说明slot[NotificationSlot](../../topics/misc/NotificationSlot.md#ZH-CN_TOPIC_0000002497446138__notificationslot-1)是通知渠道实例，仅支持设置其notificationType属性。callbackAsyncCallback<void>是回调函数，添加NotificationSlot成功时，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slot | [NotificationSlot](../../topics/misc/NotificationSlot.md#ZH-CN_TOPIC_0000002497446138__notificationslot-1) | 是 | 通知渠道实例，仅支持设置其notificationType属性。 |
+| callback | AsyncCallback<void> | 是 | 回调函数，添加[NotificationSlot](../../topics/misc/NotificationSlot.md#ZH-CN_TOPIC_0000002497446138__notificationslot-1)成功时，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401If the input parameter is not valid parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | If the input parameter is not valid parameter. |
 
 **示例**：
 
@@ -380,9 +436,9 @@ reminderAgentManager.addNotificationSlot(mySlot, (err: BusinessError) => {
 });
 ```
 
-#### reminderAgentManager.addNotificationSlot
+#### reminderAgentManager.add[NotificationSlot](../../topics/misc/NotificationSlot.md#ZH-CN_TOPIC_0000002497446138__notificationslot-1)
 
-addNotificationSlot(slot: NotificationSlot): Promise<void>
+add[NotificationSlot](../../topics/misc/NotificationSlot.md#ZH-CN_TOPIC_0000002497446138__notificationslot-1)(slot: NotificationSlot): Promise<void>
 
 添加通知渠道。使用Promise异步回调。
 
@@ -390,17 +446,23 @@ addNotificationSlot(slot: NotificationSlot): Promise<void>
 
 **参数**：
 
-参数名类型必填说明slot[NotificationSlot](../../topics/misc/NotificationSlot.md#ZH-CN_TOPIC_0000002497446138__notificationslot-1)是通知渠道实例，仅支持设置其notificationType属性。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slot | [NotificationSlot](../../topics/misc/NotificationSlot.md#ZH-CN_TOPIC_0000002497446138__notificationslot-1) | 是 | 通知渠道实例，仅支持设置其notificationType属性。 |
 
 **返回值**：
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401If the input parameter is not valid parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | If the input parameter is not valid parameter. |
 
 **示例**：
 
@@ -419,9 +481,9 @@ reminderAgentManager.addNotificationSlot(mySlot).then(() => {
 });
 ```
 
-#### reminderAgentManager.removeNotificationSlot
+#### reminderAgentManager.remove[NotificationSlot](../../topics/misc/NotificationSlot.md#ZH-CN_TOPIC_0000002497446138__notificationslot-1)
 
-removeNotificationSlot(slotType: notification.SlotType, callback: AsyncCallback<void>): void
+remove[NotificationSlot](../../topics/misc/NotificationSlot.md#ZH-CN_TOPIC_0000002497446138__notificationslot-1)(slotType: notification.SlotType, callback: AsyncCallback<void>): void
 
 删除指定的通知渠道类型，使用callback异步回调。
 
@@ -429,13 +491,18 @@ removeNotificationSlot(slotType: notification.SlotType, callback: AsyncCallback<
 
 **参数**：
 
-参数名类型必填说明slotType[notification.SlotType](@ohos.notification (Notification模块).md#ZH-CN_TOPIC_0000002529286111__slottype)是通知渠道类型。callbackAsyncCallback<void>是回调函数，当删除成功时，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotType | notification.SlotType | 是 | 通知渠道类型。 |
+| callback | AsyncCallback<void> | 是 | 回调函数，当删除成功时，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401If the input parameter is not valid parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | If the input parameter is not valid parameter. |
 
 **示例**：
 
@@ -454,9 +521,9 @@ reminderAgentManager.removeNotificationSlot(notificationManager.SlotType.CONTENT
 });
 ```
 
-#### reminderAgentManager.removeNotificationSlot
+#### reminderAgentManager.remove[NotificationSlot](../../topics/misc/NotificationSlot.md#ZH-CN_TOPIC_0000002497446138__notificationslot-1)
 
-removeNotificationSlot(slotType: notification.SlotType): Promise<void>
+remove[NotificationSlot](../../topics/misc/NotificationSlot.md#ZH-CN_TOPIC_0000002497446138__notificationslot-1)(slotType: notification.SlotType): Promise<void>
 
 删除指定的通知渠道类型，使用Promise异步回调。
 
@@ -464,17 +531,23 @@ removeNotificationSlot(slotType: notification.SlotType): Promise<void>
 
 **参数**：
 
-参数名类型必填说明slotType[notification.SlotType](@ohos.notification (Notification模块).md#ZH-CN_TOPIC_0000002529286111__slottype)是通知渠道类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotType | notification.SlotType | 是 | 通知渠道类型。 |
 
 **返回值**：
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401If the input parameter is not valid parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | If the input parameter is not valid parameter. |
 
 **示例**：
 
@@ -500,13 +573,17 @@ getAllValidReminders(): Promise<Array<ReminderInfo>>
 
 **返回值**：
 
-类型说明Promise<Array<[ReminderInfo](#ZH-CN_TOPIC_0000002497445260__reminderinfo12)>>Promise对象，返回当前应用设置的所有有效（未过期）的代理提醒。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<ReminderInfo>> | Promise对象，返回当前应用设置的所有有效（未过期）的代理提醒。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
 
 **示例**：
 
@@ -551,17 +628,26 @@ addExcludeDate(reminderId: number, date: Date): Promise<void>
 
 **参数**：
 
-参数名类型必填说明reminderIdnumber是需要添加不提醒日期的代理提醒id，代理提醒id会在[发布代理提醒](#ZH-CN_TOPIC_0000002497445260__reminderagentmanagerpublishreminder)时作为返回值返回。dateDate是不提醒的日期。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| reminderId | number | 是 | 需要添加不提醒日期的代理提醒id，代理提醒id会在发布代理提醒时作为返回值返回。 |
+| date | Date | 是 | 不提醒的日期。 |
 
 **返回值**：
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[reminderAgentManager错误码](../../errors/reminderAgentManager错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[reminderAgentManager错误码](reminderAgentManager错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.401If the input parameter is not valid parameter.1700003The reminder does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | If the input parameter is not valid parameter. |
+| 1700003 | The reminder does not exist. |
 
 **示例**：
 
@@ -588,17 +674,24 @@ deleteExcludeDates(reminderId: number): Promise<void>
 
 **参数**：
 
-参数名类型必填说明reminderIdnumber是需要删除不提醒日期的代理提醒id，代理提醒id会在[发布代理提醒](#ZH-CN_TOPIC_0000002497445260__reminderagentmanagerpublishreminder)时作为返回值返回。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| reminderId | number | 是 | 需要删除不提醒日期的代理提醒id，代理提醒id会在发布代理提醒时作为返回值返回。 |
 
 **返回值**：
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[reminderAgentManager错误码](../../errors/reminderAgentManager错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[reminderAgentManager错误码](reminderAgentManager错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.1700003The reminder does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 1700003 | The reminder does not exist. |
 
 **示例**：
 
@@ -624,17 +717,24 @@ getExcludeDates(reminderId: number): Promise<Array<Date>>
 
 **参数**：
 
-参数名类型必填说明reminderIdnumber是需要查询不提醒日期的代理提醒id，代理提醒id会在[发布代理提醒](#ZH-CN_TOPIC_0000002497445260__reminderagentmanagerpublishreminder)时作为返回值返回。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| reminderId | number | 是 | 需要查询不提醒日期的代理提醒id，代理提醒id会在发布代理提醒时作为返回值返回。 |
 
 **返回值**：
 
-类型说明Promise<Array<Date>>Promise对象。返回特定日历设置的所有不提醒日期。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<Date>> | Promise对象。返回特定日历设置的所有不提醒日期。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[reminderAgentManager错误码](../../errors/reminderAgentManager错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[reminderAgentManager错误码](reminderAgentManager错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.1700003The reminder does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 1700003 | The reminder does not exist. |
 
 **示例**：
 
@@ -665,17 +765,26 @@ updateReminder(reminderId: number, reminderReq: ReminderRequest): Promise<void>
 
 **参数**：
 
-参数名类型必填说明reminderIdnumber是需要更新的代理提醒的id，代理提醒id会在[发布代理提醒](#ZH-CN_TOPIC_0000002497445260__reminderagentmanagerpublishreminder)时作为返回值返回。reminderReq[ReminderRequest](#ZH-CN_TOPIC_0000002497445260__reminderrequest)是代理提醒对象实例，用于设置提醒类型、响铃时长等具体信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| reminderId | number | 是 | 需要更新的代理提醒的id，代理提醒id会在发布代理提醒时作为返回值返回。 |
+| reminderReq | ReminderRequest | 是 | 代理提醒对象实例，用于设置提醒类型、响铃时长等具体信息。 |
 
 **返回值**：
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[reminderAgentManager错误码](../../errors/reminderAgentManager错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[reminderAgentManager错误码](reminderAgentManager错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.1700003The reminder does not exist.1700007If the input parameter is not valid parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 1700003 | The reminder does not exist. |
+| 1700007 | If the input parameter is not valid parameter. |
 
 **示例**：
 
@@ -696,13 +805,156 @@ reminderAgentManager.updateReminder(reminderId, timer).then(() => {
 });
 ```
 
+**reminderAgentManager.cancelReminderOnDisplay23+**
+
+cancelReminderOnDisplay(reminderId: number): Promise<void>
+
+取消当前通知中心内显示的通知卡片，不取消代理提醒数据。例如：每天重复的提醒，该提醒正在通知中心内显示，该接口将通知从通知中心内取消，并且会按照设定的周期，在第二天再次提醒。
+
+系统能力： SystemCapability.Notification.ReminderAgent
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| reminderId | number | 是 | 需要取消的代理提醒的id，代理提醒id会在发布代理提醒时作为返回值返回。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[reminderAgentManager错误码](reminderAgentManager错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1700003 | The reminder does not exist. |
+| 1700007 | If the input parameter is not valid parameter. |
+
+示例：
+
+```ets
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let reminderId: number = 1;
+reminderAgentManager.cancelReminderOnDisplay(reminderId).then(() => {
+  console.info("cancel display reminder  succeed");
+}).catch((err: BusinessError) => {
+  console.error("promise err code:" + err.code + " message:" + err.message);
+});
+```
+
+**reminderAgentManager.subscribeReminderState23+**
+
+subscribeReminderState(callback: Callback<Array<ReminderState>>): Promise<void>
+
+订阅代理提醒状态。使用Promise异步回调。
+
+需要权限： ohos.permission.PUBLISH_AGENT_REMINDER
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+系统能力： SystemCapability.Notification.ReminderAgent
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<Array<ReminderState>> | 是 | 回调函数，返回代理提醒状态信息。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[reminderAgentManager错误码](reminderAgentManager错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 1700007 | If the input parameter is not valid parameter. |
+
+示例：
+
+```ets
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function reminderStateCallback(states: Array<reminderAgentManager.ReminderState>) {
+  console.info('length is : ' + states.length);
+}
+
+reminderAgentManager.subscribeReminderState(reminderStateCallback).then(() => {
+  console.info('subscribe succeed');
+}).catch((err: BusinessError) => {
+  console.error('promise err code:' + err.code + ' message:' + err.message);
+});
+```
+
+**reminderAgentManager.unsubscribeReminderState23+**
+
+unsubscribeReminderState(callback?: Callback<Array<ReminderState>>): Promise<void>
+
+取消订阅代理提醒状态。使用Promise异步回调。
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+系统能力： SystemCapability.Notification.ReminderAgent
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<Array<ReminderState>> | 否 | 回调函数。如果不传参数callback，则取消所有订阅。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[reminderAgentManager错误码](reminderAgentManager错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1700007 | If the input parameter is not valid parameter. |
+
+示例：
+
+```ets
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function reminderStateCallback(states: Array<reminderAgentManager.ReminderState>) {
+  console.info('length is : ' + states.length);
+}
+
+reminderAgentManager.unsubscribeReminderState(reminderStateCallback).then(() => {
+  console.info('unsubscribe succeed');
+}).catch((err: BusinessError) => {
+  console.error('promise err code:' + err.code + ' message:' + err.message);
+});
+```
+
 #### ActionButtonType
 
 提醒上的按钮的类型。
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
 
-名称值说明ACTION_BUTTON_TYPE_CLOSE0表示关闭提醒的按钮。ACTION_BUTTON_TYPE_SNOOZE1表示延时提醒的按钮，提醒次数和间隔通过[ReminderRequest](#ZH-CN_TOPIC_0000002497445260__reminderrequest)中snoozeTimes和timeInterval设置。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ACTION_BUTTON_TYPE_CLOSE | 0 | 表示关闭提醒的按钮。 |
+| ACTION_BUTTON_TYPE_SNOOZE | 1 | 表示延时提醒的按钮，提醒次数和间隔通过ReminderRequest中snoozeTimes和timeInterval设置。 |
 
 #### ReminderType
 
@@ -710,7 +962,11 @@ reminderAgentManager.updateReminder(reminderId, timer).then(() => {
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
 
-名称值说明REMINDER_TYPE_TIMER0表示提醒类型：倒计时。REMINDER_TYPE_CALENDAR1表示提醒类型：日历。REMINDER_TYPE_ALARM2表示提醒类型：闹钟。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| REMINDER_TYPE_TIMER | 0 | 表示提醒类型：倒计时。 |
+| REMINDER_TYPE_CALENDAR | 1 | 表示提醒类型：日历。 |
+| REMINDER_TYPE_ALARM | 2 | 表示提醒类型：闹钟。 |
 
 #### RingChannel20+
 
@@ -718,7 +974,11 @@ reminderAgentManager.updateReminder(reminderId, timer).then(() => {
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
 
-名称值说明RING_CHANNEL_ALARM0闹钟通道。RING_CHANNEL_MEDIA1媒体通道。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| RING_CHANNEL_ALARM | 0 | 闹钟通道。 |
+| RING_CHANNEL_MEDIA | 1 | 媒体通道。 |
+| RING_CHANNEL_NOTIFICATION23+ | 2 | 通知通道。 |
 
 #### ActionButton
 
@@ -726,7 +986,11 @@ reminderAgentManager.updateReminder(reminderId, timer).then(() => {
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
 
-名称类型只读可选说明titlestring否否按钮显示的标题。titleResource11+string否是标题的资源ID，用于切换系统语言后读取对应标题信息。type[ActionButtonType](#ZH-CN_TOPIC_0000002497445260__actionbuttontype)否否按钮的类型。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| title | string | 否 | 否 | 按钮显示的标题。 |
+| titleResource11+ | string | 否 | 是 | 标题的资源ID，用于切换系统语言后读取对应标题信息。 |
+| type | ActionButtonType | 否 | 否 | 按钮的类型。 |
 
 #### WantAgent
 
@@ -734,7 +998,12 @@ reminderAgentManager.updateReminder(reminderId, timer).then(() => {
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
 
-名称类型只读可选说明pkgNamestring否否指明跳转目标的包名。abilityNamestring否否指明跳转目标的ability名称。parameters12+Record<string, Object>否是需要传递到目标的参数。uri12+string否是指明跳转目标的uri信息。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| pkgName | string | 否 | 否 | 指明跳转目标的包名。 |
+| abilityName | string | 否 | 否 | 指明跳转目标的ability名称。 |
+| parameters12+ | Record<string, Object> | 否 | 是 | 需要传递到目标的参数。 |
+| uri12+ | string | 否 | 是 | 指明跳转目标的uri信息。 |
 
 #### MaxScreenWantAgent
 
@@ -742,7 +1011,10 @@ reminderAgentManager.updateReminder(reminderId, timer).then(() => {
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
 
-名称类型只读可选说明pkgNamestring否否指明提醒到达时自动拉起的目标包名（如果设备在使用中，则只弹出通知横幅框）。abilityNamestring否否指明提醒到达时自动拉起的目标ability名（如果设备在使用中，则只弹出通知横幅框）。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| pkgName | string | 否 | 否 | 指明提醒到达时自动拉起的目标包名（如果设备在使用中，则只弹出通知横幅框）。 |
+| abilityName | string | 否 | 否 | 指明提醒到达时自动拉起的目标ability名（如果设备在使用中，则只弹出通知横幅框）。 |
 
 #### ReminderRequest
 
@@ -750,29 +1022,31 @@ reminderAgentManager.updateReminder(reminderId, timer).then(() => {
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
 
-名称类型只读可选说明reminderType[ReminderType](#ZH-CN_TOPIC_0000002497445260__remindertype)否否指明代理提醒类型。actionButton[[ActionButton?, ActionButton?, ActionButton?]](#ZH-CN_TOPIC_0000002497445260__actionbutton)否是
-
-弹出的提醒通知中显示的按钮。
-
-针对三方应用：最多支持两个按钮。
-
-针对系统应用：从API version 10开始最多支持三个按钮，API version 10之前的版本最多支持两个按钮。
-
-wantAgent[WantAgent](#ZH-CN_TOPIC_0000002497445260__wantagent)否是点击通知后需要跳转的目标ability信息。maxScreenWantAgent[MaxScreenWantAgent](#ZH-CN_TOPIC_0000002497445260__maxscreenwantagent)否是
-
-提醒到达时，全屏显示自动拉起目标的ability信息。如果设备正在使用中，则弹出一个通知横幅框。
-
-说明：该接口为预留接口，暂不支持使用。
-
-ringDurationnumber否是指明响铃时长（单位：秒），默认1秒，最长30分钟。snoozeTimesnumber否是指明延时提醒次数，默认0次（不适用于倒计时提醒类型）。timeIntervalnumber否是执行延时提醒间隔（单位：秒），最少30秒（不适用于倒计时提醒类型）。titlestring否是指明提醒标题。titleResourceId18+number否是指明提醒标题的资源ID。contentstring否是指明提醒内容。contentResourceId18+number否是指明提醒内容的资源ID。expiredContentstring否是指明提醒过期后需要显示的内容。expiredContentResourceId18+number否是指明提醒过期后内容的资源ID。snoozeContentstring否是指明延时提醒时需要显示的内容（不适用于倒计时提醒类型）。snoozeContentResourceId18+number否是指明延时提醒内容的资源ID。notificationIdnumber否是指明提醒使用的通知的id号，需开发者传入，相同id号的提醒会覆盖。groupId11+string否是指明提醒使用相同的组id。相同组id中，一个提醒被点击不在提醒后，组内其他提醒也会被取消。slotType[notification.SlotType](@ohos.notificationManager (NotificationManager模块).md#ZH-CN_TOPIC_0000002497446132__slottype)否是指明提醒的通道渠道类型。tapDismissed10+boolean否是
-
-通知是否自动清除，默认值为true，具体请参考[NotificationRequest.tapDismissed](../../topics/misc/NotificationRequest.md#ZH-CN_TOPIC_0000002497606118__notificationrequest-1)。
-
-- true：点击通知消息或通知按钮后，自动删除当前通知。
-
-- false：点击通知消息或通知按钮后，保留当前通知。
-
-autoDeletedTime10+number否是自动清除的时间，具体请参考[NotificationRequest.autoDeletedTime](../../topics/misc/NotificationRequest.md#ZH-CN_TOPIC_0000002497606118__notificationrequest-1)。snoozeSlotType11+[notification.SlotType](@ohos.notificationManager (NotificationManager模块).md#ZH-CN_TOPIC_0000002497446132__slottype)否是指明延时提醒的通道渠道类型（不适用于倒计时提醒类型）。customRingUri11+string否是指明自定义提示音的uri，提示音文件必须放在resources/rawfile目录下，支持m4a、aac、mp3、ogg、wav、flac、amr等格式。ringChannel20+[RingChannel](#ZH-CN_TOPIC_0000002497445260__ringchannel20)否是指明自定义提示音的音频播放通道，默认为闹钟通道。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| reminderType | ReminderType | 否 | 否 | 指明代理提醒类型。 |
+| actionButton | [ActionButton?, ActionButton?, ActionButton?] | 否 | 是 | 弹出的提醒通知中显示的按钮。 针对三方应用：最多支持两个按钮。 针对系统应用：从API version 10开始最多支持三个按钮，API version 10之前的版本最多支持两个按钮。 |
+| wantAgent | WantAgent | 否 | 是 | 点击通知后需要跳转的目标ability信息。 |
+| maxScreenWantAgent | MaxScreenWantAgent | 否 | 是 | 提醒到达时，全屏显示自动拉起目标的ability信息。如果设备正在使用中，则弹出一个通知横幅框。 说明：该接口为预留接口，暂不支持使用。 |
+| ringDuration | number | 否 | 是 | 指明响铃时长（单位：秒），默认1秒，最长30分钟。 |
+| snoozeTimes | number | 否 | 是 | 指明延时提醒次数，默认0次（不适用于倒计时提醒类型）。 |
+| timeInterval | number | 否 | 是 | 执行延时提醒间隔（单位：秒），最少30秒（不适用于倒计时提醒类型）。 |
+| title | string | 否 | 是 | 指明提醒标题。 |
+| titleResourceId18+ | number | 否 | 是 | 指明提醒标题的资源ID。 |
+| content | string | 否 | 是 | 指明提醒内容。 |
+| contentResourceId18+ | number | 否 | 是 | 指明提醒内容的资源ID。 |
+| expiredContent | string | 否 | 是 | 指明提醒过期后需要显示的内容。 |
+| expiredContentResourceId18+ | number | 否 | 是 | 指明提醒过期后内容的资源ID。 |
+| snoozeContent | string | 否 | 是 | 指明延时提醒时需要显示的内容（不适用于倒计时提醒类型）。 |
+| snoozeContentResourceId18+ | number | 否 | 是 | 指明延时提醒内容的资源ID。 |
+| notificationId | number | 否 | 是 | 指明提醒使用的通知的id号，需开发者传入，相同id号的提醒会覆盖。 |
+| groupId11+ | string | 否 | 是 | 指明提醒使用相同的组id。相同组id中，一个提醒被点击不在提醒后，组内其他提醒也会被取消。 |
+| slotType | notification.SlotType | 否 | 是 | 指明提醒的通道渠道类型。 |
+| tapDismissed10+ | boolean | 否 | 是 | 通知是否自动清除，默认值为true，具体请参考[NotificationRequest.tapDismissed](../../topics/misc/NotificationRequest.md#ZH-CN_TOPIC_0000002497606118__notificationrequest-1)。 - true：点击通知消息或通知按钮后，自动删除当前通知。 - false：点击通知消息或通知按钮后，保留当前通知。 |
+| autoDeletedTime10+ | number | 否 | 是 | 自动清除的时间，具体请参考[NotificationRequest.autoDeletedTime](../../topics/misc/NotificationRequest.md#ZH-CN_TOPIC_0000002497606118__notificationrequest-1)。 |
+| snoozeSlotType11+ | notification.SlotType | 否 | 是 | 指明延时提醒的通道渠道类型（不适用于倒计时提醒类型）。 |
+| customRingUri11+ | string | 否 | 是 | 指明自定义提示音的uri，提示音文件必须放在resources/rawfile目录下，支持m4a、aac、mp3、ogg、wav、flac、amr等格式。 |
+| ringChannel20+ | RingChannel | 否 | 是 | 指明自定义提示音的音频播放通道，默认为闹钟通道。 |
 
 #### ReminderRequestCalendar
 
@@ -782,7 +1056,13 @@ ReminderRequestCalendar extends ReminderRequest
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
 
-名称类型只读可选说明dateTime[LocalDateTime](#ZH-CN_TOPIC_0000002497445260__localdatetime)否否指明提醒的目标时间。repeatMonthsArray<number>否是指明重复提醒的月份，范围：[1, 12]。repeatDaysArray<number>否是指明重复提醒的日期，范围：[1, 31]。daysOfWeek11+Array<number>否是指明每周哪几天需要重复提醒。范围为周一到周日，对应数字为1到7。endDateTime12+[LocalDateTime](#ZH-CN_TOPIC_0000002497445260__localdatetime)否是指明提醒的结束时间。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| dateTime | LocalDateTime | 否 | 否 | 指明提醒的目标时间。 |
+| repeatMonths | Array<number> | 否 | 是 | 指明重复提醒的月份，范围：[1, 12]。 |
+| repeatDays | Array<number> | 否 | 是 | 指明重复提醒的日期，范围：[1, 31]。 |
+| daysOfWeek11+ | Array<number> | 否 | 是 | 指明每周哪几天需要重复提醒。范围为周一到周日，对应数字为1到7。 |
+| endDateTime12+ | LocalDateTime | 否 | 是 | 指明提醒的结束时间。 |
 
 #### ReminderRequestAlarm
 
@@ -792,7 +1072,11 @@ ReminderRequestAlarm extends ReminderRequest
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
 
-名称类型只读可选说明hournumber否否指明提醒的目标时刻，范围：[0, 23]。minutenumber否否指明提醒的目标分钟，范围：[0, 59]。daysOfWeekArray<number>否是指明每周哪几天需要重复提醒。范围为周一到周日，对应数字为1到7。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| hour | number | 否 | 否 | 指明提醒的目标时刻，范围：[0, 23]。 |
+| minute | number | 否 | 否 | 指明提醒的目标分钟，范围：[0, 59]。 |
+| daysOfWeek | Array<number> | 否 | 是 | 指明每周哪几天需要重复提醒。范围为周一到周日，对应数字为1到7。 |
 
 #### ReminderRequestTimer
 
@@ -802,7 +1086,9 @@ ReminderRequestTimer extends ReminderRequest
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
 
-名称类型只读可选说明triggerTimeInSecondsnumber否否指明倒计时的秒数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| triggerTimeInSeconds | number | 否 | 否 | 指明倒计时的秒数。 |
 
 #### LocalDateTime
 
@@ -810,7 +1096,14 @@ ReminderRequestTimer extends ReminderRequest
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
 
-名称类型只读可选说明yearnumber否否年monthnumber否否月，取值范围是[1, 12]。daynumber否否日，取值范围是[1, 31]。hournumber否否时，取值范围是[0, 23]。minutenumber否否分，取值范围是[0, 59]。secondnumber否是秒，取值范围是[0, 59]。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| year | number | 否 | 否 | 年 |
+| month | number | 否 | 否 | 月，取值范围是[1, 12]。 |
+| day | number | 否 | 否 | 日，取值范围是[1, 31]。 |
+| hour | number | 否 | 否 | 时，取值范围是[0, 23]。 |
+| minute | number | 否 | 否 | 分，取值范围是[0, 59]。 |
+| second | number | 否 | 是 | 秒，取值范围是[0, 59]。 |
 
 #### ReminderInfo12+
 
@@ -818,4 +1111,25 @@ ReminderRequestTimer extends ReminderRequest
 
 **系统能力**：SystemCapability.Notification.ReminderAgent
 
-名称类型只读可选说明reminderIdnumber否否发布提醒后返回的id。reminderReq[ReminderRequest](#ZH-CN_TOPIC_0000002497445260__reminderrequest)否否代理提醒对象。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| reminderId | number | 否 | 否 | 发布提醒后返回的id。 |
+| reminderReq | ReminderRequest | 否 | 否 | 代理提醒对象。 |
+
+**ReminderState23+**
+
+代理提醒状态信息。状态信息会在如下两种情况发送通知：
+
+1. 用户点击代理提醒的通知按钮时，如果应用进程存在，则会发送用户点击的按钮类型的通知给应用。如果应用未运行，则无法收到通知。
+
+1. 由于第1点不能保证应用可以收到通知，因此应用注册新的回调函数时，会将该应用下所有用户点击的按钮类型回调给应用。状态信息最多保存30天，应用注册新的回调函数时或者超过30天未注册回调函数，会删除缓存的状态信息。
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+系统能力： SystemCapability.Notification.ReminderAgent
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| reminderId | number | 否 | 否 | 发布提醒后返回的id。 |
+| buttonType | ActionButtonType | 否 | 否 | 按钮类型。 |
+| isMessageResent | boolean | 否 | 否 | 信息是否为重复发送。 - false：信息首次发送。具体场景包括：用户点击代理提醒的通知按钮时，应用进程存在；用户点击代理提醒的通知按钮时，应用未运行，后续应用注册新的回调函数。 - true：信息重复发送，具体场景为：应用进程存在，用户点击代理提醒的通知按钮后，应用注册新的回调函数。 |

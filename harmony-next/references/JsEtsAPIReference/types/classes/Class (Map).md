@@ -27,7 +27,9 @@ import { collections } from '@kit.ArkTS';
 
 **系统能力：** SystemCapability.Utils.Lang
 
-名称类型只读可选说明sizenumber是否Map的元素个数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| size | number | 是 | 否 | Map的元素个数。 |
 
 #### constructor
 
@@ -41,13 +43,18 @@ constructor(entries?: readonly (readonly [K, V])[] | null)
 
 **参数：**
 
-参数名类型必填说明entriesreadonly (readonly [K, V])[] | null否键值对数组或其它可迭代对象。默认值为null，创建一个空Map对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| entries | readonly (readonly [K, V])[] | null | 否 | 键值对数组或其它可迭代对象。默认值为null，创建一个空Map对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[语言基础类库错误码]([语言基础类库错误码](../../errors/语言基础类库错误码.md).md)。
 
-错误码ID错误信息401Parameter error.10200012The ArkTS Map's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200012 | The ArkTS Map's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -71,7 +78,6 @@ const myMap = new collections.Map<number, string>([
 class SharedClass {
   constructor() {
   }
-}
 let sObj = new SharedClass();
 const myMap1: collections.Map<number, SharedClass> = new collections.Map<number, SharedClass>([[1, sObj]]);
 // Type arguments of generic "Sendable" type must be a "Sendable" data type (arkts-sendable-generic-types)
@@ -91,13 +97,18 @@ constructor(iterable: Iterable<readonly [K, V]>)
 
 **参数：**
 
-参数名类型必填说明iterableIterable<readonly [K, V]>是用于构造ArkTS Map的对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| iterable | Iterable<readonly [K, V]> | 是 | 用于构造ArkTS Map的对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200012The ArkTS Map's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200012 | The ArkTS Map's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -123,13 +134,18 @@ entries(): IterableIterator<[K, V]>
 
 **返回值：**
 
-类型说明IterableIterator<[K, V]>返回一个Map迭代器对象。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<[K, V]> | 返回一个Map迭代器对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The entries method cannot be bound with non-sendable.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The entries method cannot be bound with non-sendable. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -160,7 +176,6 @@ for (const entry of entriesIter) {
   if (entry[1].startsWith('t')) {
     myMap.delete(entry[0]);
   }
-}
 // Expected output: 2
 console.info("size:" + myMap.size);
 ```
@@ -177,13 +192,18 @@ keys(): IterableIterator<K>
 
 **返回值：**
 
-类型说明IterableIterator<K>返回一个Map迭代器对象。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<K> | 返回一个Map迭代器对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The keys method cannot be bound with non-sendable.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The keys method cannot be bound with non-sendable. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -212,13 +232,18 @@ values(): IterableIterator<V>
 
 **返回值：**
 
-类型说明IterableIterator<V>返回一个Map迭代器对象。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<V> | 返回一个Map迭代器对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The values method cannot be bound with non-sendable.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The values method cannot be bound with non-sendable. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -247,9 +272,12 @@ clear(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The clear method cannot be bound with non-sendable.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The clear method cannot be bound with non-sendable. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -277,17 +305,25 @@ delete(key: K): boolean
 
 **参数：**
 
-参数名类型必填说明keyK是待删除元素的键。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | K | 是 | 待删除元素的键。 |
 
 **返回值：**
 
-类型说明boolean如果元素存在并已被删除，则为true；否则该元素不存在，返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果元素存在并已被删除，则为true；否则该元素不存在，返回false。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The delete method cannot be bound with non-sendable.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The delete method cannot be bound with non-sendable. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -315,17 +351,27 @@ forEach(callbackFn: (value: V, key: K, map: Map<K, V>) => void): void
 
 **参数：**
 
-参数名类型必填说明callbackFn(value: V, key: K, map: Map<K, V>) => void是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | (value: V, key: K, map: Map<K, V>) => void | 是 | 回调函数。 |
 
 callbackFn的参数说明：
 
-参数名类型必填说明valueV否当前遍历到的元素键值对的值。keyK否当前遍历到的元素键值对的键。mapMap<K, V>否当前map实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | V | 否 | 当前遍历到的元素键值对的值。 |
+| key | K | 否 | 当前遍历到的元素键值对的键。 |
+| map | Map<K, V> | 否 | 当前map实例对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The forEach method cannot be bound with non-sendable.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The forEach method cannot be bound with non-sendable. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -364,17 +410,25 @@ get(key: K): V | undefined
 
 **参数：**
 
-参数名类型必填说明keyK是指定key。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | K | 是 | 指定key。 |
 
 **返回值：**
 
-类型说明V | undefined与指定键相关联的元素，如果键在Map对象中找不到，则返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| V | undefined | 与指定键相关联的元素，如果键在Map对象中找不到，则返回undefined。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The get method cannot be bound with non-sendable.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The get method cannot be bound with non-sendable. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -400,17 +454,25 @@ has(key: K): boolean
 
 **参数：**
 
-参数名类型必填说明keyK是待查找元素的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | K | 是 | 待查找元素的值。 |
 
 **返回值：**
 
-类型说明boolean如果存在指定元素，则返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果存在指定元素，则返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The has method cannot be bound with non-sendable.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The has method cannot be bound with non-sendable. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -436,17 +498,26 @@ set(key: K, value: V): Map<K, V>
 
 **参数：**
 
-参数名类型必填说明keyK是添加或更新指定元素的键。valueV是添加或更新指定元素的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | K | 是 | 添加或更新指定元素的键。 |
+| value | V | 是 | 添加或更新指定元素的值。 |
 
 **返回值：**
 
-类型说明Map<K, V>Map对象
+| 类型 | 说明 |
+| --- | --- |
+| Map<K, V> | Map对象 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error.10200011The set method cannot be bound with non-sendable.10200201Concurrent modification error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 10200011 | The set method cannot be bound with non-sendable. |
+| 10200201 | Concurrent modification error. |
 
 **示例：**
 
@@ -478,13 +549,17 @@ myMap.set("foo", obj);
 
 **返回值：**
 
-类型说明IterableIterator<[K, V]>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<[K, V]> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The Symbol.iterator method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The Symbol.iterator method cannot be bound. |
 
 **示例：**
 

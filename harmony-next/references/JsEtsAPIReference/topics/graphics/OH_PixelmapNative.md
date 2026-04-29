@@ -1,15 +1,15 @@
 # OH_PixelmapNative
 
 ```ets
-struct OH_PixelmapNative
+typedef struct OH_PixelmapNative OH_PixelmapNative
 ```
 
 #### 概述
 
-定义像素图片信息。
+声明由图像框架定义的像素图对象。
 
-**起始版本：** 15
+起始版本： 12
 
-**相关模块：**[WindowManager](../misc/WindowManager.md)
+相关模块： [Drawing](Drawing.md)
 
-**所在头文件：**[oh_window_comm.h](../../capi/headers/oh_window_comm.h.md)
+所在头文件： [drawing_pixel_map.h](drawing_pixel_map.h.md)

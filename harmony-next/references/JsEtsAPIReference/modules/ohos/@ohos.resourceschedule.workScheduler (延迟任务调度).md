@@ -22,13 +22,22 @@ startWork(work: WorkInfo): void
 
 **参数**：
 
-参数名类型必填说明work[WorkInfo](#ZH-CN_TOPIC_0000002529445205__workinfo)是指定延迟任务具体信息，比如延迟任务ID、触发条件等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| work | WorkInfo | 是 | 指定延迟任务具体信息，比如延迟任务ID、触发条件等。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[workScheduler错误码](../../errors/workScheduler错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[workScheduler错误码]([workScheduler错误码](../../errors/workScheduler错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed.9700001Memory operation failed.9700002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9700003System service operation failed.9700004Check on workInfo failed.9700005Calling startWork failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
+| 9700001 | Memory operation failed. |
+| 9700002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9700003 | System service operation failed. |
+| 9700004 | Check on workInfo failed. |
+| 9700005 | Calling startWork failed. |
 
 **示例**：
 
@@ -49,7 +58,6 @@ startWork(work: WorkInfo): void
           mykey2: true,
           mykey3: 1.5
       }
-  }
   try{
     workScheduler.startWork(workInfo);
     console.info('workschedulerLog startWork success');
@@ -68,17 +76,22 @@ stopWork(work: WorkInfo, needCancel?: boolean): void
 
 **参数**：
 
-参数名类型必填说明work[WorkInfo](#ZH-CN_TOPIC_0000002529445205__workinfo)是要停止或移除的延迟任务。needCancelboolean否
-
-是否需要移除任务。
-
-true表示停止并移除，false表示只停止不移除。默认为false。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| work | WorkInfo | 是 | 要停止或移除的延迟任务。 |
+| needCancel | boolean | 否 | 是否需要移除任务。 true表示停止并移除，false表示只停止不移除。默认为false。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[workScheduler错误码](../../errors/workScheduler错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[workScheduler错误码](workScheduler错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed.9700001Memory operation failed.9700002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9700003System service operation failed.9700004Check on workInfo failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
+| 9700001 | Memory operation failed. |
+| 9700002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9700003 | System service operation failed. |
+| 9700004 | Check on workInfo failed. |
 
 **示例**：
 
@@ -99,7 +112,6 @@ true表示停止并移除，false表示只停止不移除。默认为false。
           mykey2: true,
           mykey3: 1.5
       }
-     }
   try{
     workScheduler.stopWork(workInfo, false);
     console.info('workschedulerLog stopWork success');
@@ -118,13 +130,22 @@ getWorkStatus(workId: number, callback : AsyncCallback<WorkInfo>): void
 
 **参数**：
 
-参数名类型必填说明workIdnumber是延迟任务Id。callbackAsyncCallback<[WorkInfo](#ZH-CN_TOPIC_0000002529445205__workinfo)>是回调函数。如果workId有效，则返回从WorkSchedulerService获取的任务，否则抛出异常。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| workId | number | 是 | 延迟任务Id。 |
+| callback | AsyncCallback<WorkInfo> | 是 | 回调函数。如果workId有效，则返回从WorkSchedulerService获取的任务，否则抛出异常。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[workScheduler错误码](../../errors/workScheduler错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[workScheduler错误码](workScheduler错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: Parameter verification failed.9700001Memory operation failed.9700002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9700003System service operation failed.9700004Check on workInfo failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: Parameter verification failed. |
+| 9700001 | Memory operation failed. |
+| 9700002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9700003 | System service operation failed. |
+| 9700004 | Check on workInfo failed. |
 
 **示例**：
 
@@ -151,17 +172,27 @@ getWorkStatus(workId: number): Promise<WorkInfo>
 
 **参数**：
 
-参数名类型必填说明workIdnumber是延迟任务Id。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| workId | number | 是 | 延迟任务Id。 |
 
 **返回值**：
 
-类型说明Promise<[WorkInfo](#ZH-CN_TOPIC_0000002529445205__workinfo)>Promise对象，如果workId有效，则返回从WorkSchedulerService获取的任务，否则抛出异常。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<WorkInfo> | Promise对象，如果workId有效，则返回从WorkSchedulerService获取的任务，否则抛出异常。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[workScheduler错误码](../../errors/workScheduler错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[workScheduler错误码](workScheduler错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: Parameter verification failed.9700001Memory operation failed.9700002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9700003System service operation failed.9700004Check on workInfo failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: Parameter verification failed. |
+| 9700001 | Memory operation failed. |
+| 9700002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9700003 | System service operation failed. |
+| 9700004 | Check on workInfo failed. |
 
 **示例**：
 
@@ -182,23 +213,33 @@ obtainAllWorks(callback : AsyncCallback<void>) : Array<WorkInfo>
 
 获取当前应用所有的延迟任务，使用Callback异步回调。
 
-从API version 9开始支持，从API version 10开始废弃，建议使用[workScheduler.obtainAllWorks10+](#ZH-CN_TOPIC_0000002529445205__workschedulerobtainallworks10)替代。
+
+从API version 9开始支持，从API version 10开始废弃，建议使用[obtainAllWorks10+](#ZH-CN_TOPIC_0000002522241200__workschedulerobtainallworks10)替代。
 
 **系统能力**：SystemCapability.ResourceSchedule.WorkScheduler
 
 **参数**：
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数，获取成功时，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数，获取成功时，err为undefined，否则为错误对象。 |
 
 **返回值**：
 
-类型说明Array<[WorkInfo](#ZH-CN_TOPIC_0000002529445205__workinfo)>延迟任务列表，如果已添加延迟任务到执行队列，则返回当前应用所有的延迟任务列表；否则返回空列表。
+| 类型 | 说明 |
+| --- | --- |
+| Array<WorkInfo> | 延迟任务列表，如果已添加延迟任务到执行队列，则返回当前应用所有的延迟任务列表；否则返回空列表。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[workScheduler错误码](../../errors/workScheduler错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[workScheduler错误码](workScheduler错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.9700001Memory operation failed.9700002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9700003System service operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 9700001 | Memory operation failed. |
+| 9700002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9700003 | System service operation failed. |
 
 #### workScheduler.obtainAllWorks10+
 
@@ -210,13 +251,20 @@ obtainAllWorks(callback : AsyncCallback<Array<WorkInfo>>): void
 
 **参数**：
 
-参数名类型必填说明callbackAsyncCallback<Array<WorkInfo>>是回调函数，获取成功时，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<WorkInfo>> | 是 | 回调函数，获取成功时，err为undefined，否则为错误对象。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[workScheduler错误码](../../errors/workScheduler错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[workScheduler错误码](workScheduler错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.9700001Memory operation failed.9700002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9700003System service operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 9700001 | Memory operation failed. |
+| 9700002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9700003 | System service operation failed. |
 
 **示例**：
 
@@ -243,13 +291,20 @@ obtainAllWorks(): Promise<Array<WorkInfo>>
 
 **返回值**：
 
-类型说明Promise<Array<[WorkInfo](#ZH-CN_TOPIC_0000002529445205__workinfo)>>Promise对象，返回当前应用所有的延迟任务。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<WorkInfo>> | Promise对象，返回当前应用所有的延迟任务。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[workScheduler错误码](../../errors/workScheduler错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[workScheduler错误码](workScheduler错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.9700001Memory operation failed.9700002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9700003System service operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 9700001 | Memory operation failed. |
+| 9700002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9700003 | System service operation failed. |
 
 **示例**：
 
@@ -274,9 +329,14 @@ stopAndClearWorks(): void
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[workScheduler错误码](../../errors/workScheduler错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[workScheduler错误码](workScheduler错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types.9700001Memory operation failed.9700002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9700003System service operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 9700001 | Memory operation failed. |
+| 9700002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9700003 | System service operation failed. |
 
 **示例**：
 
@@ -296,7 +356,7 @@ stopAndClearWorks(): void
 
 isLastWorkTimeOut(workId: number, callback : AsyncCallback<void>): boolean
 
-从API version 9开始支持，从API version 10开始废弃，建议使用[workScheduler.isLastWorkTimeOut10+](#ZH-CN_TOPIC_0000002529445205__workschedulerislastworktimeout10)替代。
+从API version 9开始支持，从API version 10开始废弃，建议使用[isLastWorkTimeOut10+](#ZH-CN_TOPIC_0000002522241200__workschedulerislastworktimeout10)替代。
 
 检查延迟任务的最后一次执行是否超时，使用Callback异步回调。
 
@@ -304,17 +364,28 @@ isLastWorkTimeOut(workId: number, callback : AsyncCallback<void>): boolean
 
 **参数**：
 
-参数名类型必填说明workIdnumber是指定延迟任务的Id。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| workId | number | 是 | 指定延迟任务的Id。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **返回值**：
 
-类型说明boolean检查延迟任务最后一次执行是否超时，如果workId有效，则返回从WorkSchedulerService获取的任务最后一次执行是否超时；否则，抛出异常。true，对应workId延迟任务最后一次执行超时，false，对应workId延迟任务最后一次执行未超时。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 检查延迟任务最后一次执行是否超时，如果workId有效，则返回从WorkSchedulerService获取的任务最后一次执行是否超时；否则，抛出异常。true，对应workId延迟任务最后一次执行超时，false，对应workId延迟任务最后一次执行未超时。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[workScheduler错误码](../../errors/workScheduler错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[workScheduler错误码](workScheduler错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: Parameter verification failed.9700001Memory operation failed.9700002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9700003System service operation failed.9700004Check on workInfo failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: Parameter verification failed. |
+| 9700001 | Memory operation failed. |
+| 9700002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9700003 | System service operation failed. |
+| 9700004 | Check on workInfo failed. |
 
 #### workScheduler.isLastWorkTimeOut10+
 
@@ -326,13 +397,22 @@ isLastWorkTimeOut(workId: number, callback : AsyncCallback<boolean>): void
 
 **参数**：
 
-参数名类型必填说明workIdnumber是指定延迟任务的Id。callbackAsyncCallback<boolean>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| workId | number | 是 | 指定延迟任务的Id。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[workScheduler错误码](../../errors/workScheduler错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[workScheduler错误码](workScheduler错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: Parameter verification failed.9700001Memory operation failed.9700002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9700003System service operation failed.9700004Check on workInfo failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: Parameter verification failed. |
+| 9700001 | Memory operation failed. |
+| 9700002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9700003 | System service operation failed. |
+| 9700004 | Check on workInfo failed. |
 
 **示例**：
 
@@ -359,17 +439,27 @@ isLastWorkTimeOut(workId: number): Promise<boolean>
 
 **参数**：
 
-参数名类型必填说明workIdnumber是指定延迟任务的Id。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| workId | number | 是 | 指定延迟任务的Id。 |
 
 **返回值**：
 
-类型说明Promise<boolean>Promise对象。返回true表示指定任务的最后一次执行超时，false表示未超时。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示指定任务的最后一次执行超时，false表示未超时。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[workScheduler错误码](../../errors/workScheduler错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[workScheduler错误码](workScheduler错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: Parameter verification failed.9700001Memory operation failed.9700002Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.9700003System service operation failed.9700004Check on workInfo failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: Parameter verification failed. |
+| 9700001 | Memory operation failed. |
+| 9700002 | Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory. |
+| 9700003 | System service operation failed. |
+| 9700004 | Check on workInfo failed. |
 
 **示例**：
 
@@ -400,39 +490,25 @@ WorkInfo参数设置时需遵循以下规则：
 
 **系统能力**：SystemCapability.ResourceSchedule.WorkScheduler
 
-名称类型只读可选说明workIdnumber否否延迟任务ID。bundleNamestring否否延迟任务所在应用的包名。abilityNamestring否否包内ability名称。networkType[NetworkType](#ZH-CN_TOPIC_0000002529445205__networktype)否是网络类型。isChargingboolean否是
-
-是否充电，默认为false。
-
-- true表示充电触发延迟任务回调。
-
-- false表示不充电触发延迟任务回调。
-
-chargerType[ChargingType](#ZH-CN_TOPIC_0000002529445205__chargingtype)否是充电类型。batteryLevelnumber否是电量。batteryStatus[BatteryStatus](#ZH-CN_TOPIC_0000002529445205__batterystatus)否是电池状态。storageRequest[StorageRequest](#ZH-CN_TOPIC_0000002529445205__storagerequest)否是存储状态。isRepeatboolean否是
-
-是否循环任务，默认为false。
-
-- true表示循环任务。
-
-- false表示非循环任务。
-
-repeatCycleTimenumber否是循环间隔，单位为毫秒。repeatCountnumber否是循环次数。isPersistedboolean否是
-
-注册的延迟任务是否可保存在系统中，默认为false。
-
-- true表示可保存，即系统重启后，任务可恢复。
-
-- false表示不可保存。
-
-isDeepIdleboolean否是
-
-是否要求设备进入空闲状态，默认为false。
-
-- true表示需要。
-
-- false表示不需要。
-
-idleWaitTimenumber否是空闲等待时间，单位为毫秒。parametersRecord<string, number | string | boolean>否是携带参数信息。earliestStartTime22+number否是任务首次执行时间距离任务申请时间的间隔，单位为毫秒，默认为0，范围大于等于0。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| workId | number | 否 | 否 | 延迟任务ID。 |
+| bundleName | string | 否 | 否 | 延迟任务所在应用的包名。 |
+| abilityName | string | 否 | 否 | 包内ability名称。 |
+| networkType | NetworkType | 否 | 是 | 网络类型。 |
+| isCharging | boolean | 否 | 是 | 是否充电，默认为false。 - true表示充电触发延迟任务回调。 - false表示不充电触发延迟任务回调。 |
+| chargerType | ChargingType | 否 | 是 | 充电类型。 |
+| batteryLevel | number | 否 | 是 | 电量。 |
+| batteryStatus | BatteryStatus | 否 | 是 | 电池状态。 |
+| storageRequest | StorageRequest | 否 | 是 | 存储状态。 |
+| isRepeat | boolean | 否 | 是 | 是否循环任务，默认为false。 - true表示循环任务。 - false表示非循环任务。 |
+| repeatCycleTime | number | 否 | 是 | 循环间隔，单位为毫秒。 |
+| repeatCount | number | 否 | 是 | 循环次数。 |
+| isPersisted | boolean | 否 | 是 | 注册的延迟任务是否可保存在系统中，默认为false。 - true表示可保存，即系统重启后，任务可恢复。 - false表示不可保存。 |
+| isDeepIdle | boolean | 否 | 是 | 是否要求设备进入空闲状态，默认为false。 - true表示需要。 - false表示不需要。 |
+| idleWaitTime | number | 否 | 是 | 空闲等待时间，单位为毫秒。 |
+| parameters | Record<string, number | string | boolean> | 否 | 是 | 携带参数信息。 |
+| earliestStartTime22+ | number | 否 | 是 | 任务首次执行时间距离任务申请时间的间隔，单位为毫秒，默认为0，范围大于等于0。 |
 
 #### NetworkType
 
@@ -440,7 +516,14 @@ idleWaitTimenumber否是空闲等待时间，单位为毫秒。parametersRecord<
 
 **系统能力**：SystemCapability.ResourceSchedule.WorkScheduler
 
-名称值说明NETWORK_TYPE_ANY0表示这个触发条件是任何类型的网络连接。NETWORK_TYPE_MOBILE1表示这个触发条件是Mobile网络连接。NETWORK_TYPE_WIFI2表示这个触发条件是Wifi类型的网络连接。NETWORK_TYPE_BLUETOOTH3表示这个触发条件是Bluetooth网络连接。NETWORK_TYPE_WIFI_P2P4表示这个触发条件是Wifi P2P网络连接。NETWORK_TYPE_ETHERNET5表示这个触发条件是有线网络连接。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NETWORK_TYPE_ANY | 0 | 表示这个触发条件是任何类型的网络连接。 |
+| NETWORK_TYPE_MOBILE | 1 | 表示这个触发条件是Mobile网络连接。 |
+| NETWORK_TYPE_WIFI | 2 | 表示这个触发条件是Wifi类型的网络连接。 |
+| NETWORK_TYPE_BLUETOOTH | 3 | 表示这个触发条件是Bluetooth网络连接。 |
+| NETWORK_TYPE_WIFI_P2P | 4 | 表示这个触发条件是Wifi P2P网络连接。 |
+| NETWORK_TYPE_ETHERNET | 5 | 表示这个触发条件是有线网络连接。 |
 
 #### ChargingType
 
@@ -448,7 +531,12 @@ idleWaitTimenumber否是空闲等待时间，单位为毫秒。parametersRecord<
 
 **系统能力**：SystemCapability.ResourceSchedule.WorkScheduler
 
-名称值说明CHARGING_PLUGGED_ANY0表示这个触发条件是任何类型的充电器连接。CHARGING_PLUGGED_AC1表示这个触发条件是直流充电器连接。CHARGING_PLUGGED_USB2表示这个触发条件是USB充连接。CHARGING_PLUGGED_WIRELESS3表示这个触发条件是无线充电器连接。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CHARGING_PLUGGED_ANY | 0 | 表示这个触发条件是任何类型的充电器连接。 |
+| CHARGING_PLUGGED_AC | 1 | 表示这个触发条件是直流充电器连接。 |
+| CHARGING_PLUGGED_USB | 2 | 表示这个触发条件是USB充电连接。 |
+| CHARGING_PLUGGED_WIRELESS | 3 | 表示这个触发条件是无线充电器连接。 |
 
 #### BatteryStatus
 
@@ -456,7 +544,11 @@ idleWaitTimenumber否是空闲等待时间，单位为毫秒。parametersRecord<
 
 **系统能力**：SystemCapability.ResourceSchedule.WorkScheduler
 
-名称值说明BATTERY_STATUS_LOW0表示这个触发条件是低电告警。BATTERY_STATUS_OKAY1表示这个触发条件是从低电恢复到正常电量。BATTERY_STATUS_LOW_OR_OKAY2表示这个触发条件是从低电恢复到正常电量或者低电告警。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| BATTERY_STATUS_LOW | 0 | 表示这个触发条件是低电告警。 |
+| BATTERY_STATUS_OKAY | 1 | 表示这个触发条件是从低电恢复到正常电量。 |
+| BATTERY_STATUS_LOW_OR_OKAY | 2 | 表示这个触发条件是从低电恢复到正常电量或者低电告警。 |
 
 #### StorageRequest
 
@@ -464,4 +556,8 @@ idleWaitTimenumber否是空闲等待时间，单位为毫秒。parametersRecord<
 
 **系统能力**：SystemCapability.ResourceSchedule.WorkScheduler
 
-名称值说明STORAGE_LEVEL_LOW0表示这个触发条件是存储空间不足。STORAGE_LEVEL_OKAY1表示这个触发条件是从存储空间不足恢复到正常。STORAGE_LEVEL_LOW_OR_OKAY2表示这个触发条件是存储空间不足或者从存储空间不足恢复到正常。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| STORAGE_LEVEL_LOW | 0 | 表示这个触发条件是存储空间不足。 |
+| STORAGE_LEVEL_OKAY | 1 | 表示这个触发条件是从存储空间不足恢复到正常。 |
+| STORAGE_LEVEL_LOW_OR_OKAY | 2 | 表示这个触发条件是存储空间不足或者从存储空间不足恢复到正常。 |

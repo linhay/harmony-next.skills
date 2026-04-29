@@ -1,6 +1,7 @@
-# @ohos.app.ability.CompletionHandlerForAbilityStartCallback (拉起应用结果回调的操作类)
+# @ohos.app.ability.CompletionHandlerFor[AbilityStartCallback](../../topics/misc/AbilityStartCallback.md) (拉起应用结果回调的操作类)
 
-CompletionHandlerForAbilityStartCallback作为[AbilityStartCallback](../../topics/system-services/AbilityStartCallback.md)的可选参数，用于返回垂域面板拉起指定类型的Ability组件的回调结果。
+CompletionHandlerForAbilityStartCallback作为[AbilityStartCallback](AbilityStartCallback.md)的可选参数，用于返回垂域面板拉起指定类型的Ability组件的回调结果。
+
 
 -
 
@@ -16,25 +17,18 @@ CompletionHandlerForAbilityStartCallback作为[AbilityStartCallback](../../topic
 import { CompletionHandlerForAbilityStartCallback } from '@kit.AbilityKit';
 ```
 
-#### CompletionHandlerForAbilityStartCallback
+#### CompletionHandlerFor[AbilityStartCallback](../../topics/misc/AbilityStartCallback.md)
 
-CompletionHandlerForAbilityStartCallback提供了onRequestSuccess和onRequestFailure两个回调函数属性，分别在拉起指定类型的Ability组件成功和失败时回调。
+CompletionHandlerFor[AbilityStartCallback](../../topics/misc/AbilityStartCallback.md)提供了onRequestSuccess和onRequestFailure两个回调函数属性，分别在拉起指定类型的Ability组件成功和失败时回调。
 
 #### 属性
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称类型只读可选说明onRequestSuccess[OnRequestSuccessFn](#ZH-CN_TOPIC_0000002497604584__onrequestsuccessfn)否是
-
-拉起指定类型的Ability组件成功时的回调函数。
-
-**元服务API**：从API version 21开始，该接口支持在元服务中使用。
-
-onRequestFailure[OnRequestFailureFn](#ZH-CN_TOPIC_0000002497604584__onrequestfailurefn)否是
-
-拉起指定类型的Ability组件失败时的回调函数。
-
-**元服务API**：从API version 21开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| onRequestSuccess | OnRequestSuccessFn | 否 | 是 | 拉起指定类型的Ability组件成功时的回调函数。 元服务API：从API version 21开始，该接口支持在元服务中使用。 |
+| onRequestFailure | OnRequestFailureFn | 否 | 是 | 拉起指定类型的Ability组件失败时的回调函数。  元服务API：从API version 21开始，该接口支持在元服务中使用。 |
 
 #### OnRequestSuccessFn
 
@@ -48,15 +42,13 @@ type OnRequestSuccessFn = (name: string) => void
 
 **参数：**
 
-参数名类型必填说明namestring是
-
-被拉起Ability组件或系统操作的名称。
-
-Ability组件名称采用'[bundleName]#[moduleName]#[abilityName]'格式拼接。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 被拉起Ability组件或系统操作的名称。 Ability组件名称采用'[bundleName]#[moduleName]#[abilityName]'格式拼接。 |
 
 **示例：**
 
-参见[OnRequestFailureFn](#ZH-CN_TOPIC_0000002497604584__onrequestfailurefn)。
+参见[OnRequestFailureFn](#ZH-CN_TOPIC_0000002522240532__onrequestfailurefn)。
 
 #### OnRequestFailureFn
 
@@ -70,13 +62,11 @@ type OnRequestFailureFn = (name: string, failureCode: AbilityStartFailureCode, f
 
 **参数：**
 
-参数名类型必填说明namestring是
-
-被拉起Ability组件或系统操作的名称。
-
-Ability组件名称采用'[bundleName]#[moduleName]#[abilityName]'格式拼接。如果用户自动取消拉起，name为空。
-
-failureCode[AbilityStartFailureCode](#ZH-CN_TOPIC_0000002497604584__abilitystartfailurecode)是失败原因的错误码。failureMessagestring是失败原因的描述。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 被拉起Ability组件或系统操作的名称。 Ability组件名称采用'[bundleName]#[moduleName]#[abilityName]'格式拼接。如果用户自动取消拉起，name为空。 |
+| failureCode | AbilityStartFailureCode | 是 | 失败原因的错误码。 |
+| failureMessage | string | 是 | 失败原因的描述。 |
 
 **示例：**
 
@@ -128,8 +118,6 @@ struct Index {
           });
         })
     }
-  }
-}
 ```
 
 #### AbilityStartFailureCode
@@ -140,4 +128,7 @@ struct Index {
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称值说明FAILURE_CODE_SYSTEM_MALFUNCTION0表示由于系统错误（如跳转弹框崩溃）而无法拉起Ability组件。FAILURE_CODE_USER_CANCEL1用户取消。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| FAILURE_CODE_SYSTEM_MALFUNCTION | 0 | 表示由于系统错误（如跳转弹框崩溃）而无法拉起Ability组件。 |
+| FAILURE_CODE_USER_CANCEL | 1 | 用户取消。 |

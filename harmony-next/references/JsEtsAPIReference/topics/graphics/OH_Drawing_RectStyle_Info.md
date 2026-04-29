@@ -12,10 +12,16 @@ typedef struct {...} OH_Drawing_RectStyle_Info
 
 **相关模块：**[Drawing](Drawing.md)
 
-**所在头文件：**[drawing_types.h](../../capi/headers/drawing_types.h.md)
+所在头文件： [drawing_types.h](drawing_types.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述uint32_t color矩形框的颜色。double leftTopRadius矩形框的左上半径。double rightTopRadius矩形框的右上半径。double rightBottomRadius矩形框的右下半径。double leftBottomRadius矩形框的左下半径。
+| 名称 | 描述 |
+| --- | --- |
+| uint32_t color | 矩形框的颜色。 |
+| double leftTopRadius | 矩形框的左上半径。 |
+| double rightTopRadius | 矩形框的右上半径。 |
+| double rightBottomRadius | 矩形框的右下半径。 |
+| double leftBottomRadius | 矩形框的左下半径。 |

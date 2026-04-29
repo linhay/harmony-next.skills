@@ -12,13 +12,20 @@
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+从API version 8开始支持，从API version 23开始不再维护，建议使用[WebCookieManager](Class (WebCookieManager).md)代替。
 
-#### constructor
+-
+
+示例效果请以真机运行为准。
+
+**constructor(deprecated)**
 
 constructor()
 
 WebCookie的构造函数。
+
+
+从API version 8开始支持，从API version 23开始废弃。且不再提供新的接口作为替代。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -28,7 +35,8 @@ setCookie()
 
 设置cookie，该方法为同步方法。设置成功返回true，否则返回false。
 
-从API version 8开始支持，从API version 9开始废弃，建议使用[setCookie9+](Class (WebCookieManager).md#ZH-CN_TOPIC_0000002497445214__setcookiedeprecated)代替。
+
+从API version 8开始支持，从API version 9开始废弃，建议使用[setCookie9+](Class (WebCookieManager).md#ZH-CN_TOPIC_0000002522081156__setcookiedeprecated)代替。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -38,6 +46,7 @@ saveCookie()
 
 将当前存在内存中的cookie同步到磁盘中，该方法为同步方法。
 
-从API version 8开始支持，从API version 9开始废弃，建议使用[saveCookieAsync9+](Class (WebCookieManager).md#ZH-CN_TOPIC_0000002497445214__savecookieasync)代替。
+
+从API version 8开始支持，从API version 9开始废弃，建议使用[saveCookieAsync9+](Class (WebCookieManager).md#ZH-CN_TOPIC_0000002522081156__savecookieasync)代替。
 
 **系统能力：** SystemCapability.Web.Webview.Core

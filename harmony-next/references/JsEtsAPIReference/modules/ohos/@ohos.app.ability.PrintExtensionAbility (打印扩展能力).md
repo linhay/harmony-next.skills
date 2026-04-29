@@ -24,7 +24,9 @@ onCreate(want: Want): void
 
 **参数：**
 
-**参数名****类型****必填****说明**want[Want](@ohos.application.Want (Want).md#ZH-CN_TOPIC_0000002529444609__want)是表示调用打印页面需要参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | Want | 是 | 表示调用打印页面需要参数。 |
 
 **示例：**
 
@@ -36,7 +38,6 @@ export default class HWPrintExtension extends PrintExtensionAbility {
     onCreate(want: Want): void {
         console.info('onCreate');
         // ...
-    }
 }
 ```
 
@@ -58,7 +59,6 @@ export default class HWPrintExtension extends PrintExtensionAbility {
         console.info('onStartDiscoverPrinter enter');
         // ...
     }
-}
 ```
 
 #### onStopDiscoverPrinter
@@ -79,7 +79,6 @@ export default class HWPrintExtension extends PrintExtensionAbility {
         console.info('onStopDiscoverPrinter enter');
         // ...
     }
-}
 ```
 
 #### onConnectPrinter
@@ -92,7 +91,9 @@ onConnectPrinter(printerId: number): void
 
 **参数：**
 
-**参数名****类型****必填****说明**printerIdnumber是表示打印机ID。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| printerId | number | 是 | 表示打印机ID。 |
 
 **示例：**
 
@@ -104,7 +105,6 @@ export default class HWPrintExtension extends PrintExtensionAbility {
         console.info('onConnectPrinter enter');
         // ...
     }
-}
 ```
 
 #### onDisconnectPrinter
@@ -117,7 +117,9 @@ onDisconnectPrinter(printerId: number): void
 
 **参数：**
 
-**参数名****类型****必填****说明**printerIdnumber是表示打印机ID。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| printerId | number | 是 | 表示打印机ID。 |
 
 **示例：**
 
@@ -128,7 +130,6 @@ export default class HWPrintExtension extends PrintExtensionAbility {
     onDisconnectPrinter(printerId: number): void {
         console.info('onDisconnectPrinter enter');
         // ...
-    }
 }
 ```
 
@@ -149,5 +150,4 @@ export default class HWPrintExtension extends PrintExtensionAbility {
     onDestroy(): void {
         console.info('onDestroy');
     }
-}
 ```

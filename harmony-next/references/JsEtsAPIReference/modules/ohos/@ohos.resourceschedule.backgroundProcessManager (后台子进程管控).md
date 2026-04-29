@@ -1,6 +1,7 @@
 # @ohos.resourceschedule.backgroundProcessManager (后台子进程管控)
 
-本模块提供了后台子进程管控接口。开发者可以通过本模块接口对子进程进行压制、解压制，避免子进程过多占用系统资源，导致系统使用卡顿。本模块接口仅对通过[OH_Ability_StartNativeChildProcess](../../capi/headers/native_child_process.h.md#ZH-CN_TOPIC_0000002529444625__oh_ability_startnativechildprocess)接口创建的子进程生效。
+本模块提供了后台子进程管控接口。开发者可以通过本模块接口对子进程进行压制、解压制，避免子进程过多占用系统资源，导致系统使用卡顿。本模块接口仅对通过[OH_Ability_StartNativeChildProcess](native_child_process.h.md#ZH-CN_TOPIC_0000002553200571__oh_ability_startnativechildprocess)接口创建的子进程生效。
+
 
 本模块首批接口从API version 17开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -20,17 +21,24 @@ setProcessPriority(pid: number, priority: ProcessPriority): Promise<void>
 
 **参数**：
 
-参数名类型必填说明pidnumber是需要被压制子进程的进程号，[OH_Ability_StartNativeChildProcess](../../capi/headers/native_child_process.h.md#ZH-CN_TOPIC_0000002529444625__oh_ability_startnativechildprocess)接口创建子进程后的pid参数，即为子进程进程号。priority[ProcessPriority](#ZH-CN_TOPIC_0000002497445262__processpriority)是压制档位。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pid | number | 是 | 需要被压制子进程的进程号，[OH_Ability_StartNativeChildProcess](../../topics/misc/native_child_process.h.md#ZH-CN_TOPIC_0000002529444625__oh_ability_startnativechildprocess)接口创建子进程后的pid参数，即为子进程进程号。 |
+| priority | ProcessPriority | 是 | 压制档位。 |
 
 **返回值**：
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: priority is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: priority is out of range. |
 
 **示例**：
 
@@ -57,11 +65,15 @@ resetProcessPriority(pid: number): Promise<void>
 
 **参数**：
 
-参数名类型必填说明pidnumber是子进程的进程号，[OH_Ability_StartNativeChildProcess](../../capi/headers/native_child_process.h.md#ZH-CN_TOPIC_0000002529444625__oh_ability_startnativechildprocess)接口创建子进程后的pid参数，即为子进程进程号。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pid | number | 是 | 子进程的进程号，[OH_Ability_StartNativeChildProcess](../../topics/misc/native_child_process.h.md#ZH-CN_TOPIC_0000002529444625__oh_ability_startnativechildprocess)接口创建子进程后的pid参数，即为子进程进程号。 |
 
 **返回值**：
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例**：
 
@@ -97,25 +109,28 @@ setPowerSaveMode(pid: number, powerSaveMode: PowerSaveMode): Promise<void>
 
 **参数**：
 
-参数名类型必填说明pidnumber是进程号。powerSaveMode[PowerSaveMode](#ZH-CN_TOPIC_0000002497445262__powersavemode20)是能效模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pid | number | 是 | 进程号。 |
+| powerSaveMode | PowerSaveMode | 是 | 能效模式。 |
 
 **返回值**：
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[backgroundProcessManager错误码](../../errors/backgroundProcessManager错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[backgroundProcessManager错误码]([backgroundProcessManager错误码](../../errors/backgroundProcessManager错误码.md).md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.801Capability not supported.31800002
-
-Parameter error. Possible causes:
-
- 1. Mandatory parameters are left unspecified;
-
- 2. Incorrect parameter types; 3. PowerSaveMode status is out of range.
-
-31800003Setup error, This setting is overridden by setting in Task Manager.31800004The setting failed due to system scheduling reasons.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 31800002 | Parameter error. Possible causes:   1. Mandatory parameters are left unspecified;   2. Incorrect parameter types; 3. PowerSaveMode status is out of range. |
+| 31800003 | Setup erro, This setting is overridden by settings in Task Manager. |
+| 31800004 | The setting failed due to system scheduling reasons. |
 
 **示例**：
 
@@ -145,23 +160,25 @@ isPowerSaveMode(pid: number): Promise<boolean>
 
 **参数**：
 
-参数名类型必填说明pidnumber是进程号。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pid | number | 是 | 进程号。 |
 
 **返回值**：
 
-类型说明Promise<boolean>Promise对象。返回进程PID是否处于能效模式，返回true表示进程处于能效模式，返回false表示进程未处于能效模式。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回进程PID是否处于能效模式，返回true表示进程处于能效模式，返回false表示进程未处于能效模式。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[backgroundProcessManager错误码](../../errors/backgroundProcessManager错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[backgroundProcessManager错误码](backgroundProcessManager错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.801Capability not supported.31800002
-
-Parameter error. Possible causes:
-
- 1. Mandatory parameters are left unspecified;
-
- 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 31800002 | Parameter error. Possible causes:   1. Mandatory parameters are left unspecified;   2. Incorrect parameter types. |
 
 **示例**：
 
@@ -179,7 +196,7 @@ try {
 }
 ```
 
-#### backgroundProcessManager.getPowerSaveMode22+
+**backgroundProcessManager.getPowerSaveMode23+**
 
 getPowerSaveMode(pid: number): Promise<PowerSaveMode>
 
@@ -193,27 +210,25 @@ getPowerSaveMode(pid: number): Promise<PowerSaveMode>
 
 **参数：**
 
-参数名类型必填说明pidnumber是
-
-进程号。
-
-取值范围：大于0的整数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pid | number | 是 | 进程号。 取值范围：大于0的整数。 |
 
 **返回值：**
 
-类型说明Promise<[PowerSaveMode](#ZH-CN_TOPIC_0000002497445262__powersavemode20)>Promise对象。返回进程能效模式状态。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<PowerSaveMode> | Promise对象。返回进程能效模式状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[backgroundProcessManager错误码](../../errors/backgroundProcessManager错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[backgroundProcessManager错误码](backgroundProcessManager错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息201Permission denied.801Capability not supported.31800002
-
-Parameter error. Possible causes:
-
- 1. Mandatory parameters are left unspecified;
-
- 2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 31800002 | Parameter error. Possible causes:   1. Mandatory parameters are left unspecified;   2. Incorrect parameter types. |
 
 **示例：**
 
@@ -223,7 +238,7 @@ import { backgroundProcessManager } from '@kit.BackgroundTasksKit';
 // 请开发者替换为实际的进程号
 let pid = 33333;
 try {
-    backgroundProcessManager.getPowerSaveMode(pid).then((result: PowerSaveMode) => {
+    backgroundProcessManager.getPowerSaveMode(pid).then((result: backgroundProcessManager.PowerSaveMode) => {
         console.info("getPowerSaveMode: " + result.toString());
     });
 } catch (error) {
@@ -237,7 +252,10 @@ try {
 
 **系统能力**： SystemCapability.Resourceschedule.BackgroundProcessManager
 
-名称值说明PROCESS_BACKGROUND1该档位相较PROCESS_INACTIVE压制效果更显著，获取到的CPU资源更少。推荐执行处于后台的图文页面等用户无感知业务的后台子进程时设置该档位。PROCESS_INACTIVE2推荐正在执行播放音频、导航等用户可感知业务的后台子进程时设置该档位。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PROCESS_BACKGROUND | 1 | 该档位相较PROCESS_INACTIVE压制效果更显著，获取到的CPU资源更少。推荐执行处于后台的图文页面等用户无感知业务的后台子进程时设置该档位。 |
+| PROCESS_INACTIVE | 2 | 推荐正在执行播放音频、导航等用户可感知业务的后台子进程时设置该档位。 |
 
 #### PowerSaveMode20+
 
@@ -245,4 +263,7 @@ try {
 
 **系统能力**： SystemCapability.Resourceschedule.BackgroundProcessManager
 
-名称值说明EFFICIENCY_MODE1效率模式，不会跟随系统进入能效模式，进入能效模式后获取到的CPU资源更少。DEFAULT_MODE2跟随系统，可能会进入能效模式。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| EFFICIENCY_MODE | 1 | 效率模式，不会跟随系统进入能效模式，进入能效模式后获取到的CPU资源更少。 |
+| DEFAULT_MODE | 2 | 跟随系统，可能会进入能效模式。 |

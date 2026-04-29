@@ -18,4 +18,6 @@ type NetHandle = connection.NetHandle
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
-类型说明[connection.NetHandle](@ohos.net.connection (网络连接管理).md#ZH-CN_TOPIC_0000002497605446__nethandle)网络链路信息。
+| 类型 | 说明 |
+| --- | --- |
+| connection.NetHandle | 网络链路信息。 |

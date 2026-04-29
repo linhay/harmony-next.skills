@@ -27,4 +27,15 @@
 
 #### 文件汇总
 
-名称描述[camera.h](../../capi/headers/camera.h.md)声明相机的基本概念。[camera_device.h](../../capi/headers/camera_device.h.md)声明相机的基本概念。[camera_input.h](../../capi/headers/camera_input.h.md)声明相机输入概念。[camera_manager.h](../../capi/headers/camera_manager.h.md)声明相机管理器的概念。[capture_session.h](../../capi/headers/capture_session.h.md)声明捕获会话概念。[metadata_output.h](../../capi/headers/metadata_output.h.md)声明元数据输出概念。[photo_native.h](../../capi/headers/photo_native.h.md)声明相机照片的概念。[photo_output.h](../../capi/headers/photo_output.h.md)声明拍照输出概念。[preview_output.h](../../capi/headers/preview_output.h.md)声明预览输出概念。[video_output.h](../../capi/headers/video_output.h.md)声明录像输出概念。
+| 名称 | 描述 |
+| --- | --- |
+| [camera.h](camera.h.md) | 声明相机的基本概念。 |
+| [camera_device.h](camera_device.h.md) | 声明相机的基本概念。 |
+| [camera_input.h](camera_input.h.md) | 声明相机输入概念。 |
+| [camera_manager.h](camera_manager.h.md) | 声明相机管理器的概念。 |
+| [capture_session.h](capture_session.h.md) | 声明捕获会话概念。 |
+| [metadata_output.h](metadata_output.h.md) | 声明元数据输出概念。 |
+| [photo_native.h](photo_native.h.md) | 声明相机照片的概念。 |
+| [photo_output.h](photo_output.h.md) | 声明拍照输出概念。 |
+| [preview_output.h](preview_output.h.md) | 声明预览输出概念。 |
+| [video_output.h](video_output.h.md) | 声明录像输出概念。 |

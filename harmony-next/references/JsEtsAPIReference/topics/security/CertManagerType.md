@@ -8,4 +8,6 @@
 
 #### 文件汇总
 
-名称描述[cm_native_type.h](../../capi/headers/cm_native_type.h.md)提供CertManager中的枚举变量、结构体定义、宏定义和错误码。
+| 名称 | 描述 |
+| --- | --- |
+| [cm_native_type.h](cm_native_type.h.md) | 提供CertManager中的枚举变量、结构体定义、宏定义和错误码。 |

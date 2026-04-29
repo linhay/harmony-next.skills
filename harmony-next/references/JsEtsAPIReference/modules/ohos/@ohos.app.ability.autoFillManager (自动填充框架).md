@@ -30,7 +30,7 @@ onSuccess(): void
 
 **示例：**
 
-参见[AutoSaveCallback.onFailure](#ZH-CN_TOPIC_0000002497604580__onfailure)。
+参见[AutoSaveCallback.onFailure](#ZH-CN_TOPIC_0000002522240528__onfailure)。
 
 #### onFailure
 
@@ -74,10 +74,10 @@ struct Index {
         }
       })
   }
-}
 ```
 
-示例中从AppStorage中取得的UiContext为预先在EntryAbility（拉起此页面的Ability）中OnWindowStageCreate生命周期获得，并存储到AppStorage中，具体可参考[requestAutoSave](#ZH-CN_TOPIC_0000002497604580__autofillmanagerrequestautosave)。
+
+示例中从AppStorage中取得的UiContext为预先在EntryAbility（拉起此页面的Ability）中OnWindowStageCreate生命周期获得，并存储到AppStorage中，具体可参考[requestAutoSave](#ZH-CN_TOPIC_0000002522240528__autofillmanagerrequestautosave)。
 
 #### autoFillManager.requestAutoSave
 
@@ -93,13 +93,19 @@ requestAutoSave(context: UIContext, callback?: AutoSaveCallback): void
 
 **参数：**
 
-参数名类型必填说明context[UIContext](../../types/classes/Class (UIContext).md)是将在其中执行保存操作的UI上下文。callback[AutoSaveCallback](#ZH-CN_TOPIC_0000002497604580__autosavecallback)否当保存请求完成时所触发的回调接口。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | UIContext | 是 | 将在其中执行保存操作的UI上下文。 |
+| callback | AutoSaveCallback | 否 | 当保存请求完成时所触发的回调接口。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码的详细介绍请参考[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[元能力子系统错误码]([元能力子系统错误码](../../errors/元能力子系统错误码.md).md)。
 
-错误码ID错误信息401The parameter check failed. Possible causes: 1. Get instance id failed; 2. Parse instance id failed; 3. The second parameter is not of type callback.16000050Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possible causes: 1. Get instance id failed; 2. Parse instance id failed; 3. The second parameter is not of type callback. |
+| 16000050 | Internal error. |
 
 **示例：**
 
@@ -138,7 +144,6 @@ export default class EntryAbility extends UIAbility {
       })
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
     });
-  }
 }
 ```
 
@@ -181,5 +186,4 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```

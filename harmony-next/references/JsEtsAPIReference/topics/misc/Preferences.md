@@ -10,4 +10,9 @@
 
 #### 文件汇总
 
-名称描述[oh_preferences.h](../../capi/headers/oh_preferences.h.md)提供访问Preferences对象的接口与数据结构。[preferences_err_code.h](../../capi/headers/oh_preferences_err_code.h.md)声明首选项模块统一使用的错误码信息。[oh_preferences_option.h](../../capi/headers/oh_preferences_option.h.md)提供访问Preferences配置选项（PreferencesOption）的接口与数据结构。[oh_preferences_value.h](../../capi/headers/oh_preferences_value.h.md)提供访问Preferences值（PreferencesValue）对象的接口、枚举类型与数据结构。
+| 名称 | 描述 |
+| --- | --- |
+| [oh_preferences.h](oh_preferences.h.md) | 提供访问Preferences对象的接口与数据结构。 |
+| [preferences_err_code.h](oh_preferences_err_code.h.md) | 声明首选项模块统一使用的错误码信息。 |
+| [oh_preferences_option.h](oh_preferences_option.h.md) | 提供访问Preferences配置选项（PreferencesOption）的接口与数据结构。 |
+| [oh_preferences_value.h](oh_preferences_value.h.md) | 提供访问Preferences值（PreferencesValue）对象的接口、枚举类型与数据结构。 |

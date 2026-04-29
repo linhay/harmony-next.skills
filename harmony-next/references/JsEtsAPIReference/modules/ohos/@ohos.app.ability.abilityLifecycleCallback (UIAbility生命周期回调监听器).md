@@ -10,9 +10,11 @@
 
 #### 使用说明
 
-1. 应用创建AbilityLifecycleCallback对象，并调用[ApplicationContext.on('abilityLifecycle')](../../topics/graphics/ApplicationContext (应用上下文).md#ZH-CN_TOPIC_0000002529284613__applicationcontextonabilitylifecycle)接口注册UIAbility生命周期变化监听。
+1. 应用创建AbilityLifecycleCallback对象，并调用[ApplicationContext.on('abilityLifecycle')](ApplicationContext (应用上下文).md#ZH-CN_TOPIC_0000002553360493__applicationcontextonabilitylifecycle)接口注册UIAbility生命周期变化监听。
+
 1. 当UIAbility生命周期变化时，应用可以通过已注册的AbilityLifecycleCallback对象接收到UIAbility生命周期的变化通知。
-1. 当应用不需要监听UIAbility生命周期变化时，需要通过[ApplicationContext.off('abilityLifecycle')](../../topics/graphics/ApplicationContext (应用上下文).md#ZH-CN_TOPIC_0000002529284613__applicationcontextoffabilitylifecycle)接口取消监听。
+
+1. 当应用不需要监听UIAbility生命周期变化时，需要通过[ApplicationContext.off('abilityLifecycle')](ApplicationContext (应用上下文).md#ZH-CN_TOPIC_0000002553360493__applicationcontextoffabilitylifecycle)接口取消监听。
 
 #### 导入模块
 
@@ -26,7 +28,7 @@ import { AbilityLifecycleCallback } from '@kit.AbilityKit';
 
 onAbilityCreate(ability: UIAbility): void
 
-在UIAbility的[onCreate](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__oncreate)触发后回调。
+在UIAbility的[onCreate](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__oncreate)触发后回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -34,17 +36,19 @@ onAbilityCreate(ability: UIAbility): void
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onWindowStageCreate
 
 onWindowStageCreate(ability: UIAbility, windowStage: window.WindowStage): void
 
-在UIAbility的[onWindowStageCreate](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onwindowstagecreate)触发后回调。
+在UIAbility的[onWindowStageCreate](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onwindowstagecreate)触发后回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -52,11 +56,14 @@ onWindowStageCreate(ability: UIAbility, windowStage: window.WindowStage): void
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。windowStage[window.WindowStage](../../types/interfaces/Interface (WindowStage).md)是回调事件对应的UIAbility主窗管理器。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
+| windowStage | window.WindowStage | 是 | 回调事件对应的UIAbility主窗管理器。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onWindowStageActive
 
@@ -70,11 +77,14 @@ onWindowStageActive(ability: UIAbility, windowStage: window.WindowStage): void
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。windowStage[window.WindowStage](../../types/interfaces/Interface (WindowStage).md)是回调事件对应的UIAbility主窗管理器。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
+| windowStage | window.WindowStage | 是 | 回调事件对应的UIAbility主窗管理器。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onWindowStageInactive
 
@@ -88,17 +98,20 @@ onWindowStageInactive(ability: UIAbility, windowStage: window.WindowStage): void
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。windowStage[window.WindowStage](../../types/interfaces/Interface (WindowStage).md)是回调事件对应的UIAbility主窗管理器。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
+| windowStage | window.WindowStage | 是 | 回调事件对应的UIAbility主窗管理器。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onWindowStageDestroy
 
 onWindowStageDestroy(ability: UIAbility, windowStage: window.WindowStage): void
 
-在UIAbility的[onWindowStageDestroy](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onwindowstagedestroy)触发后回调。
+在UIAbility的[onWindowStageDestroy](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onwindowstagedestroy)触发后回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -106,17 +119,20 @@ onWindowStageDestroy(ability: UIAbility, windowStage: window.WindowStage): void
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象windowStage[window.WindowStage](../../types/interfaces/Interface (WindowStage).md)是回调事件对应的UIAbility主窗管理器。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象 |
+| windowStage | window.WindowStage | 是 | 回调事件对应的UIAbility主窗管理器。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onAbilityDestroy
 
 onAbilityDestroy(ability: UIAbility): void
 
-在UIAbility的[onDestroy](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__ondestroy)触发后回调。
+在UIAbility的[onDestroy](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__ondestroy)触发后回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -124,17 +140,19 @@ onAbilityDestroy(ability: UIAbility): void
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onAbilityForeground
 
 onAbilityForeground(ability: UIAbility): void
 
-在UIAbility的[onForeground](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onforeground)触发后回调。
+在UIAbility的[onForeground](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onforeground)触发后回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -142,17 +160,19 @@ onAbilityForeground(ability: UIAbility): void
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onAbilityBackground
 
 onAbilityBackground(ability: UIAbility): void
 
-在UIAbility的[onBackground](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onbackground)触发后回调。
+在UIAbility的[onBackground](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onbackground)触发后回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -160,17 +180,19 @@ onAbilityBackground(ability: UIAbility): void
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onAbilityContinue
 
 onAbilityContinue(ability: UIAbility): void
 
-在UIAbility的[onContinue](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__oncontinue)触发后回调。
+在UIAbility的[onContinue](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__oncontinue)触发后回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -178,17 +200,19 @@ onAbilityContinue(ability: UIAbility): void
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onAbilityWillCreate12+
 
 onAbilityWillCreate?(ability: UIAbility): void
 
-在UIAbility的[onCreate](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__oncreate)触发前回调。
+在UIAbility的[onCreate](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__oncreate)触发前回调。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -196,17 +220,19 @@ onAbilityWillCreate?(ability: UIAbility): void
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onWindowStageWillCreate12+
 
 onWindowStageWillCreate?(ability: UIAbility, windowStage: window.WindowStage): void
 
-在UIAbility的[onWindowStageCreate](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onwindowstagecreate)触发前回调。
+在UIAbility的[onWindowStageCreate](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onwindowstagecreate)触发前回调。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -214,17 +240,20 @@ onWindowStageWillCreate?(ability: UIAbility, windowStage: window.WindowStage): v
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。windowStage[window.WindowStage](../../types/interfaces/Interface (WindowStage).md)是回调事件对应的UIAbility主窗管理器。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
+| windowStage | window.WindowStage | 是 | 回调事件对应的UIAbility主窗管理器。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onWindowStageWillDestroy12+
 
 onWindowStageWillDestroy?(ability: UIAbility, windowStage: window.WindowStage): void
 
-在UIAbility的[onWindowStageDestroy](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onwindowstagedestroy)触发前回调。
+在UIAbility的[onWindowStageDestroy](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onwindowstagedestroy)触发前回调。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -232,17 +261,20 @@ onWindowStageWillDestroy?(ability: UIAbility, windowStage: window.WindowStage): 
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。windowStage[window.WindowStage](../../types/interfaces/Interface (WindowStage).md)是回调事件对应的UIAbility主窗管理器。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
+| windowStage | window.WindowStage | 是 | 回调事件对应的UIAbility主窗管理器。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onAbilityWillForeground12+
 
 onAbilityWillForeground?(ability: UIAbility): void
 
-在UIAbility的[onForeground](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onforeground)触发前回调。
+在UIAbility的[onForeground](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onforeground)触发前回调。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -250,17 +282,19 @@ onAbilityWillForeground?(ability: UIAbility): void
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onAbilityWillDestroy12+
 
 onAbilityWillDestroy?(ability: UIAbility): void
 
-在UIAbility的[onDestroy](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__ondestroy)触发前回调。
+在UIAbility的[onDestroy](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__ondestroy)触发前回调。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -268,17 +302,19 @@ onAbilityWillDestroy?(ability: UIAbility): void
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onAbilityWillBackground12+
 
 onAbilityWillBackground?(ability: UIAbility): void
 
-在UIAbility的[onBackground](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onbackground)触发前回调。
+在UIAbility的[onBackground](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onbackground)触发前回调。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -286,17 +322,19 @@ onAbilityWillBackground?(ability: UIAbility): void
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onWillNewWant12+
 
 onWillNewWant?(ability: UIAbility): void
 
-在UIAbility的[onNewWant](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onnewwant)触发前回调。
+在UIAbility的[onNewWant](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onnewwant)触发前回调。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -304,17 +342,19 @@ onWillNewWant?(ability: UIAbility): void
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onNewWant12+
 
 onNewWant?(ability: UIAbility): void
 
-在UIAbility的[onNewWant](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onnewwant)触发后回调。
+在UIAbility的[onNewWant](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onnewwant)触发后回调。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -322,17 +362,19 @@ onNewWant?(ability: UIAbility): void
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onAbilityWillContinue12+
 
 onAbilityWillContinue?(ability: UIAbility): void
 
-在UIAbility的[onContinue](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__oncontinue)触发前回调。
+在UIAbility的[onContinue](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__oncontinue)触发前回调。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -340,17 +382,19 @@ onAbilityWillContinue?(ability: UIAbility): void
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onWindowStageWillRestore12+
 
 onWindowStageWillRestore?(ability: UIAbility, windowStage: window.WindowStage): void
 
-在UIAbility的[onWindowStageRestore](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onwindowstagerestore)触发前回调。
+在UIAbility的[onWindowStageRestore](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onwindowstagerestore)触发前回调。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -358,17 +402,20 @@ onWindowStageWillRestore?(ability: UIAbility, windowStage: window.WindowStage): 
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。windowStage[window.WindowStage](../../types/interfaces/Interface (WindowStage).md)是回调事件对应的UIAbility主窗管理器。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
+| windowStage | window.WindowStage | 是 | 回调事件对应的UIAbility主窗管理器。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onWindowStageRestore12+
 
 onWindowStageRestore?(ability: UIAbility, windowStage: window.WindowStage): void
 
-在UIAbility的[onWindowStageRestore](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onwindowstagerestore)触发后回调。
+在UIAbility的[onWindowStageRestore](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onwindowstagerestore)触发后回调。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -376,17 +423,20 @@ onWindowStageRestore?(ability: UIAbility, windowStage: window.WindowStage): void
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。windowStage[window.WindowStage](../../types/interfaces/Interface (WindowStage).md)是回调事件对应的UIAbility主窗管理器。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
+| windowStage | window.WindowStage | 是 | 回调事件对应的UIAbility主窗管理器。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onAbilityWillSaveState12+
 
 onAbilityWillSaveState?(ability: UIAbility): void
 
-在UIAbility的[onSaveState](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onsavestate)触发前回调。
+在UIAbility的[onSaveState](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onsavestate)触发前回调。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -394,17 +444,19 @@ onAbilityWillSaveState?(ability: UIAbility): void
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### onAbilitySaveState12+
 
 onAbilitySaveState?(ability: UIAbility): void
 
-在UIAbility的[onSaveState](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onsavestate)触发后回调。
+在UIAbility的[onSaveState](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onsavestate)触发后回调。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -412,11 +464,13 @@ onAbilitySaveState?(ability: UIAbility): void
 
 **参数：**
 
-参数名类型必填说明ability[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)是回调事件对应的UIAbility对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
 
 **示例：**
 
-参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002497444600__abilitylifecyclecallback使用示例)。
+参见[AbilityLifecycleCallback使用示例](#ZH-CN_TOPIC_0000002553200489__abilitylifecyclecallback使用示例)。
 
 #### AbilityLifecycleCallback使用示例
 
@@ -557,7 +611,6 @@ export default class MyStage extends AbilityStage {
     } catch (e) {
       hilog.error(DOMAIN, TAG, `register abilityLifecycle failed: ${JSON.stringify(e)}`);
     }
-  }
 
   onDestroy(): void {
     // AbilityStage销毁时取消UIAbility生命周期监听注册
@@ -565,7 +618,6 @@ export default class MyStage extends AbilityStage {
     applicationContext.off('abilityLifecycle', lifecycleId).catch((e: BusinessError) => {
       hilog.error(DOMAIN, TAG, `unregister abilityLifecycle failed: ${JSON.stringify(e)}`);
     });
-  }
 }
 ```
 
@@ -615,5 +667,4 @@ export default class EntryAbility extends UIAbility {
     // UIAbility切换到后台
     hilog.info(DOMAIN, TAG, 'EntryAbility  onBackground');
   }
-}
 ```

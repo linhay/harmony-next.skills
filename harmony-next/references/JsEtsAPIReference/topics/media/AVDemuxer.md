@@ -12,4 +12,6 @@ AVDemuxer模块提供从媒体文件码流中提取[sample](https://developer.hu
 
 #### 文件汇总
 
-名称描述[native_avdemuxer.h](../../capi/headers/native_avdemuxer.h.md)声明用于音视频媒体数据解析的接口。
+| 名称 | 描述 |
+| --- | --- |
+| [native_avdemuxer.h](native_avdemuxer.h.md) | 声明用于音视频媒体数据解析的接口。 |

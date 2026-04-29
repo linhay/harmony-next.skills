@@ -18,7 +18,9 @@ type HttpProxy = connection.HttpProxy
 
 **系统能力**：SystemCapability.Communication.NetManager.Ethernet
 
-类型说明connection.HttpProxy网络代理配置信息。
+| 类型 | 说明 |
+| --- | --- |
+| connection.HttpProxy | 网络代理配置信息。 |
 
 #### ethernet.getMacAddress14+
 
@@ -32,11 +34,17 @@ getMacAddress(): Promise<Array<MacAddressInfo>>
 
 **返回值：**
 
-类型说明Promise<Array[<MacAddressInfo>](#ZH-CN_TOPIC_0000002497445468__macaddressinfo14)>以Promise形式返回接口信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<MacAddressInfo>> | 以Promise形式返回接口信息。 |
 
 **错误码：**
 
-错误码ID错误信息201Permission denied.2200002Operation failed. Cannot connect to service.2201005Device information does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 2200002 | Operation failed. Cannot connect to service. |
+| 2201005 | Device information does not exist. |
 
 **示例：**
 
@@ -57,4 +65,7 @@ ethernet.getMacAddress().then((data: Array<ethernet.MacAddressInfo>) => {
 
 **系统能力**：SystemCapability.Communication.NetManager.Ethernet
 
-名称类型只读可选说明ifacestring否否以太网网卡名称。macAddressstring否否以太网网卡MAC地址信息。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| iface | string | 否 | 否 | 以太网网卡名称。 |
+| macAddress | string | 否 | 否 | 以太网网卡MAC地址信息。 |

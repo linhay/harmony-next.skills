@@ -12,10 +12,15 @@ typedef struct Http_ClientCert {...} Http_ClientCert
 
 **相关模块：**[netstack](Netstack.md)
 
-**所在头文件：**[net_http_type.h](../../capi/headers/net_http_type.h.md)
+所在头文件： [net_http_type.h](net_http_type.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述char *certPath证书路径。[Http_CertType](../../capi/headers/net_http_type.h.md#ZH-CN_TOPIC_0000002497605460__http_certtype) type证书类型，默认是PEM，参考[Http_CertType](../../capi/headers/net_http_type.h.md#ZH-CN_TOPIC_0000002497605460__http_certtype)。char *keyPath证书密钥的路径。char *keyPassword证书密钥的密码。
+| 名称 | 描述 |
+| --- | --- |
+| char *certPath | 证书路径。 |
+| [Http_CertType](net_http_type.h.md#ZH-CN_TOPIC_0000002497605460__http_certtype) type | 证书类型，默认是PEM，参考Http_CertType。 |
+| char *keyPath | 证书密钥的路径。 |
+| char *keyPassword | 证书密钥的密码。 |

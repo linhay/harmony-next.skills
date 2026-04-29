@@ -8,21 +8,17 @@
 
 **相关模块： **[XEngine](XEngine.md)
 
+所在头文件： [xeg_vulkan_spatial_upscale.h](xeg_vulkan_spatial_upscale.h.md)
+
 #### 汇总
 
 #### 成员变量
 
-名称
+| 名称 | 描述 |
+| --- | --- |
+| VkImageView inputImage | 超分输入图像的VkImageView，需要是有效的VkImageView，否则会出现未定义行为，如渲染失败或程序崩溃。 |
+| VkImageView outputImage | 超分输出图像的VkImageView，需要是有效的VkImageView，否则会出现未定义行为，如渲染失败或程序崩溃。 |
 
-描述
-
-VkImageView [inputImage](#ZH-CN_TOPIC_0000002328319176__inputimage)
-
-超分输入图像的VkImageView，需要是有效的VkImageView，否则会出现未定义行为，如渲染失败或程序崩溃。
-
-VkImageView [outputImage](#ZH-CN_TOPIC_0000002328319176__outputimage)
-
-超分输出图像的VkImageView，需要是有效的VkImageView，否则会出现未定义行为，如渲染失败或程序崩溃。
 
 对创建VkImageView的VkImage对象有以下约束：
 

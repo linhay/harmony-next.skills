@@ -24,11 +24,16 @@
 
 除支持[通用事件](通用事件.md)外，还支持如下事件：
 
-名称参数描述submitFormResult点击提交按钮，进行表单提交时，触发该事件。reset-点击重置按钮后，触发该事件。
+| 名称 | 参数 | 描述 |
+| --- | --- | --- |
+| submit | FormResult | 点击提交按钮，进行表单提交时，触发该事件。 |
+| reset | - | 点击重置按钮后，触发该事件。 |
 
 **表1** FormResult
 
-名称类型描述valueObjectinput元素的name和value的值。
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| value | Object | input元素的name和value的值。 |
 
 #### 方法
 
@@ -58,11 +63,12 @@
 // xxx.js
 export default{
   onSubmit(result) {
-    console.log(result.value.radioGroup) // radio1 or radio2
-    console.log(result.value.user) // text input value
+    console.info(result.value.radioGroup) // radio1 or radio2
+    console.info(result.value.user) // text input value
   },
   onReset() {
-    console.log('reset all value')
+    console.info('reset all value')
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522245444.webp)

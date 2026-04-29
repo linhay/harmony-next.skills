@@ -11,9 +11,9 @@
 import { camera } from '@kit.CameraKit';
 ```
 
-#### isWhiteBalanceModeSupported20+
+#### is[WhiteBalanceMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__whitebalancemode20)Supported20+
 
-isWhiteBalanceModeSupported(mode: WhiteBalanceMode): boolean
+is[WhiteBalanceMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__whitebalancemode20)Supported(mode: WhiteBalanceMode): boolean
 
 检测是否支持当前传入的白平衡模式。
 
@@ -23,17 +23,24 @@ isWhiteBalanceModeSupported(mode: WhiteBalanceMode): boolean
 
 **参数：**
 
-参数名类型必填说明mode[WhiteBalanceMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__whitebalancemode20)是白平衡模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mode | [WhiteBalanceMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__whitebalancemode20) | 是 | 白平衡模式。 |
 
 **返回值：**
 
-类型说明boolean表示是否支持白平衡模式。true表示支持，false表示不支持。若接口调用失败，返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 表示是否支持白平衡模式。true表示支持，false表示不支持。若接口调用失败，返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码]([Camera错误码](../../errors/Camera错误码.md).md)。
 
-错误码ID错误信息7400101Parameter missing or parameter type incorrect.7400103Session not config, only throw in session usage.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400101 | Parameter missing or parameter type incorrect. |
+| 7400103 | Session not config, only throw in session usage. |
 
 **示例：**
 
@@ -65,13 +72,17 @@ getWhiteBalanceRange(): Array<number>
 
 **返回值：**
 
-类型说明Array<number>用于获取手动白平衡值的可调范围，如[2800，10000]，单位为K（Kelvin，温度单位），实际情况根据底层能力返回为准。若接口调用失败，返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| Array<number> | 用于获取手动白平衡值的可调范围，如[2800，10000]，单位为K（Kelvin，温度单位），实际情况根据底层能力返回为准。若接口调用失败，返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400103Session not config, only throw in session usage.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config, only throw in session usage. |
 
 **示例：**
 

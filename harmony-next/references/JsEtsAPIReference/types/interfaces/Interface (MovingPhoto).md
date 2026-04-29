@@ -23,17 +23,22 @@ getUri(): string
 
 **返回值：**
 
-类型说明string动态照片的uri。
+| 类型 | 说明 |
+| --- | --- |
+| string | 动态照片的uri。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[文件管理错误码]([文件管理错误码](../../errors/文件管理错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -45,7 +50,6 @@ class MovingPhotoHandler implements photoAccessHelper.MediaAssetDataHandler<phot
       return;
     }
     console.info("moving photo acquired successfully, uri: " + movingPhoto.getUri());
-  }
 }
 
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
@@ -72,7 +76,6 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   } catch (err) {
     console.error(`failed to request moving photo, error code is ${err.code}, message is ${err.message}`);
   }
-}
 ```
 
 #### requestContent12+
@@ -92,21 +95,30 @@ requestContent(imageFileUri: string, videoFileUri: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明imageFileUristring是待写入动态照片图片内容的uri。示例imageFileUri为："file://com.example.temptest/data/storage/el2/base/haps/ImageFile.jpg"。videoFileUristring是待写入动态照片视频内容的uri。示例videoFileUri为："file://com.example.temptest/data/storage/el2/base/haps/VideoFile.mp4"。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| imageFileUri | string | 是 | 待写入动态照片图片内容的uri。示例imageFileUri为："file://com.example.temptest/data/storage/el2/base/haps/ImageFile.jpg"。 |
+| videoFileUri | string | 是 | 待写入动态照片视频内容的uri。示例videoFileUri为："file://com.example.temptest/data/storage/el2/base/haps/VideoFile.mp4"。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息201Permission denied401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -125,8 +137,6 @@ class MovingPhotoHandler implements photoAccessHelper.MediaAssetDataHandler<phot
       console.info("moving photo contents retrieved successfully");
     } catch (err) {
       console.error(`failed to retrieve contents of moving photo, error code is ${err.code}, message is ${err.message}`);
-    }
-  }
 }
 
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
@@ -157,12 +167,11 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   } catch (err) {
     console.error(`failed to request moving photo, error code is ${err.code}, message is ${err.message}`);
   }
-}
 ```
 
 #### requestContent12+
 
-requestContent(resourceType: ResourceType, fileUri: string): Promise<void>
+requestContent(resourceType: [ResourceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529445919__resourcetype11), fileUri: string): Promise<void>
 
 请求指定资源类型的动态照片内容，并写入参数指定的uri中。使用Promise异步回调。
 
@@ -177,21 +186,30 @@ requestContent(resourceType: ResourceType, fileUri: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明resourceType[ResourceType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445919__resourcetype11)是所请求动态照片内容的资源类型。fileUristring是待写入动态照片内容的uri。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| resourceType | [ResourceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529445919__resourcetype11) | 是 | 所请求动态照片内容的资源类型。 |
+| fileUri | string | 是 | 待写入动态照片内容的uri。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息201Permission denied401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -209,8 +227,6 @@ class MovingPhotoHandler implements photoAccessHelper.MediaAssetDataHandler<phot
       console.info("moving photo image content retrieved successfully");
     } catch (err) {
       console.error(`failed to retrieve image content of moving photo, error code is ${err.code}, message is ${err.message}`);
-    }
-  }
 }
 
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
@@ -237,12 +253,11 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   } catch (err) {
     console.error(`failed to request moving photo, error code is ${err.code}, message is ${err.message}`);
   }
-}
 ```
 
 #### requestContent12+
 
-requestContent(resourceType: ResourceType): Promise<ArrayBuffer>
+requestContent(resourceType: [ResourceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529445919__resourcetype11)): Promise<ArrayBuffer>
 
 请求指定资源类型的动态照片内容，以ArrayBuffer的形式返回。使用Promise异步回调。
 
@@ -257,21 +272,29 @@ requestContent(resourceType: ResourceType): Promise<ArrayBuffer>
 
 **参数：**
 
-参数名类型必填说明resourceType[ResourceType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445919__resourcetype11)是所请求动态照片内容的资源类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| resourceType | [ResourceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529445919__resourcetype11) | 是 | 所请求动态照片内容的资源类型。 |
 
 **返回值：**
 
-类型说明Promise<ArrayBuffer>Promise对象，返回包含所请求文件内容的ArrayBuffer。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<ArrayBuffer> | Promise对象，返回包含所请求文件内容的ArrayBuffer。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息201Permission denied401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14000011System inner fail.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14000011 | System inner fail. |
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445911__photoaccesshelpergetphotoaccesshelper)的示例使用。
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](Functions.md#ZH-CN_TOPIC_0000002553362007__photoaccesshelpergetphotoaccesshelper)的示例使用。
 
 ```ets
 import { dataSharePredicates } from '@kit.ArkData';
@@ -287,8 +310,6 @@ class MovingPhotoHandler implements photoAccessHelper.MediaAssetDataHandler<phot
       console.info("moving photo image content retrieved successfully, buffer length: " + buffer.byteLength);
     } catch (err) {
       console.error(`failed to retrieve image content of moving photo, error code is ${err.code}, message is ${err.message}`);
-    }
-  }
 }
 
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
@@ -315,5 +336,4 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   } catch (err) {
     console.error(`failed to request moving photo, error code is ${err.code}, message is ${err.message}`);
   }
-}
 ```

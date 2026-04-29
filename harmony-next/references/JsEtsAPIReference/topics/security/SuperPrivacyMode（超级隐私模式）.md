@@ -1,43 +1,173 @@
 # SuperPrivacyMode（超级隐私模式）
 
-#### 1006200001 通用错误
+本模块提供超级隐私模式相关接口，应用可根据当前的超级隐私模式的状态进行相应业务处理。
 
-**错误描述**
+起始版本： 6.0.2(22)
 
-超级隐私接口通用错误。
+**导入模块**
 
-**可能原因**
+```ets
+import { superPrivacyMode } from '@kit.DeviceSecurityKit';
+```
 
-接口执行流程中调用其它系统接口出现异常。
+**SuperPrivacyMode**
 
-**处理步骤**
+表示超级隐私模式状态的枚举。
 
-请优先重试，若重试不成功，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)申请帮助。
+系统能力：SystemCapability.Security.SecurityPrivacyServer
 
-#### 1006200002 内部错误
+起始版本： 6.0.2(22)
 
-**错误描述**
+设备行为差异： 该枚举在Wearable、TV中无效果，使用时请遵循[约束与限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-getsuperprivacymode#约束与限制)部分的相关说明。
 
-超级隐私接口内部错误。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| OFF | 0 | 表示当前超级隐私模式状态为关。 |
+| ON_WHEN_FOLDED | 1 | 表示当前超级隐私模式状态为仅折叠保护（展开时超级隐私不生效，折叠时生效）。 |
+| ALWAYS_ON | 2 | 表示当前超级隐私模式状态为始终保护。 |
 
-**可能原因**
+**getSuperPrivacyMode**
 
-超级隐私模式出现内部错误，数据读取失败。
+getSuperPrivacyMode(): Promise<SuperPrivacyMode>
 
-**处理步骤**
+获取当前超级隐私模式状态。
 
-请优先重试，若重试不成功，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)申请帮助。
+系统能力：SystemCapability.Security.SecurityPrivacyServer
 
-#### 1006200005 该设备不支持超级隐私模式
+起始版本： 6.0.2(22)
 
-**错误描述**
+设备行为差异： 该接口在TV、Wearable中无效果；在存在超级隐私模式选项的Phone、PC/2in1、Tablet中可正常调用，在不存在超级隐私模式选项的Phone、PC/2in1、Tablet中返回1006200005错误码，开发者使用时请遵循[约束与限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-getsuperprivacymode#约束与限制)部分的相关说明。
 
-当前设备不支持超级隐私模式。
+返回值：
 
-**可能原因**
+| 类型 | 说明 |
+| --- | --- |
+| Promise<SuperPrivacyMode> | Promise对象，返回当前的超级隐私模式状态。 |
 
-当前设备不具备该功能。
+错误码：
 
-**处理步骤**
+以下错误码的详细介绍请参见[ArkTS API错误码](SuperPrivacyMode（超级隐私模式）.md)。
 
-在支持的设备上运行，具体支持情况请参见开发指南中的[约束与限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-getsuperprivacymode#section19314125019324)。
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1006200002 | Internal error. |
+| 1006200005 | This device is not support SuperPrivacy. |
+
+示例：
+
+```ets
+import { superPrivacyMode } from '@kit.DeviceSecurityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0000;
+const TAG = "SuperPrivacyModeTest";
+
+let mode: superPrivacyMode.SuperPrivacyMode = superPrivacyMode.SuperPrivacyMode.OFF;
+try {
+  mode = await superPrivacyMode.getSuperPrivacyMode();
+  hilog.info(DOMAIN, TAG, `Super privacy mode = ${mode}`);
+} catch (err) {
+  hilog.error(DOMAIN, TAG, `call getSuperPrivacyMode interface failed, errCode:${err?.code}, errMessage:${err?.message}`);
+}
+```
+
+**on('superPrivacyModeChange')**
+
+on(type: 'superPrivacyModeChange', callback: Callback<SuperPrivacyMode>): void
+
+订阅超级隐私模式状态变化事件。
+
+系统能力：SystemCapability.Security.SecurityPrivacyServer
+
+起始版本： 6.0.2(22)
+
+设备行为差异： 该接口在TV、Wearable中无效果；在存在超级隐私模式选项的Phone、PC/2in1、Tablet中可正常调用，在不存在超级隐私模式选项的Phone、PC/2in1、Tablet中返回1006200005错误码，开发者使用时请遵循[约束与限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-getsuperprivacymode#约束与限制)部分的相关说明。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 输入固定字符串'superPrivacyModeChange'，表示需要订阅'superPrivacyModeChange'。 |
+| callback | Callback<SuperPrivacyMode> | 是 | 回调函数，返回调用结果。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[ArkTS API错误码](SuperPrivacyMode（超级隐私模式）.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1006200001 | General error. |
+| 1006200002 | Internal error. |
+| 1006200005 | This device is not support SuperPrivacy. |
+
+示例：
+
+```ets
+import { superPrivacyMode } from '@kit.DeviceSecurityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0000;
+const TAG = "SuperPrivacyModeTest";
+
+const superPrivacyChangedCallback = (superPrivacyMode: superPrivacyMode.SuperPrivacyMode): void => {
+  hilog.info(DOMAIN, TAG, `super privcy mode changed, mode = ${superPrivacyMode}`);
+}
+
+hilog.info(DOMAIN, TAG, 'start register super privacy mode changed listener');
+try {
+  superPrivacyMode.on('superPrivacyModeChange', superPrivacyChangedCallback);
+  hilog.info(DOMAIN, TAG, 'register super privacy mode change listener success');
+} catch (err) {
+  hilog.error(DOMAIN, TAG, `register super privacy changed listener failed, ${JSON.stringify(err)}`);
+}
+```
+
+**off('superPrivacyModeChange')**
+
+off(type: 'superPrivacyModeChange', callback?: Callback<SuperPrivacyMode>): void
+
+取消订阅超级隐私模式状态变化事件。
+
+系统能力：SystemCapability.Security.SecurityPrivacyServer
+
+起始版本： 6.0.2(22)
+
+设备行为差异： 该接口在TV、Wearable中无效果；在存在超级隐私模式选项的Phone、PC/2in1、Tablet中可正常调用，在不存在超级隐私模式选项的Phone、PC/2in1、Tablet中返回1006200005错误码，开发者使用时请遵循[约束与限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-getsuperprivacymode#约束与限制)部分的相关说明。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 输入固定字符串'superPrivacyModeChange'，表示需要订阅的事件为'superPrivacyModeChange'。 |
+| callback | Callback<SuperPrivacyMode> | 否 | 回调函数，返回调用结果。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[ArkTS API错误码](SuperPrivacyMode（超级隐私模式）.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1006200001 | General error. |
+| 1006200002 | Internal error. |
+| 1006200005 | This device is not support SuperPrivacy. |
+
+示例：
+
+```ets
+import { superPrivacyMode } from '@kit.DeviceSecurityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0000;
+const TAG = "SuperPrivacyModeTest";
+
+const superPrivacyChangedCallback = (superPrivacyMode: superPrivacyMode.SuperPrivacyMode): void => {
+  hilog.info(DOMAIN, TAG, `super privcy mode changed, mode = ${superPrivacyMode}`);
+}
+
+hilog.info(DOMAIN, TAG, 'start unregister super privacy mode changed listener');
+try {
+  superPrivacyMode.off('superPrivacyModeChange', superPrivacyChangedCallback);
+} catch (err) {
+  hilog.error(DOMAIN, TAG, `unregister super privacy changed listener failed, ${JSON.stringify(err)}`);
+}
+```

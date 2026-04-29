@@ -4,12 +4,18 @@
 
 该模块提供以下分布式数据管理相关的常用功能：
 
-- [KVManager](#ZH-CN_TOPIC_0000002529284683__kvmanager)：数据管理实例，用于获取KVStore的相关信息。
-- [KvStoreResultSet8+](#ZH-CN_TOPIC_0000002529284683__kvstoreresultset8)：提供获取KVStore数据库结果集的相关方法，包括查询和移动数据读取位置等。
-- [Query8+](#ZH-CN_TOPIC_0000002529284683__query8)：使用谓词表示数据库查询，提供创建Query实例、查询数据库中的数据和添加谓词的方法。
-- [KVStore](#ZH-CN_TOPIC_0000002529284683__kvstore)：KVStore数据库实例，提供增加数据、删除数据和订阅数据变更、订阅数据同步完成的方法。
-- [SingleKVStore](#ZH-CN_TOPIC_0000002529284683__singlekvstore)：单版本分布式数据库，继承自[KVStore](#ZH-CN_TOPIC_0000002529284683__kvstore)，不对数据所属设备进行区分，提供查询数据和同步数据的方法。
-- [DeviceKVStore8+](#ZH-CN_TOPIC_0000002529284683__devicekvstore8)：设备协同数据库，继承自[KVStore](#ZH-CN_TOPIC_0000002529284683__kvstore)，以设备维度对数据进行区分，提供查询数据和同步数据的方法。
+- [KVManager](#ZH-CN_TOPIC_0000002553200603__kvmanager)：数据管理实例，用于获取KVStore的相关信息。
+
+- [KvStoreResultSet8+](#ZH-CN_TOPIC_0000002553200603__kvstoreresultset8)：提供获取KVStore数据库结果集的相关方法，包括查询和移动数据读取位置等。
+
+- [Query8+](#ZH-CN_TOPIC_0000002553200603__query8)：使用谓词表示数据库查询，提供创建Query实例、查询数据库中的数据和添加谓词的方法。
+
+- [KVStore](#ZH-CN_TOPIC_0000002553200603__kvstore)：KVStore数据库实例，提供增加数据、删除数据和订阅数据变更、订阅数据同步完成的方法。
+
+- [SingleKVStore](#ZH-CN_TOPIC_0000002553200603__singlekvstore)：单版本分布式数据库，继承自[KVStore](#ZH-CN_TOPIC_0000002553200603__kvstore)，不对数据所属设备进行区分，提供查询数据和同步数据的方法。
+
+- [DeviceKVStore8+](#ZH-CN_TOPIC_0000002553200603__devicekvstore8)：设备协同数据库，继承自[KVStore](#ZH-CN_TOPIC_0000002553200603__kvstore)，以设备维度对数据进行区分，提供查询数据和同步数据的方法。
+
 
 -
 
@@ -39,7 +45,10 @@ createKVManager(config: KVManagerConfig, callback: AsyncCallback<KVManager>): vo
 
 **参数：**
 
-参数名类型必填说明config[KVManagerConfig](#ZH-CN_TOPIC_0000002529284683__kvmanagerconfig)是提供KVManager实例的配置信息，包括调用方的Bundle名称和用户信息。callbackAsyncCallback<[KVManager](#ZH-CN_TOPIC_0000002529284683__kvmanager)>是回调函数。返回创建的KVManager对象实例。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | KVManagerConfig | 是 | 提供KVManager实例的配置信息，包括调用方的Bundle名称和用户信息。 |
+| callback | AsyncCallback<KVManager> | 是 | 回调函数。返回创建的KVManager对象实例。 |
 
 **示例：**
 
@@ -52,7 +61,6 @@ try {
         userInfo : {
             userId : '0',
             userType : distributedData.UserType.SAME_USER_ID
-        }
     }
     distributedData.createKVManager(kvManagerConfig, function (err, manager) {
         if (err) {
@@ -77,11 +85,15 @@ createKVManager(config: KVManagerConfig): Promise<KVManager>
 
 **参数：**
 
-参数名类型必填说明config[KVManagerConfig](#ZH-CN_TOPIC_0000002529284683__kvmanager)是提供KVManager实例的配置信息，包括调用方的包名和用户信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | KVManagerConfig | 是 | 提供KVManager实例的配置信息，包括调用方的包名和用户信息。 |
 
 **返回值：**
 
-类型说明Promise<[KVManager](#ZH-CN_TOPIC_0000002529284683__kvmanager)>Promise对象。返回创建的KVManager对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<KVManager> | Promise对象。返回创建的KVManager对象实例。 |
 
 **示例：**
 
@@ -93,7 +105,6 @@ try {
     userInfo: {
       userId: '0',
       userType: distributedData.UserType.SAME_USER_ID
-    }
   }
   distributedData.createKVManager(kvManagerConfig).then((manager) => {
     console.log("Succeeded in creating KVManager");
@@ -112,7 +123,10 @@ try {
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
-名称类型必填说明userInfo[UserInfo](#ZH-CN_TOPIC_0000002529284683__userinfo)是调用方的用户信息。bundleNamestring是调用方的Bundle名称。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| userInfo | UserInfo | 是 | 调用方的用户信息。 |
+| bundleName | string | 是 | 调用方的Bundle名称。 |
 
 #### UserInfo
 
@@ -120,7 +134,10 @@ try {
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
-名称类型必填说明userIdstring否指示要设置的用户ID，默认为'0'。userType[UserType](#ZH-CN_TOPIC_0000002529284683__usertype)否指示要设置的用户类型，默认为0。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| userId | string | 否 | 指示要设置的用户ID，默认为'0'。 |
+| userType | UserType | 否 | 指示要设置的用户类型，默认为0。 |
 
 #### UserType
 
@@ -128,11 +145,13 @@ try {
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
-名称值说明SAME_USER_ID0使用同一账号登录不同设备的用户。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SAME_USER_ID | 0 | 使用同一账号登录不同设备的用户。 |
 
 #### KVManager
 
-数据管理实例，用于获取KVStore的相关信息。在调用KVManager的方法前，需要先通过[createKVManager](#ZH-CN_TOPIC_0000002529284683__distributeddatacreatekvmanager)构建一个KVManager实例。
+数据管理实例，用于获取KVStore的相关信息。在调用KVManager的方法前，需要先通过[createKVManager](#ZH-CN_TOPIC_0000002553200603__distributeddatacreatekvmanager)构建一个KVManager实例。
 
 #### getKVStore
 
@@ -144,7 +163,11 @@ getKVStore<T extends KVStore>(storeId: string, options: Options, callback: Async
 
 **参数：**
 
-参数名类型必填说明storeIdstring是数据库唯一标识符，长度不大于[MAX_STORE_ID_LENGTH](#ZH-CN_TOPIC_0000002529284683__constants)。options[Options](#ZH-CN_TOPIC_0000002529284683__options)是创建KVStore实例的配置信息。callbackAsyncCallback<T>是回调函数。返回创建的KVStore数据库实例。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| storeId | string | 是 | 数据库唯一标识符，长度不大于MAX_STORE_ID_LENGTH。 |
+| options | Options | 是 | 创建KVStore实例的配置信息。 |
+| callback | AsyncCallback<T> | 是 | 回调函数。返回创建的KVStore数据库实例。 |
 
 **示例：**
 
@@ -183,11 +206,16 @@ getKVStore<T extends KVStore>(storeId: string, options: Options): Promise<T>
 
 **参数：**
 
-参数名类型必填说明storeIdstring是数据库唯一标识符，长度不大于[MAX_STORE_ID_LENGTH](#ZH-CN_TOPIC_0000002529284683__constants)。options[Options](#ZH-CN_TOPIC_0000002529284683__options)是创建KVStore实例的配置信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| storeId | string | 是 | 数据库唯一标识符，长度不大于MAX_STORE_ID_LENGTH。 |
+| options | Options | 是 | 创建KVStore实例的配置信息。 |
 
 **返回值：**
 
-类型说明Promise<T> ，<T extends [KVStore](#ZH-CN_TOPIC_0000002529284683__kvstore)>Promise对象。返回创建的KVStore数据库实例。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<T> ，<T extends KVStore> | Promise对象。返回创建的KVStore数据库实例。 |
 
 **示例：**
 
@@ -224,7 +252,12 @@ closeKVStore(appId: string, storeId: string, kvStore: KVStore, callback: AsyncCa
 
 **参数：**
 
-参数名类型必填说明appIdstring是所调用数据库方的包名。storeIdstring是要关闭的数据库唯一标识符，长度不大于[MAX_STORE_ID_LENGTH](#ZH-CN_TOPIC_0000002529284683__constants)。kvStore[KVStore](#ZH-CN_TOPIC_0000002529284683__kvstore)是要关闭的KVStore数据库。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| appId | string | 是 | 所调用数据库方的包名。 |
+| storeId | string | 是 | 要关闭的数据库唯一标识符，长度不大于MAX_STORE_ID_LENGTH。 |
+| kvStore | KVStore | 是 | 要关闭的KVStore数据库。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -247,7 +280,6 @@ try {
         kvManager.closeKVStore('appId', 'storeId', kvStore, function (err, data) {
             console.log('closeKVStore success');
         });
-    });
 } catch (e) {
     console.log('closeKVStore e ' + e);
 }
@@ -263,11 +295,17 @@ closeKVStore(appId: string, storeId: string, kvStore: KVStore): Promise<void>
 
 **参数：**
 
-参数名类型必填说明appIdstring是所调用数据库方的包名。storeIdstring是要关闭的数据库唯一标识符，长度不大于[MAX_STORE_ID_LENGTH](#ZH-CN_TOPIC_0000002529284683__constants)。kvStore[KVStore](#ZH-CN_TOPIC_0000002529284683__kvstore)是要关闭的KVStore数据库。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| appId | string | 是 | 所调用数据库方的包名。 |
+| storeId | string | 是 | 要关闭的数据库唯一标识符，长度不大于MAX_STORE_ID_LENGTH。 |
+| kvStore | KVStore | 是 | 要关闭的KVStore数据库。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -310,7 +348,11 @@ deleteKVStore(appId: string, storeId: string, callback: AsyncCallback<void>): vo
 
 **参数：**
 
-参数名类型必填说明appIdstring是所调用数据库方的包名。storeIdstring是要删除的数据库唯一标识符，长度不大于[MAX_STORE_ID_LENGTH](#ZH-CN_TOPIC_0000002529284683__constants)。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| appId | string | 是 | 所调用数据库方的包名。 |
+| storeId | string | 是 | 要删除的数据库唯一标识符，长度不大于MAX_STORE_ID_LENGTH。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -333,7 +375,6 @@ try {
         kvManager.deleteKVStore('appId', 'storeId', function (err, data) {
             console.log('deleteKVStore success');
         });
-    });
 } catch (e) {
     console.log('DeleteKVStore e ' + e);
 }
@@ -349,11 +390,16 @@ deleteKVStore(appId: string, storeId: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明appIdstring是所调用数据库方的包名。storeIdstring是要删除的数据库唯一标识符，长度不大于[MAX_STORE_ID_LENGTH](#ZH-CN_TOPIC_0000002529284683__constants)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| appId | string | 是 | 所调用数据库方的包名。 |
+| storeId | string | 是 | 要删除的数据库唯一标识符，长度不大于MAX_STORE_ID_LENGTH。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -390,13 +436,16 @@ try {
 
 getAllKVStoreId(appId: string, callback: AsyncCallback<string[]>): void
 
-获取所有通过[getKVStore](#ZH-CN_TOPIC_0000002529284683__getkvstore)方法创建的且没有调用[deleteKVStore](#ZH-CN_TOPIC_0000002529284683__deletekvstore8)方法删除的KVStore数据库的storeId，使用callback异步回调。
+获取所有通过[getKVStore](#ZH-CN_TOPIC_0000002553200603__getkvstore)方法创建的且没有调用[deleteKVStore](#ZH-CN_TOPIC_0000002553200603__deletekvstore8)方法删除的KVStore数据库的storeId，使用callback异步回调。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
 
-参数名类型必填说明appIdstring是所调用数据库方的包名。callbackAsyncCallback<string[]>是回调函数。返回所有创建的KvStore数据库的storeId。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| appId | string | 是 | 所调用数据库方的包名。 |
+| callback | AsyncCallback<string[]> | 是 | 回调函数。返回所有创建的KvStore数据库的storeId。 |
 
 **示例：**
 
@@ -416,17 +465,21 @@ try {
 
 getAllKVStoreId(appId: string): Promise<string[]>
 
-获取所有通过[getKVStore](#ZH-CN_TOPIC_0000002529284683__getkvstore)方法创建的且没有调用[deleteKVStore](#ZH-CN_TOPIC_0000002529284683__deletekvstore8)方法删除的KVStore数据库的storeId，使用Promise异步回调。
+获取所有通过[getKVStore](#ZH-CN_TOPIC_0000002553200603__getkvstore)方法创建的且没有调用[deleteKVStore](#ZH-CN_TOPIC_0000002553200603__deletekvstore8)方法删除的KVStore数据库的storeId，使用Promise异步回调。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
 
-参数名类型必填说明appIdstring是所调用数据库方的包名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| appId | string | 是 | 所调用数据库方的包名。 |
 
 **返回值：**
 
-类型说明Promise<string[]>Promise对象。返回所有创建的KvStore数据库的storeId。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string[]> | Promise对象。返回所有创建的KvStore数据库的storeId。 |
 
 **示例：**
 
@@ -455,7 +508,10 @@ on(event: 'distributedDataServiceDie', deathCallback: Callback<void>): void
 
 **参数：**
 
-参数名类型必填说明eventstring是订阅的事件名，固定为'distributedDataServiceDie'，即服务状态变更事件。deathCallbackCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 订阅的事件名，固定为'distributedDataServiceDie'，即服务状态变更事件。 |
+| deathCallback | Callback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -482,7 +538,10 @@ off(event: 'distributedDataServiceDie', deathCallback?: Callback<void>): void
 
 **参数：**
 
-参数名类型必填说明eventstring是取消订阅的事件名，固定为'distributedDataServiceDie'，即服务状态变更事件。deathCallbackCallback<void>否取消订阅的函数。如不设置callback，则取消所有已订阅的函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 取消订阅的事件名，固定为'distributedDataServiceDie'，即服务状态变更事件。 |
+| deathCallback | Callback<void> | 否 | 取消订阅的函数。如不设置callback，则取消所有已订阅的函数。 |
 
 **示例：**
 
@@ -504,115 +563,38 @@ try {
 
 用于提供创建数据库的配置信息。
 
-名称类型必填说明createIfMissingboolean否
-
-当数据库文件不存在时是否创建数据库，默认为true，即创建。
-
-**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
-
-encryptboolean否
-
-设置数据库文件是否加密，默认为false，即不加密。
-
-**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
-
-backupboolean否
-
-设置数据库文件是否备份，默认为true，即备份。
-
-**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
-
-autoSyncboolean否
-
-设置数据库文件是否自动同步。默认为false，即手动同步。
-
-**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
-
-**需要权限**： ohos.permission.DISTRIBUTED_DATASYNC
-
-kvStoreType[KVStoreType](#ZH-CN_TOPIC_0000002529284683__kvstoretype)否
-
-设置要创建的数据库类型，默认为DEVICE_COLLABORATION，即多设备协同数据库。
-
-**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
-
-securityLevel[SecurityLevel](#ZH-CN_TOPIC_0000002529284683__securitylevel)否
-
-设置数据库安全级别(S1-S4)。
-
-**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
-
-schema8+[Schema](#ZH-CN_TOPIC_0000002529284683__schema8)否
-
-设置定义存储在数据库中的值，默认为undefined，即不使用schema。
-
-**系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| createIfMissing | boolean | 否 | 当数据库文件不存在时是否创建数据库，默认为true，即创建。 系统能力： SystemCapability.DistributedDataManager.KVStore.Core |
+| encrypt | boolean | 否 | 设置数据库文件是否加密，默认为false，即不加密。 系统能力： SystemCapability.DistributedDataManager.KVStore.Core |
+| backup | boolean | 否 | 设置数据库文件是否备份，默认为true，即备份。 系统能力： SystemCapability.DistributedDataManager.KVStore.Core |
+| autoSync | boolean | 否 | 设置数据库文件是否自动同步。默认为false，即手动同步。 系统能力： SystemCapability.DistributedDataManager.KVStore.Core 需要权限： ohos.permission.DISTRIBUTED_DATASYNC |
+| kvStoreType | KVStoreType | 否 | 设置要创建的数据库类型，默认为DEVICE_COLLABORATION，即多设备协同数据库。 系统能力： SystemCapability.DistributedDataManager.KVStore.Core |
+| securityLevel | SecurityLevel | 否 | 设置数据库安全级别(S1-S4)。 系统能力： SystemCapability.DistributedDataManager.KVStore.Core |
+| schema8+ | Schema | 否 | 设置定义存储在数据库中的值，默认为undefined，即不使用schema。 系统能力： SystemCapability.DistributedDataManager.KVStore.DistributedKVStore |
 
 #### KVStoreType
 
 KVStore数据库类型枚举。
 
-名称值说明DEVICE_COLLABORATION0
-
-表示多设备协同数据库。
-
-**数据库特点：** 数据以设备的维度管理，不存在冲突；支持按照设备的维度查询数据。
-
-**系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
-
-SINGLE_VERSION1
-
-表示单版本数据库。
-
-**数据库特点：** 数据不分设备，设备之间修改相同的key会覆盖。
-
-**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
-
-MULTI_VERSION2
-
-表示多版本数据库。当前暂不支持使用此接口。
-
-**系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DEVICE_COLLABORATION | 0 | 表示多设备协同数据库。 数据库特点： 数据以设备的维度管理，不存在冲突；支持按照设备的维度查询数据。 系统能力： SystemCapability.DistributedDataManager.KVStore.DistributedKVStore |
+| SINGLE_VERSION | 1 | 表示单版本数据库。 数据库特点： 数据不分设备，设备之间修改相同的key会覆盖。 系统能力： SystemCapability.DistributedDataManager.KVStore.Core |
+| MULTI_VERSION | 2 | 表示多版本数据库。当前暂不支持使用此接口。 系统能力： SystemCapability.DistributedDataManager.KVStore.DistributedKVStore |
 
 #### SecurityLevel
 
 数据库的安全级别枚举。
 
-名称值说明NO_LEVEL0
-
-表示数据库不设置安全级别(已废弃)。
-
-**系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
-
-S01
-
-表示数据库的安全级别为公共级别(已废弃)。
-
-**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
-
-S12
-
-表示数据库的安全级别为低级别，当数据泄露时会产生较低影响。例如，包含壁纸等系统数据的数据库。
-
-**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
-
-S23
-
-表示数据库的安全级别为中级别，当数据泄露时会产生较大影响。例如，包含录音、视频等用户生成数据或通话记录等信息的数据库。
-
-**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
-
-S35
-
-表示数据库的安全级别为高级别，当数据泄露时会产生重大影响。例如，包含用户运动、健康、位置等信息的数据库。
-
-**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
-
-S46
-
-表示数据库的安全级别为关键级别，当数据泄露时会产生严重影响。例如，包含认证凭据、财务数据等信息的数据库。
-
-**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NO_LEVEL | 0 | 表示数据库不设置安全级别(已废弃)。 系统能力： SystemCapability.DistributedDataManager.KVStore.DistributedKVStore |
+| S0 | 1 | 表示数据库的安全级别为公共级别(已废弃)。 系统能力： SystemCapability.DistributedDataManager.KVStore.Core |
+| S1 | 2 | 表示数据库的安全级别为低级别，当数据泄露时会产生较低影响。例如，包含壁纸等系统数据的数据库。 系统能力： SystemCapability.DistributedDataManager.KVStore.Core |
+| S2 | 3 | 表示数据库的安全级别为中级别，当数据泄露时会产生较大影响。例如，包含录音、视频等用户生成数据或通话记录等信息的数据库。 系统能力： SystemCapability.DistributedDataManager.KVStore.Core |
+| S3 | 5 | 表示数据库的安全级别为高级别，当数据泄露时会产生重大影响。例如，包含用户运动、健康、位置等信息的数据库。 系统能力： SystemCapability.DistributedDataManager.KVStore.Core |
+| S4 | 6 | 表示数据库的安全级别为关键级别，当数据泄露时会产生严重影响。例如，包含认证凭据、财务数据等信息的数据库。 系统能力： SystemCapability.DistributedDataManager.KVStore.Core |
 
 #### Constants
 
@@ -620,15 +602,27 @@ KVStore常量。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
-名称值说明MAX_KEY_LENGTH1024数据库中Key允许的最大长度，单位字节。MAX_VALUE_LENGTH4194303数据库中Value允许的最大长度，单位字节。MAX_KEY_LENGTH_DEVICE896最大设备密钥长度，单位字节。MAX_STORE_ID_LENGTH128数据库标识符允许的最大长度，单位字节。MAX_QUERY_LENGTH512000最大查询长度，单位字节。MAX_BATCH_SIZE128最大批处理操作数量。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| MAX_KEY_LENGTH | 1024 | 数据库中Key允许的最大长度，单位字节。 |
+| MAX_VALUE_LENGTH | 4194303 | 数据库中Value允许的最大长度，单位字节。 |
+| MAX_KEY_LENGTH_DEVICE | 896 | 最大设备密钥长度，单位字节。 |
+| MAX_STORE_ID_LENGTH | 128 | 数据库标识符允许的最大长度，单位字节。 |
+| MAX_QUERY_LENGTH | 512000 | 最大查询长度，单位字节。 |
+| MAX_BATCH_SIZE | 128 | 最大批处理操作数量。 |
 
 #### Schema8+
 
-表示数据库模式，可以在创建或打开数据库时创建Schema对象并将它们放入[Options](#ZH-CN_TOPIC_0000002529284683__options)中。
+表示数据库模式，可以在创建或打开数据库时创建Schema对象并将它们放入[Options](#ZH-CN_TOPIC_0000002553200603__options)中。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
-名称类型可读可写说明root8+[FieldNode](#ZH-CN_TOPIC_0000002529284683__fieldnode8)是是表示json根对象。indexes8+Array<string>是是表示json类型的字符串数组。mode8+number是是表示Schema的模式。skip8+number是是Schema的跳跃大小。
+| 名称 | 类型 | 可读 | 可写 | 说明 |
+| --- | --- | --- | --- | --- |
+| root8+ | FieldNode | 是 | 是 | 表示json根对象。 |
+| indexes8+ | Array<string> | 是 | 是 | 表示json类型的字符串数组。 |
+| mode8+ | number | 是 | 是 | 表示Schema的模式。 |
+| skip8+ | number | 是 | 是 | Schema的跳跃大小。 |
 
 #### constructor8+
 
@@ -644,7 +638,11 @@ constructor()
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
-名称类型可读可写说明nullable8+boolean是是表示数据库字段是否可以为空。default8+string是是表示Fieldnode的默认值。type8+number是是表示指定节点对应数据类型的值。
+| 名称 | 类型 | 可读 | 可写 | 说明 |
+| --- | --- | --- | --- | --- |
+| nullable8+ | boolean | 是 | 是 | 表示数据库字段是否可以为空。 |
+| default8+ | string | 是 | 是 | 表示Fieldnode的默认值。 |
+| type8+ | number | 是 | 是 | 表示指定节点对应数据类型的值。 |
 
 #### constructor8+
 
@@ -656,7 +654,9 @@ constructor(name: string)
 
 **参数：**
 
-参数名类型必填说明namestring是FieldNode的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | FieldNode的值。 |
 
 #### appendChild8+
 
@@ -668,11 +668,15 @@ appendChild(child: FieldNode): boolean
 
 **参数：**
 
-参数名类型必填说明child[FieldNode](#ZH-CN_TOPIC_0000002529284683__fieldnode8)是要附加的域节点。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| child | FieldNode | 是 | 要附加的域节点。 |
 
 **返回值：**
 
-类型说明boolean返回true表示子节点成功添加到FieldNode；返回false则表示操作失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示子节点成功添加到FieldNode；返回false则表示操作失败。 |
 
 **示例：**
 
@@ -700,7 +704,7 @@ try {
 
 提供获取KVStore数据库结果集的相关方法，包括查询和移动数据读取位置等。
 
-在调用KvStoreResultSet的方法前，需要先通过[getKVStore](#ZH-CN_TOPIC_0000002529284683__getkvstore)构建一个KVStore实例。
+在调用KvStoreResultSet的方法前，需要先通过[getKVStore](#ZH-CN_TOPIC_0000002553200603__getkvstore)构建一个KVStore实例。
 
 #### getCount8+
 
@@ -712,7 +716,9 @@ getCount(): number
 
 **返回值：**
 
-类型说明number返回数据的总行数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回数据的总行数。 |
 
 **示例：**
 
@@ -743,7 +749,9 @@ getPosition(): number
 
 **返回值：**
 
-类型说明number返回当前读取位置。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回当前读取位置。 |
 
 **示例：**
 
@@ -774,7 +782,9 @@ moveToFirst(): boolean
 
 **返回值：**
 
-类型说明boolean返回true表示操作成功；返回false则表示操作失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示操作成功；返回false则表示操作失败。 |
 
 **示例：**
 
@@ -805,7 +815,9 @@ moveToLast(): boolean
 
 **返回值：**
 
-类型说明boolean返回true表示操作成功；返回false则表示操作失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示操作成功；返回false则表示操作失败。 |
 
 **示例：**
 
@@ -836,7 +848,9 @@ moveToNext(): boolean
 
 **返回值：**
 
-类型说明boolean返回true表示操作成功；返回false则表示操作失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示操作成功；返回false则表示操作失败。 |
 
 **示例：**
 
@@ -867,7 +881,9 @@ moveToPrevious(): boolean
 
 **返回值：**
 
-类型说明boolean返回true表示操作成功；返回false则表示操作失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示操作成功；返回false则表示操作失败。 |
 
 **示例：**
 
@@ -898,11 +914,15 @@ move(offset: number): boolean
 
 **参数：**
 
-参数名类型必填说明offsetnumber是表示与当前位置的相对偏移量，负偏移表示向后移动，正偏移表示向前移动。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 是 | 表示与当前位置的相对偏移量，负偏移表示向后移动，正偏移表示向前移动。 |
 
 **返回值：**
 
-类型说明boolean返回true表示操作成功；返回false则表示操作失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示操作成功；返回false则表示操作失败。 |
 
 **示例：**
 
@@ -933,11 +953,15 @@ moveToPosition(position: number): boolean
 
 **参数：**
 
-参数名类型必填说明positionnumber是表示绝对位置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| position | number | 是 | 表示绝对位置。 |
 
 **返回值：**
 
-类型说明boolean返回true表示操作成功；返回false则表示操作失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示操作成功；返回false则表示操作失败。 |
 
 **示例：**
 
@@ -968,7 +992,9 @@ isFirst(): boolean
 
 **返回值：**
 
-类型说明boolean返回true表示读取位置为第一行；返回false表示读取位置不是第一行。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示读取位置为第一行；返回false表示读取位置不是第一行。 |
 
 **示例：**
 
@@ -999,7 +1025,9 @@ isLast(): boolean
 
 **返回值：**
 
-类型说明boolean返回true表示读取位置为最后一行；返回false表示读取位置不是最后一行。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示读取位置为最后一行；返回false表示读取位置不是最后一行。 |
 
 **示例：**
 
@@ -1030,7 +1058,9 @@ isBeforeFirst(): boolean
 
 **返回值：**
 
-类型说明boolean返回true表示读取位置在第一行之前；返回false表示读取位置不在第一行之前。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示读取位置在第一行之前；返回false表示读取位置不在第一行之前。 |
 
 **示例：**
 
@@ -1061,7 +1091,9 @@ isAfterLast(): boolean
 
 **返回值：**
 
-类型说明boolean返回true表示读取位置在最后一行之后；返回false表示读取位置不在最后一行之后。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示读取位置在最后一行之后；返回false表示读取位置不在最后一行之后。 |
 
 **示例：**
 
@@ -1092,7 +1124,9 @@ getEntry(): Entry
 
 **返回值：**
 
-类型说明[Entry](#ZH-CN_TOPIC_0000002529284683__entry)返回键值对。
+| 类型 | 说明 |
+| --- | --- |
+| Entry | 返回键值对。 |
 
 **示例：**
 
@@ -1123,7 +1157,7 @@ try {
 
 constructor()
 
-用于创建Schema实例的构造函数。
+用于创建Query实例的构造函数。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
@@ -1137,7 +1171,9 @@ reset(): Query
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回重置的Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回重置的Query对象。 |
 
 **示例：**
 
@@ -1164,11 +1200,16 @@ equalTo(field: string, value: number|string|boolean): Query
 
 **参数：**
 
-参数名类型必填说明fieldstring是表示指定字段，不能包含' ^ '。valuenumber|string|boolean是表示指定的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 表示指定字段，不能包含' ^ '。 |
+| value | number|string|boolean | 是 | 表示指定的值。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1193,11 +1234,16 @@ notEqualTo(field: string, value: number|string|boolean): Query
 
 **参数：**
 
-参数名类型必填说明fieldstring是表示指定字段，不能包含' ^ '。valuenumber|string|boolean是表示指定的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 表示指定字段，不能包含' ^ '。 |
+| value | number|string|boolean | 是 | 表示指定的值。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1222,11 +1268,16 @@ greaterThan(field: string, value: number|string|boolean): Query
 
 **参数：**
 
-参数名类型必填说明fieldstring是表示指定字段，不能包含' ^ '。valuenumber|string|boolean是表示指定的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 表示指定字段，不能包含' ^ '。 |
+| value | number|string|boolean | 是 | 表示指定的值。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1251,11 +1302,16 @@ lessThan(field: string, value: number|string): Query
 
 **参数：**
 
-参数名类型必填说明fieldstring是表示指定字段，不能包含' ^ '。valuenumber|string是表示指定的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 表示指定字段，不能包含' ^ '。 |
+| value | number|string | 是 | 表示指定的值。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1280,11 +1336,16 @@ greaterThanOrEqualTo(field: string, value: number|string): Query
 
 **参数：**
 
-参数名类型必填说明fieldstring是表示指定字段，不能包含' ^ '。valuenumber|string是表示指定的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 表示指定字段，不能包含' ^ '。 |
+| value | number|string | 是 | 表示指定的值。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1309,11 +1370,16 @@ lessThanOrEqualTo(field: string, value: number|string): Query
 
 **参数：**
 
-参数名类型必填说明fieldstring是表示指定字段，不能包含' ^ '。valuenumber|string是表示指定的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 表示指定字段，不能包含' ^ '。 |
+| value | number|string | 是 | 表示指定的值。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1338,11 +1404,15 @@ isNull(field: string): Query
 
 **参数：**
 
-参数名类型必填说明fieldstring是表示指定字段，不能包含' ^ '。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 表示指定字段，不能包含' ^ '。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1367,11 +1437,16 @@ inNumber(field: string, valueList: number[]): Query
 
 **参数：**
 
-参数名类型必填说明fieldstring是表示指定字段，不能包含' ^ '。valueListnumber[]是表示指定的值列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 表示指定字段，不能包含' ^ '。 |
+| valueList | number[] | 是 | 表示指定的值列表。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1396,11 +1471,16 @@ inString(field: string, valueList: string[]): Query
 
 **参数：**
 
-参数名类型必填说明fieldstring是表示指定字段，不能包含' ^ '。valueListstring[]是表示指定的字符串值列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 表示指定字段，不能包含' ^ '。 |
+| valueList | string[] | 是 | 表示指定的字符串值列表。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1425,11 +1505,16 @@ notInNumber(field: string, valueList: number[]): Query
 
 **参数：**
 
-参数名类型必填说明fieldstring是表示指定字段，不能包含' ^ '。valueListnumber[]是表示指定的值列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 表示指定字段，不能包含' ^ '。 |
+| valueList | number[] | 是 | 表示指定的值列表。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1454,11 +1539,16 @@ notInString(field: string, valueList: string[]): Query
 
 **参数：**
 
-参数名类型必填说明fieldstring是表示指定字段，不能包含' ^ '。valueListstring[]是表示指定的字符串值列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 表示指定字段，不能包含' ^ '。 |
+| valueList | string[] | 是 | 表示指定的字符串值列表。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1483,11 +1573,16 @@ like(field: string, value: string): Query
 
 **参数：**
 
-参数名类型必填说明fieldstring是表示指定字段，不能包含' ^ '。valuestring是表示指定的字符串值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 表示指定字段，不能包含' ^ '。 |
+| value | string | 是 | 表示指定的字符串值。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1512,11 +1607,16 @@ unlike(field: string, value: string): Query
 
 **参数：**
 
-参数名类型必填说明fieldstring是表示指定字段，不能包含' ^ '。valuestring是表示指定的字符串值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 表示指定字段，不能包含' ^ '。 |
+| value | string | 是 | 表示指定的字符串值。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1541,7 +1641,9 @@ and(): Query
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回查询对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回查询对象。 |
 
 **示例：**
 
@@ -1568,7 +1670,9 @@ or(): Query
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回查询对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回查询对象。 |
 
 **示例：**
 
@@ -1595,11 +1699,15 @@ orderByAsc(field: string): Query
 
 **参数：**
 
-参数名类型必填说明fieldstring是表示指定字段，不能包含' ^ '。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 表示指定字段，不能包含' ^ '。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1625,11 +1733,15 @@ orderByDesc(field: string): Query
 
 **参数：**
 
-参数名类型必填说明fieldstring是表示指定字段，不能包含' ^ '。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 表示指定字段，不能包含' ^ '。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1655,11 +1767,16 @@ limit(total: number, offset: number): Query
 
 **参数：**
 
-参数名类型必填说明totalnumber是表示指定的结果数。offsetnumber是表示起始位置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| total | number | 是 | 表示指定的结果数。 |
+| offset | number | 是 | 表示起始位置。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1687,11 +1804,15 @@ isNotNull(field: string): Query
 
 **参数：**
 
-参数名类型必填说明fieldstring是表示指定字段，不能包含' ^ '。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 表示指定字段，不能包含' ^ '。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1716,7 +1837,9 @@ beginGroup(): Query
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1743,7 +1866,9 @@ endGroup(): Query
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1770,11 +1895,15 @@ prefixKey(prefix: string): Query
 
 **参数：**
 
-参数名类型必填说明prefixstring是表示指定的键前缀。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| prefix | string | 是 | 表示指定的键前缀。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1800,11 +1929,15 @@ setSuggestIndex(index: string): Query
 
 **参数：**
 
-参数名类型必填说明indexstring是指示要设置的索引。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | string | 是 | 指示要设置的索引。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1828,17 +1961,21 @@ deviceId(deviceId:string):Query
 
 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
 
-deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002529284683__sync)。
+deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002553200603__sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是指示查询的设备ID。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 指示查询的设备ID。 |
 
 **返回值：**
 
-类型说明[Query](#ZH-CN_TOPIC_0000002529284683__query8)返回Query对象。
+| 类型 | 说明 |
+| --- | --- |
+| Query | 返回Query对象。 |
 
 **示例：**
 
@@ -1862,7 +1999,9 @@ getSqlLike():string
 
 **返回值：**
 
-类型说明string返回一个字段列中包含对应子串的结果。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回一个字段列中包含对应子串的结果。 |
 
 **示例：**
 
@@ -1880,7 +2019,7 @@ try {
 
 KVStore数据库实例，提供增加数据、删除数据和订阅数据变更、订阅数据同步完成的方法。
 
-在调用KVStore的方法前，需要先通过[getKVStore](#ZH-CN_TOPIC_0000002529284683__getkvstore)构建一个KVStore实例。
+在调用KVStore的方法前，需要先通过[getKVStore](#ZH-CN_TOPIC_0000002553200603__getkvstore)构建一个KVStore实例。
 
 #### put
 
@@ -1892,7 +2031,11 @@ put(key: string, value: Uint8Array | string | number | boolean, callback: AsyncC
 
 **参数：**
 
-参数名类型必填说明keystring是要添加数据的key，不能为空且长度不大于[MAX_KEY_LENGTH](#ZH-CN_TOPIC_0000002529284683__constants)。valueUint8Array | string | number | boolean是要添加数据的value，支持Uint8Array、number 、 string 、boolean，Uint8Array、string 的长度不大于[MAX_VALUE_LENGTH](#ZH-CN_TOPIC_0000002529284683__constants)。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要添加数据的key，不能为空且长度不大于MAX_KEY_LENGTH。 |
+| value | Uint8Array | string | number | boolean | 是 | 要添加数据的value，支持Uint8Array、number 、 string 、boolean，Uint8Array、string 的长度不大于MAX_VALUE_LENGTH。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -1923,11 +2066,16 @@ put(key: string, value: Uint8Array | string | number | boolean): Promise<void>
 
 **参数：**
 
-参数名类型必填说明keystring是要添加数据的key，不能为空且长度不大于[MAX_KEY_LENGTH](#ZH-CN_TOPIC_0000002529284683__constants)。valueUint8Array | string | number | boolean是要添加数据的value，支持Uint8Array、number 、 string 、boolean，Uint8Array、string 的长度不大于[MAX_VALUE_LENGTH](#ZH-CN_TOPIC_0000002529284683__constants)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要添加数据的key，不能为空且长度不大于MAX_KEY_LENGTH。 |
+| value | Uint8Array | string | number | boolean | 是 | 要添加数据的value，支持Uint8Array、number 、 string 、boolean，Uint8Array、string 的长度不大于MAX_VALUE_LENGTH。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -1956,7 +2104,10 @@ delete(key: string, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明keystring是要删除数据的key，不能为空且长度不大于[MAX_KEY_LENGTH](#ZH-CN_TOPIC_0000002529284683__constants)。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要删除数据的key，不能为空且长度不大于MAX_KEY_LENGTH。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -1978,7 +2129,6 @@ try {
             }
             console.log("delete success");
         });
-    });
 }catch (e) {
     console.log("An unexpected error occurred. Error:" + e);
 }
@@ -1994,11 +2144,15 @@ delete(key: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明keystring是要删除数据的key，不能为空且长度不大于[MAX_KEY_LENGTH](#ZH-CN_TOPIC_0000002529284683__constants)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要删除数据的key，不能为空且长度不大于MAX_KEY_LENGTH。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -2032,7 +2186,11 @@ on(event: 'dataChange', type: SubscribeType, listener: Callback<ChangeNotificati
 
 **参数：**
 
-参数名类型必填说明eventstring是订阅的事件名，固定为'dataChange'，表示数据变更事件。type[SubscribeType](#ZH-CN_TOPIC_0000002529284683__subscribetype)是表示订阅的类型。listenerCallback<[ChangeNotification](#ZH-CN_TOPIC_0000002529284683__changenotification)>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 订阅的事件名，固定为'dataChange'，表示数据变更事件。 |
+| type | SubscribeType | 是 | 表示订阅的类型。 |
+| listener | Callback<ChangeNotification> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -2053,7 +2211,10 @@ on(event: 'syncComplete', syncCallback: Callback<Array<[string, number]>>): void
 
 **参数：**
 
-参数名类型必填说明eventstring是订阅的事件名，固定为'syncComplete'，表示同步完成事件。syncCallbackCallback<Array<[string, number]>>是回调函数。用于向调用方发送同步结果的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 订阅的事件名，固定为'syncComplete'，表示同步完成事件。 |
+| syncCallback | Callback<Array<[string, number]>> | 是 | 回调函数。用于向调用方发送同步结果的回调。 |
 
 **示例：**
 
@@ -2074,7 +2235,10 @@ off(event:'dataChange', listener?: Callback<ChangeNotification>): void
 
 **参数：**
 
-参数名类型必填说明eventstring是取消订阅的事件名，固定为'dataChange'，表示数据变更事件。listenerCallback<[ChangeNotification](#ZH-CN_TOPIC_0000002529284683__changenotification)>否取消订阅的函数。如不设置callback，则取消所有订阅的函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 取消订阅的事件名，固定为'dataChange'，表示数据变更事件。 |
+| listener | Callback<ChangeNotification> | 否 | 取消订阅的函数。如不设置callback，则取消所有订阅的函数。 |
 
 **示例：**
 
@@ -2088,12 +2252,9 @@ class KvstoreModel {
         if (kvStore != null) {
             kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_REMOTE, this.call);
         }
-    }
     unsubscribeDataChange() {
         if (kvStore != null) {
             kvStore.off('dataChange', this.call);
-        }
-    }
 }
 ```
 
@@ -2107,7 +2268,10 @@ off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): vo
 
 **参数：**
 
-参数名类型必填说明eventstring是取消订阅的事件名，固定为'syncComplete'，表示同步完成事件。syncCallbackCallback<Array<[string, number]>>否取消订阅的函数。如不设置callback，则取消所有订阅的函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 取消订阅的事件名，固定为'syncComplete'，表示同步完成事件。 |
+| syncCallback | Callback<Array<[string, number]>> | 否 | 取消订阅的函数。如不设置callback，则取消所有订阅的函数。 |
 
 **示例：**
 
@@ -2121,12 +2285,9 @@ class KvstoreModel {
         if (kvStore != null) {
             kvStore.on('syncComplete', this.call);
         }
-    }
     unsubscribeSyncComplete() {
         if (kvStore != null) {
             kvStore.off('syncComplete', this.call);
-        }
-    }
 }
 ```
 
@@ -2140,7 +2301,10 @@ putBatch(entries: Entry[], callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明entries[Entry](#ZH-CN_TOPIC_0000002529284683__entry)[]是表示要批量插入的键值对。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| entries | Entry[] | 是 | 表示要批量插入的键值对。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -2156,7 +2320,6 @@ try {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
             }
-        }
         entries.push(entry);
     }
     console.log('entries: ' + JSON.stringify(entries));
@@ -2167,7 +2330,6 @@ try {
             console.log('entries.length: ' + entries.length);
             console.log('entries[0]: ' + JSON.stringify(entries[0]));
         });
-    });
 }catch(e) {
     console.log('PutBatch e ' + JSON.stringify(e));
 }
@@ -2183,11 +2345,15 @@ putBatch(entries: Entry[]): Promise<void>
 
 **参数：**
 
-参数名类型必填说明entries[Entry](#ZH-CN_TOPIC_0000002529284683__entry)[]是表示要批量插入的键值对。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| entries | Entry[] | 是 | 表示要批量插入的键值对。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -2202,7 +2368,6 @@ try {
             value : {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
-            }
         }
         entries.push(entry);
     }
@@ -2233,7 +2398,10 @@ deleteBatch(keys: string[], callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明keysstring[]是表示要批量删除的键值对。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| keys | string[] | 是 | 表示要批量删除的键值对。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -2250,7 +2418,6 @@ try {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
             }
-        }
         entries.push(entry);
         keys.push(key + i);
     }
@@ -2260,7 +2427,6 @@ try {
         kvStore.deleteBatch(keys, async function (err,data) {
             console.log('deleteBatch success');
         });
-    });
 }catch(e) {
     console.log('DeleteBatch e ' + e);
 }
@@ -2276,11 +2442,15 @@ deleteBatch(keys: string[]): Promise<void>
 
 **参数：**
 
-参数名类型必填说明keysstring[]是表示要批量删除的键值对。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| keys | string[] | 是 | 表示要批量删除的键值对。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -2296,7 +2466,6 @@ try {
             value : {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
-            }
         }
         entries.push(entry);
         keys.push(key + i);
@@ -2327,7 +2496,9 @@ startTransaction(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -2341,7 +2512,6 @@ function putBatchString(len, prefix) {
             value : {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
-            }
         }
         entries.push(entry);
     }
@@ -2360,7 +2530,6 @@ try {
         kvStore.putBatch(entries, async function (err,data) {
             console.log('putBatch success');
         });
-    });
 }catch(e) {
     console.log('startTransaction e ' + e);
 }
@@ -2376,7 +2545,9 @@ startTransaction(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -2408,7 +2579,9 @@ commit(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -2437,7 +2610,9 @@ commit(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -2464,7 +2639,9 @@ rollback(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -2493,7 +2670,9 @@ rollback(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -2520,7 +2699,10 @@ enableSync(enabled: boolean, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明enabledboolean是设定是否开启同步，true表示开启同步，false表示不启用同步。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enabled | boolean | 是 | 设定是否开启同步，true表示开启同步，false表示不启用同步。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -2549,11 +2731,15 @@ enableSync(enabled: boolean): Promise<void>
 
 **参数：**
 
-参数名类型必填说明enabledboolean是设定是否开启同步，true表示开启同步，false表示不启用同步。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enabled | boolean | 是 | 设定是否开启同步，true表示开启同步，false表示不启用同步。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -2580,7 +2766,11 @@ setSyncRange(localLabels: string[], remoteSupportLabels: string[], callback: Asy
 
 **参数：**
 
-参数名类型必填说明localLabelsstring[]是表示本地设备的同步标签。remoteSupportLabelsstring[]是表示要同步数据的设备的同步标签。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| localLabels | string[] | 是 | 表示本地设备的同步标签。 |
+| remoteSupportLabels | string[] | 是 | 表示要同步数据的设备的同步标签。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -2607,11 +2797,16 @@ setSyncRange(localLabels: string[], remoteSupportLabels: string[]): Promise<void
 
 **参数：**
 
-参数名类型必填说明localLabelsstring[]是表示本地设备的同步标签。remoteSupportLabelsstring[]是表示要同步数据的设备的同步标签。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| localLabels | string[] | 是 | 表示本地设备的同步标签。 |
+| remoteSupportLabels | string[] | 是 | 表示要同步数据的设备的同步标签。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -2636,7 +2831,11 @@ try {
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
-名称值说明SUBSCRIBE_TYPE_LOCAL0表示订阅本地数据变更。SUBSCRIBE_TYPE_REMOTE1表示订阅远端数据变更。SUBSCRIBE_TYPE_ALL2表示订阅远端和本地数据变更。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SUBSCRIBE_TYPE_LOCAL | 0 | 表示订阅本地数据变更。 |
+| SUBSCRIBE_TYPE_REMOTE | 1 | 表示订阅远端数据变更。 |
+| SUBSCRIBE_TYPE_ALL | 2 | 表示订阅远端和本地数据变更。 |
 
 #### ChangeNotification
 
@@ -2644,7 +2843,12 @@ try {
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
-名称类型必填说明insertEntries[Entry](#ZH-CN_TOPIC_0000002529284683__entry)[]是数据添加记录。updateEntries[Entry](#ZH-CN_TOPIC_0000002529284683__entry)[]是数据更新记录。deleteEntries[Entry](#ZH-CN_TOPIC_0000002529284683__entry)[]是数据删除记录。deviceIdstring是设备ID，此处为设备UUID。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| insertEntries | Entry[] | 是 | 数据添加记录。 |
+| updateEntries | Entry[] | 是 | 数据更新记录。 |
+| deleteEntries | Entry[] | 是 | 数据删除记录。 |
+| deviceId | string | 是 | 设备ID，此处为设备UUID。 |
 
 #### Entry
 
@@ -2652,7 +2856,10 @@ try {
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
-名称类型必填说明keystring是键值。value[Value](#ZH-CN_TOPIC_0000002529284683__value)是值对象。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 键值。 |
+| value | Value | 是 | 值对象。 |
 
 #### Value
 
@@ -2660,7 +2867,10 @@ try {
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
-名称类型必填说明type[ValueType](#ZH-CN_TOPIC_0000002529284683__value)是值类型。valueUint8Array | string | number | boolean是值。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | ValueType | 是 | 值类型。 |
+| value | Uint8Array | string | number | boolean | 是 | 值。 |
 
 #### ValueType
 
@@ -2668,15 +2878,22 @@ try {
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
-名称值说明STRING0表示值类型为字符串。INTEGER1表示值类型为整数。FLOAT2表示值类型为浮点数。BYTE_ARRAY3表示值类型为字节数组。BOOLEAN4表示值类型为布尔值。DOUBLE5表示值类型为双浮点数。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| STRING | 0 | 表示值类型为字符串。 |
+| INTEGER | 1 | 表示值类型为整数。 |
+| FLOAT | 2 | 表示值类型为浮点数。 |
+| BYTE_ARRAY | 3 | 表示值类型为字节数组。 |
+| BOOLEAN | 4 | 表示值类型为布尔值。 |
+| DOUBLE | 5 | 表示值类型为双浮点数。 |
 
 #### SingleKVStore
 
-单版本数据库，继承自[KVStore](#ZH-CN_TOPIC_0000002529284683__kvstore)数据库，提供查询数据和同步数据的方法。
+单版本数据库，继承自[KVStore](#ZH-CN_TOPIC_0000002553200603__kvstore)数据库，提供查询数据和同步数据的方法。
 
 单版本数据库，不对数据所属设备进行区分，不同设备使用相同键写入数据会互相覆盖。比如，可以使用单版本数据库实现个人日历、联系人数据在不同设备间的数据同步。
 
-在调用SingleKVStore的方法前，需要先通过[getKVStore](#ZH-CN_TOPIC_0000002529284683__getkvstore)构建一个SingleKVStore实例。
+在调用SingleKVStore的方法前，需要先通过[getKVStore](#ZH-CN_TOPIC_0000002553200603__getkvstore)构建一个SingleKVStore实例。
 
 #### get
 
@@ -2688,7 +2905,10 @@ get(key: string, callback: AsyncCallback<Uint8Array | string | boolean | number>
 
 **参数：**
 
-参数名类型必填说明keystring是要查询数据的key，不能为空且长度不大于[MAX_KEY_LENGTH](#ZH-CN_TOPIC_0000002529284683__constants)。callbackAsyncCallback<Uint8Array | string | boolean | number>是回调函数。返回获取查询的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要查询数据的key，不能为空且长度不大于MAX_KEY_LENGTH。 |
+| callback | AsyncCallback<Uint8Array | string | boolean | number> | 是 | 回调函数。返回获取查询的值。 |
 
 **示例：**
 
@@ -2706,7 +2926,6 @@ try {
         kvStore.get(KEY_TEST_STRING_ELEMENT, function (err,data) {
             console.log("get success data: " + data);
         });
-    });
 }catch (e) {
     console.log("An unexpected error occurred. Error:" + e);
 }
@@ -2722,11 +2941,15 @@ get(key: string): Promise<Uint8Array | string | boolean | number>
 
 **参数：**
 
-参数名类型必填说明keystring是要查询数据的key，不能为空且长度不大于[MAX_KEY_LENGTH](#ZH-CN_TOPIC_0000002529284683__constants)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 要查询数据的key，不能为空且长度不大于MAX_KEY_LENGTH。 |
 
 **返回值：**
 
-类型说明Promise<Uint8Array | string | boolean | number>Promise对象。返回获取查询的值。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Uint8Array | string | boolean | number> | Promise对象。返回获取查询的值。 |
 
 **示例：**
 
@@ -2760,7 +2983,10 @@ getEntries(keyPrefix: string, callback: AsyncCallback<Entry[]>): void
 
 **参数：**
 
-参数名类型必填说明keyPrefixstring是表示要匹配的键前缀。callbackAsyncCallback<[Entry](#ZH-CN_TOPIC_0000002529284683__entry)[]>是回调函数。返回匹配指定前缀的键值对列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| keyPrefix | string | 是 | 表示要匹配的键前缀。 |
+| callback | AsyncCallback<Entry[]> | 是 | 回调函数。返回匹配指定前缀的键值对列表。 |
 
 **示例：**
 
@@ -2776,7 +3002,6 @@ try {
                 type : distributedData.ValueType.INTEGER,
                 value : 222
             }
-        }
         entries.push(entry);
     }
     kvStore.putBatch(entries, async function (err,data) {
@@ -2786,7 +3011,6 @@ try {
             console.log('entries.length: ' + entries.length);
             console.log('entries[0]: ' + JSON.stringify(entries[0]));
         });
-    });
 }catch(e) {
     console.log('PutBatch e ' + e);
 }
@@ -2802,11 +3026,15 @@ getEntries(keyPrefix: string): Promise<Entry[]>
 
 **参数：**
 
-参数名类型必填说明keyPrefixstring是表示要匹配的键前缀。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| keyPrefix | string | 是 | 表示要匹配的键前缀。 |
 
 **返回值：**
 
-类型说明Promise<[Entry](#ZH-CN_TOPIC_0000002529284683__entry)[]>Promise对象。返回匹配指定前缀的键值对列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Entry[]> | Promise对象。返回匹配指定前缀的键值对列表。 |
 
 **示例：**
 
@@ -2821,7 +3049,6 @@ try {
             value : {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
-            }
         }
         entries.push(entry);
     }
@@ -2855,7 +3082,10 @@ getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
 
 **参数：**
 
-参数名类型必填说明query[Query](#ZH-CN_TOPIC_0000002529284683__query8)是表示要匹配的键前缀。callbackAsyncCallback<[Entry](#ZH-CN_TOPIC_0000002529284683__entry)[]>是回调函数。返回与指定Query对象匹配的键值对列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | Query | 是 | 表示要匹配的键前缀。 |
+| callback | AsyncCallback<Entry[]> | 是 | 回调函数。返回与指定Query对象匹配的键值对列表。 |
 
 **示例：**
 
@@ -2872,7 +3102,6 @@ try {
                 type : distributedData.ValueType.BYTE_ARRAY,
                 value : arr
             }
-        }
         entries.push(entry);
     }
     console.log('entries: ' + JSON.stringify(entries));
@@ -2885,7 +3114,6 @@ try {
             console.log('entries.length: ' + entries.length);
             console.log('entries[0]: ' + JSON.stringify(entries[0]));
         });
-    });
     console.log('GetEntries success');
 }catch(e) {
     console.log('GetEntries e ' + e);
@@ -2902,11 +3130,15 @@ getEntries(query: Query): Promise<Entry[]>
 
 **参数：**
 
-参数名类型必填说明query[Query](#ZH-CN_TOPIC_0000002529284683__query8)是表示查询对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | Query | 是 | 表示查询对象。 |
 
 **返回值：**
 
-类型说明Promise<[Entry](#ZH-CN_TOPIC_0000002529284683__entry)[]>Promise对象。返回与指定Query对象匹配的键值对列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Entry[]> | Promise对象。返回与指定Query对象匹配的键值对列表。 |
 
 **示例：**
 
@@ -2922,7 +3154,6 @@ try {
             value : {
                 type : distributedData.ValueType.BYTE_ARRAY,
                 value : arr
-            }
         }
         entries.push(entry);
     }
@@ -2955,7 +3186,10 @@ getResultSet(keyPrefix: string, callback: AsyncCallback<KvStoreResultSet>): void
 
 **参数：**
 
-参数名类型必填说明keyPrefixstring是表示要匹配的键前缀。callbackAsyncCallback<[KvStoreResultSet](#ZH-CN_TOPIC_0000002529284683__kvstoreresultset8)>是回调函数。返回具有指定前缀的结果集。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| keyPrefix | string | 是 | 表示要匹配的键前缀。 |
+| callback | AsyncCallback<KvStoreResultSet> | 是 | 回调函数。返回具有指定前缀的结果集。 |
 
 **示例：**
 
@@ -2972,7 +3206,6 @@ try {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
             }
-        }
         entries.push(entry);
     }
     kvStore.putBatch(entries, async function (err, data) {
@@ -2984,7 +3217,6 @@ try {
                 console.log('GetResultSet closeResultSet success');
             })
         });
-    });
 }catch(e) {
     console.log('GetResultSet e ' + e);
 }
@@ -3000,11 +3232,15 @@ getResultSet(keyPrefix: string): Promise<KvStoreResultSet>
 
 **参数：**
 
-参数名类型必填说明keyPrefixstring是表示要匹配的键前缀。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| keyPrefix | string | 是 | 表示要匹配的键前缀。 |
 
 **返回值：**
 
-类型说明Promise<[KvStoreResultSet](#ZH-CN_TOPIC_0000002529284683__kvstoreresultset8)>Promise对象。返回具有指定前缀的结果集。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<KvStoreResultSet> | Promise对象。返回具有指定前缀的结果集。 |
 
 **示例：**
 
@@ -3020,7 +3256,6 @@ try {
             value : {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
-            }
         }
         entries.push(entry);
     }
@@ -3055,7 +3290,10 @@ getResultSet(query: Query, callback: AsyncCallback<KvStoreResultSet>): void
 
 **参数：**
 
-参数名类型必填说明queryQuery是表示查询对象。callbackAsyncCallback<[KvStoreResultSet](#ZH-CN_TOPIC_0000002529284683__kvstoreresultset8)>是回调函数，获取与指定Query对象匹配的KvStoreResultSet对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | Query | 是 | 表示查询对象。 |
+| callback | AsyncCallback<KvStoreResultSet> | 是 | 回调函数，获取与指定Query对象匹配的KvStoreResultSet对象。 |
 
 **示例：**
 
@@ -3072,7 +3310,6 @@ try {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
             }
-        }
         entries.push(entry);
     }
     kvStore.putBatch(entries, async function (err, data) {
@@ -3083,7 +3320,6 @@ try {
             console.log('getResultSet succeed.');
             resultSet = result;
         });
-    });
 } catch(e) {
     console.log('GetResultSet e ' + e);
 }
@@ -3099,11 +3335,15 @@ getResultSet(query: Query): Promise<KvStoreResultSet>
 
 **参数：**
 
-参数名类型必填说明query[Query](#ZH-CN_TOPIC_0000002529284683__query8)是表示查询对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | Query | 是 | 表示查询对象。 |
 
 **返回值：**
 
-类型说明Promise<[KvStoreResultSet](#ZH-CN_TOPIC_0000002529284683__kvstoreresultset8)>Promise对象。获取与指定Query对象匹配的KvStoreResultSet对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<KvStoreResultSet> | Promise对象。获取与指定Query对象匹配的KvStoreResultSet对象。 |
 
 **示例：**
 
@@ -3119,7 +3359,6 @@ try {
             value : {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
-            }
         }
         entries.push(entry);
     }
@@ -3145,13 +3384,16 @@ try {
 
 closeResultSet(resultSet: KvStoreResultSet, callback: AsyncCallback<void>): void
 
-关闭由[SingleKVStore.getResultSet](#ZH-CN_TOPIC_0000002529284683__getresultset8)返回的KvStoreResultSet对象，使用callback异步回调。
+关闭由[SingleKVStore.getResultSet](#ZH-CN_TOPIC_0000002553200603__getresultset8)返回的KvStoreResultSet对象，使用callback异步回调。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
 
-参数名类型必填说明resultSet[KvStoreResultSet](#ZH-CN_TOPIC_0000002529284683__kvstoreresultset8)是表示要关闭的KvStoreResultSet对象。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| resultSet | KvStoreResultSet | 是 | 表示要关闭的KvStoreResultSet对象。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -3175,17 +3417,21 @@ try {
 
 closeResultSet(resultSet: KvStoreResultSet): Promise<void>
 
-关闭由[SingleKVStore.getResultSet](#ZH-CN_TOPIC_0000002529284683__getresultset8)返回的KvStoreResultSet对象，使用Promise异步回调。
+关闭由[SingleKVStore.getResultSet](#ZH-CN_TOPIC_0000002553200603__getresultset8)返回的KvStoreResultSet对象，使用Promise异步回调。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
 
-参数名类型必填说明resultSet[KvStoreResultSet](#ZH-CN_TOPIC_0000002529284683__kvstoreresultset8)是表示要关闭的KvStoreResultSet对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| resultSet | KvStoreResultSet | 是 | 表示要关闭的KvStoreResultSet对象。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -3213,7 +3459,10 @@ getResultSize(query: Query, callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明query[Query](#ZH-CN_TOPIC_0000002529284683__query8)是表示查询对象。callbackAsyncCallback<number>是回调函数。返回与指定Query对象匹配的结果数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | Query | 是 | 表示查询对象。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。返回与指定Query对象匹配的结果数。 |
 
 **示例：**
 
@@ -3229,7 +3478,6 @@ try {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
             }
-        }
         entries.push(entry);
     }
     kvStore.putBatch(entries, async function (err, data) {
@@ -3239,7 +3487,6 @@ try {
         kvStore.getResultSize(query, async function (err, resultSize) {
             console.log('getResultSet succeed.');
         });
-    });
 } catch(e) {
     console.log('GetResultSize e ' + e);
 }
@@ -3255,11 +3502,15 @@ getResultSize(query: Query): Promise<number>
 
 **参数：**
 
-参数名类型必填说明query[Query](#ZH-CN_TOPIC_0000002529284683__query8)是表示查询对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | Query | 是 | 表示查询对象。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象。获取与指定Query对象匹配的结果数。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象。获取与指定Query对象匹配的结果数。 |
 
 **示例：**
 
@@ -3274,7 +3525,6 @@ try {
             value : {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
-            }
         }
         entries.push(entry);
     }
@@ -3303,13 +3553,16 @@ removeDeviceData(deviceId: string, callback: AsyncCallback<void>): void
 
 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
 
-deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002529284683__sync)。
+deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002553200603__sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是表示要删除设备的名称。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 表示要删除设备的名称。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -3331,7 +3584,6 @@ try {
                 });
             }
         });
-    });
 }catch(e) {
     console.log('RemoveDeviceData e ' + e);
 }
@@ -3345,17 +3597,21 @@ removeDeviceData(deviceId: string): Promise<void>
 
 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
 
-deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002529284683__sync)。
+deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002553200603__sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是表示要删除设备的名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 表示要删除设备的名称。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -3399,7 +3655,11 @@ sync(deviceIds: string[], mode: SyncMode, delayMs?: number): void
 
 **参数：**
 
-参数名类型必填说明deviceIdsstring[]是同一组网环境下，需要同步的设备的networkId列表。mode[SyncMode](#ZH-CN_TOPIC_0000002529284683__syncmode)是同步模式。delayMsnumber否可选参数，允许延时时间，单位：ms（毫秒），默认为0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceIds | string[] | 是 | 同一组网环境下，需要同步的设备的networkId列表。 |
+| mode | SyncMode | 是 | 同步模式。 |
+| delayMs | number | 否 | 可选参数，允许延时时间，单位：ms（毫秒），默认为0。 |
 
 **示例：**
 
@@ -3420,7 +3680,6 @@ deviceManager.createDeviceManager('bundleName', (err, value) => {
       for (var i = 0; i < devices.length; i++) {
         deviceIds[i] = devices[i].networkId;
       }
-    }
     try {
       kvStore.on('syncComplete', function (data) {
         console.log('Sync dataChange');
@@ -3437,7 +3696,6 @@ deviceManager.createDeviceManager('bundleName', (err, value) => {
     } catch (e) {
       console.log('Sync e' + e);
     }
-  }
 });
 ```
 
@@ -3451,7 +3709,11 @@ on(event: 'dataChange', type: SubscribeType, listener: Callback<ChangeNotificati
 
 **参数：**
 
-参数名类型必填说明eventstring是订阅的事件名，固定为'dataChange'，表示数据变更事件。type[SubscribeType](#ZH-CN_TOPIC_0000002529284683__subscribetype)是表示订阅的类型。listenerCallback<[ChangeNotification](#ZH-CN_TOPIC_0000002529284683__changenotification)>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 订阅的事件名，固定为'dataChange'，表示数据变更事件。 |
+| type | SubscribeType | 是 | 表示订阅的类型。 |
+| listener | Callback<ChangeNotification> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -3472,7 +3734,10 @@ on(event: 'syncComplete', syncCallback: Callback<Array<[string, number]>>): void
 
 **参数：**
 
-参数名类型必填说明eventstring是订阅的事件名，固定为'syncComplete'，表示同步完成事件。syncCallbackCallback<Array<[string, number]>>是回调函数。用于向调用方发送同步结果的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 订阅的事件名，固定为'syncComplete'，表示同步完成事件。 |
+| syncCallback | Callback<Array<[string, number]>> | 是 | 回调函数。用于向调用方发送同步结果的回调。 |
 
 **示例：**
 
@@ -3504,7 +3769,10 @@ off(event:'dataChange', listener?: Callback<ChangeNotification>): void
 
 **参数：**
 
-参数名类型必填说明eventstring是取消订阅的事件名，固定为'dataChange'，表示数据变更事件。listenerCallback<[ChangeNotification](#ZH-CN_TOPIC_0000002529284683__changenotification)>否取消订阅的函数。如不设置callback，则取消所有订阅的函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 取消订阅的事件名，固定为'dataChange'，表示数据变更事件。 |
+| listener | Callback<ChangeNotification> | 否 | 取消订阅的函数。如不设置callback，则取消所有订阅的函数。 |
 
 **示例：**
 
@@ -3518,12 +3786,9 @@ class KvstoreModel {
         if (kvStore != null) {
             kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_REMOTE, this.call);
         }
-    }
     unsubscribeDataChange() {
         if (kvStore != null) {
             kvStore.off('dataChange', this.call);
-        }
-    }
 }
 ```
 
@@ -3537,7 +3802,10 @@ off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): vo
 
 **参数：**
 
-参数名类型必填说明eventstring是取消订阅的事件名，固定为'syncComplete'，表示同步完成事件。syncCallbackCallback<Array<[string, number]>>否取消订阅的函数。如不设置callback，则取消所有订阅的函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 取消订阅的事件名，固定为'syncComplete'，表示同步完成事件。 |
+| syncCallback | Callback<Array<[string, number]>> | 否 | 取消订阅的函数。如不设置callback，则取消所有订阅的函数。 |
 
 **示例：**
 
@@ -3551,12 +3819,9 @@ class KvstoreModel {
         if (kvStore != null) {
             kvStore.on('syncComplete', this.call);
         }
-    }
     unsubscribeSyncComplete() {
         if (kvStore != null) {
             kvStore.off('syncComplete', this.call);
-        }
-    }
 }
 ```
 
@@ -3570,7 +3835,10 @@ setSyncParam(defaultAllowedDelayMs: number, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明defaultAllowedDelayMsnumber是表示数据库同步允许的默认延迟，以毫秒为单位。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| defaultAllowedDelayMs | number | 是 | 表示数据库同步允许的默认延迟，以毫秒为单位。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -3596,11 +3864,15 @@ setSyncParam(defaultAllowedDelayMs: number): Promise<void>
 
 **参数：**
 
-参数名类型必填说明defaultAllowedDelayMsnumber是表示数据库同步允许的默认延迟，以毫秒为单位。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| defaultAllowedDelayMs | number | 是 | 表示数据库同步允许的默认延迟，以毫秒为单位。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -3628,7 +3900,9 @@ getSecurityLevel(callback: AsyncCallback<SecurityLevel>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[SecurityLevel](#ZH-CN_TOPIC_0000002529284683__securitylevel)>是回调函数。返回数据库的安全级别。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<SecurityLevel> | 是 | 回调函数。返回数据库的安全级别。 |
 
 **示例：**
 
@@ -3653,7 +3927,9 @@ getSecurityLevel(): Promise<SecurityLevel>
 
 **返回值：**
 
-类型说明Promise<[SecurityLevel](#ZH-CN_TOPIC_0000002529284683__securitylevel)>Promise对象。返回数据库的安全级别。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<SecurityLevel> | Promise对象。返回数据库的安全级别。 |
 
 **示例：**
 
@@ -3678,7 +3954,7 @@ try {
 
 比如，可以使用设备协同数据库实现设备间的图片分享，可以查看其他设备的图片，但无法修改和删除其他设备的图片。
 
-在调用DeviceKVStore的方法前，需要先通过[getKVStore](#ZH-CN_TOPIC_0000002529284683__getkvstore)构建一个DeviceKVStore实例。
+在调用DeviceKVStore的方法前，需要先通过[getKVStore](#ZH-CN_TOPIC_0000002553200603__getkvstore)构建一个DeviceKVStore实例。
 
 #### get8+
 
@@ -3688,13 +3964,17 @@ get(deviceId: string, key: string, callback: AsyncCallback<boolean|string|number
 
 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
 
-deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002529284683__sync)。
+deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002553200603__sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是标识要查询其数据的设备。keystring是表示要查询key值的键。callbackAsyncCallback<boolean|string|number|Uint8Array>是回调函数，返回匹配给定条件的字符串值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 标识要查询其数据的设备。 |
+| key | string | 是 | 表示要查询key值的键。 |
+| callback | AsyncCallback<boolean|string|number|Uint8Array> | 是 | 回调函数，返回匹配给定条件的字符串值。 |
 
 **示例：**
 
@@ -3722,17 +4002,22 @@ get(deviceId: string, key: string): Promise<boolean|string|number|Uint8Array>
 
 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
 
-deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002529284683__sync)。
+deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002553200603__sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是标识要查询其数据的设备。keystring是表示要查询key值的键。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 标识要查询其数据的设备。 |
+| key | string | 是 | 表示要查询key值的键。 |
 
 **返回值：**
 
-类型说明Promise<boolean|string|number|Uint8Array>Promise对象。返回匹配给定条件的字符串值。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean|string|number|Uint8Array> | Promise对象。返回匹配给定条件的字符串值。 |
 
 **示例：**
 
@@ -3764,13 +4049,17 @@ getEntries(deviceId: string, keyPrefix: string, callback: AsyncCallback<Entry[]>
 
 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
 
-deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002529284683__sync)。
+deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002553200603__sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是标识要查询其数据的设备。keyPrefixstring是表示要匹配的键前缀。callbackAsyncCallback<[Entry](#ZH-CN_TOPIC_0000002529284683__entry)[]>是回调函数，返回满足给定条件的所有键值对的列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 标识要查询其数据的设备。 |
+| keyPrefix | string | 是 | 表示要匹配的键前缀。 |
+| callback | AsyncCallback<Entry[]> | 是 | 回调函数，返回满足给定条件的所有键值对的列表。 |
 
 **示例：**
 
@@ -3786,7 +4075,6 @@ try {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
             }
-        }
         entries.push(entry);
     }
     console.log('entries: ' + entries);
@@ -3797,7 +4085,6 @@ try {
             console.log('entries.length: ' + entries.length);
             console.log('entries[0]: ' + JSON.stringify(entries[0]));
         });
-    });
 }catch(e) {
     console.log('PutBatch e ' + e);
 }
@@ -3811,17 +4098,22 @@ getEntries(deviceId: string, keyPrefix: string): Promise<Entry[]>
 
 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
 
-deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002529284683__sync)。
+deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002553200603__sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是标识要查询其数据的设备。keyPrefixstring是表示要匹配的键前缀。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 标识要查询其数据的设备。 |
+| keyPrefix | string | 是 | 表示要匹配的键前缀。 |
 
 **返回值：**
 
-类型说明Promise<[Entry](#ZH-CN_TOPIC_0000002529284683__entry)[]>Promise对象。返回匹配给定条件的所有键值对的列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Entry[]> | Promise对象。返回匹配给定条件的所有键值对的列表。 |
 
 **示例：**
 
@@ -3836,7 +4128,6 @@ try {
             value : {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
-            }
         }
         entries.push(entry);
     }
@@ -3870,7 +4161,10 @@ getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
 
 **参数：**
 
-参数名类型必填说明query[Query](#ZH-CN_TOPIC_0000002529284683__query8)是表示查询对象。callbackAsyncCallback<[Entry](#ZH-CN_TOPIC_0000002529284683__entry)[]>是回调函数，返回与指定Query对象匹配的键值对列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | Query | 是 | 表示查询对象。 |
+| callback | AsyncCallback<Entry[]> | 是 | 回调函数，返回与指定Query对象匹配的键值对列表。 |
 
 **示例：**
 
@@ -3887,7 +4181,6 @@ try {
                 type : distributedData.ValueType.BYTE_ARRAY,
                 value : arr
             }
-        }
         entries.push(entry);
     }
     console.log('entries: ' + JSON.stringify(entries));
@@ -3901,7 +4194,6 @@ try {
             console.log('entries.length: ' + entries.length);
             console.log('entries[0]: ' + JSON.stringify(entries[0]));
         });
-    });
     console.log('GetEntries success');
 }catch(e) {
     console.log('GetEntries e ' + e);
@@ -3918,11 +4210,15 @@ getEntries(query: Query): Promise<Entry[]>
 
 **参数：**
 
-参数名类型必填说明query[Query](#ZH-CN_TOPIC_0000002529284683__query8)是表示查询对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | Query | 是 | 表示查询对象。 |
 
 **返回值：**
 
-类型说明Promise<[Entry](#ZH-CN_TOPIC_0000002529284683__entry)[]>Promise对象。返回与指定Query对象匹配的键值对列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Entry[]> | Promise对象。返回与指定Query对象匹配的键值对列表。 |
 
 **示例：**
 
@@ -3938,7 +4234,6 @@ try {
             value : {
                 type : distributedData.ValueType.BYTE_ARRAY,
                 value : arr
-            }
         }
         entries.push(entry);
     }
@@ -3969,13 +4264,17 @@ getEntries(deviceId: string, query: Query, callback: AsyncCallback<Entry[]>): vo
 
 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
 
-deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002529284683__sync)。
+deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002553200603__sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是键值对所属的设备ID。query[Query](#ZH-CN_TOPIC_0000002529284683__query8)是表示查询对象。callbackAsyncCallback<[Entry](#ZH-CN_TOPIC_0000002529284683__entry)[]>是回调函数。返回与指定设备ID和Query对象匹配的键值对列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 键值对所属的设备ID。 |
+| query | Query | 是 | 表示查询对象。 |
+| callback | AsyncCallback<Entry[]> | 是 | 回调函数。返回与指定设备ID和Query对象匹配的键值对列表。 |
 
 **示例：**
 
@@ -3991,7 +4290,6 @@ try {
             value : {
                 type : distributedData.ValueType.BYTE_ARRAY,
                 value : arr
-            }
         }
         entries.push(entry);
     }
@@ -4021,17 +4319,22 @@ getEntries(deviceId: string, query: Query): Promise<Entry[]>
 
 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
 
-deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002529284683__sync)。
+deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002553200603__sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是键值对所属的设备ID。query[Query](#ZH-CN_TOPIC_0000002529284683__query8)是表示查询对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 键值对所属的设备ID。 |
+| query | Query | 是 | 表示查询对象。 |
 
 **返回值：**
 
-类型说明Promise<[Entry](#ZH-CN_TOPIC_0000002529284683__entry)[]>Promise对象。返回与指定设备ID和Query对象匹配的键值对列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Entry[]> | Promise对象。返回与指定设备ID和Query对象匹配的键值对列表。 |
 
 **示例：**
 
@@ -4047,7 +4350,6 @@ try {
             value : {
                 type : distributedData.ValueType.BYTE_ARRAY,
                 value : arr
-            }
         }
         entries.push(entry);
     }
@@ -4079,13 +4381,17 @@ getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KvStor
 
 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
 
-deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002529284683__sync)。
+deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002553200603__sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是标识要查询其数据的设备。keyPrefixstring是表示要匹配的键前缀。callbackAsyncCallback<[KvStoreResultSet](#ZH-CN_TOPIC_0000002529284683__kvstoreresultset8)>是回调函数。返回与指定设备ID和key前缀匹配的KvStoreResultSet对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 标识要查询其数据的设备。 |
+| keyPrefix | string | 是 | 表示要匹配的键前缀。 |
+| callback | AsyncCallback<KvStoreResultSet> | 是 | 回调函数。返回与指定设备ID和key前缀匹配的KvStoreResultSet对象。 |
 
 **示例：**
 
@@ -4113,17 +4419,22 @@ getResultSet(deviceId: string, keyPrefix: string): Promise<KvStoreResultSet>
 
 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
 
-deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002529284683__sync)。
+deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002553200603__sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是标识要查询其数据的设备。keyPrefixstring是表示要匹配的键前缀。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 标识要查询其数据的设备。 |
+| keyPrefix | string | 是 | 表示要匹配的键前缀。 |
 
 **返回值：**
 
-类型说明Promise<[KvStoreResultSet](#ZH-CN_TOPIC_0000002529284683__kvstoreresultset8)>Promise对象。返回与指定设备ID和key前缀匹配的KvStoreResultSet对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<KvStoreResultSet> | Promise对象。返回与指定设备ID和key前缀匹配的KvStoreResultSet对象。 |
 
 **示例：**
 
@@ -4157,7 +4468,10 @@ getResultSet(query: Query, callback: AsyncCallback<KvStoreResultSet>): void
 
 **参数：**
 
-参数名类型必填说明query[Query](#ZH-CN_TOPIC_0000002529284683__query8)是表示查询对象。callbackAsyncCallback<[KvStoreResultSet](#ZH-CN_TOPIC_0000002529284683__kvstoreresultset8)>是回调函数，返回与指定Query对象匹配的KvStoreResultSet对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | Query | 是 | 表示查询对象。 |
+| callback | AsyncCallback<KvStoreResultSet> | 是 | 回调函数，返回与指定Query对象匹配的KvStoreResultSet对象。 |
 
 **示例：**
 
@@ -4173,7 +4487,6 @@ try {
             value : {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
-            }
         }
         entries.push(entry);
     }
@@ -4189,7 +4502,6 @@ try {
                 console.log('closeResultSet success');
             })
         });
-    });
 } catch(e) {
     console.log('GetResultSet e ' + e);
 }
@@ -4205,11 +4517,15 @@ getResultSet(query: Query): Promise<KvStoreResultSet>
 
 **参数：**
 
-参数名类型必填说明query[Query](#ZH-CN_TOPIC_0000002529284683__query8)是表示查询对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | Query | 是 | 表示查询对象。 |
 
 **返回值：**
 
-类型说明Promise<[KvStoreResultSet](#ZH-CN_TOPIC_0000002529284683__kvstoreresultset8)>Promise对象。返回与指定Query对象匹配的KvStoreResultSet对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<KvStoreResultSet> | Promise对象。返回与指定Query对象匹配的KvStoreResultSet对象。 |
 
 **示例：**
 
@@ -4225,7 +4541,6 @@ try {
             value : {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
-            }
         }
         entries.push(entry);
     }
@@ -4262,13 +4577,17 @@ getResultSet(deviceId: string, query: Query, callback: AsyncCallback<KvStoreResu
 
 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
 
-deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002529284683__sync)。
+deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002553200603__sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是KvStoreResultSet对象所属的设备ID。query[Query](#ZH-CN_TOPIC_0000002529284683__query8)是表示查询对象。callbackAsyncCallback<[KvStoreResultSet](#ZH-CN_TOPIC_0000002529284683__kvstoreresultset8)>是回调函数。返回与指定设备ID和Query对象匹配的KvStoreResultSet对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | KvStoreResultSet对象所属的设备ID。 |
+| query | Query | 是 | 表示查询对象。 |
+| callback | AsyncCallback<KvStoreResultSet> | 是 | 回调函数。返回与指定设备ID和Query对象匹配的KvStoreResultSet对象。 |
 
 **示例：**
 
@@ -4285,7 +4604,6 @@ try {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
             }
-        }
         entries.push(entry);
     }
     kvStore.putBatch(entries, async function (err, data) {
@@ -4299,7 +4617,6 @@ try {
                 console.log('closeResultSet success');
             })
         });
-    });
 } catch(e) {
     console.log('GetResultSet e ' + e);
 }
@@ -4313,17 +4630,22 @@ getResultSet(deviceId: string, query: Query): Promise<KvStoreResultSet>
 
 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
 
-deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002529284683__sync)。
+deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002553200603__sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是KvStoreResultSet对象所属的设备ID。query[Query](#ZH-CN_TOPIC_0000002529284683__query8)是表示查询对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | KvStoreResultSet对象所属的设备ID。 |
+| query | Query | 是 | 表示查询对象。 |
 
 **返回值：**
 
-类型说明Promise<[KvStoreResultSet](#ZH-CN_TOPIC_0000002529284683__kvstoreresultset8)>Promise对象。返回与指定设备ID和Query对象匹配的KvStoreResultSet对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<KvStoreResultSet> | Promise对象。返回与指定设备ID和Query对象匹配的KvStoreResultSet对象。 |
 
 **示例：**
 
@@ -4339,7 +4661,6 @@ try {
             value : {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
-            }
         }
         entries.push(entry);
     }
@@ -4373,13 +4694,16 @@ try {
 
 closeResultSet(resultSet: KvStoreResultSet, callback: AsyncCallback<void>): void
 
-关闭由[DeviceKVStore.getResultSet](#ZH-CN_TOPIC_0000002529284683__getresultset8-4)返回的KvStoreResultSet对象，使用callback异步回调。
+关闭由[DeviceKVStore.getResultSet](#ZH-CN_TOPIC_0000002553200603__getresultset8-4)返回的KvStoreResultSet对象，使用callback异步回调。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
 **参数：**
 
-参数名类型必填说明resultSet[KvStoreResultSet](#ZH-CN_TOPIC_0000002529284683__kvstoreresultset8)是指示要关闭的KvStoreResultSet对象。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| resultSet | KvStoreResultSet | 是 | 指示要关闭的KvStoreResultSet对象。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -4404,17 +4728,21 @@ try {
 
 closeResultSet(resultSet: KvStoreResultSet): Promise<void>
 
-关闭由[DeviceKVStore.getResultSet](#ZH-CN_TOPIC_0000002529284683__getresultset8-4)返回的KvStoreResultSet对象，使用Promise异步回调。
+关闭由[DeviceKVStore.getResultSet](#ZH-CN_TOPIC_0000002553200603__getresultset8-4)返回的KvStoreResultSet对象，使用Promise异步回调。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
 **参数：**
 
-参数名类型必填说明resultSet[KvStoreResultSet](#ZH-CN_TOPIC_0000002529284683__kvstoreresultset8)是指示要关闭的KvStoreResultSet对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| resultSet | KvStoreResultSet | 是 | 指示要关闭的KvStoreResultSet对象。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -4443,7 +4771,10 @@ getResultSize(query: Query, callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明query[Query](#ZH-CN_TOPIC_0000002529284683__query8)是表示查询对象。callbackAsyncCallback<number>是回调函数，返回与指定Query对象匹配的结果数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | Query | 是 | 表示查询对象。 |
+| callback | AsyncCallback<number> | 是 | 回调函数，返回与指定Query对象匹配的结果数。 |
 
 **示例：**
 
@@ -4459,7 +4790,6 @@ try {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
             }
-        }
         entries.push(entry);
     }
     kvStore.putBatch(entries, async function (err, data) {
@@ -4470,7 +4800,6 @@ try {
         kvStore.getResultSize(query, async function (err, resultSize) {
             console.log('getResultSet succeed.');
         });
-    });
 } catch(e) {
     console.log('GetResultSize e ' + e);
 }
@@ -4486,11 +4815,15 @@ getResultSize(query: Query): Promise<number>
 
 **参数：**
 
-参数名类型必填说明query[Query](#ZH-CN_TOPIC_0000002529284683__query8)是表示查询对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | Query | 是 | 表示查询对象。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象。返回与指定Query对象匹配的结果数。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象。返回与指定Query对象匹配的结果数。 |
 
 **示例：**
 
@@ -4505,7 +4838,6 @@ try {
             value : {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
-            }
         }
         entries.push(entry);
     }
@@ -4535,13 +4867,17 @@ getResultSize(deviceId: string, query: Query, callback: AsyncCallback<number>): 
 
 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
 
-deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002529284683__sync)。
+deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002553200603__sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是KvStoreResultSet对象所属的设备ID。query[Query](#ZH-CN_TOPIC_0000002529284683__query8)是表示查询对象。callbackAsyncCallback<number>是回调函数。返回与指定设备ID和Query对象匹配的结果数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | KvStoreResultSet对象所属的设备ID。 |
+| query | Query | 是 | 表示查询对象。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。返回与指定设备ID和Query对象匹配的结果数。 |
 
 **示例：**
 
@@ -4557,7 +4893,6 @@ try {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
             }
-        }
         entries.push(entry);
     }
     kvStore.putBatch(entries, async function (err, data) {
@@ -4567,7 +4902,6 @@ try {
         kvStore.getResultSize('localDeviceId', query, async function (err, resultSize) {
             console.log('getResultSet succeed.');
         });
-    });
 } catch(e) {
     console.log('GetResultSize e ' + e);
 }
@@ -4581,17 +4915,22 @@ getResultSize(deviceId: string, query: Query): Promise<number>
 
 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
 
-deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002529284683__sync)。
+deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002553200603__sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是KvStoreResultSet对象所属的设备ID。query[Query](#ZH-CN_TOPIC_0000002529284683__query8)是表示查询对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | KvStoreResultSet对象所属的设备ID。 |
+| query | Query | 是 | 表示查询对象。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象。返回与指定设备ID和Query对象匹配的结果数。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象。返回与指定设备ID和Query对象匹配的结果数。 |
 
 **示例：**
 
@@ -4606,7 +4945,6 @@ try {
             value : {
                 type : distributedData.ValueType.STRING,
                 value : 'batch_test_string_value'
-            }
         }
         entries.push(entry);
     }
@@ -4635,13 +4973,16 @@ removeDeviceData(deviceId: string, callback: AsyncCallback<void>): void
 
 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
 
-deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002529284683__sync)。
+deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002553200603__sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是标识要删除其数据的设备。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 标识要删除其数据的设备。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -4663,7 +5004,6 @@ try {
                 });
             }
         });
-    });
 }catch(e) {
     console.log('RemoveDeviceData e ' + e);
 }
@@ -4677,17 +5017,21 @@ removeDeviceData(deviceId: string): Promise<void>
 
 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
 
-deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002529284683__sync)。
+deviceId具体获取方式请参考[sync接口示例](#ZH-CN_TOPIC_0000002553200603__sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是标识要删除其数据的设备。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 标识要删除其数据的设备。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -4731,7 +5075,11 @@ sync(deviceIds: string[], mode: SyncMode, delayMs?: number): void
 
 **参数：**
 
-参数名类型必填说明deviceIdsstring[]是需要同步DeviceKVStore数据库的设备networkId列表。mode[SyncMode](#ZH-CN_TOPIC_0000002529284683__syncmode)是同步模式。delayMsnumber否可选参数，允许延时时间，单位：ms（毫秒），默认为0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceIds | string[] | 是 | 需要同步DeviceKVStore数据库的设备networkId列表。 |
+| mode | SyncMode | 是 | 同步模式。 |
+| delayMs | number | 否 | 可选参数，允许延时时间，单位：ms（毫秒），默认为0。 |
 
 **示例：**
 
@@ -4752,7 +5100,6 @@ deviceManager.createDeviceManager('bundleName', (err, value) => {
       for (var i = 0; i < devices.length; i++) {
         deviceIds[i] = devices[i].networkId;
       }
-    }
     try {
       kvStore.on('syncComplete', function (data) {
         console.log('Sync dataChange');
@@ -4769,7 +5116,6 @@ deviceManager.createDeviceManager('bundleName', (err, value) => {
     } catch (e) {
       console.log('Sync e' + e);
     }
-  }
 });
 ```
 
@@ -4783,7 +5129,11 @@ on(event: 'dataChange', type: SubscribeType, listener: Callback<ChangeNotificati
 
 **参数：**
 
-参数名类型必填说明eventstring是订阅的事件名，固定为'dataChange'，表示数据变更事件。type[SubscribeType](#ZH-CN_TOPIC_0000002529284683__subscribetype)是表示订阅的类型。listenerCallback<[ChangeNotification](#ZH-CN_TOPIC_0000002529284683__changenotification)>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 订阅的事件名，固定为'dataChange'，表示数据变更事件。 |
+| type | SubscribeType | 是 | 表示订阅的类型。 |
+| listener | Callback<ChangeNotification> | 是 | 回调函数。 |
 
 **示例：**
 
@@ -4804,7 +5154,10 @@ on(event: 'syncComplete', syncCallback: Callback<Array<[string, number]>>): void
 
 **参数：**
 
-参数名类型必填说明eventstring是订阅的事件名，固定为'syncComplete'，表示同步完成事件。syncCallbackCallback<Array<[string, number]>>是回调函数。用于向调用方发送同步结果的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 订阅的事件名，固定为'syncComplete'，表示同步完成事件。 |
+| syncCallback | Callback<Array<[string, number]>> | 是 | 回调函数。用于向调用方发送同步结果的回调。 |
 
 **示例：**
 
@@ -4836,7 +5189,10 @@ off(event:'dataChange', listener?: Callback<ChangeNotification>): void
 
 **参数：**
 
-参数名类型必填说明eventstring是取消订阅的事件名，固定为'dataChange'，表示数据变更事件。listenerCallback<[ChangeNotification](#ZH-CN_TOPIC_0000002529284683__changenotification)>否取消订阅的函数。如不设置callback，则取消所有订阅的函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 取消订阅的事件名，固定为'dataChange'，表示数据变更事件。 |
+| listener | Callback<ChangeNotification> | 否 | 取消订阅的函数。如不设置callback，则取消所有订阅的函数。 |
 
 **示例：**
 
@@ -4850,12 +5206,9 @@ class KvstoreModel {
         if (kvStore != null) {
             kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_REMOTE, this.call);
         }
-    }
     unsubscribeDataChange() {
         if (kvStore != null) {
             kvStore.off('dataChange', this.call);
-        }
-    }
 }
 ```
 
@@ -4869,7 +5222,10 @@ off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): vo
 
 **参数：**
 
-参数名类型必填说明eventstring是取消订阅的事件名，固定为'syncComplete'，表示同步完成事件。syncCallbackCallback<Array<[string, number]>>否取消订阅的函数。如不设置callback，则取消所有订阅的函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 取消订阅的事件名，固定为'syncComplete'，表示同步完成事件。 |
+| syncCallback | Callback<Array<[string, number]>> | 否 | 取消订阅的函数。如不设置callback，则取消所有订阅的函数。 |
 
 **示例：**
 
@@ -4883,13 +5239,10 @@ class KvstoreModel {
         if (kvStore != null) {
             kvStore.on('syncComplete', this.call);
         }
-    }
     unsubscribeSyncComplete() {
         if (kvStore != null) {
             kvStore.off('syncComplete', this.call);
         }
-    }
-}
 ```
 
 #### SyncMode
@@ -4898,4 +5251,8 @@ class KvstoreModel {
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
-名称值说明PULL_ONLY0表示只能从远端拉取数据到本端。PUSH_ONLY1表示只能从本端推送数据到远端。PUSH_PULL2表示从本端推送数据到远端，然后从远端拉取数据到本端。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PULL_ONLY | 0 | 表示只能从远端拉取数据到本端。 |
+| PUSH_ONLY | 1 | 表示只能从本端推送数据到远端。 |
+| PUSH_PULL | 2 | 表示从本端推送数据到远端，然后从远端拉取数据到本端。 |

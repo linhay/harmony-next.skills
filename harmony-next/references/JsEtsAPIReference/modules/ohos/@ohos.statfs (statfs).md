@@ -21,11 +21,15 @@ getFreeBytes(path:string):Promise<number>
 
 **参数：**
 
-参数名类型必填说明pathstring是需要查询的文件系统的文件路径
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 需要查询的文件系统的文件路径 |
 
 **返回值：**
 
-类型说明Promise<number>返回空闲字节数
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 返回空闲字节数 |
 
 **示例：**
 
@@ -49,7 +53,10 @@ getFreeBytes(path:string, callback:AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明pathstring是需要查询的文件系统的文件路径callbackAsyncCallback<number>是异步获取空闲字节数之后的回调
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 需要查询的文件系统的文件路径 |
+| callback | AsyncCallback<number> | 是 | 异步获取空闲字节数之后的回调 |
 
 **示例：**
 
@@ -77,11 +84,15 @@ getTotalBytes(path: string): Promise<number>
 
 **参数：**
 
-参数名类型必填说明pathstring是需要查询的文件系统的文件路径
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 需要查询的文件系统的文件路径 |
 
 **返回值：**
 
-类型说明Promise<number>返回总字节数
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 返回总字节数 |
 
 **示例：**
 
@@ -105,7 +116,10 @@ getTotalBytes(path: string, callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明pathstring是需要查询的文件系统的文件路径callbackAsyncCallback<number>是异步获取总字节数之后的回调
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 需要查询的文件系统的文件路径 |
+| callback | AsyncCallback<number> | 是 | 异步获取总字节数之后的回调 |
 
 **示例：**
 

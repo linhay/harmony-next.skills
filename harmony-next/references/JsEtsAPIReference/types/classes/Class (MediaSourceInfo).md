@@ -12,10 +12,14 @@
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### 属性
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
-名称类型只读可选说明type12+[SourceType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445167__sourcetype12)否否媒体源的类型。source12+string否否媒体源地址。format12+string否否媒体源格式， 可能为空， 需要使用者自己去判断格式。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| type12+ | [SourceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529445167__sourcetype12) | 否 | 否 | 媒体源的类型。 |
+| source12+ | string | 否 | 否 | 媒体源地址。 |
+| format12+ | string | 否 | 否 | 媒体源格式， 可能为空， 需要使用者自己去判断格式。 |

@@ -4,7 +4,8 @@
 
 ResultSet实例不会实时刷新。使用结果集后，如果数据库中的数据发生变化（如增删改操作），需要重新查询才能获取到最新的数据。
 
-下列API示例中，都需先使用[query](Interface (RdbStore).md#ZH-CN_TOPIC_0000002529444649__query)、[querySql](Interface (RdbStore).md#ZH-CN_TOPIC_0000002529444649__querysql)、[remoteQuery](Interface (RdbStore).md#ZH-CN_TOPIC_0000002529444649__remotequery-1)、[queryLockedRow](Interface (RdbStore).md#ZH-CN_TOPIC_0000002529444649__querylockedrow12)等query类方法中任一方法获取到ResultSet实例，再通过此实例调用对应方法。
+下列API示例中，都需先使用[query](Interface (RdbStore).md#ZH-CN_TOPIC_0000002553200595__query)、[querySql](Interface (RdbStore).md#ZH-CN_TOPIC_0000002553200595__querysql)、[remoteQuery](Interface (RdbStore).md#ZH-CN_TOPIC_0000002553200595__remotequery-1)、[queryLockedRow](Interface (RdbStore).md#ZH-CN_TOPIC_0000002553200595__querylockedrow12)等query类方法中任一方法获取到ResultSet实例，再通过此实例调用对应方法。
+
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,7 +19,64 @@ import { relationalStore } from '@kit.ArkData';
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
-名称类型只读可选说明columnNamesArray<string>是否获取结果集中所有列的名称。当结果集中包含重名列时，获取的列名会不符合预期。columnCountnumber是否获取结果集中列的数量。rowCountnumber是否获取结果集中行的数量。rowIndexnumber是否获取结果集当前行的索引位置，默认值为-1。索引位置下标从0开始。isAtFirstRowboolean是否检查结果集指针是否位于第一行（行索引为0），true表示位于第一行，false表示不位于第一行。isAtLastRowboolean是否检查结果集指针是否位于最后一行，true表示位于最后一行，false表示不位于最后一行。isEndedboolean是否检查结果集指针是否位于最后一行之后，true表示位于最后一行之后，false表示不位于最后一行之后。isStartedboolean是否检查指针是否移动过，true表示指针已移动过，false表示指针未移动过。isClosedboolean是否检查当前结果集是否关闭，true表示结果集已关闭，false表示结果集未关闭。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| columnNames | Array<string> | 是 | 否 | 获取结果集中所有列的名称。当结果集中包含重名列时，获取的列名会不符合预期，建议使用getColumnNames接口获取。 |
+| columnCount | number | 是 | 否 | 获取结果集中列的数量。 |
+| rowCount | number | 是 | 否 | 获取结果集中行的数量。 |
+| rowIndex | number | 是 | 否 | 获取结果集当前行的索引位置，默认值为-1。索引位置下标从0开始。 |
+| isAtFirstRow | boolean | 是 | 否 | 检查结果集指针是否位于第一行（行索引为0），true表示位于第一行，false表示不位于第一行。 |
+| isAtLastRow | boolean | 是 | 否 | 检查结果集指针是否位于最后一行，true表示位于最后一行，false表示不位于最后一行。 |
+| isEnded | boolean | 是 | 否 | 检查结果集指针是否位于最后一行之后，true表示位于最后一行之后，false表示不位于最后一行之后。 |
+| isStarted | boolean | 是 | 否 | 检查指针是否移动过，true表示指针已移动过，false表示指针未移动过。 |
+| isClosed | boolean | 是 | 否 | 检查当前结果集是否关闭，true表示结果集已关闭，false表示结果集未关闭。 |
+
+**getColumnNames23+**
+
+getColumnNames(): Array<string>
+
+获取结果集中所有列的名称。
+
+列名以字符串数组的形式返回，数组中字符串的顺序与结果集中列的顺序一致。
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+系统能力： SystemCapability.DistributedDataManager.RelationalStore.Core
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| Array<string> | 返回结果集中所有列的名称。支持获取包含重名列的列名。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[关系型数据库错误码]([关系型数据库错误码](../../errors/关系型数据库错误码.md).md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14800001 | Invalid arguments. Possible causes: 1. Parameter is out of valid range. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800014 | The target instance is already closed. |
+| 14800019 | The SQL must be a query statement. |
+| 14800021 | SQLite: Generic error. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800030 | SQLite: Unable to open the database file. |
+
+示例：
+
+```ets
+try {
+  // 联表查询EMPLOYEE1和EMPLOYEE2，并获取重名的列名。store为获取到的RdbStore实例。
+  let resultSet: relationalStore.ResultSet = await store.querySql("SELECT e1.NAME, e2.NAME, e1.AGE, e2.AGE FROM EMPLOYEE1 e1 LEFT JOIN EMPLOYEE2 e2 ON e1.SALARY=e2.SALARY");
+  if (resultSet != undefined) {
+    const names = resultSet.getColumnNames();
+  }
+} catch (err) {
+  console.error(`Failed to get column names: code:${err.code}, message:${err.message}`);
+}
+```
 
 #### getColumnIndex
 
@@ -30,17 +88,42 @@ getColumnIndex(columnName: string): number
 
 **参数：**
 
-参数名类型必填说明columnNamestring是表示结果集中指定列的名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnName | string | 是 | 表示结果集中指定列的名称。 |
 
 **返回值：**
 
-类型说明number返回指定列的索引。当结果集中包含重名列时，返回值会不符合预期。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回指定列的索引。当结果集中包含重名列时，返回值会不符合预期。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14800000Inner error.14800011Failed to open the database because it is corrupted.14800013ResultSet is empty or column index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800019The SQL must be a query statement.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800013 | Column index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800019 | The SQL must be a query statement. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
@@ -63,17 +146,42 @@ getColumnName(columnIndex: number): string
 
 **参数：**
 
-参数名类型必填说明columnIndexnumber是表示结果集中指定列的索引。当结果集中包含重名列时，返回值会不符合预期。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnIndex | number | 是 | 表示结果集中指定列的索引。 |
 
 **返回值：**
 
-类型说明string返回指定列的名称。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回指定列的名称。当结果集中包含重名列时，返回值会不符合预期。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14800000Inner error.14800011Failed to open the database because it is corrupted.14800013ResultSet is empty or column index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800019The SQL must be a query statement.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800013 | Column index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800019 | The SQL must be a query statement. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
@@ -85,9 +193,9 @@ if (resultSet != undefined) {
 }
 ```
 
-#### getColumnType18+
+#### get[ColumnType](../enums/Enums.md#ZH-CN_TOPIC_0000002497604686__columntype18)18+
 
-getColumnType(columnIdentifier: number | string): Promise<ColumnType>
+get[ColumnType](../enums/Enums.md#ZH-CN_TOPIC_0000002497604686__columntype18)(columnIdentifier: number | string): Promise<ColumnType>
 
 根据指定的列索引或列名称获取列数据类型，使用Promise异步回调。
 
@@ -95,17 +203,43 @@ getColumnType(columnIdentifier: number | string): Promise<ColumnType>
 
 **参数：**
 
-参数名类型必填说明columnIdentifiernumber | string是表示结果集中指定列的索引或名称。索引必须是非负整数，最大不能超过属性columnNames的长度。列名必须是属性columnNames内的名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnIdentifier | number | string | 是 | 表示结果集中指定列的索引或名称。索引必须是非负整数，最大不能超过属性columnNames的长度。列名必须是属性columnNames内的名称。 |
 
 **返回值：**
 
-类型说明Promise<[ColumnType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497604686__columntype18)>Promise对象。返回指定列的数据类型。当结果集中包含重名列时，通过列名获取的结果会不符合预期。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[ColumnType](../enums/Enums.md#ZH-CN_TOPIC_0000002497604686__columntype18)> | Promise对象。返回指定列的数据类型。当结果集中包含重名列时，通过列名获取的结果会不符合预期。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14800000Inner error.14800011Failed to open the database because it is corrupted.14800012ResultSet is empty or pointer index is out of bounds.14800013ResultSet is empty or column index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800019The SQL must be a query statement.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800013 | Column index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800019 | The SQL must be a query statement. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
@@ -123,9 +257,9 @@ if (resultSet != undefined) {
 }
 ```
 
-#### getColumnTypeSync18+
+#### get[ColumnType](../enums/Enums.md#ZH-CN_TOPIC_0000002497604686__columntype18)Sync18+
 
-getColumnTypeSync(columnIdentifier: number | string): ColumnType
+get[ColumnType](../enums/Enums.md#ZH-CN_TOPIC_0000002497604686__columntype18)Sync(columnIdentifier: number | string): ColumnType
 
 根据指定的列索引或列名称获取列数据类型。
 
@@ -133,17 +267,43 @@ getColumnTypeSync(columnIdentifier: number | string): ColumnType
 
 **参数：**
 
-参数名类型必填说明columnIdentifiernumber | string是表示结果集中指定列的索引或名称。索引必须是非负整数，最大不能超过属性columnNames的长度。列名必须是属性columnNames内的名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnIdentifier | number | string | 是 | 表示结果集中指定列的索引或名称。索引必须是非负整数，最大不能超过属性columnNames的长度。列名必须是属性columnNames内的名称。 |
 
 **返回值：**
 
-类型说明[ColumnType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497604686__columntype18)返回指定列的数据类型。当结果集中包含重名列时，通过列名获取的结果会不符合预期。
+| 类型 | 说明 |
+| --- | --- |
+| [ColumnType](../enums/Enums.md#ZH-CN_TOPIC_0000002497604686__columntype18) | 返回指定列的数据类型。当结果集中包含重名列时，通过列名获取的结果会不符合预期。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14800000Inner error.14800011Failed to open the database because it is corrupted.14800012ResultSet is empty or pointer index is out of bounds.14800013ResultSet is empty or column index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800019The SQL must be a query statement.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800013 | Column index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800019 | The SQL must be a query statement. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
@@ -171,17 +331,42 @@ goTo(offset:number): boolean
 
 **参数：**
 
-参数名类型必填说明offsetnumber是表示相对当前结果集指针位置的偏移量，正值表示向后移动，负值表示向前移动。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 是 | 表示相对当前结果集指针位置的偏移量，正值表示向后移动，负值表示向前移动。 |
 
 **返回值：**
 
-类型说明boolean如果成功移动结果集，则为true；否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果成功移动结果集，则为true；否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14800000Inner error.14800011Failed to open the database because it is corrupted.14800012ResultSet is empty or pointer index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800019The SQL must be a query statement.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800019 | The SQL must be a query statement. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
@@ -201,17 +386,42 @@ goToRow(position: number): boolean
 
 **参数：**
 
-参数名类型必填说明positionnumber是表示要移动到的指定位置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| position | number | 是 | 表示要移动到的指定位置。 |
 
 **返回值：**
 
-类型说明boolean如果成功移动结果集，则为true；否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果成功移动结果集，则为true；否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14800000Inner error.14800011Failed to open the database because it is corrupted.14800012ResultSet is empty or pointer index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800019The SQL must be a query statement.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800019 | The SQL must be a query statement. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
@@ -231,13 +441,35 @@ goToFirstRow(): boolean
 
 **返回值：**
 
-类型说明boolean如果成功移动结果集，则为true；否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果成功移动结果集，则为true；否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**14800000Inner error.14800011Failed to open the database because it is corrupted.14800012ResultSet is empty or pointer index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800019The SQL must be a query statement.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800019 | The SQL must be a query statement. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
@@ -257,13 +489,35 @@ goToLastRow(): boolean
 
 **返回值：**
 
-类型说明boolean如果成功移动结果集，则为true；否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果成功移动结果集，则为true；否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**14800000Inner error.14800011Failed to open the database because it is corrupted.14800012ResultSet is empty or pointer index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800019The SQL must be a query statement.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800019 | The SQL must be a query statement. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
@@ -283,13 +537,35 @@ goToNextRow(): boolean
 
 **返回值：**
 
-类型说明boolean如果成功移动结果集，则为true；否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果成功移动结果集，则为true；否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**14800000Inner error.14800011Failed to open the database because it is corrupted.14800012ResultSet is empty or pointer index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800019The SQL must be a query statement.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800019 | The SQL must be a query statement. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
@@ -309,13 +585,35 @@ goToPreviousRow(): boolean
 
 **返回值：**
 
-类型说明boolean如果成功移动结果集，则为true；否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果成功移动结果集，则为true；否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**14800000Inner error.14800011Failed to open the database because it is corrupted.14800012ResultSet is empty or pointer index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800019The SQL must be a query statement.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800019 | The SQL must be a query statement. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
@@ -327,25 +625,50 @@ if (resultSet != undefined) {
 
 #### getValue12+
 
-getValue(columnIndex: number): ValueType
+getValue(columnIndex: number): [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)
 
-获取当前行中指定列的值，如果值类型是ValueType中指定的任意类型，返回指定类型的值，否则返回14800000。如果值类型为INTEGER，值大于 Number.MAX_SAFE_INTEGER 或小于 Number.MIN_SAFE_INTEGER 且不希望丢失精度，建议使用[getString](#ZH-CN_TOPIC_0000002497604684__getstring)接口获取。
+获取当前行中指定列的值，如果值类型是ValueType中指定的任意类型，返回指定类型的值，否则返回14800000。如果值类型为INTEGER，值大于 Number.MAX_SAFE_INTEGER 或小于 Number.MIN_SAFE_INTEGER 且不希望丢失精度，建议使用[getString](#ZH-CN_TOPIC_0000002522080632__getstring)接口获取。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
 
-参数名类型必填说明columnIndexnumber是指定的列索引，从0开始。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 **返回值：**
 
-类型说明[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)表示允许的数据字段类型。
+| 类型 | 说明 |
+| --- | --- |
+| [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype) | 表示允许的数据字段类型。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14800000Inner error.14800011Failed to open the database because it is corrupted.14800012ResultSet is empty or pointer index is out of bounds.14800013ResultSet is empty or column index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800013 | Column index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
@@ -357,8 +680,6 @@ if (resultSet !== undefined) {
       const name = resultSet.getValue(colIndex);
       console.info(`Get value success, name is ${name}`);
     }
-  }
-}
 ```
 
 #### getBlob
@@ -371,17 +692,42 @@ getBlob(columnIndex: number): Uint8Array
 
 **参数：**
 
-参数名类型必填说明columnIndexnumber是指定的列索引，从0开始。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 **返回值：**
 
-类型说明Uint8Array以字节数组的形式返回指定列的值。
+| 类型 | 说明 |
+| --- | --- |
+| Uint8Array | 以字节数组的形式返回指定列的值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14800000Inner error.14800011Failed to open the database because it is corrupted.14800012ResultSet is empty or pointer index is out of bounds.14800013ResultSet is empty or column index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800013 | Column index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
@@ -395,23 +741,48 @@ if (resultSet != undefined) {
 
 getString(columnIndex: number): string
 
-以字符串形式获取当前行中指定列的值，如果当前列中的值为INTEGER、DOUBLE、TEXT、BLOB类型，会以字符串形式返回指定值，如果是当前列中的值为INTEGER，并且为空，则会返回空字符串""，其他类型则返回14800000。如果当前列中的值为DOUBLE类型，可能存在精度的丢失，建议使用[getDouble](#ZH-CN_TOPIC_0000002497604684__getdouble)接口获取。
+以字符串形式获取当前行中指定列的值，如果当前列中的值为INTEGER、DOUBLE、TEXT、BLOB类型，会以字符串形式返回指定值，如果是当前列中的值为INTEGER，并且为空，则会返回空字符串""，其他类型则返回14800000。如果当前列中的值为DOUBLE类型，可能存在精度的丢失，建议使用[getDouble](#ZH-CN_TOPIC_0000002522080632__getdouble)接口获取。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
 
-参数名类型必填说明columnIndexnumber是指定的列索引，从0开始。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 **返回值：**
 
-类型说明string以字符串形式返回指定列的值。
+| 类型 | 说明 |
+| --- | --- |
+| string | 以字符串形式返回指定列的值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14800000Inner error.14800011Failed to open the database because it is corrupted.14800012ResultSet is empty or pointer index is out of bounds.14800013ResultSet is empty or column index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800013 | Column index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
@@ -425,27 +796,48 @@ if (resultSet != undefined) {
 
 getLong(columnIndex: number): number
 
-以Long形式获取当前行中指定列的值，如果当前列的数据类型为INTEGER、DOUBLE、TEXT、BLOB类型，会转成Long类型返回指定值，如果该列内容为空时，会返回0，其他类型则返回14800000。如果当前列的数据类型为INTEGER，值大于 Number.MAX_SAFE_INTEGER 或小于 Number.MIN_SAFE_INTEGER 且不希望丢失精度，建议使用[getString](#ZH-CN_TOPIC_0000002497604684__getstring)接口获取。如果当前列的数据类型为DOUBLE且不希望丢失精度，建议使用[getDouble](#ZH-CN_TOPIC_0000002497604684__getdouble)接口获取。
+以Long形式获取当前行中指定列的值，如果当前列的数据类型为INTEGER、DOUBLE、TEXT、BLOB类型，会转成Long类型返回指定值，如果该列内容为空时，会返回0，其他类型则返回14800000。如果当前列的数据类型为INTEGER，值大于 Number.MAX_SAFE_INTEGER 或小于 Number.MIN_SAFE_INTEGER 且不希望丢失精度，建议使用[getString](#ZH-CN_TOPIC_0000002522080632__getstring)接口获取。如果当前列的数据类型为DOUBLE且不希望丢失精度，建议使用[getDouble](#ZH-CN_TOPIC_0000002522080632__getdouble)接口获取。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
 
-参数名类型必填说明columnIndexnumber是指定的列索引，从0开始。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 **返回值：**
 
-类型说明number
-
-以Long形式返回指定列的值。
-
-该接口支持的精度范围是：Number.MIN_SAFE_INTEGER ~ Number.MAX_SAFE_INTEGER，若超出该范围，建议对于DOUBLE类型的值使用[getDouble](#ZH-CN_TOPIC_0000002497604684__getdouble)，对于INTEGER类型的值使用[getString](#ZH-CN_TOPIC_0000002497604684__getstring)。
+| 类型 | 说明 |
+| --- | --- |
+| number | 以Long形式返回指定列的值。 该接口支持的精度范围是：Number.MIN_SAFE_INTEGER ~ Number.MAX_SAFE_INTEGER，若超出该范围，建议对于DOUBLE类型的值使用getDouble，对于INTEGER类型的值使用getString。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14800000Inner error.14800011Failed to open the database because it is corrupted.14800012ResultSet is empty or pointer index is out of bounds.14800013ResultSet is empty or column index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800013 | Column index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
@@ -457,8 +849,6 @@ if (resultSet !== undefined) {
       const age = resultSet.getLong(colIndex);
       console.info(`Get long success, age is ${age}`);
     }
-  }
-}
 ```
 
 #### getDouble
@@ -471,17 +861,42 @@ getDouble(columnIndex: number): number
 
 **参数：**
 
-参数名类型必填说明columnIndexnumber是指定的列索引，从0开始。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 **返回值：**
 
-类型说明number以double形式返回指定列的值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 以double形式返回指定列的值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14800000Inner error.14800011Failed to open the database because it is corrupted.14800012ResultSet is empty or pointer index is out of bounds.14800013ResultSet is empty or column index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800013 | Column index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
@@ -493,31 +908,54 @@ if (resultSet !== undefined) {
       const salary = resultSet.getDouble(colIndex);
       console.info(`Get double success, salary is ${salary}`);
     }
-  }
-}
 ```
 
 #### getAsset10+
 
 getAsset(columnIndex: number): Asset
 
-以[Asset](Interfaces (其他).md#ZH-CN_TOPIC_0000002529284677__asset10)形式获取当前行中指定列的值，如果当前列的数据类型为Asset类型，会以Asset类型返回指定值，如果当前列中的值为null时，会返回null，其他类型则返回14800000。
+以[Asset](Interfaces (其他).md#ZH-CN_TOPIC_0000002553200597__asset10)形式获取当前行中指定列的值，如果当前列的数据类型为Asset类型，会以Asset类型返回指定值，如果当前列中的值为null时，会返回null，其他类型则返回14800000。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
 
-参数名类型必填说明columnIndexnumber是指定的列索引，从0开始。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 **返回值：**
 
-类型说明[Asset](Interfaces (其他).md#ZH-CN_TOPIC_0000002529284677__asset10)以Asset形式返回指定列的值。
+| 类型 | 说明 |
+| --- | --- |
+| Asset | 以Asset形式返回指定列的值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14800000Inner error.14800011Failed to open the database because it is corrupted.14800012ResultSet is empty or pointer index is out of bounds.14800013ResultSet is empty or column index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800013 | Column index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
@@ -527,27 +965,52 @@ if (resultSet != undefined) {
 }
 ```
 
-#### getAssets10+
+#### get[Assets](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__assets10)10+
 
-getAssets(columnIndex: number): Assets
+get[Assets](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__assets10)(columnIndex: number): Assets
 
-以[Assets](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__assets10)形式获取当前行中指定列的值，如果当前列的数据类型为Assets类型，会以Assets类型返回指定值，如果当前列中的值为null时，会返回null，其他类型则返回14800000。
+以[Assets](Types.md#ZH-CN_TOPIC_0000002522240634__assets10)形式获取当前行中指定列的值，如果当前列的数据类型为Assets类型，会以Assets类型返回指定值，如果当前列中的值为null时，会返回null，其他类型则返回14800000。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
 
-参数名类型必填说明columnIndexnumber是指定的列索引，从0开始。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 **返回值：**
 
-类型说明[Assets](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__assets10)以Assets形式返回指定列的值。
+| 类型 | 说明 |
+| --- | --- |
+| [Assets](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__assets10) | 以Assets形式返回指定列的值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14800000Inner error.14800011Failed to open the database because it is corrupted.14800012ResultSet is empty or pointer index is out of bounds.14800013ResultSet is empty or column index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800013 | Column index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
@@ -559,7 +1022,7 @@ if (resultSet != undefined) {
 
 #### getRow11+
 
-getRow(): ValuesBucket
+getRow(): [ValuesBucket](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuesbucket)
 
 获取当前行。
 
@@ -567,13 +1030,35 @@ getRow(): ValuesBucket
 
 **返回值：**
 
-类型说明[ValuesBucket](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuesbucket)返回指定行的值。当结果集中包含重名列时，返回值会不符合预期。
+| 类型 | 说明 |
+| --- | --- |
+| [ValuesBucket](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuesbucket) | 返回指定行的值。当结果集中包含重名列时，返回值会不符合预期，建议使用getCurrentRowData接口获取。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**14800000Inner error.14800011Failed to open the database because it is corrupted.14800012ResultSet is empty or pointer index is out of bounds.14800013ResultSet is empty or column index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800013 | Column index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
@@ -585,7 +1070,7 @@ if (resultSet != undefined) {
 
 #### getRows18+
 
-getRows(maxCount: number, position?: number): Promise<Array<ValuesBucket>>
+getRows(maxCount: number, position?: number): Promise<Array<[ValuesBucket](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuesbucket)>>
 
 从结果集中获取指定数量的数据，使用Promise异步回调。禁止与[ResultSet](Interface (ResultSet).md)的其他接口并发调用，否则获取的数据可能非预期。
 
@@ -593,23 +1078,46 @@ getRows(maxCount: number, position?: number): Promise<Array<ValuesBucket>>
 
 **参数：**
 
-参数名类型必填说明maxCountnumber是正整数，指定要从结果集中获取数据的条数。不为正整数则参数非法，抛出错误码401。positionnumber否非负整数，指定从结果集中获取数据的起始位置，不填则从结果集的当前行（默认首次获取数据时为当前结果集的第一行）开始获取数据。不为非负整数则参数非法，抛出错误码401。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| maxCount | number | 是 | 正整数，指定要从结果集中获取数据的条数。不为正整数则参数非法，抛出错误码401。 |
+| position | number | 否 | 非负整数，指定从结果集中获取数据的起始位置，不填则从结果集的当前行（默认首次获取数据时为当前结果集的第一行）开始获取数据。不为非负整数则参数非法，抛出错误码401。 |
 
 **返回值：**
 
-类型说明Promise<Array<[ValuesBucket](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuesbucket)>>返回maxCount条数据，剩余数据不足maxCount条则返回剩余数据，返回空数组时代表已经遍历到结果集的末尾。当结果集中包含重名列时，返回值会不符合预期。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<[ValuesBucket](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuesbucket)>> | 返回maxCount条数据，剩余数据不足maxCount条则返回剩余数据，返回空数组时代表已经遍历到结果集的末尾。当结果集中包含重名列时，返回值会不符合预期，建议使用getRowsData接口获取。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14800000Inner error.14800011Failed to open the database because it is corrupted.14800012ResultSet is empty or pointer index is out of bounds.14800013ResultSet is empty or column index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800013 | Column index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
 
 **示例：**
 
 ```ets
 // 以查到100条数据为例
-async function proccessRows(resultSet: relationalStore.ResultSet) {
+async function processRows(resultSet: relationalStore.ResultSet) {
   // 示例1：仅指定maxCount
   if (resultSet != undefined) {
     let rows: Array<relationalStore.ValuesBucket>;
@@ -618,7 +1126,6 @@ async function proccessRows(resultSet: relationalStore.ResultSet) {
     // getRows会自动移动结果集当前行到上次getRows获取结束位置的下一行，无需使用goToFirstRow、goToNextRow等接口移动
     while ((rows = await (resultSet as relationalStore.ResultSet).getRows(maxCount)).length != 0) {
       console.info(JSON.stringify(rows[0]));
-    }
   }
 
   // 示例2：指定maxCount和起始的position
@@ -630,13 +1137,137 @@ async function proccessRows(resultSet: relationalStore.ResultSet) {
       console.info(JSON.stringify(rows[0]));
       position += rows.length;
     }
+```
+
+**getCurrentRowData23+**
+
+getCurrentRowData(): RowData
+
+获取当前行所有列的值。
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+系统能力： SystemCapability.DistributedDataManager.RelationalStore.Core
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| RowData | 返回当前行所有列的值。支持获取包含重名列的值。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14800001 | Invalid arguments. Possible causes: 1. Parameter is out of valid range. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800019 | The SQL must be a query statement. |
+| 14800021 | SQLite: Generic error. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800030 | SQLite: Unable to open the database file. |
+
+示例：
+
+```ets
+try {
+  // 联表查询EMPLOYEE1和EMPLOYEE2，并获取当前行包含重名列名的值。store为获取到的RdbStore实例。
+  let resultSet: relationalStore.ResultSet = await store.querySql("SELECT e1.NAME, e2.NAME, e1.AGE, e2.AGE FROM EMPLOYEE1 e1 LEFT JOIN EMPLOYEE2 e2 ON e1.SALARY=e2.SALARY");
+  if (resultSet != undefined) {
+    resultSet.goToFirstRow();
+    const rowData = resultSet.getCurrentRowData();
   }
+} catch (err) {
+  console.error(`Failed to get row data: code:${err.code}, message:${err.message}`);
+}
+```
+
+**getRowsData23+**
+
+getRowsData(maxCount: number, position?: number): Promise<RowsData>
+
+从指定位置position开始，最多获取maxCount行数据。使用Promise异步回调。禁止与[ResultSet](Interface (ResultSet).md)的其他接口并发调用，否则获取的数据可能非预期。
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+系统能力： SystemCapability.DistributedDataManager.RelationalStore.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| maxCount | number | 是 | 正整数，指定从结果集中获取数据的条数。不为正整数则参数非法，抛出错误码14800001。 |
+| position | number | 否 | 非负整数，指定从结果集中获取数据的起始位置，不填则从结果集的当前行（默认首次获取数据时为当前结果集的第一行）开始获取数据。不为非负整数则参数非法，抛出错误码14800001。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<RowsData> | 返回maxCount条数据，剩余数据不足maxCount条则返回剩余数据，返回空数组时代表已经遍历到结果集的末尾。支持获取包含重名列的值。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14800001 | Invalid arguments. Possible causes: 1. Parameter is out of valid range. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800019 | The SQL must be a query statement. |
+| 14800021 | SQLite: Generic error. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+
+示例：
+
+```ets
+try {
+  // 联表查询EMPLOYEE1和EMPLOYEE2，并获取多行包含重名列名的值。store为获取到的RdbStore实例。
+  let resultSet: relationalStore.ResultSet = await store.querySql("SELECT e1.NAME, e2.NAME, e1.AGE, e2.AGE FROM EMPLOYEE1 e1 LEFT JOIN EMPLOYEE2 e2 ON e1.SALARY=e2.SALARY");
+  // 以查到50条数据为例
+  // 示例1：仅指定maxCount
+  if (resultSet != undefined) {
+    let rowsData: relationalStore.RowsData;
+    // 从结果集的当前行（默认首次获取数据时为当前结果集的第一行，后续为上次获取数据结束位置的下一行）开始获取数据
+    // getRowsData会自动移动结果集当前行到上次getRowsData获取结束位置的下一行，无需使用goToFirstRow、goToNextRow等接口移动
+    let maxCount: number = 50;
+    let rowCount: number = 0;
+    while ((rowsData = await resultSet.getRowsData(maxCount)).length != 0) {
+      rowsData.forEach((rowData, index) => {
+        // 第rowCount + index + 1行的查询结果
+        console.info(`${rowCount + index + 1}：${rowData}`);
+      });
+      rowCount += rowsData.length;
+    }
+
+  // 示例2：指定maxCount和起始的position
+  if (resultSet != undefined) {
+    let rowsData: relationalStore.RowsData;
+    let maxCount: number = 50;
+    let position: number = 50;
+    while ((rowsData = await resultSet.getRowsData(maxCount, position)).length != 0) {
+      rowsData.forEach((rowData, index) => {
+        // 第position + index + 1行的查询结果
+        console.info(`${position + index + 1}：${rowData}`);
+      });
+      position += rowsData.length;
+    }
+} catch (err) {
+  console.error(`Failed to get rows data: code:${err.code}, message:${err.message}`);
 }
 ```
 
 #### getSendableRow12+
 
-getSendableRow(): sendableRelationalStore.ValuesBucket
+getSendableRow(): sendableRelationalStore.[ValuesBucket](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuesbucket)
 
 获取当前行数据的sendable形式，用于跨线程传递。
 
@@ -644,28 +1275,50 @@ getSendableRow(): sendableRelationalStore.ValuesBucket
 
 **返回值：**
 
-类型说明[sendableRelationalStore.ValuesBucket](../../modules/ohos/@ohos.data.sendableRelationalStore (共享关系型数据库).md#ZH-CN_TOPIC_0000002529284679__valuesbucket)当前行数据的sendable形式，用于跨线程传递。
+| 类型 | 说明 |
+| --- | --- |
+| sendableRelationalStore.[ValuesBucket](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuesbucket) | 当前行数据的sendable形式，用于跨线程传递。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**14800000Inner error.14800011Failed to open the database because it is corrupted.14800012ResultSet is empty or pointer index is out of bounds.14800013ResultSet is empty or column index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800013 | Column index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
-示例代码中this.context定义见Stage模型的应用[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)。
+示例代码中this.context定义见Stage模型的应用[Context](Context (Stage模型的上下文基类).md)。
 
 ```ets
 import { window } from '@kit.ArkUI';
 import { UIAbility } from '@kit.AbilityKit';
 import { relationalStore } from '@kit.ArkData';
 import { taskpool } from '@kit.ArkTS';
-import type ctx from '@ohos.app.ability.common';
+import { common } from '@kit.AbilityKit';
 import { sendableRelationalStore } from '@kit.ArkData';
 
 @Concurrent
-async function getDataByName(name: string, context: ctx.UIAbilityContext) {
+async function getDataByName(name: string, context: common.UIAbilityContext) {
   const STORE_CONFIG: relationalStore.StoreConfig = {
     name: "RdbTest.db",
     securityLevel: relationalStore.SecurityLevel.S3
@@ -682,7 +1335,6 @@ async function getDataByName(name: string, context: ctx.UIAbilityContext) {
   } else {
     return null;
   }
-}
 
 export default class EntryAbility extends UIAbility {
   async onWindowStageCreate(windowStage: window.WindowStage) {
@@ -695,8 +1347,6 @@ export default class EntryAbility extends UIAbility {
       const name = sendableValuesBucket.get('name');
       console.info(`Query data in taskpool succeeded, name is "${name}", age is "${age}"`);
     }
-  }
-}
 ```
 
 #### isColumnNull
@@ -709,17 +1359,42 @@ isColumnNull(columnIndex: number): boolean
 
 **参数：**
 
-参数名类型必填说明columnIndexnumber是指定的列索引，从0开始。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 **返回值：**
 
-类型说明boolean如果当前行中指定列的值为null，则返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果当前行中指定列的值为null，则返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[关系型数据库错误码](../../errors/关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14800000Inner error.14800011Failed to open the database because it is corrupted.14800012ResultSet is empty or pointer index is out of bounds.14800013ResultSet is empty or column index is out of bounds.14800014The RdbStore or ResultSet is already closed.14800021SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist.14800022SQLite: Callback routine requested an abort.14800023SQLite: Access permission denied.14800024SQLite: The database file is locked.14800025SQLite: A table in the database is locked.14800026SQLite: The database is out of memory.14800027SQLite: Attempt to write a readonly database.14800028SQLite: Some kind of disk I/O error occurred.14800029SQLite: The database is full.14800030SQLite: Unable to open the database file.14800031SQLite: TEXT or BLOB exceeds size limit.14800032SQLite: Abort due to constraint violation.14800033SQLite: Data type mismatch.14800034SQLite: Library used incorrectly.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14800000 | Inner error. |
+| 14800011 | The current operation failed because the database is corrupted. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800013 | Column index is out of bounds. |
+| 14800014 | The target instance is already closed. |
+| 14800021 | SQLite: Generic error. |
+| 14800022 | SQLite: Callback routine requested an abort. |
+| 14800023 | SQLite: Access permission denied. |
+| 14800024 | SQLite: The database file is locked. |
+| 14800025 | SQLite: A table in the database is locked. |
+| 14800026 | SQLite: The database is out of memory. |
+| 14800027 | SQLite: Attempt to write a readonly database. |
+| 14800028 | SQLite: Some kind of disk I/O error occurred. |
+| 14800029 | SQLite: The database is full. |
+| 14800030 | SQLite: Unable to open the database file. |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+| 14800032 | SQLite: Abort due to constraint violation. |
+| 14800033 | SQLite: Data type mismatch. |
+| 14800034 | SQLite: Library used incorrectly. |
 
 **示例：**
 
@@ -730,8 +1405,6 @@ if (resultSet !== undefined) {
     if (colIndex > -1) {
       const isColumnNull = resultSet.isColumnNull(colIndex);
       console.info(`Column is null: ${isColumnNull}`);
-    }
-  }
 }
 ```
 
@@ -753,6 +1426,9 @@ if (resultSet != undefined) {
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关系型数据库错误码](../../errors/关系型数据库错误码.md)。
+以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。
 
-**错误码ID****错误信息**14800000Inner error.14800012ResultSet is empty or pointer index is out of bounds.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14800000 | Inner error. |
+| 14800012 | ResultSet is empty or pointer index is out of bounds. |

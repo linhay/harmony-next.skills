@@ -1,11 +1,11 @@
 # HarmonyOS NEXT 开发者专家技能包 (Reference Skill)
 
 `harmony-next.skills` 是为 AI 编程助手（如 Gemini CLI, Claude Code, Codex）设计的参考技能库。
-它为 HarmonyOS NEXT（以 API 12+ 为主；文档大量包含 API 12-23 的版本标注/兼容/变更说明，且少量内容会引用更早版本用于对比）提供本地化的离线知识源，包含 4,257 份涵盖 ArkTS、ArkUI 和 NDK 的 Markdown 格式参考文档（其中 `JsEtsAPIReference/` 为 4,232 份）。
+它为 HarmonyOS NEXT（以 API 12-23 为主；文档包含 API 12-23 的版本标注、兼容与变更说明，少量内容会引用更早版本用于对比）提供本地化的离线知识源，包含 3,614 份涵盖 ArkTS、ArkUI 和 NDK 的 Markdown 格式参考文档（其中 `JsEtsAPIReference/` 为 3,589 份）。
 
 [English Version](./README_en.md)
 
-## 核心特性 (v1.1.0+)
+## 核心特性 (v1.2.0+)
 
 除了详尽的 API 参考外，本项目现已包含以下**专家级实战指南**：
 - **渐进式披露检索**：`SKILL.md -> KITS.md/TASK_MAP.md -> INDEX.md`，先命中路径再打开少量目标文档。
@@ -56,9 +56,27 @@ claude --add-dir /path/to/harmony-next.skills/harmony-next
 2. [`harmony-next/references/INDEX.md`](https://github.com/linhay/harmony-next.skills/blob/master/harmony-next/references/INDEX.md)
 
 ## 包含内容
-- `harmony-next/references/`: 4,257 份 Markdown 文档 (约 50 MB)。
+- `harmony-next/references/`: 3,614 份 Markdown 文档 (约 50 MB)。
 - `harmony-next/SKILL.md`: 助手的检索规则与回答策略。
 - `harmony-next.skill`: 由 GitHub Actions 自动生成的打包发布产物。
+
+## 参考库维护
+
+当 `references/JsEtsAPIReference/` 发生同步、迁移或批量改写后，建议按下面顺序执行：
+
+```bash
+python3 harmony-next/scripts/reference_compat.py generate
+python3 harmony-next/scripts/reference_compat.py check
+python3 harmony-next/scripts/reference_compat.py audit
+python3 -m unittest discover -s harmony-next/tests -p 'test_*.py' -v
+```
+
+各命令职责：
+
+- `generate`：把旧的 `../../capi/headers/*.md` 引用改写到真实 `topics/**/<header>.h.md`，并重建 `references/INDEX.md` 与 `references/JsEtsAPIReference/INDEX.md`
+- `check`：确认旧 `capi/headers/` 页面已删除、索引与磁盘一致、正文里没有残留旧路径引用
+- `audit`：扫描当前未提交改动，找出“原本有内部 Markdown 链接、现在被改成纯文本”的残留问题
+- `unittest`：校验迁移与扫描脚本本身没有回归
 
 ## 为什么需要它？
 - **消除幻觉**：提供 HarmonyOS 5.0+ 真实 API 实现指导。

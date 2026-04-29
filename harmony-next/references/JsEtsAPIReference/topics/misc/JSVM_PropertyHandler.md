@@ -12,10 +12,13 @@ typedef struct {...} JSVM_PropertyHandler
 
 **相关模块：**[JSVM](JSVM.md)
 
-**所在头文件：**[jsvm_types.h](../../capi/headers/jsvm_types.h.md)
+所在头文件： [jsvm_types.h](jsvm_types.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述[JSVM_PropertyHandlerCfg](JSVM_PropertyHandlerConfigurationStruct_.md) propertyHandlerCfg访问实例对象属性触发相应的回调函数。[JSVM_Callback](JSVM_CallbackStruct_.md) callAsFunctionCallback实例对象作为函数调用将触发此回调。
+| 名称 | 描述 |
+| --- | --- |
+| [JSVM_PropertyHandlerCfg](../../types/structs/JSVM_PropertyHandlerConfigurationStruct_.md) propertyHandlerCfg | 访问实例对象属性触发相应的回调函数。 |
+| [JSVM_Callback](../../types/structs/JSVM_CallbackStruct_.md) callAsFunctionCallback | 实例对象作为函数调用将触发此回调。 |

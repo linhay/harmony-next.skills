@@ -20,7 +20,9 @@ import { FenceExtensionAbility } from '@kit.LocationKit';
 
 **系统能力**：SystemCapability.Location.Location.Geofence
 
-名称类型只读可选说明context[FenceExtensionContext](@ohos.app.ability.FenceExtensionContext (FenceExtensionContext).md)否否围栏服务上下文。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| context | FenceExtensionContext | 否 | 否 | 围栏服务上下文。 |
 
 #### onFenceStatusChange
 
@@ -32,7 +34,10 @@ onFenceStatusChange(transition: geoLocationManager.GeofenceTransition, additions
 
 **参数：**
 
-参数名类型必填说明transition[geoLocationManager.GeofenceTransition](@ohos.geoLocationManager (位置服务).md#ZH-CN_TOPIC_0000002497606102__geofencetransition12)是地理围栏事件信息；包含地理围栏ID和具体的地理围栏事件。additionsRecord<string, string>是附加信息
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| transition | geoLocationManager.GeofenceTransition | 是 | 地理围栏事件信息；包含地理围栏ID和具体的地理围栏事件。 |
+| additions | Record<string, string> | 是 | 附加信息 |
 
 **示例：**
 
@@ -78,7 +83,6 @@ export class MyFenceExtensionAbility extends FenceExtensionAbility {
       notificationManager.publish(notificationRequest);
     });
   }
-}
 ```
 
 #### onDestroy
@@ -99,5 +103,4 @@ class MyFenceExtensionAbility extends FenceExtensionAbility {
     // 处理ability销毁事件
     console.info(`on ability destroy`);
   }
-}
 ```

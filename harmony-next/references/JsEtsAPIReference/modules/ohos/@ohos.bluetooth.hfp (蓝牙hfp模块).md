@@ -18,7 +18,9 @@ type BaseProfile = baseProfile.BaseProfile
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-类型说明[baseProfile.BaseProfile](@ohos.bluetooth.baseProfile (蓝牙baseProfile模块).md#ZH-CN_TOPIC_0000002497445438__baseprofile)基础Profile接口定义。
+| 类型 | 说明 |
+| --- | --- |
+| baseProfile.BaseProfile | 基础Profile接口定义。 |
 
 #### hfp.createHfpAgProfile
 
@@ -30,13 +32,18 @@ createHfpAgProfile(): HandsFreeAudioGatewayProfile
 
 **返回值：**
 
-类型说明[HandsFreeAudioGatewayProfile](#ZH-CN_TOPIC_0000002529285411__handsfreeaudiogatewayprofile)返回HFP AG实例。
+| 类型 | 说明 |
+| --- | --- |
+| HandsFreeAudioGatewayProfile | 返回HFP AG实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)。
 
-错误码ID错误信息401Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -55,6 +62,8 @@ try {
 
 该实例表示蓝牙通话音频中的[HFP AG](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#hfp-ag)角色‌。
 
-- 该类继承于[BaseProfile](#ZH-CN_TOPIC_0000002529285411__baseprofile)，因此可以使用其父类中的方法。
-- 使用该类的接口前，需通过[createHfpAgProfile](#ZH-CN_TOPIC_0000002529285411__hfpcreatehfpagprofile)接口构造该类的实例。
+- 该类继承于[BaseProfile](#ZH-CN_TOPIC_0000002522081446__baseprofile)，因此可以使用其父类中的方法。
+
+- 使用该类的接口前，需通过[createHfpAgProfile](#ZH-CN_TOPIC_0000002522081446__hfpcreatehfpagprofile)接口构造该类的实例。
+
 - 和该实例角色相对应的是[HF](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#hf)角色。

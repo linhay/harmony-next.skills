@@ -38,7 +38,7 @@ Session paused.
 
 **处理步骤**
 
-可调用[HMS_AREngine_ARSession_Resume](../topics/media/AR Engine.md#ZH-CN_TOPIC_0000002500306234__ga7138d56b767738b8aadcbc74f4c328db)重新开始会话。
+可调用[HMS_[AREngine_ARSession](../topics/misc/AR Engine.md#ZH-CN_TOPIC_0000002500306234__ga2dbf3585f50628750ec855501c043650)_Resume](AR Engine.md#ZH-CN_TOPIC_0000002553362039__hms_arengine_arsession_resume)重新开始会话。
 
 #### 1009200003 会话未暂停状态
 
@@ -56,7 +56,7 @@ Session not paused.
 
 **处理步骤**
 
-可调用[HMS_AREngine_ARSession_Pause](../topics/media/AR Engine.md#ZH-CN_TOPIC_0000002500306234__ga09dedb5c633141321591db0981629de1)暂停当前会话。
+可调用[HMS_AREngine_ARSession_Pause](AR Engine.md#ZH-CN_TOPIC_0000002553362039__hms_arengine_arsession_pause)暂停当前会话。
 
 #### 1009200004 未跟踪状态
 
@@ -74,7 +74,7 @@ Not tracking.
 
 **处理步骤**
 
-查看当前会话对象([AREngine_ARSession](../topics/media/AR Engine.md#ZH-CN_TOPIC_0000002500306234__ga2dbf3585f50628750ec855501c043650)类型对象)是否为空。
+查询当前会话对象（[AREngine_ARSession](AR Engine.md#ZH-CN_TOPIC_0000002553362039__arengine_arsession)类型对象）是否为空。
 
 #### 1009200005 未设置纹理状态
 
@@ -92,7 +92,7 @@ Texture not set.
 
 **处理步骤**
 
-查看是否使用[HMS_AREngine_ARSession_SetCameraGLTexture()](../topics/media/AR Engine.md#ZH-CN_TOPIC_0000002500306234__gac697e4be36db63ed6098f154aa9ac01c)接口设置正确的GL纹理。
+查看是否使用[HMS_AREngine_ARSession_SetCameraGLTexture()](AR Engine.md#ZH-CN_TOPIC_0000002553362039__hms_arengine_arsession_setcameragltexture)接口设置正确的GL纹理。
 
 #### 1009200006 缺少GL上下文状态
 
@@ -110,7 +110,7 @@ GL context missing.
 
 **处理步骤**
 
-检查[HMS_AREngine_ARSession_Update()](../topics/media/AR Engine.md#ZH-CN_TOPIC_0000002500306234__ga1d1cacf372a8011a439f0e4e76994259)接口是否在OpenGL渲染线程下调用。
+检查[HMS_AREngine_ARSession_Update()](AR Engine.md#ZH-CN_TOPIC_0000002553362039__hms_arengine_arsession_update)接口是否在OpenGL渲染线程下调用。
 
 #### 1009200007 不支持的配置状态
 
@@ -164,7 +164,7 @@ Service unavailable.
 
 **处理步骤**
 
-查看当前设备是否在[硬件要求](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-preparations#section143821139152310)中，如设备满足要求，可[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/)，华为支持人员会及时处理。
+查看当前设备是否在[硬件要求](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-preparations#硬件要求)中，如设备满足要求，可[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/)，华为支持人员会及时处理。
 
 #### 1009200010 相机不可用
 
@@ -202,8 +202,13 @@ The number of images added exceeds the maximum.
 
 排查应用在添加图像到跟踪图像数据库是否超过最大数量限制。
 
-1. 如果使用ArkTS开发，最大数量限制可以通过[ARAugmentedImageDatabase.getCapacity](../topics/media/arEngine（AR增强现实能力）.md#section87071617088)获取，数据库中已经存储的图像数量可通过[ARAugmentedImageDatabase.getImageCount](../topics/media/arEngine（AR增强现实能力）.md#section106577102812)获取。
-1. 如果使用C/C++开发，最大数量限制可以通过[HMS_AREngine_ARAugmentedImageDatabase_GetCapacity](../topics/media/AR Engine.md#section650873916491)获取，数据库中已经存储的图像数量可通过[HMS_AREngine_ARAugmentedImageDatabase_GetImageCount](../topics/media/AR Engine.md#section6183812506)获取。
+1.
+
+如果使用ArkTS开发，最大数量限制可以通过[ARAugmentedImageDatabase.getCapacity](arEngine（AR增强现实能力）.md#ZH-CN_TOPIC_0000002553202077__araugmentedimagedatabasegetcapacity)获取，数据库中已经存储的图像数量可通过[ARAugmentedImageDatabase.getImageCount](arEngine（AR增强现实能力）.md#ZH-CN_TOPIC_0000002553202077__araugmentedimagedatabasegetimagecount)获取。
+
+1.
+
+如果使用C/C++开发，最大数量限制可以通过[HMS_AREngine_ARAugmentedImageDatabase_GetCapacity](AR Engine.md#ZH-CN_TOPIC_0000002553362039__hms_arengine_araugmentedimagedatabase_getcapacity)获取，数据库中已经存储的图像数量可通过[HMS_AREngine_ARAugmentedImageDatabase_GetImageCount](AR Engine.md#ZH-CN_TOPIC_0000002553362039__hms_arengine_araugmentedimagedatabase_getimagecount)获取。
 
 如符合要求，可[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/)，华为支持人员会及时处理。
 
@@ -223,7 +228,7 @@ Attempted to add an image with insufficient quality to the image database.
 
 **处理步骤**
 
-排查应用是否将质量不足的图像添加到图像数据库中，可以参考[ARAddAugmentedImageReason](../topics/media/arEngine（AR增强现实能力）.md#section7453144131020)，如符合要求，可[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/)，华为支持人员会及时处理。
+排查应用是否将质量不足的图像添加到图像数据库中，可以参考[ARAddAugmentedImageReason](arEngine（AR增强现实能力）.md#ZH-CN_TOPIC_0000002553202077__araddaugmentedimagereason)，如符合要求，可[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/)，华为支持人员会及时处理。
 
 #### 1009200013 没有有效的图像数据库
 
@@ -241,7 +246,7 @@ No valid image database.
 
 **处理步骤**
 
-排查是否使用[HMS_AREngine_ARAugmentedImageDatabase_Create](../topics/media/AR Engine.md#section4108822184411)创建图像数据库。
+排查是否使用[HMS_AREngine_ARAugmentedImageDatabase_Create](AR Engine.md#ZH-CN_TOPIC_0000002553362039__hms_arengine_araugmentedimagedatabase_create)创建图像数据库。
 
 如符合要求，可[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/)，华为支持人员会及时处理。
 
@@ -261,7 +266,7 @@ The pictures cannot be added when the tracking state is running.
 
 **处理步骤**
 
-检查[AREngine_ARTrackingState](../topics/media/AR Engine.md#ZH-CN_TOPIC_0000002500306234__gaae57d2f58331e1033b60cdb2d506a382)状态，置为ARENGINE_TRACKING_STATE_PAUSED或者ARENGINE_TRACKING_STATE_STOPPED。
+检查[AREngine_ARTrackingState](AR Engine.md#ZH-CN_TOPIC_0000002553362039__arengine_artrackingstate)状态，置为ARENGINE_TRACKING_STATE_PAUSED或者ARENGINE_TRACKING_STATE_STOPPED。
 
 #### 1009200015 创建nativeBuffer失败
 
@@ -299,8 +304,24 @@ Failed to write nativeBuffer.
 
 检查设备内存状态，确保有可用堆内存，如有空闲内存仍然报错，可重启设备。
 
-#### 1009200201 非法操作状态
+#### 1009200017 相机服务异常
+**错误信息**
 
+The camera service is abnormal.
+
+**错误描述**
+
+相机服务异常。
+
+**可能原因**
+
+相机服务异常，比如相机服务重启、跨进程调用异常等。
+
+**处理步骤**
+
+相机内部错误，出现的情况不明确，建议尝试重新创建业务。
+
+#### 1009200201 非法操作状态
 **错误信息**
 
 ARView invalid operation.
@@ -311,11 +332,11 @@ ARView操作不规范。
 
 **可能原因**
 
-ARViewContext已初始化后重复进行config/callBack等相关设置。
+[ARViewContext](../topics/misc/arViewController（AR场景管理能力）.md#section12681656121519)已初始化后重复进行config/callBack等相关设置。
 
 **处理步骤**
 
-请参考[ARViewContext](../topics/media/arViewController（AR场景管理能力）.md#section12681656121519)示例代码，是否按照示例代码使用。
+请参考[ARViewContext](arViewController（AR场景管理能力）.md#ZH-CN_TOPIC_0000002522082116__arviewcontext)示例代码，是否按照示例代码使用。
 
 #### 1009200202 缺少AR呈现场景
 
@@ -329,13 +350,13 @@ Graphics3D AR scene required.
 
 **可能原因**
 
-ARViewContext初始化时未提前设置AR呈现场景 - [ARViewContext.scene](../topics/media/arViewController（AR场景管理能力）.md#section885612613616)。
+ARViewContext初始化时未提前设置AR呈现场景 - [ARViewContext.scene](arViewController（AR场景管理能力）.md#ZH-CN_TOPIC_0000002522082116__arviewcontextscene)。
 
 **处理步骤**
 
-在[ARViewContext](../topics/media/arViewController（AR场景管理能力）.md#section12681656121519)初始化之前先进行AR呈现场景设置，可以参考[管理AR会话](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-arsession)。
+在[ARViewContext](arViewController（AR场景管理能力）.md#ZH-CN_TOPIC_0000002522082116__arviewcontext)初始化之前先进行AR呈现场景设置，可以参考[管理AR会话](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-arsession)。
 
-#### 1009200203 ARViewContext.config未配置
+#### 1009200203 [ARViewContext](../topics/misc/arViewController（AR场景管理能力）.md#section12681656121519).config未配置
 
 **错误信息**
 
@@ -343,15 +364,15 @@ AREngine config required.
 
 **错误描述**
 
-ARViewContext.config未配置。
+[ARViewContext](../topics/misc/arViewController（AR场景管理能力）.md#section12681656121519).config未配置。
 
 **可能原因**
 
-ARViewContext初始化时未提前设置config - ARViewContext.config 。
+[ARViewContext](../topics/misc/arViewController（AR场景管理能力）.md#section12681656121519)初始化时未提前设置config - ARViewContext.config 。
 
 **处理步骤**
 
-在[ARViewContext](../topics/media/arViewController（AR场景管理能力）.md#section12681656121519)初始化之前先进行config配置，可以参考[管理AR会话](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-arsession)。
+在[ARViewContext](arViewController（AR场景管理能力）.md#ZH-CN_TOPIC_0000002522082116__arviewcontext)初始化之前先进行config配置，可以参考[管理AR会话](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-arsession)。
 
 #### 1009200204 AR会话初始化失败
 
@@ -387,4 +408,4 @@ AR场景相机节点创建失败。
 
 **处理步骤**
 
-排查应用在使用ARView时，是否已调用[ARViewContext](../topics/media/arViewController（AR场景管理能力）.md#section12681656121519)接口进行了初始化，并做了相关相机确认或者系统有充足内存，如不存在，可[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/)，华为支持人员会及时处理。
+排查应用在使用ARView时，是否已调用[ARViewContext](arViewController（AR场景管理能力）.md#ZH-CN_TOPIC_0000002522082116__arviewcontext)接口进行了初始化，并做了相关相机确认或者系统有充足内存，如不存在，可[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/)，华为支持人员会及时处理。

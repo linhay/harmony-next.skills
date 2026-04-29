@@ -8,18 +8,13 @@
 
 **相关模块：**[NetworkBoost](NetworkBoost.md)
 
+所在头文件： [network_boost_handover.h](network_boost_handover.h.md)
+
 #### 汇总
 
 #### 成员变量
 
-名称
-
-描述
-
-****[HMS_NetworkBoost_OnHandoverStart](NetworkBoost.md#ZH-CN_TOPIC_0000002463695266__gaeb846c7c42199e314b95770657ed583d) onNetworkHandoverStart
-
-连接迁移开始的回调。
-
-****[HMS_NetworkBoost_OnHandoverComplete](NetworkBoost.md#ZH-CN_TOPIC_0000002463695266__ga799fbecb09ede04fec174737425082f6) onNetworkHandoverComplete
-
-连接迁移结束的回调。
+| 名称 | 描述 |
+| --- | --- |
+| [HMS_NetworkBoost_OnHandoverStart](NetworkBoost.md#ZH-CN_TOPIC_0000002463695266__gaeb846c7c42199e314b95770657ed583d) onNetworkHandoverStart | 连接迁移开始的回调。 |
+| [HMS_NetworkBoost_OnHandoverComplete](NetworkBoost.md#ZH-CN_TOPIC_0000002463695266__ga799fbecb09ede04fec174737425082f6) onNetworkHandoverComplete | 连接迁移结束的回调。 |

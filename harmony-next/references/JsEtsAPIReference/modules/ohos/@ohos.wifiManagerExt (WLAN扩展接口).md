@@ -26,9 +26,13 @@ enableHotspot(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](../../errors/WIFI错误码.md)。
+以下错误码的详细介绍请参见[WIFI错误码]([WIFI错误码](../../errors/WIFI错误码.md).md)。
 
-**错误码ID****错误信息**201Permission denied.801Capability not supported.2701000Operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 2701000 | Operation failed. |
 
 **示例：**
 
@@ -56,9 +60,13 @@ disableHotspot(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](../../errors/WIFI错误码.md)。
+以下错误码的详细介绍请参见[WIFI错误码](WIFI错误码.md)。
 
-**错误码ID****错误信息**201Permission denied.801Capability not supported.2701000Operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 2701000 | Operation failed. |
 
 **示例：**
 
@@ -84,13 +92,19 @@ getSupportedPowerMode(): Promise<Array<PowerMode>>
 
 **返回值：**
 
-类型说明Promise<Array<[PowerMode](#ZH-CN_TOPIC_0000002529285417__powermode)>>Promise对象。表示功率模式。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<PowerMode>> | Promise对象。表示功率模式。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](../../errors/WIFI错误码.md)。
+以下错误码的详细介绍请参见[WIFI错误码](WIFI错误码.md)。
 
-**错误码ID****错误信息**201Permission denied.801Capability not supported.2701000Operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 2701000 | Operation failed. |
 
 #### PowerMode
 
@@ -98,7 +112,11 @@ getSupportedPowerMode(): Promise<Array<PowerMode>>
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
-名称值说明SLEEPING0睡眠模式。GENERAL1常规模式。THROUGH_WALL2穿墙模式。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SLEEPING | 0 | 睡眠模式。 |
+| GENERAL | 1 | 常规模式。 |
+| THROUGH_WALL | 2 | 穿墙模式。 |
 
 #### wifiManagerExt.getSupportedPowerMode
 
@@ -112,13 +130,19 @@ getSupportedPowerMode(callback: AsyncCallback<Array<PowerMode>>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<Array<[PowerMode](#ZH-CN_TOPIC_0000002529285417__powermode)>>是回调函数。当操作成功时，err为0，data表示支持的功率模式。如果err为非0，表示处理出现错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<PowerMode>> | 是 | 回调函数。当操作成功时，err为0，data表示支持的功率模式。如果err为非0，表示处理出现错误。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](../../errors/WIFI错误码.md)。
+以下错误码的详细介绍请参见[WIFI错误码](WIFI错误码.md)。
 
-**错误码ID****错误信息**201Permission denied.801Capability not supported.2701000Operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 2701000 | Operation failed. |
 
 **示例：**
 
@@ -148,13 +172,19 @@ getPowerMode(): Promise<PowerMode>
 
 **返回值：**
 
-类型说明Promise<[PowerMode](#ZH-CN_TOPIC_0000002529285417__powermode)>Promise对象。表示功率模式。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<PowerMode> | Promise对象。表示功率模式。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](../../errors/WIFI错误码.md)。
+以下错误码的详细介绍请参见[WIFI错误码](WIFI错误码.md)。
 
-**错误码ID****错误信息**201Permission denied.801Capability not supported.2701000Operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 2701000 | Operation failed. |
 
 **示例：**
 
@@ -181,13 +211,19 @@ getPowerMode(callback: AsyncCallback<PowerMode>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[PowerMode](#ZH-CN_TOPIC_0000002529285417__powermode)>是回调函数。当操作成功时，err为0，data表示功率模式。如果err为非0，表示处理出现错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<PowerMode> | 是 | 回调函数。当操作成功时，err为0，data表示功率模式。如果err为非0，表示处理出现错误。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](../../errors/WIFI错误码.md)。
+以下错误码的详细介绍请参见[WIFI错误码](WIFI错误码.md)。
 
-**错误码ID****错误信息**201Permission denied.801Capability not supported.2701000Operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 2701000 | Operation failed. |
 
 **示例：**
 
@@ -223,13 +259,19 @@ setPowerMode(mode: PowerMode) : void
 
 **参数：**
 
-参数名类型必填说明mode[PowerMode](#ZH-CN_TOPIC_0000002529285417__powermode)是功率模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mode | PowerMode | 是 | 功率模式。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](../../errors/WIFI错误码.md)。
+以下错误码的详细介绍请参见[WIFI错误码](WIFI错误码.md)。
 
-**错误码ID****错误信息**201Permission denied.801Capability not supported.2701000Operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 2701000 | Operation failed. |
 
 **示例：**
 

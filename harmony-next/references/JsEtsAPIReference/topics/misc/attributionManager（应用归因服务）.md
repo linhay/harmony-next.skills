@@ -22,124 +22,17 @@ import { attributionManager } from '@kit.AppGalleryKit';
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-adTechId
-
-string
-
-否
-
-否
-
-分发平台对应的归因角色ID，本次登记归因来源对应营销任务所归属的分发平台的标识符。
-
-分发平台向应用归因云侧[注册归因角色](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribution-register#section11218192952612)时，由应用归因服务分配，长度固定为8字符。
-
-campaignId
-
-string
-
-否
-
-否
-
-营销任务ID，登记归因来源对应的营销任务的ID，长度不超过6字符。
-
- 说明：
-
-从6.0.2(22)开始，该接口支持长度由不超过6字符变为不超过9字符。
-
-destinationId
-
-string
-
-否
-
-否
-
-开发者应用上架华为应用市场的AppId，长度不超过64个字符。
-
- 说明：
-
-您的应用ID参考[查看应用基本信息](https://developer.huawei.com/consumer/cn/doc/app/agc-help-appinfo-0000001100014694)获取。
-
-sourceType
-
-[SourceType](#section648111185221)
-
-否
-
-否
-
-归因来源类型：
-
-- 0：曝光。
-- 1：点击。
-
-mmpIds
-
-string[]
-
-否
-
-是
-
-本次广告投放，使用的归因监测平台对应的归因角色ID。最大数量2个，每个ID字符串长度固定为8字符。
-
-如果调用方传递了归因监测平台ID，应用归因服务会向归因监测平台回传归因结果；如果调用方没有传递归因监测平台ID，则归因监测平台收不到回传的归因结果。
-
-serviceTag
-
-string
-
-否
-
-是
-
-分发平台关注的业务信息，如创意、素材等，长度不超过32字符。
-
-如果调用方传递了serviceTag，应用归因服务通过白名单方式向分发平台开放（白名单开放方式请联系华为运营）；如果调用方没有传递serviceTag，则分发平台收不到回传的serviceTag。
-
-nonce
-
-string
-
-否
-
-否
-
-用于计算签名的随机数，每次广告请求，nonce唯一。长度固定为32字符。
-
-同一个adTechId下，同一个nonce最多可以登记5次曝光，5次点击类型的归因来源信息。
-
-timestamp
-
-number
-
-否
-
-否
-
-请求广告的时间戳（即广告投放时间，登记归因来源时，要求广告时间与当前时间偏差不超过10分钟）。unix时间戳，单位：毫秒。
-
-signature
-
-string
-
-否
-
-否
-
-签名值，分发平台/媒体根据广告相应信息按照[归因来源签名计算规则](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-attribution-appendix-triger#section4208115642013)计算生成签名并提供，长度不超过800字符。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| adTechId | string | 否 | 否 | 分发平台对应的归因角色ID，本次登记归因来源对应营销任务所归属的分发平台的标识符。 分发平台向应用归因云侧注册归因角色时，由应用归因服务分配，长度固定为8个字符。 |
+| campaignId | string | 否 | 否 | 营销任务ID，登记归因来源对应的营销任务的ID，长度不超过6个字符。 说明： 从6.0.2(22)开始，该接口支持长度由不超过6个字符变为不超过9个字符。 |
+| destinationId | string | 否 | 否 | 开发者应用上架华为应用市场的AppId，长度不超过64个字符。 说明： 您的应用ID参考查看应用基本信息获取。 |
+| sourceType | SourceType | 否 | 否 | 归因来源类型： 0：曝光。 1：点击。 |
+| mmpIds | string[] | 否 | 是 | 本次广告投放，使用的归因监测平台对应的归因角色ID。最大数量2个，每个ID字符串长度固定为8字符。 如果调用方传递了归因监测平台ID，应用归因服务会向归因监测平台回传归因结果；如果调用方没有传递归因监测平台ID，则归因监测平台收不到回传的归因结果。 |
+| serviceTag | string | 否 | 是 | 分发平台关注的业务信息，如创意、素材等，长度不超过32个字符。 如果调用方传递了serviceTag，在申请开通权限后应用归因服务会将serviceTag回传分发平台。 |
+| nonce | string | 否 | 否 | 用于计算签名的随机数，每次广告请求，nonce唯一。长度固定为32个字符。 同一个adTechId下，同一个nonce最多可以登记5次曝光，5次点击类型的归因来源信息。 |
+| timestamp | number | 否 | 否 | 请求广告的时间戳（即广告投放时间，登记归因来源时，要求广告时间与当前时间偏差不超过10分钟）。unix时间戳，单位：毫秒 |
+| signature | string | 否 | 否 | 签名值，分发平台/媒体根据广告相应信息按照归因来源签名计算规则计算生成签名并提供，长度不超过800个字符。 |
 
 #### AdTriggerInfo
 
@@ -151,71 +44,12 @@ string
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-businessScene
-
-number
-
-否
-
-是
-
-业务场景值，在开发者登记转化时，用于标识开发者的业务场景。
-
-取值范围：[0,99]。
-
-triggerData
-
-number
-
-否
-
-否
-
-转化事件编码。
-
-[标准转化事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribution-trigger-standard)取值范围：[1, 200]。
-
-[自定义转化事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribution-trigger-custom)取值范围：[501, 600]。
-
-timestamp
-
-number
-
-否
-
-是
-
-转化事件发生时间（要求登记转化事件接口调用时间与转化事件发生时间的间隔默认不超过10分钟）。unix时间戳，单位：毫秒。
-
- 说明：
-
-**起始版本：**6.0.2(22)
-
-serviceTag
-
-string
-
-否
-
-是
-
-开发者关注的业务信息，长度不超过32字符。
-
-如果调用方传递了serviceTag，应用归因服务通过白名单方式向开发者开放（白名单开放方式请联系华为运营）；如果调用方没有传递serviceTag，则开发者收不到回传的serviceTag。
-
- 说明：
-
-**起始版本：**6.0.2(22)
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| businessScene | number | 否 | 是 | 业务场景值，在开发者登记转化时，用于标识开发者的业务场景。 取值范围：[0,99]。 |
+| triggerData | number | 否 | 否 | 转化事件编码。 标准转化事件取值范围：[1, 200]。 自定义转化事件取值范围：[501, 600]。 |
+| timestamp | number | 否 | 是 | 转化事件发生时间（要求登记转化事件接口调用时间与转化事件发生时间的间隔默认不超过10分钟）。unix时间戳，单位：毫秒。 起始版本： 6.0.2(22) |
+| serviceTag | string | 否 | 是 | 开发者关注的业务信息，长度不超过32个字符。 如果调用方传递了serviceTag，在申请开通权限后应用归因服务会将serviceTag回传分发平台。 起始版本： 6.0.2(22) |
 
 #### SourceType
 
@@ -227,23 +61,10 @@ string
 
 **起始版本：**5.0.0(12)
 
-名称
-
-值
-
-说明
-
-IMPRESSION
-
-0
-
-归因来源类型：曝光。
-
-CLICK
-
-1
-
-归因来源类型：点击。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| IMPRESSION | 0 | 归因来源类型：曝光。 |
+| CLICK | 1 | 归因来源类型：点击。 |
 
 #### attributionManager.registerSource
 
@@ -259,66 +80,34 @@ registerSource(adSourceInfo: AdSourceInfo): Promise<void>
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-adSourceInfo
-
-[AdSourceInfo](#section0594928105511)
-
-是
-
-媒体/分发平台登记归因来源信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| adSourceInfo | AdSourceInfo | 是 | 媒体/分发平台登记归因来源信息。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<void>
-
-Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码]([ArkTS API错误码](../../errors/ArkTS API错误码.md).md)。
 
-错误码ID
-
-错误信息
-
-401
-
-Parameter error.
-
-1009300001
-
-The specified service extension connect failed.
-
-1009300002
-
-System internal error.
-
-1009300003
-
-The identity check error.
-
-1009300004
-
-The sign check error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 1009300001 | The specified service extension connect failed. |
+| 1009300002 | System internal error. |
+| 1009300003 | The identity check error. |
+| 1009300004 | The sign check error. |
 
 **示例：**
 
 ```ets
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { attributionManager } from '@kit.AppGalleryKit';
-import { SignUtil } from '../common/utils/SignUtil';  //参考指南附录[生成签名方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-attribution-appendix-triger#section5203225132112)部分代码
+import { SignUtil } from '../common/utils/SignUtil';  //参考指南附录生成签名方法部分代码
 import { util } from '@kit.ArkTS';
 import { BusinessError,deviceInfo } from '@kit.BasicServicesKit';
 
@@ -331,7 +120,7 @@ class  Attribution {
       let privateKey: string =" ";
       // 在应用归因云侧注册广告生态伙伴角色时，由应用归因服务分配
       let adTechId: string = '20****8';
-      // 分发平台创建的营销任务id，6.0.2（22）之前支持长度不超过6字符，6.0.2(22)及以上支持长度不超过9字符
+      // 分发平台创建的营销任务id，6.0.2(22)之前支持长度不超过6个字符，6.0.2(22)及以上支持长度不超过9个字符
       let campaignId: string = '';
       let osApiVersion: number = deviceInfo.sdkApiVersion;
       if (osApiVersion >= 22) {
@@ -371,8 +160,6 @@ class  Attribution {
     } catch (error) {
       hilog.error(0, TAG, `registerSource error.code is ${error.code}, message is ${error.message}`);
     }
-  }
-}
 ```
 
 #### attributionManager.registerTrigger
@@ -389,55 +176,26 @@ registerTrigger(adTriggerInfo: AdTriggerInfo): Promise<void>
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-adTriggerInfo
-
-[AdTriggerInfo](#section6127112918554)
-
-是
-
-转化事件信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| adTriggerInfo | AdTriggerInfo | 是 | 转化事件信息。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<void>
-
-Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](ArkTS API错误码.md)。
 
-错误码ID
-
-错误信息
-
-401
-
-Parameter error.
-
-1009300001
-
-The specified service extension connect failed.
-
-1009300002
-
-System internal error.
-
-1009300003
-
-The identity check error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 1009300001 | The specified service extension connect failed. |
+| 1009300002 | System internal error. |
+| 1009300003 | The identity check error. |
 
 **示例：**
 
@@ -472,6 +230,4 @@ class Attribution {
     } catch (error) {
       hilog.error(0, TAG, `registerTrigger error.code is ${error.code}, message is ${error.message}`);
     }
-  }
-}
 ```

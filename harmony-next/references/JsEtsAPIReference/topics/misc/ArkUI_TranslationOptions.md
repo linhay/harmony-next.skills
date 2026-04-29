@@ -1,0 +1,25 @@
+# ArkUI_TranslationOptions
+
+```ets
+typedef struct {...} ArkUI_TranslationOptions
+```
+
+**概述**
+
+定义组件转场时的平移效果对象。
+
+起始版本： 12
+
+相关模块： [ArkUI_NativeModule](ArkUI_NativeModule.md)
+
+所在头文件： [native_type.h](native_type.h.md)
+
+**汇总**
+
+**成员变量**
+
+| 名称 | 描述 |
+| --- | --- |
+| float x | 横向的平移距离，单位为vp。 |
+| float y | 纵向的平移距离，单位为vp。 |
+| float z | 竖向的平移距离，单位为vp。 |

@@ -12,4 +12,4 @@ typedef struct RawFile64 RawFile64
 
 **相关模块：**[rawfile](rawfile.md)
 
-**所在头文件：**[raw_file.h](../../capi/headers/raw_file.h.md)
+**所在头文件：**[raw_file.h](../../topics/misc/[raw_file.h](raw_file.h.md).md)

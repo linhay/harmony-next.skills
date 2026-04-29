@@ -24,11 +24,17 @@ pick(context: Context, mediaTypes: Array<PickerMediaType>, pickerProfile: Picker
 
 **参数：**
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是应用上下文。mediaTypesArray<[PickerMediaType](#ZH-CN_TOPIC_0000002529445759__pickermediatype)>是媒体类型。pickerProfile[PickerProfile](#ZH-CN_TOPIC_0000002529445759__pickerprofile)是pickerProfile对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 应用上下文。 |
+| mediaTypes | Array<PickerMediaType> | 是 | 媒体类型。 |
+| pickerProfile | PickerProfile | 是 | pickerProfile对象。 |
 
 **返回值：**
 
-类型说明Promise<PickerResult>Promise对象，返回相机选择器的处理结果[PickerResult](#ZH-CN_TOPIC_0000002529445759__pickerresult)。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<PickerResult> | Promise对象，返回相机选择器的处理结果PickerResult。 |
 
 **示例：**
 
@@ -49,7 +55,6 @@ async function demo(context: Context) {
     let err = error as BusinessError;
     console.error(`the pick call failed. error code: ${err.code}`);
   }
-}
 ```
 
 #### PickerMediaType
@@ -60,7 +65,10 @@ async function demo(context: Context) {
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
-名称值说明PHOTO'photo'拍照模式。VIDEO'video'录制模式。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PHOTO | 'photo' | 拍照模式。 |
+| VIDEO | 'video' | 录制模式。 |
 
 #### PickerProfile
 
@@ -70,7 +78,11 @@ async function demo(context: Context) {
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
-名称类型只读可选说明cameraPosition[camera.CameraPosition](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraposition)否否相机的位置。saveUristring否是保存配置信息的uri，默认值请参考[文件uri](@ohos.file.fileuri (文件URI).md#ZH-CN_TOPIC_0000002529285247__constructor10)。当前saveUri参数为可选参数，若未配置该参数，则拍摄的照片和视频会默认存入媒体库中；若不想将照片和视频存入媒体库中，请自行配置应用沙箱内的文件资源路径，如自行传入资源路径时请确保该文件存在且具备写入权限，否则会保存失败。videoDurationnumber否是录制的最大时长（单位：秒）。默认为0，不设置最大录制时长。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| cameraPosition | [camera.CameraPosition](../../types/enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraposition) | 否 | 否 | 相机的位置。 |
+| saveUri | string | 否 | 是 | 保存配置信息的uri，默认值请参考文件uri。当前saveUri参数为可选参数，若未配置该参数，则拍摄的照片和视频会默认存入媒体库中；若不想将照片和视频存入媒体库中，请自行配置应用沙箱内的文件资源路径，如自行传入资源路径时请确保该文件存在且具备写入权限，否则会保存失败。 |
+| videoDuration | number | 否 | 是 | 录制的最大时长（单位：秒）。默认为0，不设置最大录制时长。 |
 
 #### PickerResult
 
@@ -80,4 +92,8 @@ async function demo(context: Context) {
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
-名称类型只读可选说明resultCodenumber否否处理的结果，成功返回0，失败返回-1。resultUristring否否返回的uri地址。若saveUri为空，resultUri为公共媒体路径。若saveUri不为空且具备写权限，resultUri与saveUri相同。若saveUri不为空且不具备写权限，则无法获取到resultUri。mediaType[PickerMediaType](#ZH-CN_TOPIC_0000002529445759__pickermediatype)否否返回的媒体类型。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| resultCode | number | 否 | 否 | 处理的结果，成功返回0，失败返回-1。 |
+| resultUri | string | 否 | 否 | 返回的uri地址。若saveUri为空，resultUri为公共媒体路径。若saveUri不为空且具备写权限，resultUri与saveUri相同。若saveUri不为空且不具备写权限，则无法获取到resultUri。 |
+| mediaType | PickerMediaType | 否 | 否 | 返回的媒体类型。 |

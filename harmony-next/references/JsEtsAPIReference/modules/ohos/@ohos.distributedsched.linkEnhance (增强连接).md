@@ -4,6 +4,8 @@ linkEnhance模块提供高效的蓝牙连接和数据传输功能，增强设备
 
 本模块首批接口从API version 20开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
+本模块接口仅可在Stage模型下使用
+
 #### 导入模块
 
 ```ets
@@ -20,19 +22,29 @@ createServer(name: string): Server
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明namestring是自定义的非空字符串，标识应用的服务名，最大长度255字节。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 自定义的非空字符串，标识应用的服务名，最大长度255字节。 |
 
 **返回值：**
 
-类型说明[Server](#ZH-CN_TOPIC_0000002497445460__server)创建成功的服务对象。
+| 类型 | 说明 |
+| --- | --- |
+| Server | 创建成功的服务对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.32390203Duplicate server name.32390206Invalid parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390203 | Duplicate server name. |
+| 32390206 | Invalid parameter. |
 
 **示例：**
 
@@ -64,19 +76,29 @@ createConnection(deviceId: string, name: string): Connection
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明deviceIdstring是连接的目标设备的deviceId，即对端设备的BLE MAC地址。BLE MAC的获取方法，请参考[查找设备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ble-development-guide)。namestring是连接的目标设备的服务名，非空字符串，最大长度255字节。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 连接的目标设备的deviceId，即对端设备的BLE MAC地址。BLE MAC的获取方法，请参考查找设备。 |
+| name | string | 是 | 连接的目标设备的服务名，非空字符串，最大长度255字节。 |
 
 **返回值：**
 
-类型说明[Connection](#ZH-CN_TOPIC_0000002497445460__connection)创建成功的连接对象。
+| 类型 | 说明 |
+| --- | --- |
+| Connection | 创建成功的连接对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.32390206Invalid parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390206 | Invalid parameter. |
 
 **示例：**
 
@@ -115,11 +137,17 @@ start(): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.32390202The number of servers exceeds the limit.32390300Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390202 | The number of servers exceeds the limit. |
+| 32390300 | Internal error. |
 
 **示例：**
 
@@ -151,11 +179,15 @@ stop(): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
 
 **示例：**
 
@@ -188,11 +220,15 @@ close(): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
 
 **示例：**
 
@@ -225,15 +261,23 @@ on(type: 'connectionAccepted', callback: Callback<Connection>): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'connectionAccepted'，收到对端连接，触发该事件。callbackCallback<[Connection](#ZH-CN_TOPIC_0000002497445460__connection)>是注册的回调函数。[Connection](#ZH-CN_TOPIC_0000002497445460__connection)返回的连接对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'connectionAccepted'，收到对端连接，触发该事件。 |
+| callback | Callback<Connection> | 是 | 注册的回调函数。Connection返回的连接对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.32390206Parameter invalid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390206 | Parameter invalid. |
 
 **示例：**
 
@@ -272,15 +316,23 @@ off(type: 'connectionAccepted', callback?: Callback<Connection>): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'connectionAccepted'，收到对端连接，触发该事件。callbackCallback<[Connection](#ZH-CN_TOPIC_0000002497445460__connection)>否注册的回调函数。[Connection](#ZH-CN_TOPIC_0000002497445460__connection)返回的连接对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'connectionAccepted'，收到对端连接，触发该事件。 |
+| callback | Callback<Connection> | 否 | 注册的回调函数。Connection返回的连接对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.32390206Parameter invalid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390206 | Parameter invalid. |
 
 **示例：**
 
@@ -297,11 +349,11 @@ try {
   // 使用服务名构造Server
   let server: linkEnhance.Server = linkEnhance.createServer(name);
   server.on('connectionAccepted', (connection: linkEnhance.Connection): void => {
-    hilog.info(0x0000, TAG, 'accpet new connection');
+    hilog.info(0x0000, TAG, 'accept new connection');
   });
   // 取消订阅服务接收
   server.off('connectionAccepted', (connection: linkEnhance.Connection): void => {
-    hilog.info(0x0000, TAG, 'accpet new connection');
+    hilog.info(0x0000, TAG, 'accept new connection');
   });
 } catch (err) {
   hilog.error(0x0000, TAG, 'start sever errCode: ' + (err as BusinessError).code + ', errMessage: ' +
@@ -319,15 +371,23 @@ on(type: 'serverStopped', callback: Callback<number>): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'serverStopped'，底层服务异常时，触发该事件。callbackCallback<number>是注册的回调函数，number为返回的错误码。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'serverStopped'，底层服务异常时，触发该事件。 |
+| callback | Callback<number> | 是 | 注册的回调函数，number为返回的错误码。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.32390206Parameter invalid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390206 | Parameter invalid. |
 
 **示例：**
 
@@ -366,15 +426,23 @@ off(type: 'serverStopped', callback?: Callback<number>): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'serverStopped'，底层服务异常时触发。callbackCallback<number>否注册的回调函数，number为返回的错误码。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'serverStopped'，底层服务异常时触发。 |
+| callback | Callback<number> | 否 | 注册的回调函数，number为返回的错误码。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.32390206Parameter invalid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390206 | Parameter invalid. |
 
 **示例：**
 
@@ -409,17 +477,13 @@ try {
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
-名称类型只读可选说明deviceIdstring否否对端设备ID，成功返回对端设备的deviceId，失败返回空字符串。successboolean否否连接结果，true表示连接成功，false表示连接失败。reasonnumber否否
+模型约束：此接口仅可在Stage模型下使用
 
-连接成功返回0，连接失败返回错误码：
-
-- 32390200：表示客户端连接超时。
-
-- 32390201：表示服务端服务未启动。
-
-- 32390300：表示内部错误。
-
-更多关于错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| deviceId | string | 否 | 否 | 对端设备ID，成功返回对端设备的deviceId，失败返回空字符串。 |
+| success | boolean | 否 | 否 | 连接结果，true表示连接成功，false表示连接失败。 |
+| reason | number | 否 | 否 | 连接成功返回0，连接失败返回错误码： - 32390200：表示客户端连接超时。 - 32390201：表示服务端服务未启动。 - 32390300：表示内部错误。 更多关于错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。 |
 
 #### Connection
 
@@ -435,11 +499,17 @@ connect(): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.32390204The number of connection exceeds the limit.32390300Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390204 | The number of connection exceeds the limit. |
+| 32390300 | Internal error. |
 
 **示例：**
 
@@ -478,11 +548,15 @@ disconnect(): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
 
 **示例：**
 
@@ -520,11 +594,15 @@ close(): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
 
 **示例：**
 
@@ -562,15 +640,21 @@ getPeerDeviceId(): string
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **返回值：**
 
-类型说明string对端设备的deviceId，即对端设备的BLE MAC地址。如果获取失败返回空字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 对端设备的deviceId，即对端设备的BLE MAC地址。如果获取失败返回空字符串。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
 
 **示例：**
 
@@ -603,15 +687,24 @@ sendData(data: ArrayBuffer): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明data[ArrayBuffer](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arraybuffer-object)是需要发送的数据，最大发送长度为1024字节。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | ArrayBuffer | 是 | 需要发送的数据，最大发送长度为1024字节。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.32390205Connection is not ready.32390206Invalid parameter.32390300Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390205 | Connection is not ready. |
+| 32390206 | Invalid parameter. |
+| 32390300 | Internal error. |
 
 **示例：**
 
@@ -653,15 +746,23 @@ on(type: 'connectResult', callback: Callback<ConnectResult>): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'connectResult'，完成connect()调用，触发该事件。callbackCallback<[ConnectResult](#ZH-CN_TOPIC_0000002497445460__connectresult)>是注册的回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'connectResult'，完成connect()调用，触发该事件。 |
+| callback | Callback<ConnectResult> | 是 | 注册的回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.32390206Invalid parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390206 | Invalid parameter. |
 
 **示例：**
 
@@ -699,15 +800,23 @@ off(type: 'connectResult', callback?: Callback<ConnectResult>): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'connectResult'，完成connect()调用，触发该事件。callbackCallback<[ConnectResult](#ZH-CN_TOPIC_0000002497445460__connectresult)>否注册的回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'connectResult'，完成connect()调用，触发该事件。 |
+| callback | Callback<ConnectResult> | 否 | 注册的回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.32390206Invalid parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390206 | Invalid parameter. |
 
 **示例：**
 
@@ -745,15 +854,23 @@ on(type: 'disconnected', callback: Callback<number>): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'disconnected'，连接被动断开或底层异常断开时，触发该事件。callbackCallback<number>是注册的回调函数，number为返回的错误码。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'disconnected'，连接被动断开或底层异常断开时，触发该事件。 |
+| callback | Callback<number> | 是 | 注册的回调函数，number为返回的错误码。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.32390206Invalid parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390206 | Invalid parameter. |
 
 **示例：**
 
@@ -788,15 +905,23 @@ off(type: 'disconnected', callback?: Callback<number>): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'disconnected'，连接被动断开或底层异常断开时，触发该事件。callbackCallback<number>否注册的回调函数。number为返回的错误码。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'disconnected'，连接被动断开或底层异常断开时，触发该事件。 |
+| callback | Callback<number> | 否 | 注册的回调函数。number为返回的错误码。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.32390206Invalid parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390206 | Invalid parameter. |
 
 **示例：**
 
@@ -834,15 +959,23 @@ on(type: 'dataReceived', callback: Callback<ArrayBuffer>): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'dataReceived'，收到数据时，触发该事件。callbackCallback<[ArrayBuffer](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arraybuffer-object)>是注册的回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'dataReceived'，收到数据时，触发该事件。 |
+| callback | Callback<ArrayBuffer> | 是 | 注册的回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.32390206Invalid parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390206 | Invalid parameter. |
 
 **示例：**
 
@@ -877,15 +1010,23 @@ off(type: 'dataReceived', callback?: Callback<ArrayBuffer>): void
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+模型约束：此接口仅可在Stage模型下使用
+
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'dataReceived'，收到数据时，触发该事件。callbackCallback<[ArrayBuffer](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arraybuffer-object)>否注册的回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'dataReceived'，收到数据时，触发该事件。 |
+| callback | Callback<ArrayBuffer> | 否 | 注册的回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参考[增强连接错误码](../../errors/增强连接错误码.md)。
+以下错误码的详细介绍请参考[增强连接错误码](增强连接错误码.md)。
 
-错误码ID错误信息201Permission denied.32390206Invalid parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 32390206 | Invalid parameter. |
 
 **示例：**
 

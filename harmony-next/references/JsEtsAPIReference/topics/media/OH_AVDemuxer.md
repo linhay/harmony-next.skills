@@ -12,4 +12,4 @@ typedef struct OH_AVDemuxer OH_AVDemuxer
 
 **相关模块：**[AVDemuxer](AVDemuxer.md)
 
-**所在头文件：**[native_avdemuxer.h](../../capi/headers/native_avdemuxer.h.md)
+**所在头文件：**[native_avdemuxer.h](../../topics/media/[native_avdemuxer.h](native_avdemuxer.h.md).md)

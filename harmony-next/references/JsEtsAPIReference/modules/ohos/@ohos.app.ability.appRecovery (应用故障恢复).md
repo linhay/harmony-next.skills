@@ -12,37 +12,48 @@ import { appRecovery } from '@kit.AbilityKit';
 
 #### RestartFlag
 
-应用重启标志，[enableAppRecovery](#ZH-CN_TOPIC_0000002529284599__apprecoveryenableapprecovery)接口重启选项参数，该类型为枚举。
+应用重启标志，[enableAppRecovery](#ZH-CN_TOPIC_0000002553360479__apprecoveryenableapprecovery)接口重启选项参数，该类型为枚举。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称值说明ALWAYS_RESTART0总是重启应用。RESTART_WHEN_JS_CRASH0x0001发生JS_CRASH时重启应用。RESTART_WHEN_APP_FREEZE0x0002发生APP_FREEZE时重启应用。NO_RESTART0xFFFF总是不重启应用。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ALWAYS_RESTART | 0 | 总是重启应用。 |
+| RESTART_WHEN_JS_CRASH | 0x0001 | 发生JS_CRASH时重启应用。 |
+| RESTART_WHEN_APP_FREEZE | 0x0002 | 发生APP_FREEZE时重启应用。 |
+| NO_RESTART | 0xFFFF | 总是不重启应用。 |
 
 #### SaveOccasionFlag
 
-保存条件标志，[enableAppRecovery](#ZH-CN_TOPIC_0000002529284599__apprecoveryenableapprecovery)接口状态保存时的选项参数，该类型为枚举。
+保存条件标志，[enableAppRecovery](#ZH-CN_TOPIC_0000002553360479__apprecoveryenableapprecovery)接口状态保存时的选项参数，该类型为枚举。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称值说明SAVE_WHEN_ERROR0x0001当发生应用故障时保存。SAVE_WHEN_BACKGROUND0x0002当应用切入后台时保存。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SAVE_WHEN_ERROR | 0x0001 | 当发生应用故障时保存。 |
+| SAVE_WHEN_BACKGROUND | 0x0002 | 当应用切入后台时保存。 |
 
 #### SaveModeFlag
 
-状态保存标志，[enableAppRecovery](#ZH-CN_TOPIC_0000002529284599__apprecoveryenableapprecovery)接口状态保存方式的参数，该类型为枚举。
+状态保存标志，[enableAppRecovery](#ZH-CN_TOPIC_0000002553360479__apprecoveryenableapprecovery)接口状态保存方式的参数，该类型为枚举。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称值说明SAVE_WITH_FILE0x0001每次状态保存都会写入到本地文件缓存。SAVE_WITH_SHARED_MEMORY0x0002状态先保存在内存中，应用故障退出时写入到本地文件缓存。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SAVE_WITH_FILE | 0x0001 | 每次状态保存都会写入到本地文件缓存。 |
+| SAVE_WITH_SHARED_MEMORY | 0x0002 | 状态先保存在内存中，应用故障退出时写入到本地文件缓存。 |
 
 #### appRecovery.enableAppRecovery
 
-enableAppRecovery(restart?: [RestartFlag](#ZH-CN_TOPIC_0000002529284599__restartflag), saveOccasion?: [SaveOccasionFlag](#ZH-CN_TOPIC_0000002529284599__saveoccasionflag), saveMode?: [SaveModeFlag](#ZH-CN_TOPIC_0000002529284599__savemodeflag)) : void
+enableAppRecovery(restart?: [RestartFlag](#ZH-CN_TOPIC_0000002553360479__restartflag), saveOccasion?: [SaveOccasionFlag](#ZH-CN_TOPIC_0000002553360479__saveoccasionflag), saveMode?: [SaveModeFlag](#ZH-CN_TOPIC_0000002553360479__savemodeflag)) : void
 
 使能应用恢复功能，参数按顺序填入。该接口调用后，应用从启动器启动时第一个Ability支持恢复。
 
@@ -54,7 +65,11 @@ enableAppRecovery(restart?: [RestartFlag](#ZH-CN_TOPIC_0000002529284599__restart
 
 **参数：**
 
-参数名类型必填说明restart[RestartFlag](#ZH-CN_TOPIC_0000002529284599__restartflag)否枚举类型，发生对应故障时是否重启，默认为重启。saveOccasion[SaveOccasionFlag](#ZH-CN_TOPIC_0000002529284599__saveoccasionflag)否枚举类型，状态保存时机，默认为故障时保存。saveMode[SaveModeFlag](#ZH-CN_TOPIC_0000002529284599__savemodeflag)否枚举类型，状态保存方式， 默认为文件缓存。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| restart | RestartFlag | 否 | 枚举类型，发生对应故障时是否重启，默认为重启。 |
+| saveOccasion | SaveOccasionFlag | 否 | 枚举类型，状态保存时机，默认为故障时保存。 |
+| saveMode | SaveModeFlag | 否 | 枚举类型，状态保存方式， 默认为文件缓存。 |
 
 **示例：**
 
@@ -69,7 +84,6 @@ export default class MyAbilityStage extends AbilityStage {
       appRecovery.SaveModeFlag.SAVE_WITH_FILE
     );
   }
-}
 ```
 
 #### appRecovery.restartApp
@@ -78,7 +92,7 @@ restartApp(): void
 
 重启当前进程，并拉起应用启动时第一个Ability，如果该Ability存在已经保存的状态，这些状态数据会在Ability的onCreate生命周期回调的want参数中作为wantParam属性传入。
 
-API10时将启动由[setRestartWant](#ZH-CN_TOPIC_0000002529284599__apprecoverysetrestartwant10)指定的Ability。如果没有指定则按以下规则启动：
+API10时将启动由[setRestartWant](#ZH-CN_TOPIC_0000002553360479__apprecoverysetrestartwant10)指定的Ability。如果没有指定则按以下规则启动：
 
 如果当前应用前台的Ability支持恢复，则重新拉起该Ability。
 
@@ -128,7 +142,9 @@ saveAppState(): boolean
 
 **返回值：**
 
-类型说明boolean保存成功与否。true：保存成功，false：保存失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 保存成功与否。true：保存成功，false：保存失败。 |
 
 **示例：**
 
@@ -152,7 +168,7 @@ try {
 
 #### appRecovery.saveAppState10+
 
-saveAppState(context?: UIAbilityContext): boolean
+saveAppState(context?: [UIAbilityContext](../../topics/misc/UIAbilityContext.md)): boolean
 
 主动保存Ability的状态，这个状态将在下次恢复启动时使用。可以配合[errorManager](@ohos.app.ability.errorManager (错误管理模块).md)相关接口使用。
 
@@ -164,11 +180,15 @@ saveAppState(context?: UIAbilityContext): boolean
 
 **参数：**
 
-参数名类型必填说明context[UIAbilityContext](../../topics/graphics/UIAbilityContext.md)否需要保存状态的UIAbility所对应的context。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [UIAbilityContext](../../topics/misc/UIAbilityContext.md) | 否 | 需要保存状态的UIAbility所对应的context。 |
 
 **返回值：**
 
-类型说明boolean保存成功与否。true：保存成功，false：保存失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 保存成功与否。true：保存成功，false：保存失败。 |
 
 **示例：**
 
@@ -204,7 +224,9 @@ setRestartWant(want: Want): void
 
 **参数：**
 
-参数名类型必填说明want[Want](@ohos.app.ability.Want (Want).md)是通过设置Want中"bundleName"和"abilityName"字段来指定恢复重启的Ability。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | Want | 是 | 通过设置Want中"bundleName"和"abilityName"字段来指定恢复重启的Ability。 |
 
 **示例：**
 
@@ -228,5 +250,4 @@ struct Index {
         appRecovery.setRestartWant(want);
       })
   }
-}
 ```

@@ -1,28 +1,23 @@
-[]()[]()
-
 # Span
 
-作为[Text](../graphics/Text.md)、[ContainerSpan](ContainerSpan.md)组件的子组件，用于显示行内文本的组件。
+作为[Text](Text.md)、[ContainerSpan](ContainerSpan.md)组件的子组件，用于显示行内文本的组件。
+
 
  该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
- 该组件从API version 10开始支持继承父组件Text的属性，即如果子组件未设置属性且父组件设置属性，则继承父组件设置的属性。支持继承的属性仅包括：fontColor、fontSize、fontStyle、fontWeight、decoration、letterSpacing、textCase、fontFamily、textShadow。
+ 该组件从API version 10开始支持继承父组件[Text](Text.md)的属性，即如果子组件未设置属性且父组件设置属性，则继承父组件设置的属性。支持继承的属性仅包括：fontColor、fontSize、fontStyle、fontWeight、decoration、letterSpacing、textCase、fontFamily、textShadow。
 
- 不支持[通用属性](通用属性 (ts-component-general-attributes).md)。若需设置通用属性，应使用[Text](../graphics/Text.md)进行设置，或改用[属性字符串](../misc/属性字符串.md)中的[CustomSpan](../misc/属性字符串.md#ZH-CN_TOPIC_0000002497444920__customspan)自行绘制。
+ 不支持[通用属性](通用属性.md)。若需设置通用属性，应使用[Text](Text.md)进行设置，或改用[属性字符串](属性字符串.md)中的[CustomSpan](属性字符串.md#ZH-CN_TOPIC_0000002553360773__customspan)自行绘制。
 
-[通用事件](通用事件 (ts-component-general-events).md)只支持点击事件[onClick](../misc/点击事件.md#ZH-CN_TOPIC_0000002529284807__onclick)和悬浮事件[onHover](../misc/悬浮事件.md#ZH-CN_TOPIC_0000002497444838__onhover)。
-
-[]()[]()
+ [通用事件](通用事件.md)只支持点击事件[onClick](点击事件.md#ZH-CN_TOPIC_0000002522240764__onclick)和悬浮事件[onHover](悬浮事件.md#ZH-CN_TOPIC_0000002553360691__onhover)。
 
 #### 子组件
 
 无
 
-[]()[]()
-
 #### 接口
 
-Span(value: string | Resource)
+Span(value: string | [Resource](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource))
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -32,13 +27,13 @@ Span(value: string | Resource)
 
 **参数：**
 
-参数名类型必填说明valuestring | [Resource](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)是文本内容。[]()[]()
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | string | [Resource](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 是 | 文本内容。 |
 
 #### 属性
 
-属性继承自[BaseSpan](#ZH-CN_TOPIC_0000002529284887__basespan)。
-
-[]()[]()
+属性继承自[BaseSpan](#ZH-CN_TOPIC_0000002522240844__basespan)。
 
 #### decoration
 
@@ -54,37 +49,20 @@ decoration(value: DecorationStyleInterface)
 
 **参数：**
 
-参数名类型必填说明value[DecorationStyleInterface12+](../misc/属性字符串.md#ZH-CN_TOPIC_0000002497444920__decorationstyleinterface)是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [DecorationStyleInterface12+](属性字符串.md#ZH-CN_TOPIC_0000002497444920__decorationstyleinterface) | 是 | 文本装饰线样式对象。 默认值： {  type: TextDecorationType.None,  color: Color.Black,  style: TextDecorationStyle.SOLID  } 说明：  style参数不支持卡片能力。 |
 
-文本装饰线样式对象。
-
-默认值：
-
-{
-
- type: TextDecorationType.None,
-
- color: Color.Black,
-
- style: TextDecorationStyle.SOLID
-
-}
-
-**说明：**
-
-style参数不支持卡片能力。
 
  当文字的下边缘轮廓与装饰线位置相交时，会触发下划线避让规则，下划线将在这些字符处避让文字。常见“gjyqp”等英文字符。
 
  当文本装饰线的颜色设置为Color.Transparent时，装饰线颜色设置为跟随每行第一个字的字体颜色。当文本装饰线的颜色设置为透明色16进制对应值“#00FFFFFF”时，装饰线颜色设置为透明色。
 
-[]()[]()
-
 #### letterSpacing
 
-letterSpacing(value: number | ResourceStr)
+letterSpacing(value: number | [Resource](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)Str)
 
-设置文本字符间距。取值小于0，字符聚集重叠，取值大于0且随着数值变大，字符间距越来越大，稀疏分布。string类型支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"。
+设置文本字符间距。取值小于0，字符聚集重叠，取值大于0且随着数值变大，字符间距越来越大，稀疏分布。string类型支持number类型取值的字符串形式，可以附带单位，例如"10"、"10[fp](像素单位.md)"。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -94,19 +72,13 @@ letterSpacing(value: number | ResourceStr)
 
 **参数：**
 
-参数名类型必填说明valuenumber | [ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)是
-
-文本字符间距。
-
-单位：[fp](../misc/像素单位.md)
-
-从API version 20开始，支持Resource类型。
-
-[]()[]()
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 是 | 文本字符间距。 单位：[fp](像素单位.md)  从API version 20开始，支持Resource类型。 |
 
 #### textCase
 
-textCase(value: TextCase)
+textCase(value: [TextCase](枚举说明.md#ZH-CN_TOPIC_0000002529284967__textcase))
 
 设置文本大小写。
 
@@ -118,17 +90,13 @@ textCase(value: TextCase)
 
 **参数：**
 
-参数名类型必填说明value[TextCase](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__textcase)是
-
-文本大小写。
-
-默认值：TextCase.Normal
-
-[]()[]()
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [TextCase](枚举说明.md#ZH-CN_TOPIC_0000002529284967__textcase) | 是 | 文本大小写。 默认值：TextCase.Normal |
 
 #### fontColor
 
-fontColor(value: ResourceColor)
+fontColor(value: [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor))
 
 设置字体颜色。
 
@@ -140,19 +108,13 @@ fontColor(value: ResourceColor)
 
 **参数：**
 
-参数名类型必填说明value[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)是
-
-字体颜色。
-
-默认值：'e6182431'
-
-Wearable设备上默认值为：'#c5ffffff'
-
-[]()[]()
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 是 | 字体颜色。 默认值：'e6182431' Wearable设备上默认值为：'#c5ffffff' |
 
 #### fontSize
 
-fontSize(value: number | string | Resource)
+fontSize(value: number | string | [Resource](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource))
 
 设置字体大小。
 
@@ -164,17 +126,13 @@ fontSize(value: number | string | Resource)
 
 **参数：**
 
-参数名类型必填说明valuenumber | string | [Resource](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)是
-
-字体大小。fontSize为number类型时，使用fp单位。字体默认大小16fp。string类型支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"，不支持设置百分比字符串。
-
-Wearable设备上默认值为：15fp
-
-[]()[]()
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | string | [Resource](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 是 | 字体大小。fontSize为number类型时，使用fp单位。字体默认大小16fp。string类型支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"，不支持设置百分比字符串。 Wearable设备上默认值为：15fp |
 
 #### fontStyle
 
-fontStyle(value: FontStyle)
+fontStyle(value: [FontStyle](枚举说明.md#ZH-CN_TOPIC_0000002529284967__fontstyle))
 
 设置字体样式。
 
@@ -186,17 +144,13 @@ fontStyle(value: FontStyle)
 
 **参数：**
 
-参数名类型必填说明value[FontStyle](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__fontstyle)是
-
-字体样式。
-
-默认值：FontStyle.Normal
-
-[]()[]()
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [FontStyle](枚举说明.md#ZH-CN_TOPIC_0000002529284967__fontstyle) | 是 | 字体样式。 默认值：FontStyle.Normal |
 
 #### fontWeight
 
-fontWeight(value: number | FontWeight | ResourceStr)
+fontWeight(value: number | FontWeight | [Resource](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)Str)
 
 设置文本的字体粗细，设置过大可能会在不同字体下有截断。
 
@@ -208,19 +162,13 @@ fontWeight(value: number | FontWeight | ResourceStr)
 
 **参数：**
 
-参数名类型必填说明valuenumber | [FontWeight](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__fontweight) | [ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)是
-
-文本的字体粗细，number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如"400"，以及"bold"、"bolder"、"lighter"、"regular"、"medium"，分别对应FontWeight中相应的枚举值。
-
-默认值：FontWeight.Normal
-
-从API version 20开始，支持Resource类型。
-
-[]()[]()
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | [FontWeight](枚举说明.md#ZH-CN_TOPIC_0000002529284967__fontweight) | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 是 | 文本的字体粗细，number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如"400"，以及"bold"、"bolder"、"lighter"、"regular"、"medium"，分别对应FontWeight中相应的枚举值。 默认值：FontWeight.Normal  从API version 20开始，支持Resource类型。 |
 
 #### fontFamily
 
-fontFamily(value: string | Resource)
+fontFamily(value: string | [Resource](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource))
 
 设置字体列表。
 
@@ -232,21 +180,16 @@ fontFamily(value: string | Resource)
 
 **参数：**
 
-参数名类型必填说明valuestring | [Resource](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | string | [Resource](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource) | 是 | 字体列表。 默认字体'HarmonyOS Sans'。 使用多个字体时，请用逗号','分隔，字体的优先级按顺序生效。例如：'Arial,HarmonyOS Sans'。 |
 
-字体列表。
 
-默认字体'HarmonyOS Sans'。
-
-使用多个字体时，请用逗号','分隔，字体的优先级按顺序生效。例如：'Arial,HarmonyOS Sans'。
-
-可以使用[loadFontSync](../../modules/ohos/@ohos.graphics.text (文本模块).md#ZH-CN_TOPIC_0000002497605988__loadfontsync)注册自定义字体。
-
-[]()[]()
+可以使用[loadFontSync](@ohos.graphics.text (文本模块).md#ZH-CN_TOPIC_0000002553362061__loadfontsync)注册自定义字体。
 
 #### lineHeight10+
 
-lineHeight(value: Length)
+lineHeight(value: [Length](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__length))
 
 设置文本行高。
 
@@ -256,17 +199,13 @@ lineHeight(value: Length)
 
 **参数：**
 
-参数名类型必填说明value[Length](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__length)是
-
-文本行高。
-
- number类型时单位为fp。设置string类型时，支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"。
-
-[]()[]()
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [Length](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__length) | 是 | 文本行高。   number类型时单位为fp。设置string类型时，支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"。 |
 
 #### font10+
 
-font(value: Font)
+font(value: [Font](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font))
 
 设置文本样式。包括字体大小、字体粗细、字体族和字体风格。
 
@@ -276,11 +215,13 @@ font(value: Font)
 
 **参数：**
 
-参数名类型必填说明value[Font](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font)是文本样式。[]()[]()
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [Font](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__font) | 是 | 文本样式。 |
 
 #### textShadow11+
 
-textShadow(value: ShadowOptions | Array<ShadowOptions>)
+textShadow(value: [ShadowOptions](图像效果.md#ZH-CN_TOPIC_0000002497444856__shadowoptions对象说明) | Array<ShadowOptions>)
 
 设置文字阴影效果。该接口支持以数组形式入参，实现多重文字阴影。不支持fill字段, 不支持智能取色模式。
 
@@ -290,15 +231,16 @@ textShadow(value: ShadowOptions | Array<ShadowOptions>)
 
 **参数：**
 
-参数名类型必填说明value[ShadowOptions](../misc/图像效果.md#ZH-CN_TOPIC_0000002497444856__shadowoptions对象说明) | Array<[ShadowOptions](../misc/图像效果.md#ZH-CN_TOPIC_0000002497444856__shadowoptions对象说明)>是文字阴影效果。[]()[]()
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [ShadowOptions](图像效果.md#ZH-CN_TOPIC_0000002497444856__shadowoptions对象说明) | Array<ShadowOptions> | 是 | 文字阴影效果。 |
 
 #### 事件
 
-通用事件支持[点击事件onClick](../misc/点击事件.md#ZH-CN_TOPIC_0000002529284807__onclick)、[悬浮事件onHover](../misc/悬浮事件.md#ZH-CN_TOPIC_0000002497444838__onhover)。
+通用事件支持[点击事件onClick](点击事件.md#ZH-CN_TOPIC_0000002522240764__onclick)、[悬浮事件onHover](悬浮事件.md#ZH-CN_TOPIC_0000002553360691__onhover)。
+
 
  由于Span组件无尺寸信息，因此点击事件返回的ClickEvent对象的target属性无效。
-
-[]()[]()
 
 #### BaseSpan
 
@@ -308,11 +250,9 @@ textShadow(value: ShadowOptions | Array<ShadowOptions>)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-[]()[]()
-
 #### textBackgroundStyle11+
 
-textBackgroundStyle(style: TextBackgroundStyle): T
+textBackgroundStyle(style: [Text](Text.md)BackgroundStyle): T
 
 设置背景样式。作为[ContainerSpan](ContainerSpan.md)的子组件时可以继承它的此属性值，优先使用其自身的此属性。
 
@@ -322,27 +262,19 @@ textBackgroundStyle(style: TextBackgroundStyle): T
 
 **参数：**
 
-参数名类型必填说明style[TextBackgroundStyle](#ZH-CN_TOPIC_0000002529284887__textbackgroundstyle11对象说明)是
-
-背景样式。
-
-默认值:
-
-{
-
- color: Color.Transparent,
-
- radius: 0
-
-}
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| style | [Text](Text.md)BackgroundStyle | 是 | 背景样式。 默认值: {  color: Color.Transparent,  radius: 0 } |
 
 **返回值：**
 
-类型说明T返回当前Span的属性。[]()[]()
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回当前Span的属性。 |
 
 #### baselineOffset12+
 
-baselineOffset(value: LengthMetrics): T
+baselineOffset(value: [LengthMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetrics12)): T
 
 设置Span基线的偏移量。此属性与父组件的baselineOffset是共存的。
 
@@ -352,31 +284,28 @@ baselineOffset(value: LengthMetrics): T
 
 **参数：**
 
-参数名类型必填说明value[LengthMetrics](../graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetrics12)是
-
-设置Span基线的偏移量，设置该值为百分比时，按默认值显示。
-
-正数内容向上偏移，负数向下偏移。
-
-默认值：0
-
-在ImageSpan中，设置为非0时，[verticalAlign](ImageSpan.md#ZH-CN_TOPIC_0000002529444861__verticalalign)将固定为ImageSpanAlignment.BASELINE对齐；设置为0时，要使基线对齐策略生效，需同时设置[verticalAlign](ImageSpan.md#ZH-CN_TOPIC_0000002529444861__verticalalign)为ImageSpanAlignment.BASELINE。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [LengthMetrics](../misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__lengthmetrics12) | 是 | 设置Span基线的偏移量，设置该值为百分比时，按默认值显示。 正数内容向上偏移，负数向下偏移。 默认值：0 在ImageSpan中，设置为非0时，[verticalAlign](../../types/interfaces/ImageSpan.md#ZH-CN_TOPIC_0000002529444861__verticalalign)将固定为ImageSpanAlignment.BASELINE对齐；设置为0时，要使基线对齐策略生效，需同时设置verticalAlign为ImageSpanAlignment.BASELINE。 |
 
 **返回值：**
 
-类型说明T返回当前Span的属性。[]()[]()
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回当前Span的属性。 |
 
-#### TextBackgroundStyle11+对象说明
+#### [Text](Text.md)BackgroundStyle11+对象说明
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明color[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)否是文本背景色。radius[Dimension](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10) | [BorderRadiuses](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__borderradiuses9)否是文本背景圆角。[]()[]()
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| color | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 否 | 是 | 文本背景色。 |
+| radius | [Dimension](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10) | [BorderRadiuses](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__borderradiuses9) | 否 | 是 | 文本背景圆角。 |
 
 #### 示例
-
-[]()[]()
 
 #### 示例1（设置文本样式）
 
@@ -513,14 +442,13 @@ struct SpanExample {
       }
     }.width('100%').padding({ left: 35, right: 35, top: 35 })
   }
-}
 ```
 
-[]()[]()
+![image](public_sys-resources/zh-cn_image_0000002553205033.webp)
 
 #### 示例2（设置文本阴影）
 
-从API version 11开始，该示例通过[textShadow](#ZH-CN_TOPIC_0000002529284887__textshadow11)属性展示了文本设置阴影的效果。
+从API version 11开始，该示例通过[textShadow](#ZH-CN_TOPIC_0000002522240844__textshadow11)属性展示了文本设置阴影的效果。
 
 ```ets
 // xxx.ets
@@ -566,15 +494,13 @@ struct SpanExample {
         Span('123456789') // span can inherit text shadow & font size from outer text
       }.fontSize(50).textShadow(this.textShadows).fontColor(Color.Pink)
     }
-  }
-}
 ```
 
-[]()[]()
+![image](public_sys-resources/zh-cn_image_0000002522085080.webp)
 
 #### 示例3（设置背景样式）
 
-从API version 11开始，该示例通过[textBackgroundStyle](#ZH-CN_TOPIC_0000002529284887__textbackgroundstyle11)属性展示了文本设置背景样式的效果。
+从API version 11开始，该示例通过[textBackgroundStyle](#ZH-CN_TOPIC_0000002522240844__textbackgroundstyle11)属性展示了文本设置背景样式的效果。
 
 ```ets
 // xxx.ets
@@ -591,14 +517,13 @@ struct SpanExample {
       }
     }.width('100%').margin({ bottom: '5vp' }).alignItems(HorizontalAlign.Center)
   }
-}
 ```
 
-[]()[]()
+![image](public_sys-resources/zh-cn_image_0000002553364997.webp)
 
 #### 示例4（设置文本基线偏移量）
 
-从API version 12开始，该示例通过[baselineOffset](#ZH-CN_TOPIC_0000002529284887__baselineoffset12)属性展示了文本设置不同基线偏移量的效果。
+从API version 12开始，该示例通过[baselineOffset](#ZH-CN_TOPIC_0000002522240844__baselineoffset12)属性展示了文本设置不同基线偏移量的效果。
 
 ```ets
 // xxx.ets
@@ -628,5 +553,6 @@ struct SpanExample {
     }
     .height('100%')
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522245074.webp)

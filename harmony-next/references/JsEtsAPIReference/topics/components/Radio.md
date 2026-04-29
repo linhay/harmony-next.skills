@@ -24,7 +24,9 @@ Radio(options: RadioOptions)
 
 **参数：**
 
-参数名类型必填说明options[RadioOptions](#ZH-CN_TOPIC_0000002497444910__radiooptions对象说明)是配置单选框的参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | RadioOptions | 是 | 配置单选框的参数。 |
 
 #### RadioOptions对象说明
 
@@ -32,37 +34,12 @@ Radio(options: RadioOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明valuestring否否
-
-当前单选框的值。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-groupstring否否
-
-当前单选框的所属群组名称，相同group的Radio只能有一个被选中。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-indicatorType12+[RadioIndicatorType](#ZH-CN_TOPIC_0000002497444910__radioindicatortype12枚举说明)否是
-
-配置单选框的选中样式。未设置时按照RadioIndicatorType.TICK进行显示。
-
-**卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-indicatorBuilder12+[CustomBuilder](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__custombuilder8)否是
-
-配置单选框的选中样式为自定义组件。自定义组件与Radio组件为中心点对齐显示。indicatorBuilder设置为undefined时，按照RadioIndicatorType.TICK进行显示。
-
-**卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| value | string | 否 | 否 | 当前单选框的值。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| group | string | 否 | 否 | 当前单选框的所属群组名称，相同group的Radio只能有一个被选中。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| indicatorType12+ | RadioIndicatorType | 否 | 是 | 配置单选框的选中样式。未设置时按照RadioIndicatorType.TICK进行显示。 卡片能力： 从API version 12开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| indicatorBuilder12+ | [CustomBuilder](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__custombuilder8) | 否 | 是 | 配置单选框的选中样式为自定义组件。自定义组件与Radio组件为中心点对齐显示。indicatorBuilder设置为undefined时，按照RadioIndicatorType.TICK进行显示。 卡片能力： 从API version 12开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 
 #### RadioIndicatorType12+枚举说明
 
@@ -74,11 +51,15 @@ indicatorBuilder12+[CustomBuilder](../misc/基础类型定义.md#ZH-CN_TOPIC_000
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称值说明TICK0选中样式为系统默认TICK图标。DOT1选中样式为系统默认DOT图标。CUSTOM2选中样式为indicatorBuilder中的内容。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| TICK | 0 | 选中样式为系统默认TICK图标。 |
+| DOT | 1 | 选中样式为系统默认DOT图标。 |
+| CUSTOM | 2 | 选中样式为indicatorBuilder中的内容。 |
 
 #### 属性
 
-除支持[通用属性](../misc/通用属性.md)外，还支持以下属性：
+除支持[通用属性]([通用属性](../misc/通用属性.md).md)外，还支持以下属性：
 
 #### checked
 
@@ -98,19 +79,15 @@ checked(value: boolean)
 
 **参数：**
 
-参数名类型必填说明valueboolean是
-
-单选框的选中状态。
-
-默认值：false
-
-值为true时，单选框被选中。值为false时，单选框不被选中。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | boolean | 是 | 单选框的选中状态。 默认值：false 值为true时，单选框被选中。值为false时，单选框不被选中。 |
 
 #### checked18+
 
-checked(isChecked: Optional<boolean>)
+checked(isChecked: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<boolean>)
 
-设置单选框的选中状态。与[checked](#ZH-CN_TOPIC_0000002497444910__checked)相比，isChecked参数新增了对undefined类型的支持。
+设置单选框的选中状态。与[checked](#ZH-CN_TOPIC_0000002553360763__checked)相比，isChecked参数新增了对undefined类型的支持。
 
 该属性支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)、[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding#系统组件参数双向绑定)双向绑定变量。
 
@@ -122,13 +99,9 @@ checked(isChecked: Optional<boolean>)
 
 **参数：**
 
-参数名类型必填说明isChecked[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<boolean>是
-
-单选框的选中状态。
-
-当isChecked的值为undefined时取默认值false。
-
-值为true时，单选框被选中。值为false时，单选框不被选中。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isChecked | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<boolean> | 是 | 单选框的选中状态。 当isChecked的值为undefined时取默认值false。 值为true时，单选框被选中。值为false时，单选框不被选中。 |
 
 #### radioStyle10+
 
@@ -144,7 +117,9 @@ radioStyle(value?: RadioStyle)
 
 **参数：**
 
-参数名类型必填说明value[RadioStyle](#ZH-CN_TOPIC_0000002497444910__radiostyle10对象说明)否单选框选中状态和非选中状态的样式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | RadioStyle | 否 | 单选框选中状态和非选中状态的样式。 |
 
 #### contentModifier12+
 
@@ -158,17 +133,15 @@ contentModifier(modifier: ContentModifier<RadioConfiguration>)
 
 **参数：**
 
-参数名类型必填说明modifier[ContentModifier<RadioConfiguration>](#ZH-CN_TOPIC_0000002497444910__radioconfiguration12对象说明)是
-
-在Radio组件上，定制内容区的方法。
-
-modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| modifier | ContentModifier<RadioConfiguration> | 是 | 在Radio组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
 
 #### contentModifier18+
 
-contentModifier(modifier: Optional<ContentModifier<RadioConfiguration>>)
+contentModifier(modifier: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<ContentModifier<RadioConfiguration>>)
 
-定制Radio内容区的方法。与[contentModifier](#ZH-CN_TOPIC_0000002497444910__contentmodifier12)12+相比，modifier参数新增了对undefined类型的支持。
+定制Radio内容区的方法。与[contentModifier](#ZH-CN_TOPIC_0000002553360763__contentmodifier12)12+相比，modifier参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -176,21 +149,17 @@ contentModifier(modifier: Optional<ContentModifier<RadioConfiguration>>)
 
 **参数：**
 
-参数名类型必填说明modifier[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[ContentModifier<RadioConfiguration>](#ZH-CN_TOPIC_0000002497444910__radioconfiguration12对象说明)>是
-
-在Radio组件上，定制内容区的方法。
-
-modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。
-
-当modifier的值为undefined时，不使用内容修改器。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| modifier | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<ContentModifier<RadioConfiguration>> | 是 | 在Radio组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 当modifier的值为undefined时，不使用内容修改器。 |
 
 #### 事件
 
-除支持[通用事件](../misc/通用事件.md)外，还支持以下事件：
+除支持[通用事件]([通用事件](../misc/通用事件.md).md)外，还支持以下事件：
 
 #### onChange
 
-onChange(callback: (isChecked: boolean) => void)
+onChange([callback](../networking/Rcp_OnProgressCallback.md#ZH-CN_TOPIC_0000002317126053__a899177e3d91f73c817ccdb2edafbcd8f): (isChecked: boolean) => void)
 
 单选框选中状态改变时触发的回调。
 
@@ -202,17 +171,15 @@ onChange(callback: (isChecked: boolean) => void)
 
 **参数：**
 
-参数名类型必填说明isCheckedboolean是
-
-单选框选中状态改变时触发该回调。
-
-值为true时，表示从未选中变为选中。值为false时，表示从选中变为未选中。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isChecked | boolean | 是 | 单选框选中状态改变时触发该回调。 值为true时，表示从未选中变为选中。值为false时，表示从选中变为未选中。 |
 
 #### onChange18+
 
-onChange(callback: Optional<OnRadioChangeCallback>)
+onChange(callback: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<OnRadioChangeCallback>)
 
-单选框选中状态改变时触发的回调。与[onChange](#ZH-CN_TOPIC_0000002497444910__onchange)相比，callback参数新增了对undefined类型的支持。
+单选框选中状态改变时触发的回调。与[onChange](#ZH-CN_TOPIC_0000002553360763__onchange)相比，callback参数新增了对undefined类型的支持。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
@@ -222,11 +189,9 @@ onChange(callback: Optional<OnRadioChangeCallback>)
 
 **参数：**
 
-参数名类型必填说明callback[Optional](../misc/自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<[OnRadioChangeCallback](#ZH-CN_TOPIC_0000002497444910__onradiochangecallback18)>是
-
-单选框选中状态改变时触发该回调。
-
-当callback的值为undefined时，不使用回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284845__optionalt12)<OnRadioChangeCallback> | 是 | 单选框选中状态改变时触发该回调。 当callback的值为undefined时，不使用回调函数。 |
 
 #### OnRadioChangeCallback18+
 
@@ -240,11 +205,9 @@ type OnRadioChangeCallback = (isChecked: boolean) => void
 
 **参数：**
 
-参数名类型必填说明isCheckedboolean是
-
-单选框的状态。
-
-值为true时，表示从未选中变为选中。值为false时，表示从选中变为未选中。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isChecked | boolean | 是 | 单选框的状态。 值为true时，表示从未选中变为选中。值为false时，表示从选中变为未选中。 |
 
 #### RadioStyle10+对象说明
 
@@ -254,45 +217,25 @@ type OnRadioChangeCallback = (isChecked: boolean) => void
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明checkedBackgroundColor[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)否是
-
-开启状态底板颜色。
-
-默认值：$r('sys.color.ohos_id_color_text_primary_activated')
-
-uncheckedBorderColor[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)否是
-
-关闭状态描边颜色。
-
-默认值：$r('sys.color.ohos_id_color_switch_outline_off')
-
-indicatorColor[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)否是
-
-开启状态内部圆饼颜色。从API version 12开始，indicatorType设置为RadioIndicatorType.TICK和RadioIndicatorType.DOT时，支持修改内部颜色。indicatorType设置为RadioIndicatorType.CUSTOM时，不支持修改内部颜色。
-
-默认值：$r('sys.color.ohos_id_color_foreground_contrary')
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| checkedBackgroundColor | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 否 | 是 | 开启状态底板颜色。 默认值：$r('sys.color.ohos_id_color_text_primary_activated') |
+| uncheckedBorderColor | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 否 | 是 | 关闭状态描边颜色。 默认值：$r('sys.color.ohos_id_color_switch_outline_off') |
+| indicatorColor | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 否 | 是 | 开启状态内部圆饼颜色。从API version 12开始，indicatorType设置为RadioIndicatorType.TICK和RadioIndicatorType.DOT时，支持修改内部颜色。indicatorType设置为RadioIndicatorType.CUSTOM时，不支持修改内部颜色。 默认值：$r('sys.color.ohos_id_color_foreground_contrary') |
 
 #### RadioConfiguration12+对象说明
 
-开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](../misc/自定义内容.md#ZH-CN_TOPIC_0000002497444874__commonconfigurationt)。
+开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](自定义内容.md#ZH-CN_TOPIC_0000002553360727__commonconfigurationt)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明valuestring否否当前单选框的值。checkedboolean否否
-
-设置单选框的选中状态。
-
-默认值：false
-
-值为true时，单选框被选中。值为false时，单选框不被选中。
-
-triggerChangeCallback<boolean>否否
-
-触发单选框选中状态变化。
-
-值为true时，表示从未选中变为选中。值为false时，表示从选中变为未选中。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| value | string | 否 | 否 | 当前单选框的值。 |
+| checked | boolean | 否 | 否 | 设置单选框的选中状态。 默认值：false 值为true时，单选框被选中。值为false时，单选框不被选中。 |
+| triggerChange | Callback<boolean> | 否 | 否 | 触发单选框选中状态变化。 值为true时，表示从未选中变为选中。值为false时，表示从选中变为未选中。 |
 
 #### 示例
 
@@ -344,7 +287,6 @@ struct RadioExample {
           })
       }
     }.padding({ top: 30 })
-  }
 }
 ```
 
@@ -400,7 +342,6 @@ struct RadioExample {
       }
     }.padding({ top: 30 })
   }
-}
 ```
 
 #### 示例3（设置自定义样式）
@@ -419,7 +360,6 @@ class MyRadioStyle implements ContentModifier<RadioConfiguration> {
 
   applyContent(): WrappedBuilder<[RadioConfiguration]> {
     return wrapBuilder(buildRadio);
-  }
 }
 
 @Builder
@@ -439,7 +379,6 @@ function buildRadio(config: RadioConfiguration) {
           config.triggerChange(true);
         }
       })
-  }
 }
 
 @Entry
@@ -462,7 +401,6 @@ struct refreshExample {
           .height(60)
           .contentModifier(new MyRadioStyle(2, '#004AAF'))
       }
-    }
-  }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522084990.webp)

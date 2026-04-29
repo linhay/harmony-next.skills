@@ -15,4 +15,6 @@ AudioCodec模块提供用于音频编解码功能的函数。
 
 #### 文件汇总
 
-名称描述[native_avcodec_audiocodec.h](../../capi/headers/native_avcodec_audiocodec.h.md)音频编解码Native API的声明。
+| 名称 | 描述 |
+| --- | --- |
+| [native_avcodec_audiocodec.h](native_avcodec_audiocodec.h.md) | 音频编解码Native API的声明。 |

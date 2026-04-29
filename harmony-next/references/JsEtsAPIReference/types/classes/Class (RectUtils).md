@@ -44,12 +44,14 @@ static makeEmpty(): common2D.Rect
 
 **返回值：**
 
-类型说明[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)创建的矩形对象。
+| 类型 | 说明 |
+| --- | --- |
+| common2D.Rect | 创建的矩形对象。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
 
 let rect = drawing.RectUtils.makeEmpty();
 ```
@@ -64,16 +66,23 @@ static makeLtrb(left: number, top: number, right: number, bottom: number): commo
 
 **参数：**
 
-参数名类型必填说明leftnumber是矩形的左上角x轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点左侧，正数表示位于坐标原点右侧。topnumber是矩形的左上角y轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点上侧，正数表示位于坐标原点下侧。rightnumber是矩形的右下角x轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点左侧，正数表示位于坐标原点右侧。bottomnumber是矩形的右下角y轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点上侧，正数表示位于坐标原点下侧。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| left | number | 是 | 矩形的左上角x轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点左侧，正数表示位于坐标原点右侧。 |
+| top | number | 是 | 矩形的左上角y轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点上侧，正数表示位于坐标原点下侧。 |
+| right | number | 是 | 矩形的右下角x轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点左侧，正数表示位于坐标原点右侧。 |
+| bottom | number | 是 | 矩形的右下角y轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点上侧，正数表示位于坐标原点下侧。 |
 
 **返回值：**
 
-类型说明[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)创建的矩形。
+| 类型 | 说明 |
+| --- | --- |
+| common2D.Rect | 创建的矩形。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
 
 let rect = drawing.RectUtils.makeLtrb(10, 10, 20, 20);
 ```
@@ -88,16 +97,21 @@ static makeCopy(src: common2D.Rect): common2D.Rect
 
 **参数：**
 
-参数名类型必填说明src[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是用于拷贝的矩形。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| src | common2D.Rect | 是 | 用于拷贝的矩形。 |
 
 **返回值：**
 
-类型说明[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)创建的新矩形。
+| 类型 | 说明 |
+| --- | --- |
+| common2D.Rect | 创建的新矩形。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeLtrb(10, 10, 20, 20);
 let rect2 = drawing.RectUtils.makeCopy(rect);
 console.info('rect2.left:', rect2.left);
@@ -116,16 +130,21 @@ static getWidth(rect: common2D.Rect): number
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是矩形对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 矩形对象。 |
 
 **返回值：**
 
-类型说明number返回矩形的宽。如果矩形的左边界大于右边界，获取的宽度为负值，左边界小于右边界则为正值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回矩形的宽。如果矩形的左边界大于右边界，获取的宽度为负值，左边界小于右边界则为正值。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeLtrb(10, 10, 20, 20);
 let width = drawing.RectUtils.getWidth(rect);
 console.info('width:', width);
@@ -141,16 +160,21 @@ static getHeight(rect: common2D.Rect): number
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是矩形对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 矩形对象。 |
 
 **返回值：**
 
-类型说明number返回矩形的高。如果矩形的上边界大于下边界，获取的高度为负值，上边界小于下边界则为正值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回矩形的高。如果矩形的上边界大于下边界，获取的高度为负值，上边界小于下边界则为正值。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeLtrb(10, 10, 20, 20);
 let height = drawing.RectUtils.getHeight(rect);
 ```
@@ -165,16 +189,21 @@ static centerX(rect: common2D.Rect): number
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是矩形对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 矩形对象。 |
 
 **返回值：**
 
-类型说明number返回矩形中心的横坐标。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回矩形中心的横坐标。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeLtrb(20, 30, 30, 40);
 let x = drawing.RectUtils.centerX(rect);
 ```
@@ -189,16 +218,21 @@ static centerY(rect: common2D.Rect): number
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是矩形对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 矩形对象。 |
 
 **返回值：**
 
-类型说明number返回矩形中心的纵坐标。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回矩形中心的纵坐标。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeLtrb(20, 30, 30, 40);
 let x = drawing.RectUtils.centerY(rect);
 ```
@@ -213,16 +247,22 @@ static contains(rect: common2D.Rect, other: common2D.Rect): boolean
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是矩形对象。other[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是判断是否被包含的矩形对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 矩形对象。 |
+| other | common2D.Rect | 是 | 判断是否被包含的矩形对象。 |
 
 **返回值：**
 
-类型说明boolean返回矩形是否完全包含另一个矩形的结果。true表示指定矩形在另一个矩形内部或者相等，false表示指定矩形在另一个矩形外部。空的矩形不包含任何矩形。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回矩形是否完全包含另一个矩形的结果。true表示指定矩形在另一个矩形内部或者相等，false表示指定矩形在另一个矩形外部。空的矩形不包含任何矩形。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeLtrb(10, 10, 20, 20);
 let rect2 = drawing.RectUtils.makeLtrb(0, 0, 40, 40);
 let isContains = drawing.RectUtils.contains(rect2, rect);
@@ -239,16 +279,25 @@ static contains(rect: common2D.Rect, left: number, top: number, right: number, b
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是矩形对象。leftnumber是矩形的左上角x轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点左侧，正数表示位于坐标原点右侧。topnumber是矩形的左上角y轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点上侧，正数表示位于坐标原点下侧。rightnumber是矩形的右下角x轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点左侧，正数表示位于坐标原点右侧。bottomnumber是矩形的右下角y轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点上侧，正数表示位于坐标原点下侧。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 矩形对象。 |
+| left | number | 是 | 矩形的左上角x轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点左侧，正数表示位于坐标原点右侧。 |
+| top | number | 是 | 矩形的左上角y轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点上侧，正数表示位于坐标原点下侧。 |
+| right | number | 是 | 矩形的右下角x轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点左侧，正数表示位于坐标原点右侧。 |
+| bottom | number | 是 | 矩形的右下角y轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点上侧，正数表示位于坐标原点下侧。 |
 
 **返回值：**
 
-类型说明boolean返回矩形是否完全包含由左上右下坐标组成的矩形的结果。true表示指定左上右下坐标组成的矩形在矩形的内部或者相等，false表示指定左上右下坐标组成的矩形在矩形的外部。空的矩形不包含任何矩形。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回矩形是否完全包含由左上右下坐标组成的矩形的结果。true表示指定左上右下坐标组成的矩形在矩形的内部或者相等，false表示指定左上右下坐标组成的矩形在矩形的外部。空的矩形不包含任何矩形。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeLtrb(0, 0, 100, 100);
 let isContains = drawing.RectUtils.contains(rect, 10, 20, 30, 40);
 console.info('isContains :', isContains);
@@ -264,16 +313,23 @@ static contains(rect: common2D.Rect, x: number, y: number): boolean
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是矩形对象。xnumber是要判断点的x轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点左侧，正数表示位于坐标原点右侧。ynumber是要判断点的y轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点上侧，正数表示位于坐标原点下侧。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 矩形对象。 |
+| x | number | 是 | 要判断点的x轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点左侧，正数表示位于坐标原点右侧。 |
+| y | number | 是 | 要判断点的y轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点上侧，正数表示位于坐标原点下侧。 |
 
 **返回值：**
 
-类型说明boolean返回矩形是否完全包含x、y组成的点的结果。true表示矩形完全包含x、y组成的点，false表示矩形不完全包含x、y组成的点。左边界和上边界属于矩形内部，右边界和下边界不属于矩形内部。空的矩形不包含任何点。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回矩形是否完全包含x、y组成的点的结果。true表示矩形完全包含x、y组成的点，false表示矩形不完全包含x、y组成的点。左边界和上边界属于矩形内部，右边界和下边界不属于矩形内部。空的矩形不包含任何点。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeLtrb(0, 0, 100, 100);
 let isContains = drawing.RectUtils.contains(rect, 10, 20);
 console.info('isContains: ', isContains);
@@ -289,12 +345,19 @@ static inset(rect: common2D.Rect, left: number, top: number, right: number, bott
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是矩形对象。leftnumber是添加到矩形左边界的值（矩形左上角横坐标），该参数为浮点数。0表示不进行任何运算，正数表示进行相加运算，负数表示相减运算。topnumber是添加到矩形上边界的值（矩形左上角纵坐标），该参数为浮点数。0表示不进行任何运算，正数表示进行相加运算，负数表示相减运算。rightnumber是添加到矩形右边界的值（矩形右下角横坐标），该参数为浮点数。0表示不进行任何运算，正数表示进行相加运算，负数表示相减运算。bottomnumber是添加到矩形下边界的值（矩形右下角纵坐标），该参数为浮点数。0表示不进行任何运算，正数表示进行相加运算，负数表示相减运算。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 矩形对象。 |
+| left | number | 是 | 添加到矩形左边界的值（矩形左上角横坐标），该参数为浮点数。0表示不进行任何运算，正数表示进行相加运算，负数表示相减运算。 |
+| top | number | 是 | 添加到矩形上边界的值（矩形左上角纵坐标），该参数为浮点数。0表示不进行任何运算，正数表示进行相加运算，负数表示相减运算。 |
+| right | number | 是 | 添加到矩形右边界的值（矩形右下角横坐标），该参数为浮点数。0表示不进行任何运算，正数表示进行相加运算，负数表示相减运算。 |
+| bottom | number | 是 | 添加到矩形下边界的值（矩形右下角纵坐标），该参数为浮点数。0表示不进行任何运算，正数表示进行相加运算，负数表示相减运算。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeLtrb(10, 10, 20, 20);
 drawing.RectUtils.inset(rect, 10, -20, 30, 60);
 console.info('rect.left:', rect.left);
@@ -313,16 +376,22 @@ static intersect(rect: common2D.Rect, other: common2D.Rect): boolean
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是用于计算交集的原矩形。other[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是用于计算交集的另一个矩形。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 用于计算交集的原矩形。 |
+| other | common2D.Rect | 是 | 用于计算交集的另一个矩形。 |
 
 **返回值：**
 
-类型说明boolean返回两个矩形是否有交集的结果。true表示两个矩形有交集，false表示两个矩形没有交集。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回两个矩形是否有交集的结果。true表示两个矩形有交集，false表示两个矩形没有交集。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeLtrb(0, 0, 20, 20);
 let rect2 = drawing.RectUtils.makeLtrb(10, 10, 40, 40);
 let isIntersect = drawing.RectUtils.intersect(rect, rect2);
@@ -343,16 +412,22 @@ static isIntersect(rect: common2D.Rect, other: common2D.Rect): boolean
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是用于计算交集的原矩形。other[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是用于计算交集的另一个矩形。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 用于计算交集的原矩形。 |
+| other | common2D.Rect | 是 | 用于计算交集的另一个矩形。 |
 
 **返回值：**
 
-类型说明boolean返回两个矩形是否有交集的结果。true表示指定矩形与原矩形相交，false表示指定矩形和原矩形没有交集。两矩形仅边重叠或点相交返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回两个矩形是否有交集的结果。true表示指定矩形与原矩形相交，false表示指定矩形和原矩形没有交集。两矩形仅边重叠或点相交返回false。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeLtrb(0, 0, 20, 20);
 let rect2 = drawing.RectUtils.makeLtrb(10, 10, 40, 40);
 let isIntersect = drawing.RectUtils.isIntersect(rect, rect2);
@@ -369,12 +444,16 @@ static union(rect: common2D.Rect, other: common2D.Rect): void
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是用于计算并集的原矩形。other[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是用于计算并集的另一个矩形。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 用于计算并集的原矩形。 |
+| other | common2D.Rect | 是 | 用于计算并集的另一个矩形。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeLtrb(0, 0, 20, 20);
 let rect2 = drawing.RectUtils.makeLtrb(10, 10, 40, 40);
 drawing.RectUtils.union(rect, rect2);
@@ -394,16 +473,21 @@ static isEmpty(rect: common2D.Rect): boolean
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是用于判断的矩形对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 用于判断的矩形对象。 |
 
 **返回值：**
 
-类型说明boolean返回矩形是否为空的结果。true表示矩形是空，false表示矩形不为空。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回矩形是否为空的结果。true表示矩形是空，false表示矩形不为空。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeEmpty();
 let isEmpty = drawing.RectUtils.isEmpty(rect);
 console.info('isEmpty :', isEmpty);
@@ -422,12 +506,17 @@ static offset(rect: common2D.Rect, dx: number, dy: number): void
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是发生偏移的矩形区域。dxnumber是水平方向平移的距离，该参数为浮点数。0表示不平移，负数表示向左平移，正数表示向右平移。dynumber是竖直方向平移的距离，该参数为浮点数。0表示不平移，负数表示向上平移，正数表示向下平移。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 发生偏移的矩形区域。 |
+| dx | number | 是 | 水平方向平移的距离，该参数为浮点数。0表示不平移，负数表示向左平移，正数表示向右平移。 |
+| dy | number | 是 | 竖直方向平移的距离，该参数为浮点数。0表示不平移，负数表示向上平移，正数表示向下平移。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeLtrb(0, 0, 20, 20);
 drawing.RectUtils.offset(rect, 10, 20);
 console.info('rect.left:', rect.left);
@@ -446,12 +535,17 @@ static offsetTo(rect: common2D.Rect, newLeft: number, newTop: number): void
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是发生偏移的矩形区域。newLeftnumber是要平移到的对应位置的x轴坐标，浮点数。0表示坐标原点，负数位于坐标原点左侧，正数位于坐标原点右侧。newTopnumber是要平移到的对应位置的y轴坐标，浮点数。0表示坐标原点，负数位于坐标原点上侧，正数位于坐标原点下侧。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 发生偏移的矩形区域。 |
+| newLeft | number | 是 | 要平移到的对应位置的x轴坐标，浮点数。0表示坐标原点，负数位于坐标原点左侧，正数位于坐标原点右侧。 |
+| newTop | number | 是 | 要平移到的对应位置的y轴坐标，浮点数。0表示坐标原点，负数位于坐标原点上侧，正数位于坐标原点下侧。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeLtrb(20, 20, 40, 40);
 drawing.RectUtils.offsetTo(rect, 10, 20);
 console.info('rect.left:', rect.left);
@@ -470,12 +564,16 @@ static setRect(rect: common2D.Rect, other: common2D.Rect): void
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是原矩形。other[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是用于赋值的矩形。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 原矩形。 |
+| other | common2D.Rect | 是 | 用于赋值的矩形。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeLtrb(10, 20, 30, 40);
 let rect2 = drawing.RectUtils.makeEmpty();
 drawing.RectUtils.setRect(rect2, rect);
@@ -495,12 +593,19 @@ static setLtrb(rect: common2D.Rect, left: number, top: number, right: number, bo
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是矩形对象。leftnumber是矩形的左上角x轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点左侧，正数表示位于坐标原点右侧。topnumber是矩形的左上角y轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点上侧，正数表示位于坐标原点下侧。rightnumber是矩形的右下角x轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点左侧，正数表示位于坐标原点右侧。bottomnumber是矩形的右下角y轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点上侧，正数表示位于坐标原点下侧。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 矩形对象。 |
+| left | number | 是 | 矩形的左上角x轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点左侧，正数表示位于坐标原点右侧。 |
+| top | number | 是 | 矩形的左上角y轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点上侧，正数表示位于坐标原点下侧。 |
+| right | number | 是 | 矩形的右下角x轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点左侧，正数表示位于坐标原点右侧。 |
+| bottom | number | 是 | 矩形的右下角y轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点上侧，正数表示位于坐标原点下侧。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeEmpty();
 drawing.RectUtils.setLtrb(rect, 10, 20, 30, 60);
 console.info('rect.left:', rect.left);
@@ -519,12 +624,15 @@ static setEmpty(rect: common2D.Rect): void
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是用于设置为空的矩形对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 用于设置为空的矩形对象。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeLtrb(10, 20, 20, 30);
 drawing.RectUtils.setEmpty(rect)
 console.info('rect.left:', rect.left);
@@ -545,12 +653,15 @@ static sort(rect: common2D.Rect): void
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是用于设置的矩形对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 用于设置的矩形对象。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeLtrb(20, 40, 30, 30);
 drawing.RectUtils.sort(rect);
 console.info('rect.left:', rect.left);
@@ -569,16 +680,22 @@ static isEqual(rect: common2D.Rect, other: common2D.Rect): boolean
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是需要判断的原矩形。other[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是需要判断的另一矩形。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 需要判断的原矩形。 |
+| other | common2D.Rect | 是 | 需要判断的另一矩形。 |
 
 **返回值：**
 
-类型说明boolean返回两个矩形是否相等的结果。true表示两个矩形相等，false表示两个矩形不相等。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回两个矩形是否相等的结果。true表示两个矩形相等，false表示两个矩形不相等。 |
 
 **示例：**
 
 ```ets
-import { drawing, common2D } from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
+
 let rect = drawing.RectUtils.makeLtrb(10, 20, 20, 30);
 let rect2 = drawing.RectUtils.makeEmpty();
 let isEqual = drawing.RectUtils.isEqual(rect, rect2);

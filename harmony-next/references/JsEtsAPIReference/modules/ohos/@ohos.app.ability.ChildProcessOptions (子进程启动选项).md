@@ -16,7 +16,10 @@ import { ChildProcessOptions } from '@kit.AbilityKit';
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称类型只读可选说明isolationModeboolean否是控制子进程的沙箱隔离级别及网络访问权限。true表示子进程运行在独立沙箱环境中，且无法访问网络；false表示子进程与主进程共享沙箱和网络环境。默认为false。isolationUid21+boolean否是控制子进程是否使用独立的uid。true表示子进程运行拥有独立的uid；false表示子进程与主进程拥有相同uid。默认为false。仅在isolationMode为true时生效。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| isolationMode | boolean | 否 | 是 | 控制子进程的沙箱隔离级别及网络访问权限。true表示子进程运行在独立沙箱环境中，且无法访问网络；false表示子进程与主进程共享沙箱和网络环境。默认为false。 |
+| isolationUid21+ | boolean | 否 | 是 | 控制子进程是否使用独立的uid。true表示子进程运行拥有独立的uid；false表示子进程与主进程拥有相同uid。默认为false。仅在isolationMode为true时生效。 |
 
 **示例：**
 
@@ -32,7 +35,6 @@ export default class DemoProcess extends ChildProcess {
     let entryParams = args?.entryParams;
     let fd = args?.fds?.key1;
     //子进程代码逻辑
-  }
 }
 ```
 
@@ -80,5 +82,4 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```

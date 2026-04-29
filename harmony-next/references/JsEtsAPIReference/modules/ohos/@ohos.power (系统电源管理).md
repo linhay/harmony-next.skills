@@ -23,7 +23,9 @@ isActive(): boolean
 
 **返回值：**
 
-类型说明boolean活动状态返回true，非活动状态返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 活动状态返回true，非活动状态返回false。 |
 
 **示例：**
 
@@ -46,7 +48,9 @@ rebootDevice(reason: string): void
 
 **参数：**
 
-参数名类型必填说明reasonstring是重启原因。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| reason | string | 是 | 重启原因。 |
 
 **示例：**
 
@@ -64,7 +68,9 @@ getPowerMode(): DevicePowerMode
 
 **返回值：**
 
-类型说明[DevicePowerMode](#ZH-CN_TOPIC_0000002529285495__devicepowermode9)电源模式。
+| 类型 | 说明 |
+| --- | --- |
+| DevicePowerMode | 电源模式。 |
 
 **示例：**
 
@@ -83,13 +89,17 @@ isStandby(): boolean
 
 **返回值：**
 
-类型说明boolean进入待机模式返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 进入待机模式返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[系统电源管理错误码](../../errors/系统电源管理错误码.md)。
+以下错误码的详细介绍请参见[系统电源管理错误码]([系统电源管理错误码](../../errors/系统电源管理错误码.md).md)。
 
-错误码ID错误信息4900101Failed to connect to the service.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 4900101 | Failed to connect to the service. |
 
 **示例：**
 
@@ -106,7 +116,8 @@ try {
 
 isScreenOn(callback: AsyncCallback<boolean>): void
 
-从API version 7开始支持，从API version 9开始不再维护，建议使用[power.isActive](#ZH-CN_TOPIC_0000002529285495__powerisactive9)替代。
+
+从API version 7开始支持，从API version 9开始不再维护，建议使用[power.isActive](#ZH-CN_TOPIC_0000002522081592__powerisactive9)替代。
 
 检测当前设备的亮灭屏状态。使用callback异步回调。
 
@@ -114,7 +125,9 @@ isScreenOn(callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<boolean>是回调函数。当检测成功，err为undefined，data为获取到的亮灭屏状态，返回true表示亮屏，返回false表示灭屏；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当检测成功，err为undefined，data为获取到的亮灭屏状态，返回true表示亮屏，返回false表示灭屏；否则为错误对象。 |
 
 **示例：**
 
@@ -132,7 +145,8 @@ power.isScreenOn((err: Error, data: boolean) => {
 
 isScreenOn(): Promise<boolean>
 
-从API version 7开始支持，从API version 9开始不再维护，建议使用[power.isActive](#ZH-CN_TOPIC_0000002529285495__powerisactive9)替代。
+
+从API version 7开始支持，从API version 9开始不再维护，建议使用[power.isActive](#ZH-CN_TOPIC_0000002522081592__powerisactive9)替代。
 
 检测当前设备的亮灭屏状态。使用Promise异步回调。
 
@@ -140,7 +154,9 @@ isScreenOn(): Promise<boolean>
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示亮屏；返回false表示灭屏。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示亮屏；返回false表示灭屏。 |
 
 **示例：**
 
@@ -160,7 +176,13 @@ power.isScreenOn()
 
 **系统能力：** SystemCapability.PowerManager.PowerManager.Core
 
-名称值说明MODE_NORMAL600表示标准模式，默认值。MODE_POWER_SAVE601表示省电模式。MODE_PERFORMANCE602表示性能模式。MODE_EXTREME_POWER_SAVE603表示超级省电模式。MODE_CUSTOM_POWER_SAVE20+650表示自定义省电模式。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| MODE_NORMAL | 600 | 表示标准模式，默认值。 |
+| MODE_POWER_SAVE | 601 | 表示省电模式。 |
+| MODE_PERFORMANCE | 602 | 表示性能模式。 |
+| MODE_EXTREME_POWER_SAVE | 603 | 表示超级省电模式。 |
+| MODE_CUSTOM_POWER_SAVE20+ | 650 | 表示自定义省电模式。 |
 
 #### PowerKeyFilteringStrategy21+
 
@@ -168,4 +190,7 @@ power.isScreenOn()
 
 **系统能力：** SystemCapability.PowerManager.PowerManager.Core
 
-名称值说明DISABLE_LONG_PRESS_FILTERING0表示不使能电源键过滤策略，默认值。LONG_PRESS_FILTERING_ONCE1表示仅过滤当前电源键长按事件，下一次不过滤。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DISABLE_LONG_PRESS_FILTERING | 0 | 表示不使能电源键过滤策略，默认值。 |
+| LONG_PRESS_FILTERING_ONCE | 1 | 表示仅过滤当前电源键长按事件，下一次不过滤。 |

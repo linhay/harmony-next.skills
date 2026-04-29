@@ -10,12 +10,14 @@ struct OH_Filter_ColorMatrix {...}
 
 **起始版本：** 12
 
-**相关模块：**[effectKit](../misc/effectKit.md)
+相关模块： [effectKit](effectKit.md)
 
-**所在头文件：**[effect_types.h](../../capi/headers/effect_types.h.md)
+所在头文件： [effect_types.h](effect_types.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述float val[20]自定义颜色矩阵，值是一个5*4的数组。
+| 名称 | 描述 |
+| --- | --- |
+| float val[20] | 自定义颜色矩阵，值是一个5*4的数组。 |

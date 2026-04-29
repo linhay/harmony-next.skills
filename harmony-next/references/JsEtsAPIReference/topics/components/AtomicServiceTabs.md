@@ -16,7 +16,7 @@ import { AtomicServiceTabs, TabBarOptions, TabBarPosition, OnContentWillChangeCa
 
 #### 属性
 
-不支持[通用属性](../misc/通用属性.md)
+不支持[通用属性]([通用属性](../misc/通用属性.md).md)
 
 #### AtomicServiceTabs
 
@@ -24,13 +24,10 @@ import { AtomicServiceTabs, TabBarOptions, TabBarPosition, OnContentWillChangeCa
 AtomicServiceTabs({
    tabContents?: [ TabContentBuilder?,
                     TabContentBuilder?,
-                  TabContentBuilder?,
-                  TabContentBuilder?,
                   TabContentBuilder?
                 ],
    tabBarOptionsArray: [ TabBarOptions,
                         TabBarOptions,
-                        TabBarOptions?,
                         TabBarOptions?,
                         TabBarOptions?
                       ],
@@ -48,13 +45,23 @@ AtomicServiceTabs({
 
 **装饰器类型：**@Component
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
-名称类型必填装饰器类型说明tabContents[[TabContentBuilder?](#ZH-CN_TOPIC_0000002529284935__tabcontentbuilder),[TabContentBuilder?](#ZH-CN_TOPIC_0000002529284935__tabcontentbuilder), [TabContentBuilder?](#ZH-CN_TOPIC_0000002529284935__tabcontentbuilder),[TabContentBuilder?](#ZH-CN_TOPIC_0000002529284935__tabcontentbuilder), [TabContentBuilder?](#ZH-CN_TOPIC_0000002529284935__tabcontentbuilder)]否@BuilderParam内容视图容器数组，默认为空。tabBarOptionsArray[[TabBarOptions](#ZH-CN_TOPIC_0000002529284935__tabbaroptions),[TabBarOptions](#ZH-CN_TOPIC_0000002529284935__tabbaroptions), [TabBarOptions?](#ZH-CN_TOPIC_0000002529284935__tabbaroptions),[TabBarOptions?](#ZH-CN_TOPIC_0000002529284935__tabbaroptions), [TabBarOptions?](#ZH-CN_TOPIC_0000002529284935__tabbaroptions)]是@Prop页签容器数组。tabBarPosition[TabBarPosition](#ZH-CN_TOPIC_0000002529284935__tabbarposition)否@Prop设置页签栏位置，默认值为TabBarPosition.Bottom。layoutMode18+[LayoutMode](TabContent.md#ZH-CN_TOPIC_0000002497444904__layoutmode10)否@Prop设置底部页签的图片、文字排布的方式，默认值为LayoutMode.VERTICAL。barBackgroundColor[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)否@Prop设置TabBar的背景颜色，默认值为透明。indexnumber否@Prop设置当前显示页签的索引，索引值从0开始。barOverlapboolean否@Prop设置TabBar是否背后变模糊并叠加在TabContent之上。true表示TabBar背后变模糊并叠加在TabContent之上。默认值：true。controller[TabsController](tabs.md#ZH-CN_TOPIC_0000002497604882__tabscontroller)否-Tabs组件的控制器，用于控制Tabs组件进行页签切换。onChangeCallback<number>否-Tabs页签切换后触发的事件。onTabBarClickCallback<number>否-Tabs页签点击后触发的事件。onContentWillChange[OnContentWillChangeCallback](#ZH-CN_TOPIC_0000002529284935__oncontentwillchangecallback)否-Tabs页面切换拦截事件能力，新页面即将显示时触发该回调。
+| 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- |
+| tabContents | [TabContentBuilder?,TabContentBuilder?, TabContentBuilder?,TabContentBuilder?, TabContentBuilder?] | 否 | @BuilderParam | 内容视图容器数组，默认为空。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| tabBarOptionsArray | [TabBarOptions,TabBarOptions, TabBarOptions?,TabBarOptions?, TabBarOptions?] | 是 | @Prop | 页签容器数组。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| tabBarPosition | TabBarPosition | 否 | @Prop | 设置页签栏位置，默认值为TabBarPosition.Bottom。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| layoutMode18+ | [LayoutMode](TabContent.md#ZH-CN_TOPIC_0000002497444904__layoutmode10) | 否 | @Prop | 设置底部页签的图片、文字排布的方式，默认值为LayoutMode.VERTICAL。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
+| barBackgroundColor | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 否 | @Prop | 设置TabBar的背景颜色，默认值为透明。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| index | number | 否 | @Prop | 设置当前显示页签的索引，索引值从0开始。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| barOverlap | boolean | 否 | @Prop | 设置TabBar是否背景变模糊并叠加在TabContent之上。true表示TabBar背景变模糊并叠加在TabContent之上。默认值：true。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| controller | [TabsController](tabs.md#ZH-CN_TOPIC_0000002497604882__tabscontroller) | 否 | - | Tabs组件的控制器，用于控制Tabs组件进行页签切换。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| onChange | Callback<number> | 否 | - | Tabs页签切换后触发的事件。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| onTabBarClick | Callback<number> | 否 | - | Tabs页签点击后触发的事件。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| onContentWillChange | OnContentWillChangeCallback | 否 | - | Tabs页面切换拦截事件能力，新页面即将显示时触发该回调。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 
 #### TabContentBuilder
 
@@ -70,7 +77,7 @@ type TabContentBuilder = () => void
 
 #### constructor
 
-constructor(icon: ResourceStr | TabBarSymbol, text: ResourceStr, unselectedColor?: ResourceColor, selectedColor?: ResourceColor)
+constructor(icon: ResourceStr | TabBarSymbol, text: ResourceStr, unselectedColor?: [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor), selectedColor?: ResourceColor)
 
 TabBarOptions的构造函数。
 
@@ -80,7 +87,12 @@ TabBarOptions的构造函数。
 
 **参数：**
 
-参数名类型必填说明icon[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | [TabBarSymbol](TabContent.md#ZH-CN_TOPIC_0000002497444904__tabbarsymbol12对象说明)是页签内的图片内容。text[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)是页签内的文字内容。unselectedColor[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)否未选择时的页签颜色，默认值：#99182431。selectedColor[ResourceColor](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)否被选择时的页签颜色，默认值：#FF007DFF。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| icon | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | [TabBarSymbol](TabContent.md#ZH-CN_TOPIC_0000002497444904__tabbarsymbol12对象说明) | 是 | 页签内的图片内容。 |
+| text | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 是 | 页签内的文字内容。 |
+| unselectedColor | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 否 | 未选择时的页签颜色，默认值：#99182431。 |
+| selectedColor | [ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 否 | 被选择时的页签颜色，默认值：#FF007DFF。 |
 
 #### TabBarPosition
 
@@ -88,7 +100,10 @@ TabBarOptions的构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称值说明LEFT0设置TabBar位于屏幕左侧BOTTOM1设置TabBar位于屏幕底部
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| LEFT | 0 | 设置TabBar位于屏幕左侧 |
+| BOTTOM | 1 | 设置TabBar位于屏幕底部 |
 
 #### OnContentWillChangeCallback
 
@@ -102,11 +117,16 @@ type OnContentWillChangeCallback = (currentIndex: number, comingIndex: number) =
 
 **参数：**
 
-参数名类型必填说明currentIndexnumber是当前页签索引。comingIndexnumber是即将切换的页签索引。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| currentIndex | number | 是 | 当前页签索引。 |
+| comingIndex | number | 是 | 即将切换的页签索引。 |
 
 **返回值：**
 
-类型说明boolean回调函数正常执行则返回true，反之返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 回调函数正常执行则返回true，反之返回false。 |
 
 #### 示例
 
@@ -178,7 +198,6 @@ struct Index {
     }.margin({top:500})
     }.height('100%')
   }
-}
 ```
 
 #### 示例2(纯图标样式)
@@ -248,7 +267,6 @@ struct Index {
       Text("comingIndex = " + this.comingIndex + ", currentIndex = " + this.currentIndex)
     }.margin({top:500})
     }.height('100%')
-  }
 }
 ```
 
@@ -342,5 +360,6 @@ struct AtomicserviceTabs  {
       }.margin({ top: 10 })
     }.height('100%')
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553365273.webp)

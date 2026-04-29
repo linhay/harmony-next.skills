@@ -20,11 +20,15 @@ getId(uri: string): number
 
 **参数：**
 
-参数名类型必填说明uristring是表示uri对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 表示uri对象。 |
 
 **返回值：**
 
-类型说明number返回uri路径末尾的ID。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回uri路径末尾的ID。 |
 
 **示例：**
 
@@ -44,11 +48,16 @@ attachId(uri: string, id: number): string
 
 **参数：**
 
-参数名类型必填说明uristring是表示uri对象。idnumber是表示要附加的ID。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 表示uri对象。 |
+| id | number | 是 | 表示要附加的ID。 |
 
 **返回值：**
 
-类型说明string返回附加ID之后的uri对象。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回附加ID之后的uri对象。 |
 
 **示例：**
 
@@ -72,11 +81,15 @@ deleteId(uri: string): string
 
 **参数：**
 
-参数名类型必填说明uristring是表示要从中删除ID的uri对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 表示要从中删除ID的uri对象。 |
 
 **返回值：**
 
-类型说明string返回删除ID之后的uri对象。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回删除ID之后的uri对象。 |
 
 **示例：**
 
@@ -96,11 +109,16 @@ updateId(uri: string, id: number): string
 
 **参数：**
 
-参数名类型必填说明uristring是表示uri对象。idnumber是表示要更新的ID。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 表示uri对象。 |
+| id | number | 是 | 表示要更新的ID。 |
 
 **返回值：**
 
-类型说明string返回更新ID之后的uri对象。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回更新ID之后的uri对象。 |
 
 **示例：**
 

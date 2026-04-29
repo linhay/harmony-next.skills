@@ -12,7 +12,7 @@
 
 -
 
-以下API需先使用UIContext中的[getMediaQuery()](Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getmediaquery)方法获取到MediaQuery对象，再通过该对象调用对应方法。
+以下API需先使用UIContext中的[getMediaQuery()](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getmediaquery)方法获取到MediaQuery对象，再通过该对象调用对应方法。
 
 #### matchMediaSync
 
@@ -26,12 +26,16 @@ matchMediaSync(condition: string): mediaQuery.MediaQueryListener
 
 **参数：**
 
-参数名类型必填说明conditionstring是媒体事件的匹配条件，具体可参考[媒体查询语法规则](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-media-query#语法规则)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| condition | string | 是 | 媒体事件的匹配条件，具体可参考媒体查询语法规则。 |
 
 **返回值：**
 
-类型说明[mediaQuery.MediaQueryListener](../../modules/ohos/@ohos.mediaquery (媒体查询).md#ZH-CN_TOPIC_0000002497604790__mediaquerylistener)媒体事件监听句柄，用于注册和去注册监听回调。
+| 类型 | 说明 |
+| --- | --- |
+| mediaQuery.MediaQueryListener | 媒体事件监听句柄，用于注册和去注册监听回调。 |
 
 **示例：**
 
-完整示例请参考[mediaquery示例](../../modules/ohos/@ohos.mediaquery (媒体查询).md#ZH-CN_TOPIC_0000002497604790__示例)。
+完整示例请参考[mediaquery示例](@ohos.mediaquery (媒体查询).md#ZH-CN_TOPIC_0000002522080740__示例)。

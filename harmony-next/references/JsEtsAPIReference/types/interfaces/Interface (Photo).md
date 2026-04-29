@@ -17,7 +17,9 @@ import { camera } from '@kit.CameraKit';
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
-名称类型只读可选说明main11+[image.Image](Interface (Image).md)否否全质量图Image。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| main11+ | image.Image | 否 | 否 | 全质量图Image。 |
 
 #### release11+
 
@@ -31,7 +33,9 @@ release(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **示例：**
 

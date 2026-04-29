@@ -16,7 +16,10 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 **系统能力：** SystemCapability.Security.CertificateManager
 
-名称值说明CM_KEY_PURPOSE_SIGN4签名。CM_KEY_PURPOSE_VERIFY8验签。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CM_KEY_PURPOSE_SIGN | 4 | 签名。 |
+| CM_KEY_PURPOSE_VERIFY | 8 | 验签。 |
 
 #### CmKeyDigest
 
@@ -24,7 +27,16 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 **系统能力：** SystemCapability.Security.CertificateManager
 
-名称值说明CM_DIGEST_NONE0不需要摘要算法，选用此项时，需要业务传入已经计算过摘要的数据进行签名、验签。CM_DIGEST_MD51MD5摘要算法。CM_DIGEST_SHA12SHA1摘要算法。CM_DIGEST_SHA2243SHA224摘要算法。CM_DIGEST_SHA2564SHA256摘要算法。CM_DIGEST_SHA3845SHA384摘要算法。CM_DIGEST_SHA5126SHA512摘要算法。CM_DIGEST_SM318+7SM3摘要算法。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CM_DIGEST_NONE | 0 | 不需要摘要算法，选用此项时，需要业务传入已经计算过摘要的数据进行签名、验签。 |
+| CM_DIGEST_MD5 | 1 | MD5摘要算法。 |
+| CM_DIGEST_SHA1 | 2 | SHA1摘要算法。 |
+| CM_DIGEST_SHA224 | 3 | SHA224摘要算法。 |
+| CM_DIGEST_SHA256 | 4 | SHA256摘要算法。 |
+| CM_DIGEST_SHA384 | 5 | SHA384摘要算法。 |
+| CM_DIGEST_SHA512 | 6 | SHA512摘要算法。 |
+| CM_DIGEST_SM318+ | 7 | SM3摘要算法。 |
 
 #### CmKeyPadding
 
@@ -32,7 +44,11 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 **系统能力：** SystemCapability.Security.CertificateManager
 
-名称值说明CM_PADDING_NONE0无填充。CM_PADDING_PSS1PSS方式填充。CM_PADDING_PKCS1_V1_52PKCS1_V1_5方式填充。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CM_PADDING_NONE | 0 | 无填充。 |
+| CM_PADDING_PSS | 1 | PSS方式填充。 |
+| CM_PADDING_PKCS1_V1_5 | 2 | PKCS1_V1_5方式填充。 |
 
 #### CMSignatureSpec
 
@@ -40,7 +56,11 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 **系统能力：** SystemCapability.Security.CertificateManager
 
-名称类型只读可选说明purpose[CmKeyPurpose](#ZH-CN_TOPIC_0000002529445349__cmkeypurpose)否否表示密钥使用目的的枚举。padding[CmKeyPadding](#ZH-CN_TOPIC_0000002529445349__cmkeypadding)否是表示填充方式的枚举。digest[CmKeyDigest](#ZH-CN_TOPIC_0000002529445349__cmkeydigest)否是表示摘要算法的枚举。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| purpose | CmKeyPurpose | 否 | 否 | 表示密钥使用目的的枚举。 |
+| padding | CmKeyPadding | 否 | 是 | 表示填充方式的枚举。 |
+| digest | CmKeyDigest | 否 | 是 | 表示摘要算法的枚举。 |
 
 #### CertInfo
 
@@ -48,7 +68,18 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 **系统能力：** SystemCapability.Security.CertificateManager
 
-名称类型只读可选说明uristring否否表示证书的唯一标识符，最大长度为256字节。certAliasstring否否表示证书的别名，最大长度为128字节。stateboolean否否表示证书的状态，true为启用状态、false为禁用状态。issuerNamestring否否表示证书的颁发者名称，最大长度为256字节。subjectNamestring否否表示证书的使用者名称，最大长度为1024字节。serialstring否否表示证书的序列号，最大长度为64字节。格式为16进制字符串，例如：62C2CB4DE8405E96。notBeforestring否否表示证书有效期起始日期，最大长度为32字节。notAfterstring否否表示证书有效期截止日期，最大长度为32字节。fingerprintSha256string否否表示证书的指纹值，最大长度为128字节。certUint8Array否否表示证书二进制数据，最大长度为8196字节。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uri | string | 否 | 否 | 表示证书的唯一标识符，最大长度为256字节。 |
+| certAlias | string | 否 | 否 | 表示证书的别名，最大长度为128字节。 |
+| state | boolean | 否 | 否 | 表示证书的状态，true为启用状态、false为禁用状态。 |
+| issuerName | string | 否 | 否 | 表示证书的颁发者名称，最大长度为256字节。 |
+| subjectName | string | 否 | 否 | 表示证书的使用者名称，最大长度为1024字节。 |
+| serial | string | 否 | 否 | 表示证书的序列号，最大长度为64字节。格式为16进制字符串，例如：62C2CB4DE8405E96。 |
+| notBefore | string | 否 | 否 | 表示证书有效期起始日期，最大长度为32字节。 |
+| notAfter | string | 否 | 否 | 表示证书有效期截止日期，最大长度为32字节。 |
+| fingerprintSha256 | string | 否 | 否 | 表示证书的指纹值，最大长度为128字节。 |
+| cert | Uint8Array | 否 | 否 | 表示证书二进制数据，最大长度为8196字节。 |
 
 #### CertAbstract
 
@@ -56,7 +87,12 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 **系统能力：** SystemCapability.Security.CertificateManager
 
-名称类型只读可选说明uristring否否表示证书的唯一标识符，最大长度为256字节。certAliasstring否否表示证书的别名，最大长度为128字节。stateboolean否否表示证书的状态，true为启用状态、false为禁用状态。subjectNamestring否否表示证书的使用者名称，最大长度为1024字节。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uri | string | 否 | 否 | 表示证书的唯一标识符，最大长度为256字节。 |
+| certAlias | string | 否 | 否 | 表示证书的别名，最大长度为128字节。 |
+| state | boolean | 否 | 否 | 表示证书的状态，true为启用状态、false为禁用状态。 |
+| subjectName | string | 否 | 否 | 表示证书的使用者名称，最大长度为1024字节。 |
 
 #### Credential
 
@@ -64,7 +100,15 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 **系统能力：** SystemCapability.Security.CertificateManager
 
-名称类型只读可选说明typestring否否表示凭据的类型，最大长度为8字节。aliasstring否否表示凭据的别名，最大长度为128字节。keyUristring否否表示凭据的唯一标识符，最大长度为256字节。certNumnumber否否表示凭据中包含的证书个数。keyNumnumber否否表示凭据中包含的密钥个数。credentialDataUint8Array否否表示凭据二进制数据，最大长度为20480字节。certPurpose22+[CertificatePurpose](#ZH-CN_TOPIC_0000002529445349__certificatepurpose22)否是表示凭据的用途。默认值为CertificatePurpose.PURPOSE_DEFAULT。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| type | string | 否 | 否 | 表示凭据的类型，最大长度为8字节。 |
+| alias | string | 否 | 否 | 表示凭据的别名，最大长度为128字节。 |
+| keyUri | string | 否 | 否 | 表示凭据的唯一标识符，最大长度为256字节。 |
+| certNum | number | 否 | 否 | 表示凭据中包含的证书个数。 |
+| keyNum | number | 否 | 否 | 表示凭据中包含的密钥个数。 |
+| credentialData | Uint8Array | 否 | 否 | 表示凭据二进制数据，最大长度为20480字节。 |
+| certPurpose22+ | CertificatePurpose | 否 | 是 | 表示凭据的用途。默认值为CertificatePurpose.PURPOSE_DEFAULT。 |
 
 #### CredentialAbstract
 
@@ -72,7 +116,11 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 **系统能力：** SystemCapability.Security.CertificateManager
 
-名称类型只读可选说明typestring否否表示凭据的类型，最大长度为8字节。aliasstring否否表示凭据的别名，最大长度为128字节。keyUristring否否表示凭据的唯一标识符，最大长度为256字节。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| type | string | 否 | 否 | 表示凭据的类型，最大长度为8字节。 |
+| alias | string | 否 | 否 | 表示凭据的别名，最大长度为128字节。 |
+| keyUri | string | 否 | 否 | 表示凭据的唯一标识符，最大长度为256字节。 |
 
 #### CMResult
 
@@ -80,7 +128,16 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 **系统能力：** SystemCapability.Security.CertificateManager
 
-名称类型只读可选说明certListArray<[CertAbstract](#ZH-CN_TOPIC_0000002529445349__certabstract)>否是表示证书简要信息的列表。certInfo[CertInfo](#ZH-CN_TOPIC_0000002529445349__certinfo)否是表示证书详情。credentialListArray<[CredentialAbstract](#ZH-CN_TOPIC_0000002529445349__credentialabstract)>否是表示凭据简要信息的列表。credential[Credential](#ZH-CN_TOPIC_0000002529445349__credential)否是表示凭据详情。appUidListArray<string>否是表示授权应用列表。uristring否是表示证书或凭据的唯一标识符，最大长度为256字节。outDataUint8Array否是表示签名结果。credentialDetailList22+Array<[Credential](#ZH-CN_TOPIC_0000002529445349__credential)>否是表示凭据详细信息。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| certList | Array<CertAbstract> | 否 | 是 | 表示证书简要信息的列表。 |
+| certInfo | CertInfo | 否 | 是 | 表示证书详情。 |
+| credentialList | Array<CredentialAbstract> | 否 | 是 | 表示凭据简要信息的列表。 |
+| credential | Credential | 否 | 是 | 表示凭据详情。 |
+| appUidList | Array<string> | 否 | 是 | 表示授权应用列表。 |
+| uri | string | 否 | 是 | 表示证书或凭据的唯一标识符，最大长度为256字节。 |
+| outData | Uint8Array | 否 | 是 | 表示签名结果。 |
+| credentialDetailList22+ | Array<Credential> | 否 | 是 | 表示凭据详细信息。 |
 
 #### CMHandle
 
@@ -88,7 +145,9 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 **系统能力：** SystemCapability.Security.CertificateManager
 
-名称类型只读可选说明handleUint8Array否否签名、验签的初始化操作句柄，最大长度为8字节。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| handle | Uint8Array | 否 | 否 | 签名、验签的初始化操作句柄，最大长度为8字节。 |
 
 #### CMErrorCode
 
@@ -96,11 +155,19 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 **系统能力：** SystemCapability.Security.CertificateManager
 
-名称值说明CM_ERROR_NO_PERMISSION201表示应用程序无权限调用接口。CM_ERROR_INVALID_PARAMS401表示输入参数无效。CM_ERROR_GENERIC17500001表示调用接口时发生内部错误。CM_ERROR_NO_FOUND17500002表示证书或凭据不存在。CM_ERROR_INCORRECT_FORMAT17500003表示输入证书或凭据的数据格式无效。CM_ERROR_MAX_CERT_COUNT_REACHED12+17500004表示证书或凭据数量达到上限。CM_ERROR_NO_AUTHORIZATION12+17500005表示应用未经用户授权。CM_ERROR_DEVICE_ENTER_ADVSECMODE18+17500007表示设备进入坚盾守护模式。CM_ERROR_STORE_PATH_NOT_SUPPORTED20+17500009表示不支持指定的证书存储路径。CM_ERROR_ACCESS_UKEY_SERVICE_FAILED22+17500010表示访问USB凭据服务失败。CM_ERROR_PARAMETER_VALIDATION_FAILED22+17500011
-
-表示输入参数校验失败。
-
-例如：参数格式不正确、参数范围无效。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CM_ERROR_NO_PERMISSION | 201 | 表示应用程序无权限调用接口。 |
+| CM_ERROR_INVALID_PARAMS | 401 | 表示输入参数无效。 |
+| CM_ERROR_GENERIC | 17500001 | 表示调用接口时发生内部错误。 |
+| CM_ERROR_NO_FOUND | 17500002 | 表示证书或凭据不存在。 |
+| CM_ERROR_INCORRECT_FORMAT | 17500003 | 表示输入证书或凭据的数据格式无效。 |
+| CM_ERROR_MAX_CERT_COUNT_REACHED12+ | 17500004 | 表示证书或凭据数量达到上限。 |
+| CM_ERROR_NO_AUTHORIZATION12+ | 17500005 | 表示应用未经用户授权。 |
+| CM_ERROR_DEVICE_ENTER_ADVSECMODE18+ | 17500007 | 表示设备进入坚盾守护模式。 |
+| CM_ERROR_STORE_PATH_NOT_SUPPORTED20+ | 17500009 | 表示不支持指定的证书存储路径。 |
+| CM_ERROR_ACCESS_UKEY_SERVICE_FAILED22+ | 17500010 | 表示访问USB凭据服务失败。 |
+| CM_ERROR_PARAMETER_VALIDATION_FAILED22+ | 17500011 | 表示输入参数校验失败。 例如：参数格式不正确、参数范围无效。 |
 
 #### CertType18+
 
@@ -108,7 +175,10 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 **系统能力：** SystemCapability.Security.CertificateManager
 
-名称值说明CA_CERT_SYSTEM0表示系统CA证书。CA_CERT_USER1表示用户CA证书。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CA_CERT_SYSTEM | 0 | 表示系统CA证书。 |
+| CA_CERT_USER | 1 | 表示用户CA证书。 |
 
 #### CertScope18+
 
@@ -116,7 +186,10 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 **系统能力：** SystemCapability.Security.CertificateManager
 
-名称值说明CURRENT_USER1表示当前用户。GLOBAL_USER2表示设备公共，即所有用户都可以访问的位置。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CURRENT_USER | 1 | 表示当前用户。 |
+| GLOBAL_USER | 2 | 表示设备公共，即所有用户都可以访问的位置。 |
 
 #### CertAlgorithm20+
 
@@ -124,7 +197,10 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 **系统能力：** SystemCapability.Security.CertificateManager
 
-名称值说明INTERNATIONAL1表示国际密码算法，如RSA、NIST ECC等。SM2表示商用密码算法，如SM2、SM4等。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| INTERNATIONAL | 1 | 表示国际密码算法，如RSA、NIST ECC等。 |
+| SM | 2 | 表示商用密码算法，如SM2、SM4等。 |
 
 #### CertStoreProperty18+
 
@@ -132,7 +208,11 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 **系统能力：** SystemCapability.Security.CertificateManager
 
-名称类型只读可选说明certType[CertType](#ZH-CN_TOPIC_0000002529445349__certtype18)否否表示证书的类型。certScope[CertScope](#ZH-CN_TOPIC_0000002529445349__certscope18)否是表示证书的存储位置。当证书类型为CA_CERT_USER时，此项为必选项。certAlg20+[CertAlgorithm](#ZH-CN_TOPIC_0000002529445349__certalgorithm20)否是表示证书算法类型。仅当certType为CA_CERT_SYSTEM时有效，默认值为INTERNATIONAL。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| certType | CertType | 否 | 否 | 表示证书的类型。 |
+| certScope | CertScope | 否 | 是 | 表示证书的存储位置。当证书类型为CA_CERT_USER时，此项为必选项。 |
+| certAlg20+ | CertAlgorithm | 否 | 是 | 表示证书算法类型。仅当certType为CA_CERT_SYSTEM时有效，默认值为INTERNATIONAL。 |
 
 #### AuthStorageLevel18+
 
@@ -140,7 +220,11 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 **系统能力：** SystemCapability.Security.CertificateManager
 
-名称值说明EL11EL1级别，表示设备启动后可以访问。EL22EL2级别，表示设备首次解锁后可以访问。EL44EL4级别，表示设备解锁时可以访问。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| EL1 | 1 | EL1级别，表示设备启动后可以访问。 |
+| EL2 | 2 | EL2级别，表示设备首次解锁后可以访问。 |
+| EL4 | 4 | EL4级别，表示设备解锁时可以访问。 |
 
 #### CertificatePurpose22+
 
@@ -148,7 +232,12 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 **系统能力：** SystemCapability.Security.CertificateManager
 
-名称值说明PURPOSE_DEFAULT0默认用途，用于凭据签名。PURPOSE_ALL1用于查询所有凭据。PURPOSE_SIGN2用于凭据签名。PURPOSE_ENCRYPT3用于凭据加密。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PURPOSE_DEFAULT | 0 | 默认用途，用于凭据签名。 |
+| PURPOSE_ALL | 1 | 用于查询所有凭据。 |
+| PURPOSE_SIGN | 2 | 用于凭据签名。 |
+| PURPOSE_ENCRYPT | 3 | 用于凭据加密。 |
 
 #### UkeyInfo22+
 
@@ -156,7 +245,9 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 **系统能力：** SystemCapability.Security.CertificateManager
 
-名称类型只读可选说明certPurpose[CertificatePurpose](#ZH-CN_TOPIC_0000002529445349__certificatepurpose22)否是表示凭据用途。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| certPurpose | CertificatePurpose | 否 | 是 | 表示凭据用途。 |
 
 #### certificateManager.installPrivateCertificate
 
@@ -170,13 +261,24 @@ installPrivateCertificate(keystore: Uint8Array, keystorePwd: string, certAlias: 
 
 **参数**：
 
-参数名类型必填说明keystoreUint8Array是表示带有密钥对和证书的密钥库文件，最大长度为20480字节。keystorePwdstring是表示密钥库文件的密码，长度限制32字节以内。certAliasstring是表示用户输入的凭据别名，当前仅支持传入数字、字母或下划线，长度建议32字节以内。callbackAsyncCallback<[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)>是回调函数。当安装私有凭据成功时，err为null，data为[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)对象中的uri属性；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| keystore | Uint8Array | 是 | 表示带有密钥对和证书的密钥库文件，最大长度为20480字节。 |
+| keystorePwd | string | 是 | 表示密钥库文件的密码，长度限制32字节以内。 |
+| certAlias | string | 是 | 表示用户输入的凭据别名，当前仅支持传入数字、字母或下划线，长度建议32字节以内。 |
+| callback | AsyncCallback<CMResult> | 是 | 回调函数。当安装私有凭据成功时，err为null，data为CMResult对象中的uri属性；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码]([证书管理错误码](../../errors/证书管理错误码.md).md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.17500003The keystore is in an invalid format or the keystore password is incorrect.17500004The number of certificates or credentials reaches the maximum allowed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 17500003 | The keystore is in an invalid format or the keystore password is incorrect. |
+| 17500004 | The number of certificates or credentials reaches the maximum allowed. |
 
 **示例**：
 
@@ -214,17 +316,29 @@ installPrivateCertificate(keystore: Uint8Array, keystorePwd: string, certAlias: 
 
 **参数**：
 
-参数名类型必填说明keystoreUint8Array是表示带有密钥对和证书的密钥库文件，最大长度为20480字节。keystorePwdstring是表示密钥库文件的密码，长度限制32字节以内。certAliasstring是表示用户输入的凭据别名，当前仅支持传入数字、字母或下划线，长度建议32字节以内。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| keystore | Uint8Array | 是 | 表示带有密钥对和证书的密钥库文件，最大长度为20480字节。 |
+| keystorePwd | string | 是 | 表示密钥库文件的密码，长度限制32字节以内。 |
+| certAlias | string | 是 | 表示用户输入的凭据别名，当前仅支持传入数字、字母或下划线，长度建议32字节以内。 |
 
 **返回值**：
 
-类型说明Promise<[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)>Promise对象。表示安装私有凭据的结果，返回值为[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)对象中的uri属性。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<CMResult> | Promise对象。表示安装私有凭据的结果，返回值为CMResult对象中的uri属性。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.17500003The keystore is in an invalid format or the keystore password is incorrect.17500004The number of certificates or credentials reaches the maximum allowed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 17500003 | The keystore is in an invalid format or the keystore password is incorrect. |
+| 17500004 | The number of certificates or credentials reaches the maximum allowed. |
 
 **示例**：
 
@@ -261,29 +375,30 @@ installPrivateCertificate(keystore: Uint8Array, keystorePwd: string, certAlias: 
 
 **参数：**
 
-参数名类型必填说明keystoreUint8Array是表示带有密钥对和证书的密钥库文件，最大长度为20480字节。keystorePwdstring是
-
-表示密钥库文件的密码。
-
-长度限制：32字节以内。
-
-certAliasstring是
-
-表示用户输入的凭据别名，当前仅支持传入数字、字母或下划线。
-
-长度建议：32字节以内。
-
-level[AuthStorageLevel](#ZH-CN_TOPIC_0000002529445349__authstoragelevel18)是表示凭据的存储级别。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| keystore | Uint8Array | 是 | 表示带有密钥对和证书的密钥库文件，最大长度为20480字节。 |
+| keystorePwd | string | 是 | 表示密钥库文件的密码。 长度限制：32字节以内。 |
+| certAlias | string | 是 | 表示用户输入的凭据别名，当前仅支持传入数字、字母或下划线。 长度建议：32字节以内。 |
+| level | AuthStorageLevel | 是 | 表示凭据的存储级别。 |
 
 **返回值：**
 
-类型说明Promise<[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)>Promise对象。表示安装私有凭据的结果，返回值为[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)对象中的uri属性。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<CMResult> | Promise对象。表示安装私有凭据的结果，返回值为CMResult对象中的uri属性。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.17500003The keystore is in an invalid format or the keystore password is incorrect.17500004The number of certificates or credentials reaches the maximum allowed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 17500003 | The keystore is in an invalid format or the keystore password is incorrect. |
+| 17500004 | The number of certificates or credentials reaches the maximum allowed. |
 
 **示例：**
 
@@ -322,13 +437,21 @@ getPrivateCertificate(keyUri: string, callback: AsyncCallback<CMResult>): void
 
 **参数**：
 
-参数名类型必填说明keyUristring是表示待获取凭据的唯一标识符，长度限制256字节以内。callbackAsyncCallback<[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)>是回调函数。当获取私有凭据的详细信息成功时，err为null，data为[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)对象中的credential属性；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| keyUri | string | 是 | 表示待获取凭据的唯一标识符，长度限制256字节以内。 |
+| callback | AsyncCallback<CMResult> | 是 | 回调函数。当获取私有凭据的详细信息成功时，err为null，data为CMResult对象中的credential属性；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.17500002The certificate does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 17500002 | The certificate does not exist. |
 
 **示例**：
 
@@ -347,7 +470,6 @@ try {
         let list = cmResult.credential;
         console.info('Succeeded in getting private certificate.');
       }
-    }
   });
 } catch (error) {
   console.error(`Failed to get private certificate. Code: ${error.code}, message: ${error.message}`);
@@ -366,17 +488,26 @@ getPrivateCertificate(keyUri: string): Promise<CMResult>
 
 **参数**：
 
-参数名类型必填说明keyUristring是表示待获取凭据的唯一标识符，长度限制256字节以内。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| keyUri | string | 是 | 表示待获取凭据的唯一标识符，长度限制256字节以内。 |
 
 **返回值**：
 
-类型说明Promise<[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)>Promise对象。表示获取私有凭据详细信息的结果，返回值为[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)对象中的credential属性。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<CMResult> | Promise对象。表示获取私有凭据详细信息的结果，返回值为CMResult对象中的credential属性。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.17500002The certificate does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 17500002 | The certificate does not exist. |
 
 **示例**：
 
@@ -413,13 +544,21 @@ uninstallPrivateCertificate(keyUri: string, callback: AsyncCallback<void>): void
 
 **参数**：
 
-参数名类型必填说明keyUristring是表示待卸载凭据的唯一标识符，长度限制256字节以内。callbackAsyncCallback<void>是回调函数。当卸载私有凭据成功时，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| keyUri | string | 是 | 表示待卸载凭据的唯一标识符，长度限制256字节以内。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当卸载私有凭据成功时，err为null，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.17500002The certificate does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 17500002 | The certificate does not exist. |
 
 **示例**：
 
@@ -452,17 +591,26 @@ uninstallPrivateCertificate(keyUri: string): Promise<void>
 
 **参数**：
 
-参数名类型必填说明keyUristring是表示待卸载凭据的唯一标识符，长度限制256字节以内。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| keyUri | string | 是 | 表示待卸载凭据的唯一标识符，长度限制256字节以内。 |
 
 **返回值**：
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.17500002The certificate does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 17500002 | The certificate does not exist. |
 
 **示例**：
 
@@ -494,17 +642,29 @@ installUserTrustedCertificateSync(cert: Uint8Array, certScope: CertScope) : CMRe
 
 **参数**：
 
-参数名类型必填说明certUint8Array是表示CA证书数据，最大长度为8196字节。certScope[CertScope](#ZH-CN_TOPIC_0000002529445349__certscope18)是表示CA证书安装的位置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| cert | Uint8Array | 是 | 表示CA证书数据，最大长度为8196字节。 |
+| certScope | CertScope | 是 | 表示CA证书安装的位置。 |
 
 **返回值**：
 
-类型说明[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)表示CA证书的安装结果，返回值CMResult对象中的uri属性。
+| 类型 | 说明 |
+| --- | --- |
+| CMResult | 表示CA证书的安装结果，返回值CMResult对象中的uri属性。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.17500003Indicates that the certificate is in an invalid format.17500004Indicates that the number of certificates reaches the maximum allowed.17500007Indicates that the device enters advanced security mode. In this mode, the user CA certificate cannot be installed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 17500003 | Indicates that the certificate is in an invalid format. |
+| 17500004 | Indicates that the number of certificates reaches the maximum allowed. |
+| 17500007 | Indicates that the device enters advanced security mode. In this mode, the user CA certificate cannot be installed. |
 
 **示例**：
 
@@ -521,7 +681,7 @@ try {
     if (certUri === undefined) {
         console.error("The result of install user trusted certificate is undefined.");
     } else {
-        console.info("Successed to install user trusted certificate.");
+        console.info("Succeeded to install user trusted certificate.");
     }
 } catch (error) {
     console.error(`Failed to install user trusted certificate. Code: ${error.code}, message: ${error.message}`);
@@ -540,13 +700,20 @@ uninstallUserTrustedCertificateSync(certUri: string) : void
 
 **参数**：
 
-参数名类型必填说明certUristring是表示待卸删除证书的唯一标识符，长度限制256字节以内。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| certUri | string | 是 | 表示待卸删除证书的唯一标识符，长度限制256字节以内。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.17500002Indicates that the certificate does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 17500002 | Indicates that the certificate does not exist. |
 
 **示例**：
 
@@ -573,13 +740,23 @@ init(authUri: string, spec: CMSignatureSpec, callback: AsyncCallback<CMHandle>):
 
 **参数**：
 
-参数名类型必填说明authUristring是表示使用凭据的唯一标识符，长度限制256字节以内。spec[CMSignatureSpec](#ZH-CN_TOPIC_0000002529445349__cmsignaturespec)是表示签名、验签的属性。callbackAsyncCallback<[CMHandle](#ZH-CN_TOPIC_0000002529445349__cmhandle)>是回调函数。当签名、验签的初始化操作成功时，err为null，data为获取到的CMHandle；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| authUri | string | 是 | 表示使用凭据的唯一标识符，长度限制256字节以内。 |
+| spec | CMSignatureSpec | 是 | 表示签名、验签的属性。 |
+| callback | AsyncCallback<CMHandle> | 是 | 回调函数。当签名、验签的初始化操作成功时，err为null，data为获取到的CMHandle；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.17500002The certificate does not exist.17500005The application is not authorized by the user.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 17500002 | The certificate does not exist. |
+| 17500005 | The application is not authorized by the user. |
 
 **示例**：
 
@@ -617,17 +794,28 @@ init(authUri: string, spec: CMSignatureSpec): Promise<CMHandle>
 
 **参数**：
 
-参数名类型必填说明authUristring是表示使用凭据的唯一标识符，长度限制256字节以内。spec[CMSignatureSpec](#ZH-CN_TOPIC_0000002529445349__cmsignaturespec)是表示签名、验签的属性。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| authUri | string | 是 | 表示使用凭据的唯一标识符，长度限制256字节以内。 |
+| spec | CMSignatureSpec | 是 | 表示签名、验签的属性。 |
 
 **返回值**：
 
-类型说明Promise<[CMHandle](#ZH-CN_TOPIC_0000002529445349__cmhandle)>Promise对象。表示签名、验签的初始化操作结果，返回CMHandle对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<CMHandle> | Promise对象。表示签名、验签的初始化操作结果，返回CMHandle对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.17500002The certificate does not exist.17500005The application is not authorized by the user.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 17500002 | The certificate does not exist. |
+| 17500005 | The application is not authorized by the user. |
 
 **示例**：
 
@@ -664,13 +852,21 @@ update(handle: Uint8Array, data: Uint8Array, callback: AsyncCallback<void>): voi
 
 **参数**：
 
-参数名类型必填说明handleUint8Array是表示初始化操作返回的句柄，最大长度为8字节。dataUint8Array是表示待签名、验签的数据。callbackAsyncCallback<void>是回调函数。当签名、验签的数据更新操作成功时，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| handle | Uint8Array | 是 | 表示初始化操作返回的句柄，最大长度为8字节。 |
+| data | Uint8Array | 是 | 表示待签名、验签的数据。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当签名、验签的数据更新操作成功时，err为null，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
 
 **示例**：
 
@@ -709,17 +905,26 @@ update(handle: Uint8Array, data: Uint8Array): Promise<void>
 
 **参数**：
 
-参数名类型必填说明handleUint8Array是表示初始化操作返回的句柄，最大长度为8字节。dataUint8Array是表示待签名、验签的数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| handle | Uint8Array | 是 | 表示初始化操作返回的句柄，最大长度为8字节。 |
+| data | Uint8Array | 是 | 表示待签名、验签的数据。 |
 
 **返回值**：
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
 
 **示例**：
 
@@ -757,13 +962,20 @@ finish(handle: Uint8Array, callback: AsyncCallback<CMResult>): void
 
 **参数**：
 
-参数名类型必填说明handleUint8Array是表示初始化操作返回的句柄，最大长度为8字节。callbackAsyncCallback<[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)>是回调函数。当签名成功时，err为null，data为[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)对象中的outData属性，表示签名数据；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| handle | Uint8Array | 是 | 表示初始化操作返回的句柄，最大长度为8字节。 |
+| callback | AsyncCallback<CMResult> | 是 | 回调函数。当签名成功时，err为null，data为CMResult对象中的outData属性，表示签名数据；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
 
 **示例**：
 
@@ -785,7 +997,6 @@ try {
       } else {
         console.info('The result of finishing is undefined.');
       }
-    }
   });
 } catch(error) {
   console.error(`Failed to finish. Code: ${error.code}, message: ${error.message}`);
@@ -804,13 +1015,21 @@ finish(handle: Uint8Array, signature: Uint8Array, callback: AsyncCallback<CMResu
 
 **参数**：
 
-参数名类型必填说明handleUint8Array是表示初始化操作返回的句柄，最大长度为8字节。signatureUint8Array是表示签名数据。callbackAsyncCallback<[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)>是回调函数。当验签成功时，err为null；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| handle | Uint8Array | 是 | 表示初始化操作返回的句柄，最大长度为8字节。 |
+| signature | Uint8Array | 是 | 表示签名数据。 |
+| callback | AsyncCallback<CMResult> | 是 | 回调函数。当验签成功时，err为null；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
 
 **示例**：
 
@@ -849,17 +1068,26 @@ finish(handle: Uint8Array, signature?: Uint8Array): Promise<CMResult>
 
 **参数**：
 
-参数名类型必填说明handleUint8Array是表示初始化操作返回的句柄，最大长度为8字节。signatureUint8Array否表示签名数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| handle | Uint8Array | 是 | 表示初始化操作返回的句柄，最大长度为8字节。 |
+| signature | Uint8Array | 否 | 表示签名数据。 |
 
 **返回值**：
 
-类型说明Promise<[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)>Promise对象。执行签名操作时，表示签名的结果，返回值为[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)对象中的outData属性；执行验签操作时，无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<CMResult> | Promise对象。执行签名操作时，表示签名的结果，返回值为CMResult对象中的outData属性；执行验签操作时，无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
 
 **示例**：
 
@@ -911,13 +1139,20 @@ abort(handle: Uint8Array, callback: AsyncCallback<void>): void
 
 **参数**：
 
-参数名类型必填说明handleUint8Array是表示初始化操作返回的句柄，最大长度为8字节。callbackAsyncCallback<void>是回调函数。当中止签名、验签成功时，err为null，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| handle | Uint8Array | 是 | 表示初始化操作返回的句柄，最大长度为8字节。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当中止签名、验签成功时，err为null，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
 
 **示例**：
 
@@ -953,17 +1188,25 @@ abort(handle: Uint8Array): Promise<void>
 
 **参数**：
 
-参数名类型必填说明handleUint8Array是表示初始化操作返回的句柄，最大长度为8字节。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| handle | Uint8Array | 是 | 表示初始化操作返回的句柄，最大长度为8字节。 |
 
 **返回值**：
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
 
 **示例**：
 
@@ -998,17 +1241,27 @@ getPublicCertificate(keyUri: string): Promise<CMResult>
 
 **参数**：
 
-参数名类型必填说明keyUristring是表示用户公共凭据的唯一标识符，长度限制256字节以内。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| keyUri | string | 是 | 表示用户公共凭据的唯一标识符，长度限制256字节以内。 |
 
 **返回值**：
 
-类型说明Promise<[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)>Promise对象。表示获取用户公共凭据详细信息的结果，返回值为[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)对象中的credential属性。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<CMResult> | Promise对象。表示获取用户公共凭据详细信息的结果，返回值为CMResult对象中的credential属性。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.17500002The certificate does not exist.17500005The application is not authorized by the user.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 17500002 | The certificate does not exist. |
+| 17500005 | The application is not authorized by the user. |
 
 **示例**：
 
@@ -1045,17 +1298,25 @@ isAuthorizedApp(keyUri: string): Promise<boolean>
 
 **参数**：
 
-参数名类型必填说明keyUristring是表示用户授权给应用使用的凭据的唯一标识符，长度限制256字节以内。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| keyUri | string | 是 | 表示用户授权给应用使用的凭据的唯一标识符，长度限制256字节以内。 |
 
 **返回值**：
 
-类型说明Promise<boolean>Promise对象。表示查询应用是否被授权的结果，true为已授权，false为未授权。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。表示查询应用是否被授权的结果，true为已授权，false为未授权。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
 
 **示例**：
 
@@ -1091,13 +1352,18 @@ getAllUserTrustedCertificates(): Promise<CMResult>
 
 **返回值**：
 
-类型说明Promise<[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)>Promise对象。表示获取用户根CA证书列表的结果，返回值[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)对象中的certList属性。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<CMResult> | Promise对象。表示获取用户根CA证书列表的结果，返回值CMResult对象中的certList属性。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
 
 **示例**：
 
@@ -1135,17 +1401,25 @@ getAllUserTrustedCertificates(scope: CertScope): Promise<CMResult>
 
 **参数**：
 
-参数名类型必填说明scope[CertScope](#ZH-CN_TOPIC_0000002529445349__certscope18)是表示证书的位置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| scope | CertScope | 是 | 表示证书的位置。 |
 
 **返回值**：
 
-类型说明Promise<[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)>Promise对象。表示获取用户根CA证书列表的结果，返回值[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)对象中的certList属性。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<CMResult> | Promise对象。表示获取用户根CA证书列表的结果，返回值CMResult对象中的certList属性。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
 
 **示例**：
 
@@ -1185,17 +1459,26 @@ getUserTrustedCertificate(certUri: string): Promise<CMResult>
 
 **参数**：
 
-参数名类型必填说明certUristring是表示用户根CA证书的唯一标识符，长度限制256字节以内。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| certUri | string | 是 | 表示用户根CA证书的唯一标识符，长度限制256字节以内。 |
 
 **返回值**：
 
-类型说明Promise<[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)>Promise对象。表示获取用户根CA证书详细信息的结果，返回值为[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)对象中的certInfo属性。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<CMResult> | Promise对象。表示获取用户根CA证书详细信息的结果，返回值为CMResult对象中的certInfo属性。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.17500002The certificate does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 17500002 | The certificate does not exist. |
 
 **示例**：
 
@@ -1232,13 +1515,18 @@ getPrivateCertificates(): Promise<CMResult>
 
 **返回值**：
 
-类型说明Promise<[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)>Promise对象。表示获取应用安装的凭据列表的结果，返回值[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)对象中的credentialList属性。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<CMResult> | Promise对象。表示获取应用安装的凭据列表的结果，返回值CMResult对象中的credentialList属性。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed. The application does not have the permission required to call the API.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
 
 **示例**：
 
@@ -1274,17 +1562,25 @@ getCertificateStorePath(property: CertStoreProperty): string;
 
 **参数**：
 
-参数名类型必填说明property[CertStoreProperty](#ZH-CN_TOPIC_0000002529445349__certstoreproperty18)是表示获取证书存储路径的参数集合。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| property | CertStoreProperty | 是 | 表示获取证书存储路径的参数集合。 |
 
 **返回值**：
 
-类型说明string表示证书的存储路径。
+| 类型 | 说明 |
+| --- | --- |
+| string | 表示证书的存储路径。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. For example, CertStoreProperty.certType is set to CA_CERT_USER, but CertStoreProperty.certScope is not specified.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.17500009The device does not support the specified certificate storage path, For example, the device outside China does not support the certificate that uses SM algorithm.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. For example, CertStoreProperty.certType is set to CA_CERT_USER, but CertStoreProperty.certScope is not specified. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 17500009 | The device does not support the specified certificate storage path, For example, the device outside China does not support the certificate that uses SM algorithm. |
 
 **示例**：
 
@@ -1341,17 +1637,29 @@ getUkeyCertificate(keyUri: string, ukeyInfo: UkeyInfo): Promise<CMResult>
 
 **参数**：
 
-参数名类型必填说明keyUristring是表示USB凭据的唯一标识符，长度限制256字节以内。ukeyInfo[UkeyInfo](#ZH-CN_TOPIC_0000002529445349__ukeyinfo22)是表示USB凭据的属性信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| keyUri | string | 是 | 表示USB凭据的唯一标识符，长度限制256字节以内。 |
+| ukeyInfo | UkeyInfo | 是 | 表示USB凭据的属性信息。 |
 
 **返回值**：
 
-类型说明Promise<[CMResult](#ZH-CN_TOPIC_0000002529445349__cmresult)>Promise对象，返回获取到的USB凭据详情的结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<CMResult> | Promise对象，返回获取到的USB凭据详情的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[证书管理错误码](../../errors/证书管理错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[证书管理错误码](证书管理错误码.md)。
 
-错误码ID错误信息201Permission verification failed.801Capability not supported. The application does not have the permission required to call the API.17500001Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again.17500002Indicates that the certificate does not exist.17500010Indicates that access USB key service failed.17500011Indicates that the input parameters validation failed. For example, the parameter format is incorrect or the value range is invalid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. |
+| 801 | Capability not supported. The application does not have the permission required to call the API. |
+| 17500001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 17500002 | Indicates that the certificate does not exist. |
+| 17500010 | Indicates that access USB key service failed. |
+| 17500011 | Indicates that the input parameters validation failed. For example, the parameter format is incorrect or the value range is invalid. |
 
 **示例**：
 

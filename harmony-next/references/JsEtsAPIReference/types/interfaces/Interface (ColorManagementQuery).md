@@ -23,7 +23,9 @@ getSupportedColorSpaces(): Array<colorSpaceManager.ColorSpace>
 
 **返回值：**
 
-类型说明Array<[colorSpaceManager.ColorSpace](../../modules/ohos/@ohos.graphics.colorSpaceManager (色彩管理).md#ZH-CN_TOPIC_0000002497445992__colorspace)>支持的色彩空间列表。若接口调用失败，返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| Array<colorSpaceManager.ColorSpace> | 支持的色彩空间列表。若接口调用失败，返回undefined。 |
 
 **示例：**
 

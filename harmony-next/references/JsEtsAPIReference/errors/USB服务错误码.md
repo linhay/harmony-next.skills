@@ -116,7 +116,7 @@ Resource busy. Possible causes: 1. The transfer has already been submitted. 2. T
 
 **处理步骤**
 
-检查[usbManager.claimInterface](../modules/ohos/@ohos.usbManager (USB管理).md#ZH-CN_TOPIC_0000002497445526__usbmanagerclaiminterface)接口是否调用成功。
+检查[usbManager.claimInterface](@ohos.usbManager (USB管理).md#ZH-CN_TOPIC_0000002553201555__usbmanagerclaiminterface)接口是否调用成功。
 
 #### 14400008 没有设备(连接已断开)
 

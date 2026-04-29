@@ -6,63 +6,16 @@
 
 支持的预览文件类型如下：
 
-类型
-
-文件后缀
-
-mimeType类型
-
-文本
-
-txt、cpp、c、h、java、xhtml、xml
-
-text/plain、text/x-c++src、text/x-csrc、text/x-chdr、text/x-java、application/xhtml+xml、text/xml
-
-网页
-
-html、htm
-
-text/html
-
-图片
-
-jpg、png、gif、webp、bmp、svg
-
-image/jpeg、image/png、image/gif、image/webp，image/bmp、image/svg+xml
-
-音频
-
-m4a、aac、mp3、ogg、wav
-
-audio/mp4a-latm、audio/aac、audio/mpeg、audio/ogg、audio/x-wav
-
-视频
-
-mp4、mkv、ts
-
-video/mp4、video/x-matroska、video/mp2ts
-
-文件夹
-
-无
-
-无
-
-文档
-
-pdf
-
-application/pdf
-
-**起始版本：**5.0.0(12)
-
-Office文档
-
-doc、docx、xls、xlsx、ppt、pptx、csv、ofd
-
-application/msword、application/vnd.openxmlformats-officedocument.wordprocessingml.document、application/vnd.ms-excel、application/vnd.openxmlformats-officedocument.spreadsheetml.sheet、application/vnd.ms-powerpoint、application/vnd.openxmlformats-officedocument.presentationml.presentation、text/csv、general.ofd
-
-**起始版本：**5.0.0(12)
+| 类型 | 文件后缀 | mimeType类型 |
+| --- | --- | --- |
+| 文本 | txt、cpp、c、h、java、xhtml、xml | text/plain、text/x-c++src、text/x-csrc、text/x-chdr、text/x-java、application/xhtml+xml、text/xml |
+| 网页 | html、htm | text/html |
+| 图片 | jpg、png、gif、webp、bmp、svg | image/jpeg、image/png、image/gif、image/webp，image/bmp、image/svg+xml |
+| 音频 | m4a、aac、mp3、ogg、wav | audio/mp4a-latm、audio/aac、audio/mpeg、audio/ogg、audio/x-wav |
+| 视频 | mp4、mkv、ts | video/mp4、video/x-matroska、video/mp2ts |
+| 文件夹 | 无 | 无 |
+| 文档 | pdf | application/pdf 起始版本： 5.0.0(12) |
+| Office文档 | doc、docx、xls、xlsx、ppt、pptx、csv、ofd | application/msword、application/vnd.openxmlformats-officedocument.wordprocessingml.document、application/vnd.ms-excel、application/vnd.openxmlformats-officedocument.spreadsheetml.sheet、application/vnd.ms-powerpoint、application/vnd.openxmlformats-officedocument.presentationml.presentation、text/csv、general.ofd 起始版本： 5.0.0(12) |
 
 **起始版本：**4.1.0(11)
 
@@ -82,49 +35,11 @@ import { filePreview } from '@kit.PreviewKit';
 
 **起始版本：**4.1.0(11)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-title
-
-string
-
-否
-
-是
-
-文件的标题名称
-
-uri
-
-string
-
-否
-
-否
-
-文件的[uri](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri-intro)
-
-mimeType
-
-string
-
-否
-
-否
-
-文件的媒体资源类型，如text/plain。
-
- 说明：
-
-若无法确定文件格式，该项可直接赋值空字符串（""），系统会通过uri后缀进行文件格式判断。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| title | string | 否 | 是 | 文件的标题名称 |
+| uri | string | 否 | 否 | 文件的uri |
+| mimeType | string | 否 | 否 | 文件的媒体资源类型，如text/plain。  说明：   若无法确定文件格式，该项可直接赋值空字符串（""），系统会通过uri后缀进行文件格式判断。 |
 
 #### DisplayInfo
 
@@ -136,55 +51,12 @@ string
 
 **起始版本：**4.1.0(11)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-x
-
-number
-
-否
-
-否
-
-预览窗口的起始X轴，单位px
-
-y
-
-number
-
-否
-
-否
-
-预览窗口的起始Y轴，单位px
-
-width
-
-number
-
-否
-
-是
-
-预览窗口的宽度，单位px
-
-height
-
-number
-
-否
-
-是
-
-预览窗口的高度，单位px
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| x | number | 否 | 否 | 预览窗口的起始X轴，单位px |
+| y | number | 否 | 否 | 预览窗口的起始Y轴，单位px |
+| width | number | 否 | 是 | 预览窗口的宽度，单位px |
+| height | number | 否 | 是 | 预览窗口的高度，单位px |
 
 #### openPreview
 
@@ -202,61 +74,23 @@ openPreview(context: Context, file: PreviewInfo, info?: DisplayInfo): Promise<vo
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context)
-
-是
-
-上下文[common.UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext)。
-
- 注意：
-
-当前context仅支持传入UIAbilityContext。
-
-file
-
-[PreviewInfo](#section1081123302517)
-
-是
-
-文件的预览信息，title为可选，不填会通过uri解析，无法解析则显示未知文件。
-
-info
-
-[DisplayInfo](#section177311614561)
-
-否
-
-模态窗口的窗口展示信息，2in1端不填写则展示默认大小窗口，手机和平板设备填写无效。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 上下文common.UIAbilityContext。  注意：   当前context仅支持传入UIAbilityContext。 |
+| file | PreviewInfo | 是 | 文件的预览信息，title为可选，不填会通过uri解析，无法解析则显示未知文件。 |
+| info | DisplayInfo | 否 | 模态窗口的窗口展示信息，2in1端不填写则展示默认大小窗口，Phone、Tablet填写无效。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<void>
-
-无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
 
-错误码ID
-
-错误信息
-
-401
-
-invalid input parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | invalid input parameter. |
 
 **示例：**
 
@@ -299,59 +133,18 @@ openPreview(context: Context, file: PreviewInfo, info: DisplayInfo, callback: As
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context)
-
-是
-
-上下文[common.UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext)。
-
- 注意：
-
-当前context仅支持传入UIAbilityContext。
-
-file
-
-[PreviewInfo](#section1081123302517)
-
-是
-
-文件的预览信息，title为可选，不填写时会通过uri解析，无法解析则显示未知文件。
-
-info
-
-[DisplayInfo](#section177311614561)
-
-是
-
-模态窗口的窗口展示信息，手机和平板设备填写无效。
-
-callback
-
-[AsyncCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base#asynccallback)<void>
-
-是
-
-回调函数。当预览窗口成功打开时，err为undefined或err.code为0，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 上下文common.UIAbilityContext。  注意：   当前context仅支持传入UIAbilityContext。 |
+| file | PreviewInfo | 是 | 文件的预览信息，title为可选，不填写时会通过uri解析，无法解析则显示未知文件。 |
+| info | DisplayInfo | 是 | 模态窗口的窗口展示信息，手机和平板设备填写无效。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当预览窗口成功打开时，err为undefined或err.code为0，否则为错误对象。 |
 
 **错误码：**以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
 
-错误码ID
-
-错误信息
-
-401
-
-invalid input parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | invalid input parameter. |
 
 **示例：**
 
@@ -397,65 +190,24 @@ openPreview(context: Context, files: Array<PreviewInfo>, index?: number): Promis
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context)
-
-是
-
-上下文[common.UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext)。
-
- 注意：
-
-当前context仅支持传入UIAbilityContext。
-
-files
-
-Array<[PreviewInfo](#section1081123302517)>
-
-是
-
-文件预览信息列表。
-
-index
-
-number
-
-否
-
-预览窗口打开时展示的文件预览信息下标，不填默认为0。取值范围大于等于0，小于files长度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 上下文common.UIAbilityContext。  注意：   当前context仅支持传入UIAbilityContext。 |
+| files | Array<PreviewInfo> | 是 | 文件预览信息列表。 |
+| index | number | 否 | 预览窗口打开时展示的文件预览信息下标，不填默认为0。取值范围大于等于0，小于files长度。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<void>
-
-无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
 
-错误码ID
-
-错误信息
-
-401
-
-invalid input parameter.
-
-801
-
-Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | invalid input parameter. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -494,53 +246,22 @@ canPreview(context: Context, uri: string): Promise<boolean>
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context)
-
-是
-
-上下文[common.UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext)。
-
- 注意：
-
-当前context仅支持传入UIAbilityContext。
-
-uri
-
-string
-
-是
-
-文件[uri](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri-intro)
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 上下文common.UIAbilityContext。  注意：   当前context仅支持传入UIAbilityContext。 |
+| uri | string | 是 | 文件uri |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<boolean>
-
-Promise对象，当传入支持的文件uri时，会返回true；传入不可预览的文件uri时，返回false。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象，当传入支持的文件uri时，会返回true；传入不可预览的文件uri时，返回false。 |
 
 **错误码：**以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
 
-错误码ID
-
-错误信息
-
-401
-
-invalid input parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | invalid input parameter. |
 
 **示例：**
 
@@ -588,51 +309,17 @@ canPreview(context: Context, uri: string, callback: AsyncCallback<boolean>): voi
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context)
-
-是
-
-上下文[common.UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext)。
-
- 注意：
-
-当前context仅支持传入UIAbilityContext。
-
-uri
-
-string
-
-是
-
-文件[uri](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri-intro)
-
-callback
-
-[AsyncCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base#asynccallback)<boolean>
-
-是
-
-回调函数。当传入支持的文件uri时，会返回true；传入不可预览的文件uri时，返回false。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 上下文common.UIAbilityContext。  注意：   当前context仅支持传入UIAbilityContext。 |
+| uri | string | 是 | 文件uri |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当传入支持的文件uri时，会返回true；传入不可预览的文件uri时，返回false。 |
 
 **错误码：**以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
 
-错误码ID
-
-错误信息
-
-401
-
-invalid input parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | invalid input parameter. |
 
 **示例：**
 
@@ -680,45 +367,21 @@ hasDisplayed(context: Context): Promise<boolean>
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context)
-
-是
-
-上下文[common.UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext)。
-
- 注意：
-
-当前context仅支持传入UIAbilityContext。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 上下文common.UIAbilityContext。  注意：   当前context仅支持传入UIAbilityContext。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<boolean>
-
-Promise对象，预览窗口是单例的形式，当预览窗口已经打开过并且没关闭，那会返回true。如果没打开或者打开后已关闭，那将返回false。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象，预览窗口是单例的形式，当预览窗口已经打开过并且没关闭，那会返回true。如果没打开或者打开后已关闭，那将返回false。 |
 
 **错误码：**以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
 
-错误码ID
-
-错误信息
-
-401
-
-invalid input parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | invalid input parameter. |
 
 **示例：**
 
@@ -762,43 +425,16 @@ hasDisplayed(context: Context, callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context)
-
-是
-
-上下文[common.UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext)。
-
- 注意：
-
-当前context仅支持传入UIAbilityContext。
-
-callback
-
-[AsyncCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base#asynccallback)<boolean>
-
-是
-
-回调函数。预览窗口是单例的形式，当预览窗口已经打开过并且没关闭，那会返回true。如果没打开或者打开后已关闭，那将返回false。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 上下文common.UIAbilityContext。  注意：   当前context仅支持传入UIAbilityContext。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。预览窗口是单例的形式，当预览窗口已经打开过并且没关闭，那会返回true。如果没打开或者打开后已关闭，那将返回false。 |
 
 **错误码：**以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
 
-错误码ID
-
-错误信息
-
-401
-
-invalid input parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | invalid input parameter. |
 
 **示例：**
 
@@ -844,45 +480,21 @@ closePreview(context: Context): Promise<void>
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context)
-
-是
-
-上下文[common.UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext)。
-
- 注意：
-
-当前context仅支持传入UIAbilityContext。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 上下文common.UIAbilityContext。  注意：   当前context仅支持传入UIAbilityContext。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<void>
-
-无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
 
-错误码ID
-
-错误信息
-
-401
-
-invalid input parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | invalid input parameter. |
 
 **示例：**
 
@@ -912,43 +524,16 @@ closePreview(context: Context, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context)
-
-是
-
-上下文[common.UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext)。
-
- 注意：
-
-当前context仅支持传入UIAbilityContext。
-
-callback
-
-[AsyncCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base#asynccallback)<void>
-
-是
-
-回调函数。当预览窗口成功关闭时，err为undefined或err.code为0，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 上下文common.UIAbilityContext。  注意：   当前context仅支持传入UIAbilityContext。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当预览窗口成功关闭时，err为undefined或err.code为0，否则为错误对象。 |
 
 **错误码：**以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
 
-错误码ID
-
-错误信息
-
-401
-
-invalid input parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | invalid input parameter. |
 
 **示例：**
 
@@ -979,53 +564,22 @@ loadData(context: Context, file: PreviewInfo): Promise<void>
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context)
-
-是
-
-上下文[common.UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext)。
-
- 注意：
-
-当前context仅支持传入UIAbilityContext。
-
-file
-
-[PreviewInfo](#section1081123302517)
-
-是
-
-文件的预览信息，title为可选，不填会通过uri解析，无法解析则显示未知文件。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 上下文common.UIAbilityContext。  注意：   当前context仅支持传入UIAbilityContext。 |
+| file | PreviewInfo | 是 | 文件的预览信息，title为可选，不填会通过uri解析，无法解析则显示未知文件。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<void>
-
-无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
 
-错误码ID
-
-错误信息
-
-401
-
-invalid input parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | invalid input parameter. |
 
 **示例：**
 
@@ -1060,51 +614,17 @@ loadData(context: Context, file: PreviewInfo, callback: AsyncCallback<void>): vo
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context)
-
-是
-
-上下文[common.UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext)。
-
- 注意：
-
-当前context仅支持传入UIAbilityContext。
-
-file
-
-[PreviewInfo](#section1081123302517)
-
-是
-
-文件的预览信息，title为可选，不填会通过uri解析，无法解析则显示未知文件。
-
-callback
-
-[AsyncCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base#asynccallback)<void>
-
-是
-
-回调函数。当预览文件加载成功时，err为undefined或err.code为0，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 上下文common.UIAbilityContext。  注意：   当前context仅支持传入UIAbilityContext。 |
+| file | PreviewInfo | 是 | 文件的预览信息，title为可选，不填会通过uri解析，无法解析则显示未知文件。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当预览文件加载成功时，err为undefined或err.code为0，否则为错误对象。 |
 
 **错误码：**以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
 
-错误码ID
-
-错误信息
-
-401
-
-invalid input parameter.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | invalid input parameter. |
 
 **示例：**
 
@@ -1142,65 +662,24 @@ loadData(context: Context, files: Array<PreviewInfo>, index?: number): Promise<v
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-context
-
-[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context)
-
-是
-
-上下文[common.UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext)。
-
- 注意：
-
-当前context仅支持传入UIAbilityContext。
-
-files
-
-Array<[PreviewInfo](#section1081123302517)>
-
-是
-
-文件预览信息列表。
-
-index
-
-number
-
-否
-
-预览窗口打开时展示的文件预览信息下标，不填默认为0。取值范围大于等于0，小于files长度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 上下文common.UIAbilityContext。  注意：   当前context仅支持传入UIAbilityContext。 |
+| files | Array<PreviewInfo> | 是 | 文件预览信息列表。 |
+| index | number | 否 | 预览窗口打开时展示的文件预览信息下标，不填默认为0。取值范围大于等于0，小于files长度。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<void>
-
-无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
 
-错误码ID
-
-错误信息
-
-401
-
-invalid input parameter.
-
-801
-
-Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | invalid input parameter. |
+| 801 | Capability not supported. |
 
 **示例：**
 

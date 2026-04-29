@@ -14,13 +14,9 @@ import { PointPredictor } from '@kit.Penkit';
 
 本模块提供以下方法。
 
-方法名称
-
-说明
-
-[getPredictionPoint](#section158711315171)
-
-获取预测点信息。
+| 方法名称 | 说明 |
+| --- | --- |
+| getPredictionPoint | 获取预测点信息。 |
 
 #### getPredictionPoint
 
@@ -36,31 +32,15 @@ getPredictionPoint(event: TouchEvent): TouchPoint
 
 **参数：**
 
-**参数名**
-
-**类型**
-
-必填
-
-**说明**
-
-event
-
-[TouchEvent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-touch#touchevent对象说明)
-
-是
-
-当前点信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | TouchEvent | 是 | 当前点信息。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[TouchPoint](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#touchpoint11)
-
-预测点信息。
+| 类型 | 说明 |
+| --- | --- |
+| TouchPoint | 预测点信息。 |
 
 **示例：**
 
@@ -86,7 +66,7 @@ struct PointPredictorDemo {
 
   build() {
     Stack({ alignContent: Alignment.TopEnd }) {
-      this.Canvas() // Canvas.
+      this.Canvas() // 画布。
     }.height('100%').width('100%')
   }
 
@@ -105,9 +85,9 @@ struct PointPredictorDemo {
       .height('100%')
       .onTouch((event: TouchEvent) => {
         switch (event.type) {
-          case TouchType.Down: // Create a drawing path when the screen is touched.
+          case TouchType.Down: // 按下时，新建一条画图路径。
             break;
-          case TouchType.Move: // Use the prediction algorithm to perform prediction and obtain the prediction point.
+          case TouchType.Move: // 使用预测算法进行预测，获得预测点。
             let point = this.pointPredictor?.getPredictionPoint(event)
             this.actualXCoordinate = event.touches[0]?.x
             this.actualYCoordinate = event.touches[0]?.y
@@ -121,5 +101,4 @@ struct PointPredictorDemo {
         }
       })
   }
-}
 ```

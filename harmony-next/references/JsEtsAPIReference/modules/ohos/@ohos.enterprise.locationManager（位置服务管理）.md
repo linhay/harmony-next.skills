@@ -26,23 +26,25 @@ setLocationPolicy(admin: Want, policy: LocationPolicy): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+冲突规则： [独占](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则2独占)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。policy[LocationPolicy](#ZH-CN_TOPIC_0000002497605590__locationpolicy)是
-
-位置服务策略。
-
-- 0：默认策略。
-
-- 1：禁用。
-
-- 2：强制启用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| policy | LocationPolicy | 是 | 位置服务策略。 - 0：默认策略。 - 1：禁用。 - 2：强制启用。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码]([企业设备管理错误码](../../errors/企业设备管理错误码.md).md)和[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -78,17 +80,26 @@ getLocationPolicy(admin: Want): LocationPolicy
 
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 **返回值：**
 
-类型说明[LocationPolicy](#ZH-CN_TOPIC_0000002497605590__locationpolicy)位置服务策略枚举值。0：默认策略。1：禁用。2：强制启用。
+| 类型 | 说明 |
+| --- | --- |
+| LocationPolicy | 位置服务策略枚举值。0：默认策略。1：禁用。2：强制启用。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -118,4 +129,8 @@ try {
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-名称值说明DEFAULT_LOCATION_SERVICE0默认策略。DISALLOW_LOCATION_SERVICE1禁用位置服务策略。FORCE_OPEN_LOCATION_SERVICE2强制开启位置服务策略。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DEFAULT_LOCATION_SERVICE | 0 | 默认策略。 |
+| DISALLOW_LOCATION_SERVICE | 1 | 禁用位置服务策略。 |
+| FORCE_OPEN_LOCATION_SERVICE | 2 | 强制开启位置服务策略。 |

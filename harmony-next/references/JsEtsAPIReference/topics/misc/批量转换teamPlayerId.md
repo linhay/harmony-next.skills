@@ -8,29 +8,40 @@
 
 #### 接口约束
 
+-
+
 - 调用此接口前，请确保转出方/转入方已完成[游戏转移](https://developer.huawei.com/consumer/cn/doc/app/game-center-transferring-0000001194325290)，否则均将无权转换teamPlayerId。
+
+-
+
 - 单次接口请求最多可以获取1000条teamPlayerId数据。
+
+-
+
 - 请勿频繁调用此接口，调用的时间间隔请控制在3秒以上。
 
 #### 接口原型
 
-承载协议
+-
 
-HTTPS POST
+承载协议：HTTPS POST
 
-接口方向
+-
 
-开发者服务器 -> 华为服务器
+接口方向：开发者服务器->华为游戏服务器
 
-接口URL
+-
 
-中国站点：https://connect-api.cloud.huawei.com/api/jas/open/players/player-accounts/team-player/convert
+接口URL：
 
- 注意：
+  - 中国站点：[https://connect-api.cloud.huawei.com/api/jas/open/players/player-accounts/team-player/convert](https://connect-api.cloud.huawei.com/api/jas/open/players/player-accounts/team-player/convert)
 
-调用[获取Token](https://developer.huawei.com/consumer/cn/doc/AppGallery-connect-References/agcapi-obtain_token-0000001158365043)接口时使用的域名需与本接口域名保持一致，例如本接口使用“connect-api.cloud.huawei.com”，则调用[获取Token](https://developer.huawei.com/consumer/cn/doc/AppGallery-connect-References/agcapi-obtain_token-0000001158365043)接口需使用“https://connect-api.cloud.huawei.com/api/jas/open/players/player-accounts/team-player/convert”。
 
-数据格式
+调用[获取Token](https://developer.huawei.com/consumer/cn/doc/AppGallery-connect-References/agcapi-obtain_token-0000001158365043)接口时使用的域名需与本接口域名保持一致，例如本接口使用“connect-api.cloud.huawei.com”，则调用[获取Token](https://developer.huawei.com/consumer/cn/doc/AppGallery-connect-References/agcapi-obtain_token-0000001158365043)接口需使用“[https://connect-api.cloud.huawei.com/api/jas/open/players/player-accounts/team-player/convert”。](https://connect-api.cloud.huawei.com/api/jas/open/players/player-accounts/team-player/convert”。)
+
+-
+
+数据格式：
 
 请求：Content-Type: application/json
 
@@ -40,77 +51,21 @@ HTTPS POST
 
 #### Header
 
-参数名称
-
-是否必选
-
-类型
-
-参数说明
-
-client_id
-
-是
-
-String
-
-用于鉴权的客户端ID，获取方法参考[创建API客户端](https://developer.huawei.com/consumer/cn/doc/AppGallery-connect-Guides/agcapi-getstarted-0000001111845114#section103mcpsimp)。
-
-Authorization
-
-是
-
-String
-
-认证信息，格式为“Authorization: Bearer ${access_token}”。access_token为[获取Token](https://developer.huawei.com/consumer/cn/doc/AppGallery-connect-References/agcapi-obtain_token-0000001158365043)中获取的access_token。
-
-appId
-
-是
-
-String
-
-游戏APP ID，获取方法参见[查看应用信息](https://developer.huawei.com/consumer/cn/doc/app/agc-help-view-app-info-0000002282674569)。
+| 参数名称 | 是否必选 | 类型 | 参数说明 |
+| --- | --- | --- | --- |
+| client_id | 是 | String | 用于鉴权的客户端ID，获取方法参考创建API客户端。 |
+| Authorization | 是 | String | 认证信息，格式为“Authorization: Bearer ${access_token}”。access_token为获取Token中获取的access_token。 |
+| appId | 是 | String | 游戏APP ID，获取方法参见查看应用信息。 |
 
 #### Body
 
 请求Body中使用JSON格式携带更相关信息，参数如下表所示。
 
-参数名称
-
-是否必选
-
-类型
-
-参数说明
-
-srcCpId
-
-是
-
-Long
-
-游戏转出方的开发者Developer ID，获取方法参见[查看应用信息](https://developer.huawei.com/consumer/cn/doc/app/agc-help-view-app-info-0000002282674569)。
-
-dstCpId
-
-是
-
-Long
-
-游戏转入方的开发者Developer ID，获取方法参见[查看应用信息](https://developer.huawei.com/consumer/cn/doc/app/agc-help-view-app-info-0000002282674569)。
-
-teamPlayerIds
-
-是
-
-List<String>
-
-转让前，游戏的玩家标识teamPlayerId列表，列表数量至少1条，至多不超过1000条。
-
- 说明：
-
-建议开发者做好去重工作，确保teamPlayerId列表不要有重复的信息。
+| 参数名称 | 是否必选 | 类型 | 参数说明 |
+| --- | --- | --- | --- |
+| srcCpId | 是 | Long | 游戏转出方的开发者Developer ID，获取方法参见查看应用信息。 |
+| dstCpId | 是 | Long | 游戏转入方的开发者Developer ID，获取方法参见查看应用信息。 |
+| teamPlayerIds | 是 | List<String> | 转让前，游戏的玩家标识teamPlayerId列表，列表数量至少1条，至多不超过1000条。 建议开发者做好去重工作，确保teamPlayerId列表不要有重复的信息。 |
 
 #### 请求示例
 
@@ -126,7 +81,6 @@ Authorization: Bearer ******
     "dstCpId": 4008****74585,
     "teamPlayerIds":[
         "**********",
-        "**********",
         "**********"
     ]
 }
@@ -134,112 +88,31 @@ Authorization: Bearer ******
 
 #### 响应参数
 
-参数名称
+| 参数名称 | 是否必选 | 类型 | 参数说明 |
+| --- | --- | --- | --- |
+| ret | 是 | JosRet | 包含返回码及描述信息的JSON字符串，格式为{"code":retcode, "msg": "description"}，retcode为返回码，description为返回码描述信息。 |
+| data | 是 | List<ConvertTeamPlayerIdItem> | 单次接口请求任务的查询结果。 |
 
-是否必选
-
-类型
-
-参数说明
-
-ret
-
-是
-
-[JosRet](#ZH-CN_TOPIC_0000002506511027__zh-cn_topic_0000002273612857_zh-cn_topic_0000002195007290_li266952144619)
-
-包含返回码及描述信息的JSON字符串，格式为{"code":*retcode*, "msg": "*description*"}，retcode为返回码，description为返回码描述信息。
-
-data
-
-是
-
-List<[ConvertTeamPlayerIdItem](#ZH-CN_TOPIC_0000002506511027__zh-cn_topic_0000002273612857_zh-cn_topic_0000002195007290_li14201142814463)>
-
-单次接口请求任务的查询结果。
+-
 
 - JosRet
 
-参数名称
+| 参数名称 | 是否必选 | 类型 | 参数说明 |
+| --- | --- | --- | --- |
+| code | 是 | int | 单次接口请求任务的结果返回码： 0：请求成功。 -1：请求失败。 3002：鉴权错误。 |
+| msg | 否 | String | 失败时的描述信息。 |
 
-是否必选
-
-类型
-
-参数说明
-
-code
-
-是
-
-int
-
-单次接口请求任务的结果返回码：
-
-  - 0：请求成功。
-  - -1：请求失败。
-  - 3002：鉴权错误。
-
-msg
-
-否
-
-String
-
-失败时的描述信息。
+-
 
 - ConvertTeamPlayerIdItem
 
-参数名称
-
-是否必选
-
-类型
-
-参数说明
-
-srcCpId
-
-是
-
-Long
-
-游戏转出方的开发者Developer ID。
-
-srcTeamPlayerId
-
-是
-
-String
-
-转让前，游戏的玩家标识teamPlayerId。
-
-dstCpId
-
-是
-
-Long
-
-游戏转入方的开发者Developer ID。
-
-dstTeamPlayerId
-
-是
-
-String
-
-转让后，游戏的玩家标识teamPlayerId。
-
-errCode
-
-是
-
-int
-
-查询单个teamplayerId的结果返回码：
-
-  - 0：成功。
-  - -1：失败。
+| 参数名称 | 是否必选 | 类型 | 参数说明 |
+| --- | --- | --- | --- |
+| srcCpId | 是 | Long | 游戏转出方的开发者Developer ID。 |
+| srcTeamPlayerId | 是 | String | 转让前，游戏的玩家标识teamPlayerId。 |
+| dstCpId | 是 | Long | 游戏转入方的开发者Developer ID。 |
+| dstTeamPlayerId | 是 | String | 转让后，游戏的玩家标识teamPlayerId。 |
+| errCode | 是 | int | 查询单个teamplayerId的结果返回码： 0：成功。 -1：失败。 |
 
 #### 响应示例
 
@@ -264,7 +137,7 @@ int
 #### 调用示例
 
 ```ets
-“Java”
+Java
 /**
  * 批量转换teamPlayerId
  *
@@ -307,11 +180,10 @@ private static void batchGetOpenIds(String domain, String client_id, String toke
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-}
 ```
 
 ```ets
-“C#”
+C#
 /**
  * 批量转换teamPlayerId
  *
@@ -359,11 +231,10 @@ static void convertTeamPlayerId(string domain, string clientId, string token, Li
     {
         Console.WriteLine(e.ToString());
     }
-}
 ```
 
 ```ets
-“PHP”
+PHP
 /**
  * 批量转换teamPlayerId
  *
@@ -410,7 +281,7 @@ public function batch_convert_teamPlayerIds(string $domain, string $client_id, s
 ```
 
 ```ets
-“Python”
+Python
 from getToken import *
 class BatchConvertTeamPlayerIdsSolution:
     @staticmethod

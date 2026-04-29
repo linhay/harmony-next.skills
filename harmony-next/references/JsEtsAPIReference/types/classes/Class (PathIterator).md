@@ -34,7 +34,9 @@ constructor(path: Path)
 
 **参数：**
 
-参数名类型必填说明path[Path](Class (Path).md)是迭代器绑定的路径对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | Path | 是 | 迭代器绑定的路径对象。 |
 
 **示例：**
 
@@ -47,7 +49,7 @@ let iter: drawing.PathIterator = new drawing.PathIterator(path);
 
 #### next18+
 
-next(points: Array<common2D.Point>, offset?: number): PathIteratorVerb
+next(points: Array<common2D.Point>, offset?: number): [PathIteratorVerb](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathiteratorverb18)
 
 返回当前路径的下一个操作，并将迭代器置于该操作。
 
@@ -55,17 +57,24 @@ next(points: Array<common2D.Point>, offset?: number): PathIteratorVerb
 
 **参数：**
 
-参数名类型必填说明pointsArray<[common2D.Point](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__point12)>是坐标点数组，长度必须至少为偏移量加4，以确保能容纳所有类型的路径数据。操作执行后，该数组会被覆盖。填入的坐标点数量取决于操作类型，其中，MOVE填入1个坐标点，LINE填入2个坐标点，QUAD填入3个坐标点，CONIC填入3个坐标点 + 1个权重值（共3.5组），CUBIC填入4个坐标点，CLOSE和DONE不填入任何点。offsetnumber否数组中写入位置相对起始点的偏移量，默认为0，取值范围为[0, size-4]，size是指坐标点数组长度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| points | Array<common2D.Point> | 是 | 坐标点数组，长度必须至少为偏移量加4，以确保能容纳所有类型的路径数据。操作执行后，该数组会被覆盖。填入的坐标点数量取决于操作类型，其中，MOVE填入1个坐标点，LINE填入2个坐标点，QUAD填入3个坐标点，CONIC填入3个坐标点 + 1个权重值（共3.5组），CUBIC填入4个坐标点，CLOSE和DONE不填入任何点。 |
+| offset | number | 否 | 数组中写入位置相对起始点的偏移量，默认为0，取值范围为[0, size-4]，size是指坐标点数组长度。 |
 
 **返回值：**
 
-类型说明[PathIteratorVerb](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__pathiteratorverb18)迭代器包含的路径操作类型。
+| 类型 | 说明 |
+| --- | --- |
+| [PathIteratorVerb](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathiteratorverb18) | 迭代器包含的路径操作类型。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -90,7 +99,7 @@ console.info(outputMessage);
 
 #### peek18+
 
-peek(): PathIteratorVerb
+peek(): [PathIteratorVerb](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathiteratorverb18)
 
 返回当前路径的下一个操作，迭代器保持在原操作。
 
@@ -98,7 +107,9 @@ peek(): PathIteratorVerb
 
 **返回值：**
 
-类型说明[PathIteratorVerb](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__pathiteratorverb18)迭代器包含的路径操作类型。
+| 类型 | 说明 |
+| --- | --- |
+| [PathIteratorVerb](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathiteratorverb18) | 迭代器包含的路径操作类型。 |
 
 **示例：**
 
@@ -120,7 +131,9 @@ hasNext(): boolean
 
 **返回值：**
 
-类型说明boolean判断路径操作迭代器中是否还有下一个操作。true表示有，false表示没有。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 判断路径操作迭代器中是否还有下一个操作。true表示有，false表示没有。 |
 
 **示例：**
 

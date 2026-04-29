@@ -12,4 +12,4 @@ typedef void *OH_AI_TrainCfgHandle
 
 **相关模块：**[MindSpore](MindSpore.md)
 
-**所在头文件：**[model.h](../../capi/headers/model.h.md)
+**所在头文件：**[model.h](../../topics/misc/[model.h](model.h.md).md)

@@ -18,7 +18,7 @@ import { particleAbility } from '@kit.AbilityKit';
 
 #### particleAbility.startAbility
 
-startAbility(parameter: StartAbilityParameter, callback: AsyncCallback<void>): void
+startAbility(parameter: [StartAbilityParameter](../../topics/misc/StartAbilityParameter.md), callback: AsyncCallback<void>): void
 
 启动指定的particleAbility。使用callback异步回调。
 
@@ -28,7 +28,10 @@ startAbility(parameter: StartAbilityParameter, callback: AsyncCallback<void>): v
 
 **参数：**
 
-参数名类型必填说明parameter[StartAbilityParameter](../../topics/components/StartAbilityParameter.md)是表示启动的ability。callbackAsyncCallback<void>是回调函数。当启动指定的particleAbility成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| parameter | [StartAbilityParameter](../../topics/misc/StartAbilityParameter.md) | 是 | 表示启动的ability。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当启动指定的particleAbility成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -48,12 +51,11 @@ particleAbility.startAbility(
       abilityName: 'com.example.Data.EntryAbility',
       uri: ''
     },
-  },
   (error, data) => {
     if (error && error.code !== 0) {
       console.error(`startAbility fail, error: ${JSON.stringify(error)}`);
     } else {
-      console.log(`startAbility success, data: ${JSON.stringify(data)}`);
+      console.info(`startAbility success, data: ${JSON.stringify(data)}`);
     }
   },
 );
@@ -61,7 +63,7 @@ particleAbility.startAbility(
 
 #### particleAbility.startAbility
 
-startAbility(parameter: StartAbilityParameter): Promise<void>
+startAbility(parameter: [StartAbilityParameter](../../topics/misc/StartAbilityParameter.md)): Promise<void>
 
 启动指定的particleAbility。使用Promise异步回调。
 
@@ -71,11 +73,15 @@ startAbility(parameter: StartAbilityParameter): Promise<void>
 
 **参数：**
 
-参数名类型必填说明parameter[StartAbilityParameter](../../topics/components/StartAbilityParameter.md)是表示启动的ability。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| parameter | [StartAbilityParameter](../../topics/misc/StartAbilityParameter.md) | 是 | 表示启动的ability。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -95,7 +101,6 @@ particleAbility.startAbility(
       abilityName: 'com.example.Data.EntryAbility',
       uri: ''
     },
-  },
 ).then(() => {
   console.info('particleAbility startAbility');
 });
@@ -111,7 +116,9 @@ terminateSelf(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当销毁当前particleAbility成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当销毁当前particleAbility成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -123,7 +130,6 @@ particleAbility.terminateSelf(
     if (error && error.code !== 0) {
       console.error(`terminateSelf fail, error: ${JSON.stringify(error)}`);
     }
-  }
 );
 ```
 
@@ -137,7 +143,9 @@ terminateSelf(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -149,9 +157,9 @@ particleAbility.terminateSelf().then(() => {
 });
 ```
 
-#### particleAbility.acquireDataAbilityHelper
+#### particleAbility.acquire[DataAbilityHelper](../../topics/misc/DataAbilityHelper.md)
 
-acquireDataAbilityHelper(uri: string): DataAbilityHelper
+acquire[DataAbilityHelper](../../topics/misc/DataAbilityHelper.md)(uri: string): DataAbilityHelper
 
 获取dataAbilityHelper对象。
 
@@ -163,11 +171,15 @@ acquireDataAbilityHelper(uri: string): DataAbilityHelper
 
 **参数：**
 
-参数名类型必填说明uristring是表示要打开的文件的路径。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 表示要打开的文件的路径。 |
 
 **返回值：**
 
-类型说明[DataAbilityHelper](../../topics/system-services/DataAbilityHelper.md)用来协助其他Ability访问DataAbility的工具类。
+| 类型 | 说明 |
+| --- | --- |
+| [DataAbilityHelper](../../topics/misc/DataAbilityHelper.md) | 用来协助其他Ability访问DataAbility的工具类。 |
 
 **示例：**
 
@@ -188,11 +200,16 @@ startBackgroundRunning(id: number, request: NotificationRequest, callback: Async
 
 **系统能力**：SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[backgroundTaskManager.startBackgroundRunning](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstartbackgroundrunning)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[backgroundTaskManager.startBackgroundRunning](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstartbackgroundrunning)替代。
 
 **参数：**
 
-参数名类型必填说明idnumber是长时任务通知id号。request[NotificationRequest](@ohos.notification (Notification模块).md#ZH-CN_TOPIC_0000002529286111__notificationrequest)是通知参数，用于显示通知栏的信息。callbackAsyncCallback<void>是回调函数。当向系统申请长时任务成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | number | 是 | 长时任务通知id号。 |
+| request | NotificationRequest | 是 | 通知参数，用于显示通知栏的信息。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当向系统申请长时任务成功，err为undefined，否则为错误对象。 |
 
 **示例**：
 
@@ -206,7 +223,6 @@ function callback(error: BusinessError, data: void) {
     console.error(`Operation failed error: ${JSON.stringify(error)}`);
   } else {
     console.info(`Operation succeeded, data: ${data}`);
-  }
 }
 
 let wantAgentInfo: wantAgent.WantAgentInfo = {
@@ -248,15 +264,21 @@ startBackgroundRunning(id: number, request: NotificationRequest): Promise<void>
 
 **系统能力**：SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[backgroundTaskManager.startBackgroundRunning](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstartbackgroundrunning-1)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[backgroundTaskManager.startBackgroundRunning](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstartbackgroundrunning-1)替代。
 
 **参数：**
 
-参数名类型必填说明idnumber是长时任务通知id号。request[NotificationRequest](@ohos.notification (Notification模块).md#ZH-CN_TOPIC_0000002529286111__notificationrequest)是通知参数，用于显示通知栏的信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | number | 是 | 长时任务通知id号。 |
+| request | NotificationRequest | 是 | 通知参数，用于显示通知栏的信息。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例**：
 
@@ -295,7 +317,6 @@ wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj) => {
   }).catch((err: BusinessError) => {
     console.error(`Operation failed cause: ${JSON.stringify(err)}`);
   });
-});
 ```
 
 #### particleAbility.cancelBackgroundRunning(deprecated)
@@ -306,11 +327,14 @@ cancelBackgroundRunning(callback: AsyncCallback<void>): void
 
 **系统能力**：SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[backgroundTaskManager.stopBackgroundRunning](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstopbackgroundrunning)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[backgroundTaskManager.stopBackgroundRunning](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstopbackgroundrunning)替代。
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当向系统申请取消长时任务成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当向系统申请取消长时任务成功，err为undefined，否则为错误对象。 |
 
 **示例**：
 
@@ -324,7 +348,6 @@ function callback(error: BusinessError, data: void) {
   } else {
     console.info(`Operation succeeded, data: ${data}`);
   }
-}
 
 particleAbility.cancelBackgroundRunning(callback);
 ```
@@ -337,11 +360,14 @@ cancelBackgroundRunning(): Promise<void>
 
 **系统能力**：SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[backgroundTaskManager.stopBackgroundRunning](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstopbackgroundrunning-1)替代。
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[backgroundTaskManager.stopBackgroundRunning](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstopbackgroundrunning-1)替代。
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例**：
 
@@ -358,7 +384,7 @@ particleAbility.cancelBackgroundRunning().then(() => {
 
 #### particleAbility.connectAbility
 
-connectAbility(request: Want, options:ConnectOptions): number
+connectAbility(request: Want, options:[ConnectOptions](../../topics/misc/ConnectOptions.md)): number
 
 将当前ability与指定的ServiceAbility进行连接。
 
@@ -370,11 +396,16 @@ connectAbility(request: Want, options:ConnectOptions): number
 
 **参数：**
 
-参数名类型必填说明request[Want](@ohos.application.Want (Want).md)是表示被连接的ServiceAbility。options[ConnectOptions](../../topics/misc/ConnectOptions.md)是连接回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| request | Want | 是 | 表示被连接的ServiceAbility。 |
+| options | [ConnectOptions](../../topics/misc/ConnectOptions.md) | 是 | 连接回调方法。 |
 
 **返回值：**
 
-类型说明number连接的ServiceAbility的ID(ID从0开始自增，每连接成功一次ID加1)。
+| 类型 | 说明 |
+| --- | --- |
+| number | 连接的ServiceAbility的ID(ID从0开始自增，每连接成功一次ID加1)。 |
 
 **示例**：
 
@@ -390,19 +421,18 @@ let connId = particleAbility.connectAbility(
   },
   {
     onConnect: (element, remote) => {
-      console.log(`ConnectAbility onConnect remote is proxy: ${(remote instanceof rpc.RemoteProxy)}`);
+      console.info(`ConnectAbility onConnect remote is proxy: ${(remote instanceof rpc.RemoteProxy)}`);
     },
     onDisconnect: (element) => {
-      console.log(`ConnectAbility onDisconnect element.deviceId: ${element.deviceId}`);
+      console.info(`ConnectAbility onDisconnect element.deviceId: ${element.deviceId}`);
     },
     onFailed: (code) => {
       console.error(`particleAbilityTest ConnectAbility onFailed errCode: ${code}`);
     },
-  },
 );
 
 particleAbility.disconnectAbility(connId).then((data) => {
-  console.log(`data: ${data}`);
+  console.info(`data: ${data}`);
 }).catch((error: BusinessError) => {
   console.error(`particleAbilityTest result errCode: ${error.code}`);
 });
@@ -418,7 +448,10 @@ disconnectAbility(connection: number, callback:AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明connectionnumber是表示断开连接的ServiceAbility的ID。callbackAsyncCallback<void>是回调函数。当断开当前ability与指定ServiceAbility的连接成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| connection | number | 是 | 表示断开连接的ServiceAbility的ID。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当断开当前ability与指定ServiceAbility的连接成功，err为undefined，否则为错误对象。 |
 
 **示例**：
 
@@ -433,14 +466,13 @@ let connId = particleAbility.connectAbility(
   },
   {
     onConnect: (element, remote) => {
-      console.log(`ConnectAbility onConnect remote is proxy: ${(remote instanceof rpc.RemoteProxy)}`);
+      console.info(`ConnectAbility onConnect remote is proxy: ${(remote instanceof rpc.RemoteProxy)}`);
     },
     onDisconnect: (element) => {
-      console.log(`ConnectAbility onDisconnect element.deviceId: ${element.deviceId}`);
+      console.info(`ConnectAbility onDisconnect element.deviceId: ${element.deviceId}`);
     },
     onFailed: (code) => {
       console.error(`particleAbilityTest ConnectAbility onFailed errCode: ${code}`);
-    },
   },
 );
 
@@ -459,11 +491,15 @@ disconnectAbility(connection: number): Promise<void>
 
 **参数：**
 
-参数名类型必填说明connectionnumber是表示断开连接的ServiceAbility的ID。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| connection | number | 是 | 表示断开连接的ServiceAbility的ID。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例**：
 
@@ -479,19 +515,18 @@ let connId = particleAbility.connectAbility(
   },
   {
     onConnect: (element, remote) => {
-      console.log(`ConnectAbility onConnect remote is proxy: ${(remote instanceof rpc.RemoteProxy)}`);
+      console.info(`ConnectAbility onConnect remote is proxy: ${(remote instanceof rpc.RemoteProxy)}`);
     },
     onDisconnect: (element) => {
-      console.log(`ConnectAbility onDisconnect element.deviceId: ${element.deviceId}`);
+      console.info(`ConnectAbility onDisconnect element.deviceId: ${element.deviceId}`);
     },
     onFailed: (code) => {
       console.error(`particleAbilityTest ConnectAbility onFailed errCode: ${code}`);
     },
-  },
 );
 
 particleAbility.disconnectAbility(connId).then(() => {
-  console.log('disconnectAbility success');
+  console.info('disconnectAbility success');
 }).catch((error: BusinessError) => {
   console.error(`particleAbilityTest result errCode : ${error.code}`);
 });
@@ -503,4 +538,6 @@ particleAbility.disconnectAbility(connId).then(() => {
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
-名称值说明INVALID_PARAMETER-1无效的参数。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| INVALID_PARAMETER | -1 | 无效的参数。 |

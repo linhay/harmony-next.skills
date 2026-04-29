@@ -20,7 +20,9 @@ getPortList(): Readonly<SerialPort>[]
 
 **返回值：**
 
-类型说明Readonly<[SerialPort](#ZH-CN_TOPIC_0000002529285497__serialport)>[]串口信息列表。
+| 类型 | 说明 |
+| --- | --- |
+| Readonly<SerialPort>[] | 串口信息列表。 |
 
 **示例：**
 
@@ -52,17 +54,26 @@ hasSerialRight(portId: number): boolean
 
 **参数：**
 
-参数名类型必填说明portIdnumber是端口号。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| portId | number | 是 | 端口号。 |
 
 **返回值：**
 
-类型说明booleantrue表示已授权，false表示未授权。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true表示已授权，false表示未授权。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[USB服务错误码]([USB服务错误码](../../errors/USB服务错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14400005Database operation exception.31400001Serial port management exception.31400003PortId does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14400005 | Database operation exception. |
+| 31400001 | Serial port management exception. |
+| 31400003 | PortId does not exist. |
 
 **示例：**
 
@@ -88,7 +99,6 @@ function hasSerialRight() {
   } else {
     console.info('No permission to access the serial port');
   }
-}
 ```
 
 #### serialManager.requestSerialRight
@@ -101,17 +111,26 @@ requestSerialRight(portId: number): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明portIdnumber是端口号。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| portId | number | 是 | 端口号。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象，true表示请求权限成功，false表示请求权限失败。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象，true表示请求权限成功，false表示请求权限失败。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍参见[通用错误码](通用错误码.md)和[USB服务错误码](USB服务错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14400005Database operation exception.31400001Serial port management exception.31400003PortId does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14400005 | Database operation exception. |
+| 31400001 | Serial port management exception. |
+| 31400003 | PortId does not exist. |
 
 **示例：**
 
@@ -143,7 +162,6 @@ function requestSerialRight() {
       }
     });
   }
-}
 ```
 
 #### serialManager.open
@@ -156,13 +174,21 @@ open(portId: number): void
 
 **参数：**
 
-参数名类型必填说明portIdnumber是端口号。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| portId | number | 是 | 端口号。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍参见[通用错误码](通用错误码.md)和[USB服务错误码](USB服务错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.31400001Serial port management exception.31400002Access denied. Call requestSerialRight to request user authorization first.31400003PortId does not exist.31400004The serial port device is occupied.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 31400001 | Serial port management exception. |
+| 31400002 | Access denied. Call requestSerialRight to request user authorization first. |
+| 31400003 | PortId does not exist. |
+| 31400004 | The serial port device is occupied. |
 
 **示例：**
 
@@ -202,7 +228,6 @@ function open() {
   } catch (error) {
     console.error('open usbSerial error, ' + JSON.stringify(error));
   }
-}
 ```
 
 #### serialManager.getAttribute
@@ -215,17 +240,26 @@ getAttribute(portId: number): Readonly<SerialAttribute>
 
 **参数：**
 
-参数名类型必填说明portIdnumber是端口号。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| portId | number | 是 | 端口号。 |
 
 **返回值：**
 
-类型说明Readonly<[SerialAttribute](#ZH-CN_TOPIC_0000002529285497__serialattribute)>返回串口的配置参数。
+| 类型 | 说明 |
+| --- | --- |
+| Readonly<SerialAttribute> | 返回串口的配置参数。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍参见[通用错误码](通用错误码.md)和[USB服务错误码](USB服务错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.31400001Serial port management exception.31400003PortId does not exist.31400005The serial port device is not opened. Call the open API first.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 31400001 | Serial port management exception. |
+| 31400003 | PortId does not exist. |
+| 31400005 | The serial port device is not opened. Call the open API first. |
 
 **示例：**
 
@@ -278,7 +312,6 @@ function getAttribute() {
   } catch (error) {
     console.error('getAttribute usbSerial error, ' + JSON.stringify(error));
   }
-}
 ```
 
 #### serialManager.setAttribute
@@ -291,13 +324,21 @@ setAttribute(portId: number, attribute: SerialAttribute): void
 
 **参数：**
 
-参数名类型必填说明portIdnumber是端口号。attribute[SerialAttribute](#ZH-CN_TOPIC_0000002529285497__serialattribute)是串口参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| portId | number | 是 | 端口号。 |
+| attribute | SerialAttribute | 是 | 串口参数。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍参见[通用错误码](通用错误码.md)和[USB服务错误码](USB服务错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.31400001Serial port management exception.31400003PortId does not exist.31400005The serial port device is not opened. Call the open API first.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 31400001 | Serial port management exception. |
+| 31400003 | PortId does not exist. |
+| 31400005 | The serial port device is not opened. Call the open API first. |
 
 **示例：**
 
@@ -352,7 +393,6 @@ function setAttribute() {
   } catch (error) {
     console.error('setAttribute usbSerial error, ' + JSON.stringify(error));
   }
-}
 ```
 
 #### serialManager.read
@@ -365,17 +405,30 @@ read(portId: number, buffer: Uint8Array, timeout?: number): Promise<number>
 
 **参数：**
 
-参数名类型必填说明portIdnumber是端口号。bufferUint8Array是读取数据的缓冲区。timeoutnumber否超时时间（单位：ms），可选参数，默认为0不超时，用户按需选择。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| portId | number | 是 | 端口号。 |
+| buffer | Uint8Array | 是 | 读取数据的缓冲区。 |
+| timeout | number | 否 | 超时时间（单位：ms）。API在目标端口缓冲区无数据时，等待指定时间后返回。默认值0表示不等待直接返回。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回读取数据长度。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回读取数据长度。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍参见[通用错误码](通用错误码.md)和[USB服务错误码](USB服务错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.31400001Serial port management exception.31400003PortId does not exist.31400005The serial port device is not opened. Call the open API first.31400006Data transfer timed out.31400007I/O exception. Possible causes: 1. The transfer was canceled. 2. The device offered more data than allowed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 31400001 | Serial port management exception. |
+| 31400003 | PortId does not exist. |
+| 31400005 | The serial port device is not opened. Call the open API first. |
+| 31400006 | Data transfer timed out. |
+| 31400007 | I/O exception. Possible causes: 1. The transfer was canceled. 2. The device offered more data than allowed. |
 
 **示例：**
 
@@ -436,17 +489,30 @@ readSync(portId: number, buffer: Uint8Array, timeout?: number): number
 
 **参数：**
 
-参数名类型必填说明portIdnumber是端口号。bufferUint8Array是读取数据的缓冲区。timeoutnumber否超时时间（单位：ms），可选参数，默认为0不超时，用户按需选择。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| portId | number | 是 | 端口号。 |
+| buffer | Uint8Array | 是 | 读取数据的缓冲区。 |
+| timeout | number | 否 | 超时时间（单位：ms）。API在目标端口缓冲区无数据时，等待指定时间后返回。默认值0表示不等待直接返回。 |
 
 **返回值：**
 
-类型说明number返回读取数据长度。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回读取数据长度。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍参见[通用错误码](通用错误码.md)和[USB服务错误码](USB服务错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.31400001Serial port management exception.31400003PortId does not exist.31400005The serial port device is not opened. Call the open API first.31400006Data transfer timed out.31400007I/O exception. Possible causes: 1. The transfer was canceled. 2. The device offered more data than allowed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 31400001 | Serial port management exception. |
+| 31400003 | PortId does not exist. |
+| 31400005 | The serial port device is not opened. Call the open API first. |
+| 31400006 | Data transfer timed out. |
+| 31400007 | I/O exception. Possible causes: 1. The transfer was canceled. 2. The device offered more data than allowed. |
 
 **示例：**
 
@@ -495,7 +561,6 @@ function readSync() {
   } catch (error) {
     console.error('readSync usbSerial error, ' + JSON.stringify(error));
   }
-}
 ```
 
 #### serialManager.write
@@ -508,17 +573,30 @@ write(portId: number, buffer: Uint8Array, timeout?: number): Promise<number>
 
 **参数：**
 
-参数名类型必填说明portIdnumber是端口号。bufferUint8Array是写入数据的缓冲区。timeoutnumber否超时时间（单位：ms），可选参数，默认为0不超时，用户按需选择。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| portId | number | 是 | 端口号。 |
+| buffer | Uint8Array | 是 | 写入数据的缓冲区。 |
+| timeout | number | 否 | 超时时间（单位：ms），指定时间内等待API在目标端口的缓冲区是否可写，若可写则正常处理，若不可写等待超过指定时间后返回超时。默认值0表示不可写时不等待直接返回。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回写入数据长度。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回写入数据长度。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍参见[通用错误码](通用错误码.md)和[USB服务错误码](USB服务错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.31400001Serial port management exception.31400003PortId does not exist.31400005The serial port device is not opened. Call the open API first.31400006Data transfer timed out.31400007I/O exception. Possible causes: 1. The transfer was canceled. 2. The device offered more data than allowed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 31400001 | Serial port management exception. |
+| 31400003 | PortId does not exist. |
+| 31400005 | The serial port device is not opened. Call the open API first. |
+| 31400006 | Data transfer timed out. |
+| 31400007 | I/O exception. Possible causes: 1. The transfer was canceled. 2. The device offered more data than allowed. |
 
 **示例：**
 
@@ -580,17 +658,30 @@ writeSync(portId: number, buffer: Uint8Array, timeout?: number): number
 
 **参数：**
 
-参数名类型必填说明portIdnumber是端口号。bufferUint8Array是写入目标缓冲区。timeoutnumber否超时时间（单位：ms），可选参数，默认为0不超时，用户按需选择。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| portId | number | 是 | 端口号。 |
+| buffer | Uint8Array | 是 | 写入目标缓冲区。 |
+| timeout | number | 否 | 超时时间（单位：ms），指定时间内等待API在目标端口的缓冲区是否可写，若可写则正常处理，若不可写等待超过指定时间后返回超时。默认值0表示不可写时不等待直接返回。 |
 
 **返回值：**
 
-类型说明number返回写入数据长度。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回写入数据长度。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍参见[通用错误码](通用错误码.md)和[USB服务错误码](USB服务错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.31400001Serial port management exception.31400003PortId does not exist.31400005The serial port device is not opened. Call the open API first.31400006Data transfer timed out.31400007I/O exception. Possible causes: 1. The transfer was canceled. 2. The device offered more data than allowed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 31400001 | Serial port management exception. |
+| 31400003 | PortId does not exist. |
+| 31400005 | The serial port device is not opened. Call the open API first. |
+| 31400006 | Data transfer timed out. |
+| 31400007 | I/O exception. Possible causes: 1. The transfer was canceled. 2. The device offered more data than allowed. |
 
 **示例：**
 
@@ -640,7 +731,6 @@ function writeSync() {
   } catch (error) {
     console.error('writeSync usbSerial error, ' + JSON.stringify(error));
   }
-}
 ```
 
 #### serialManager.close
@@ -653,13 +743,20 @@ close(portId: number): void
 
 **参数：**
 
-参数名类型必填说明portIdnumber是端口号。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| portId | number | 是 | 端口号。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍参见[通用错误码](通用错误码.md)和[USB服务错误码](USB服务错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.31400001Serial port management exception.31400003PortId does not exist.31400005The serial port device is not opened. Call the open API first.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 31400001 | Serial port management exception. |
+| 31400003 | PortId does not exist. |
+| 31400005 | The serial port device is not opened. Call the open API first. |
 
 **示例：**
 
@@ -708,7 +805,6 @@ function close() {
   } catch (error) {
     console.error('close usbSerial error, ' + JSON.stringify(error));
   }
-}
 ```
 
 #### serialManager.cancelSerialRight
@@ -721,13 +817,21 @@ cancelSerialRight(portId: number): void
 
 **参数：**
 
-参数名类型必填说明portIdnumber是端口号。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| portId | number | 是 | 端口号。 |
 
 **错误码：**
 
-以下错误码的详细介绍参见[通用错误码](../../errors/通用错误码.md)和[USB服务错误码](../../errors/USB服务错误码.md)。
+以下错误码的详细介绍参见[通用错误码](通用错误码.md)和[USB服务错误码](USB服务错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14400005Database operation exception.31400001Serial port management exception.31400002Access denied. Call requestSerialRight to request user authorization first.31400003PortId does not exist.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14400005 | Database operation exception. |
+| 31400001 | Serial port management exception. |
+| 31400002 | Access denied. Call requestSerialRight to request user authorization first. |
+| 31400003 | PortId does not exist. |
 
 **示例：**
 
@@ -767,7 +871,6 @@ function cancelSerialRight() {
   } catch (error) {
     console.error('cancelSerialRight error, ', JSON.stringify(error));
   }
-}
 ```
 
 #### SerialAttribute
@@ -776,7 +879,12 @@ function cancelSerialRight() {
 
 **系统能力：** SystemCapability.USB.USBManager.Serial
 
-名称类型只读可选说明baudRate[BaudRates](#ZH-CN_TOPIC_0000002529285497__baudrates)否否串口波特率。dataBits[DataBits](#ZH-CN_TOPIC_0000002529285497__databits)否是串口数据位，默认值为8位。parity[Parity](#ZH-CN_TOPIC_0000002529285497__parity)否是串口奇偶校验，默认值为None，无奇偶校验。stopBits[StopBits](#ZH-CN_TOPIC_0000002529285497__stopbits)否是串口停止位，默认值为1位。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| baudRate | BaudRates | 否 | 否 | 串口波特率。 |
+| dataBits | DataBits | 否 | 是 | 串口数据位，默认值为8位。 |
+| parity | Parity | 否 | 是 | 串口奇偶校验，默认值为None，无奇偶校验。 |
+| stopBits | StopBits | 否 | 是 | 串口停止位，默认值为1位。 |
 
 #### SerialPort
 
@@ -784,7 +892,10 @@ function cancelSerialRight() {
 
 **系统能力：** SystemCapability.USB.USBManager.Serial
 
-名称类型只读可选说明portIdnumber否否端口号。deviceNamestring否否串口设备名称。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| portId | number | 否 | 否 | 端口号。 |
+| deviceName | string | 否 | 否 | 串口设备名称。 |
 
 #### BaudRates
 
@@ -792,7 +903,38 @@ function cancelSerialRight() {
 
 **系统能力：** SystemCapability.USB.USBManager.Serial
 
-名称值说明BAUDRATE_5050传输波特率为50。BAUDRATE_7575传输波特率为75。BAUDRATE_110110传输波特率为110。BAUDRATE_134134传输波特率为134。BAUDRATE_150150传输波特率为150。BAUDRATE_200200传输波特率为200。BAUDRATE_300300传输波特率为300。BAUDRATE_600600传输波特率为600。BAUDRATE_12001200传输波特率为1200。BAUDRATE_18001800传输波特率为1800。BAUDRATE_24002400传输波特率为2400。BAUDRATE_48004800传输波特率为4800。BAUDRATE_96009600传输波特率为9600。BAUDRATE_1920019200传输波特率为19200。BAUDRATE_3840038400传输波特率为38400。BAUDRATE_5760057600传输波特率为57600。BAUDRATE_115200115200传输波特率为115200。BAUDRATE_230400230400传输波特率为230400。BAUDRATE_460800460800传输波特率为460800。BAUDRATE_500000500000传输波特率为500000。BAUDRATE_576000576000传输波特率为576000。BAUDRATE_921600921600传输波特率为921600。BAUDRATE_10000001000000传输波特率为1000000。BAUDRATE_11520001152000传输波特率为1152000。BAUDRATE_15000001500000传输波特率为1500000。BAUDRATE_20000002000000传输波特率为2000000。BAUDRATE_25000002500000传输波特率为2500000。BAUDRATE_30000003000000传输波特率为3000000。BAUDRATE_35000003500000传输波特率为3500000。BAUDRATE_40000004000000传输波特率为4000000。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| BAUDRATE_50 | 50 | 传输波特率为50。 |
+| BAUDRATE_75 | 75 | 传输波特率为75。 |
+| BAUDRATE_110 | 110 | 传输波特率为110。 |
+| BAUDRATE_134 | 134 | 传输波特率为134。 |
+| BAUDRATE_150 | 150 | 传输波特率为150。 |
+| BAUDRATE_200 | 200 | 传输波特率为200。 |
+| BAUDRATE_300 | 300 | 传输波特率为300。 |
+| BAUDRATE_600 | 600 | 传输波特率为600。 |
+| BAUDRATE_1200 | 1200 | 传输波特率为1200。 |
+| BAUDRATE_1800 | 1800 | 传输波特率为1800。 |
+| BAUDRATE_2400 | 2400 | 传输波特率为2400。 |
+| BAUDRATE_4800 | 4800 | 传输波特率为4800。 |
+| BAUDRATE_9600 | 9600 | 传输波特率为9600。 |
+| BAUDRATE_19200 | 19200 | 传输波特率为19200。 |
+| BAUDRATE_38400 | 38400 | 传输波特率为38400。 |
+| BAUDRATE_57600 | 57600 | 传输波特率为57600。 |
+| BAUDRATE_115200 | 115200 | 传输波特率为115200。 |
+| BAUDRATE_230400 | 230400 | 传输波特率为230400。 |
+| BAUDRATE_460800 | 460800 | 传输波特率为460800。 |
+| BAUDRATE_500000 | 500000 | 传输波特率为500000。 |
+| BAUDRATE_576000 | 576000 | 传输波特率为576000。 |
+| BAUDRATE_921600 | 921600 | 传输波特率为921600。 |
+| BAUDRATE_1000000 | 1000000 | 传输波特率为1000000。 |
+| BAUDRATE_1152000 | 1152000 | 传输波特率为1152000。 |
+| BAUDRATE_1500000 | 1500000 | 传输波特率为1500000。 |
+| BAUDRATE_2000000 | 2000000 | 传输波特率为2000000。 |
+| BAUDRATE_2500000 | 2500000 | 传输波特率为2500000。 |
+| BAUDRATE_3000000 | 3000000 | 传输波特率为3000000。 |
+| BAUDRATE_3500000 | 3500000 | 传输波特率为3500000。 |
+| BAUDRATE_4000000 | 4000000 | 传输波特率为4000000。 |
 
 #### DataBits
 
@@ -800,7 +942,12 @@ function cancelSerialRight() {
 
 **系统能力：** SystemCapability.USB.USBManager.Serial
 
-名称值说明DATABIT_88报文的有效数据位宽为8比特。DATABIT_77报文的有效数据位宽为7比特。DATABIT_66报文的有效数据位宽为6比特。DATABIT_55报文的有效数据位宽为5比特。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DATABIT_8 | 8 | 报文的有效数据位宽为8比特。 |
+| DATABIT_7 | 7 | 报文的有效数据位宽为7比特。 |
+| DATABIT_6 | 6 | 报文的有效数据位宽为6比特。 |
+| DATABIT_5 | 5 | 报文的有效数据位宽为5比特。 |
 
 #### Parity
 
@@ -808,7 +955,13 @@ function cancelSerialRight() {
 
 **系统能力：** SystemCapability.USB.USBManager.Serial
 
-名称值说明PARITY_NONE0无校验。PARITY_ODD1奇检验。PARITY_EVEN2偶校验。PARITY_MARK3固定为1。PARITY_SPACE4固定为0。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PARITY_NONE | 0 | 无校验。 |
+| PARITY_ODD | 1 | 奇校验。 |
+| PARITY_EVEN | 2 | 偶校验。 |
+| PARITY_MARK | 3 | 固定为1。 |
+| PARITY_SPACE | 4 | 固定为0。 |
 
 #### StopBits
 
@@ -816,4 +969,7 @@ function cancelSerialRight() {
 
 **系统能力：** SystemCapability.USB.USBManager.Serial
 
-名称值说明STOPBIT_10报文的有效停止位宽为1比特。STOPBIT_21报文的有效停止位宽为2比特。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| STOPBIT_1 | 0 | 报文的有效停止位宽为1比特。 |
+| STOPBIT_2 | 1 | 报文的有效停止位宽为2比特。 |

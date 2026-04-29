@@ -96,8 +96,24 @@ Failed to delete the service instance.
 
 检查mDNS服务是否存在。
 
-#### 2204010 发送消息失败
+#### 2204009 发送数据报文失败
+**错误信息**
 
+Failed to send packet.
+
+**错误描述**
+
+发送数据报文失败。
+
+**可能原因**
+
+当前没有可用网络。
+
+**处理步骤**
+
+检查当前设备是否连接到了可用的网络。
+
+#### 2204010 发送消息失败
 **错误信息**
 
 Failed to send the message.

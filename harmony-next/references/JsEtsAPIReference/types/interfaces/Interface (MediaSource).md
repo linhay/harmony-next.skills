@@ -1,11 +1,10 @@
 # Interface (MediaSource)
 
+媒体数据信息。来源自[createMediaSourceWithUrl](Functions.md#ZH-CN_TOPIC_0000002522082030__mediacreatemediasourcewithurl12)。
+
+
 - 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 - 本Interface首批接口从API version 12开始支持。
-
-媒体数据信息。来源自[createMediaSourceWithUrl](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445861__mediacreatemediasourcewithurl12)。
-
-**系统能力：** SystemCapability.Multimedia.Media.Core
 
 #### 导入模块
 
@@ -15,7 +14,7 @@ import { media } from '@kit.MediaKit';
 
 #### setMimeType12+
 
-setMimeType(mimeType: AVMimeTypes): void
+setMimeType(mimeType: [AVMimeTypes](../enums/Enums.md#ZH-CN_TOPIC_0000002497445922__avmimetypes12)): void
 
 设置媒体MIME类型，以帮助播放器处理扩展的媒体源。
 
@@ -25,7 +24,9 @@ setMimeType(mimeType: AVMimeTypes): void
 
 **参数：**
 
-参数名类型必填说明mimeType[AVMimeTypes](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445922__avmimetypes12)是媒体MIME类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mimeType | [AVMimeTypes](../enums/Enums.md#ZH-CN_TOPIC_0000002497445922__avmimetypes12) | 是 | 媒体MIME类型。 |
 
 #### setMediaResourceLoaderDelegate18+
 
@@ -39,7 +40,9 @@ setMediaResourceLoaderDelegate(resourceLoader: MediaSourceLoader): void
 
 **参数：**
 
-参数名类型必填说明resourceLoader[MediaSourceLoader](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605902__mediasourceloader18)是应用实现的媒体数据获取接口，方便播放器获取数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| resourceLoader | MediaSourceLoader | 是 | 应用实现的媒体数据获取接口，方便播放器获取数据。 |
 
 **示例：**
 
@@ -80,3 +83,17 @@ let resourceLoader: media.MediaSourceLoader = {
 
 mediaSource.setMediaResourceLoaderDelegate(resourceLoader);
 ```
+
+**enableOfflineCache23+**
+
+enableOfflineCache(enable: boolean): void
+
+是否在视频播放期间启用离线缓存。
+
+系统能力： SystemCapability.Multimedia.Media.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enable | boolean | 是 | 是否在视频播放期间启用离线缓存。true表示启用，false表示不启用。 |

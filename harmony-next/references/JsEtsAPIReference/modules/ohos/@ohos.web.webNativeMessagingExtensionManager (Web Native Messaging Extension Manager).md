@@ -20,7 +20,12 @@ import { webNativeMessagingExtensionManager } from '@kit.ArkWeb';
 
 **模型约束:** 此接口仅可在Stage模型下使用。
 
-名称类型只读可选说明connectionIdnumber否否连接ID。bundleNamestring否否Web原生消息扩展应用的包名。extensionOriginstring否否浏览器扩展的源URL。extensionPidnumber否否Web原生消息扩展的进程ID。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| connectionId | number | 否 | 否 | 连接ID。 |
+| bundleName | string | 否 | 否 | Web原生消息扩展应用的包名。 |
+| extensionOrigin | string | 否 | 否 | 浏览器扩展的源URL。 |
+| extensionPid | number | 否 | 否 | Web原生消息扩展的进程ID。 |
 
 #### NmErrorCode
 
@@ -28,7 +33,11 @@ Native Messaging的错误列表。
 
 **系统能力**：SystemCapability.Web.Webview.Core
 
-名称值说明PERMISSION_DENY17100203Permission denied due to missing ohos.permission.WEB_NATIVE_MESSAGING.WANT_CONTENT_ERROR17100202The want content is invalid.INNER_ERROR17100201Inner error for native messaging.Error code:
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PERMISSION_DENY | 17100203 | Permission denied due to missing ohos.permission.WEB_NATIVE_MESSAGING. |
+| WANT_CONTENT_ERROR | 17100202 | The want content is invalid. |
+| INNER_ERROR | 17100201 | Inner error for native messaging.Error code: |
 
 #### WebExtensionConnectionCallback
 
@@ -44,7 +53,9 @@ onConnect(connection: ConnectionNativeInfo): void
 
 **参数:**
 
-参数名类型必填说明connection[ConnectionNativeInfo](#ZH-CN_TOPIC_0000002497605204__connectionnativeinfo)是连接信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| connection | ConnectionNativeInfo | 是 | 连接信息。 |
 
 **示例:**
 
@@ -87,8 +98,6 @@ export default class EntryAbility extends UIAbility {
       let message = (err as BusinessError).message;
       console.error(`connectNative failed, code is ${code}, message is ${message}`);
     }
-  }
-}
 ```
 
 #### onDisconnect
@@ -103,7 +112,9 @@ onDisconnect(connection: ConnectionNativeInfo): void
 
 **参数:**
 
-参数名类型必填说明connection[ConnectionNativeInfo](#ZH-CN_TOPIC_0000002497605204__connectionnativeinfo)是连接信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| connection | ConnectionNativeInfo | 是 | 连接信息。 |
 
 **示例:**
 
@@ -146,8 +157,6 @@ export default class EntryAbility extends UIAbility {
       let message = (err as BusinessError).message;
       console.error(`connectNative failed, code is ${code}, message is ${message}`);
     }
-  }
-}
 ```
 
 #### onFailed
@@ -162,7 +171,10 @@ onFailed(code: NmErrorCode, errMsg: string): void
 
 **参数:**
 
-参数名类型必填说明code[NmErrorCode](#ZH-CN_TOPIC_0000002497605204__nmerrorcode)是错误码。errMsgstring是错误码对应信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | NmErrorCode | 是 | 错误码。 |
+| errMsg | string | 是 | 错误码对应信息。 |
 
 **示例:**
 
@@ -205,13 +217,11 @@ export default class EntryAbility extends UIAbility {
       let message = (err as BusinessError).message;
       console.error(`connectNative failed, code is ${code}, message is ${message}`);
     }
-  }
-}
 ```
 
 #### webNativeMessagingExtensionManager.connectNative
 
-connectNative(context: UIAbilityContext, want: Want, callback: WebExtensionConnectionCallback): number
+connectNative(context: [UIAbilityContext](../../topics/misc/UIAbilityContext.md), want: Want, callback: WebExtensionConnectionCallback): number
 
 将当前Ability连接到指定的Web原生消息扩展Ability。
 
@@ -223,17 +233,25 @@ connectNative(context: UIAbilityContext, want: Want, callback: WebExtensionConne
 
 **参数:**
 
-参数名类型必填说明context[UIAbilityContext](../../topics/graphics/UIAbilityContext.md)是Web原生消息扩展的上下文。want[Want](@ohos.app.ability.Want (Want).md)是启动Ability的want信息。callback[WebExtensionConnectionCallback](#ZH-CN_TOPIC_0000002497605204__webextensionconnectioncallback)是WebExtensionConnection状态的回调对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [UIAbilityContext](../../topics/misc/UIAbilityContext.md) | 是 | Web原生消息扩展的上下文。 |
+| want | Want | 是 | 启动Ability的want信息。 |
+| callback | WebExtensionConnectionCallback | 是 | WebExtensionConnection状态的回调对象。 |
 
 **返回值:**
 
-类型说明number连接标识ID。
+| 类型 | 说明 |
+| --- | --- |
+| number | 连接标识ID。 |
 
 **错误码:**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
 
 **示例:**
 
@@ -276,8 +294,6 @@ export default class EntryAbility extends UIAbility {
       let message = (err as BusinessError).message;
       console.error(`connectNative failed, code is ${code}, message is ${message}`);
     }
-  }
-}
 ```
 
 #### webNativeMessagingExtensionManager.disconnectNative
@@ -294,17 +310,26 @@ disconnectNative(connectionId: number): Promise<void>
 
 **参数:**
 
-参数名类型必填说明connectionIdnumber是连接的标识ID。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| connectionId | number | 是 | 连接的标识ID。 |
 
 **返回值:**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码:**
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)和[元能力子系统错误码]([元能力子系统错误码](../../errors/元能力子系统错误码.md).md)。
 
-错误码ID错误信息201Permission verification failed.801Capability not supported.16000011The context does not exist.16000050Internal error. Possible causes: 1. Failed to connect to the system service; 2. The system service failed to communicate with dependency module.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. |
+| 801 | Capability not supported. |
+| 16000011 | The context does not exist. |
+| 16000050 | Internal error. Possible causes: 1. Failed to connect to the system service; 2. The system service failed to communicate with dependency module. |
 
 **示例:**
 
@@ -327,9 +352,7 @@ export default class EntryAbility extends UIAbility {
       let message = (err as BusinessError).message;
       console.error(`disconnectNative failed, code is ${code}, message is ${message}`);
     }
-  }
   onForeground() {
     this.disconnect();
   }
-}
 ```

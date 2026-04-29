@@ -1,4 +1,4 @@
-# USBSerialDdk
+# USBSerialDDK
 
 #### 概述
 
@@ -10,4 +10,7 @@
 
 #### 文件汇总
 
-名称描述[usb_serial_api.h](../../capi/headers/usb_serial_api.h.md)声明用于主机侧访问串口设备的USB Serial DDK接口。[usb_serial_types.h](../../capi/headers/usb_serial_types.h.md)提供USB SERIAL DDK中的枚举变量、结构体定义与宏定义。
+| 名称 | 描述 |
+| --- | --- |
+| [usb_serial_api.h](usb_serial_api.h.md) | 声明用于主机侧访问串口设备的USB Serial DDK接口。 |
+| [usb_serial_types.h](usb_serial_types.h.md) | 提供USB SERIAL DDK中的枚举变量、结构体定义与宏定义。 |

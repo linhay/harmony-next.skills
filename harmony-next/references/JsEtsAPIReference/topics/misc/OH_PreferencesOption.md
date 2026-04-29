@@ -12,4 +12,4 @@ typedef struct OH_PreferencesOption OH_PreferencesOption
 
 **相关模块：**[Preferences](Preferences.md)
 
-**所在头文件：**[oh_preferences_option.h](../../capi/headers/oh_preferences_option.h.md)
+**所在头文件：**[oh_preferences_option.h](../../topics/misc/[oh_preferences_option.h](oh_preferences_option.h.md).md)

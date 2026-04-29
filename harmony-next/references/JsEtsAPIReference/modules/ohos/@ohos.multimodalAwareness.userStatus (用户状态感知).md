@@ -16,7 +16,10 @@ import { userStatus } from '@kit.MultimodalAwarenessKit';
 
 **系统能力**：SystemCapability.MultimodalAwareness.UserStatus
 
-名称值说明OTHERS0表示是成年人操作。CHILD1表示是儿童操作。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| OTHERS | 0 | 表示是成年人操作。 |
+| CHILD | 1 | 表示是儿童操作。 |
 
 #### UserClassification
 
@@ -24,7 +27,10 @@ import { userStatus } from '@kit.MultimodalAwarenessKit';
 
 **系统能力**：SystemCapability.MultimodalAwareness.UserStatus
 
-名称类型只读可选说明ageGroup[UserAgeGroup](#ZH-CN_TOPIC_0000002497445658__useragegroup)否是表示具体的年龄群组（例如，儿童、成人）。confidencefloat否是表示年龄群组检测结果的置信度，取值范围为0~1的浮点数，数值越大代表置信度越高。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| ageGroup | UserAgeGroup | 否 | 是 | 表示具体的年龄群组（例如，儿童、成人）。 |
+| confidence | float | 否 | 是 | 表示年龄群组检测结果的置信度，取值范围为0~1的浮点数，数值越大代表置信度越高。 |
 
 #### userStatus.on('userAgeGroupDetected')
 
@@ -38,35 +44,25 @@ import { userStatus } from '@kit.MultimodalAwarenessKit';
 
 **设备行为差异**：该接口在Phone中可正常调用，在其他设备类型中返回801错误码。
 
+
 该接口仅在部分Phone中支持使用，当Phone设备不支持时返回801错误码。
 
 **参数**：
 
-参数名类型必填说明typestring是事件类型。type为“userAgeGroupDetected”，表示年龄群组检测功能。callbackCallback<[UserClassification](#ZH-CN_TOPIC_0000002497445658__userclassification)>是回调函数，返回检测结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件类型。type为“userAgeGroupDetected”，表示年龄群组检测功能。 |
+| callback | Callback<UserClassification> | 是 | 回调函数，返回检测结果。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[用户状态感知错误码](../../errors/用户状态感知错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[用户状态感知错误码]([用户状态感知错误码](../../errors/用户状态感知错误码.md).md)和[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息801Capability not supported. Function can not work correctly due to limited device capabilities.33900001
-
-Service exception. Possible causes:
-
-1. System error, such as a null pointer and container-related exception.
-
-2. Node-API invocation exception, such as invalid Node-API status.
-
-33900002
-
-Subscription failed. Possible causes:
-
-1. Callback registration failed.
-
-2. Failed to bind the native object to the JS wrapper.
-
-3. Node-API invocation exception, such as invalid Node-API status.
-
-4. IPC request exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. Function can not work correctly due to limited device capabilities. |
+| 33900001 | Service exception. Possible causes:  1. System error, such as a null pointer and container-related exception.  2. Node-API invocation exception, such as invalid Node-API status. |
+| 33900002 | Subscription failed. Possible causes:  1. Callback registration failed.  2. Failed to bind the native object to the JS wrapper.  3. Node-API invocation exception, such as invalid Node-API status.  4. IPC request exception. |
 
 **示例**：
 
@@ -94,33 +90,25 @@ off(type: 'userAgeGroupDetected', callback?: Callback<UserClassification>): void
 
 **设备行为差异**：该接口在Phone中可正常调用，在其他设备类型中返回33900003错误码。
 
+
 该接口仅在部分Phone中支持使用，当Phone设备不支持时返回33900003错误码。
 
 **参数**：
 
-参数名类型必填说明typestring是事件类型。type为“userAgeGroupDetected”，表示年龄群组检测功能。callbackCallback<[UserClassification](#ZH-CN_TOPIC_0000002497445658__userclassification)>否回调函数，返回检测结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件类型。type为“userAgeGroupDetected”，表示年龄群组检测功能。 |
+| callback | Callback<UserClassification> | 否 | 回调函数，返回检测结果。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[用户状态感知错误码](../../errors/用户状态感知错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[用户状态感知错误码](用户状态感知错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息801Capability not supported. Function can not work correctly due to limited device capabilities.33900001
-
-Service exception. Possible causes:
-
-1. System error, such as a null pointer and container-related exception.
-
-2. Node-API invocation exception, such as invalid Node-API status.
-
-33900003
-
-Unsubscription failed. Possible causes:
-
-1. Callback failure.
-
-2. Node-API invocation exception, such as invalid Node-API status.
-
-3. IPC request exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. Function can not work correctly due to limited device capabilities. |
+| 33900001 | Service exception. Possible causes:  1. System error, such as a null pointer and container-related exception.  2. Node-API invocation exception, such as invalid Node-API status. |
+| 33900003 | Unsubscription failed. Possible causes:  1. Callback failure.  2. Node-API invocation exception, such as invalid Node-API status.  3. IPC request exception. |
 
 **示例**：
 

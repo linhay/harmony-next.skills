@@ -12,11 +12,14 @@
 import wifi from '@ohos.wifi';
 ```
 
-#### wifi.isWifiActive
+**wifi.isWifiActive(deprecated)**
 
 isWifiActive(): boolean
 
 查询WLAN是否已使能。
+
+
+从API version 6开始支持，从API version 9开始废弃。建议使用[wifiManager.isWifiActive](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageriswifiactive)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -24,7 +27,9 @@ isWifiActive(): boolean
 
 **返回值：**
 
-类型说明booleantrue:已使能， false:未使能。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true:已使能， false:未使能。 |
 
 **示例：**
 
@@ -39,11 +44,14 @@ try {
 }
 ```
 
-#### wifi.scan
+**wifi.scan(deprecated)**
 
 scan(): boolean
 
 启动WLAN扫描。
+
+
+从API version 6开始支持，从API version 9开始废弃。建议使用[wifiManager.scan](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagerscandeprecated)替代。
 
 **需要权限：** ohos.permission.SET_WIFI_INFO 和 ohos.permission.LOCATION
 
@@ -51,7 +59,9 @@ scan(): boolean
 
 **返回值：**
 
-类型说明booleantrue:扫描操作执行成功， false:扫描操作执行失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true:扫描操作执行成功， false:扫描操作执行失败。 |
 
 **示例：**
 
@@ -65,11 +75,14 @@ try {
 }
 ```
 
-#### wifi.getScanInfos
+**wifi.getScanInfos(deprecated)**
 
 getScanInfos(): Promise<Array<WifiScanInfo>>
 
 获取扫描结果，使用Promise异步回调。
+
+
+从API version 6开始支持，从API version 9开始废弃。建议使用[wifiManager.getScanInfos](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagergetscaninfolist10)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO 和 (ohos.permission.GET_WIFI_PEERS_MAC 或 ohos.permission.LOCATION)
 
@@ -79,13 +92,18 @@ ohos.permission.GET_WIFI_PEERS_MAC权限仅系统应用可申请。
 
 **返回值：**
 
-类型说明Promise< Array<[WifiScanInfo](#ZH-CN_TOPIC_0000002497445456__wifiscaninfo)> >Promise对象。返回扫描到的热点列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise< Array<WifiScanInfo> > | Promise对象。返回扫描到的热点列表。 |
 
-#### wifi.getScanInfos
+**wifi.getScanInfos(deprecated)**
 
 getScanInfos(callback: AsyncCallback<Array<WifiScanInfo>>): void
 
 获取扫描结果，使用callback异步回调。
+
+
+从API version 6开始支持，从API version 9开始废弃。建议使用[wifiManager.getScanInfos](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagergetscaninfolist10)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO 和 (ohos.permission.GET_WIFI_PEERS_MAC 或 ohos.permission.LOCATION)
 
@@ -95,7 +113,9 @@ ohos.permission.GET_WIFI_PEERS_MAC权限仅系统应用可申请。
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback< Array<[WifiScanInfo](#ZH-CN_TOPIC_0000002497445456__wifiscaninfo)>>是回调函数。当成功时，err为0，data为扫描到的热点；否则err为非0值，data为空。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback< Array<WifiScanInfo>> | 是 | 回调函数。当成功时，err为0，data为扫描到的热点；否则err为非0值，data为空。 |
 
 **示例：**
 
@@ -104,7 +124,7 @@ import wifi from '@ohos.wifi';
 
 wifi.getScanInfos().then(result => {
     let len = result.length;
-    console.log("wifi received scan info: " + len);
+    console.info("wifi received scan info: " + len);
     for (let i = 0; i < len; ++i) {
         console.info("ssid: " + result[i].ssid);
         console.info("bssid: " + result[i].bssid);
@@ -119,35 +139,69 @@ wifi.getScanInfos().then(result => {
 });
 ```
 
-#### WifiScanInfo
+**WifiScanInfo(deprecated)**
 
 WLAN热点信息。
 
+
+从API version 6开始支持，从API version 9开始废弃。建议使用[WifiScanInfo](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifiscaninfo)替代。
+
 **系统能力：** SystemCapability.Communication.WiFi.STA
 
-名称类型只读可选说明ssidstring否否热点的SSID，最大长度为32字节，编码格式为UTF-8。bssidstring否否热点的BSSID，例如：00:11:22:33:44:55。capabilitiesstring否否热点能力。securityType[WifiSecurityType](#ZH-CN_TOPIC_0000002497445456__wifisecuritytype)否否WLAN加密类型。rssinumber否否热点的信号强度(dBm)。bandnumber否否WLAN接入点的频段。1表示2.4GHZ；2表示5GHZ。frequencynumber否否WLAN接入点的频率。channelWidthnumber否否WLAN接入点的带宽。timestampnumber否否时间戳。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| ssid | string | 否 | 否 | 热点的SSID，最大长度为32字节，编码格式为UTF-8。 |
+| bssid | string | 否 | 否 | 热点的BSSID，例如：00:11:22:33:44:55。 |
+| capabilities | string | 否 | 否 | 热点能力。 |
+| securityType | WifiSecurityType | 否 | 否 | WLAN加密类型。 |
+| rssi | number | 否 | 否 | 热点的信号强度(dBm)。 |
+| band | number | 否 | 否 | WLAN接入点的频段。1表示2.4GHZ；2表示5GHZ。 |
+| frequency | number | 否 | 否 | WLAN接入点的频率。 |
+| channelWidth | number | 否 | 否 | WLAN接入点的带宽。 |
+| timestamp | number | 否 | 否 | 时间戳。 |
 
-#### WifiSecurityType
+**WifiSecurityType(deprecated)**
 
 表示加密类型的枚举。
 
+
+从API version 6开始支持，从API version 9开始废弃。建议使用[WifiSecurityType](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifisecuritytype)替代。
+
 **系统能力：** SystemCapability.Communication.WiFi.Core
 
-名称值说明WIFI_SEC_TYPE_INVALID0无效加密类型。WIFI_SEC_TYPE_OPEN1开放加密类型。WIFI_SEC_TYPE_WEP2Wired Equivalent Privacy (WEP)加密类型。WIFI_SEC_TYPE_PSK3Pre-shared key (PSK)加密类型。WIFI_SEC_TYPE_SAE4Simultaneous Authentication of Equals (SAE)加密类型。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| WIFI_SEC_TYPE_INVALID | 0 | 无效加密类型。 |
+| WIFI_SEC_TYPE_OPEN | 1 | 开放加密类型。 |
+| WIFI_SEC_TYPE_WEP | 2 | Wired Equivalent Privacy (WEP)加密类型。 |
+| WIFI_SEC_TYPE_PSK | 3 | Pre-shared key (PSK)加密类型。 |
+| WIFI_SEC_TYPE_SAE | 4 | Simultaneous Authentication of Equals (SAE)加密类型。 |
 
-#### WifiDeviceConfig
+**WifiDeviceConfig(deprecated)**
 
 WLAN配置信息。
 
+
+从API version 6开始支持，从API version 9开始废弃。建议使用[WifiDeviceConfig](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifideviceconfig)替代。
+
 **系统能力：** SystemCapability.Communication.WiFi.STA
 
-名称类型只读可选说明ssidstring否否热点的SSID，最大长度为32字节，编码格式为UTF-8。bssidstring否否热点的BSSID，例如：00:11:22:33:44:55。preSharedKeystring否否热点的密钥，最大长度为64字节。isHiddenSsidboolean否否是否是隐藏网络。true:是隐藏网络，false:不是隐藏网络。securityType[WifiSecurityType](#ZH-CN_TOPIC_0000002497445456__wifisecuritytype)否否加密类型。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| ssid | string | 否 | 否 | 热点的SSID，最大长度为32字节，编码格式为UTF-8。 |
+| bssid | string | 否 | 否 | 热点的BSSID，例如：00:11:22:33:44:55。 |
+| preSharedKey | string | 否 | 否 | 热点的密钥，最大长度为64字节。 |
+| isHiddenSsid | boolean | 否 | 否 | 是否是隐藏网络。true:是隐藏网络，false:不是隐藏网络。 |
+| securityType | WifiSecurityType | 否 | 否 | 加密类型。 |
 
-#### wifi.addUntrustedConfig7+
+**wifi.addUntrustedConfig(deprecated)**
 
 addUntrustedConfig(config: WifiDeviceConfig): Promise<boolean>
 
 添加不可信网络配置，使用Promise异步回调。
+
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.addCandidateConfig](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageraddcandidateconfig)替代。
 
 **需要权限：** ohos.permission.SET_WIFI_INFO
 
@@ -155,11 +209,15 @@ addUntrustedConfig(config: WifiDeviceConfig): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明config[WifiDeviceConfig](#ZH-CN_TOPIC_0000002497445456__wifideviceconfig)是WLAN配置信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | WifiDeviceConfig | 是 | WLAN配置信息。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。表示操作结果，true: 成功， false: 失败。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。表示操作结果，true: 成功， false: 失败。 |
 
 **示例：**
 
@@ -185,7 +243,6 @@ try {
             dnsServers: [],
             domains: []
         }
-    }
     wifi.addUntrustedConfig(config).then(result => {
         console.info("result:" + JSON.stringify(result));
     });
@@ -194,11 +251,14 @@ try {
 }
 ```
 
-#### wifi.addUntrustedConfig7+
+**wifi.addUntrustedConfig(deprecated)**
 
 addUntrustedConfig(config: WifiDeviceConfig, callback: AsyncCallback<boolean>): void
 
 添加不可信网络配置，使用callback异步回调。
+
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.addCandidateConfig](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageraddcandidateconfig-1)替代。
 
 **需要权限：** ohos.permission.SET_WIFI_INFO
 
@@ -206,7 +266,10 @@ addUntrustedConfig(config: WifiDeviceConfig, callback: AsyncCallback<boolean>): 
 
 **参数：**
 
-参数名类型必填说明config[WifiDeviceConfig](#ZH-CN_TOPIC_0000002497445456__wifideviceconfig)是WLAN配置信息。callbackAsyncCallback<boolean>是回调函数。当操作成功时，err为0，data表示操作结果，true: 成功， false: 失败。如果error为非0，表示处理出现错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | WifiDeviceConfig | 是 | WLAN配置信息。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当操作成功时，err为0，data表示操作结果，true: 成功， false: 失败。如果error为非0，表示处理出现错误。 |
 
 **示例：**
 
@@ -232,7 +295,6 @@ try {
             dnsServers: [],
             domains: []
         }
-    }
     wifi.addUntrustedConfig(config,(error,result) => {
         console.info("result:" + JSON.stringify(result));
     });
@@ -241,11 +303,14 @@ try {
 }
 ```
 
-#### wifi.removeUntrustedConfig7+
+**wifi.removeUntrustedConfig(deprecated)**
 
 removeUntrustedConfig(config: WifiDeviceConfig): Promise<boolean>
 
 移除不可信网络配置，使用Promise异步回调。
+
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.removeCandidateConfig](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagerremovecandidateconfig)替代。
 
 **需要权限：** ohos.permission.SET_WIFI_INFO
 
@@ -253,11 +318,15 @@ removeUntrustedConfig(config: WifiDeviceConfig): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明config[WifiDeviceConfig](#ZH-CN_TOPIC_0000002497445456__wifideviceconfig)是WLAN配置信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | WifiDeviceConfig | 是 | WLAN配置信息。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。表示操作结果，true: 成功， false: 失败。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。表示操作结果，true: 成功， false: 失败。 |
 
 **示例：**
 
@@ -283,7 +352,6 @@ try {
             dnsServers: [],
             domains: []
         }
-    }
     wifi.removeUntrustedConfig(config).then(result => {
         console.info("result:" + JSON.stringify(result));
     });
@@ -292,11 +360,14 @@ try {
 }
 ```
 
-#### wifi.removeUntrustedConfig7+
+**wifi.removeUntrustedConfig(deprecated)**
 
 removeUntrustedConfig(config: WifiDeviceConfig, callback: AsyncCallback<boolean>): void
 
 移除不可信网络配置，使用callback异步回调。
+
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.removeCandidateConfig](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagerremovecandidateconfig-1)替代。
 
 **需要权限：** ohos.permission.SET_WIFI_INFO
 
@@ -304,7 +375,10 @@ removeUntrustedConfig(config: WifiDeviceConfig, callback: AsyncCallback<boolean>
 
 **参数：**
 
-参数名类型必填说明config[WifiDeviceConfig](#ZH-CN_TOPIC_0000002497445456__wifideviceconfig)是WLAN配置信息。callbackAsyncCallback<boolean>是回调函数。当操作成功时，err为0，data表示操作结果，true: 成功， false: 失败。如果error为非0，表示处理出现错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | WifiDeviceConfig | 是 | WLAN配置信息。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当操作成功时，err为0，data表示操作结果，true: 成功， false: 失败。如果error为非0，表示处理出现错误。 |
 
 **示例：**
 
@@ -330,7 +404,6 @@ try {
             dnsServers: [],
             domains: []
         }
-    }
     wifi.removeUntrustedConfig(config,(error,result) => {
     console.info("result:" + JSON.stringify(result));
     });
@@ -339,11 +412,14 @@ try {
 }
 ```
 
-#### wifi.getSignalLevel
+**wifi.getSignalLevel(deprecated)**
 
 getSignalLevel(rssi: number, band: number): number
 
 查询WLAN信号强度。
+
+
+从API version 6开始支持，从API version 9开始废弃。建议使用[wifiManager.getSignalLevel](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagergetsignallevel)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -351,11 +427,16 @@ getSignalLevel(rssi: number, band: number): number
 
 **参数：**
 
-参数名类型必填说明rssinumber是热点的信号强度(dBm)。bandnumber是WLAN接入点的频段。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rssi | number | 是 | 热点的信号强度(dBm)。 |
+| band | number | 是 | WLAN接入点的频段。 |
 
 **返回值：**
 
-类型说明number信号强度，取值范围为[0, 4]。
+| 类型 | 说明 |
+| --- | --- |
+| number | 信号强度，取值范围为[0, 4]。 |
 
 **示例：**
 
@@ -372,11 +453,14 @@ try {
 }
 ```
 
-#### wifi.getLinkedInfo
+**wifi.getLinkedInfo(deprecated)**
 
 getLinkedInfo(): Promise<WifiLinkedInfo>
 
 获取WLAN连接信息。使用Promise异步回调。
+
+
+从API version 6开始支持，从API version 9开始废弃。建议使用[wifiManager.getLinkedInfo](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagergetlinkedinfo)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -384,13 +468,18 @@ getLinkedInfo(): Promise<WifiLinkedInfo>
 
 **返回值：**
 
-类型说明Promise<[WifiLinkedInfo](#ZH-CN_TOPIC_0000002497445456__wifilinkedinfo)>Promise对象。表示WLAN连接信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<WifiLinkedInfo> | Promise对象。表示WLAN连接信息。 |
 
-#### wifi.getLinkedInfo
+**wifi.getLinkedInfo(deprecated)**
 
 getLinkedInfo(callback: AsyncCallback<WifiLinkedInfo>): void
 
 获取WLAN连接信息。使用callback异步回调。
+
+
+从API version 6开始支持，从API version 9开始废弃。建议使用[wifiManager.getLinkedInfo](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagergetlinkedinfo-1)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -398,7 +487,9 @@ getLinkedInfo(callback: AsyncCallback<WifiLinkedInfo>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[WifiLinkedInfo](#ZH-CN_TOPIC_0000002497445456__wifilinkedinfo)>是回调函数。当获取成功时，err为0，data表示WLAN连接信息。如果error为非0，表示处理出现错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<WifiLinkedInfo> | 是 | 回调函数。当获取成功时，err为0，data表示WLAN连接信息。如果error为非0，表示处理出现错误。 |
 
 **示例：**
 
@@ -420,27 +511,57 @@ wifi.getLinkedInfo().then(data => {
 });
 ```
 
-#### WifiLinkedInfo
+**WifiLinkedInfo(deprecated)**
 
 提供WLAN连接的相关信息。
 
+
+从API version 6开始支持，从API version 9开始废弃。建议使用[WifiLinkedInfo](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifilinkedinfo)替代。
+
 **系统能力：** SystemCapability.Communication.WiFi.STA
 
-名称类型只读可选说明ssidstring否否热点的SSID，最大长度为32字节，编码格式为UTF-8。bssidstring否否热点的BSSID，例如：00:11:22:33:44:55。rssinumber否否热点的信号强度(dBm)。bandnumber否否WLAN接入点的频段。1表示2.4GHZ；2表示5GHZ。linkSpeednumber否否WLAN接入点的速度，单位Mbps。frequencynumber否否WLAN接入点的频率。isHiddenboolean否否WLAN接入点是否是隐藏网络。true:是隐藏网络，false:不是隐藏网络。isRestrictedboolean否否WLAN接入点是否限制数据量。true: 限制，false:不限制。macAddressstring否否设备的MAC地址。ipAddressnumber否否WLAN连接的IP地址。connState[ConnState](#ZH-CN_TOPIC_0000002497445456__connstate)否否WLAN连接状态。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| ssid | string | 否 | 否 | 热点的SSID，最大长度为32字节，编码格式为UTF-8。 |
+| bssid | string | 否 | 否 | 热点的BSSID，例如：00:11:22:33:44:55。 |
+| rssi | number | 否 | 否 | 热点的信号强度(dBm)。 |
+| band | number | 否 | 否 | WLAN接入点的频段。1表示2.4GHZ；2表示5GHZ。 |
+| linkSpeed | number | 否 | 否 | WLAN接入点的速度，单位Mbps。 |
+| frequency | number | 否 | 否 | WLAN接入点的频率。 |
+| isHidden | boolean | 否 | 否 | WLAN接入点是否是隐藏网络。true:是隐藏网络，false:不是隐藏网络。 |
+| isRestricted | boolean | 否 | 否 | WLAN接入点是否限制数据量。true: 限制，false:不限制。 |
+| macAddress | string | 否 | 否 | 设备的MAC地址。 |
+| ipAddress | number | 否 | 否 | WLAN连接的IP地址。 |
+| connState | ConnState | 否 | 否 | WLAN连接状态。 |
 
-#### ConnState
+**ConnState(deprecated)**
 
 表示WLAN连接状态的枚举。
 
+
+从API version 6开始支持，从API version 9开始废弃。建议使用[WifiLinkedInfo](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__connstate)替代。
+
 **系统能力：** SystemCapability.Communication.WiFi.STA
 
-名称值说明SCANNING0设备正在搜索可用的AP。CONNECTING1正在建立WLAN连接。AUTHENTICATING2WLAN连接正在认证中。OBTAINING_IPADDR3正在获取WLAN连接的IP地址。CONNECTED4WLAN连接已建立。DISCONNECTING5WLAN连接正在断开。DISCONNECTED6WLAN连接已断开。UNKNOWN7WLAN连接建立失败。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SCANNING | 0 | 设备正在搜索可用的AP。 |
+| CONNECTING | 1 | 正在建立WLAN连接。 |
+| AUTHENTICATING | 2 | WLAN连接正在认证中。 |
+| OBTAINING_IPADDR | 3 | 正在获取WLAN连接的IP地址。 |
+| CONNECTED | 4 | WLAN连接已建立。 |
+| DISCONNECTING | 5 | WLAN连接正在断开。 |
+| DISCONNECTED | 6 | WLAN连接已断开。 |
+| UNKNOWN | 7 | WLAN连接建立失败。 |
 
-#### wifi.isConnected7+
+**wifi.isConnected(deprecated)**
 
 isConnected(): boolean
 
 查询WLAN是否已连接。
+
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.isConnected](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagerisconnected)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -448,13 +569,18 @@ isConnected(): boolean
 
 **返回值：**
 
-类型说明booleantrue:已连接， false:未连接。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true:已连接， false:未连接。 |
 
-#### wifi.isFeatureSupported7+
+**wifi.isFeatureSupported(deprecated)**
 
 isFeatureSupported(featureId: number): boolean
 
 判断设备是否支持相关WLAN特性。
+
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.isFeatureSupported](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagerisfeaturesupported)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -462,11 +588,15 @@ isFeatureSupported(featureId: number): boolean
 
 **参数：**
 
-参数名类型必填说明featureIdnumber是特性ID值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| featureId | number | 是 | 特性ID值。 |
 
 **返回值：**
 
-类型说明booleantrue:支持， false:不支持。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true:支持， false:不支持。 |
 
 **示例：**
 
@@ -482,11 +612,14 @@ try {
 }
 ```
 
-#### wifi.getIpInfo7+
+**wifi.getIpInfo(deprecated)**
 
 getIpInfo(): IpInfo
 
 获取IP信息。
+
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.getIpInfo](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagergetipinfo)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -494,7 +627,9 @@ getIpInfo(): IpInfo
 
 **返回值：**
 
-类型说明[IpInfo](#ZH-CN_TOPIC_0000002497445456__ipinfo7)IP信息。
+| 类型 | 说明 |
+| --- | --- |
+| IpInfo | IP信息。 |
 
 **示例：**
 
@@ -509,19 +644,33 @@ try {
 }
 ```
 
-#### IpInfo7+
+**IpInfo(deprecated)**
 
 IP信息。
 
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.getIpInfo](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagergetipinfo)替代。
+
 **系统能力：** SystemCapability.Communication.WiFi.AP.Core
 
-名称类型只读可选说明ipAddressnumber否否IP地址。gatewaynumber否否网关。netmasknumber否否掩码。primaryDnsnumber否否主DNS服务器IP地址。secondDnsnumber否否备DNS服务器IP地址。serverIpnumber否否DHCP服务端IP地址。leaseDurationnumber否否IP地址租用时长。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| ipAddress | number | 否 | 否 | IP地址。 |
+| gateway | number | 否 | 否 | 网关。 |
+| netmask | number | 否 | 否 | 掩码。 |
+| primaryDns | number | 否 | 否 | 主DNS服务器IP地址。 |
+| secondDns | number | 否 | 否 | 备DNS服务器IP地址。 |
+| serverIp | number | 否 | 否 | DHCP服务端IP地址。 |
+| leaseDuration | number | 否 | 否 | IP地址租用时长。 |
 
-#### wifi.getCountryCode7+
+**wifi.getCountryCode(deprecated)**
 
 getCountryCode(): string
 
 获取国家码信息。
+
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.getCountryCode](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagergetcountrycode)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -529,7 +678,9 @@ getCountryCode(): string
 
 **返回值：**
 
-类型说明string国家码。
+| 类型 | 说明 |
+| --- | --- |
+| string | 国家码。 |
 
 **示例：**
 
@@ -544,11 +695,14 @@ try {
 }
 ```
 
-#### wifi.getP2pLinkedInfo8+
+**wifi.getP2pLinkedInfo(deprecated)**
 
 getP2pLinkedInfo(): Promise<WifiP2pLinkedInfo>
 
 获取P2P连接信息。使用Promise异步回调。
+
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.getP2pLinkedInfo](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagergetp2plinkedinfo)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -556,29 +710,47 @@ getP2pLinkedInfo(): Promise<WifiP2pLinkedInfo>
 
 **返回值：**
 
-类型说明Promise<[WifiP2pLinkedInfo](#ZH-CN_TOPIC_0000002497445456__wifip2plinkedinfo8)>Promise对象。表示P2P连接信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<WifiP2pLinkedInfo> | Promise对象。表示P2P连接信息。 |
 
-#### WifiP2pLinkedInfo8+
+**WifiP2pLinkedInfo(deprecated)**
 
 提供WLAN连接的相关信息。
 
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[WifiP2pLinkedInfo](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifip2plinkedinfo)替代。
+
 **系统能力：** SystemCapability.Communication.WiFi.P2P
 
-名称类型只读可选说明connectState[P2pConnectState](#ZH-CN_TOPIC_0000002497445456__p2pconnectstate8)否否P2P连接状态。isGroupOwnerboolean否否是否是群主。true:是群主，false:不是群主。groupOwnerAddrstring否否群组MAC地址。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| connectState | P2pConnectState | 否 | 否 | P2P连接状态。 |
+| isGroupOwner | boolean | 否 | 否 | 是否是群主。true:是群主，false:不是群主。 |
+| groupOwnerAddr | string | 否 | 否 | 群组MAC地址。 |
 
-#### P2pConnectState8+
+**P2pConnectState(deprecated)**
 
 表示P2P连接状态的枚举。
 
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[P2pConnectState](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__p2pconnectstate)替代。
+
 **系统能力：** SystemCapability.Communication.WiFi.P2P
 
-名称值说明DISCONNECTED0断开状态。CONNECTED1连接状态。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DISCONNECTED | 0 | 断开状态。 |
+| CONNECTED | 1 | 连接状态。 |
 
-#### wifi.getP2pLinkedInfo8+
+**wifi.getP2pLinkedInfo(deprecated)**
 
 getP2pLinkedInfo(callback: AsyncCallback<WifiP2pLinkedInfo>): void
 
 获取P2P连接信息。使用callback异步回调。
+
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.getP2pLinkedInfo](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagergetp2plinkedinfo-1)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -586,7 +758,9 @@ getP2pLinkedInfo(callback: AsyncCallback<WifiP2pLinkedInfo>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[WifiP2pLinkedInfo](#ZH-CN_TOPIC_0000002497445456__wifip2plinkedinfo8)>是回调函数。当操作成功时，err为0，data表示P2P连接信息。如果error为非0，表示处理出现错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<WifiP2pLinkedInfo> | 是 | 回调函数。当操作成功时，err为0，data表示P2P连接信息。如果error为非0，表示处理出现错误。 |
 
 **示例：**
 
@@ -606,11 +780,14 @@ wifi.getP2pLinkedInfo().then(data => {
 });
 ```
 
-#### wifi.getCurrentGroup8+
+**wifi.getCurrentGroup(deprecated)**
 
 getCurrentGroup(): Promise<WifiP2pGroupInfo>
 
 获取P2P当前组信息。使用Promise异步回调。
+
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.getCurrentGroup](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagergetcurrentgroup)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO 和 ohos.permission.LOCATION
 
@@ -618,13 +795,18 @@ getCurrentGroup(): Promise<WifiP2pGroupInfo>
 
 **返回值：**
 
-类型说明Promise<[WifiP2pGroupInfo](#ZH-CN_TOPIC_0000002497445456__wifip2pgroupinfo8)>Promise对象。表示当前组信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<WifiP2pGroupInfo> | Promise对象。表示当前组信息。 |
 
-#### wifi.getCurrentGroup8+
+**wifi.getCurrentGroup(deprecated)**
 
 getCurrentGroup(callback: AsyncCallback<WifiP2pGroupInfo>): void
 
 获取P2P当前组信息。使用callback异步回调。
+
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.getCurrentGroup](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagergetcurrentgroup-1)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO 和 ohos.permission.LOCATION
 
@@ -632,7 +814,9 @@ getCurrentGroup(callback: AsyncCallback<WifiP2pGroupInfo>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[WifiP2pGroupInfo](#ZH-CN_TOPIC_0000002497445456__wifip2pgroupinfo8)>是回调函数。当操作成功时，err为0，data表示当前组信息。如果error为非0，表示处理出现错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<WifiP2pGroupInfo> | 是 | 回调函数。当操作成功时，err为0，data表示当前组信息。如果error为非0，表示处理出现错误。 |
 
 **示例：**
 
@@ -652,11 +836,14 @@ wifi.getCurrentGroup().then(data => {
 });
 ```
 
-#### wifi.getP2pPeerDevices8+
+**wifi.getP2pPeerDevices(deprecated)**
 
 getP2pPeerDevices(): Promise<WifiP2pDevice[]>
 
 获取P2P对端设备列表信息。使用Promise异步回调。
+
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.getP2pPeerDevices](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagergetp2ppeerdevices)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO 和 ohos.permission.LOCATION
 
@@ -664,13 +851,18 @@ getP2pPeerDevices(): Promise<WifiP2pDevice[]>
 
 **返回值：**
 
-类型说明Promise<[WifiP2pDevice[]](#ZH-CN_TOPIC_0000002497445456__wifip2pdevice8)>Promise对象。表示对端设备列表信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<WifiP2pDevice[]> | Promise对象。表示对端设备列表信息。 |
 
-#### wifi.getP2pPeerDevices8+
+**wifi.getP2pPeerDevices(deprecated)**
 
 getP2pPeerDevices(callback: AsyncCallback<WifiP2pDevice[]>): void
 
 获取P2P对端设备列表信息。使用callback异步回调。
+
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.getP2pPeerDevices](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagergetp2ppeerdevices-1)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO 和 ohos.permission.LOCATION
 
@@ -678,7 +870,9 @@ getP2pPeerDevices(callback: AsyncCallback<WifiP2pDevice[]>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[WifiP2pDevice[]](#ZH-CN_TOPIC_0000002497445456__wifip2pdevice8)>是回调函数。当操作成功时，err为0，data表示对端设备列表信息。如果error为非0，表示处理出现错误。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<WifiP2pDevice[]> | 是 | 回调函数。当操作成功时，err为0，data表示对端设备列表信息。如果error为非0，表示处理出现错误。 |
 
 **示例：**
 
@@ -698,27 +892,48 @@ wifi.getP2pPeerDevices().then(data => {
 });
 ```
 
-#### WifiP2pDevice8+
+**WifiP2pDevice(deprecated)**
 
 表示P2P设备信息。
 
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[WifiP2pDevice](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifip2pdevice)替代。
+
 **系统能力：** SystemCapability.Communication.WiFi.P2P
 
-名称类型只读可选说明deviceNamestring否否设备名称。deviceAddressstring否否设备MAC地址。primaryDeviceTypestring否否主设备类型。deviceStatus[P2pDeviceStatus](#ZH-CN_TOPIC_0000002497445456__p2pdevicestatus8)否否设备状态。groupCapabilitysnumber否否群组能力。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| deviceName | string | 否 | 否 | 设备名称。 |
+| deviceAddress | string | 否 | 否 | 设备MAC地址。 |
+| primaryDeviceType | string | 否 | 否 | 主设备类型。 |
+| deviceStatus | P2pDeviceStatus | 否 | 否 | 设备状态。 |
+| groupCapabilitys | number | 否 | 否 | 群组能力。 |
 
-#### P2pDeviceStatus8+
+**P2pDeviceStatus(deprecated)**
 
 表示设备状态的枚举。
 
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[P2pDeviceStatus](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__p2pdevicestatus)替代。
+
 **系统能力：** SystemCapability.Communication.WiFi.P2P
 
-名称值说明CONNECTED0连接状态。INVITED1邀请状态。FAILED2失败状态。AVAILABLE3可用状态。UNAVAILABLE4不可用状态。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CONNECTED | 0 | 连接状态。 |
+| INVITED | 1 | 邀请状态。 |
+| FAILED | 2 | 失败状态。 |
+| AVAILABLE | 3 | 可用状态。 |
+| UNAVAILABLE | 4 | 不可用状态。 |
 
-#### wifi.createGroup8+
+**wifi.createGroup(deprecated)**
 
 createGroup(config: WifiP2PConfig): boolean
 
 创建群组。
+
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.createGroup](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagercreategroup)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -726,11 +941,15 @@ createGroup(config: WifiP2PConfig): boolean
 
 **参数：**
 
-参数名类型必填说明config[WifiP2PConfig](#ZH-CN_TOPIC_0000002497445456__wifip2pconfig8)是群组配置信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | WifiP2PConfig | 是 | 群组配置信息。 |
 
 **返回值：**
 
-类型说明booleantrue:创建群组操作执行成功， false:创建群组操作执行失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true:创建群组操作执行成功， false:创建群组操作执行失败。 |
 
 **示例：**
 
@@ -752,27 +971,46 @@ try {
 }
 ```
 
-#### WifiP2PConfig8+
+**WifiP2PConfig(deprecated)**
 
 表示P2P配置信息。
 
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[WifiP2PConfig](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifip2pconfig)替代。
+
 **系统能力：** SystemCapability.Communication.WiFi.P2P
 
-名称类型只读可选说明deviceAddressstring否否设备地址。netIdnumber否否网络ID。创建群组时-1表示创建临时组，-2表示创建永久组。passphrasestring否否群组密钥。groupNamestring否否群组名称。goBand[GroupOwnerBand](#ZH-CN_TOPIC_0000002497445456__groupownerband8)否否群组带宽。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| deviceAddress | string | 否 | 否 | 设备地址。 |
+| netId | number | 否 | 否 | 网络ID。创建群组时-1表示创建临时组，-2表示创建永久组。 |
+| passphrase | string | 否 | 否 | 群组密钥。 |
+| groupName | string | 否 | 否 | 群组名称。 |
+| goBand | GroupOwnerBand | 否 | 否 | 群组带宽。 |
 
-#### GroupOwnerBand8+
+**GroupOwnerBand(deprecated)**
 
 表示群组带宽的枚举。
 
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[GroupOwnerBand](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__groupownerband)替代。
+
 **系统能力：** SystemCapability.Communication.WiFi.P2P
 
-名称值说明GO_BAND_AUTO0自动模式。GO_BAND_2GHZ12GHZ。GO_BAND_5GHZ25GHZ。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| GO_BAND_AUTO | 0 | 自动模式。 |
+| GO_BAND_2GHZ | 1 | 2GHZ。 |
+| GO_BAND_5GHZ | 2 | 5GHZ。 |
 
-#### wifi.removeGroup8+
+**wifi.removeGroup(deprecated)**
 
 removeGroup(): boolean
 
 移除群组。
+
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.removeGroup](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagerremovegroup)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -780,7 +1018,9 @@ removeGroup(): boolean
 
 **返回值：**
 
-类型说明booleantrue:操作执行成功， false:操作执行失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true:操作执行成功， false:操作执行失败。 |
 
 **示例：**
 
@@ -794,11 +1034,14 @@ try {
 }
 ```
 
-#### wifi.p2pConnect8+
+**wifi.p2pConnect(deprecated)**
 
 p2pConnect(config: WifiP2PConfig): boolean
 
 执行P2P连接。
+
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.p2pConnect](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagerp2pconnect)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO 和 ohos.permission.LOCATION
 
@@ -806,11 +1049,15 @@ p2pConnect(config: WifiP2PConfig): boolean
 
 **参数：**
 
-参数名类型必填说明config[WifiP2PConfig](#ZH-CN_TOPIC_0000002497445456__wifip2pconfig8)是连接配置信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | WifiP2PConfig | 是 | 连接配置信息。 |
 
 **返回值：**
 
-类型说明booleantrue:操作执行成功， false:操作执行失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true:操作执行成功， false:操作执行失败。 |
 
 **示例：**
 
@@ -855,7 +1102,6 @@ let recvP2pPeerDeviceChangeFunc = (result:wifi.WifiP2pDevice[]) => {
                 }
                 wifi.p2pConnect(config);
             }
-        }
     });
 }
 wifi.on("p2pPeerDeviceChange", recvP2pPeerDeviceChangeFunc);
@@ -880,11 +1126,14 @@ setTimeout(() => {wifi.off("p2pPersistentGroupChange", recvP2pPersistentGroupCha
 console.info("start discover devices -> " + wifi.startDiscoverDevices());
 ```
 
-#### wifi.p2pCancelConnect8+
+**wifi.p2pCancelConnect(deprecated)**
 
 p2pCancelConnect(): boolean
 
 取消P2P连接。
+
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.p2pCancelConnect](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagerp2pcancelconnect)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -892,7 +1141,9 @@ p2pCancelConnect(): boolean
 
 **返回值：**
 
-类型说明booleantrue:操作执行成功， false:操作执行失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true:操作执行成功， false:操作执行失败。 |
 
 **示例：**
 
@@ -906,11 +1157,14 @@ try {
 }
 ```
 
-#### wifi.startDiscoverDevices8+
+**wifi.startDiscoverDevices(deprecated)**
 
 startDiscoverDevices(): boolean
 
 开始发现设备。
+
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.startDiscoverDevices](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagerstartdiscoverdevices)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO 和 ohos.permission.LOCATION
 
@@ -918,7 +1172,9 @@ startDiscoverDevices(): boolean
 
 **返回值：**
 
-类型说明booleantrue:操作执行成功， false:操作执行失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true:操作执行成功， false:操作执行失败。 |
 
 **示例：**
 
@@ -932,11 +1188,14 @@ try {
 }
 ```
 
-#### wifi.stopDiscoverDevices8+
+**wifi.stopDiscoverDevices(deprecated)**
 
 stopDiscoverDevices(): boolean
 
 停止发现设备。
+
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.stopDiscoverDevices](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanagerstopdiscoverdevices)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -944,7 +1203,9 @@ stopDiscoverDevices(): boolean
 
 **返回值：**
 
-类型说明booleantrue:操作执行成功 false:操作执行失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true:操作执行成功 false:操作执行失败。 |
 
 **示例：**
 
@@ -958,45 +1219,75 @@ try {
 }
 ```
 
-#### WifiP2pGroupInfo8+
+**WifiP2pGroupInfo(deprecated)**
 
 表示P2P群组相关信息。
 
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[WifiP2pGroupInfo](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifip2pgroupinfo)替代。
+
 **系统能力：** SystemCapability.Communication.WiFi.P2P
 
-名称类型只读可选说明isP2pGoboolean否否是否是群主。true:是群主，false:不是群主。ownerInfo[WifiP2pDevice](#ZH-CN_TOPIC_0000002497445456__wifip2pdevice8)否否群组的设备信息。passphrasestring否否群组密钥。interfacestring否否接口名称。groupNamestring否否群组名称。networkIdnumber否否网络ID。frequencynumber否否群组的频率。clientDevices[WifiP2pDevice[]](#ZH-CN_TOPIC_0000002497445456__wifip2pdevice8)否否接入的设备列表信息。goIpAddressstring否否群组IP地址。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| isP2pGo | boolean | 否 | 否 | 是否是群主。true:是群主，false:不是群主。 |
+| ownerInfo | WifiP2pDevice | 否 | 否 | 群组的设备信息。 |
+| passphrase | string | 否 | 否 | 群组密钥。 |
+| interface | string | 否 | 否 | 接口名称。 |
+| groupName | string | 否 | 否 | 群组名称。 |
+| networkId | number | 否 | 否 | 网络ID。 |
+| frequency | number | 否 | 否 | 群组的频率。 |
+| clientDevices | WifiP2pDevice[] | 否 | 否 | 接入的设备列表信息。 |
+| goIpAddress | string | 否 | 否 | 群组IP地址。 |
 
-#### wifi.on('wifiStateChange')7+
+**wifi.on('wifiStateChange')(deprecated)**
 
 on(type: 'wifiStateChange', callback: Callback<number>): void
 
 注册WLAN状态改变事件。
 
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.on](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageronwifistatechange)替代。
+
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"wifiStateChange"字符串。callbackCallback<number>是状态改变回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"wifiStateChange"字符串。 |
+| callback | Callback<number> | 是 | 状态改变回调函数。 |
 
 **状态改变事件的枚举：**
 
-枚举值说明0未激活。1已激活。2激活中。3去激活中。
+| 枚举值 | 说明 |
+| --- | --- |
+| 0 | 未激活。 |
+| 1 | 已激活。 |
+| 2 | 激活中。 |
+| 3 | 去激活中。 |
 
-#### wifi.off('wifiStateChange')7+
+**wifi.off('wifiStateChange')(deprecated)**
 
 off(type: 'wifiStateChange', callback?: Callback<number>): void
 
 取消注册WLAN状态改变事件。
 
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.off](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageroffwifistatechange)替代。
+
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"wifiStateChange"字符串。callbackCallback<number>否状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"wifiStateChange"字符串。 |
+| callback | Callback<number> | 否 | 状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。 |
 
 **示例：**
 
@@ -1014,37 +1305,52 @@ wifi.on("wifiStateChange", recvPowerNotifyFunc);
 wifi.off("wifiStateChange", recvPowerNotifyFunc);
 ```
 
-#### wifi.on('wifiConnectionChange')7+
+**wifi.on('wifiConnectionChange')(deprecated)**
 
 on(type: 'wifiConnectionChange', callback: Callback<number>): void
 
 注册WLAN连接状态改变事件。
 
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.on](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageronwificonnectionchange)替代。
+
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"wifiConnectionChange"字符串。callbackCallback<number>是状态改变回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"wifiConnectionChange"字符串。 |
+| callback | Callback<number> | 是 | 状态改变回调函数。 |
 
 **连接状态改变事件的枚举：**
 
-枚举值说明0已断开。1已连接。
+| 枚举值 | 说明 |
+| --- | --- |
+| 0 | 已断开。 |
+| 1 | 已连接。 |
 
-#### wifi.off('wifiConnectionChange')7+
+**wifi.off('wifiConnectionChange')(deprecated)**
 
 off(type: 'wifiConnectionChange', callback?: Callback<number>): void
 
 取消注册WLAN连接状态改变事件。
 
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.off](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageroffwificonnectionchange)替代。
+
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"wifiConnectionChange"字符串。callbackCallback<number>否连接状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"wifiConnectionChange"字符串。 |
+| callback | Callback<number> | 否 | 连接状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。 |
 
 **示例：**
 
@@ -1062,37 +1368,52 @@ wifi.on("wifiConnectionChange", recvWifiConnectionChangeFunc);
 wifi.off("wifiConnectionChange", recvWifiConnectionChangeFunc);
 ```
 
-#### wifi.on('wifiScanStateChange')7+
+**wifi.on('wifiScanStateChange')(deprecated)**
 
 on(type: 'wifiScanStateChange', callback: Callback<number>): void
 
 注册扫描状态改变事件。
 
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.on](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageronwifiscanstatechange)替代。
+
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"wifiScanStateChange"字符串。callbackCallback<number>是状态改变回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"wifiScanStateChange"字符串。 |
+| callback | Callback<number> | 是 | 状态改变回调函数。 |
 
 **扫描状态改变事件的枚举：**
 
-枚举值说明0扫描失败。1扫描成功。
+| 枚举值 | 说明 |
+| --- | --- |
+| 0 | 扫描失败。 |
+| 1 | 扫描成功。 |
 
-#### wifi.off('wifiScanStateChange')7+
+**wifi.off('wifiScanStateChange')(deprecated)**
 
 off(type: 'wifiScanStateChange', callback?: Callback<number>): void
 
 取消注册扫描状态改变事件。
 
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.off](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageroffwifiscanstatechange)替代。
+
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"wifiScanStateChange"字符串。callbackCallback<number>否状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"wifiScanStateChange"字符串。 |
+| callback | Callback<number> | 否 | 状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。 |
 
 **示例：**
 
@@ -1110,33 +1431,45 @@ wifi.on("wifiScanStateChange", recvWifiScanStateChangeFunc);
 wifi.off("wifiScanStateChange", recvWifiScanStateChangeFunc);
 ```
 
-#### wifi.on('wifiRssiChange')7+
+**wifi.on('wifiRssiChange')(deprecated)**
 
 on(type: 'wifiRssiChange', callback: Callback<number>): void
 
 注册RSSI状态改变事件。
 
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.on](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageronwifirssichange)替代。
+
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"wifiRssiChange"字符串。callbackCallback<number>是状态改变回调函数，返回以dBm为单位的RSSI值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"wifiRssiChange"字符串。 |
+| callback | Callback<number> | 是 | 状态改变回调函数，返回以dBm为单位的RSSI值。 |
 
-#### wifi.off('wifiRssiChange')7+
+**wifi.off('wifiRssiChange')(deprecated)**
 
 off(type: 'wifiRssiChange', callback?: Callback<number>): void
 
 取消注册RSSI状态改变事件。
 
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.off](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageroffwifirssichange)替代。
+
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"wifiRssiChange"字符串。callbackCallback<number>否状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"wifiRssiChange"字符串。 |
+| callback | Callback<number> | 否 | 状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。 |
 
 **示例：**
 
@@ -1154,11 +1487,14 @@ wifi.on("wifiRssiChange", recvWifiRssiChangeFunc);
 wifi.off("wifiRssiChange", recvWifiRssiChangeFunc);
 ```
 
-#### wifi.on('hotspotStateChange')7+
+**wifi.on('hotspotStateChange')(deprecated)**
 
 on(type: 'hotspotStateChange', callback: Callback<number>): void
 
 注册热点状态改变事件。
+
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.on](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageronhotspotstatechange)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -1166,11 +1502,19 @@ on(type: 'hotspotStateChange', callback: Callback<number>): void
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"hotspotStateChange"字符串。callbackCallback<number>是状态改变回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"hotspotStateChange"字符串。 |
+| callback | Callback<number> | 是 | 状态改变回调函数。 |
 
 **热点状态改变事件的枚举：**
 
-枚举值说明0未激活。1已激活。2激活中。3去激活中。
+| 枚举值 | 说明 |
+| --- | --- |
+| 0 | 未激活。 |
+| 1 | 已激活。 |
+| 2 | 激活中。 |
+| 3 | 去激活中。 |
 
 **示例：**
 
@@ -1188,11 +1532,14 @@ wifi.on("hotspotStateChange", recvHotspotStateChangeFunc);
 wifi.off("hotspotStateChange", recvHotspotStateChangeFunc);
 ```
 
-#### wifi.off('hotspotStateChange')7+
+**wifi.off('hotspotStateChange')(deprecated)**
 
 off(type: 'hotspotStateChange', callback?: Callback<number>): void
 
 取消注册热点状态改变事件。
+
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.off](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageroffhotspotstatechange)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -1200,39 +1547,60 @@ off(type: 'hotspotStateChange', callback?: Callback<number>): void
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"hotspotStateChange"字符串。callbackCallback<number>否状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"hotspotStateChange"字符串。 |
+| callback | Callback<number> | 否 | 状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。 |
 
-#### wifi.on('p2pStateChange')8+
+**wifi.on('p2pStateChange')(deprecated)**
 
 on(type: 'p2pStateChange', callback: Callback<number>): void
 
 注册P2P开关状态改变事件。
 
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.on](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageronp2pstatechange)替代。
+
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
 **系统能力：** SystemCapability.Communication.WiFi.P2P
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"p2pStateChange"字符串。callbackCallback<number>是状态改变回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"p2pStateChange"字符串。 |
+| callback | Callback<number> | 是 | 状态改变回调函数。 |
 
 **P2P状态改变事件的枚举：**
 
-枚举值说明1空闲。2打开中。3已打开。4关闭中。5已关闭。
+| 枚举值 | 说明 |
+| --- | --- |
+| 1 | 空闲。 |
+| 2 | 打开中。 |
+| 3 | 已打开。 |
+| 4 | 关闭中。 |
+| 5 | 已关闭。 |
 
-#### wifi.off('p2pStateChange')8+
+**wifi.off('p2pStateChange')(deprecated)**
 
 off(type: 'p2pStateChange', callback?: Callback<number>): void
 
 取消注册P2P开关状态改变事件。
 
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[wifiManager.off](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageroffp2pstatechange)替代。
+
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
 **系统能力：** SystemCapability.Communication.WiFi.P2P
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"p2pStateChange"字符串。callbackCallback<number>否状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"p2pStateChange"字符串。 |
+| callback | Callback<number> | 否 | 状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。 |
 
 **示例：**
 
@@ -1250,33 +1618,45 @@ wifi.on("p2pStateChange", recvP2pStateChangeFunc);
 wifi.off("p2pStateChange", recvP2pStateChangeFunc);
 ```
 
-#### wifi.on('p2pConnectionChange')8+
+**wifi.on('p2pConnectionChange')(deprecated)**
 
 on(type: 'p2pConnectionChange', callback: Callback<WifiP2pLinkedInfo>): void
 
 注册P2P连接状态改变事件。
 
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.on](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageronp2pconnectionchange)替代。
+
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
 **系统能力：** SystemCapability.Communication.WiFi.P2P
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"p2pConnectionChange"字符串。callbackCallback<[WifiP2pLinkedInfo](#ZH-CN_TOPIC_0000002497445456__wifip2plinkedinfo8)>是状态改变回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"p2pConnectionChange"字符串。 |
+| callback | Callback<WifiP2pLinkedInfo> | 是 | 状态改变回调函数。 |
 
-#### wifi.off('p2pConnectionChange')8+
+**wifi.off('p2pConnectionChange')(deprecated)**
 
 off(type: 'p2pConnectionChange', callback?: Callback<WifiP2pLinkedInfo>): void
 
 取消注册P2P连接状态改变事件。
 
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.off](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageroffp2pconnectionchange)替代。
+
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
 **系统能力：** SystemCapability.Communication.WiFi.P2P
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"p2pConnectionChange"字符串。callbackCallback<[WifiP2pLinkedInfo](#ZH-CN_TOPIC_0000002497445456__wifip2plinkedinfo8)>否状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"p2pConnectionChange"字符串。 |
+| callback | Callback<WifiP2pLinkedInfo> | 否 | 状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。 |
 
 **示例：**
 
@@ -1294,11 +1674,14 @@ wifi.on("p2pConnectionChange", recvP2pConnectionChangeFunc);
 wifi.off("p2pConnectionChange", recvP2pConnectionChangeFunc);
 ```
 
-#### wifi.on('p2pDeviceChange')8+
+**wifi.on('p2pDeviceChange')(deprecated)**
 
 on(type: 'p2pDeviceChange', callback: Callback<WifiP2pDevice>): void
 
 注册P2P设备状态改变事件。
+
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.on](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageronp2pdevicechange)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO 和 ohos.permission.LOCATION
 
@@ -1306,13 +1689,19 @@ on(type: 'p2pDeviceChange', callback: Callback<WifiP2pDevice>): void
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"p2pDeviceChange"字符串。callbackCallback<[WifiP2pDevice](#ZH-CN_TOPIC_0000002497445456__wifip2pdevice8)>是状态改变回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"p2pDeviceChange"字符串。 |
+| callback | Callback<WifiP2pDevice> | 是 | 状态改变回调函数。 |
 
-#### wifi.off('p2pDeviceChange')8+
+**wifi.off('p2pDeviceChange')(deprecated)**
 
 off(type: 'p2pDeviceChange', callback?: Callback<WifiP2pDevice>): void
 
 取消注册P2P设备状态改变事件。
+
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.off](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageroffp2pdevicechange)替代。
 
 **需要权限：** ohos.permission.LOCATION
 
@@ -1320,7 +1709,10 @@ off(type: 'p2pDeviceChange', callback?: Callback<WifiP2pDevice>): void
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"p2pDeviceChange"字符串。callbackCallback<[WifiP2pDevice](#ZH-CN_TOPIC_0000002497445456__wifip2pdevice8)>否状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"p2pDeviceChange"字符串。 |
+| callback | Callback<WifiP2pDevice> | 否 | 状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。 |
 
 **示例：**
 
@@ -1338,11 +1730,14 @@ wifi.on("p2pDeviceChange", recvP2pDeviceChangeFunc);
 wifi.off("p2pDeviceChange", recvP2pDeviceChangeFunc);
 ```
 
-#### wifi.on('p2pPeerDeviceChange')8+
+**wifi.on('p2pPeerDeviceChange')(deprecated)**
 
 on(type: 'p2pPeerDeviceChange', callback: Callback<WifiP2pDevice[]>): void
 
 注册P2P对端设备状态改变事件。
+
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.on](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageronp2ppeerdevicechange)替代。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO 和 ohos.permission.LOCATION
 
@@ -1350,13 +1745,19 @@ on(type: 'p2pPeerDeviceChange', callback: Callback<WifiP2pDevice[]>): void
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"p2pPeerDeviceChange"字符串。callbackCallback<[WifiP2pDevice[]](#ZH-CN_TOPIC_0000002497445456__wifip2pdevice8)>是状态改变回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"p2pPeerDeviceChange"字符串。 |
+| callback | Callback<WifiP2pDevice[]> | 是 | 状态改变回调函数。 |
 
-#### wifi.off('p2pPeerDeviceChange')8+
+**wifi.off('p2pPeerDeviceChange')(deprecated)**
 
 off(type: 'p2pPeerDeviceChange', callback?: Callback<WifiP2pDevice[]>): void
 
 取消注册P2P对端设备状态改变事件。
+
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.off](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageroffp2ppeerdevicechange)替代。
 
 **需要权限：** ohos.permission.LOCATION
 
@@ -1364,7 +1765,10 @@ off(type: 'p2pPeerDeviceChange', callback?: Callback<WifiP2pDevice[]>): void
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"p2pPeerDeviceChange"字符串。callbackCallback<[WifiP2pDevice[]](#ZH-CN_TOPIC_0000002497445456__wifip2pdevice8)>否状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"p2pPeerDeviceChange"字符串。 |
+| callback | Callback<WifiP2pDevice[]> | 否 | 状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。 |
 
 **示例：**
 
@@ -1382,33 +1786,45 @@ wifi.on("p2pPeerDeviceChange", recvP2pPeerDeviceChangeFunc);
 wifi.off("p2pPeerDeviceChange", recvP2pPeerDeviceChangeFunc);
 ```
 
-#### wifi.on('p2pPersistentGroupChange')8+
+**wifi.on('p2pPersistentGroupChange')(deprecated)**
 
 on(type: 'p2pPersistentGroupChange', callback: Callback<void>): void
 
 注册P2P永久组状态改变事件。
 
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.on](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageronp2ppersistentgroupchange)替代。
+
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
 **系统能力：** SystemCapability.Communication.WiFi.P2P
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"p2pPersistentGroupChange"字符串。callbackCallback<void>是状态改变回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"p2pPersistentGroupChange"字符串。 |
+| callback | Callback<void> | 是 | 状态改变回调函数。 |
 
-#### wifi.off('p2pPersistentGroupChange')8+
+**wifi.off('p2pPersistentGroupChange')(deprecated)**
 
 off(type: 'p2pPersistentGroupChange', callback?: Callback<void>): void
 
 取消注册P2P永久组状态改变事件。
 
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.off](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageroffp2ppersistentgroupchange)替代。
+
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
 **系统能力：** SystemCapability.Communication.WiFi.P2P
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"p2pPersistentGroupChange"字符串。callbackCallback<void>否状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"p2pPersistentGroupChange"字符串。 |
+| callback | Callback<void> | 否 | 状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。 |
 
 **示例：**
 
@@ -1426,37 +1842,52 @@ wifi.on("p2pPersistentGroupChange", recvP2pPersistentGroupChangeFunc);
 wifi.off("p2pPersistentGroupChange", recvP2pPersistentGroupChangeFunc);
 ```
 
-#### wifi.on('p2pDiscoveryChange')8+
+**wifi.on('p2pDiscoveryChange')(deprecated)**
 
 on(type: 'p2pDiscoveryChange', callback: Callback<number>): void
 
 注册发现设备状态改变事件。
 
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.on](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageronp2pdiscoverychange)替代。
+
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
 **系统能力：** SystemCapability.Communication.WiFi.P2P
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"p2pDiscoveryChange"字符串。callbackCallback<number>是状态改变回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"p2pDiscoveryChange"字符串。 |
+| callback | Callback<number> | 是 | 状态改变回调函数。 |
 
 **发现设备状态改变事件的枚举：**
 
-枚举值说明0初始状态。1发现成功。
+| 枚举值 | 说明 |
+| --- | --- |
+| 0 | 初始状态。 |
+| 1 | 发现成功。 |
 
-#### wifi.off('p2pDiscoveryChange')8+
+**wifi.off('p2pDiscoveryChange')(deprecated)**
 
 off(type: 'p2pDiscoveryChange', callback?: Callback<number>): void
 
 取消注册发现设备状态改变事件。
 
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[wifiManager.off](@ohos.wifiManager (WLAN).md#ZH-CN_TOPIC_0000002553201413__wifimanageroffp2pdiscoverychange)替代。
+
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
 **系统能力：** SystemCapability.Communication.WiFi.P2P
 
 **参数：**
 
-参数名类型必填说明typestring是固定填"p2pDiscoveryChange"字符串。callbackCallback<number>否状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定填"p2pDiscoveryChange"字符串。 |
+| callback | Callback<number> | 否 | 状态改变回调函数。如果callback不填，将取消注册该事件关联的所有回调函数。 |
 
 **示例：**
 

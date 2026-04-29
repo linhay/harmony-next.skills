@@ -16,7 +16,7 @@ add(attributes: AssetMap): Promise<void>
 
 新增一条关键资产。使用Promise异步回调。
 
-设置[IS_PERSISTENT](#ZH-CN_TOPIC_0000002529285329__tag)属性时，需要申请ohos.permission.STORE_PERSISTENT_DATA权限。
+设置[IS_PERSISTENT](#ZH-CN_TOPIC_0000002522081320__tag)属性时，需要申请ohos.permission.STORE_PERSISTENT_DATA权限。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
@@ -24,27 +24,37 @@ add(attributes: AssetMap): Promise<void>
 
 **参数：**
 
-参数名类型必填说明attributes[AssetMap](#ZH-CN_TOPIC_0000002529285329__assetmap)是待新增关键资产的属性集合，包括关键资产明文、访问控制属性、自定义数据等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| attributes | AssetMap | 是 | 待新增关键资产的属性集合，包括关键资产明文、访问控制属性、自定义数据等。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](../../errors/关键资产存储服务(ASSET)错误码.md)
+以下错误码的详细介绍请参见[关键资产存储服务错误码](关键资产存储服务错误码.md)
 
-错误码ID错误信息201The caller doesn't have the permission.401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
-
-24000001The ASSET service is unavailable.24000003The asset already exists.24000005The screen lock status does not match.24000006Insufficient memory.24000007The asset is corrupted.24000008The database operation failed.24000009The cryptography operation failed.24000010IPC failed.24000011Calling the Bundle Manager service failed.24000012Calling the OS Account service failed.24000013Calling the Access Token service failed.24000014The file operation failed.24000015Getting the system time failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | The caller doesn't have the permission. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 24000001 | The ASSET service is unavailable. |
+| 24000003 | The asset already exists. |
+| 24000005 | The screen lock status does not match. |
+| 24000006 | Insufficient memory. |
+| 24000007 | The asset is corrupted. |
+| 24000008 | The database operation failed. |
+| 24000009 | The cryptography operation failed. |
+| 24000010 | IPC failed. |
+| 24000011 | Calling the Bundle Manager service failed. |
+| 24000012 | Calling the OS Account service failed. |
+| 24000013 | Calling the Access Token service failed. |
+| 24000014 | The file operation failed. |
+| 24000015 | Getting the system time failed. |
 
 **示例：**
 
@@ -73,7 +83,7 @@ addSync(attributes: AssetMap): void
 
 新增一条关键资产，使用同步方式返回结果。
 
-如果要设置[IS_PERSISTENT](#ZH-CN_TOPIC_0000002529285329__tag)属性，需要申请ohos.permission.STORE_PERSISTENT_DATA权限。
+如果要设置[IS_PERSISTENT](#ZH-CN_TOPIC_0000002522081320__tag)属性，需要申请ohos.permission.STORE_PERSISTENT_DATA权限。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
@@ -81,23 +91,31 @@ addSync(attributes: AssetMap): void
 
 **参数：**
 
-参数名类型必填说明attributes[AssetMap](#ZH-CN_TOPIC_0000002529285329__assetmap)是待新增关键资产的属性集合，包括关键资产明文、访问控制属性、自定义数据等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| attributes | AssetMap | 是 | 待新增关键资产的属性集合，包括关键资产明文、访问控制属性、自定义数据等。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](../../errors/关键资产存储服务(ASSET)错误码.md)
+以下错误码的详细介绍请参见[关键资产存储服务错误码](关键资产存储服务错误码.md)
 
-错误码ID错误信息201The caller doesn't have the permission.401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
-
-24000001The ASSET service is unavailable.24000003The asset already exists.24000005The screen lock status does not match.24000006Insufficient memory.24000007The asset is corrupted.24000008The database operation failed.24000009The cryptography operation failed.24000010IPC failed.24000011Calling the Bundle Manager service failed.24000012Calling the OS Account service failed.24000013Calling the Access Token service failed.24000014The file operation failed.24000015Getting the system time failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | The caller doesn't have the permission. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 24000001 | The ASSET service is unavailable. |
+| 24000003 | The asset already exists. |
+| 24000005 | The screen lock status does not match. |
+| 24000006 | Insufficient memory. |
+| 24000007 | The asset is corrupted. |
+| 24000008 | The database operation failed. |
+| 24000009 | The cryptography operation failed. |
+| 24000010 | IPC failed. |
+| 24000011 | Calling the Bundle Manager service failed. |
+| 24000012 | Calling the OS Account service failed. |
+| 24000013 | Calling the Access Token service failed. |
+| 24000014 | The file operation failed. |
+| 24000015 | Getting the system time failed. |
 
 **示例：**
 
@@ -130,25 +148,33 @@ remove(query: AssetMap): Promise<void>
 
 **参数：**
 
-参数名类型必填说明query[AssetMap](#ZH-CN_TOPIC_0000002529285329__assetmap)是待删除关键资产的搜索条件，如别名、访问控制属性、自定义数据等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | AssetMap | 是 | 待删除关键资产的搜索条件，如别名、访问控制属性、自定义数据等。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](../../errors/关键资产存储服务(ASSET)错误码.md)
+以下错误码的详细介绍请参见[关键资产存储服务错误码](关键资产存储服务错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Incorrect parameter types.
-
-2. Parameter verification failed.
-
-24000001The ASSET service is unavailable.24000002The asset is not found.24000006Insufficient memory.24000007The asset is corrupted.24000008The database operation failed.24000010IPC failed.24000011Calling the Bundle Manager service failed.24000012Calling the OS Account service failed.24000013Calling the Access Token service failed.24000015Getting the system time failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. 2. Parameter verification failed. |
+| 24000001 | The ASSET service is unavailable. |
+| 24000002 | The asset is not found. |
+| 24000006 | Insufficient memory. |
+| 24000007 | The asset is corrupted. |
+| 24000008 | The database operation failed. |
+| 24000010 | IPC failed. |
+| 24000011 | Calling the Bundle Manager service failed. |
+| 24000012 | Calling the OS Account service failed. |
+| 24000013 | Calling the Access Token service failed. |
+| 24000015 | Getting the system time failed. |
 
 **示例：**
 
@@ -180,21 +206,27 @@ removeSync(query: AssetMap): void
 
 **参数：**
 
-参数名类型必填说明query[AssetMap](#ZH-CN_TOPIC_0000002529285329__assetmap)是待删除关键资产的搜索条件，如别名、访问控制属性、自定义数据等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | AssetMap | 是 | 待删除关键资产的搜索条件，如别名、访问控制属性、自定义数据等。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](../../errors/关键资产存储服务(ASSET)错误码.md)
+以下错误码的详细介绍请参见[关键资产存储服务错误码](关键资产存储服务错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Incorrect parameter types.
-
-2. Parameter verification failed.
-
-24000001The ASSET service is unavailable.24000002The asset is not found.24000006Insufficient memory.24000007The asset is corrupted.24000008The database operation failed.24000010IPC failed.24000011Calling the Bundle Manager service failed.24000012Calling the OS Account service failed.24000013Calling the Access Token service failed.24000015Getting the system time failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. 2. Parameter verification failed. |
+| 24000001 | The ASSET service is unavailable. |
+| 24000002 | The asset is not found. |
+| 24000006 | Insufficient memory. |
+| 24000007 | The asset is corrupted. |
+| 24000008 | The database operation failed. |
+| 24000010 | IPC failed. |
+| 24000011 | Calling the Bundle Manager service failed. |
+| 24000012 | Calling the OS Account service failed. |
+| 24000013 | Calling the Access Token service failed. |
+| 24000015 | Getting the system time failed. |
 
 **示例：**
 
@@ -224,27 +256,36 @@ update(query: AssetMap, attributesToUpdate: AssetMap): Promise<void>
 
 **参数：**
 
-参数名类型必填说明query[AssetMap](#ZH-CN_TOPIC_0000002529285329__assetmap)是待更新关键资产的搜索条件，如关键资产别名、访问控制属性、自定义数据等。attributesToUpdate[AssetMap](#ZH-CN_TOPIC_0000002529285329__assetmap)是待更新关键资产的属性集合，如关键资产明文、自定义数据等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | AssetMap | 是 | 待更新关键资产的搜索条件，如关键资产别名、访问控制属性、自定义数据等。 |
+| attributesToUpdate | AssetMap | 是 | 待更新关键资产的属性集合，如关键资产明文、自定义数据等。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](../../errors/关键资产存储服务(ASSET)错误码.md)
+以下错误码的详细介绍请参见[关键资产存储服务错误码](关键资产存储服务错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
-
-24000001The ASSET service is unavailable.24000002The asset is not found.24000005The screen lock status does not match.24000006Insufficient memory.24000007The asset is corrupted.24000008The database operation failed.24000009The cryptography operation failed.24000010IPC failed.24000011Calling the Bundle Manager service failed.24000012Calling the OS Account service failed.24000013Calling the Access Token service failed.24000015Getting the system time failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 24000001 | The ASSET service is unavailable. |
+| 24000002 | The asset is not found. |
+| 24000005 | The screen lock status does not match. |
+| 24000006 | Insufficient memory. |
+| 24000007 | The asset is corrupted. |
+| 24000008 | The database operation failed. |
+| 24000009 | The cryptography operation failed. |
+| 24000010 | IPC failed. |
+| 24000011 | Calling the Bundle Manager service failed. |
+| 24000012 | Calling the OS Account service failed. |
+| 24000013 | Calling the Access Token service failed. |
+| 24000015 | Getting the system time failed. |
 
 **示例：**
 
@@ -278,23 +319,30 @@ updateSync(query: AssetMap, attributesToUpdate: AssetMap): void
 
 **参数：**
 
-参数名类型必填说明query[AssetMap](#ZH-CN_TOPIC_0000002529285329__assetmap)是待更新关键资产的搜索条件，如关键资产别名、访问控制属性、自定义数据等。attributesToUpdate[AssetMap](#ZH-CN_TOPIC_0000002529285329__assetmap)是待更新关键资产的属性集合，如关键资产明文、自定义数据等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | AssetMap | 是 | 待更新关键资产的搜索条件，如关键资产别名、访问控制属性、自定义数据等。 |
+| attributesToUpdate | AssetMap | 是 | 待更新关键资产的属性集合，如关键资产明文、自定义数据等。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](../../errors/关键资产存储服务(ASSET)错误码.md)
+以下错误码的详细介绍请参见[关键资产存储服务错误码](关键资产存储服务错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
-
-24000001The ASSET service is unavailable.24000002The asset is not found.24000005The screen lock status does not match.24000006Insufficient memory.24000007The asset is corrupted.24000008The database operation failed.24000009The cryptography operation failed.24000010IPC failed.24000011Calling the Bundle Manager service failed.24000012Calling the OS Account service failed.24000013Calling the Access Token service failed.24000015Getting the system time failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 24000001 | The ASSET service is unavailable. |
+| 24000002 | The asset is not found. |
+| 24000005 | The screen lock status does not match. |
+| 24000006 | Insufficient memory. |
+| 24000007 | The asset is corrupted. |
+| 24000008 | The database operation failed. |
+| 24000009 | The cryptography operation failed. |
+| 24000010 | IPC failed. |
+| 24000011 | Calling the Bundle Manager service failed. |
+| 24000012 | Calling the OS Account service failed. |
+| 24000013 | Calling the Access Token service failed. |
+| 24000015 | Getting the system time failed. |
 
 **示例：**
 
@@ -318,7 +366,7 @@ asset.updateSync(query, attrsToUpdate);
 
 preQuery(query: AssetMap): Promise<Uint8Array>
 
-查询的预处理，用于需要用户认证的关键资产。在用户认证成功后，应当随后调用[asset.query](#ZH-CN_TOPIC_0000002529285329__assetquery)和[asset.postQuery](#ZH-CN_TOPIC_0000002529285329__assetpostquery)接口。使用Promise异步回调。
+查询的预处理，用于需要用户认证的关键资产。在用户认证成功后，应当随后调用[asset.query](#ZH-CN_TOPIC_0000002522081320__assetquery)和[asset.postQuery](#ZH-CN_TOPIC_0000002522081320__assetpostquery)接口。使用Promise异步回调。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
@@ -326,29 +374,36 @@ preQuery(query: AssetMap): Promise<Uint8Array>
 
 **参数：**
 
-参数名类型必填说明query[AssetMap](#ZH-CN_TOPIC_0000002529285329__assetmap)是关键资产的查询条件，如别名、访问控制属性、自定义数据等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | AssetMap | 是 | 关键资产的查询条件，如别名、访问控制属性、自定义数据等。 |
 
 **返回值：**
 
-类型说明Promise<Uint8Array>
-
-Promise对象，返回挑战值。
-
-**说明：** 挑战值用于后续的用户认证。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Uint8Array> | Promise对象，返回挑战值。 说明： 挑战值用于后续的用户认证。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](../../errors/关键资产存储服务(ASSET)错误码.md)
+以下错误码的详细介绍请参见[关键资产存储服务错误码](关键资产存储服务错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Incorrect parameter types.
-
-2. Parameter verification failed.
-
-24000001The ASSET service is unavailable.24000002The asset is not found.24000005The screen lock status does not match.24000006Insufficient memory.24000007The asset is corrupted.24000008The database operation failed.24000009The cryptography operation failed.24000010IPC failed.24000011Calling the Bundle Manager service failed.24000012Calling the OS Account service failed.24000013Calling the Access Token service failed.24000016The cache exceeds the limit.24000017The capability is not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. 2. Parameter verification failed. |
+| 24000001 | The ASSET service is unavailable. |
+| 24000002 | The asset is not found. |
+| 24000005 | The screen lock status does not match. |
+| 24000006 | Insufficient memory. |
+| 24000007 | The asset is corrupted. |
+| 24000008 | The database operation failed. |
+| 24000009 | The cryptography operation failed. |
+| 24000010 | IPC failed. |
+| 24000011 | Calling the Bundle Manager service failed. |
+| 24000012 | Calling the OS Account service failed. |
+| 24000013 | Calling the Access Token service failed. |
+| 24000016 | The cache exceeds the limit. |
+| 24000017 | The capability is not supported. |
 
 **示例：**
 
@@ -372,7 +427,7 @@ asset.preQuery(query).then((challenge: Uint8Array) => {
 
 preQuerySync(query: AssetMap): Uint8Array
 
-查询的预处理，用于需要用户认证的关键资产。在用户认证成功后，应当随后调用[asset.querySync](#ZH-CN_TOPIC_0000002529285329__assetquerysync12)、[asset.postQuerySync](#ZH-CN_TOPIC_0000002529285329__assetpostquerysync12)。使用同步方式返回结果。
+查询的预处理，用于需要用户认证的关键资产。在用户认证成功后，应当随后调用[asset.querySync](#ZH-CN_TOPIC_0000002522081320__assetquerysync12)、[asset.postQuerySync](#ZH-CN_TOPIC_0000002522081320__assetpostquerysync12)。使用同步方式返回结果。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
@@ -380,29 +435,36 @@ preQuerySync(query: AssetMap): Uint8Array
 
 **参数：**
 
-参数名类型必填说明query[AssetMap](#ZH-CN_TOPIC_0000002529285329__assetmap)是关键资产的查询条件，如别名、访问控制属性、自定义数据等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | AssetMap | 是 | 关键资产的查询条件，如别名、访问控制属性、自定义数据等。 |
 
 **返回值：**
 
-类型说明Uint8Array
-
-挑战值。
-
-**说明：** 挑战值用于后续用户认证。
+| 类型 | 说明 |
+| --- | --- |
+| Uint8Array | 挑战值。 说明： 挑战值用于后续用户认证。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](../../errors/关键资产存储服务(ASSET)错误码.md)
+以下错误码的详细介绍请参见[关键资产存储服务错误码](关键资产存储服务错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Incorrect parameter types.
-
-2. Parameter verification failed.
-
-24000001The ASSET service is unavailable.24000002The asset is not found.24000005The screen lock status does not match.24000006Insufficient memory.24000007The asset is corrupted.24000008The database operation failed.24000009The cryptography operation failed.24000010IPC failed.24000011Calling the Bundle Manager service failed.24000012Calling the OS Account service failed.24000013Calling the Access Token service failed.24000016The cache exceeds the limit.24000017The capability is not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. 2. Parameter verification failed. |
+| 24000001 | The ASSET service is unavailable. |
+| 24000002 | The asset is not found. |
+| 24000005 | The screen lock status does not match. |
+| 24000006 | Insufficient memory. |
+| 24000007 | The asset is corrupted. |
+| 24000008 | The database operation failed. |
+| 24000009 | The cryptography operation failed. |
+| 24000010 | IPC failed. |
+| 24000011 | Calling the Bundle Manager service failed. |
+| 24000012 | Calling the OS Account service failed. |
+| 24000013 | Calling the Access Token service failed. |
+| 24000016 | The cache exceeds the limit. |
+| 24000017 | The capability is not supported. |
 
 **示例：**
 
@@ -425,7 +487,7 @@ console.info(`Succeeded in pre-querying with sync, the challenge is: `, challeng
 
 query(query: AssetMap): Promise<Array<AssetMap>>
 
-查询一条或多条符合条件的关键资产。若查询需要用户认证的关键资产，则需要在本函数前调用[asset.preQuery](#ZH-CN_TOPIC_0000002529285329__assetprequery)接口，在本函数后调用[asset.postQuery](#ZH-CN_TOPIC_0000002529285329__assetpostquery)接口，开发步骤请参考[开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-js-query-auth)。使用Promise异步回调。
+查询一条或多条符合条件的关键资产。若查询需要用户认证的关键资产，则需要在本函数前调用[asset.preQuery](#ZH-CN_TOPIC_0000002522081320__assetprequery)接口，在本函数后调用[asset.postQuery](#ZH-CN_TOPIC_0000002522081320__assetpostquery)接口，开发步骤请参考[开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-js-query-auth)。使用Promise异步回调。
 
 如果未查询到符合条件的关键资产，将抛出“未找到关键资产”的异常，而非返回空的查询结果列表。
 
@@ -435,25 +497,36 @@ query(query: AssetMap): Promise<Array<AssetMap>>
 
 **参数：**
 
-参数名类型必填说明query[AssetMap](#ZH-CN_TOPIC_0000002529285329__assetmap)是关键资产的查询条件，如别名、访问控制属性、自定义数据等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | AssetMap | 是 | 关键资产的查询条件，如别名、访问控制属性、自定义数据等。 |
 
 **返回值：**
 
-类型说明Promise<Array<AssetMap>>Promise对象，返回查询结果列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<AssetMap>> | Promise对象，返回查询结果列表。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](../../errors/关键资产存储服务(ASSET)错误码.md)
+以下错误码的详细介绍请参见[关键资产存储服务错误码](关键资产存储服务错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Incorrect parameter types.
-
-2. Parameter verification failed.
-
-24000001The ASSET service is unavailable.24000002The asset is not found.24000004Access denied.24000005The screen lock status does not match.24000006Insufficient memory.24000007The asset is corrupted.24000008The database operation failed.24000009The cryptography operation failed.24000010IPC failed.24000011Calling the Bundle Manager service failed.24000012Calling the OS Account service failed.24000013Calling the Access Token service failed.24000017The capability is not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. 2. Parameter verification failed. |
+| 24000001 | The ASSET service is unavailable. |
+| 24000002 | The asset is not found. |
+| 24000004 | Access denied. |
+| 24000005 | The screen lock status does not match. |
+| 24000006 | Insufficient memory. |
+| 24000007 | The asset is corrupted. |
+| 24000008 | The database operation failed. |
+| 24000009 | The cryptography operation failed. |
+| 24000010 | IPC failed. |
+| 24000011 | Calling the Bundle Manager service failed. |
+| 24000012 | Calling the OS Account service failed. |
+| 24000013 | Calling the Access Token service failed. |
+| 24000017 | The capability is not supported. |
 
 **示例：**
 
@@ -484,7 +557,7 @@ asset.query(query).then((res: Array<asset.AssetMap>) => {
 
 querySync(query: AssetMap): Array<AssetMap>
 
-查询一条或多条符合条件的关键资产。若查询需要用户认证的关键资产，则需要在本函数前调用[asset.preQuerySync](#ZH-CN_TOPIC_0000002529285329__assetprequerysync12)，在本函数后调用[asset.postQuerySync](#ZH-CN_TOPIC_0000002529285329__assetpostquerysync12)，开发步骤请参考[开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-js-query-auth)。使用同步方式返回结果。
+查询一条或多条符合条件的关键资产。若查询需要用户认证的关键资产，则需要在本函数前调用[asset.preQuerySync](#ZH-CN_TOPIC_0000002522081320__assetprequerysync12)，在本函数后调用[asset.postQuerySync](#ZH-CN_TOPIC_0000002522081320__assetpostquerysync12)，开发步骤请参考[开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-js-query-auth)。使用同步方式返回结果。
 
 如果未查询到符合条件的关键资产，将抛出“未找到关键资产”的异常，而非返回空的查询结果列表。
 
@@ -494,25 +567,36 @@ querySync(query: AssetMap): Array<AssetMap>
 
 **参数：**
 
-参数名类型必填说明query[AssetMap](#ZH-CN_TOPIC_0000002529285329__assetmap)是关键资产的查询条件，如别名、访问控制属性、自定义数据等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | AssetMap | 是 | 关键资产的查询条件，如别名、访问控制属性、自定义数据等。 |
 
 **返回值：**
 
-类型说明Array<AssetMap>查询结果列表。
+| 类型 | 说明 |
+| --- | --- |
+| Array<AssetMap> | 查询结果列表。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](../../errors/关键资产存储服务(ASSET)错误码.md)
+以下错误码的详细介绍请参见[关键资产存储服务错误码](关键资产存储服务错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Incorrect parameter types.
-
-2. Parameter verification failed.
-
-24000001The ASSET service is unavailable.24000002The asset is not found.24000004Access denied.24000005The screen lock status does not match.24000006Insufficient memory.24000007The asset is corrupted.24000008The database operation failed.24000009The cryptography operation failed.24000010IPC failed.24000011Calling the Bundle Manager service failed.24000012Calling the OS Account service failed.24000013Calling the Access Token service failed.24000017The capability is not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. 2. Parameter verification failed. |
+| 24000001 | The ASSET service is unavailable. |
+| 24000002 | The asset is not found. |
+| 24000004 | Access denied. |
+| 24000005 | The screen lock status does not match. |
+| 24000006 | Insufficient memory. |
+| 24000007 | The asset is corrupted. |
+| 24000008 | The database operation failed. |
+| 24000009 | The cryptography operation failed. |
+| 24000010 | IPC failed. |
+| 24000011 | Calling the Bundle Manager service failed. |
+| 24000012 | Calling the OS Account service failed. |
+| 24000013 | Calling the Access Token service failed. |
+| 24000017 | The capability is not supported. |
 
 **示例：**
 
@@ -542,7 +626,7 @@ console.info(`Succeeded in querying Asset.`);
 
 postQuery(handle: AssetMap): Promise<void>
 
-查询的后置处理，用于需要用户认证的关键资产（与[asset.preQuery](#ZH-CN_TOPIC_0000002529285329__assetprequery)函数成对出现）。使用Promise异步回调。
+查询的后置处理，用于需要用户认证的关键资产（与[asset.preQuery](#ZH-CN_TOPIC_0000002522081320__assetprequery)函数成对出现）。使用Promise异步回调。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
@@ -550,27 +634,29 @@ postQuery(handle: AssetMap): Promise<void>
 
 **参数：**
 
-参数名类型必填说明handle[AssetMap](#ZH-CN_TOPIC_0000002529285329__assetmap)是待处理的查询句柄，包含[asset.preQuery](#ZH-CN_TOPIC_0000002529285329__assetprequery)执行成功返回的挑战值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| handle | AssetMap | 是 | 待处理的查询句柄，包含asset.preQuery执行成功返回的挑战值。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](../../errors/关键资产存储服务(ASSET)错误码.md)
+以下错误码的详细介绍请参见[关键资产存储服务错误码](关键资产存储服务错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
-
-24000001The ASSET service is unavailable.24000006Insufficient memory.24000010IPC failed.24000011Calling the Bundle Manager service failed.24000012Calling the OS Account service failed.24000013Calling the Access Token service failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 24000001 | The ASSET service is unavailable. |
+| 24000006 | Insufficient memory. |
+| 24000010 | IPC failed. |
+| 24000011 | Calling the Bundle Manager service failed. |
+| 24000012 | Calling the OS Account service failed. |
+| 24000013 | Calling the Access Token service failed. |
 
 **示例：**
 
@@ -589,7 +675,7 @@ asset.postQuery(handle).then(() => {
 
 postQuerySync(handle: AssetMap): void
 
-查询的后置处理，用于需要用户认证的关键资产。需与[asset.preQuerySync](#ZH-CN_TOPIC_0000002529285329__assetprequerysync12)函数成对出现。使用同步方式返回结果。
+查询的后置处理，用于需要用户认证的关键资产。需与[asset.preQuerySync](#ZH-CN_TOPIC_0000002522081320__assetprequerysync12)函数成对出现。使用同步方式返回结果。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
@@ -597,23 +683,23 @@ postQuerySync(handle: AssetMap): void
 
 **参数：**
 
-参数名类型必填说明handle[AssetMap](#ZH-CN_TOPIC_0000002529285329__assetmap)是待处理的查询句柄，包含[asset.preQuerySync](#ZH-CN_TOPIC_0000002529285329__assetprequerysync12)执行成功返回的挑战值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| handle | AssetMap | 是 | 待处理的查询句柄，包含asset.preQuerySync执行成功返回的挑战值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](../../errors/关键资产存储服务(ASSET)错误码.md)
+以下错误码的详细介绍请参见[关键资产存储服务错误码](关键资产存储服务错误码.md)
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
-
-24000001The ASSET service is unavailable.24000006Insufficient memory.24000010IPC failed.24000011Calling the Bundle Manager service failed.24000012Calling the OS Account service failed.24000013Calling the Access Token service failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 24000001 | The ASSET service is unavailable. |
+| 24000006 | Insufficient memory. |
+| 24000010 | IPC failed. |
+| 24000011 | Calling the Bundle Manager service failed. |
+| 24000012 | Calling the OS Account service failed. |
+| 24000013 | Calling the Access Token service failed. |
 
 **示例：**
 
@@ -636,17 +722,30 @@ querySyncResult(query: AssetMap): Promise<SyncResult>
 
 **参数：**
 
-参数名类型必填说明query[AssetMap](#ZH-CN_TOPIC_0000002529285329__assetmap)是同步结果查询条件，如关键资产所属群组、业务自定义属性信息是否加密。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| query | AssetMap | 是 | 同步结果查询条件，如关键资产所属群组、业务自定义属性信息是否加密。 |
 
 **返回值：**
 
-类型说明Promise<[SyncResult](#ZH-CN_TOPIC_0000002529285329__syncresult20)>Promise对象，返回同步执行结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<SyncResult> | Promise对象，返回同步执行结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](../../errors/关键资产存储服务(ASSET)错误码.md)。
+以下错误码的详细介绍请参见[关键资产存储服务错误码](关键资产存储服务错误码.md)。
 
-错误码ID错误信息24000001The ASSET service is unavailable.24000006Insufficient memory.24000010IPC failed.24000011Calling the Bundle Manager service failed.24000012Calling the OS Account service failed.24000013Calling the Access Token service failed.24000014The file operation failed.24000018Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 24000001 | The ASSET service is unavailable. |
+| 24000006 | Insufficient memory. |
+| 24000010 | IPC failed. |
+| 24000011 | Calling the Bundle Manager service failed. |
+| 24000012 | Calling the OS Account service failed. |
+| 24000013 | Calling the Access Token service failed. |
+| 24000014 | The file operation failed. |
+| 24000018 | Parameter verification failed. |
 
 **示例：**
 
@@ -667,207 +766,71 @@ asset.querySyncResult(query).then((res: asset.SyncResult) => {
 
 **系统能力：** SystemCapability.Security.Asset
 
-名称值说明BOOL0x01 << 28标识关键资产属性对应的数据类型是布尔。NUMBER0x02 << 28标识关键资产属性对应的数据类型是整型。BYTES0x03 << 28标识关键资产属性对应的数据类型是字节数组。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| BOOL | 0x01 << 28 | 标识关键资产属性对应的数据类型是布尔。 |
+| NUMBER | 0x02 << 28 | 标识关键资产属性对应的数据类型是整型。 |
+| BYTES | 0x03 << 28 | 标识关键资产属性对应的数据类型是字节数组。 |
 
 #### Tag
 
-枚举，关键资产支持的属性名称类型，用作[AssetMap](#ZH-CN_TOPIC_0000002529285329__assetmap)的键。
+枚举，关键资产支持的属性名称类型，用作[AssetMap](#ZH-CN_TOPIC_0000002522081320__assetmap)的键。
 
 **系统能力：** SystemCapability.Security.Asset
 
+
 以下为Tag类型的全量枚举值，每个接口可传的Tag枚举及对应的Value取值范围不同，详见[各个场景的开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-store-kit-overview)。
 
-名称值说明SECRETTagType.BYTES | 0x01
-
-关键资产明文。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-ALIASTagType.BYTES | 0x02
-
-关键资产别名，每条关键资产的唯一索引。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-ACCESSIBILITYTagType.NUMBER | 0x03
-
-基于锁屏状态的访问控制。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-REQUIRE_PASSWORD_SETTagType.BOOL | 0x04
-
-是否仅在设置了锁屏密码的情况下，可访问关键资产。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-AUTH_TYPETagType.NUMBER | 0x05
-
-访问关键资产所需的用户认证类型。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-AUTH_VALIDITY_PERIODTagType.NUMBER | 0x06
-
-用户认证的有效期。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-AUTH_CHALLENGETagType.BYTES | 0x07
-
-用户认证的挑战值。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-AUTH_TOKENTagType.BYTES | 0x08
-
-用户认证通过的授权令牌。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-SYNC_TYPETagType.NUMBER | 0x10
-
-关键资产支持的同步类型。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-IS_PERSISTENTTagType.BOOL | 0x11在应用卸载时是否保留关键资产。DATA_LABEL_CRITICAL_1TagType.BYTES | 0x20
-
-关键资产附属信息，内容由业务自定义且**有完整性保护**。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-DATA_LABEL_CRITICAL_2TagType.BYTES | 0x21
-
-关键资产附属信息，内容由业务自定义且**有完整性保护**。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-DATA_LABEL_CRITICAL_3TagType.BYTES | 0x22
-
-关键资产附属信息，内容由业务自定义且**有完整性保护**。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-DATA_LABEL_CRITICAL_4TagType.BYTES | 0x23
-
-关键资产附属信息，内容由业务自定义且**有完整性保护**。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-DATA_LABEL_NORMAL_1TagType.BYTES | 0x30
-
-关键资产附属信息，内容由业务自定义且**无完整性保护**。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-DATA_LABEL_NORMAL_2TagType.BYTES | 0x31
-
-关键资产附属信息，内容由业务自定义且**无完整性保护**。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-DATA_LABEL_NORMAL_3TagType.BYTES | 0x32
-
-关键资产附属信息，内容由业务自定义且**无完整性保护**。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-DATA_LABEL_NORMAL_4TagType.BYTES | 0x33
-
-关键资产附属信息，内容由业务自定义且**无完整性保护**。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-DATA_LABEL_NORMAL_LOCAL_112+TagType.BYTES | 0x34
-
-关键资产附属的本地信息，内容由业务自定义且**无完整性保护**，该项信息不会进行同步。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-DATA_LABEL_NORMAL_LOCAL_212+TagType.BYTES | 0x35
-
-关键资产附属的本地信息，内容由业务自定义且**无完整性保护**，该项信息不会进行同步。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-DATA_LABEL_NORMAL_LOCAL_312+TagType.BYTES | 0x36
-
-关键资产附属的本地信息，内容由业务自定义且**无完整性保护**，该项信息不会进行同步。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-DATA_LABEL_NORMAL_LOCAL_412+TagType.BYTES | 0x37
-
-关键资产附属的本地信息，内容由业务自定义且**无完整性保护**，该项信息不会进行同步。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-RETURN_TYPETagType.NUMBER | 0x40
-
-关键资产查询返回的结果类型。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-RETURN_LIMITTagType.NUMBER | 0x41
-
-关键资产查询返回的结果数量。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-RETURN_OFFSETTagType.NUMBER | 0x42
-
-关键资产查询返回的结果偏移量。
-
-**说明：** 用于分批查询场景，指定从第几个开始返回。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-RETURN_ORDERED_BYTagType.NUMBER | 0x43
-
-关键资产查询返回的结果排序依据，仅支持按照附属信息排序。
-
-**说明：** 默认按照关键资产新增的顺序返回。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-CONFLICT_RESOLUTIONTagType.NUMBER | 0x44
-
-新增关键资产时的冲突（如：别名相同）处理策略。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-UPDATE_TIME12+TagType.BYTES | 0x45
-
-数据的更新时间（时间戳形式）。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-OPERATION_TYPE12+TagType.NUMBER | 0x46附加的操作类型。REQUIRE_ATTR_ENCRYPTED14+TagType.BOOL | 0x47
-
-是否加密业务自定义附属信息。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-GROUP_ID18+TagType.BYTES | 0x48
-
-关键资产所属群组。
-
-WRAP_TYPE18+TagType.NUMBER | 0x49
-
-关键资产支持的加密导入导出类型。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SECRET | TagType.BYTES | 0x01 | 关键资产明文。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| ALIAS | TagType.BYTES | 0x02 | 关键资产别名，每条关键资产的唯一索引。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| ACCESSIBILITY | TagType.NUMBER | 0x03 | 基于锁屏状态的访问控制。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| REQUIRE_PASSWORD_SET | TagType.BOOL | 0x04 | 是否仅在设置了锁屏密码的情况下，可访问关键资产。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| AUTH_TYPE | TagType.NUMBER | 0x05 | 访问关键资产所需的用户认证类型。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| AUTH_VALIDITY_PERIOD | TagType.NUMBER | 0x06 | 用户认证的有效期。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| AUTH_CHALLENGE | TagType.BYTES | 0x07 | 用户认证的挑战值。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| AUTH_TOKEN | TagType.BYTES | 0x08 | 用户认证通过的授权令牌。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| SYNC_TYPE | TagType.NUMBER | 0x10 | 关键资产支持的同步类型。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| IS_PERSISTENT | TagType.BOOL | 0x11 | 在应用卸载时是否保留关键资产。 |
+| DATA_LABEL_CRITICAL_1 | TagType.BYTES | 0x20 | 关键资产附属信息，内容由业务自定义且有完整性保护。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| DATA_LABEL_CRITICAL_2 | TagType.BYTES | 0x21 | 关键资产附属信息，内容由业务自定义且有完整性保护。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| DATA_LABEL_CRITICAL_3 | TagType.BYTES | 0x22 | 关键资产附属信息，内容由业务自定义且有完整性保护。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| DATA_LABEL_CRITICAL_4 | TagType.BYTES | 0x23 | 关键资产附属信息，内容由业务自定义且有完整性保护。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| DATA_LABEL_NORMAL_1 | TagType.BYTES | 0x30 | 关键资产附属信息，内容由业务自定义且无完整性保护。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| DATA_LABEL_NORMAL_2 | TagType.BYTES | 0x31 | 关键资产附属信息，内容由业务自定义且无完整性保护。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| DATA_LABEL_NORMAL_3 | TagType.BYTES | 0x32 | 关键资产附属信息，内容由业务自定义且无完整性保护。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| DATA_LABEL_NORMAL_4 | TagType.BYTES | 0x33 | 关键资产附属信息，内容由业务自定义且无完整性保护。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| DATA_LABEL_NORMAL_LOCAL_112+ | TagType.BYTES | 0x34 | 关键资产附属的本地信息，内容由业务自定义且无完整性保护，该项信息不会进行同步。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| DATA_LABEL_NORMAL_LOCAL_212+ | TagType.BYTES | 0x35 | 关键资产附属的本地信息，内容由业务自定义且无完整性保护，该项信息不会进行同步。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| DATA_LABEL_NORMAL_LOCAL_312+ | TagType.BYTES | 0x36 | 关键资产附属的本地信息，内容由业务自定义且无完整性保护，该项信息不会进行同步。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| DATA_LABEL_NORMAL_LOCAL_412+ | TagType.BYTES | 0x37 | 关键资产附属的本地信息，内容由业务自定义且无完整性保护，该项信息不会进行同步。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| RETURN_TYPE | TagType.NUMBER | 0x40 | 关键资产查询返回的结果类型。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| RETURN_LIMIT | TagType.NUMBER | 0x41 | 关键资产查询返回的结果数量。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| RETURN_OFFSET | TagType.NUMBER | 0x42 | 关键资产查询返回的结果偏移量。 说明： 用于分批查询场景，指定从第几个开始返回。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| RETURN_ORDERED_BY | TagType.NUMBER | 0x43 | 关键资产查询返回的结果排序依据，仅支持按照附属信息排序。 说明： 默认按照关键资产新增的顺序返回。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| CONFLICT_RESOLUTION | TagType.NUMBER | 0x44 | 新增关键资产时的冲突（如：别名相同）处理策略。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| UPDATE_TIME12+ | TagType.BYTES | 0x45 | 数据的更新时间（时间戳形式）。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| OPERATION_TYPE12+ | TagType.NUMBER | 0x46 | 附加的操作类型。 |
+| REQUIRE_ATTR_ENCRYPTED14+ | TagType.BOOL | 0x47 | 是否加密业务自定义附属信息。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| GROUP_ID18+ | TagType.BYTES | 0x48 | 关键资产所属群组。 |
+| WRAP_TYPE18+ | TagType.NUMBER | 0x49 | 关键资产支持的加密导入导出类型。 |
 
 #### Value
 
 type Value = boolean | number | Uint8Array
 
-关键资产属性的内容，用作[AssetMap](#ZH-CN_TOPIC_0000002529285329__assetmap)的值。
+关键资产属性的内容，用作[AssetMap](#ZH-CN_TOPIC_0000002522081320__assetmap)的值。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Asset
 
-类型说明boolean表示值类型为布尔类型，取值范围为true或false。number表示值类型为数字，取值范围为Tag对应的枚举值或数值。Uint8Array表示值类型为字节数组，内容由业务自定义。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 表示值类型为布尔类型，取值范围为true或false。 |
+| number | 表示值类型为数字，取值范围为Tag对应的枚举值或数值。 |
+| Uint8Array | 表示值类型为字节数组，内容由业务自定义。 |
 
 #### AssetMap
 
@@ -879,7 +842,9 @@ type AssetMap = Map<Tag, Value>
 
 **系统能力：** SystemCapability.Security.Asset
 
-类型说明Map<Tag, Value>表示值类型是Map，键值对取值范围分别参考[Tag](#ZH-CN_TOPIC_0000002529285329__tag)和[Value](#ZH-CN_TOPIC_0000002529285329__value)。
+| 类型 | 说明 |
+| --- | --- |
+| Map<Tag, Value> | 表示值类型是Map，键值对取值范围分别参考Tag和Value。 |
 
 #### Accessibility
 
@@ -889,17 +854,11 @@ type AssetMap = Map<Tag, Value>
 
 **系统能力：** SystemCapability.Security.Asset
 
-名称值说明DEVICE_POWERED_ON0开机后可访问。DEVICE_FIRST_UNLOCKED1
-
-首次解锁后可访问
-
-**说明：** 未设置锁屏密码时，等同于开机后可访问。
-
-DEVICE_UNLOCKED2
-
-解锁状态时可访问
-
-**说明：** 未设置锁屏密码时，等同于开机后可访问。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DEVICE_POWERED_ON | 0 | 开机后可访问。 |
+| DEVICE_FIRST_UNLOCKED | 1 | 首次解锁后可访问 说明： 未设置锁屏密码时，等同于开机后可访问。 |
+| DEVICE_UNLOCKED | 2 | 解锁状态时可访问 说明： 未设置锁屏密码时，等同于开机后可访问。 |
 
 #### AuthType
 
@@ -909,7 +868,10 @@ DEVICE_UNLOCKED2
 
 **系统能力：** SystemCapability.Security.Asset
 
-名称值说明NONE0x00访问关键资产前无需用户认证。ANY0xFF任意一种用户认证方式（PIN码、人脸、指纹等）通过后，均可访问关键资产。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NONE | 0x00 | 访问关键资产前无需用户认证。 |
+| ANY | 0xFF | 任意一种用户认证方式（PIN码、人脸、指纹等）通过后，均可访问关键资产。 |
 
 #### SyncType
 
@@ -919,17 +881,12 @@ DEVICE_UNLOCKED2
 
 **系统能力：** SystemCapability.Security.Asset
 
-名称值说明NEVER0不允许同步关键资产。THIS_DEVICE1 << 0
-
-只在本设备进行同步，如仅在本设备还原的备份场景。
-
-**说明：** 本字段是能力预埋，当前不支持。
-
-TRUSTED_DEVICE1 << 1只在可信设备间进行同步，如克隆场景。TRUSTED_ACCOUNT12+1 << 2
-
-只在登录可信账号的设备间进行同步，如云同步场景。
-
-**说明：** 本字段是能力预埋，当前不支持。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NEVER | 0 | 不允许同步关键资产。 |
+| THIS_DEVICE | 1 << 0 | 只在本设备进行同步，如仅在本设备还原的备份场景。 说明： 本字段是能力预埋，当前不支持。 |
+| TRUSTED_DEVICE | 1 << 1 | 只在可信设备间进行同步，如克隆场景。 |
+| TRUSTED_ACCOUNT12+ | 1 << 2 | 只在登录可信账号的设备间进行同步，如云同步场景。 说明： 本字段是能力预埋，当前不支持。 |
 
 #### ReturnType
 
@@ -939,17 +896,10 @@ TRUSTED_DEVICE1 << 1只在可信设备间进行同步，如克隆场景。TRUSTE
 
 **系统能力：** SystemCapability.Security.Asset
 
-名称值说明ALL0
-
-返回关键资产明文及属性。
-
-**说明：** 查询单条关键资产明文时，需设置此类型。
-
-ATTRIBUTES1
-
-返回关键资产属性，不含关键资产明文。
-
-**说明：** 批量查询关键资产属性时，需设置此类型。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ALL | 0 | 返回关键资产明文及属性。 说明： 查询单条关键资产明文时，需设置此类型。 |
+| ATTRIBUTES | 1 | 返回关键资产属性，不含关键资产明文。 说明： 批量查询关键资产属性时，需设置此类型。 |
 
 #### ConflictResolution
 
@@ -959,7 +909,10 @@ ATTRIBUTES1
 
 **系统能力：** SystemCapability.Security.Asset
 
-名称值说明OVERWRITE0覆盖原有的关键资产。THROW_ERROR1抛出异常，由业务进行后续处理。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| OVERWRITE | 0 | 覆盖原有的关键资产。 |
+| THROW_ERROR | 1 | 抛出异常，由业务进行后续处理。 |
 
 #### OperationType12+
 
@@ -967,7 +920,10 @@ ATTRIBUTES1
 
 **系统能力：** SystemCapability.Security.Asset
 
-名称值说明NEED_SYNC0需要进行同步操作。NEED_LOGOUT1需要进行登出操作。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NEED_SYNC | 0 | 需要进行同步操作。 |
+| NEED_LOGOUT | 1 | 需要进行登出操作。 |
 
 #### WrapType18+
 
@@ -975,7 +931,10 @@ ATTRIBUTES1
 
 **系统能力：** SystemCapability.Security.Asset
 
-名称值说明NEVER0不允许加密导入导出关键资产。TRUSTED_ACCOUNT1只在登录可信账号的设备进行加密导入导出关键资产。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NEVER | 0 | 不允许加密导入导出关键资产。 |
+| TRUSTED_ACCOUNT | 1 | 只在登录可信账号的设备进行加密导入导出关键资产。 |
 
 #### SyncResult20+
 
@@ -983,7 +942,11 @@ ATTRIBUTES1
 
 **系统能力：** SystemCapability.Security.Asset
 
-名称类型只读可选说明resultCodenumber是否关键资产同步的结果码。同步成功时结果码为0，同步失败时结果码参考[ErrorCode](#ZH-CN_TOPIC_0000002529285329__errorcode)。totalCountnumber是是触发同步的关键资产总数。failedCountnumber是是关键资产同步失败的数量。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| resultCode | number | 是 | 否 | 关键资产同步的结果码。同步成功时结果码为0，同步失败时结果码参考ErrorCode。 |
+| totalCount | number | 是 | 是 | 触发同步的关键资产总数。 |
+| failedCount | number | 是 | 是 | 关键资产同步失败的数量。 |
 
 #### ErrorCode
 
@@ -991,116 +954,26 @@ ATTRIBUTES1
 
 **系统能力：** SystemCapability.Security.Asset
 
-名称值说明PERMISSION_DENIED201调用方无权限。NOT_SYSTEM_APPLICATION12+202调用方不是一个系统应用。INVALID_ARGUMENT401
-
-参数错误。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-SERVICE_UNAVAILABLE24000001
-
-关键资产服务不可用。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-NOT_FOUND24000002
-
-未找到关键资产。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-DUPLICATED24000003
-
-关键资产已存在。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-ACCESS_DENIED24000004
-
-拒绝访问关键资产。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-STATUS_MISMATCH24000005
-
-锁屏状态不匹配。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-OUT_OF_MEMORY24000006
-
-系统内存不足。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-DATA_CORRUPTED24000007
-
-关键资产损坏。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-DATABASE_ERROR24000008
-
-数据库操作失败。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-CRYPTO_ERROR24000009
-
-算法库操作失败。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-IPC_ERROR24000010
-
-进程通信错误。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-BMS_ERROR24000011
-
-包管理服务异常。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-ACCOUNT_ERROR24000012
-
-账号系统异常。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-ACCESS_TOKEN_ERROR24000013
-
-访问控制服务异常。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-FILE_OPERATION_ERROR24000014
-
-文件操作失败。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-GET_SYSTEM_TIME_ERROR24000015
-
-获取系统时间失败。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-LIMIT_EXCEEDED24000016
-
-缓存数量超限。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-UNSUPPORTED24000017
-
-该子功能不支持。
-
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-PARAM_VERIFICATION_FAILED20+24000018
-
-参数校验失败。
-
-**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PERMISSION_DENIED | 201 | 调用方无权限。 |
+| NOT_SYSTEM_APPLICATION12+ | 202 | 调用方不是一个系统应用。 |
+| INVALID_ARGUMENT | 401 | 参数错误。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| SERVICE_UNAVAILABLE | 24000001 | 关键资产服务不可用。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| NOT_FOUND | 24000002 | 未找到关键资产。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| DUPLICATED | 24000003 | 关键资产已存在。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| ACCESS_DENIED | 24000004 | 访问被拒绝。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| STATUS_MISMATCH | 24000005 | 锁屏状态不匹配。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| OUT_OF_MEMORY | 24000006 | 系统内存不足。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| DATA_CORRUPTED | 24000007 | 关键资产损坏。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| DATABASE_ERROR | 24000008 | 数据库操作失败。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| CRYPTO_ERROR | 24000009 | 算法库操作失败。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| IPC_ERROR | 24000010 | 进程通信错误。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| BMS_ERROR | 24000011 | 包管理服务异常。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| ACCOUNT_ERROR | 24000012 | 账号系统服务异常。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| ACCESS_TOKEN_ERROR | 24000013 | 访问控制服务异常。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| FILE_OPERATION_ERROR | 24000014 | 文件操作失败。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| GET_SYSTEM_TIME_ERROR | 24000015 | 获取系统时间失败。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| LIMIT_EXCEEDED | 24000016 | 缓存数量超限。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| UNSUPPORTED | 24000017 | 该子功能不支持。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| PARAM_VERIFICATION_FAILED20+ | 24000018 | 参数校验失败。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |

@@ -12,10 +12,14 @@ IPC消息选项定义。
 
 **相关模块：**[OHIPCRemoteObject](OHIPCRemoteObject.md)
 
-**所在头文件：**[ipc_cremote_object.h](../../capi/headers/ipc_cremote_object.h.md)
+所在头文件： [ipc_cremote_object.h](ipc_cremote_object.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述OH_IPC_RequestMode mode消息请求模式。uint32_t timeoutRPC预留参数，该参数对IPC无效。void* reserved保留参数，必须为空
+| 名称 | 描述 |
+| --- | --- |
+| OH_IPC_RequestMode mode | 消息请求模式。 |
+| uint32_t timeout | RPC预留参数，该参数对IPC无效。 |
+| void* reserved | 保留参数，必须为空 |

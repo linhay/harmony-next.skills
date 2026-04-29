@@ -1,3 +1,0 @@
-# security
-
-- **[PermissionRequestResult](PermissionRequestResult.md)**

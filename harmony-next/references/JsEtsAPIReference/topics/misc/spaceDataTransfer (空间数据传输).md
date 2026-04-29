@@ -20,75 +20,14 @@ import { fileTransfer } from '@kit.EnterpriseSpaceKit';
 
 **起始版本：**6.0.0(20)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-auditId
-
-string
-
-否
-
-否
-
-表示在发起审批时由数据库自动生成的审批ID，通常为由9位数字组成的字符串。不能为空字符串。
-
-userId
-
-string
-
-否
-
-否
-
-表示用户ID。
-
-userName
-
-string
-
-否
-
-否
-
-表示用户名称。
-
-time
-
-number
-
-否
-
-否
-
-表示整形转换后的审批时间戳，以ms为单位。
-
-comments
-
-string
-
-否
-
-否
-
-表示审批评论。无位数限制。
-
-status
-
-string
-
-否
-
-否
-
-表示文件审批状态。其中，"1"表示等待审批，"2"表示取消审批，"3"表示拒绝审批，"4"表示同意审批。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| auditId | string | 否 | 否 | 表示在发起审批时由数据库自动生成的审批ID，通常为由9位数字组成的字符串。不能为空字符串。 |
+| userId | string | 否 | 否 | 表示用户ID。 |
+| userName | string | 否 | 否 | 表示用户名称。 |
+| time | number | 否 | 否 | 表示整型转换后的审批时间戳，以ms为单位。 |
+| comments | string | 否 | 否 | 表示审批评论。无位数限制。 |
+| status | string | 否 | 否 | 表示文件审批状态。其中，"1"表示等待审批，"2"表示取消审批，"3"表示拒绝审批，"4"表示同意审批。 |
 
 #### setAuditInfo
 
@@ -104,59 +43,26 @@ setAuditInfo(transactionNum: string, info: AuditInfo): number
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-transactionNum
-
-string
-
-是
-
-在传输文件时由数据库自动生成的传输编号，通常为由19位数字组成的字符串。不能为空字符串。
-
-info
-
-[AuditInfo](#section14605182931520)
-
-是
-
-表示审批信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| transactionNum | string | 是 | 在传输文件时由数据库自动生成的传输编号，通常为由19位数字组成的字符串。不能为空字符串。 |
+| info | AuditInfo | 是 | 表示审批信息。 |
 
 **返回值：**
 
-类型
-
-说明
-
-number
-
-返回设置审批信息的结果。结果为0代表设置审批信息成功。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回设置审批信息的结果。结果为0代表设置审批信息成功。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码]([ArkTS API错误码](../../errors/ArkTS API错误码.md).md)。
 
-错误码ID
-
-错误信息
-
-201
-
-the application does not have permission to call this function.
-
-1020300001
-
-System service exception.
-
-1020300002
-
-Parameter error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | the application does not have permission to call this function. |
+| 1020300001 | System service exception. |
+| 1020300002 | Parameter error. |
 
 **示例：**
 
@@ -194,51 +100,25 @@ getAuditInfo(transactionNum: string): AuditInfo
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-transactionNum
-
-string
-
-是
-
-在传输文件时由数据库自动生成的传输编号，通常为由19位数字组成的字符串。不能为空字符串。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| transactionNum | string | 是 | 在传输文件时由数据库自动生成的传输编号，通常为由19位数字组成的字符串。不能为空字符串。 |
 
 **返回值：**
 
-类型
-
-说明
-
-[AuditInfo](#section14605182931520)
-
-表示审批信息。
+| 类型 | 说明 |
+| --- | --- |
+| AuditInfo | 表示审批信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](ArkTS API错误码.md)。
 
-错误码ID
-
-错误信息
-
-201
-
-the application does not have permission to call this function.
-
-1020300001
-
-System service exception.
-
-1020300002
-
-Parameter error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | the application does not have permission to call this function. |
+| 1020300001 | System service exception. |
+| 1020300002 | Parameter error. |
 
 **示例：**
 
@@ -268,256 +148,88 @@ policyPush(policyContext: string): void
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-policyContext
-
-string
-
-是
-
-下发单双通策略的内容。一级节点为**config**，其有5个二级节点，分别为**inEnable**、**incoming_check**、**outEnable**、**outgoing_check**和**checkpoint_config****。**每个节点负责不同的功能，共同构成了完整的策略配置。详细内容参考下表。
-
-- **inEnable**：控制企业空间接收文件的权限。
-- **incoming_check**：定义个人空间向企业空间发送文件时的检测规则。参数格式为字符串，内容会在后续详细解释。
-- **outEnable **：控制企业空间外发文件的权限。
-- **outgoing_check**：定义企业空间向个人空间发送文件时的检测规则。参数格式为字符串，内容会在后续详细解释。
-- **checkpoint_config**：配置检测应用的信息，包括应用的包名、组件名、参数、检测函数编码。参数格式为字符串，内容会在后续详细解释。
-- **approvalpoint_config**：配置审批点的信息，包括应用的包名和组件名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| policyContext | string | 是 | 下发单双通策略的内容。一级节点为config，其有6个二级节点，分别为inEnable、incoming_check、outEnable、outgoing_check、checkpoint_config和approvalpoint_config。每个节点负责不同的功能，共同构成了完整的策略配置。详细内容参考下表。 - inEnable：控制企业空间接收文件的权限。 - incoming_check：定义个人空间向企业空间发送文件时的检测规则。参数格式为字符串，内容会在后续详细解释。 - outEnable：控制企业空间外发文件的权限。 - outgoing_check：定义企业空间向个人空间发送文件时的检测规则。参数格式为字符串，内容会在后续详细解释。 - checkpoint_config：配置检测应用的信息，包括应用的包名、组件名、参数、检测函数编码。参数格式为字符串，内容会在后续详细解释。 - approvalpoint_config：配置审批点的信息，包括应用的包名和组件名。 |
 
 **二级节点详细说明**
 
+-
+
 - **inEnable**：控制企业空间接收文件的权限。其值为“0”时，表示禁止；为“1”时，表示允许。
+
+-
 
 - **outEnable**：控制企业空间外发文件的权限。其值为“0”时，表示禁止；为“1”时，表示允许。
 
+-
+
 - **incoming_check**
 
-**参数名称**
-
-**功能描述**
-
-**示例值**
-
-data_list
-
-定义个人空间向企业空间发送文件时的检测规则。
-
-[ { "check_point": "VirusCheck", "check_point_name": "VirusCheck_in", "check_sequence": "Serial", "order": "0", "allow": "VirusCheck.result == 0", "forbidden": "VirusCheck.result == 1" } ]
+| 参数名称 | 功能描述 | 示例值 |
+| --- | --- | --- |
+| data_list | 定义个人空间向企业空间发送文件时的检测规则。 | [ { "allow": "VirusCheck.result == 0", "approval": "", "check_point": "VirusCheck", "check_point_name": "VirusCheck_in", "is_enable": "true", "forbidden": "VirusCheck.result == 1", "order": "0" } ] |
 
 - **outgoing_check**
 
-**参数名称**
-
-**功能描述**
-
-**示例值**
-
-data_list
-
-定义企业空间向个人空间发送文件时的检测规则。
-
-[ { "check_point": "SecurityCheck", "check_point_name": "SecurityCheck_out", "check_sequence": "Serial", "order": "0", "allow": "SecurityCheck.Result == 3 or SecurityCheck.Result == 4 or SecurityCheck.Result == 6 or SecurityCheck.Result == 7", "approval": "SecurityCheck.Result == 10", "forbidden": "SecurityCheck.Result == 0 or SecurityCheck.Result == 1 or SecurityCheck.Result == 12 or SecurityCheck.Result == 2 or SecurityCheck.Result == 5 or SecurityCheck.Result == 8 or SecurityCheck.Result == 9 or SecurityCheck.Result == 11" } ]
+| 参数名称 | 功能描述 | 示例值 |
+| --- | --- | --- |
+| data_list | 定义企业空间向个人空间发送文件时的检测规则。 | [ { "allow": "SecurityCheck.Result == 3 or SecurityCheck.Result == 4 or SecurityCheck.Result == 6 or SecurityCheck.Result == 7", "approval": "SecurityCheck.Result == 10", "check_point": "SecurityCheck", "check_point_name": "SecurityCheck_out", "is_enable": "true", "forbidden": "SecurityCheck.Result == 0 or SecurityCheck.Result == 1 or SecurityCheck.Result == 12 or SecurityCheck.Result == 2 or SecurityCheck.Result == 5 or SecurityCheck.Result == 8 or SecurityCheck.Result == 9 or SecurityCheck.Result == 11", "order": "0" } ] |
 
 - **checkpoint_config**
 
-**参数名称**
-
-**功能描述**
-
-**示例值**
-
-data_list
-
-配置检测应用的信息，包括应用的包名、组件名、参数、检测函数编码。
-
-[ { "check_point": "VirusCheck", "check_point_name": "VirusCheck_in", "check_sequence": "Serial", "order": "0", "allow": "VirusCheck.result == 0", "forbidden": "VirusCheck.result == 1" } ]
+| 参数名称 | 功能描述 | 示例值 |
+| --- | --- | --- |
+| data_list | 配置检测应用的信息，包括应用的包名、组件名、参数、检测函数编码。 | [ { "check_point": "VirusCheck", "check_point_name": "VirusCheck_in", "check_sequence": "Serial", "order": "0", "allow": "VirusCheck.result == 0", "forbidden": "VirusCheck.result == 1" } ] |
 
 - **approvalpoint_config**
 
-**参数名称**
-
-**功能描述**
-
-**示例值**
-
-data_list
-
-定义个人空间向企业空间发送文件时的检测规则。
-
-[ { "bundle_name": "com.example.enterprisespacekit_samplecode_clientdemo_arkts", "ability_name": "TestApprovalAbility" } ]
+| 参数名称 | 功能描述 | 示例值 |
+| --- | --- | --- |
+| data_list | 定义个人空间向企业空间发送文件时的检测规则。 | [ { "bundle_name": "com.example.enterprisespacekit_samplecode_clientdemo_arkts", "ability_name": "TestApprovalAbility" } ] |
 
 **三级节点详细说明**
 
 - **incoming_check**下的**data_list**
 
-**参数名称**
-
-**功能描述**
-
-**示例值**
-
-check_point
-
-检测点类型。
-
-"VirusCheck"
-
-check_point_name
-
-检测点名称。
-
-"VirusCheck_in"
-
-check_sequence
-
-检测顺序类型。
-
-"Serial"
-
-order
-
-检测点顺序号。
-
-"0"
-
-allow
-
-放通动作配置，通过表达式配置。
-
-"VirusCheck.result == 0"
-
-forbidden
-
-拦截动作配置，通过表达式配置。
-
-"VirusCheck.result == 1"
+| 参数名称 | 功能描述 | 示例值 |
+| --- | --- | --- |
+| allow | 放通动作配置，通过表达式配置。 | "VirusCheck.result == 0" |
+| approval | 审批动作配置，个人空间向企业空间发送文件时的审批不生效，不需要配置。 | "VirusCheck.Result == 10" |
+| check_point | 检测点类型。 SecurityCheck：安全检查 VirusCheck：病毒检查 | "SecurityCheck" |
+| check_point_name | 检测点名称。 | "VirusCheck_in" |
+| is_enable | 配置个人空间向企业空间发送文件时检测的规则是否生效。可选参数。 true：生效 false：不生效 默认值：true | "true" |
+| forbidden | 拦截动作配置信息，通过“VirusCheck.Result == xx”样式表达拦截动作，当用“or”连接多个表达式时，多个拦截动作组合配置。“xx”具体取值由业务决定。 | "VirusCheck.result == 1 or VirusCheck.result == 2" |
+| order | 检测点顺序号，编号从0开始。空间互传服务会根据编号顺序依次处理检测点。 | "0" |
 
 - **outgoing_check**下的**data_list**
 
-**参数名称**
-
-**功能描述**
-
-**示例值**
-
-check_point
-
-检测点类型。
-
-"SecurityCheck"
-
-check_point_name
-
-检测点名称。
-
-"SecurityCheck_out"
-
-check_sequence
-
-检测顺序类型。
-
-"Serial"
-
-order
-
-检测点顺序号。
-
-"0"
-
-allow
-
-放通动作配置，通过表达式配置。
-
-"SecurityCheck.Result == 3 or SecurityCheck.Result == 4 or SecurityCheck.Result == 6 or SecurityCheck.Result == 7"
-
-approval
-
-审批动作配置，通过表达式配置。
-
-"SecurityCheck.Result == 10"
-
-forbidden
-
-拦截动作配置，通过表达式配置。
-
-"SecurityCheck.Result == 0 or SecurityCheck.Result == 1 or SecurityCheck.Result == 12 or SecurityCheck.Result == 2 or SecurityCheck.Result == 5 or SecurityCheck.Result == 8 or SecurityCheck.Result == 9 or SecurityCheck.Result == 11"
+| 参数名称 | 功能描述 | 示例值 |
+| --- | --- | --- |
+| allow | 放通动作配置，通过表达式配置。 | "SecurityCheck.Result == 3 or SecurityCheck.Result == 4 or SecurityCheck.Result == 6 or SecurityCheck.Result == 7" |
+| approval | 审批动作配置，通过表达式配置。 | "SecurityCheck.Result == 10" |
+| check_point | 检测点类型。 SecurityCheck：安全检查 VirusCheck：病毒检查 | "SecurityCheck" |
+| check_point_name | 检测点名称。 | "SecurityCheck_out" |
+| is_enable | 配置个人空间向企业空间发送文件时检测的规则是否生效。可选参数。 true：生效 false：不生效 默认值：true | "true" |
+| forbidden | 拦截动作配置信息，通过“SecurityCheck.Result == xx”样式表达拦截动作，当用“or”连接多个表达式时，多个拦截动作组合配置。“xx”具体取值由业务决定。 | "SecurityCheck.Result == 0 or SecurityCheck.Result == 1 or SecurityCheck.Result == 12 or SecurityCheck.Result == 2 or SecurityCheck.Result == 5 or SecurityCheck.Result == 8 or SecurityCheck.Result == 9 or SecurityCheck.Result == 11" |
+| order | 检测点顺序号，编号从0开始。空间互传服务会根据编号顺序依次处理检测点。 | "0" |
 
 - **checkpoint_config**下的**data_list**
 
-**参数名称**
-
-**功能描述**
-
-**示例值**
-
-check_point_name
-
-检测点名称。
-
-"SecurityCheck" 或 "VirusCheck"
-
-bundle_name
-
-包名。
-
-"com.example.enterprisespacekit_samplecode_clientdemo_arkts"
-
-ability_name
-
-组件名。
-
-"TestScanAbility"
-
-func_code
-
-检测函数编码。
-
-"2" 或 "3"
-
-send_param
-
-检测发起的参数配置。暂无实际使用场景，为预留字段。
-
-""
-
-recv_msg
-
-检测响应的参数配置。暂无实际使用场景，为预留字段。
-
-""
-
-type
-
-检测点类型，有病毒检测、资产检测和其他类型，分别为“1”、“2”和“3”。当前只支持病毒检测和资产检测类型。
-
-“1”
+| 参数名称 | 功能描述 | 示例值 |
+| --- | --- | --- |
+| check_point_name | 检测点名称。 | "SecurityCheck" 或 "VirusCheck" |
+| bundle_name | 包名。 | "com.example.enterprisespacekit_samplecode_clientdemo_arkts" |
+| ability_name | 组件名。 | "TestScanAbility" |
+| func_code | 检测函数编码。 | "2" 或 "3" |
+| type | 检测点类型。 1：病毒检测 2：资产检测，检测资产能否外发 3：其他类型 当前仅支持病毒检测和资产检测类型。 | “1” |
 
 - **approvalpoint_config**下的**data_list**
 
-**参数名称**
-
-**功能描述**
-
-**示例值**
-
-bundle_name
-
-包名。
-
-"com.example.enterprisespacekit_samplecode_clientdemo_arkts"
-
-ability_name
-
-组件名。
-
-"TestApprovalAbility"
+| 参数名称 | 功能描述 | 示例值 |
+| --- | --- | --- |
+| bundle_name | 包名。 | "com.example.enterprisespacekit_samplecode_clientdemo_arkts" |
+| ability_name | 组件名。 | "TestApprovalAbility" |
 
 policyContext内容可参考如下：
 
@@ -532,8 +244,7 @@ policyContext内容可参考如下：
           "approval": "",
           "check_point": "VirusCheck",
           "check_point_name": "VirusCheck_in",
-          "check_sequence": "Serial",
-          "encryption": "",
+          "is_enable": "true",
           "forbidden": "VirusCheck.result == 1",
           "order": "0"
         }
@@ -547,8 +258,7 @@ policyContext内容可参考如下：
           "approval": "SecurityCheck.Result == 10",
           "check_point": "SecurityCheck",
           "check_point_name": "SecurityCheck_out",
-          "check_sequence": "Serial",
-          "encryption": "",
+          "is_enable": "true",
           "forbidden": "SecurityCheck.Result == 0 or SecurityCheck.Result == 1 or SecurityCheck.Result == 12 or SecurityCheck.Result == 2 or SecurityCheck.Result == 5 or SecurityCheck.Result == 8 or SecurityCheck.Result == 9 or SecurityCheck.Result == 11",
           "order": "0"
         }
@@ -561,8 +271,6 @@ policyContext内容可参考如下：
           "bundle_name": "com.example.enterprisespacekit_samplecode_clientdemo_arkts",
           "ability_name": "TestScanAbility",
           "func_code": "2",
-          "send_param": "",
-          "recv_msg": "",
           "type": "2"
         },
         {
@@ -570,8 +278,6 @@ policyContext内容可参考如下：
           "bundle_name": "com.example.enterprisespacekit_samplecode_clientdemo_arkts",
           "ability_name": "TestScanAbility",
           "func_code": "3",
-          "send_param": "",
-          "recv_msg": "",
           "type": "1"
         }
       ]
@@ -584,29 +290,17 @@ policyContext内容可参考如下：
         }
       ]
     }
-  }
-}
 ```
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](ArkTS API错误码.md)。
 
-错误码ID
-
-错误信息
-
-201
-
-the application does not have permission to call this function.
-
-1020300001
-
-System service exception.
-
-1020300002
-
-Parameter error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | the application does not have permission to call this function. |
+| 1020300001 | System service exception. |
+| 1020300002 | Parameter error. |
 
 **示例：**
 
@@ -614,7 +308,7 @@ Parameter error.
 import { fileTransfer } from '@kit.EnterpriseSpaceKit';
 
 const policyContext: string =
-  '{\"config\":{\"inEnable\":\"1\",\"incoming_check\":{\"data_list\":[{\"allow\":\"VirusCheck.result == 0\",\"approval\":\"\",\"check_point\":\"VirusCheck\",\"check_point_name\":\"VirusCheck_in\",\"check_sequence\":\"Serial\",\"encryption\":\"\",\"forbidden\":\"VirusCheck.result == 1\",\"order\":\"0\"}]},\"outEnable\":\"0\",\"outgoing_check\":{\"data_list\":[{\"allow\":\"SecurityCheck.Result == 3 or SecurityCheck.Result == 4 or SecurityCheck.Result == 6 or SecurityCheck.Result == 7\",\"approval\":\"SecurityCheck.Result == 10\",\"check_point\":\"SecurityCheck\",\"check_point_name\":\"SecurityCheck_out\",\"check_sequence\":\"Serial\",\"encryption\":\"\",\"forbidden\":\"SecurityCheck.Result == 0 or SecurityCheck.Result == 1 or SecurityCheck.Result == 12 or SecurityCheck.Result == 2 or SecurityCheck.Result == 5 or SecurityCheck.Result == 8 or SecurityCheck.Result == 9 or SecurityCheck.Result == 11\",\"order\":\"0\"}]},\"checkpoint_config\":{\"data_list\":[{\"check_point_name\":\"SecurityCheck\",\"bundle_name\":\"com.example.enterprisespacekit_samplecode_clientdemo_arkts\",\"ability_name\":\"TestScanAbility\",\"func_code\":\"2\",\"send_param\":\"\",\"recv_msg\":\"\",\"type\":\"2\"},{\"check_point_name\":\"VirusCheck\",\"bundle_name\":\"com.example.enterprisespacekit_samplecode_clientdemo_arkts\",\"ability_name\":\"TestScanAbility\",\"func_code\":\"3\",\"send_param\":\"\",\"recv_msg\":\"\",\"type\":\"1\"}]},\"approvalpoint_config\":{\"data_list\":[{\"bundle_name\":\"com.example.enterprisespacekit_samplecode_clientdemo_arkts\",\"ability_name\":\"TestApprovalAbility\"}]}}}';
+  '{\"config\":{\"inEnable\":\"1\",\"incoming_check\":{\"data_list\":[{\"allow\":\"VirusCheck.result == 0\",\"approval\":\"\",\"check_point\":\"VirusCheck\",\"check_point_name\":\"VirusCheck_in\",\"check_sequence\":\"Serial\",\"forbidden\":\"VirusCheck.result == 1\",\"order\":\"0\"}]},\"outEnable\":\"0\",\"outgoing_check\":{\"data_list\":[{\"allow\":\"SecurityCheck.Result == 3 or SecurityCheck.Result == 4 or SecurityCheck.Result == 6 or SecurityCheck.Result == 7\",\"approval\":\"SecurityCheck.Result == 10\",\"check_point\":\"SecurityCheck\",\"check_point_name\":\"SecurityCheck_out\",\"check_sequence\":\"Serial\",\"forbidden\":\"SecurityCheck.Result == 0 or SecurityCheck.Result == 1 or SecurityCheck.Result == 12 or SecurityCheck.Result == 2 or SecurityCheck.Result == 5 or SecurityCheck.Result == 8 or SecurityCheck.Result == 9 or SecurityCheck.Result == 11\",\"order\":\"0\"}]},\"checkpoint_config\":{\"data_list\":[{\"check_point_name\":\"SecurityCheck\",\"bundle_name\":\"com.example.enterprisespacekit_samplecode_clientdemo_arkts\",\"ability_name\":\"TestScanAbility\",\"func_code\":\"2\",\"type\":\"2\"},{\"check_point_name\":\"VirusCheck\",\"bundle_name\":\"com.example.enterprisespacekit_samplecode_clientdemo_arkts\",\"ability_name\":\"TestScanAbility\",\"func_code\":\"3\",\"type\":\"1\"}]},\"approvalpoint_config\":{\"data_list\":[{\"bundle_name\":\"com.example.enterprisespacekit_samplecode_clientdemo_arkts\",\"ability_name\":\"TestApprovalAbility\"}]}}}';
 try {
   fileTransfer.policyPush(policyContext);
   console.info(`Succeeded in pushing policy`);

@@ -12,4 +12,4 @@ typedef struct Location_RequestConfig Location_RequestConfig
 
 **相关模块：**[Location](Location.md)
 
-**所在头文件：**[oh_location_type.h](../../capi/headers/oh_location_type.h.md)
+**所在头文件：**[oh_location_type.h](../../topics/misc/[oh_location_type.h](oh_location_type.h.md).md)

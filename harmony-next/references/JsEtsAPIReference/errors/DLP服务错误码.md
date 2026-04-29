@@ -24,11 +24,11 @@ Invalid parameter value.
 
 1.
 
-aeskey或iv非法。
+aesKey或iv非法。
 
 1.
 
-授权到期时间低于系统时间。
+系统时间晚于授权到期时间。
 
 1.
 
@@ -36,7 +36,7 @@ Fd小于0。
 
 1.
 
-tokenid等于0。
+tokenId等于0。
 
 1.
 
@@ -54,8 +54,93 @@ userId小于0。
 
 请传入正确的参数。
 
-#### 19100006 非DLP沙箱应用
+#### 19100002 加解密出错
+**错误信息**
 
+Credential service busy due to too many tasks or duplicate tasks.
+
+**错误描述**
+
+启动加解密出错。
+
+**可能原因**
+
+1.
+
+当前运行的加解密任务数大于100。
+
+1.
+
+加解密任务重复。
+
+**处理步骤**
+
+请等待一段时间后重试。
+
+#### 19100003 加解密超时
+**错误信息**
+
+Credential task time out.
+
+**错误描述**
+
+加解密超时。
+
+**可能原因**
+
+DLP文件加解密时间超过10秒。
+
+**处理步骤**
+
+请等待一段时间后重试。
+
+#### 19100004 凭据服务错误
+**错误信息**
+
+Credential service error.
+
+**错误描述**
+
+凭据服务错误。
+
+**可能原因**
+
+1.
+
+DLP凭据服务不存在。
+
+1.
+
+DLP凭据服务异常。
+
+**处理步骤**
+
+请等待一段时间后重试，或者重启设备。
+
+#### 19100005 凭据认证服务器错误
+**错误信息**
+
+Credential authentication server error.
+
+**错误描述**
+
+凭据认证服务器错误。
+
+**可能原因**
+
+1.
+
+凭据认证服务器无法连接。
+
+1.
+
+凭据认证服务器不存在。
+
+**处理步骤**
+
+请检查凭据认证服务器后重试。
+
+#### 19100006 非DLP沙箱应用
 **错误信息**
 
 No permission to call this API, which is available only for DLP sandbox applications.
@@ -84,14 +169,63 @@ No permission to call this API, which is available only for non-DLP sandbox appl
 
 **可能原因**
 
-调用方不可以是DLP沙箱应用。
+调用方是DLP沙箱应用。
 
 **处理步骤**
 
 请确认调用场景后重试。
 
-#### 19100011 系统服务工作异常
+#### 19100008 非DLP文件
+**错误信息**
 
+The file is not a DLP file.
+
+**错误描述**
+
+文件不是DLP文件。
+
+**可能原因**
+
+操作非DLP文件格式文件。
+
+**处理步骤**
+
+请使用经过DLP加密的DLP文件。
+
+#### 19100009 操作DLP文件失败
+**错误信息**
+
+Failed to operate the DLP file.
+
+**错误描述**
+
+操作DLP文件失败。
+
+**可能原因**
+
+1.
+
+当前用户不在授权范围内。
+
+1.
+
+安装沙箱应用失败。
+
+1.
+
+关联link文件失败。
+
+1.
+
+打开DLP文件数大于1000。
+
+**处理步骤**
+
+step1：请确认访问权限。
+
+step2：请等待一段时间或重启后重试。
+
+#### 19100011 系统服务工作异常
 **错误信息**
 
 The system ability works abnormally.
@@ -144,8 +278,41 @@ System memory is insufficient.
 
 系统内存不足，请稍后重试，或者重启设备。
 
-#### 19100016 want参数中没有uri
+#### 19100013 用户无权限
+**错误信息**
 
+The user does not have the permission.
+
+**错误描述**
+
+用户无权限。
+
+**可能原因**
+
+当前登录账号无此文件的权限。
+
+**处理步骤**
+
+请检查权限。
+
+#### 19100014 账号未登录
+**错误信息**
+
+Account not logged in.
+
+**错误描述**
+
+账号未登录。
+
+**可能原因**
+
+对应类型账号未登录。
+
+**处理步骤**
+
+请登录账号。
+
+#### 19100016 want参数中没有uri
 **错误信息**
 
 The uri field is missing in the want parameter.
@@ -192,11 +359,11 @@ The application is not authorized.
 
 **可能原因**
 
-应用不在授信应用白名单中。
+应用不在授信应用名单中。
 
 **处理步骤**
 
-请设置授信应用白名单。
+接入授信应用名单。请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)方式获取技术支持。
 
 #### 19100021 设置企业应用策略失败
 
@@ -308,7 +475,7 @@ A system error has occurred.
 
 1.
 
-IPC数据读写识别。
+IPC数据读写失败。
 
 1.
 

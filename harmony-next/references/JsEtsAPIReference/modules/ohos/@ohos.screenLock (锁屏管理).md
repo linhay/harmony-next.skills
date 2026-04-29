@@ -16,13 +16,16 @@ isScreenLocked(callback: AsyncCallback<boolean>): void
 
 判断屏幕是否锁屏。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。替代接口仅面向系统应用开放。
+
+从API version 7开始支持，除Lite Wearable外，从API version 9开始废弃。替代接口仅面向系统应用开放。
 
 **系统能力：** SystemCapability.MiscServices.ScreenLock
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<boolean>是回调函数。返回true表示屏幕已锁屏；返回false表示屏幕未锁屏。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。返回true表示屏幕已锁屏；返回false表示屏幕未锁屏。 |
 
 **示例：**
 
@@ -44,13 +47,16 @@ isScreenLocked(): Promise<boolean>
 
 判断屏幕是否锁屏。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。
+
+从API version 7开始支持，除Lite Wearable外，从API version 9开始废弃。
 
 **系统能力：** SystemCapability.MiscServices.ScreenLock
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示屏幕已锁屏；返回false表示屏幕未锁屏。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示屏幕已锁屏；返回false表示屏幕未锁屏。 |
 
 **示例：**
 
@@ -70,13 +76,16 @@ isSecureMode(callback: AsyncCallback<boolean>): void
 
 判断当前设备的屏幕锁定是否安全（安全屏幕锁定意味着解锁屏幕需要密码、图案或其他用户身份识别）。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。
+
+从API version 7开始支持，除Lite Wearable外，从API version 9开始废弃。
 
 **系统能力：** SystemCapability.MiscServices.ScreenLock
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<boolean>是回调函数。返回true表示当前设备的屏幕锁定安全；返回false表示当前设备的屏幕锁定不安全。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。返回true表示当前设备的屏幕锁定安全；返回false表示当前设备的屏幕锁定不安全。 |
 
 **示例：**
 
@@ -98,13 +107,16 @@ isSecureMode(): Promise<boolean>
 
 判断当前设备的屏幕锁定是否安全（安全屏幕锁定意味着解锁屏幕需要密码、图案或其他用户身份识别）。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。
+
+从API version 7开始支持，除Lite Wearable外，从API version 9开始废弃。
 
 **系统能力：** SystemCapability.MiscServices.ScreenLock
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示当前设备的屏幕锁定安全；返回false表示当前设备的屏幕锁定不安全。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示当前设备的屏幕锁定安全；返回false表示当前设备的屏幕锁定不安全。 |
 
 **示例：**
 
@@ -124,13 +136,16 @@ unlockScreen(callback: AsyncCallback<void>): void
 
 解锁屏幕。使用callback异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。
+
+从API version 7开始支持，除Lite Wearable外，从API version 9开始废弃。
 
 **系统能力：** SystemCapability.MiscServices.ScreenLock
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。解锁屏幕成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。解锁屏幕成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -152,13 +167,16 @@ unlockScreen(): Promise<void>
 
 解锁屏幕。使用Promise异步回调。
 
-从API version 7开始支持，从API version 9开始废弃。
+
+从API version 7开始支持，除Lite Wearable外，从API version 9开始废弃。
 
 **系统能力：** SystemCapability.MiscServices.ScreenLock
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 

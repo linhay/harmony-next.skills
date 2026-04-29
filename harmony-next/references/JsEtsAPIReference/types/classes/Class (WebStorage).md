@@ -12,7 +12,7 @@
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 -
 
@@ -38,13 +38,18 @@ static deleteOrigin(origin: string): void
 
 **参数：**
 
-参数名类型必填说明originstring是指定源的字符串索引，来自于[getOrigins](#ZH-CN_TOPIC_0000002497605198__getorigins)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| origin | string | 是 | 指定源的字符串索引，来自于getOrigins。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)、[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码]([Webview错误码](../../errors/Webview错误码.md).md)、[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息17100011Invalid origin.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100011 | Invalid origin. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -71,8 +76,6 @@ struct WebComponent {
 
         })
       Web({ src: $rawfile('index.html'), controller: this.controller })
-    }
-  }
 }
 ```
 
@@ -151,7 +154,6 @@ struct WebComponent {
                } else {
                    console.info("没有更多记录了")
                }
-           }
        };
 
        // 错误处理
@@ -177,13 +179,18 @@ static getOrigins(callback: AsyncCallback<Array<WebStorageOrigin>>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<Array<[WebStorageOrigin](../interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529285193__webstorageorigin)>>是以数组方式返回源的信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<WebStorageOrigin>> | 是 | 以数组方式返回源的信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)、[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码](Webview错误码.md)、[通用错误码](通用错误码.md)。
 
-错误码ID错误信息17100012Invalid web storage origin.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100012 | Invalid web storage origin. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -220,11 +227,9 @@ struct WebComponent {
         })
       Web({ src: $rawfile('index.html'), controller: this.controller })
     }
-  }
-}
 ```
 
-加载的html文件，请参考[deleteOrigin](#ZH-CN_TOPIC_0000002497605198__deleteorigin)接口下的html文件。
+加载的html文件，请参考[deleteOrigin](#ZH-CN_TOPIC_0000002553201123__deleteorigin)接口下的html文件。
 
 #### getOrigins
 
@@ -236,13 +241,18 @@ static getOrigins(): Promise<Array<WebStorageOrigin>>
 
 **返回值：**
 
-类型说明Promise<Array<[WebStorageOrigin](../interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529285193__webstorageorigin)>>Promise实例，用于获取当前所有源的信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<WebStorageOrigin>> | Promise实例，用于获取当前所有源的信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)、[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码](Webview错误码.md)、[通用错误码](通用错误码.md)。
 
-错误码ID错误信息17100012Invalid web storage origin.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100012 | Invalid web storage origin. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -279,11 +289,9 @@ struct WebComponent {
         })
       Web({ src: $rawfile('index.html'), controller: this.controller })
     }
-  }
-}
 ```
 
-加载的html文件，请参考[deleteOrigin](#ZH-CN_TOPIC_0000002497605198__deleteorigin)接口下的html文件。
+加载的html文件，请参考[deleteOrigin](#ZH-CN_TOPIC_0000002553201123__deleteorigin)接口下的html文件。
 
 #### getOriginQuota
 
@@ -295,17 +303,19 @@ static getOriginQuota(origin: string, callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明originstring是指定源的字符串索引。callbackAsyncCallback<number>是
-
-指定源的存储配额。
-
-number是long型整数，范围为(-2,147,483,648)~(2,147,483,647)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| origin | string | 是 | 指定源的字符串索引。 |
+| callback | AsyncCallback<number> | 是 | 指定源的存储配额。 number是long型整数，范围为(-2,147,483,648)~(2,147,483,647)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)、[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码](Webview错误码.md)、[通用错误码](通用错误码.md)。
 
-错误码ID错误信息17100011Invalid origin.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100011 | Invalid origin. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -339,11 +349,9 @@ struct WebComponent {
         })
       Web({ src: $rawfile('index.html'), controller: this.controller })
     }
-  }
-}
 ```
 
-加载的html文件，请参考[deleteOrigin](#ZH-CN_TOPIC_0000002497605198__deleteorigin)接口下的html文件。
+加载的html文件，请参考[deleteOrigin](#ZH-CN_TOPIC_0000002553201123__deleteorigin)接口下的html文件。
 
 #### getOriginQuota
 
@@ -355,17 +363,24 @@ static getOriginQuota(origin: string): Promise<number>
 
 **参数：**
 
-参数名类型必填说明originstring是指定源的字符串索引
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| origin | string | 是 | 指定源的字符串索引 |
 
 **返回值：**
 
-类型说明Promise<number>Promise实例，用于获取指定源的存储配额。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise实例，用于获取指定源的存储配额。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)、[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码](Webview错误码.md)、[通用错误码](通用错误码.md)。
 
-错误码ID错误信息17100011Invalid origin.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100011 | Invalid origin. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -399,11 +414,9 @@ struct WebComponent {
         })
       Web({ src: $rawfile('index.html'), controller: this.controller })
     }
-  }
-}
 ```
 
-加载的html文件，请参考[deleteOrigin](#ZH-CN_TOPIC_0000002497605198__deleteorigin)接口下的html文件。
+加载的html文件，请参考[deleteOrigin](#ZH-CN_TOPIC_0000002553201123__deleteorigin)接口下的html文件。
 
 #### getOriginUsage
 
@@ -415,13 +428,19 @@ static getOriginUsage(origin: string, callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明originstring是指定源的字符串索引callbackAsyncCallback<number>是指定源的存储量。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| origin | string | 是 | 指定源的字符串索引 |
+| callback | AsyncCallback<number> | 是 | 指定源的存储量。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)、[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码](Webview错误码.md)、[通用错误码](通用错误码.md)。
 
-错误码ID错误信息17100011Invalid origin.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100011 | Invalid origin. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -455,11 +474,9 @@ struct WebComponent {
         })
       Web({ src: $rawfile('index.html'), controller: this.controller })
     }
-  }
-}
 ```
 
-加载的html文件，请参考[deleteOrigin](#ZH-CN_TOPIC_0000002497605198__deleteorigin)接口下的html文件。
+加载的html文件，请参考[deleteOrigin](#ZH-CN_TOPIC_0000002553201123__deleteorigin)接口下的html文件。
 
 #### getOriginUsage
 
@@ -471,17 +488,24 @@ static getOriginUsage(origin: string): Promise<number>
 
 **参数：**
 
-参数名类型必填说明originstring是指定源的字符串索引
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| origin | string | 是 | 指定源的字符串索引 |
 
 **返回值：**
 
-类型说明Promise<number>Promise实例，用于获取指定源的存储量。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise实例，用于获取指定源的存储量。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)、[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码](Webview错误码.md)、[通用错误码](通用错误码.md)。
 
-错误码ID错误信息17100011Invalid origin.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100011 | Invalid origin. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -513,11 +537,9 @@ struct WebComponent {
         })
       Web({ src: $rawfile('index.html'), controller: this.controller })
     }
-  }
-}
 ```
 
-加载的html文件，请参考[deleteOrigin](#ZH-CN_TOPIC_0000002497605198__deleteorigin)接口下的html文件。
+加载的html文件，请参考[deleteOrigin](#ZH-CN_TOPIC_0000002553201123__deleteorigin)接口下的html文件。
 
 #### deleteAllData
 
@@ -529,13 +551,9 @@ static deleteAllData(incognito?: boolean): void
 
 **参数：**
 
-参数名类型必填说明incognito11+boolean否
-
-true表示删除所有隐私模式下内存中的web数据，false表示删除正常非隐私模式下Web的SQL数据库当前使用的所有存储。
-
-默认值：false。
-
-传入undefined或null时为false。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| incognito11+ | boolean | 否 | true表示删除所有隐私模式下内存中的web数据，false表示删除正常非隐私模式下Web的SQL数据库当前使用的所有存储。 默认值：false。 传入undefined或null时为false。 |
 
 **示例：**
 
@@ -561,8 +579,6 @@ struct WebComponent {
         })
       Web({ src: $rawfile('index.html'), controller: this.controller })
     }
-  }
-}
 ```
 
-加载的html文件，请参考[deleteOrigin](#ZH-CN_TOPIC_0000002497605198__deleteorigin)接口下加载的html文件。
+加载的html文件，请参考[deleteOrigin](#ZH-CN_TOPIC_0000002553201123__deleteorigin)接口下加载的html文件。

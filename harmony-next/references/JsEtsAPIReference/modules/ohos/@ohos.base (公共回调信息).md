@@ -12,8 +12,16 @@
 
 #### 导入模块
 
+ArkTS示例：
+
 ```ets
 import { AsyncCallback, BusinessError, Callback, ErrorCallback } from '@kit.BasicServicesKit';
+```
+
+JS示例：
+
+```ets
+import base from '@ohos.base';
 ```
 
 #### Callback
@@ -32,7 +40,9 @@ Callback<T> {
 
 **系统能力：** SystemCapability.Base
 
-名称类型必填说明dataT是接口调用时的公共回调信息。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | T | 是 | 接口调用时的公共回调信息。 |
 
 #### ErrorCallback
 
@@ -44,7 +54,7 @@ ErrorCallback<T extends Error = BusinessError> {
 
 通用回调函数，携带错误参数。
 
-回调返回的信息为[BusinessError](#ZH-CN_TOPIC_0000002497445536__businesserror)类型的信息。
+回调返回的信息为[BusinessError](#ZH-CN_TOPIC_0000002553201565__businesserror)类型的信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -52,7 +62,9 @@ ErrorCallback<T extends Error = BusinessError> {
 
 **参数：**
 
-名称类型必填说明errT是接口调用失败的公共错误信息。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| err | T | 是 | 接口调用失败的公共错误信息。 |
 
 #### AsyncCallback
 
@@ -64,7 +76,7 @@ AsyncCallback<T, E = void> {
 
 通用回调函数，携带错误参数和异步返回值。
 
-错误参数为[BusinessError](#ZH-CN_TOPIC_0000002497445536__businesserror)类型的信息。
+错误参数为[BusinessError](#ZH-CN_TOPIC_0000002553201565__businesserror)类型的信息。
 
 异步返回值的类型由开发者自定义，回调将返回对应类型的信息。
 
@@ -72,17 +84,14 @@ AsyncCallback<T, E = void> {
 
 **系统能力：** SystemCapability.Base
 
-名称类型必填说明err[BusinessError](#ZH-CN_TOPIC_0000002497445536__businesserror)是接口调用失败的公共错误信息。dataT是接口调用时的公共回调信息。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| err | BusinessError | 是 | 接口调用失败的公共错误信息。 |
+| data | T | 是 | 接口调用时的公共回调信息。 |
 
 #### BusinessError
 
-BusinessError<T = void> extends Error {
-
-code: number;
-
-data?: T;
-
-}
+BusinessError<T = void> extends Error { code: number; data?: T; }
 
 错误参数。
 
@@ -90,4 +99,7 @@ data?: T;
 
 **系统能力：** SystemCapability.Base
 
-名称类型必填说明codenumber是接口调用失败返回的错误码信息。dataT否接口调用时的公共回调信息。如果不填，则回调不返回相关信息。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | number | 是 | 接口调用失败返回的错误码信息。 |
+| data | T | 否 | 接口调用时的公共回调信息。如果不填，则回调不返回相关信息。 |

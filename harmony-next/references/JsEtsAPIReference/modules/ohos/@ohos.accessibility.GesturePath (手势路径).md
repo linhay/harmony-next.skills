@@ -20,7 +20,10 @@ import { GesturePath } from '@kit.AccessibilityKit';
 
 #### 属性
 
-名称类型只读可选说明pointsArray<[GesturePoint](@ohos.accessibility.GesturePoint (手势触摸点).md#ZH-CN_TOPIC_0000002497444696__gesturepoint)>否否手势触摸点。durationTimenumber否否手势总耗时，单位为毫秒。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| points | Array<GesturePoint> | 否 | 否 | 手势触摸点。 |
+| durationTime | number | 否 | 否 | 手势总耗时，单位为毫秒。 |
 
 #### constructor(deprecated)
 
@@ -28,13 +31,16 @@ constructor(durationTime: number);
 
 构造函数。
 
-从API version 12开始废弃。
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
 
 **系统能力**：SystemCapability.BarrierFree.Accessibility.Core
 
 **参数：**
 
-参数名类型必填说明durationTimenumber是手势总耗时，单位为毫秒。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| durationTime | number | 是 | 手势总耗时，单位为毫秒。 |
 
 **示例：**
 

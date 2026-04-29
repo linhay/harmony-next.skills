@@ -16,13 +16,15 @@
 import { WorkSchedulerExtensionAbility } from '@kit.BackgroundTasksKit';
 ```
 
-#### WorkSchedulerExtensionContext10+
+#### [WorkSchedulerExtensionContext](../../topics/misc/WorkSchedulerExtensionContext.md)10+
 
-type WorkSchedulerExtensionContext = _WorkSchedulerExtensionContext
+type WorkSchedulerExtensionContext = [_WorkSchedulerExtensionContext](../../topics/misc/WorkSchedulerExtensionContext.md)
 
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
 
-类型说明[_WorkSchedulerExtensionContext](../../topics/graphics/WorkSchedulerExtensionContext.md)WorkSchedulerExtension的上下文环境。
+| 类型 | 说明 |
+| --- | --- |
+| [_WorkSchedulerExtensionContext](../../topics/misc/WorkSchedulerExtensionContext.md) | WorkSchedulerExtension的上下文环境。 |
 
 #### WorkSchedulerExtensionAbility
 
@@ -30,7 +32,9 @@ type WorkSchedulerExtensionContext = _WorkSchedulerExtensionContext
 
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
 
-名称类型只读可选说明context10+[WorkSchedulerExtensionContext](../../topics/graphics/WorkSchedulerExtensionContext.md)否否WorkSchedulerExtension的上下文环境，继承自ExtensionContext。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| context10+ | [WorkSchedulerExtensionContext](../../topics/misc/WorkSchedulerExtensionContext.md) | 否 | 否 | WorkSchedulerExtension的上下文环境，继承自ExtensionContext。 |
 
 #### onWorkStart
 
@@ -42,7 +46,9 @@ onWorkStart(work: workScheduler.WorkInfo): void
 
 **参数**：
 
-参数名类型必填说明work[workScheduler.WorkInfo](@ohos.resourceschedule.workScheduler (延迟任务调度).md#ZH-CN_TOPIC_0000002529445205__workinfo)是要添加到执行队列的任务。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| work | workScheduler.WorkInfo | 是 | 要添加到执行队列的任务。 |
 
 **示例：**
 
@@ -55,20 +61,21 @@ export default class MyWorkSchedulerExtensionAbility extends WorkSchedulerExtens
       console.info(`MyWorkSchedulerExtensionAbility onWorkStart, workId: ${workInfo.workId},
           bundleName: ${workInfo.bundleName}, abilityName: ${workInfo.abilityName}.`);
   }
-}
 ```
 
 #### onWorkStop
 
 onWorkStop(work: workScheduler.WorkInfo): void
 
-结束延迟任务调度回调。当延迟任务2分钟超时或应用调用[stopWork](@ohos.resourceschedule.workScheduler (延迟任务调度).md#ZH-CN_TOPIC_0000002529445205__workschedulerstopwork)接口取消任务时，触发该回调。
+结束延迟任务调度回调。当延迟任务2分钟超时或应用调用[stopWork](@ohos.resourceschedule.workScheduler (延迟任务调度).md#ZH-CN_TOPIC_0000002522241200__workschedulerstopwork)接口取消任务时，触发该回调。
 
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
 
 **参数**：
 
-参数名类型必填说明work[workScheduler.WorkInfo](@ohos.resourceschedule.workScheduler (延迟任务调度).md#ZH-CN_TOPIC_0000002529445205__workinfo)是执行队列中要结束回调的任务。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| work | workScheduler.WorkInfo | 是 | 执行队列中要结束回调的任务。 |
 
 **示例：**
 
@@ -81,5 +88,4 @@ export default class MyWorkSchedulerExtensionAbility extends WorkSchedulerExtens
       console.info(`MyWorkSchedulerExtensionAbility onWorkStop, workId: ${workInfo.workId},
           bundleName: ${workInfo.bundleName}, abilityName: ${workInfo.abilityName}.`);
   }
-}
 ```

@@ -6,10 +6,10 @@ typedef struct MediaKeySession MediaKeySession
 
 #### 概述
 
-MediaKeySession结构。
+MediaKeySession类型。
 
-**起始版本：** 11
+起始版本： 12
 
-**相关模块：**[Drm](../misc/Drm.md)
+相关模块： [AVPlayer](AVPlayer.md)
 
-**所在头文件：**[native_drm_common.h](../../capi/headers/native_drm_common.h.md)
+所在头文件： [avplayer.h](avplayer.h.md)

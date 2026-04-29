@@ -2,7 +2,7 @@
 
 -
 
-从API version 9开始不再维护，推荐使用该模块[@ohos.bundle.bundleManager](../ohos/@ohos.bundle.bundleManager (应用程序包管理模块).md)。
+从API version 9开始不再维护，推荐使用该模块[@ohos.bundle.bundleManager](@ohos.bundle.bundleManager (应用程序包管理模块).md)。
 
 -
 
@@ -16,7 +16,8 @@ import Package from '@system.package';
 
 #### package.hasInstalled(deprecated)
 
-从API version 9开始不再维护，推荐使用该模块[@ohos.bundle.bundleManager](../ohos/@ohos.bundle.bundleManager (应用程序包管理模块).md)。
+
+从API version 3开始支持，从API version 9开始废弃，建议使用[getBundleInfo](@ohos.bundle.bundleManager (应用程序包管理模块).md#ZH-CN_TOPIC_0000002522080562__bundlemanagergetbundleinfo14)替代。
 
 hasInstalled(options: CheckPackageHasInstalledOptions): void
 
@@ -26,7 +27,9 @@ hasInstalled(options: CheckPackageHasInstalledOptions): void
 
 **参数：**
 
-参数名类型必填说明options[CheckPackageHasInstalledOptions](#ZH-CN_TOPIC_0000002529444611__checkpackagehasinstalledoptions)是选项参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | CheckPackageHasInstalledOptions | 是 | 选项参数。 |
 
 **示例：**
 
@@ -49,25 +52,33 @@ struct MainPage {
   }
   build() {
   }
-}
 ```
 
 #### CheckPackageHasInstalledResponse
 
-从API version 9开始不再维护。
+
+从API version 3开始支持，从API version 9开始废弃。
 
 指示应用包是否已安装。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework
 
-名称类型必填说明resultboolean是指示应用是否已安装。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| result | boolean | 是 | 指示应用是否已安装。 |
 
 #### CheckPackageHasInstalledOptions
 
-从API version 9开始不再维护。
+
+从API version 3开始支持，从API version 9开始废弃。
 
 查询包是否已安装时的选项。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework
 
-名称类型必填说明bundleNamestring是应用Bundle名称。successFunction否接口调用成功的回调函数。failFunction否接口调用失败的回调函数。completeFunction否接口调用结束的回调函数。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| bundleName | string | 是 | 应用Bundle名称。 |
+| success | Function | 否 | 接口调用成功的回调函数。 |
+| fail | Function | 否 | 接口调用失败的回调函数。 |
+| complete | Function | 否 | 接口调用结束的回调函数。 |

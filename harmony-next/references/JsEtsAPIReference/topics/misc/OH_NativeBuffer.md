@@ -1,15 +1,11 @@
-# OH_NativeBuffer
-
-```ets
-struct OH_NativeBuffer
-```
+# [OH_NativeBuffer](OH_NativeBuffer.md)
 
 #### 概述
 
-NativeBuffer结构体类型，用于执行NativeBuffer相关操作。
+OH_NativeBuffer结构体声明。
 
-**起始版本：** 12
+起始版本： 10
 
-**相关模块：**[Image_NativeModule](../graphics/Image_NativeModule.md)
+相关模块： [Vulkan](Vulkan.md)
 
-**所在头文件：**[pixelmap_native.h](../../capi/headers/pixelmap_native.h.md)
+所在头文件： [vulkan_ohos.h](vulkan_ohos.h.md)

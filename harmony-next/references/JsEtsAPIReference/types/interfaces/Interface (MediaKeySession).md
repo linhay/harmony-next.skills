@@ -1,8 +1,9 @@
 # Interface (MediaKeySession)
 
-本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+支持媒体密钥管理。在调用MediaKeySession方法之前，必须使用[createMediaKeySession](Interface (MediaKeySystem).md#ZH-CN_TOPIC_0000002553201917__createmediakeysession)获取一个MediaKeySession实例。
 
-支持媒体密钥管理。在调用MediaKeySession方法之前，必须使用[createMediaKeySession](Interface (MediaKeySystem).md#ZH-CN_TOPIC_0000002497605826__createmediakeysession)获取一个MediaKeySession实例。
+
+本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 #### 导入模块
 
@@ -22,17 +23,28 @@ generateMediaKeyRequest(mimeType: string, initData: Uint8Array, mediaKeyType: nu
 
 **参数：**
 
-参数名类型必填说明mimeTypestring是媒体类型，DRM解决方案名称，可通过[isMediaKeySystemSupported](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529285815__drmismediakeysystemsupported-1)查询。initDataUint8Array是初始数据。mediaKeyTypenumber是媒体密钥类型。0表示在线，1表示离线。options[OptionsData[]](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445846__optionsdata)否可选数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mimeType | string | 是 | 媒体类型，DRM解决方案名称，可通过[isMediaKeySystemSupported](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529285815__drmismediakeysystemsupported-1)查询。 |
+| initData | Uint8Array | 是 | 初始数据。 |
+| mediaKeyType | number | 是 | 媒体密钥类型。0表示在线，1表示离线。 |
+| options | OptionsData[] | 否 | 可选数据。 |
 
 **返回值：**
 
-类型说明Promise<[MediaKeyRequest](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445846__mediakeyrequest)>Promise对象，媒体密钥请求。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<MediaKeyRequest> | Promise对象，媒体密钥请求。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码]([DRM错误码](../../errors/DRM错误码.md).md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -63,17 +75,25 @@ processMediaKeyResponse(response: Uint8Array): Promise<Uint8Array>
 
 **参数：**
 
-参数名类型必填说明responseUint8Array是媒体密钥响应。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| response | Uint8Array | 是 | 媒体密钥响应。 |
 
 **返回值：**
 
-类型说明Promise<Uint8Array>Promise对象，媒体密钥标识。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Uint8Array> | Promise对象，媒体密钥标识。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -104,13 +124,18 @@ mediaKeySession.processMediaKeyResponse(mediaKeyResponse).then((mediaKeyId: Uint
 
 **返回值：**
 
-类型说明[MediaKeyStatus[]](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445846__mediakeystatus)当前媒体密钥状态值。
+| 类型 | 说明 |
+| --- | --- |
+| MediaKeyStatus[] | 当前媒体密钥状态值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -140,9 +165,12 @@ clearMediaKeys(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -179,17 +207,25 @@ generateOfflineReleaseRequest(mediaKeyId: Uint8Array): Promise<Uint8Array>
 
 **参数：**
 
-参数名类型必填说明mediaKeyIdUint8Array是离线媒体密钥标识。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mediaKeyId | Uint8Array | 是 | 离线媒体密钥标识。 |
 
 **返回值：**
 
-类型说明Promise<Uint8Array>Promise对象，设备上的DRM解决方案支持离线媒体密钥释放处理，则返回离线媒体密钥释放请求。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Uint8Array> | Promise对象，设备上的DRM解决方案支持离线媒体密钥释放处理，则返回离线媒体密钥释放请求。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -220,17 +256,26 @@ processOfflineReleaseResponse(mediaKeyId: Uint8Array, response: Uint8Array): Pro
 
 **参数：**
 
-参数名类型必填说明mediaKeyIdUint8Array是离线媒体密钥标识。responseUint8Array是离线媒体密钥释放响应。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mediaKeyId | Uint8Array | 是 | 离线媒体密钥标识。 |
+| response | Uint8Array | 是 | 离线媒体密钥释放响应。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，设备上的DRM解决方案支持离线媒体密钥释放处理，则返回。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，设备上的DRM解决方案支持离线媒体密钥释放处理，则返回。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -268,17 +313,25 @@ restoreOfflineMediaKeys(mediaKeyId: Uint8Array): Promise<void>
 
 **参数：**
 
-参数名类型必填说明mediaKeyIdUint8Array是离线媒体密钥标识。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mediaKeyId | Uint8Array | 是 | 离线媒体密钥标识。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -297,9 +350,9 @@ mediaKeySession.restoreOfflineMediaKeys(mediaKeyId).then(() => {
 });
 ```
 
-#### getContentProtectionLevel
+#### get[ContentProtectionLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002529285817__contentprotectionlevel)
 
-getContentProtectionLevel(): ContentProtectionLevel
+get[ContentProtectionLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002529285817__contentprotectionlevel)(): ContentProtectionLevel
 
 获取当前会话的内容保护级别。
 
@@ -309,13 +362,18 @@ getContentProtectionLevel(): ContentProtectionLevel
 
 **返回值：**
 
-类型说明[ContentProtectionLevel](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285817__contentprotectionlevel)返回当前会话内容保护级别。
+| 类型 | 说明 |
+| --- | --- |
+| [ContentProtectionLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002529285817__contentprotectionlevel) | 返回当前会话内容保护级别。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -345,17 +403,25 @@ requireSecureDecoderModule(mimeType: string): boolean
 
 **参数：**
 
-参数名类型必填说明mimeTypestring是媒体类型，支持的媒体类型取决于DRM解决方案，可通过[isMediaKeySystemSupported](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529285815__drmismediakeysystemsupported-1)查询。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mimeType | string | 是 | 媒体类型，支持的媒体类型取决于DRM解决方案，可通过[isMediaKeySystemSupported](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529285815__drmismediakeysystemsupported-1)查询。 |
 
 **返回值：**
 
-类型说明boolean是否需要安全解码，true表示需要安全解码，false表示不需要安全解码。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否需要安全解码，true表示需要安全解码，false表示不需要安全解码。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -385,13 +451,19 @@ on(type: 'keyRequired', callback: (eventInfo: EventInfo) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件类型，固定为'keyRequired'，当播放DRM节目需要获取媒体密钥时触发。callback(eventInfo: [EventInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445846__eventinfo)) => void是回调函数，返回事件信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件类型，固定为'keyRequired'，当播放DRM节目需要获取媒体密钥时触发。 |
+| callback | (eventInfo: EventInfo) => void | 是 | 回调函数，返回事件信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors |
 
 **示例：**
 
@@ -417,13 +489,19 @@ off(type: 'keyRequired', callback?: (eventInfo: EventInfo) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件类型，固定为'keyRequired'。callback(eventInfo: [EventInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445846__eventinfo)) => void否回调函数，返回事件信息。可选。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件类型，固定为'keyRequired'。 |
+| callback | (eventInfo: EventInfo) => void | 否 | 回调函数，返回事件信息。可选。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors |
 
 **示例：**
 
@@ -447,13 +525,19 @@ on(type: 'keyExpired', callback: (eventInfo: EventInfo) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件类型，固定为'keyExpired'。密钥过期时触发。callback(eventInfo: [EventInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445846__eventinfo)) => void是回调函数，返回事件信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件类型，固定为'keyExpired'。密钥过期时触发。 |
+| callback | (eventInfo: EventInfo) => void | 是 | 回调函数，返回事件信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors |
 
 **示例：**
 
@@ -479,13 +563,19 @@ off(type: 'keyExpired', callback?: (eventInfo: EventInfo) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件类型，固定为'keyExpired'。callback(eventInfo: [EventInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445846__eventinfo)) => void否回调函数，返回事件信息。可选。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件类型，固定为'keyExpired'。 |
+| callback | (eventInfo: EventInfo) => void | 否 | 回调函数，返回事件信息。可选。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors |
 
 **示例：**
 
@@ -509,13 +599,19 @@ on(type: 'vendorDefined', callback: (eventInfo: EventInfo) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'vendorDefined'。自定义事件发生时触发。callback(eventInfo: [EventInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445846__eventinfo)) => void是回调函数，返回事件信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'vendorDefined'。自定义事件发生时触发。 |
+| callback | (eventInfo: EventInfo) => void | 是 | 回调函数，返回事件信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors |
 
 **示例：**
 
@@ -541,13 +637,19 @@ off(type: 'vendorDefined', callback?: (eventInfo: EventInfo) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'vendorDefined'。callback(eventInfo: [EventInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445846__eventinfo)) => void否回调函数，返回事件信息。可选。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'vendorDefined'。 |
+| callback | (eventInfo: EventInfo) => void | 否 | 回调函数，返回事件信息。可选。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors |
 
 **示例：**
 
@@ -571,13 +673,19 @@ on(type: 'expirationUpdate', callback: (eventInfo: EventInfo) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件类型，固定为'expirationUpdate'。密钥过期更新时触发。callback(eventInfo: [EventInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445846__eventinfo)) => void是回调函数，返回事件信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件类型，固定为'expirationUpdate'。密钥过期更新时触发。 |
+| callback | (eventInfo: EventInfo) => void | 是 | 回调函数，返回事件信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors |
 
 **示例：**
 
@@ -603,13 +711,19 @@ off(type: 'expirationUpdate', callback?: (eventInfo: EventInfo) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件类型，固定为'expirationUpdate'。callback(eventInfo: [EventInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445846__eventinfo)) => void否回调函数，返回事件信息。可选。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件类型，固定为'expirationUpdate'。 |
+| callback | (eventInfo: EventInfo) => void | 否 | 回调函数，返回事件信息。可选。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors |
 
 **示例：**
 
@@ -633,13 +747,19 @@ on(type: 'keysChange', callback: (keyInfo: KeysInfo[], newKeyAvailable: boolean)
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件类型，固定为'keysChange'。密钥变化时触发。callback(keyInfo: [KeysInfo[]](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445846__keysinfo), newKeyAvailable: boolean) => void是回调函数，返回事件信息，包含密钥标识和密钥状态描述的列表及密钥是否可用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件类型，固定为'keysChange'。密钥变化时触发。 |
+| callback | (keyInfo: KeysInfo[], newKeyAvailable: boolean) => void | 是 | 回调函数，返回事件信息，包含密钥标识和密钥状态描述的列表及密钥是否可用。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors |
 
 **示例：**
 
@@ -667,13 +787,19 @@ off(type: 'keysChange', callback?: (keyInfo: KeysInfo[], newKeyAvailable: boolea
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件类型，固定为'keysChange'。callback(keyInfo: [KeysInfo[]](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445846__keysinfo), newKeyAvailable: boolean) => void否回调函数，返回事件信息，包含密钥标识和密钥状态描述的列表及密钥是否可用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件类型，固定为'keysChange'。 |
+| callback | (keyInfo: KeysInfo[], newKeyAvailable: boolean) => void | 否 | 回调函数，返回事件信息，包含密钥标识和密钥状态描述的列表及密钥是否可用。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified or too many parameters. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors |
 
 **示例：**
 
@@ -697,9 +823,12 @@ destroy(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 

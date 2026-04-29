@@ -14,21 +14,11 @@ import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo, photoAccessHelper,
 
 #### 属性
 
-支持[通用属性](../../topics/misc/通用属性.md)。
+支持[通用属性]([通用属性](../../topics/misc/通用属性.md).md)。
 
 #### AlbumPickerComponent
 
-AlbumPickerComponent({
-
- albumPickerOptions?: AlbumPickerOptions,
-
- onAlbumClick?: (albumInfo: AlbumInfo) => boolean,
-
- onEmptyAreaClick?: EmptyAreaClickCallback,
-
- albumPickerController?: AlbumPickerController
-
-})
+AlbumPickerComponent( {albumPickerOptions?: AlbumPickerOptions, onAlbumClick?: (albumInfo: AlbumInfo) => boolean, onEmptyAreaClick?: EmptyAreaClickCallback, albumPickerController?: AlbumPickerController })
 
 应用可以在布局中嵌入AlbumPickerComponent组件，通过此组件，应用无需申请权限，即可访问公共目录中的相册列表。
 
@@ -38,29 +28,12 @@ AlbumPickerComponent({
 
 **参数：**
 
-名称类型必填说明albumPickerOptions[AlbumPickerOptions](#ZH-CN_TOPIC_0000002529445921__albumpickeroptions)否
-
-AlbumPicker的配置信息。
-
-**元服务API**：从API version 12开始，该接口支持在元服务中使用。
-
-onAlbumClick(albumInfo: [AlbumInfo](#ZH-CN_TOPIC_0000002529445921__albuminfo)) => boolean否
-
-用户选择某个相册时产生的回调事件，将相册uri给到应用。不对返回值做特殊处理。
-
-**元服务API**：从API version 12开始，该接口支持在元服务中使用。
-
-onEmptyAreaClick13+[EmptyAreaClickCallback](#ZH-CN_TOPIC_0000002529445921__emptyareaclickcallback13)否
-
-点击相册组件空白区域时产生的回调事件，并将该次点击通知给应用。
-
-**元服务API**：从API version 13开始，该接口支持在元服务中使用。
-
-albumPickerController20+[AlbumPickerController](#ZH-CN_TOPIC_0000002529445921__albumpickercontroller20)否
-
-应用可通过AlbumPickerController向组件发送数据。
-
-**元服务API**：从API version 20开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| albumPickerOptions | AlbumPickerOptions | 否 | AlbumPicker的配置信息。  元服务API：从API version 12开始，该接口支持在元服务中使用。 |
+| onAlbumClick | (albumInfo: AlbumInfo) => boolean | 否 | 用户选择某个相册时产生的回调事件，将相册uri给到应用。不对返回值做特殊处理。  元服务API：从API version 12开始，该接口支持在元服务中使用。 |
+| onEmptyAreaClick13+ | EmptyAreaClickCallback | 否 | 点击相册组件空白区域时产生的回调事件，并将该次点击通知给应用。  元服务API：从API version 13开始，该接口支持在元服务中使用。 |
+| albumPickerController20+ | AlbumPickerController | 否 | 应用可通过AlbumPickerController向组件发送数据。  元服务API：从API version 20开始，该接口支持在元服务中使用。 |
 
 #### AlbumPickerOptions
 
@@ -68,23 +41,11 @@ Album Picker配置选项。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
-名称类型只读可选说明themeColorMode[PickerColorMode](@ohos.file.PhotoPickerComponent (PhotoPicker组件).md#ZH-CN_TOPIC_0000002497605958__pickercolormode)否是
-
-相册页主题颜色，包括跟随系统、浅色模式以及深色模式，默认为跟随系统。
-
-**元服务API**：从API version 12开始，该接口支持在元服务中使用。
-
-filterType13+[photoAccessHelper.PhotoViewMIMETypes](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445919__photoviewmimetypes)否是
-
-相册组件过滤参数，可筛选只显示图片、视频或者图片和视频。若未配置此参数，则某个具体相册中显示图片和视频类型的所有资源。
-
-**元服务API**：从API version 13开始，该接口支持在元服务中使用。
-
-fontSize20+number | string否是
-
-字体大小，取值范围参考[fontsize](../../topics/graphics/Text.md#ZH-CN_TOPIC_0000002497444914__fontsize)。
-
-**元服务API**：从API version 20开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| themeColorMode | PickerColorMode | 否 | 是 | 相册页主题颜色，包括跟随系统、浅色模式以及深色模式，默认为跟随系统。   元服务API：从API version 12开始，该接口支持在元服务中使用。 |
+| filterType13+ | [photoAccessHelper.PhotoViewMIMETypes](../../types/enums/Enums.md#ZH-CN_TOPIC_0000002529445919__photoviewmimetypes) | 否 | 是 | 相册组件过滤参数，可筛选只显示图片、视频或者图片和视频。若未配置此参数，则某个具体相册中显示图片和视频类型的所有资源。  元服务API：从API version 13开始，该接口支持在元服务中使用。 |
+| fontSize20+ | number | string | 否 | 是 | 字体大小，取值范围参考fontSize。  元服务API：从API version 20开始，该接口支持在元服务中使用。 |
 
 #### EmptyAreaClickCallback13+
 
@@ -104,7 +65,10 @@ type EmptyAreaClickCallback = () => void
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
-名称类型只读可选说明uristring否是相册的uri。albumNamestring否是相册的名称。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uri | string | 否 | 是 | 相册的uri。 |
+| albumName | string | 否 | 是 | 相册的名称。 |
 
 #### AlbumPickerController20+
 
@@ -126,7 +90,9 @@ setFontSize(fontSize: number | string): void
 
 **参数：**
 
-参数名类型必填说明fontSizenumber | string是字体大小，取值范围参考[fontsize](../../topics/graphics/Text.md#ZH-CN_TOPIC_0000002497444914__fontsize)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fontSize | number | string | 是 | 字体大小，取值范围参考fontSize。 |
 
 #### 示例
 
@@ -167,6 +133,4 @@ struct PickerDemo {
         onEmptyAreaClick: this.emptyAreaClickCallback,
       }).height('100%').width('100%')
     }
-  }
-}
 ```

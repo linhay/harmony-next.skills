@@ -20,13 +20,17 @@ registerThermalLevelCallback(callback: Callback<ThermalLevel>): void
 
 **参数：**
 
-参数名类型必填说明callbackCallback<[ThermalLevel](#ZH-CN_TOPIC_0000002497605504__thermallevel)>是回调函数，返回变化后的热档位；该参数是一个函数类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<ThermalLevel> | 是 | 回调函数，返回变化后的热档位；该参数是一个函数类型。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
 
 **示例：**
 
@@ -51,13 +55,17 @@ unregisterThermalLevelCallback(callback?: Callback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackCallback<void>否可选参数，回调函数，无返回值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<void> | 否 | 可选参数，回调函数，无返回值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
 
 **示例：**
 
@@ -82,7 +90,9 @@ getLevel(): ThermalLevel
 
 **返回值：**
 
-类型说明[ThermalLevel](#ZH-CN_TOPIC_0000002497605504__thermallevel)热档位信息。
+| 类型 | 说明 |
+| --- | --- |
+| ThermalLevel | 热档位信息。 |
 
 **示例：**
 
@@ -95,7 +105,8 @@ console.info('thermal level is: ' + level);
 
 subscribeThermalLevel(callback: AsyncCallback<ThermalLevel>): void
 
-从API version 8开始支持，从API version 9开始不再维护，建议使用[thermal.registerThermalLevelCallback](#ZH-CN_TOPIC_0000002497605504__thermalregisterthermallevelcallback9)替代。
+
+从API version 8开始支持，从API version 9开始不再维护，建议使用[thermal.registerThermalLevelCallback](#ZH-CN_TOPIC_0000002522241588__thermalregisterthermallevelcallback9)替代。
 
 **方法介绍：** 订阅热档位变化时的回调提醒。使用callback异步回调。
 
@@ -103,7 +114,9 @@ subscribeThermalLevel(callback: AsyncCallback<ThermalLevel>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[ThermalLevel](#ZH-CN_TOPIC_0000002497605504__thermallevel)>是回调函数。AsyncCallback只返回一个参数，为热档位信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<ThermalLevel> | 是 | 回调函数。AsyncCallback只返回一个参数，为热档位信息。 |
 
 **示例：**
 
@@ -117,7 +130,8 @@ thermal.subscribeThermalLevel((err: Error, level: thermal.ThermalLevel) => {
 
 unsubscribeThermalLevel(callback?: AsyncCallback<void>): void
 
-从API version 8开始支持，从API version 9开始不再维护，建议使用[thermal.unregisterThermalLevelCallback](#ZH-CN_TOPIC_0000002497605504__thermalunregisterthermallevelcallback9)替代。
+
+从API version 8开始支持，从API version 9开始不再维护，建议使用[thermal.unregisterThermalLevelCallback](#ZH-CN_TOPIC_0000002522241588__thermalunregisterthermallevelcallback9)替代。
 
 **方法介绍：** 取消订阅热档位变化时的回调提醒。使用callback异步回调。
 
@@ -125,7 +139,9 @@ unsubscribeThermalLevel(callback?: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>否回调函数，无返回值。不填该参数则取消所有回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 否 | 回调函数，无返回值。不填该参数则取消所有回调。 |
 
 **示例：**
 
@@ -139,7 +155,8 @@ thermal.unsubscribeThermalLevel(() => {
 
 getThermalLevel(): ThermalLevel
 
-从API version 8开始支持，从API version 9开始不再维护，建议使用[thermal.getLevel](#ZH-CN_TOPIC_0000002497605504__thermalgetlevel9)替代。
+
+从API version 8开始支持，从API version 9开始不再维护，建议使用[thermal.getLevel](#ZH-CN_TOPIC_0000002522241588__thermalgetlevel9)替代。
 
 **方法介绍：** 获取当前热档位信息。
 
@@ -147,7 +164,9 @@ getThermalLevel(): ThermalLevel
 
 **返回值：**
 
-类型说明[ThermalLevel](#ZH-CN_TOPIC_0000002497605504__thermallevel)热档位信息。
+| 类型 | 说明 |
+| --- | --- |
+| ThermalLevel | 热档位信息。 |
 
 **示例：**
 
@@ -162,8 +181,13 @@ console.info('thermal level is: ' + level);
 
 **系统能力：** SystemCapability.PowerManager.ThermalManager
 
-名称值说明COOL0表明设备处于清凉状态，业务执行不受热控的限制。NORMAL1表明设备温度正常，但邻近温热状态，无感知业务应降低规格和负载。WARM2表明设备进入温热状态，无感知业务应暂停或延迟运行。HOT3表明设备发热明显，无感知业务应停止，非关键业务应降低规格及负载。OVERHEATED4表明设备发热严重，无感知业务与非关键业务应停止，前台关键业务应降低规格及负载。WARNING5表明设备过热即将进入紧急状态，整机资源供给大幅降低，停止所有非关键业务，前台关键业务应降低至最低规格。EMERGENCY6表明设备已经进入过热紧急状态，整机资源供给降至最低，设备功能受限，仅保留基础功能可用。ESCAPE11+7
-
-表明设备即将进入热逃生状态，所有业务将被强制停止，业务需做好逃生措施，例如保存重要数据等。
-
-**说明**: 从API version 11开始支持。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| COOL | 0 | 表明设备处于清凉状态，业务执行不受热控的限制。 |
+| NORMAL | 1 | 表明设备温度正常，但邻近温热状态，无感知业务应降低规格和负载。 |
+| WARM | 2 | 表明设备进入温热状态，无感知业务应暂停或延迟运行。 |
+| HOT | 3 | 表明设备发热明显，无感知业务应停止，非关键业务应降低规格及负载。 |
+| OVERHEATED | 4 | 表明设备发热严重，无感知业务与非关键业务应停止，前台关键业务应降低规格及负载。 |
+| WARNING | 5 | 表明设备过热即将进入紧急状态，整机资源供给大幅降低，停止所有非关键业务，前台关键业务应降低至最低规格。 |
+| EMERGENCY | 6 | 表明设备已经进入过热紧急状态，整机资源供给降至最低，设备功能受限，仅保留基础功能可用。 |
+| ESCAPE11+ | 7 | 表明设备即将进入热逃生状态，所有业务将被强制停止，业务需做好逃生措施，例如保存重要数据等。  说明: 从API version 11开始支持。 |

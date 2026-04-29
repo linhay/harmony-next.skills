@@ -16,7 +16,14 @@ import { commonType } from '@kit.ArkData';
 
 **系统能力：** SystemCapability.DistributedDataManager.CommonType
 
-名称值说明ASSET_NORMAL1表示资产状态正常。ASSET_INSERT2表示资产需要插入到云端。ASSET_UPDATE3表示资产需要更新到云端。ASSET_DELETE4表示资产需要在云端删除。ASSET_ABNORMAL5表示资产状态异常。ASSET_DOWNLOADING6表示资产正在下载到本地设备。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ASSET_NORMAL | 1 | 表示资产状态正常。 |
+| ASSET_INSERT | 2 | 表示资产需要插入到云端。 |
+| ASSET_UPDATE | 3 | 表示资产需要更新到云端。 |
+| ASSET_DELETE | 4 | 表示资产需要在云端删除。 |
+| ASSET_ABNORMAL | 5 | 表示资产状态异常。 |
+| ASSET_DOWNLOADING | 6 | 表示资产正在下载到本地设备。 |
 
 #### Asset
 
@@ -24,17 +31,27 @@ import { commonType } from '@kit.ArkData';
 
 **系统能力：** SystemCapability.DistributedDataManager.CommonType
 
-名称类型只读可选说明namestring否否资产的名称。uristring否否资产的uri，在系统里的绝对路径。pathstring否否资产在应用沙箱里的路径。createTimestring否否资产被创建出来的时间。modifyTimestring否否资产最后一次被修改的时间。sizestring否否资产占用空间的大小。确保在全链路中保持统一、一致的存储格式与取值逻辑。建议所有系统节点均采用标准化处理方式（单位为字节（Byte），取值为非负整数）。status[AssetStatus](#ZH-CN_TOPIC_0000002497604678__assetstatus)否是资产的状态，默认值为ASSET_NORMAL。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | string | 否 | 否 | 资产的名称。 |
+| uri | string | 否 | 否 | 资产的uri，在系统里的绝对路径。 |
+| path | string | 否 | 否 | 资产在应用沙箱里的路径。 |
+| createTime | string | 否 | 否 | 资产被创建出来的时间。 |
+| modifyTime | string | 否 | 否 | 资产最后一次被修改的时间。 |
+| size | string | 否 | 否 | 资产占用空间的大小。确保在全链路中保持统一、一致的存储格式与取值逻辑。建议所有系统节点均采用标准化处理方式（单位为字节（Byte），取值为非负整数）。 |
+| status | AssetStatus | 否 | 是 | 资产的状态，默认值为ASSET_NORMAL。 |
 
 #### Assets
 
 type Assets = Array<Asset>
 
-表示[Asset](#ZH-CN_TOPIC_0000002497604678__asset)类型的数组。
+表示[Asset](#ZH-CN_TOPIC_0000002522080626__asset)类型的数组。
 
 **系统能力：** SystemCapability.DistributedDataManager.CommonType
 
-类型说明Array<[Asset](#ZH-CN_TOPIC_0000002497604678__asset)>表示Asset类型的数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<Asset> | 表示Asset类型的数组。 |
 
 #### ValueType
 
@@ -44,7 +61,15 @@ type ValueType = null | number | string | boolean | Uint8Array | Asset | Assets
 
 **系统能力：** SystemCapability.DistributedDataManager.CommonType
 
-类型说明null表示值类型为空。number表示值类型为数字。string表示值类型为字符串。boolean表示值类型为布尔值。Uint8Array表示值类型为Uint8类型的数组。Asset表示值类型为附件[Asset](#ZH-CN_TOPIC_0000002497604678__asset)。Assets表示值类型为附件数组[Assets](#ZH-CN_TOPIC_0000002497604678__assets)。
+| 类型 | 说明 |
+| --- | --- |
+| null | 表示值类型为空。 |
+| number | 表示值类型为数字。 |
+| string | 表示值类型为字符串。 |
+| boolean | 表示值类型为布尔值。 |
+| Uint8Array | 表示值类型为Uint8类型的数组。 |
+| Asset | 表示值类型为附件Asset。 |
+| Assets | 表示值类型为附件数组Assets。 |
 
 #### ValuesBucket
 
@@ -54,4 +79,6 @@ type ValuesBucket = Record<string, ValueType>
 
 **系统能力：** SystemCapability.DistributedDataManager.CommonType
 
-类型说明Record<string, [ValueType](#ZH-CN_TOPIC_0000002497604678__valuetype)>表示键值对类型。键的类型为string，值的类型为[ValueType](#ZH-CN_TOPIC_0000002497604678__valuetype)。
+| 类型 | 说明 |
+| --- | --- |
+| Record<string, ValueType> | 表示键值对类型。键的类型为string，值的类型为ValueType。 |

@@ -18,7 +18,7 @@ import { EnvironmentCallback } from '@kit.AbilityKit';
 
 onConfigurationUpdated(config: Configuration): void
 
-[注册系统环境变化的监听](../../topics/graphics/ApplicationContext (应用上下文).md#ZH-CN_TOPIC_0000002529284613__applicationcontextonenvironment)后，在系统环境变化时触发回调。
+[注册系统环境变化的监听](ApplicationContext (应用上下文).md#ZH-CN_TOPIC_0000002553360493__applicationcontextonenvironment)后，在系统环境变化时触发回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -26,17 +26,22 @@ onConfigurationUpdated(config: Configuration): void
 
 **参数：**
 
-参数名类型必填说明config[Configuration](@ohos.app.ability.Configuration (环境变量).md)是变化后的Configuration对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | Configuration | 是 | 变化后的Configuration对象。 |
 
 **示例：**
 
-参见[EnvironmentCallback使用](#ZH-CN_TOPIC_0000002497604586__environmentcallback使用)。
+参见[EnvironmentCallback使用](#ZH-CN_TOPIC_0000002522240534__environmentcallback使用)。
 
 #### onMemoryLevel
 
 onMemoryLevel(level: AbilityConstant.MemoryLevel): void
 
-[注册系统环境变化的监听](../../topics/graphics/ApplicationContext (应用上下文).md#ZH-CN_TOPIC_0000002529284613__applicationcontextonenvironment)后，在系统内存变化时触发回调。
+[注册系统环境变化的监听](ApplicationContext (应用上下文).md#ZH-CN_TOPIC_0000002553360493__applicationcontextonenvironment)后，在系统内存变化时触发回调。
+
+
+onMemoryLevel回调运行在当前进程的主线程中，如果在该回调中做耗时的UI组件释放，会阻塞主线程任务，因此不建议在该回调中释放UI组件。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -44,11 +49,13 @@ onMemoryLevel(level: AbilityConstant.MemoryLevel): void
 
 **参数：**
 
-参数名类型必填说明level[AbilityConstant.MemoryLevel](@ohos.app.ability.AbilityConstant (Ability相关常量).md#ZH-CN_TOPIC_0000002497604576__memorylevel)是回调返回整机可用的内存级别，显示当前整机可用内存的等级。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| level | AbilityConstant.MemoryLevel | 是 | 回调返回整机可用的内存级别，显示当前整机可用内存的等级。 |
 
 **示例：**
 
-参见[EnvironmentCallback使用](#ZH-CN_TOPIC_0000002497604586__environmentcallback使用)。
+参见[EnvironmentCallback使用](#ZH-CN_TOPIC_0000002522240534__environmentcallback使用)。
 
 #### EnvironmentCallback使用
 
@@ -96,6 +103,4 @@ export default class MyAbility extends UIAbility {
     } catch (paramError) {
       console.error(`error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);
     }
-  }
-}
 ```

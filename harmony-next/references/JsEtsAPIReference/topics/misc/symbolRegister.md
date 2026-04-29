@@ -16,69 +16,35 @@ registerSymbol(ttfSrc: resourceManager.Resource, jsonSrc: resourceManager.Resour
 
 注册自定义Symbol资源。
 
+模型约束： 此接口仅可在Stage模型下使用。
+
 **系统能力：**SystemCapability.UIDesign.Core
 
 **起始版本：**5.1.1(19)
 
 **参数：**
 
-**参数名**
-
-**类型**
-
-必填
-
-**说明**
-
-ttfSrc
-
-[resourceManager.Resource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resource)
-
-是
-
-自定义Symbol图标资源。
-
-jsonSrc
-
-[resourceManager.Resource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resource)
-
-是
-
-自定义Symbol动效参数资源。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ttfSrc | resourceManager.Resource | 是 | 自定义Symbol图标资源。 |
+| jsonSrc | resourceManager.Resource | 是 | 自定义Symbol动效参数资源。 |
 
 **返回值：**
 
-类型
-
-说明
-
-boolean
-
-返回注册结果，true：注册成功，false：注册失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回注册结果，true：注册成功，false：注册失败。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码]([ArkTS API错误码](../../errors/ArkTS API错误码.md).md)。
 
-错误码ID
-
-错误信息
-
-401
-
-Parameter error.
-
-801
-
-Device Type error.
-
-1012600002
-
-TTF or JSON resource out of size.
-
-1012600003
-
-TTF or JSON resource content error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 801 | Device Type error. |
+| 1012600002 | TTF or JSON resource out of size. |
+| 1012600003 | TTF or JSON resource content error. |
 
 **示例：**
 
@@ -98,11 +64,10 @@ struct test {
       console.error("errCode:" + err.code)
       console.error("error " + err.message);
     }
-  }
   build() {
     Column(){
       SymbolGlyph($r('app.string.symbol_custom_phone_fill_1'))
     }
-  }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522085782.webp)

@@ -22,13 +22,26 @@ setFormNextRefreshTime(formId: string, minute: number, callback: AsyncCallback<v
 
 **参数：**
 
-参数名类型必填说明formIdstring是卡片标识。minutenumber是指定卡片多久之后更新，取值范围：大于等于5，单位：min。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| formId | string | 是 | 卡片标识。 |
+| minute | number | 是 | 指定卡片多久之后更新，取值范围：大于等于5，单位：min。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[卡片错误码](../../errors/卡片错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[卡片错误码]([卡片错误码](../../errors/卡片错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.16500050IPC connection error.16500060Service connection error.16500100Failed to obtain the configuration information.16501000An internal functional error occurred.16501001The ID of the form to be operated does not exist.16501002The number of forms exceeds the maximum allowed.16501003The form cannot be operated by the current application.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed. |
+| 16500050 | IPC connection error. |
+| 16500060 | Service connection error. |
+| 16500100 | Failed to obtain the configuration information. |
+| 16501000 | An internal functional error occurred. |
+| 16501001 | The ID of the form to be operated does not exist. |
+| 16501002 | The number of forms exceeds the maximum allowed. |
+| 16501003 | The form cannot be operated by the current application. |
 
 **示例：**
 
@@ -62,17 +75,31 @@ setFormNextRefreshTime(formId: string, minute: number): Promise<void>
 
 **参数：**
 
-参数名类型必填说明formIdstring是卡片标识。minutenumber是指定卡片多久之后更新，取值范围：大于等于5，单位：min。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| formId | string | 是 | 卡片标识。 |
+| minute | number | 是 | 指定卡片多久之后更新，取值范围：大于等于5，单位：min。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[卡片错误码](../../errors/卡片错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[卡片错误码](卡片错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.16500050IPC connection error.16500060Service connection error.16500100Failed to obtain the configuration information.16501000An internal functional error occurred.16501001The ID of the form to be operated does not exist.16501002The number of forms exceeds the maximum allowed.16501003The form cannot be operated by the current application.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed. |
+| 16500050 | IPC connection error. |
+| 16500060 | Service connection error. |
+| 16500100 | Failed to obtain the configuration information. |
+| 16501000 | An internal functional error occurred. |
+| 16501001 | The ID of the form to be operated does not exist. |
+| 16501002 | The number of forms exceeds the maximum allowed. |
+| 16501003 | The form cannot be operated by the current application. |
 
 **示例：**
 
@@ -98,19 +125,34 @@ updateForm(formId: string, formBindingData: formBindingData.FormBindingData,call
 
 更新指定的卡片，使用callback异步回调。
 
+
+从API version 20开始，如果卡片刷新的数据通过共享内存更新，刷新数据总大小不超过10MB，刷新图片数量不超过20张。API version 19及之前的版本，图片文件数量上限为5张，每张限制内存2MB，超出限制的图片会显示异常。
+
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.Form
 
 **参数：**
 
-参数名类型必填说明formIdstring是请求更新的卡片标识。formBindingData[formBindingData.FormBindingData](@ohos.app.form.formBindingData (卡片数据绑定类).md#ZH-CN_TOPIC_0000002529445243__formbindingdata)是用于更新的数据。callbackAsyncCallback<void>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| formId | string | 是 | 请求更新的卡片标识。 |
+| formBindingData | formBindingData.FormBindingData | 是 | 用于更新的数据。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[卡片错误码](../../errors/卡片错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[卡片错误码](卡片错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.16500050IPC connection error.16500060Service connection error.16500100Failed to obtain the configuration information.16501000An internal functional error occurred.16501001The ID of the form to be operated does not exist.16501003The form cannot be operated by the current application.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed. |
+| 16500050 | IPC connection error. |
+| 16500060 | Service connection error. |
+| 16500100 | Failed to obtain the configuration information. |
+| 16501000 | An internal functional error occurred. |
+| 16501001 | The ID of the form to be operated does not exist. |
+| 16501003 | The form cannot be operated by the current application. |
 
 **示例：**
 
@@ -143,23 +185,39 @@ updateForm(formId: string, formBindingData: formBindingData.FormBindingData): Pr
 
 更新指定的卡片，使用Promise异步回调。
 
+
+从API version 20开始，如果卡片刷新的数据通过共享内存更新，刷新数据总大小不超过10MB，刷新图片数量不超过20张。API version 19及之前的版本，图片文件数量上限为5张，每张限制内存2MB，超出限制的图片会显示异常。
+
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.Form
 
 **参数：**
 
-参数名类型必填说明formIdstring是请求更新的卡片标识。formBindingData[formBindingData.FormBindingData](@ohos.app.form.formBindingData (卡片数据绑定类).md#ZH-CN_TOPIC_0000002529445243__formbindingdata)是用于更新的数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| formId | string | 是 | 请求更新的卡片标识。 |
+| formBindingData | formBindingData.FormBindingData | 是 | 用于更新的数据。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[卡片错误码](../../errors/卡片错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[卡片错误码](卡片错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.16500050IPC connection error.16500060Service connection error.16500100Failed to obtain the configuration information.16501000An internal functional error occurred.16501001The ID of the form to be operated does not exist.16501003The form cannot be operated by the current application.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed. |
+| 16500050 | IPC connection error. |
+| 16500060 | Service connection error. |
+| 16500100 | Failed to obtain the configuration information. |
+| 16501000 | An internal functional error occurred. |
+| 16501001 | The ID of the form to be operated does not exist. |
+| 16501003 | The form cannot be operated by the current application. |
 
 **示例：**
 
@@ -196,13 +254,20 @@ getFormsInfo(callback: AsyncCallback<Array<formInfo.FormInfo>>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<Array<[formInfo.FormInfo](@ohos.app.form.formInfo (formInfo).md)>>是回调函数。返回查询到的卡片信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<formInfo.FormInfo>> | 是 | 回调函数。返回查询到的卡片信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[卡片错误码](../../errors/卡片错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[卡片错误码](卡片错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.16500050IPC connection error.16500100Failed to obtain the configuration information.16501000An internal functional error occurred.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed. |
+| 16500050 | IPC connection error. |
+| 16500100 | Failed to obtain the configuration information. |
+| 16501000 | An internal functional error occurred. |
 
 **示例：**
 
@@ -235,13 +300,21 @@ getFormsInfo(filter: formInfo.FormInfoFilter, callback: AsyncCallback<Array<form
 
 **参数：**
 
-参数名类型必填说明filter[formInfo.FormInfoFilter](@ohos.app.form.formInfo (formInfo).md#ZH-CN_TOPIC_0000002497445300__forminfofilter)是卡片信息过滤器。callbackAsyncCallback<Array<[formInfo.FormInfo](@ohos.app.form.formInfo (formInfo).md)>>是回调函数。返回查询到符合条件的卡片信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| filter | formInfo.FormInfoFilter | 是 | 卡片信息过滤器。 |
+| callback | AsyncCallback<Array<formInfo.FormInfo>> | 是 | 回调函数。返回查询到符合条件的卡片信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[卡片错误码](../../errors/卡片错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[卡片错误码](卡片错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.16500050IPC connection error.16500100Failed to obtain the configuration information.16501000An internal functional error occurred.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed. |
+| 16500050 | IPC connection error. |
+| 16500100 | Failed to obtain the configuration information. |
+| 16501000 | An internal functional error occurred. |
 
 **示例：**
 
@@ -278,17 +351,26 @@ getFormsInfo(filter?: formInfo.FormInfoFilter): Promise<Array<formInfo.FormInfo>
 
 **参数：**
 
-参数名类型必填说明filter[formInfo.FormInfoFilter](@ohos.app.form.formInfo (formInfo).md#ZH-CN_TOPIC_0000002497445300__forminfofilter)否卡片信息过滤器, 默认为空，不进行过滤。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| filter | formInfo.FormInfoFilter | 否 | 卡片信息过滤器, 默认为空，不进行过滤。 |
 
 **返回值：**
 
-类型说明Promise<Array<[formInfo.FormInfo](@ohos.app.form.formInfo (formInfo).md)>>Promise对象。返回查询到符合条件的卡片信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<formInfo.FormInfo>> | Promise对象。返回查询到符合条件的卡片信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[卡片错误码](../../errors/卡片错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[卡片错误码](卡片错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.16500050IPC connection error.16500100Failed to obtain the configuration information.16501000An internal functional error occurred.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed. |
+| 16500050 | IPC connection error. |
+| 16500100 | Failed to obtain the configuration information. |
+| 16501000 | An internal functional error occurred. |
 
 **示例：**
 
@@ -321,21 +403,24 @@ openFormEditAbility(abilityName: string, formId: string, isMainPage?: boolean): 
 
 **参数：**
 
-参数名类型必填说明abilityNamestring是编辑页的ability名称。formIdstring是卡片标识。isMainPageboolean否
-
-是否为主编辑页。
-
-- true：表示是主编辑页。
-
-- false：表示不是主编辑页。
-
-默认值：true。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| abilityName | string | 是 | 编辑页的ability名称。 |
+| formId | string | 是 | 卡片标识。 |
+| isMainPage | boolean | 否 | 是否为主编辑页。 - true：表示是主编辑页。 - false：表示不是主编辑页。 默认值：true。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[卡片错误码](../../errors/卡片错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[卡片错误码](卡片错误码.md)。
 
-错误码ID错误信息801Capability not supported.function openFormEditAbility can not work correctly due to limited device capabilities.16500050IPC connection error.16500100Failed to obtain the configuration information.16501000An internal functional error occurred.16501003The form cannot be operated by the current application.16501007Form is not trust.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported.function openFormEditAbility can not work correctly due to limited device capabilities. |
+| 16500050 | IPC connection error. |
+| 16500100 | Failed to obtain the configuration information. |
+| 16501000 | An internal functional error occurred. |
+| 16501003 | The form cannot be operated by the current application. |
+| 16501007 | Form is not trust. |
 
 **示例：**
 
@@ -371,6 +456,72 @@ struct Page {
     .height('100%')
     .width('100%')
   }
+```
+
+**formProvider.closeFormEditAbility23+**
+
+closeFormEditAbility(isMainPage?: boolean): void
+
+关闭卡片编辑页。
+
+系统能力： SystemCapability.Ability.Form
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isMainPage | boolean | 否 | 是否关闭一级卡片编辑页，true表示关闭一级编辑页，false表示关闭非一级编辑页。 默认值：true。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md#ZH-CN_TOPIC_0000002522080522__801-该设备不支持此api)和[卡片错误码](卡片错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported due to limited device capabilities. |
+| 16500050 | IPC connection error. |
+| 16501015 | Cannot close the widget editing page opened by other apps. |
+
+示例：
+
+```ets
+import { formProvider } from '@kit.FormKit';
+
+const TAG: string = 'FormEditDemo-Page] -->';
+
+@Entry
+@Component
+struct Page {
+  @State message: string = 'Hello World';
+
+  aboutToAppear(): void {
+    console.info(`${TAG} aboutToAppear.....`);
+  }
+
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .id('PageHelloWorld')
+        .fontSize(50)
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Top },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          console.info(`${TAG} onClick.....`);
+          try {
+            formProvider.closeFormEditAbility();
+            console.info(`${TAG} close FormEditAbility success.`);
+          } catch (error) {
+            console.error(`${TAG} close FormEditAbility faild, code: ${error.code}, message: ${error.message}`);
+          }
+        })
+    }
+    .height('100%')
+    .width('100%')
 }
 ```
 
@@ -386,29 +537,22 @@ openFormManager(want: Want): void
 
 **参数：**
 
-参数名类型必填说明want[Want](@ohos.app.ability.Want (Want).md)是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | Want | 是 | 打开卡片管理页面的请求中的want参数，需包含以下字段。 bundleName: 卡片所属应用的包名。 abilityName: 卡片所属的ability名称。 parameters: - ohos.extra.param.key.form_dimension: 卡片尺寸。 - ohos.extra.param.key.form_name: 卡片名称。 - ohos.extra.param.key.module_name: 卡片所属的模块名称。 |
 
-打开卡片管理页面的请求中的want参数，需包含以下字段。
-
-bundleName: 卡片所属应用的包名。
-
-abilityName: 卡片所属的ability名称。
-
-parameters:
-
-- ohos.extra.param.key.form_dimension: [卡片尺寸](@ohos.app.form.formInfo (formInfo).md#ZH-CN_TOPIC_0000002497445300__formdimension)。
-
-- ohos.extra.param.key.form_name: 卡片名称。
-
-- ohos.extra.param.key.module_name: 卡片所属的模块名称。
 
 如果parameters参数没有填完整或者指定的卡片不存在，就会默认展示[form_config.json](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-configuration#卡片配置)中配置的默认卡片。
 
 **错误码：**
 
-以下错误码的详细介绍请参见[卡片错误码](../../errors/卡片错误码.md)。
+以下错误码的详细介绍请参见[卡片错误码](卡片错误码.md)。
 
-错误码ID错误信息16500050IPC connection error.16500100Failed to obtain the configuration information.16501000An internal functional error occurred.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16500050 | IPC connection error. |
+| 16500100 | Failed to obtain the configuration information. |
+| 16501000 | An internal functional error occurred. |
 
 **示例：**
 
@@ -441,23 +585,32 @@ getPublishedFormInfoById(formId: string): Promise<formInfo.FormInfo>
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
-该字段从API version 18开始支持，从API version 20开始废弃，建议使用[getPublishedRunningFormInfoById](#ZH-CN_TOPIC_0000002529285271__formprovidergetpublishedrunningforminfobyid20)替代。
+
+该字段从API version 18开始支持，从API version 20开始废弃，建议使用[getPublishedRunningFormInfoById](#ZH-CN_TOPIC_0000002522241248__formprovidergetpublishedrunningforminfobyid20)替代。
 
 **系统能力：** SystemCapability.Ability.Form
 
 **参数：**
 
-参数名类型必填说明formIdstring是卡片标识。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| formId | string | 是 | 卡片标识。 |
 
 **返回值：**
 
-类型说明Promise<[formInfo.FormInfo](@ohos.app.form.formInfo (formInfo).md#ZH-CN_TOPIC_0000002497445300__forminfo)>Promise对象。返回查询到符合条件的卡片信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<formInfo.FormInfo> | Promise对象。返回查询到符合条件的卡片信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[卡片错误码](../../errors/卡片错误码.md)。
+以下错误码的详细介绍请参见[卡片错误码](卡片错误码.md)。
 
-错误码ID错误信息16500050IPC connection error.16500100Failed to obtain the configuration information.16501000An internal functional error occurred.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16500050 | IPC connection error. |
+| 16500100 | Failed to obtain the configuration information. |
+| 16501000 | An internal functional error occurred. |
 
 **示例：**
 
@@ -485,19 +638,26 @@ getPublishedFormInfos(): Promise<Array<formInfo.FormInfo>>
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
-该字段从API version 18开始支持，从API version 20开始废弃，建议使用[getPublishedRunningFormInfos](#ZH-CN_TOPIC_0000002529285271__formprovidergetpublishedrunningforminfos20)替代。
+
+该字段从API version 18开始支持，从API version 20开始废弃，建议使用[getPublishedRunningFormInfos](#ZH-CN_TOPIC_0000002522241248__formprovidergetpublishedrunningforminfos20)替代。
 
 **系统能力：** SystemCapability.Ability.Form
 
 **返回值：**
 
-类型说明Promise<Array<[formInfo.FormInfo](@ohos.app.form.formInfo (formInfo).md)>>Promise对象。返回查询到符合条件的卡片信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<formInfo.FormInfo>> | Promise对象。返回查询到符合条件的卡片信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[卡片错误码](../../errors/卡片错误码.md)。
+以下错误码的详细介绍请参见[卡片错误码](卡片错误码.md)。
 
-错误码ID错误信息16500050IPC connection error.16500100Failed to obtain the configuration information.16501000An internal functional error occurred.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16500050 | IPC connection error. |
+| 16500100 | Failed to obtain the configuration information. |
+| 16501000 | An internal functional error occurred. |
 
 **示例：**
 
@@ -522,23 +682,42 @@ requestOverflow(formId: string, overflowInfo: formInfo.OverflowInfo): Promise<vo
 
 卡片提供方发起互动卡片动效请求，只针对[场景动效类型互动卡片](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-configuration#sceneanimationparams标签)生效，使用Promise异步回调。
 
+
+1. 该接口在省电模式场景下不可使用，会报16501000错误码。
+
+1. 当设备热档位进入HOT场景并且没有点击事件的场景下，该接口会报16501000错误码；当热档位进入OVERHEATED时，任何情况下都会报16501000错误码。热档位信息具体可参考[热档位信息](@ohos.thermal (热管理).md#ZH-CN_TOPIC_0000002522241588__thermallevel)。
+
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.Form
 
 **参数：**
 
-参数名类型必填说明formIdstring是卡片id标识。overflowInfo[formInfo.OverflowInfo](@ohos.app.form.formInfo (formInfo).md#ZH-CN_TOPIC_0000002497445300__overflowinfo20)是动效请求参数信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| formId | string | 是 | 卡片id标识。 |
+| overflowInfo | formInfo.OverflowInfo | 是 | 动效请求参数信息。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[卡片错误码](../../errors/卡片错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[卡片错误码](卡片错误码.md)。
 
-错误码ID错误信息801Capability not supported.function requestOverflow can not work correctly due to limited device capabilities.16500050IPC connection error.16500060Service connection error.16500100Failed to obtain the configuration information.16501000An internal functional error occurred.16501001The ID of the form to be operated does not exist.16501003The form cannot be operated by the current application.16501011The form can not support this operation.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported.function requestOverflow can not work correctly due to limited device capabilities. |
+| 16500050 | IPC connection error. |
+| 16500060 | Service connection error. |
+| 16500100 | Failed to obtain the configuration information. |
+| 16501000 | An internal functional error occurred. |
+| 16501001 | The ID of the form to be operated does not exist. |
+| 16501003 | The form cannot be operated by the current application. |
+| 16501011 | The form can not support this operation. |
 
 **示例：**
 
@@ -581,17 +760,30 @@ cancelOverflow(formId: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明formIdstring是卡片id。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| formId | string | 是 | 卡片id。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[卡片错误码](../../errors/卡片错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[卡片错误码](卡片错误码.md)。
 
-错误码ID错误信息801Capability not supported.function cancelOverflow can not work correctly due to limited device capabilities.16500050IPC connection error.16500060Service connection error.16500100Failed to obtain the configuration information.16501000An internal functional error occurred.16501001The ID of the form to be operated does not exist.16501003The form cannot be operated by the current application.16501011The form can not support this operation.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported.function cancelOverflow can not work correctly due to limited device capabilities. |
+| 16500050 | IPC connection error. |
+| 16500060 | Service connection error. |
+| 16500100 | Failed to obtain the configuration information. |
+| 16501000 | An internal functional error occurred. |
+| 16501001 | The ID of the form to be operated does not exist. |
+| 16501003 | The form cannot be operated by the current application. |
+| 16501011 | The form can not support this operation. |
 
 **示例：**
 
@@ -624,17 +816,29 @@ getFormRect(formId: string): Promise<formInfo.Rect>
 
 **参数：**
 
-参数名类型必填说明formIdstring是卡片id标识。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| formId | string | 是 | 卡片id标识。 |
 
 **返回值：**
 
-类型说明Promise<[formInfo.Rect](@ohos.app.form.formInfo (formInfo).md#ZH-CN_TOPIC_0000002497445300__rect20)>Promise对象，返回卡片相对屏幕左上角的位置信息和卡片尺寸信息，单位vp。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<formInfo.Rect> | Promise对象，返回卡片相对屏幕左上角的位置信息和卡片尺寸信息，单位vp。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[卡片错误码](../../errors/卡片错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[卡片错误码](卡片错误码.md)。
 
-错误码ID错误信息801Capability not supported.function getFormRect can not work correctly due to limited device capabilities.16500050IPC connection error.16500060Service connection error.16500100Failed to obtain the configuration information.16501000An internal functional error occurred.16501001The ID of the form to be operated does not exist.16501003The form cannot be operated by the current application.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported.function getFormRect can not work correctly due to limited device capabilities. |
+| 16500050 | IPC connection error. |
+| 16500060 | Service connection error. |
+| 16500100 | Failed to obtain the configuration information. |
+| 16501000 | An internal functional error occurred. |
+| 16501001 | The ID of the form to be operated does not exist. |
+| 16501003 | The form cannot be operated by the current application. |
 
 **示例：**
 
@@ -665,17 +869,27 @@ getPublishedRunningFormInfoById(formId: string): Promise<formInfo.RunningFormInf
 
 **参数：**
 
-参数名类型必填说明formIdstring是卡片标识。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| formId | string | 是 | 卡片标识。 |
 
 **返回值：**
 
-类型说明Promise<[formInfo.RunningFormInfo](@ohos.app.form.formInfo (formInfo).md#ZH-CN_TOPIC_0000002497445300__runningforminfo20)>Promise对象。返回符合条件的卡片信息，包括卡片名称、尺寸等。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<formInfo.RunningFormInfo> | Promise对象。返回符合条件的卡片信息，包括卡片名称、尺寸等。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[卡片错误码](../../errors/卡片错误码.md)。
+以下错误码的详细介绍请参见[卡片错误码](卡片错误码.md)。
 
-错误码ID错误信息16500050IPC connection error.16500100Failed to obtain the configuration information.16501000An internal functional error occurred.16501001The ID of the form to be operated does not exist.16501003The form cannot be operated by the current application.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16500050 | IPC connection error. |
+| 16500100 | Failed to obtain the configuration information. |
+| 16501000 | An internal functional error occurred. |
+| 16501001 | The ID of the form to be operated does not exist. |
+| 16501003 | The form cannot be operated by the current application. |
 
 **示例：**
 
@@ -708,13 +922,19 @@ getPublishedRunningFormInfos(): Promise<Array<formInfo.RunningFormInfo>>
 
 **返回值：**
 
-类型说明Promise<Array<[formInfo.RunningFormInfo](@ohos.app.form.formInfo (formInfo).md#ZH-CN_TOPIC_0000002497445300__runningforminfo20)>>Promise对象。返回符合条件的卡片信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<formInfo.RunningFormInfo>> | Promise对象。返回符合条件的卡片信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[卡片错误码](../../errors/卡片错误码.md)。
+以下错误码的详细介绍请参见[卡片错误码](卡片错误码.md)。
 
-错误码ID错误信息16500050IPC connection error.16500100Failed to obtain the configuration information.16501000An internal functional error occurred.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16500050 | IPC connection error. |
+| 16500100 | Failed to obtain the configuration information. |
+| 16501000 | An internal functional error occurred. |
 
 **示例：**
 
@@ -735,7 +955,7 @@ try {
 
 #### formProvider.reloadForms22+
 
-reloadForms(context: UIAbilityContext, moduleName: string, abilityName: string, formName: string): Promise<number>
+reloadForms(context: [UIAbilityContext](../../topics/misc/UIAbilityContext.md), moduleName: string, abilityName: string, formName: string): Promise<number>
 
 对于当前应用程序相同moduleName、abilityName、formName的卡片，多次加桌后会每张卡片会有不同的卡片id。卡片提供方可以通过本接口批量更新不同的卡片id但moduleName、abilityName、formName相同的卡片。在应用主进程通过本接口通知FormExtension进程进行批量更新，仅支持在[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)中调用，使用Promise异步回调。
 
@@ -747,17 +967,26 @@ reloadForms(context: UIAbilityContext, moduleName: string, abilityName: string, 
 
 **参数：**
 
-参数名类型必填说明context[UIAbilityContext](../../topics/graphics/UIAbilityContext.md)是[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)的上下文，做校验使用。moduleNamestring是指定卡片的moduleName。abilityNamestring是指定卡片的abilityName。formNamestring是指定卡片在[form_config.json](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-configuration#配置文件字段说明)中配置的卡片名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [UIAbilityContext](../../topics/misc/UIAbilityContext.md) | 是 | UIAbility的上下文，做校验使用。 |
+| moduleName | string | 是 | 指定卡片的moduleName。 |
+| abilityName | string | 是 | 指定卡片的abilityName。 |
+| formName | string | 是 | 指定卡片在form_config.json中配置的卡片名称。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象。返回请求更新卡片的数量。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象。返回请求更新卡片的数量。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[卡片错误码](../../errors/卡片错误码.md)。
+以下错误码的详细介绍请参见[卡片错误码](卡片错误码.md)。
 
-错误码ID错误信息16501000An internal functional error occurred.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16501000 | An internal functional error occurred. |
 
 **示例：**
 
@@ -767,6 +996,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { formProvider } from '@kit.FormKit';
 
 try {
+  // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
   let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
   //请开发者替换为实际请求更新的卡片信息
   let moduleName: string = 'entry';
@@ -784,7 +1014,7 @@ try {
 
 #### formProvider.reloadAllForms22+
 
-reloadAllForms(context: UIAbilityContext): Promise<number>
+reloadAllForms(context: [UIAbilityContext](../../topics/misc/UIAbilityContext.md)): Promise<number>
 
 在应用主进程通过本接口可以通知FormExtension进程批量更新当前应用程序下已经加桌的所有卡片，仅支持在[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)中调用，使用Promise异步回调。
 
@@ -796,17 +1026,23 @@ reloadAllForms(context: UIAbilityContext): Promise<number>
 
 **参数：**
 
-参数名类型必填说明context[UIAbilityContext](../../topics/graphics/UIAbilityContext.md)是[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)的上下文，做校验使用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [UIAbilityContext](../../topics/misc/UIAbilityContext.md) | 是 | UIAbility的上下文，做校验使用。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象。返回请求更新卡片的数量。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象。返回请求更新卡片的数量。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[卡片错误码](../../errors/卡片错误码.md)。
+以下错误码的详细介绍请参见[卡片错误码](卡片错误码.md)。
 
-错误码ID错误信息16501000An internal functional error occurred.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16501000 | An internal functional error occurred. |
 
 **示例：**
 
@@ -816,6 +1052,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { formProvider } from '@kit.FormKit';
 
 try {
+  // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
   let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
   formProvider.reloadAllForms(context).then((reloadNum: number) => {
     console.info(`reloadAllForms success, reload number: ${reloadNum}`);

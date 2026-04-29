@@ -1,8 +1,9 @@
 # Interface (MediaKeySystem)
 
-本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+支持MediaKeySystem实例管理、设备证书申请与处理、会话创建、离线媒体密钥管理、获取DRM度量记录、设备属性等。在调用MediaKeySystem方法之前，必须使用[createMediaKeySystem](Functions.md#ZH-CN_TOPIC_0000002553361873__drmcreatemediakeysystem)创建一个MediaKeySystem实例。
 
-支持MediaKeySystem实例管理、设备证书申请与处理、会话创建、离线媒体密钥管理、获取DRM度量记录、设备属性等。在调用MediaKeySystem方法之前，必须使用[createMediaKeySystem](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529285815__drmcreatemediakeysystem)创建一个MediaKeySystem实例。
+
+本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 #### 导入模块
 
@@ -22,13 +23,20 @@ setConfigurationString(configName: string, value: string): void
 
 **参数：**
 
-参数名类型必填说明configNamestring是配置属性名，不能为空，属性名参考[PreDefinedConfigName](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285817__predefinedconfigname)，具体支持的属性名由设备上DRM解决方案决定。valuestring是配置属性值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| configName | string | 是 | 配置属性名，不能为空，属性名参考[PreDefinedConfigName](../enums/Enums.md#ZH-CN_TOPIC_0000002529285817__predefinedconfigname)，具体支持的属性名由设备上DRM解决方案决定。 |
+| value | string | 是 | 配置属性值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码]([DRM错误码](../../errors/DRM错误码.md).md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -57,17 +65,25 @@ getConfigurationString(configName: string): string
 
 **参数：**
 
-参数名类型必填说明configNamestring是配置属性名，不能为空，属性名参考[PreDefinedConfigName](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285817__predefinedconfigname)，具体支持的属性名由设备上DRM解决方案决定。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| configName | string | 是 | 配置属性名，不能为空，属性名参考[PreDefinedConfigName](../enums/Enums.md#ZH-CN_TOPIC_0000002529285817__predefinedconfigname)，具体支持的属性名由设备上DRM解决方案决定。 |
 
 **返回值：**
 
-类型说明string返回字符串类型的配置属性值。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回字符串类型的配置属性值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Parameter verification failed, the param's length is zero or too big(exceeds 4096 Bytes).24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Parameter verification failed, the param's length is zero or too big(exceeds 4096 Bytes). |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -96,13 +112,20 @@ setConfigurationByteArray(configName: string, value: Uint8Array): void
 
 **参数：**
 
-参数名类型必填说明configNamestring是配置属性名，不能为空，属性名参考[PreDefinedConfigName](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285817__predefinedconfigname)，具体支持的属性名由设备上DRM解决方案决定。valueUint8Array是数组类型的配置属性值，具体属性值由设备上DRM解决方案决定。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| configName | string | 是 | 配置属性名，不能为空，属性名参考[PreDefinedConfigName](../enums/Enums.md#ZH-CN_TOPIC_0000002529285817__predefinedconfigname)，具体支持的属性名由设备上DRM解决方案决定。 |
+| value | Uint8Array | 是 | 数组类型的配置属性值，具体属性值由设备上DRM解决方案决定。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors.24700201Fatal service error, for example, service died.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 **示例：**
 
@@ -134,17 +157,25 @@ getConfigurationByteArray(configName: string): Uint8Array
 
 **参数：**
 
-参数名类型必填说明configNamestring是配置属性名，不能为空，属性名参考[PreDefinedConfigName](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285817__predefinedconfigname)，具体支持的属性名由设备上DRM解决方案决定。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| configName | string | 是 | 配置属性名，不能为空，属性名参考[PreDefinedConfigName](../enums/Enums.md#ZH-CN_TOPIC_0000002529285817__predefinedconfigname)，具体支持的属性名由设备上DRM解决方案决定。 |
 
 **返回值：**
 
-类型说明Uint8Array数组类型的配置属性值。
+| 类型 | 说明 |
+| --- | --- |
+| Uint8Array | 数组类型的配置属性值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Parameter verification failed.24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -173,13 +204,18 @@ getStatistics(): StatisticKeyValue[]
 
 **返回值：**
 
-类型说明[StatisticKeyValue[]](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445846__statistickeyvalue)度量记录。
+| 类型 | 说明 |
+| --- | --- |
+| StatisticKeyValue[] | 度量记录。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -196,9 +232,9 @@ try {
 }
 ```
 
-#### getMaxContentProtectionLevel
+#### getMax[ContentProtectionLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002529285817__contentprotectionlevel)
 
-getMaxContentProtectionLevel(): ContentProtectionLevel
+getMax[ContentProtectionLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002529285817__contentprotectionlevel)(): ContentProtectionLevel
 
 获取当前DRM解决方案支持的最大内容保护级别。
 
@@ -208,13 +244,18 @@ getMaxContentProtectionLevel(): ContentProtectionLevel
 
 **返回值：**
 
-类型说明[ContentProtectionLevel](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285817__contentprotectionlevel)返回设备支持的最大内容保护级别。
+| 类型 | 说明 |
+| --- | --- |
+| [ContentProtectionLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002529285817__contentprotectionlevel) | 返回设备支持的最大内容保护级别。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -243,13 +284,18 @@ generateKeySystemRequest(): Promise<ProvisionRequest>
 
 **返回值：**
 
-类型说明Promise<[ProvisionRequest](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445846__provisionrequest)>Promise对象，mediaKeySystem设备证书的请求。设备上如果已存在设备证书，会返回失败。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<ProvisionRequest> | Promise对象，mediaKeySystem设备证书的请求。设备上如果已存在设备证书，会返回失败。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -278,17 +324,25 @@ processKeySystemResponse(response: Uint8Array): Promise<void>
 
 **参数：**
 
-参数名类型必填说明responseUint8Array是设备证书响应。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| response | Uint8Array | 是 | 设备证书响应。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -306,9 +360,9 @@ mediaKeySystem.processKeySystemResponse(keySystemResponse).then(() => {
 });
 ```
 
-#### getCertificateStatus
+#### get[CertificateStatus](../enums/Enums.md#ZH-CN_TOPIC_0000002529285817__certificatestatus)
 
-getCertificateStatus():CertificateStatus
+get[CertificateStatus](../enums/Enums.md#ZH-CN_TOPIC_0000002529285817__certificatestatus)():CertificateStatus
 
 获取设备证书状态值。
 
@@ -318,13 +372,18 @@ getCertificateStatus():CertificateStatus
 
 **返回值：**
 
-类型说明[CertificateStatus](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285817__certificatestatus)设备证书状态值。
+| 类型 | 说明 |
+| --- | --- |
+| [CertificateStatus](../enums/Enums.md#ZH-CN_TOPIC_0000002529285817__certificatestatus) | 设备证书状态值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -353,13 +412,19 @@ on(type: 'keySystemRequired', callback: (eventInfo: EventInfo) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件类型，通过[createMediaKeySystem](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529285815__drmcreatemediakeysystem)成功创建MediaKeySystem实例后可监听，需要设备证书时触发该事件。callback(eventInfo: [EventInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445846__eventinfo)) => void是回调函数，返回事件信息。只要有该事件返回就证明需请求设备证书。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件类型，通过[createMediaKeySystem](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529285815__drmcreatemediakeysystem)成功创建MediaKeySystem实例后可监听，需要设备证书时触发该事件。 |
+| callback | (eventInfo: EventInfo) => void | 是 | 回调函数，返回事件信息。只要有该事件返回就证明需请求设备证书。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.24700101All unknown errors
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 24700101 | All unknown errors |
 
 **示例：**
 
@@ -384,13 +449,19 @@ off(type: 'keySystemRequired', callback?: (eventInfo: EventInfo) => void): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件类型，通过[createMediaKeySystem](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529285815__drmcreatemediakeysystem)成功创建MediaKeySystem实例后可监听。callback(eventInfo: [EventInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445846__eventinfo)) => void否回调函数，返回事件信息。可选。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件类型，通过[createMediaKeySystem](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529285815__drmcreatemediakeysystem)成功创建MediaKeySystem实例后可监听。 |
+| callback | (eventInfo: EventInfo) => void | 否 | 回调函数，返回事件信息。可选。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.24700101All unknown errors
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 24700101 | All unknown errors |
 
 **示例：**
 
@@ -402,7 +473,7 @@ mediaKeySystem.off('keySystemRequired');
 
 #### createMediaKeySession
 
-createMediaKeySession(level: ContentProtectionLevel): MediaKeySession
+createMediaKeySession(level: [ContentProtectionLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002529285817__contentprotectionlevel)): MediaKeySession
 
 创建指定内容保护级别的MediaKeySession实例。
 
@@ -412,17 +483,26 @@ createMediaKeySession(level: ContentProtectionLevel): MediaKeySession
 
 **参数：**
 
-参数名类型必填说明level[ContentProtectionLevel](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285817__contentprotectionlevel)是内容保护级别。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| level | [ContentProtectionLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002529285817__contentprotectionlevel) | 是 | 内容保护级别。 |
 
 **返回值：**
 
-类型说明[MediaKeySession](Interface (MediaKeySession).md)MediaKeySession实例。
+| 类型 | 说明 |
+| --- | --- |
+| MediaKeySession | MediaKeySession实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.The param level exceeds reasonable range, please use value in ContentProtectionLevel.24700101All unknown errors24700104Meet max MediaKeySession num limit24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.The param level exceeds reasonable range, please use value in [ContentProtectionLevel](../enums/Enums.md#ZH-CN_TOPIC_0000002529285817__contentprotectionlevel). |
+| 24700101 | All unknown errors |
+| 24700104 | Meet max MediaKeySession num limit |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -451,13 +531,19 @@ createMediaKeySession(): MediaKeySession
 
 **返回值：**
 
-类型说明[MediaKeySession](Interface (MediaKeySession).md)MediaKeySession实例。
+| 类型 | 说明 |
+| --- | --- |
+| MediaKeySession | MediaKeySession实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息24700101All unknown errors24700104Meet max MediaKeySession num limit24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 24700101 | All unknown errors |
+| 24700104 | Meet max MediaKeySession num limit |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -486,13 +572,18 @@ getOfflineMediaKeyIds(): Uint8Array[]
 
 **返回值：**
 
-类型说明Uint8Array[]离线媒体密钥标识列表。
+| 类型 | 说明 |
+| --- | --- |
+| Uint8Array[] | 离线媒体密钥标识列表。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -509,9 +600,9 @@ try {
 }
 ```
 
-#### getOfflineMediaKeyStatus
+#### get[OfflineMediaKeyStatus](../enums/Enums.md#ZH-CN_TOPIC_0000002529285817__offlinemediakeystatus)
 
-getOfflineMediaKeyStatus(mediaKeyId: Uint8Array): OfflineMediaKeyStatus
+get[OfflineMediaKeyStatus](../enums/Enums.md#ZH-CN_TOPIC_0000002529285817__offlinemediakeystatus)(mediaKeyId: Uint8Array): OfflineMediaKeyStatus
 
 获取指定离线媒体密钥标识的媒体密钥的状态值。
 
@@ -521,17 +612,25 @@ getOfflineMediaKeyStatus(mediaKeyId: Uint8Array): OfflineMediaKeyStatus
 
 **参数：**
 
-参数名类型必填说明mediaKeyIdUint8Array是离线媒体密钥标识。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mediaKeyId | Uint8Array | 是 | 离线媒体密钥标识。 |
 
 **返回值：**
 
-类型说明[OfflineMediaKeyStatus](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285817__offlinemediakeystatus)离线媒体密钥状态值。
+| 类型 | 说明 |
+| --- | --- |
+| [OfflineMediaKeyStatus](../enums/Enums.md#ZH-CN_TOPIC_0000002529285817__offlinemediakeystatus) | 离线媒体密钥状态值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed.24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -562,13 +661,19 @@ clearOfflineMediaKeys(mediaKeyId: Uint8Array): void
 
 **参数：**
 
-参数名类型必填说明mediaKeyIdUint8Array是离线媒体密钥标识。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mediaKeyId | Uint8Array | 是 | 离线媒体密钥标识。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息401The parameter check failed.Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed.Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 
@@ -599,9 +704,12 @@ destroy(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[DRM错误码](../../errors/DRM错误码.md)。
+以下错误码的详细介绍请参见[DRM错误码](DRM错误码.md)。
 
-错误码ID错误信息24700101All unknown errors24700201Fatal service error, for example, service died
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 24700101 | All unknown errors |
+| 24700201 | Fatal service error, for example, service died |
 
 **示例：**
 

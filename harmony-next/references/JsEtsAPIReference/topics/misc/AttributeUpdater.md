@@ -52,11 +52,13 @@ type Initializer<T> = () => T
 
 **返回值：**
 
-类型说明T返回当前组件。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回当前组件。 |
 
 #### AttributeUpdater<T, C = Initializer<T>>
 
-为[AttributeModifier](动态属性设置.md#ZH-CN_TOPIC_0000002529284843__attributemodifiert)的实现类，开发者需要自定义class继承AttributeUpdater。
+为[AttributeModifier](动态属性设置.md#ZH-CN_TOPIC_0000002522240800__attributemodifiert)的实现类，开发者需要自定义class继承AttributeUpdater。
 
 其中C代表组件的构造函数类型，比如Text组件的TextInterface，Image组件的ImageInterface等，仅在使用updateConstructorParams时才需要传递C类型。
 
@@ -76,7 +78,9 @@ applyNormalAttribute?(instance: T): void
 
 **参数：**
 
-参数名类型必填说明instanceT是组件的属性类，用来标识进行属性设置的组件的类型，比如Button组件的ButtonAttribute，Text组件的TextAttribute等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| instance | T | 是 | 组件的属性类，用来标识进行属性设置的组件的类型，比如Button组件的ButtonAttribute，Text组件的TextAttribute等。 |
 
 #### initializeModifier
 
@@ -90,7 +94,9 @@ AttributeUpdater首次设置给组件时提供的样式。
 
 **参数：**
 
-参数名类型必填说明instanceT是组件的属性类，用来标识进行属性设置的组件的类型，比如Button组件的ButtonAttribute，Text组件的TextAttribute等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| instance | T | 是 | 组件的属性类，用来标识进行属性设置的组件的类型，比如Button组件的ButtonAttribute，Text组件的TextAttribute等。 |
 
 **示例：**
 
@@ -111,7 +117,6 @@ class MyButtonModifier extends AttributeUpdater<ButtonAttribute> {
   // 该AttributeUpdater对象后续使用或者更新的时候触发的回调
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.borderWidth(1);
-  }
 }
 
 @Entry
@@ -142,7 +147,6 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```
 
 #### attribute
@@ -157,7 +161,9 @@ get attribute(): T | undefined
 
 **返回值：**
 
-类型说明T | undefined如果AttributeUpdater中组件的属性类实例存在，则返回对应组件的属性类实例，否则返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| T | undefined | 如果AttributeUpdater中组件的属性类实例存在，则返回对应组件的属性类实例，否则返回undefined。 |
 
 **示例：**
 
@@ -172,7 +178,6 @@ class MyButtonModifier extends AttributeUpdater<ButtonAttribute> {
     instance.backgroundColor('#ffd5d5d5')
       .width('50%')
       .height(30);
-  }
 }
 
 @Entry
@@ -193,8 +198,9 @@ struct updaterDemo2 {
     }
     .height('100%')
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553204683.webp)
 
 #### 属性
 
@@ -202,7 +208,9 @@ struct updaterDemo2 {
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-名称类型只读可选说明updateConstructorParams[C](#ZH-CN_TOPIC_0000002529284789__attributeupdatert-c--initializert)否否C代表组件的构造函数类型，比如Text组件的TextInterface，Image组件的ImageInterface等。用于更改组件的构造函数入参。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| updateConstructorParams | C | 否 | 否 | C代表组件的构造函数类型，比如Text组件的TextInterface，Image组件的ImageInterface等。用于更改组件的构造函数入参。 |
 
 **示例：**
 
@@ -214,7 +222,6 @@ import { AttributeUpdater } from '@kit.ArkUI';
 
 class MyTextModifier extends AttributeUpdater<TextAttribute, TextInterface> {
   initializeModifier(instance: TextAttribute) {
-  }
 }
 
 @Entry
@@ -238,7 +245,6 @@ struct attributeDemo3 {
     }
     .height('100%')
   }
-}
 ```
 
 #### onComponentChanged
@@ -253,7 +259,9 @@ onComponentChanged(component: T): void
 
 **参数：**
 
-参数名类型必填说明componentT是组件的属性类，用来标识进行属性设置的组件的类型，比如Button组件的ButtonAttribute，Text组件的TextAttribute等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| component | T | 是 | 组件的属性类，用来标识进行属性设置的组件的类型，比如Button组件的ButtonAttribute，Text组件的TextAttribute等。 |
 
 **示例：**
 
@@ -272,7 +280,6 @@ class MyButtonModifier extends AttributeUpdater<ButtonAttribute> {
     instance.backgroundColor('#ff2787d9')
       .width('50%')
       .height(30);
-  }
 }
 
 @Entry
@@ -296,10 +303,8 @@ struct updaterDemo4 {
           Button("Button")
             .attributeModifier(this.modifier)
         }
-      }
       .width('100%')
     }
     .height('100%')
   }
-}
 ```

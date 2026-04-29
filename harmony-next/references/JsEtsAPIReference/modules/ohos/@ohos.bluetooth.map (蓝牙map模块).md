@@ -18,7 +18,9 @@ type BaseProfile = baseProfile.BaseProfile
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-类型说明[baseProfile.BaseProfile](@ohos.bluetooth.baseProfile (蓝牙baseProfile模块).md#ZH-CN_TOPIC_0000002497445438__baseprofile)基础Profile接口定义。
+| 类型 | 说明 |
+| --- | --- |
+| baseProfile.BaseProfile | 基础Profile接口定义。 |
 
 #### map.createMapMseProfile
 
@@ -30,13 +32,18 @@ createMapMseProfile(): MapMseProfile
 
 **返回值：**
 
-类型说明MapMseProfile返回该profile的实例。
+| 类型 | 说明 |
+| --- | --- |
+| MapMseProfile | 返回该profile的实例。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)。
 
-错误码ID错误信息401Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
 
 **示例：**
 
@@ -55,6 +62,8 @@ try {
 
 该实例表示蓝牙消息访问协议中的[MSE](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#mse)角色。
 
-- 该类继承于[BaseProfile](#ZH-CN_TOPIC_0000002529445387__baseprofile)，因此可以使用其父类中的方法。
-- 使用该类的接口前，需通过[createMapMseProfile](#ZH-CN_TOPIC_0000002529445387__mapcreatemapmseprofile)接口构造该类的实例。
+- 该类继承于[BaseProfile](#ZH-CN_TOPIC_0000002553361369__baseprofile)，因此可以使用其父类中的方法。
+
+- 使用该类的接口前，需通过[createMapMseProfile](#ZH-CN_TOPIC_0000002553361369__mapcreatemapmseprofile)接口构造该类的实例。
+
 - 和该实例角色相对应的是[MCE](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#mce)角色。

@@ -21,4 +21,6 @@ onProgress(progress: number): void
 
 **参数：**
 
-参数名类型必填说明progressnumber是返回的进度百分比，范围为0~100。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| progress | number | 是 | 返回的进度百分比，范围为0~100。 |

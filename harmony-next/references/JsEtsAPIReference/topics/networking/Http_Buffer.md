@@ -12,10 +12,13 @@ HTTP缓存结构体。
 
 **相关模块：**[netstack](Netstack.md)
 
-**所在头文件：**[net_http_type.h](../../capi/headers/net_http_type.h.md)
+所在头文件： [net_http_type.h](net_http_type.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述const char *buffer缓存区数据。uint32_t length缓存区长度。
+| 名称 | 描述 |
+| --- | --- |
+| const char *buffer | 缓存区数据。 |
+| uint32_t length | 缓存区长度。 |

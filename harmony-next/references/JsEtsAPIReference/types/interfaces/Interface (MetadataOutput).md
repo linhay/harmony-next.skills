@@ -22,13 +22,18 @@ start(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当开始输出metadata成功，err为undefined，否则为错误对象。错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当开始输出metadata成功，err为undefined，否则为错误对象。错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码]([Camera错误码](../../errors/Camera错误码.md).md)。
 
-错误码ID错误信息7400103Session not config.7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -58,13 +63,18 @@ start(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400103Session not config.7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -92,7 +102,9 @@ stop(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当停止输出metadata成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当停止输出metadata成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -122,7 +134,9 @@ stop(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **示例：**
 
@@ -152,7 +166,10 @@ on(type: 'metadataObjectsAvailable', callback: AsyncCallback<Array<MetadataObjec
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'metadataObjectsAvailable'，metadataOutput创建成功后可监听。检测到有效的metadata数据时触发该事件发生并返回相应的metadata数据。callbackAsyncCallback<Array<[MetadataObject](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__metadataobject)>>是回调函数，用于获取metadata数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'metadataObjectsAvailable'，metadataOutput创建成功后可监听。 检测到有效的metadata数据时，触发该事件发生并返回相应的metadata数据。如果输入错误字段，则不会创建有效监听。 |
+| callback | AsyncCallback<Array<MetadataObject>> | 是 | 回调函数，用于获取metadata数据。 |
 
 **示例：**
 
@@ -184,7 +201,10 @@ off(type: 'metadataObjectsAvailable', callback?: AsyncCallback<Array<MetadataObj
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'metadataObjectsAvailable'，metadataOutput创建成功后可监听。callbackAsyncCallback<Array<[MetadataObject](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605794__metadataobject)>>否回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'metadataObjectsAvailable'，metadataOutput创建成功后可监听。 |
+| callback | AsyncCallback<Array<MetadataObject>> | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。 |
 
 **示例：**
 
@@ -208,7 +228,10 @@ on(type: 'error', callback: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'error'，metadataOutput创建成功后可监听。metadata接口使用错误时触发该事件并返回对应错误码，比如调用[start](#ZH-CN_TOPIC_0000002497445806__start-1)，[CameraOutput.release](Interface (CameraOutput).md#ZH-CN_TOPIC_0000002529285771__release-1)接口时发生错误返回对应错误信息。callback[ErrorCallback](../../modules/ohos/@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__errorcallback)是回调函数，用于获取错误信息。返回错误码，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'error'，metadataOutput创建成功后可监听。metadata接口使用错误时触发该事件并返回对应错误码，比如调用start，CameraOutput.release接口时发生错误返回对应错误信息。 |
+| callback | ErrorCallback | 是 | 回调函数，用于获取错误信息。返回错误码，错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **示例：**
 
@@ -236,7 +259,10 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是监听事件，固定为'error'，metadataOutput创建成功后可监听。callback[ErrorCallback](../../modules/ohos/@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__errorcallback)否回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 监听事件，固定为'error'，metadataOutput创建成功后可监听。 |
+| callback | ErrorCallback | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。 |
 
 **示例：**
 
@@ -244,4 +270,86 @@ off(type: 'error', callback?: ErrorCallback): void
 function unregisterMetadataOutputError(metadataOutput: camera.MetadataOutput): void {
   metadataOutput.off('error');
 }
+```
+
+**addMetadataObjectTypes23+**
+
+addMetadataObjectTypes(types: Array<MetadataObjectType>): void
+
+新增需要上报的检测对象类型。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.Multimedia.Camera.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| types | Array<MetadataObjectType> | 是 | metadata流类型信息，通过getSupportedOutputCapability接口获取。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400101 | Parameter missing or parameter type incorrect. |
+| 7400103 | Session not config. |
+| 7400201 | Camera service fatal error. |
+
+示例：
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function addMetadataObjectTypes(metadataOutput: camera.MetadataOutput, types: Array<camera.MetadataObjectType>): void {
+  try {
+    metadataOutput.addMetadataObjectTypes(types);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`addMetadataObjectTypes error. error code: ${err.code}`);
+  }
+```
+
+**removeMetadataObjectTypes23+**
+
+removeMetadataObjectTypes(types: Array<MetadataObjectType>): void
+
+删除需要上报的检测对象类型。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.Multimedia.Camera.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| types | Array<MetadataObjectType> | 是 | metadata流类型信息，通过getSupportedOutputCapability接口获取。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400101 | Parameter missing or parameter type incorrect. |
+| 7400103 | Session not config. |
+| 7400201 | Camera service fatal error. |
+
+示例：
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function removeMetadataObjectTypes(metadataOutput: camera.MetadataOutput, types: Array<camera.MetadataObjectType>): void {
+  try {
+    metadataOutput.removeMetadataObjectTypes(types);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`removeMetadataObjectTypes error. error code: ${err.code}`);
+  }
 ```

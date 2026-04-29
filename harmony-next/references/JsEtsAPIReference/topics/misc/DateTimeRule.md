@@ -12,10 +12,18 @@ typedef struct DateTimeRule {...} DateTimeRule
 
 **相关模块：**[i18n](i18n.md)
 
-**所在头文件：**[timezone.h](../../capi/headers/timezone.h.md)
+所在头文件： [timezone.h](timezone.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述int32_t month月份。int32_t dayOfMonth当月的第几天。int32_t dayOfWeek当周的第几天。int32_t weekInMonth当月的第几周。int32_t millisInDay从当天凌晨0点开始到当前时间的毫秒值。[DateRuleType](../../capi/headers/timezone.h.md#ZH-CN_TOPIC_0000002529285317__dateruletype) dateRuleType日期规则类型。[TimeRuleType](../../capi/headers/timezone.h.md#ZH-CN_TOPIC_0000002529285317__timeruletype) timeRuleType时间规则类型。
+| 名称 | 描述 |
+| --- | --- |
+| int32_t month | 月份。 |
+| int32_t dayOfMonth | 当月的第几天。 |
+| int32_t dayOfWeek | 当周的第几天。 |
+| int32_t weekInMonth | 当月的第几周。 |
+| int32_t millisInDay | 从当天凌晨0点开始到当前时间的毫秒值。 |
+| [DateRuleType](timezone.h.md#ZH-CN_TOPIC_0000002529285317__dateruletype) dateRuleType | 日期规则类型。 |
+| [TimeRuleType](timezone.h.md#ZH-CN_TOPIC_0000002529285317__timeruletype) timeRuleType | 时间规则类型。 |

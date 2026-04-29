@@ -12,10 +12,13 @@ typedef struct {...} JSVM_TypeTag
 
 **相关模块：**[JSVM](JSVM.md)
 
-**所在头文件：**[jsvm_types.h](../../capi/headers/jsvm_types.h.md)
+所在头文件： [jsvm_types.h](jsvm_types.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述uint64_t lower低64位uint64_t upper高64位
+| 名称 | 描述 |
+| --- | --- |
+| uint64_t lower | 低64位 |
+| uint64_t upper | 高64位 |

@@ -12,4 +12,4 @@ typedef struct OH_Rdb_ConfigV2 OH_Rdb_ConfigV2
 
 **相关模块：**[RDB](RDB.md)
 
-**所在头文件：**[relational_store.h](../../capi/headers/relational_store.h.md)
+**所在头文件：**[relational_store.h](../../topics/misc/[relational_store.h](relational_store.h.md).md)

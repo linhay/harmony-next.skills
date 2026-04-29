@@ -154,7 +154,6 @@ let tranceOptions: mapCommon.TraceOverlayParams = {
       markerBoy1.setVisible(false);
       markerBoy2.setVisible(true);
     }
-  }
 };
 let markers: Array<map.Marker> = new Array();
 markers.push(markerBoy1, markerBoy2);
@@ -178,13 +177,9 @@ getId(): string
 
 **返回值：**
 
-类型
-
-说明
-
-string
-
-返回动态轨迹的ID。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回动态轨迹的ID。 |
 
 **示例：**
 

@@ -12,7 +12,7 @@
 
 -
 
-以下API需先使用UIContext中的[getComponentUtils()](Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getcomponentutils)方法获取到ComponentUtils对象，再通过该对象调用对应方法。
+以下API需先使用UIContext中的[getComponentUtils()](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getcomponentutils)方法获取到ComponentUtils对象，再通过该对象调用对应方法。
 
 #### getRectangleById
 
@@ -20,7 +20,8 @@ getRectangleById(id: string): componentUtils.ComponentInfo
 
 获取组件大小、位置、平移、缩放、旋转及仿射矩阵属性信息。
 
-该接口需要在目标组件布局、完成以后获取目标组件区域大小信息，建议在[onAppear](../../topics/misc/挂载卸载事件.md#ZH-CN_TOPIC_0000002529284813__onappear)中使用该接口。
+
+该接口需要在目标组件布局、完成以后获取目标组件区域大小信息，建议在[onAppear](挂载卸载事件.md#ZH-CN_TOPIC_0000002522240770__onappear)中使用该接口。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -28,17 +29,23 @@ getRectangleById(id: string): componentUtils.ComponentInfo
 
 **参数：**
 
-参数名类型必填说明idstring是组件唯一标识id。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | string | 是 | 组件唯一标识id。 |
 
 **返回值：**
 
-类型说明[componentUtils.ComponentInfo](../../modules/ohos/@ohos.arkui.componentUtils (componentUtils).md#ZH-CN_TOPIC_0000002529284761__componentinfo)组件大小、位置、平移缩放旋转及仿射矩阵属性信息。
+| 类型 | 说明 |
+| --- | --- |
+| componentUtils.ComponentInfo | 组件大小、位置、平移缩放旋转及仿射矩阵属性信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息100001UI execution context not found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 100001 | UI execution context not found. |
 
 **示例：**
 
@@ -74,5 +81,4 @@ struct Index {
     .height('100%')
     .width('100%')
   }
-}
 ```

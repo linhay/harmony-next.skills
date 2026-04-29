@@ -12,10 +12,16 @@ typedef struct OH_Drawing_FontGenericInfo {...} OH_Drawing_FontGenericInfo
 
 **相关模块：**[Drawing](Drawing.md)
 
-**所在头文件：**[drawing_text_typography.h](../../capi/headers/drawing_text_typography.h.md)
+所在头文件： [drawing_text_typography.h](drawing_text_typography.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述char* familyName字体家族名。size_t aliasInfoSize别名字体列表的数量。size_t adjustInfoSize字重映射列表的数量。[OH_Drawing_FontAliasInfo](OH_Drawing_FontAliasInfo.md)* aliasInfoSet别名字体列表。[OH_Drawing_FontAdjustInfo](OH_Drawing_FontAdjustInfo.md)* adjustInfoSet字重映射列表。
+| 名称 | 描述 |
+| --- | --- |
+| char* familyName | 字体家族名。 |
+| size_t aliasInfoSize | 别名字体列表的数量。 |
+| size_t adjustInfoSize | 字重映射列表的数量。 |
+| [OH_Drawing_FontAliasInfo](OH_Drawing_FontAliasInfo.md)* aliasInfoSet | 别名字体列表。 |
+| [OH_Drawing_FontAdjustInfo](OH_Drawing_FontAdjustInfo.md)* adjustInfoSet | 字重映射列表。 |

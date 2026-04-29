@@ -12,12 +12,16 @@ typedef struct OH_AudioInfo {...} OH_AudioInfo
 
 **起始版本：** 10
 
-**相关模块：**[AVScreenCapture](../misc/AVScreenCapture.md)
+相关模块： [AVScreenCapture](AVScreenCapture.md)
 
-**所在头文件：**[native_avscreen_capture_base.h](../../capi/headers/native_avscreen_capture_base.h.md)
+所在头文件： [native_avscreen_capture_base.h](native_avscreen_capture_base.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述[OH_AudioCaptureInfo](OH_AudioCaptureInfo.md) micCapInfo音频麦克风采样信息。[OH_AudioCaptureInfo](OH_AudioCaptureInfo.md) innerCapInfo音频内录采样信息。[OH_AudioEncInfo](OH_AudioEncInfo.md) audioEncInfo音频编码信息，原始码流时不需要设置。
+| 名称 | 描述 |
+| --- | --- |
+| [OH_AudioCaptureInfo](OH_AudioCaptureInfo.md) micCapInfo | 音频麦克风采样信息。 |
+| [OH_AudioCaptureInfo](OH_AudioCaptureInfo.md) innerCapInfo | 音频内录采样信息。 |
+| [OH_AudioEncInfo](OH_AudioEncInfo.md) audioEncInfo | 音频编码信息，原始码流时不需要设置。 |

@@ -20,21 +20,10 @@ isSimActive(slotId: number, callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
-
-callbackAsyncCallback<boolean>是
-
-回调函数。返回指定卡槽是否激活。
-
-- true:激活。
-
-- false：未激活。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。返回指定卡槽是否激活。 - true:激活。 - false：未激活。 |
 
 **示例：**
 
@@ -57,23 +46,15 @@ isSimActive(slotId: number): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明Promise<boolean>
-
-以Promise形式返回指定卡槽是否激活。
-
-- true:激活。
-
-- false：未激活。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | 以Promise形式返回指定卡槽是否激活。 - true:激活。 - false：未激活。 |
 
 **示例：**
 
@@ -98,23 +79,15 @@ isSimActiveSync(slotId: number): boolean
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明boolean
-
-返回指定卡槽是否激活。
-
-- true:激活。
-
-- false：未激活。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回指定卡槽是否激活。 - true:激活。 - false：未激活。 |
 
 **示例：**
 
@@ -135,15 +108,9 @@ getDefaultVoiceSlotId(callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是
-
-回调函数。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
-
-- -1：未设置或服务不可用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 回调函数。 - 0：卡槽1。 - 1：卡槽2。 - -1：未设置或服务不可用。 |
 
 **示例：**
 
@@ -166,15 +133,9 @@ getDefaultVoiceSlotId(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>
-
-以Promise形式返回默认语音业务的卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
-
-- -1：未设置或服务不可用。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 以Promise形式返回默认语音业务的卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 - -1：未设置或服务不可用。 |
 
 **示例：**
 
@@ -199,27 +160,22 @@ hasOperatorPrivileges(slotId: number, callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
-
-callbackAsyncCallback<boolean>是
-
-回调函数。 返回检查应用(调用者)是否已被授予运营商权限。
-
-- true:授权。
-
-- false：未授权。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。 返回检查应用(调用者)是否已被授予运营商权限。 - true:授权。 - false：未授权。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码]([电话子系统错误码](../../errors/电话子系统错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -242,23 +198,27 @@ hasOperatorPrivileges(slotId: number): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明Promise<boolean>以Promise形式返回检查应用(调用者)是否已被授予运营商权限。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | 以Promise形式返回检查应用(调用者)是否已被授予运营商权限。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -283,21 +243,23 @@ getISOCountryCodeForSim(slotId: number, callback: AsyncCallback<string>): void
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 callbackAsyncCallback<string>是回调函数。返回国家码，例如：CN(中国)。
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300004No SIM card found.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300004 | No SIM card found. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -320,23 +282,28 @@ getISOCountryCodeForSim(slotId: number): Promise<string>
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明Promise<string>以Promise形式返回获取指定卡槽SIM卡的ISO国家码。例如：CN(中国)。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | 以Promise形式返回获取指定卡槽SIM卡的ISO国家码。例如：CN(中国)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300004No SIM card found.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300004 | No SIM card found. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -361,17 +328,15 @@ getISOCountryCodeForSimSync(slotId: number): string
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明string返回获取指定卡槽SIM卡的ISO国家码。例如：CN(中国)。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回获取指定卡槽SIM卡的ISO国家码。例如：CN(中国)。 |
 
 **示例：**
 
@@ -392,21 +357,23 @@ getSimOperatorNumeric(slotId: number, callback: AsyncCallback<string>): void
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 callbackAsyncCallback<string>是回调函数。返回指定卡槽SIM卡的归属PLMN号。
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300004No SIM card found.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300004 | No SIM card found. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -429,23 +396,28 @@ getSimOperatorNumeric(slotId: number): Promise<string>
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明Promise<string>以Promise形式返回获取指定卡槽SIM卡的归属PLMN号。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | 以Promise形式返回获取指定卡槽SIM卡的归属PLMN号。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300004No SIM card found.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300004 | No SIM card found. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -470,17 +442,15 @@ getSimOperatorNumericSync(slotId: number): string
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明string返回获取指定卡槽SIM卡的归属PLMN号。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回获取指定卡槽SIM卡的归属PLMN号。 |
 
 **示例：**
 
@@ -501,21 +471,23 @@ getSimSpn(slotId: number, callback: AsyncCallback<string>): void
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 callbackAsyncCallback<string>是回调函数。返回指定卡槽SIM卡的SPN。
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300004No SIM card found.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300004 | No SIM card found. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -538,23 +510,28 @@ getSimSpn(slotId: number): Promise<string>
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明Promise<string>以Promise形式返回获取指定卡槽SIM卡的SPN。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | 以Promise形式返回获取指定卡槽SIM卡的SPN。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300004No SIM card found.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300004 | No SIM card found. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -579,17 +556,15 @@ getSimSpnSync(slotId: number): string
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明string返回获取指定卡槽SIM卡的SPN。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回获取指定卡槽SIM卡的SPN。 |
 
 **示例：**
 
@@ -610,21 +585,22 @@ getSimState(slotId: number, callback: AsyncCallback<SimState>): void
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
-
-callbackAsyncCallback<[SimState](#ZH-CN_TOPIC_0000002529445457__simstate)>是回调函数。参考[SimState](#ZH-CN_TOPIC_0000002529445457__simstate)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
+| callback | AsyncCallback<SimState> | 是 | 回调函数。参考SimState。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -647,23 +623,27 @@ getSimState(slotId: number): Promise<SimState>
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明Promise<[SimState](#ZH-CN_TOPIC_0000002529445457__simstate)>以Promise形式返回获取指定卡槽的SIM卡状态。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<SimState> | 以Promise形式返回获取指定卡槽的SIM卡状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -688,17 +668,15 @@ getSimStateSync(slotId: number): SimState
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明[SimState](#ZH-CN_TOPIC_0000002529445457__simstate)返回获取指定卡槽的SIM卡状态。
+| 类型 | 说明 |
+| --- | --- |
+| SimState | 返回获取指定卡槽的SIM卡状态。 |
 
 **示例：**
 
@@ -719,21 +697,23 @@ getCardType(slotId: number, callback: AsyncCallback<CardType>): void
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
-
-callbackAsyncCallback<[CardType](#ZH-CN_TOPIC_0000002529445457__cardtype7)>是回调函数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
+| callback | AsyncCallback<CardType> | 是 | 回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300004No SIM card found.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300004 | No SIM card found. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -756,23 +736,28 @@ getCardType(slotId: number): Promise<CardType>
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明Promise<[CardType](#ZH-CN_TOPIC_0000002529445457__cardtype7)>以Promise形式返回指定卡槽SIM卡的卡类型。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<CardType> | 以Promise形式返回指定卡槽SIM卡的卡类型。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300004No SIM card found.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300004 | No SIM card found. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -797,17 +782,15 @@ getCardTypeSync(slotId: number): CardType
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明[CardType](#ZH-CN_TOPIC_0000002529445457__cardtype7)返回指定卡槽SIM卡的卡类型。
+| 类型 | 说明 |
+| --- | --- |
+| CardType | 返回指定卡槽SIM卡的卡类型。 |
 
 **示例：**
 
@@ -828,27 +811,22 @@ hasSimCard(slotId: number, callback: AsyncCallback<boolean>): void
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
-
-callbackAsyncCallback<boolean>是
-
-回调返回指定卡槽是否插卡。
-
-- true:插卡。
-
-- false：未插卡。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
+| callback | AsyncCallback<boolean> | 是 | 回调返回指定卡槽是否插卡。 - true:插卡。 - false：未插卡。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -871,29 +849,27 @@ hasSimCard(slotId: number): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明Promise<boolean>
-
-以Promise形式返回指定卡槽是否插卡。
-
-- true:插卡。
-
-- false：未插卡。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | 以Promise形式返回指定卡槽是否插卡。 - true:插卡。 - false：未插卡。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -918,23 +894,15 @@ hasSimCardSync(slotId: number): boolean
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明boolean
-
-返回指定卡槽是否插卡。
-
-- true:插卡。
-
-- false：未插卡。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回指定卡槽是否插卡。 - true:插卡。 - false：未插卡。 |
 
 **示例：**
 
@@ -949,9 +917,10 @@ console.info(`has sim card: ` + hasSimCard);
 
 getSimAccountInfo(slotId: number, callback: AsyncCallback<IccAccountInfo>): void
 
-获取SIM卡帐户信息。使用callback异步回调。
+获取SIM卡账户信息。使用callback异步回调。
 
 **需要权限**：ohos.permission.GET_TELEPHONY_STATE
+
 
 获取ICCID和号码信息时需要GET_TELEPHONY_STATE权限，ICCID和号码信息为敏感数据，不向三方应用开放。调用接口时，获取到的ICCID和号码信息为空。
 
@@ -959,21 +928,24 @@ getSimAccountInfo(slotId: number, callback: AsyncCallback<IccAccountInfo>): void
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
-
-callbackAsyncCallback<[IccAccountInfo](#ZH-CN_TOPIC_0000002529445457__iccaccountinfo10)>是回调函数。返回指定卡槽SIM卡的帐户信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
+| callback | AsyncCallback<IccAccountInfo> | 是 | 回调函数。返回指定卡槽SIM卡的账户信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息201Permission denied401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300004No SIM card found.8300999Unknown error.8301002The SIM card failed to read or update data.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300004 | No SIM card found. |
+| 8300999 | Unknown error. |
+| 8301002 | The SIM card failed to read or update data. |
 
 **示例：**
 
@@ -990,9 +962,10 @@ sim.getSimAccountInfo(0, (err:BusinessError , data: sim.IccAccountInfo) => {
 
 getSimAccountInfo(slotId: number): Promise<IccAccountInfo>
 
-获取SIM卡帐户信息。使用Promise异步回调。
+获取SIM卡账户信息。使用Promise异步回调。
 
 **需要权限**：ohos.permission.GET_TELEPHONY_STATE
+
 
 获取ICCID和号码信息时需要GET_TELEPHONY_STATE权限，ICCID和号码信息为敏感数据，不向三方应用开放。调用接口时，获取到的ICCID和号码信息为空。
 
@@ -1000,23 +973,29 @@ getSimAccountInfo(slotId: number): Promise<IccAccountInfo>
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明Promise<[IccAccountInfo](#ZH-CN_TOPIC_0000002529445457__iccaccountinfo10)>以Promise形式返回指定卡槽SIM卡的帐户信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<IccAccountInfo> | 以Promise形式返回指定卡槽SIM卡的账户信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息201Permission denied401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300004No SIM card found.8300999Unknown error.8301002The SIM card failed to read or update data.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300004 | No SIM card found. |
+| 8300999 | Unknown error. |
+| 8301002 | The SIM card failed to read or update data. |
 
 **示例：**
 
@@ -1035,9 +1014,10 @@ sim.getSimAccountInfo(0).then((data: sim.IccAccountInfo) => {
 
 getActiveSimAccountInfoList(callback: AsyncCallback<Array<IccAccountInfo>>): void
 
-获取激活SIM卡帐户信息列表。使用callback异步回调。
+获取激活SIM卡账户信息列表。使用callback异步回调。
 
 **需要权限**：ohos.permission.GET_TELEPHONY_STATE
+
 
 获取ICCID和号码信息时需要GET_TELEPHONY_STATE权限，ICCID和号码信息为敏感数据，不向三方应用开放。调用接口时，获取到的ICCID和号码信息为空。
 
@@ -1045,13 +1025,22 @@ getActiveSimAccountInfoList(callback: AsyncCallback<Array<IccAccountInfo>>): voi
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<Array<[IccAccountInfo](#ZH-CN_TOPIC_0000002529445457__iccaccountinfo10)>>是回调函数。返回激活SIM卡帐户信息列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<IccAccountInfo>> | 是 | 回调函数。返回激活SIM卡账户信息列表。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300004No SIM card found.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300004 | No SIM card found. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -1074,7 +1063,9 @@ getMaxSimCount(): number
 
 **返回值：**
 
-类型说明number卡槽数量。
+| 类型 | 说明 |
+| --- | --- |
+| number | 卡槽数量。 |
 
 **示例：**
 
@@ -1088,9 +1079,10 @@ console.info("Result: "+ sim.getMaxSimCount());
 
 getActiveSimAccountInfoList(): Promise<Array<IccAccountInfo>>
 
-获取激活SIM卡帐户信息列表。使用Promise异步回调。
+获取激活SIM卡账户信息列表。使用Promise异步回调。
 
 **需要权限**：ohos.permission.GET_TELEPHONY_STATE
+
 
 获取ICCID和号码信息时需要GET_TELEPHONY_STATE权限，ICCID和号码信息为敏感数据，不向三方应用开放。调用接口时，获取到的ICCID和号码信息为空。
 
@@ -1098,13 +1090,20 @@ getActiveSimAccountInfoList(): Promise<Array<IccAccountInfo>>
 
 **返回值：**
 
-类型说明Promise<Array<[IccAccountInfo](#ZH-CN_TOPIC_0000002529445457__iccaccountinfo10)>>以Promise形式返回激活卡槽SIM卡的帐户信息列表。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<IccAccountInfo>> | 以Promise形式返回激活卡槽SIM卡的账户信息列表。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息8300002Service connection failed.8300003System internal error.8300004No SIM card found.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300004 | No SIM card found. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -1129,21 +1128,23 @@ getOpKey(slotId: number, callback: AsyncCallback<string>): void
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 callbackAsyncCallback<string>是回调函数。
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -1174,23 +1175,28 @@ getOpKey(slotId: number): Promise<string>
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明Promise<string>以Promise形式返回指定卡槽中SIM卡的opkey。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | 以Promise形式返回指定卡槽中SIM卡的opkey。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -1215,17 +1221,15 @@ getOpKeySync(slotId: number): string
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明string返回指定卡槽中SIM卡的opkey。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回指定卡槽中SIM卡的opkey。 |
 
 **示例：**
 
@@ -1246,21 +1250,23 @@ getOpName(slotId: number, callback: AsyncCallback<string>): void
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 callbackAsyncCallback<string>是回调函数。
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -1291,23 +1297,28 @@ getOpName(slotId: number): Promise<string>
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明Promise<string>以Promise形式返回指定卡槽中SIM卡的OpName。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | 以Promise形式返回指定卡槽中SIM卡的OpName。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.801Capability not supported.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300999Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
@@ -1332,17 +1343,15 @@ getOpNameSync(slotId: number): string
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明string返回指定卡槽中SIM卡的OpName。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回指定卡槽中SIM卡的OpName。 |
 
 **示例：**
 
@@ -1363,17 +1372,23 @@ getDefaultVoiceSimId(callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是
-
-回调函数。
-
-与SIM卡绑定，从1开始递增。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 回调函数。 与SIM卡绑定，从1开始递增。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300004No SIM card found.8300999Unknown error.8301001SIM card is not activated.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300004 | No SIM card found. |
+| 8300999 | Unknown error. |
+| 8301001 | SIM card is not activated. |
 
 **示例：**
 
@@ -1396,17 +1411,22 @@ getDefaultVoiceSimId(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>
-
-以Promise形式返回默认语音业务的SIM卡ID。
-
-与SIM卡绑定，从1开始递增。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 以Promise形式返回默认语音业务的SIM卡ID。 与SIM卡绑定，从1开始递增。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.telephony(电话子系统)错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[ohos.telephony(电话子系统)错误码](电话子系统错误码.md)。
 
-错误码ID错误信息8300001Invalid parameter value.8300002Service connection failed.8300003System internal error.8300004No SIM card found.8300999Unknown error.8301001SIM card is not activated.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Service connection failed. |
+| 8300003 | System internal error. |
+| 8300004 | No SIM card found. |
+| 8300999 | Unknown error. |
+| 8301001 | SIM card is not activated. |
 
 **示例：**
 
@@ -1432,21 +1452,21 @@ getSimLabel(slotId: number, callback: AsyncCallback<SimLabel>): void
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
-
-callbackAsyncCallback<[SimLabel](#ZH-CN_TOPIC_0000002529445457__simlabel20)>是回调函数。获取SIM卡标签信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
+| callback | AsyncCallback<SimLabel> | 是 | 回调函数。获取SIM卡标签信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[电话子系统错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[电话子系统错误码](电话子系统错误码.md)。
 
-错误码ID错误信息8300001Invalid parameter value.8300002Operation failed. Cannot connect to service.8300003System internal error.8300999Unknown error code.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Operation failed. Cannot connect to service. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error code. |
 
 **示例：**
 
@@ -1469,23 +1489,26 @@ getSimLabel(slotId: number): Promise<SimLabel>
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明Promise<[SimLabel](#ZH-CN_TOPIC_0000002529445457__simlabel20) >回调函数。获取SIM卡标签信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<SimLabel > | 回调函数。获取SIM卡标签信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[电话子系统错误码](../../errors/电话子系统错误码.md)。
+以下错误码的详细介绍请参见[电话子系统错误码](电话子系统错误码.md)。
 
-错误码ID错误信息8300001Invalid parameter value.8300002Operation failed. Cannot connect to service.8300003System internal error.8300999Unknown error code.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Operation failed. Cannot connect to service. |
+| 8300003 | System internal error. |
+| 8300999 | Unknown error code. |
 
 **示例：**
 
@@ -1510,17 +1533,15 @@ getSimLabelSync(slotId: number): SimLabel
 
 **参数：**
 
-参数名类型必填说明slotIdnumber是
-
-卡槽ID。
-
-- 0：卡槽1。
-
-- 1：卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 **返回值：**
 
-类型说明[SimLabel](#ZH-CN_TOPIC_0000002529445457__simlabel20)SIM卡标签。
+| 类型 | 说明 |
+| --- | --- |
+| SimLabel | SIM卡标签。 |
 
 **示例：**
 
@@ -1537,7 +1558,10 @@ SIM卡类型的枚举。
 
 **系统能力**：SystemCapability.Telephony.CoreService
 
-名称值说明PSIM0实体SIM卡。ESIM1电子SIM卡。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PSIM | 0 | 实体SIM卡。 |
+| ESIM | 1 | 电子SIM卡。 |
 
 #### SimLabel20+
 
@@ -1545,7 +1569,10 @@ SIM卡标签。
 
 **系统能力**：SystemCapability.Telephony.CoreService
 
-名称类型只读可选说明simType[SimType](#ZH-CN_TOPIC_0000002529445457__simtype20)否否表示SIM卡类型的枚举。indexnumber否否SIM卡的唯一标识索引值。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| simType | SimType | 否 | 否 | 表示SIM卡类型的枚举。 |
+| index | number | 否 | 否 | SIM卡的唯一标识索引值。 |
 
 #### SimState
 
@@ -1553,7 +1580,14 @@ SIM卡状态。
 
 **系统能力**：SystemCapability.Telephony.CoreService
 
-名称值说明SIM_STATE_UNKNOWN0SIM卡状态未知，即无法获取准确的状态。SIM_STATE_NOT_PRESENT1表示SIM卡处于not present状态，即卡槽中没有插入SIM卡。SIM_STATE_LOCKED2表示SIM卡处于locked状态，即SIM卡被PIN、PUK或网络锁锁定。SIM_STATE_NOT_READY3表示SIM卡处于not ready状态，即SIM卡在位但无法正常工作。SIM_STATE_READY4表示SIM卡处于ready状态，即SIM卡在位且工作正常。SIM_STATE_LOADED5表示SIM卡处于loaded状态，即SIM卡在位且所有卡文件加载完毕。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SIM_STATE_UNKNOWN | 0 | SIM卡状态未知，即无法获取准确的状态。 |
+| SIM_STATE_NOT_PRESENT | 1 | 表示SIM卡处于not present状态，即卡槽中没有插入SIM卡。 |
+| SIM_STATE_LOCKED | 2 | 表示SIM卡处于locked状态，即SIM卡被PIN、PUK或网络锁锁定。 |
+| SIM_STATE_NOT_READY | 3 | 表示SIM卡处于not ready状态，即SIM卡在位但无法正常工作。 |
+| SIM_STATE_READY | 4 | 表示SIM卡处于ready状态，即SIM卡在位且工作正常。 |
+| SIM_STATE_LOADED | 5 | 表示SIM卡处于loaded状态，即SIM卡在位且所有卡文件加载完毕。 |
 
 #### CardType7+
 
@@ -1561,28 +1595,31 @@ SIM卡状态。
 
 **系统能力**：SystemCapability.Telephony.CoreService
 
-名称值说明UNKNOWN_CARD-1未知类型。SINGLE_MODE_SIM_CARD10单SIM卡。SINGLE_MODE_USIM_CARD20单USIM卡。SINGLE_MODE_RUIM_CARD30单RUIM卡。DUAL_MODE_CG_CARD40双卡模式C+G。CT_NATIONAL_ROAMING_CARD41中国电信内部漫游卡。CU_DUAL_MODE_CARD42中国联通双模卡。DUAL_MODE_TELECOM_LTE_CARD43双模式电信LTE卡。DUAL_MODE_UG_CARD50双模式UG卡。SINGLE_MODE_ISIM_CARD8+60单一ISIM卡类型。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| UNKNOWN_CARD | -1 | 未知类型。 |
+| SINGLE_MODE_SIM_CARD | 10 | 单SIM卡。 |
+| SINGLE_MODE_USIM_CARD | 20 | 单USIM卡。 |
+| SINGLE_MODE_RUIM_CARD | 30 | 单RUIM卡。 |
+| DUAL_MODE_CG_CARD | 40 | 双卡模式C+G。 |
+| CT_NATIONAL_ROAMING_CARD | 41 | 中国电信内部漫游卡。 |
+| CU_DUAL_MODE_CARD | 42 | 中国联通双模卡。 |
+| DUAL_MODE_TELECOM_LTE_CARD | 43 | 双模式电信LTE卡。 |
+| DUAL_MODE_UG_CARD | 50 | 双模式UG卡。 |
+| SINGLE_MODE_ISIM_CARD8+ | 60 | 单一ISIM卡类型。 |
 
 #### IccAccountInfo10+
 
-Icc帐户信息。
+Icc账户信息。
 
 **系统能力**：SystemCapability.Telephony.CoreService
 
-名称类型只读可选说明simIdnumber否否SIM卡ID。slotIndexnumber否否卡槽ID。isEsimboolean否否
-
-标记卡是否是eSim。
-
-- true:是eSim。
-
-- false：不是eSim。
-
-isActiveboolean否否
-
-卡是否被激活。
-
-- true:激活。
-
-- false：未激活。
-
-iccIdstring否否ICCID号码。showNamestring否否SIM卡显示名称。showNumberstring否否SIM卡显示号码。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| simId | number | 否 | 否 | SIM卡ID。 |
+| slotIndex | number | 否 | 否 | 卡槽ID。 |
+| isEsim | boolean | 否 | 否 | 标记卡是否是eSim。 - true:是eSim。 - false：不是eSim。 |
+| isActive | boolean | 否 | 否 | 卡是否被激活。  - true:激活。 - false：未激活。 |
+| iccId | string | 否 | 否 | ICCID号码。 |
+| showName | string | 否 | 否 | SIM卡显示名称。 |
+| showNumber | string | 否 | 否 | SIM卡显示号码。 |

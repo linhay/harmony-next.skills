@@ -1,183 +1,119 @@
-[]()[]()
+# qrcode
 
-# QRCode
+生成并显示二维码。
 
-用于显示单个二维码的组件。
 
-该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-
-二维码组件的像素点数量与内容有关，组件尺寸过小可能导致内容无法展示，此时需要适当调整组件尺寸。
-
-[]()[]()
+该组件从API version 5 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 #### 子组件
 
-无
-
-[]()[]()
-
-#### 接口
-
-QRCode(value: ResourceStr)
-
-创建二维码组件，通过扫描组件显示的二维码图案可以获取二维码中包含的字符串信息。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
-参数名类型必填说明value[ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)是
-
-二维码内容字符串。最大支持512个字符，若超出，则截取前512个字符。
-
-从API version 20开始，支持Resource类型。
-
-**说明：**
-
-设置为null时与设置字符串“null”效果一致；设置为undefined时与设置字符串“undefined”效果一致；当传入空字符串时，将生成无效二维码。
-
-[]()[]()
+不支持。
 
 #### 属性
 
-除支持[通用属性](../components/通用属性 (ts-component-general-attributes).md)外，还支持以下属性：
-
-[]()[]()
-
-#### color
-
-color(value: ResourceColor)
-
-设置二维码颜色。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
-参数名类型必填说明value[ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)是
-
-二维码颜色。默认值：'#ff000000'，且不跟随系统深浅色模式切换而修改。
-
-[]()[]()
-
-#### backgroundColor
-
-backgroundColor(value: ResourceColor)
-
-设置二维码背景颜色。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
-参数名类型必填说明value[ResourceColor](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)是
-
-二维码背景颜色。
-
-默认值：Color.White
-
-从API version 11开始，默认值改为'#ffffffff'，且不跟随系统深浅色模式切换而修改。
-
-[]()[]()
-
-#### contentOpacity11+
-
-contentOpacity(value: number | Resource)
-
-设置二维码内容颜色的不透明度。不透明度最小值为0，最大值为1。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
-参数名类型必填说明valuenumber | [Resource](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)是
-
-二维码内容颜色的不透明度。
-
-默认值：1
-
-取值范围：[0, 1]，超出取值范围按默认值处理。
-
-[]()[]()
+| 名称 | 类型 | 默认值 | 必填 | 描述 |
+| --- | --- | --- | --- | --- |
+| value | string | - | 是 | 用来生成二维码的内容。最大长度为256。 |
+| id | string | - | 否 | 组件的唯一标识。 |
+| style | string | - | 否 | 组件的样式声明。 |
+| class | string | - | 否 | 组件的样式类，用于引用样式表。 |
+| ref | string | - | 否 | 用来指定指向子元素的引用信息，该引用将注册到父组件的$refs 属性对象上。 |
 
 #### 事件
 
-通用事件支持[点击事件](点击事件.md)、[触摸事件](触摸事件.md)和[挂载卸载事件](挂载卸载事件.md)。
+| 名称 | 参数 | 描述 |
+| --- | --- | --- |
+| click | - | 点击动作触发该事件。 |
+| longpress | - | 长按动作触发该事件。 |
+| swipe5+ | SwipeEvent | 组件上快速滑动后触发。 |
 
-[]()[]()
+**样式**
+
+| 名称 | 类型 | 默认值 | 必填 | 描述 |
+| --- | --- | --- | --- | --- |
+| color | <color> | #000000 | 否 | 二维码颜色。 |
+| background-color | <color> | #ffffff | 否 | 二维码背景颜色。 |
+| width | <length> | <percentage>5+ | - | 否 | 设置组件自身的宽度。 未设置时组件宽度默认为0。 |
+| height | <length> | <percentage>5+ | - | 否 | 设置组件自身的高度。 未设置时组件高度默认为0。 |
+| padding | <length> | 0 | 否 | 使用简写属性设置所有的内边距属性。  该属性可以有1到4个值： - 指定一个值时，该值指定四个边的内边距。 - 指定两个值时，第一个值指定上下两边的内边距，第二个指定左右两边的内边距。 - 指定三个值时，第一个指定上边的内边距，第二个指定左右两边的内边距，第三个指定下边的内边距。 - 指定四个值时分别为上、右、下、左边的内边距（顺时针顺序）。 |
+| padding-[left|top|right|bottom] | <length> | 0 | 否 | 设置左、上、右、下内边距属性。 |
+| margin | <length> | <percentage>5+ | 0 | 否 | 使用简写属性设置所有的外边距属性，该属性可以有1到4个值。 - 只有一个值时，这个值会被指定给全部的四个边。 - 两个值时，第一个值被匹配给上和下，第二个值被匹配给左和右。 - 三个值时，第一个值被匹配给上, 第二个值被匹配给左和右，第三个值被匹配给下。 - 四个值时，会依次按上、右、下、左的顺序匹配 (即顺时针顺序)。 |
+| margin-[left|top|right|bottom] | <length> | <percentage>5+ | 0 | 否 | 设置左、上、右、下外边距属性。 |
+| border-width | <length> | 0 | 否 | 使用简写属性设置元素的所有边框宽度。 |
+| border-color | <color> | black | 否 | 使用简写属性设置元素的所有边框颜色。 |
+| border-radius | <length> | - | 否 | border-radius属性是设置元素的外边框圆角半径。 |
+| display | string | flex | 否 | 确定一个元素所产生的框的类型，可选值为： - flex：弹性布局。 - none：不渲染此元素。 |
+| [left|top] | <length> | <percentage>6+ | - | 否 | left|top确定元素的偏移位置。 - left属性规定元素的左边缘。该属性定义了定位元素左外边距边界与其包含块左边界之间的偏移。 - top属性规定元素的顶部边缘。该属性定义了一个定位元素的上外边距边界与其包含块上边界之间的偏移。 |
+
+
+-
+
+width和height不一致时，以二者最小值作为二维码的边长。且最终生成的二维码居中显示；
+
+-
+
+width和height的最小值为200px。
 
 #### 示例
 
-[]()[]()
-
-#### 示例1（设置颜色、背景颜色、不透明度）
-
-该示例展示了QRCode组件的基本使用方法，通过[color](#ZH-CN_TOPIC_0000002529284901__color)属性设置二维码颜色、[backgroundColor](#ZH-CN_TOPIC_0000002529284901__backgroundcolor)属性设置二维码背景颜色、[contentOpacity](#ZH-CN_TOPIC_0000002529284901__contentopacity11)属性设置二维码不透明度。
+```ets
+<!-- xxx.hml -->
+<div class="container">
+    <qrcode value="{{qr_value}}" class="qrCode" style="color: {{qr_col}};background-color: {{qr_bcol}};"></qrcode>
+    <input type="button" onclick="changeColor" class="button">Color</input>
+    <input type="button" onclick="changeBackgroundColor" class="button">BackgroundColor</input>
+    <input type="button" onclick="changeValue" class="button">Value</input>
+</div>
+```
 
 ```ets
-// xxx.ets
-@Entry
-@Component
-struct QRCodeExample {
-  private value: string = 'hello world';
-
-  build() {
-    Column({ space: 5 }) {
-      Text('normal').fontSize(9).width('90%').fontColor(0xCCCCCC).fontSize(30)
-      QRCode(this.value).width(140).height(140)
-
-      // 设置二维码颜色
-      Text('color').fontSize(9).width('90%').fontColor(0xCCCCCC).fontSize(30)
-      QRCode(this.value).color(0xF7CE00).width(140).height(140)
-
-      // 设置二维码背景色
-      Text('backgroundColor').fontSize(9).width('90%').fontColor(0xCCCCCC).fontSize(30)
-      QRCode(this.value).width(140).height(140).backgroundColor(Color.Orange)
-
-      // 设置二维码不透明度
-      Text('contentOpacity').fontSize(9).width('90%').fontColor(0xCCCCCC).fontSize(30)
-      QRCode(this.value).width(140).height(140).color(Color.Black).contentOpacity(0.1)
-    }.width('100%').margin({ top: 5 })
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   }
+.qrCode {
+  width: 200px;
+  height: 200px;
+}
+.button {
+  width: 30%;
+  height: 10%;
+  margin-top: 5%;
 }
 ```
 
-[]()[]()
-
-#### 示例2（设置背景颜色为透明）
-
-该示例通过[backgroundColor](#ZH-CN_TOPIC_0000002529284901__backgroundcolor)属性设置二维码背景颜色为透明，从而实现二维码内容与背景融合。
-
 ```ets
-// xxx.ets
-@Entry
-@Component
-struct QRCodeExample {
-  private value: string = 'hello world';
-
-  build() {
-    Column({ space: 5 }) {
-      RelativeContainer() {
-        // $r('app.media.ocean')需要替换为开发者所需的图像资源文件。
-        Image($r('app.media.ocean'))
-        // 设置二维码背景色为透明
-        QRCode(this.value).width(200).height(200).backgroundColor("#00ffffff")
-      }.width(200).height(200)
-    }.width('100%').margin({ top: 5 })
+// xxx.js
+export default {
+    data: {
+        qr_col: '#87ceeb',
+        qr_bcol: '#f0ffff',
+        qr_value: 'value'
+    },
+    changeColor() {
+        if (this.qr_col == '#87ceeb') {
+            this.qr_col = '#fa8072';
+        } else {
+            this.qr_col = '#87ceeb';
   }
+    },
+    changeBackgroundColor() {
+        if (this.qr_bcol == '#f0ffff') {
+            this.qr_bcol = '#ffffe0';
+        } else {
+            this.qr_bcol = '#f0ffff';
 }
+    },
+    changeValue() {
+        if (this.qr_value == 'value') {
+            this.qr_value = 'change';
+        } else {
+            this.qr_value = 'value';
+        }
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553205639.webp)

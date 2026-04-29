@@ -50,7 +50,9 @@ constructor(path: Path)
 
 **参数：**
 
-参数名类型必填说明path[Path](Class (Path).md)是待复制的路径对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | Path | 是 | 待复制的路径对象。 |
 
 **示例：**
 
@@ -77,7 +79,9 @@ set(src: Path): void
 
 **参数：**
 
-参数名类型必填说明src[Path](Class (Path).md)是用于更新的路径。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| src | Path | 是 | 用于更新的路径。 |
 
 **示例：**
 
@@ -104,13 +108,18 @@ moveTo(x: number, y: number) : void
 
 **参数：**
 
-参数名类型必填说明xnumber是起始点的x轴坐标，该参数为浮点数。ynumber是起始点的y轴坐标，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| x | number | 是 | 起始点的x轴坐标，该参数为浮点数。 |
+| y | number | 是 | 起始点的y轴坐标，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -133,13 +142,18 @@ lineTo(x: number, y: number) : void
 
 **参数：**
 
-参数名类型必填说明xnumber是目标点的x轴坐标，该参数为浮点数。ynumber是目标点的y轴坐标，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| x | number | 是 | 目标点的x轴坐标，该参数为浮点数。 |
+| y | number | 是 | 目标点的y轴坐标，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -163,13 +177,22 @@ arcTo(x1: number, y1: number, x2: number, y2: number, startDeg: number, sweepDeg
 
 **参数：**
 
-参数名类型必填说明x1number是矩形左上角的x坐标，该参数为浮点数。y1number是矩形左上角的y坐标，该参数为浮点数。x2number是矩形右下角的x坐标，该参数为浮点数。y2number是矩形右下角的y坐标，该参数为浮点数。startDegnumber是起始的角度。角度的起始方向（0°）为x轴正方向。sweepDegnumber是扫描的度数，为正数时顺时针扫描，为负数时逆时针扫描。实际扫描的度数为该入参对360取模的结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| x1 | number | 是 | 矩形左上角的x坐标，该参数为浮点数。 |
+| y1 | number | 是 | 矩形左上角的y坐标，该参数为浮点数。 |
+| x2 | number | 是 | 矩形右下角的x坐标，该参数为浮点数。 |
+| y2 | number | 是 | 矩形右下角的y坐标，该参数为浮点数。 |
+| startDeg | number | 是 | 起始的角度。角度的起始方向（0°）为x轴正方向。 |
+| sweepDeg | number | 是 | 扫描的度数，为正数时顺时针扫描，为负数时逆时针扫描。实际扫描的度数为该入参对360取模的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -193,13 +216,20 @@ quadTo(ctrlX: number, ctrlY: number, endX: number, endY: number): void
 
 **参数：**
 
-参数名类型必填说明ctrlXnumber是控制点的x坐标，该参数为浮点数。ctrlYnumber是控制点的y坐标，该参数为浮点数。endXnumber是目标点的x坐标，该参数为浮点数。endYnumber是目标点的y坐标，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ctrlX | number | 是 | 控制点的x坐标，该参数为浮点数。 |
+| ctrlY | number | 是 | 控制点的y坐标，该参数为浮点数。 |
+| endX | number | 是 | 目标点的x坐标，该参数为浮点数。 |
+| endY | number | 是 | 目标点的y坐标，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -223,13 +253,21 @@ conicTo(ctrlX: number, ctrlY: number, endX: number, endY: number, weight: number
 
 **参数：**
 
-参数名类型必填说明ctrlXnumber是控制点的x坐标，该参数为浮点数。ctrlYnumber是控制点的y坐标，该参数为浮点数。endXnumber是目标点的x坐标，该参数为浮点数。endYnumber是目标点的y坐标，该参数为浮点数。weightnumber是表示曲线权重，决定了曲线的形状。值越大，曲线越接近控制点。小于等于0时，效果与[lineTo](#ZH-CN_TOPIC_0000002529445943__lineto)相同；值为1时，效果与[quadTo](#ZH-CN_TOPIC_0000002529445943__quadto)相同。该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ctrlX | number | 是 | 控制点的x坐标，该参数为浮点数。 |
+| ctrlY | number | 是 | 控制点的y坐标，该参数为浮点数。 |
+| endX | number | 是 | 目标点的x坐标，该参数为浮点数。 |
+| endY | number | 是 | 目标点的y坐标，该参数为浮点数。 |
+| weight | number | 是 | 表示曲线权重，决定了曲线的形状。值越大，曲线越接近控制点。小于等于0时，效果与lineTo相同；值为1时，效果与quadTo相同。该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -252,13 +290,22 @@ cubicTo(ctrlX1: number, ctrlY1: number, ctrlX2: number, ctrlY2: number, endX: nu
 
 **参数：**
 
-参数名类型必填说明ctrlX1number是第一个控制点的x坐标，该参数为浮点数。ctrlY1number是第一个控制点的y坐标，该参数为浮点数。ctrlX2number是第二个控制点的x坐标，该参数为浮点数。ctrlY2number是第二个控制点的y坐标，该参数为浮点数。endXnumber是目标点的x坐标，该参数为浮点数。endYnumber是目标点的y坐标，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ctrlX1 | number | 是 | 第一个控制点的x坐标，该参数为浮点数。 |
+| ctrlY1 | number | 是 | 第一个控制点的y坐标，该参数为浮点数。 |
+| ctrlX2 | number | 是 | 第二个控制点的x坐标，该参数为浮点数。 |
+| ctrlY2 | number | 是 | 第二个控制点的y坐标，该参数为浮点数。 |
+| endX | number | 是 | 目标点的x坐标，该参数为浮点数。 |
+| endY | number | 是 | 目标点的y坐标，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -282,13 +329,18 @@ rMoveTo(dx: number, dy: number): void
 
 **参数：**
 
-参数名类型必填说明dxnumber是路径新起始点相对于当前路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。dynumber是路径新起始点相对于当前路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dx | number | 是 | 路径新起始点相对于当前路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。 |
+| dy | number | 是 | 路径新起始点相对于当前路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -311,13 +363,18 @@ rLineTo(dx: number, dy: number): void
 
 **参数：**
 
-参数名类型必填说明dxnumber是目标点相对于当前路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。dynumber是目标点相对于当前路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dx | number | 是 | 目标点相对于当前路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。 |
+| dy | number | 是 | 目标点相对于当前路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -340,13 +397,20 @@ rQuadTo(dx1: number, dy1: number, dx2: number, dy2: number): void
 
 **参数：**
 
-参数名类型必填说明dx1number是控制点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。dy1number是控制点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。dx2number是目标点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。dy2number是目标点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dx1 | number | 是 | 控制点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。 |
+| dy1 | number | 是 | 控制点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。 |
+| dx2 | number | 是 | 目标点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。 |
+| dy2 | number | 是 | 目标点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -369,13 +433,21 @@ rConicTo(ctrlX: number, ctrlY: number, endX: number, endY: number, weight: numbe
 
 **参数：**
 
-参数名类型必填说明ctrlXnumber是控制点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。ctrlYnumber是控制点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。endXnumber是目标点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。endYnumber是目标点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。weightnumber是表示曲线的权重，决定了曲线的形状，越大越接近控制点。若小于等于0则等同于使用[rLineTo](#ZH-CN_TOPIC_0000002529445943__rlineto12)添加一条到结束点的线段，若为1则等同于[rQuadTo](#ZH-CN_TOPIC_0000002529445943__rquadto12)，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ctrlX | number | 是 | 控制点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。 |
+| ctrlY | number | 是 | 控制点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。 |
+| endX | number | 是 | 目标点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。 |
+| endY | number | 是 | 目标点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。 |
+| weight | number | 是 | 表示曲线的权重，决定了曲线的形状，越大越接近控制点。若小于等于0则等同于使用rLineTo添加一条到结束点的线段，若为1则等同于rQuadTo，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -398,13 +470,22 @@ rCubicTo(ctrlX1: number, ctrlY1: number, ctrlX2: number, ctrlY2: number, endX: n
 
 **参数：**
 
-参数名类型必填说明ctrlX1number是第一个控制点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。ctrlY1number是第一个控制点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。ctrlX2number是第二个控制点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。ctrlY2number是第二个控制点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。endXnumber是目标点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。endYnumber是目标点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ctrlX1 | number | 是 | 第一个控制点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。 |
+| ctrlY1 | number | 是 | 第一个控制点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。 |
+| ctrlX2 | number | 是 | 第二个控制点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。 |
+| ctrlY2 | number | 是 | 第二个控制点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。 |
+| endX | number | 是 | 目标点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。 |
+| endY | number | 是 | 目标点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -433,13 +514,19 @@ addArc(rect: common2D.Rect, startAngle: number, sweepAngle: number): void
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是包含弧的椭圆的矩形边界。startAnglenumber是弧的起始角度，单位为度，0度为x轴正方向，该参数为浮点数。sweepAnglenumber是扫描角度，单位为度。正数表示顺时针方向，负数表示逆时针方向，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 包含弧的椭圆的矩形边界。 |
+| startAngle | number | 是 | 弧的起始角度，单位为度，0度为x轴正方向，该参数为浮点数。 |
+| sweepAngle | number | 是 | 扫描角度，单位为度。正数表示顺时针方向，负数表示逆时针方向，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -453,7 +540,7 @@ path.addArc(rect, 90, 180);
 
 #### addCircle12+
 
-addCircle(x: number, y: number, radius: number, pathDirection?: PathDirection): void
+addCircle(x: number, y: number, radius: number, pathDirection?: [PathDirection](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathdirection12)): void
 
 按指定方向，向路径添加圆形，圆的起点位于(x + radius, y)。
 
@@ -461,13 +548,20 @@ addCircle(x: number, y: number, radius: number, pathDirection?: PathDirection): 
 
 **参数：**
 
-参数名类型必填说明xnumber是表示圆心的x轴坐标，该参数为浮点数。ynumber是表示圆心的y轴坐标，该参数为浮点数。radiusnumber是表示圆形的半径，该参数为浮点数，小于等于0时不会有任何效果。pathDirection[PathDirection](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__pathdirection12)否表示路径方向，默认为顺时针方向。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| x | number | 是 | 表示圆心的x轴坐标，该参数为浮点数。 |
+| y | number | 是 | 表示圆心的y轴坐标，该参数为浮点数。 |
+| radius | number | 是 | 表示圆形的半径，该参数为浮点数，小于等于0时不会有任何效果。 |
+| pathDirection | [PathDirection](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathdirection12) | 否 | 表示路径方向，默认为顺时针方向。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -481,7 +575,7 @@ path.addCircle(100, 200, 50, drawing.PathDirection.CLOCKWISE);
 
 #### addOval12+
 
-addOval(rect: common2D.Rect, start: number, pathDirection?: PathDirection): void
+addOval(rect: common2D.Rect, start: number, pathDirection?: [PathDirection](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathdirection12)): void
 
 按指定方向，将矩形的内切椭圆添加到路径中。
 
@@ -489,13 +583,19 @@ addOval(rect: common2D.Rect, start: number, pathDirection?: PathDirection): void
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是椭圆的矩形边界。startnumber是表示椭圆初始点的索引，0，1，2，3分别对应椭圆的上端点，右端点，下端点，左端点，该参数为不小于0的整数，大于等于4时会对4取余。pathDirection[PathDirection](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__pathdirection12)否表示路径方向，默认为顺时针方向。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 椭圆的矩形边界。 |
+| start | number | 是 | 表示椭圆初始点的索引，0，1，2，3分别对应椭圆的上端点，右端点，下端点，左端点，该参数为不小于0的整数，大于等于4时会对4取余。 |
+| pathDirection | [PathDirection](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathdirection12) | 否 | 表示路径方向，默认为顺时针方向。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -509,7 +609,7 @@ path.addOval(rect, 5, drawing.PathDirection.CLOCKWISE);
 
 #### addRect12+
 
-addRect(rect: common2D.Rect, pathDirection?: PathDirection): void
+addRect(rect: common2D.Rect, pathDirection?: [PathDirection](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathdirection12)): void
 
 按指定方向，将矩形添加到路径中，添加的路径的起始点为矩形左上角。
 
@@ -517,13 +617,18 @@ addRect(rect: common2D.Rect, pathDirection?: PathDirection): void
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是向路径中添加的矩形轮廓。pathDirection[PathDirection](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__pathdirection12)否表示路径方向，默认为顺时针方向。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 向路径中添加的矩形轮廓。 |
+| pathDirection | [PathDirection](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathdirection12) | 否 | 表示路径方向，默认为顺时针方向。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -537,7 +642,7 @@ path.addRect(rect, drawing.PathDirection.CLOCKWISE);
 
 #### addRoundRect12+
 
-addRoundRect(roundRect: RoundRect, pathDirection?: PathDirection): void
+addRoundRect(roundRect: RoundRect, pathDirection?: [PathDirection](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathdirection12)): void
 
 按指定方向，向路径添加圆角矩形轮廓。路径添加方向为顺时针时，起始点位于圆角矩形左下方圆角与左边界的交点；路径添加方向为逆时针时，起始点位于圆角矩形左上方圆角与左边界的交点。
 
@@ -545,13 +650,18 @@ addRoundRect(roundRect: RoundRect, pathDirection?: PathDirection): void
 
 **参数：**
 
-参数名类型必填说明roundRect[RoundRect](Class (RoundRect).md)是圆角矩形对象。pathDirection[PathDirection](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__pathdirection12)否表示路径方向，默认为顺时针方向。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| roundRect | RoundRect | 是 | 圆角矩形对象。 |
+| pathDirection | [PathDirection](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathdirection12) | 否 | 表示路径方向，默认为顺时针方向。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -574,13 +684,18 @@ addPath(path: Path, matrix?: Matrix | null): void
 
 **参数：**
 
-参数名类型必填说明path[Path](Class (Path).md)是表示源路径对象。matrix[Matrix](Class (Matrix).md)|null否表示矩阵对象，默认为单位矩阵。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | Path | 是 | 表示源路径对象。 |
+| matrix | Matrix|null | 否 | 表示矩阵对象，默认为单位矩阵。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -606,13 +721,17 @@ transform(matrix: Matrix): void
 
 **参数：**
 
-参数名类型必填说明matrix[Matrix](Class (Matrix).md)是表示矩阵对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| matrix | Matrix | 是 | 表示矩阵对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -632,23 +751,30 @@ path.transform(matrix);
 
 contains(x: number, y: number): boolean
 
-判断指定坐标点是否被路径包含，判定是否被路径包含的规则参考[PathFillType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__pathfilltype12)。
+判断指定坐标点是否被路径包含，判定是否被路径包含的规则参考[PathFillType](Enums.md#ZH-CN_TOPIC_0000002553202101__pathfilltype12)。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
-参数名类型必填说明xnumber是x轴上坐标点，该参数必须为浮点数。ynumber是y轴上坐标点，该参数必须为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| x | number | 是 | x轴上坐标点，该参数必须为浮点数。 |
+| y | number | 是 | y轴上坐标点，该参数必须为浮点数。 |
 
 **返回值：**
 
-类型说明boolean返回指定坐标点是否在路径内。true表示点在路径内，false表示点不在路径内。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回指定坐标点是否在路径内。true表示点在路径内，false表示点不在路径内。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -672,7 +798,10 @@ setLastPoint(x: number, y: number): void
 
 **参数：**
 
-参数名类型必填说明xnumber是指定点的x轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点左侧，正数表示位于坐标原点右侧。ynumber是指定点的y轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点上侧，正数表示位于坐标原点下侧。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| x | number | 是 | 指定点的x轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点左侧，正数表示位于坐标原点右侧。 |
+| y | number | 是 | 指定点的y轴坐标，该参数为浮点数。0表示坐标原点，负数表示位于坐标原点上侧，正数表示位于坐标原点下侧。 |
 
 **示例：**
 
@@ -693,7 +822,7 @@ console.info('isEmpty:', isEmpty);
 
 #### setFillType12+
 
-setFillType(pathFillType: PathFillType): void
+setFillType(pathFillType: [PathFillType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathfilltype12)): void
 
 设置路径的填充类型，决定路径内部区域的定义方式。例如，使用Winding填充类型时，路径内部区域由路径环绕的次数决定，而使用EvenOdd填充类型时，路径内部区域由路径环绕的次数是否为奇数决定。
 
@@ -701,13 +830,17 @@ setFillType(pathFillType: PathFillType): void
 
 **参数：**
 
-参数名类型必填说明pathFillType[PathFillType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__pathfilltype12)是表示路径填充规则。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pathFillType | [PathFillType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathfilltype12) | 是 | 表示路径填充规则。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -720,7 +853,7 @@ path.setFillType(drawing.PathFillType.WINDING);
 
 #### getFillType20+
 
-getFillType(): PathFillType
+getFillType(): [PathFillType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathfilltype12)
 
 获取路径的填充类型。
 
@@ -728,7 +861,9 @@ getFillType(): PathFillType
 
 **返回值：**
 
-类型说明[PathFillType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__pathfilltype12)路径填充类型。
+| 类型 | 说明 |
+| --- | --- |
+| [PathFillType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathfilltype12) | 路径填充类型。 |
 
 **示例：**
 
@@ -750,7 +885,9 @@ getBounds(): common2D.Rect
 
 **返回值：**
 
-类型说明[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)包含路径的最小矩形区域。
+| 类型 | 说明 |
+| --- | --- |
+| common2D.Rect | 包含路径的最小矩形区域。 |
 
 **示例：**
 
@@ -777,13 +914,18 @@ addPolygon(points: Array<common2D.Point>, close: boolean): void
 
 **参数：**
 
-参数名类型必填说明pointsArray<[common2D.Point](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__point12)>是坐标点数组。closeboolean是表示是否将路径闭合，即是否添加路径起始点到终点的连线。true表示将路径闭合，false表示不将路径闭合。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| points | Array<common2D.Point> | 是 | 坐标点数组。 |
+| close | boolean | 是 | 表示是否将路径闭合，即是否添加路径起始点到终点的连线。true表示将路径闭合，false表示不将路径闭合。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -813,17 +955,24 @@ offset(dx: number, dy: number): Path
 
 **参数：**
 
-参数名类型必填说明dxnumber是x轴方向偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。dynumber是y轴方向偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dx | number | 是 | x轴方向偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。 |
+| dy | number | 是 | y轴方向偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。 |
 
 **返回值：**
 
-类型说明[Path](Class (Path).md)返回当前路径偏移(dx,dy)后生成的新路径对象。
+| 类型 | 说明 |
+| --- | --- |
+| Path | 返回当前路径偏移(dx,dy)后生成的新路径对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -838,7 +987,7 @@ const dst = path.offset(200, 200);
 
 #### op12+
 
-op(path: Path, pathOp: PathOp): boolean
+op(path: Path, pathOp: [PathOp](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathop12)): boolean
 
 将当前路径置为和path按照指定的路径操作类型合并后的结果。
 
@@ -846,17 +995,24 @@ op(path: Path, pathOp: PathOp): boolean
 
 **参数：**
 
-参数名类型必填说明path[Path](Class (Path).md)是路径对象，用于与当前路径合并。pathOp[PathOp](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__pathop12)是路径操作类型枚举。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | Path | 是 | 路径对象，用于与当前路径合并。 |
+| pathOp | [PathOp](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathop12) | 是 | 路径操作类型枚举。 |
 
 **返回值：**
 
-类型说明boolean返回路径合并是否成功的结果。true表示合并成功，false表示合并失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回路径合并是否成功的结果。true表示合并成功，false表示合并失败。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
 
 **示例：**
 
@@ -937,7 +1093,9 @@ isEmpty(): boolean
 
 **返回值：**
 
-类型说明boolean路径是否为空。true表示当前路径为空，false表示路径不为空。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 路径是否为空。true表示当前路径为空，false表示路径不为空。 |
 
 **示例：**
 
@@ -960,11 +1118,15 @@ isRect(rect: common2D.Rect | null): boolean
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)| null是矩形对象，作为出参使用，路径构成矩形时，会被改写为路径表示的矩形，否则不会改变。可以为null，表示无需获取路径表示的矩形。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect| null | 是 | 矩形对象，作为出参使用，路径构成矩形时，会被改写为路径表示的矩形，否则不会改变。可以为null，表示无需获取路径表示的矩形。 |
 
 **返回值：**
 
-类型说明boolean返回路径是否构成矩形。true表示路径构成矩形，false表示路径不构成矩形。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回路径是否构成矩形。true表示路径构成矩形，false表示路径不构成矩形。 |
 
 **示例：**
 
@@ -994,11 +1156,15 @@ getLength(forceClosed: boolean): number
 
 **参数：**
 
-参数名类型必填说明forceClosedboolean是表示是否按照闭合路径测量，true表示测量时路径会被强制视为已闭合，false表示会根据路径的实际闭合状态测量。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| forceClosed | boolean | 是 | 表示是否按照闭合路径测量，true表示测量时路径会被强制视为已闭合，false表示会根据路径的实际闭合状态测量。 |
 
 **返回值：**
 
-类型说明number路径长度。
+| 类型 | 说明 |
+| --- | --- |
+| number | 路径长度。 |
 
 **示例：**
 
@@ -1021,17 +1187,26 @@ getPositionAndTangent(forceClosed: boolean, distance: number, position: common2D
 
 **参数：**
 
-参数名类型必填说明forceClosedboolean是表示是否按照闭合路径测量，true表示测量时路径会被强制视为已闭合，false表示会根据路径的实际闭合状态测量。distancenumber是表示与路径起始点的距离，小于0时会被视作0，大于路径长度时会被视作路径长度。该参数为浮点数。position[common2D.Point](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__point12)是存储获取到的距离路径起始点distance处的点的坐标。tangent[common2D.Point](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__point12)是存储获取到的距离路径起始点distance处的点的切线值，tangent.x表示该点切线的余弦值，tangent.y表示该点切线的正弦值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| forceClosed | boolean | 是 | 表示是否按照闭合路径测量，true表示测量时路径会被强制视为已闭合，false表示会根据路径的实际闭合状态测量。 |
+| distance | number | 是 | 表示与路径起始点的距离，小于0时会被视作0，大于路径长度时会被视作路径长度。该参数为浮点数。 |
+| position | common2D.Point | 是 | 存储获取到的距离路径起始点distance处的点的坐标。 |
+| tangent | common2D.Point | 是 | 存储获取到的距离路径起始点distance处的点的切线值，tangent.x表示该点切线的余弦值，tangent.y表示该点切线的正弦值。 |
 
 **返回值：**
 
-类型说明boolean表示是否成功获取距离路径起始点distance处的点的坐标和正切值的结果。true表示获取成功，false表示获取失败，position和tangent不会被改变。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 表示是否成功获取距离路径起始点distance处的点的坐标和正切值的结果。true表示获取成功，false表示获取失败，position和tangent不会被改变。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -1062,11 +1237,19 @@ getSegment(forceClosed: boolean, start: number, stop: number, startWithMoveTo: b
 
 **参数：**
 
-参数名类型必填说明forceClosedboolean是表示是否按照闭合路径测量，true表示测量时路径会被强制视为已闭合，false表示会根据路径的实际闭合状态测量。startnumber是表示与路径起始点的距离，距离路径起始点start距离的位置即为截取路径片段的起始点，小于0时会被视作0，大于等于stop时会截取失败。该参数为浮点数。stopnumber是表示与路径起始点的距离，距离路径起始点stop距离的位置即为截取路径片段的终点，小于等于start时会截取失败，大于路径长度时会被视作路径长度。该参数为浮点数。startWithMoveToboolean是表示是否在目标路径执行[moveTo](#ZH-CN_TOPIC_0000002529445943__moveto)移动到截取路径片段的起始点位置。true表示执行，false表示不执行。dst[Path](Class (Path).md)是目标路径，截取成功时会将得到的路径片段追加到目标路径上，截取失败时不做改变。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| forceClosed | boolean | 是 | 表示是否按照闭合路径测量，true表示测量时路径会被强制视为已闭合，false表示会根据路径的实际闭合状态测量。 |
+| start | number | 是 | 表示与路径起始点的距离，距离路径起始点start距离的位置即为截取路径片段的起始点，小于0时会被视作0，大于等于stop时会截取失败。该参数为浮点数。 |
+| stop | number | 是 | 表示与路径起始点的距离，距离路径起始点stop距离的位置即为截取路径片段的终点，小于等于start时会截取失败，大于路径长度时会被视作路径长度。该参数为浮点数。 |
+| startWithMoveTo | boolean | 是 | 表示是否在目标路径执行moveTo移动到截取路径片段的起始点位置。true表示执行，false表示不执行。 |
+| dst | Path | 是 | 目标路径，截取成功时会将得到的路径片段追加到目标路径上，截取失败时不做改变。 |
 
 **返回值：**
 
-类型说明boolean表示是否成功截取路径片段。true表示截取成功，false表示截取失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 表示是否成功截取路径片段。true表示截取成功，false表示截取失败。 |
 
 **示例：**
 
@@ -1091,7 +1274,9 @@ isClosed(): boolean
 
 **返回值：**
 
-类型说明boolean表示当前路径是否闭合，true表示闭合，false表示不闭合。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 表示当前路径是否闭合，true表示闭合，false表示不闭合。 |
 
 **示例：**
 
@@ -1110,7 +1295,7 @@ if (path.isClosed()) {
 
 #### getMatrix12+
 
-getMatrix(forceClosed: boolean, distance: number, matrix: Matrix, flags: PathMeasureMatrixFlags): boolean
+getMatrix(forceClosed: boolean, distance: number, matrix: Matrix, flags: [PathMeasureMatrixFlags](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathmeasurematrixflags12)): boolean
 
 在路径上的某个位置，获取一个变换矩阵，用于表示该点的坐标和朝向。
 
@@ -1118,17 +1303,26 @@ getMatrix(forceClosed: boolean, distance: number, matrix: Matrix, flags: PathMea
 
 **参数：**
 
-参数名类型必填说明forceClosedboolean是表示是否按照闭合路径测量，true表示测量时路径会被强制视为已闭合，false表示会根据路径的实际闭合状态测量。distancenumber是表示与路径起始点的距离，小于0时会被视作0，大于路径长度时会被视作路径长度。该参数为浮点数。matrix[Matrix](Class (Matrix).md)是矩阵对象，用于存储得到的矩阵。flags[PathMeasureMatrixFlags](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__pathmeasurematrixflags12)是矩阵信息维度枚举。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| forceClosed | boolean | 是 | 表示是否按照闭合路径测量，true表示测量时路径会被强制视为已闭合，false表示会根据路径的实际闭合状态测量。 |
+| distance | number | 是 | 表示与路径起始点的距离，小于0时会被视作0，大于路径长度时会被视作路径长度。该参数为浮点数。 |
+| matrix | Matrix | 是 | 矩阵对象，用于存储得到的矩阵。 |
+| flags | [PathMeasureMatrixFlags](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__pathmeasurematrixflags12) | 是 | 矩阵信息维度枚举。 |
 
 **返回值：**
 
-类型说明boolean返回是否成功获取变换矩阵的结果。true表示成功，false表示失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回是否成功获取变换矩阵的结果。true表示成功，false表示失败。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: Mandatory parameters are left unspecified.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: Mandatory parameters are left unspecified. |
 
 **示例：**
 
@@ -1154,17 +1348,23 @@ buildFromSvgString(str: string): boolean
 
 **参数：**
 
-参数名类型必填说明strstring是SVG格式的字符串，用于描述绘制路径。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| str | string | 是 | SVG格式的字符串，用于描述绘制路径。 |
 
 **返回值：**
 
-类型说明boolean返回是否成功解析SVG字符串的结果。true表示解析成功，false表示解析失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回是否成功解析SVG字符串的结果。true表示解析成功，false表示解析失败。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: Mandatory parameters are left unspecified.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: Mandatory parameters are left unspecified. |
 
 **示例：**
 
@@ -1190,7 +1390,9 @@ getPathIterator(): PathIterator
 
 **返回值：**
 
-类型说明[PathIterator](Class (PathIterator).md)该路径的迭代器对象。
+| 类型 | 说明 |
+| --- | --- |
+| PathIterator | 该路径的迭代器对象。 |
 
 **示例：**
 
@@ -1215,25 +1417,23 @@ approximate(acceptableError: number): Array<number>
 
 **参数：**
 
-参数名类型必填说明acceptableErrornumber是表示路径上每条线段的可接受误差。该参数为浮点数，不应小于0，当参数小于0时报错。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| acceptableError | number | 是 | 表示路径上每条线段的可接受误差。该参数为浮点数，不应小于0，当参数小于0时报错。 |
 
 **返回值：**
 
-类型说明Array<number>
-
-返回包含近似路径的点的数组，至少包含两个点。每个点由三个值组成：
-
-1. 该点所在的位置距离路径起点的长度比例值，范围为[0.0, 1.0]。
-
-2. 点的x坐标。
-
-3. 点的y坐标。
+| 类型 | 说明 |
+| --- | --- |
+| Array<number> | 返回包含近似路径的点的数组，至少包含两个点。每个点由三个值组成： 1. 该点所在的位置距离路径起点的长度比例值，范围为[0.0, 1.0]。 2. 点的x坐标。 3. 点的y坐标。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[图形绘制与显示错误码](../../errors/图形绘制与显示错误码.md)。
+以下错误码的详细介绍请参见[图形绘制与显示错误码]([图形绘制与显示错误码](../../errors/图形绘制与显示错误码.md).md)。
 
-错误码ID错误信息25900001Parameter error.Possible causes: Incorrect parameter range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 25900001 | Parameter error.Possible causes: Incorrect parameter range. |
 
 **示例：**
 
@@ -1259,17 +1459,25 @@ interpolate(other: Path, weight: number, interpolatedPath: Path): boolean
 
 **参数：**
 
-参数名类型必填说明other[Path](Class (Path).md)是表示另一条路径对象。weightnumber是表示插值权重，必须在[0.0, 1.0]范围内。该参数为浮点数。interpolatedPath[Path](Class (Path).md)是表示用于存储插值结果的目标路径对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| other | Path | 是 | 表示另一条路径对象。 |
+| weight | number | 是 | 表示插值权重，必须在[0.0, 1.0]范围内。该参数为浮点数。 |
+| interpolatedPath | Path | 是 | 表示用于存储插值结果的目标路径对象。 |
 
 **返回值：**
 
-类型说明boolean返回插值操作是否成功的结果。true表示插值成功，false表示插值失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回插值操作是否成功的结果。true表示插值成功，false表示插值失败。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[图形绘制与显示错误码](../../errors/图形绘制与显示错误码.md)。
+以下错误码的详细介绍请参见[图形绘制与显示错误码](图形绘制与显示错误码.md)。
 
-错误码ID错误信息25900001Parameter error.Possible causes: Incorrect parameter range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 25900001 | Parameter error.Possible causes: Incorrect parameter range. |
 
 **示例：**
 
@@ -1301,11 +1509,15 @@ isInterpolate(other: Path): boolean
 
 **参数：**
 
-参数名类型必填说明other[Path](Class (Path).md)是表示另一条路径对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| other | Path | 是 | 表示另一条路径对象。 |
 
 **返回值：**
 
-类型说明boolean返回当前路径与另一条路径是否兼容插值的结果。true表示兼容插值，false表示不兼容插值。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回当前路径与另一条路径是否兼容插值的结果。true表示兼容插值，false表示不兼容插值。 |
 
 **示例：**
 
@@ -1323,4 +1535,51 @@ if (path.isInterpolate(other)) {
 } else {
   console.info('isInterpolate return false');
 }
+```
+
+**isInverseFillType23+**
+
+isInverseFillType(): boolean
+
+检查当前路径填充类型是否是反向填充类型。例如填充类型Winding、EvenOdd不是反向类型，InverseWinding、InverseEvenOdd是反向类型。
+
+系统能力： SystemCapability.Graphics.Drawing
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 检查当前路径填充类型是否是反向填充类型。true表示是反向填充类型，false表示不是反向填充类型。 |
+
+示例：
+
+```ets
+import { drawing } from '@kit.ArkGraphics2D';
+
+let path: drawing.Path = new drawing.Path();
+path.setFillType(drawing.PathFillType.WINDING);
+if (path.isInverseFillType()) {
+  console.info("path is inverse FillType.");
+} else {
+  console.info("path is not inverse FillType.");
+}
+```
+
+**toggleInverseFillType23+**
+
+toggleInverseFillType(): void
+
+切换路径的填充类型为反向类型。例如，使用Winding填充类型时，经过取反后填充类型为InverseWinding，而使用EvenOdd填充类型时，经过取反后填充类型为InverseEvenOdd，反之亦然。
+
+系统能力： SystemCapability.Graphics.Drawing
+
+示例：
+
+```ets
+import { drawing } from '@kit.ArkGraphics2D';
+
+let path: drawing.Path = new drawing.Path();
+path.setFillType(drawing.PathFillType.WINDING);
+path.toggleInverseFillType();
+console.info("path fillType = ", path.getFillType());
 ```

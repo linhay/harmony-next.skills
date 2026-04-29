@@ -22,7 +22,9 @@ getChannelId(): string
 
 **返回值：**
 
-类型说明string渠道号
+| 类型 | 说明 |
+| --- | --- |
+| string | 渠道号 |
 
 **示例：**
 

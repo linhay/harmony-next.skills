@@ -12,7 +12,7 @@
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### 导入模块
 
@@ -32,7 +32,9 @@ static setDownloadDelegate(delegate: WebDownloadDelegate): void
 
 **参数：**
 
-参数名类型必填说明delegate[WebDownloadDelegate](Class (WebDownloadDelegate).md)是用来接收下载进度的委托。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| delegate | WebDownloadDelegate | 是 | 用来接收下载进度的委托。 |
 
 **示例：**
 
@@ -119,8 +121,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### resumeDownload11+
@@ -135,13 +135,17 @@ static resumeDownload(webDownloadItem: WebDownloadItem): void
 
 **参数：**
 
-参数名类型必填说明webDownloadItem[WebDownloadItem](Class (WebDownloadItem).md)是待恢复的下载任务。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| webDownloadItem | WebDownloadItem | 是 | 待恢复的下载任务。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码]([Webview错误码](../../errors/Webview错误码.md).md)。
 
-错误码ID错误信息17100018No WebDownloadDelegate has been set yet.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100018 | No WebDownloadDelegate has been set yet. |
 
 **示例：**
 
@@ -228,6 +232,4 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```

@@ -30,17 +30,23 @@ requestSuspendDelay(reason: string, callback: Callback<void>): DelaySuspendInfo
 
 延迟挂起时间一般情况下默认值为3分钟，低电量（依据系统低电量广播）时默认值为1分钟。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[backgroundTaskManager.requestSuspendDelay](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerrequestsuspenddelay)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[backgroundTaskManager.requestSuspendDelay](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerrequestsuspenddelay)替代。
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.TransientTask
 
 **参数**：
 
-参数名类型必填说明reasonstring是延迟挂起申请的原因。callbackCallback<void>是延迟即将超时的回调函数，一般在超时前6秒通过此回调通知应用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| reason | string | 是 | 延迟挂起申请的原因。 |
+| callback | Callback<void> | 是 | 延迟即将超时的回调函数，一般在超时前6秒通过此回调通知应用。 |
 
 **返回值**：
 
-类型说明[DelaySuspendInfo](#ZH-CN_TOPIC_0000002497445264__delaysuspendinfodeprecated)返回延迟挂起信息。
+| 类型 | 说明 |
+| --- | --- |
+| DelaySuspendInfo | 返回延迟挂起信息。 |
 
 **示例**：
 
@@ -67,13 +73,17 @@ getRemainingDelayTime(requestId: number, callback: AsyncCallback<number>): void
 
 获取应用程序进入挂起状态前的剩余时间，使用callback形式返回。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[backgroundTaskManager.getRemainingDelayTime](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagergetremainingdelaytime)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[backgroundTaskManager.getRemainingDelayTime](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagergetremainingdelaytime)替代。
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.TransientTask
 
 **参数**：
 
-参数名类型必填说明requestIdnumber是延迟挂起的请求ID。这个值通过调用[requestSuspendDelay](#ZH-CN_TOPIC_0000002497445264__backgroundtaskmanagerrequestsuspenddelaydeprecated)方法获取。callbackAsyncCallback<number>是指定的callback回调方法。用于返回应用程序进入挂起状态之前的剩余时间，以毫秒为单位。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| requestId | number | 是 | 延迟挂起的请求ID。这个值通过调用requestSuspendDelay方法获取。 |
+| callback | AsyncCallback<number> | 是 | 指定的callback回调方法。用于返回应用程序进入挂起状态之前的剩余时间，以毫秒为单位。 |
 
 **示例**：
 
@@ -97,17 +107,22 @@ getRemainingDelayTime(requestId: number): Promise<number>
 
 获取应用程序进入挂起状态前的剩余时间，使用Promise形式返回。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[backgroundTaskManager.getRemainingDelayTime](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagergetremainingdelaytime-1)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[backgroundTaskManager.getRemainingDelayTime](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagergetremainingdelaytime-1)替代。
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.TransientTask
 
 **参数**：
 
-参数名类型必填说明requestIdnumber是延迟挂起的请求ID。这个值通过调用[requestSuspendDelay](#ZH-CN_TOPIC_0000002497445264__backgroundtaskmanagerrequestsuspenddelaydeprecated)方法获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| requestId | number | 是 | 延迟挂起的请求ID。这个值通过调用requestSuspendDelay方法获取。 |
 
 **返回值**：
 
-类型说明Promise<number>指定的Promise回调方法。返回应用程序进入挂起状态之前的剩余时间，以毫秒为单位。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | 指定的Promise回调方法。返回应用程序进入挂起状态之前的剩余时间，以毫秒为单位。 |
 
 **示例**：
 
@@ -129,13 +144,16 @@ cancelSuspendDelay(requestId: number): void
 
 取消延迟挂起。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[backgroundTaskManager.cancelSuspendDelay](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagercancelsuspenddelay)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[backgroundTaskManager.cancelSuspendDelay](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagercancelsuspenddelay)替代。
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.TransientTask
 
 **参数**：
 
-参数名类型必填说明requestIdnumber是延迟挂起的请求ID。这个值通过调用[requestSuspendDelay](#ZH-CN_TOPIC_0000002497445264__backgroundtaskmanagerrequestsuspenddelaydeprecated)方法获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| requestId | number | 是 | 延迟挂起的请求ID。这个值通过调用requestSuspendDelay方法获取。 |
 
 **示例**：
 
@@ -150,7 +168,8 @@ startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: Want
 
 向系统申请长时任务，使用callback形式返回结果。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[backgroundTaskManager.startBackgroundRunning](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstartbackgroundrunning)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[backgroundTaskManager.startBackgroundRunning](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstartbackgroundrunning)替代。
 
 **需要权限:** ohos.permission.KEEP_BACKGROUND_RUNNING
 
@@ -158,15 +177,12 @@ startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: Want
 
 **参数**：
 
-参数名类型必填说明contextContext是
-
-应用运行的上下文。
-
-FA模型的应用Context定义见[Context](../../topics/graphics/Context (FA模型的上下文基类).md)。
-
-Stage模型的应用Context定义见[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)。
-
-bgMode[BackgroundMode](#ZH-CN_TOPIC_0000002497445264__backgroundmodedeprecated)是向系统申请的后台模式。wantAgent[WantAgent](@ohos.app.ability.wantAgent (WantAgent模块).md)是通知参数，用于指定长时任务通知点击后跳转的界面。callbackAsyncCallback<void>是callback形式返回启动长时任务的结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
+| bgMode | BackgroundMode | 是 | 向系统申请的后台模式。 |
+| wantAgent | WantAgent | 是 | 通知参数，用于指定长时任务通知点击后跳转的界面。 |
+| callback | AsyncCallback<void> | 是 | callback形式返回启动长时任务的结果。 |
 
 **示例**：
 
@@ -183,7 +199,6 @@ function callback(err: BusinessError, data: void) {
     console.error("Operation startBackgroundRunning failed Cause: " + err);
   } else {
     console.info("Operation startBackgroundRunning succeeded");
-  }
 }
 
 let wantAgentInfo : wantAgent.WantAgentInfo = {
@@ -220,7 +235,6 @@ function callback(err: BusinessError, data: void) {
   } else {
     console.info("Operation startBackgroundRunning succeeded");
   }
-}
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
@@ -250,7 +264,8 @@ startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: Want
 
 向系统申请长时任务，使用promise形式返回结果。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[backgroundTaskManager.startBackgroundRunning](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstartbackgroundrunning-1)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[backgroundTaskManager.startBackgroundRunning](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstartbackgroundrunning-1)替代。
 
 **需要权限:** ohos.permission.KEEP_BACKGROUND_RUNNING
 
@@ -258,19 +273,17 @@ startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: Want
 
 **参数**：
 
-参数名类型必填说明contextContext是
-
-应用运行的上下文。
-
-FA模型的应用Context定义见[Context](../../topics/graphics/Context (FA模型的上下文基类).md)。
-
-Stage模型的应用Context定义见[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)。
-
-bgMode[BackgroundMode](#ZH-CN_TOPIC_0000002497445264__backgroundmodedeprecated)是向系统申请的后台模式。wantAgent[WantAgent](@ohos.app.ability.wantAgent (WantAgent模块).md)是通知参数，用于指定长时任务通知点击跳转的界面。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
+| bgMode | BackgroundMode | 是 | 向系统申请的后台模式。 |
+| wantAgent | WantAgent | 是 | 通知参数，用于指定长时任务通知点击跳转的界面。 |
 
 **返回值**：
 
-类型说明Promise<void>使用Promise形式返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 使用Promise形式返回结果。 |
 
 **示例**：
 
@@ -300,7 +313,6 @@ wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj: WantAgent) => {
     console.info("Operation startBackgroundRunning succeeded");
   }).catch((err: BusinessError) => {
     console.error("Operation startBackgroundRunning failed Cause: " + err);
-  });
 });
 ```
 
@@ -337,7 +349,6 @@ export default class EntryAbility extends UIAbility {
       }).catch((err: BusinessError) => {
         console.error("Operation startBackgroundRunning failed Cause: " + err);
       });
-    });
   }
 };
 ```
@@ -348,20 +359,16 @@ stopBackgroundRunning(context: Context, callback: AsyncCallback<void>): void
 
 向系统申请取消长时任务，使用callback形式返回结果。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[backgroundTaskManager.stopBackgroundRunning](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstopbackgroundrunning)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[backgroundTaskManager.stopBackgroundRunning](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstopbackgroundrunning)替代。
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
 **参数**：
 
-参数名类型必填说明contextContext是
-
-应用运行的上下文。
-
-FA模型的应用Context定义见[Context](../../topics/graphics/Context (FA模型的上下文基类).md)。
-
-Stage模型的应用Context定义见[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
 callbackAsyncCallback<void>是callback形式返回启动长时任务的结果。
 
 **示例**：
@@ -378,7 +385,6 @@ function callback(err: BusinessError, data: void) {
     console.error("Operation stopBackgroundRunning failed Cause: " + err);
   } else {
     console.info("Operation stopBackgroundRunning succeeded");
-  }
 }
 
 backgroundTaskManager.stopBackgroundRunning(featureAbility.getContext(), callback);
@@ -399,7 +405,6 @@ function callback(err: BusinessError, data: void) {
   } else {
     console.info("Operation stopBackgroundRunning succeeded");
   }
-}
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
@@ -414,23 +419,22 @@ stopBackgroundRunning(context: Context): Promise<void>
 
 向系统申请取消长时任务，使用promise形式返回结果。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[backgroundTaskManager.stopBackgroundRunning](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002529285231__backgroundtaskmanagerstopbackgroundrunning-1)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[backgroundTaskManager.stopBackgroundRunning](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002553361127__backgroundtaskmanagerstopbackgroundrunning-1)替代。
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
 **参数**：
 
-参数名类型必填说明contextContext是
-
-应用运行的上下文。
-
-FA模型的应用Context定义见[Context](../../topics/graphics/Context (FA模型的上下文基类).md)。
-
-Stage模型的应用Context定义见[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
 
 **返回值**：
 
-类型说明Promise<void>使用Promise形式返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 使用Promise形式返回结果。 |
 
 **示例**：
 
@@ -474,22 +478,31 @@ export default class EntryAbility extends UIAbility {
 
 延迟挂起信息。
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[DelaySuspendInfo](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002529285231__delaysuspendinfo)替代。
+
+从API version 7开始支持，从API version 9开始废弃。建议使用[DelaySuspendInfo](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002553361127__delaysuspendinfo)替代。
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.TransientTask
 
-名称类型只读可选说明requestIdnumber否否延迟挂起的请求ID。actualDelayTimenumber否否
-
-应用的实际挂起延迟时间，以毫秒为单位。
-
-一般情况下默认值为180000，低电量（依据系统低电量广播）时默认值为60000。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| requestId | number | 否 | 否 | 延迟挂起的请求ID。 |
+| actualDelayTime | number | 否 | 否 | 应用的实际挂起延迟时间，以毫秒为单位。 一般情况下默认值为180000，低电量（依据系统低电量广播）时默认值为60000。 |
 
 #### BackgroundMode(deprecated)
 
 长时任务类型。
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[BackgroundMode](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002529285231__backgroundmode)替代。
+
+从API version 8开始支持，从API version 9开始废弃。建议使用[BackgroundMode](@ohos.resourceschedule.backgroundTaskManager (后台任务管理).md#ZH-CN_TOPIC_0000002553361127__backgroundmode)替代。
 
 **系统能力:** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
-名称值说明DATA_TRANSFER1数据传输。AUDIO_PLAYBACK2音频播放。AUDIO_RECORDING3录音。LOCATION4定位导航。BLUETOOTH_INTERACTION5蓝牙相关。MULTI_DEVICE_CONNECTION6多设备互联。TASK_KEEPING9计算任务（仅在特定设备生效）。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DATA_TRANSFER | 1 | 数据传输。 |
+| AUDIO_PLAYBACK | 2 | 音频播放。 |
+| AUDIO_RECORDING | 3 | 录音。 |
+| LOCATION | 4 | 定位导航。 |
+| BLUETOOTH_INTERACTION | 5 | 蓝牙相关。 |
+| MULTI_DEVICE_CONNECTION | 6 | 多设备互联。 |
+| TASK_KEEPING | 9 | 计算任务（仅在特定设备生效）。 |

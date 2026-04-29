@@ -12,10 +12,13 @@ typedef struct {...} ffrt_dependence_t
 
 **相关模块：**[FFRT](FFRT.md)
 
-**所在头文件：**[type_def.h](../../capi/headers/type_def.h.md)
+所在头文件： [type_def.h](type_def.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述[ffrt_dependence_type_t](../../capi/headers/type_def.h.md#ZH-CN_TOPIC_0000002497605556__ffrt_dependence_type_t) type依赖类型const void* ptr依赖数据地址
+| 名称 | 描述 |
+| --- | --- |
+| [ffrt_dependence_type_t](type_def.h.md#ZH-CN_TOPIC_0000002497605556__ffrt_dependence_type_t) type | 依赖类型 |
+| const void* ptr | 依赖数据地址 |

@@ -16,7 +16,8 @@
 
 卡片框架通过将加桌数据通知给桌面，触发卡片添加到桌面操作。
 
-该组件从API Version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+
+该组件从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 该组件不支持在Wearable设备上使用。
 
@@ -34,7 +35,7 @@ import { AddFormMenuItem } from '@kit.ArkUI';
 
 #### 属性
 
-不支持[通用属性](../misc/通用属性.md)。
+不支持[通用属性]([通用属性](../misc/通用属性.md).md)。
 
 #### AddFormMenuItem
 
@@ -56,7 +57,11 @@ options?: AddFormOptions
 
 **参数：**
 
-参数名类型必填说明want[Want](../../modules/ohos/@ohos.app.ability.Want (Want).md#ZH-CN_TOPIC_0000002529284603__want)是待发布功能组件的want信息。componentIdstring是应用内功能组件ID，组件ID对应的界面与待添加的服务卡片界面相似。options[AddFormOptions](#ZH-CN_TOPIC_0000002529284951__addformoptions)否添加卡片选项。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | Want | 是 | 待发布功能组件的want信息。 |
+| componentId | string | 是 | 应用内功能组件[ID](组件标识.md)，组件ID对应的界面与待添加的服务卡片界面相似。 |
+| options | AddFormOptions | 否 | 添加卡片选项。 |
 
 #### AddFormOptions
 
@@ -66,7 +71,11 @@ options?: AddFormOptions
 
 **参数：**
 
-名称类型只读可选说明formBindingData[formBindingData.FormBindingData](../../modules/ohos/@ohos.app.form.formBindingData (卡片数据绑定类).md#ZH-CN_TOPIC_0000002529445243__formbindingdata)否是卡片数据。callbackAsyncCallback<string>否是返回添加卡片是否成功的结果回调。返回为0表示卡片添加成功，非0表示卡片添加失败，失败时请参考[卡片错误码信息](../../errors/卡片错误码.md)进行排查。style[FormMenuItemStyle](#ZH-CN_TOPIC_0000002529284951__formmenuitemstyle)否是菜单自定义样式信息。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| formBindingData | formBindingData.FormBindingData | 否 | 是 | 卡片数据。 |
+| callback | AsyncCallback<string> | 否 | 是 | 返回添加卡片是否成功的结果回调。返回为0表示卡片添加成功，非0表示卡片添加失败，失败时请参考[卡片错误码信息](../../errors/卡片错误码.md)进行排查。 |
+| style | FormMenuItemStyle | 否 | 是 | 菜单自定义样式信息。 |
 
 #### FormMenuItemStyle
 
@@ -76,7 +85,10 @@ options?: AddFormOptions
 
 **参数：**
 
-名称类型只读可选说明options[MenuItemOptions](MenuItem.md#ZH-CN_TOPIC_0000002497604926__menuitemoptions对象说明)否是包含设置MenuItem的各项信息。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| options | [MenuItemOptions](MenuItem.md#ZH-CN_TOPIC_0000002497604926__menuitemoptions对象说明) | 否 | 是 | 包含设置MenuItem的各项信息。 |
+
 
 仅在 style配置为空或不配置时，使用默认的图标和menu文字。
 
@@ -112,7 +124,6 @@ struct Index {
             'ohos.extra.param.key.form_name': 'widget', // 卡片名称
             'ohos.extra.param.key.module_name': 'entry' // 卡片所属的模块名称
           },
-        },
         this.compId,
         {
           formBindingData: formBindingData.createFormBindingData({}),
@@ -132,9 +143,7 @@ struct Index {
             //   endIcon: $r("app.media.icon") // 菜单图标，可以自己提供
             // }
           }
-        }
       )
-    }
   }
 
   build() {
@@ -151,7 +160,6 @@ struct Index {
       .width('100%')
     }
     .height('100%')
-  }
 }
 ```
 
@@ -207,11 +215,13 @@ struct WidgetCard {
       });
     })
   }
-}
 ```
 
 **高级自定义控件界面**
 
+![image](public_sys-resources/zh-cn_image_0000002522245380.webp)
+
 **调用高级自定义控件桌面加桌结果**
 
 左侧是formbindingdata为空加桌结果，右侧是formbindingdata为{ data: 'share' }的加桌结果。
+![image](public_sys-resources/zh-cn_image_0000002553205343.webp)

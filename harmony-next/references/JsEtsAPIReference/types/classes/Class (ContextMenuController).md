@@ -12,7 +12,7 @@
 
 -
 
-以下API需先使用UIContext中的[getContextMenuController()](Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getcontextmenucontroller12)方法获取ContextMenuController实例，再通过此实例调用对应方法。
+以下API需先使用UIContext中的[getContextMenuController()](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getcontextmenucontroller12)方法获取ContextMenuController实例，再通过此实例调用对应方法。
 
 #### close12+
 
@@ -70,5 +70,6 @@ struct Index {
     .width('100%')
     .height('100%')
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553204637.webp)

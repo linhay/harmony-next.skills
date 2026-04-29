@@ -2,7 +2,10 @@
 
 弧形滑动条组件，通常用于在圆形屏幕的穿戴设备中快速调节设置值，如音量调节、亮度调节等应用场景。
 
+
  该组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+
+- 该组件支持在Phone、PC/2in1、Tablet、TV、Wearable设备上使用。API version 22及以前版本，在Phone、PC/2in1、Tablet、TV上使用会编译告警，但可以正常运行。
 
 #### 导入模块
 
@@ -27,11 +30,11 @@ import {
 
 #### 属性
 
-不支持[通用属性](../misc/通用属性.md)。
+不支持[通用属性]([通用属性](../misc/通用属性.md).md)。
 
 #### 事件
 
-不支持[通用事件](../misc/通用事件.md)。
+不支持[通用事件]([通用事件](../misc/通用事件.md).md)。
 
 #### ArcSlider
 
@@ -47,11 +50,9 @@ ArcSlider({ options: ArcSliderOptions })
 
 **参数：**
 
-名称类型必填说明options[ArcSliderOptions](#ZH-CN_TOPIC_0000002529284883__arcslideroptions)是
-
-配置弧形滑动条的参数。
-
-默认值：[ArcSliderOptions](#ZH-CN_TOPIC_0000002529284883__arcslideroptions)的各项子属性均取其默认值。
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | ArcSliderOptions | 是 | 配置弧形滑动条的参数。 默认值：ArcSliderOptions的各项子属性均取其默认值。 |
 
 #### ArcSliderOptions
 
@@ -65,61 +66,15 @@ ArcSlider({ options: ArcSliderOptions })
 
 #### 属性
 
-名称类型只读可选说明valueOptions[ArcSliderValueOptions](#ZH-CN_TOPIC_0000002529284883__arcslidervalueoptions)否是
-
-配置弧形Slider的数值信息。
-
-默认值：[ArcSliderValueOptions](#ZH-CN_TOPIC_0000002529284883__arcslidervalueoptions)的各项子属性均取其默认值。
-
-**装饰器类型：** @Trace
-
-layoutOptions[ArcSliderLayoutOptions](#ZH-CN_TOPIC_0000002529284883__arcsliderlayoutoptions)否是
-
-配置弧形Slider的布局信息。
-
-默认值：[ArcSliderLayoutOptions](#ZH-CN_TOPIC_0000002529284883__arcsliderlayoutoptions)的各项子属性均取其默认值。
-
-**装饰器类型：** @Trace
-
-styleOptions[ArcSliderStyleOptions](#ZH-CN_TOPIC_0000002529284883__arcsliderstyleoptions)否是
-
-配置弧形Slider的样式信息。
-
-默认值：[ArcSliderStyleOptions](#ZH-CN_TOPIC_0000002529284883__arcsliderstyleoptions)的各项子属性均取其默认值。
-
-**装饰器类型：** @Trace
-
-digitalCrownSensitivity[CrownSensitivity](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__crownsensitivity18)否是
-
-设置旋转表冠的灵敏度。
-
-默认值：CrownSensitivity.MEDIUM
-
-**装饰器类型：** @Trace
-
-onTouch[ArcSliderTouchHandler](#ZH-CN_TOPIC_0000002529284883__arcslidertouchhandler)否是
-
-弧形Slider被触摸时，告知应用。
-
-默认值：不传入的情况，无回调。
-
-**装饰器类型：** @Trace
-
-onChange[ArcSliderChangeHandler](#ZH-CN_TOPIC_0000002529284883__arcsliderchangehandler)否是
-
-弧形Slider的进度值发生变化时，告知应用。
-
-默认值：不传入的情况，无回调。
-
-**装饰器类型：** @Trace
-
-onEnlarge[ArcSliderEnlargeHandler](#ZH-CN_TOPIC_0000002529284883__arcsliderenlargehandler)否是
-
-弧形Slider放大或缩小时，告知应用。
-
-默认值：不传入的情况，无回调。
-
-**装饰器类型：** @Trace
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| valueOptions | ArcSliderValueOptions | 否 | 是 | 配置弧形Slider的数值信息。 默认值：ArcSliderValueOptions的各项子属性均取其默认值。 装饰器类型： @Trace |
+| layoutOptions | ArcSliderLayoutOptions | 否 | 是 | 配置弧形Slider的布局信息。 默认值：ArcSliderLayoutOptions的各项子属性均取其默认值。 装饰器类型： @Trace |
+| styleOptions | ArcSliderStyleOptions | 否 | 是 | 配置弧形Slider的样式信息。 默认值：ArcSliderStyleOptions的各项子属性均取其默认值。 装饰器类型： @Trace |
+| digital[CrownSensitivity](枚举说明.md#ZH-CN_TOPIC_0000002529284967__crownsensitivity18) | CrownSensitivity | 否 | 是 | 设置旋转表冠的灵敏度。 默认值：CrownSensitivity.MEDIUM 装饰器类型： @Trace |
+| onTouch | ArcSliderTouchHandler | 否 | 是 | 弧形Slider被触摸时，告知应用。 默认值：不传入的情况，无回调。 装饰器类型： @Trace |
+| onChange | ArcSliderChangeHandler | 否 | 是 | 弧形Slider的进度值发生变化时，告知应用。 默认值：不传入的情况，无回调。 装饰器类型： @Trace |
+| onEnlarge | ArcSliderEnlargeHandler | 否 | 是 | 弧形Slider放大或缩小时，告知应用。 默认值：不传入的情况，无回调。 装饰器类型： @Trace |
 
 #### constructor
 
@@ -133,7 +88,9 @@ ArcSliderOptions的构造函数。
 
 **参数：**
 
-参数名类型必填说明options[ArcSliderOptionsConstructorOptions](#ZH-CN_TOPIC_0000002529284883__arcslideroptionsconstructoroptions)否ArcSliderOptions的构造信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | ArcSliderOptionsConstructorOptions | 否 | ArcSliderOptions的构造信息。 |
 
 #### ArcSliderValueOptions
 
@@ -147,35 +104,11 @@ ArcSliderOptions的构造函数。
 
 #### 属性
 
-名称类型只读可选说明progressnumber否是
-
-设置当前进度值。
-
-默认值：与参数min的取值一致
-
-**装饰器类型：** @Trace
-
-minnumber否是
-
-设置最小值。
-
-默认值：0
-
-**装饰器类型：** @Trace
-
-maxnumber否是
-
-设置最大值。
-
-默认值：100
-
-**说明：**
-
-当出现异常情况min >= max时，min取默认值0，max取默认值100。
-
-progress不在[min, max]范围之内，取min或者max，靠近min取min，靠近max取max。
-
-**装饰器类型：** @Trace
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| progress | number | 否 | 是 | 设置当前进度值。 默认值：与参数min的取值一致 装饰器类型： @Trace |
+| min | number | 否 | 是 | 设置最小值。 默认值：0 装饰器类型： @Trace |
+| max | number | 否 | 是 | 设置最大值。 默认值：100 说明： 当出现异常情况min >= max时，min取默认值0，max取默认值100。 progress不在[min, max]范围之内，取min或者max，靠近min取min，靠近max取max。 装饰器类型： @Trace |
 
 #### constructor
 
@@ -189,7 +122,9 @@ ArcSliderValueOptions的构造函数。
 
 **参数：**
 
-参数名类型必填说明options[ArcSliderValueOptionsConstructorOptions](#ZH-CN_TOPIC_0000002529284883__arcslidervalueoptionsconstructoroptions)否ArcSliderValueOptions的构造信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | ArcSliderValueOptionsConstructorOptions | 否 | ArcSliderValueOptions的构造信息。 |
 
 #### ArcSliderLayoutOptions
 
@@ -203,21 +138,10 @@ ArcSliderValueOptions的构造函数。
 
 #### 属性
 
-名称类型只读可选说明reverseboolean否是
-
-设置弧形Slider取值范围是否反向。值为false时表示从上往下滑。
-
-默认值：true，表示从下往上滑动。
-
-**装饰器类型：** @Trace
-
-position[ArcSliderPosition](#ZH-CN_TOPIC_0000002529284883__arcsliderposition)否是
-
-弧形Slider的屏幕显示位置。
-
-默认值：ArcSliderPosition.RIGHT
-
-**装饰器类型：** @Trace
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| reverse | boolean | 否 | 是 | 设置弧形Slider取值范围是否反向。值为false时表示从上往下滑。 默认值：true，表示从下往上滑动。 装饰器类型： @Trace |
+| position | ArcSliderPosition | 否 | 是 | 弧形Slider的屏幕显示位置。 默认值：ArcSliderPosition.RIGHT 装饰器类型： @Trace |
 
 #### constructor
 
@@ -231,7 +155,9 @@ ArcSliderLayoutOptions的构造函数。
 
 **参数：**
 
-参数名类型必填说明options[ArcSliderLayoutOptionsConstructorOptions](#ZH-CN_TOPIC_0000002529284883__arcsliderlayoutoptionsconstructoroptions)否ArcSliderLayoutOptions的构造信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | ArcSliderLayoutOptionsConstructorOptions | 否 | ArcSliderLayoutOptions的构造信息。 |
 
 #### ArcSliderStyleOptions
 
@@ -245,51 +171,13 @@ ArcSliderLayoutOptions的构造函数。
 
 #### 属性
 
-名称类型只读可选说明trackThicknessnumber否是
-
-正常状态下弧形Slider的描边粗细，单位：vp。
-
-默认值：5
-
-取值范围：[5, 16]，异常值按默认值处理。
-
-**装饰器类型：** @Trace
-
-activeTrackThicknessnumber否是
-
-放大状态下弧形Slider的描边粗细，单位：vp。
-
-默认值：24
-
-取值范围：[24, 36]，异常值按默认值处理。
-
-**装饰器类型：** @Trace
-
-trackColorstring否是
-
-设置描边背景色。
-
-默认值：#33FFFFFF
-
-**装饰器类型：** @Trace
-
-selectedColorstring否是
-
-设置描边高亮色。
-
-默认值：#FF5EA1FF
-
-**装饰器类型：** @Trace
-
-trackBlurnumber否是
-
-设置描边背景模糊值，单位：vp。
-
-默认值：20
-
-设置小于0的值时，按照默认值处理。
-
-**装饰器类型：** @Trace
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| trackThickness | number | 否 | 是 | 正常状态下弧形Slider的描边粗细，单位：vp。 默认值：5 取值范围：[5, 16]，异常值按默认值处理。 装饰器类型： @Trace |
+| activeTrackThickness | number | 否 | 是 | 放大状态下弧形Slider的描边粗细，单位：vp。 默认值：24 取值范围：[24, 36]，异常值按默认值处理。 装饰器类型： @Trace |
+| trackColor | string | 否 | 是 | 设置描边背景色。 默认值：#33FFFFFF 装饰器类型： @Trace |
+| selectedColor | string | 否 | 是 | 设置描边高亮色。 默认值：#FF5EA1FF 装饰器类型： @Trace |
+| trackBlur | number | 否 | 是 | 设置描边背景模糊值，单位：vp。 默认值：20 设置小于0的值时，按照默认值处理。 装饰器类型： @Trace |
 
 #### constructor
 
@@ -303,7 +191,9 @@ ArcSliderStyleOptions的构造函数。
 
 **参数：**
 
-参数名类型必填说明options[ArcSliderStyleOptionsConstructorOptions](#ZH-CN_TOPIC_0000002529284883__arcsliderstyleoptionsconstructoroptions)否ArcSliderStyleOptions的构造信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | ArcSliderStyleOptionsConstructorOptions | 否 | ArcSliderStyleOptions的构造信息。 |
 
 #### ArcSliderPosition
 
@@ -313,11 +203,14 @@ ArcSliderStyleOptions的构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
-名称值说明LEFT0弧形Slider的屏幕显示位置在左侧。RIGHT1弧形Slider的屏幕显示位置在右侧。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| LEFT | 0 | 弧形Slider的屏幕显示位置在左侧。 |
+| RIGHT | 1 | 弧形Slider的屏幕显示位置在右侧。 |
 
 #### ArcSliderTouchHandler
 
-type ArcSliderTouchHandler = (event: TouchEvent) => void
+type ArcSliderTouchHandler = (event: [TouchEvent](触摸事件.md#ZH-CN_TOPIC_0000002529444777__touchevent对象说明)) => void
 
 弧形Slider被触摸时，告知应用。
 
@@ -327,7 +220,9 @@ type ArcSliderTouchHandler = (event: TouchEvent) => void
 
 **参数：**
 
-参数名类型必填说明event[TouchEvent](../misc/触摸事件.md#ZH-CN_TOPIC_0000002529444777__touchevent对象说明)是获得TouchEvent对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | [TouchEvent](触摸事件.md#ZH-CN_TOPIC_0000002529444777__touchevent对象说明) | 是 | 获得TouchEvent对象。 |
 
 #### ArcSliderChangeHandler
 
@@ -341,7 +236,9 @@ type ArcSliderChangeHandler = (progress: number) => void
 
 **参数：**
 
-参数名类型必填说明progressnumber是Slider当前的进度值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| progress | number | 是 | Slider当前的进度值。 |
 
 #### ArcSliderEnlargeHandler
 
@@ -355,13 +252,9 @@ type ArcSliderEnlargeHandler = (isEnlarged: boolean) => void
 
 **参数：**
 
-参数名类型必填说明isEnlargedboolean是
-
-ArcSlider当前是否放大。
-
-isEnlarged为false时，ArcSlider组件处于缩小状态。
-
-isEnlarged为true时，ArcSlider组件处于放大状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isEnlarged | boolean | 是 | ArcSlider当前是否放大。 isEnlarged为false时，ArcSlider组件处于缩小状态。 isEnlarged为true时，ArcSlider组件处于放大状态。 |
 
 #### ArcSliderOptionsConstructorOptions
 
@@ -371,47 +264,15 @@ ArcSliderOptions的构造信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
-名称类型只读可选说明valueOptions[ArcSliderValueOptions](#ZH-CN_TOPIC_0000002529284883__arcslidervalueoptions)否是
-
-配置弧形Slider的数值信息。
-
-默认值：[ArcSliderValueOptions](#ZH-CN_TOPIC_0000002529284883__arcslidervalueoptions)的各项子属性均取其默认值。
-
-layoutOptions[ArcSliderLayoutOptions](#ZH-CN_TOPIC_0000002529284883__arcsliderlayoutoptions)否是
-
-配置弧形Slider的布局信息。
-
-默认值：[ArcSliderLayoutOptions](#ZH-CN_TOPIC_0000002529284883__arcsliderlayoutoptions)的各项子属性均取其默认值。
-
-styleOptions[ArcSliderStyleOptions](#ZH-CN_TOPIC_0000002529284883__arcsliderstyleoptions)否是
-
-配置弧形Slider的样式信息。
-
-默认值：[ArcSliderStyleOptions](#ZH-CN_TOPIC_0000002529284883__arcsliderstyleoptions)的各项子属性均取其默认值。
-
-digitalCrownSensitivity[CrownSensitivity](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__crownsensitivity18)否是
-
-设置旋转表冠的灵敏度。
-
-默认值：CrownSensitivity.MEDIUM
-
-onTouch[ArcSliderTouchHandler](#ZH-CN_TOPIC_0000002529284883__arcslidertouchhandler)否是
-
-弧形Slider被触摸时，告知应用。
-
-默认值：不传入的情况，无回调。
-
-onChange[ArcSliderChangeHandler](#ZH-CN_TOPIC_0000002529284883__arcsliderchangehandler)否是
-
-弧形Slider的进度值发生变化时，告知应用。
-
-默认值：不传入的情况，无回调。
-
-onEnlarge[ArcSliderEnlargeHandler](#ZH-CN_TOPIC_0000002529284883__arcsliderenlargehandler)否是
-
-弧形Slider放大或缩小时，告知应用。
-
-默认值：不传入的情况，无回调。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| valueOptions | ArcSliderValueOptions | 否 | 是 | 配置弧形Slider的数值信息。 默认值：ArcSliderValueOptions的各项子属性均取其默认值。 |
+| layoutOptions | ArcSliderLayoutOptions | 否 | 是 | 配置弧形Slider的布局信息。 默认值：ArcSliderLayoutOptions的各项子属性均取其默认值。 |
+| styleOptions | ArcSliderStyleOptions | 否 | 是 | 配置弧形Slider的样式信息。 默认值：ArcSliderStyleOptions的各项子属性均取其默认值。 |
+| digital[CrownSensitivity](枚举说明.md#ZH-CN_TOPIC_0000002529284967__crownsensitivity18) | CrownSensitivity | 否 | 是 | 设置旋转表冠的灵敏度。 默认值：CrownSensitivity.MEDIUM |
+| onTouch | ArcSliderTouchHandler | 否 | 是 | 弧形Slider被触摸时，告知应用。 默认值：不传入的情况，无回调。 |
+| onChange | ArcSliderChangeHandler | 否 | 是 | 弧形Slider的进度值发生变化时，告知应用。 默认值：不传入的情况，无回调。 |
+| onEnlarge | ArcSliderEnlargeHandler | 否 | 是 | 弧形Slider放大或缩小时，告知应用。 默认值：不传入的情况，无回调。 |
 
 #### ArcSliderValueOptionsConstructorOptions
 
@@ -421,29 +282,11 @@ ArcSliderValueOptions的构造信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
-名称类型只读可选说明progressnumber否是
-
-设置当前进度值。
-
-默认值：与参数min的取值一致。
-
-minnumber否是
-
-设置最小值。
-
-默认值：0
-
-maxnumber否是
-
-设置最大值。
-
-默认值：100
-
-**说明：**
-
-当出现异常情况min >= max时，min取默认值0，max取默认值100。
-
-progress不在[min, max]范围之内，取min或者max，靠近min取min，靠近max取max。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| progress | number | 否 | 是 | 设置当前进度值。 默认值：与参数min的取值一致。 |
+| min | number | 否 | 是 | 设置最小值。 默认值：0 |
+| max | number | 否 | 是 | 设置最大值。 默认值：100 说明： 当出现异常情况min >= max时，min取默认值0，max取默认值100。 progress不在[min, max]范围之内，取min或者max，靠近min取min，靠近max取max。 |
 
 #### ArcSliderLayoutOptionsConstructorOptions
 
@@ -453,17 +296,10 @@ ArcSliderLayoutValueOptions的构造信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
-名称类型只读可选说明reverseboolean否是
-
-设置弧形Slider取值范围是否反向。
-
-默认值：true。表示从下往上滑动。
-
-position[ArcSliderPosition](#ZH-CN_TOPIC_0000002529284883__arcsliderposition)否是
-
-弧形Slider的屏幕显示位置。
-
-默认值：ArcSliderPosition.RIGHT
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| reverse | boolean | 否 | 是 | 设置弧形Slider取值范围是否反向。 默认值：true。表示从下往上滑动。 |
+| position | ArcSliderPosition | 否 | 是 | 弧形Slider的屏幕显示位置。 默认值：ArcSliderPosition.RIGHT |
 
 #### ArcSliderStyleOptionsConstructorOptions
 
@@ -473,41 +309,13 @@ ArcSliderStyleOptions的构造信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
-名称类型只读可选说明trackThicknessnumber否是
-
-正常状态下弧形Slider的描边粗细，单位：vp。
-
-默认值：5
-
-取值范围：[5, 16]，异常值按默认值处理。
-
-activeTrackThicknessnumber否是
-
-放大状态下弧形Slider的描边粗细，单位：vp。
-
-默认值：24
-
-取值范围：[24, 36]，异常值按默认值处理。
-
-trackColorstring否是
-
-设置描边背景色。
-
-默认值：#33FFFFFF
-
-selectedColorstring否是
-
-设置描边高亮色。
-
-默认值：#FF5EA1FF
-
-trackBlurnumber否是
-
-设置描边背景模糊值，单位：vp。
-
-默认值：20
-
-设置小于0的值时，按照默认值处理。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| trackThickness | number | 否 | 是 | 正常状态下弧形Slider的描边粗细，单位：vp。 默认值：5 取值范围：[5, 16]，异常值按默认值处理。 |
+| activeTrackThickness | number | 否 | 是 | 放大状态下弧形Slider的描边粗细，单位：vp。 默认值：24 取值范围：[24, 36]，异常值按默认值处理。 |
+| trackColor | string | 否 | 是 | 设置描边背景色。 默认值：#33FFFFFF |
+| selectedColor | string | 否 | 是 | 设置描边高亮色。 默认值：#FF5EA1FF |
+| trackBlur | number | 否 | 是 | 设置描边背景模糊值，单位：vp。 默认值：20 设置小于0的值时，按照默认值处理。 |
 
 #### 示例
 
@@ -570,5 +378,6 @@ struct ArcSliderExample {
       ArcSlider({ options: this.arcSliderOptions })}
       .width('100%')
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002553364917.webp)

@@ -1,93 +1,66 @@
 # Interfaces (其他)
 
-本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-#### TargetInfo18+
+-
 
-指定组件绑定的目标节点。
+本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+-
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+本模块使用屏幕物理像素单位px。
 
-**参数：**
+-
 
-名称类型只读可选说明idstring | number否否
+本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
 
-指定popup或menu绑定的目标节点。
+**TextBlobRunBuffer**
 
-**说明：**
+描述一行文字中具有相同属性的连续字形。
 
-1. 当id是number时，对应组件实例的UniqueID，此id由系统保证唯一性。
+系统能力： SystemCapability.Graphics.Drawing
 
-2. 当id是string时，对应[通用属性id](../../topics/misc/组件标识.md#ZH-CN_TOPIC_0000002497604824__id)所指定的组件，此id的唯一性需由开发者确保，但实际可能会有多个。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| glyph | number | 否 | 否 | 存储文字的索引，该参数为整数，传入浮点类型时向下取整。 |
+| positionX | number | 否 | 否 | 文本的起点x轴坐标，该参数为浮点数。 |
+| positionY | number | 否 | 否 | 文本的起点y轴坐标，该参数为浮点数。 |
 
-componentIdnumber否是目标节点所在的自定义组件的UniqueID。当上述id指定为string类型时，可通过此属性圈定范围。方便开发者在一定范围内保证id: string的唯一性。
+**FontMetrics**
 
-#### PageInfo12+
+描述字形大小和布局的属性信息，同一种字体中的字符属性大致相同。
 
-Router和NavDestination等页面信息，若无对应的Router或NavDestination页面信息，则对应属性为undefined。
+元服务API： 从API version 22开始，该接口支持在元服务中使用。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+系统能力： SystemCapability.Graphics.Drawing
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| flags12+ | FontMetricsFlags | 否 | 是 | 表明哪些字体度量标志有效。 |
+| top | number | 否 | 否 | 文字最高处到基线之间的最大距离，浮点数。 |
+| ascent | number | 否 | 否 | 文字最高处到基线之间的距离，浮点数。 |
+| descent | number | 否 | 否 | 基线到文字最低处之间的距离，浮点数。 |
+| bottom | number | 否 | 否 | 基线到文字最低处之间的最大距离，浮点数。 |
+| leading | number | 否 | 否 | 行间距，从上一行文字descent到下一行文字ascent之间的距离，浮点数。 |
+| avgCharWidth12+ | number | 否 | 是 | 平均字符宽度。 |
+| maxCharWidth12+ | number | 否 | 是 | 最大字符宽度。 |
+| xMin12+ | number | 否 | 是 | 字体中任意字形边界框最左边沿到原点的水平距离，这个值往往小于零，意味着字形在水平方向上的最小边界。 |
+| xMax12+ | number | 否 | 是 | 字体中任意字形边界框最右边沿到原点的水平距离，此值多为正数，指示了字形在水平方向上的最大延伸范围。 |
+| xHeight12+ | number | 否 | 是 | 小写字母x的高度，通常为负值。 |
+| capHeight12+ | number | 否 | 是 | 大写字母的高度，通常为负值。 |
+| underlineThickness12+ | number | 否 | 是 | 下划线的厚度。 |
+| underlinePosition12+ | number | 否 | 是 | 文本基线到下划线顶部的垂直距离，通常是正数。 |
+| strikethroughThickness12+ | number | 否 | 是 | 文本删除线的厚度，即贯穿文本字符的水平线的宽度。 |
+| strikethroughPosition12+ | number | 否 | 是 | 文本基线到底部删除线的垂直距离，通常为负值。 |
 
-名称类型只读可选说明routerPageInfoobserver.[RouterPageInfo](../../modules/ohos/@ohos.arkui.observer (无感监听).md#ZH-CN_TOPIC_0000002529444737__routerpageinfo)否是Router信息。navDestinationInfoobserver.[NavDestinationInfo](../../modules/ohos/@ohos.arkui.observer (无感监听).md#ZH-CN_TOPIC_0000002529444737__navdestinationinfo)否是NavDestination信息。
+**FontFeature20+**
 
-#### OverlayManagerOptions15+
+表示字体特征。字体特征是字体内置的排版规则，用于控制字形的显示效果，具体包括连字、替代字形、上下标等功能。
 
-初始化[OverlayManager](../classes/Class (OverlayManager).md)时所用参数。
+元服务API： 从API version 22开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+系统能力： SystemCapability.Graphics.Drawing
 
-名称类型只读可选说明renderRootOverlayboolean否是
-
-是否渲染overlay根节点，true表示渲染overlay根节点，false表示不渲染overlay根节点，默认值为true。
-
-**元服务API：** 从API version 15开始，该接口支持在元服务中使用。
-
-enableBackPressedEvent19+boolean否是
-
-是否支持通过侧滑手势关闭OverlayManager下的ComponentContent，true表示可以通过侧滑关闭，false表示不可以通过侧滑关闭，默认值为false。
-
-**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
-
-#### GestureTriggerInfo20+
-
-特定手势回调函数触发时的信息。
-
-**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-名称类型只读可选说明event[GestureEvent](../../topics/misc/手势公共接口.md#ZH-CN_TOPIC_0000002497604864__gestureevent对象说明)否否手势事件对象。current[GestureRecognizer](../../topics/misc/手势公共接口.md#ZH-CN_TOPIC_0000002497604864__gesturerecognizer12)否否手势识别器对象。可从中获取手势的详细信息，但请勿在本地保留此对象，因为当节点释放后该对象可能失效。currentPhase[GestureActionPhase](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497604786__gestureactionphase20)否否手势动作回调阶段。node[FrameNode](../../topics/components/FrameNode.md)否是触发手势的节点。默认值为null，表示没有触发手势的节点。
-
-#### GestureObserverConfigs20+
-
-该参数用于指定需要监听的手势回调阶段（传入空数组将无效），仅当手势触发指定阶段时才会发送通知。
-
-**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-名称类型只读可选说明actionPhasesArray<[GestureActionPhase](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497604786__gestureactionphase20)>否否手势事件对象。
-
-#### SwiperContentInfo23+
-
-Swiper组件的内容区信息。
-
-**元服务API：** 从API version 23开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-名称类型只读可选说明idstring否否Swiper组件的id。uniqueIdnumber否否Swiper组件的唯一标识符。swiperItemInfosArray<[SwiperItemInfo](#ZH-CN_TOPIC_0000002529444751__swiperiteminfo23)>否否当前处于显示状态的Swiper子组件的信息。
-
-#### SwiperItemInfo23+
-
-Swiper子组件的信息。
-
-**元服务API：** 从API version 23开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-名称类型只读可选说明uniqueIdnumber否否Swiper子组件的唯一标识符。indexnumber否否Swiper子组件在Swiper中的索引。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | string | 否 | 否 | 字体特征的名称。常见的字体特征名称包含liga、frac、case等，需要对应的ttf文件支持才能生效。 |
+| value | number | 否 | 否 | 字体特征的数值，浮点数。建议通过字体查看工具或查阅字体文档，确定具体的有效取值范围。 |

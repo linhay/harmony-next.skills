@@ -12,7 +12,7 @@ import { ability } from '@kit.AbilityKit';
 
 #### DataAbilityHelper
 
-type DataAbilityHelper = _DataAbilityHelper
+type DataAbilityHelper = [_DataAbilityHelper](../../topics/misc/DataAbilityHelper.md)
 
 DataAbilityHelper二级模块。
 
@@ -20,21 +20,25 @@ DataAbilityHelper二级模块。
 
 **模型约束**：此接口仅可在FA模型下使用。
 
-类型说明[_DataAbilityHelper](../../topics/system-services/DataAbilityHelper.md)DataAbilityHelper二级模块。
+| 类型 | 说明 |
+| --- | --- |
+| [_DataAbilityHelper](../../topics/misc/DataAbilityHelper.md) | DataAbilityHelper二级模块。 |
 
 #### PacMap
 
-type PacMap = _PacMap
+type PacMap = [_PacMap](../../topics/misc/DataAbilityHelper.md#ZH-CN_TOPIC_0000002529284609__pacmap)
 
 PacMap二级模块。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
-类型说明[_PacMap](../../topics/system-services/DataAbilityHelper.md#ZH-CN_TOPIC_0000002529284609__pacmap)DataAbilityHelper二级模块。
+| 类型 | 说明 |
+| --- | --- |
+| [_PacMap](../../topics/misc/DataAbilityHelper.md#ZH-CN_TOPIC_0000002529284609__pacmap) | DataAbilityHelper二级模块。 |
 
 #### DataAbilityOperation
 
-type DataAbilityOperation = _DataAbilityOperation
+type DataAbilityOperation = [_DataAbilityOperation](../../topics/misc/DataAbilityOperation.md)
 
 DataAbilityOperation二级模块。
 
@@ -42,11 +46,13 @@ DataAbilityOperation二级模块。
 
 **模型约束**：此接口仅可在FA模型下使用。
 
-类型说明[_DataAbilityOperation](../../topics/system-services/DataAbilityOperation.md)DataAbilityOperation二级模块。
+| 类型 | 说明 |
+| --- | --- |
+| [_DataAbilityOperation](../../topics/misc/DataAbilityOperation.md) | DataAbilityOperation二级模块。 |
 
 #### DataAbilityResult
 
-type DataAbilityResult = _DataAbilityResult
+type DataAbilityResult = [_DataAbilityResult](../../topics/misc/DataAbilityResult.md)
 
 DataAbilityResult二级模块。
 
@@ -54,11 +60,13 @@ DataAbilityResult二级模块。
 
 **模型约束**：此接口仅可在FA模型下使用。
 
-类型说明[_DataAbilityResult](../../topics/system-services/DataAbilityResult.md)DataAbilityResult二级模块。
+| 类型 | 说明 |
+| --- | --- |
+| [_DataAbilityResult](../../topics/misc/DataAbilityResult.md) | DataAbilityResult二级模块。 |
 
 #### AbilityResult
 
-type AbilityResult = _AbilityResult
+type AbilityResult = [_AbilityResult](../../topics/misc/AbilityResult.md)
 
 AbilityResult二级模块。
 
@@ -66,11 +74,13 @@ AbilityResult二级模块。
 
 **模型约束**：此接口仅可在FA模型下使用。
 
-类型说明[_AbilityResult](../../topics/system-services/AbilityResult.md)AbilityResult二级模块。
+| 类型 | 说明 |
+| --- | --- |
+| [_AbilityResult](../../topics/misc/AbilityResult.md) | AbilityResult二级模块。 |
 
 #### ConnectOptions
 
-type ConnectOptions = _ConnectOptions
+type ConnectOptions = [_ConnectOptions](../../topics/misc/ConnectOptions.md)
 
 ConnectOptions二级模块。
 
@@ -78,11 +88,13 @@ ConnectOptions二级模块。
 
 **模型约束**：此接口仅可在FA模型下使用。
 
-类型说明[_ConnectOptions](../../topics/misc/ConnectOptions.md)ConnectOptions二级模块。
+| 类型 | 说明 |
+| --- | --- |
+| [_ConnectOptions](../../topics/misc/ConnectOptions.md) | ConnectOptions二级模块。 |
 
 #### StartAbilityParameter
 
-type StartAbilityParameter = _StartAbilityParameter
+type StartAbilityParameter = [_StartAbilityParameter](../../topics/misc/StartAbilityParameter.md)
 
 StartAbilityParameter二级模块。
 
@@ -90,7 +102,9 @@ StartAbilityParameter二级模块。
 
 **模型约束**：此接口仅可在FA模型下使用。
 
-类型说明[_StartAbilityParameter](../../topics/components/StartAbilityParameter.md)StartAbilityParameter二级模块。
+| 类型 | 说明 |
+| --- | --- |
+| [_StartAbilityParameter](../../topics/misc/StartAbilityParameter.md) | StartAbilityParameter二级模块。 |
 
 **示例：**
 

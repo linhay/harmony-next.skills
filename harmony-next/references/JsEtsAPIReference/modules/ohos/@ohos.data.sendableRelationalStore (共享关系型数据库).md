@@ -26,17 +26,24 @@ toSendableValuesBucket(valuesBucket: NonSendableBucket): ValuesBucket
 
 **参数：**
 
-参数名类型必填说明valuesBucket[NonSendableBucket](#ZH-CN_TOPIC_0000002529284679__nonsendablebucket)是不可跨线程传递的ValuesBucket数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| valuesBucket | NonSendableBucket | 是 | 不可跨线程传递的ValuesBucket数据。 |
 
 **返回值**：
 
-类型说明[ValuesBucket](#ZH-CN_TOPIC_0000002529284679__valuesbucket)可用于跨线程传递的ValuesBucket数据。
+| 类型 | 说明 |
+| --- | --- |
+| ValuesBucket | 可用于跨线程传递的ValuesBucket数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[关系型数据库错误码](../../errors/关系型数据库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[关系型数据库错误码]([关系型数据库错误码](../../errors/关系型数据库错误码.md).md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14800000Inner error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14800000 | Inner error. |
 
 **示例：**
 
@@ -82,17 +89,24 @@ fromSendableValuesBucket(valuesBucket: ValuesBucket): NonSendableBucket
 
 **参数：**
 
-参数名类型必填说明valuesBucket[ValuesBucket](#ZH-CN_TOPIC_0000002529284679__valuesbucket)是可用于跨线程传递的ValuesBucket数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| valuesBucket | ValuesBucket | 是 | 可用于跨线程传递的ValuesBucket数据。 |
 
 **返回值**：
 
-类型说明[NonSendableBucket](#ZH-CN_TOPIC_0000002529284679__nonsendablebucket)不可跨线程传递的ValuesBucket数据。
+| 类型 | 说明 |
+| --- | --- |
+| NonSendableBucket | 不可跨线程传递的ValuesBucket数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[关系型数据库错误码](../../errors/关系型数据库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14800000Inner error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14800000 | Inner error. |
 
 **示例：**
 
@@ -138,17 +152,24 @@ toSendableAsset(asset: NonSendableAsset): Asset
 
 **参数：**
 
-参数名类型必填说明asset[NonSendableAsset](#ZH-CN_TOPIC_0000002529284679__nonsendablebucket)是不可跨线程传递的Asset数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| asset | NonSendableAsset | 是 | 不可跨线程传递的Asset数据。 |
 
 **返回值**：
 
-类型说明[Asset](#ZH-CN_TOPIC_0000002529284679__asset)可跨线程传递的Asset数据。
+| 类型 | 说明 |
+| --- | --- |
+| Asset | 可跨线程传递的Asset数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[关系型数据库错误码](../../errors/关系型数据库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14800000Inner error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14800000 | Inner error. |
 
 **示例：**
 
@@ -174,17 +195,24 @@ fromSendableAsset(asset: Asset): NonSendableAsset
 
 **参数：**
 
-参数名类型必填说明asset[Asset](#ZH-CN_TOPIC_0000002529284679__asset)是可跨线程传递的Asset数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| asset | Asset | 是 | 可跨线程传递的Asset数据。 |
 
 **返回值**：
 
-类型说明[NonSendableAsset](#ZH-CN_TOPIC_0000002529284679__nonsendablebucket)不可跨线程传递的Asset数据。
+| 类型 | 说明 |
+| --- | --- |
+| NonSendableAsset | 不可跨线程传递的Asset数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[关系型数据库错误码](../../errors/关系型数据库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.14800000Inner error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 14800000 | Inner error. |
 
 **示例：**
 
@@ -203,7 +231,7 @@ const normalAsset = sendableRelationalStore.fromSendableAsset(sendableAsset);
 
 #### sendableRelationalStore.fromSendableValues20+
 
-fromSendableValues(values: collections.Array<ValueType>): NonSendableValues
+fromSendableValues(values: collections.Array<[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)>): NonSendableValues
 
 将可跨线程传递的数组数据，转换为不可跨线程传递的数组数据。
 
@@ -211,17 +239,23 @@ fromSendableValues(values: collections.Array<ValueType>): NonSendableValues
 
 **参数：**
 
-参数名类型必填说明valuescollections.Array<[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)>是可跨线程传递的数组数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| values | collections.Array<[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)> | 是 | 可跨线程传递的数组数据。 |
 
 **返回值**：
 
-类型说明[NonSendableValues](#ZH-CN_TOPIC_0000002529284679__nonsendablevalues20)不可跨线程传递的数组数据。
+| 类型 | 说明 |
+| --- | --- |
+| NonSendableValues | 不可跨线程传递的数组数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关系型数据库错误码](../../errors/关系型数据库错误码.md)。
+以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。
 
-**错误码ID****错误信息**14800000Inner error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14800000 | Inner error. |
 
 **示例：**
 
@@ -238,7 +272,7 @@ const values = sendableRelationalStore.fromSendableValues(array);
 
 #### sendableRelationalStore.toSendableValues20+
 
-toSendableValues(values: NonSendableValues): collections.Array<ValueType>
+toSendableValues(values: NonSendableValues): collections.Array<[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)>
 
 将不可跨线程传递的数组数据，转换为可跨线程传递的数组数据。
 
@@ -246,17 +280,23 @@ toSendableValues(values: NonSendableValues): collections.Array<ValueType>
 
 **参数：**
 
-参数名类型必填说明values[NonSendableValues](#ZH-CN_TOPIC_0000002529284679__nonsendablevalues20)是不可跨线程传递的数组数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| values | NonSendableValues | 是 | 不可跨线程传递的数组数据。 |
 
 **返回值**：
 
-类型说明collections.Array<[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)>可跨线程传递的数组数据。
+| 类型 | 说明 |
+| --- | --- |
+| collections.Array<[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)> | 可跨线程传递的数组数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关系型数据库错误码](../../errors/关系型数据库错误码.md)。
+以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。
 
-**错误码ID****错误信息**14800000Inner error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 14800000 | Inner error. |
 
 **示例：**
 
@@ -271,91 +311,87 @@ const values = sendableRelationalStore.toSendableValues(array);
 
 #### Asset
 
-记录资产附件（文件、图片、视频等类型文件）的相关信息。用于支持资产数据跨线程传递，继承自[lang.ISendable](../other/@arkts.lang (ArkTS语言基础能力).md#ZH-CN_TOPIC_0000002497444768__langisendable)。资产类型的相关接口暂不支持Datashare。使用[sendableRelationalStore.toSendableAsset](#ZH-CN_TOPIC_0000002529284679__sendablerelationalstoretosendableasset)方法创建。
+记录资产附件（文件、图片、视频等类型文件）的相关信息。用于支持资产数据跨线程传递，继承自[lang.ISendable](@arkts.lang (ArkTS语言基础能力).md#ZH-CN_TOPIC_0000002553200659__langisendable)。资产类型的相关接口暂不支持Datashare。使用[sendableRelationalStore.toSendableAsset](#ZH-CN_TOPIC_0000002553200599__sendablerelationalstoretosendableasset)方法创建。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
-名称类型只读可选说明namestring否否资产的名称。uristring否否资产的uri，在系统里的绝对路径。pathstring否否资产在应用沙箱里的路径。createTimestring否否资产被创建出来的时间。modifyTimestring否否资产最后一次被修改的时间。sizestring否否资产占用空间的大小。statusnumber否是资产的状态，取值与[relationalStore.AssetStatus](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497604686__assetstatus10)枚举值保持一致，默认值为relationalStore.AssetStatus.ASSET_NORMAL。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | string | 否 | 否 | 资产的名称。 |
+| uri | string | 否 | 否 | 资产的uri，在系统里的绝对路径。 |
+| path | string | 否 | 否 | 资产在应用沙箱里的路径。 |
+| createTime | string | 否 | 否 | 资产被创建出来的时间。 |
+| modifyTime | string | 否 | 否 | 资产最后一次被修改的时间。 |
+| size | string | 否 | 否 | 资产占用空间的大小。 |
+| status | number | 否 | 是 | 资产的状态，取值与[relationalStore.AssetStatus](../../types/enums/Enums.md#ZH-CN_TOPIC_0000002497604686__assetstatus10)枚举值保持一致，默认值为relationalStore.AssetStatus.ASSET_NORMAL。 |
 
 #### Assets
 
 type Assets = collections.Array<Asset>
 
-表示[Asset](#ZH-CN_TOPIC_0000002529284679__asset)类型数据的集合。用于支持Asset数据集合跨线程传递。
+表示[Asset](#ZH-CN_TOPIC_0000002553200599__asset)类型数据的集合。用于支持Asset数据集合跨线程传递。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
-类型说明[collections.Array](../../types/classes/Class (Array).md)<[Asset](#ZH-CN_TOPIC_0000002529284679__asset)>用于并发场景的Asset附件数据集合。
+| 类型 | 说明 |
+| --- | --- |
+| collections.Array<Asset> | 用于并发场景的Asset附件数据集合。 |
 
-#### ValueType
+#### [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)
 
-type ValueType = null | number | string | boolean | collections.Uint8Array | Asset | Assets | collections.Float32Array | bigint
+type [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype) = null | number | string | boolean | collections.Uint8Array | Asset | Assets | collections.Float32Array | bigint
 
 用于表示允许的数据字段类型，接口参数具体类型根据其功能而定。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
-类型说明null表示值类型为空。number表示值类型为数字。string表示值类型为字符串。boolean表示值类型为布尔值。[collections.Uint8Array](../../types/classes/Class (Uint8Array).md)表示值类型为Uint8类型的数组。[Asset](#ZH-CN_TOPIC_0000002529284679__asset)
-
-表示值类型为附件Asset。
-
-当字段类型是Asset时，在创建表的sql语句中，类型应当为：ASSET。
-
-[Assets](#ZH-CN_TOPIC_0000002529284679__assets)
-
-表示值类型为附件数据集合Assets。
-
-当字段类型是Assets时，在创建表的sql语句中，类型应当为：ASSETS。
-
-[collections.Float32Array](../../types/classes/Class (Float32Array).md)
-
-表示值类型为浮点数组。
-
-当字段类型是collections.Float32Array时，在创建表的sql语句中，类型应当为：floatvector(128)。
-
-bigint
-
-表示值类型为任意长度的整数。
-
-当字段类型是bigint时，在创建表的sql语句中，类型应当为：UNLIMITED INT，详见[通过关系型数据库实现数据持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-rdb-store)。
-
-**说明：**
-
-bigint类型字段不能比较大小，不适用以下谓词操作：between、notBetween、greaterThan、lessThan、greaterThanOrEqualTo、lessThanOrEqualTo、orderByAsc、orderByDesc。
-
-bigint类型字段的数据写入时，需通过BigInt()方法或在数据尾部添加'n'的方式明确为bigint类型，如'let data = BigInt(1234)'或'let data = 1234n'。
-
-bigint字段如果写入number类型的数据，则查询该数据的返回类型为number，而非bigint。
+| 类型 | 说明 |
+| --- | --- |
+| null | 表示值类型为空。 |
+| number | 表示值类型为数字。 |
+| string | 表示值类型为字符串。 |
+| boolean | 表示值类型为布尔值。 |
+| collections.Uint8Array | 表示值类型为Uint8类型的数组。 |
+| Asset | 表示值类型为附件Asset。 当字段类型是Asset时，在创建表的sql语句中，类型应当为：ASSET。 |
+| Assets | 表示值类型为附件数据集合Assets。 当字段类型是Assets时，在创建表的sql语句中，类型应当为：ASSETS。 |
+| collections.Float32Array | 表示值类型为浮点数组。 当字段类型是collections.Float32Array时，在创建表的sql语句中，类型应当为：floatvector(128)。 |
+| bigint | 表示值类型为任意长度的整数。 当字段类型是bigint时，在创建表的sql语句中，类型应当为：UNLIMITED INT，详见通过关系型数据库实现数据持久化。 说明： bigint类型字段不能比较大小，不适用以下谓词操作：between、notBetween、greaterThan、lessThan、greaterThanOrEqualTo、lessThanOrEqualTo、orderByAsc、orderByDesc。 bigint类型字段的数据写入时，需通过BigInt()方法或在数据尾部添加'n'的方式明确为bigint类型，如'let data = BigInt(1234)'或'let data = 1234n'。 bigint字段如果写入number类型的数据，则查询该数据的返回类型为number，而非bigint。 |
 
 #### ValuesBucket
 
-type ValuesBucket = collections.Map<string, ValueType>
+type ValuesBucket = collections.Map<string, [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)>
 
-表示[ValueType](#ZH-CN_TOPIC_0000002529284679__valuetype)数据的键值对存储，用于支持ValueType数据跨线程传递。
+表示[ValueType](#ZH-CN_TOPIC_0000002553200599__valuetype)数据的键值对存储，用于支持ValueType数据跨线程传递。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
-类型说明[collections.Map](../../types/classes/Class (Map).md)<string, [ValueType](#ZH-CN_TOPIC_0000002529284679__valuetype)>并发场景的键值对数据存储，其中，键的类型为string，值的类型为ValueType。
+| 类型 | 说明 |
+| --- | --- |
+| collections.Map<string, [ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)> | 并发场景的键值对数据存储，其中，键的类型为string，值的类型为ValueType。 |
 
 #### NonSendableBucket
 
-type NonSendableBucket = relationalStore.ValuesBucket
+type NonSendableBucket = [relationalStore.ValuesBucket](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuesbucket)
 
 用于存储键值对的类型。不支持跨线程传递。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
-类型说明[relationalStore.ValuesBucket](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuesbucket)非并发场景的键值对数据存储。
+| 类型 | 说明 |
+| --- | --- |
+| [relationalStore.ValuesBucket](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuesbucket) | 非并发场景的键值对数据存储。 |
 
 #### NonSendableValues20+
 
-type NonSendableValues = Array<relationalStore.ValueType>
+type NonSendableValues = Array<relationalStore.[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)>
 
-表示[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)数据数组存储。不支持跨线程传递。
+表示[ValueType](Types.md#ZH-CN_TOPIC_0000002522240634__valuetype)数据数组存储。不支持跨线程传递。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
-类型说明Array<[relationalStore.ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)>非并发场景的数组数据存储，值的类型为ValueType。
+| 类型 | 说明 |
+| --- | --- |
+| Array<relationalStore.[ValueType](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__valuetype)> | 非并发场景的数组数据存储，值的类型为ValueType。 |
 
 #### NonSendableAsset
 
@@ -365,7 +401,9 @@ type NonSendableAsset = relationalStore.Asset
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
-类型说明[relationalStore.Asset](../../types/interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529284677__asset10)非并发场景的资产附件数据存储。
+| 类型 | 说明 |
+| --- | --- |
+| relationalStore.Asset | 非并发场景的资产附件数据存储。 |
 
 #### 跨线程传递使用示例
 
@@ -465,5 +503,4 @@ struct Index {
     .height('100%')
     .width('100%')
   }
-}
 ```

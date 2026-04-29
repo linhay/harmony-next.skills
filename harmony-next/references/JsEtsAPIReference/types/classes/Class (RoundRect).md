@@ -34,7 +34,9 @@ constructor(roundRect: RoundRect)
 
 **参数：**
 
-参数名类型必填说明roundRect[RoundRect](Class (RoundRect).md)是用于拷贝的圆角矩形。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| roundRect | RoundRect | 是 | 用于拷贝的圆角矩形。 |
 
 **示例：**
 
@@ -56,13 +58,19 @@ constructor(rect: common2D.Rect, xRadii: number, yRadii: number)
 
 **参数：**
 
-参数名类型必填说明rect[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是需要创建的圆角矩形区域。xRadiinumber是X轴上的圆角半径，该参数为浮点数，小于等于0时无效。yRadiinumber是Y轴上的圆角半径，该参数为浮点数，小于等于0时无效。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rect | common2D.Rect | 是 | 需要创建的圆角矩形区域。 |
+| xRadii | number | 是 | X轴上的圆角半径，该参数为浮点数，小于等于0时无效。 |
+| yRadii | number | 是 | Y轴上的圆角半径，该参数为浮点数，小于等于0时无效。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -75,7 +83,7 @@ let roundRect = new drawing.RoundRect(rect, 50, 50);
 
 #### setCorner12+
 
-setCorner(pos: CornerPos, x: number, y: number): void
+setCorner(pos: [CornerPos](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__cornerpos12), x: number, y: number): void
 
 设置圆角矩形中指定圆角位置的圆角半径。
 
@@ -83,13 +91,19 @@ setCorner(pos: CornerPos, x: number, y: number): void
 
 **参数：**
 
-参数名类型必填说明pos[CornerPos](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__cornerpos12)是圆角位置。xnumber是x轴方向的圆角半径，该参数为浮点数，小于等于0时无效。ynumber是y轴方向的圆角半径，该参数为浮点数，小于等于0时无效。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pos | [CornerPos](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__cornerpos12) | 是 | 圆角位置。 |
+| x | number | 是 | x轴方向的圆角半径，该参数为浮点数，小于等于0时无效。 |
+| y | number | 是 | y轴方向的圆角半径，该参数为浮点数，小于等于0时无效。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
 
 **示例：**
 
@@ -102,7 +116,7 @@ roundRect.setCorner(drawing.CornerPos.TOP_LEFT_POS, 150, 150);
 
 #### getCorner12+
 
-getCorner(pos: CornerPos): common2D.Point
+getCorner(pos: [CornerPos](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__cornerpos12)): common2D.Point
 
 获取圆角矩形中指定圆角位置的圆角半径。
 
@@ -110,17 +124,23 @@ getCorner(pos: CornerPos): common2D.Point
 
 **参数：**
 
-参数名类型必填说明pos[CornerPos](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__cornerpos12)是圆角位置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pos | [CornerPos](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__cornerpos12) | 是 | 圆角位置。 |
 
 **返回值：**
 
-类型说明[common2D.Point](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__point12)返回一个点，其横坐标表示圆角x轴方向上的半径，纵坐标表示y轴方向上的半径。
+| 类型 | 说明 |
+| --- | --- |
+| common2D.Point | 返回一个点，其横坐标表示圆角x轴方向上的半径，纵坐标表示y轴方向上的半径。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
 
 **示例：**
 
@@ -143,13 +163,18 @@ offset(dx: number, dy: number): void
 
 **参数：**
 
-参数名类型必填说明dxnumber是表示x轴方向上的偏移量。正数表示向x轴正方向平移，负数表示向x轴负方向平移，该参数为浮点数。dynumber是表示y轴方向上的偏移量。正数表示向y轴正方向平移，负数表示向y轴负方向平移，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dx | number | 是 | 表示x轴方向上的偏移量。正数表示向x轴正方向平移，负数表示向x轴负方向平移，该参数为浮点数。 |
+| dy | number | 是 | 表示y轴方向上的偏移量。正数表示向y轴正方向平移，负数表示向y轴负方向平移，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 

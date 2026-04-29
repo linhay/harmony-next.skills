@@ -22,7 +22,9 @@ import { collections } from '@kit.ArkTS';
 
 **系统能力：** SystemCapability.Utils.Lang
 
-名称类型只读可选说明lengthnumber是否ConcatArray的元素个数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| length | number | 是 | 否 | ConcatArray的元素个数。 |
 
 #### [index: number]
 
@@ -34,17 +36,24 @@ readonly [index: number]: T
 
 **参数：**
 
-参数名类型必填说明indexnumber是所需代码单元的从零开始的索引，不支持修改指定索引位置的元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 所需代码单元的从零开始的索引，不支持修改指定索引位置的元素。 |
 
 **返回值：**
 
-类型说明TConcatArray给定的元素数据类型。
+| 类型 | 说明 |
+| --- | --- |
+| T | ConcatArray给定的元素数据类型。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码详细介绍请参考[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[语言基础类库错误码]([语言基础类库错误码](../../errors/语言基础类库错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Illegal index.10200001The value of index is out of range.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Illegal index. |
+| 10200001 | The value of index is out of range. |
 
 **示例：**
 
@@ -65,17 +74,23 @@ join(separator?: string): string
 
 **参数：**
 
-参数名类型必填说明separatorstring否用于分隔ConcatArray元素的字符串。如果省略，则使用逗号分隔。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| separator | string | 否 | 用于分隔ConcatArray元素的字符串。如果省略，则使用逗号分隔。 |
 
 **返回值：**
 
-类型说明string包含所有ConcatArray元素连接成的字符串。如果ConcatArray为空，则返回空字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 包含所有ConcatArray元素连接成的字符串。如果ConcatArray为空，则返回空字符串。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Invalid separator.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Invalid separator. |
 
 **示例：**
 
@@ -96,17 +111,24 @@ slice(start?: number, end?: number): ConcatArray<T>
 
 **参数：**
 
-参数名类型必填说明startnumber否开始索引。如果start < 0，则会从start + array.length位置开始。默认值为0。endnumber否结束索引（不包括该元素）。如果end < 0，则会到end + array.length位置结束。默认为ArkTS Array的长度。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| start | number | 否 | 开始索引。如果start < 0，则会从start + array.length位置开始。默认值为0。 |
+| end | number | 否 | 结束索引（不包括该元素）。如果end < 0，则会到end + array.length位置结束。默认为ArkTS Array的长度。 |
 
 **返回值：**
 
-类型说明ConcatArray<T>包含原始ConcatArray切片的新ConcatArray。
+| 类型 | 说明 |
+| --- | --- |
+| ConcatArray<T> | 包含原始ConcatArray切片的新ConcatArray。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Invalid `start` or `end` parameters.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Invalid `start` or `end` parameters. |
 
 **示例：**
 

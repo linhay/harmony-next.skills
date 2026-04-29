@@ -12,7 +12,7 @@
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 -
 
@@ -38,7 +38,9 @@ getGuid(): string
 
 **返回值：**
 
-类型说明string下载任务的唯一ID。
+| 类型 | 说明 |
+| --- | --- |
+| string | 下载任务的唯一ID。 |
 
 **示例：**
 
@@ -87,8 +89,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### getCurrentSpeed11+
@@ -101,7 +101,9 @@ getCurrentSpeed(): number
 
 **返回值：**
 
-类型说明number下载的速度（字节每秒）。
+| 类型 | 说明 |
+| --- | --- |
+| number | 下载的速度（字节每秒）。 |
 
 **示例：**
 
@@ -150,8 +152,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### getPercentComplete11+
@@ -164,7 +164,9 @@ getPercentComplete(): number
 
 **返回值：**
 
-类型说明number下载完成的进度，100代表下载完成，-1代表进度未知。
+| 类型 | 说明 |
+| --- | --- |
+| number | 下载完成的进度，100代表下载完成，-1代表进度未知。 |
 
 **示例：**
 
@@ -213,8 +215,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### getTotalBytes11+
@@ -227,7 +227,9 @@ getTotalBytes(): number
 
 **返回值：**
 
-类型说明number待下载文件的总长度，-1代表总大小未知。
+| 类型 | 说明 |
+| --- | --- |
+| number | 待下载文件的总长度，-1代表总大小未知。 |
 
 **示例：**
 
@@ -276,13 +278,11 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### getState11+
 
-getState(): WebDownloadState
+getState(): [WebDownloadState](../enums/Enums.md#ZH-CN_TOPIC_0000002529445167__webdownloadstate11)
 
 获取下载的状态。
 
@@ -290,7 +290,9 @@ getState(): WebDownloadState
 
 **返回值：**
 
-类型说明[WebDownloadState](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445167__webdownloadstate11)下载的状态。
+| 类型 | 说明 |
+| --- | --- |
+| [WebDownloadState](../enums/Enums.md#ZH-CN_TOPIC_0000002529445167__webdownloadstate11) | 下载的状态。 |
 
 **示例：**
 
@@ -339,13 +341,11 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### getLastErrorCode11+
 
-getLastErrorCode(): WebDownloadErrorCode
+getLastErrorCode(): [WebDownloadErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002529445167__webdownloaderrorcode11)
 
 获取下载的错误码。
 
@@ -353,7 +353,9 @@ getLastErrorCode(): WebDownloadErrorCode
 
 **返回值：**
 
-类型说明[WebDownloadErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529445167__webdownloaderrorcode11)下载发生错误的时候的错误码。
+| 类型 | 说明 |
+| --- | --- |
+| [WebDownloadErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002529445167__webdownloaderrorcode11) | 下载发生错误的时候的错误码。 |
 
 **示例：**
 
@@ -403,8 +405,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### getMethod11+
@@ -417,7 +417,9 @@ getMethod(): string
 
 **返回值：**
 
-类型说明string下载的请求方式。
+| 类型 | 说明 |
+| --- | --- |
+| string | 下载的请求方式。 |
 
 **示例：**
 
@@ -466,8 +468,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### getMimeType11+
@@ -480,7 +480,9 @@ getMimeType(): string
 
 **返回值：**
 
-类型说明string下载的媒体类型（例如，一个声音文件可能被标记为 audio/ogg ，一个图像文件可能是 image/png）。
+| 类型 | 说明 |
+| --- | --- |
+| string | 下载的媒体类型（例如，一个声音文件可能被标记为 audio/ogg ，一个图像文件可能是 image/png）。 |
 
 **示例：**
 
@@ -529,8 +531,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### getUrl11+
@@ -543,7 +543,9 @@ getUrl(): string
 
 **返回值：**
 
-类型说明string下载的请求地址。
+| 类型 | 说明 |
+| --- | --- |
+| string | 下载的请求地址。 |
 
 **示例：**
 
@@ -592,8 +594,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### getSuggestedFileName11+
@@ -606,7 +606,9 @@ getSuggestedFileName(): string
 
 **返回值：**
 
-类型说明string下载的建议文件名。
+| 类型 | 说明 |
+| --- | --- |
+| string | 下载的建议文件名。 |
 
 **示例：**
 
@@ -655,8 +657,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### getReceivedBytes11+
@@ -669,7 +669,9 @@ getReceivedBytes(): number
 
 **返回值：**
 
-类型说明number已经接收的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 已经接收的字节数。 |
 
 **示例：**
 
@@ -719,8 +721,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### getFullPath11+
@@ -733,7 +733,9 @@ getFullPath(): string
 
 **返回值：**
 
-类型说明string下载文件在磁盘上的全路径。
+| 类型 | 说明 |
+| --- | --- |
+| string | 下载文件在磁盘上的全路径。 |
 
 **示例：**
 
@@ -783,8 +785,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### serialize11+
@@ -797,7 +797,9 @@ serialize(): Uint8Array
 
 **返回值：**
 
-类型说明Uint8Array失败的下载序列化后的字节数组。
+| 类型 | 说明 |
+| --- | --- |
+| Uint8Array | 失败的下载序列化后的字节数组。 |
 
 **示例：**
 
@@ -849,8 +851,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### deserialize11+
@@ -863,17 +863,23 @@ static deserialize(serializedData: Uint8Array): WebDownloadItem
 
 **参数：**
 
-参数名类型必填说明serializedDataUint8Array是序列化后的下载。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| serializedData | Uint8Array | 是 | 序列化后的下载。 |
 
 **返回值：**
 
-类型说明WebDownloadItem从字节数组反序列化为一个WebDownloadItem对象。
+| 类型 | 说明 |
+| --- | --- |
+| WebDownloadItem | 从字节数组反序列化为一个WebDownloadItem对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Incorrect parameter types. 2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. 2. Parameter verification failed. |
 
 **示例：**
 
@@ -933,8 +939,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### start11+
@@ -949,13 +953,17 @@ start(downloadPath: string): void
 
 **参数：**
 
-参数名类型必填说明downloadPathstring是下载文件的路径(包含文件名)，路径长度与文件管理中长度一致，最长255字符。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| downloadPath | string | 是 | 下载文件的路径(包含文件名)，路径长度与文件管理中长度一致，最长255字符。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Incorrect parameter types. 2. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. 2. Parameter verification failed. |
 
 **示例：**
 
@@ -1014,8 +1022,6 @@ struct WebComponent {
           }
         })
       Web({ src: 'www.example.com', controller: this.controller })
-    }
-  }
 }
 ```
 
@@ -1095,8 +1101,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### pause11+
@@ -1109,9 +1113,11 @@ pause(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码]([Webview错误码](../../errors/Webview错误码.md).md)。
 
-错误码ID错误信息17100019The download task is not started yet.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100019 | The download task is not started yet. |
 
 **示例：**
 
@@ -1189,8 +1195,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### resume11+
@@ -1203,9 +1207,11 @@ resume(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码](Webview错误码.md)。
 
-错误码ID错误信息17100016The download task is not paused.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100016 | The download task is not paused. |
 
 **示例：**
 
@@ -1291,6 +1297,4 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```

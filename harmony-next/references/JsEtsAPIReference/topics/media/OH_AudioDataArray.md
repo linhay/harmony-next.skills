@@ -12,10 +12,14 @@ typedef struct {...} OH_AudioDataArray
 
 **相关模块：**[OHAudioSuite](OHAudioSuite.md)
 
-**所在头文件：**[native_audio_suite_base.h](../../capi/headers/native_audio_suite_base.h.md)
+所在头文件： [native_audio_suite_base.h](native_audio_suite_base.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述void **audioDataArray需要输出的音频数据地址。int32_t arraySize音频数组大小。int32_t requestFrameSizeaudioDataArray数组中地址的内存大小（单位为字节），应确保每个地址均具有requestFrameSize字节个大小。
+| 名称 | 描述 |
+| --- | --- |
+| void **audioDataArray | 需要输出的音频数据地址。 |
+| int32_t arraySize | 音频数组大小。 |
+| int32_t requestFrameSize | audioDataArray数组中地址的内存大小（单位为字节），应确保每个地址均具有requestFrameSize字节个大小。 |

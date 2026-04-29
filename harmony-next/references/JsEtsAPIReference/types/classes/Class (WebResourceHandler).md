@@ -12,7 +12,7 @@
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### 导入模块
 
@@ -30,17 +30,22 @@ didReceiveResponse(response: WebSchemeHandlerResponse): void
 
 **参数：**
 
-参数名类型必填说明response[WebSchemeHandlerResponse](Class (WebSchemeHandlerResponse).md)是该拦截请求的响应。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| response | WebSchemeHandlerResponse | 是 | 该拦截请求的响应。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)、[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码]([Webview错误码](../../errors/Webview错误码.md).md)、[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.17100021The resource handler is invalid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. |
+| 17100021 | The resource handler is invalid. |
 
 **示例：**
 
-示例请参考[OnRequestStart](Class (WebSchemeHandler).md#ZH-CN_TOPIC_0000002497445218__onrequeststart12)。
+示例请参考[OnRequestStart](Class (WebSchemeHandler).md#ZH-CN_TOPIC_0000002522081160__onrequeststart12)。
 
 #### didReceiveResponseBody12+
 
@@ -52,75 +57,93 @@ didReceiveResponseBody(data: ArrayBuffer): void
 
 **参数：**
 
-参数名类型必填说明dataArrayBuffer是响应体数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | ArrayBuffer | 是 | 响应体数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)、[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码](Webview错误码.md)、[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.17100021The resource handler is invalid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. |
+| 17100021 | The resource handler is invalid. |
 
 **示例：**
 
-示例请参考[OnRequestStart](Class (WebSchemeHandler).md#ZH-CN_TOPIC_0000002497445218__onrequeststart12)。
+示例请参考[OnRequestStart](Class (WebSchemeHandler).md#ZH-CN_TOPIC_0000002522081160__onrequeststart12)。
 
 #### didFinish12+
 
 didFinish(): void
 
-通知Web组件被拦截的请求已经完成，并且没有更多的数据可用，调用前需要优先调用[didReceiveResponse](#ZH-CN_TOPIC_0000002497605196__didreceiveresponse12)将构造的响应头传递给被拦截的请求。
+通知Web组件被拦截的请求已经完成，并且没有更多的数据可用，调用前需要优先调用[didReceiveResponse](#ZH-CN_TOPIC_0000002553201121__didreceiveresponse12)将构造的响应头传递给被拦截的请求。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码](Webview错误码.md)。
 
-错误码ID错误信息17100021The resource handler is invalid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100021 | The resource handler is invalid. |
 
 **示例：**
 
-示例请参考[OnRequestStart](Class (WebSchemeHandler).md#ZH-CN_TOPIC_0000002497445218__onrequeststart12)。
+示例请参考[OnRequestStart](Class (WebSchemeHandler).md#ZH-CN_TOPIC_0000002522081160__onrequeststart12)。
 
 #### didFail12+
 
 didFail(code: WebNetErrorList): void
 
-通知ArkWeb内核被拦截请求应该返回失败，调用前需要优先调用[didReceiveResponse](#ZH-CN_TOPIC_0000002497605196__didreceiveresponse12)将构造的响应头传递给被拦截的请求。
+通知ArkWeb内核被拦截请求应该返回失败，调用前需要优先调用[didReceiveResponse](#ZH-CN_TOPIC_0000002553201121__didreceiveresponse12)将构造的响应头传递给被拦截的请求。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
 
-参数名类型必填说明code[WebNetErrorList](../../modules/ohos/@ohos.web.netErrorList (ArkWeb网络协议栈错误列表).md#ZH-CN_TOPIC_0000002497445224__webneterrorlist)是网络错误码。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | WebNetErrorList | 是 | 网络错误码。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)、[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码](Webview错误码.md)、[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Incorrect parameter types.17100021The resource handler is invalid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
+| 17100021 | The resource handler is invalid. |
 
 **示例：**
 
-示例请参考[OnRequestStart](Class (WebSchemeHandler).md#ZH-CN_TOPIC_0000002497445218__onrequeststart12)。
+示例请参考[OnRequestStart](Class (WebSchemeHandler).md#ZH-CN_TOPIC_0000002522081160__onrequeststart12)。
 
 #### didFail20+
 
 didFail(code: WebNetErrorList, completeIfNoResponse: boolean): void
 
-通知ArkWeb内核，被拦截请求应返回失败。若completeIfNoResponse为false，调用前需优先调用[didReceiveResponse](#ZH-CN_TOPIC_0000002497605196__didreceiveresponse12)，将构造的响应头传递给被拦截的请求。若completeIfNoResponse为true，且调用前未调用[didReceiveResponse](#ZH-CN_TOPIC_0000002497605196__didreceiveresponse12)，则自动生成一个响应头，网络错误码为-104，详情参见[WebNetErrorList](../../modules/ohos/@ohos.web.netErrorList (ArkWeb网络协议栈错误列表).md#ZH-CN_TOPIC_0000002497445224__webneterrorlist)。
+通知ArkWeb内核，被拦截请求应返回失败。若completeIfNoResponse为false，调用前需优先调用[didReceiveResponse](#ZH-CN_TOPIC_0000002553201121__didreceiveresponse12)，将构造的响应头传递给被拦截的请求。若completeIfNoResponse为true，且调用前未调用[didReceiveResponse](#ZH-CN_TOPIC_0000002553201121__didreceiveresponse12)，则自动生成一个响应头，网络错误码为-104，详情参见[WebNetErrorList](@ohos.web.netErrorList (ArkWeb网络协议栈错误列表).md#ZH-CN_TOPIC_0000002522081166__webneterrorlist)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
 
-参数名类型必填说明code[WebNetErrorList](../../modules/ohos/@ohos.web.netErrorList (ArkWeb网络协议栈错误列表).md#ZH-CN_TOPIC_0000002497445224__webneterrorlist)是网络错误码。completeIfNoResponseboolean是调用当前接口时，若之前未调用过[didReceiveResponse](#ZH-CN_TOPIC_0000002497605196__didreceiveresponse12)，是否完成此次网络请求；值为true时，若之前未调用过[didReceiveResponse](#ZH-CN_TOPIC_0000002497605196__didreceiveresponse12)，则会自动生成一个response以完成此次网络请求，网络错误码为-104；值为false时，将等待应用调用[didReceiveResponse](#ZH-CN_TOPIC_0000002497605196__didreceiveresponse12)并传入response，不会直接完成此次网络请求。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| code | WebNetErrorList | 是 | 网络错误码。 |
+| completeIfNoResponse | boolean | 是 | 调用当前接口时，若之前未调用过didReceiveResponse，是否完成此次网络请求；值为true时，若之前未调用过didReceiveResponse，则会自动生成一个response以完成此次网络请求，网络错误码为-104；值为false时，将等待应用调用didReceiveResponse并传入response，不会直接完成此次网络请求。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Webview错误码](../../errors/Webview错误码.md)。
+以下错误码的详细介绍请参见[Webview错误码](Webview错误码.md)。
 
-错误码ID错误信息17100101The errorCode is either ARKWEB_NET_OK or outside the range of error codes in WebNetErrorList.17100021The resource handler is invalid.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100101 | The errorCode is either ARKWEB_NET_OK or outside the range of error codes in WebNetErrorList. |
+| 17100021 | The resource handler is invalid. |
 
 **示例：**
 
@@ -192,6 +215,4 @@ struct WebComponent {
         .javaScriptAccess(true)
         .domStorageAccess(true)
     }
-  }
-}
 ```

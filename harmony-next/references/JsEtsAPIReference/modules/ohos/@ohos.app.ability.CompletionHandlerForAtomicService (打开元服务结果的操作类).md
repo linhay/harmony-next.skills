@@ -24,11 +24,15 @@ import { CompletionHandlerForAtomicService } from '@kit.AbilityKit';
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称值说明FAILURE_CODE_SYSTEM_MALFUNCTION0表示由于系统错误（如跳转弹框崩溃）而无法打开元服务。FAILURE_CODE_USER_CANCEL1用户取消。FAILURE_CODE_USER_REFUSE2用户拒绝。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| FAILURE_CODE_SYSTEM_MALFUNCTION | 0 | 表示由于系统错误（如跳转弹框崩溃）而无法打开元服务。 |
+| FAILURE_CODE_USER_CANCEL | 1 | 用户取消。 |
+| FAILURE_CODE_USER_REFUSE | 2 | 用户拒绝。 |
 
 #### CompletionHandlerForAtomicService
 
-CompletionHandlerForAtomicService提供了[onAtomicServiceRequestSuccess](#ZH-CN_TOPIC_0000002529444551__onatomicservicerequestsuccess)和[onAtomicServiceRequestFailure](#ZH-CN_TOPIC_0000002529444551__onatomicservicerequestfailure)两个回调函数，分别在打开元服务成功和失败时回调。
+CompletionHandlerForAtomicService提供了[onAtomicServiceRequestSuccess](#ZH-CN_TOPIC_0000002553360455__onatomicservicerequestsuccess)和[onAtomicServiceRequestFailure](#ZH-CN_TOPIC_0000002553360455__onatomicservicerequestfailure)两个回调函数，分别在打开元服务成功和失败时回调。
 
 #### onAtomicServiceRequestSuccess
 
@@ -42,11 +46,13 @@ onAtomicServiceRequestSuccess(appId: string): void
 
 **参数：**
 
-参数名类型必填说明appIdstring是被拉起元服务的appId。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| appId | string | 是 | 被拉起元服务的appId。 |
 
 **示例：**
 
-参见[CompletionHandlerForAtomicService示例](#ZH-CN_TOPIC_0000002529444551__completionhandlerforatomicservice示例)。
+参见[CompletionHandlerForAtomicService示例](#ZH-CN_TOPIC_0000002553360455__completionhandlerforatomicservice示例)。
 
 #### onAtomicServiceRequestFailure
 
@@ -60,11 +66,15 @@ onAtomicServiceRequestFailure(appId: string, failureCode: FailureCode, failureMe
 
 **参数：**
 
-参数名类型必填说明appIdstring是被拉起元服务的appId。failureCode[FailureCode](#ZH-CN_TOPIC_0000002529444551__failurecode)是失败原因的错误码。failureMessagestring是失败原因的描述。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| appId | string | 是 | 被拉起元服务的appId。 |
+| failureCode | FailureCode | 是 | 失败原因的错误码。 |
+| failureMessage | string | 是 | 失败原因的描述。 |
 
 **示例：**
 
-参见[CompletionHandlerForAtomicService示例](#ZH-CN_TOPIC_0000002529444551__completionhandlerforatomicservice示例)。
+参见[CompletionHandlerForAtomicService示例](#ZH-CN_TOPIC_0000002553360455__completionhandlerforatomicservice示例)。
 
 #### CompletionHandlerForAtomicService示例
 
@@ -93,5 +103,4 @@ export default class EntryAbility extends UIAbility {
       hilog.error(0x0000, 'testTag', `openAtomicService failed:${JSON.stringify(err)}`);
     });
   }
-}
 ```

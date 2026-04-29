@@ -22,87 +22,30 @@ enableTrustedAuthentication(challenge: Uint8Array, pwdInfo: PasswordInfo, label:
 
 **参数**：
 
-参数名
-
-类型
-
-必填
-
-说明
-
-challenge
-
-Uint8Array
-
-是
-
-在发起请求之前通过[Universal Keystore Kit初始化会话](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-huks#huksinitsession9)获取的challenge值，参数规格为32字节随机数。
-
-pwdInfo
-
-[PasswordInfo](#section1550072910133)
-
-是
-
-密码对应的定制信息，详细信息参考PasswordInfo。
-
-label
-
-[TUILable](#section125211933134315)
-
-是
-
-用于TUI界面展示时的定制信息，详见TUILable。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| challenge | Uint8Array | 是 | 在发起请求之前通过Universal Keystore Kit初始化会话获取的challenge值，参数规格为32字节随机数。 |
+| pwdInfo | PasswordInfo | 是 | 密码对应的定制信息，详细信息参考PasswordInfo。 |
+| label | TUILable | 是 | 用于TUI界面展示时的定制信息，详见TUILable。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<[AuthInfo](#section1214193712473)>
-
-Promise对象，返回开通数字盾密码对应的authID和authToken信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AuthInfo> | Promise对象，返回开通数字盾密码对应的authID和authToken信息。 |
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](TrustedAuthentication （数字盾服务）.md)**。**
 
-错误码ID
-
-错误信息
-
-1019100001
-
-The interface invoker does not have the corresponding permission.
-
-1019100002
-
-Parameter error.
-
-Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
-
-1019100007
-
-Unsupported custom image.
-
-1019100008
-
-The user canceled the operation.
-
-1019100011
-
-The title text cannot be displayed.
-
-1019100013
-
-Failed to set the password.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1019100001 | The interface invoker does not have the corresponding permission. |
+| 1019100002 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 1019100007 | Unsupported custom image. |
+| 1019100008 | The user canceled the operation. |
+| 1019100011 | The title text cannot be displayed. |
+| 1019100013 | Failed to set the password. |
 
 **示例：**
 
@@ -152,107 +95,34 @@ modifyTrustedAuthenticationPwd(challenge: Uint8Array, pwdInfo: PasswordInfo, aut
 
 **参数**：
 
-参数名
-
-类型
-
-必填
-
-说明
-
-challenge
-
-Uint8Array
-
-是
-
-在发起请求之前通过[Universal Keystore Kit初始化会话](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-huks#huksinitsession9)获取的challenge值，参数规格为32字节随机数。
-
-pwdInfo
-
-[PasswordInfo](#section1550072910133)
-
-是
-
-密码对应的定制信息。
-
-authID
-
-bigint
-
-是
-
-密码创建时获取的authID信息。
-
-label
-
-[TUILable](#section125211933134315)
-
-是
-
-用于TUI界面展示时的定制信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| challenge | Uint8Array | 是 | 在发起请求之前通过Universal Keystore Kit初始化会话获取的challenge值，参数规格为32字节随机数。 |
+| pwdInfo | PasswordInfo | 是 | 密码对应的定制信息。 |
+| authID | bigint | 是 | 密码创建时获取的authID信息。 |
+| label | TUILable | 是 | 用于TUI界面展示时的定制信息。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<[AuthToken](#section20919104010476)>
-
-Promise对象，返回修改数字盾密码对应的authToken信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AuthToken> | Promise对象，返回修改数字盾密码对应的authToken信息。 |
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](TrustedAuthentication （数字盾服务）.md)**。**
 
-错误码ID
-
-错误信息
-
-1019100001
-
-The interface invoker does not have the corresponding permission.
-
-1019100002
-
-Parameter error.
-
-Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
-
-1019100003
-
-The maximum number of password authentication attempts has been reached.
-
-1019100005
-
-Face/Fingerprint/Password authentication failed.
-
-1019100007
-
-Unsupported custom image.
-
-1019100008
-
-The user canceled the operation.
-
-1019100011
-
-The title text cannot be displayed.
-
-1019100012
-
-Invalid authentication ID.
-
-1019100014
-
-Failed to change the password.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1019100001 | The interface invoker does not have the corresponding permission. |
+| 1019100002 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 1019100003 | The maximum number of password authentication attempts has been reached. |
+| 1019100005 | Face/Fingerprint/Password authentication failed. |
+| 1019100007 | Unsupported custom image. |
+| 1019100008 | The user canceled the operation. |
+| 1019100011 | The title text cannot be displayed. |
+| 1019100012 | Invalid authentication ID. |
+| 1019100014 | Failed to change the password. |
 
 **示例：**
 
@@ -304,113 +174,34 @@ disableTrustedAuthentication(challenge: Uint8Array, needAuth: boolean, authID: b
 
 **参数**：
 
-参数名
-
-类型
-
-必填
-
-说明
-
-challenge
-
-Uint8Array
-
-是
-
-当needAuth为true时，在发起请求之前通过[Universal Keystore Kit初始化会话](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-huks#huksinitsession9)获取的challenge值，参数规格为32字节随机数。
-
-当needAuth为false时，该值可不从Universal Keystore Kit获取，challenge值为任意32字节数即可。
-
-needAuth
-
-boolean
-
-是
-
-是否需要进行密码认证标识。
-
-当值为false时，表示不进行密码认证发起的数字盾服务关闭场景。
-
-当值为true时，表示需要进行密码认证，密码认证通过后才可关闭数字盾服务。
-
-authID
-
-bigint
-
-是
-
-密码创建时获取的authID信息。
-
-label
-
-[TUILable](#section125211933134315)
-
-是
-
-用于TUI界面展示时的定制信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| challenge | Uint8Array | 是 | 当needAuth为true时，在发起请求之前通过Universal Keystore Kit初始化会话获取的challenge值，参数规格为32字节随机数。 当needAuth为false时，该值可不从Universal Keystore Kit获取，challenge值为任意32字节数即可。 |
+| needAuth | boolean | 是 | 是否需要进行密码认证标识。 当值为false时，表示不进行密码认证发起的数字盾服务关闭场景。 当值为true时，表示需要进行密码认证，密码认证通过后才可关闭数字盾服务。 |
+| authID | bigint | 是 | 密码创建时获取的authID信息。 |
+| label | TUILable | 是 | 用于TUI界面展示时的定制信息。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<[AuthToken](#section20919104010476)>
-
-Promise对象，返回删除数字盾密码对应的authToken信息，当needAuth为false时，返回的authToken信息为全0无效的authToken。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AuthToken> | Promise对象，返回删除数字盾密码对应的authToken信息，当needAuth为false时，返回的authToken信息为全0无效的authToken。 |
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](TrustedAuthentication （数字盾服务）.md)**。**
 
-错误码ID
-
-错误信息
-
-1019100001
-
-The interface invoker does not have the corresponding permission.
-
-1019100002
-
-Parameter error.
-
-Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
-
-1019100003
-
-The maximum number of password authentication attempts has been reached.
-
-1019100004
-
-Failed to delete the password.
-
-1019100005
-
-Face/Fingerprint/Password authentication failed.
-
-1019100007
-
-Unsupported custom image.
-
-1019100008
-
-The user canceled the operation.
-
-1019100011
-
-The title text cannot be displayed.
-
-1019100012
-
-Invalid authentication ID.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1019100001 | The interface invoker does not have the corresponding permission. |
+| 1019100002 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 1019100003 | The maximum number of password authentication attempts has been reached. |
+| 1019100004 | Failed to delete the password. |
+| 1019100005 | Face/Fingerprint/Password authentication failed. |
+| 1019100007 | Unsupported custom image. |
+| 1019100008 | The user canceled the operation. |
+| 1019100011 | The title text cannot be displayed. |
+| 1019100012 | Invalid authentication ID. |
 
 **示例：**
 
@@ -456,91 +247,31 @@ trustedAuthentication(challenge: Uint8Array, authID: bigint, label: TUILable): P
 
 **参数**：
 
-参数名
-
-类型
-
-必填
-
-说明
-
-challenge
-
-Uint8Array
-
-是
-
-在发起请求之前通过[Universal Keystore Kit初始化会话](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-huks#huksinitsession9)获取的challenge值，参数规格为32字节随机数。
-
-authID
-
-bigint
-
-是
-
-密码创建时获取的authID信息。
-
-label
-
-[TUILable](#section125211933134315)
-
-是
-
-用于TUI界面展示时的定制信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| challenge | Uint8Array | 是 | 在发起请求之前通过Universal Keystore Kit初始化会话获取的challenge值，参数规格为32字节随机数。 |
+| authID | bigint | 是 | 密码创建时获取的authID信息。 |
+| label | TUILable | 是 | 用于TUI界面展示时的定制信息。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<[AuthToken](#section20919104010476)>
-
-Promise对象，返回数字盾密码认证对应的authToken信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AuthToken> | Promise对象，返回数字盾密码认证对应的authToken信息。 |
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](TrustedAuthentication （数字盾服务）.md)**。**
 
-错误码ID
-
-错误信息
-
-1019100001
-
-The interface invoker does not have the corresponding permission.
-
-1019100002
-
-Parameter error.
-
-Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
-
-1019100003
-
-The maximum number of password authentication attempts has been reached.
-
-1019100005
-
-Face/Fingerprint/Password authentication failed.
-
-1019100007
-
-Unsupported custom image.
-
-1019100008
-
-The user canceled the operation.
-
-1019100012
-
-Invalid authentication ID.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1019100001 | The interface invoker does not have the corresponding permission. |
+| 1019100002 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 1019100003 | The maximum number of password authentication attempts has been reached. |
+| 1019100005 | Face/Fingerprint/Password authentication failed. |
+| 1019100007 | Unsupported custom image. |
+| 1019100008 | The user canceled the operation. |
+| 1019100012 | Invalid authentication ID. |
 
 **示例：**
 
@@ -586,103 +317,32 @@ procContentAuthentication(challenge: Uint8Array, authID: bigint, authMsg: AuthRe
 
 **参数**：
 
-参数名
-
-类型
-
-必填
-
-说明
-
-challenge
-
-Uint8Array
-
-是
-
-在发起请求之前通过[Universal Keystore Kit初始化会话](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-huks#huksinitsession9)获取的challenge值，参数规格为32字节随机数。
-
-authID
-
-bigint
-
-是
-
-密码创建时获取的authID信息。
-
-authMsg
-
-[AuthReqParams](#section3989356115014)
-
-是
-
-交易认证请求相关参数。
-
-label
-
-[TUILable](#section125211933134315)
-
-是
-
-用于TUI界面展示时的定制信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| challenge | Uint8Array | 是 | 在发起请求之前通过Universal Keystore Kit初始化会话获取的challenge值，参数规格为32字节随机数。 |
+| authID | bigint | 是 | 密码创建时获取的authID信息。 |
+| authMsg | AuthReqParams | 是 | 交易认证请求相关参数。 |
+| label | TUILable | 是 | 用于TUI界面展示时的定制信息。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<[AuthToken](#section20919104010476)>
-
-Promise对象。
-
-当使用密码认证时，返回结果包括交易数据信息的authToken。
-
-当使用生物特征进行认证时，返回结果为临时authToken，在经过生物认证通过后，需使用[getBiometricAuthToken](#section627215120542)获取正式签发的包含交易信息的authToken。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AuthToken> | Promise对象。 当使用密码认证时，返回结果包括交易数据信息的authToken。 当使用生物特征进行认证时，返回结果为临时authToken，在经过生物认证通过后，需使用getBiometricAuthToken获取正式签发的包含交易信息的authToken。 |
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](TrustedAuthentication （数字盾服务）.md)**。**
 
-错误码ID
-
-错误信息
-
-1019100001
-
-The interface invoker does not have the corresponding permission.
-
-1019100002
-
-Parameter error.
-
-Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
-
-1019100005
-
-Face/Fingerprint/Password authentication failed.
-
-1019100008
-
-The user canceled the operation.
-
-1019100011
-
-The text content cannot be displayed.
-
-1019100012
-
-Invalid authentication ID.
-
-1019100021
-
-The corresponding biometric data has not been bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1019100001 | The interface invoker does not have the corresponding permission. |
+| 1019100002 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 1019100005 | Face/Fingerprint/Password authentication failed. |
+| 1019100008 | The user canceled the operation. |
+| 1019100011 | The text content cannot be displayed. |
+| 1019100012 | Invalid authentication ID. |
+| 1019100021 | The corresponding biometric data has not been bound. |
 
 **示例：**
 
@@ -732,93 +392,30 @@ getBiometricAuthToken(operType: OperateType, tuiAuthToken: Uint8Array, bioAuthTo
 
 **参数**：
 
-参数名
-
-类型
-
-必填
-
-说明
-
-operType
-
-[OperateType](#section14617053498)
-
-是
-
-获取生物特征authToken操作类型，详见[OperateType](#section14617053498)。
-
-tuiAuthToken
-
-Uint8Array
-
-是
-
-当操作类型为OPERATE_TYPE_BIOMETRIC_AUTH时，tuiAuthToken表示通过密码认证（即[trustedAuthentication](#section6763105845111)）获取的authToken信息。
-
-当操作类型为OPERATE_TYPE_CONTENT_AUTH时，tuiAuthToken表示通过交易信息临时确认（即[procContentAuthentication](#section1381398185415)）获取的authToken信息。
-
-bioAuthToken
-
-Uint8Array
-
-是
-
-生物特征认证获取的authToken，要求tuiAuthToken和bioAuthToken获取时使用同一个challenge，即保障两个authToken通过同一次会话获取。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| operType | OperateType | 是 | 获取生物特征authToken操作类型，详见OperateType。 |
+| tuiAuthToken | Uint8Array | 是 | 当操作类型为OPERATE_TYPE_BIOMETRIC_AUTH时，tuiAuthToken表示通过密码认证（即trustedAuthentication）获取的authToken信息。 当操作类型为OPERATE_TYPE_CONTENT_AUTH时，tuiAuthToken表示通过交易信息临时确认（即procContentAuthentication）获取的authToken信息。 |
+| bioAuthToken | Uint8Array | 是 | 生物特征认证获取的authToken，要求tuiAuthToken和bioAuthToken获取时使用同一个challenge，即保障两个authToken通过同一次会话获取。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<[AuthToken](#section20919104010476)>
-
-Promise对象。
-
-在生物特征认证绑定流程中，获取的authToken为经数字盾服务认证签发的包括生物特征ID的authToken。
-
-在生物特征交易认证流程中，获取的authToken为经数字盾服务认证前的包括交易信息和生物特征ID的authToken。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AuthToken> | Promise对象。 在生物特征认证绑定流程中，获取的authToken为经数字盾服务认证签发的包括生物特征ID的authToken。 在生物特征交易认证流程中，获取的authToken为经数字盾服务认证前的包括交易信息和生物特征ID的authToken。 |
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](TrustedAuthentication （数字盾服务）.md)**。**
 
-错误码ID
-
-错误信息
-
-1019100001
-
-The interface invoker does not have the corresponding permission.
-
-1019100002
-
-Parameter error.
-
-Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
-
-1019100005
-
-Face/Fingerprint/Password authentication failed.
-
-1019100015
-
-Failed to get the biometric authToken.
-
-1019100019
-
-The biometric data for authentication does not match the bound biometric feature.
-
-1019100020
-
-The biometric data has already been bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1019100001 | The interface invoker does not have the corresponding permission. |
+| 1019100002 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 1019100005 | Face/Fingerprint/Password authentication failed. |
+| 1019100015 | Failed to get the biometric authToken. |
+| 1019100019 | The biometric data for authentication does not match the bound biometric feature. |
+| 1019100020 | The biometric data has already been bound. |
 
 **示例：**
 
@@ -846,7 +443,6 @@ async function PwdVerify(challenge: Uint8Array, resourceMgr:resourceManager.Reso
   } catch (err) {
     hilog.error(0x0000, 'testTag', `Failed to trustedAuthentication, code:${err.code}, message:${err.message}`);
     throw new Error('Password verify failed:' + (err as BusinessError).message);
-  }
 }
 const rand = cryptoFramework.createRandom();
 const len: number = 32;
@@ -899,71 +495,27 @@ importData(data: ArrayBuffer, authID: bigint): Promise<void>
 
 **参数**：
 
-参数名
-
-类型
-
-必填
-
-说明
-
-data
-
-ArrayBuffer
-
-是
-
-通常指定为从Universal Keystore Kit获取的wrapkey数据信息，导入数据大小限制在2048字节内，对应数据不支持反复导入。
-
-authID
-
-bigint
-
-是
-
-密码创建时获取的authID信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | ArrayBuffer | 是 | 通常指定为从Universal Keystore Kit获取的wrapkey数据信息，导入数据大小限制在2048字节内，对应数据不支持反复导入。 |
+| authID | bigint | 是 | 密码创建时获取的authID信息。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<void>
-
-Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](TrustedAuthentication （数字盾服务）.md)**。**
 
-错误码ID
-
-错误信息
-
-1019100001
-
-The interface invoker does not have the corresponding permission.
-
-1019100002
-
-Parameter error.
-
-Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
-
-1019100010
-
-Failed to import data.
-
-1019100012
-
-Invalid authentication ID.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1019100001 | The interface invoker does not have the corresponding permission. |
+| 1019100002 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 1019100010 | Failed to import data. |
+| 1019100012 | Invalid authentication ID. |
 
 **示例：**
 
@@ -998,71 +550,27 @@ exportData(authID: bigint, label: TUILable): Promise<ArrayBuffer>
 
 **参数**：
 
-参数名
-
-类型
-
-必填
-
-说明
-
-authID
-
-bigint
-
-是
-
-密码创建时获取的authID信息。
-
-label
-
-[TUILable](#section125211933134315)
-
-是
-
-用于TUI界面展示时的定制信息，详见[TUILable](#section125211933134315)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| authID | bigint | 是 | 密码创建时获取的authID信息。 |
+| label | TUILable | 是 | 用于TUI界面展示时的定制信息，详见TUILable。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<ArrayBuffer>
-
-Promise对象，返回备份的数据信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<ArrayBuffer> | Promise对象，返回备份的数据信息。 |
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](TrustedAuthentication （数字盾服务）.md)**。**
 
-错误码ID
-
-错误信息
-
-1019100001
-
-The interface invoker does not have the corresponding permission.
-
-1019100002
-
-Parameter error.
-
-Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
-
-1019100009
-
-Failed to export data.
-
-1019100012
-
-Invalid authentication ID.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1019100001 | The interface invoker does not have the corresponding permission. |
+| 1019100002 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 1019100009 | Failed to export data. |
+| 1019100012 | Invalid authentication ID. |
 
 **示例：**
 
@@ -1104,59 +612,25 @@ checkConfirmUITextFormat(text: string): Promise<TextCheckResult>
 
 **参数**：
 
-参数名
-
-类型
-
-必填
-
-说明
-
-text
-
-string
-
-是
-
-将在TUI界面展示的认证信息内容。在交易认证前，可通过该接口确认交易信息是否可以在屏幕上单行完整展示，长度规格为1~200字节。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 将在TUI界面展示的认证信息内容。在交易认证前，可通过该接口确认交易信息是否可以在屏幕上单行完整展示，长度规格为1~200字节。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<[TextCheckResult](#section27021232135111)>
-
-Promise对象，TUI界面显示指定text对应检查结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<TextCheckResult> | Promise对象，TUI界面显示指定text对应检查结果。 |
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](TrustedAuthentication （数字盾服务）.md)**。**
 
-错误码ID
-
-错误信息
-
-1019100001
-
-The interface invoker does not have the corresponding permission.
-
-1019100002
-
-Parameter error.
-
-Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
-
-1019100006
-
-Check input confirm text failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1019100001 | The interface invoker does not have the corresponding permission. |
+| 1019100002 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 1019100006 | Check input confirm text failed. |
 
 **示例：**
 
@@ -1188,63 +662,26 @@ getRemainAuthTimes(authID: bigint): Promise<number>
 
 **参数**：
 
-参数名
-
-类型
-
-必填
-
-说明
-
-authID
-
-bigint
-
-是
-
-密码创建时获取的authID信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| authID | bigint | 是 | 密码创建时获取的authID信息。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<number>
-
-Promise对象，数字盾剩余认证次数。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，数字盾剩余认证次数。 |
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](TrustedAuthentication （数字盾服务）.md)**。**
 
-错误码ID
-
-错误信息
-
-1019100001
-
-The interface invoker does not have the corresponding permission.
-
-1019100002
-
-Parameter error.
-
-Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
-
-1019100012
-
-Invalid authentication ID.
-
-1019100017
-
-Failed to get the remaining number of authentication attempts.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1019100001 | The interface invoker does not have the corresponding permission. |
+| 1019100002 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 1019100012 | Invalid authentication ID. |
+| 1019100017 | Failed to get the remaining number of authentication attempts. |
 
 **示例：**
 
@@ -1276,75 +713,28 @@ disableTrustedBioAuthentication(authID: bigint, authType: AuthType): Promise<voi
 
 **参数**：
 
-参数名
-
-类型
-
-必填
-
-说明
-
-authID
-
-bigint
-
-是
-
-密码创建时获取的authID信息。
-
-authType
-
-AuthType
-
-是
-
-仅支持AUTH_TYPE_FACE、AUTH_TYPE_FINGERPRINT
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| authID | bigint | 是 | 密码创建时获取的authID信息。 |
+| authType | AuthType | 是 | 仅支持AUTH_TYPE_FACE、AUTH_TYPE_FINGERPRINT |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<void>
-
-Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](TrustedAuthentication （数字盾服务）.md)**。**
 
-错误码ID
-
-错误信息
-
-1019100001
-
-The interface invoker does not have the corresponding permission.
-
-1019100002
-
-Parameter error.
-
-Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameter types.
-
-3. Parameter verification failed.
-
-1019100012
-
-Invalid authentication ID.
-
-1019100018
-
-Failed to unbind the corresponding biometric data.
-
-1019100021
-
-The corresponding biometric data has not been bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1019100001 | The interface invoker does not have the corresponding permission. |
+| 1019100002 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 1019100012 | Invalid authentication ID. |
+| 1019100018 | Failed to unbind the corresponding biometric data. |
+| 1019100021 | The corresponding biometric data has not been bound. |
 
 **示例：**
 
@@ -1372,55 +762,12 @@ try {
 
 **起始版本：**6.0.0(20)
 
-**名称**
-
-**类型**
-
-****只读
-
-可选
-
-**说明**
-
-pwdType
-
-[PasswordType](#section1365374114910)
-
-否
-
-否
-
-密码类型，取值范围详见[PasswordType](#section1365374114910)。
-
-pwdMaxLength
-
-number
-
-否
-
-否
-
-密码最大长度，取值范围6~18。
-
-pwdMinLength
-
-number
-
-否
-
-否
-
-密码最小长度，取值范围6~18，且小于等于pwdMaxLength。
-
-maxAuthFailCount
-
-number
-
-否
-
-否
-
-密码最大连续认证失败次数，取值范围1~10。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| pwdType | PasswordType | 否 | 否 | 密码类型，取值范围详见PasswordType。 |
+| pwdMaxLength | number | 否 | 否 | 密码最大长度，取值范围6~18。 |
+| pwdMinLength | number | 否 | 否 | 密码最小长度，取值范围6~18，且小于等于pwdMaxLength。 |
+| maxAuthFailCount | number | 否 | 否 | 密码最大连续认证失败次数，取值范围1~10。 |
 
 #### TUILable
 
@@ -1430,35 +777,10 @@ TUI页面下的定制信息，包括定制图像logo和页面标题。
 
 **起始版本：**6.0.0(20)
 
-**名称**
-
-**类型**
-
-****只读
-
-可选
-
-**说明**
-
-image
-
-ArrayBuffer
-
-否
-
-否
-
-定制logo信息，当前暂不支持透明图片。要求图片格式为PNG RGBA格式、最大宽度、长度要求均为216px。
-
-title
-
-string
-
-否
-
-否
-
-定制TUI页面标题信息，最大长度要求为31字节。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| image | ArrayBuffer | 否 | 否 | 定制logo信息，要求图片格式为PNG RGBA格式、最大宽度、长度要求均为216px。 |
+| title | string | 否 | 否 | 定制TUI页面标题信息，最大长度要求为31字节。 |
 
 #### AuthInfo
 
@@ -1468,35 +790,10 @@ string
 
 **起始版本：**6.0.0(20)
 
-**名称**
-
-**类型**
-
-****只读
-
-可选
-
-**说明**
-
-authToken
-
-Uint8Array
-
-否
-
-否
-
-包括密码authID的authToken信息。
-
-authID
-
-bigint
-
-否
-
-否
-
-表示数字盾密码authID索引，用于密码认证、删除、修改。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| authToken | Uint8Array | 否 | 否 | 包括密码authID的authToken信息。 |
+| authID | bigint | 否 | 否 | 表示数字盾密码authID索引，用于密码认证、删除、修改。 |
 
 #### AuthToken
 
@@ -1506,25 +803,9 @@ bigint
 
 **起始版本：**6.0.0(20)
 
-**名称**
-
-**类型**
-
-****只读
-
-可选
-
-**说明**
-
-authToken
-
-Uint8Array
-
-否
-
-否
-
-对应操作流程中authToken信息。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| authToken | Uint8Array | 否 | 否 | 对应操作流程中authToken信息。 |
 
 #### AuthType
 
@@ -1534,29 +815,11 @@ Uint8Array
 
 **起始版本：**6.0.0(20)
 
-**名称**
-
-值
-
-**说明**
-
-AUTH_TYPE_FACE
-
-2
-
-人脸认证
-
-AUTH_TYPE_FINGERPRINT
-
-4
-
-指纹认证
-
-AUTH_TYPE_TUI_PIN
-
-32
-
-TUI密码认证
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| AUTH_TYPE_FACE | 2 | 人脸认证 |
+| AUTH_TYPE_FINGERPRINT | 4 | 指纹认证 |
+| AUTH_TYPE_TUI_PIN | 32 | TUI密码认证 |
 
 #### PasswordType
 
@@ -1566,23 +829,10 @@ TUI密码认证
 
 **起始版本：**6.0.0(20)
 
-**名称**
-
-值
-
-**说明**
-
-PASSWORD_TYPE_DIGITAL
-
-0
-
-纯数字密码类型
-
-PASSWORD_TYPE_MIXED
-
-1
-
-数字、字符混合密码类型
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PASSWORD_TYPE_DIGITAL | 0 | 纯数字密码类型 |
+| PASSWORD_TYPE_MIXED | 1 | 数字、字符混合密码类型 |
 
 #### OperateType
 
@@ -1592,23 +842,10 @@ PASSWORD_TYPE_MIXED
 
 **起始版本：**6.0.0(20)
 
-**名称**
-
-值
-
-**说明**
-
-OPERATE_TYPE_BIOMETRIC_AUTH
-
-1
-
-生物特征与密码认证绑定操作
-
-OPERATE_TYPE_CONTENT_AUTH
-
-2
-
-使用生物特征进行交易认证操作
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| OPERATE_TYPE_BIOMETRIC_AUTH | 1 | 生物特征与密码认证绑定操作 |
+| OPERATE_TYPE_CONTENT_AUTH | 2 | 使用生物特征进行交易认证操作 |
 
 #### AuthReqParams
 
@@ -1618,35 +855,10 @@ OPERATE_TYPE_CONTENT_AUTH
 
 **起始版本：**6.0.0(20)
 
-**名称**
-
-**类型**
-
-****只读
-
-可选
-
-**说明**
-
-reqType
-
-[AuthType](#section58527274920)
-
-否
-
-否
-
-认证类型，取值范围详见[AuthType](#section58527274920)。
-
-authContent
-
-Array<string>
-
-否
-
-否
-
-认证数据，即交易场景下交易数据，单条数据大小在1024字节以内。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| reqType | AuthType | 否 | 否 | 认证类型，取值范围详见AuthType。 |
+| authContent | Array<string> | 否 | 否 | 认证数据，即交易场景下交易数据，单条数据大小在1024字节以内。 |
 
 #### TextCheckResult
 
@@ -1656,35 +868,10 @@ TUI界面文本信息是否可以单行显示的检查结果。
 
 **起始版本：**6.0.0(20)
 
-**名称**
-
-**类型**
-
-****只读
-
-可选
-
-**说明**
-
-result
-
-number
-
-否
-
-否
-
-指定输入文本检查结果，如果可以正常显示，返回为0，否则返回[1019100011 不合法的TUI认证信息](TrustedAuthentication （数字盾服务）.md#section19615182019615)。
-
-lastIndex
-
-number
-
-否
-
-否
-
-输入字符串可正常显示的最后一个字符对应的索引。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| result | number | 否 | 否 | 指定输入文本检查结果，如果可以正常显示，返回为0，否则返回[1019100011 不合法的TUI认证信息](../../errors/TrustedAuthentication （数字盾服务）.md#section19615182019615)。 |
+| lastIndex | number | 否 | 否 | 输入字符串可正常显示的最后一个字符对应的索引。 |
 
 #### TrustedAuthErrorCode
 
@@ -1694,134 +881,26 @@ number
 
 **起始版本：**6.0.0(20)
 
-**名称**
-
-值
-
-**说明**
-
-TRUSTED_AUTH_ERROR_NO_PERMISSION
-
-1019100001
-
-权限校验失败
-
-TRUSTED_AUTH_ERROR_ILLEGAL_ARGUMENT
-
-1019100002
-
-参数检查失败
-
-TRUSTED_AUTH_ERROR_PWD_LIMIT_REACHED
-
-1019100003
-
-密码认证连续失败次数达到应用定义的最大次数
-
-TRUSTED_AUTH_ERROR_PWD_DELETE_FAILED
-
-1019100004
-
-删除密码失败
-
-TRUSTED_AUTH_ERROR_VERIFY_FAILED
-
-1019100005
-
-密码认证失败
-
-TRUSTED_AUTH_ERROR_CHECK_CONFIRM_TEXT_FAILED
-
-1019100006
-
-输入文本信息检查失败
-
-TRUSTED_AUTH_ERROR_NOT_SUPPORT_IMAGE
-
-1019100007
-
-不支持的图片格式
-
-TRUSTED_AUTH_ERROR_USER_REQ_CANCEL
-
-1019100008
-
-用户取消操作
-
-TRUSTED_AUTH_ERROR_EXPORT_DATA_FAILED
-
-1019100009
-
-备份数据导出失败
-
-TRUSTED_AUTH_ERROR_IMPORT_DATA_FAILED
-
-1019100010
-
-备份数据导入失败
-
-TRUSTED_AUTH_ERROR_INVALID_CONTENT
-
-1019100011
-
-不合法的TUI认证信息
-
-TRUSTED_AUTH_ERROR_INVALID_AUTH_ID
-
-1019100012
-
-无效的authID
-
-TRUSTED_AUTH_ERROR_SET_PWD_FAILED
-
-1019100013
-
-创建密码失败
-
-TRUSTED_AUTH_ERROR_MODIFY_PWD_FAILED
-
-1019100014
-
-修改密码失败
-
-TRUSTED_AUTH_ERROR_BIO_RESIGN_FAILED
-
-1019100015
-
-生物认证authToken签发失败
-
-TRUSTED_AUTH_FEATURE_INITIALIZATION_FAILED
-
-1019100016
-
-数字盾服务未使能
-
-TRUSTED_AUTH_ERROR_GET_REMAIN_TIME
-
-1019100017
-
-获取数字盾剩余认证次数失败
-
-TRUSTED_AUTH_ERROR_DISABLE_BIO_AUTH
-
-1019100018
-
-解绑指定生物特征认证能力失败
-
-TRUSTED_AUTH_ERROR_BIO_MISMATCH
-
-1019100019
-
-认证的生物特征与绑定的生物特征不匹配
-
-TRUSTED_AUTH_ERROR_BIO_REPEATED_BIND
-
-1019100020
-
-已绑定对应的生物特征
-
-TRUSTED_AUTH_ERROR_NOT_BIND_BIO
-
-1019100021
-
-对应生物特征未绑定
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| TRUSTED_AUTH_ERROR_NO_PERMISSION | 1019100001 | 权限校验失败 |
+| TRUSTED_AUTH_ERROR_ILLEGAL_ARGUMENT | 1019100002 | 参数检查失败 |
+| TRUSTED_AUTH_ERROR_PWD_LIMIT_REACHED | 1019100003 | 密码认证连续失败次数达到应用定义的最大次数 |
+| TRUSTED_AUTH_ERROR_PWD_DELETE_FAILED | 1019100004 | 删除密码失败 |
+| TRUSTED_AUTH_ERROR_VERIFY_FAILED | 1019100005 | 密码认证失败 |
+| TRUSTED_AUTH_ERROR_CHECK_CONFIRM_TEXT_FAILED | 1019100006 | 输入文本信息检查失败 |
+| TRUSTED_AUTH_ERROR_NOT_SUPPORT_IMAGE | 1019100007 | 不支持的图片格式 |
+| TRUSTED_AUTH_ERROR_USER_REQ_CANCEL | 1019100008 | 用户取消操作 |
+| TRUSTED_AUTH_ERROR_EXPORT_DATA_FAILED | 1019100009 | 备份数据导出失败 |
+| TRUSTED_AUTH_ERROR_IMPORT_DATA_FAILED | 1019100010 | 备份数据导入失败 |
+| TRUSTED_AUTH_ERROR_INVALID_CONTENT | 1019100011 | 不合法的TUI认证信息 |
+| TRUSTED_AUTH_ERROR_INVALID_AUTH_ID | 1019100012 | 无效的authID |
+| TRUSTED_AUTH_ERROR_SET_PWD_FAILED | 1019100013 | 创建密码失败 |
+| TRUSTED_AUTH_ERROR_MODIFY_PWD_FAILED | 1019100014 | 修改密码失败 |
+| TRUSTED_AUTH_ERROR_BIO_RESIGN_FAILED | 1019100015 | 生物认证authToken签发失败 |
+| TRUSTED_AUTH_FEATURE_INITIALIZATION_FAILED | 1019100016 | 数字盾服务未使能 |
+| TRUSTED_AUTH_ERROR_GET_REMAIN_TIME | 1019100017 | 获取数字盾剩余认证次数失败 |
+| TRUSTED_AUTH_ERROR_DISABLE_BIO_AUTH | 1019100018 | 解绑指定生物特征认证能力失败 |
+| TRUSTED_AUTH_ERROR_BIO_MISMATCH | 1019100019 | 认证的生物特征与绑定的生物特征不匹配 |
+| TRUSTED_AUTH_ERROR_BIO_REPEATED_BIND | 1019100020 | 已绑定对应的生物特征 |
+| TRUSTED_AUTH_ERROR_NOT_BIND_BIO | 1019100021 | 对应生物特征未绑定 |

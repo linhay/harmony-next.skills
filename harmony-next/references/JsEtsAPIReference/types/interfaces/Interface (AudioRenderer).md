@@ -2,7 +2,8 @@
 
 提供音频渲染的相关接口。
 
-在使用AudioRenderer的接口之前，需先通过[createAudioRenderer](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529285689__audiocreateaudiorenderer8)获取AudioRenderer实例。
+在使用AudioRenderer的接口之前，需先通过[createAudioRenderer](Functions.md#ZH-CN_TOPIC_0000002553201779__audiocreateaudiorenderer8)获取AudioRenderer实例。
+
 
 - 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 - 本Interface首批接口从API version 8开始支持。
@@ -17,7 +18,9 @@ import { audio } from '@kit.AudioKit';
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
-名称类型只读可选说明state8+[AudioState](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiostate8)是否音频渲染器的状态。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| state8+ | [AudioState](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiostate8) | 是 | 否 | 音频渲染器的状态。 |
 
 **示例：**
 
@@ -37,7 +40,9 @@ getRendererInfo(callback: AsyncCallback<AudioRendererInfo>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[AudioRendererInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiorendererinfo8)>是回调函数。当获取音频渲染器的信息成功，err为undefined，data为获取到的音频渲染器的信息；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<AudioRendererInfo> | 是 | 回调函数。当获取音频渲染器的信息成功，err为undefined，data为获取到的音频渲染器的信息；否则为错误对象。 |
 
 **示例：**
 
@@ -63,7 +68,9 @@ getRendererInfo(): Promise<AudioRendererInfo>
 
 **返回值：**
 
-类型说明Promise<[AudioRendererInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiorendererinfo8)>Promise对象，返回音频渲染器信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AudioRendererInfo> | Promise对象，返回音频渲染器信息。 |
 
 **示例：**
 
@@ -87,7 +94,9 @@ getRendererInfoSync(): AudioRendererInfo
 
 **返回值：**
 
-类型说明[AudioRendererInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiorendererinfo8)返回音频渲染器信息。
+| 类型 | 说明 |
+| --- | --- |
+| AudioRendererInfo | 返回音频渲染器信息。 |
 
 **示例：**
 
@@ -113,7 +122,9 @@ getStreamInfo(callback: AsyncCallback<AudioStreamInfo>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[AudioStreamInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiostreaminfo8)>是回调函数。当获取音频流信息成功，err为undefined，data为获取到的音频流信息；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<AudioStreamInfo> | 是 | 回调函数。当获取音频流信息成功，err为undefined，data为获取到的音频流信息；否则为错误对象。 |
 
 **示例：**
 
@@ -139,7 +150,9 @@ getStreamInfo(): Promise<AudioStreamInfo>
 
 **返回值：**
 
-类型说明Promise<[AudioStreamInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiostreaminfo8)>Promise对象，返回音频流信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AudioStreamInfo> | Promise对象，返回音频流信息。 |
 
 **示例：**
 
@@ -167,7 +180,9 @@ getStreamInfoSync(): AudioStreamInfo
 
 **返回值：**
 
-类型说明[AudioStreamInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiostreaminfo8)返回音频流信息。
+| 类型 | 说明 |
+| --- | --- |
+| AudioStreamInfo | 返回音频流信息。 |
 
 **示例：**
 
@@ -196,7 +211,9 @@ getAudioStreamId(callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是回调函数。当获取音频流id成功，err为undefined，data为获取到的音频流id；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 回调函数。当获取音频流id成功，err为undefined，data为获取到的音频流id；否则为错误对象。 |
 
 **示例：**
 
@@ -218,7 +235,9 @@ getAudioStreamId(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回音频流id。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回音频流id。 |
 
 **示例：**
 
@@ -242,7 +261,9 @@ getAudioStreamIdSync(): number
 
 **返回值：**
 
-类型说明number返回音频流id。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回音频流id。 |
 
 **示例：**
 
@@ -258,9 +279,9 @@ try {
 }
 ```
 
-#### setAudioEffectMode10+
+#### set[AudioEffectMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioeffectmode10)10+
 
-setAudioEffectMode(mode: AudioEffectMode, callback: AsyncCallback<void>): void
+set[AudioEffectMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioeffectmode10)(mode: AudioEffectMode, callback: AsyncCallback<void>): void
 
 设置当前音效模式。使用callback异步回调。
 
@@ -268,13 +289,19 @@ setAudioEffectMode(mode: AudioEffectMode, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明mode[AudioEffectMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioeffectmode10)是音效模式。callbackAsyncCallback<void>是回调函数。当设置当前音效模式成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mode | [AudioEffectMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioeffectmode10) | 是 | 音效模式。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置当前音效模式成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码]([Audio错误码](../../errors/Audio错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed. Return by callback.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. Return by callback. |
 
 **示例：**
 
@@ -290,9 +317,9 @@ audioRenderer.setAudioEffectMode(audio.AudioEffectMode.EFFECT_DEFAULT, (err: Bus
 });
 ```
 
-#### setAudioEffectMode10+
+#### set[AudioEffectMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioeffectmode10)10+
 
-setAudioEffectMode(mode: AudioEffectMode): Promise<void>
+set[AudioEffectMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioeffectmode10)(mode: AudioEffectMode): Promise<void>
 
 设置当前音效模式。使用Promise异步回调。
 
@@ -300,17 +327,24 @@ setAudioEffectMode(mode: AudioEffectMode): Promise<void>
 
 **参数：**
 
-参数名类型必填说明mode[AudioEffectMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioeffectmode10)是音效模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mode | [AudioEffectMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioeffectmode10) | 是 | 音效模式。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. Return by promise. |
 
 **示例：**
 
@@ -324,9 +358,9 @@ audioRenderer.setAudioEffectMode(audio.AudioEffectMode.EFFECT_DEFAULT).then(() =
 });
 ```
 
-#### getAudioEffectMode10+
+#### get[AudioEffectMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioeffectmode10)10+
 
-getAudioEffectMode(callback: AsyncCallback<AudioEffectMode>): void
+get[AudioEffectMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioeffectmode10)(callback: AsyncCallback<AudioEffectMode>): void
 
 获取当前音效模式。使用callback异步回调。
 
@@ -334,7 +368,9 @@ getAudioEffectMode(callback: AsyncCallback<AudioEffectMode>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[AudioEffectMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioeffectmode10)>是回调函数。当获取当前音效模式成功，err为undefined，data为获取到的当前音效模式；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<[AudioEffectMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioeffectmode10)> | 是 | 回调函数。当获取当前音效模式成功，err为undefined，data为获取到的当前音效模式；否则为错误对象。 |
 
 **示例：**
 
@@ -350,9 +386,9 @@ audioRenderer.getAudioEffectMode((err: BusinessError, effectMode: audio.AudioEff
 });
 ```
 
-#### getAudioEffectMode10+
+#### get[AudioEffectMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioeffectmode10)10+
 
-getAudioEffectMode(): Promise<AudioEffectMode>
+get[AudioEffectMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioeffectmode10)(): Promise<AudioEffectMode>
 
 获取当前音效模式。使用Promise异步回调。
 
@@ -360,7 +396,9 @@ getAudioEffectMode(): Promise<AudioEffectMode>
 
 **返回值：**
 
-类型说明Promise<[AudioEffectMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioeffectmode10)>Promise对象，返回当前音效模式。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AudioEffectMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioeffectmode10)> | Promise对象，返回当前音效模式。 |
 
 **示例：**
 
@@ -384,11 +422,9 @@ start(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是
-
-回调函数。当启动音频渲染器成功，err为undefined，否则为错误对象。异常将返回error对象：
-
-错误码6800301：表示包含状态检查异常、焦点抢占失败、系统处理异常（具体错误查看系统日志）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当启动音频渲染器成功，err为undefined，否则为错误对象。异常将返回error对象： 错误码6800301：表示包含状态检查异常、焦点抢占失败、系统处理异常（具体错误查看系统日志）。 |
 
 **示例：**
 
@@ -414,11 +450,9 @@ start(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>
-
-Promise对象，成功表示启动音频渲染器成功。异常将返回error对象：
-
-错误码6800301：表示包含状态检查异常、焦点抢占失败、系统处理异常（具体错误查看系统日志）。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，成功表示启动音频渲染器成功。异常将返回error对象： 错误码6800301：表示包含状态检查异常、焦点抢占失败、系统处理异常（具体错误查看系统日志）。 |
 
 **示例：**
 
@@ -442,7 +476,9 @@ pause(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当暂停渲染成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当暂停渲染成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -468,7 +504,9 @@ pause(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -492,7 +530,9 @@ drain(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当检查缓冲区是否已被耗尽成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当检查缓冲区是否已被耗尽成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -518,7 +558,9 @@ drain(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -536,19 +578,23 @@ audioRenderer.drain().then(() => {
 
 flush(): Promise<void>
 
-清空缓冲区（[AudioState](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiostate8)为STATE_RUNNING、STATE_PAUSED、STATE_STOPPED状态下可用）。使用Promise异步回调。
+清空缓冲区（[AudioState](Enums.md#ZH-CN_TOPIC_0000002553201785__audiostate8)为STATE_RUNNING、STATE_PAUSED、STATE_STOPPED状态下可用）。使用Promise异步回调。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800103Operation not permit at current state. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800103 | Operation not permit at current state. Return by promise. |
 
 **示例：**
 
@@ -572,7 +618,9 @@ stop(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当停止渲染成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当停止渲染成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -598,7 +646,9 @@ stop(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -622,7 +672,9 @@ release(callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当释放音频渲染器成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当释放音频渲染器成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -648,7 +700,9 @@ release(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -672,7 +726,9 @@ getAudioTime(callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是回调函数。当获取时间戳成功，err为undefined，data为获取到的时间戳；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 回调函数。当获取时间戳成功，err为undefined，data为获取到的时间戳；否则为错误对象。 |
 
 **示例：**
 
@@ -694,7 +750,9 @@ getAudioTime(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回时间戳。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回时间戳。 |
 
 **示例：**
 
@@ -718,7 +776,9 @@ getAudioTimeSync(): number
 
 **返回值：**
 
-类型说明number返回时间戳。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回时间戳。 |
 
 **示例：**
 
@@ -750,13 +810,17 @@ getAudioTimestampInfo(): Promise<AudioTimestampInfo>
 
 **返回值：**
 
-类型说明Promise<[AudioTimestampInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiotimestampinfo19)>Promise对象，返回音频流时间戳和当前数据帧位置信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<AudioTimestampInfo> | Promise对象，返回音频流时间戳和当前数据帧位置信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800103Operation not permit at current state.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800103 | Operation not permit at current state. |
 
 **示例：**
 
@@ -780,13 +844,17 @@ getAudioTimestampInfoSync(): AudioTimestampInfo
 
 **返回值：**
 
-类型说明[AudioTimestampInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiotimestampinfo19)返回音频流时间戳和当前数据帧位置信息。
+| 类型 | 说明 |
+| --- | --- |
+| AudioTimestampInfo | 返回音频流时间戳和当前数据帧位置信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800103Operation not permit at current state.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800103 | Operation not permit at current state. |
 
 **示例：**
 
@@ -802,6 +870,59 @@ try {
 }
 ```
 
+**getLatency23+**
+
+getLatency(type: AudioLatencyType): number
+
+获取当前音频路由的预估时延。
+
+
+- 无线连接的音频设备，时延估算会存在误差，结果仅供参考。
+
+- 由于时延未计入实时缓冲区，建议仅在音频播放开始时获取，避免频繁调用，否则可能因路由切换而阻塞该接口调用。
+
+- 音频输出到硬件后的音画同步建议使用[getAudioTimestampInfo](#ZH-CN_TOPIC_0000002522241812__getaudiotimestampinfo19)或[getAudioTimestampInfoSync](#ZH-CN_TOPIC_0000002522241812__getaudiotimestampinfosync19)完成。
+
+模型约束：此接口仅可在Stage模型下使用。
+
+系统能力： SystemCapability.Multimedia.Audio.Renderer
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | AudioLatencyType | 是 | 获取的时延类型。 |
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回音频时延，单位为毫秒。 |
+
+错误码：
+
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800101 | Parameter verification failed. |
+| 6800103 | Operation not permitted in release state. |
+| 6800301 | System internal error, like audio service error. |
+
+示例：
+
+```ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+try {
+  const latency: number = audioRenderer.getLatency(audio.AudioLatencyType.LATENCY_TYPE_ALL);
+  console.info(`Current audio latency: ${latency}ms`);
+} catch (err) {
+  const error = err as BusinessError;
+  console.error(`Failed to get latency. Code: ${error.code}, message: ${error.message}`);
+}
+```
+
 #### getBufferSize8+
 
 getBufferSize(callback: AsyncCallback<number>): void
@@ -812,7 +933,9 @@ getBufferSize(callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是回调函数。当获取音频渲染器的最小缓冲区大小成功，err为undefined，data为获取到的最小缓冲区大小；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 回调函数。当获取音频渲染器的最小缓冲区大小成功，err为undefined，data为获取到的最小缓冲区大小；否则为错误对象。 |
 
 **示例：**
 
@@ -841,7 +964,9 @@ getBufferSize(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回缓冲区大小。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回缓冲区大小。 |
 
 **示例：**
 
@@ -868,7 +993,9 @@ getBufferSizeSync(): number
 
 **返回值：**
 
-类型说明number返回缓冲区大小。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回缓冲区大小。 |
 
 **示例：**
 
@@ -896,13 +1023,18 @@ setSpeed(speed: number): void
 
 **参数：**
 
-参数名类型必填说明speednumber是设置播放的倍速值（倍速范围：0.25-4.0）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| speed | number | 是 | 设置播放的倍速值（倍速范围：[0.25, 4.0]）。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -920,7 +1052,9 @@ getSpeed(): number
 
 **返回值：**
 
-类型说明number返回播放的倍速值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回播放的倍速值。 |
 
 **示例：**
 
@@ -928,9 +1062,9 @@ getSpeed(): number
 let speed = audioRenderer.getSpeed();
 ```
 
-#### setInterruptMode9+
+#### set[InterruptMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__interruptmode9)9+
 
-setInterruptMode(mode: InterruptMode): Promise<void>
+set[InterruptMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__interruptmode9)(mode: InterruptMode): Promise<void>
 
 设置应用的焦点模型。使用Promise异步回调。
 
@@ -938,11 +1072,15 @@ setInterruptMode(mode: InterruptMode): Promise<void>
 
 **参数：**
 
-参数名类型必填说明mode[InterruptMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__interruptmode9)是焦点模型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mode | [InterruptMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__interruptmode9) | 是 | 焦点模型。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -958,9 +1096,9 @@ audioRenderer.setInterruptMode(mode).then(() => {
 });
 ```
 
-#### setInterruptMode9+
+#### set[InterruptMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__interruptmode9)9+
 
-setInterruptMode(mode: InterruptMode, callback: AsyncCallback<void>): void
+set[InterruptMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__interruptmode9)(mode: InterruptMode, callback: AsyncCallback<void>): void
 
 设置应用的焦点模型。使用callback异步回调。
 
@@ -968,7 +1106,10 @@ setInterruptMode(mode: InterruptMode, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明mode[InterruptMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__interruptmode9)是焦点模型。callbackAsyncCallback<void>是回调函数。当设置应用的焦点模型成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mode | [InterruptMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__interruptmode9) | 是 | 焦点模型。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置应用的焦点模型成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -985,9 +1126,9 @@ audioRenderer.setInterruptMode(mode, (err: BusinessError) => {
 });
 ```
 
-#### setInterruptModeSync10+
+#### set[InterruptMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__interruptmode9)Sync10+
 
-setInterruptModeSync(mode: InterruptMode): void
+set[InterruptMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__interruptmode9)Sync(mode: InterruptMode): void
 
 设置应用的焦点模型。同步设置。
 
@@ -995,13 +1136,18 @@ setInterruptModeSync(mode: InterruptMode): void
 
 **参数：**
 
-参数名类型必填说明mode[InterruptMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__interruptmode9)是焦点模型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mode | [InterruptMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__interruptmode9) | 是 | 焦点模型。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -1027,11 +1173,15 @@ setVolume(volume: number): Promise<void>
 
 **参数：**
 
-参数名类型必填说明volumenumber是音量值范围为[0.0, 1.0]。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volume | number | 是 | 音量值范围为[0.0, 1.0]。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -1055,7 +1205,10 @@ setVolume(volume: number, callback: AsyncCallback<void>): void
 
 **参数：**
 
-参数名类型必填说明volumenumber是音量值范围为[0.0, 1.0]。callbackAsyncCallback<void>是回调函数。当设置应用的音量成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volume | number | 是 | 音量值范围为[0.0, 1.0]。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置应用的音量成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -1081,7 +1234,9 @@ getVolume(): number
 
 **返回值：**
 
-类型说明number返回音量大小，音量值范围为[0.0, 1.0]。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回音量大小，音量值范围为[0.0, 1.0]。 |
 
 **示例：**
 
@@ -1107,7 +1262,9 @@ getMinStreamVolume(callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是回调函数。当获取音频流的最小音量成功，err为undefined，data为获取到的应用基于音频流的最小音量（音量范围[0, 1]）；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 回调函数。当获取音频流的最小音量成功，err为undefined，data为获取到的应用基于音频流的最小音量（音量范围[0, 1]）；否则为错误对象。 |
 
 **示例：**
 
@@ -1133,7 +1290,9 @@ getMinStreamVolume(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回音频流最小音量（音量范围[0, 1]）。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回音频流最小音量（音量范围[0, 1]）。 |
 
 **示例：**
 
@@ -1157,7 +1316,9 @@ getMinStreamVolumeSync(): number
 
 **返回值：**
 
-类型说明number返回音频流最小音量（音量范围[0, 1]）。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回音频流最小音量（音量范围[0, 1]）。 |
 
 **示例：**
 
@@ -1183,7 +1344,9 @@ getMaxStreamVolume(callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是回调函数。当获取音频流的最大音量成功，err为undefined，data为获取到的应用基于音频流的最大音量（音量范围[0, 1]）；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 回调函数。当获取音频流的最大音量成功，err为undefined，data为获取到的应用基于音频流的最大音量（音量范围[0, 1]）；否则为错误对象。 |
 
 **示例：**
 
@@ -1209,7 +1372,9 @@ getMaxStreamVolume(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回音频流最大音量（音量范围[0, 1]）。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回音频流最大音量（音量范围[0, 1]）。 |
 
 **示例：**
 
@@ -1233,7 +1398,9 @@ getMaxStreamVolumeSync(): number
 
 **返回值：**
 
-类型说明number返回音频流最大音量（音量范围[0, 1]）。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回音频流最大音量（音量范围[0, 1]）。 |
 
 **示例：**
 
@@ -1259,7 +1426,9 @@ getUnderflowCount(callback: AsyncCallback<number>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是回调函数。当获取当前播放音频流的欠载音频帧数量成功，err为undefined，data为获取到的当前播放音频流的欠载音频帧数量；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 回调函数。当获取当前播放音频流的欠载音频帧数量成功，err为undefined，data为获取到的当前播放音频流的欠载音频帧数量；否则为错误对象。 |
 
 **示例：**
 
@@ -1285,7 +1454,9 @@ getUnderflowCount(): Promise<number>
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回音频流的欠载音频帧数量。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回音频流的欠载音频帧数量。 |
 
 **示例：**
 
@@ -1309,7 +1480,9 @@ getUnderflowCountSync(): number
 
 **返回值：**
 
-类型说明number返回音频流的欠载音频帧数量。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回音频流的欠载音频帧数量。 |
 
 **示例：**
 
@@ -1327,7 +1500,7 @@ try {
 
 #### getCurrentOutputDevices10+
 
-getCurrentOutputDevices(callback: AsyncCallback<AudioDeviceDescriptors>): void
+getCurrentOutputDevices(callback: AsyncCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>): void
 
 获取音频流输出设备信息。使用callback异步回调。
 
@@ -1335,7 +1508,9 @@ getCurrentOutputDevices(callback: AsyncCallback<AudioDeviceDescriptors>): void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>是回调函数。当获取音频流输出设备信息成功，err为undefined，data为获取到的音频流输出设备信息；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)> | 是 | 回调函数。当获取音频流输出设备信息成功，err为undefined，data为获取到的音频流输出设备信息；否则为错误对象。 |
 
 **示例：**
 
@@ -1356,13 +1531,12 @@ audioRenderer.getCurrentOutputDevices((err: BusinessError, deviceInfo: audio.Aud
       console.info(`DeviceInfo channelcount: ${deviceInfo[i].channelCounts[0]}`);
       console.info(`DeviceInfo channelmask: ${deviceInfo[i].channelMasks[0]}`);
     }
-  }
 });
 ```
 
 #### getCurrentOutputDevices10+
 
-getCurrentOutputDevices(): Promise<AudioDeviceDescriptors>
+getCurrentOutputDevices(): Promise<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>
 
 获取音频流输出设备信息。使用Promise异步回调。
 
@@ -1370,7 +1544,9 @@ getCurrentOutputDevices(): Promise<AudioDeviceDescriptors>
 
 **返回值：**
 
-类型说明Promise<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>Promise对象，返回音频流的输出设备信息。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)> | Promise对象，返回音频流的输出设备信息。 |
 
 **示例：**
 
@@ -1395,7 +1571,7 @@ audioRenderer.getCurrentOutputDevices().then((deviceInfo: audio.AudioDeviceDescr
 
 #### getCurrentOutputDevicesSync10+
 
-getCurrentOutputDevicesSync(): AudioDeviceDescriptors
+getCurrentOutputDevicesSync(): [AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)
 
 获取音频流输出设备信息。同步返回结果。
 
@@ -1403,7 +1579,9 @@ getCurrentOutputDevicesSync(): AudioDeviceDescriptors
 
 **返回值：**
 
-类型说明[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)返回音频流的输出设备信息。
+| 类型 | 说明 |
+| --- | --- |
+| [AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors) | 返回音频流的输出设备信息。 |
 
 **示例：**
 
@@ -1428,9 +1606,9 @@ try {
 }
 ```
 
-#### setChannelBlendMode11+
+#### set[ChannelBlendMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__channelblendmode11)11+
 
-setChannelBlendMode(mode: ChannelBlendMode): void
+set[ChannelBlendMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__channelblendmode11)(mode: ChannelBlendMode): void
 
 设置单双声道混合模式。同步返回结果。
 
@@ -1438,13 +1616,19 @@ setChannelBlendMode(mode: ChannelBlendMode): void
 
 **参数：**
 
-参数名类型必填说明mode[ChannelBlendMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__channelblendmode11)是声道混合模式类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mode | [ChannelBlendMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__channelblendmode11) | 是 | 声道混合模式类型。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.6800103Operation not permit at current state.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
+| 6800103 | Operation not permit at current state. |
 
 **示例：**
 
@@ -1465,13 +1649,19 @@ setVolumeWithRamp(volume: number, duration: number): void
 
 **参数：**
 
-参数名类型必填说明volumenumber是渐变目标音量值，音量范围为[0.0, 1.0]。durationnumber是渐变持续时间，单位为ms。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volume | number | 是 | 渐变目标音量值，音量范围为[0.0, 1.0]。 |
+| duration | number | 是 | 渐变持续时间，单位为ms。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -1495,7 +1685,9 @@ setSilentModeAndMixWithOthers(on: boolean): void
 
 **参数：**
 
-参数名类型必填说明onboolean是打开/关闭静音并发播放模式。true表示设置当前播放的音频流静音播放，并且不会打断其它音频流播放。false表示取消当前播放的音频流静音播放，音频流可根据系统焦点策略抢占焦点。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| on | boolean | 是 | 打开/关闭静音并发播放模式。true表示设置当前播放的音频流静音播放，并且不会打断其它音频流播放。false表示取消当前播放的音频流静音播放，音频流可根据系统焦点策略抢占焦点。 |
 
 **示例：**
 
@@ -1513,7 +1705,9 @@ getSilentModeAndMixWithOthers(): boolean
 
 **返回值：**
 
-类型说明boolean静音并发播放模式状态。返回true表示打开，返回false表示关闭。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 静音并发播放模式状态。返回true表示打开，返回false表示关闭。 |
 
 **示例：**
 
@@ -1523,32 +1717,40 @@ let on = audioRenderer.getSilentModeAndMixWithOthers();
 
 #### setDefaultOutputDevice12+
 
-setDefaultOutputDevice(deviceType: DeviceType): Promise<void>
+setDefaultOutputDevice(deviceType: [DeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__devicetype)): Promise<void>
 
 设置默认发声设备。使用Promise异步回调。
 
-- 本接口仅适用于[StreamUsage](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage)为语音消息、VoIP语音通话或者VoIP视频通话的场景，支持听筒、扬声器和系统默认设备。
+
+- 本接口仅适用于[StreamUsage](Enums.md#ZH-CN_TOPIC_0000002553201785__streamusage)为语音消息、VoIP语音通话或者VoIP视频通话的场景，支持听筒、扬声器和系统默认设备。
+
 - 本接口允许在AudioRenderer创建后随时调用，系统会记录应用设置的默认本机内置发声设备。应用启动播放时，若外接设备如蓝牙耳机或有线耳机已接入，系统优先从外接设备发声；否则，系统遵循应用设置的默认本机内置发声设备。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
+设备行为差异： 当该接口在无听筒的设备上设置默认发声设备为听筒时，将继续从扬声器发声。
+
 **参数：**
 
-参数名类型必填说明deviceType[DeviceType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__devicetype)是
-
-设备类型。
-
-仅支持以下设备：EARPIECE（听筒）、SPEAKER（扬声器）和DEFAULT（系统默认设备）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceType | [DeviceType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__devicetype) | 是 | 设备类型。 仅支持以下设备：EARPIECE（听筒）、SPEAKER（扬声器）和DEFAULT（系统默认设备）。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.6800103Operation not permit at current state.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
+| 6800103 | Operation not permit at current state. |
 
 **示例：**
 
@@ -1573,19 +1775,25 @@ on(type: 'audioInterrupt', callback: Callback<InterruptEvent>): void
 
 AudioRenderer对象在start事件时获取焦点，在pause、stop等事件时释放焦点，无需开发者主动申请。
 
-调用此方法后，如果AudioRenderer对象获取焦点失败或发生中断事件（如被其他音频打断等），会收到[InterruptEvent](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__interruptevent9)。建议应用根据InterruptEvent的信息进行进一步处理。更多信息请参阅文档[音频焦点和音频会话介绍](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-playback-concurrency)。
+调用此方法后，如果AudioRenderer对象获取焦点失败或发生中断事件（如被其他音频打断等），会收到[InterruptEvent](Interfaces (其他).md#ZH-CN_TOPIC_0000002522241818__interruptevent9)。建议应用根据InterruptEvent的信息进行进一步处理。更多信息请参阅文档[音频焦点和音频会话介绍](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-playback-concurrency)。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Interrupt
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'audioInterrupt'，当音频焦点状态发生变化时，触发该事件。callbackCallback<[InterruptEvent](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__interruptevent9)>是回调函数，返回中断事件信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'audioInterrupt'，当音频焦点状态发生变化时，触发该事件。 |
+| callback | Callback<InterruptEvent> | 是 | 回调函数，返回中断事件信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -1640,7 +1848,6 @@ audioRenderer.on('audioInterrupt', (interruptEvent: audio.InterruptEvent) => {
         console.info('Invalid interruptEvent');
         break;
     }
-  }
 });
 ```
 
@@ -1654,13 +1861,18 @@ off(type: 'audioInterrupt', callback?: Callback<InterruptEvent>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'audioInterrupt'，当取消监听音频中断事件时，触发该事件。callbackCallback<[InterruptEvent](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__interruptevent9)>否回调函数，返回中断事件信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'audioInterrupt'，当取消监听音频中断事件时，触发该事件。 |
+| callback | Callback<InterruptEvent> | 否 | 回调函数，返回中断事件信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -1717,7 +1929,6 @@ let audioInterruptCallback = (interruptEvent: audio.InterruptEvent) => {
         console.info('Invalid interruptEvent');
         break;
     }
-  }
 };
 
 audioRenderer.on('audioInterrupt', audioInterruptCallback);
@@ -1737,7 +1948,11 @@ on(type: 'markReach', frame: number, callback: Callback<number>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'markReach'，当渲染的帧数到达frame参数的值时，触发该事件。framenumber是触发事件的帧数。该值必须大于0。callbackCallback<number>是回调函数，返回frame参数的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'markReach'，当渲染的帧数到达frame参数的值时，触发该事件。 |
+| frame | number | 是 | 触发事件的帧数。该值必须大于0。 |
+| callback | Callback<number> | 是 | 回调函数，返回frame参数的值。 |
 
 **示例：**
 
@@ -1759,7 +1974,10 @@ off(type: 'markReach', callback?: Callback<number>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'markReach'，当取消监听标记到达事件时，触发该事件。callback18+Callback<number>否回调函数，返回frame参数的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'markReach'，当取消监听标记到达事件时，触发该事件。 |
+| callback18+ | Callback<number> | 否 | 回调函数，返回frame参数的值。 |
 
 **示例：**
 
@@ -1791,7 +2009,11 @@ on(type: 'periodReach', frame: number, callback: Callback<number>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'periodReach'，当渲染的帧数达到frame参数的值时，触发该事件。framenumber是触发事件的帧数。该值必须大于 0。callbackCallback<number>是回调函数，返回frame参数的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'periodReach'，当渲染的帧数达到frame参数的值时，触发该事件。 |
+| frame | number | 是 | 触发事件的帧数。该值必须大于 0。 |
+| callback | Callback<number> | 是 | 回调函数，返回frame参数的值。 |
 
 **示例：**
 
@@ -1813,7 +2035,10 @@ off(type: 'periodReach', callback?: Callback<number>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'periodReach'，当取消监听标记到达事件时，触发该事件。callback18+Callback<number>否回调函数，返回frame参数的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'periodReach'，当取消监听标记到达事件时，触发该事件。 |
+| callback18+ | Callback<number> | 否 | 回调函数，返回frame参数的值。 |
 
 **示例：**
 
@@ -1835,7 +2060,7 @@ audioRenderer.off('periodReach', periodReachCallback);
 
 #### on('stateChange')8+
 
-on(type: 'stateChange', callback: Callback<AudioState>): void
+on(type: 'stateChange', callback: Callback<[AudioState](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiostate8)>): void
 
 监听状态变化事件（当AudioRenderer的状态发生变化时触发）。使用callback异步回调。
 
@@ -1843,7 +2068,10 @@ on(type: 'stateChange', callback: Callback<AudioState>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'stateChange'，当AudioRenderer的状态发生变化时，触发该事件。callbackCallback<[AudioState](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiostate8)>是回调函数，返回当前音频的状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'stateChange'，当AudioRenderer的状态发生变化时，触发该事件。 |
+| callback | Callback<[AudioState](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiostate8)> | 是 | 回调函数，返回当前音频的状态。 |
 
 **示例：**
 
@@ -1860,21 +2088,26 @@ audioRenderer.on('stateChange', (state: audio.AudioState) => {
 
 #### off('stateChange')18+
 
-off(type: 'stateChange', callback?: Callback<AudioState>): void
+off(type: 'stateChange', callback?: Callback<[AudioState](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiostate8)>): void
 
-取消监听到达标记事件。使用callback异步回调。
+取消监听状态变化事件。使用callback异步回调。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'stateChange'，当取消监听到达标记事件时，触发该事件。callbackCallback<[AudioState](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiostate8)>否回调函数，返回当前音频的状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'stateChange'，当取消监听状态变化事件时，触发该事件。 |
+| callback | Callback<[AudioState](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiostate8)> | 否 | 回调函数，返回当前音频的状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -1899,7 +2132,7 @@ audioRenderer.off('stateChange', stateChangeCallback);
 
 #### on('outputDeviceChange')10+
 
-on(type: 'outputDeviceChange', callback: Callback<AudioDeviceDescriptors>): void
+on(type: 'outputDeviceChange', callback: Callback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>): void
 
 监听音频输出设备变化事件（当音频输出设备发生变化时触发）。使用callback异步回调。
 
@@ -1907,13 +2140,19 @@ on(type: 'outputDeviceChange', callback: Callback<AudioDeviceDescriptors>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'outputDeviceChange'，当音频输出设备发生变化时，触发该事件。callbackCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>是回调函数，返回当前音频流的输出设备描述信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'outputDeviceChange'，当音频输出设备发生变化时，触发该事件。 |
+| callback | Callback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)> | 是 | 回调函数，返回当前音频流的输出设备描述信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -1927,7 +2166,7 @@ audioRenderer.on('outputDeviceChange', (deviceInfo: audio.AudioDeviceDescriptors
 
 #### off('outputDeviceChange')10+
 
-off(type: 'outputDeviceChange', callback?: Callback<AudioDeviceDescriptors>): void
+off(type: 'outputDeviceChange', callback?: Callback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>): void
 
 取消监听音频输出设备变化事件。使用callback异步回调。
 
@@ -1935,13 +2174,19 @@ off(type: 'outputDeviceChange', callback?: Callback<AudioDeviceDescriptors>): vo
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'outputDeviceChange'，当取消监听音频输出设备变化事件时，触发该事件。callbackCallback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)>否回调函数，返回当前音频流的输出设备描述信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'outputDeviceChange'，当取消监听音频输出设备变化事件时，触发该事件。 |
+| callback | Callback<[AudioDeviceDescriptors](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiodevicedescriptors)> | 否 | 回调函数，返回当前音频流的输出设备描述信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -1971,13 +2216,19 @@ on(type: 'outputDeviceChangeWithInfo', callback: Callback<AudioStreamDeviceChang
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'outputDeviceChangeWithInfo'，当音频输出设备发生变化时，触发该事件。callbackCallback<[AudioStreamDeviceChangeInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiostreamdevicechangeinfo11)>是回调函数，返回当前音频流的输出设备描述信息及变化原因。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'outputDeviceChangeWithInfo'，当音频输出设备发生变化时，触发该事件。 |
+| callback | Callback<AudioStreamDeviceChangeInfo> | 是 | 回调函数，返回当前音频流的输出设备描述信息及变化原因。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -2000,13 +2251,19 @@ off(type: 'outputDeviceChangeWithInfo', callback?: Callback<AudioStreamDeviceCha
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'outputDeviceChangeWithInfo'，当取消监听音频流输出设备变化及原因事件时，触发该事件。callbackCallback<[AudioStreamDeviceChangeInfo](Interfaces (其他).md#ZH-CN_TOPIC_0000002497445724__audiostreamdevicechangeinfo11)>否回调函数，返回当前音频流的输出设备描述信息及变化原因。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'outputDeviceChangeWithInfo'，当取消监听音频流输出设备变化及原因事件时，触发该事件。 |
+| callback | Callback<AudioStreamDeviceChangeInfo> | 否 | 回调函数，返回当前音频流的输出设备描述信息及变化原因。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -2029,7 +2286,7 @@ audioRenderer.off('outputDeviceChangeWithInfo', outputDeviceChangeWithInfoCallba
 
 #### on('writeData')11+
 
-on(type: 'writeData', callback: AudioRendererWriteDataCallback): void
+on(type: 'writeData', callback: [AudioRendererWriteDataCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererwritedatacallback12)): void
 
 监听音频数据写入回调事件（当需要写入音频数据时触发），使用 callback 方式返回结果。
 
@@ -2039,17 +2296,19 @@ on(type: 'writeData', callback: AudioRendererWriteDataCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'writeData'，当需要写入音频数据时，触发该事件。callback[AudioRendererWriteDataCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererwritedatacallback12)是
-
-回调函数，入参代表应用接收待写入的数据缓冲区。
-
-API version 11 不支持返回回调结果，从 API version 12 开始支持返回回调结果[AudioDataCallbackResult](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiodatacallbackresult12)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'writeData'，当需要写入音频数据时，触发该事件。 |
+| callback | [AudioRendererWriteDataCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererwritedatacallback12) | 是 | 回调函数，入参代表应用接收待写入的数据缓冲区。 API version 11 不支持返回回调结果，从 API version 12 开始支持返回回调结果[AudioDataCallbackResult](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiodatacallbackresult12)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -2098,7 +2357,7 @@ audioRenderer.start().then(() => {
 
 #### off('writeData')11+
 
-off(type: 'writeData', callback?: AudioRendererWriteDataCallback): void
+off(type: 'writeData', callback?: [AudioRendererWriteDataCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererwritedatacallback12)): void
 
 取消监听音频数据写入回调事件。使用callback异步回调。
 
@@ -2106,17 +2365,19 @@ off(type: 'writeData', callback?: AudioRendererWriteDataCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'writeData'，当取消监听音频数据写入回调事件时，触发该事件。callback[AudioRendererWriteDataCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererwritedatacallback12)否
-
-回调函数，入参代表应用接收待写入的数据缓冲区。
-
-API version 11 不支持返回回调结果，从 API version 12 开始支持返回回调结果[AudioDataCallbackResult](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiodatacallbackresult12)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'writeData'，当取消监听音频数据写入回调事件时，触发该事件。 |
+| callback | [AudioRendererWriteDataCallback](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497605704__audiorendererwritedatacallback12) | 否 | 回调函数，入参代表应用接收待写入的数据缓冲区。 API version 11 不支持返回回调结果，从 API version 12 开始支持返回回调结果AudioDataCallbackResult。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -2140,13 +2401,17 @@ write(buffer: ArrayBuffer, callback: AsyncCallback<number>): void
 
 写入缓冲区。使用callback异步回调。
 
-从API version 8开始支持，从API version 11开始废弃，建议使用[on('writeData')](#ZH-CN_TOPIC_0000002497445720__onwritedata11)替代。
+
+从API version 8开始支持，从API version 11开始废弃，建议使用[on('writeData')](#ZH-CN_TOPIC_0000002522241812__onwritedata11)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
 
-参数名类型必填说明bufferArrayBuffer是要写入缓冲区的数据。callbackAsyncCallback<number>是回调函数。当写入缓冲区成功，err为undefined，data为获取到的写入的字节数；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| buffer | ArrayBuffer | 是 | 要写入缓冲区的数据。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。当写入缓冲区成功，err为undefined，data为获取到的写入的字节数；否则为错误对象。 |
 
 **示例：**
 
@@ -2187,7 +2452,6 @@ audioRenderer.getBufferSize().then((data: number)=> {
             resolve(writeSize)
           }
         })
-      })
     }
   });
   }).catch((err: BusinessError) => {
@@ -2201,17 +2465,22 @@ write(buffer: ArrayBuffer): Promise<number>
 
 写入缓冲区。使用Promise异步回调。
 
-从API version 8开始支持，从API version 11开始废弃，建议使用[on('writeData')](#ZH-CN_TOPIC_0000002497445720__onwritedata11)替代。
+
+从API version 8开始支持，从API version 11开始废弃，建议使用[on('writeData')](#ZH-CN_TOPIC_0000002522241812__onwritedata11)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
 
-参数名类型必填说明bufferArrayBuffer是要写入缓冲区的数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| buffer | ArrayBuffer | 是 | 要写入缓冲区的数据。 |
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回写入的字节数。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回写入的字节数。 |
 
 **示例：**
 
@@ -2250,7 +2519,6 @@ audioRenderer.getBufferSize().then((data: number) => {
         let error = err as BusinessError;
         console.error(`audioRenderer.write err: ${error}`);
       }
-    }
   });
 }).catch((err: BusinessError) => {
   console.error(`AudioFrameworkRenderLog: getBufferSize: ERROR: ${err}`);
@@ -2259,17 +2527,21 @@ audioRenderer.getBufferSize().then((data: number) => {
 
 #### setRenderRate(deprecated)
 
-setRenderRate(rate: AudioRendererRate, callback: AsyncCallback<void>): void
+setRenderRate(rate: [AudioRendererRate](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8), callback: AsyncCallback<void>): void
 
 设置音频渲染速率。使用callback异步回调。
 
-从API version 8开始支持，从API version 11开始废弃，建议使用[setSpeed](#ZH-CN_TOPIC_0000002497445720__setspeed11)替代。
+
+从API version 8开始支持，从API version 11开始废弃，建议使用[setSpeed](#ZH-CN_TOPIC_0000002522241812__setspeed11)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
 
-参数名类型必填说明rate[AudioRendererRate](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8)是渲染的速率。callbackAsyncCallback<void>是回调函数。当设置音频渲染速率成功，err为undefined，否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rate | [AudioRendererRate](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8) | 是 | 渲染的速率。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当设置音频渲染速率成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -2287,21 +2559,26 @@ audioRenderer.setRenderRate(audio.AudioRendererRate.RENDER_RATE_NORMAL, (err: Bu
 
 #### setRenderRate(deprecated)
 
-setRenderRate(rate: AudioRendererRate): Promise<void>
+setRenderRate(rate: [AudioRendererRate](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8)): Promise<void>
 
 设置音频渲染速率。使用Promise异步回调。
 
-从API version 8开始支持，从API version 11开始废弃，建议使用[setSpeed](#ZH-CN_TOPIC_0000002497445720__setspeed11)替代。
+
+从API version 8开始支持，从API version 11开始废弃，建议使用[setSpeed](#ZH-CN_TOPIC_0000002522241812__setspeed11)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
 
-参数名类型必填说明rate[AudioRendererRate](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8)是渲染的速率。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rate | [AudioRendererRate](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8) | 是 | 渲染的速率。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -2317,17 +2594,20 @@ audioRenderer.setRenderRate(audio.AudioRendererRate.RENDER_RATE_NORMAL).then(() 
 
 #### getRenderRate(deprecated)
 
-getRenderRate(callback: AsyncCallback<AudioRendererRate>): void
+getRenderRate(callback: AsyncCallback<[AudioRendererRate](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8)>): void
 
 获取音频渲染速率。使用callback异步回调。
 
-从API version 8开始支持，从API version 11开始废弃，建议使用[getSpeed](#ZH-CN_TOPIC_0000002497445720__getspeed11)替代。
+
+从API version 8开始支持，从API version 11开始废弃，建议使用[getSpeed](#ZH-CN_TOPIC_0000002522241812__getspeed11)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[AudioRendererRate](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8)>是回调函数。当获取当前渲染速率成功，err为undefined，data为获取到的当前渲染速率；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<[AudioRendererRate](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8)> | 是 | 回调函数。当获取当前渲染速率成功，err为undefined，data为获取到的当前渲染速率；否则为错误对象。 |
 
 **示例：**
 
@@ -2341,17 +2621,20 @@ audioRenderer.getRenderRate((err: BusinessError, renderRate: audio.AudioRenderer
 
 #### getRenderRate(deprecated)
 
-getRenderRate(): Promise<AudioRendererRate>
+getRenderRate(): Promise<[AudioRendererRate](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8)>
 
 获取音频渲染速率。使用Promise异步回调。
 
-从API version 8开始支持，从API version 11开始废弃，建议使用[getSpeed](#ZH-CN_TOPIC_0000002497445720__getspeed11)替代。
+
+从API version 8开始支持，从API version 11开始废弃，建议使用[getSpeed](#ZH-CN_TOPIC_0000002522241812__getspeed11)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
 
-类型说明Promise<[AudioRendererRate](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8)>Promise对象，返回渲染速率。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AudioRendererRate](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8)> | Promise对象，返回渲染速率。 |
 
 **示例：**
 
@@ -2367,17 +2650,20 @@ audioRenderer.getRenderRate().then((renderRate: audio.AudioRendererRate) => {
 
 #### getRenderRateSync(deprecated)
 
-getRenderRateSync(): AudioRendererRate
+getRenderRateSync(): [AudioRendererRate](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8)
 
 获取音频渲染速率。同步返回结果。
 
-从API version 10开始支持，从API version 11开始废弃，建议使用[getSpeed](#ZH-CN_TOPIC_0000002497445720__getspeed11)替代。
+
+从API version 10开始支持，从API version 11开始废弃，建议使用[getSpeed](#ZH-CN_TOPIC_0000002522241812__getspeed11)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
 
-类型说明[AudioRendererRate](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8)返回渲染速率。
+| 类型 | 说明 |
+| --- | --- |
+| [AudioRendererRate](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audiorendererrate8) | 返回渲染速率。 |
 
 **示例：**
 
@@ -2399,7 +2685,9 @@ setLoudnessGain(loudnessGain: number): Promise<void>
 
 设置播放响度。使用Promise异步回调。
 
-- 该接口仅支持类型为[STREAM_USAGE_MUSIC](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage)、[STREAM_USAGE_MOVIE](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage)或[STREAM_USAGE_AUDIOBOOK](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage)的音频流。
+
+- 该接口仅支持类型为[STREAM_USAGE_MUSIC](Enums.md#ZH-CN_TOPIC_0000002553201785__streamusage)、[STREAM_USAGE_MOVIE](Enums.md#ZH-CN_TOPIC_0000002553201785__streamusage)或[STREAM_USAGE_AUDIOBOOK](Enums.md#ZH-CN_TOPIC_0000002553201785__streamusage)的音频流。
+
 - 该接口不支持高清通路的响度设置。
 - 由于音频框架与硬件之间存在缓冲区，响度调节实际生效存在延迟，时长取决于缓冲区长度。
 - 建议在不同音频开始播放前预先设置响度，以实现最佳均衡效果。
@@ -2408,21 +2696,24 @@ setLoudnessGain(loudnessGain: number): Promise<void>
 
 **参数：**
 
-参数名类型必填说明loudnessGainnumber是设置播放的响度值，单位为dB，响度范围为[-90.0, 24.0]。默认值为0.0dB。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| loudnessGain | number | 是 | 设置播放的响度值，单位为dB，响度范围为[-90.0, 24.0]。默认值为0.0dB。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800101Parameter verification failed.6800104
-
-Operation is not supported on this renderer, e.g. the stream usage of this renderer is not one of [STREAM_USAGE_MUSIC](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage),
-
-[STREAM_USAGE_MOVIE](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage), or [STREAM_USAGE_AUDIOBOOK](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage), or this renderer is routed through the high-resolution playback path.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800101 | Parameter verification failed. |
+| 6800104 | Operation is not supported on this renderer, e.g. the stream usage of this renderer is not one of [STREAM_USAGE_MUSIC](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage), [STREAM_USAGE_MOVIE](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage), or [STREAM_USAGE_AUDIOBOOK](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage), or this renderer is routed through the high-resolution playback path. |
 
 **示例：**
 
@@ -2440,7 +2731,9 @@ getLoudnessGain(): number
 
 **返回值：**
 
-类型说明number返回播放的响度值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回播放的响度值。 |
 
 **示例：**
 

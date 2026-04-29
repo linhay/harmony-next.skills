@@ -56,7 +56,9 @@ constructor(matrix: Matrix)
 
 **参数：**
 
-参数名类型必填说明matrix[Matrix](Class (Matrix).md)是被拷贝的矩阵。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| matrix | Matrix | 是 | 被拷贝的矩阵。 |
 
 **示例：**
 
@@ -77,7 +79,9 @@ isAffine(): boolean
 
 **返回值：**
 
-类型说明boolean返回当前矩阵是否为仿射矩阵。true表示是仿射矩阵，false表示不是仿射矩阵。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回当前矩阵是否为仿射矩阵。true表示是仿射矩阵，false表示不是仿射矩阵。 |
 
 **示例：**
 
@@ -100,7 +104,9 @@ rectStaysRect(): boolean
 
 **返回值：**
 
-类型说明boolean返回经过该矩阵映射后的矩形的形状是否仍为矩形。true表示仍是矩形，false表示不是矩形。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回经过该矩阵映射后的矩形的形状是否仍为矩形。true表示仍是矩形，false表示不是矩形。 |
 
 **示例：**
 
@@ -124,7 +130,12 @@ setSkew(kx: number, ky: number, px: number, py: number): void
 
 **参数：**
 
-参数名类型必填说明kxnumber是x轴上的倾斜量，该参数为浮点数。正值会使绘制沿y轴增量方向向右倾斜；负值会使绘制沿y轴增量方向向左倾斜。kynumber是y轴上的倾斜量，该参数为浮点数。正值会使绘制沿x轴增量方向向下倾斜；负值会使绘制沿x轴增量方向向上倾斜。pxnumber是倾斜中心点的x轴坐标，该参数为浮点数。0表示坐标原点，正数表示位于坐标原点右侧，负数表示位于坐标原点左侧。pynumber是倾斜中心点的y轴坐标，该参数为浮点数。0表示坐标原点，正数表示位于坐标原点下侧，负数表示位于坐标原点上侧。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| kx | number | 是 | x轴上的倾斜量，该参数为浮点数。正值会使绘制沿y轴增量方向向右倾斜；负值会使绘制沿y轴增量方向向左倾斜。 |
+| ky | number | 是 | y轴上的倾斜量，该参数为浮点数。正值会使绘制沿x轴增量方向向下倾斜；负值会使绘制沿x轴增量方向向上倾斜。 |
+| px | number | 是 | 倾斜中心点的x轴坐标，该参数为浮点数。0表示坐标原点，正数表示位于坐标原点右侧，负数表示位于坐标原点左侧。 |
+| py | number | 是 | 倾斜中心点的y轴坐标，该参数为浮点数。0表示坐标原点，正数表示位于坐标原点下侧，负数表示位于坐标原点上侧。 |
 
 **示例：**
 
@@ -146,7 +157,12 @@ setSinCos(sinValue: number, cosValue: number, px: number, py: number): void
 
 **参数：**
 
-参数名类型必填说明sinValuenumber是旋转角度的正弦值。仅当正弦值和余弦值的平方和为1时，为旋转变换，否则矩阵可能包含平移缩放等其他变换。cosValuenumber是旋转角度的余弦值。仅当正弦值和余弦值的平方和为1时，为旋转变换，否则矩阵可能包含平移缩放等其他变换。pxnumber是旋转中心的x轴坐标，该参数为浮点数。0表示坐标原点，正数表示位于坐标原点右侧，负数表示位于坐标原点左侧。pynumber是旋转中心的y轴坐标，该参数为浮点数。0表示坐标原点，正数表示位于坐标原点下侧，负数表示位于坐标原点上侧。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sinValue | number | 是 | 旋转角度的正弦值。仅当正弦值和余弦值的平方和为1时，为旋转变换，否则矩阵可能包含平移缩放等其他变换。 |
+| cosValue | number | 是 | 旋转角度的余弦值。仅当正弦值和余弦值的平方和为1时，为旋转变换，否则矩阵可能包含平移缩放等其他变换。 |
+| px | number | 是 | 旋转中心的x轴坐标，该参数为浮点数。0表示坐标原点，正数表示位于坐标原点右侧，负数表示位于坐标原点左侧。 |
+| py | number | 是 | 旋转中心的y轴坐标，该参数为浮点数。0表示坐标原点，正数表示位于坐标原点下侧，负数表示位于坐标原点上侧。 |
 
 **示例：**
 
@@ -168,13 +184,19 @@ setRotation(degree: number, px: number, py: number): void
 
 **参数：**
 
-参数名类型必填说明degreenumber是角度，单位为度。正数表示顺时针旋转，负数表示逆时针旋转，该参数为浮点数。pxnumber是旋转轴点的横坐标，该参数为浮点数。pynumber是旋转轴点的纵坐标，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| degree | number | 是 | 角度，单位为度。正数表示顺时针旋转，负数表示逆时针旋转，该参数为浮点数。 |
+| px | number | 是 | 旋转轴点的横坐标，该参数为浮点数。 |
+| py | number | 是 | 旋转轴点的纵坐标，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -195,13 +217,20 @@ setScale(sx: number, sy: number, px: number, py: number): void
 
 **参数：**
 
-参数名类型必填说明sxnumber是x轴方向缩放系数，为负数时可看作是先关于y = px作镜像翻转后再进行缩放，该参数为浮点数。synumber是y轴方向缩放系数，为负数时可看作是先关于x = py作镜像翻转后再进行缩放，该参数为浮点数。pxnumber是缩放中心点的横坐标，该参数为浮点数。pynumber是缩放中心点的纵坐标，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sx | number | 是 | x轴方向缩放系数，为负数时可看作是先关于y = px作镜像翻转后再进行缩放，该参数为浮点数。 |
+| sy | number | 是 | y轴方向缩放系数，为负数时可看作是先关于x = py作镜像翻转后再进行缩放，该参数为浮点数。 |
+| px | number | 是 | 缩放中心点的横坐标，该参数为浮点数。 |
+| py | number | 是 | 缩放中心点的纵坐标，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -222,13 +251,18 @@ setTranslation(dx: number, dy: number): void
 
 **参数：**
 
-参数名类型必填说明dxnumber是x轴方向平移距离，正数表示往x轴正方向平移，负数表示往x轴负方向平移，该参数为浮点数。dynumber是y轴方向平移距离，正数表示往y轴正方向平移，负数表示往y轴负方向平移，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dx | number | 是 | x轴方向平移距离，正数表示往x轴正方向平移，负数表示往x轴负方向平移，该参数为浮点数。 |
+| dy | number | 是 | y轴方向平移距离，正数表示往y轴正方向平移，负数表示往y轴负方向平移，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -249,13 +283,17 @@ setMatrix(values: Array<number>): void
 
 **参数：**
 
-参数名类型必填说明valuesArray<number>是长度为9的浮点数组，表示矩阵对象参数。数组中的值按下标从小，到大分别表示水平缩放系数、水平倾斜系数、水平位移系数、垂直倾斜系数、垂直缩放系数、垂直位移系数、X轴透视系数、Y轴透视系数、透视缩放系数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| values | Array<number> | 是 | 长度为9的浮点数组，表示矩阵对象参数。数组中的值按下标从小，到大分别表示水平缩放系数、水平倾斜系数、水平位移系数、垂直倾斜系数、垂直缩放系数、垂直位移系数、X轴透视系数、Y轴透视系数、透视缩放系数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -277,13 +315,17 @@ preConcat(matrix: Matrix): void
 
 **参数：**
 
-参数名类型必填说明matrix[Matrix](Class (Matrix).md)是表示矩阵对象，位于乘法表达式右侧。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| matrix | Matrix | 是 | 表示矩阵对象，位于乘法表达式右侧。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -307,7 +349,9 @@ setMatrix(matrix: Array<number> | Matrix): void
 
 **参数：**
 
-参数名类型必填说明matrixArray<number> | [Matrix](Class (Matrix).md)是用于更新的数组或矩阵。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| matrix | Array<number> | Matrix | 是 | 用于更新的数组或矩阵。 |
 
 **示例：**
 
@@ -330,7 +374,10 @@ setConcat(matrixA: Matrix, matrixB: Matrix): void
 
 **参数：**
 
-参数名类型必填说明matrixA[Matrix](Class (Matrix).md)是用于运算的矩阵A。matrixB[Matrix](Class (Matrix).md)是用于运算的矩阵B。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| matrixA | Matrix | 是 | 用于运算的矩阵A。 |
+| matrixB | Matrix | 是 | 用于运算的矩阵B。 |
 
 **示例：**
 
@@ -354,7 +401,9 @@ postConcat(matrix: Matrix): void
 
 **参数：**
 
-参数名类型必填说明matrix[Matrix](Class (Matrix).md)是用于运算的矩阵。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| matrix | Matrix | 是 | 用于运算的矩阵。 |
 
 **示例：**
 
@@ -384,17 +433,23 @@ isEqual(matrix: Matrix): Boolean
 
 **参数：**
 
-参数名类型必填说明matrix[Matrix](Class (Matrix).md)是另一个矩阵。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| matrix | Matrix | 是 | 另一个矩阵。 |
 
 **返回值：**
 
-类型说明Boolean返回两个矩阵的比较结果。true表示两个矩阵相等，false表示两个矩阵不相等。
+| 类型 | 说明 |
+| --- | --- |
+| Boolean | 返回两个矩阵的比较结果。true表示两个矩阵相等，false表示两个矩阵不相等。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -422,17 +477,23 @@ invert(matrix: Matrix): Boolean
 
 **参数：**
 
-参数名类型必填说明matrix[Matrix](Class (Matrix).md)是矩阵对象，用于存储获取到的逆矩阵。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| matrix | Matrix | 是 | 矩阵对象，用于存储获取到的逆矩阵。 |
 
 **返回值：**
 
-类型说明Boolean返回matrix是否被设置为逆矩阵的结果。true表示当前矩阵可逆，matrix被设置为逆矩阵，false表示当前矩阵不可逆，matrix不被设置。
+| 类型 | 说明 |
+| --- | --- |
+| Boolean | 返回matrix是否被设置为逆矩阵的结果。true表示当前矩阵可逆，matrix被设置为逆矩阵，false表示当前矩阵不可逆，matrix不被设置。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -460,7 +521,9 @@ isIdentity(): Boolean
 
 **返回值：**
 
-类型说明Boolean返回矩阵是否是单位矩阵。true表示矩阵是单位矩阵，false表示矩阵不是单位矩阵。
+| 类型 | 说明 |
+| --- | --- |
+| Boolean | 返回矩阵是否是单位矩阵。true表示矩阵是单位矩阵，false表示矩阵不是单位矩阵。 |
 
 **示例：**
 
@@ -485,17 +548,23 @@ getValue(index: number): number
 
 **参数：**
 
-参数名类型必填说明indexnumber是索引位置，范围0-8，该参数为整数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 索引位置，范围0-8，该参数为整数。 |
 
 **返回值：**
 
-类型说明number函数返回矩阵给定索引位对应的值，该返回值为整数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 函数返回矩阵给定索引位对应的值，该返回值为整数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 **示例：**
 
@@ -518,13 +587,19 @@ postRotate(degree: number, px: number, py: number): void
 
 **参数：**
 
-参数名类型必填说明degreenumber是旋转角度，单位为度。正数表示顺时针旋转，负数表示逆时针旋转，该参数为浮点数。pxnumber是旋转中心点的横坐标，该参数为浮点数。pynumber是旋转中心点的纵坐标，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| degree | number | 是 | 旋转角度，单位为度。正数表示顺时针旋转，负数表示逆时针旋转，该参数为浮点数。 |
+| px | number | 是 | 旋转中心点的横坐标，该参数为浮点数。 |
+| py | number | 是 | 旋转中心点的纵坐标，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -549,13 +624,20 @@ postScale(sx: number, sy: number, px: number, py: number): void
 
 **参数：**
 
-参数名类型必填说明sxnumber是x轴方向缩放系数，负数表示先关于y = px作镜像翻转后再进行缩放，该参数为浮点数。synumber是y轴方向缩放系数，负数表示先关于x = py作镜像翻转后再进行缩放，该参数为浮点数。pxnumber是缩放中心点的横坐标，该参数为浮点数。pynumber是缩放中心点的纵坐标，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sx | number | 是 | x轴方向缩放系数，负数表示先关于y = px作镜像翻转后再进行缩放，该参数为浮点数。 |
+| sy | number | 是 | y轴方向缩放系数，负数表示先关于x = py作镜像翻转后再进行缩放，该参数为浮点数。 |
+| px | number | 是 | 缩放中心点的横坐标，该参数为浮点数。 |
+| py | number | 是 | 缩放中心点的纵坐标，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -581,13 +663,18 @@ postTranslate(dx: number, dy: number): void
 
 **参数：**
 
-参数名类型必填说明dxnumber是x轴方向平移距离，正数表示往x轴正方向平移，负数表示往x轴负方向平移，该参数为浮点数。dynumber是y轴方向平移距离，正数表示往y轴正方向平移，负数表示往y轴负方向平移，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dx | number | 是 | x轴方向平移距离，正数表示往x轴正方向平移，负数表示往x轴负方向平移，该参数为浮点数。 |
+| dy | number | 是 | y轴方向平移距离，正数表示往y轴正方向平移，负数表示往y轴负方向平移，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -611,13 +698,19 @@ preRotate(degree: number, px: number, py: number): void
 
 **参数：**
 
-参数名类型必填说明degreenumber是旋转角度，单位为度。正数表示顺时针旋转，负数表示逆时针旋转，该参数为浮点数。pxnumber是旋转中心点的横坐标，该参数为浮点数。pynumber是旋转中心点的纵坐标，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| degree | number | 是 | 旋转角度，单位为度。正数表示顺时针旋转，负数表示逆时针旋转，该参数为浮点数。 |
+| px | number | 是 | 旋转中心点的横坐标，该参数为浮点数。 |
+| py | number | 是 | 旋转中心点的纵坐标，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -642,7 +735,12 @@ postSkew(kx: number, ky: number, px: number, py: number): void
 
 **参数：**
 
-参数名类型必填说明kxnumber是x轴上的倾斜量，该参数为浮点数。正值会使绘制沿y轴增量方向向右倾斜；负值会使绘制沿y轴增量方向向左倾斜。kynumber是y轴上的倾斜量，该参数为浮点数。正值会使绘制沿x轴增量方向向下倾斜；负值会使绘制沿x轴增量方向向上倾斜。pxnumber是倾斜中心点的x轴坐标，该参数为浮点数。0表示坐标原点，正数表示位于坐标原点右侧，负数表示位于坐标原点左侧。pynumber是倾斜中心点的y轴坐标，该参数为浮点数。0表示坐标原点，正数表示位于坐标原点下侧，负数表示位于坐标原点上侧。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| kx | number | 是 | x轴上的倾斜量，该参数为浮点数。正值会使绘制沿y轴增量方向向右倾斜；负值会使绘制沿y轴增量方向向左倾斜。 |
+| ky | number | 是 | y轴上的倾斜量，该参数为浮点数。正值会使绘制沿x轴增量方向向下倾斜；负值会使绘制沿x轴增量方向向上倾斜。 |
+| px | number | 是 | 倾斜中心点的x轴坐标，该参数为浮点数。0表示坐标原点，正数表示位于坐标原点右侧，负数表示位于坐标原点左侧。 |
+| py | number | 是 | 倾斜中心点的y轴坐标，该参数为浮点数。0表示坐标原点，正数表示位于坐标原点下侧，负数表示位于坐标原点上侧。 |
 
 **示例：**
 
@@ -662,7 +760,12 @@ matrix.postSkew(2.0, 1.0, 2.0, 1.0);
 
 **参数：**
 
-参数名类型必填说明kxnumber是x轴上的倾斜量，该参数为浮点数。正值会使绘制沿y轴增量方向向右倾斜；负值会使绘制沿y轴增量方向向左倾斜。kynumber是y轴上的倾斜量，该参数为浮点数。正值会使绘制沿x轴增量方向向下倾斜；负值会使绘制沿x轴增量方向向上倾斜。pxnumber是倾斜中心点的x轴坐标，该参数为浮点数。0表示坐标原点，正数表示位于坐标原点右侧，负数表示位于坐标原点左侧。pynumber是倾斜中心点的y轴坐标，该参数为浮点数。0表示坐标原点，正数表示位于坐标原点下侧，负数表示位于坐标原点上侧。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| kx | number | 是 | x轴上的倾斜量，该参数为浮点数。正值会使绘制沿y轴增量方向向右倾斜；负值会使绘制沿y轴增量方向向左倾斜。 |
+| ky | number | 是 | y轴上的倾斜量，该参数为浮点数。正值会使绘制沿x轴增量方向向下倾斜；负值会使绘制沿x轴增量方向向上倾斜。 |
+| px | number | 是 | 倾斜中心点的x轴坐标，该参数为浮点数。0表示坐标原点，正数表示位于坐标原点右侧，负数表示位于坐标原点左侧。 |
+| py | number | 是 | 倾斜中心点的y轴坐标，该参数为浮点数。0表示坐标原点，正数表示位于坐标原点下侧，负数表示位于坐标原点上侧。 |
 
 **示例：**
 
@@ -682,11 +785,15 @@ mapRadius(radius: number): number
 
 **参数：**
 
-参数名类型必填说明radiusnumber是用于计算的圆的半径，浮点数。如果是负数，则按照绝对值进行计算。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| radius | number | 是 | 用于计算的圆的半径，浮点数。如果是负数，则按照绝对值进行计算。 |
 
 **返回值：**
 
-类型说明number返回经过变换之后的平均半径。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回经过变换之后的平均半径。 |
 
 **示例：**
 
@@ -709,13 +816,20 @@ preScale(sx: number, sy: number, px: number, py: number): void
 
 **参数：**
 
-参数名类型必填说明sxnumber是x轴方向缩放系数，为负数时可看作是先关于y = px作镜像翻转后再进行缩放，该参数为浮点数。synumber是y轴方向缩放系数，为负数时可看作是先关于x = py作镜像翻转后再进行缩放，该参数为浮点数。pxnumber是轴心点横坐标，该参数为浮点数。pynumber是轴心点纵坐标，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sx | number | 是 | x轴方向缩放系数，为负数时可看作是先关于y = px作镜像翻转后再进行缩放，该参数为浮点数。 |
+| sy | number | 是 | y轴方向缩放系数，为负数时可看作是先关于x = py作镜像翻转后再进行缩放，该参数为浮点数。 |
+| px | number | 是 | 轴心点横坐标，该参数为浮点数。 |
+| py | number | 是 | 轴心点纵坐标，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -741,13 +855,18 @@ preTranslate(dx: number, dy: number): void
 
 **参数：**
 
-参数名类型必填说明dxnumber是x轴方向平移距离，正数表示往x轴正方向平移，负数表示往x轴负方向平移，该参数为浮点数。dynumber是y轴方向平移距离，正数表示往y轴正方向平移，负数表示往y轴负方向平移，该参数为浮点数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dx | number | 是 | x轴方向平移距离，正数表示往x轴正方向平移，负数表示往x轴负方向平移，该参数为浮点数。 |
+| dy | number | 是 | y轴方向平移距离，正数表示往y轴正方向平移，负数表示往y轴负方向平移，该参数为浮点数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -790,17 +909,23 @@ mapPoints(src: Array<common2D.Point>): Array<common2D.Point>
 
 **参数：**
 
-参数名类型必填说明srcArray<[common2D.Point](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__point12)>是源点数组。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| src | Array<common2D.Point> | 是 | 源点数组。 |
 
 **返回值：**
 
-类型说明Array<[common2D.Point](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__point12)>源点数组经矩阵变换后的点数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<common2D.Point> | 源点数组经矩阵变换后的点数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -827,7 +952,9 @@ getAll(): Array<number>
 
 **返回值：**
 
-类型说明Array<number>存储矩阵元素值的浮点数组，长度为9。
+| 类型 | 说明 |
+| --- | --- |
+| Array<number> | 存储矩阵元素值的浮点数组，长度为9。 |
 
 **示例：**
 
@@ -844,21 +971,30 @@ mapRect(dst: common2D.Rect, src: common2D.Rect): boolean
 
 将目标矩形设置为源矩形通过矩阵变换后的图形的外接矩形。如下图所示，蓝色矩形为源矩形，假设黄色矩形为源矩形通过矩阵变换形成的图形，此时黄色矩形的边不与坐标轴平行，无法使用矩形对象表示，因此，将目标矩形设置为黄色矩形的外接矩形，即黑色矩形。
 
+![image](public_sys-resources/zh-cn_image_0000002522086128.webp)
+
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
-参数名类型必填说明dst[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是目标矩形对象，用于存储源矩形经矩阵变换后的图形的外接矩形。src[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是源矩形对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dst | common2D.Rect | 是 | 目标矩形对象，用于存储源矩形经矩阵变换后的图形的外接矩形。 |
+| src | common2D.Rect | 是 | 源矩形对象。 |
 
 **返回值：**
 
-类型说明boolean返回源矩形经过矩阵变换后的图形是否仍然是矩形，true表示是矩形，false表示不是矩形。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回源矩形经过矩阵变换后的图形是否仍然是矩形，true表示是矩形，false表示不是矩形。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -875,7 +1011,7 @@ if (matrix.mapRect(dst, src)) {
 
 #### setRectToRect12+
 
-setRectToRect(src: common2D.Rect, dst: common2D.Rect, scaleToFit: ScaleToFit): boolean
+setRectToRect(src: common2D.Rect, dst: common2D.Rect, scaleToFit: [ScaleToFit](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__scaletofit12)): boolean
 
 将当前矩阵设置为能使源矩形映射到目标矩形的变换矩阵。
 
@@ -883,17 +1019,25 @@ setRectToRect(src: common2D.Rect, dst: common2D.Rect, scaleToFit: ScaleToFit): b
 
 **参数：**
 
-参数名类型必填说明src[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是源矩形。dst[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)是目标矩形。scaleToFit[ScaleToFit](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__scaletofit12)是源矩形到目标矩形的映射方式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| src | common2D.Rect | 是 | 源矩形。 |
+| dst | common2D.Rect | 是 | 目标矩形。 |
+| scaleToFit | [ScaleToFit](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__scaletofit12) | 是 | 源矩形到目标矩形的映射方式。 |
 
 **返回值：**
 
-类型说明boolean返回矩阵是否可以表示矩形之间的映射，true表示可以，false表示不可以。如果源矩形的宽高任意一个小于等于0，则返回false，并将矩阵设置为单位矩阵；如果目标矩形的宽高任意一个小于等于0，则返回true，并将矩阵设置为除透视缩放系数为1外其余值皆为0的矩阵。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回矩阵是否可以表示矩形之间的映射，true表示可以，false表示不可以。如果源矩形的宽高任意一个小于等于0，则返回false，并将矩阵设置为单位矩阵；如果目标矩形的宽高任意一个小于等于0，则返回true，并将矩阵设置为除透视缩放系数为1外其余值皆为0的矩阵。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
 
 **示例：**
 
@@ -919,17 +1063,25 @@ setPolyToPoly(src: Array<common2D.Point>, dst: Array<common2D.Point>, count: num
 
 **参数：**
 
-参数名类型必填说明srcArray<[common2D.Point](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__point12)>是源点数组，长度必须为count。dstArray<[common2D.Point](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__point12)>是目标点数组，长度必须为count。countnumber是在src和dst点的数量，该参数为整数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| src | Array<common2D.Point> | 是 | 源点数组，长度必须为count。 |
+| dst | Array<common2D.Point> | 是 | 目标点数组，长度必须为count。 |
+| count | number | 是 | 在src和dst点的数量，该参数为整数。 |
 
 **返回值：**
 
-类型说明boolean返回设置矩阵是否成功的结果，true表示设置成功，false表示设置失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回设置矩阵是否成功的结果，true表示设置成功，false表示设置失败。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 

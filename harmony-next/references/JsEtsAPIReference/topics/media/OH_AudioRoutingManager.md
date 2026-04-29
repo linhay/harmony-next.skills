@@ -12,4 +12,4 @@ typedef struct OH_AudioRoutingManager OH_AudioRoutingManager
 
 **相关模块：**[OHAudio](OHAudio.md)
 
-**所在头文件：**[native_audio_routing_manager.h](../../capi/headers/native_audio_routing_manager.h.md)
+**所在头文件：**[native_audio_routing_manager.h](../../topics/media/[native_audio_routing_manager.h](native_audio_routing_manager.h.md).md)

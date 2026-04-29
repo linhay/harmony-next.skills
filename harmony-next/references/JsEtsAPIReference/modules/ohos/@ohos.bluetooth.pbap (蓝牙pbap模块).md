@@ -18,7 +18,9 @@ type BaseProfile = baseProfile.BaseProfile
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
 
-类型说明[baseProfile.BaseProfile](@ohos.bluetooth.baseProfile (蓝牙baseProfile模块).md#ZH-CN_TOPIC_0000002497445438__baseprofile)基础Profile接口定义。
+| 类型 | 说明 |
+| --- | --- |
+| baseProfile.BaseProfile | 基础Profile接口定义。 |
 
 #### pbap.createPbapServerProfile
 
@@ -30,19 +32,18 @@ createPbapServerProfile(): PbapServerProfile
 
 **返回值：**
 
-类型说明PbapServerProfile
-
-返回PSE实例。
-
-- 该类继承于[BaseProfile](#ZH-CN_TOPIC_0000002529285413__baseprofile)，因此可以使用其父类中的方法。
-
-- 和该实例角色相对应的是[PCE](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#pce)角色。
+| 类型 | 说明 |
+| --- | --- |
+| PbapServerProfile | 返回PSE实例。 - 该类继承于BaseProfile，因此可以使用其父类中的方法。 - 和该实例角色相对应的是PCE角色。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[蓝牙服务子系统错误码](../../errors/蓝牙服务子系统错误码.md)。
+以下错误码的详细介绍请参见[蓝牙服务子系统错误码]([蓝牙服务子系统错误码](../../errors/蓝牙服务子系统错误码.md).md)。
 
-错误码ID错误信息401Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
 
 **示例：**
 

@@ -12,10 +12,15 @@ typedef struct {...} JSVM_ScriptOrigin
 
 **相关模块：**[JSVM](JSVM.md)
 
-**所在头文件：**[jsvm_types.h](../../capi/headers/jsvm_types.h.md)
+所在头文件： [jsvm_types.h](jsvm_types.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述const char* sourceMapUrlSourcemap 路径。const char* resourceName源文件名。size_t resourceLineOffset这段代码在源文件中的起始行号。size_t resourceColumnOffset这段代码在源文件中的起始列号。
+| 名称 | 描述 |
+| --- | --- |
+| const char* sourceMapUrl | Sourcemap 路径。 |
+| const char* resourceName | 源文件名。 |
+| size_t resourceLineOffset | 这段代码在源文件中的起始行号。 |
+| size_t resourceColumnOffset | 这段代码在源文件中的起始列号。 |

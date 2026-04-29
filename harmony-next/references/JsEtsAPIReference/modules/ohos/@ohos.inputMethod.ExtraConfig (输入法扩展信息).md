@@ -18,7 +18,11 @@ type CustomValueType = number | string | boolean
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
-类型说明string表示值类型为字符串。number表示值类型为数字。boolean表示值类型为布尔值。
+| 类型 | 说明 |
+| --- | --- |
+| string | 表示值类型为字符串。 |
+| number | 表示值类型为数字。 |
+| boolean | 表示值类型为布尔值。 |
 
 #### InputMethodExtraConfig
 
@@ -26,4 +30,6 @@ type CustomValueType = number | string | boolean
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
-名称类型只读可选说明customSettingsRecord<string, [CustomValueType](#ZH-CN_TOPIC_0000002497445312__customvaluetype)>否否输入法扩展信息。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| customSettings | Record<string, CustomValueType> | 否 | 否 | 输入法扩展信息，用于储存自定义的键值对，这些键值对可以是任何与输入法相关的配置信息。例如用户的输入习惯、快捷键设置、主题颜色等。这些设置信息将在输入法应用绑定时加载，以提供个性化的用户体验。信息的总长度不超过32KB。 |

@@ -10,7 +10,7 @@
 import { visionBase, skeletonDetection } from '@kit.CoreVisionKit';
 ```
 
-#### SkeletonPointType
+#### Skeleton[Point](VisionBase（Core Vision Kit基类）.md#section1465431712919)Type
 
 骨骼点类型的枚举类。
 
@@ -18,115 +18,27 @@ import { visionBase, skeletonDetection } from '@kit.CoreVisionKit';
 
 **起始版本：**5.0.0(12)
 
-名称
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NOSE | 0 | 鼻子。 |
+| LEFT_EYE | 1 | 左眼。 |
+| RIGHT_EYE | 2 | 右眼。 |
+| LEFT_EAR | 3 | 左耳。 |
+| RIGHT_EAR | 4 | 右耳。 |
+| LEFT_SHOULDER | 5 | 左肩。 |
+| RIGHT_SHOULDER | 6 | 右肩。 |
+| LEFT_ELBOW | 7 | 左肘。 |
+| RIGHT_ELBOW | 8 | 右肘。 |
+| LEFT_WRIST | 9 | 左腕。 |
+| RIGHT_WRIST | 10 | 右腕。 |
+| LEFT_HIP | 11 | 左髋。 |
+| RIGHT_HIP | 12 | 右髋。 |
+| LEFT_KNEE | 13 | 左膝。 |
+| RIGHT_KNEE | 14 | 右膝。 |
+| LEFT_ANKLE | 15 | 左脚踝。 |
+| RIGHT_ANKLE | 16 | 右脚踝。 |
 
-值
-
-说明
-
-NOSE
-
-0
-
-鼻子。
-
-LEFT_EYE
-
-1
-
-左眼。
-
-RIGHT_EYE
-
-2
-
-右眼。
-
-LEFT_EAR
-
-3
-
-左耳。
-
-RIGHT_EAR
-
-4
-
-右耳。
-
-LEFT_SHOULDER
-
-5
-
-左肩。
-
-RIGHT_SHOULDER
-
-6
-
-右肩。
-
-LEFT_ELBOW
-
-7
-
-左肘。
-
-RIGHT_ELBOW
-
-8
-
-右肘。
-
-LEFT_WRIST
-
-9
-
-左腕。
-
-RIGHT_WRIST
-
-10
-
-右腕。
-
-LEFT_HIP
-
-11
-
-左髋。
-
-RIGHT_HIP
-
-12
-
-右髋。
-
-LEFT_KNEE
-
-13
-
-左膝。
-
-RIGHT_KNEE
-
-14
-
-右膝。
-
-LEFT_ANKLE
-
-15
-
-左脚踝。
-
-RIGHT_ANKLE
-
-16
-
-右脚踝。
-
-#### SkeletonPoint
+#### Skeleton[Point](VisionBase（Core Vision Kit基类）.md#section1465431712919)
 
 详细的骨骼点信息。
 
@@ -134,45 +46,11 @@ RIGHT_ANKLE
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-point
-
-visionBase.[Point](VisionBase（Core Vision Kit基类）.md#section1465431712919)
-
-否
-
-否
-
-骨骼点的图像坐标，即它在图像中的x和y位置。
-
-score
-
-number
-
-否
-
-否
-
-骨骼点的置信度。取值范围是(0,1)。0表示置信度最低，1表示置信度最高，置信度越高，说明这个点的位置越可靠。
-
-type
-
-[SkeletonPointType](#section4298938144913)
-
-否
-
-否
-
-骨骼点的类型，即它在人体骨骼模型中的位置。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| point | visionBase.[Point](VisionBase（Core Vision Kit基类）.md#section1465431712919) | 否 | 否 | 骨骼点的图像坐标，即它在图像中的x和y位置。 |
+| score | number | 否 | 否 | 骨骼点的置信度。取值范围是(0,1)。0表示置信度最低，1表示置信度最高，置信度越高，说明这个点的位置越可靠。 |
+| type | Skeleton[Point](VisionBase（Core Vision Kit基类）.md#section1465431712919)Type | 否 | 否 | 骨骼点的类型，即它在人体骨骼模型中的位置。 |
 
 #### Skeleton
 
@@ -182,106 +60,54 @@ type
 
 **起始版本：**5.0.0(12)
 
-名称
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| boundingBox | visionBase.[BoundingBox](VisionBase（Core Vision Kit基类）.md#section789716171126) | 否 | 否 | 骨骼的边界框，也就是所有骨骼点加一起的矩形框。 |
+| score | number | 否 | 否 | 表示骨骼点的总体置信度,取值范围是(0,1)，0表示置信度最低，1表示置信度最高。反映了这个骨骼整体的可信程度。 |
+| points | Array<Skeleton[Point](VisionBase（Core Vision Kit基类）.md#section1465431712919)> | 否 | 否 | 返回包含骨骼点详情的对象数组。 |
 
-类型
+#### SkeletonDetection[Response](VisionBase（Core Vision Kit基类）.md#section13793135121418)
 
-只读
-
-可选
-
-说明
-
-boundingBox
-
-visionBase.[BoundingBox](VisionBase（Core Vision Kit基类）.md#section789716171126)
-
-否
-
-否
-
-骨骼的边界框，也就是所有骨骼点加一起的矩形框。
-
-score
-
-number
-
-否
-
-否
-
-表示骨骼点的总体置信度,取值范围是(0,1)，0表示置信度最低，1表示置信度最高。反映了这个骨骼整体的可信程度。
-
-points
-
-Array<[SkeletonPoint](#section674171818172)>
-
-否
-
-否
-
-返回包含骨骼点详情的对象数组。
-
-#### SkeletonDetectionResponse
-
-用于表示一次骨骼点检测的完整结果。作为骨骼点检测的顶层输出，封装了一次检测的全部结果。继承自visionBase的[Response](VisionBase（Core Vision Kit基类）.md#section13793135121418)。
+用于表示一次骨骼点检测的完整结果。作为骨骼点检测的顶层输出，封装了一次检测的全部结果。继承自visionBase的[Response](VisionBase（Core Vision Kit基类）.md#ZH-CN_TOPIC_0000002522082568__response)。
 
 **系统能力：**SystemCapability.AI.Vision.SkeletonDetection
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-skeletons
-
-Array<[Skeleton](#section49341529125412)>
-
-否
-
-否
-
-包含图片内所有人的人体骨骼点结果集合。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| skeletons | Array<Skeleton> | 否 | 否 | 包含图片内所有人的人体骨骼点结果集合。 |
 
 #### SkeletonDetector
 
-定义骨骼点检测的接口和基本结构。继承自[visionBase.Analyzer](VisionBase（Core Vision Kit基类）.md#section6867321337)类。它有以下功能函数：
+定义骨骼点检测的接口和基本结构。继承自[visionBase.Analyzer](VisionBase（Core Vision Kit基类）.md#ZH-CN_TOPIC_0000002522082568__analyzer)类。它有以下功能函数：
+
+-
 
 - private constructor()：这是一个私有构造函数，意味着不能直接通过 new 关键字实例化SkeletonDetector。必须通过 create() 静态方法来创建实例。
-- static create(): Promise<SkeletonDetector>：这是一个静态方法，用于创建SkeletonDetector的实例。使用Promise异步回调。它返回一个 Promise，解析为创建的SkeletonDetector实例。
-- process(request: visionBase.Request): Promise<SkeletonDetectionResponse>：这是一个实例方法，用于处理骨骼点检测请求。使用Promise异步回调。
+
+-
+
+static create(): Promise<SkeletonDetector>：这是一个静态方法，用于创建SkeletonDetector的实例。使用Promise异步回调。
+
+-
+
+- process(request: visionBase.Request): Promise<SkeletonDetection[Response](VisionBase（Core Vision Kit基类）.md#section13793135121418)>：这是一个实例方法，用于处理骨骼点检测请求。使用Promise异步回调。
+
+-
+
 - destroy(): Promise<void>：这是一个实例方法，用于销毁骨骼点检测的进程，使用Promise异步回调。
 
 **系统能力：**SystemCapability.AI.Vision.SkeletonDetection
 
 **起始版本：**5.0.0(12)
 
-名称
-
-说明
-
-constructor
-
-强制开发者必须使用static create()方法来创建SkeletonDetector的实例。
-
-create
-
-初始化骨骼点检测接口。
-
-process
-
-骨骼点检测的实际执行接口。
-
-destroy
-
-骨骼点检测的销毁接口。
+| 名称 | 说明 |
+| --- | --- |
+| constructor | 强制开发者必须使用static create()方法来创建SkeletonDetector的实例。 |
+| create | 初始化骨骼点检测接口。 |
+| process | 骨骼点检测的实际执行接口。 |
+| destroy | 骨骼点检测的销毁接口。 |
 
 #### create
 
@@ -295,29 +121,18 @@ static create(): Promise<SkeletonDetector>
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<[SkeletonDetector](#section1372216360530)>
-
-Promise对象，返回[SkeletonDetector](#section1372216360530)实例。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<SkeletonDetector> | Promise对象，返回SkeletonDetector实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Vision Kit错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[Core Vision Kit错误码](ArkTS API错误码.md)。
 
-错误码ID
-
-错误信息
-
-1011000001
-
-Failed to run, please try again.
-
-1011000002
-
-The service is abnormal.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1011000001 | Failed to run, please try again. |
+| 1011000002 | The service is abnormal. |
 
 **示例：**
 
@@ -343,7 +158,6 @@ async function createAndDestroyDetector() {
   } else {
     hilog.error(0x0000,'skeletonDetectionSample','Failed to destroy Skeleton detector');
   }
-}
 
 @Entry
 @Component
@@ -355,8 +169,6 @@ struct Page {
         createAndDestroyDetector()
       })
     }
-  }
-}
 ```
 
 #### destroy
@@ -371,13 +183,9 @@ destroy(): Promise<void>
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<void>
-
-无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -403,7 +211,6 @@ async function createAndDestroyDetector() {
   } else {
     hilog.error(0x0000,'skeletonDetectionSample','Failed to destroy Skeleton detector');
   }
-}
 
 @Entry
 @Component
@@ -415,13 +222,11 @@ struct Page {
         createAndDestroyDetector()
       })
     }
-  }
-}
 ```
 
 #### process
 
-process(request: visionBase.Request): Promise<SkeletonDetectionResponse>
+process(request: visionBase.Request): Promise<SkeletonDetection[Response](VisionBase（Core Vision Kit基类）.md#section13793135121418)>
 
 创建骨骼点检测实例并执行骨骼点检测。使用Promise异步回调。
 
@@ -431,57 +236,26 @@ process(request: visionBase.Request): Promise<SkeletonDetectionResponse>
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-request
-
-visionBase.[Request](VisionBase（Core Vision Kit基类）.md#section6430105121211)
-
-是
-
-图片实例。骨骼点检测接口仅支持传入一张图片，不支持传入多张图片。
-
-具体规格请参考[约束与限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-vision-introduction#section625292610522)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| request | visionBase.[Request](VisionBase（Core Vision Kit基类）.md#section6430105121211) | 是 | 图片实例。骨骼点检测接口仅支持传入一张图片，不支持传入多张图片。 具体规格请参考约束与限制。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<[SkeletonDetectionResponse](#section1565918285820)>
-
-返回骨骼点识别的结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<SkeletonDetection[Response](VisionBase（Core Vision Kit基类）.md#section13793135121418)> | 返回骨骼点识别的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Vision Kit错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[Core Vision Kit错误码](ArkTS API错误码.md)。
 
-错误码ID
-
-错误信息
-
-401
-
-The parameter check failed.
-
-1011000001
-
-Failed to run, please try again.
-
-1011000003
-
-Failed to run the model, please try again.
-
-1011000004
-
-**Running the model timed out. Try again later.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The parameter check failed. |
+| 1011000001 | Failed to run, please try again. |
+| 1011000003 | Failed to run the model, please try again. |
+| 1011000004 | Running the model timed out. Try again later. |
 
 **示例：**
 
@@ -557,20 +331,18 @@ struct Page {
                 skeleton.points.forEach(point => {
                   hilog.info(0x0000, 'skeletonDetectionSample', `    ${skeletonDetection.SkeletonPointType[point.type]}: (${point.point.x}, ${point.point.y}), Score: ${point.score}`);
                 });
-              });
             }
 
             // 清理资源
             if (chooseImage && imageSource) {
-              chooseImage.release();
-              imageSource.release();
+              void chooseImage.release();
+              void imageSource.release();
             }
             if (file) {
               try {
                 await fileIo.close(file);
               } catch (err) {
-                hilog.error(0x0000, 'skeletonDetectionSample', `Failed to close fileSource. Code: ${err.code}，message: ${err.message}`);
-              }
+                hilog.error(0x0000, 'skeletonDetectionSample', `Failed to close fileSource. Code: ${err.code}, message: ${err.message}`);
             }
             if (detector) {
               await detector.destroy();
@@ -578,10 +350,8 @@ struct Page {
             }
           }, 100);
         }).catch((err: BusinessError) => {
-          hilog.error(0x0000, 'skeletonDetectionSample', `Failed to get photo image uri. code: ${err.code}，message: ${err.message}`);
+          hilog.error(0x0000, 'skeletonDetectionSample', `Failed to get photo image uri. Code: ${err.code}, message: ${err.message}`);
         });
       })
     }
-  }
-}
 ```

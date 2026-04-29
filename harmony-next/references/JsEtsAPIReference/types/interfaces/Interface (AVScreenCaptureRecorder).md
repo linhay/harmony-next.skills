@@ -1,9 +1,10 @@
 # Interface (AVScreenCaptureRecorder)
 
+屏幕录制管理类，用于进行屏幕录制。在调用AVScreenCaptureRecorder的方法前，需要先通过[createAVScreenCaptureRecorder()](Functions.md#ZH-CN_TOPIC_0000002522082030__mediacreateavscreencapturerecorder12)创建一个AVScreenCaptureRecorder实例。
+
+
 - 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 - 本Interface首批接口从API version 12开始支持。
-
-屏幕录制管理类，用于进行屏幕录制。在调用AVScreenCaptureRecorder的方法前，需要先通过[createAVScreenCaptureRecorder()](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445861__mediacreateavscreencapturerecorder12)创建一个AVScreenCaptureRecorder实例。
 
 #### 导入模块
 
@@ -21,17 +22,25 @@ init(config: AVScreenCaptureRecordConfig): Promise<void>
 
 **参数：**
 
-参数名类型必填说明config[AVScreenCaptureRecordConfig](Interfaces (其他).md#ZH-CN_TOPIC_0000002497605902__avscreencapturerecordconfig12)是配置屏幕录制的相关参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | AVScreenCaptureRecordConfig | 是 | 配置屏幕录制的相关参数。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Media错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Media错误码]([Media错误码](../../errors/Media错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise.5400103IO error. Return by promise.5400105Service died. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise. |
+| 5400103 | IO error. Return by promise. |
+| 5400105 | Service died. Return by promise. |
 
 **示例：**
 
@@ -41,7 +50,7 @@ import { fileIo as fs } from '@kit.CoreFileKit';
 import { media } from '@kit.MediaKit';
 
 // 初始化avScreenCaptureRecorder。
-let avScreenCaptureRecorder!: media.AVScreenCaptureRecorder;
+let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
 media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
   if (captureRecorder != null) {
     avScreenCaptureRecorder = captureRecorder;
@@ -64,30 +73,37 @@ let avCaptureConfig: media.AVScreenCaptureRecordConfig = {
     // 补充其他参数。
 };
 
+if (avScreenCaptureRecorder != undefined) {
 avScreenCaptureRecorder.init(avCaptureConfig).then(() => {
-    console.info('Succeeded in initing avScreenCaptureRecorder');
+    console.info('Succeeded in initializing avScreenCaptureRecorder');
 }).catch((err: BusinessError) => {
     console.error(`Failed to init avScreenCaptureRecorder. Code: ${err.code}, message: ${err.message}`);
 });
+}
 ```
 
 #### startRecording12+
 
 startRecording(): Promise<void>
 
-开始录屏。使用Promise异步回调。
+开始录屏，在使用前需要先调用[init](Interface (AVScreenCaptureRecorder).md#ZH-CN_TOPIC_0000002553361953__init12)接口。使用Promise异步回调。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Media错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[Media错误码](Media错误码.md)。
 
-错误码ID错误信息5400103IO error. Return by promise.5400105Service died. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400103 | IO error. Return by promise. |
+| 5400105 | Service died. Return by promise. |
 
 **示例：**
 
@@ -111,13 +127,18 @@ stopRecording(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Media错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[Media错误码](Media错误码.md)。
 
-错误码ID错误信息5400103IO error. Return by promise.5400105Service died. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400103 | IO error. Return by promise. |
+| 5400105 | Service died. Return by promise. |
 
 **示例：**
 
@@ -143,17 +164,24 @@ skipPrivacyMode(windowIDs: Array<number>): Promise<void>
 
 **参数：**
 
-参数名类型必填说明windowIDsArray<number>是需要豁免隐私的窗口列表，包括主窗口id和子窗口id，窗口属性获取方法可以参考[getWindowProperties](Interface (Window).md#ZH-CN_TOPIC_0000002497604802__getwindowproperties9)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| windowIDs | Array<number> | 是 | 需要豁免隐私的窗口列表，包括主窗口id和子窗口id，窗口属性获取方法可以参考getWindowProperties。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Media错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[Media错误码](Media错误码.md)。
 
-错误码ID错误信息5400103IO error. Return by promise.5400105Service died. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400103 | IO error. Return by promise. |
+| 5400105 | Service died. Return by promise. |
 
 **示例：**
 
@@ -178,17 +206,24 @@ setMicEnabled(enable: boolean): Promise<void>
 
 **参数：**
 
-参数名类型必填说明enableboolean是麦克风开关控制，true代表麦克风打开，false代表麦克风关闭。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enable | boolean | 是 | 麦克风开关控制，true代表麦克风打开，false代表麦克风关闭。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Media错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[Media错误码](Media错误码.md)。
 
-错误码ID错误信息5400103IO error. Return by promise.5400105Service died. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400103 | IO error. Return by promise. |
+| 5400105 | Service died. Return by promise. |
 
 **示例：**
 
@@ -196,15 +231,15 @@ setMicEnabled(enable: boolean): Promise<void>
 import { BusinessError } from '@kit.BasicServicesKit';
 
 avScreenCaptureRecorder.setMicEnabled(true).then(() => {
-    console.info('Succeeded in setMicEnabled avScreenCaptureRecorder');
+  console.info('Succeeded in setting microphone enabled.');
 }).catch((err: BusinessError) => {
-    console.error(`Failed to setMicEnabled avScreenCaptureRecorder. Code: ${err.code}, message: ${err.message}`);
+  console.error(`Failed to set microphone enabled. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
-#### setPickerMode22+
+#### set[PickerMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445922__pickermode22)22+
 
-setPickerMode(pickerMode: PickerMode): Promise<void>
+set[PickerMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445922__pickermode22)(pickerMode: PickerMode): Promise<void>
 
 设置Picker显示模式，在下一次显示Picker时生效。使用Promise异步回调。
 
@@ -212,27 +247,25 @@ setPickerMode(pickerMode: PickerMode): Promise<void>
 
 **参数：**
 
-参数名类型必填说明pickerMode[PickerMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445922__pickermode22)是
-
-选择Picker模式。
-
-定义了在Picker中显示的内容类型：
-
-- SCREEN_ONLY：仅显示屏幕列表。
-
-- WINDOW_ONLY：仅显示窗口列表。
-
-- SCREEN_AND_WINDOW：同时显示屏幕列表和窗口列表（默认值）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pickerMode | [PickerMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445922__pickermode22) | 是 | 选择Picker模式。 定义了在Picker中显示的内容类型： - SCREEN_ONLY：仅显示屏幕列表。 - WINDOW_ONLY：仅显示窗口列表。 - SCREEN_AND_WINDOW：同时显示屏幕列表和窗口列表（默认值）。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Media错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[Media错误码](Media错误码.md)。
 
-错误码ID错误信息5400102Operation not allowed. Return by promise.5400103IO error. Return by promise.5400105Service died. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400103 | IO error. Return by promise. |
+| 5400105 | Service died. Return by promise. |
 
 **示例：**
 
@@ -240,9 +273,9 @@ setPickerMode(pickerMode: PickerMode): Promise<void>
 import { BusinessError } from '@kit.BasicServicesKit';
 
 avScreenCaptureRecorder.setPickerMode(media.PickerMode.WINDOW_ONLY).then(() => {
-    console.info('Succeeded in setPickerMode');
+  console.info('Succeeded in setting picker mode.');
 }).catch((err: BusinessError) => {
-    console.error(`Failed to setPickerMode, code: ${err.code}, message: ${err.message}`);
+  console.error(`Failed to set picker mode. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
@@ -256,17 +289,25 @@ excludePickerWindows(excludedWindows: Array<number>): Promise<void>
 
 **参数：**
 
-参数名类型必填说明excludedWindowsArray<number>是需要在Picker中隐藏的窗口列表，窗口属性获取方法可以参考[getWindowProperties](Interface (Window).md#ZH-CN_TOPIC_0000002497604802__getwindowproperties9)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| excludedWindows | Array<number> | 是 | 需要在Picker中隐藏的窗口列表，窗口属性获取方法可以参考getWindowProperties。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Media错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[Media错误码](Media错误码.md)。
 
-错误码ID错误信息5400102Operation not allowed. Return by promise.5400103IO error. Return by promise.5400105Service died. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400103 | IO error. Return by promise. |
+| 5400105 | Service died. Return by promise. |
 
 **示例：**
 
@@ -276,9 +317,9 @@ import { BusinessError } from '@kit.BasicServicesKit';
 let excludedWindows: Array<number> = [101, 102, 103];
 
 avScreenCaptureRecorder.excludePickerWindows(excludedWindows).then(() => {
-    console.info('Succeeded in excludePickerWindows');
+  console.info('Succeeded in excluding picker windows.');
 }).catch((err: BusinessError) => {
-    console.error(`Failed to excludePickerWindows, code: ${err.code}, message: ${err.message}`);
+  console.error(`Failed to exclude picker windows. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
@@ -295,13 +336,19 @@ presentPicker(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Media错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[Media错误码](Media错误码.md)。
 
-错误码ID错误信息5400102Operation not allowed. Return by promise.5400103IO error. Return by promise.5400105Service died. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400103 | IO error. Return by promise. |
+| 5400105 | Service died. Return by promise. |
 
 **示例：**
 
@@ -309,9 +356,9 @@ presentPicker(): Promise<void>
 import { BusinessError } from '@kit.BasicServicesKit';
 
 avScreenCaptureRecorder.presentPicker().then(() => {
-    console.info('Succeeded in presentPicker avScreenCaptureRecorder');
+  console.info('Succeeded in presenting picker avScreenCaptureRecorder.');
 }).catch((err: BusinessError) => {
-    console.error('Failed to presentPicker avScreenCaptureRecorder, error: ' + err.message);
+  console.error(`Failed to present picker avScreenCaptureRecorder. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
@@ -325,13 +372,18 @@ release(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Media错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[Media错误码](Media错误码.md)。
 
-错误码ID错误信息5400103IO error. Return by promise.5400105Service died. Return by promise.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400103 | IO error. Return by promise. |
+| 5400105 | Service died. Return by promise. |
 
 **示例：**
 
@@ -347,7 +399,7 @@ avScreenCaptureRecorder.release().then(() => {
 
 #### on('stateChange')12+
 
-on(type: 'stateChange', callback: Callback<AVScreenCaptureStateCode>): void
+on(type: 'stateChange', callback: Callback<[AVScreenCaptureStateCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445922__avscreencapturestatecode12)>): void
 
 订阅录屏状态切换的事件，当状态发生的时候，会通过订阅的回调通知用户。用户只能订阅一个状态切换的回调方法，重复订阅时，以最后一次订阅的回调接口为准。
 
@@ -355,7 +407,10 @@ on(type: 'stateChange', callback: Callback<AVScreenCaptureStateCode>): void
 
 **参数：**
 
-参数名类型必填说明typestring是状态切换事件回调类型，支持的事件：'stateChange'。callbackCallback<[AVScreenCaptureStateCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445922__avscreencapturestatecode12)>是状态切换事件回调方法，[AVScreenCaptureStateCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445922__avscreencapturestatecode12)表示切换到的状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 状态切换事件回调类型，支持的事件：'stateChange'。 |
+| callback | Callback<[AVScreenCaptureStateCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445922__avscreencapturestatecode12)> | 是 | 状态切换事件回调方法，AVScreenCaptureStateCode表示切换到的状态。 |
 
 **示例：**
 
@@ -375,13 +430,20 @@ on(type: 'error', callback: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是错误事件回调类型，支持的事件：'error'。callback[ErrorCallback](../../modules/ohos/@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__errorcallback)是录屏错误事件回调方法。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 错误事件回调类型，支持的事件：'error'。 |
+| callback | ErrorCallback | 是 | 录屏错误事件回调方法。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Media错误码](../../errors/Media错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Media错误码](Media错误码.md)。
 
-错误码ID错误信息201permission denied.5400103IO error. Return by ErrorCallback.5400105Service died. Return by ErrorCallback.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | permission denied. |
+| 5400103 | IO error. Return by ErrorCallback. |
+| 5400105 | Service died. Return by ErrorCallback. |
 
 **示例：**
 
@@ -393,7 +455,7 @@ avScreenCaptureRecorder.on('error', (err: BusinessError) => {
 
 #### off('stateChange')12+
 
- off(type: 'stateChange', callback?: Callback<AVScreenCaptureStateCode>): void
+ off(type: 'stateChange', callback?: Callback<[AVScreenCaptureStateCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445922__avscreencapturestatecode12)>): void
 
 取消订阅状态切换回调事件。用户可以指定填入状态切换的回调方法来取消订阅。
 
@@ -401,7 +463,10 @@ avScreenCaptureRecorder.on('error', (err: BusinessError) => {
 
 **参数：**
 
-参数名类型必填说明typestring是状态切换事件回调类型，支持的事件：'stateChange'。callbackCallback<[AVScreenCaptureStateCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445922__avscreencapturestatecode12)>否状态切换事件回调方法，[AVScreenCaptureStateCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445922__avscreencapturestatecode12)表示切换到的状态，不填此参数则会取消最后一次订阅事件。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 状态切换事件回调类型，支持的事件：'stateChange'。 |
+| callback | Callback<[AVScreenCaptureStateCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445922__avscreencapturestatecode12)> | 否 | 状态切换事件回调方法，AVScreenCaptureStateCode表示切换到的状态，不填此参数则会取消最后一次订阅事件。 |
 
 **示例：**
 
@@ -419,7 +484,10 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **参数：**
 
-参数名类型必填说明typestring是状态切换事件回调类型，支持的事件：'error'。callback[ErrorCallback](../../modules/ohos/@ohos.base (公共回调信息).md#ZH-CN_TOPIC_0000002497445536__errorcallback)否录屏错误事件回调方法，不填此参数则会取消最后一次订阅事件。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 状态切换事件回调类型，支持的事件：'error'。 |
+| callback | ErrorCallback | 否 | 录屏错误事件回调方法，不填此参数则会取消最后一次订阅事件。 |
 
 **示例：**
 

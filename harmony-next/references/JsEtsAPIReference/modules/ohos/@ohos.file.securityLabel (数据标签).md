@@ -23,7 +23,6 @@ export default class EntryAbility extends UIAbility {
     let context = this.context;
     let pathDir = context.filesDir;
   }
-}
 ```
 
 使用该功能模块对文件/目录进行操作前，需要先获取其应用沙箱路径，获取方式及其接口用法请参考：[应用上下文Context-获取应用文件路径](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#获取应用文件路径)。
@@ -36,7 +35,13 @@ type DataLevel = 's0' | 's1' | 's2' | 's3' | 's4'
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
-类型说明's0'数据安全等级"S0" 。's1'数据安全等级"S1" 。's2'数据安全等级"S2" 。's3'数据安全等级"S3" 。's4'数据安全等级"S4" 。
+| 类型 | 说明 |
+| --- | --- |
+| 's0' | 数据安全等级"S0" 。 |
+| 's1' | 数据安全等级"S1" 。 |
+| 's2' | 数据安全等级"S2" 。 |
+| 's3' | 数据安全等级"S3" 。 |
+| 's4' | 数据安全等级"S4" 。 |
 
 数据安全等级详细说明请见[数据安全标签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/access-control-by-device-and-data-level#数据安全标签)。
 
@@ -50,17 +55,31 @@ setSecurityLabel(path:string, type:DataLevel):Promise<void>
 
 **参数：**
 
-参数名类型必填说明pathstring是文件路径。type[DataLevel](#ZH-CN_TOPIC_0000002529285249__datalevel)是数据安全等级，只支持"s0","s1","s2","s3","s4"。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 文件路径。 |
+| type | DataLevel | 是 | 数据安全等级，只支持"s0","s1","s2","s3","s4"。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise实例，用于异步获取结果。本调用将返回空值。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise实例，用于异步获取结果。本调用将返回空值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[基础文件IO错误码](../../errors/文件管理错误码.md#ZH-CN_TOPIC_0000002529445241__基础文件io错误码)。
+以下错误码的详细介绍请参见[基础文件IO错误码](文件管理错误码.md#ZH-CN_TOPIC_0000002522241236__基础文件io错误码)。
 
-错误码ID错误信息13900001Operation not permitted13900007Arg list too long13900015File exists13900020Invalid argument13900025No space left on device13900037No data available13900041Quota exceeded13900042Unknown error
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900001 | Operation not permitted |
+| 13900007 | Arg list too long |
+| 13900015 | File exists |
+| 13900020 | Invalid argument |
+| 13900025 | No space left on device |
+| 13900037 | No data available |
+| 13900041 | Quota exceeded |
+| 13900042 | Unknown error |
 
 **示例：**
 
@@ -84,13 +103,26 @@ setSecurityLabel(path:string, type:DataLevel, callback: AsyncCallback<void>):voi
 
 **参数：**
 
-参数名类型必填说明pathstring是文件路径。type[DataLevel](#ZH-CN_TOPIC_0000002529285249__datalevel)是数据安全等级，只支持"s0","s1","s2","s3","s4"。callbackAsyncCallback<void>是设置数据安全等级之后的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 文件路径。 |
+| type | DataLevel | 是 | 数据安全等级，只支持"s0","s1","s2","s3","s4"。 |
+| callback | AsyncCallback<void> | 是 | 设置数据安全等级之后的回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[基础文件IO错误码](../../errors/文件管理错误码.md#ZH-CN_TOPIC_0000002529445241__基础文件io错误码)。
+以下错误码的详细介绍请参见[基础文件IO错误码](文件管理错误码.md#ZH-CN_TOPIC_0000002522241236__基础文件io错误码)。
 
-错误码ID错误信息13900001Operation not permitted13900007Arg list too long13900015File exists13900020Invalid argument13900025No space left on device13900037No data available13900041Quota exceeded13900042Unknown error
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900001 | Operation not permitted |
+| 13900007 | Arg list too long |
+| 13900015 | File exists |
+| 13900020 | Invalid argument |
+| 13900025 | No space left on device |
+| 13900037 | No data available |
+| 13900041 | Quota exceeded |
+| 13900042 | Unknown error |
 
 **示例：**
 
@@ -116,13 +148,25 @@ setSecurityLabelSync(path:string, type:DataLevel):void
 
 **参数：**
 
-参数名类型必填说明pathstring是文件路径。type[DataLevel](#ZH-CN_TOPIC_0000002529285249__datalevel)是数据安全等级，只支持"s0","s1","s2","s3","s4"。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 文件路径。 |
+| type | DataLevel | 是 | 数据安全等级，只支持"s0","s1","s2","s3","s4"。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[基础文件IO错误码](../../errors/文件管理错误码.md#ZH-CN_TOPIC_0000002529445241__基础文件io错误码)。
+以下错误码的详细介绍请参见[基础文件IO错误码](文件管理错误码.md#ZH-CN_TOPIC_0000002522241236__基础文件io错误码)。
 
-错误码ID错误信息13900001Operation not permitted13900007Arg list too long13900015File exists13900020Invalid argument13900025No space left on device13900037No data available13900041Quota exceeded13900042Unknown error
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900001 | Operation not permitted |
+| 13900007 | Arg list too long |
+| 13900015 | File exists |
+| 13900020 | Invalid argument |
+| 13900025 | No space left on device |
+| 13900037 | No data available |
+| 13900041 | Quota exceeded |
+| 13900042 | Unknown error |
 
 **示例：**
 
@@ -141,17 +185,30 @@ getSecurityLabel(path:string):Promise<string>
 
 **参数：**
 
-参数名类型必填说明pathstring是文件路径。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 文件路径。 |
 
 **返回值：**
 
-类型说明Promise<string>返回数据安全等级。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | 返回数据安全等级。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[基础文件IO错误码](../../errors/文件管理错误码.md#ZH-CN_TOPIC_0000002529445241__基础文件io错误码)。
+以下错误码的详细介绍请参见[基础文件IO错误码](文件管理错误码.md#ZH-CN_TOPIC_0000002522241236__基础文件io错误码)。
 
-错误码ID错误信息13900001Operation not permitted13900007Arg list too long13900015File exists13900020Invalid argument13900025No space left on device13900037No data available13900041Quota exceeded13900042Unknown error
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900001 | Operation not permitted |
+| 13900007 | Arg list too long |
+| 13900015 | File exists |
+| 13900020 | Invalid argument |
+| 13900025 | No space left on device |
+| 13900037 | No data available |
+| 13900041 | Quota exceeded |
+| 13900042 | Unknown error |
 
 **示例：**
 
@@ -175,13 +232,25 @@ getSecurityLabel(path:string, callback:AsyncCallback<string>): void
 
 **参数：**
 
-参数名类型必填说明pathstring是文件路径。callbackAsyncCallback<string>是异步获取数据安全等级之后的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 文件路径。 |
+| callback | AsyncCallback<string> | 是 | 异步获取数据安全等级之后的回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[基础文件IO错误码](../../errors/文件管理错误码.md#ZH-CN_TOPIC_0000002529445241__基础文件io错误码)。
+以下错误码的详细介绍请参见[基础文件IO错误码](文件管理错误码.md#ZH-CN_TOPIC_0000002522241236__基础文件io错误码)。
 
-错误码ID错误信息13900001Operation not permitted13900007Arg list too long13900015File exists13900020Invalid argument13900025No space left on device13900037No data available13900041Quota exceeded13900042Unknown error
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900001 | Operation not permitted |
+| 13900007 | Arg list too long |
+| 13900015 | File exists |
+| 13900020 | Invalid argument |
+| 13900025 | No space left on device |
+| 13900037 | No data available |
+| 13900041 | Quota exceeded |
+| 13900042 | Unknown error |
 
 **示例：**
 
@@ -207,17 +276,30 @@ getSecurityLabelSync(path:string):string
 
 **参数：**
 
-参数名类型必填说明pathstring是文件路径。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 文件路径。 |
 
 **返回值：**
 
-类型说明string返回数据安全等级。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回数据安全等级。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[基础文件IO错误码](../../errors/文件管理错误码.md#ZH-CN_TOPIC_0000002529445241__基础文件io错误码)。
+以下错误码的详细介绍请参见[基础文件IO错误码](文件管理错误码.md#ZH-CN_TOPIC_0000002522241236__基础文件io错误码)。
 
-错误码ID错误信息13900001Operation not permitted13900007Arg list too long13900015File exists13900020Invalid argument13900025No space left on device13900037No data available13900041Quota exceeded13900042Unknown error
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900001 | Operation not permitted |
+| 13900007 | Arg list too long |
+| 13900015 | File exists |
+| 13900020 | Invalid argument |
+| 13900025 | No space left on device |
+| 13900037 | No data available |
+| 13900041 | Quota exceeded |
+| 13900042 | Unknown error |
 
 **示例：**
 

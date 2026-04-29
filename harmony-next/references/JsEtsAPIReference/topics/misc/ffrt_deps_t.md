@@ -12,10 +12,13 @@ typedef struct {...} ffrt_deps_t
 
 **相关模块：**[FFRT](FFRT.md)
 
-**所在头文件：**[type_def.h](../../capi/headers/type_def.h.md)
+所在头文件： [type_def.h](type_def.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述uint32_t len依赖数量const [ffrt_dependence_t*](ffrt_dependence_t.md) items依赖数据
+| 名称 | 描述 |
+| --- | --- |
+| uint32_t len | 依赖数量 |
+| const [ffrt_dependence_t*](ffrt_dependence_t.md) items | 依赖数据 |

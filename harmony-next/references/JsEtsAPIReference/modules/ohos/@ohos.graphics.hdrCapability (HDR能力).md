@@ -18,4 +18,13 @@ HDR格式枚举。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
-名称值说明NONE0不支持HDR类型。VIDEO_HLG1支持视频的HLG格式。VIDEO_HDR102支持视频的HDR10格式。VIDEO_HDR_VIVID3支持视频的HDR_VIVID格式。IMAGE_HDR_VIVID_DUAL4支持图片的HDR_VIVID格式，以dual JPEG格式存储。IMAGE_HDR_VIVID_SINGLE5支持图片的HDR_VIVID格式，以single HEIF格式存储。IMAGE_HDR_ISO_DUAL6支持图片的HDR_ISO格式，以dual JPEG格式存储。IMAGE_HDR_ISO_SINGLE7支持图片的HDR_ISO格式，以single HEIF格式存储。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NONE | 0 | 不支持HDR类型。 |
+| VIDEO_HLG | 1 | 支持视频的HLG格式。 |
+| VIDEO_HDR10 | 2 | 支持视频的HDR10格式。 |
+| VIDEO_HDR_VIVID | 3 | 支持视频的HDR_VIVID格式。 |
+| IMAGE_HDR_VIVID_DUAL | 4 | 支持图片的HDR_VIVID格式，以dual JPEG格式存储。 |
+| IMAGE_HDR_VIVID_SINGLE | 5 | 支持图片的HDR_VIVID格式，以single HEIF格式存储。 |
+| IMAGE_HDR_ISO_DUAL | 6 | 支持图片的HDR_ISO格式，以dual JPEG格式存储。 |
+| IMAGE_HDR_ISO_SINGLE | 7 | 支持图片的HDR_ISO格式，以single HEIF格式存储。 |

@@ -24,7 +24,8 @@ onConfigurationUpdate(newConfig: Configuration): void
 
 当系统环境变量发生变化时，系统会触发该回调。开发者可以重写该回调实现对系统环境变量变化时的响应，例如当系统语言类型发生变化时，应用可以在回调中进行定制化的处理等。
 
-该回调方法在实际触发时存在一定限制。例如如果开发者通过[setLanguage](../../topics/graphics/ApplicationContext (应用上下文).md#ZH-CN_TOPIC_0000002529284613__applicationcontextsetlanguage11)接口设置应用的语言，即便系统语言发生变化，系统也不再触发onConfigurationUpdate回调。详见[使用场景](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/subscribe-system-environment-variable-changes#使用场景)。
+
+该回调方法在实际触发时存在一定限制。例如如果开发者通过[setLanguage](ApplicationContext (应用上下文).md#ZH-CN_TOPIC_0000002553360493__applicationcontextsetlanguage11)接口设置应用的语言，即便系统语言发生变化，系统也不再触发onConfigurationUpdate回调。详见[使用场景](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/subscribe-system-environment-variable-changes#使用场景)。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -32,7 +33,9 @@ onConfigurationUpdate(newConfig: Configuration): void
 
 **参数：**
 
-参数名类型必填说明newConfig[Configuration](@ohos.app.ability.Configuration (环境变量).md)是表示更新后的配置信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| newConfig | Configuration | 是 | 表示更新后的配置信息。 |
 
 **示例：**
 
@@ -44,7 +47,6 @@ class MyUIAbility extends UIAbility {
   onConfigurationUpdate(config: Configuration) {
     console.info(`onConfigurationUpdate, config: ${JSON.stringify(config)}`);
   }
-}
 ```
 
 #### Ability.onMemoryLevel
@@ -53,29 +55,18 @@ onMemoryLevel(level: AbilityConstant.MemoryLevel): void
 
 当整机可用内存变化到指定程度时，系统会触发该回调。开发者可以重写该回调实现对内存级别变化的响应，例如释放缓存数据等。
 
+
+onMemoryLevel回调运行在当前进程的主线程中，如果在该回调中做耗时的UI组件释放，会阻塞主线程任务，因此不建议在该回调中释放UI组件。
+
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.AbilityCore
 
 **参数：**
 
-参数名类型必填说明level[AbilityConstant.MemoryLevel](@ohos.app.ability.AbilityConstant (Ability相关常量).md#ZH-CN_TOPIC_0000002497604576__memorylevel)是
-
-整机可用内存变化到的级别。
-
-**说明：**
-
-不同产品的触发条件可能存在差异。以12G内存的标准设备为例：
-
-- 当整机可用内存下降至1700M~
-
-1800M时，会触发MEMORY_LEVEL_MODERATE类型(整机可用内存适中)的onMemoryLevel回调。
-
-- 当整机可用内存下降至1600M
-
- 1700M时，会触发MEMORY_LEVEL_LOW类型(整机可用内存低)的onMemoryLevel回调。
-
-- 当整机可用内存下降至1600M以下时，会触发MEMORY_LEVEL_CRITICAL类型(整机可用内存极低)的onMemoryLevel回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| level | AbilityConstant.MemoryLevel | 是 | 整机可用内存变化到的级别。 说明： 不同产品的触发条件可能存在差异。以12G内存的标准设备为例： - 当整机可用内存下降至1700MB~ 1800MB时，会触发MEMORY_LEVEL_MODERATE类型(整机可用内存适中)的onMemoryLevel回调。 - 当整机可用内存下降至1600MB 1700MB时，会触发MEMORY_LEVEL_LOW类型(整机可用内存低)的onMemoryLevel回调。  - 当整机可用内存下降至1600MB以下时，会触发MEMORY_LEVEL_CRITICAL类型(整机可用内存极低)的onMemoryLevel回调。 |
 
 **示例：**
 
@@ -87,5 +78,4 @@ class MyUIAbility extends UIAbility {
   onMemoryLevel(level: AbilityConstant.MemoryLevel) {
     console.info(`onMemoryLevel, level: ${JSON.stringify(level)}`);
   }
-}
 ```

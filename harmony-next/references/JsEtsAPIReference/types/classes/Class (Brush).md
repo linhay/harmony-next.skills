@@ -46,13 +46,17 @@ constructor(brush: Brush)
 
 **参数：**
 
-参数名类型必填说明brush[Brush](Class (Brush).md)是待复制的画刷对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| brush | Brush | 是 | 待复制的画刷对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -75,13 +79,17 @@ setColor(color: common2D.Color) : void
 
 **参数：**
 
-参数名类型必填说明color[common2D.Color](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__color)是ARGB格式的颜色，每个颜色通道的值是0到255之间的整数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| color | common2D.Color | 是 | ARGB格式的颜色，每个颜色通道的值是0到255之间的整数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
 
 **示例：**
 
@@ -97,19 +105,26 @@ brush.setColor(color);
 
 setColor(alpha: number, red: number, green: number, blue: number): void
 
-设置画刷的颜色。性能优于[setColor](#ZH-CN_TOPIC_0000002529445939__setcolor)接口，推荐使用本接口。
+设置画刷的颜色。性能优于[setColor](#ZH-CN_TOPIC_0000002522082128__setcolor)接口，推荐使用本接口。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
-参数名类型必填说明alphanumber是ARGB格式颜色的透明度通道值，该参数是0到255之间的整数，传入范围内的浮点数会向下取整。rednumber是ARGB格式颜色的红色通道值，该参数是0到255之间的整数，传入范围内的浮点数会向下取整。greennumber是ARGB格式颜色的绿色通道值，该参数是0到255之间的整数，传入范围内的浮点数会向下取整。bluenumber是ARGB格式颜色的蓝色通道值，该参数是0到255之间的整数，传入范围内的浮点数会向下取整。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| alpha | number | 是 | ARGB格式颜色的透明度通道值，该参数是0到255之间的整数，传入范围内的浮点数会向下取整。 |
+| red | number | 是 | ARGB格式颜色的红色通道值，该参数是0到255之间的整数，传入范围内的浮点数会向下取整。 |
+| green | number | 是 | ARGB格式颜色的绿色通道值，该参数是0到255之间的整数，传入范围内的浮点数会向下取整。 |
+| blue | number | 是 | ARGB格式颜色的蓝色通道值，该参数是0到255之间的整数，传入范围内的浮点数会向下取整。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
 
 **示例：**
 
@@ -130,13 +145,17 @@ setColor(color: number) : void
 
 **参数：**
 
-参数名类型必填说明colornumber是16进制ARGB格式的颜色。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| color | number | 是 | 16进制ARGB格式的颜色。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
 
 **示例：**
 
@@ -151,13 +170,16 @@ brush.setColor(0xffff0000);
 
 setColor4f(color4f: common2D.Color4f, colorSpace: colorSpaceManager.ColorSpaceManager | null): void
 
-设置画刷的颜色以及标准色域，与[setColor](#ZH-CN_TOPIC_0000002529445939__setcolor)区别在于可以单独设置色域，适用于需要单独设置色域的场景。
+设置画刷的颜色以及标准色域，与[setColor](#ZH-CN_TOPIC_0000002522082128__setcolor)区别在于可以单独设置色域，适用于需要单独设置色域的场景。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
-参数名类型必填说明color4f[common2D.Color4f](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__color4f20)是ARGB格式的颜色，每个颜色通道的值是0.0-1.0之间的浮点数，大于1.0时，取1.0，小于0.0时，取0.0。colorSpace[colorSpaceManager.ColorSpaceManager](../../modules/ohos/@ohos.graphics.colorSpaceManager (色彩管理).md#ZH-CN_TOPIC_0000002497445992__colorspacemanager) | null是标准色域对象，null表示使用SRGB色域。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| color4f | common2D.Color4f | 是 | ARGB格式的颜色，每个颜色通道的值是0.0-1.0之间的浮点数，大于1.0时，取1.0，小于0.0时，取0.0。 |
+| colorSpace | colorSpaceManager.ColorSpaceManager | null | 是 | 标准色域对象，null表示使用SRGB色域。 |
 
 **示例：**
 
@@ -180,7 +202,9 @@ getColor(): common2D.Color
 
 **返回值：**
 
-类型说明common2D.Color返回画刷的颜色。
+| 类型 | 说明 |
+| --- | --- |
+| common2D.Color | 返回画刷的颜色。 |
 
 **示例：**
 
@@ -197,13 +221,15 @@ let colorGet = brush.getColor();
 
 getColor4f(): common2D.Color4f
 
-获取画刷的颜色，与[getColor](#ZH-CN_TOPIC_0000002529445939__getcolor12)的区别是返回值类型为浮点数，适用于需要浮点数类型的场景。
+获取画刷的颜色，与[getColor](#ZH-CN_TOPIC_0000002522082128__getcolor12)的区别是返回值类型为浮点数，适用于需要浮点数类型的场景。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
 
-类型说明[common2D.Color4f](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__color4f20)返回画刷的颜色。
+| 类型 | 说明 |
+| --- | --- |
+| common2D.Color4f | 返回画刷的颜色。 |
 
 **示例：**
 
@@ -227,7 +253,9 @@ getHexColor(): number
 
 **返回值：**
 
-类型说明number返回画刷的颜色，以16进制ARGB格式的32位无符号整数表示。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回画刷的颜色，以16进制ARGB格式的32位无符号整数表示。 |
 
 **示例：**
 
@@ -251,13 +279,17 @@ setAntiAlias(aa: boolean) : void
 
 **参数：**
 
-参数名类型必填说明aaboolean是表示是否开启抗锯齿，true表示开启，false表示关闭。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| aa | boolean | 是 | 表示是否开启抗锯齿，true表示开启，false表示关闭。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -278,7 +310,9 @@ isAntiAlias(): boolean
 
 **返回值：**
 
-类型说明boolean返回画刷是否开启抗锯齿属性，true表示开启，false表示关闭。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回画刷是否开启抗锯齿属性，true表示开启，false表示关闭。 |
 
 **示例：**
 
@@ -299,13 +333,17 @@ setAlpha(alpha: number) : void
 
 **参数：**
 
-参数名类型必填说明alphanumber是用于表示透明度的[0, 255]区间内的整数值，传入浮点类型时向下取整。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| alpha | number | 是 | 用于表示透明度的[0, 255]区间内的整数值，传入浮点类型时向下取整。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
 
 **示例：**
 
@@ -326,7 +364,9 @@ getAlpha(): number
 
 **返回值：**
 
-类型说明number返回画刷的透明度，该返回值为0到255之间的整数。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回画刷的透明度，该返回值为0到255之间的整数。 |
 
 **示例：**
 
@@ -339,7 +379,7 @@ let alpha = brush.getAlpha();
 
 #### setColorFilter
 
-setColorFilter(filter: ColorFilter) : void
+setColorFilter(filter: ColorFilter | null) : void
 
 给画刷添加额外的颜色滤波器。
 
@@ -347,13 +387,17 @@ setColorFilter(filter: ColorFilter) : void
 
 **参数：**
 
-参数名类型必填说明filter[ColorFilter](Class (ColorFilter).md)是颜色滤波器。null表示清空颜色滤波器。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| filter | ColorFilter | null | 是 | 颜色滤波器。null表示清空颜色滤波器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -367,7 +411,7 @@ brush.setColorFilter(colorFilter);
 
 #### setMaskFilter12+
 
-setMaskFilter(filter: MaskFilter): void
+setMaskFilter(filter: MaskFilter | null): void
 
 给画刷添加额外的蒙版滤镜。
 
@@ -375,13 +419,17 @@ setMaskFilter(filter: MaskFilter): void
 
 **参数：**
 
-参数名类型必填说明filter[MaskFilter](Class (MaskFilter).md)是蒙版滤镜。null表示清空蒙版滤镜。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| filter | MaskFilter | null | 是 | 蒙版滤镜。null表示清空蒙版滤镜。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -396,12 +444,11 @@ class DrawingRenderNode extends RenderNode {
     let maskFilter = drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.OUTER, 10);
     brush.setMaskFilter(maskFilter);
   }
-}
 ```
 
 #### setShaderEffect12+
 
-setShaderEffect(shaderEffect: ShaderEffect): void
+setShaderEffect(shaderEffect: ShaderEffect | null): void
 
 设置画刷着色器效果。
 
@@ -409,13 +456,17 @@ setShaderEffect(shaderEffect: ShaderEffect): void
 
 **参数：**
 
-参数名类型必填说明shaderEffect[ShaderEffect](Class (ShaderEffect).md)是着色器对象。null表示清空着色器效果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| shaderEffect | ShaderEffect | null | 是 | 着色器对象。null表示清空着色器效果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -429,7 +480,7 @@ brush.setShaderEffect(shaderEffect);
 
 #### setShadowLayer12+
 
-setShadowLayer(shadowLayer: ShadowLayer): void
+setShadowLayer(shadowLayer: ShadowLayer | null): void
 
 设置画刷阴影层效果。当前仅在绘制文字时生效。
 
@@ -437,13 +488,17 @@ setShadowLayer(shadowLayer: ShadowLayer): void
 
 **参数：**
 
-参数名类型必填说明shadowLayer[ShadowLayer](Class (ShadowLayer).md)是阴影层对象。null表示清空阴影层效果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| shadowLayer | ShadowLayer | null | 是 | 阴影层对象。null表示清空阴影层效果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -486,12 +541,11 @@ class DrawingRenderNode extends RenderNode {
     canvas.drawTextBlob(textBlob, 300, 200);
     canvas.detachBrush();
   }
-}
 ```
 
-#### setBlendMode
+#### set[BlendMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__blendmode)
 
-setBlendMode(mode: BlendMode) : void
+set[BlendMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__blendmode)(mode: BlendMode) : void
 
 设置画刷的混合模式。未调用此接口设置时，系统默认的混合模式为SRC_OVER。
 
@@ -499,13 +553,17 @@ setBlendMode(mode: BlendMode) : void
 
 **参数：**
 
-参数名类型必填说明mode[BlendMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__blendmode)是颜色的混合模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mode | [BlendMode](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__blendmode) | 是 | 颜色的混合模式。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
 
 **示例：**
 
@@ -526,13 +584,17 @@ setImageFilter(filter: ImageFilter | null): void
 
 **参数：**
 
-参数名类型必填说明filter[ImageFilter](Class (ImageFilter).md) | null是图像滤波器，null表示清空图像滤波器效果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| filter | ImageFilter | null | 是 | 图像滤波器，null表示清空图像滤波器效果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types. |
 
 **示例：**
 
@@ -555,7 +617,9 @@ getColorFilter(): ColorFilter
 
 **返回值：**
 
-类型说明[ColorFilter](Class (ColorFilter).md)返回颜色滤波器。
+| 类型 | 说明 |
+| --- | --- |
+| ColorFilter | 返回颜色滤波器。 |
 
 **示例：**
 

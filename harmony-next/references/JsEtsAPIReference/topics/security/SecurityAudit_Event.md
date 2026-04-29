@@ -8,7 +8,7 @@
 
 **相关模块：**[SecurityAudit](SecurityAudit.md)
 
-**所在头文件：**[security_audit.h](../../capi/headers/security_audit.h.md)
+**所在头文件：**[security_audit.h](../../topics/security/[security_audit.h](security_audit.h.md).md)
 
 #### 汇总
 

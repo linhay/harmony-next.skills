@@ -23,13 +23,17 @@ getZoomRatioRange(): Array<number>
 
 **返回值：**
 
-类型说明Array<number>用于获取可变焦距比范围，返回的数组包括其最小值和最大值。接口调用失败会抛出相应错误码并返回undefined，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 类型 | 说明 |
+| --- | --- |
+| Array<number> | 用于获取可变焦距比范围，返回的数组包括其最小值和最大值。接口调用失败会抛出相应错误码并返回undefined，错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码]([Camera错误码](../../errors/Camera错误码.md).md)。
 
-错误码ID错误信息7400103Session not config, only throw in session usage.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config, only throw in session usage. |
 
 **示例：**
 

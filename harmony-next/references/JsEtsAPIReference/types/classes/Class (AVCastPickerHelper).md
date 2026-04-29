@@ -1,9 +1,11 @@
 # Class (AVCastPickerHelper)
 
-- 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
-- 本Class首批接口从API version 14开始支持。
-
 投播半模态对象，可拉起半模态窗口，选择投播设备。在使用前，需要创建AVCastPickerHelper实例。
+
+
+- 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+
+- 本Class首批接口从API version 14开始支持。
 
 #### 导入模块
 
@@ -15,7 +17,7 @@ import { avSession } from '@kit.AVSessionKit';
 
 constructor(context: Context)
 
-创建AVCastPickerHelper对象，获取context参考[getHostContext](Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__gethostcontext12)。
+创建AVCastPickerHelper对象，获取context参考[getHostContext](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__gethostcontext12)。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
@@ -23,13 +25,18 @@ constructor(context: Context)
 
 **参数：**
 
-参数名类型必填说明contextContext是应用上下文（仅支持[UIAbilityContext](../../topics/graphics/UIAbilityContext.md)）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 应用上下文（仅支持[UIAbilityContext](../../topics/misc/UIAbilityContext.md)）。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码]([媒体会话管理错误码](../../errors/媒体会话管理错误码.md).md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -56,7 +63,6 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```
 
 #### select14+
@@ -71,17 +77,23 @@ select(options?: AVCastPickerOptions): Promise<void>
 
 **参数：**
 
-参数名类型必填说明options[AVCastPickerOptions](../interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529285755__avcastpickeroptions14)否AVCastPicker选择选项。无此参数时，以AVCastPickerOptions默认值拉起。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | AVCastPickerOptions | 否 | AVCastPicker选择选项。无此参数时，以AVCastPickerOptions默认值拉起。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。当命令发送成功，无返回结果，否则返回错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。当命令发送成功，无返回结果，否则返回错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 
 **示例：**
 
@@ -90,15 +102,22 @@ import { common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { avSession } from '@kit.AVSessionKit';
 
-async function avCastPicker(context: common.Context) {
-  let avCastPickerOptions : avSession.AVCastPickerOptions = {
-    sessionType : 'video',
+class MyPage {
+  private avCastPicker: avSession.AVCastPickerHelper;
+
+  constructor(context: common.Context) {
+    this.avCastPicker = new avSession.AVCastPickerHelper(context);
   }
-  let avCastPicker = new avSession.AVCastPickerHelper(context);
-  avCastPicker.select(avCastPickerOptions).then(() => {
+
+  async selectCastDevice() {
+    const avCastPickerOptions: avSession.AVCastPickerOptions = {
+    sessionType : 'video',
+    };
+
+    this.avCastPicker.select(avCastPickerOptions).then(() => {
     console.info('select successfully');
   }).catch((err: BusinessError) => {
-    console.error(`AVCastPicker.select failed with err: ${err.code}, ${err.message}`);
+      console.error('AVCastPicker.select failed with err: ${err.code}, ${err.message}');
   });
 }
 ```
@@ -115,7 +134,9 @@ resetCommunicationDevice(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **示例：**
 
@@ -145,13 +166,19 @@ on(type: 'pickerStateChange', callback: Callback<AVCastPickerState>) : void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持事件'pickerStateChange'：当半模态窗口变化时，触发该事件。callbackCallback<[AVCastPickerState](../../modules/ohos/@ohos.multimedia.avCastPickerParam (投播组件参数).md#ZH-CN_TOPIC_0000002497445786__avcastpickerstate)>是回调函数，参数state是变化后的半模态窗口状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持事件'pickerStateChange'：当半模态窗口变化时，触发该事件。 |
+| callback | Callback<AVCastPickerState> | 是 | 回调函数，参数state是变化后的半模态窗口状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 
@@ -180,19 +207,19 @@ off(type: 'pickerStateChange', callback?: Callback<AVCastPickerState>) : void
 
 **参数：**
 
-参数名类型必填说明typestring是取消对应的监听事件，支持事件'pickerStateChange'。callbackCallback<[AVCastPickerState](../../modules/ohos/@ohos.multimedia.avCastPickerParam (投播组件参数).md#ZH-CN_TOPIC_0000002497445786__avcastpickerstate)>否
-
-回调函数，参数state是变化后的半模态窗口状态。
-
-当监听事件取消成功，err为undefined，否则返回错误对象。
-
-该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消对应的监听事件，支持事件'pickerStateChange'。 |
+| callback | Callback<AVCastPickerState> | 否 | 回调函数，参数state是变化后的半模态窗口状态。 当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[媒体会话管理错误码](../../errors/媒体会话管理错误码.md)。
+以下错误码的详细介绍请参见[媒体会话管理错误码](媒体会话管理错误码.md)。
 
-错误码ID错误信息401parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.6600101Session service exception.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter check failed. 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 6600101 | Session service exception. |
 
 **示例：**
 

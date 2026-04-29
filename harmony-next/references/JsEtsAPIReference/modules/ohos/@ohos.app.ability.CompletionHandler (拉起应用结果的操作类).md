@@ -1,6 +1,7 @@
 # @ohos.app.ability.CompletionHandler (拉起应用结果的操作类)
 
-CompletionHandler作为[StartOptions](@ohos.app.ability.StartOptions (startAbility的可选参数).md#ZH-CN_TOPIC_0000002529284585__startoptions)和[OpenLinkOptions](@ohos.app.ability.OpenLinkOptions (openLink的可选参数).md#ZH-CN_TOPIC_0000002497604592__openlinkoptions)的可选参数，用于处理拉起应用请求的结果。
+CompletionHandler作为[StartOptions](@ohos.app.ability.StartOptions (startAbility的可选参数).md#ZH-CN_TOPIC_0000002553360463__startoptions)和[OpenLinkOptions](@ohos.app.ability.OpenLinkOptions ([openLink](../../topics/misc/UIAbilityContext.md#ZH-CN_TOPIC_0000002497604628__openlink12)的可选参数).md#ZH-CN_TOPIC_0000002553200503__openlinkoptions)的可选参数，用于处理拉起应用请求的结果。
+
 
 -
 
@@ -16,15 +17,15 @@ CompletionHandler作为[StartOptions](@ohos.app.ability.StartOptions (startAbili
 
 -
 
-[startAbility](../../topics/graphics/UIAbilityContext.md#ZH-CN_TOPIC_0000002497604628__startability-2)
+[startAbility](UIAbilityContext.md#ZH-CN_TOPIC_0000002553200541__startability-2)
 
 -
 
-[startAbilityForResult](../../topics/graphics/UIAbilityContext.md#ZH-CN_TOPIC_0000002497604628__startabilityforresult-2)
+[startAbilityForResult](UIAbilityContext.md#ZH-CN_TOPIC_0000002553200541__startabilityforresult-2)
 
 -
 
-[openLink](../../topics/graphics/UIAbilityContext.md#ZH-CN_TOPIC_0000002497604628__openlink12)
+[openLink](UIAbilityContext.md#ZH-CN_TOPIC_0000002553200541__openlink12)
 
 #### 导入模块
 
@@ -34,11 +35,11 @@ import { CompletionHandler } from '@kit.AbilityKit';
 
 #### CompletionHandler
 
-CompletionHandler提供了[onRequestSuccess](#ZH-CN_TOPIC_0000002529284577__onrequestsuccess)和[onRequestFailure](#ZH-CN_TOPIC_0000002529284577__onrequestfailure)两个回调函数，分别用来处理拉起应用成功和失败时的结果。
+CompletionHandler提供了[onRequestSuccess](#ZH-CN_TOPIC_0000002522080532__onrequestsuccess)和[onRequestFailure](#ZH-CN_TOPIC_0000002522080532__onrequestfailure)两个回调函数，分别用来处理拉起应用成功和失败时的结果。
 
 #### onRequestSuccess
 
-onRequestSuccess(elementName: ElementName, message: string): void
+onRequestSuccess(elementName: [ElementName](../../topics/misc/ElementName.md), message: string): void
 
 拉起应用成功时的回调函数。
 
@@ -48,23 +49,18 @@ onRequestSuccess(elementName: ElementName, message: string): void
 
 **参数：**
 
-参数名类型必填说明elementName[ElementName](../../topics/misc/ElementName.md)是ElementName信息用于标识被拉起应用。通常，ElementName仅包含abilityName和bundleName。moduleName和deviceId信息是否存在取决于调用方是否传入。shortName和uri为空。messagestring是
-
-成功拉起应用时的信息。该信息采用JSON格式，样式如下：
-
-{
-
- "errMsg": "Succeeded."
-
-}
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| elementName | [ElementName](../../topics/misc/ElementName.md) | 是 | ElementName信息用于标识被拉起应用。通常，ElementName仅包含abilityName和bundleName。moduleName和deviceId信息是否存在取决于调用方是否传入。shortName和uri为空。 |
+| message | string | 是 | 成功拉起应用时的信息。该信息采用JSON格式，样式如下： {  "errMsg": "Succeeded." } |
 
 **示例：**
 
-参见[CompletionHandler使用](#ZH-CN_TOPIC_0000002529284577__completionhandler使用)。
+参见[CompletionHandler使用](#ZH-CN_TOPIC_0000002522080532__completionhandler使用)。
 
 #### onRequestFailure
 
-onRequestFailure(elementName: ElementName, message: string): void
+onRequestFailure(elementName: [ElementName](../../topics/misc/ElementName.md), message: string): void
 
 拉起应用失败时的回调函数。
 
@@ -74,39 +70,14 @@ onRequestFailure(elementName: ElementName, message: string): void
 
 **参数：**
 
-参数名类型必填说明elementName[ElementName](../../topics/misc/ElementName.md)是
-
-ElementName信息用于标识被拉起应用。
-
-- 通常，ElementName仅包含abilityName和bundleName。moduleName和deviceId信息是否存在取决于调用方是否传入。shortName和uri为空。
-
-- 隐式启动失败时，无法获取ElementName信息。
-
-messagestring是
-
-拉起应用失败时的信息。该信息采用JSON格式，样式如下：
-
-{
-
- "errMsg": "xxx"
-
-}
-
-其中，"xxx"的取值说明如下：
-
-Failed to call <api-name>：表示调用接口出错。其中，<api-name>为具体的接口名，比如startAbility。
-
-User refused redirection：表示用户关闭了应用跳转弹框。
-
-User closed the implicit startup picker：表示用户关闭了隐式启动时的应用选择弹框。
-
-User closed the app clone picker：表示用户关闭了分身应用选择弹框。
-
-Free installation failed：表示免安装失败。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| elementName | [ElementName](../../topics/misc/ElementName.md) | 是 | ElementName信息用于标识被拉起应用。 - 通常，ElementName仅包含abilityName和bundleName。moduleName和deviceId信息是否存在取决于调用方是否传入。shortName和uri为空。 - 隐式启动失败时，无法获取ElementName信息。 |
+| message | string | 是 | 拉起应用失败时的信息。该信息采用JSON格式，样式如下： {  "errMsg": "xxx" } 其中，"xxx"的取值说明如下： Failed to call <api-name>：表示调用接口出错。其中，<api-name>为具体的接口名，比如[startAbility](../../topics/misc/UIAbilityContext.md#ZH-CN_TOPIC_0000002497604628__startability-2)。 User refused redirection：表示用户关闭了应用跳转弹框。 User closed the implicit startup picker：表示用户关闭了隐式启动时的应用选择弹框。 User closed the app clone picker：表示用户关闭了分身应用选择弹框。 Free installation failed：表示免安装失败。 |
 
 **示例：**
 
-参见[CompletionHandler使用](#ZH-CN_TOPIC_0000002529284577__completionhandler使用)。
+参见[CompletionHandler使用](#ZH-CN_TOPIC_0000002522080532__completionhandler使用)。
 
 #### CompletionHandler使用
 
@@ -151,6 +122,4 @@ export default class EntryAbility extends UIAbility {
       let message = (err as BusinessError).message;
       console.error(`startAbility failed, code is ${code}, message is ${message}`);
     }
-  }
-}
 ```

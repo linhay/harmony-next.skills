@@ -20,11 +20,16 @@ createRdbPredicates(name: string, dataAbilityPredicates: DataAbilityPredicates):
 
 **参数：**
 
-参数名类型必填说明namestring是数据库表中的表名。dataAbilityPredicates[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)是DataAbility谓词。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | 数据库表中的表名。 |
+| dataAbilityPredicates | DataAbilityPredicates | 是 | DataAbility谓词。 |
 
 **返回值：**
 
-类型说明rdb.[RdbPredicates](@ohos.data.rdb (关系型数据库).md#ZH-CN_TOPIC_0000002529444657__rdbpredicates)返回RdbPredicates对象。
+| 类型 | 说明 |
+| --- | --- |
+| rdb.RdbPredicates | 返回RdbPredicates对象。 |
 
 **示例：**
 
@@ -57,11 +62,16 @@ equalTo(field: string, value: ValueType): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。value[ValueType](#ZH-CN_TOPIC_0000002497444700__valuetype)是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | ValueType | 是 | 指示要与谓词匹配的值。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -81,11 +91,16 @@ notEqualTo(field: string, value: ValueType): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。value[ValueType](#ZH-CN_TOPIC_0000002497444700__valuetype)是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | ValueType | 是 | 指示要与谓词匹配的值。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -103,7 +118,9 @@ beginWrap(): DataAbilityPredicates
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回带有左括号的DataAbility谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回带有左括号的DataAbility谓词。 |
 
 **示例：**
 
@@ -126,7 +143,9 @@ endWrap(): DataAbilityPredicates
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回带有右括号的DataAbility谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回带有右括号的DataAbility谓词。 |
 
 **示例：**
 
@@ -151,7 +170,9 @@ or(): DataAbilityPredicates
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回带有或条件的DataAbility谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回带有或条件的DataAbility谓词。 |
 
 **示例：**
 
@@ -171,7 +192,9 @@ and(): DataAbilityPredicates
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回带有和条件的DataAbility谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回带有和条件的DataAbility谓词。 |
 
 **示例：**
 
@@ -191,11 +214,16 @@ contains(field: string, value: string): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。valuestring是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | string | 是 | 指示要与谓词匹配的值。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -215,11 +243,16 @@ beginsWith(field: string, value: string): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。valuestring是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | string | 是 | 指示要与谓词匹配的值。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -239,11 +272,16 @@ endsWith(field: string, value: string): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。valuestring是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | string | 是 | 指示要与谓词匹配的值。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -261,11 +299,15 @@ isNull(field: string): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -283,11 +325,15 @@ isNotNull(field: string): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -307,11 +353,16 @@ like(field: string, value: string): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。valuestring是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | string | 是 | 指示要与谓词匹配的值。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -329,11 +380,16 @@ glob(field: string, value: string): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。valuestring是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | string | 是 | 指示要与谓词匹配的值。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -357,11 +413,17 @@ between(field: string, low: ValueType, high: ValueType): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。low[ValueType](#ZH-CN_TOPIC_0000002497444700__valuetype)是指示与谓词匹配的最小值。high[ValueType](#ZH-CN_TOPIC_0000002497444700__valuetype)是指示与谓词匹配的最大值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| low | ValueType | 是 | 指示与谓词匹配的最小值。 |
+| high | ValueType | 是 | 指示与谓词匹配的最大值。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -379,11 +441,17 @@ notBetween(field: string, low: ValueType, high: ValueType): DataAbilityPredicate
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。low[ValueType](#ZH-CN_TOPIC_0000002497444700__valuetype)是指示与谓词匹配的最小值。high[ValueType](#ZH-CN_TOPIC_0000002497444700__valuetype)是指示与谓词匹配的最大值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| low | ValueType | 是 | 指示与谓词匹配的最小值。 |
+| high | ValueType | 是 | 指示与谓词匹配的最大值。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -401,11 +469,16 @@ greaterThan(field: string, value: ValueType): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。value[ValueType](#ZH-CN_TOPIC_0000002497444700__valuetype)是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | ValueType | 是 | 指示要与谓词匹配的值。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -423,11 +496,16 @@ lessThan(field: string, value: ValueType): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。value[ValueType](#ZH-CN_TOPIC_0000002497444700__valuetype)是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | ValueType | 是 | 指示要与谓词匹配的值。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -445,11 +523,16 @@ greaterThanOrEqualTo(field: string, value: ValueType): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。value[ValueType](#ZH-CN_TOPIC_0000002497444700__valuetype)是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | ValueType | 是 | 指示要与谓词匹配的值。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -467,11 +550,16 @@ lessThanOrEqualTo(field: string, value: ValueType): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。value[ValueType](#ZH-CN_TOPIC_0000002497444700__valuetype)是指示要与谓词匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | ValueType | 是 | 指示要与谓词匹配的值。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -489,11 +577,15 @@ orderByAsc(field: string): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -512,11 +604,15 @@ orderByDesc(field: string): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -535,7 +631,9 @@ distinct(): DataAbilityPredicates
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回可用于过滤重复记录的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回可用于过滤重复记录的谓词。 |
 
 **示例：**
 
@@ -553,11 +651,15 @@ limitAs(value: number): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明valuenumber是最大数据记录数，取值为正整数。传入值小于等于0时，不会限制记录数量。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 最大数据记录数，取值为正整数。传入值小于等于0时，不会限制记录数量。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回可用于设置最大数据记录数的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回可用于设置最大数据记录数的谓词。 |
 
 **示例：**
 
@@ -575,11 +677,15 @@ offsetAs(rowOffset: number): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明rowOffsetnumber是返回结果的起始位置，取值为正整数。传入值小于等于0时，查询结果将从第一个元素位置返回。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rowOffset | number | 是 | 返回结果的起始位置，取值为正整数。传入值小于等于0时，查询结果将从第一个元素位置返回。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回具有指定返回结果起始位置的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回具有指定返回结果起始位置的谓词。 |
 
 **示例：**
 
@@ -598,11 +704,15 @@ groupBy(fields: Array<string>): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldsArray<string>是指定分组依赖的列名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fields | Array<string> | 是 | 指定分组依赖的列名。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回分组查询列的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回分组查询列的谓词。 |
 
 **示例：**
 
@@ -620,11 +730,15 @@ indexedBy(field: string): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是创建的索引列名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 创建的索引列名称。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回具有指定索引列的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回具有指定索引列的谓词。 |
 
 **示例：**
 
@@ -668,7 +782,6 @@ export default class EntryAbility extends UIAbility {
 
     //  ...
   }
-}
 ```
 
 #### in
@@ -681,11 +794,16 @@ in(field: string, value: Array<ValueType>): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。valueArray<[ValueType](#ZH-CN_TOPIC_0000002497444700__valuetype)>是以ValueType类型数组形式指定的要匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | Array<ValueType> | 是 | 以ValueType类型数组形式指定的要匹配的值。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -703,11 +821,16 @@ notIn(field: string, value: Array<ValueType>): DataAbilityPredicates
 
 **参数：**
 
-参数名类型必填说明fieldstring是数据库表中的列名。valueArray<[ValueType](#ZH-CN_TOPIC_0000002497444700__valuetype)>是以ValueType类型数组形式指定的要匹配的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| field | string | 是 | 数据库表中的列名。 |
+| value | Array<ValueType> | 是 | 以ValueType类型数组形式指定的要匹配的值。 |
 
 **返回值：**
 
-类型说明[DataAbilityPredicates](#ZH-CN_TOPIC_0000002497444700__dataabilitypredicates)返回与指定字段匹配的谓词。
+| 类型 | 说明 |
+| --- | --- |
+| DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
 
 **示例：**
 
@@ -723,4 +846,8 @@ type ValueType = number | string | boolean
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
-类型说明number表示值类型为数字。string表示值类型为字符。boolean表示值类型为布尔值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 表示值类型为数字。 |
+| string | 表示值类型为字符。 |
+| boolean | 表示值类型为布尔值。 |

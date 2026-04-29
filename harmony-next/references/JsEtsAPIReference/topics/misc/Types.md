@@ -1,177 +1,384 @@
 # Types
 
-本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-此模块仅支持在ArkTS文件（文件后缀为.ets）中导入使用。
+-
 
-#### ISendable
+该组件首批接口从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
-type ISendable = lang.ISendable
+-
 
-ISendable是所有Sendable类型（除null和undefined）的父类型。自身没有任何必须的方法和属性。
+示例效果请以真机运行为准。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**WebviewController9+**
 
-**系统能力：** SystemCapability.Utils.Lang
+type WebviewController = WebviewController
 
-类型说明[lang.ISendable](../../modules/other/@arkts.lang (ArkTS语言基础能力).md#ZH-CN_TOPIC_0000002497444768__langisendable)所有Sendable类型的父类型。
+提供Web控制器的方法。
 
-#### ArrayFromMapFn18+
+系统能力： SystemCapability.Web.Webview.Core
 
-type ArrayFromMapFn<FromElementType, ToElementType> = (value: FromElementType, index: number) => ToElementType
+| 类型 | 说明 |
+| --- | --- |
+| WebviewController | 通过WebviewController可以控制Web组件各种行为。一个WebviewController对象只能控制一个Web组件，且必须在Web组件和WebviewController绑定后，才能调用WebviewController上的方法（静态方法除外）。 |
 
-ArkTS Array归约函数类型，被Array类的'from' 接口使用。
+**OnAdsBlockedCallback12+**
 
-**系统能力：** SystemCapability.Utils.Lang
+type OnAdsBlockedCallback = (details: AdsBlockedDetails) => void
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+当页面发生广告过滤时触发此回调。
+
+系统能力： SystemCapability.Web.Webview.Core
 
 **参数：**
 
-参数名类型必填说明valueFromElementType是当前正在处理的元素。indexnumber是当前遍历的ArkTS Array元素下标。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| details | AdsBlockedDetails | 是 | 发生广告拦截时，广告资源信息。 |
+
+**OnSslErrorEventCallback12+**
+
+type OnSslErrorEventCallback = (sslErrorEvent: SslErrorEvent) => void
+
+用户加载资源时发生SSL错误时触发的回调。
+
+系统能力： SystemCapability.Web.Webview.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sslErrorEvent | SslErrorEvent | 是 | 用户加载资源时发生SSL错误时触发的回调详情。 |
+
+**OnVerifyPinCallback22+**
+
+type OnVerifyPinCallback = (verifyPinEvent: VerifyPinEvent) => void
+
+需要用户进行PIN码认证时触发的回调。
+
+系统能力： SystemCapability.Web.Webview.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| verifyPinEvent | VerifyPinEvent | 是 | 需要用户进行PIN码认证时触发的回调详情。 |
+
+**OnContextMenuHideCallback11+**
+
+type OnContextMenuHideCallback = () => void
+
+上下文菜单自定义隐藏的回调。
+
+系统能力： SystemCapability.Web.Webview.Core
+
+**OnRenderProcessNotRespondingCallback12+**
+
+type OnRenderProcessNotRespondingCallback = (data : RenderProcessNotRespondingData) => void
+
+渲染进程无响应时触发的回调。
+
+系统能力： SystemCapability.Web.Webview.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | RenderProcessNotRespondingData | 是 | 渲染进程无响应的详细信息。 |
+
+**OnRenderProcessRespondingCallback12+**
+
+type OnRenderProcessRespondingCallback = () => void
+
+渲染进程由无响应状态变回正常运行状态时触发该回调。
+
+系统能力： SystemCapability.Web.Webview.Core
+
+**OnViewportFitChangedCallback12+**
+
+type OnViewportFitChangedCallback = (viewportFit: ViewportFit) => void
+
+网页meta中viewport-fit配置项更改时触发的回调。
+
+系统能力： SystemCapability.Web.Webview.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| viewportFit | ViewportFit | 是 | 网页meta中viewport-fit配置的视口类型。 |
+
+**OnNativeEmbedVisibilityChangeCallback12+**
+
+type OnNativeEmbedVisibilityChangeCallback = (nativeEmbedVisibilityInfo: NativeEmbedVisibilityInfo) => void
+
+当同层标签可见性变化时触发该回调。
+
+系统能力： SystemCapability.Web.Webview.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| nativeEmbedVisibilityInfo | NativeEmbedVisibilityInfo | 是 | 提供同层标签的可见性信息。 |
+
+**OnFullScreenEnterCallback12+**
+
+type OnFullScreenEnterCallback = (event: FullScreenEnterEvent) => void
+
+Web组件进入全屏时触发的回调。
+
+系统能力： SystemCapability.Web.Webview.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | FullScreenEnterEvent | 是 | Web组件进入全屏的回调事件详情。 |
+
+**OnFirstMeaningfulPaintCallback12+**
+
+type OnFirstMeaningfulPaintCallback = (firstMeaningfulPaint: [FirstMeaningfulPaint](Interfaces（其他）.md#ZH-CN_TOPIC_0000002522241178__firstmeaningfulpaint12)) => void
+
+网页绘制页面度量信息的回调，当网页加载完页面主要内容时会触发该回调。
+
+系统能力： SystemCapability.Web.Webview.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| firstMeaningfulPaint | FirstMeaningfulPaint | 是 | 绘制页面主要内容度量的详细信息。 |
+
+**OnLargestContentfulPaintCallback12+**
+
+type OnLargestContentfulPaintCallback = (largestContentfulPaint: [LargestContentfulPaint](Interfaces（其他）.md#ZH-CN_TOPIC_0000002522241178__largestcontentfulpaint12)) => void
+
+网页绘制页面最大内容度量信息的回调。
+
+系统能力： SystemCapability.Web.Webview.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| largestContentfulPaint | LargestContentfulPaint | 是 | 网页绘制页面最大内容度量的详细信息。 |
+
+**OnNavigationEntryCommittedCallback11+**
+
+type OnNavigationEntryCommittedCallback = (loadCommittedDetails: [LoadCommittedDetails](Interfaces（其他）.md#ZH-CN_TOPIC_0000002522241178__loadcommitteddetails11)) => void
+
+导航条目提交时触发的回调。
+
+系统能力： SystemCapability.Web.Webview.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| loadCommittedDetails | LoadCommittedDetails | 是 | 提供已提交跳转的网页的详细信息。 |
+
+**OnSafeBrowsingCheckResultCallback11+**
+
+type OnSafeBrowsingCheckResultCallback = (threatType: ThreatType) => void
+
+网站安全风险检查触发的回调。
+
+系统能力： SystemCapability.Web.Webview.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| threatType | ThreatType | 是 | 定义网站threat类型。 |
+
+**OnIntelligentTrackingPreventionCallback12+**
+
+type OnIntelligentTrackingPreventionCallback = (details: IntelligentTrackingPreventionDetails) => void
+
+当跟踪者cookie被拦截时触发的回调。
+
+系统能力： SystemCapability.Web.Webview.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| details | IntelligentTrackingPreventionDetails | 是 | 提供智能防跟踪拦截的详细信息。 |
+
+**OnOverrideUrlLoadingCallback12+**
+
+type OnOverrideUrlLoadingCallback = (webResourceRequest: WebResourceRequest) => boolean
+
+onOverrideUrlLoading的回调。
+
+系统能力： SystemCapability.Web.Webview.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| webResourceRequest | WebResourceRequest | 是 | url请求的相关信息。 |
 
 **返回值：**
 
-类型说明ToElementType归约函数的结果，该结果会作为数组的新元素。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示阻止此次加载，否则允许此次加载。 |
 
-#### ArrayPredicateFn18+
+**WebKeyboardCallback12+**
 
-type ArrayPredicateFn<ElementType, ArrayType> = (value: ElementType, index: number, array: ArrayType) => boolean
+type WebKeyboardCallback = (keyboardCallbackInfo: WebKeyboardCallbackInfo) => WebKeyboardOptions
 
-ArkTS Array归约函数类型，被Array类的'some'和'every'接口使用，用来判断数组元素是否满足测试条件。
+拦截网页可编辑元素拉起软键盘的回调，一般在点击网页input标签时触发。
 
-**系统能力：** SystemCapability.Utils.Lang
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+系统能力： SystemCapability.Web.Webview.Core
 
 **参数：**
 
-参数名类型必填说明valueElementType是当前正在处理的元素。indexnumber是当前遍历的ArkTS Array元素下标。arrayArrayType是当前遍历的ArkTS Array本身。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| keyboardCallbackInfo | WebKeyboardCallbackInfo | 是 | 拦截网页拉起软键盘回调通知的入参，其中包括WebKeyboardController、可编辑元素的属性。 |
 
 **返回值：**
 
-类型说明boolean归约函数的结果，该结果作为判断当前元素是否通过测试条件。为true时表示当前或之前的某个元素已满足条件，为false时表示尚未找到符合条件的元素。
+| 类型 | 说明 |
+| --- | --- |
+| WebKeyboardOptions | 回调函数通过返回WebKeyboardOptions来决定ArkWeb内核拉起不同类型的软键盘。 |
 
-#### ArrayReduceCallback18+
+**OnOverrideErrorPageCallback20+**
 
-type ArrayReduceCallback<AccType, ElementType, ArrayType> =
+type OnOverrideErrorPageCallback = (errorPageEvent: OnErrorReceiveEvent) => string
 
- (previousValue: AccType, currentValue: ElementType, currentIndex: number, array: ArrayType) => AccType
+onOverrideErrorPage的回调函数，网页加载失败时触发。
 
-ArkTS Array归约函数类型，被Array类的'reduceRight'接口使用。
-
-**系统能力：** SystemCapability.Utils.Lang
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+系统能力： SystemCapability.Web.Webview.Core
 
 **参数：**
 
-参数名类型必填说明previousValueAccType是当前遍历所累积的值。currentValueElementType是当前遍历的ArkTS Array元素。currentIndexnumber是当前遍历的ArkTS Array元素下标。arrayArrayType是当前遍历的ArkTS Array实例。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| errorPageEvent | OnErrorReceiveEvent | 是 | 网页加载遇到错误时返回的相关信息。 |
 
 **返回值：**
 
-类型说明AccType归约函数的结果，该结果会作为下一次调用ArrayReduceCallback时的previousValue参数。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回以Base64编码的HTML文本内容。 |
 
-#### TypedArrayFromMapFn
+**MouseInfoCallback20+**
 
-type TypedArrayFromMapFn<FromElementType, ToElementType> = (value: FromElementType, index: number) => ToElementType
+type MouseInfoCallback = (event: NativeEmbedMouseInfo) => void
 
-ArkTS TypedArray映射函数类型。
+当鼠标/触摸板点击到同层标签时触发该回调。
 
-**系统能力：** SystemCapability.Utils.Lang
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**参数：**
-
-参数名类型必填说明valueFromElementType是当前遍历的用于构造ArkTS TypedArray的元素。indexnumber是当前遍历的用于构造ArkTS TypedArray的元素下标，从0开始。
-
-**返回值：**
-
-类型说明ToElementType转换后的元素值。
-
-#### TypedArrayPredicateFn
-
-type TypedArrayPredicateFn<ElementType, ArrayType> = (value: ElementType, index: number, array: ArrayType) => boolean
-
-ArkTS TypedArray断言测试函数类型。
-
-**系统能力：** SystemCapability.Utils.Lang
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+系统能力： SystemCapability.Web.Webview.Core
 
 **参数：**
 
-参数名类型必填说明valueElementType是当前遍历的ArkTS TypedArray元素。indexnumber是当前遍历的ArkTS TypedArray元素下标，从0开始。arrayArrayType是当前遍历的ArkTS TypedArray实例。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | NativeEmbedMouseInfo | 是 | 提供鼠标/触摸板在同层标签上点击或长按的详细信息。 |
 
-**返回值：**
+示例：
 
-类型说明boolean如果值符合条件，则为true，否则为false。
+完整示例代码参考[onNativeEmbedMouseEvent](事件.md#ZH-CN_TOPIC_0000002522081170__onnativeembedmouseevent20)。
 
-#### TypedArrayForEachCallback
+**OnNativeEmbedObjectParamChangeCallback21+**
 
-type TypedArrayForEachCallback<ElementType, ArrayType> = (value: ElementType, index: number, array: ArrayType) => void
+type OnNativeEmbedObjectParamChangeCallback = (event: NativeEmbedParamDataInfo) => void
 
-ArkTS TypedArray遍历函数类型。
+增加、修改或删除同层渲染object标签内嵌param元素时触发此回调。
 
-**系统能力：** SystemCapability.Utils.Lang
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**参数：**
-
-参数名类型必填说明valueElementType否当前遍历的ArkTS TypedArray元素。indexnumber否当前遍历的ArkTS TypedArray元素下标，从0开始。arrayArrayType否当前遍历的ArkTS TypedArray实例。
-
-#### TypedArrayMapCallback
-
-type TypedArrayMapCallback<ElementType, ArrayType> = (value: ElementType, index: number, array: ArrayType) => ElementType
-
-ArkTS TypedArray转换映射函数类型。
-
-**系统能力：** SystemCapability.Utils.Lang
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+系统能力： SystemCapability.Web.Webview.Core
 
 **参数：**
 
-参数名类型必填说明valueElementType是当前映射的ArkTS TypedArray元素。indexnumber是当前映射的ArkTS TypedArray元素下标，从0开始。arrayArrayType是当前映射的ArkTS TypedArray实例。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | NativeEmbedParamDataInfo | 是 | object标签内嵌param元素的详细变化信息。 |
 
-**返回值：**
+示例：
 
-类型说明ElementType转换后的元素值。
+完整示例代码参考[onNativeEmbedObjectParamChange](事件.md#ZH-CN_TOPIC_0000002522081170__onnativeembedobjectparamchange21)。
 
-#### TypedArrayReduceCallback
+**OnDetectBlankScreenCallback22+**
 
-type TypedArrayReduceCallback<AccType, ElementType, ArrayType> = (previousValue: AccType, currentValue: ElementType, currentIndex: number, array: ArrayType) => AccType
+type OnDetectBlankScreenCallback = (event: BlankScreenDetectionEventInfo) => void
 
-ArkTS TypedArray归约函数类型。
+检测到白屏时触发此回调。
 
-**系统能力：** SystemCapability.Utils.Lang
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**参数：**
-
-参数名类型必填说明previousValueAccType是当前遍历所累积的值。currentValueElementType是当前遍历的ArkTS TypedArray元素。currentIndexnumber是当前遍历的ArkTS TypedArray元素下标，从0开始。arrayArrayType是当前遍历的ArkTS TypedArray实例。
-
-**返回值：**
-
-类型说明AccType归约函数的结果。该结果会作为下一次调用TypedArrayReduceCallback时的previousValue参数。
-
-#### TypedArrayCompareFn
-
-type TypedArrayCompareFn<ElementType> = (first: ElementType, second: ElementType) => number
-
-ArkTS TypedArray排序函数类型。
-
-**系统能力：** SystemCapability.Utils.Lang
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+系统能力： SystemCapability.Web.Webview.Core
 
 **参数：**
 
-参数名类型必填说明firstElementType是当前待比较的第一个元素。secondElementType是当前待比较的第二个元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | BlankScreenDetectionEventInfo | 是 | 检测到白屏时的详细信息。 |
 
-**返回值：**
+示例：
 
-类型说明number元素比较的结果。如果first小于second，返回值为负数；如果first大于second，返回值为正数；如果两个值相等，返回值为0。
+完整示例代码参考[onDetectedBlankScreen](事件.md#ZH-CN_TOPIC_0000002522081170__ondetectedblankscreen22)。
+
+**OnCameraCaptureStateChangeCallback23+**
+
+type OnCameraCaptureStateChangeCallback = (event: CameraCaptureStateChangeInfo) => void;
+
+当页面摄像头状态发生改变时触发此回调。
+
+系统能力： SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | CameraCaptureStateChangeInfo | 是 | 网页摄像头状态发生改变时，返回原来的状态和改变后的状态。 |
+
+**OnMicrophoneCaptureStateChangeCallback23+**
+
+type OnMicrophoneCaptureStateChangeCallback = (event: MicrophoneCaptureStateChangeInfo) => void;
+
+当页面麦克风状态发生改变时触发此回调。
+
+系统能力： SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | MicrophoneCaptureStateChangeInfo | 是 | 网页麦克风状态发生改变时，返回原来的状态和改变后的状态。 |
+
+**TextSelectionChangeCallback23+**
+
+type TextSelectionChangeCallback = (selectionText: string) => void
+
+onTextSelectionChange的回调函数，选区内容改变时触发。
+
+系统能力： SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| selectionText | string | 是 | 返回所选文本的内容。 |
+
+示例：
+
+完整示例代码参考[onTextSelectionChange](事件.md#ZH-CN_TOPIC_0000002522081170__ontextselectionchange23)。
+
+**OnFirstScreenPaintCallback23+**
+
+type OnFirstScreenPaintCallback = (firstScreenPaint: FirstScreenPaint) => void
+
+检测到首屏渲染结束时会触发此回调。
+
+系统能力： SystemCapability.Web.Webview.Core
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| firstScreenPaint | FirstScreenPaint | 是 | 检测到首屏渲染时的详细信息。 |
+
+示例：
+
+完整示例代码参考[onFirstScreenPaint](事件.md#ZH-CN_TOPIC_0000002522081170__onfirstscreenpaint23)。

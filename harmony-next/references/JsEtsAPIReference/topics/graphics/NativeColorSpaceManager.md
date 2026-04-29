@@ -10,4 +10,6 @@
 
 #### 文件汇总
 
-名称描述[native_color_space_manager.h](../../capi/headers/native_color_space_manager.h.md)定义创建和使用色彩空间的相关函数。
+| 名称 | 描述 |
+| --- | --- |
+| [native_color_space_manager.h](native_color_space_manager.h.md) | 定义创建和使用色彩空间的相关函数。 |

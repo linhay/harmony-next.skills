@@ -3,27 +3,27 @@
 ## UI & Layout
 - 推荐 Kit: ArkUI
 - Keywords: ArkUI, List, Grid, Tabs, Navigation, Component
-- 快速命中: `rg -n "(List|Grid|Tabs|Navigation|LazyForEach|FrameNode)" JsEtsAPIReference/INDEX.md | head`
+- 快速命中: `rg -n "(List|Grid|Tabs|Navigation|LazyForEach|FrameNode)" INDEX.md | rg "JsEtsAPIReference/" | head`
 
 ## App LifeCycle
 - 推荐 Kit: AbilityKit
 - Keywords: UIAbility, AbilityStage, Context, Want
-- 快速命中: `rg -n "(UIAbility|AbilityStage|Context|Want|ExtensionAbility)" JsEtsAPIReference/INDEX.md | head`
+- 快速命中: `rg -n "(UIAbility|AbilityStage|Context|Want|ExtensionAbility)" INDEX.md | rg "JsEtsAPIReference/" | head`
 
 ## Network
 - 推荐 Kit: NetworkKit, ArkWeb
 - Keywords: rcp, http, socket, Web
-- 快速命中: `rg -n "(http|socket|@ohos\\.net\\.|@ohos\\.web\\.)" JsEtsAPIReference/INDEX.md | head`
+- 快速命中: `rg -n "(http|socket|@ohos\\.net\\.|@ohos\\.web\\.)" INDEX.md | rg "JsEtsAPIReference/" | head`
 
 ## Media
 - 推荐 Kit: MediaKit, CameraKit, ImageKit
 - Keywords: Audio, Video, Camera, Image
-- 快速命中: `rg -n "(@ohos\\.multimedia\\.|Camera|Audio|Video|Image)" JsEtsAPIReference/INDEX.md | head`
+- 快速命中: `rg -n "(@ohos\\.multimedia\\.|Camera|Audio|Video|Image)" INDEX.md | rg "JsEtsAPIReference/" | head`
 
 ## Data Management
 - 推荐 Kit: ArkData
 - Keywords: rdb, Preferences, DataObject, distributedData
-- 快速命中: `rg -n "(@ohos\\.data\\.|rdb|Preferences|distributed)" JsEtsAPIReference/INDEX.md | head`
+- 快速命中: `rg -n "(@ohos\\.data\\.|rdb|Preferences|distributed)" INDEX.md | rg "JsEtsAPIReference/" | head`
 
 ## IDE & Development
 - 推荐目录: ideGuides/
@@ -53,7 +53,7 @@
 - 快速命中: `rg -n "(HAP|HAR|HSP|Stage|TaskPool|Worker|自适应|响应式|Continuation)" INDEX.md | head`
 
 ## NDK & Native
-- 推荐目录: ndkGuides/, JsEtsAPIReference/capi/headers/
+- 推荐目录: ndkGuides/, JsEtsAPIReference/topics/
 - Keywords: NDK, Node-API, napi, C++, CMake, 跨语言互调
 - 快速命中: `rg -n "(Node-API|napi|CMake|NDK)" INDEX.md | head`
 

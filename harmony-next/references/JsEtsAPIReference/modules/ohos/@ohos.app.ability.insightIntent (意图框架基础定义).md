@@ -18,18 +18,10 @@ import { insightIntent } from '@kit.AbilityKit';
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称值说明UI_ABILITY_FOREGROUND0
-
-将UIAbility在前台显示。
-
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
-
-UI_ABILITY_BACKGROUND1
-
-将UIAbility在后台拉起。
-
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
-
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| UI_ABILITY_FOREGROUND | 0 | 将UIAbility在前台显示。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
+| UI_ABILITY_BACKGROUND | 1 | 将UIAbility在后台拉起。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
 UI_EXTENSION_ABILITY2拉起UIExtensionAbility。
 
 #### ExecuteResult
@@ -38,47 +30,24 @@ UI_EXTENSION_ABILITY2拉起UIExtensionAbility。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称类型只读可选说明codenumber否否
-
-意图执行返回的错误码，由开发者定义。
-
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
-
-resultRecord<string, Object>否是
-
-意图执行返回的结果，通常会包含需要返回给系统入口的数据。
-
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
-
-uris18+Array<string>否是
-
-意图执行返回的URI列表。该字段需要与flags字段配合使用，根据URI列表将flags字段的相应权限授权给系统入口。
-
-**元服务API**：从API version 18开始，该接口支持在元服务中使用。
-
-flags18+number否是
-
-意图执行返回给系统入口的URI列表的授权权限。
-
-**元服务API**：从API version 18开始，该接口支持在元服务中使用。
-
-**说明：**
-
-该参数仅支持FLAG_AUTH_READ_URI_PERMISSION、FLAG_AUTH_WRITE_URI_PERMISSION、FLAG_AUTH_READ_URI_PERMISSION|FLAG_AUTH_WRITE_URI_PERMISSION。权限介绍见[Flags](@ohos.app.ability.wantConstant (Want常量).md#ZH-CN_TOPIC_0000002497604612__flags)。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| code | number | 否 | 否 | 意图执行返回的错误码，由开发者定义。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
+| result | Record<string, Object> | 否 | 是 | 意图执行返回的结果，通常会包含需要返回给系统入口的数据。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
+| uris18+ | Array<string> | 否 | 是 | 意图执行返回的URI列表。该字段需要与flags字段配合使用，根据URI列表将flags字段的相应权限授权给系统入口。 元服务API：从API version 18开始，该接口支持在元服务中使用。 |
+| flags18+ | number | 否 | 是 | 意图执行返回给系统入口的URI列表的授权权限。 元服务API：从API version 18开始，该接口支持在元服务中使用。 说明： 该参数仅支持FLAG_AUTH_READ_URI_PERMISSION、FLAG_AUTH_WRITE_URI_PERMISSION、FLAG_AUTH_READ_URI_PERMISSION|FLAG_AUTH_WRITE_URI_PERMISSION。权限介绍见Flags。 |
 
 #### IntentEntity20+
 
 意图实体结构体定义，用于定义意图执行过程中涉及的关键信息对象，包括意图参数和意图执行结果等。
 
-开发者通过继承该类来定义意图实体，继承类需使用[@InsightIntentEntity](@ohos.app.ability.InsightIntentDecorator (意图装饰器定义).md#ZH-CN_TOPIC_0000002497604590__insightintententity)装饰。
+开发者通过继承该类来定义意图实体，继承类需使用[@InsightIntentEntity](@ohos.app.ability.InsightIntentDecorator (意图装饰器定义).md#ZH-CN_TOPIC_0000002522240536__insightintententity)装饰。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称类型只读可选说明entityIdstring否否
-
-意图实体的ID。
-
-**元服务API**：从API version 20开始，该接口支持在元服务中使用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| entityId | string | 否 | 否 | 意图实体的ID。 元服务API：从API version 20开始，该接口支持在元服务中使用。 |
 
 #### IntentResult<T>20+
 
@@ -86,14 +55,18 @@ flags18+number否是
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称类型只读可选说明codenumber否否
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| code | number | 否 | 否 | 意图执行返回的错误码，由开发者定义。 元服务API：从API version 20开始，该接口支持在元服务中使用。 |
+| result | T | 否 | 是 | 意图执行返回的结果，通常会包含需要返回给系统入口的数据。 元服务API：从API version 20开始，该接口支持在元服务中使用。 |
 
-意图执行返回的错误码，由开发者定义。
+**ReturnMode23+**
 
-**元服务API**：从API version 20开始，该接口支持在元服务中使用。
+意图执行结果返回给意图拉起方的返回形式。
 
-resultT否是
+系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
-意图执行返回的结果，通常会包含需要返回给系统入口的数据。
-
-**元服务API**：从API version 20开始，该接口支持在元服务中使用。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CALLBACK | 0 | 表示意图执行结果将由意图执行基类中的onExecuteInUIAbilityForegroundMode接口或onExecuteInUIExtensionAbility接口返回。 元服务API：从API version 23开始，该接口支持在元服务中使用。 |
+| FUNCTION | 1 | 表示意图执行结果会延迟返回，直到开发者主动调用意图提供方管理能力中的sendExecuteResult接口或sendIntentResult接口返回意图执行结果。 元服务API：从API version 23开始，该接口支持在元服务中使用。 |

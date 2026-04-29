@@ -1,6 +1,7 @@
 # LoopObserver
 
-定义异常监听，可以作为[ErrorManager.on](../../modules/ohos/@ohos.app.ability.errorManager (错误管理模块).md#ZH-CN_TOPIC_0000002497604610__errormanageronloopobserver12)的入参监听当前应用主线程事件处理事件。
+定义异常监听，可以作为[ErrorManager.on](@ohos.app.ability.errorManager (错误管理模块).md#ZH-CN_TOPIC_0000002553200523__errormanageronloopobserver12)的入参监听当前应用主线程事件处理事件。
+
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -22,7 +23,9 @@ onLoopTimeOut?(timeout: number): void
 
 **参数：**
 
-参数名类型必填说明timeoutnumber是返回应用主线程消息实际执行时间。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| timeout | number | 是 | 返回应用主线程消息实际执行时间。 |
 
 **示例：**
 

@@ -8,34 +8,18 @@
 
 **相关模块：**[NetworkBoost](NetworkBoost.md)
 
+所在头文件： [network_boost.h](network_boost.h.md)
+
 #### 汇总
 
 #### 成员变量
 
-名称
-
-描述
-
-[NetworkBoost_ServiceType](NetworkBoost.md#ZH-CN_TOPIC_0000002463695266__gaabe242932bb115198d2f27c0deedb0f5)[scene](#section159871228122717)
-
-表示业务场景类型。
-
-[NetworkBoost_SceneEvent](NetworkBoost.md#section9626183119507)[sceneEvent](#section2054235172714)
-
-表示业务场景事件。
-
-uint32_t [startTime](#section1047652018448)
-
-表示要经过多长时间进入到sceneEvent事件，单位为s。
-
-- 0表示立即发生sceneEvent事件，默认为0。
-- 大于0表示预测未来多长时间进入sceneEvent事件。
-
-uint32_t [duration](#section1047620200441)
-
-预计本次设置的业务场景会持续的时长，单位为s。0表示持续时长未知，以SceneEvent的离开事件表示终止。开发者可以依据实际的场景类型进行选填。
-
-例如：应用即将在10s后进入秒杀场景，预计持续20s。scene可以传入'seckillService'类型，sceneEvent填写SCENE_EVENT_ENTER，startTime可填写10，duration填写20。
+| 名称 | 描述 |
+| --- | --- |
+| [NetworkBoost_ServiceType](NetworkBoost.md#ZH-CN_TOPIC_0000002463695266__gaabe242932bb115198d2f27c0deedb0f5) scene | 表示业务场景类型。 |
+| [NetworkBoost_SceneEvent](NetworkBoost.md#section9626183119507) sceneEvent | 表示业务场景事件。 |
+| uint32_t startTime | 表示要经过多长时间进入到sceneEvent事件，单位为s。 - 0表示立即发生sceneEvent事件，默认为0。 - 大于0表示预测未来多长时间进入sceneEvent事件。 |
+| uint32_t duration | 预计本次设置的业务场景会持续的时长，单位为s。0表示持续时长未知，以SceneEvent的离开事件表示终止。开发者可以依据实际的场景类型进行选填。 例如：应用即将在10s后进入秒杀场景，预计持续20s。scene可以传入'seckillService'类型，sceneEvent填写SCENE_EVENT_ENTER，startTime可填写10，duration填写20。 |
 
 #### 结构体成员变量说明
 

@@ -23,13 +23,17 @@ hasFlash(): boolean
 
 **返回值：**
 
-类型说明boolean设备是否支持闪光灯。true表示支持，false表示不支持。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 设备是否支持闪光灯。true表示支持，false表示不支持。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码]([Camera错误码](../../errors/Camera错误码.md).md)。
 
-错误码ID错误信息7400103Session not config, only throw in session usage.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config, only throw in session usage. |
 
 **示例：**
 
@@ -49,9 +53,9 @@ function hasFlash(photoSession: camera.PhotoSession): boolean {
 }
 ```
 
-#### isFlashModeSupported11+
+#### is[FlashMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__flashmode)Supported11+
 
-isFlashModeSupported(flashMode: FlashMode): boolean
+is[FlashMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__flashmode)Supported(flashMode: FlashMode): boolean
 
 检测闪光灯模式是否支持。
 
@@ -61,17 +65,23 @@ isFlashModeSupported(flashMode: FlashMode): boolean
 
 **参数：**
 
-参数名类型必填说明flashMode[FlashMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__flashmode)是指定闪光灯模式。传参为null或者undefined，作为0处理，闪光灯关闭。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| flashMode | [FlashMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__flashmode) | 是 | 指定闪光灯模式。传参为null或者undefined，作为0处理，闪光灯关闭。 |
 
 **返回值：**
 
-类型说明boolean检测表示支持该闪光灯模式。true表示支持，false表示不支持。接口调用失败会抛出相应错误码并返回undefined，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 检测表示支持该闪光灯模式。true表示支持，false表示不支持。接口调用失败会抛出相应错误码并返回undefined，错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400103Session not config, only throw in session usage.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config, only throw in session usage. |
 
 **示例：**
 

@@ -1,6 +1,7 @@
 # Class (SslErrorHandler)
 
-Web组件返回的SSL错误通知事件的处理对象。示例代码参考[onSslErrorEvent](../../topics/misc/事件.md#ZH-CN_TOPIC_0000002497445228__onsslerrorevent12)事件。
+Web组件返回的SSL错误通知事件的处理对象。示例代码参考[onSslErrorEvent](事件.md#ZH-CN_TOPIC_0000002522081170__onsslerrorevent12)事件。
+
 
 -
 
@@ -12,7 +13,7 @@ Web组件返回的SSL错误通知事件的处理对象。示例代码参考[onSs
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### constructor9+
 
@@ -48,10 +49,6 @@ handleCancel(abortLoading: boolean): void
 
 **参数：**
 
-参数名类型必填说明abortLoadingboolean是
-
-是否在取消请求后停止加载页面。
-
-true表示停止加载页面，false表示继续加载页面。
-
-默认值为false。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| abortLoading | boolean | 是 | 是否在取消请求后停止加载页面。 true表示停止加载页面，false表示继续加载页面。 默认值为false。 |

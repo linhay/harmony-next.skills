@@ -1,6 +1,6 @@
-# Class (UIContext)
+# Class (UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12))
 
-UIContext实例对象。
+UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)实例对象。
 
 -
 
@@ -12,14 +12,14 @@ UIContext实例对象。
 
 -
 
-以下API需先使用ohos.window中的[getUIContext()](../interfaces/Interface (Window).md#ZH-CN_TOPIC_0000002497604802__getuicontext10)方法获取UIContext实例，再通过此实例调用对应方法。或者可以通过自定义组件内置方法[getUIContext()](../../topics/misc/自定义组件内置方法.md#ZH-CN_TOPIC_0000002497444970__getuicontext)获取。本文中UIContext对象以uiContext表示。
+以下API需要通过对应的UIContext实例调用。获取UIContext分为三种方式，第一种是使用ohos.window中的[getUIContext()](Interface (Window).md#ZH-CN_TOPIC_0000002522080752__getuicontext10)方法获取UIContext实例，第二种是通过自定义组件内置方法[getUIContext()](自定义组件内置方法.md#ZH-CN_TOPIC_0000002522240898__getuicontext)获取UIContext实例，第三种是通过UIContext类的静态方法如[getCallingScopeUIContext](#ZH-CN_TOPIC_0000002522240732__getcallingscopeuicontext22)获取UIContext实例。本文中UIContext对象以uiContext表示。
 
 **示例：**
 
-以下示例展示了两种获取UIContext实例的方法。
+以下示例展示了三种获取UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)实例的方法。
 
 ```ets
-//两种方法获取到的UIContext没有差异
+// 三种方法获取到的UIContext没有差异
 //index.ets
 import { UIContext } from '@kit.ArkUI';
 
@@ -32,10 +32,10 @@ struct Index {
           .onClick(()=>{
             //通过自定义组件内置方法获取
             this.getUIContext()
+            // 通过UIContext类的静态方法获取
+            let uiContext = UIContext.getCallingScopeUIContext();
             //其他运行逻辑
           })
-    }
-  }
 }
 
 //EntryAbility.ets
@@ -51,6 +51,328 @@ export default class EntryAbility extends UIAbility {
     windowStage.getMainWindowSync().getUIContext()
     //其他运行逻辑
   }
+```
+
+**constructor22+**
+
+constructor()
+
+构造UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)对象。
+
+
+通过构造函数创建的UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)对象指向不明确的UI上下文，即不指向任何UI实例。该UIContext对应实例的唯一标识ID为-1。
+
+元服务API： 从API version 22开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+示例：
+
+```ets
+import { UIContext } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+function GetUIContextByAtomicInterface(): UIContext {
+  let callingScopeUIContext = UIContext.getCallingScopeUIContext();
+  if (callingScopeUIContext) {
+    hilog.info(0x00, 'testTag', `Get UIContext of calling scope.`)
+    return callingScopeUIContext;
+  }
+  let allContexts = UIContext.getAllUIContexts();
+  let length = allContexts.length;
+  if (length === 1) {
+    hilog.info(0x00, 'testTag', `Get UIContext of unique UI instance.`)
+    return allContexts[0];
+  }
+  let lastFocusedUIContext = UIContext.getLastFocusedUIContext();
+  if (lastFocusedUIContext) {
+    hilog.info(0x00, 'testTag', `Get UIContext of last focused instance.`)
+    return lastFocusedUIContext;
+  }
+  let lastForegroundUIContext = UIContext.getLastForegroundUIContext();
+  if (lastForegroundUIContext) {
+    hilog.info(0x00, 'testTag', `Get UIContext of last foregrounded instance.`)
+    return lastForegroundUIContext;
+  }
+  if (length !== 0) {
+    hilog.info(0x00, 'testTag', `Get UIContext with maximum instanceId.`)
+    return allContexts[length - 1];
+  }
+  hilog.info(0x00, 'testTag', `Get UIContext of undefined calling scope.`)
+  return new UIContext();
+}
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+
+  aboutToAppear() {
+    let uiContext = this.getUIContext();
+    hilog.info(0x00, 'testTag', `aboutToAppear UIContext: ${uiContext.getId()}`)
+  }
+
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .id('HelloWorld')
+        .fontSize($r('app.float.page_text_font_size'))
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          let resolvedUIContext = UIContext.resolveUIContext();
+          let contextByAtomicInterface = GetUIContextByAtomicInterface();
+          hilog.info(0x00, 'testTag',
+            `UIContext id: ${resolvedUIContext.getId()}, strategy: ${resolvedUIContext.strategy}}, contextByAtomicInterface: ${contextByAtomicInterface.getId()}`);
+          this.message = 'Welcome';
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+```
+
+**getCallingScopeUI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)22+**
+
+static getCallingScopeUI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)(): UIContext | undefined
+
+获取当前[调用作用域](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#基本概念)的UIContext，调用作用域不明确时返回undefined。
+
+
+返回的UIContext对象可能指向一个已销毁的UI实例，通常在由已销毁的实例抛出异步任务时出现。建议通过[isAvailable](#ZH-CN_TOPIC_0000002522240732__isavailable20)接口判断其有效性。
+
+元服务API： 从API version 22开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12) | undefined | 当前调用作用域的UIContext，调用作用域不明确时返回undefined。 |
+
+示例：
+
+```ets
+import { UIContext } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          this.message = 'Welcome';
+          let uiContext = UIContext.getCallingScopeUIContext();
+          hilog.info(0x00, 'testTag', 'Current calling UIContext is : ' + uiContext?.isAvailable());
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+```
+
+**getLastFocusedUI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)22+**
+
+static getLastFocusedUI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)(): UIContext | undefined
+
+获取最近一次切换到获焦状态的UI实例的UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)。
+
+元服务API： 从API version 22开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12) | undefined | 返回最近一次切换到获焦状态的UI实例的UIContext。如果最近一次切换到获焦状态的实例已被销毁或无实例曾经处于获焦状态，返回undefined。 |
+
+示例：
+
+```ets
+import { UIContext } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          this.message = 'Welcome';
+          let uiContext = UIContext.getLastFocusedUIContext();
+          hilog.info(0x00, 'testTag', 'Current calling UIContext is : ' + uiContext?.isAvailable());
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+```
+
+**getLastForegroundUI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)22+**
+
+static getLastForegroundUI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)(): UIContext | undefined
+
+获取最近一次切换到前台状态的UI实例的UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)。
+
+元服务API： 从API version 22开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12) | undefined | 返回最近一次切换到前台状态的UI实例的UIContext。如果最近一次切换到前台状态的UI实例已被销毁或无UI实例曾经处于前台状态，则返回undefined。 |
+
+示例：
+
+```ets
+import { UIContext } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          this.message = 'Welcome';
+          let uiContext = UIContext.getLastForegroundUIContext();
+          hilog.info(0x00, 'testTag', 'Current calling UIContext is : ' + uiContext?.isAvailable());
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+```
+
+**getAllUI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)s22+**
+
+static getAllUI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)s(): UIContext[]
+
+获取所有当前有效的UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)实例。
+
+元服务API： 从API version 22开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)[] | 返回所有当前有效UIContext实例的数组。如果没有有效的UIContext实例，则返回空数组。 |
+
+示例：
+
+```ets
+import { UIContext } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          this.message = 'Welcome';
+          let uiContexts = UIContext.getAllUIContexts();
+          hilog.info(0x00, 'testTag', `There are ${uiContexts.length} UIContext(s)`);
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+```
+
+**resolveUI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)22+**
+
+static resolveUI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)(): ResolvedUIContext
+
+使用优先级策略获取带有解析策略的UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)实例对象。
+
+
+按照预定义的优先级顺序解析并返回UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)实例和UIContext的解析策略。
+
+解析规则按顺序如下：
+
+1. 当前调用作用域中的UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)。
+
+1. 如果只存在一个UI实例，则返回其UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)。
+
+1. 如果存在UI实例切换到获焦状态，且最近一次切换到获焦状态的UI实例未销毁，则返回最近一次获焦UI实例的UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)。
+
+1. 如果存在UI实例切换到前台状态，且最近一次切换到前台状态的UI实例未销毁，则返回最近一次切换到前台状态的UI实例的UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)。
+
+1. 如果存在多个UI实例，则返回实例唯一标识的ID最大的UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)。
+
+1. 如果以上条件均不满足，则返回一个无效的UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)实例。
+
+元服务API： 从API version 22开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| ResolvedUI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12) | 返回带有解析策略的UIContext实例对象。 |
+
+示例：
+
+```ets
+import { UIContext } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Button('click').onClick(() => {
+        let resolvedUIContext = UIContext.resolveUIContext();
+        hilog.info(0x00, 'testTag', `UIContext id: ${resolvedUIContext.getId()}, strategy: ${resolvedUIContext.strategy}}`);
+      })
+    }
+    .width(UIContext.resolveUIContext().px2vp(100))
+    .height('100%')
 }
 ```
 
@@ -58,7 +380,7 @@ export default class EntryAbility extends UIAbility {
 
 isAvailable(): boolean
 
-判断UIContext对象对应的UI实例是否有效。使用[getUIContext](../interfaces/Interface (Window).md#ZH-CN_TOPIC_0000002497604802__getuicontext10)方法获取UIContext对象。后端UI实例存在时，该UI实例有效。通过new UIContext()创建的UIContext对象无对应的UI实例；多次[loadContent](../interfaces/Interface (Window).md#ZH-CN_TOPIC_0000002497604802__loadcontent9)后，旧的UI实例会失效。多窗口应用场景，当窗口关闭后，该窗口的UI实例失效。总而言之，当UIContext对象没有对应的后端UI实例时，该对象是无效的。
+判断UIContext对象对应的UI实例是否有效。使用[getUIContext](Interface (Window).md#ZH-CN_TOPIC_0000002522080752__getuicontext10)方法获取UIContext对象。后端UI实例存在时，该UI实例有效。通过new UIContext()创建的UIContext对象无对应的UI实例；多次[loadContent](Interface (Window).md#ZH-CN_TOPIC_0000002522080752__loadcontent9)后，旧的UI实例会失效。多窗口应用场景，当窗口关闭后，该窗口的UI实例失效。总而言之，当UIContext对象没有对应的后端UI实例时，该对象是无效的。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -66,7 +388,9 @@ isAvailable(): boolean
 
 **返回值：**
 
-类型说明boolean返回UIContext对象对应的UI实例是否有效。true表示有效，false表示无效。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)对象对应的UI实例是否有效。true表示有效，false表示无效。 |
 
 **示例：**
 
@@ -125,7 +449,6 @@ struct UIContextCompare {
     .height("100%")
     .padding(20)
   }
-}
 ```
 
 #### getFont
@@ -140,7 +463,9 @@ getFont(): Font
 
 **返回值：**
 
-类型说明[Font](Class (Font).md)返回Font实例对象。
+| 类型 | 说明 |
+| --- | --- |
+| Font | 返回Font实例对象。 |
 
 **示例：**
 
@@ -158,11 +483,13 @@ getComponentUtils(): ComponentUtils
 
 **返回值：**
 
-类型说明[ComponentUtils](Class (ComponentUtils).md)返回ComponentUtils实例对象。
+| 类型 | 说明 |
+| --- | --- |
+| ComponentUtils | 返回ComponentUtils实例对象。 |
 
 **示例：**
 
-完整示例请参考[getComponentUtils](../../modules/ohos/@ohos.arkui.componentUtils (componentUtils).md)中的示例。
+完整示例请参考[示例1（获取ComponentUtils对象）](@ohos.arkui.componentUtils (componentUtils).md#ZH-CN_TOPIC_0000002553360643__示例1获取componentutils对象)。
 
 #### getUIInspector
 
@@ -176,7 +503,9 @@ getUIInspector(): UIInspector
 
 **返回值：**
 
-类型说明[UIInspector](Class (UIInspector).md)返回UIInspector实例对象。
+| 类型 | 说明 |
+| --- | --- |
+| UIInspector | 返回UIInspector实例对象。 |
 
 **示例：**
 
@@ -194,7 +523,9 @@ getUIObserver(): UIObserver
 
 **返回值：**
 
-类型说明[UIObserver](Class (UIObserver).md)返回UIObserver实例对象。
+| 类型 | 说明 |
+| --- | --- |
+| UIObserver | 返回UIObserver实例对象。 |
 
 **示例：**
 
@@ -205,7 +536,6 @@ struct PageOne {
     NavDestination() {
       Text("pageOne")
     }.title("pageOne")
-  }
 }
 
 @Entry
@@ -241,14 +571,13 @@ struct Index {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 #### getId22+
 
 getId(): number
 
-获取后端实例唯一标识的ID。
+获取UI实例对象唯一标识，多实例场景下，开发者可使用此唯一标识区分多个UI实例对象，便于管理。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -256,7 +585,9 @@ getId(): number
 
 **返回值：**
 
-类型说明number返回后端实例唯一标识的ID，取值范围：[-1, +∞)
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回后端实例唯一标识的ID，取值范围：[-1, +∞) |
 
 **示例：**
 
@@ -269,9 +600,8 @@ struct Index{
       .width("100%")
       .height("100%")
       .onClick(()=>{
-      console.log(`id:${this.getUIContext()?.getId()}`);
+      console.info(`id:${this.getUIContext()?.getId()}`);
     })
-  }
 }
 ```
 
@@ -287,11 +617,13 @@ getMediaQuery(): MediaQuery
 
 **返回值：**
 
-类型说明[MediaQuery](Class (MediaQuery).md)返回MediaQuery实例对象。
+| 类型 | 说明 |
+| --- | --- |
+| MediaQuery | 返回MediaQuery实例对象。 |
 
 **示例：**
 
-完整示例请参考[mediaquery示例](../../modules/ohos/@ohos.mediaquery (媒体查询).md#ZH-CN_TOPIC_0000002497604790__示例)。
+完整示例请参考[mediaquery示例](@ohos.mediaquery (媒体查询).md#ZH-CN_TOPIC_0000002522080740__示例)。
 
 #### getRouter
 
@@ -305,11 +637,13 @@ getRouter(): Router
 
 **返回值：**
 
-类型说明[Router](Class (Router).md)返回Router实例对象。
+| 类型 | 说明 |
+| --- | --- |
+| Router | 返回Router实例对象。 |
 
 **示例：**
 
-完整示例请参考[pushUrl](Class (Router).md#ZH-CN_TOPIC_0000002497604782__pushurl)。
+完整示例请参考[pushUrl](Class (Router).md#ZH-CN_TOPIC_0000002553200695__pushurl)。
 
 #### getPromptAction
 
@@ -323,7 +657,9 @@ getPromptAction(): PromptAction
 
 **返回值：**
 
-类型说明[PromptAction](Class (PromptAction).md)返回PromptAction实例对象。
+| 类型 | 说明 |
+| --- | --- |
+| PromptAction | 返回PromptAction实例对象。 |
 
 **示例：**
 
@@ -341,7 +677,9 @@ getOverlayManager(): OverlayManager
 
 **返回值：**
 
-类型说明[OverlayManager](Class (OverlayManager).md)返回OverlayManager实例对象。
+| 类型 | 说明 |
+| --- | --- |
+| OverlayManager | 返回OverlayManager实例对象。 |
 
 **示例：**
 
@@ -359,15 +697,15 @@ setOverlayManagerOptions(options: OverlayManagerOptions): boolean
 
 **参数：**
 
-参数名类型必填说明options[OverlayManagerOptions](../interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529444751__overlaymanageroptions15)是OverlayManager参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | OverlayManagerOptions | 是 | OverlayManager参数。 |
 
 **返回值：**
 
-类型说明boolean
-
-是否设置成功。
-
-返回true表示设置成功。返回false表示设置失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否设置成功。 返回true表示设置成功。返回false表示设置失败。 |
 
 **示例：**
 
@@ -377,7 +715,7 @@ setOverlayManagerOptions(options: OverlayManagerOptions): boolean
 
 getOverlayManagerOptions(): OverlayManagerOptions
 
-用于获取当前[OverlayManagerOptions](../interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529444751__overlaymanageroptions15)参数。
+用于获取当前[OverlayManagerOptions](Interfaces (其他).md#ZH-CN_TOPIC_0000002553200699__overlaymanageroptions15)参数。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
@@ -385,11 +723,92 @@ getOverlayManagerOptions(): OverlayManagerOptions
 
 **返回值：**
 
-类型说明[OverlayManagerOptions](../interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529444751__overlaymanageroptions15)返回当前OverlayManagerOptions。
+| 类型 | 说明 |
+| --- | --- |
+| OverlayManagerOptions | 返回当前OverlayManagerOptions。 |
 
 **示例：**
 
 完整示例请参考[OverlayManager](Class (OverlayManager).md)中的示例。
+
+**animateToImmediately23+**
+
+animateToImmediately(param: AnimateParam, processor: Callback<void>): void
+
+通过UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)对象指定明确的动画主实例上下文，并触发显式动画立即下发。避免由于找不到实例或实例不对，导致的动画不执行或动画结束回调不执行问题。使用callback异步回调。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| param | AnimateParam | 是 | 设置动画效果相关参数。 |
+| processor | Callback<void> | 是 | 回调函数。指定显示动效的闭包函数，在闭包函数中导致的状态变化系统会自动插入过渡动画。 |
+
+示例：
+
+该示例通过UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)对象获取显式立即动画，并调用animateToImmediately接口实现参数定义的动画效果。
+
+```ets
+// xxx.ets
+@Entry
+@Component
+struct AnimateToImmediatelyExample {
+  @State widthSize: number = 250
+  @State heightSize: number = 100
+  @State opacitySize: number = 0
+  private flag: boolean = true
+  uiContext: UIContext | null | undefined = this.getUIContext();
+
+  build() {
+    Column() {
+      Column()
+        .width(this.widthSize)
+        .height(this.heightSize)
+        .backgroundColor(Color.Green)
+        .opacity(this.opacitySize)
+      Button('change size')
+        .margin(30)
+        .onClick(() => {
+          if (this.flag) {
+            this.uiContext?.animateToImmediately({
+              delay: 0,
+              duration: 1000
+            }, () => {
+              this.opacitySize = 1
+            })
+            this.uiContext?.animateTo({
+              delay: 1000,
+              duration: 1000
+            }, () => {
+              this.widthSize = 150
+              this.heightSize = 60
+            })
+          } else {
+            this.uiContext?.animateToImmediately({
+              delay: 0,
+              duration: 1000
+            }, () => {
+              this.widthSize = 250
+              this.heightSize = 100
+            })
+            this.uiContext?.animateTo({
+              delay: 1000,
+              duration: 1000
+            }, () => {
+              this.opacitySize = 0
+            })
+          }
+          this.flag = !this.flag
+        })
+    }.width('100%').margin({ top: 5 })
+  }
+```
+
+![image](public_sys-resources/zh-cn_image_0000002553364603.webp)
 
 #### animateTo
 
@@ -401,18 +820,29 @@ animateTo(value: AnimateParam, event: () => void): void
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-- 不推荐在aboutToAppear、aboutToDisappear中调用动画。
-- 如果在[aboutToAppear](../../topics/misc/自定义组件的生命周期.md#ZH-CN_TOPIC_0000002529444913__abouttoappear)中调用动画，自定义组件内的build还未执行，内部组件还未创建，动画时机过早，动画属性没有初值无法对组件产生动画。
-- 执行[aboutToDisappear](../../topics/misc/自定义组件的生命周期.md#ZH-CN_TOPIC_0000002529444913__abouttodisappear)时，组件即将销毁，不能在aboutToDisappear里面做动画。
-- 在组件出现和消失时，可以通过[组件内转场](../../topics/misc/组件内转场 (transition).md)添加动画效果。
-- 组件内转场不支持的属性，可以参考[显式动画](../../topics/misc/显式动画 (animateTo).md)中的[示例2](../../topics/misc/显式动画 (animateTo).md#ZH-CN_TOPIC_0000002497444950__示例2动画执行结束后组件消失)，使用animateTo实现动画执行结束后组件消失的效果。
+
+- 不推荐在[aboutToAppear](../../topics/components/自定义组件的生命周期.md#ZH-CN_TOPIC_0000002529444913__abouttoappear)、[aboutToDisappear](../../topics/components/自定义组件的生命周期.md#ZH-CN_TOPIC_0000002529444913__abouttodisappear)中调用动画。
+
+- 如果在[aboutToAppear](自定义组件的生命周期.md#ZH-CN_TOPIC_0000002553200861__abouttoappear)中调用动画，自定义组件内的build还未执行，内部组件还未创建，动画时机过早，动画属性没有初值无法对组件产生动画。
+
+- 执行[aboutToDisappear](自定义组件的生命周期.md#ZH-CN_TOPIC_0000002553200861__abouttodisappear)时，组件即将销毁，不能在aboutToDisappear里面做动画。
+
+- 在组件出现和消失时，可以通过[组件内转场](组件内转场 (transition).md)添加动画效果。
+
+- 组件内转场不支持的属性，可以参考[显式动画](显式动画 (animateTo).md)中的[示例2](显式动画 (animateTo).md#ZH-CN_TOPIC_0000002553360803__示例2动画执行结束后组件消失)，使用animateTo实现动画执行结束后组件消失的效果。
+
 - 某些场景下，在[状态管理V2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-overview#状态管理v2)中使用animateTo动画，会产生异常效果，具体可参考：[在状态管理V2中使用animateTo动画效果异常](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-local#在状态管理v2中使用animateto动画效果异常)。
-- UIAbility从前台切换至后台时会立即结束仍在步进中的有限循环动画，从而触发[onFinish动画播放完成回调](../../topics/misc/显式动画 (animateTo).md#ZH-CN_TOPIC_0000002497444950__animateparam对象说明)。
+
+- UIAbility从前台切换至后台时会立即结束仍在步进中的有限循环动画，从而触发[onFinish动画播放完成回调](显式动画 (animateTo).md#ZH-CN_TOPIC_0000002553360803__animateparam对象说明)。
+
 - 在设置的开发者选项中关闭过渡动画，动画会当帧结束，onFinish动画播放完成回调会立即执行，请避免在回调中加入时序相关的功能逻辑。
 
 **参数：**
 
-参数名类型必填说明value[AnimateParam](../../topics/misc/显式动画 (animateTo).md#ZH-CN_TOPIC_0000002497444950__animateparam对象说明)是设置动画效果相关参数。event() => void是指定显示动效的闭包函数，在闭包函数中导致的状态变化系统会自动插入过渡动画。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | AnimateParam | 是 | 设置动画效果相关参数。 |
+| event | () => void | 是 | 指定显示动效的闭包函数，在闭包函数中导致的状态变化系统会自动插入过渡动画。 |
 
 **示例：**
 
@@ -432,7 +862,6 @@ struct AnimateToExample {
     if (!this.uiContext) {
       console.warn("no uiContext");
       return;
-    }
   }
 
   build() {
@@ -491,14 +920,13 @@ struct AnimateToExample {
         })
     }.width('100%').margin({ top: 5 })
   }
-}
 ```
 
-#### getSharedLocalStorage12+
+#### getShared[LocalStorage](../../topics/components/应用级变量的状态管理.md#ZH-CN_TOPIC_0000002529284961__localstorage9)12+
 
-getSharedLocalStorage(): LocalStorage | undefined
+getShared[LocalStorage](../../topics/components/应用级变量的状态管理.md#ZH-CN_TOPIC_0000002529284961__localstorage9)(): LocalStorage | undefined
 
-获取当前stage共享的LocalStorage实例。
+获取当前stage共享的[LocalStorage](../../topics/components/应用级变量的状态管理.md#ZH-CN_TOPIC_0000002529284961__localstorage9)实例。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -508,7 +936,9 @@ getSharedLocalStorage(): LocalStorage | undefined
 
 **返回值：**
 
-类型说明[LocalStorage](../../topics/misc/应用级变量的状态管理.md#ZH-CN_TOPIC_0000002529284961__localstorage9) | undefined返回LocalStorage实例。共享的LocalStorage实例不存在时返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| [LocalStorage](../../topics/components/应用级变量的状态管理.md#ZH-CN_TOPIC_0000002529284961__localstorage9) | undefined | 返回LocalStorage实例。共享的LocalStorage实例不存在时返回undefined。 |
 
 **示例：**
 
@@ -522,7 +952,6 @@ export default class EntryAbility extends UIAbility {
 
   onWindowStageCreate(windowStage: window.WindowStage) {
     windowStage.loadContent('pages/Index', this.storage);
-  }
 }
 ```
 
@@ -550,14 +979,13 @@ struct SharedLocalStorage {
     }
     .height('100%')
   }
-}
 ```
 
-#### getHostContext12+
+#### getHost[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)12+
 
-getHostContext(): Context | undefined
+getHost[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)(): Context | undefined
 
-获得当前元能力的Context。
+获得当前元能力的[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -567,7 +995,9 @@ getHostContext(): Context | undefined
 
 **返回值：**
 
-类型说明[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12) | undefined返回当前组件所在Ability的Context，Context的具体类型为当前Ability关联的Context对象。例如：在UIAbility窗口中的页面调用该接口，返回类型为[UIAbilityContext](../../topics/graphics/UIAbilityContext.md#ZH-CN_TOPIC_0000002497604628__uiabilitycontext-1)。在ExtensionAbility窗口中的页面调用该接口，返回类型为[ExtensionContext](../../topics/graphics/ExtensionContext.md)。ability上下文不存在时返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| [Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12) | undefined | 返回当前组件所在Ability的Context，Context的具体类型为当前Ability关联的Context对象。例如：在UIAbility窗口中的页面调用该接口，返回类型为[UIAbilityContext](../../topics/misc/[UIAbilityContext](../../topics/misc/UIAbilityContext.md).md#ZH-CN_TOPIC_0000002497604628__uiabilitycontext-1)。在ExtensionAbility窗口中的页面调用该接口，返回类型为[ExtensionContext](../../topics/misc/ExtensionContext.md)。ability上下文不存在时返回undefined。 |
 
 **示例：**
 
@@ -593,12 +1023,11 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```
 
-#### getFrameNodeById12+
+#### get[FrameNode](../../topics/misc/FrameNode.md)ById12+
 
-getFrameNodeById(id: string): FrameNode | null
+get[FrameNode](../../topics/misc/FrameNode.md)ById(id: string): FrameNode | null
 
 通过组件的id获取组件树的实体节点。
 
@@ -608,21 +1037,26 @@ getFrameNodeById(id: string): FrameNode | null
 
 **参数：**
 
-参数名类型必填说明idstring是节点对应的[组件标识](../../topics/misc/组件标识.md)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | string | 是 | 节点对应的[组件标识](../../topics/components/组件标识.md)。 |
 
 **返回值：**
 
-类型说明[FrameNode](../../topics/components/FrameNode.md) | null返回的组件树的实体节点或者空节点。
+| 类型 | 说明 |
+| --- | --- |
+| [FrameNode](../../topics/misc/FrameNode.md) | null | 返回的组件树的实体节点或者空节点。 |
 
-getFrameNodeById通过遍历查询对应id的节点，性能较差。推荐使用[getAttachedFrameNodeById](#ZH-CN_TOPIC_0000002529444749__getattachedframenodebyid12)。
+
+getFrameNodeById通过遍历查询对应id的节点，性能较差。推荐使用[getAttachedFrameNodeById](#ZH-CN_TOPIC_0000002522240732__getattachedframenodebyid12)。
 
 **示例：**
 
-完整示例请参考[获取根节点示例](../../topics/components/FrameNode.md#ZH-CN_TOPIC_0000002529284787__获取根节点示例)。
+完整示例请参考[获取根节点示例](FrameNode.md#ZH-CN_TOPIC_0000002522240744__[获取根节点示例](../../topics/misc/FrameNode.md#ZH-CN_TOPIC_0000002529284787__获取根节点示例))。
 
-#### getAttachedFrameNodeById12+
+#### getAttached[FrameNode](../../topics/misc/FrameNode.md)ById12+
 
-getAttachedFrameNodeById(id: string): FrameNode | null
+getAttached[FrameNode](../../topics/misc/FrameNode.md)ById(id: string): FrameNode | null
 
 通过组件的id获取当前窗口上的实体节点。
 
@@ -632,13 +1066,18 @@ getAttachedFrameNodeById(id: string): FrameNode | null
 
 **参数：**
 
-参数名类型必填说明idstring是节点对应的[组件标识](../../topics/misc/组件标识.md)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | string | 是 | 节点对应的[组件标识](../../topics/components/组件标识.md)。 |
 
 **返回值：**
 
-类型说明[FrameNode](../../topics/components/FrameNode.md) | null返回的组件树的实体节点或者空节点。
+| 类型 | 说明 |
+| --- | --- |
+| [FrameNode](../../topics/misc/FrameNode.md) | null | 返回的组件树的实体节点或者空节点。 |
 
-getAttachedFrameNodeById仅能查询上屏节点。
+
+getAttached[FrameNode](../../topics/misc/FrameNode.md)ById仅能查询上屏节点。
 
 **示例：**
 
@@ -666,17 +1105,16 @@ struct MyComponent {
     .height('100%')
     .width('100%')
   }
-}
 ```
 
-#### getFrameNodeByUniqueId12+
+#### get[FrameNode](../../topics/misc/FrameNode.md)ByUniqueId12+
 
-getFrameNodeByUniqueId(id: number): FrameNode | null
+get[FrameNode](../../topics/misc/FrameNode.md)ByUniqueId(id: number): FrameNode | null
 
-提供getFrameNodeByUniqueId接口通过组件的uniqueId获取组件树的实体节点。
+提供get[FrameNode](../../topics/misc/FrameNode.md)ByUniqueId接口通过组件的uniqueId获取组件树的实体节点。
 
-1. 当uniqueId对应的是系统组件时，返回组件所对应的FrameNode；
-1. 当uniqueId对应的是自定义组件时，若其有渲染内容，则返回该自定义组件的根节点，类型为__Common__；若其无渲染内容，则返回其第一个子组件的FrameNode。
+1. 当uniqueId对应的是系统组件时，返回组件所对应的[FrameNode](../../topics/misc/FrameNode.md)；
+1. 当uniqueId对应的是自定义组件时，若其有渲染内容，则返回该自定义组件的根节点，类型为__Common__；若其无渲染内容，则返回其第一个子组件的[FrameNode](../../topics/misc/FrameNode.md)。
 1. 当uniqueId无对应的组件时，返回null。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -685,11 +1123,15 @@ getFrameNodeByUniqueId(id: number): FrameNode | null
 
 **参数：**
 
-参数名类型必填说明idnumber是节点对应的UniqueId
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | number | 是 | 节点对应的UniqueId |
 
 **返回值：**
 
-类型说明[FrameNode](../../topics/components/FrameNode.md) | null返回的组件树的实体节点或者空节点。
+| 类型 | 说明 |
+| --- | --- |
+| [FrameNode](../../topics/misc/FrameNode.md) | null | 返回的组件树的实体节点或者空节点。 |
 
 **示例：**
 
@@ -705,11 +1147,9 @@ struct MyComponent {
     if (uiContext) {
       let node: FrameNode | null = uiContext.getFrameNodeByUniqueId(uniqueId);
     }
-  }
 
   build() {
     // ...
-  }
 }
 ```
 
@@ -722,7 +1162,8 @@ getPageInfoByUniqueId(id: number): PageInfo
 1. 当uniqueId对应的节点在Page节点中，routerPageInfo属性为其对应的Router信息；
 1. 当uniqueId对应的节点在NavDestination节点中，navDestinationInfo属性为其对应的NavDestination信息；
 1. 当uniqueId对应的节点无对应的Router或NavDestination信息时，对应的属性为undefined；
-1. 模态弹窗并不在任何Page节点中。当uniqueId对应的节点在模态弹窗中，例如[CustomDialog](../../topics/components/自定义弹窗 (CustomDialog).md)、[bindSheet](../../topics/misc/半模态转场.md#ZH-CN_TOPIC_0000002497604850__bindsheet)和[bindContentCover](../../topics/misc/全屏模态转场.md#ZH-CN_TOPIC_0000002529444815__bindcontentcover)构建的模态页面中，routerPageInfo属性为undefined。
+
+1. 模态弹窗并不在任何Page节点中。当uniqueId对应的节点在模态弹窗中，例如[CustomDialog](自定义弹窗 (CustomDialog).md)、[bindSheet](半模态转场.md#ZH-CN_TOPIC_0000002522080800__bindsheet)和[bindContentCover](全屏模态转场.md#ZH-CN_TOPIC_0000002553200763__bindcontentcover)构建的模态页面中，routerPageInfo属性为undefined。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -730,11 +1171,15 @@ getPageInfoByUniqueId(id: number): PageInfo
 
 **参数：**
 
-参数名类型必填说明idnumber是节点对应的UniqueId。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | number | 是 | 节点对应的UniqueId。 |
 
 **返回值：**
 
-类型说明[PageInfo](../interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002529444751__pageinfo12)返回节点对应的Router和NavDestination信息。
+| 类型 | 说明 |
+| --- | --- |
+| PageInfo | 返回节点对应的Router和NavDestination信息。 |
 
 **示例：**
 
@@ -753,8 +1198,6 @@ struct PageInfoExample {
           MyComponent()
         }
       }.id('navigation')
-    }
-  }
 }
 
 @Component
@@ -780,7 +1223,6 @@ struct MyComponent {
     .width('100%')
     .alignItems(HorizontalAlign.Center)
   }
-}
 ```
 
 #### getNavigationInfoByUniqueId12+
@@ -798,15 +1240,19 @@ getNavigationInfoByUniqueId(id: number): observer.NavigationInfo | undefined
 
 **参数：**
 
-参数名类型必填说明idnumber是节点对应的UniqueId。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | number | 是 | 节点对应的UniqueId。 |
 
 **返回值：**
 
-类型说明observer.[NavigationInfo](../../modules/ohos/@ohos.arkui.observer (无感监听).md#ZH-CN_TOPIC_0000002529444737__navigationinfo12) | undefined返回节点对应的Navigation信息。
+| 类型 | 说明 |
+| --- | --- |
+| observer.NavigationInfo | undefined | 返回节点对应的Navigation信息。 |
 
 **示例：**
 
-请参考[getPageInfoByUniqueId](#ZH-CN_TOPIC_0000002529444749__getpageinfobyuniqueid12)的示例。
+请参考[getPageInfoByUniqueId](#ZH-CN_TOPIC_0000002522240732__getpageinfobyuniqueid12)的示例。
 
 #### showAlertDialog
 
@@ -814,7 +1260,8 @@ showAlertDialog(options: AlertDialogParamWithConfirm | AlertDialogParamWithButto
 
 显示警告弹窗组件，可设置文本内容与响应回调。
 
-不支持在输入法类型窗口中使用子窗（showInSubwindow为true）的showAlertDialog，详情见输入法框架的约束与限制说明[createPanel](../../modules/ohos/@ohos.inputMethodEngine (输入法服务).md#ZH-CN_TOPIC_0000002529445255__createpanel10-1)。
+
+不支持在输入法类型窗口中使用子窗（[showInSubWindow](警告弹窗 (AlertDialog).md#ZH-CN_TOPIC_0000002553200847__alertdialogparam对象说明) 为true）的showAlertDialog，详情见输入法框架的约束与限制说明[createPanel](@ohos.inputMethodEngine (输入法服务).md#ZH-CN_TOPIC_0000002553201227__createpanel10-1)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -822,7 +1269,9 @@ showAlertDialog(options: AlertDialogParamWithConfirm | AlertDialogParamWithButto
 
 **参数：**
 
-参数名类型必填说明options[AlertDialogParamWithConfirm](../../topics/components/警告弹窗 (AlertDialog).md#ZH-CN_TOPIC_0000002529444899__alertdialogparamwithconfirm对象说明) | [AlertDialogParamWithButtons](../../topics/components/警告弹窗 (AlertDialog).md#ZH-CN_TOPIC_0000002529444899__alertdialogparamwithbuttons对象说明) | [AlertDialogParamWithOptions](../../topics/components/警告弹窗 (AlertDialog).md#ZH-CN_TOPIC_0000002529444899__alertdialogparamwithoptions10对象说明)是定义并显示AlertDialog组件。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | AlertDialogParamWithConfirm | AlertDialogParamWithButtons | AlertDialogParamWithOptions | 是 | 定义并显示AlertDialog组件。 |
 
 **示例：**
 
@@ -853,17 +1302,15 @@ struct Index {
               cancel: () => {
                 console.info('Closed callbacks');
               }
-            }
           );
         })
     }.height('100%').width('100%').justifyContent(FlexAlign.Center)
-  }
 }
 ```
 
 #### showActionSheet
 
-showActionSheet(value: ActionSheetOptions): void
+showActionSheet(value: Action[SheetOptions](../../topics/components/半模态转场.md#ZH-CN_TOPIC_0000002497604850__sheetoptions)): void
 
 定义列表弹窗并弹出。
 
@@ -873,7 +1320,9 @@ showActionSheet(value: ActionSheetOptions): void
 
 **参数：**
 
-参数名类型必填说明value[ActionSheetOptions](../../topics/misc/列表选择弹窗 (ActionSheet).md#ZH-CN_TOPIC_0000002497604934__actionsheetoptions对象说明)是配置列表弹窗的参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | Action[SheetOptions](../../topics/components/半模态转场.md#ZH-CN_TOPIC_0000002497604850__sheetoptions) | 是 | 配置列表弹窗的参数。 |
 
 **示例：**
 
@@ -920,13 +1369,11 @@ struct Index {
                 action: () => {
                   console.info('pears');
                 }
-              }
             ]
           });
         })
     }.height('100%').width('100%').justifyContent(FlexAlign.Center)
   }
-}
 ```
 
 #### showDatePickerDialog
@@ -935,7 +1382,8 @@ showDatePickerDialog(options: DatePickerDialogOptions): void
 
 定义日期滑动选择器弹窗并弹出。
 
-不支持在输入法类型窗口中使用子窗（showInSubwindow为true）的showDatePickerDialog，详情见输入法框架的约束与限制说明[createPanel](../../modules/ohos/@ohos.inputMethodEngine (输入法服务).md#ZH-CN_TOPIC_0000002529445255__createpanel10-1)。
+
+不支持在输入法类型窗口中使用子窗（showInSubwindow为true）的showDatePickerDialog，详情见输入法框架的约束与限制说明[createPanel](@ohos.inputMethodEngine (输入法服务).md#ZH-CN_TOPIC_0000002553201227__createpanel10-1)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -945,7 +1393,9 @@ showDatePickerDialog(options: DatePickerDialogOptions): void
 
 **参数：**
 
-参数名类型必填说明options[DatePickerDialogOptions](../../topics/components/日期滑动选择器弹窗 (DatePickerDialog).md#ZH-CN_TOPIC_0000002529444901__datepickerdialogoptions对象说明)是配置日期滑动选择器弹窗的参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | DatePickerDialogOptions | 是 | 配置日期滑动选择器弹窗的参数。 |
 
 **示例：**
 
@@ -993,10 +1443,8 @@ struct DatePickerDialogExample {
                 console.info("DatePickerDialog:onWillDisappear()");
               }
             })
-          })
       }.width('100%')
     }.height('100%')
-  }
 }
 ```
 
@@ -1006,7 +1454,8 @@ showTimePickerDialog(options: TimePickerDialogOptions): void
 
 定义时间滑动选择器弹窗并弹出。
 
-不支持在输入法类型窗口中使用子窗（showInSubwindow为true）的showTimePickerDialog，详情见输入法框架的约束与限制说明[createPanel](../../modules/ohos/@ohos.inputMethodEngine (输入法服务).md#ZH-CN_TOPIC_0000002529445255__createpanel10-1)。
+
+不支持在输入法类型窗口中使用子窗（showInSubwindow为true）的showTimePickerDialog，详情见输入法框架的约束与限制说明[createPanel](@ohos.inputMethodEngine (输入法服务).md#ZH-CN_TOPIC_0000002553201227__createpanel10-1)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1016,7 +1465,9 @@ showTimePickerDialog(options: TimePickerDialogOptions): void
 
 **参数：**
 
-参数名类型必填说明options[TimePickerDialogOptions](../../topics/components/时间滑动选择器弹窗 (TimePickerDialog).md#ZH-CN_TOPIC_0000002497604936__timepickerdialogoptions对象说明)是配置时间滑动选择器弹窗的参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | TimePickerDialogOptions | 是 | 配置时间滑动选择器弹窗的参数。 |
 
 **示例：**
 
@@ -1027,7 +1478,6 @@ class SelectTime{
   selectTime: Date = new Date('2020-12-25T08:30:00');
   hours(h:number,m:number){
     this.selectTime.setHours(h, m);
-  }
 }
 
 @Entry
@@ -1060,7 +1510,6 @@ struct TimePickerDialogExample {
         })
     }.width('100%').margin({ top: 5 })
   }
-}
 ```
 
 #### showTextPickerDialog
@@ -1069,7 +1518,8 @@ showTextPickerDialog(options: TextPickerDialogOptions): void
 
 定义文本滑动选择器弹窗并弹出。
 
-不支持在输入法类型窗口中使用子窗（showInSubwindow为true）的showTextPickerDialog，详情见输入法框架的约束与限制说明[createPanel](../../modules/ohos/@ohos.inputMethodEngine (输入法服务).md#ZH-CN_TOPIC_0000002529445255__createpanel10-1)。
+
+不支持在输入法类型窗口中使用子窗（showInSubwindow为true）的showTextPickerDialog，详情见输入法框架的约束与限制说明[createPanel](@ohos.inputMethodEngine (输入法服务).md#ZH-CN_TOPIC_0000002553201227__createpanel10-1)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1079,7 +1529,9 @@ showTextPickerDialog(options: TextPickerDialogOptions): void
 
 **参数：**
 
-参数名类型必填说明options[TextPickerDialogOptions](../../topics/components/文本滑动选择器弹窗 (TextPickerDialog).md#ZH-CN_TOPIC_0000002497444958__textpickerdialogoptions对象说明)是配置文本滑动选择器弹窗的参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | TextPickerDialogOptions | 是 | 配置文本滑动选择器弹窗的参数。 |
 
 **示例：**
 
@@ -1091,12 +1543,10 @@ class SelectedValue{
   set(val: number){
     this.select = val;
   }
-}
 class SelectedArray{
   select: number[] = [];
   set(val: number[]){
     this.select = val;
-  }
 }
 @Entry
 @Component
@@ -1133,7 +1583,6 @@ struct TextPickerDialogExample {
       }.width('100%').margin({ top: 5 })
     }.height('100%')
   }
-}
 ```
 
 #### showTextPickerDialog20+
@@ -1142,7 +1591,8 @@ showTextPickerDialog(style: TextPickerDialogOptions|TextPickerDialogOptionsExt):
 
 定义文本滑动选择器弹窗并弹出，相比API version 11，新增了TextPickerDialogOptionsExt参数支持。
 
-不支持在输入法类型窗口中使用子窗（showInSubwindow为true）的showTextPickerDialog，详情见输入法框架的约束与限制说明[createPanel](../../modules/ohos/@ohos.inputMethodEngine (输入法服务).md#ZH-CN_TOPIC_0000002529445255__createpanel10-1)。
+
+不支持在输入法类型窗口中使用子窗（showInSubwindow为true）的showTextPickerDialog，详情见输入法框架的约束与限制说明[createPanel](@ohos.inputMethodEngine (输入法服务).md#ZH-CN_TOPIC_0000002553201227__createpanel10-1)。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -1152,7 +1602,9 @@ showTextPickerDialog(style: TextPickerDialogOptions|TextPickerDialogOptionsExt):
 
 **参数：**
 
-参数名类型必填说明style[TextPickerDialogOptions](../../topics/components/文本滑动选择器弹窗 (TextPickerDialog).md#ZH-CN_TOPIC_0000002497444958__textpickerdialogoptions对象说明)| [TextPickerDialogOptionsExt](../../topics/components/文本滑动选择器弹窗 (TextPickerDialog).md#ZH-CN_TOPIC_0000002497444958__textpickerdialogoptionsext20对象说明)是配置文本滑动选择器弹窗的参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| style | TextPickerDialogOptions| TextPickerDialogOptionsExt | 是 | 配置文本滑动选择器弹窗的参数。 |
 
 #### createAnimator
 
@@ -1166,17 +1618,23 @@ createAnimator(options: AnimatorOptions): AnimatorResult
 
 **参数：**
 
-参数名类型必填说明options[AnimatorOptions](../../modules/ohos/@ohos.animator (动画).md#ZH-CN_TOPIC_0000002497604768__animatoroptions)是定义动画选项。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | AnimatorOptions | 是 | 定义动画选项。 |
 
 **返回值：**
 
-类型说明[AnimatorResult](../../modules/ohos/@ohos.animator (动画).md#ZH-CN_TOPIC_0000002497604768__animatorresult)Animator结果接口。
+| 类型 | 说明 |
+| --- | --- |
+| AnimatorResult | Animator结果接口。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -1210,14 +1668,13 @@ export default class EntryAbility extends UIAbility {
       uiContext.createAnimator(options);
     });
   }
-}
 ```
 
 #### createAnimator18+
 
 createAnimator(options: AnimatorOptions | SimpleAnimatorOptions): AnimatorResult
 
-创建animator动画结果对象（AnimatorResult）。与[createAnimator](#ZH-CN_TOPIC_0000002529444749__createanimator)相比，新增对[SimpleAnimatorOptions](../../modules/ohos/@ohos.animator (动画).md#ZH-CN_TOPIC_0000002497604768__simpleanimatoroptions18)类型入参的支持。
+创建animator动画结果对象（AnimatorResult）。与[createAnimator](#ZH-CN_TOPIC_0000002522240732__createanimator)相比，新增对[SimpleAnimatorOptions](@ohos.animator (动画).md#ZH-CN_TOPIC_0000002553200681__simpleanimatoroptions18)类型入参的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -1225,17 +1682,23 @@ createAnimator(options: AnimatorOptions | SimpleAnimatorOptions): AnimatorResult
 
 **参数：**
 
-参数名类型必填说明options[AnimatorOptions](../../modules/ohos/@ohos.animator (动画).md#ZH-CN_TOPIC_0000002497604768__animatoroptions) | [SimpleAnimatorOptions](../../modules/ohos/@ohos.animator (动画).md#ZH-CN_TOPIC_0000002497604768__simpleanimatoroptions18)是定义动画选项。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | AnimatorOptions | SimpleAnimatorOptions | 是 | 定义动画选项。 |
 
 **返回值：**
 
-类型说明[AnimatorResult](../../modules/ohos/@ohos.animator (动画).md#ZH-CN_TOPIC_0000002497604768__animatorresult)Animator结果接口。
+| 类型 | 说明 |
+| --- | --- |
+| AnimatorResult | Animator结果接口。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -1260,7 +1723,6 @@ export default class EntryAbility extends UIAbility {
       uiContext.createAnimator(options);
     });
   }
-}
 ```
 
 #### runScopedTask
@@ -1275,7 +1737,9 @@ runScopedTask(callback: () => void): void
 
 **参数：**
 
-参数名类型必填说明callback() => void是回调函数
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | () => void | 是 | 回调函数 |
 
 **示例：**
 
@@ -1292,18 +1756,16 @@ struct Index {
           this.uiContext.runScopedTask(()=>{
             // do something
           })
-        })
       }
       .width('100%')
     }
     .height('100%')
-  }
 }
 ```
 
-#### setKeyboardAvoidMode11+
+#### set[KeyboardAvoidMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497604786__keyboardavoidmode11)11+
 
-setKeyboardAvoidMode(value: KeyboardAvoidMode): void
+set[KeyboardAvoidMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497604786__keyboardavoidmode11)(value: KeyboardAvoidMode): void
 
 配置虚拟键盘弹出时，页面的避让模式。
 
@@ -1313,21 +1775,20 @@ setKeyboardAvoidMode(value: KeyboardAvoidMode): void
 
 **参数：**
 
-参数名类型必填说明value[KeyboardAvoidMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497604786__keyboardavoidmode11)是
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [KeyboardAvoidMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497604786__keyboardavoidmode11) | 是 | 键盘弹出时的页面避让模式。 默认值：KeyboardAvoidMode.OFFSET |
 
-键盘弹出时的页面避让模式。
 
-默认值：KeyboardAvoidMode.OFFSET
+[KeyboardAvoidMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497604786__keyboardavoidmode11).RESIZE模式会压缩页面大小，页面中设置百分比宽高的组件会跟随页面压缩，而直接设置宽高的组件会按设置的固定大小布局。设置KeyboardAvoidMode的RESIZE模式时，expandSafeArea([SafeAreaType.KEYBOARD],[SafeAreaEdge.BOTTOM])不生效。
 
-KeyboardAvoidMode.RESIZE模式会压缩页面大小，页面中设置百分比宽高的组件会跟随页面压缩，而直接设置宽高的组件会按设置的固定大小布局。设置KeyboardAvoidMode的RESIZE模式时，expandSafeArea([SafeAreaType.KEYBOARD],[SafeAreaEdge.BOTTOM])不生效。
+[KeyboardAvoidMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497604786__keyboardavoidmode11).NONE模式配置页面不避让键盘，页面会被抬起的键盘遮盖。
 
-KeyboardAvoidMode.NONE模式配置页面不避让键盘，页面会被抬起的键盘遮盖。
-
-setKeyboardAvoidMode针对页面生效，对于弹窗类组件不生效，比如Dialog、Popup、Menu、BindSheet、BindContentCover、Toast、OverlayManager。弹窗类组件的避让模式可以参考[CustomDialogControllerOptions对象说明](../../topics/components/自定义弹窗 (CustomDialog).md#ZH-CN_TOPIC_0000002497444956__customdialogcontrolleroptions对象说明)。
+setKeyboardAvoidMode针对页面生效，对于弹窗类组件不生效，比如Dialog、Popup、Menu、BindSheet、BindContentCover、Toast、OverlayManager。弹窗类组件的避让模式可以参考[CustomDialogControllerOptions对象说明](自定义弹窗 (CustomDialog).md#ZH-CN_TOPIC_0000002553360809__customdialogcontrolleroptions对象说明)。
 
 **示例：**
 
-完整示例请参考[示例4（设置键盘避让模式为压缩）](../../topics/misc/安全区域.md#ZH-CN_TOPIC_0000002497444852__示例4设置键盘避让模式为压缩)、[示例5（设置键盘避让模式为上抬）](../../topics/misc/安全区域.md#ZH-CN_TOPIC_0000002497444852__示例5设置键盘避让模式为上抬)以及[示例6（切换避让模式）](../../topics/misc/安全区域.md#ZH-CN_TOPIC_0000002497444852__示例6切换避让模式)。
+完整示例请参考[示例4（设置键盘避让模式为压缩）](安全区域.md#ZH-CN_TOPIC_0000002553360705__示例4设置键盘避让模式为压缩)、[示例5（设置键盘避让模式为上抬）](安全区域.md#ZH-CN_TOPIC_0000002553360705__示例5设置键盘避让模式为上抬)以及[示例6（切换避让模式）](安全区域.md#ZH-CN_TOPIC_0000002553360705__示例6切换避让模式)。
 
 ```ets
 // EntryAbility.ets
@@ -1341,12 +1802,11 @@ export default class EntryAbility extends UIAbility{
         uiContext.setKeyboardAvoidMode(KeyboardAvoidMode.RESIZE);
       });
     }
-}
 ```
 
-#### getKeyboardAvoidMode11+
+#### get[KeyboardAvoidMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497604786__keyboardavoidmode11)11+
 
-getKeyboardAvoidMode(): KeyboardAvoidMode
+get[KeyboardAvoidMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497604786__keyboardavoidmode11)(): KeyboardAvoidMode
 
 获取虚拟键盘弹出时，页面的避让模式。
 
@@ -1356,11 +1816,13 @@ getKeyboardAvoidMode(): KeyboardAvoidMode
 
 **返回值：**
 
-类型说明[KeyboardAvoidMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497604786__keyboardavoidmode11)返回当前的页面避让模式。
+| 类型 | 说明 |
+| --- | --- |
+| [KeyboardAvoidMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497604786__keyboardavoidmode11) | 返回当前的页面避让模式。 |
 
 **示例：**
 
-完整示例请参考[示例4（设置键盘避让模式为压缩）](../../topics/misc/安全区域.md#ZH-CN_TOPIC_0000002497444852__示例4设置键盘避让模式为压缩)、[示例5（设置键盘避让模式为上抬）](../../topics/misc/安全区域.md#ZH-CN_TOPIC_0000002497444852__示例5设置键盘避让模式为上抬)以及[示例6（切换避让模式）](../../topics/misc/安全区域.md#ZH-CN_TOPIC_0000002497444852__示例6切换避让模式)。
+完整示例请参考[示例4（设置键盘避让模式为压缩）](安全区域.md#ZH-CN_TOPIC_0000002553360705__示例4设置键盘避让模式为压缩)、[示例5（设置键盘避让模式为上抬）](安全区域.md#ZH-CN_TOPIC_0000002553360705__示例5设置键盘避让模式为上抬)以及[示例6（切换避让模式）](安全区域.md#ZH-CN_TOPIC_0000002553360705__示例6切换避让模式)。
 
 ```ets
 // EntryAbility.ets
@@ -1375,7 +1837,6 @@ export default class EntryAbility extends UIAbility{
         console.info("KeyboardAvoidMode:", JSON.stringify(KeyboardAvoidMode));
       });
     }
-}
 ```
 
 #### getAtomicServiceBar11+
@@ -1390,7 +1851,9 @@ getAtomicServiceBar(): Nullable<AtomicServiceBar>
 
 **返回值：**
 
-类型说明Nullable<[AtomicServiceBar](../interfaces/Interface (AtomicServiceBar).md)>如果是元服务则返回AtomicServerBar类型，否则返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| Nullable<AtomicServiceBar> | 如果是元服务则返回AtomicServerBar类型，否则返回undefined。 |
 
 **示例：**
 
@@ -1413,7 +1876,6 @@ export default class EntryAbility extends UIAbility {
       }
     });
   }
-}
 ```
 
 #### getDragController11+
@@ -1428,7 +1890,9 @@ getDragController(): DragController
 
 **返回值：**
 
-类型说明[DragController](../../modules/ohos/@ohos.arkui.dragController (DragController).md)获取DragController对象。
+| 类型 | 说明 |
+| --- | --- |
+| DragController | 获取DragController对象。 |
 
 **示例：**
 
@@ -1438,7 +1902,7 @@ getDragController(): DragController
 
 keyframeAnimateTo(param: KeyframeAnimateParam, keyframes: Array<KeyframeState>): void
 
-产生关键帧动画。该接口的使用说明请参考[keyframeAnimateTo](../../topics/components/关键帧动画 (keyframeAnimateTo).md)。
+产生关键帧动画。该接口的使用说明请参考[keyframeAnimateTo](关键帧动画 (keyframeAnimateTo).md)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1446,7 +1910,10 @@ keyframeAnimateTo(param: KeyframeAnimateParam, keyframes: Array<KeyframeState>):
 
 **参数：**
 
-参数名类型必填说明param[KeyframeAnimateParam](../../topics/components/关键帧动画 (keyframeAnimateTo).md#ZH-CN_TOPIC_0000002529284921__keyframeanimateparam对象说明)是关键帧动画的整体动画参数。keyframesArray<[KeyframeState](../../topics/components/关键帧动画 (keyframeAnimateTo).md#ZH-CN_TOPIC_0000002529284921__keyframestate对象说明)>是所有的关键帧状态的列表。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| param | KeyframeAnimateParam | 是 | 关键帧动画的整体动画参数。 |
+| keyframes | Array<KeyframeState> | 是 | 所有的关键帧状态的列表。 |
 
 **示例：**
 
@@ -1500,11 +1967,9 @@ struct KeyframeDemo {
               event: () => {
                 this.myScale = 1;
               }
-            }
           ]);
         })
     }.width('100%').margin({ top: 5 })
-  }
 }
 ```
 
@@ -1520,7 +1985,9 @@ getFocusController(): FocusController
 
 **返回值：**
 
-类型说明[FocusController](Class (FocusController).md)获取FocusController对象。
+| 类型 | 说明 |
+| --- | --- |
+| FocusController | 获取FocusController对象。 |
 
 **示例：**
 
@@ -1538,51 +2005,23 @@ getFilteredInspectorTree(filters?: Array<string>): string
 
 **参数：**
 
-参数名类型必填说明filtersArray<string>否
-
-需要获取的组件属性的过滤列表。目前仅支持过滤字段：
-
-"id"：组件唯一标识。
-
-"src"：资源来源。
-
-"content"：元素、组件或对象所包含的信息或数据。
-
-"editable"：是否可编辑。
-
-"scrollable"：是否可滚动。
-
-"selectable"：是否可选择。
-
-"focusable"：是否可聚焦。
-
-"focused"：是否已聚焦。
-
-如果在filters参数中包含以上一个或者多个字段，则未包含的字段会在组件属性查询结果中被过滤掉。如果用户未传入filters参数或者filters参数为空数组，则以上字段全部不会在组件属性查询结果中被过滤掉。
-
-从API version 20开始，支持该过滤字段：
-
-"isLayoutInspector"：返回组件树是否包含[自定义组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components)。如果用户未传入filters参数或者filters数组不包含isLayoutInspector，返回的组件树将缺少自定义组件的信息。
-
-其余字段仅供测试场景使用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| filters | Array<string> | 否 | 需要获取的组件属性的过滤列表。目前仅支持过滤字段： "id"：组件唯一标识。 "src"：资源来源。 "content"：元素、组件或对象所包含的信息或数据。 "editable"：是否可编辑。 "scrollable"：是否可滚动。 "selectable"：是否可选择。 "focusable"：是否可聚焦。 "focused"：是否已聚焦。 如果在filters参数中包含以上一个或者多个字段，则未包含的字段会在组件属性查询结果中被过滤掉。如果用户未传入filters参数或者filters参数为空数组，则以上字段全部不会在组件属性查询结果中被过滤掉。 从API version 20开始，支持该过滤字段： "isLayoutInspector"：返回组件树是否包含自定义组件。如果用户未传入filters参数或者filters数组不包含isLayoutInspector，返回的组件树将缺少自定义组件的信息。 其余字段仅供测试场景使用。 |
 
 **返回值：**
 
-类型说明string获取组件树及组件属性的JSON字符串。组件中每个字段的含义请参考[getInspectorInfo](../../topics/components/FrameNode.md#ZH-CN_TOPIC_0000002529284787__getinspectorinfo12)的返回值说明。
+| 类型 | 说明 |
+| --- | --- |
+| string | 获取组件树及组件属性的JSON字符串。组件中每个字段的含义请参考[getInspectorInfo](../../topics/misc/FrameNode.md#ZH-CN_TOPIC_0000002529284787__getinspectorinfo12)的返回值说明。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameters types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -1602,8 +2041,6 @@ struct ComponentPage {
       i += '-';
       for (let index = 0; index < JSON.parse(inspectorStr).$children.length; index++) {
         this.loopConsole(JSON.stringify(JSON.parse(inspectorStr).$children[index]), i);
-      }
-    }
   }
 
   build() {
@@ -1625,7 +2062,6 @@ struct ComponentPage {
     }
     .width('100%')
     .height('100%')
-  }
 }
 ```
 
@@ -1662,47 +2098,25 @@ getFilteredInspectorTreeById(id: string, depth: number, filters?: Array<string>)
 
 **参数：**
 
-参数名类型必填说明idstring是指定的[组件标识](../../topics/misc/组件标识.md)id。depthnumber是获取子组件的层数。当取值0时，获取指定的组件及其所有的子孙组件的属性。当取值1时，仅获取指定的组件的属性。当取值2时，指定的组件及其1层子组件的属性。以此类推。filtersArray<string>否
-
-需要获取的组件属性的过滤列表。目前仅支持过滤字段：
-
-"id"：组件唯一标识。
-
-"src"：资源来源。
-
-"content"：元素、组件或对象所包含的信息或数据。
-
-"editable"：是否可编辑。
-
-"scrollable"：是否可滚动。
-
-"selectable"：是否可选择。
-
-"focusable"：是否可聚焦。
-
-"focused"：是否已聚焦。
-
-如果在filters参数中包含以上一个或者多个字段，则未包含的字段会在组件属性查询结果中被过滤掉。如果用户未传入filters参数或者filters参数为空数组，则以上字段全部不会在组件属性查询结果中被过滤掉。
-
-其余字段仅供测试场景使用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | string | 是 | 指定的[组件标识](../../topics/components/组件标识.md)id。 |
+| depth | number | 是 | 获取子组件的层数。当取值0时，获取指定的组件及其所有的子孙组件的属性。当取值1时，仅获取指定的组件的属性。当取值2时，指定的组件及其1层子组件的属性。以此类推。 |
+| filters | Array<string> | 否 | 需要获取的组件属性的过滤列表。目前仅支持过滤字段： "id"：组件唯一标识。 "src"：资源来源。 "content"：元素、组件或对象所包含的信息或数据。 "editable"：是否可编辑。 "scrollable"：是否可滚动。 "selectable"：是否可选择。 "focusable"：是否可聚焦。 "focused"：是否已聚焦。 如果在filters参数中包含以上一个或者多个字段，则未包含的字段会在组件属性查询结果中被过滤掉。如果用户未传入filters参数或者filters参数为空数组，则以上字段全部不会在组件属性查询结果中被过滤掉。 其余字段仅供测试场景使用。 |
 
 **返回值：**
 
-类型说明string获取指定的组件及其子组件的属性的JSON字符串。组件中每个字段的含义请参考[getInspectorInfo](../../topics/components/FrameNode.md#ZH-CN_TOPIC_0000002529284787__getinspectorinfo12)的返回值说明。
+| 类型 | 说明 |
+| --- | --- |
+| string | 获取指定的组件及其子组件的属性的JSON字符串。组件中每个字段的含义请参考[getInspectorInfo](../../topics/misc/FrameNode.md#ZH-CN_TOPIC_0000002529284787__getinspectorinfo12)的返回值说明。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. Mandatory parameters are left unspecified.
-
-2. Incorrect parameters types.
-
-3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
 
 **示例：**
 
@@ -1738,7 +2152,6 @@ struct ComponentPage {
     .width('100%')
     .height('100%')
   }
-}
 ```
 
 返回的JSON字符串结构如下：
@@ -1763,15 +2176,17 @@ getCursorController(): CursorController
 
 **返回值：**
 
-类型说明[CursorController](Class (CursorController).md)获取CursorController对象。
+| 类型 | 说明 |
+| --- | --- |
+| CursorController | 获取CursorController对象。 |
 
 **示例：**
 
-完整示例请参考[CursorController](Class (ContextMenuController).md)中的示例。
+完整示例请参考[CursorController](Class (CursorController).md)中的示例。
 
-#### getContextMenuController12+
+#### get[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)MenuController12+
 
-getContextMenuController(): ContextMenuController
+get[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)MenuController(): ContextMenuController
 
 获取[ContextMenuController](Class (ContextMenuController).md)对象，可通过该对象控制菜单。
 
@@ -1781,13 +2196,15 @@ getContextMenuController(): ContextMenuController
 
 **返回值：**
 
-类型说明[ContextMenuController](Class (ContextMenuController).md)获取ContextMenuController对象。
+| 类型 | 说明 |
+| --- | --- |
+| [Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)MenuController | 获取ContextMenuController对象。 |
 
 #### getMeasureUtils12+
 
 getMeasureUtils(): MeasureUtils
 
-允许用户通过UIContext对象，获取MeasureUtils对象进行文本计算。
+允许用户通过UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)对象，获取MeasureUtils对象进行文本计算。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1795,7 +2212,9 @@ getMeasureUtils(): MeasureUtils
 
 **返回值：**
 
-类型说明[MeasureUtils](Class (MeasureUtils).md)提供文本宽度、高度等相关计算。
+| 类型 | 说明 |
+| --- | --- |
+| MeasureUtils | 提供文本宽度、高度等相关计算。 |
 
 **示例：**
 
@@ -1815,7 +2234,9 @@ getComponentSnapshot(): ComponentSnapshot
 
 **返回值：**
 
-类型说明[ComponentSnapshot](Class (ComponentSnapshot).md)获取ComponentSnapshot对象。
+| 类型 | 说明 |
+| --- | --- |
+| ComponentSnapshot | 获取ComponentSnapshot对象。 |
 
 **示例：**
 
@@ -1829,15 +2250,16 @@ vp2px(value : number) : number
 
 转换公式为：px值 = vp值 × 像素密度
 
-像素密度：当前窗口生效的像素密度值，即屏幕物理像素密度[VirtualScreenConfig.density](../../modules/ohos/@ohos.display (屏幕属性).md#ZH-CN_TOPIC_0000002529284797__virtualscreenconfig16)。
+像素密度：当前窗口生效的像素密度值，即屏幕物理像素密度[VirtualScreenConfig](@ohos.display (屏幕属性).md#ZH-CN_TOPIC_0000002522240754__virtualscreenconfig16).density。
+
 
 1.
 
-getUIContext需在[windowStage.loadContent](../interfaces/Interface (WindowStage).md#ZH-CN_TOPIC_0000002497444824__loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。
+getUIContext需在windowStage.[loadContent](Interface (WindowStage).md#ZH-CN_TOPIC_0000002553360677__loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。
 
 1.
 
-UI实例未创建时，[像素单位](../../topics/misc/像素单位.md)中的vp2px接口使用默认屏幕的虚拟像素比进行转换。在该场景下，开发者使用UIContext接口替换时，可参考[像素单位转换接口替换为UIContext接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#像素单位转换接口替换为uicontext接口)。
+UI实例未创建时，[像素单位]([像素单位](../../topics/components/像素单位.md).md)中的vp2px接口使用默认屏幕的虚拟像素比进行转换。在该场景下，开发者使用UIContext接口替换时，可参考[像素单位转换接口替换为UIContext接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#像素单位转换接口替换为uicontext接口)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1845,19 +2267,15 @@ UI实例未创建时，[像素单位](../../topics/misc/像素单位.md)中的vp
 
 **参数：**
 
-参数名类型必填说明valuenumber是
-
-将vp单位的数值转换为以px为单位的数值。
-
-取值范围：(-∞, +∞)
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 将vp单位的数值转换为以px为单位的数值。 取值范围：(-∞, +∞) |
 
 **返回值：**
 
-类型说明number
-
-转换后的数值。
-
-取值范围：(-∞, +∞)
+| 类型 | 说明 |
+| --- | --- |
+| number | 转换后的数值。 取值范围：(-∞, +∞) |
 
 **示例：**
 
@@ -1882,7 +2300,6 @@ struct MatrixExample {
     }.width('100%')
     .height('100%')
   }
-}
 ```
 
 #### px2vp12+
@@ -1893,15 +2310,16 @@ px2vp(value : number) : number
 
 转换公式为：vp值 = px值 ÷ 像素密度
 
-像素密度：当前窗口生效的像素密度值，即屏幕物理像素密度[VirtualScreenConfig.density](../../modules/ohos/@ohos.display (屏幕属性).md#ZH-CN_TOPIC_0000002529284797__virtualscreenconfig16)。
+像素密度：当前窗口生效的像素密度值，即屏幕物理像素密度[VirtualScreenConfig](@ohos.display (屏幕属性).md#ZH-CN_TOPIC_0000002522240754__virtualscreenconfig16).density。
+
 
 1.
 
-getUIContext需在[windowStage.loadContent](../interfaces/Interface (WindowStage).md#ZH-CN_TOPIC_0000002497444824__loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。
+getUIContext需在windowStage.[loadContent](Interface (WindowStage).md#ZH-CN_TOPIC_0000002553360677__loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。
 
 1.
 
-UI实例未创建时，[像素单位](../../topics/misc/像素单位.md)中的px2vp接口使用默认屏幕的虚拟像素比进行转换。在该场景下，开发者使用UIContext接口替换时，可参考[像素单位转换接口替换为UIContext接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#像素单位转换接口替换为uicontext接口)。
+UI实例未创建时，[像素单位](像素单位.md)中的px2vp接口使用默认屏幕的虚拟像素比进行转换。在该场景下，开发者使用UIContext接口替换时，可参考[像素单位转换接口替换为UIContext接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#像素单位转换接口替换为uicontext接口)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1909,19 +2327,15 @@ UI实例未创建时，[像素单位](../../topics/misc/像素单位.md)中的px
 
 **参数：**
 
-参数名类型必填说明valuenumber是
-
-将px单位的数值转换为以vp为单位的数值。
-
-取值范围：(-∞, +∞)
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 将px单位的数值转换为以vp为单位的数值。 取值范围：(-∞, +∞) |
 
 **返回值：**
 
-类型说明number
-
-转换后的数值。
-
-取值范围：(-∞, +∞)
+| 类型 | 说明 |
+| --- | --- |
+| number | 转换后的数值。 取值范围：(-∞, +∞) |
 
 **示例：**
 
@@ -1946,7 +2360,6 @@ struct MatrixExample {
     }.width('100%')
     .height('100%')
   }
-}
 ```
 
 #### fp2px12+
@@ -1957,11 +2370,12 @@ fp2px(value : number) : number
 
 转换公式为：px值 = fp值 × 像素密度 × 字体缩放比例
 
-像素密度：当前窗口生效的像素密度值，即屏幕物理像素密度[VirtualScreenConfig.density](../../modules/ohos/@ohos.display (屏幕属性).md#ZH-CN_TOPIC_0000002529284797__virtualscreenconfig16)。
+像素密度：当前窗口生效的像素密度值，即屏幕物理像素密度[VirtualScreenConfig](@ohos.display (屏幕属性).md#ZH-CN_TOPIC_0000002522240754__virtualscreenconfig16).density。
 
-字体缩放比例：系统设置的字体缩放系数，对应 [Configuration.fontScale](../../topics/misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__configuration)。
+字体缩放比例：系统设置的字体缩放系数，对应 [Configuration.fontScale](基础类型定义.md#ZH-CN_TOPIC_0000002553360849__configuration)。
 
-getUIContext需在[windowStage.loadContent](../interfaces/Interface (WindowStage).md#ZH-CN_TOPIC_0000002497444824__loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。
+
+getUIContext需在windowStage.[loadContent](Interface (WindowStage).md#ZH-CN_TOPIC_0000002553360677__loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1969,19 +2383,15 @@ getUIContext需在[windowStage.loadContent](../interfaces/Interface (WindowStage
 
 **参数：**
 
-参数名类型必填说明valuenumber是
-
-将fp单位的数值转换为以px为单位的数值。
-
-取值范围：(-∞, +∞)
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 将fp单位的数值转换为以px为单位的数值。 取值范围：(-∞, +∞) |
 
 **返回值：**
 
-类型说明number
-
-转换后的数值。
-
-取值范围：(-∞, +∞)
+| 类型 | 说明 |
+| --- | --- |
+| number | 转换后的数值。 取值范围：(-∞, +∞) |
 
 **示例：**
 
@@ -2006,7 +2416,6 @@ struct MatrixExample {
     }.width('100%')
     .height('100%')
   }
-}
 ```
 
 #### px2fp12+
@@ -2017,11 +2426,12 @@ px2fp(value : number) : number
 
 转换公式为：fp值 = px值 ÷ 像素密度 ÷ 字体缩放比例
 
-像素密度：当前窗口生效的像素密度值，通常就是屏幕物理像素密度[VirtualScreenConfig.density](../../modules/ohos/@ohos.display (屏幕属性).md#ZH-CN_TOPIC_0000002529284797__virtualscreenconfig16)。
+像素密度：当前窗口生效的像素密度值，通常就是屏幕物理像素密度[VirtualScreenConfig](@ohos.display (屏幕属性).md#ZH-CN_TOPIC_0000002522240754__virtualscreenconfig16).density。
 
-字体缩放比例：系统设置的字体缩放系数，对应 [Configuration.fontScale](../../topics/misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__configuration)。
+字体缩放比例：系统设置的字体缩放系数，对应 [Configuration.fontScale](基础类型定义.md#ZH-CN_TOPIC_0000002553360849__configuration)。
 
-getUIContext需在[windowStage.loadContent](../interfaces/Interface (WindowStage).md#ZH-CN_TOPIC_0000002497444824__loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。
+
+getUIContext需在windowStage.[loadContent](Interface (WindowStage).md#ZH-CN_TOPIC_0000002553360677__loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2029,19 +2439,15 @@ getUIContext需在[windowStage.loadContent](../interfaces/Interface (WindowStage
 
 **参数：**
 
-参数名类型必填说明valuenumber是
-
-将px单位的数值转换为以fp为单位的数值。
-
-取值范围：(-∞, +∞)
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 将px单位的数值转换为以fp为单位的数值。 取值范围：(-∞, +∞) |
 
 **返回值：**
 
-类型说明number
-
-转换后的数值。
-
-取值范围：(-∞, +∞)
+| 类型 | 说明 |
+| --- | --- |
+| number | 转换后的数值。 取值范围：(-∞, +∞) |
 
 **示例：**
 
@@ -2066,7 +2472,6 @@ struct MatrixExample {
     }.width('100%')
     .height('100%')
   }
-}
 ```
 
 #### lpx2px12+
@@ -2077,7 +2482,8 @@ lpx2px(value : number) : number
 
 转换公式为：px值 = lpx值 × 实际屏幕宽度与逻辑宽度（通过[designWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#pages标签)配置）的比值。
 
-getUIContext需在[windowStage.loadContent](../interfaces/Interface (WindowStage).md#ZH-CN_TOPIC_0000002497444824__loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。
+
+getUIContext需在windowStage.[loadContent](Interface (WindowStage).md#ZH-CN_TOPIC_0000002553360677__loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2085,19 +2491,15 @@ getUIContext需在[windowStage.loadContent](../interfaces/Interface (WindowStage
 
 **参数：**
 
-参数名类型必填说明valuenumber是
-
-将lpx单位的数值转换为以px为单位的数值。
-
-取值范围：(-∞, +∞)
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 将lpx单位的数值转换为以px为单位的数值。 取值范围：(-∞, +∞) |
 
 **返回值：**
 
-类型说明number
-
-转换后的数值。
-
-取值范围：(-∞, +∞)
+| 类型 | 说明 |
+| --- | --- |
+| number | 转换后的数值。 取值范围：(-∞, +∞) |
 
 **示例：**
 
@@ -2122,7 +2524,6 @@ struct MatrixExample {
     }.width('100%')
     .height('100%')
   }
-}
 ```
 
 #### px2lpx12+
@@ -2133,7 +2534,8 @@ px2lpx(value : number) : number
 
 转换公式为：lpx值 = px值 ÷ 实际屏幕宽度与逻辑宽度（通过[designWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#pages标签)配置）的比值。
 
-getUIContext需在[windowStage.loadContent](../interfaces/Interface (WindowStage).md#ZH-CN_TOPIC_0000002497444824__loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。
+
+getUIContext需在windowStage.[loadContent](Interface (WindowStage).md#ZH-CN_TOPIC_0000002553360677__loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2141,19 +2543,15 @@ getUIContext需在[windowStage.loadContent](../interfaces/Interface (WindowStage
 
 **参数：**
 
-参数名类型必填说明valuenumber是
-
-将px单位的数值转换为以lpx为单位的数值。
-
-取值范围：(-∞, +∞)
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 将px单位的数值转换为以lpx为单位的数值。 取值范围：(-∞, +∞) |
 
 **返回值：**
 
-类型说明number
-
-转换后的数值。
-
-取值范围：(-∞, +∞)
+| 类型 | 说明 |
+| --- | --- |
+| number | 转换后的数值。 取值范围：(-∞, +∞) |
 
 **示例：**
 
@@ -2178,7 +2576,6 @@ struct MatrixExample {
     }.width('100%')
     .height('100%')
   }
-}
 ```
 
 #### getWindowName12+
@@ -2193,7 +2590,9 @@ getWindowName(): string | undefined
 
 **返回值：**
 
-类型说明string | undefined当前实例所在窗口的名称。若窗口不存在，则返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| string | undefined | 当前实例所在窗口的名称。若窗口不存在，则返回undefined。 |
 
 **示例：**
 
@@ -2224,14 +2623,60 @@ struct Index {
     }
     .height('100%')
   }
+```
+
+**getWindowId23+**
+
+getWindowId(): number | undefined
+
+获取当前应用实例所属的窗口ID。
+
+
+若UIContext位于主应用程序进程中的[UIExtensionAbility](@ohos.app.ability.UIExtensionAbility (带界面的ExtensionAbility组件).md)内，则返回主应用程序的顶层窗口ID。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| number | undefined | 当前应用实例所属的窗口ID。若窗口不存在，则返回undefined。 |
+
+示例：
+
+```ets
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+
+  aboutToAppear() {
+    const windowId = this.getUIContext().getWindowId();
+    hilog.info(0x0000, 'testTag', 'current window id: %{public}d', windowId);
+  }
+
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+      }
+      .width('100%')
+    }
+    .height('100%')
 }
 ```
 
-#### getWindowWidthBreakpoint13+
+#### getWindow[WidthBreakpoint](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__widthbreakpoint13)13+
 
-getWindowWidthBreakpoint(): WidthBreakpoint
+getWindow[WidthBreakpoint](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__widthbreakpoint13)(): WidthBreakpoint
 
-获取当前实例所在窗口的宽度断点枚举值。具体枚举值根据窗口宽度vp值确定，详见 [WidthBreakpoint](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__widthbreakpoint13)。
+获取当前实例所在窗口的宽度断点枚举值。具体枚举值根据窗口宽度vp值确定，详见 [WidthBreakpoint](枚举说明.md#ZH-CN_TOPIC_0000002553200889__widthbreakpoint13)。
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
@@ -2239,7 +2684,9 @@ getWindowWidthBreakpoint(): WidthBreakpoint
 
 **返回值：**
 
-类型说明[WidthBreakpoint](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__widthbreakpoint13)当前实例所在窗口的宽度断点枚举值。若窗口宽度为 0vp，则返回WIDTH_XS。
+| 类型 | 说明 |
+| --- | --- |
+| [WidthBreakpoint](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__widthbreakpoint13) | 当前实例所在窗口的宽度断点枚举值。若窗口宽度为 0vp，则返回WIDTH_XS。 |
 
 **示例：**
 
@@ -2271,14 +2718,13 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```
 
-#### getWindowHeightBreakpoint13+
+#### getWindow[HeightBreakpoint](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__heightbreakpoint13)13+
 
-getWindowHeightBreakpoint(): HeightBreakpoint
+getWindow[HeightBreakpoint](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__heightbreakpoint13)(): HeightBreakpoint
 
-获取当前实例所在窗口的高度断点。具体枚举值根据窗口高宽比确定，详见 [HeightBreakpoint](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__heightbreakpoint13)。
+获取当前实例所在窗口的高度断点。具体枚举值根据窗口高宽比确定，详见 [HeightBreakpoint](枚举说明.md#ZH-CN_TOPIC_0000002553200889__heightbreakpoint13)。
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
@@ -2286,7 +2732,9 @@ getWindowHeightBreakpoint(): HeightBreakpoint
 
 **返回值：**
 
-类型说明[HeightBreakpoint](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__heightbreakpoint13)当前实例所在窗口的宽高比对应的高度断点枚举值。若窗口高宽比为0，则返回HEIGHT_SM。
+| 类型 | 说明 |
+| --- | --- |
+| [HeightBreakpoint](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__heightbreakpoint13) | 当前实例所在窗口的宽高比对应的高度断点枚举值。若窗口高宽比为0，则返回HEIGHT_SM。 |
 
 **示例：**
 
@@ -2319,7 +2767,6 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```
 
 #### postFrameCallback12+
@@ -2334,7 +2781,9 @@ postFrameCallback(frameCallback: FrameCallback): void
 
 **参数：**
 
-参数名类型必填说明frameCallback[FrameCallback](Class (FrameCallback).md)是下一帧需要执行的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| frameCallback | FrameCallback | 是 | 下一帧需要执行的回调。 |
 
 **示例：**
 
@@ -2352,7 +2801,6 @@ class MyFrameCallback extends FrameCallback {
   onFrame(frameTimeNanos: number) {
     console.info('MyFrameCallback ' + this.tag + ' ' + frameTimeNanos.toString());
   }
-}
 
 @Entry
 @Component
@@ -2364,8 +2812,6 @@ struct Index {
           this.getUIContext().postFrameCallback(new MyFrameCallback("normTask"));
         })
     }
-  }
-}
 ```
 
 #### postDelayedFrameCallback12+
@@ -2380,7 +2826,10 @@ postDelayedFrameCallback(frameCallback: FrameCallback, delayTime: number): void
 
 **参数：**
 
-参数名类型必填说明frameCallback[FrameCallback](Class (FrameCallback).md)是下一帧需要执行的回调。delayTimenumber是延迟的时间，以毫秒为单位。传入null、undefined或小于0的值，会按0处理。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| frameCallback | FrameCallback | 是 | 下一帧需要执行的回调。 |
+| delayTime | number | 是 | 延迟的时间，以毫秒为单位。传入null、undefined或小于0的值，会按0处理。 |
 
 **示例：**
 
@@ -2398,7 +2847,6 @@ class MyFrameCallback extends FrameCallback {
   onFrame(frameTimeNanos: number) {
     console.info('MyFrameCallback ' + this.tag + ' ' + frameTimeNanos.toString());
   }
-}
 
 @Entry
 @Component
@@ -2410,8 +2858,6 @@ struct Index {
           this.getUIContext().postDelayedFrameCallback(new MyFrameCallback("delayTask"), 5);
         })
     }
-  }
-}
 ```
 
 #### requireDynamicSyncScene12+
@@ -2426,11 +2872,15 @@ requireDynamicSyncScene(id: string): Array<DynamicSyncScene>
 
 **参数：**
 
-参数名类型必填说明idstring是节点对应的[组件标识](../../topics/misc/组件标识.md)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | string | 是 | 节点对应的[组件标识](../../topics/components/组件标识.md)。 |
 
 **返回值：**
 
-类型说明Array<DynamicSyncScene>获取DynamicSyncScene对象数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<DynamicSyncScene> | 获取DynamicSyncScene对象数组。 |
 
 **示例：**
 
@@ -2478,27 +2928,25 @@ struct Frame {
           });
         })
     }
-  }
-}
 ```
 
 #### openBindSheet12+
 
-openBindSheet<T extends Object>(bindSheetContent: ComponentContent<T>, sheetOptions?: SheetOptions, targetId?: number): Promise<void>
+openBindSheet<T extends Object>([bindSheet](../../topics/components/半模态转场.md#ZH-CN_TOPIC_0000002497604850__bindsheet)Content: [ComponentContent<T>](../../topics/misc/ComponentContent.md), sheetOptions?: SheetOptions, targetId?: number): Promise<void>
 
-创建并弹出以bindSheetContent作为内容的半模态页面，使用Promise异步回调。通过该接口弹出的半模态页面样式完全按照bindSheetContent中设置的样式显示。
-
-1.
-
-使用该接口时，若未传入有效的targetId，则不支持设置SheetOptions.preferType为POPUP模式、不支持设置SheetOptions.mode为EMBEDDED模式。
+创建并弹出以[bindSheet](../../topics/components/半模态转场.md#ZH-CN_TOPIC_0000002497604850__bindsheet)Content作为内容的半模态页面，使用Promise异步回调。通过该接口弹出的半模态页面样式完全按照bindSheetContent中设置的样式显示。
 
 1.
 
-由于[updateBindSheet](#ZH-CN_TOPIC_0000002529444749__updatebindsheet12)和[closeBindSheet](#ZH-CN_TOPIC_0000002529444749__closebindsheet12)依赖bindSheetContent去更新或者关闭指定的半模态页面，开发者需自行维护传入的bindSheetContent。
+使用该接口时，若未传入有效的targetId，则不支持设置[SheetOptions](../../topics/components/半模态转场.md#ZH-CN_TOPIC_0000002497604850__sheetoptions).preferType为POPUP模式、不支持设置SheetOptions.mode为EMBEDDED模式。
 
 1.
 
-不支持设置SheetOptions.UIContext。
+由于[updateBindSheet](#ZH-CN_TOPIC_0000002522240732__updatebindsheet12)和[closeBindSheet](#ZH-CN_TOPIC_0000002522240732__closebindsheet12)依赖bindSheetContent去更新或者关闭指定的半模态页面，开发者需自行维护传入的bindSheetContent。
+
+1.
+
+不支持设置SheetOptions.UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2506,31 +2954,30 @@ openBindSheet<T extends Object>(bindSheetContent: ComponentContent<T>, sheetOpti
 
 **参数：**
 
-参数名类型必填说明bindSheetContent[ComponentContent<T>](../../topics/components/ComponentContent.md)是半模态页面中显示的组件内容。sheetOptions[SheetOptions](../../topics/misc/半模态转场.md#ZH-CN_TOPIC_0000002497604850__sheetoptions)否
-
-半模态页面样式。
-
-**说明：**
-
-1. 不支持设置SheetOptions.uiContext，该属性的值固定为当前实例的UIContext。
-
-2. 若不传递targetId，则不支持设置SheetOptions.preferType为POPUP样式，若设置了POPUP样式则使用CENTER样式替代。
-
-3. 若不传递targetId，则不支持设置SheetOptions.mode为EMBEDDED模式，默认为OVERLAY模式。
-
-4. 其余属性的默认值参考[SheetOptions](../../topics/misc/半模态转场.md#ZH-CN_TOPIC_0000002497604850__sheetoptions)文档。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| [bindSheet](../../topics/components/半模态转场.md#ZH-CN_TOPIC_0000002497604850__bindsheet)Content | ComponentContent<T> | 是 | 半模态页面中显示的组件内容。 |
+| sheetOptions | SheetOptions | 否 | 半模态页面样式。 说明： 1. 不支持设置SheetOptions.ui[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)，该属性的值固定为当前实例的UIContext。 2. 若不传递targetId，则不支持设置SheetOptions.preferType为POPUP样式，若设置了POPUP样式则使用CENTER样式替代。 3. 若不传递targetId，则不支持设置SheetOptions.mode为EMBEDDED模式，默认为OVERLAY模式。 4. 其余属性的默认值参考SheetOptions文档。 |
 targetIdnumber否需要绑定组件的ID，若不指定则不绑定任何组件。id不存在时返回错误码120004。在传入undefined时返回错误码401。
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[半模态错误码](../../errors/半模态错误码.md)错误码。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[半模态错误码]([半模态错误码](../../errors/半模态错误码.md).md)错误码。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.120001The bindSheetContent is incorrect.120002The bindSheetContent already exists.120004The targetId does not exist.120005The node of targetId is not in the component tree.120006The node of targetId is not a child of the page node or NavDestination node.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 120001 | The [bindSheet](../../topics/components/半模态转场.md#ZH-CN_TOPIC_0000002497604850__bindsheet)Content is incorrect. |
+| 120002 | The [bindSheet](../../topics/components/半模态转场.md#ZH-CN_TOPIC_0000002497604850__bindsheet)Content already exists. |
+| 120004 | The targetId does not exist. |
+| 120005 | The node of targetId is not in the component tree. |
+| 120006 | The node of targetId is not a child of the page node or NavDestination node. |
 
 **示例：**
 
@@ -2543,7 +2990,6 @@ class Params {
 
   constructor(text: string) {
     this.text = text;
-  }
 }
 
 let contentNode: ComponentContent<Params>;
@@ -2565,7 +3011,6 @@ function buildText(params: Params) {
           .catch((err: BusinessError) => {
             console.error('updateBindSheet error: ' + err.code + ' ' + err.message);
           })
-      })
 
     Button('Close BindSheet')
       .fontSize(20)
@@ -2577,8 +3022,6 @@ function buildText(params: Params) {
           .catch((err: BusinessError) => {
             console.error('closeBindSheet error: ' + err.code + ' ' + err.message);
           })
-      })
-  }
 }
 
 @Entry
@@ -2612,22 +3055,19 @@ struct UIContextBindSheet {
               .catch((err: BusinessError) => {
                 console.error('openBindSheet error: ' + err.code + ' ' + err.message);
               })
-          })
-      }
     }
     .height('100%')
     .width('100%')
-  }
 }
 ```
 
 #### updateBindSheet12+
 
-updateBindSheet<T extends Object>(bindSheetContent: ComponentContent<T>, sheetOptions: SheetOptions, partialUpdate?: boolean ): Promise<void>
+updateBindSheet<T extends Object>([bindSheet](../../topics/components/半模态转场.md#ZH-CN_TOPIC_0000002497604850__bindsheet)Content: ComponentContent<T>, sheetOptions: SheetOptions, partialUpdate?: boolean ): Promise<void>
 
-更新bindSheetContent对应的半模态页面的样式，使用Promise异步回调。
+更新[bindSheet](../../topics/components/半模态转场.md#ZH-CN_TOPIC_0000002497604850__bindsheet)Content对应的半模态页面的样式，使用Promise异步回调。
 
-不支持更新SheetOptions.UIContext、SheetOptions.mode、回调函数。
+不支持更新SheetOptions.UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)、SheetOptions.mode、回调函数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2635,33 +3075,27 @@ updateBindSheet<T extends Object>(bindSheetContent: ComponentContent<T>, sheetOp
 
 **参数：**
 
-参数名类型必填说明bindSheetContent[ComponentContent<T>](../../topics/components/ComponentContent.md)是半模态页面中显示的组件内容。sheetOptions[SheetOptions](../../topics/misc/半模态转场.md#ZH-CN_TOPIC_0000002497604850__sheetoptions)是
-
-半模态页面样式。
-
-**说明：**
-
-不支持更新SheetOptions.uiContext、SheetOptions.mode、回调函数。
-
-partialUpdateboolean否
-
-半模态页面更新方式, 默认值为false。
-
-**说明：**
-
-1. true为增量更新，保留当前值，更新SheetOptions中的指定属性。
-
-2. false为全量更新，除SheetOptions中的指定属性，其他属性恢复默认值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| [bindSheet](../../topics/components/半模态转场.md#ZH-CN_TOPIC_0000002497604850__bindsheet)Content | ComponentContent<T> | 是 | 半模态页面中显示的组件内容。 |
+| sheetOptions | SheetOptions | 是 | 半模态页面样式。 说明： 不支持更新SheetOptions.ui[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)、SheetOptions.mode、回调函数。 |
+| partialUpdate | boolean | 否 | 半模态页面更新方式, 默认值为false。 说明： 1. true为增量更新，保留当前值，更新[SheetOptions](../../topics/components/半模态转场.md#ZH-CN_TOPIC_0000002497604850__sheetoptions)中的指定属性。 2. false为全量更新，除SheetOptions中的指定属性，其他属性恢复默认值。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[半模态错误码](../../errors/半模态错误码.md)错误码。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[半模态错误码](半模态错误码.md)错误码。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.120001The bindSheetContent is incorrect.120003The bindSheetContent cannot be found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 120001 | The [bindSheet](../../topics/components/半模态转场.md#ZH-CN_TOPIC_0000002497604850__bindsheet)Content is incorrect. |
+| 120003 | The [bindSheet](../../topics/components/半模态转场.md#ZH-CN_TOPIC_0000002497604850__bindsheet)Content cannot be found. |
 
 **示例：**
 
@@ -2674,7 +3108,6 @@ class Params {
 
   constructor(text: string) {
     this.text = text;
-  }
 }
 
 let contentNode: ComponentContent<Params>;
@@ -2696,7 +3129,6 @@ function buildText(params: Params) {
           .catch((err: BusinessError) => {
             console.error('updateBindSheet error: ' + err.code + ' ' + err.message);
           })
-      })
 
     Button('Close BindSheet')
       .fontSize(20)
@@ -2708,8 +3140,6 @@ function buildText(params: Params) {
           .catch((err: BusinessError) => {
             console.error('closeBindSheet error: ' + err.code + ' ' + err.message);
           })
-      })
-  }
 }
 
 @Entry
@@ -2743,20 +3173,17 @@ struct UIContextBindSheet {
               .catch((err: BusinessError) => {
                 console.error('openBindSheet error: ' + err.code + ' ' + err.message);
               })
-          })
-      }
     }
     .height('100%')
     .width('100%')
-  }
 }
 ```
 
 #### closeBindSheet12+
 
-closeBindSheet<T extends Object>(bindSheetContent: ComponentContent<T>): Promise<void>
+closeBindSheet<T extends Object>([bindSheet](../../topics/components/半模态转场.md#ZH-CN_TOPIC_0000002497604850__bindsheet)Content: ComponentContent<T>): Promise<void>
 
-关闭bindSheetContent对应的半模态页面，使用Promise异步回调。
+关闭[bindSheet](../../topics/components/半模态转场.md#ZH-CN_TOPIC_0000002497604850__bindsheet)Content对应的半模态页面，使用Promise异步回调。
 
 使用此接口关闭半模态页面时，不会触发shouldDismiss回调。
 
@@ -2766,17 +3193,25 @@ closeBindSheet<T extends Object>(bindSheetContent: ComponentContent<T>): Promise
 
 **参数：**
 
-参数名类型必填说明bindSheetContent[ComponentContent<T>](../../topics/components/ComponentContent.md)是半模态页面中显示的组件内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| [bindSheet](../../topics/components/半模态转场.md#ZH-CN_TOPIC_0000002497604850__bindsheet)Content | ComponentContent<T> | 是 | 半模态页面中显示的组件内容。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[半模态错误码](../../errors/半模态错误码.md)错误码。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[半模态错误码](半模态错误码.md)错误码。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed.120001The bindSheetContent is incorrect.120003The bindSheetContent cannot be found.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
+| 120001 | The [bindSheet](../../topics/components/半模态转场.md#ZH-CN_TOPIC_0000002497604850__bindsheet)Content is incorrect. |
+| 120003 | The [bindSheet](../../topics/components/半模态转场.md#ZH-CN_TOPIC_0000002497604850__bindsheet)Content cannot be found. |
 
 **示例：**
 
@@ -2789,7 +3224,6 @@ class Params {
 
   constructor(text: string) {
     this.text = text;
-  }
 }
 
 let contentNode: ComponentContent<Params>;
@@ -2811,7 +3245,6 @@ function buildText(params: Params) {
           .catch((err: BusinessError) => {
             console.error('updateBindSheet error: ' + err.code + ' ' + err.message);
           })
-      })
 
     Button('Close BindSheet')
       .fontSize(20)
@@ -2823,8 +3256,6 @@ function buildText(params: Params) {
           .catch((err: BusinessError) => {
             console.error('closeBindSheet error: ' + err.code + ' ' + err.message);
           })
-      })
-  }
 }
 
 @Entry
@@ -2858,12 +3289,9 @@ struct UIContextBindSheet {
               .catch((err: BusinessError) => {
                 console.error('openBindSheet error: ' + err.code + ' ' + err.message);
               })
-          })
-      }
     }
     .height('100%')
     .width('100%')
-  }
 }
 ```
 
@@ -2879,11 +3307,9 @@ isFollowingSystemFontScale(): boolean
 
 **返回值：**
 
-类型说明boolean
-
-当前UI上下文是否跟随系统字体倍率。
-
-true表示UI上下文跟随系统倍率，false表示UI上下文不跟随系统倍率。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 当前UI上下文是否跟随系统字体倍率。 true表示UI上下文跟随系统倍率，false表示UI上下文不跟随系统倍率。 |
 
 **示例：**
 
@@ -2899,8 +3325,6 @@ struct Index {
         console.info('isFollowingSystemFontScale', this.getUIContext().isFollowingSystemFontScale());
       });
     }
-  }
-}
 ```
 
 #### getMaxFontScale13+
@@ -2915,7 +3339,9 @@ getMaxFontScale(): number
 
 **返回值：**
 
-类型说明number当前UI上下文最大字体倍率。
+| 类型 | 说明 |
+| --- | --- |
+| number | 当前UI上下文最大字体倍率。 |
 
 **示例：**
 
@@ -2931,15 +3357,14 @@ struct Index {
         console.info('getMaxFontScale', this.getUIContext().getMaxFontScale().toFixed(2));
       });
     }
-  }
-}
 ```
 
-#### bindTabsToScrollable13+
+#### bindTabsTo[Scroll](../../topics/components/Scroll.md)able13+
 
-bindTabsToScrollable(tabsController: TabsController, scroller: Scroller): void
+bindTabsTo[Scroll](../../topics/components/Scroll.md)able(tabsController: TabsController, scroller: [Scroller](../../topics/components/Scroll.md#ZH-CN_TOPIC_0000002497444896__scroller)): void
 
-绑定Tabs组件和可滚动容器组件（支持[List](../../topics/components/list.md)、[Scroll](../../topics/components/Scroll.md)、[Grid](../../topics/components/Grid.md)、[WaterFlow](../../topics/misc/WaterFlow.md)），当滑动可滚动容器组件时，会触发所有与其绑定的Tabs组件的TabBar的显示和隐藏动效，上滑隐藏，下滑显示。一个TabsController可与多个Scroller绑定，一个Scroller也可与多个TabsController绑定。
+绑定Tabs组件和可滚动容器组件（支持[List]([List](../../topics/components/list.md).md)、[Scroll](Scroll.md)、[Grid]([Grid](../../topics/components/Grid.md).md)、[WaterFlow]([WaterFlow](../../topics/components/WaterFlow.md).md)），当滑动可滚动容器组件时，会触发所有与其绑定的Tabs组件的TabBar的显示和隐藏动效，上滑隐藏，下滑显示。一个TabsController可与多个Scroller绑定，一个Scroller也可与多个TabsController绑定。
+
 
 当多个可滚动容器组件绑定了同一个Tabs组件时，只要滑动任意一个可滚动容器组件，就会触发TabBar的显示或隐藏。且当任意一个可滚动容器组件滑动到底部时，会立即触发TabBar的显示动效。因此不建议同时触发多个可滚动容器组件的滑动。
 
@@ -2949,7 +3374,10 @@ bindTabsToScrollable(tabsController: TabsController, scroller: Scroller): void
 
 **参数：**
 
-参数名类型必填说明tabsController[TabsController](../../topics/components/tabs.md#ZH-CN_TOPIC_0000002497604882__tabscontroller)是Tabs组件的控制器。scroller[Scroller](../../topics/components/Scroll.md#ZH-CN_TOPIC_0000002497444896__scroller)是可滚动容器组件的控制器。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| tabsController | [TabsController](../../topics/components/tabs.md#ZH-CN_TOPIC_0000002497604882__tabscontroller) | 是 | Tabs组件的控制器。 |
+| scroller | [Scroll](../../topics/components/Scroll.md)er | 是 | 可滚动容器组件的控制器。 |
 
 **示例：**
 
@@ -3045,12 +3473,11 @@ struct TabsExample {
     .barOverlap(true) // 使TabBar叠加在TabContent上，当TabBar向上或向下隐藏后，原位置处不为空白
     .clip(true) // 对超出Tabs组件范围的子组件进行裁剪，防止TabBar向上或向下隐藏后误触TabBar
   }
-}
 ```
 
-#### unbindTabsFromScrollable13+
+#### unbindTabsFrom[Scroll](../../topics/components/Scroll.md)able13+
 
-unbindTabsFromScrollable(tabsController: TabsController, scroller: Scroller): void
+unbindTabsFrom[Scroll](../../topics/components/Scroll.md)able(tabsController: TabsController, scroller: Scroller): void
 
 解除Tabs组件和可滚动容器组件的绑定。
 
@@ -3060,17 +3487,20 @@ unbindTabsFromScrollable(tabsController: TabsController, scroller: Scroller): vo
 
 **参数：**
 
-参数名类型必填说明tabsController[TabsController](../../topics/components/tabs.md#ZH-CN_TOPIC_0000002497604882__tabscontroller)是Tabs组件的控制器。scroller[Scroller](../../topics/components/Scroll.md#ZH-CN_TOPIC_0000002497444896__scroller)是可滚动容器组件的控制器。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| tabsController | [TabsController](../../topics/components/tabs.md#ZH-CN_TOPIC_0000002497604882__tabscontroller) | 是 | Tabs组件的控制器。 |
+| scroller | [Scroll](../../topics/components/Scroll.md)er | 是 | 可滚动容器组件的控制器。 |
 
 **示例：**
 
-参考[bindTabsToScrollable](#ZH-CN_TOPIC_0000002529444749__bindtabstoscrollable13)接口示例。
+参考[bindTabsToScrollable](#ZH-CN_TOPIC_0000002522240732__bindtabstoscrollable13)接口示例。
 
-#### bindTabsToNestedScrollable13+
+#### bindTabsToNested[Scroll](../../topics/components/Scroll.md)able13+
 
-bindTabsToNestedScrollable(tabsController: TabsController, parentScroller: Scroller, childScroller: Scroller): void
+bindTabsToNested[Scroll](../../topics/components/Scroll.md)able(tabsController: TabsController, parentScroller: Scroller, childScroller: Scroller): void
 
-绑定Tabs组件和嵌套的可滚动容器组件（支持[List](../../topics/components/list.md)、[Scroll](../../topics/components/Scroll.md)、[Grid](../../topics/components/Grid.md)、[WaterFlow](../../topics/misc/WaterFlow.md)），当滑动父组件或子组件时，会触发所有与其绑定的Tabs组件的TabBar的显示和隐藏动效，上滑隐藏，下滑显示。一个TabsController可与多个嵌套的Scroller绑定，嵌套的Scroller也可与多个TabsController绑定。
+绑定Tabs组件和嵌套的可滚动容器组件（支持[List](List.md)、[Scroll](Scroll.md)、[Grid](Grid.md)、[WaterFlow](WaterFlow.md)），当滑动父组件或子组件时，会触发所有与其绑定的Tabs组件的TabBar的显示和隐藏动效，上滑隐藏，下滑显示。一个TabsController可与多个嵌套的Scroller绑定，嵌套的Scroller也可与多个TabsController绑定。
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
@@ -3078,15 +3508,19 @@ bindTabsToNestedScrollable(tabsController: TabsController, parentScroller: Scrol
 
 **参数：**
 
-参数名类型必填说明tabsController[TabsController](../../topics/components/tabs.md#ZH-CN_TOPIC_0000002497604882__tabscontroller)是Tabs组件的控制器。parentScroller[Scroller](../../topics/components/Scroll.md#ZH-CN_TOPIC_0000002497444896__scroller)是可滚动容器组件的控制器。childScroller[Scroller](../../topics/components/Scroll.md#ZH-CN_TOPIC_0000002497444896__scroller)是可滚动容器组件的控制器。其对应组件为parentScroller对应组件的子组件，且组件间存在嵌套滚动关系。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| tabsController | [TabsController](../../topics/components/tabs.md#ZH-CN_TOPIC_0000002497604882__tabscontroller) | 是 | Tabs组件的控制器。 |
+| parent[Scroll](../../topics/components/Scroll.md)er | Scroller | 是 | 可滚动容器组件的控制器。 |
+| child[Scroll](../../topics/components/Scroll.md)er | Scroller | 是 | 可滚动容器组件的控制器。其对应组件为parentScroller对应组件的子组件，且组件间存在嵌套滚动关系。 |
 
 **示例：**
 
-参考[bindTabsToScrollable](#ZH-CN_TOPIC_0000002529444749__bindtabstoscrollable13)接口示例。
+参考[bindTabsToScrollable](#ZH-CN_TOPIC_0000002522240732__bindtabstoscrollable13)接口示例。
 
-#### unbindTabsFromNestedScrollable13+
+#### unbindTabsFromNested[Scroll](../../topics/components/Scroll.md)able13+
 
-unbindTabsFromNestedScrollable(tabsController: TabsController, parentScroller: Scroller, childScroller: Scroller): void
+unbindTabsFromNested[Scroll](../../topics/components/Scroll.md)able(tabsController: TabsController, parentScroller: Scroller, childScroller: Scroller): void
 
 解除Tabs组件和嵌套的可滚动容器组件的绑定。
 
@@ -3096,11 +3530,15 @@ unbindTabsFromNestedScrollable(tabsController: TabsController, parentScroller: S
 
 **参数：**
 
-参数名类型必填说明tabsController[TabsController](../../topics/components/tabs.md#ZH-CN_TOPIC_0000002497604882__tabscontroller)是Tabs组件的控制器。parentScroller[Scroller](../../topics/components/Scroll.md#ZH-CN_TOPIC_0000002497444896__scroller)是可滚动容器组件的控制器。childScroller[Scroller](../../topics/components/Scroll.md#ZH-CN_TOPIC_0000002497444896__scroller)是可滚动容器组件的控制器。其对应组件为parentScroller对应组件的子组件，且组件间存在嵌套滚动关系。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| tabsController | [TabsController](../../topics/components/tabs.md#ZH-CN_TOPIC_0000002497604882__tabscontroller) | 是 | Tabs组件的控制器。 |
+| parent[Scroll](../../topics/components/Scroll.md)er | Scroller | 是 | 可滚动容器组件的控制器。 |
+| child[Scroll](../../topics/components/Scroll.md)er | Scroller | 是 | 可滚动容器组件的控制器。其对应组件为parentScroller对应组件的子组件，且组件间存在嵌套滚动关系。 |
 
 **示例：**
 
-参考[bindTabsToScrollable](#ZH-CN_TOPIC_0000002529444749__bindtabstoscrollable13)接口示例。
+参考[bindTabsToScrollable](#ZH-CN_TOPIC_0000002522240732__bindtabstoscrollable13)接口示例。
 
 #### enableSwipeBack18+
 
@@ -3108,19 +3546,15 @@ enableSwipeBack(enabled: Optional<boolean>): void
 
 设置是否支持应用内横向滑动返回上一级。
 
-**元服务API:** 从API version 18 开始，该接口支持在元服务中使用。
+元服务API： 从API version 18 开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
 **参数：**
 
-参数名类型必填说明enabledOptional<boolean>是
-
-是否支持应用内横向滑动返回，默认值为true。
-
-当值为true时，支持应用内横向滑动返回。
-
-当值为false时，不支持应用内横向滑动返回。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enabled | Optional<boolean> | 是 | 是否支持应用内横向滑动返回，默认值为true。 当值为true时，支持应用内横向滑动返回。 当值为false时，不支持应用内横向滑动返回。 |
 
 **示例：**
 
@@ -3140,7 +3574,6 @@ struct Index {
     .height('100%')
     .width('100%')
   }
-}
 ```
 
 #### getTextMenuController16+
@@ -3149,50 +3582,51 @@ getTextMenuController(): TextMenuController
 
 获取[TextMenuController](Class (TextMenuController).md)对象，可通过该对象控制文本选择菜单。
 
-**元服务API:** 从API version 16 开始，该接口支持在元服务中使用。
+元服务API： 从API version 16 开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
 
-类型说明[TextMenuController](Class (TextMenuController).md)获取TextMenuController对象。
+| 类型 | 说明 |
+| --- | --- |
+| TextMenuController | 获取TextMenuController对象。 |
 
 **示例：**
 
 参考[TextMenuController](Class (TextMenuController).md)接口示例。
 
-#### createUIContextWithoutWindow17+
+#### createUI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)WithoutWindow17+
 
-static createUIContextWithoutWindow(context: common.UIAbilityContext | common.ExtensionContext) : UIContext | undefined
+static createUI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)WithoutWindow(context: common.UIAbilityContext | common.ExtensionContext) : UIContext | undefined
 
 创建一个不依赖窗口的UI实例，并返回其UI上下文。该接口所创建的UI实例是单例。
 
 返回的UI上下文只可用于创建[自定义节点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-node)，不能执行其他UI操作。
 
-**元服务API:** 从API version 17 开始，该接口支持在元服务中使用。
+元服务API： 从API version 17 开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
-参数名类型必填说明contextcommon.[UIAbilityContext](../../topics/graphics/UIAbilityContext.md) | common.[ExtensionContext](../../topics/graphics/ExtensionContext.md)是[UIAbility](../../modules/ohos/@ohos.app.ability.UIAbility (带界面的应用组件).md)或[ExtensionAbility](../../modules/ohos/@ohos.app.ability.ExtensionAbility (扩展能力基类).md)所对应的上下文环境。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | common.UIAbility[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12) | common.ExtensionContext | 是 | UIAbility或ExtensionAbility所对应的上下文环境。 |
 
 **返回值：**
 
-类型说明UIContext | undefined创建的UI实例的上下文，创建失败时返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| UI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12) | undefined | 创建的UI实例的上下文，创建失败时返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[接口调用异常错误码](../../errors/接口调用异常错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[接口调用异常错误码]([接口调用异常错误码](../../errors/接口调用异常错误码.md).md)。
 
-错误码ID错误信息401
-
-Parameter error. Possible causes:
-
-1. The number of parameters is incorrect.
-
-2. Invalid parameter type of context.
-
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. The number of parameters is incorrect. 2. Invalid parameter type of context. |
 100001Internal error.
 
 **示例：**
@@ -3213,13 +3647,13 @@ export default class EntryAbility extends UIAbility {
 }
 ```
 
-#### destroyUIContextWithoutWindow17+
+#### destroyUI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)WithoutWindow17+
 
-static destroyUIContextWithoutWindow(): void
+static destroyUI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)WithoutWindow(): void
 
-销毁[createUIContextWithoutWindow](#ZH-CN_TOPIC_0000002529444749__createuicontextwithoutwindow17)创建的UI实例。
+销毁[createUIContextWithoutWindow](#ZH-CN_TOPIC_0000002522240732__createuicontextwithoutwindow17)创建的UI实例。
 
-**元服务API:** 从API version 17 开始，该接口支持在元服务中使用。
+元服务API： 从API version 17 开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -3242,9 +3676,9 @@ export default class EntryAbility extends UIAbility {
 }
 ```
 
-#### dispatchKeyEvent15+
+#### dispatch[KeyEvent](../../topics/components/按键事件.md#ZH-CN_TOPIC_0000002529284805__keyevent对象说明)15+
 
-dispatchKeyEvent(node: number | string, event: KeyEvent): boolean
+dispatch[KeyEvent](../../topics/components/按键事件.md#ZH-CN_TOPIC_0000002529284805__keyevent对象说明)(node: number | string, event: KeyEvent): boolean
 
 按键事件应分发给指定的组件。为了确保行为的可预测性，目标组件必须位于分发组件的子树中。
 
@@ -3254,15 +3688,16 @@ dispatchKeyEvent(node: number | string, event: KeyEvent): boolean
 
 **参数：**
 
-参数名类型必填说明nodenumber | string是组件的id或者节点UniqueID。event[KeyEvent](../../topics/misc/按键事件.md#ZH-CN_TOPIC_0000002529284805__keyevent对象说明)是KeyEvent对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| node | number | string | 是 | 组件的id或者节点UniqueID。 |
+| event | [KeyEvent](../../topics/components/按键事件.md#ZH-CN_TOPIC_0000002529284805__keyevent对象说明) | 是 | KeyEvent对象。 |
 
 **返回值：**
 
-类型说明boolean
-
-按键事件是否成功分发给指定的组件。
-
-true表示分发成功，false表示分发失败。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 按键事件是否成功分发给指定的组件。 true表示分发成功，false表示分发失败。 |
 
 **示例：**
 
@@ -3271,7 +3706,6 @@ true表示分发成功，false表示分发失败。
 @Component
 struct Index {
   build() {
-    Row() {
       Row() {
         Button('Button1').id('Button1').onKeyEvent((event) => {
           console.info("Button1");
@@ -3303,12 +3737,11 @@ struct Index {
       return true;
     })
   }
-}
 ```
 
-#### setPixelRoundMode18+
+#### set[PixelRoundMode](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__pixelroundmode18)18+
 
-setPixelRoundMode(mode: PixelRoundMode): void
+set[PixelRoundMode](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__pixelroundmode18)(mode: PixelRoundMode): void
 
 配置当前页面的像素取整模式。
 
@@ -3318,11 +3751,9 @@ setPixelRoundMode(mode: PixelRoundMode): void
 
 **参数：**
 
-参数名类型必填说明mode[PixelRoundMode](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__pixelroundmode18)是
-
-像素取整模式。
-
-默认值：PixelRoundMode.PIXEL_ROUND_ON_LAYOUT_FINISH
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mode | [PixelRoundMode](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__pixelroundmode18) | 是 | 像素取整模式。 默认值：PixelRoundMode.PIXEL_ROUND_ON_LAYOUT_FINISH |
 
 **示例：**
 
@@ -3338,12 +3769,11 @@ export default class EntryAbility extends UIAbility{
         uiContext.setPixelRoundMode(PixelRoundMode.PIXEL_ROUND_ON_LAYOUT_FINISH);
       });
     }
-}
 ```
 
-#### getPixelRoundMode18+
+#### get[PixelRoundMode](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__pixelroundmode18)18+
 
-getPixelRoundMode(): PixelRoundMode
+get[PixelRoundMode](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__pixelroundmode18)(): PixelRoundMode
 
 获取当前页面的像素取整模式。
 
@@ -3353,7 +3783,9 @@ getPixelRoundMode(): PixelRoundMode
 
 **返回值：**
 
-类型说明[PixelRoundMode](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__pixelroundmode18)当前页面的像素取整模式。
+| 类型 | 说明 |
+| --- | --- |
+| [PixelRoundMode](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__pixelroundmode18) | 当前页面的像素取整模式。 |
 
 **示例：**
 
@@ -3369,7 +3801,6 @@ export default class EntryAbility extends UIAbility{
         console.info("pixelRoundMode : " + uiContext.getPixelRoundMode().valueOf());
       });
     }
-}
 ```
 
 #### setResourceManagerCacheMaxCountForHSP21+
@@ -3386,13 +3817,19 @@ static setResourceManagerCacheMaxCountForHSP(count: number): void
 
 **参数：**
 
-参数名类型必填说明countnumber是设置的资源缓存数量，取值范围为非负整数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| count | number | 是 | 设置的资源缓存数量，取值范围为非负整数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[UI上下文错误码](../../errors/UI上下文错误码.md)。
+以下错误码的详细介绍请参见[UI上下文错误码]([UI上下文错误码](../../errors/UI上下文错误码.md).md)。
 
-错误码ID错误信息100101The parameter value cannot be less than 0.100102The parameter value cannot be a floating-point number.100103The function cannot be called from a non-main thread.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 100101 | The parameter is less than 0. |
+| 100102 | The parameter value cannot be a floating point number. |
+| 100103 | The function cannot be called from a non main thread. |
 
 **示例：**
 
@@ -3416,6 +3853,93 @@ export default class EntryAbility extends UIAbility {
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
     });
   }
+```
+
+**setImageCacheCount23+**
+
+setImageCacheCount(value: number): void
+
+设置内存中缓存解码后图片的数量上限，以加快同源图片的再次加载速度。默认值为0，表示不缓存。缓存使用LRU策略，新图片加载超过上限时，会移除最久未使用的缓存。建议根据应用内存需求，合理设置缓存数量，避免内存使用过高。
+
+setImageCacheCount方法需要在@Entry标记的页面，[onPageShow](自定义组件的生命周期.md#ZH-CN_TOPIC_0000002553200861__onpageshow)或[aboutToAppear](自定义组件的生命周期.md#ZH-CN_TOPIC_0000002553200861__abouttoappear)里面设置才生效。
+
+setImageCacheCount、setImageRawDataCacheSize和setImageFileCacheSize并不灵活，后续不继续演进。对于复杂情况，更推荐使用[ImageKnife](https://gitcode.com/openharmony-tpc/ImageKnife)。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 内存中解码后图片的缓存数量。 取值范围：[0, +∞) |
+
+示例：
+
+```ets
+// xxx.ets
+@Entry
+@Component
+struct Index {
+  onPageShow() {
+    // 设置解码后图片内存缓存上限为100张
+    this.getUIContext().setImageCacheCount(100);
+    console.info('Application onPageShow');
+  }
+  onDestroy() {
+    console.info('Application onDestroy');
+  }
+
+  build() {
+    Row(){
+      Image('https://www.example.com/xxx.png') // 请填写一个具体的网络图片地址
+        .width(200)
+        .height(50)
+    }.width('100%')
+  }
+```
+
+**setImageRawDataCacheSize23+**
+
+setImageRawDataCacheSize(value: number): void
+
+设置内存中缓存解码前图片数据的大小上限，单位为字节，以加快再次加载同源图片的速度。默认值为0，表示不缓存。缓存使用LRU策略，新图片加载后，若解码前数据超过上限，会删除最久未使用的图片数据缓存。建议根据应用内存需求，设置合理的缓存上限，避免内存使用过高。
+
+setImageRawDataCacheSize方法需要在@Entry标记的页面，[onPageShow](自定义组件的生命周期.md#ZH-CN_TOPIC_0000002553200861__onpageshow)或[aboutToAppear](自定义组件的生命周期.md#ZH-CN_TOPIC_0000002553200861__abouttoappear)里面设置才生效。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 内存中解码前图片数据的缓存大小，单位为字节。 取值范围：[0, +∞) |
+
+示例：
+
+```ets
+// xxx.ets
+@Entry
+@Component
+struct Index {
+  onPageShow() {
+    // 设置解码前图片数据内存缓存上限为100MB (100MB=100*1024*1024B=104857600B)
+    this.getUIContext().setImageRawDataCacheSize(104857600);
+    console.info('Application onPageShow');
+  }
+  onDestroy() {
+    console.info('Application onDestroy');
+  }
+
+  build() {
+    Row(){
+      Image('https://www.example.com/xxx.png') // 请填写一个具体的网络图片地址
+        .width(200)
+        .height(50)
+    }.width('100%')
 }
 ```
 
@@ -3431,8 +3955,134 @@ getMagnifier(): Magnifier
 
 **返回值：**
 
-类型说明[Magnifier](Class (Magnifier).md)Magnifier对象，可用于控制放大镜的显示和隐藏。
+| 类型 | 说明 |
+| --- | --- |
+| Magnifier | Magnifier对象，可用于控制放大镜的显示和隐藏。 |
 
 **示例：**
 
-参考[Magnifier](Class (Magnifier).md)的[bind](Class (Magnifier).md#ZH-CN_TOPIC_0000002529284771__bind)接口示例。
+参考[Magnifier](Class (Magnifier).md)的[bind](Class (Magnifier).md#ZH-CN_TOPIC_0000002553360653__bind)接口示例。
+
+**setCustomKeyboardContinueFeature23+**
+
+setCustomKeyboardContinueFeature(feature: CustomKeyboardContinueFeature): void
+
+设置自定义键盘之间切换时，是否接续。
+
+元服务API： 从API version 23开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+模型约束：此接口仅可在Stage模型下使用。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| feature | CustomKeyboardContinueFeature | 是 | 自定义键盘之间切换时是否接续。 默认值：CustomKeyboardContinueFeature.DISABLED，即不接续。 |
+
+示例：
+
+```ets
+// xxx.ets
+import { CustomKeyboardContinueFeature } from '@ohos.arkui.UIContext';
+
+@Entry
+@Component
+struct Index {
+  controller: TextInputController = new TextInputController();
+  controller2: TextInputController = new TextInputController();
+  @State inputValue: string = '';
+  @State inputValue2: string = '';
+  @State supportAvoidance: boolean = true;
+  @State isValue: CustomKeyboardContinueFeature = CustomKeyboardContinueFeature.DISABLED;
+  @State str: string = '否';
+
+  // 自定义键盘组件
+  @Builder
+  CustomKeyboardBuilder() {
+    Column() {
+      Row() {
+        Button('x').onClick(() => {
+          // 关闭自定义键盘
+          this.controller.stopEditing();
+        }).margin(10)
+        Button('delete').onClick(() => {
+          this.inputValue = this.inputValue.slice(0, -1);
+        }).margin(10)
+      }
+
+      Grid() {
+        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: number | string) => {
+          GridItem() {
+            Button(item + '')
+              .width(110).onClick(() => {
+              this.inputValue += item;
+            })
+          }
+        })
+      }.maxCount(3).columnsGap(10).rowsGap(10).padding(5)
+    }.backgroundColor('rgb(213, 213, 213)').height(300)
+  }
+
+  // 自定义键盘组件
+  @Builder
+  CustomKeyboardBuilder2() {
+    Column() {
+      Row() {
+        Button('x').onClick(() => {
+          // 关闭自定义键盘
+          this.controller2.stopEditing();
+        }).margin(10)
+        Button('delete').onClick(() => {
+          this.inputValue2 = this.inputValue2.slice(0, -1);
+        }).margin(10)
+      }
+
+      Grid() {
+        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: number | string) => {
+          GridItem() {
+            Button(item + '')
+              .width(110).onClick(() => {
+              this.inputValue2 += item;
+            })
+          }
+        })
+      }.maxCount(3).columnsGap(10).rowsGap(10).padding(5)
+    }.backgroundColor('rgb(227, 248, 249)').height(150)
+  }
+
+  build() {
+    Scroll() {
+      Column() {
+        Button('是否接续：' + this.str).onClick(() => {
+          if (this.isValue == CustomKeyboardContinueFeature.ENABLED) {
+            this.isValue = CustomKeyboardContinueFeature.DISABLED
+            this.str = '否'
+          } else {
+            this.isValue = CustomKeyboardContinueFeature.ENABLED
+            this.str = '是'
+          }
+          this.getUIContext().setCustomKeyboardContinueFeature(this.isValue);
+        }).fontSize(20).width('80%').key('button')
+
+        TextInput({
+          placeholder: 'TextInput1 bind CustomKeyboardBuilder',
+          controller: this.controller,
+          text: this.inputValue
+        })// 绑定自定义键盘
+          .customKeyboard(this.CustomKeyboardBuilder(), { supportAvoidance: this.supportAvoidance })
+          .margin(10)
+          .border({ width: 1 })
+        TextInput({
+          placeholder: 'TextInput2 bind CustomKeyboardBuilder2',
+          controller: this.controller2,
+          text: this.inputValue2
+        })// 绑定自定义键盘
+          .customKeyboard(this.CustomKeyboardBuilder2(), { supportAvoidance: this.supportAvoidance })
+          .margin(10)
+          .border({ width: 1 })
+      }
+```
+
+![image](public_sys-resources/zh-cn_image_0000002553204647.webp)

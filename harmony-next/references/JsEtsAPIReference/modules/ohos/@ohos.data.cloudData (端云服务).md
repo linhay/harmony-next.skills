@@ -20,7 +20,9 @@ import { cloudData } from '@kit.ArkData';
 
 **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client
 
-名称值说明NETWORK0通过网络同步策略。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NETWORK | 0 | 通过网络同步策略。 |
 
 #### NetWorkStrategy
 
@@ -28,7 +30,10 @@ import { cloudData } from '@kit.ArkData';
 
 **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client
 
-名称值说明WIFI1WIFI网络策略。CELLULAR2蜂窝网络策略。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| WIFI | 1 | WIFI网络策略。 |
+| CELLULAR | 2 | 蜂窝网络策略。 |
 
 #### cloudData.setCloudStrategy
 
@@ -40,17 +45,25 @@ setCloudStrategy(strategy: StrategyType, param?: Array<commonType.ValueType>): P
 
 **参数：**
 
-参数名类型必填说明strategy[StrategyType](#ZH-CN_TOPIC_0000002497604690__strategytype)是配置的策略类型。paramArray<[commonType.ValueType](@ohos.data.commonType (数据通用类型).md#ZH-CN_TOPIC_0000002497604678__valuetype)>否策略参数。当前仅支持设置网络策略，默认支持WIFI和蜂窝网络策略。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| strategy | StrategyType | 是 | 配置的策略类型。 |
+| param | Array<commonType.ValueType> | 否 | 策略参数。当前仅支持设置网络策略，默认支持WIFI和蜂窝网络策略。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-**错误码ID****错误信息**401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.801Capability not supported.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | Capability not supported. |
 
 **样例：**
 

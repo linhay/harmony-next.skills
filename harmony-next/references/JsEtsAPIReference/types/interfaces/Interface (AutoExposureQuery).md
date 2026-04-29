@@ -12,9 +12,9 @@
 import { camera } from '@kit.CameraKit';
 ```
 
-#### isExposureModeSupported11+
+#### is[ExposureMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__exposuremode)Supported11+
 
-isExposureModeSupported(aeMode: ExposureMode): boolean
+is[ExposureMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__exposuremode)Supported(aeMode: ExposureMode): boolean
 
 检测曝光模式是否支持。
 
@@ -24,17 +24,23 @@ isExposureModeSupported(aeMode: ExposureMode): boolean
 
 **参数：**
 
-参数名类型必填说明aeMode[ExposureMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__exposuremode)是曝光模式。传参为null或者undefined，作为0处理，曝光锁定。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| aeMode | [ExposureMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__exposuremode) | 是 | 曝光模式。传参为null或者undefined，作为0处理，曝光锁定。 |
 
 **返回值：**
 
-类型说明boolean获取是否支持曝光模式，true为支持，false为不支持。接口调用失败会抛出相应错误码并返回undefined，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 获取是否支持曝光模式，true为支持，false为不支持。接口调用失败会抛出相应错误码并返回undefined，错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码]([Camera错误码](../../errors/Camera错误码.md).md)。
 
-错误码ID错误信息7400103Session not config, only throw in session usage.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config, only throw in session usage. |
 
 **示例：**
 
@@ -66,13 +72,17 @@ getExposureBiasRange(): Array<number>
 
 **返回值：**
 
-类型说明Array<number>获取补偿范围的数组。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 类型 | 说明 |
+| --- | --- |
+| Array<number> | 获取补偿范围的数组。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400103Session not config, only throw in session usage.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config, only throw in session usage. |
 
 **示例：**
 

@@ -2,43 +2,26 @@
 
 #### 概述
 
-此结构体描述创建具有NNGI特性的[XEG_RTGI](XEngine.md#ZH-CN_TOPIC_0000002328319196__xeg_rtgi)对象的信息，当结构体中的信息变化时，需要创建新的[XEG_RTGI](XEngine.md#ZH-CN_TOPIC_0000002328319196__xeg_rtgi)对象。
+此结构体描述创建具有NNGI特性的[XEG_RTGI](XEngine.md#ZH-CN_TOPIC_0000002553202223__xeg_rtgi)对象的信息，当结构体中的信息变化时，需要创建新的[XEG_RTGI](XEngine.md#ZH-CN_TOPIC_0000002553202223__xeg_rtgi)对象。
 
 **起始版本：** 6.0.0(20)
 
 **相关模块：**[XEngine](XEngine.md)
 
+所在头文件： [xeg_vulkan_rtgi.h](xeg_vulkan_rtgi.h.md)
+
 #### 汇总
 
 #### 成员变量
 
-名称
-
-描述
-
-XEG_StructureType [sType](#ZH-CN_TOPIC_0000002328319208__stype)
-
-识别此结构的[XEG_StructureType](XEngine.md#ZH-CN_TOPIC_0000002328319196__xeg_structuretype)值，必须是XEG_STRUCTURE_TYPE_NNGI_CREATE_INFO。
-
-const void * [pNext](#ZH-CN_TOPIC_0000002328319208__pnext)
-
-指向扩展结构的指针。
-
-XEG_RTGIQualityMode [qualityMode](#ZH-CN_TOPIC_0000002328319208__qualitymode)
-
-输出图像的质量模式，必须为[XEG_RTGIQualityMode](XEngine.md#ZH-CN_TOPIC_0000002328319196__xeg_rtgiqualitymode)中的枚举值。
-
-VkExtent2D [inferenceInputSize](#ZH-CN_TOPIC_0000002328319208__inferenceinputsize)
-
-推理输入图像的分辨率，必须与[XEG_NNGIDescription](XEG_NNGIDescription.md)中的推理输入图像的分辨率保持一致。
-
-VkExtent2D [inferenceOutputSize](#ZH-CN_TOPIC_0000002328319208__inferenceoutputsize)
-
-推理输出图像的分辨率，必须与[XEG_NNGIDescription](XEG_NNGIDescription.md)中的推理输出图像的分辨率保持一致，推荐使用（640，368）。
-
-VkExtent2D [trainingSize](#ZH-CN_TOPIC_0000002328319208__trainingsize)
-
-训练图像的分辨率，必须与[XEG_NNGIDescription](XEG_NNGIDescription.md)中的训练输入和输出图像的分辨率保持一致，推荐使用（64，32）。
+| 名称 | 描述 |
+| --- | --- |
+| [XEG_StructureType](XEngine.md#ZH-CN_TOPIC_0000002328319196__xeg_structuretype) sType | 识别此结构的XEG_StructureType值，必须是XEG_STRUCTURE_TYPE_NNGI_CREATE_INFO。 |
+| const void * pNext | 指向扩展结构的指针。 |
+| [XEG_RTGIQualityMode](XEngine.md#ZH-CN_TOPIC_0000002328319196__xeg_rtgiqualitymode) qualityMode | 输出图像的质量模式，必须为[XEG_RTGI](XEngine.md#ZH-CN_TOPIC_0000002328319196__xeg_rtgi)QualityMode中的枚举值。 |
+| VkExtent2D inferenceInputSize | 推理输入图像的分辨率，必须与[XEG_NNGIDescription](XEG_NNGIDescription.md)中的推理输入图像的分辨率保持一致。 |
+| VkExtent2D inferenceOutputSize | 推理输出图像的分辨率，必须与[XEG_NNGIDescription](XEG_NNGIDescription.md)中的推理输出图像的分辨率保持一致，推荐使用（640，368）。 |
+| VkExtent2D trainingSize | 训练图像的分辨率，必须与[XEG_NNGIDescription](XEG_NNGIDescription.md)中的训练输入和输出图像的分辨率保持一致，推荐使用（64，32）。 |
 
 #### 结构体成员变量说明
 
@@ -80,7 +63,7 @@ XEG_RTGIQualityMode XEG_NNGICreateInfo::qualityMode
 
 **描述**
 
-输出图像的质量模式，必须为[XEG_RTGIQualityMode](XEngine.md#ZH-CN_TOPIC_0000002328319196__xeg_rtgiqualitymode)中的枚举值。
+输出图像的质量模式，必须为[XEG_RTGIQualityMode](XEngine.md#ZH-CN_TOPIC_0000002553202223__xeg_rtgiqualitymode)中的枚举值。
 
 #### sType
 
@@ -90,7 +73,7 @@ XEG_StructureType XEG_NNGICreateInfo::sType
 
 **描述**
 
-识别此结构的[XEG_StructureType](XEngine.md#ZH-CN_TOPIC_0000002328319196__xeg_structuretype)值，必须是XEG_STRUCTURE_TYPE_NNGI_CREATE_INFO。
+识别此结构的[XEG_StructureType](XEngine.md#ZH-CN_TOPIC_0000002553202223__xeg_structuretype)值，必须是XEG_STRUCTURE_TYPE_NNGI_CREATE_INFO。
 
 #### trainingSize
 

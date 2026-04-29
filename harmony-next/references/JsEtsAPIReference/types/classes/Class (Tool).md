@@ -1,6 +1,7 @@
 # Class (Tool)
 
-本模块定义的工具类，仅提供静态的方法，主要完成其他模块和[common2D](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md)中定义的数据结构的转换功能等操作。
+本模块定义的工具类，仅提供静态的方法，主要完成其他模块和[common2D](@ohos.graphics.common2D (2D图形通用数据类型).md)中定义的数据结构的转换功能等操作。
+
 
 -
 
@@ -24,27 +25,33 @@
 import { drawing } from '@kit.ArkGraphics2D';
 ```
 
-#### makeColorFromResourceColor15+
+#### makeColorFrom[ResourceColor](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)15+
 
-static makeColorFromResourceColor(resourceColor: ResourceColor): common2D.Color
+static makeColorFrom[ResourceColor](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)(resourceColor: [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)Color): common2D.Color
 
-将ResourceColor类型的值转换为common2D.Color对象。
+将[ResourceColor](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)类型的值转换为common2D.Color对象。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
-参数名类型必填说明resourceColor[ResourceColor](../../topics/misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor)是ResourceColor格式的颜色值（支持所有的4种输入，示例中提供13个示例输入）。其中第4种类型[Resource](../../topics/misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)只接受$r('belonging.type.name')构造方法，需要确保该资源在main/resources/base/element目录下已定义(app支持color、string和integer，sys只支持color)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| resourceColor | [ResourceColor](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcecolor) | 是 | ResourceColor格式的颜色值（支持所有的4种输入，示例中提供13个示例输入）。其中第4种类型Resource只接受$r('belonging.type.name')构造方法，需要确保该资源在main/resources/base/element目录下已定义(app支持color、string和integer，sys只支持color)。 |
 
 **返回值：**
 
-类型说明[common2D.Color](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__color)转换后的common2D.Color颜色对象，若转换失败则返回空指针。
+| 类型 | 说明 |
+| --- | --- |
+| common2D.Color | 转换后的common2D.Color颜色对象，若转换失败则返回空指针。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 

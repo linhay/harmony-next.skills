@@ -48,7 +48,9 @@ import { LightWeightSet } from '@kit.ArkTS';
 
 **系统能力：** SystemCapability.Utils.Lang
 
-名称类型只读可选说明lengthnumber是否LightWeightSet的元素个数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| length | number | 是 | 否 | LightWeightSet的元素个数。 |
 
 #### constructor
 
@@ -62,9 +64,11 @@ LightWeightSet的构造函数。
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码]([语言基础类库错误码](../../errors/语言基础类库错误码.md).md)。
 
-错误码ID错误信息10200012The LightWeightSet's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200012 | The LightWeightSet's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -84,13 +88,17 @@ isEmpty(): boolean
 
 **返回值：**
 
-类型说明boolean为空返回true，不为空返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 为空返回true，不为空返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The isEmpty method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The isEmpty method cannot be bound. |
 
 **示例：**
 
@@ -112,17 +120,23 @@ add(obj: T): boolean
 
 **参数：**
 
-参数名类型必填说明objT是添加的成员数据。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| obj | T | 是 | 添加的成员数据。 |
 
 **返回值：**
 
-类型说明boolean成功添加元素返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 成功添加元素返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The add method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The add method cannot be bound. |
 
 **示例：**
 
@@ -144,17 +158,24 @@ addAll(set: LightWeightSet<T>): boolean
 
 **参数：**
 
-参数名类型必填说明setLightWeightSet<T>是提供添加元素的LightWeightSet。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| set | LightWeightSet<T> | 是 | 提供添加元素的LightWeightSet。 |
 
 **返回值：**
 
-类型说明boolean成功添加元素返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 成功添加元素返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The addAll method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The addAll method cannot be bound. |
 
 **示例：**
 
@@ -181,17 +202,24 @@ hasAll(set: LightWeightSet<T>): boolean
 
 **参数：**
 
-参数名类型必填说明setLightWeightSet<T>是比较对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| set | LightWeightSet<T> | 是 | 比较对象。 |
 
 **返回值：**
 
-类型说明boolean包含所有元素时返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 包含所有元素时返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The hasAll method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The hasAll method cannot be bound. |
 
 **示例：**
 
@@ -217,17 +245,23 @@ has(key: T): boolean
 
 **参数：**
 
-参数名类型必填说明keyT是指定key
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | T | 是 | 指定key |
 
 **返回值：**
 
-类型说明boolean包含指定key时返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 包含指定key时返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The has method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The has method cannot be bound. |
 
 **示例：**
 
@@ -250,13 +284,19 @@ increaseCapacityTo(minimumCapacity: number): void
 
 **参数：**
 
-参数名类型必填说明minimumCapacitynumber是需要容纳的元素数量。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| minimumCapacity | number | 是 | 需要容纳的元素数量。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.10200001The value of minimumCapacity is out of range.10200011The increaseCapacityTo method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 10200001 | The value of minimumCapacity is out of range. |
+| 10200011 | The increaseCapacityTo method cannot be bound. |
 
 **示例：**
 
@@ -277,17 +317,23 @@ getIndexOf(key: T): number
 
 **参数：**
 
-参数名类型必填说明keyT是查找的指定key。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | T | 是 | 查找的指定key。 |
 
 **返回值：**
 
-类型说明number在lightWeightSet中指定数据的下标。若lightWeightSet中没有要查找的元素，则返回一个负值。表示目标哈希值应该插入的位置，插入位置是从1开始计数的，负号表示这是一个插入位置而不是索引。
+| 类型 | 说明 |
+| --- | --- |
+| number | 在lightWeightSet中指定数据的下标。若lightWeightSet中没有要查找的元素，则返回一个负值。表示目标哈希值应该插入的位置，插入位置是从1开始计数的，负号表示这是一个插入位置而不是索引。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The getIndexOf method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The getIndexOf method cannot be bound. |
 
 **示例：**
 
@@ -311,17 +357,23 @@ remove(key: T): T
 
 **参数：**
 
-参数名类型必填说明keyT是指定key。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | T | 是 | 指定key。 |
 
 **返回值：**
 
-类型说明T返回删除元素的值。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回删除元素的值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The remove method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The remove method cannot be bound. |
 
 **示例：**
 
@@ -345,17 +397,24 @@ removeAt(index: number): boolean
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定下标。需要小于等于int32_max即2147483647。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定下标。需要小于等于int32_max即2147483647。 |
 
 **返回值：**
 
-类型说明boolean确认是否成功删除元素，成功删除元素返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 确认是否成功删除元素，成功删除元素返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The removeAt method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The removeAt method cannot be bound. |
 
 **示例：**
 
@@ -379,17 +438,24 @@ getValueAt(index: number): T
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定下标。需要小于等于int32_max即2147483647。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定下标。需要小于等于int32_max即2147483647。 |
 
 **返回值：**
 
-类型说明T返回指定下标对应的元素。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回指定下标对应的元素。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The getValueAt method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The getValueAt method cannot be bound. |
 
 **参数：**
 
@@ -413,9 +479,11 @@ clear(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The clear method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The clear method cannot be bound. |
 
 **示例：**
 
@@ -440,7 +508,9 @@ toString(): String
 
 **返回值：**
 
-类型说明String返回对应字符串。
+| 类型 | 说明 |
+| --- | --- |
+| String | 返回对应字符串。 |
 
 **示例：**
 
@@ -464,13 +534,17 @@ toArray(): Array<T>
 
 **返回值：**
 
-类型说明Array<T>返回对应数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<T> | 返回对应数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The toArray method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The toArray method cannot be bound. |
 
 **示例：**
 
@@ -493,13 +567,17 @@ values(): IterableIterator<T>
 
 **返回值：**
 
-类型说明IterableIterator<T>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<T> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The values method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The values method cannot be bound. |
 
 **示例：**
 
@@ -527,17 +605,27 @@ forEach(callbackFn: (value?: T, key?: T, set?: LightWeightSet<T>) => void, thisA
 
 **参数：**
 
-参数名类型必填说明callbackFnfunction是回调函数。thisArgObject否callbackFn被调用时用作this值，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | function | 是 | 回调函数。 |
+| thisArg | Object | 否 | callbackFn被调用时用作this值，默认值为当前实例对象。 |
 
 callbackFn的参数说明：
 
-参数名类型必填说明valueT否当前遍历到的元素键值对的值，默认值为首个键值对的值。keyT否当前遍历到的元素键值对的键（和value相同），默认值为首个键值对的键。setLightWeightSet<T>否当前调用forEach方法的实例对象，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | T | 否 | 当前遍历到的元素键值对的值，默认值为首个键值对的值。 |
+| key | T | 否 | 当前遍历到的元素键值对的键（和value相同），默认值为首个键值对的键。 |
+| set | LightWeightSet<T> | 否 | 当前调用forEach方法的实例对象，默认值为当前实例对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The forEach method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The forEach method cannot be bound. |
 
 **示例：**
 
@@ -575,13 +663,17 @@ entries(): IterableIterator<[T, T]>
 
 **返回值：**
 
-类型说明IterableIterator<[T, T]>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<[T, T]> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The entries method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The entries method cannot be bound. |
 
 **示例：**
 
@@ -620,13 +712,17 @@ for(let i = 0; i < 10; i++) {
 
 **返回值：**
 
-类型说明IterableIterator<T>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<T> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The Symbol.iterator method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The Symbol.iterator method cannot be bound. |
 
 **示例：**
 
@@ -676,17 +772,23 @@ equal(obj: Object): boolean
 
 **参数：**
 
-参数名类型必填说明objObject是比较对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| obj | Object | 是 | 比较对象。 |
 
 **返回值：**
 
-类型说明boolean当obj为仅含string或number的LightWeightSet或数组，且对象内部元素构成相同时，返回true；其它情况返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 当obj为仅含string或number的LightWeightSet或数组，且对象内部元素构成相同时，返回true；其它情况返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The equal method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The equal method cannot be bound. |
 
 **示例：**
 

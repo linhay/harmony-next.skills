@@ -12,10 +12,15 @@ typedef struct Rdb_Statistic {...} Rdb_Statistic
 
 **相关模块：**[RDB](RDB.md)
 
-**所在头文件：**[relational_store.h](../../capi/headers/relational_store.h.md)
+所在头文件： [relational_store.h](relational_store.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述int total表示数据库表中需要端云同步的总行数。int successful表示数据库表中端云同步成功的行数。int failed表示数据库表中端云同步失败的行数。int remained表示数据库表中端云同步剩余未执行的行数。
+| 名称 | 描述 |
+| --- | --- |
+| int total | 表示数据库表中需要端云同步的总行数。 |
+| int successful | 表示数据库表中端云同步成功的行数。 |
+| int failed | 表示数据库表中端云同步失败的行数。 |
+| int remained | 表示数据库表中端云同步剩余未执行的行数。 |

@@ -12,4 +12,4 @@ typedef struct OH_Drawing_Region OH_Drawing_Region
 
 **相关模块：**[Drawing](Drawing.md)
 
-**所在头文件：**[drawing_types.h](../../capi/headers/drawing_types.h.md)
+**所在头文件：**[drawing_types.h](../../topics/graphics/[drawing_types.h](drawing_types.h.md).md)

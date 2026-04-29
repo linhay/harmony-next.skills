@@ -28,7 +28,10 @@ onDependencyCompleted?(dependency: string, result: Object): void
 
 **参数：**
 
-参数名类型必填说明dependencystring是依赖的启动任务名称。resultObject是依赖的启动任务[init](#ZH-CN_TOPIC_0000002529444563__init)返回的执行结果。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dependency | string | 是 | 依赖的启动任务名称。 |
+| result | Object | 是 | 依赖的启动任务init返回的执行结果。 |
 
 **示例：**
 
@@ -51,12 +54,11 @@ export default class StartupTask_001 extends StartupTask {
       dependency, JSON.stringify(result));
     // ...
   }
-}
 ```
 
 #### init
 
-init(context: AbilityStageContext): Promise<Object | void>
+init(context: [AbilityStageContext](../../topics/misc/AbilityStageContext.md)): Promise<Object | void>
 
 当所有依赖的启动任务都执行完成后，该方法将会被调用。开发者可以在该回调中执行该启动任务的初始化操作。使用Promise异步回调。
 
@@ -64,11 +66,15 @@ init(context: AbilityStageContext): Promise<Object | void>
 
 **参数：**
 
-参数名类型必填说明context[AbilityStageContext](../../topics/graphics/AbilityStageContext.md)是[AbilityStage](@ohos.app.ability.AbilityStage (AbilityStage组件管理器).md)的上下文环境
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [AbilityStageContext](../../topics/misc/AbilityStageContext.md) | 是 | AbilityStage的上下文环境 |
 
 **返回值：**
 
-类型说明Promise<Object | void>Promise对象，返回启动任务执行结果对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Object | void> | Promise对象，返回启动任务执行结果对象。 |
 
 **示例：**
 
@@ -91,5 +97,4 @@ export default class StartupTask_001 extends StartupTask {
   onDependencyCompleted(dependency: string, result: Object): void {
     // ...
   }
-}
 ```

@@ -18,7 +18,10 @@ import { StartupConfig } from '@kit.AbilityKit';
 
 **系统能力**：SystemCapability.Ability.AppStartup
 
-名称类型只读可选说明timeoutMsnumber否是执行所有启动任务的超时时间（单位：毫秒），默认值为10000毫秒。startupListener[StartupListener](@ohos.app.appstartup.StartupListener (启动框架任务监听器).md)否是表示启动框架的监听器，该监听器将在所有启动任务完成时调用。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| timeoutMs | number | 否 | 是 | 执行所有启动任务的超时时间（单位：毫秒），默认值为10000毫秒。 |
+| startupListener | StartupListener | 否 | 是 | 表示启动框架的监听器，该监听器将在所有启动任务完成时调用。 |
 
 **示例：**
 
@@ -48,5 +51,4 @@ export default class MyStartupConfigEntry extends StartupConfigEntry {
     };
     return config;
   }
-}
 ```

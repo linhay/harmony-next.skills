@@ -28,15 +28,24 @@ setSimDisabled(admin: Want, slotId: number): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+冲突规则： [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。slotIdnumber是卡槽ID，目前仅支持单卡槽设备和双卡槽设备，取值范围为0或1，其中0表示卡槽1，1表示卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| slotId | number | 是 | 卡槽ID，目前仅支持单卡槽设备和双卡槽设备，取值范围为0或1，其中0表示卡槽1，1表示卡槽2。 |
 
 **错误码**：
 
-请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+请参见[企业设备管理错误码]([企业设备管理错误码](../../errors/企业设备管理错误码.md).md)和[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 
 **示例：**
 
@@ -70,15 +79,24 @@ setSimEnabled(admin: Want, slotId: number): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+冲突规则： [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。slotIdnumber是卡槽ID，目前仅支持单卡槽设备和双卡槽设备，取值范围为0或1，其中0表示卡槽1，1表示卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| slotId | number | 是 | 卡槽ID，目前仅支持单卡槽设备和双卡槽设备，取值范围为0或1，其中0表示卡槽1，1表示卡槽2。 |
 
 **错误码**：
 
-请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 
 **示例：**
 
@@ -114,17 +132,26 @@ isSimDisabled(admin: Want, slotId: number): boolean
 
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。slotIdnumber是卡槽ID，目前仅支持单卡槽设备和双卡槽设备，取值范围为0或1，其中0表示卡槽1，1表示卡槽2。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| slotId | number | 是 | 卡槽ID，目前仅支持单卡槽设备和双卡槽设备，取值范围为0或1，其中0表示卡槽1，1表示卡槽2。 |
 
 **返回值：**
 
-类型说明boolean指定卡槽的禁用状态。true表示已被禁用，false表示未被禁用。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 指定卡槽的禁用状态。true表示已被禁用，false表示未被禁用。 |
 
 **错误码**：
 
-请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 
 **示例：**
 
@@ -148,15 +175,17 @@ try {
 
 #### telephonyManager.addOutgoingCallPolicyNumbers
 
-addOutgoingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, numbers: Array<string>): void
+addOutgoingCallPolicyNumbers(admin: Want, policy: [adminManager.Policy](@ohos.enterprise.adminManager（admin权限管理）.md#ZH-CN_TOPIC_0000002529445551__policy20), numbers: Array<string>): void
 
 添加通话呼出的允许或禁用名单，如果不添加名单，任意号码都可以呼出，添加后只有名单内的号码允许或禁止呼出。
 
 以下情况下，通过本接口添加通话呼出的允许或禁用名单，会报策略冲突：
 
-1. 已经通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002529285583__restrictionssetdisallowedpolicy)接口禁用了设备通话能力，再通过本接口添加通话呼出的禁用或允许名单，返回203错误码。通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002529285583__restrictionssetdisallowedpolicy)接口解除禁用设备通话能力后，可解除冲突。
-1. 已经通过本接口设置了通话呼出的禁用名单，再通过本接口添加通话呼出允许名单，返回9200010错误码。通过[removeOutgoingCallPolicyNumbers](#ZH-CN_TOPIC_0000002497605594__telephonymanagerremoveoutgoingcallpolicynumbers)接口将之前设置的通话呼出禁用名单移除后，可解除冲突。
-1. 已经通过本接口设置了通话呼出的允许名单，再通过本接口添加通话呼出禁用名单，返回9200010错误码。通过[removeOutgoingCallPolicyNumbers](#ZH-CN_TOPIC_0000002497605594__telephonymanagerremoveoutgoingcallpolicynumbers)接口将之前设置的通话呼出允许名单移除后，可解除冲突。
+1. 已经通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002522241688__restrictionssetdisallowedpolicy)接口禁用了设备通话能力，再通过本接口添加通话呼出的禁用或允许名单，返回203错误码。通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002522241688__restrictionssetdisallowedpolicy)接口解除禁用设备通话能力后，可解除冲突。
+
+1. 已经通过本接口设置了通话呼出的禁用名单，再通过本接口添加通话呼出允许名单，返回9200010错误码。通过[removeOutgoingCallPolicyNumbers](#ZH-CN_TOPIC_0000002522081696__telephonymanagerremoveoutgoingcallpolicynumbers)接口将之前设置的通话呼出禁用名单移除后，可解除冲突。
+
+1. 已经通过本接口设置了通话呼出的允许名单，再通过本接口添加通话呼出禁用名单，返回9200010错误码。通过[removeOutgoingCallPolicyNumbers](#ZH-CN_TOPIC_0000002522081696__telephonymanagerremoveoutgoingcallpolicynumbers)接口将之前设置的通话呼出允许名单移除后，可解除冲突。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_TELEPHONY
 
@@ -166,15 +195,29 @@ addOutgoingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, numbers: 
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。policy[adminManager.Policy](@ohos.enterprise.adminManager（admin权限管理）.md#ZH-CN_TOPIC_0000002529445551__policy20)是允许或禁用名单策略。BLOCK_LIST为禁用名单，TRUST_LIST为允许名单。numbersArray<string>是通话号码列表，当前仅支持全号码匹配。数组总长度不能超过1000。例如，若当前允许名单数组中已有100个号码，则最多支持通过该接口再添加900个。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| policy | [adminManager.Policy](@ohos.enterprise.adminManager（admin权限管理）.md#ZH-CN_TOPIC_0000002529445551__policy20) | 是 | 允许或禁用名单策略。BLOCK_LIST为禁用名单，TRUST_LIST为允许名单。 |
+| numbers | Array<string> | 是 | 通话号码列表，当前仅支持全号码匹配。数组总长度不能超过1000。例如，若当前允许名单数组中已有100个号码，则最多支持通过该接口再添加900个。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.9200010A conflict policy has been configured.9200012Parameter verification failed.201Permission verification failed. The application does not have the permission required to call the API.203This function is prohibited by enterprise management policies.801Capability not supported. Failed to call the API due to limited device capabilities.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 9200010 | A conflict policy has been configured. |
+| 9200012 | Parameter verification failed. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 203 | This function is prohibited by enterprise management policies. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
 
 **示例：**
 
@@ -203,13 +246,13 @@ try {
 
 #### telephonyManager.removeOutgoingCallPolicyNumbers
 
-removeOutgoingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, numbers: Array<string>): void
+removeOutgoingCallPolicyNumbers(admin: Want, policy: [adminManager.Policy](@ohos.enterprise.adminManager（admin权限管理）.md#ZH-CN_TOPIC_0000002529445551__policy20), numbers: Array<string>): void
 
 移除通话呼出的允许或禁用名单，若在该名单尚未设置时进行移除，则会移除失败。
 
 以下情况下，通过本接口移除通话呼出的允许或禁用名单，会报策略冲突：
 
-已经通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002529285583__restrictionssetdisallowedpolicy)接口禁用了设备通话能力，再通过本接口移除通话呼出的禁用或允许名单，返回203错误码。通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002529285583__restrictionssetdisallowedpolicy)接口解除禁用设备通话能力后，可解除冲突。
+已经通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002522241688__restrictionssetdisallowedpolicy)接口禁用了设备通话能力，再通过本接口移除通话呼出的禁用或允许名单，返回203错误码。通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002522241688__restrictionssetdisallowedpolicy)接口解除禁用设备通话能力后，可解除冲突。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_TELEPHONY
 
@@ -219,15 +262,28 @@ removeOutgoingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, number
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。policy[adminManager.Policy](@ohos.enterprise.adminManager（admin权限管理）.md#ZH-CN_TOPIC_0000002529445551__policy20)是允许或禁用名单策略。BLOCK_LIST为禁用名单，TRUST_LIST为允许名单。numbersArray<string>是待移除的通话号码数组。数组总长度不能超过1000。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| policy | [adminManager.Policy](@ohos.enterprise.adminManager（admin权限管理）.md#ZH-CN_TOPIC_0000002529445551__policy20) | 是 | 允许或禁用名单策略。BLOCK_LIST为禁用名单，TRUST_LIST为允许名单。 |
+| numbers | Array<string> | 是 | 待移除的通话号码数组。数组总长度不能超过1000。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.9200012Parameter verification failed.201Permission verification failed. The application does not have the permission required to call the API.203This function is prohibited by enterprise management policies.801Capability not supported. Failed to call the API due to limited device capabilities.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 9200012 | Parameter verification failed. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 203 | This function is prohibited by enterprise management policies. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
 
 **示例：**
 
@@ -256,7 +312,7 @@ try {
 
 #### telephonyManager.getOutgoingCallPolicyNumbers
 
-getOutgoingCallPolicyNumbers(admin: Want, policy: adminManager.Policy): Array<string>
+getOutgoingCallPolicyNumbers(admin: Want, policy: [adminManager.Policy](@ohos.enterprise.adminManager（admin权限管理）.md#ZH-CN_TOPIC_0000002529445551__policy20)): Array<string>
 
 获取通话呼出的允许或禁用名单。
 
@@ -270,17 +326,27 @@ getOutgoingCallPolicyNumbers(admin: Want, policy: adminManager.Policy): Array<st
 
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。policy[adminManager.Policy](@ohos.enterprise.adminManager（admin权限管理）.md#ZH-CN_TOPIC_0000002529445551__policy20)是允许或禁用名单策略。 BLOCK_LIST为禁用名单，TRUST_LIST为允许名单。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| policy | [adminManager.Policy](@ohos.enterprise.adminManager（admin权限管理）.md#ZH-CN_TOPIC_0000002529445551__policy20) | 是 | 允许或禁用名单策略。 BLOCK_LIST为禁用名单，TRUST_LIST为允许名单。 |
 
 **返回值：**
 
-类型说明Array<string>通话呼出禁用或允许名单的号码数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<string> | 通话呼出禁用或允许名单的号码数组。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.801Capability not supported. Failed to call the API due to limited device capabilities.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
 
 **示例：**
 
@@ -305,15 +371,17 @@ try {
 
 #### telephonyManager.addIncomingCallPolicyNumbers
 
-addIncomingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, numbers: Array<string>): void
+addIncomingCallPolicyNumbers(admin: Want, policy: [adminManager.Policy](@ohos.enterprise.adminManager（admin权限管理）.md#ZH-CN_TOPIC_0000002529445551__policy20), numbers: Array<string>): void
 
 添加通话呼入的允许或禁用名单，如果不添加名单，则任意号码都可以呼入，添加后仅名单内的号码允许或禁止呼入。
 
 以下情况下，通过本接口添加通话呼入的允许或禁用名单，会报策略冲突：
 
-1. 已经通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002529285583__restrictionssetdisallowedpolicy)接口禁用了设备通话能力，再通过本接口添加通话呼入的禁用或允许名单，返回203错误码。通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002529285583__restrictionssetdisallowedpolicy)接口解除禁用设备通话能力后，可解除冲突。
-1. 已经通过本接口设置了通话呼入的禁用名单，再通过本接口添加通话呼入允许名单，返回9200010错误码。通过[removeIncomingCallPolicyNumbers](#ZH-CN_TOPIC_0000002497605594__telephonymanagerremoveincomingcallpolicynumbers)接口将之前设置的通话呼入禁用名单移除后，可解除冲突。
-1. 已经通过本接口设置了通话呼入的允许名单，再通过本接口添加通话呼入禁用名单，返回9200010错误码。通过[removeIncomingCallPolicyNumbers](#ZH-CN_TOPIC_0000002497605594__telephonymanagerremoveincomingcallpolicynumbers)接口将之前设置的通话呼入允许名单移除后，可解除冲突。
+1. 已经通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002522241688__restrictionssetdisallowedpolicy)接口禁用了设备通话能力，再通过本接口添加通话呼入的禁用或允许名单，返回203错误码。通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002522241688__restrictionssetdisallowedpolicy)接口解除禁用设备通话能力后，可解除冲突。
+
+1. 已经通过本接口设置了通话呼入的禁用名单，再通过本接口添加通话呼入允许名单，返回9200010错误码。通过[removeIncomingCallPolicyNumbers](#ZH-CN_TOPIC_0000002522081696__telephonymanagerremoveincomingcallpolicynumbers)接口将之前设置的通话呼入禁用名单移除后，可解除冲突。
+
+1. 已经通过本接口设置了通话呼入的允许名单，再通过本接口添加通话呼入禁用名单，返回9200010错误码。通过[removeIncomingCallPolicyNumbers](#ZH-CN_TOPIC_0000002522081696__telephonymanagerremoveincomingcallpolicynumbers)接口将之前设置的通话呼入允许名单移除后，可解除冲突。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_TELEPHONY
 
@@ -323,15 +391,29 @@ addIncomingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, numbers: 
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。policy[adminManager.Policy](@ohos.enterprise.adminManager（admin权限管理）.md#ZH-CN_TOPIC_0000002529445551__policy20)是允许或禁用名单策略。BLOCK_LIST为禁用名单，TRUST_LIST为允许名单。numbersArray<string>是通话号码列表，当前仅支持全号码匹配。数组总长度不能超过1000。例如，若当前允许名单数组中已有100个号码，则最多支持通过该接口再添加900个。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| policy | [adminManager.Policy](@ohos.enterprise.adminManager（admin权限管理）.md#ZH-CN_TOPIC_0000002529445551__policy20) | 是 | 允许或禁用名单策略。BLOCK_LIST为禁用名单，TRUST_LIST为允许名单。 |
+| numbers | Array<string> | 是 | 通话号码列表，当前仅支持全号码匹配。数组总长度不能超过1000。例如，若当前允许名单数组中已有100个号码，则最多支持通过该接口再添加900个。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.9200010A conflict policy has been configured.9200012Parameter verification failed.201Permission verification failed. The application does not have the permission required to call the API.203This function is prohibited by enterprise management policies.801Capability not supported. Failed to call the API due to limited device capabilities.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 9200010 | A conflict policy has been configured. |
+| 9200012 | Parameter verification failed. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 203 | This function is prohibited by enterprise management policies. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
 
 **示例：**
 
@@ -360,13 +442,13 @@ try {
 
 #### telephonyManager.removeIncomingCallPolicyNumbers
 
-removeIncomingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, numbers: Array<string>): void
+removeIncomingCallPolicyNumbers(admin: Want, policy: [adminManager.Policy](@ohos.enterprise.adminManager（admin权限管理）.md#ZH-CN_TOPIC_0000002529445551__policy20), numbers: Array<string>): void
 
 移除通话呼入的允许或禁用名单，若在该名单尚未设置时进行移除，则会移除失败。
 
 以下情况下，通过本接口移除通话呼入的允许或禁用名单，会报策略冲突：
 
-1. 已经通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002529285583__restrictionssetdisallowedpolicy)接口禁用了设备通话能力，再通过本接口移除通话呼入的禁用或允许名单，返回203错误码。通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002529285583__restrictionssetdisallowedpolicy)接口解除禁用设备通话能力后，可解除冲突。
+1. 已经通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002522241688__restrictionssetdisallowedpolicy)接口禁用了设备通话能力，再通过本接口移除通话呼入的禁用或允许名单，返回203错误码。通过[setDisallowedPolicy](@ohos.enterprise.restrictions （限制类策略）.md#ZH-CN_TOPIC_0000002522241688__restrictionssetdisallowedpolicy)接口解除禁用设备通话能力后，可解除冲突。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_TELEPHONY
 
@@ -376,15 +458,28 @@ removeIncomingCallPolicyNumbers(admin: Want, policy: adminManager.Policy, number
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。policy[adminManager.Policy](@ohos.enterprise.adminManager（admin权限管理）.md#ZH-CN_TOPIC_0000002529445551__policy20)是允许或禁用名单策略。BLOCK_LIST为禁用名单，TRUST_LIST为允许名单。numbersArray<string>是待移除的通话号码数组。数组总长度不能超过1000。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| policy | [adminManager.Policy](@ohos.enterprise.adminManager（admin权限管理）.md#ZH-CN_TOPIC_0000002529445551__policy20) | 是 | 允许或禁用名单策略。BLOCK_LIST为禁用名单，TRUST_LIST为允许名单。 |
+| numbers | Array<string> | 是 | 待移除的通话号码数组。数组总长度不能超过1000。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.9200012Parameter verification failed.201Permission verification failed. The application does not have the permission required to call the API.203This function is prohibited by enterprise management policies.801Capability not supported. Failed to call the API due to limited device capabilities.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 9200012 | Parameter verification failed. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 203 | This function is prohibited by enterprise management policies. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
 
 **示例：**
 
@@ -413,7 +508,7 @@ try {
 
 #### telephonyManager.getIncomingCallPolicyNumbers
 
-getIncomingCallPolicyNumbers(admin: Want, policy: adminManager.Policy): Array<string>
+getIncomingCallPolicyNumbers(admin: Want, policy: [adminManager.Policy](@ohos.enterprise.adminManager（admin权限管理）.md#ZH-CN_TOPIC_0000002529445551__policy20)): Array<string>
 
 获取通话呼入的允许或禁用名单。
 
@@ -427,17 +522,27 @@ getIncomingCallPolicyNumbers(admin: Want, policy: adminManager.Policy): Array<st
 
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。policy[adminManager.Policy](@ohos.enterprise.adminManager（admin权限管理）.md#ZH-CN_TOPIC_0000002529445551__policy20)是允许或禁用名单策略。BLOCK_LIST为禁用名单，TRUST_LIST为允许名单。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| policy | [adminManager.Policy](@ohos.enterprise.adminManager（admin权限管理）.md#ZH-CN_TOPIC_0000002529445551__policy20) | 是 | 允许或禁用名单策略。BLOCK_LIST为禁用名单，TRUST_LIST为允许名单。 |
 
 **返回值：**
 
-类型说明Array<string>通话呼入禁用或允许名单的号码数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<string> | 通话呼入禁用或允许名单的号码数组。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.801Capability not supported. Failed to call the API due to limited device capabilities.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
 
 **示例：**
 
@@ -457,5 +562,54 @@ try {
   console.info(`Succeeded in getting incoming call policy. result: ${JSON.stringify(numbers)}`);
 } catch (err) {
   console.error(`Failed to get incoming call policy. Code: ${err.code}, message: ${err.message}`);
+}
+```
+
+**telephonyManager.hangupCalling23+**
+
+hangupCalling(admin: Want): void
+
+挂断当前通话。仅支持运营商通话，不包括畅联等。
+
+需要权限： ohos.permission.ENTERPRISE_MANAGE_TELEPHONY
+
+系统能力： SystemCapability.Customization.EnterpriseDeviceManager
+
+设备行为差异： 该接口在Phone和Tablet设备中可正常调用，在其他设备中返回801错误码。
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+
+错误码：
+
+请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+
+示例：
+
+```ets
+import { Want } from '@kit.AbilityKit';
+import { telephonyManager } from '@kit.MDMKit';
+
+let wantTemp: Want = {
+  //需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+try {
+  telephonyManager.hangupCalling(wantTemp);
+} catch (err) {
+  console.error(`Failed to hang up calling. Code: ${err.code}, message: ${err.message}`);
 }
 ```

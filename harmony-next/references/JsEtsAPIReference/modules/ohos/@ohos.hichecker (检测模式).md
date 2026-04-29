@@ -16,7 +16,13 @@ import { hichecker } from '@kit.PerformanceAnalysisKit';
 
 **系统能力**：SystemCapability.HiviewDFX.HiChecker
 
-名称类型值说明RULE_CAUTION_PRINT_LOGbigint1ULL << 63告警规则，当有告警时记录日志。RULE_CAUTION_TRIGGER_CRASHbigint1ULL << 62告警规则，当有告警时让应用退出。RULE_THREAD_CHECK_SLOW_PROCESSbigint1ULL检测规则，检测是否有耗时函数被调用。RULE_CHECK_ABILITY_CONNECTION_LEAKbigint1ULL << 33检测规则，检测是否发生ability泄露。RULE_CHECK_ARKUI_PERFORMANCE11+bigint1ULL << 34检测规则，检测arkui性能。
+| 名称 | 类型 | 值 | 说明 |
+| --- | --- | --- | --- |
+| RULE_CAUTION_PRINT_LOG | bigint | 1ULL << 63 | 告警规则，当有告警时记录日志。 |
+| RULE_CAUTION_TRIGGER_CRASH | bigint | 1ULL << 62 | 告警规则，当有告警时让应用退出。 |
+| RULE_THREAD_CHECK_SLOW_PROCESS | bigint | 1ULL | 检测规则，检测是否有耗时函数被调用。 |
+| RULE_CHECK_ABILITY_CONNECTION_LEAK | bigint | 1ULL << 33 | 检测规则，检测是否发生ability泄露。 |
+| RULE_CHECK_ARKUI_PERFORMANCE11+ | bigint | 1ULL << 34 | 检测规则，检测arkui性能。 |
 
 #### hichecker.addCheckRule9+
 
@@ -28,11 +34,15 @@ addCheckRule(rule: bigint): void
 
 **参数：**
 
-参数名类型必填说明rulebigint是需要添加的规则。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rule | bigint | 是 | 需要添加的规则。 |
 
 **错误码：**
 
-错误码ID错误信息401the parameter check failed, only one bigint type parameter is needed
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | the parameter check failed, only one bigint type parameter is needed |
 
 **示例：**
 
@@ -60,11 +70,15 @@ removeCheckRule(rule: bigint): void
 
 **参数：**
 
-参数名类型必填说明rulebigint是需要删除的规则。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rule | bigint | 是 | 需要删除的规则。 |
 
 **错误码：**
 
-错误码ID错误信息401the parameter check failed, only one bigint type parameter is needed
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | the parameter check failed, only one bigint type parameter is needed |
 
 **示例：**
 
@@ -92,15 +106,21 @@ containsCheckRule(rule: bigint): boolean
 
 **参数：**
 
-参数名类型必填说明rulebigint是需要查询的规则。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rule | bigint | 是 | 需要查询的规则。 |
 
 **返回值：**
 
-类型说明boolean查询结果。true 表示规则已添加；false 表示规则未添加。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 查询结果。true 表示规则已添加；false 表示规则未添加。 |
 
 **错误码：**
 
-错误码ID错误信息401the parameter check failed, only one bigint type parameter is needed
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | the parameter check failed, only one bigint type parameter is needed |
 
 **示例：**
 
@@ -123,7 +143,8 @@ try {
 
 addRule(rule: bigint): void
 
-从 API Version 9 开始废弃，建议使用[hichecker.addCheckRule](#ZH-CN_TOPIC_0000002529445623__hicheckeraddcheckrule9)替代。
+
+从API version 8开始支持，从API version 9开始废弃，建议使用[hichecker.addCheckRule](#ZH-CN_TOPIC_0000002522081778__hicheckeraddcheckrule9)替代。
 
 添加一条或多条规则到系统，系统根据添加的规则进行检测或反馈。
 
@@ -131,7 +152,9 @@ addRule(rule: bigint): void
 
 **参数：**
 
-参数名类型必填说明rulebigint是需要添加的规则。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rule | bigint | 是 | 需要添加的规则。 |
 
 **示例：**
 
@@ -148,7 +171,8 @@ hichecker.addRule(
 
 removeRule(rule: bigint): void
 
-从 API Version 9 开始废弃，建议使用[hichecker.removeCheckRule](#ZH-CN_TOPIC_0000002529445623__hicheckerremovecheckrule9)替代。
+
+从API version 8开始支持，从API version 9开始废弃，建议使用[hichecker.removeCheckRule](#ZH-CN_TOPIC_0000002522081778__hicheckerremovecheckrule9)替代。
 
 删除一条或多条规则，删除的规则后续将不再生效。
 
@@ -156,7 +180,9 @@ removeRule(rule: bigint): void
 
 **参数：**
 
-参数名类型必填说明rulebigint是需要删除的规则。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rule | bigint | 是 | 需要删除的规则。 |
 
 **示例：**
 
@@ -179,7 +205,9 @@ getRule(): bigint
 
 **返回值：**
 
-类型说明bigint当前系统中添加的规则。
+| 类型 | 说明 |
+| --- | --- |
+| bigint | 当前系统中添加的规则。 |
 
 **示例：**
 
@@ -195,7 +223,8 @@ hichecker.getRule();   // return 1n;
 
 contains(rule: bigint): boolean
 
-从 API Version 9 开始废弃，建议使用[hichecker.containsCheckRule](#ZH-CN_TOPIC_0000002529445623__hicheckercontainscheckrule9)替代。
+
+从API version 8开始支持，从API version 9开始废弃，建议使用[hichecker.containsCheckRule](#ZH-CN_TOPIC_0000002522081778__hicheckercontainscheckrule9)替代。
 
 当前已添加的规则集中是否包含了某一个特定的规则。如果传入的规则级别为线程级别，则仅在当前线程中进行查询。
 
@@ -203,11 +232,15 @@ contains(rule: bigint): boolean
 
 **参数：**
 
-参数名类型必填说明rulebigint是需要查询的规则。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rule | bigint | 是 | 需要查询的规则。 |
 
 **返回值：**
 
-类型说明boolean查询结果。true 表示规则已添加；false 表示规则未添加。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 查询结果。true 表示规则已添加；false 表示规则未添加。 |
 
 **示例：**
 

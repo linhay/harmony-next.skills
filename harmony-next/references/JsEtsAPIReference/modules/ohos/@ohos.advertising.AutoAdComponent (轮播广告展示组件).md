@@ -29,55 +29,12 @@ AutoAdComponent({
 
 **参数：**
 
-**参数名**
-
-**类型**
-
-必填
-
-**装饰器类型**
-
-说明
-
-adParam
-
-advertising.[AdRequestParams](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adrequestparams)
-
-是
-
--
-
-广告请求参数。
-
-adOptions
-
-advertising.[AdOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adoptions)
-
-是
-
--
-
-广告配置参数。
-
-displayOptions
-
-advertising.[AdDisplayOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#addisplayoptions)
-
-是
-
--
-
-广告展示参数。
-
-interactionListener
-
-advertising.[AdInteractionListener](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adinteractionlistener)
-
-是
-
--
-
-广告状态变化回调。
+| 参数名 | 类型 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- |
+| adParam | advertising.AdRequestParams | 是 | - | 广告请求参数。 |
+| adOptions | advertising.AdOptions | 是 | - | 广告配置参数。 |
+| displayOptions | advertising.AdDisplayOptions | 是 | - | 广告展示参数。 |
+| interactionListener | advertising.AdInteractionListener | 是 | - | 广告状态变化回调。 |
 
 **示例：**
 
@@ -94,6 +51,10 @@ struct Index {
     adId: 'testw6vs28auh3',
     // 广告类型
     adType: 8
+    // 广告位宽，单位vp
+    adWidth: 360,
+    // 广告位高，单位vp
+    adHeight: 57
   };
   // 广告配置参数
   private adOptions: advertising.AdOptions = {};
@@ -102,6 +63,12 @@ struct Index {
     // 广告轮播的时间间隔，单位ms，取值范围[30000, 120000]
     refreshTime: 30000
   };
+  private ratio: number = -1;
+
+  aboutToAppear() {
+    if (this.adRequestParams.adWidth && this.adRequestParams.adHeight) {
+      this.ratio = this.adRequestParams.adWidth / this.adRequestParams.adHeight;
+    }
 
   build() {
     Column() {
@@ -122,15 +89,12 @@ struct Index {
                 hilog.info(0x0000, 'testTag', 'onAdClose');
                 break;
             }
-          }
-        }
       })
         .width('100%')
-        .height('100%')
+        .aspectRatio(this.ratio)
     }
     .width('100%')
     .height('100%')
-  }
 }
 ```
 

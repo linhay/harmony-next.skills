@@ -16,9 +16,11 @@ enableBluetooth(): void
 
 开启蓝牙。
 
-- 调用该接口时，系统弹出开启蓝牙的对话框，由用户确认是否需要开启蓝牙。如果应用想要感知用户操作对话框的行为，建议使用[access.enableBluetoothAsync](#ZH-CN_TOPIC_0000002497605416__accessenablebluetoothasync20)。
-- 蓝牙开关状态结果可通过[access.on('stateChange')](#ZH-CN_TOPIC_0000002497605416__accessonstatechange)的回调函数获取到。
-- 建议蓝牙开关状态是[STATE_OFF](#ZH-CN_TOPIC_0000002497605416__bluetoothstate)时，才调用该接口开启蓝牙（可使用[access.getState](#ZH-CN_TOPIC_0000002497605416__accessgetstate)判断当前蓝牙开关状态）。
+- 调用该接口时，系统弹出开启蓝牙的对话框，由用户确认是否需要开启蓝牙。如果应用想要感知用户操作对话框的行为，建议使用[access.enableBluetoothAsync](#ZH-CN_TOPIC_0000002522241436__accessenablebluetoothasync20)。
+
+- 蓝牙开关状态结果可通过[access.on('stateChange')](#ZH-CN_TOPIC_0000002522241436__accessonstatechange)的回调函数获取到。
+
+- 建议蓝牙开关状态是[STATE_OFF](#ZH-CN_TOPIC_0000002522241436__bluetoothstate)时，才调用该接口开启蓝牙（可使用[access.getState](#ZH-CN_TOPIC_0000002522241436__accessgetstate)判断当前蓝牙开关状态）。
 
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
 
@@ -28,9 +30,14 @@ enableBluetooth(): void
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[蓝牙服务子系统错误码](../../errors/蓝牙服务子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[蓝牙服务子系统错误码]([蓝牙服务子系统错误码](../../errors/蓝牙服务子系统错误码.md).md)。
 
-错误码ID错误信息201Permission denied.801Capability not supported.2900001Service stopped.2900099Operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 2900001 | Service stopped. |
+| 2900099 | Operation failed. |
 
 **示例：**
 
@@ -51,8 +58,10 @@ enableBluetoothAsync(): Promise<void>
 开启蓝牙。使用Promise异步回调。
 
 - 调用该接口时，系统弹出开启蓝牙的对话框，由用户确认是否需要开启蓝牙。应用可以感知用户操作对话框的行为。
-- 蓝牙开关状态结果可通过[access.on('stateChange')](#ZH-CN_TOPIC_0000002497605416__accessonstatechange)的回调函数获取到。
-- 建议蓝牙开关状态是[STATE_OFF](#ZH-CN_TOPIC_0000002497605416__bluetoothstate)时，才调用该接口开启蓝牙（可使用[access.getState](#ZH-CN_TOPIC_0000002497605416__accessgetstate)判断当前蓝牙开关状态）。
+
+- 蓝牙开关状态结果可通过[access.on('stateChange')](#ZH-CN_TOPIC_0000002522241436__accessonstatechange)的回调函数获取到。
+
+- 建议蓝牙开关状态是[STATE_OFF](#ZH-CN_TOPIC_0000002522241436__bluetoothstate)时，才调用该接口开启蓝牙（可使用[access.getState](#ZH-CN_TOPIC_0000002522241436__accessgetstate)判断当前蓝牙开关状态）。
 
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
 
@@ -62,13 +71,22 @@ enableBluetoothAsync(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[蓝牙服务子系统错误码](../../errors/蓝牙服务子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[蓝牙服务子系统错误码](蓝牙服务子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.801Capability not supported.2900001Service stopped.2900013The user does not respond.2900014User refuse the action.2900099Operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 2900001 | Service stopped. |
+| 2900013 | The user does not respond. |
+| 2900014 | User refuse the action. |
+| 2900099 | Operation failed. |
 
 **示例：**
 
@@ -92,9 +110,11 @@ disableBluetooth(): void
 
 关闭蓝牙。
 
-- 调用该接口时，系统弹出关闭蓝牙的对话框，由用户确认是否需要关闭蓝牙。如果应用想要感知用户操作对话框的行为，建议使用[access.disableBluetoothAsync](#ZH-CN_TOPIC_0000002497605416__accessdisablebluetoothasync20)。
-- 蓝牙开关状态结果可通过[access.on('stateChange')](#ZH-CN_TOPIC_0000002497605416__accessonstatechange)的回调函数获取到。
-- 建议蓝牙开关状态是[STATE_ON](#ZH-CN_TOPIC_0000002497605416__bluetoothstate)时，才调用该接口关闭蓝牙（可使用[access.getState](#ZH-CN_TOPIC_0000002497605416__accessgetstate)判断当前蓝牙开关状态）。
+- 调用该接口时，系统弹出关闭蓝牙的对话框，由用户确认是否需要关闭蓝牙。如果应用想要感知用户操作对话框的行为，建议使用[access.disableBluetoothAsync](#ZH-CN_TOPIC_0000002522241436__accessdisablebluetoothasync20)。
+
+- 蓝牙开关状态结果可通过[access.on('stateChange')](#ZH-CN_TOPIC_0000002522241436__accessonstatechange)的回调函数获取到。
+
+- 建议蓝牙开关状态是[STATE_ON](#ZH-CN_TOPIC_0000002522241436__bluetoothstate)时，才调用该接口关闭蓝牙（可使用[access.getState](#ZH-CN_TOPIC_0000002522241436__accessgetstate)判断当前蓝牙开关状态）。
 
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
 
@@ -104,9 +124,14 @@ disableBluetooth(): void
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[蓝牙服务子系统错误码](../../errors/蓝牙服务子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[蓝牙服务子系统错误码](蓝牙服务子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.801Capability not supported.2900001Service stopped.2900099Operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 2900001 | Service stopped. |
+| 2900099 | Operation failed. |
 
 **示例：**
 
@@ -127,8 +152,10 @@ disableBluetoothAsync(): Promise<void>
 关闭蓝牙。使用Promise异步回调。
 
 - 调用该接口时，系统弹出关闭蓝牙的对话框，由用户确认是否需要关闭蓝牙。应用可以感知用户操作对话框的行为。
-- 蓝牙开关状态结果可通过[access.on('stateChange')](#ZH-CN_TOPIC_0000002497605416__accessonstatechange)的回调函数获取到。
-- 建议蓝牙开关状态是[STATE_ON](#ZH-CN_TOPIC_0000002497605416__bluetoothstate)时，才调用该接口关闭蓝牙（可使用[access.getState](#ZH-CN_TOPIC_0000002497605416__accessgetstate)判断当前蓝牙开关状态）。
+
+- 蓝牙开关状态结果可通过[access.on('stateChange')](#ZH-CN_TOPIC_0000002522241436__accessonstatechange)的回调函数获取到。
+
+- 建议蓝牙开关状态是[STATE_ON](#ZH-CN_TOPIC_0000002522241436__bluetoothstate)时，才调用该接口关闭蓝牙（可使用[access.getState](#ZH-CN_TOPIC_0000002522241436__accessgetstate)判断当前蓝牙开关状态）。
 
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
 
@@ -138,13 +165,22 @@ disableBluetoothAsync(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[蓝牙服务子系统错误码](../../errors/蓝牙服务子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[蓝牙服务子系统错误码](蓝牙服务子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.801Capability not supported.2900001Service stopped.2900013The user does not respond.2900014User refuse the action.2900099Operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 2900001 | Service stopped. |
+| 2900013 | The user does not respond. |
+| 2900014 | User refuse the action. |
+| 2900099 | Operation failed. |
 
 **示例：**
 
@@ -174,13 +210,19 @@ getState(): BluetoothState
 
 **返回值：**
 
-类型说明[BluetoothState](#ZH-CN_TOPIC_0000002497605416__bluetoothstate)表示蓝牙开关状态。
+| 类型 | 说明 |
+| --- | --- |
+| BluetoothState | 表示蓝牙开关状态。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[蓝牙服务子系统错误码](../../errors/蓝牙服务子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[蓝牙服务子系统错误码](蓝牙服务子系统错误码.md)。
 
-错误码ID错误信息801Capability not supported.2900001Service stopped.2900099Operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 2900001 | Service stopped. |
+| 2900099 | Operation failed. |
 
 **示例：**
 
@@ -206,19 +248,20 @@ on(type: 'stateChange', callback: Callback<BluetoothState>): void
 
 **参数：**
 
-参数名类型必填说明typestring是
-
-事件回调类型，支持的事件为'stateChange'，表示蓝牙开关状态变化事件。
-
-如：当调用[access.enableBluetooth](#ZH-CN_TOPIC_0000002497605416__accessenablebluetooth)或[access.disableBluetooth](#ZH-CN_TOPIC_0000002497605416__accessdisablebluetooth)时，可触发该事件。
-
-callbackCallback<[BluetoothState](#ZH-CN_TOPIC_0000002497605416__bluetoothstate)>是指定订阅的回调函数，会携带蓝牙开关状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'stateChange'，表示蓝牙开关状态变化事件。 如：当调用access.enableBluetooth或access.disableBluetooth时，可触发该事件。 |
+| callback | Callback<BluetoothState> | 是 | 指定订阅的回调函数，会携带蓝牙开关状态。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[蓝牙服务子系统错误码](../../errors/蓝牙服务子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[蓝牙服务子系统错误码](蓝牙服务子系统错误码.md)。
 
-错误码ID错误信息401Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.801Capability not supported.2900099Operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| [401](../../errors/通用错误码.md#ZH-CN_TOPIC_0000002529284567__401-参数检查失败) | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
+| 2900099 | Operation failed. |
 
 **示例：**
 
@@ -247,17 +290,20 @@ off(type: 'stateChange', callback?: Callback<BluetoothState>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'stateChange'，表示蓝牙开关状态变化事件。callbackCallback<[BluetoothState](#ZH-CN_TOPIC_0000002497605416__bluetoothstate)>否
-
-指定取消订阅的回调函数通知。
-
-若传参，则需与[access.on('stateChange')](#ZH-CN_TOPIC_0000002497605416__accessonstatechange)中的回调函数一致；若无传参，则取消订阅该type对应的所有回调函数通知。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'stateChange'，表示蓝牙开关状态变化事件。 |
+| callback | Callback<BluetoothState> | 否 | 指定取消订阅的回调函数通知。 若传参，则需与access.on('stateChange')中的回调函数一致；若无传参，则取消订阅该type对应的所有回调函数通知。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[蓝牙服务子系统错误码](../../errors/蓝牙服务子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[蓝牙服务子系统错误码](蓝牙服务子系统错误码.md)。
 
-错误码ID错误信息401Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.801Capability not supported.2900099Operation failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| [401](../../errors/通用错误码.md#ZH-CN_TOPIC_0000002529284567__401-参数检查失败) | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
+| 2900099 | Operation failed. |
 
 **示例：**
 
@@ -282,9 +328,12 @@ addPersistentDeviceId(deviceId: string): Promise<void>
 持久化存储蓝牙设备的虚拟MAC地址。使用Promise异步回调。
 
 - 应用通过蓝牙相关接口，如扫描等途径获取到的设备地址（虚拟MAC地址）和实际的设备MAC地址不同。蓝牙子系统会保存一个虚拟MAC地址和实际设备MAC地址的映射关系。若应用想长期对该蓝牙设备进行操作使用，建议用此接口持久化存储该设备的虚拟MAC地址，后续可直接使用，该地址映射关系不会再改变。
-- 指定持久化存储的虚拟MAC地址需是有效的（可使用[access.isValidRandomDeviceId](#ZH-CN_TOPIC_0000002497605416__accessisvalidrandomdeviceid16)判断）。
+
+- 指定持久化存储的虚拟MAC地址需是有效的（可使用[access.isValidRandomDeviceId](#ZH-CN_TOPIC_0000002522241436__accessisvalidrandomdeviceid16)判断）。
+
 - 使用该接口时，开发者应确保该虚拟MAC地址对应的对端蓝牙设备实际地址是保持不变的，若对端设备实际地址发生变化，持久化存储的地址信息将失效，无法继续使用。
-- 可调用[access.deletePersistentDeviceId](#ZH-CN_TOPIC_0000002497605416__accessdeletepersistentdeviceid16)删除已持久化存储的虚拟MAC地址。
+
+- 可调用[access.deletePersistentDeviceId](#ZH-CN_TOPIC_0000002522241436__accessdeletepersistentdeviceid16)删除已持久化存储的虚拟MAC地址。
 
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH 和 ohos.permission.PERSISTENT_BLUETOOTH_PEERS_MAC
 
@@ -294,21 +343,28 @@ addPersistentDeviceId(deviceId: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是
-
-对端设备的虚拟MAC地址，例如："XX:XX:XX:XX:XX:XX"。
-
-该地址一般来源于蓝牙扫描结果，如：可通过调用[startScan](@ohos.bluetooth.ble (蓝牙ble模块).md#ZH-CN_TOPIC_0000002529285409__startscan15)或[connection.startBluetoothDiscovery](@ohos.bluetooth.connection (蓝牙connection模块).md#ZH-CN_TOPIC_0000002529445383__connectionstartbluetoothdiscovery)扫描得到。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 对端设备的虚拟MAC地址，例如："XX:XX:XX:XX:XX:XX"。 该地址一般来源于蓝牙扫描结果，如：可通过调用startScan或connection.startBluetoothDiscovery扫描得到。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[蓝牙服务子系统错误码](../../errors/蓝牙服务子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[蓝牙服务子系统错误码](蓝牙服务子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.801Capability not supported.2900003Bluetooth disabled.2900010The number of supported device addresses has reached the upper limit.2900099Add persistent device address failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| [401](../../errors/通用错误码.md#ZH-CN_TOPIC_0000002529284567__401-参数检查失败) | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
+| 2900003 | Bluetooth disabled. |
+| 2900010 | The number of supported device addresses has reached the upper limit. |
+| 2900099 | Add persistent device address failed. |
 
 **示例：**
 
@@ -329,7 +385,7 @@ deletePersistentDeviceId(deviceId: string): Promise<void>
 
 删除已持久化存储的蓝牙虚拟MAC地址。使用Promise异步回调。
 
-- 该虚拟MAC地址通过[access.addPersistentDeviceId](#ZH-CN_TOPIC_0000002497605416__accessaddpersistentdeviceid16)持久化存储。
+- 该虚拟MAC地址通过[access.addPersistentDeviceId](#ZH-CN_TOPIC_0000002522241436__accessaddpersistentdeviceid16)持久化存储。
 
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH 和 ohos.permission.PERSISTENT_BLUETOOTH_PEERS_MAC
 
@@ -339,21 +395,27 @@ deletePersistentDeviceId(deviceId: string): Promise<void>
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是
-
-对端设备的虚拟MAC地址，例如："XX:XX:XX:XX:XX:XX"，
-
-该地址一般来源于蓝牙扫描结果，如：通过调用[startScan](@ohos.bluetooth.ble (蓝牙ble模块).md#ZH-CN_TOPIC_0000002529285409__startscan15)或[connection.startBluetoothDiscovery](@ohos.bluetooth.connection (蓝牙connection模块).md#ZH-CN_TOPIC_0000002529445383__connectionstartbluetoothdiscovery)扫描得到。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 对端设备的虚拟MAC地址，例如："XX:XX:XX:XX:XX:XX"， 该地址一般来源于蓝牙扫描结果，如：通过调用startScan或connection.startBluetoothDiscovery扫描得到。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[蓝牙服务子系统错误码](../../errors/蓝牙服务子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[蓝牙服务子系统错误码](蓝牙服务子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.801Capability not supported.2900003Bluetooth disabled.2900099delete persistent device address failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| [401](../../errors/通用错误码.md#ZH-CN_TOPIC_0000002529284567__401-参数检查失败) | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
+| 2900003 | Bluetooth disabled. |
+| 2900099 | delete persistent device address failed. |
 
 **示例：**
 
@@ -382,13 +444,20 @@ getPersistentDeviceIds(): string[];
 
 **返回值：**
 
-类型说明string[]持久化存储过的蓝牙虚拟MAC地址列表。
+| 类型 | 说明 |
+| --- | --- |
+| string[] | 持久化存储过的蓝牙虚拟MAC地址列表。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[蓝牙服务子系统错误码](../../errors/蓝牙服务子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[蓝牙服务子系统错误码](蓝牙服务子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.801Capability not supported.2900003Bluetooth disabled.2900099Get persistent device address failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 2900003 | Bluetooth disabled. |
+| 2900099 | Get persistent device address failed. |
 
 **示例：**
 
@@ -408,7 +477,7 @@ isValidRandomDeviceId(deviceId: string): boolean;
 
 判断对端蓝牙设备的虚拟MAC地址是否有效。
 
-- 有效的虚拟MAC地址一般来源于蓝牙扫描结果，如：通过调用[startScan](@ohos.bluetooth.ble (蓝牙ble模块).md#ZH-CN_TOPIC_0000002529285409__startscan15)或[connection.startBluetoothDiscovery](@ohos.bluetooth.connection (蓝牙connection模块).md#ZH-CN_TOPIC_0000002529445383__connectionstartbluetoothdiscovery)扫描得到。
+- 有效的虚拟MAC地址一般来源于蓝牙扫描结果，如：通过调用[startScan](@ohos.bluetooth.ble (蓝牙ble模块).md#ZH-CN_TOPIC_0000002522081444__startscan15)或[connection.startBluetoothDiscovery](@ohos.bluetooth.connection (蓝牙connection模块).md#ZH-CN_TOPIC_0000002553361365__connectionstartbluetoothdiscovery)扫描得到。
 
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
 
@@ -418,17 +487,27 @@ isValidRandomDeviceId(deviceId: string): boolean;
 
 **参数：**
 
-参数名类型必填说明deviceIdstring是对端设备的虚拟MAC地址，例如："XX:XX:XX:XX:XX:XX"。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 对端设备的虚拟MAC地址，例如："XX:XX:XX:XX:XX:XX"。 |
 
 **返回值：**
 
-类型说明boolean蓝牙设备的虚拟MAC地址是否是有效的。true表示有效地址，false表示无效地址。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 蓝牙设备的虚拟MAC地址是否是有效的。true表示有效地址，false表示无效地址。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[蓝牙服务子系统错误码](../../errors/蓝牙服务子系统错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[蓝牙服务子系统错误码](蓝牙服务子系统错误码.md)。
 
-错误码ID错误信息201Permission denied.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.801Capability not supported.2900003Bluetooth disabled.2900099Check persistent device address failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| [401](../../errors/通用错误码.md#ZH-CN_TOPIC_0000002529284567__401-参数检查失败) | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
+| 2900003 | Bluetooth disabled. |
+| 2900099 | Check persistent device address failed. |
 
 **示例：**
 
@@ -455,17 +534,22 @@ convertUuid(uuid: string): string
 - 若输入16bit的UUID，例如“1801”，将输出“00001801-0000-1000-8000-00805f9b34fb”。
 - 若输入32bit的UUID，例如“12341801”，将输出“12341801-0000-1000-8000-00805f9b34fb”。
 - 若输入128bit的UUID，例如“11112222-3333-4444-5555-666677778888”，将直接输出该UUID。
-- 若输入不符合以上格式的UUID或包含非16进制范围内的字符，将返回[401](../../errors/通用错误码.md#ZH-CN_TOPIC_0000002529284567__401-参数检查失败)错误码。
+
+- 若输入不符合以上格式的UUID或包含非16进制范围内的字符，将返回[401](通用错误码.md#ZH-CN_TOPIC_0000002522080522__401-参数检查失败)错误码。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **参数：**
 
-参数名类型必填说明uuidstring是16bit、32bit、128bit的UUID。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uuid | string | 是 | 16bit、32bit、128bit的UUID。 |
 
 **返回值：**
 
-类型说明string转换后的128bit的UUID。
+| 类型 | 说明 |
+| --- | --- |
+| string | 转换后的128bit的UUID。 |
 
 **示例：**
 
@@ -489,4 +573,12 @@ try {
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-名称值说明STATE_OFF0表示蓝牙已关闭。STATE_TURNING_ON1表示蓝牙正在打开。STATE_ON2表示蓝牙已打开。STATE_TURNING_OFF3表示蓝牙正在关闭。STATE_BLE_TURNING_ON4表示蓝牙正在打开LE-only模式。STATE_BLE_ON5表示蓝牙正处于LE-only模式。STATE_BLE_TURNING_OFF6表示蓝牙正在关闭LE-only模式。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| STATE_OFF | 0 | 表示蓝牙已关闭。 |
+| STATE_TURNING_ON | 1 | 表示蓝牙正在打开。 |
+| STATE_ON | 2 | 表示蓝牙已打开。 |
+| STATE_TURNING_OFF | 3 | 表示蓝牙正在关闭。 |
+| STATE_BLE_TURNING_ON | 4 | 表示蓝牙正在打开LE-only模式。 |
+| STATE_BLE_ON | 5 | 表示蓝牙正处于LE-only模式。 |
+| STATE_BLE_TURNING_OFF | 6 | 表示蓝牙正在关闭LE-only模式。 |

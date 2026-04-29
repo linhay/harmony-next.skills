@@ -30,17 +30,26 @@ static makeFromPosText(text: string, len: number, points: common2D.Point[], font
 
 **参数：**
 
-参数名类型必填说明textstring是绘制字形的文本内容。lennumber是字形个数，由[countText](Class (Font).md#ZH-CN_TOPIC_0000002529285967__counttext12)获取，该参数为整数。points[common2D.Point](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__point12)[]是点数组，用于指定每个字形的坐标，长度必须为len。font[Font](Class (Font).md)是字型对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 绘制字形的文本内容。 |
+| len | number | 是 | 字形个数，由countText获取，该参数为整数。 |
+| points | common2D.Point[] | 是 | 点数组，用于指定每个字形的坐标，长度必须为len。 |
+| font | Font | 是 | 字型对象。 |
 
 **返回值：**
 
-类型说明[TextBlob](Class (TextBlob).md)TextBlob对象。
+| 类型 | 说明 |
+| --- | --- |
+| TextBlob | TextBlob对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types. |
 
 **示例：**
 
@@ -62,7 +71,6 @@ class DrawingRenderNode extends RenderNode {
     let textblob : drawing.TextBlob =drawing.TextBlob.makeFromPosText(text, points.length, points, font);
     canvas.drawTextBlob(textblob, 100, 100);
   }
-}
 ```
 
 #### uniqueID12+
@@ -75,7 +83,9 @@ uniqueID(): number
 
 **返回值：**
 
-类型说明number返回TextBlob对象的唯一的非零标识符。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回TextBlob对象的唯一的非零标识符。 |
 
 **示例：**
 
@@ -92,7 +102,7 @@ console.info("uniqueID---------------" +id);
 
 #### makeFromString
 
-static makeFromString(text: string, font: Font, encoding?: TextEncoding): TextBlob
+static makeFromString(text: string, font: Font, encoding?: [TextEncoding](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__textencoding)): TextBlob
 
 将string类型的值转化成TextBlob对象。
 
@@ -100,17 +110,25 @@ static makeFromString(text: string, font: Font, encoding?: TextEncoding): TextBl
 
 **参数：**
 
-参数名类型必填说明textstring是绘制字形的文本内容。font[Font](Class (Font).md)是字型对象。encoding[TextEncoding](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285977__textencoding)否编码类型，默认值为TEXT_ENCODING_UTF8。当前只有TEXT_ENCODING_UTF8生效，其余编码类型也会被视为TEXT_ENCODING_UTF8。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 绘制字形的文本内容。 |
+| font | Font | 是 | 字型对象。 |
+| encoding | [TextEncoding](../enums/Enums.md#ZH-CN_TOPIC_0000002529285977__textencoding) | 否 | 编码类型，默认值为TEXT_ENCODING_UTF8。当前只有TEXT_ENCODING_UTF8生效，其余编码类型也会被视为TEXT_ENCODING_UTF8。 |
 
 **返回值：**
 
-类型说明[TextBlob](Class (TextBlob).md)TextBlob对象。
+| 类型 | 说明 |
+| --- | --- |
+| TextBlob | TextBlob对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -130,7 +148,6 @@ class DrawingRenderNode extends RenderNode {
     canvas.drawTextBlob(textBlob, 20, 20);
     canvas.detachBrush();
   }
-}
 ```
 
 #### makeFromRunBuffer
@@ -143,17 +160,25 @@ static makeFromRunBuffer(pos: Array<TextBlobRunBuffer>, font: Font, bounds?: com
 
 **参数：**
 
-参数名类型必填说明posArray<[TextBlobRunBuffer](../interfaces/Interfaces (其他).md#ZH-CN_TOPIC_0000002497446006__textblobrunbuffer)>是TextBlobRunBuffer数组。font[Font](Class (Font).md)是字型对象。bounds[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)否可选，如果不设置，则无边界框。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pos | Array<TextBlobRunBuffer> | 是 | TextBlobRunBuffer数组。 |
+| font | Font | 是 | 字型对象。 |
+| bounds | common2D.Rect | 否 | 可选，如果不设置，则无边界框。 |
 
 **返回值：**
 
-类型说明[TextBlob](Class (TextBlob).md)TextBlob对象。
+| 类型 | 说明 |
+| --- | --- |
+| TextBlob | TextBlob对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 
 **示例：**
 
@@ -180,7 +205,6 @@ class DrawingRenderNode extends RenderNode {
     canvas.drawTextBlob(textBlob, 20, 20);
     canvas.detachBrush();
   }
-}
 ```
 
 #### bounds
@@ -193,7 +217,9 @@ bounds(): common2D.Rect
 
 **返回值：**
 
-类型说明[common2D.Rect](../../modules/ohos/@ohos.graphics.common2D (2D图形通用数据类型).md#ZH-CN_TOPIC_0000002529445937__rect)文字边界框的矩形区域。
+| 类型 | 说明 |
+| --- | --- |
+| common2D.Rect | 文字边界框的矩形区域。 |
 
 **示例：**
 

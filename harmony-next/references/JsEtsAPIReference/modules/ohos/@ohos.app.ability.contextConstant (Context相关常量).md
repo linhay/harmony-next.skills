@@ -18,87 +18,29 @@ import { contextConstant } from '@kit.AbilityKit';
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称值说明EL10
-
-设备级加密区，设备开机后可访问的数据区。
-
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
-
-EL21
-
-用户级加密区，设备开机，首次输入密码后才能够访问的数据区。
-
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
-
-EL311+2
-
-用户级加密区，不同场景的文件权限如下：
-
-已打开文件：锁屏时，可读写；解锁后，可读写。
-
-未打开文件：锁屏时，不可打开、不可读写；解锁后，可打开、可读写。
-
-创建新文件：锁屏时，可创建、可打开、可写不可读；解锁后，可创建、可打开、可读写。
-
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
-
-EL411+3
-
-用户级加密区，不同场景的文件权限如下：
-
-已打开文件：锁屏时，不可读写；解锁后，可读写。
-
-未打开文件：锁屏时，不可打开、不可读写；解锁后，可打开、可读写。
-
-创建新文件：锁屏时，不可创建；解锁后，可创建、可打开、可读写。
-
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
-
-EL512+4
-
-应用级加密区，不同场景的文件权限如下：
-
-已打开文件：锁屏时，可读写；解锁后，可读写。
-
-未打开文件：锁屏时，调用[Access](@ohos.ability.screenLockFileManager (锁屏敏感数据管理).md#ZH-CN_TOPIC_0000002529444571__screenlockfilemanageracquireaccess)接口获取保留密钥后，可打开、可读写，否则不可打开、不可读写；解锁后，可打开、可读写。
-
-创建新文件：锁屏时，可创建、可打开、可读写；解锁后，可创建、可打开、可读写。
-
-**元服务API**：从API version 12开始，该接口支持在元服务中使用。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| EL1 | 0 | 设备级加密区，设备开机后可访问的数据区。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
+| EL2 | 1 | 用户级加密区，设备开机，首次输入密码后才能够访问的数据区。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
+| EL311+ | 2 | 用户级加密区，不同场景的文件权限如下： 已打开文件：锁屏时，可读写；解锁后，可读写。 未打开文件：锁屏时，不可打开、不可读写；解锁后，可打开、可读写。 创建新文件：锁屏时，可创建、可打开、可写不可读；解锁后，可创建、可打开、可读写。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
+| EL411+ | 3 | 用户级加密区，不同场景的文件权限如下： 已打开文件：锁屏时，不可读写；解锁后，可读写。 未打开文件：锁屏时，不可打开、不可读写；解锁后，可打开、可读写。 创建新文件：锁屏时，不可创建；解锁后，可创建、可打开、可读写。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
+| EL512+ | 4 | 应用级加密区，不同场景的文件权限如下： 已打开文件：锁屏时，可读写；解锁后，可读写。 未打开文件：锁屏时，调用Access接口获取保留密钥后，可打开、可读写，否则不可打开、不可读写；解锁后，可打开、可读写。 创建新文件：锁屏时，可创建、可打开、可读写；解锁后，可创建、可打开、可读写。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 
 #### ProcessMode12+
 
 UIAbility启动后的进程模式。
 
-ProcessMode作为[StartOptions](@ohos.app.ability.StartOptions (startAbility的可选参数).md)的一个属性，仅在[UIAbilityContext.startAbility](../../topics/graphics/UIAbilityContext.md#ZH-CN_TOPIC_0000002497604628__startability-1)中生效，用来指定目标UIAbility的进程模式。
+ProcessMode作为[StartOptions](@ohos.app.ability.StartOptions (startAbility的可选参数).md)的一个属性，仅在[UIAbilityContext.startAbility](UIAbilityContext.md#ZH-CN_TOPIC_0000002553200541__startability-1)中生效，用来指定目标UIAbility的进程模式。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **设备行为差异**：该功能仅在2in1和Tablet设备上生效，在其他设备中返回801错误码。
 
-名称值说明NEW_PROCESS_ATTACH_TO_PARENT1
-
-创建一个新进程，并在该进程上启动UIAbility。该进程会跟随父进程退出。
-
-**约束：**
-
-使用此模式时，要求目标UIAbility跟调用方是在同一个应用。
-
-NEW_PROCESS_ATTACH_TO_STATUS_BAR_ITEM2
-
-创建一个新进程，在该进程上启动UIAbility，并绑定该进程到状态栏图标上。
-
-**约束：**
-
-使用此模式时，要求目标UIAbility跟调用方是在同一个应用，并且应用要在状态栏中有图标。
-
-ATTACH_TO_STATUS_BAR_ITEM3
-
-启动UIAbility，并绑定该UIAbility所在进程到状态栏图标上。
-
-**约束：**
-
-使用此模式时，要求目标UIAbility跟调用方是在同一个应用，并且应用要在状态栏中有图标。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NEW_PROCESS_ATTACH_TO_PARENT | 1 | 创建一个新进程，并在该进程上启动UIAbility。该进程会跟随父进程退出。 约束： 使用此模式时，要求目标UIAbility跟调用方是在同一个应用。 |
+| NEW_PROCESS_ATTACH_TO_STATUS_BAR_ITEM | 2 | 创建一个新进程，在该进程上启动UIAbility，并绑定该进程到状态栏图标上。 约束： 使用此模式时，要求目标UIAbility跟调用方是在同一个应用，并且应用要在状态栏中有图标。 |
+| ATTACH_TO_STATUS_BAR_ITEM | 3 | 启动UIAbility，并绑定该UIAbility所在进程到状态栏图标上。 约束： 使用此模式时，要求目标UIAbility跟调用方是在同一个应用，并且应用要在状态栏中有图标。 |
 
 **示例：**
 
@@ -134,8 +76,6 @@ export default class EntryAbility extends UIAbility {
       let message = (err as BusinessError).message;
       console.error(`startAbility failed, code is ${code}, message is ${message}`);
     }
-  }
-}
 ```
 
 #### StartupVisibility12+
@@ -144,27 +84,34 @@ UIAbility启动后是否可见。
 
 当用户设置目标UIAbility为不可见时，目标UIAbility的窗口不会显示在前台，dock栏也不会有图标，同时目标UIAbility的onForeground生命周期不会被调用。
 
-StartupVisibility作为[StartOptions](@ohos.app.ability.StartOptions (startAbility的可选参数).md)的一个属性，仅在[UIAbilityContext.startAbility](../../topics/graphics/UIAbilityContext.md#ZH-CN_TOPIC_0000002497604628__startability-1)中生效，用来指定目标UIAbility启动后的可见性。
+StartupVisibility作为[StartOptions](@ohos.app.ability.StartOptions (startAbility的可选参数).md)的一个属性，仅在[UIAbilityContext.startAbility](UIAbilityContext.md#ZH-CN_TOPIC_0000002553200541__startability-1)中生效，用来指定目标UIAbility启动后的可见性。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **设备行为差异**：该功能仅在2in1和Tablet设备上生效，在其他设备中返回801错误码。
 
-名称值说明STARTUP_HIDE0目标UIAbility启动后，进入隐藏状态。不会调用UIAbility的onForeground生命周期。STARTUP_SHOW1目标UIAbility启动后，正常显示。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| STARTUP_HIDE | 0 | 目标UIAbility启动后，进入隐藏状态。不会调用UIAbility的onForeground生命周期。 |
+| STARTUP_SHOW | 1 | 目标UIAbility启动后，正常显示。 |
 
 **示例：**
 
- 参见[ContextConstant.ProcessMode](#ZH-CN_TOPIC_0000002497444608__processmode12)。
+ 参见[ContextConstant.ProcessMode](#ZH-CN_TOPIC_0000002553200497__processmode12)。
 
 #### Scenarios20+
 
-表示不触发[onNewWant](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002529444559__onnewwant)生命周期回调场景的枚举，用于[setOnNewWantSkipScenarios](../../topics/graphics/UIAbilityContext.md#ZH-CN_TOPIC_0000002497604628__setonnewwantskipscenarios20)接口。
+表示不触发[onNewWant](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onnewwant)生命周期回调场景的枚举，用于[setOnNewWantSkipScenarios](UIAbilityContext.md#ZH-CN_TOPIC_0000002553200541__setonnewwantskipscenarios20)接口。
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称值说明SCENARIO_MOVE_MISSION_TO_FRONT0x00000001共享屏幕时系统将用户选择的UIAbility拉起到前台场景。SCENARIO_SHOW_ABILITY0x00000002[showAbility](../../topics/graphics/UIAbilityContext.md#ZH-CN_TOPIC_0000002497604628__showability12)接口触发的UIAbility到前台场景。SCENARIO_BACK_TO_CALLER_ABILITY_WITH_RESULT0x00000004[backToCallerAbilityWithResult](../../topics/graphics/UIAbilityContext.md#ZH-CN_TOPIC_0000002497604628__backtocallerabilitywithresult12)接口触发的UIAbility到前台场景。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SCENARIO_MOVE_MISSION_TO_FRONT | 0x00000001 | 共享屏幕时系统将用户选择的UIAbility拉起到前台场景。 |
+| SCENARIO_SHOW_ABILITY | 0x00000002 | [showAbility](../../topics/misc/UIAbilityContext.md#ZH-CN_TOPIC_0000002497604628__showability12)接口触发的UIAbility到前台场景。 |
+| SCENARIO_BACK_TO_CALLER_ABILITY_WITH_RESULT | 0x00000004 | [backToCallerAbilityWithResult](../../topics/misc/UIAbilityContext.md#ZH-CN_TOPIC_0000002497604628__backtocallerabilitywithresult12)接口触发的UIAbility到前台场景。 |
 
 **示例：**
 
@@ -192,6 +139,4 @@ export default class EntryAbility extends UIAbility {
       let message = (err as BusinessError).message;
       console.error(`setOnNewWantSkipScenarios failed, code is ${code}, message is ${message}`);
     }
-  }
-}
 ```

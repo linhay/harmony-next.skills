@@ -12,4 +12,4 @@ IPC远端服务对象。
 
 **相关模块：**[OHIPCParcel](../components/OHIPCParcel.md)
 
-**所在头文件：**[ipc_cparcel.h](../../capi/headers/ipc_cparcel.h.md)
+**所在头文件：**[ipc_cparcel.h](../../topics/misc/[ipc_cparcel.h](ipc_cparcel.h.md).md)

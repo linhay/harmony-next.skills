@@ -32,7 +32,9 @@ import { LinkedList } from '@kit.ArkTS';
 
 **系统能力：** SystemCapability.Utils.Lang
 
-名称类型只读可选说明lengthnumber是否LinkedList的元素个数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| length | number | 是 | 否 | LinkedList的元素个数。 |
 
 #### constructor
 
@@ -46,9 +48,11 @@ LinkedList的构造函数。
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码]([语言基础类库错误码](../../errors/语言基础类库错误码.md).md)。
 
-错误码ID错误信息10200012The LinkedList's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200012 | The LinkedList's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -68,17 +72,23 @@ add(element: T): boolean
 
 **参数：**
 
-参数名类型必填说明elementT是待插入的元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | T | 是 | 待插入的元素。 |
 
 **返回值：**
 
-类型说明boolean插入成功返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 插入成功返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The add method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The add method cannot be bound. |
 
 **示例：**
 
@@ -110,13 +120,17 @@ addFirst(element: T): void
 
 **参数：**
 
-参数名类型必填说明elementT是待插入的元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | T | 是 | 待插入的元素。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The addFirst method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The addFirst method cannot be bound. |
 
 **示例：**
 
@@ -149,13 +163,20 @@ insert(index: number, element: T): void
 
 **参数：**
 
-参数名类型必填说明indexnumber是插入位置索引。需要小于等于int32_max即2147483647。elementT是插入元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 插入位置索引。需要小于等于int32_max即2147483647。 |
+| element | T | 是 | 插入元素。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.10200001The value of index is out of range.10200011The insert method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 10200001 | The value of index is out of range. |
+| 10200011 | The insert method cannot be bound. |
 
 **示例：**
 
@@ -180,17 +201,23 @@ has(element: T): boolean
 
 **参数：**
 
-参数名类型必填说明elementT是指定元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | T | 是 | 指定元素。 |
 
 **返回值：**
 
-类型说明boolean包含指定元素返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 包含指定元素返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The has method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The has method cannot be bound. |
 
 **示例：**
 
@@ -213,17 +240,24 @@ get(index: number): T
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定的下标值。需要小于等于int32_max即2147483647。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定的下标值。需要小于等于int32_max即2147483647。 |
 
 **返回值：**
 
-类型说明T根据下标查找到的元素，元素不存在返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| T | 根据下标查找到的元素，元素不存在返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The get method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The get method cannot be bound. |
 
 **示例：**
 
@@ -252,17 +286,23 @@ getLastIndexOf(element: T): number
 
 **参数：**
 
-参数名类型必填说明elementT是指定元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | T | 是 | 指定元素。 |
 
 **返回值：**
 
-类型说明number返回指定元素最后一次出现时的下标值，查找失败返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回指定元素最后一次出现时的下标值，查找失败返回-1。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The getLastIndexOf method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The getLastIndexOf method cannot be bound. |
 
 **示例：**
 
@@ -291,17 +331,23 @@ getIndexOf(element: T): number
 
 **参数：**
 
-参数名类型必填说明elementT是指定元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | T | 是 | 指定元素。 |
 
 **返回值：**
 
-类型说明number返回指定元素第一次出现时的下标值，查找失败返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回指定元素第一次出现时的下标值，查找失败返回-1。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The getIndexOf method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The getIndexOf method cannot be bound. |
 
 **示例：**
 
@@ -330,17 +376,25 @@ removeByIndex(index: number): T
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定元素的下标值。需要小于等于int32_max即2147483647。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定元素的下标值。需要小于等于int32_max即2147483647。 |
 
 **返回值：**
 
-类型说明T返回删除的元素，如果元素为空返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回删除的元素，如果元素为空返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.10200001The value of index is out of range.10200011The removeByIndex method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 10200001 | The value of index is out of range. |
+| 10200011 | The removeByIndex method cannot be bound. |
 
 **示例：**
 
@@ -367,13 +421,18 @@ removeFirst(): T
 
 **返回值：**
 
-类型说明T返回删除的元素。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回删除的元素。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200010Container is empty.10200011The removeFirst method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200010 | Container is empty. |
+| 10200011 | The removeFirst method cannot be bound. |
 
 **示例：**
 
@@ -400,13 +459,18 @@ removeLast(): T
 
 **返回值：**
 
-类型说明T返回删除的元素。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回删除的元素。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200010Container is empty.10200011The removeLast method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200010 | Container is empty. |
+| 10200011 | The removeLast method cannot be bound. |
 
 **示例：**
 
@@ -433,17 +497,23 @@ remove(element: T): boolean
 
 **参数：**
 
-参数名类型必填说明elementT是指定元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | T | 是 | 指定元素。 |
 
 **返回值：**
 
-类型说明boolean删除成功返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 删除成功返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The remove method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The remove method cannot be bound. |
 
 **示例：**
 
@@ -469,17 +539,25 @@ removeFirstFound(element: T): boolean
 
 **参数：**
 
-参数名类型必填说明elementT是指定元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | T | 是 | 指定元素。 |
 
 **返回值：**
 
-类型说明boolean删除成功返回true，删除失败或不存在该元素时返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 删除成功返回true，删除失败或不存在该元素时返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200010Container is empty.10200011The removeFirstFound method cannot be bound.10200017The element does not exist in this container.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200010 | Container is empty. |
+| 10200011 | The removeFirstFound method cannot be bound. |
+| 10200017 | The element does not exist in this container. |
 
 **示例：**
 
@@ -505,17 +583,25 @@ removeLastFound(element: T): boolean
 
 **参数：**
 
-参数名类型必填说明elementT是指定元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| element | T | 是 | 指定元素。 |
 
 **返回值：**
 
-类型说明boolean删除成功返回true，删除失败或不存在该元素时返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 删除成功返回true，删除失败或不存在该元素时返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200010Container is empty.10200011The removeLastFound method cannot be bound.10200017The element does not exist in this container.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200010 | Container is empty. |
+| 10200011 | The removeLastFound method cannot be bound. |
+| 10200017 | The element does not exist in this container. |
 
 **示例：**
 
@@ -541,13 +627,17 @@ clone(): LinkedList<T>
 
 **返回值：**
 
-类型说明LinkedList<T>返回LinkedList对象实例。
+| 类型 | 说明 |
+| --- | --- |
+| LinkedList<T> | 返回LinkedList对象实例。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The clone method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The clone method cannot be bound. |
 
 **示例：**
 
@@ -563,9 +653,7 @@ console.info("result:", result.has(4));  // result: true
 
 #### forEach
 
-forEach(callbackFn: (value: T, index?: number, LinkedList?: LinkedList<T>) => void,
-
-thisArg?: Object): void
+forEach(callbackFn: (value: T, index?: number, LinkedList?: LinkedList<T>) => void, thisArg?: Object): void
 
 通过回调函数来遍历LinkedList实例对象上的元素以及其下标。
 
@@ -575,17 +663,27 @@ thisArg?: Object): void
 
 **参数：**
 
-参数名类型必填说明callbackFnfunction是回调函数。thisArgObject否callbackFn被调用时用作this值，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | function | 是 | 回调函数。 |
+| thisArg | Object | 否 | callbackFn被调用时用作this值，默认值为当前实例对象。 |
 
 callbackFn的参数说明：
 
-参数名类型必填说明valueT是当前遍历到的元素。indexnumber否当前遍历到的下标值，默认值为0。LinkedListLinkedList<T>否当前调用forEach方法的实例对象，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | T | 是 | 当前遍历到的元素。 |
+| index | number | 否 | 当前遍历到的下标值，默认值为0。 |
+| LinkedList | LinkedList<T> | 否 | 当前调用forEach方法的实例对象，默认值为当前实例对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The forEach method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The forEach method cannot be bound. |
 
 **示例：**
 
@@ -616,9 +714,11 @@ clear(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The clear method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The clear method cannot be bound. |
 
 **示例：**
 
@@ -645,17 +745,26 @@ set(index: number, element: T): T
 
 **参数：**
 
-参数名类型必填说明indexnumber是查找的下标值。需要小于等于int32_max即2147483647。elementT是用来替换的元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 查找的下标值。需要小于等于int32_max即2147483647。 |
+| element | T | 是 | 用来替换的元素。 |
 
 **返回值：**
 
-类型说明T返回替换后的元素，如果元素为空则返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回替换后的元素，如果元素为空则返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.10200001The value of index is out of range.10200011The set method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 10200001 | The value of index is out of range. |
+| 10200011 | The set method cannot be bound. |
 
 **示例：**
 
@@ -681,13 +790,17 @@ convertToArray(): Array<T>
 
 **返回值：**
 
-类型说明Array<T>返回转换后的数组。
+| 类型 | 说明 |
+| --- | --- |
+| Array<T> | 返回转换后的数组。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The convertToArray method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The convertToArray method cannot be bound. |
 
 **示例：**
 
@@ -713,13 +826,17 @@ getFirst(): T
 
 **返回值：**
 
-类型说明T返回对应元素，若元素为空则返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回对应元素，若元素为空则返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The getFirst method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The getFirst method cannot be bound. |
 
 **示例：**
 
@@ -745,13 +862,17 @@ getLast(): T
 
 **返回值：**
 
-类型说明T返回对应元素，若元素为空则返回undefined。
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回对应元素，若元素为空则返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The getLast method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The getLast method cannot be bound. |
 
 **示例：**
 
@@ -777,13 +898,17 @@ console.info("result:", result);  // result: 4
 
 **返回值：**
 
-类型说明IterableIterator<T>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<T> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The Symbol.iterator method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The Symbol.iterator method cannot be bound. |
 
 **示例：**
 

@@ -52,7 +52,9 @@ import { LightWeightMap } from '@kit.ArkTS';
 
 **系统能力：** SystemCapability.Utils.Lang
 
-名称类型只读可选说明lengthnumber是否LightWeightMap的元素个数。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| length | number | 是 | 否 | LightWeightMap的元素个数。 |
 
 #### constructor
 
@@ -66,9 +68,11 @@ LightWeightMap的构造函数。
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码]([语言基础类库错误码](../../errors/语言基础类库错误码.md).md)。
 
-错误码ID错误信息10200012The LightWeightMap's constructor cannot be directly invoked.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200012 | The LightWeightMap's constructor cannot be directly invoked. |
 
 **示例：**
 
@@ -88,13 +92,17 @@ isEmpty(): boolean
 
 **返回值：**
 
-类型说明boolean为空返回true，不为空返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 为空返回true，不为空返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The isEmpty method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The isEmpty method cannot be bound. |
 
 **示例：**
 
@@ -116,17 +124,24 @@ hasAll(map: LightWeightMap<K, V>): boolean
 
 **参数：**
 
-参数名类型必填说明mapLightWeightMap<K, V>是比较对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| map | LightWeightMap<K, V> | 是 | 比较对象。 |
 
 **返回值：**
 
-类型说明boolean包含所有元素返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 包含所有元素返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The hasAll method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The hasAll method cannot be bound. |
 
 **示例：**
 
@@ -152,17 +167,23 @@ hasKey(key: K): boolean
 
 **参数：**
 
-参数名类型必填说明keyK是指定key。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | K | 是 | 指定key。 |
 
 **返回值：**
 
-类型说明boolean包含指定key返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 包含指定key返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The hasKey method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The hasKey method cannot be bound. |
 
 **示例：**
 
@@ -185,17 +206,23 @@ hasValue(value: V): boolean
 
 **参数：**
 
-参数名类型必填说明valueV是指定元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | V | 是 | 指定元素。 |
 
 **返回值：**
 
-类型说明boolean包含指定元素返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 包含指定元素返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The hasValue method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The hasValue method cannot be bound. |
 
 **示例：**
 
@@ -218,13 +245,18 @@ increaseCapacityTo(minimumCapacity: number): void
 
 **参数：**
 
-参数名类型必填说明minimumCapacitynumber是需要容纳的元素数量。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| minimumCapacity | number | 是 | 需要容纳的元素数量。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The increaseCapacityTo method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The increaseCapacityTo method cannot be bound. |
 
 **示例：**
 
@@ -245,17 +277,23 @@ get(key: K): V
 
 **参数：**
 
-参数名类型必填说明keyK是指定key。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | K | 是 | 指定key。 |
 
 **返回值：**
 
-类型说明V返回key映射的value值。
+| 类型 | 说明 |
+| --- | --- |
+| V | 返回key映射的value值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The get method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The get method cannot be bound. |
 
 **示例：**
 
@@ -279,17 +317,23 @@ getIndexOfKey(key: K): number
 
 **参数：**
 
-参数名类型必填说明keyK是被查找的元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | K | 是 | 被查找的元素。 |
 
 **返回值：**
 
-类型说明number返回key元素首次出现的下标值，查找失败返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回key元素首次出现的下标值，查找失败返回-1。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The getIndexOfKey method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The getIndexOfKey method cannot be bound. |
 
 **示例：**
 
@@ -313,17 +357,23 @@ getIndexOfValue(value: V): number
 
 **参数：**
 
-参数名类型必填说明valueV是被查找的元素。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | V | 是 | 被查找的元素。 |
 
 **返回值：**
 
-类型说明number返回value元素首次出现的下标值，查找失败返回-1。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回value元素首次出现的下标值，查找失败返回-1。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The getIndexOfValue method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The getIndexOfValue method cannot be bound. |
 
 **示例：**
 
@@ -347,17 +397,25 @@ getKeyAt(index: number): K
 
 **参数：**
 
-参数名类型必填说明indexnumber是所查找的下标。需要小于等于int32_max即2147483647。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 所查找的下标。需要小于等于int32_max即2147483647。 |
 
 **返回值：**
 
-类型说明K返回该下标对应的元素键值对中key值。
+| 类型 | 说明 |
+| --- | --- |
+| K | 返回该下标对应的元素键值对中key值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.10200001The value of index is out of range.10200011The getKeyAt method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 10200001 | The value of index is out of range. |
+| 10200011 | The getKeyAt method cannot be bound. |
 
 **示例：**
 
@@ -381,13 +439,18 @@ setAll(map: LightWeightMap<K, V>): void
 
 **参数：**
 
-参数名类型必填说明mapLightWeightMap<K, V>是提供添加元素的LightWeightMap。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| map | LightWeightMap<K, V> | 是 | 提供添加元素的LightWeightMap。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The setAll method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The setAll method cannot be bound. |
 
 **示例：**
 
@@ -413,17 +476,24 @@ set(key: K, value: V): Object
 
 **参数：**
 
-参数名类型必填说明keyK是添加或更新成员数据的键名。valueV是添加或更新成员数据的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | K | 是 | 添加或更新成员数据的键名。 |
+| value | V | 是 | 添加或更新成员数据的值。 |
 
 **返回值：**
 
-类型说明Object返回添加或更新数据后的LightWeightMap。
+| 类型 | 说明 |
+| --- | --- |
+| Object | 返回添加或更新数据后的LightWeightMap。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The set method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The set method cannot be bound. |
 
 **示例：**
 
@@ -445,17 +515,23 @@ remove(key: K): V
 
 **参数：**
 
-参数名类型必填说明keyK是指定key。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | K | 是 | 指定key。 |
 
 **返回值：**
 
-类型说明V返回删除元素的值。
+| 类型 | 说明 |
+| --- | --- |
+| V | 返回删除元素的值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The remove method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The remove method cannot be bound. |
 
 **示例：**
 
@@ -478,17 +554,24 @@ removeAt(index: number): boolean
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定下标。需要小于等于int32_max即2147483647。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定下标。需要小于等于int32_max即2147483647。 |
 
 **返回值：**
 
-类型说明boolean成功删除元素返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 成功删除元素返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The removeAt method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The removeAt method cannot be bound. |
 
 **示例：**
 
@@ -512,17 +595,26 @@ setValueAt(index: number, newValue: V): boolean
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定下标。需要小于等于int32_max即2147483647。newValueV是替换键值对中的值。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定下标。需要小于等于int32_max即2147483647。 |
+| newValue | V | 是 | 替换键值对中的值。 |
 
 **返回值：**
 
-类型说明boolean成功替换返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 成功替换返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.10200001The value of index is out of range.10200011The setValueAt method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 10200001 | The value of index is out of range. |
+| 10200011 | The setValueAt method cannot be bound. |
 
 **示例：**
 
@@ -546,17 +638,25 @@ getValueAt(index: number): V
 
 **参数：**
 
-参数名类型必填说明indexnumber是指定下标。需要小于等于int32_max即2147483647。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| index | number | 是 | 指定下标。需要小于等于int32_max即2147483647。 |
 
 **返回值：**
 
-类型说明V返回指定下标对应键值对中的值。
+| 类型 | 说明 |
+| --- | --- |
+| V | 返回指定下标对应键值对中的值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.10200001The value of index is out of range.10200011The getValueAt method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 10200001 | The value of index is out of range. |
+| 10200011 | The getValueAt method cannot be bound. |
 
 **示例：**
 
@@ -580,9 +680,11 @@ clear(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The clear method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The clear method cannot be bound. |
 
 **示例：**
 
@@ -607,13 +709,17 @@ keys(): IterableIterator<K>
 
 **返回值：**
 
-类型说明IterableIterator<K>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<K> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The keys method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The keys method cannot be bound. |
 
 **示例：**
 
@@ -641,13 +747,17 @@ values(): IterableIterator<V>
 
 **返回值：**
 
-类型说明IterableIterator<V>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<V> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The values method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The values method cannot be bound. |
 
 **示例：**
 
@@ -675,17 +785,27 @@ forEach(callbackFn: (value?: V, key?: K, map?: LightWeightMap<K, V>) => void, th
 
 **参数：**
 
-参数名类型必填说明callbackFnfunction是回调函数。thisArgObject否callbackFn被调用时用作this值，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callbackFn | function | 是 | 回调函数。 |
+| thisArg | Object | 否 | callbackFn被调用时用作this值，默认值为当前实例对象。 |
 
 callbackFn的参数说明：
 
-参数名类型必填说明valueV否当前遍历到的元素键值对的值，默认值为首个键值对的值。keyK否当前遍历到的元素键值对的键，默认值为首个键值对的键。mapLightWeightMap<K, V>否当前调用forEach方法的实例对象，默认值为当前实例对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | V | 否 | 当前遍历到的元素键值对的值，默认值为首个键值对的值。 |
+| key | K | 否 | 当前遍历到的元素键值对的键，默认值为首个键值对的键。 |
+| map | LightWeightMap<K, V> | 否 | 当前调用forEach方法的实例对象，默认值为当前实例对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.10200011The forEach method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 10200011 | The forEach method cannot be bound. |
 
 **示例：**
 
@@ -723,13 +843,17 @@ entries(): IterableIterator<[K, V]>
 
 **返回值：**
 
-类型说明IterableIterator<[K, V]>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<[K, V]> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The entries method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The entries method cannot be bound. |
 
 **示例：**
 
@@ -769,13 +893,17 @@ toString(): String
 
 **返回值：**
 
-类型说明String返回一个字符串。
+| 类型 | 说明 |
+| --- | --- |
+| String | 返回一个字符串。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The toString method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The toString method cannot be bound. |
 
 **示例：**
 
@@ -799,13 +927,17 @@ console.info("result:", result);  // result: sparrow:356,squirrel:123
 
 **返回值：**
 
-类型说明IterableIterator<[K, V]>返回一个迭代器。
+| 类型 | 说明 |
+| --- | --- |
+| IterableIterator<[K, V]> | 返回一个迭代器。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](../../errors/语言基础类库错误码.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](语言基础类库错误码.md)。
 
-错误码ID错误信息10200011The Symbol.iterator method cannot be bound.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The Symbol.iterator method cannot be bound. |
 
 **示例：**
 

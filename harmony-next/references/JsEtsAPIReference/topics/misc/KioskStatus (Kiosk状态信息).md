@@ -9,4 +9,8 @@
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
-名称类型只读可选说明isKioskModeboolean否否当前系统是否处于Kiosk模式。true表示处于Kiosk模式，false表示不处于。kioskBundleNamestring否否进入Kiosk模式的应用的名称。kioskBundleUidnumber否否进入Kiosk模式的应用的UID。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| isKioskMode | boolean | 否 | 否 | 当前系统是否处于Kiosk模式。true表示处于Kiosk模式，false表示不处于。 |
+| kioskBundleName | string | 否 | 否 | 进入Kiosk模式的应用的名称。 |
+| kioskBundleUid | number | 否 | 否 | 进入Kiosk模式的应用的UID。 |

@@ -1,6 +1,7 @@
 # Component3D
 
-3D渲染组件，可以加载3D模型资源并做自定义渲染，通常用于3D动效场景。
+3D渲染组件，用于将ArkGraphics 3D场景或glTF（.gltf文件和.glb文件）模型渲染到ArkUI界面中，支持自定义场景模式与自动场景模式，并提供自定义渲染管线能力。
+
 
 该组件从API Version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -10,7 +11,7 @@
 
 #### 接口
 
-Component3D(sceneOptions?: SceneOptions)
+Component3D(sceneOptions?: [Scene](../graphics/Scene.md#ZH-CN_TOPIC_0000002529446039__scene-1)Options)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -18,15 +19,11 @@ Component3D(sceneOptions?: SceneOptions)
 
 **参数：**
 
-参数名类型必填说明sceneOptions[SceneOptions](#ZH-CN_TOPIC_0000002497604924__sceneoptions对象说明)否
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sceneOptions | [Scene](../graphics/Scene.md#ZH-CN_TOPIC_0000002529446039__scene-1)Options | 否 | 3D场景配置选项。 说明： 3D场景配置选项在控件创建后不支持动态修改。 |
 
-3D场景配置选项。
-
-**说明：**
-
-3D场景配置选项在控件创建后不支持动态修改。
-
-#### SceneOptions对象说明
+#### [Scene](../graphics/Scene.md#ZH-CN_TOPIC_0000002529446039__scene-1)Options对象说明
 
 Component3D组件配置选项。
 
@@ -34,27 +31,10 @@ Component3D组件配置选项。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
-名称类型只读可选说明scene[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | [Scene](#ZH-CN_TOPIC_0000002497604924__scene12)否是
-
-3D模型资源文件或场景对象，默认值为undefined。
-
-**说明：**
-
-目前仅支持GLTF格式资源。
-
-modelType[ModelType](#ZH-CN_TOPIC_0000002497604924__modeltype枚举说明)否是
-
-3D场景显示合成方式。
-
-默认值：ModelType.SURFACE
-
-**说明：**
-
-设置为ModelType.TEXTURE时通过GPU合成显示。
-
-设置为ModelType.SURFACE时通过专有硬件合成显示。
-
-一般开发者可以使用默认值而无需关心此项设置。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| scene | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | Scene | 否 | 是 | 3D模型资源文件或场景对象，默认值为undefined。 当传入glTF（.gltf文件和.glb文件）模型时，组件以自动场景模式运行，框架会自动创建基础相机、光源和默认手势交互（旋转、缩放），其相关参数由框架内部管理，不支持外部修改，开发者仅可通过Component3D的属性对展示效果进行配置。 当传入Scene对象时，组件以自定义场景模式运行，相机、光源及交互由开发者通过ArkGraphics 3D API自行创建和管理。 当不填写此参数时，组件仅作为自定义渲染管线（shader/customRender）的输出容器使用。 说明： 自定义场景模式下未内置相机控制器，因此不会自动响应拖拽或缩放手势；如需交互，请开发者接入手势并更新相机的位置与旋转。 |
+| modelType | ModelType | 否 | 是 | 3D场景显示合成方式。 默认值：ModelType.SURFACE 说明： 设置为ModelType.TEXTURE时通过GPU合成显示。 设置为ModelType.SURFACE时通过专有硬件合成显示。 一般开发者可以使用默认值而无需关心此项设置。 |
 
 #### ModelType枚举说明
 
@@ -64,11 +44,14 @@ modelType[ModelType](#ZH-CN_TOPIC_0000002497604924__modeltype枚举说明)否是
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
-名称值说明TEXTURE0使用GPU合成显示3D场景。SURFACE1使用专有硬件显示3D场景。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| TEXTURE | 0 | 使用GPU合成显示3D场景。 |
+| SURFACE | 1 | 使用专有硬件显示3D场景。 |
 
-#### Scene12+
+#### [Scene](../graphics/Scene.md#ZH-CN_TOPIC_0000002529446039__scene-1)12+
 
-type Scene = Scene
+type [Scene](../graphics/Scene.md#ZH-CN_TOPIC_0000002529446039__scene-1) = Scene
 
 设置3D场景。
 
@@ -76,15 +59,17 @@ type Scene = Scene
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
-类型说明[Scene](../media/Scene.md#ZH-CN_TOPIC_0000002529446039__scene-1)用于设置场景。
+| 类型 | 说明 |
+| --- | --- |
+| [Scene](../graphics/Scene.md#ZH-CN_TOPIC_0000002529446039__scene-1) | 用于设置场景。 |
 
 #### 属性
 
-除支持[通用属性](../misc/通用属性.md)外，还支持以下属性：
+除支持[通用属性]([通用属性](../misc/通用属性.md).md)外，还支持以下属性：
 
 #### environment
 
-environment(uri: ResourceStr)
+environment(uri: [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr))
 
 设置3D环境资源。目前仅支持GLTF格式资源，模型资源在控件创建后不支持动态修改。
 
@@ -94,13 +79,15 @@ environment(uri: ResourceStr)
 
 **参数：**
 
-参数名类型必填说明uri[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)是3D环境资源。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 是 | 3D环境资源。 |
 
 #### customRender
 
-customRender(uri: ResourceStr, selfRenderUpdate: boolean)
+customRender(uri: [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr), selfRenderUpdate: boolean)
 
-设置三维场景渲染的渲染管道。管线配置及自渲染属性在控件创建后不支持动态修改。
+设置三维场景渲染的渲染管线。管线配置及自渲染属性在控件创建后不支持动态修改。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -108,15 +95,14 @@ customRender(uri: ResourceStr, selfRenderUpdate: boolean)
 
 **参数：**
 
-参数名类型必填说明uri[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)是自定义渲染管线的配置文件。selfRenderUpdateboolean是
-
-当设置为true时外部UI没有更新时也能触发动效渲染。
-
-当设置为false时只有外部UI更新才能触发渲染。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 是 | 自定义渲染管线的配置文件。 |
+| selfRenderUpdate | boolean | 是 | 当设置为true时外部UI没有更新时也能触发动效渲染。 当设置为false时只有外部UI更新才能触发渲染。 |
 
 #### shader
 
-shader(uri: ResourceStr)
+shader(uri: [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr))
 
 设置自定义渲染的shader文件资源。自定义渲染的shader文件资源在控件创建后不支持动态修改。
 
@@ -126,11 +112,13 @@ shader(uri: ResourceStr)
 
 **参数：**
 
-参数名类型必填说明uri[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)是自定义渲染的shader文件资源。详细.shader文件格式请参考[.shader资源文件格式要求](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d-shader-resource)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 是 | 自定义渲染的shader文件资源。详细.shader文件格式请参考.shader资源文件格式要求。 |
 
 #### shaderImageTexture
 
-shaderImageTexture(uri: ResourceStr)
+shaderImageTexture(uri: [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr))
 
 设置自定义渲染用到的纹理资源。若自定义渲染用到多个纹理资源则调用多次，绑定点与调用顺序一致，不支持纹理更换。纹理资源在控件创建后不支持动态修改。
 
@@ -140,7 +128,9 @@ shaderImageTexture(uri: ResourceStr)
 
 **参数：**
 
-参数名类型必填说明uri[ResourceStr](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr)是自定义渲染用到的纹理资源。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | [ResourceStr](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resourcestr) | 是 | 自定义渲染用到的纹理资源。 |
 
 #### shaderInputBuffer
 
@@ -154,11 +144,13 @@ shaderInputBuffer(buffer: Array<number>)
 
 **参数：**
 
-参数名类型必填说明bufferArray<number>是自定义渲染用到的动效参数，数组长度范围为[0, 1048576]。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| buffer | Array<number> | 是 | 自定义渲染用到的动效参数，数组长度范围为[0, 1048576]。 |
 
 #### renderWidth
 
-renderWidth(value: Dimension)
+renderWidth(value: [Dimension](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10))
 
 设置3D渲染分辨率的宽度。渲染分辨率的长宽可以不同于控件的长宽，若渲染分辨率与控件分辨率长宽不一致时会上采样或下采样到控件长宽。
 
@@ -172,11 +164,13 @@ renderWidth(value: Dimension)
 
 **参数：**
 
-参数名类型必填说明value[Dimension](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10)是3D渲染分辨率的宽度，当前仅支持设置Dimension.Percentage，取值范围是[0, 100%]。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [Dimension](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10) | 是 | 3D渲染分辨率的宽度，当前仅支持设置Dimension.Percentage，取值范围是[0, 100%]。 |
 
 #### renderHeight
 
-renderHeight(value: Dimension)
+renderHeight(value: [Dimension](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10))
 
 设置3D渲染分辨率的长度。渲染分辨率的长宽可以不同于控件的长宽，若渲染分辨率与控件分辨率长宽不一致时会上采样或下采样到控件长宽。
 
@@ -190,11 +184,13 @@ renderHeight(value: Dimension)
 
 **参数：**
 
-参数名类型必填说明value[Dimension](../misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10)是3D渲染分辨率的长度，当前仅支持设置Dimension.Percentage，取值范围是[0, 100%]。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [Dimension](基础类型定义.md#ZH-CN_TOPIC_0000002497604974__dimension10) | 是 | 3D渲染分辨率的长度，当前仅支持设置Dimension.Percentage，取值范围是[0, 100%]。 |
 
 #### 事件
 
-支持[通用事件](../misc/通用事件.md)。
+支持[通用事件]([通用事件](../misc/通用事件.md).md)。
 
 #### 示例
 
@@ -221,7 +217,6 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```
 
 自定义渲染示例。
@@ -244,7 +239,6 @@ function TickFrame() {
     frameCount = 0;
   } else {
     frameCount++;
-  }
 }
 
 @Entry
@@ -294,5 +288,4 @@ struct Index {
     }
     .height('100%')
   }
-}
 ```

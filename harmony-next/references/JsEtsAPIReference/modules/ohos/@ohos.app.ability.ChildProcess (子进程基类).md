@@ -22,7 +22,9 @@ onStart(args?: ChildProcessArgs): void
 
 **参数：**
 
-参数名类型必填说明args12+[ChildProcessArgs](@ohos.app.ability.ChildProcessArgs (子进程参数).md)否传递到子进程的参数。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| args12+ | ChildProcessArgs | 否 | 传递到子进程的参数。 |
 
 **示例：**
 
@@ -36,5 +38,4 @@ export default class DemoProcess extends ChildProcess {
     let fd = args?.fds?.key1;
     // ..
   }
-}
 ```

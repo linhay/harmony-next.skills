@@ -12,7 +12,7 @@
 
 -
 
-本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的地方使用，参见[UIContext](../../types/classes/Class (UIContext).md)说明。
+本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的地方使用，参见[UIContext](Class (UIContext).md)说明。
 
 #### 导入模块
 
@@ -26,13 +26,14 @@ matchMediaSync(condition: string): MediaQueryListener
 
 设置媒体查询的查询条件，并返回对应的监听句柄。
 
--
-
-从API version 7开始支持，从API version 18开始废弃，建议使用[matchMediaSync](../../types/classes/Class (MediaQuery).md#ZH-CN_TOPIC_0000002497444802__matchmediasync)替代。matchMediaSync需先通过[UIContext](../../types/classes/Class (UIContext).md)中的[getMediaQuery](../../types/classes/Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getmediaquery)方法获取[MediaQuery](../../types/classes/Class (MediaQuery).md)对象，然后通过该对象进行调用。
 
 -
 
-从API version 10开始，可以通过使用[UIContext](../../types/classes/Class (UIContext).md)中的[getMediaQuery](../../types/classes/Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getmediaquery)方法获取当前UI上下文关联的[MediaQuery](../../types/classes/Class (MediaQuery).md)对象。
+从API version 7开始支持，从API version 18开始废弃，建议使用[matchMediaSync](Class (MediaQuery).md#ZH-CN_TOPIC_0000002522080730__matchmediasync)替代。matchMediaSync需先通过[UIContext](Class (UIContext).md)中的[getMediaQuery](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getmediaquery)方法获取[MediaQuery](Class (MediaQuery).md)对象，然后通过该对象进行调用。
+
+-
+
+从API version 10开始，可以通过使用[UIContext](Class (UIContext).md)中的[getMediaQuery](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getmediaquery)方法获取当前UI上下文关联的[MediaQuery](Class (MediaQuery).md)对象。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
@@ -42,11 +43,15 @@ matchMediaSync(condition: string): MediaQueryListener
 
 **参数：**
 
-参数名类型必填说明conditionstring是媒体事件的匹配条件，具体可参考[媒体查询语法规则](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-media-query#语法规则)。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| condition | string | 是 | 媒体事件的匹配条件，具体可参考媒体查询语法规则。 |
 
 **返回值：**
 
-类型说明[MediaQueryListener](#ZH-CN_TOPIC_0000002497604790__mediaquerylistener)媒体事件监听句柄，用于注册和去注册监听回调。
+| 类型 | 说明 |
+| --- | --- |
+| MediaQueryListener | 媒体事件监听句柄，用于注册和去注册监听回调。 |
 
 **示例：**
 
@@ -60,7 +65,7 @@ let listener: mediaquery.MediaQueryListener = mediaquery.matchMediaSync('(orient
 
 媒体查询的句柄，并包含了申请句柄时的首次查询结果。媒体查询根据设置的条件语句，比如'(width <= 600vp)'，比较系统信息，若首次查询时相关信息未初始化，matches返回false。
 
-继承自[MediaQueryResult](#ZH-CN_TOPIC_0000002497604790__mediaqueryresult)。
+继承自[MediaQueryResult](#ZH-CN_TOPIC_0000002522080740__mediaqueryresult)。
 
 **卡片能力：** 从API version 12开始，该类型支持在ArkTS卡片中使用。
 
@@ -84,11 +89,14 @@ on(type: 'change', callback: Callback<MediaQueryResult>): void
 
 **参数：**
 
-参数名类型必填说明typestring是必须填写字符串'change'。callbackCallback<[MediaQueryResult](#ZH-CN_TOPIC_0000002497604790__mediaqueryresult)>是向媒体查询注册的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 必须填写字符串'change'。 |
+| callback | Callback<MediaQueryResult> | 是 | 向媒体查询注册的回调。 |
 
 **示例：**
 
-详见[off示例](#ZH-CN_TOPIC_0000002497604790__offchange)。
+详见[off示例](#ZH-CN_TOPIC_0000002522080740__offchange)。
 
 #### off('change')
 
@@ -104,7 +112,10 @@ off(type: 'change', callback?: Callback<MediaQueryResult>): void
 
 **参数：**
 
-参数名类型必填说明typestring是必须填写字符串'change'。callbackCallback<[MediaQueryResult](#ZH-CN_TOPIC_0000002497604790__mediaqueryresult)>否需要取消注册的回调，如果参数缺省则去注册该句柄下所有的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 必须填写字符串'change'。 |
+| callback | Callback<MediaQueryResult> | 否 | 需要取消注册的回调，如果参数缺省则去注册该句柄下所有的回调。 |
 
 **示例：**
 
@@ -118,7 +129,6 @@ function onPortrait(mediaQueryResult:mediaquery.MediaQueryResult) {
   } else {
     // do something here
   }
-}
 listener.on('change', onPortrait) // 注册回调
 listener.off('change', onPortrait) // 取消注册回调
 ```
@@ -135,11 +145,15 @@ listener.off('change', onPortrait) // 取消注册回调
 
 #### 属性
 
-名称类型只读可选说明matchesboolean是否是否符合匹配条件。true表示满足查询条件，false表示不满足查询条件。mediastring是否媒体事件的匹配条件。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| matches | boolean | 是 | 否 | 是否符合匹配条件。true表示满足查询条件，false表示不满足查询条件。 |
+| media | string | 是 | 否 | 媒体事件的匹配条件。 |
 
 #### 示例
 
-推荐通过使用[UIContext](../../types/classes/Class (UIContext).md)中的[getMediaQuery](../../types/classes/Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getmediaquery)方法获取当前UI上下文关联的[MediaQuery](../../types/classes/Class (MediaQuery).md)对象。
+
+推荐通过使用[UIContext](Class (UIContext).md)中的[getMediaQuery](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getmediaquery)方法获取当前UI上下文关联的[MediaQuery](Class (MediaQuery).md)对象。
 
 ```ets
 import { mediaquery } from '@kit.ArkUI';
@@ -159,7 +173,6 @@ struct MediaQueryExample {
       this.color = '#DB7093'
       this.text = 'Portrait'
     }
-  }
 
   aboutToAppear() {
     let portraitFunc = (mediaQueryResult: mediaquery.MediaQueryResult): void => this.onPortrait(mediaQueryResult)
@@ -178,5 +191,6 @@ struct MediaQueryExample {
     }
     .width('100%').height('100%')
   }
-}
 ```
+
+![image](public_sys-resources/zh-cn_image_0000002522084700.webp)

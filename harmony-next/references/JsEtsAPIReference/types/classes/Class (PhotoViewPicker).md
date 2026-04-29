@@ -14,9 +14,10 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 select(option?: PhotoSelectOptions) : Promise<PhotoSelectResult>
 
-通过选择模式拉起photoPicker界面，用户可以选择一个或多个图片/视频。接口采用Promise异步返回形式，传入可选参数PhotoSelectOptions对象，返回PhotoSelectResult对象。
+通过选择模式拉起photoPicker界面，用户可以选择一个或多个图片/视频。使用Promise异步回调。传入可选参数PhotoSelectOptions对象，返回PhotoSelectResult对象。
 
-此接口返回的PhotoSelectResult对象中的photoUris具有永久授权，可通过调用接口[photoAccessHelper.getAssets](../interfaces/Interface (PhotoAccessHelper).md#ZH-CN_TOPIC_0000002529445917__getassets)去使用。具体操作请参考[媒体文件uri的使用方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri-intro#媒体文件uri的使用方式)。
+
+此接口返回的PhotoSelectResult对象中的photoUris具有永久授权，可通过调用接口[photoAccessHelper.getAssets](Interface (PhotoAccessHelper).md#ZH-CN_TOPIC_0000002553362013__getassets)去使用。具体操作请参考[媒体文件URI的使用方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri-intro#媒体文件uri的使用方式)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -24,17 +25,25 @@ select(option?: PhotoSelectOptions) : Promise<PhotoSelectResult>
 
 **参数：**
 
-参数名类型必填说明option[PhotoSelectOptions](Classes (其他).md#ZH-CN_TOPIC_0000002497605950__photoselectoptions)否photoPicker选择选项，若无此参数，则默认选择媒体文件类型为图片和视频类型，默认选择媒体文件数量的最大值为50。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| option | PhotoSelectOptions | 否 | photoPicker选择选项，若无此参数，则默认选择媒体文件类型为图片和视频类型，默认选择媒体文件数量的最大值为50。 |
 
 **返回值：**
 
-类型说明Promise<[PhotoSelectResult](Classes (其他).md#ZH-CN_TOPIC_0000002497605950__photoselectresult)>Promise对象。返回photoPicker选择后的结果集
+| 类型 | 说明 |
+| --- | --- |
+| Promise<PhotoSelectResult> | Promise对象。返回photoPicker选择后的结果集 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)、[文件管理错误码]([文件管理错误码](../../errors/文件管理错误码.md).md)和[媒体库错误码](媒体库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 13900042 | Unknown error. |
+| 23800151 | Scene parameters validate failed, possible causes:1. An illegal enumeration value was passed to PhotoSelectOptions.globalMovingPhotoState. |
 
 **示例：**
 
@@ -43,12 +52,12 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 async function example01(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
   try {
-    let PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-    PhotoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-    PhotoSelectOptions.maxSelectNumber = 5;
+    let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
+    photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
+    photoSelectOptions.maxSelectNumber = 5;
     let photoPicker = new photoAccessHelper.PhotoViewPicker();
-    photoPicker.select(PhotoSelectOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-      console.info('PhotoViewPicker.select successfully, PhotoSelectResult uri: ' + JSON.stringify(PhotoSelectResult));
+    photoPicker.select(photoSelectOptions).then((photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+      console.info('PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
     }).catch((err: BusinessError) => {
       console.error(`PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
     });
@@ -56,7 +65,6 @@ async function example01(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
     let err: BusinessError = error as BusinessError;
     console.error(`PhotoViewPicker failed with err: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### select
@@ -65,7 +73,8 @@ select(option: PhotoSelectOptions, callback: AsyncCallback<PhotoSelectResult>) :
 
 通过选择模式拉起photoPicker界面，用户可以选择一个或多个图片/视频。接口采用callback异步返回形式，传入参数PhotoSelectOptions对象，返回PhotoSelectResult对象。
 
-此接口返回的PhotoSelectResult对象中的photoUris具有永久授权，可通过调用接口[photoAccessHelper.getAssets](../interfaces/Interface (PhotoAccessHelper).md#ZH-CN_TOPIC_0000002529445917__getassets)去使用。具体操作请参考[媒体文件uri的使用方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri-intro#媒体文件uri的使用方式)。
+
+此接口返回的PhotoSelectResult对象中的photoUris具有永久授权，可通过调用接口[photoAccessHelper.getAssets](Interface (PhotoAccessHelper).md#ZH-CN_TOPIC_0000002553362013__getassets)去使用。具体操作请参考[媒体文件URI的使用方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri-intro#媒体文件uri的使用方式)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -73,13 +82,20 @@ select(option: PhotoSelectOptions, callback: AsyncCallback<PhotoSelectResult>) :
 
 **参数：**
 
-参数名类型必填说明option[PhotoSelectOptions](Classes (其他).md#ZH-CN_TOPIC_0000002497605950__photoselectoptions)是photoPicker选择选项。callbackAsyncCallback<[PhotoSelectResult](Classes (其他).md#ZH-CN_TOPIC_0000002497605950__photoselectresult)>是callback 返回photoPicker选择后的结果集。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| option | PhotoSelectOptions | 是 | photoPicker选择选项。 |
+| callback | AsyncCallback<PhotoSelectResult> | 是 | callback 返回photoPicker选择后的结果集。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)、[文件管理错误码](文件管理错误码.md)和[媒体库错误码](媒体库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 13900042 | Unknown error. |
+| 23800151 | Scene parameters validate failed, possible causes:1. An illegal enumeration value was passed to PhotoSelectOptions.globalMovingPhotoState. |
 
 **示例：**
 
@@ -88,22 +104,21 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 async function example02(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
   try {
-    let PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-    PhotoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-    PhotoSelectOptions.maxSelectNumber = 5;
+    let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
+    photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
+    photoSelectOptions.maxSelectNumber = 5;
     let photoPicker = new photoAccessHelper.PhotoViewPicker();
-    photoPicker.select(PhotoSelectOptions, (err: BusinessError, PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+    photoPicker.select(photoSelectOptions, (err: BusinessError, photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
       if (err) {
         console.error(`PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
         return;
       }
-      console.info('PhotoViewPicker.select successfully, PhotoSelectResult uri: ' + JSON.stringify(PhotoSelectResult));
+      console.info('PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
     });
   } catch (error) {
     let err: BusinessError = error as BusinessError;
     console.error(`PhotoViewPicker failed with err: ${err.code}, ${err.message}`);
   }
-}
 ```
 
 #### select
@@ -112,7 +127,8 @@ select(callback: AsyncCallback<PhotoSelectResult>) : void
 
 通过选择模式拉起photoPicker界面，用户可以选择一个或多个图片/视频。接口采用callback异步返回形式，返回PhotoSelectResult对象。
 
-此接口返回的PhotoSelectResult对象中的photoUris具有永久授权，可通过调用接口[photoAccessHelper.getAssets](../interfaces/Interface (PhotoAccessHelper).md#ZH-CN_TOPIC_0000002529445917__getassets)去使用。具体操作请参考[媒体文件uri的使用方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri-intro#媒体文件uri的使用方式)。
+
+此接口返回的PhotoSelectResult对象中的photoUris具有永久授权，可通过调用接口[photoAccessHelper.getAssets](Interface (PhotoAccessHelper).md#ZH-CN_TOPIC_0000002553362013__getassets)去使用。具体操作请参考[媒体文件URI的使用方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri-intro#媒体文件uri的使用方式)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -120,13 +136,19 @@ select(callback: AsyncCallback<PhotoSelectResult>) : void
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[PhotoSelectResult](Classes (其他).md#ZH-CN_TOPIC_0000002497605950__photoselectresult)>是callback 返回photoPicker选择后的结果集。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<PhotoSelectResult> | 是 | callback 返回photoPicker选择后的结果集。 |
 
 **错误码：**
 
-接口抛出错误码的详细介绍请参见[通用错误码](../../errors/通用错误码.md)和[文件管理错误码](../../errors/文件管理错误码.md)。
+接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)、[文件管理错误码](文件管理错误码.md)和[媒体库错误码](媒体库错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 13900042 | Unknown error. |
+| 23800151 | Scene parameters validate failed, possible causes:1. An illegal enumeration value was passed to PhotoSelectOptions.globalMovingPhotoState. |
 
 **示例：**
 
@@ -136,16 +158,15 @@ import { BusinessError } from '@kit.BasicServicesKit';
 async function example03(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
   try {
     let photoPicker = new photoAccessHelper.PhotoViewPicker();
-    photoPicker.select((err: BusinessError, PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+    photoPicker.select((err: BusinessError, photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
       if (err) {
         console.error(`PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
         return;
       }
-      console.info('PhotoViewPicker.select successfully, PhotoSelectResult uri: ' + JSON.stringify(PhotoSelectResult));
+      console.info('PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
     });
   } catch (error) {
     let err: BusinessError = error as BusinessError;
     console.error(`PhotoViewPicker failed with err: ${err.code}, ${err.message}`);
   }
-}
 ```

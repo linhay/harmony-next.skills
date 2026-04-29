@@ -1,6 +1,7 @@
 # Class (WebContextMenuParam)
 
-实现长按页面元素或鼠标右键弹出来的菜单信息。示例代码参考[onContextMenuShow事件](../../topics/misc/事件.md#ZH-CN_TOPIC_0000002497445228__oncontextmenushow9)。
+实现长按页面元素或鼠标右键弹出来的菜单信息。示例代码参考[onContextMenuShow事件](事件.md#ZH-CN_TOPIC_0000002522081170__oncontextmenushow9)。
+
 
 -
 
@@ -12,7 +13,7 @@
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### constructor9+
 
@@ -32,11 +33,9 @@ x(): number
 
 **返回值：**
 
-类型说明number
-
-显示正常返回非负整数，否则返回-1。
-
-单位：vp。
+| 类型 | 说明 |
+| --- | --- |
+| number | 显示正常返回非负整数，否则返回-1。 单位：vp。 |
 
 #### y9+
 
@@ -48,11 +47,9 @@ y(): number
 
 **返回值：**
 
-类型说明number
-
-显示正常返回非负整数，否则返回-1。
-
-单位：vp。
+| 类型 | 说明 |
+| --- | --- |
+| number | 显示正常返回非负整数，否则返回-1。 单位：vp。 |
 
 #### getLinkUrl9+
 
@@ -64,7 +61,9 @@ getLinkUrl(): string
 
 **返回值：**
 
-类型说明string如果长按位置是链接，返回经过安全检查的url链接。
+| 类型 | 说明 |
+| --- | --- |
+| string | 如果长按位置是链接，返回经过安全检查的url链接。 |
 
 #### getUnfilteredLinkUrl9+
 
@@ -76,7 +75,9 @@ getUnfilteredLinkUrl(): string
 
 **返回值：**
 
-类型说明string如果长按位置是链接，返回原始的url链接。
+| 类型 | 说明 |
+| --- | --- |
+| string | 如果长按位置是链接，返回原始的url链接。 |
 
 #### getSourceUrl9+
 
@@ -88,7 +89,9 @@ getSourceUrl(): string
 
 **返回值：**
 
-类型说明string如果选中的元素有src属性，返回src的url。返回url的最大上限为2M，超出上限时返回空字符串。
+| 类型 | 说明 |
+| --- | --- |
+| string | 如果选中的元素有src属性，返回src的url。返回url的最大上限为2M，超出上限时返回空字符串。 |
 
 #### existsImageContents9+
 
@@ -100,19 +103,23 @@ existsImageContents(): boolean
 
 **返回值：**
 
-类型说明boolean长按位置中有图片返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 长按位置中有图片返回true，否则返回false。 |
 
 #### getMediaType9+
 
-getMediaType(): ContextMenuMediaType
+getMediaType(): [ContextMenuMediaType](../enums/Enums.md#ZH-CN_TOPIC_0000002497605218__contextmenumediatype9)
 
-获取触发上下文菜单的网页元素类型。
+获取网页元素媒体类型。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
 
-类型说明[ContextMenuMediaType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497605218__contextmenumediatype9)网页元素媒体类型。
+| 类型 | 说明 |
+| --- | --- |
+| [ContextMenuMediaType](../enums/Enums.md#ZH-CN_TOPIC_0000002497605218__contextmenumediatype9) | 网页元素媒体类型。 |
 
 #### getSelectionText9+
 
@@ -124,11 +131,13 @@ getSelectionText(): string
 
 **返回值：**
 
-类型说明string菜单上下文选中文本内容，不存在则返回空。
+| 类型 | 说明 |
+| --- | --- |
+| string | 菜单上下文选中文本内容，不存在则返回空。 |
 
 #### getSourceType9+
 
-getSourceType(): ContextMenuSourceType
+getSourceType(): [ContextMenuSourceType](../enums/Enums.md#ZH-CN_TOPIC_0000002497605218__contextmenusourcetype9)
 
 获取菜单事件来源。
 
@@ -136,11 +145,13 @@ getSourceType(): ContextMenuSourceType
 
 **返回值：**
 
-类型说明[ContextMenuSourceType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497605218__contextmenusourcetype9)菜单事件来源。
+| 类型 | 说明 |
+| --- | --- |
+| [ContextMenuSourceType](../enums/Enums.md#ZH-CN_TOPIC_0000002497605218__contextmenusourcetype9) | 菜单事件来源。 |
 
 #### getInputFieldType9+
 
-getInputFieldType(): ContextMenuInputFieldType
+getInputFieldType(): [ContextMenuInputFieldType](../enums/Enums.md#ZH-CN_TOPIC_0000002497605218__contextmenuinputfieldtype9)
 
 获取网页元素输入框类型。
 
@@ -148,7 +159,9 @@ getInputFieldType(): ContextMenuInputFieldType
 
 **返回值：**
 
-类型说明[ContextMenuInputFieldType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497605218__contextmenuinputfieldtype9)输入框类型。
+| 类型 | 说明 |
+| --- | --- |
+| [ContextMenuInputFieldType](../enums/Enums.md#ZH-CN_TOPIC_0000002497605218__contextmenuinputfieldtype9) | 输入框类型。 |
 
 #### isEditable9+
 
@@ -160,7 +173,9 @@ isEditable(): boolean
 
 **返回值：**
 
-类型说明boolean网页元素可编辑返回true，不可编辑返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 网页元素可编辑返回true，不可编辑返回false。 |
 
 #### getEditStateFlags9+
 
@@ -172,7 +187,9 @@ getEditStateFlags(): number
 
 **返回值：**
 
-类型说明number网页元素可编辑标识，参照[ContextMenuEditStateFlags](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497605218__contextmenueditstateflags9)。
+| 类型 | 说明 |
+| --- | --- |
+| number | 网页元素可编辑标识，参照[ContextMenuEditStateFlags](../enums/Enums.md#ZH-CN_TOPIC_0000002497605218__contextmenueditstateflags9)。 |
 
 #### getPreviewWidth13+
 
@@ -184,11 +201,9 @@ getPreviewWidth(): number
 
 **返回值：**
 
-类型说明number
-
-预览图的宽。
-
-单位：vp。
+| 类型 | 说明 |
+| --- | --- |
+| number | 预览图的宽。 单位：vp。 |
 
 #### getPreviewHeight13+
 
@@ -200,20 +215,20 @@ getPreviewHeight(): number
 
 **返回值：**
 
-类型说明number
+| 类型 | 说明 |
+| --- | --- |
+| number | 预览图的高。 单位：vp。 |
 
-预览图的高。
+#### get[ContextMenuMediaType](../enums/Enums.md#ZH-CN_TOPIC_0000002497605218__contextmenumediatype9)22+
 
-单位：vp。
+get[ContextMenuMediaType](../enums/Enums.md#ZH-CN_TOPIC_0000002497605218__contextmenumediatype9)(): ContextMenuDataMediaType
 
-#### getContextMenuMediaType22+
-
-getContextMenuMediaType(): ContextMenuDataMediaType
-
-获取触发上下文菜单的网页元素类型（增强获取类型能力）。
+在上报上下文菜单事件时，获取用户点击的网页元素类型。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
 
-类型说明[ContextMenuDataMediaType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497605218__contextmenudatamediatype22)网页元素媒体类型。
+| 类型 | 说明 |
+| --- | --- |
+| [ContextMenuDataMediaType](../enums/Enums.md#ZH-CN_TOPIC_0000002497605218__contextmenudatamediatype22) | 网页元素媒体类型。 |

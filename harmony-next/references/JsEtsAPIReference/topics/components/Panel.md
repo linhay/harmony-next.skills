@@ -1,266 +1,338 @@
-[]()[]()
+# Panel
 
-# panel
+可滑动面板，提供一种轻量的内容展示窗口，方便在不同尺寸中切换。
 
- 从API version 5开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
-可滑动面板，提供一种轻量的内容展示窗口，在不同尺寸中切换，属于弹出式组件。
+从API version 12开始，该组件不再维护，推荐使用通用属性[bindSheet](半模态转场.md)。
 
-[]()[]()
+该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 #### 子组件
 
 可以包含子组件。
 
-[]()[]()
+
+子组件类型：系统组件和自定义组件，支持渲染控制类型（[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)和[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)）。
+
+**接口**
+
+Panel(show: boolean)
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+元服务API： 从API version 11开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| show | boolean | 是 | 控制Panel显示或隐藏。 说明： 如果设置为false时，则不占位隐藏。Visible.None或者show之间有一个生效时，都会生效不占位隐藏。 |
 
 #### 属性
 
-除支持[通用属性](通用属性 (js-components-common-attributes).md)外，还支持如下属性：
+除支持[通用属性](通用属性.md)外，还支持以下属性：
 
-名称类型默认值必填描述typestringfoldable是
+**type**
 
-设置可滑动面板类型，不可动态变更，可选值有：
+type(value: PanelType)
 
-- minibar：提供minibar和类全屏展示切换效果。
+可滑动面板的类型。
 
-- foldable：内容永久展示类，提供大（类全屏）、中（类半屏）、小三种尺寸展示切换效果。
+模型约束： 此接口仅可在Stage模型下使用。
 
-- temporary：内容临时展示区，提供大（类全屏）、中（类半屏）两种尺寸展示切换效果。
+元服务API： 从API version 11开始，该接口支持在元服务中使用。
 
-modestringfull否
+系统能力： SystemCapability.ArkUI.ArkUI.Full
 
-设置初始状态，mode参数可选值为：
+参数：
 
-- mini：类型为minibar和foldable时，为最小状态；类型为temporary，则不生效。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | PanelType | 是 | 设置可滑动面板的类型。 默认值：PanelType.Foldable |
 
-- half: 类型为foldable和temporary时，为类半屏状态；类型为minibar，则不生效。
+**mode**
 
-- full: 类全屏状态。
+mode(value: PanelMode)
 
-dragbarbooleantrue否设置是否存在dragbar，true表示存在，false表示不存在。fullheight<length>-否指定full状态下的高度，默认为屏幕尺寸 - 8px。halfheight<length>-否指定half状态下的高度，默认为屏幕尺寸的一半。miniheight<length>-否指定mini状态下的高度，默认为48px。
+可滑动面板的初始状态。
 
--
+模型约束： 此接口仅可在Stage模型下使用。
 
-不支持渲染属性，包括for、if和show。
+元服务API： 从API version 11开始，该接口支持在元服务中使用。
 
--
+系统能力： SystemCapability.ArkUI.ArkUI.Full
 
-不支持focusable和disabled属性。
+参数：
 
-[]()[]()
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | PanelMode | 是 | 设置可滑动面板的初始状态。 Minibar类型默认值：PanelMode.Mini；其余类型默认值：PanelMode.Half 从API version 10开始，该属性支持$$双向绑定变量。 |
 
-#### 样式
+**dragBar**
 
-仅支持如下样式：
+dragBar(value: boolean)
 
-名称类型默认值必填描述padding<length>0否
+设置是否存在控制条。
 
-该属性可以有1到4个值：
+模型约束： 此接口仅可在Stage模型下使用。
 
-- 指定一个值时，该值指定四个边的内边距。
+元服务API： 从API version 11开始，该接口支持在元服务中使用。
 
-- 指定两个值时，第一个值指定上下两边的内边距，第二个指定左右两边的内边距。
+系统能力： SystemCapability.ArkUI.ArkUI.Full
 
-- 指定三个值时，第一个指定上边的内边距，第二个指定左右两边的内边距，第三个指定下边的内边距。
+参数：
 
-- 指定四个值时分别为上、右、下、左边的内边距（顺时针顺序）。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | boolean | 是 | 设置是否存在控制条，true表示存在，false表示不存在。 默认值：true |
 
-padding-[left|top|right|bottom]<length>0否设置左、上、右、下内边距属性。padding-[start|end]<length>0否设置起始和末端内边距属性。margin<length>0否
+**customHeight10+**
 
-使用简写属性设置所有的外边距属性，该属性可以有1到4个值。
+customHeight(value: Dimension | PanelHeight)
 
-- 只有一个值时，这个值会被指定给全部的四个边。
+指定PanelType.CUSTOM状态下的高度。
 
-- 两个值时，第一个值被匹配给上和下，第二个值被匹配给左和右。
+模型约束： 此接口仅可在Stage模型下使用。
 
-- 三个值时，第一个值被匹配给上, 第二个值被匹配给左和右，第三个值被匹配给下。
+元服务API： 从API version 11开始，该接口支持在元服务中使用。
 
-- 四个值时，会依次按上、右、下、左的顺序匹配 (即顺时针顺序)。
+系统能力： SystemCapability.ArkUI.ArkUI.Full
 
-margin-[left|top|right|bottom]<length>0否设置左、上、右、下外边距属性。margin-[start|end]<length>0否设置起始和末端外边距属性。border-0否使用简写属性设置所有的边框属性，包含边框的宽度，样式，颜色属性，顺序设置为border-width、border-style、border-color，不设置时，各属性值为默认值。border-stylestringsolid否
+参数：
 
-使用简写属性设置所有边框的样式，可选值为：
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | Dimension | PanelHeight | 是 | 指定PanelType.CUSTOM状态下的高度。 默认值：0 说明： 不支持设置百分比。 |
 
-- dotted：显示为一系列圆点，圆点半径为border-width的一半。
+**fullHeight**
 
-- dashed：显示为一系列短的方形虚线。
+fullHeight(value: number | string)
 
-- solid：显示为一条实线。
+指定PanelType.Full状态下的高度。
 
-border-[left|top|right|bottom]-stylestringsolid否分别设置左、上、右、下四个边框的样式，可选值为dotted、dashed、solid。border-[left|top|right|bottom]--否使用简写属性设置对应位置的边框属性，包含边框的宽度，样式，颜色属性，顺序设置为border-width、border-style、border-color，不设置的值为默认值。border-width<length>0否使用简写属性设置元素的所有边框宽度，或者单独为各边边框设置宽度。border-[left|top|right|bottom]-width<length>0否分别设置左、上、右、下四个边框的宽度。border-color<color>black否使用简写属性设置元素的所有边框颜色，或者单独为各边边框设置颜色。border-[left|top|right|bottom]-color<color>black否分别设置左、上、右、下四个边框的颜色。border-radius<length>-否border-radius属性是设置元素的外边框圆角半径。设置border-radius时不能单独设置某一个方向的border-[left|top|right|bottom]-width，border-[left|top|right|bottom]-color ，如果要设置color和width，需要将四个方向一起设置（border-width、border-color）。border-[top|bottom]-[left|right]-radius<length>-否分别设置左上，右上，右下和左下四个角的圆角半径。background<linear-gradient>-否仅支持设置[渐变样式](渐变样式 (js-components-common-gradient).md)，与background-color、background-image不兼容。background-color<color>-否设置背景颜色。background-imagestring-否设置背景图片。与background-color、background不兼容；支持本地图片资源地址。background-size
+模型约束： 此接口仅可在Stage模型下使用。
 
-- string
+元服务API： 从API version 11开始，该接口支持在元服务中使用。
 
-- <length> <length>
+系统能力： SystemCapability.ArkUI.ArkUI.Full
 
-- <percentage> <percentage>
+参数：
 
-auto否
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | string | 是 | 指定PanelMode.Full状态下的高度。 默认值：当前组件主轴大小减去8vp空白区 说明： 不支持设置百分比。 |
 
-设置背景图片的大小。
+**halfHeight**
 
-- string可选值：
+halfHeight(value: number | string)
 
- - contain：把图像扩展至最大尺寸，以使其高度和宽度完全适用内容区域。
+指定PanelMode.Half状态下的高度。
 
- - cover：把背景图像扩展至足够大，以使背景图像完全覆盖背景区域；背景图像的某些部分也许无法显示在背景定位区域中。
+模型约束： 此接口仅可在Stage模型下使用。
 
- - auto：保持原图的比例不变。
+元服务API： 从API version 11开始，该接口支持在元服务中使用。
 
-- length值参数方式：
+系统能力： SystemCapability.ArkUI.ArkUI.Full
 
- 设置背景图像的高度和宽度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto"。
+参数：
 
-- 百分比参数方式：
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | string | 是 | 指定PanelMode.Half状态下的高度。 默认值：当前组件主轴大小的一半。 说明： 不支持设置百分比。 |
 
- 以父元素的百分比来设置背景图像的宽度和高度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto"。
+**miniHeight**
 
-background-repeatstringrepeat否
+miniHeight(value: number | string)
 
-针对重复背景图像样式进行设置，背景图像默认在水平和垂直方向上重复。
+指定PanelMode.Mini状态下的高度。
 
-- repeat：在水平轴和竖直轴上同时重复绘制图片。
+模型约束： 此接口仅可在Stage模型下使用。
 
-- repeat-x：只在水平轴上重复绘制图片。
+元服务API： 从API version 11开始，该接口支持在元服务中使用。
 
-- repeat-y：只在竖直轴上重复绘制图片。
+系统能力： SystemCapability.ArkUI.ArkUI.Full
 
-- no-repeat：不会重复绘制图片。
+参数：
 
-background-position
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | string | 是 | 指定PanelMode.Mini状态下的高度。 默认值：48 单位：vp 说明： 不支持设置百分比。 |
 
-- string string
+**show**
 
-- <length> <length>
+show(value: boolean)
 
-- <percentage> <percentage>
+当滑动面板弹出时调用。
 
-0px 0px否
+模型约束： 此接口仅可在Stage模型下使用。
 
-- 关键词方式：如果仅规定了一个关键词，那么第二个值为"center"。两个值分别定义水平方向位置和竖直方向位置。
+元服务API： 从API version 11开始，该接口支持在元服务中使用。
 
- - left：水平方向上最左侧。
+系统能力： SystemCapability.ArkUI.ArkUI.Full
 
- - right：水平方向上最右侧。
+参数：
 
- - top：竖直方向上最顶部。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | boolean | 是 | 当滑动面板弹出时调用，true显示面板，false不显示面板。 默认值：true 说明： 该属性的优先级高于参数show。 |
 
- - bottom：竖直方向上最底部。
+**backgroundMask9+**
 
- - center：水平方向或竖直方向上中间位置。
+backgroundMask(color: ResourceColor)
 
-- length值参数方式：第一个值是水平位置，第二个值是垂直位置。 左上角是 0 0。单位是像素 (0px 0px) 。如果仅规定了一个值，另外一个值将是50%。
+指定Panel的背景蒙层。
 
-- 百分比参数方式：第一个值是水平位置，第二个值是垂直位置。左上角是 0% 0%。右下角是 100% 100%。如果仅规定了一个值，另外一个值为50%。
+模型约束： 此接口仅可在Stage模型下使用。
 
-- 可以混合使用<percentage>和<length>
+元服务API： 从API version 11开始，该接口支持在元服务中使用。
 
-opacitynumber1否元素的透明度，取值范围为0到1，1表示为不透明，0表示为完全透明。[]()[]()
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| color | ResourceColor | 是 | 指定Panel的背景蒙层。 默认值：'#08182431' |
+
+**showCloseIcon10+**
+
+showCloseIcon(value: boolean)
+
+设置是否显示关闭图标。
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+元服务API： 从API version 11开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | boolean | 是 | 设置是否显示关闭图标，true表示显示，false表示不显示。 默认值：false |
+
+**PanelType枚举说明**
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+元服务API： 从API version 11开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 说明 |
+| --- | --- |
+| Minibar | 提供minibar和类全屏展示切换效果。 |
+| Foldable | 内容永久展示类，提供大（类全屏）、中（类半屏）、小三种尺寸展示切换效果。 |
+| Temporary | 内容临时展示区，提供大（类全屏）、中（类半屏）两种尺寸展示切换效果。 |
+| CUSTOM10+ | 配置自适应内容高度，不支持尺寸切换效果。 |
+
+**PanelMode枚举说明**
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+元服务API： 从API version 11开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| Mini | 0 | 类型为minibar和foldable时，为最小状态；类型为temporary，则不生效。 |
+| Half | 1 | 类型为foldable和temporary时，为类半屏状态；类型为minibar，则不生效。 |
+| Full | 2 | 类全屏状态。 |
+
+**PanelHeight10+枚举说明**
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+元服务API： 从API version 11开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 说明 |
+| --- | --- |
+| WRAP_CONTENT | 类型为CUSTOM时，自适应内容高度。 |
 
 #### 事件
 
-仅支持如下事件：
+除支持[通用事件](通用事件.md)外，还支持以下事件：
 
-名称参数描述sizechange{ size: { height: heightLength, width: widthLength }, mode: modeStr }
+**onChange**
 
-当可滑动面板发生状态变化时触发，mode参数可选值为：
+onChange(event: (width: number, height: number, mode: PanelMode) => void)
 
-- mini：类型为minibar和foldable时，处于最小状态；
+当可滑动面板发生状态变化时触发。
 
-- half: 类型为foldable时，处于类半屏状态；
+模型约束： 此接口仅可在Stage模型下使用。
 
-- full: 类全屏状态。
+元服务API： 从API version 11开始，该接口支持在元服务中使用。
 
-返回的height值为内容区高度值，当dragbar属性为true时，panel本身的高度值为dragbar高度加上内容区高度。
+系统能力： SystemCapability.ArkUI.ArkUI.Full
 
-[]()[]()
+参数：
 
-#### 方法
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| width | number | 是 | 内容区的宽度值。 |
+| height | number | 是 | 内容区的高度值。 当dragBar属性为true时，panel本身的高度值为dragBar高度加上内容区高度。 |
+| mode | PanelMode | 是 | 面板的状态。 |
 
-仅支持如下方法：
+**onHeightChange9+**
 
-名称参数描述show-弹出panel可滑动面板。close-关闭panel可滑动面板。[]()[]()
+onHeightChange(callback: (value: number) => void)
+
+当可滑动面板发生高度变化时触发。
+
+模型约束： 此接口仅可在Stage模型下使用。
+
+元服务API： 从API version 11开始，该接口支持在元服务中使用。
+
+系统能力： SystemCapability.ArkUI.ArkUI.Full
+
+参数：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | 是 | 内容区的高度值，默认返回值单位为px。 当dragBar属性为true时，panel本身的高度值为dragBar高度加上内容区高度。 因用户体验设计原因，panel最高只能滑到 fullHeight-8vp。 |
 
 #### 示例
 
 ```ets
-<!-- xxx.hml -->
-<div class="doc-page">
-    <div class="btn-div">
-        <button type="capsule" value="Click here" onclick="showPanel"></button>
-    </div>
-    <panel id="simplepanel" type="foldable" mode="half" onsizechange="changeMode" miniheight="200px">
-        <div class="panel-div">
-            <div class="inner-txt">
-                <text class="txt">Simple panel in {{ modeFlag }} mode</text>
-            </div>
-            <div class="inner-btn">
-                <button type="capsule" value="Close" onclick="closePanel"></button>
-            </div>
-        </div>
-    </panel>
-</div>
-```
+// xxx.ets
+@Entry
+@Component
+struct PanelExample {
+  @State show: boolean = false
 
-```ets
-/* xxx.css */
-.doc-page {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  build() {
+    Column() {
+      Text('2021-09-30    Today Calendar: 1.afternoon......Click for details')
+        .width('90%')
+        .height(50)
+        .borderRadius(10)
+        .backgroundColor(0xFFFFFF)
+        .padding({ left: 20 })
+        .onClick(() => {
+          this.show = !this.show
+        })
+      Panel(this.show) { // 展示日程
+        Column() {
+          Text('Today Calendar')
+          Divider()
+          Text('1. afternoon 4:00 The project meeting')
 }
-
-.btn-div {
-    width: 100%;
-    height: 200px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.txt {
-    color: #000000;
-    font-weight: bold;
-    font-size: 39px;
-}
-
-.panel-div {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-}
-
-.inner-txt {
-    width: 100%;
-    height: 160px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.inner-btn {
-    width: 100%;
-    height: 120px;
-    justify-content: center;
-    align-items: center;
+      .type(PanelType.Foldable)
+      .mode(PanelMode.Half)
+      .dragBar(true) // 默认开启
+      .halfHeight(500) // 默认一半
+      .showCloseIcon(true) // 显示关闭图标
+      .onChange((width: number, height: number, mode: PanelMode) => {
+        console.info(`width:${width},height:${height},mode:${mode}`)
+      })
+    }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding({ top: 5 })
 }
 ```
 
-```ets
-// xxx.js
-export default {
-  data: {
-    modeFlag: "half"
-  },
-  showPanel() {
-    this.$element('simplepanel').show()
-  },
-  closePanel() {
-    this.$element('simplepanel').close()
-  },
-  changeMode(e) {
-    this.modeFlag = e.mode
-  }
-}
-```
+![image](public_sys-resources/zh-cn_image_0000002522085436.webp)

@@ -26,106 +26,43 @@ validateSource(adSourceInfo: AdSourceInfo, publicKey: string): Promise<void>
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-adSourceInfo
-
-[AdSourceInfo](#section1262013338292)
-
-是
-
-媒体app/分发平台登记的归因来源信息。
-
-publicKey
-
-string
-
-是
-
-已[生成密钥对](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribution-register#section1810151768)中的公钥。注册归因角色时提供给应用归因服务云侧的公钥。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| adSourceInfo | AdSourceInfo | 是 | 媒体app/分发平台登记的归因来源信息。 |
+| publicKey | string | 是 | 已生成密钥对中的公钥。注册归因角色时提供给应用归因服务云侧的公钥。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<void>
-
-Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码]([ArkTS API错误码](../../errors/ArkTS API错误码.md).md)。
 
-错误码ID
-
-错误信息
-
-401
-
-Parameter error.
-
-1009300001
-
-The specified service extension connect failed.
-
-1009300002
-
-System internal error.
-
-1009300101
-
-AdTechId is missing in the request.
-
-1009300102
-
-CampaignId is missing in the request.
-
-1009300104
-
-DestinationId is missing in the request.
-
-1009300105
-
-SourceType is missing in the request.
-
-1009300106
-
-Nonce is missing in the request.
-
-1009300107
-
-Timestamp is missing in the request.
-
-1009300108
-
-Signature is missing in the request.
-
-1009300111
-
-AdSourceInfo is missing in the request.
-
-1009300112
-
-PublicKey is missing in the request.
-
-1009300114
-
-The signature verification failed in the testing environment.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 1009300001 | The specified service extension connect failed. |
+| 1009300002 | System internal error. |
+| 1009300101 | AdTechId is missing in the request. |
+| 1009300102 | CampaignId is missing in the request. |
+| 1009300104 | DestinationId is missing in the request. |
+| 1009300105 | SourceType is missing in the request. |
+| 1009300106 | Nonce is missing in the request. |
+| 1009300107 | Timestamp is missing in the request. |
+| 1009300108 | Signature is missing in the request. |
+| 1009300111 | AdSourceInfo is missing in the request. |
+| 1009300112 | PublicKey is missing in the request. |
+| 1009300114 | The signature verification failed in the testing environment. |
 
 **示例：**
 
 ```ets
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { attributionTestManager } from '@kit.AppGalleryKit';
-import { SignUtil } from '../common/utils/SignUtil'; //参考指南附录[生成签名方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-attribution-appendix-triger#section5203225132112)部分代码
+import { SignUtil } from '../common/utils/SignUtil'; //参考指南附录生成签名方法部分代码
 import { util } from '@kit.ArkTS';
 import { deviceInfo } from '@kit.BasicServicesKit';
 
@@ -177,8 +114,6 @@ class  AttributionTest {
     } catch (error) {
       hilog.error(0, TAG, `validateSource error.code is ${error.code}, message is ${error.message}`);
     }
-  }
-}
 ```
 
 #### attributionTestManager.setPostback
@@ -199,83 +134,33 @@ setPostback(postbackInfo: PostbackInfo): Promise<void>
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-postbackInfo
-
-[PostbackInfo](#section1812319373298)
-
-是
-
-归因结果回传信息。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| postbackInfo | PostbackInfo | 是 | 归因结果回传信息。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<void>
-
-Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](ArkTS API错误码.md)。
 
-错误码ID
-
-错误信息
-
-401
-
-Parameter error.
-
-1009300001
-
-The specified service extension connect failed.
-
-1009300002
-
-System internal error.
-
-1009300101
-
-AdTechId is missing in the request.
-
-1009300102
-
-CampaignId is missing in the request.
-
-1009300103
-
-SourceId is missing in the request.
-
-1009300104
-
-DestinationId is missing in the request.
-
-1009300109
-
-TriggerData is missing in the request.
-
-1009300110
-
-PostbackUrl is missing in the request.
-
-1009300113
-
-PostbackInfo is missing in the request.
-
-1009300115
-
-Too many postbacks setting to the testing environment.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 1009300001 | The specified service extension connect failed. |
+| 1009300002 | System internal error. |
+| 1009300101 | AdTechId is missing in the request. |
+| 1009300102 | CampaignId is missing in the request. |
+| 1009300103 | SourceId is missing in the request. |
+| 1009300104 | DestinationId is missing in the request. |
+| 1009300109 | TriggerData is missing in the request. |
+| 1009300110 | PostbackUrl is missing in the request. |
+| 1009300113 | PostbackInfo is missing in the request. |
+| 1009300115 | Too many postbacks setting to the testing environment. |
 
 **示例**：
 
@@ -314,8 +199,6 @@ class AttributionTest {
     } catch (error) {
       hilog.error(0, TAG, `setPostback onError.code is ${error.code}, message is ${error.message}`);
     }
-  }
-}
 ```
 
 #### attributionTestManager.flushPostbacks
@@ -334,77 +217,30 @@ flushPostbacks(adTechId: string): Promise<void>
 
 **参数：**
 
-参数名
-
-类型
-
-必填
-
-说明
-
-adTechId
-
-string
-
-是
-
-分发平台对应的归因角色ID，本次登记归因来源对应营销任务所归属的分发平台的标识符，长度固定为8字符。
-
-使用setPostback()接口中成功设置的adTechId值。
-
- 说明：
-
-调试过程不依赖云侧注册，开发者可以使用虚拟的adTechId。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| adTechId | string | 是 | 分发平台对应的归因角色ID，本次登记归因来源对应营销任务所归属的分发平台的标识符，长度固定为8个字符。 使用setPostback()接口中成功设置的adTechId值。 说明： 调试过程不依赖云侧注册，开发者可以使用虚拟的adTechId。 |
 
 **返回值：**
 
-类型
-
-说明
-
-Promise<void>
-
-Promise对象。无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](../../errors/ArkTS API错误码.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](ArkTS API错误码.md)。
 
-错误码ID
-
-错误信息
-
-401
-
-Parameter error.
-
-1009300001
-
-The specified service extension connect failed.
-
-1009300002
-
-System internal error.
-
-1009300101
-
-AdTechId is missing in the request.
-
-1009300116
-
-There is no postback to be sent of this adTechId.
-
-1009300117
-
-Failed to send postbacks to the postbackUrl.
-
-1009300119
-
-Network error.
-
-1009300120
-
-Request too frequent.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+| 1009300001 | The specified service extension connect failed. |
+| 1009300002 | System internal error. |
+| 1009300101 | AdTechId is missing in the request. |
+| 1009300116 | There is no postback to be sent of this adTechId. |
+| 1009300117 | Failed to send postbacks to the postbackUrl. |
+| 1009300119 | Network error. |
+| 1009300120 | Request too frequent. |
 
 **示例：**
 
@@ -427,8 +263,6 @@ class AttributionTest {
     } catch (error) {
       hilog.error(0, TAG, `flushPostbacks onError.code is ${error.code}, message is ${error.message}`);
     }
-  }
-}
 ```
 
 #### AdSourceInfo
@@ -441,127 +275,17 @@ class AttributionTest {
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-adTechId
-
-string
-
-否
-
-否
-
-分发平台对应的归因角色ID，本次登记归因来源对应营销任务所归属的分发平台的标识符。
-
-分发平台向应用归因云侧[注册归因角色](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribution-register#section11218192952612)时，由应用归因服务分配，长度固定为8字符。
-
- 说明：
-
-调试过程不依赖云侧注册，开发者可以使用虚拟的adTechId。
-
-campaignId
-
-string
-
-否
-
-否
-
-营销任务ID，登记归因来源对应的营销任务的ID，长度不超过6字符。
-
- 说明：
-
-从6.0.2(22)开始，该接口支持长度由不超过6字符变为不超过9字符。
-
-destinationId
-
-string
-
-否
-
-否
-
-开发者应用上架华为应用市场的AppId，长度不超过64字符。
-
- 说明：
-
-您的应用ID参考[查看应用基本信息](https://developer.huawei.com/consumer/cn/doc/app/agc-help-appinfo-0000001100014694)获取。
-
-sourceType
-
-[SourceType](#section142399205014)
-
-否
-
-否
-
-归因来源类型：
-
-0：曝光。
-
-1：点击。
-
-mmpIds
-
-string[]
-
-否
-
-是
-
-本次广告投放，使用的归因监测平台对应的归因角色ID。最大数量2个，每个ID字符串长度固定为8字符。
-
-如果调用方传递了归因监测平台ID，应用归因服务会向归因监测平台回传归因结果；如果调用方没有传递归因监测平台ID，则归因监测平台收不到回传的归因结果。
-
-serviceTag
-
-string
-
-否
-
-是
-
-分发平台关注的业务信息，如创意、素材等，长度不超过32字符。
-
-如果调用方传递了serviceTag，应用归因服务通过白名单方式向分发平台开放（白名单开放方式请联系华为运营）；如果调用方没有传递serviceTag，则分发平台收不到回传的serviceTag。
-
-nonce
-
-string
-
-否
-
-否
-
-用于计算签名的随机数，每次广告请求，nonce唯一。长度固定为32字符。
-
-timestamp
-
-number
-
-否
-
-否
-
-请求广告的时间戳。（即广告投放时间，与当前时间偏差不超过10分钟）。unix时间戳，单位：毫秒。
-
-signature
-
-string
-
-否
-
-否
-
-签名值，分发平台/媒体根据广告相应信息按照[归因来源签名计算规则](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-attribution-appendix-triger#section4208115642013)计算并提供，长度不超过800字符。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| adTechId | string | 否 | 否 | 分发平台对应的归因角色ID，本次登记归因来源对应营销任务所归属的分发平台的标识符。 分发平台向应用归因云侧注册归因角色时，由应用归因服务分配，长度固定为8个字符。 说明： 调试过程不依赖云侧注册，开发者可以使用虚拟的adTechId。 |
+| campaignId | string | 否 | 否 | 营销任务ID，登记归因来源对应的营销任务的ID，长度不超过6个字符。 说明： 从6.0.2(22)开始，该接口支持长度由不超过6个字符变为不超过9个字符。 |
+| destinationId | string | 否 | 否 | 开发者应用上架华为应用市场的AppId，长度不超过64个字符。 说明： 您的应用ID参考查看应用基本信息获取。 |
+| sourceType | SourceType | 否 | 否 | 归因来源类型： 0：曝光。 1：点击。 |
+| mmpIds | string[] | 否 | 是 | 本次广告投放，使用的归因监测平台对应的归因角色ID。最大数量2个，每个ID字符串长度固定为8个字符。 如果调用方传递了归因监测平台ID，应用归因服务会向归因监测平台回传归因结果；如果调用方没有传递归因监测平台ID，则归因监测平台收不到回传的归因结果。 |
+| serviceTag | string | 否 | 是 | 分发平台关注的业务信息，如创意、素材等，长度不超过32个字符。 如果调用方传递了serviceTag，在申请开通权限后应用归因服务会将serviceTag回传分发平台。 |
+| nonce | string | 否 | 否 | 用于计算签名的随机数，每次广告请求，nonce唯一。长度固定为32个字符。 |
+| timestamp | number | 否 | 否 | 请求广告的时间戳。（即广告投放时间，与当前时间偏差不超过10分钟）。unix时间戳，单位：毫秒。 |
+| signature | string | 否 | 否 | 签名值，分发平台/媒体根据广告相应信息按照归因来源签名计算规则计算并提供，长度不超过800个字符。 |
 
 #### PostbackInfo
 
@@ -573,111 +297,16 @@ string
 
 **起始版本：**5.0.0(12)
 
-名称
-
-类型
-
-只读
-
-可选
-
-说明
-
-adTechId
-
-string
-
-否
-
-否
-
-分发平台对应的归因角色ID，本次登记归因来源对应营销任务所归属的分发平台的标识符。
-
-使用setPostback()接口中成功设置的adTechId值。
-
- 说明：
-
-调试过程不依赖云侧注册，开发者可以使用虚拟的adTechId。
-
-campaignId
-
-string
-
-否
-
-否
-
-营销任务ID，登记归因来源对应的营销任务的ID，长度不超过6个字符。
-
- 说明：
-
-从6.0.2(22)开始，该接口支持长度由不超过6字符变为不超过9字符。
-
-sourceId
-
-string
-
-否
-
-否
-
-媒体应用id，长度不超过64个字符。
-
-destinationId
-
-string
-
-否
-
-否
-
-开发者应用上架华为应用市场的AppId，长度不超过64个字符。
-
-serviceTag
-
-string
-
-否
-
-是
-
-分发平台关注的业务信息，如创意、素材等，长度不超过32字符。
-
-如果调用方传递了serviceTag，应用归因服务会向分发平台回传serviceTag；如果调用方没有传递serviceTag，则分发平台收不到回传的serviceTag。
-
-businessScene
-
-number
-
-否
-
-是
-
-业务场景值，在开发者登记转化时，用于标识开发者的业务场景。
-
-取值范围：[0,99]。
-
-triggerData
-
-number
-
-否
-
-否
-
-转化事件编码。
-
-取值范围：[0,999]。
-
-postbackUrl
-
-string
-
-否
-
-否
-
-用于接收归因回传归因结果的URL地址，推荐使用HTTPS协议。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| adTechId | string | 否 | 否 | 分发平台对应的归因角色ID，本次登记归因来源对应营销任务所归属的分发平台的标识符。 使用setPostback()接口中成功设置的adTechId值。 说明： 调试过程不依赖云侧注册，开发者可以使用虚拟的adTechId。 |
+| campaignId | string | 否 | 否 | 营销任务ID，登记归因来源对应的营销任务的ID，长度不超过6个字符。 说明： 从6.0.2(22)开始，该接口支持长度由不超过6字符变为不超过9字符。 |
+| sourceId | string | 否 | 否 | 媒体应用id，长度不超过64个字符。 |
+| destinationId | string | 否 | 否 | 开发者应用上架华为应用市场的AppId，长度不超过64个字符。 |
+| serviceTag | string | 否 | 是 | 分发平台关注的业务信息，如创意、素材等，长度不超过32个字符。 如果调用方传递了serviceTag，在申请开通权限后应用归因服务会将serviceTag回传分发平台。 |
+| businessScene | number | 否 | 是 | 业务场景值，在开发者登记转化时，用于标识开发者的业务场景。 取值范围：[0,99]。 |
+| triggerData | number | 否 | 否 | 转化事件编码。 取值范围：[0,999]。 |
+| postbackUrl | string | 否 | 否 | 用于接收归因回传归因结果的URL地址，推荐使用HTTPS协议。 |
 
 #### SourceType
 
@@ -689,20 +318,7 @@ string
 
 **起始版本：**5.0.0(12)
 
-名称
-
-值
-
-说明
-
-IMPRESSION
-
-0
-
-归因来源类型：曝光。
-
-CLICK
-
-1
-
-归因来源类型：点击。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| IMPRESSION | 0 | 归因来源类型：曝光。 |
+| CLICK | 1 | 归因来源类型：点击。 |

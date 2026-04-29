@@ -22,13 +22,18 @@ getUserDownloadDir(): string
 
 **返回值：**
 
-类型说明string返回当前用户预授权下载目录的沙箱路径。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回当前用户预授权下载目录的沙箱路径。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[基础文件IO错误码](文件管理错误码.md#ZH-CN_TOPIC_0000002522241236__基础文件io错误码)和[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息801Capability not supported.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 13900042 | Unknown error. |
 
 **示例：**
 
@@ -41,7 +46,6 @@ function getUserDownloadDirExample() {
   } catch (err) {
     console.error(`Failed to getUserDownloadDir. Code: ${err.code}, message: ${err.message}`);
   }
-}
 ```
 
 #### Environment.getUserDesktopDir
@@ -56,13 +60,18 @@ getUserDesktopDir(): string
 
 **返回值：**
 
-类型说明string返回当前用户预授权桌面目录的沙箱路径。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回当前用户预授权桌面目录的沙箱路径。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[基础文件IO错误码](文件管理错误码.md#ZH-CN_TOPIC_0000002522241236__基础文件io错误码)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息801Capability not supported.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 13900042 | Unknown error. |
 
 **示例：**
 
@@ -75,7 +84,6 @@ function getUserDesktopDirExample() {
   } catch (err) {
     console.error(`Failed to getUserDesktopDir. Code: ${err.code}, message: ${err.message}`);
   }
-}
 ```
 
 #### Environment.getUserDocumentDir
@@ -90,13 +98,18 @@ getUserDocumentDir(): string
 
 **返回值：**
 
-类型说明string返回当前用户预授权文档目录的沙箱路径。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回当前用户预授权文档目录的沙箱路径。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理子系统错误码](../../errors/文件管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[基础文件IO错误码](文件管理错误码.md#ZH-CN_TOPIC_0000002522241236__基础文件io错误码)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息801Capability not supported.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 13900042 | Unknown error. |
 
 **示例：**
 
@@ -109,5 +122,4 @@ function getUserDocumentDirExample() {
   } catch (err) {
     console.error(`Failed to getUserDocumentDir. Code: ${err.code}, message: ${err.message}`);
   }
-}
 ```

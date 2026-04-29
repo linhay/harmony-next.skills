@@ -24,7 +24,6 @@ class InputMethodExtAbility extends InputMethodExtensionAbility {
   onCreate(want: Want): void {
     let context: InputMethodExtensionContext = this.context;
   }
-}
 ```
 
 #### InputMethodExtensionContext.destroy
@@ -37,7 +36,9 @@ destroy(callback: AsyncCallback<void>): void;
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<void>是回调函数。当销毁输入法应用成功时，err为undefined；否则为错误对象。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<void> | 是 | 回调函数。当销毁输入法应用成功时，err为undefined；否则为错误对象。 |
 
 **示例：**
 
@@ -60,7 +61,6 @@ class InputMethodExtAbility extends InputMethodExtensionAbility {
       console.info('Succeeded in destroying context.');
     });
   }
-}
 ```
 
 #### InputMethodExtensionContext.destroy
@@ -73,7 +73,9 @@ destroy(): Promise<void>;
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
@@ -94,7 +96,6 @@ class InputMethodExtAbility extends InputMethodExtensionAbility {
       console.error(`Failed to destroy context, err code = ${err.code}`);
     });
   }
-}
 ```
 
 #### InputMethodExtensionContext.startAbility12+
@@ -107,17 +108,42 @@ startAbility(want: Want): Promise<void>;
 
 **参数：**
 
-参数名类型必填说明want[Want](@ohos.app.ability.Want (Want).md)是用于指定目标应用的Want类型信息，包括ability名称、bundle名称等。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | Want | 是 | 用于指定目标应用的Want类型信息，包括ability名称、bundle名称等。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[输入法框架错误码](../../errors/输入法框架错误码.md)，[元能力错误码](../../errors/元能力子系统错误码.md)，[通用错误码说明文档](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[输入法框架错误码]([输入法框架错误码](../../errors/输入法框架错误码.md).md)，[元能力子系统错误码](元能力子系统错误码.md)，[通用错误码说明文档](通用错误码.md)。
 
-错误码ID错误信息401parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.16000001The specified ability does not exist.16000002Incorrect ability type.16000004Cannot start an invisible component.16000005The specified process does not have the permission.16000006Cross-user operations are not allowed.16000008The crowdtesting application expires.16000009An ability cannot be started or stopped in Wukong mode.16000010The call with the continuation and prepare continuation flag is forbidden.16000011The context does not exist.16000012The application is controlled.16000013The application is controlled by EDM.16000019No matching ability is found.16000050Internal error.16000053The ability is not on the top of the UI.16000055Installation-free timed out.16000061Operation not supported.16200001The caller has been released.16000069The extension cannot start the third party application.16000070The extension cannot start the service.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 16000001 | The specified ability does not exist. |
+| 16000002 | Incorrect ability type. |
+| 16000004 | Cannot start an invisible component. |
+| 16000005 | The specified process does not have the permission. |
+| 16000006 | Cross-user operations are not allowed. |
+| 16000008 | The crowdtesting application expires. |
+| 16000009 | An ability cannot be started or stopped in Wukong mode. |
+| 16000010 | The call with the continuation and prepare continuation flag is forbidden. |
+| 16000011 | The context does not exist. |
+| 16000012 | The application is controlled. |
+| 16000013 | The application is controlled by EDM. |
+| 16000019 | No matching ability is found. |
+| 16000050 | Internal error. |
+| 16000053 | The ability is not on the top of the UI. |
+| 16000055 | Installation-free timed out. |
+| 16000061 | Operation not supported. |
+| 16200001 | The caller has been released. |
+| 16000069 | The extension cannot start the third party application. |
+| 16000070 | The extension cannot start the service. |
 
 **示例：**
 
@@ -148,5 +174,4 @@ class InputMethodExtAbility extends InputMethodExtensionAbility {
       console.error(`Failed to destroy context, err code = ${err.code}`);
     });
   }
-}
 ```

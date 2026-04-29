@@ -12,7 +12,7 @@
 
 -
 
-以下接口需要先使用UIContext中的[getAtomicServiceBar](../classes/Class (UIContext).md#ZH-CN_TOPIC_0000002529444749__getatomicservicebar11)方法获取到AtomicServiceBar对象，再通过该对象调用对应方法。
+以下接口需要先使用UIContext中的[getAtomicServiceBar](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getatomicservicebar11)方法获取到AtomicServiceBar对象，再通过该对象调用对应方法。
 
 -
 
@@ -32,7 +32,9 @@ setVisible(visible: boolean): void
 
 **参数：**
 
-参数名类型必填说明visibleboolean是元服务menuBar是否可见。true表示设置menuBar可见，false表示设置menuBar不可见。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| visible | boolean | 是 | 元服务menuBar是否可见。true表示设置menuBar可见，false表示设置menuBar不可见。 |
 
 **示例：**
 
@@ -49,19 +51,18 @@ export default class EntryAbility extends UIAbility {
       let uiContext: UIContext = windowStage.getMainWindowSync().getUIContext();
       let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext.getAtomicServiceBar();
       if (atomicServiceBar != undefined) {
-        hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
+        hilog.info(0x0000, 'testTag', 'Get AtomicServiceBar Successfully.');
         atomicServiceBar.setVisible(false);
       } else {
         hilog.info(0x0000, 'testTag', 'Get AtomicServiceBar failed.');
       }
     });
-  }
 }
 ```
 
-#### setBackgroundColor11+
+#### setBackground[Color](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__color)11+
 
-setBackgroundColor(color:Nullable<Color | number | string>): void
+setBackground[Color](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__color)(color:Nullable<Color | number | string>): void
 
 通过该方法设置元服务menuBar的背景颜色。
 
@@ -73,7 +74,9 @@ setBackgroundColor(color:Nullable<Color | number | string>): void
 
 **参数：**
 
-参数名类型必填说明colorNullable<[Color](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__color) | number | string>是通过该方法设置元服务menuBar的背景颜色，undefined代表使用默认颜色。number为HEX格式颜色，支持rgb或者argb，示例：0xffffff。string为rgb或者argb格式颜色，示例：'#ffffff'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| color | Nullable<[Color](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__color) | number | string> | 是 | 通过该方法设置元服务menuBar的背景颜色，undefined代表使用默认颜色。number为HEX格式颜色，支持rgb或者argb，示例：0xffffff。string为rgb或者argb格式颜色，示例：'#ffffff'。 |
 
 **示例：**
 
@@ -90,13 +93,12 @@ export default class EntryAbility extends UIAbility {
       let uiContext: UIContext = windowStage.getMainWindowSync().getUIContext();
       let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext.getAtomicServiceBar();
       if (atomicServiceBar != undefined) {
-        hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
+        hilog.info(0x0000, 'testTag', 'Get AtomicServiceBar Successfully.');
         atomicServiceBar.setBackgroundColor(0x88888888);
       } else {
         hilog.info(0x0000, 'testTag', 'Get AtomicServiceBar failed.');
       }
     });
-  }
 }
 ```
 
@@ -114,7 +116,9 @@ setTitleContent(content:string): void
 
 **参数：**
 
-参数名类型必填说明contentstring是元服务menuBar中的标题内容。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| content | string | 是 | 元服务menuBar中的标题内容。 |
 
 **示例：**
 
@@ -131,19 +135,18 @@ export default class EntryAbility extends UIAbility {
       let uiContext: UIContext = windowStage.getMainWindowSync().getUIContext();
       let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext.getAtomicServiceBar();
       if (atomicServiceBar != undefined) {
-        hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
+        hilog.info(0x0000, 'testTag', 'Get AtomicServiceBar Successfully.');
         atomicServiceBar.setTitleContent('text2');
       } else {
         hilog.info(0x0000, 'testTag', 'Get AtomicServiceBar failed.');
       }
     });
-  }
 }
 ```
 
-#### setTitleFontStyle11+
+#### setTitle[FontStyle](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__fontstyle)11+
 
-setTitleFontStyle(font:FontStyle):void
+setTitle[FontStyle](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__fontstyle)(font:FontStyle):void
 
 通过该方法设置元服务menuBar的字体样式。
 
@@ -155,7 +158,9 @@ setTitleFontStyle(font:FontStyle):void
 
 **参数：**
 
-参数名类型必填说明font[FontStyle](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__fontstyle)是元服务menuBar中的字体样式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| font | [FontStyle](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__fontstyle) | 是 | 元服务menuBar中的字体样式。 |
 
 **示例：**
 
@@ -172,19 +177,18 @@ export default class EntryAbility extends UIAbility {
       let uiContext: UIContext = windowStage.getMainWindowSync().getUIContext();
       let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext.getAtomicServiceBar();
       if (atomicServiceBar != undefined) {
-        hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
+        hilog.info(0x0000, 'testTag', 'Get AtomicServiceBar Successfully.');
         atomicServiceBar.setTitleFontStyle(FontStyle.Normal);
       } else {
         hilog.info(0x0000, 'testTag', 'Get AtomicServiceBar failed.');
       }
     });
-  }
 }
 ```
 
-#### setIconColor11+
+#### setIcon[Color](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__color)11+
 
-setIconColor(color:Nullable<Color | number | string>): void
+setIcon[Color](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__color)(color:Nullable<Color | number | string>): void
 
 通过该方法设置元服务图标的颜色。
 
@@ -196,7 +200,9 @@ setIconColor(color:Nullable<Color | number | string>): void
 
 **参数：**
 
-参数名类型必填说明colorNullable<[Color](../../guides/枚举说明.md#ZH-CN_TOPIC_0000002529284967__color) | number | string>是元服务图标的颜色，undefined代表使用默认颜色。number为HEX格式颜色，支持rgb或者argb，示例：0xffffff。string为rgb或者argb格式颜色，示例：'#ffffff'。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| color | Nullable<[Color](../../topics/components/枚举说明.md#ZH-CN_TOPIC_0000002529284967__color) | number | string> | 是 | 元服务图标的颜色，undefined代表使用默认颜色。number为HEX格式颜色，支持rgb或者argb，示例：0xffffff。string为rgb或者argb格式颜色，示例：'#ffffff'。 |
 
 **示例：**
 
@@ -213,19 +219,18 @@ export default class EntryAbility extends UIAbility {
       let uiContext: UIContext = windowStage.getMainWindowSync().getUIContext();
       let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext.getAtomicServiceBar();
       if (atomicServiceBar != undefined) {
-        hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
+        hilog.info(0x0000, 'testTag', 'Get AtomicServiceBar Successfully.');
         atomicServiceBar.setIconColor(0x12345678);
       } else {
         hilog.info(0x0000, 'testTag', 'Get AtomicServiceBar failed.');
       }
     });
-  }
 }
 ```
 
 #### getBarRect15+
 
-getBarRect(): Frame
+getBarRect(): [Frame](../../topics/misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__frame)
 
 获取元服务menuBar相对窗口的布局信息。
 
@@ -237,7 +242,9 @@ getBarRect(): Frame
 
 **返回值：**
 
-类型说明[Frame](../../topics/graphics/Graphics.md#ZH-CN_TOPIC_0000002529444761__frame)元服务menuBar的大小和位置。
+| 类型 | 说明 |
+| --- | --- |
+| [Frame](../../topics/misc/Graphics.md#ZH-CN_TOPIC_0000002529444761__frame) | 元服务menuBar的大小和位置。 |
 
 **示例：**
 
@@ -255,12 +262,11 @@ struct Index {
         let currentBar: Nullable<AtomicServiceBar> = uiContext.getAtomicServiceBar();
         if (currentBar != undefined) {
           let rect = currentBar.getBarRect();
-          hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully. x:'
+          hilog.info(0x0000, 'testTag', 'Get AtomicServiceBar Successfully. x:'
             + rect.x + ' y:' + rect.y + ' width:' + rect.width + ' height:' + rect.height);
         } else {
-          hilog.info(0x0000, 'testTag', 'Get AtomServiceBar failed.');
+          hilog.info(0x0000, 'testTag', 'Get AtomicServiceBar failed.');
         }
       })
   }
-}
 ```

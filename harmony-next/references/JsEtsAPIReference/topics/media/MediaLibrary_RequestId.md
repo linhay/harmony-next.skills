@@ -18,10 +18,12 @@ typedef struct MediaLibrary_RequestId {...} MediaLibrary_RequestId
 
 **相关模块：**[MediaAssetManager](MediaAssetManager.md)
 
-**所在头文件：**[media_asset_base_capi.h](../../capi/headers/media_asset_base_capi.h.md)
+所在头文件： [media_asset_base_capi.h](media_asset_base_capi.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述char requestId[UUID_STR_MAX_LENGTH]请求Id。
+| 名称 | 描述 |
+| --- | --- |
+| char requestId[UUID_STR_MAX_LENGTH] | 请求Id。 |

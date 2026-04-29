@@ -14,19 +14,25 @@ import { storageStatistics } from '@kit.CoreFileKit';
 
 getCurrentBundleStats(): Promise<BundleStats>
 
-应用异步获取当前应用存储空间大小（单位为Byte），以Promise方式返回。
+应用异步获取当前应用存储空间大小（单位为Byte），使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.StorageService.SpatialStatistics
 
 **返回值：**
 
-类型说明Promise<[BundleStats](#ZH-CN_TOPIC_0000002497605258__bundlestats9)>Promise对象，返回指定卷上的应用存储空间大小（单位为Byte）。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<BundleStats> | Promise对象，返回指定卷上的应用存储空间大小（单位为Byte）。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理错误码](../../errors/文件管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[文件管理错误码]([文件管理错误码](../../errors/文件管理错误码.md).md)和[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes: Mandatory parameters are left unspecified.13600001IPC error.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes: Mandatory parameters are left unspecified. |
+| 13600001 | IPC error. |
+| 13900042 | Unknown error. |
 
 **示例：**
 
@@ -43,19 +49,25 @@ storageStatistics.getCurrentBundleStats().then((BundleStats: storageStatistics.B
 
 getCurrentBundleStats(callback: AsyncCallback<BundleStats>): void
 
-应用异步获取当前应用存储空间大小（单位为Byte），以callback方式返回。
+应用异步获取当前应用存储空间大小（单位为Byte），使用callback异步回调。
 
 **系统能力**：SystemCapability.FileManagement.StorageService.SpatialStatistics
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<[BundleStats](#ZH-CN_TOPIC_0000002497605258__bundlestats9)>是获取指定卷上的应用存储空间大小之后的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<BundleStats> | 是 | 获取指定卷上的应用存储空间大小之后的回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理错误码](../../errors/文件管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[文件管理错误码](文件管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes: Mandatory parameters are left unspecified.13600001IPC error.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes: Mandatory parameters are left unspecified. |
+| 13600001 | IPC error. |
+| 13900042 | Unknown error. |
 
 **示例：**
 
@@ -75,19 +87,24 @@ storageStatistics.getCurrentBundleStats((error: BusinessError, bundleStats: stor
 
 getTotalSize(): Promise<number>
 
-获取内置存储的总空间大小（单位为Byte），以Promise方式返回。
+获取内置存储的总空间大小（单位为Byte），使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.StorageService.SpatialStatistics
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回内置存储的总空间大小（单位为Byte）。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回内置存储的总空间大小（单位为Byte）。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息13600001IPC error.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13600001 | IPC error. |
+| 13900042 | Unknown error. |
 
 **示例：**
 
@@ -104,19 +121,25 @@ storageStatistics.getTotalSize().then((number: number) => {
 
 getTotalSize(callback: AsyncCallback<number>): void
 
-获取内置存储的总空间大小（单位为Byte），以callback方式返回。
+获取内置存储的总空间大小（单位为Byte），使用callback异步回调。
 
 **系统能力**：SystemCapability.FileManagement.StorageService.SpatialStatistics
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是获取内置存储的总空间大小之后的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 获取内置存储的总空间大小之后的回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理错误码](../../errors/文件管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[文件管理错误码](文件管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes: Mandatory parameters are left unspecified.13600001IPC error.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes: Mandatory parameters are left unspecified. |
+| 13600001 | IPC error. |
+| 13900042 | Unknown error. |
 
 **示例：**
 
@@ -142,13 +165,18 @@ getTotalSizeSync(): number
 
 **返回值：**
 
-类型说明number返回内置存储的总空间大小（单位为Byte）。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回内置存储的总空间大小（单位为Byte）。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息13600001IPC error.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13600001 | IPC error. |
+| 13900042 | Unknown error. |
 
 **示例：**
 
@@ -167,19 +195,24 @@ try {
 
 getFreeSize(): Promise<number>
 
-获取内置存储的可用空间大小（单位为Byte），以Promise方式返回。
+获取内置存储的可用空间大小（单位为Byte），使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.StorageService.SpatialStatistics
 
 **返回值：**
 
-类型说明Promise<number>Promise对象，返回内置存储的可用空间大小（单位为Byte）。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回内置存储的可用空间大小（单位为Byte）。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息13600001IPC error.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13600001 | IPC error. |
+| 13900042 | Unknown error. |
 
 **示例：**
 
@@ -196,19 +229,25 @@ storageStatistics.getFreeSize().then((number: number) => {
 
 getFreeSize(callback: AsyncCallback<number>): void
 
-获取内置存储的可用空间大小（单位为Byte），以callback方式返回。
+获取内置存储的可用空间大小（单位为Byte），使用callback异步回调。
 
 **系统能力**：SystemCapability.FileManagement.StorageService.SpatialStatistics
 
 **参数：**
 
-参数名类型必填说明callbackAsyncCallback<number>是获取内置存储的可用空间大小之后的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<number> | 是 | 获取内置存储的可用空间大小之后的回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理错误码](../../errors/文件管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[文件管理错误码](文件管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息401The input parameter is invalid. Possible causes: Mandatory parameters are left unspecified.13600001IPC error.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | The input parameter is invalid. Possible causes: Mandatory parameters are left unspecified. |
+| 13600001 | IPC error. |
+| 13900042 | Unknown error. |
 
 **示例：**
 
@@ -234,13 +273,18 @@ getFreeSizeSync(): number
 
 **返回值：**
 
-类型说明number返回内置存储的可用空间大小（单位为Byte）。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回内置存储的可用空间大小（单位为Byte）。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理错误码](../../errors/文件管理错误码.md)。
+以下错误码的详细介绍请参见[文件管理错误码](文件管理错误码.md)。
 
-错误码ID错误信息13600001IPC error.13900042Unknown error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13600001 | IPC error. |
+| 13900042 | Unknown error. |
 
 **示例：**
 
@@ -259,4 +303,8 @@ try {
 
 **系统能力**：SystemCapability.FileManagement.StorageService.SpatialStatistics
 
-名称类型只读可选说明appSizenumber否否应用安装文件大小（单位为Byte）。cacheSizenumber否否应用缓存文件大小（单位为Byte）。dataSizenumber否否应用文件存储大小（除应用安装文件）（单位为Byte）。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| appSize | number | 否 | 否 | 应用安装文件大小（单位为Byte）。 |
+| cacheSize | number | 否 | 否 | 应用缓存文件大小（单位为Byte）。 |
+| dataSize | number | 否 | 否 | 应用文件存储大小（除应用安装文件）（单位为Byte）。 |

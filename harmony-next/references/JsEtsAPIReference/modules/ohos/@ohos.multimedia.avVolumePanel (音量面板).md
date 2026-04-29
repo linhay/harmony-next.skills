@@ -19,7 +19,7 @@ import { AVVolumePanel } from '@kit.AudioKit';
 
 #### 属性
 
-支持[通用属性](../../topics/misc/通用属性.md)。
+支持[通用属性]([通用属性](../../topics/misc/通用属性.md).md)。
 
 #### AVVolumePanel
 
@@ -27,29 +27,16 @@ AVVolumePanel({volumeLevel?: number, volumeParameter?: AVVolumePanelParameter})
 
 音量面板，可用于在当前应用内展示音量调节面板。
 
-**装饰器类型：**[@Component](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components)
+装饰器类型： [@Component](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#component)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
-名称类型必填装饰器类型说明volumeLevelnumber否@Prop
-
-通过音量面板设置的音量值。
-
-该值应介于当前设备音量的最小值和最大值之间。
-
-如果该值大于当前设备音量的最大值，则视为设置最大音量值。
-
-如果该值小于当前设备音量的最小值，则视为设置最小音量值。
-
-获取设备的最大值、最小值和当前值，可参考[AudioVolumeGroupManager](../../types/interfaces/Interface (AudioVolumeGroupManager).md)。
-
-volumeParameter[AVVolumePanelParameter](#ZH-CN_TOPIC_0000002529445671__avvolumepanelparameter)否@Prop
-
-设置音量面板的自定义参数。
-
-如果不设置该参数，则为系统音量条。
+| 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- |
+| volumeLevel | number | 否 | @Prop | 通过音量面板设置的音量值。 该值应介于当前设备音量的最小值和最大值之间。 如果该值大于当前设备音量的最大值，则视为设置最大音量值。 如果该值小于当前设备音量的最小值，则视为设置最小音量值。 获取设备的最大值、最小值和当前值，可参考AudioVolumeGroupManager。 |
+| volumeParameter | AVVolumePanelParameter | 否 | @Prop | 设置音量面板的自定义参数。 如果不设置该参数，则为系统音量条。 |
 
 #### AVVolumePanelParameter
 
@@ -59,23 +46,18 @@ volumeParameter[AVVolumePanelParameter](#ZH-CN_TOPIC_0000002529445671__avvolumep
 
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
-名称类型只读可选说明position[Position](../../topics/misc/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__position)否是
-
-设置音量面板的位置。
-
-如果不设置该参数，则为系统音量条位置。
-
-如果设置该参数且参数对应屏幕内位置，则显示开发者设置的位置。
-
-如果设置该参数且参数对应屏幕外位置，例如（-1, -1），不显示系统音量条，建议开发者显示自定义音量条。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| position | [Position](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__position) | 否 | 是 | 设置音量面板的位置。 如果不设置该参数，则为系统音量条位置。 如果设置该参数且参数对应屏幕内位置，则显示开发者设置的位置。 如果设置该参数且参数对应屏幕外位置，例如（-1, -1），不显示系统音量条，建议开发者显示自定义音量条。 |
 
 #### 事件
 
-支持[通用事件](../../topics/misc/通用事件.md)。
+支持[通用事件]([通用事件](../../topics/misc/通用事件.md).md)。
 
 #### 使用建议
 
-1. 应用在实现自定义音量条的过程中，建议使用音频框架的音量变化监听接口，通过接口回调的音量类型volumeEvent.volumeType，音量等级volumeEvent.volume以及是否显示音量条volumeEvent.updateUi等信息，应用可以判断是否需要处理当前数据和显示自定义的音量条，具体可参考[音量变化回调接口](../../types/interfaces/Interface (AudioVolumeManager).md#ZH-CN_TOPIC_0000002529445667__onstreamvolumechange20)介绍。
+1. 应用在实现自定义音量条的过程中，建议使用音频框架的音量变化监听接口，通过接口回调的音量类型volumeEvent.volumeType，音量等级volumeEvent.volume以及是否显示音量条volumeEvent.updateUi等信息，应用可以判断是否需要处理当前数据和显示自定义的音量条，具体可参考[on('streamVolumeChange')](Interface (AudioVolumeManager).md#ZH-CN_TOPIC_0000002522081822__onstreamvolumechange20)介绍。
+
 1. 为确保用户能感知音量变化，不允许应用后台调节音量，系统会做出对应的控制措施。
 
 #### 示例
@@ -101,10 +83,8 @@ struct Index {
               x: 100,
               y: 200
             }
-          }
         })
       }
     }.width('50%').height('50%')
   }
-}
 ```

@@ -18,13 +18,20 @@ import { application } from '@kit.AbilityKit';
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-名称值说明UNSPECIFIED0未发生预加载或预加载数据已被清除。TYPE_CREATE_PROCESS1进程最终预加载到进程创建完成阶段。TYPE_CREATE_ABILITY_STAGE2进程最终预加载到[AbilityStage](@ohos.app.ability.AbilityStage (AbilityStage组件管理器).md)创建完成阶段。TYPE_CREATE_WINDOW_STAGE3进程最终预加载到[WindowStage](../../types/interfaces/Interface (WindowStage).md)创建完成阶段。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| UNSPECIFIED | 0 | 未发生预加载或预加载数据已被清除。 |
+| TYPE_CREATE_PROCESS | 1 | 进程最终预加载到进程创建完成阶段。 |
+| TYPE_CREATE_ABILITY_STAGE | 2 | 进程最终预加载到AbilityStage创建完成阶段。 |
+| TYPE_CREATE_WINDOW_STAGE | 3 | 进程最终预加载到WindowStage创建完成阶段。 |
+| TYPE_CREATE_BACKGROUND_ABILITY 23+ | 4 | 进程最终预加载到onBackground执行完成阶段。 |
 
 #### application.createModuleContext12+
 
 createModuleContext(context: Context, moduleName: string): Promise<Context>
 
-创建指定模块的上下文。创建出的模块上下文中[resourceManager.Configuration](@ohos.resourceManager (资源管理).md#ZH-CN_TOPIC_0000002497445338__configuration)资源继承自入参上下文，便于开发者获取[跨HAP/HSP包应用资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-categories-and-access#跨haphsp包应用资源)。使用Promise异步回调。
+创建指定模块的上下文。创建出的模块上下文中[resourceManager.Configuration](@ohos.resourceManager (资源管理).md#ZH-CN_TOPIC_0000002553361213__configuration)资源继承自入参上下文，便于开发者获取[跨HAP/HSP包应用资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-categories-and-access#跨haphsp包应用资源)。使用Promise异步回调。
+
 
 由于创建模块上下文的过程涉及资源查询与初始化，耗时相对较长，在对应用流畅性要求较高的场景下，不建议频繁或多次调用createModuleContext接口创建多个Context实例，以免影响用户体验。
 
@@ -34,17 +41,24 @@ createModuleContext(context: Context, moduleName: string): Promise<Context>
 
 **参数**：
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是表示应用上下文。moduleNamestring是表示应用模块名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 表示应用上下文。 |
+| moduleName | string | 是 | 表示应用模块名。 |
 
 **返回值：**
 
-类型说明Promise<[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)>Promise对象。返回创建的Context。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Context> | Promise对象。返回创建的Context。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码说明文档](../../errors/通用错误码.md)。
+以下错误码详细介绍请参考[通用错误码说明文档](通用错误码.md)。
 
-错误码ID错误信息401Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 
 **示例：**
 
@@ -69,8 +83,6 @@ export default class EntryAbility extends UIAbility {
       let message: string = (error as BusinessError).message;
       console.error(`createModuleContext failed, error.code: ${code}, error.message: ${message}`);
     }
-  }
-}
 ```
 
 #### application.getApplicationContext14+
@@ -87,13 +99,17 @@ getApplicationContext(): ApplicationContext
 
 **返回值：**
 
-类型说明[ApplicationContext](../../topics/graphics/ApplicationContext (应用上下文).md)应用上下文。
+| 类型 | 说明 |
+| --- | --- |
+| ApplicationContext | 应用上下文。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[元能力子系统错误码]([元能力子系统错误码](../../errors/元能力子系统错误码.md).md)。
 
-错误码ID错误信息16000050Internal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16000050 | Internal error. |
 
 **示例：**
 
@@ -110,7 +126,48 @@ export default class EntryAbility extends UIAbility {
       let message: string = (error as BusinessError).message;
       console.error(`getApplicationContext failed, error.code: ${code}, error.message: ${message}`);
     }
-  }
+```
+
+**application.getApplicationContextInstance23+**
+
+getApplicationContextInstance(): ApplicationContext
+
+获取应用上下文。开发者使用该接口时，无需依赖Context基类。
+
+重复调用该接口，将获取同一个ApplicationContext实例。
+
+元服务API：从API version 23开始，该接口支持在元服务中使用。
+
+系统能力：SystemCapability.Ability.AbilityRuntime.Core
+
+返回值：
+
+| 类型 | 说明 |
+| --- | --- |
+| ApplicationContext | 应用上下文。 |
+
+错误码：
+
+以下错误码详细介绍请参考[元能力子系统错误码](元能力子系统错误码.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16000050 | Internal error. Possible causes: Memory operation error. |
+
+示例：
+
+```ets
+import { AbilityConstant, UIAbility, application, Want, common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    try {
+      let applicationContext: common.ApplicationContext = application.getApplicationContextInstance();
+    } catch (error) {
+      let code: number = (error as BusinessError).code;
+      let message: string = (error as BusinessError).message;
+      console.error(`getApplicationContextInstance failed, error.code: ${code}, error.message: ${message}`);
 }
 ```
 
@@ -124,11 +181,17 @@ createPluginModuleContext(context: Context, pluginBundleName: string, pluginModu
 
 **参数**：
 
-参数名类型必填说明context[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)是表示应用上下文。pluginBundleNamestring是表示应用的插件包名。pluginModuleNamestring是表示应用的插件模块名。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | Context | 是 | 表示应用上下文。 |
+| pluginBundleName | string | 是 | 表示应用的插件包名。 |
+| pluginModuleName | string | 是 | 表示应用的插件模块名。 |
 
 **返回值：**
 
-类型说明Promise<[Context](../../topics/graphics/Context (Stage模型的上下文基类).md)>Promise对象。返回创建的Context。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Context> | Promise对象。返回创建的Context。 |
 
 **示例：**
 
@@ -155,8 +218,6 @@ export default class EntryAbility extends UIAbility {
       let message: string = (error as BusinessError).message;
       console.error(`createPluginModuleContext failed, error.code: ${code}, error.message: ${message}`);
     }
-  }
-}
 ```
 
 #### application.promoteCurrentToCandidateMasterProcess20+
@@ -167,7 +228,8 @@ promoteCurrentToCandidateMasterProcess(insertToHead: boolean): Promise<void>
 
 当[主控进程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#masterprocess主控进程)销毁后，再次启动配置了isolationProcess为true的UIAbility/UIExtensionAbility组件时，系统会根据是否存在备选主控进程执行相应操作。
 
-- 如果存在备选主控进程，系统会将备选主控进程链表首节点的进程设置为主控进程，触发[onNewProcessRequest](@ohos.app.ability.AbilityStage (AbilityStage组件管理器).md#ZH-CN_TOPIC_0000002529284571__onnewprocessrequest11)回调。
+- 如果存在备选主控进程，系统会将备选主控进程链表首节点的进程设置为主控进程，触发[onNewProcessRequest](@ohos.app.ability.AbilityStage (AbilityStage组件管理器).md#ZH-CN_TOPIC_0000002522080526__onnewprocessrequest11)回调。
+
 - 如果不存在备选主控进程，系统会根据组件类型执行相应的操作。
 
   - 对于UIAbility组件，系统将创建新的空进程作为主控进程。
@@ -183,17 +245,24 @@ promoteCurrentToCandidateMasterProcess(insertToHead: boolean): Promise<void>
 
 **参数**：
 
-参数名类型必填说明insertToHeadboolean是表示是否将当前进程放入备选主控进程链表的表头。true表示放入表头，false表示放入表尾。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| insertToHead | boolean | 是 | 表示是否将当前进程放入备选主控进程链表的表头。true表示放入表头，false表示放入表尾。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码说明文档](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码说明文档](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息801Capability not supported.16000115The current process cannot be set as a candidate master process.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 16000115 | The current process cannot be set as a candidate master process. |
 
 **示例：**
 
@@ -216,8 +285,6 @@ export default class EntryAbility extends UIAbility {
       let message: string = (error as BusinessError).message;
       console.error(`promoteCurrentToCandidateMasterProcess failed, error.code: ${code}, error.message: ${message}`);
     }
-  }
-}
 ```
 
 #### application.demoteCurrentFromCandidateMasterProcess20+
@@ -232,13 +299,19 @@ demoteCurrentFromCandidateMasterProcess(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象。无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码说明文档](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码说明文档](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息801Capability not supported.16000116The current process is already a master process and does not support cancellation.16000117The current process is not a candidate master process and does not support cancellation.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 16000116 | The current process is already a master process and does not support cancellation. |
+| 16000117 | The current process is not a candidate master process and does not support cancellation. |
 
 **示例：**
 
@@ -261,8 +334,6 @@ export default class EntryAbility extends UIAbility {
       let message: string = (error as BusinessError).message;
       console.error(`demoteCurrentFromCandidateMasterProcess failed, error.code: ${code}, error.message: ${message}`);
     }
-  }
-}
 ```
 
 #### application.exitMasterProcessRole21+
@@ -277,13 +348,19 @@ exitMasterProcessRole(): Promise<void>
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码说明文档](../../errors/通用错误码.md)和[元能力子系统错误码](../../errors/元能力子系统错误码.md)。
+以下错误码详细介绍请参考[通用错误码说明文档](通用错误码.md)和[元能力子系统错误码](元能力子系统错误码.md)。
 
-错误码ID错误信息801Capability not supported.16000118Not a master process.16000119Cannot exit because there is an unfinished request.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 16000118 | Not a master process. |
+| 16000119 | Cannot exit because there is an unfinished request. |
 
 **示例：**
 
@@ -306,8 +383,6 @@ export default class EntryAbility extends UIAbility {
       let message: string = (error as BusinessError).message;
       console.error(`exitMasterProcessRole failed, error.code: ${code}, error.message: ${message}`);
     }
-  }
-}
 ```
 
 #### application.getAppPreloadType22+
@@ -316,14 +391,18 @@ getAppPreloadType(): AppPreloadType
 
 获取应用当前进程的预加载类型。
 
-- 只有在进程首次执行[AbilityStage.onCreate](@ohos.app.ability.AbilityStage (AbilityStage组件管理器).md#ZH-CN_TOPIC_0000002529284571__oncreate)完成之前调用该接口，才可以返回真实的预加载类型。
+
+- 只有在进程首次执行[AbilityStage.onCreate](@ohos.app.ability.AbilityStage (AbilityStage组件管理器).md#ZH-CN_TOPIC_0000002522080526__oncreate)完成之前调用该接口，才可以返回真实的预加载类型。
+
 - AbilityStage创建完成后，应用的预加载数据将被清除，调用该接口将返回UNSPECIFIED，无法获取到真实的预加载类型。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **返回值：**
 
-类型说明[AppPreloadType](#ZH-CN_TOPIC_0000002497604578__apppreloadtype22)应用当前进程的预加载类型。
+| 类型 | 说明 |
+| --- | --- |
+| AppPreloadType | 应用当前进程的预加载类型。 |
 
 **示例：**
 
@@ -334,5 +413,4 @@ export default class MyAbilityStage extends AbilityStage{
   onCreate() {
     let appPreloadType = application.getAppPreloadType();
   }
-}
 ```

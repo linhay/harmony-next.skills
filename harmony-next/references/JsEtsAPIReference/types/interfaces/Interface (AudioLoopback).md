@@ -2,9 +2,9 @@
 
 提供音频返听的相关接口。
 
-在使用AudioLoopback的接口之前，需先通过[audio.createAudioLoopback](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529285689__audiocreateaudioloopback20)获取AudioLoopback实例。
+在使用AudioLoopback的接口之前，需先通过[audio.createAudioLoopback](Functions.md#ZH-CN_TOPIC_0000002553201779__audiocreateaudioloopback20)获取AudioLoopback实例。
 
-当启用音频返听时，系统会创建低时延渲染器与低时延采集器，实现低时延耳返功能。采集的音频直接通过内部路由返回到渲染器。对于渲染器，其音频焦点策略与[STREAM_USAGE_MUSIC](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__streamusage)相匹配。对于采集器，其音频焦点策略与[SOURCE_TYPE_MIC](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__sourcetype8)相匹配。
+当启用音频返听时，系统会创建低时延渲染器与低时延采集器，实现低时延耳返功能。采集的音频直接通过内部路由返回到渲染器。对于渲染器，其音频焦点策略与[STREAM_USAGE_MUSIC](Enums.md#ZH-CN_TOPIC_0000002553201785__streamusage)相匹配。对于采集器，其音频焦点策略与[SOURCE_TYPE_MIC](Enums.md#ZH-CN_TOPIC_0000002553201785__sourcetype8)相匹配。
 
 输入\输出设备由系统自动选择。如果当前输入\输出不支持低时延，则音频返听无法启用。在运行过程中，如果音频焦点被另一个音频流抢占，输入\输出设备切换到不支持低时延的设备，系统会自动禁用音频返听。
 
@@ -19,7 +19,7 @@ import { audio } from '@kit.AudioKit';
 
 #### getStatus20+
 
-getStatus(): Promise<AudioLoopbackStatus>
+getStatus(): Promise<[AudioLoopbackStatus](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackstatus20)>
 
 获取音频返听状态。使用Promise异步回调。
 
@@ -27,7 +27,9 @@ getStatus(): Promise<AudioLoopbackStatus>
 
 **返回值：**
 
-类型说明Promise<[AudioLoopbackStatus](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackstatus20)>Promise对象，返回音频返听状态。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AudioLoopbackStatus](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackstatus20)> | Promise对象，返回音频返听状态。 |
 
 **示例：**
 
@@ -51,17 +53,23 @@ setVolume(volume: number): Promise<void>
 
 **参数：**
 
-参数名类型必填说明volumenumber是音量值范围为[0.0, 1.0]。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| volume | number | 是 | 音量值范围为[0.0, 1.0]。 |
 
 **返回值：**
 
-类型说明Promise<void>Promise对象，无返回结果。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码]([Audio错误码](../../errors/Audio错误码.md).md)。
 
-错误码ID错误信息6800101Parameter verification failed, form 0.0 to 1.0.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800101 | Parameter verification failed, form 0.0 to 1.0. |
 
 **示例：**
 
@@ -77,7 +85,7 @@ audioLoopback.setVolume(0.5).then(() => {
 
 #### on('statusChange')20+
 
-on(type: 'statusChange', callback: Callback<AudioLoopbackStatus>): void
+on(type: 'statusChange', callback: Callback<[AudioLoopbackStatus](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackstatus20)>): void
 
 监听返听状态变化事件（当AudioLoopback的状态发生变化时触发）。使用callback异步回调。
 
@@ -85,13 +93,18 @@ on(type: 'statusChange', callback: Callback<AudioLoopbackStatus>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'statusChange'，当AudioLoopback的状态发生变化时，触发该事件。callbackCallback<[AudioLoopbackStatus](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackstatus20)>是回调函数，返回当前音频返听的状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'statusChange'，当AudioLoopback的状态发生变化时，触发该事件。 |
+| callback | Callback<[AudioLoopbackStatus](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackstatus20)> | 是 | 回调函数，返回当前音频返听的状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -111,7 +124,7 @@ audioLoopback.on('statusChange', (status: audio.AudioLoopbackStatus) => {
 
 #### off('statusChange')20+
 
-off(type: 'statusChange', callback?: Callback<AudioLoopbackStatus>): void
+off(type: 'statusChange', callback?: Callback<[AudioLoopbackStatus](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackstatus20)>): void
 
 取消监听音频状态事件。使用callback异步回调。
 
@@ -119,13 +132,18 @@ off(type: 'statusChange', callback?: Callback<AudioLoopbackStatus>): void
 
 **参数：**
 
-参数名类型必填说明typestring是事件回调类型，支持的事件为'statusChange'，当取消监听音频状态事件时，触发该事件。callbackCallback<[AudioLoopbackStatus](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackstatus20)>否回调函数，返回当前音频返听的状态。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'statusChange'，当取消监听音频状态事件时，触发该事件。 |
+| callback | Callback<[AudioLoopbackStatus](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackstatus20)> | 否 | 回调函数，返回当前音频返听的状态。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -163,17 +181,24 @@ enable(enable: boolean): Promise<boolean>
 
 **参数：**
 
-参数名类型必填说明enableboolean是表示是否启用音频返听器。true表示启用，false表示不启用。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enable | boolean | 是 | 表示是否启用音频返听器。true表示启用，false表示不启用。 |
 
 **返回值：**
 
-类型说明Promise<boolean>Promise对象。返回true表示功能执行成功；返回false表示功能执行失败。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示功能执行成功；返回false表示功能执行失败。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](../../errors/通用错误码.md)和[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](通用错误码.md)和[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息201Permission denied.6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -193,7 +218,7 @@ audioLoopback.enable(true).then((isSuccess) => {
 
 #### setReverbPreset21+
 
-setReverbPreset(preset: AudioLoopbackReverbPreset): boolean
+setReverbPreset(preset: [AudioLoopbackReverbPreset](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackreverbpreset21)): boolean
 
 设置音频返听器的混响模式。
 
@@ -201,17 +226,23 @@ setReverbPreset(preset: AudioLoopbackReverbPreset): boolean
 
 **参数：**
 
-参数名类型必填说明preset[AudioLoopbackReverbPreset](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackreverbpreset21)是混响模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| preset | [AudioLoopbackReverbPreset](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackreverbpreset21) | 是 | 混响模式。 |
 
 **返回值：**
 
-类型说明boolean返回混响模式是否设置成功。true表示成功，false表示不成功。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回混响模式是否设置成功。true表示成功，false表示不成功。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -226,7 +257,7 @@ try {
 
 #### getReverbPreset21+
 
-getReverbPreset(): AudioLoopbackReverbPreset
+getReverbPreset(): [AudioLoopbackReverbPreset](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackreverbpreset21)
 
 获取当前音频返听器的混响模式。
 
@@ -234,11 +265,9 @@ getReverbPreset(): AudioLoopbackReverbPreset
 
 **返回值：**
 
-类型说明[AudioLoopbackReverbPreset](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackreverbpreset21)
-
-返回当前音频返听器的混响模式。
-
-在没有被修改的情况下，默认的混响模式是THEATER。
+| 类型 | 说明 |
+| --- | --- |
+| [AudioLoopbackReverbPreset](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackreverbpreset21) | 返回当前音频返听器的混响模式。 在没有被修改的情况下，默认的混响模式是THEATER。 |
 
 **示例：**
 
@@ -253,7 +282,7 @@ try {
 
 #### setEqualizerPreset21+
 
-setEqualizerPreset(preset: AudioLoopbackEqualizerPreset): boolean
+setEqualizerPreset(preset: [AudioLoopbackEqualizerPreset](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackequalizerpreset21)): boolean
 
 设置音频返听器的均衡器类型。
 
@@ -261,17 +290,23 @@ setEqualizerPreset(preset: AudioLoopbackEqualizerPreset): boolean
 
 **参数：**
 
-参数名类型必填说明preset[AudioLoopbackEqualizerPreset](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackequalizerpreset21)是均衡器类型。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| preset | [AudioLoopbackEqualizerPreset](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackequalizerpreset21) | 是 | 均衡器类型。 |
 
 **返回值：**
 
-类型说明boolean返回均衡器类型是否设置成功。true表示成功，false表示不成功。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回均衡器类型是否设置成功。true表示成功，false表示不成功。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Audio错误码](../../errors/Audio错误码.md)。
+以下错误码的详细介绍请参见[Audio错误码](Audio错误码.md)。
 
-错误码ID错误信息6800101Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800101 | Parameter verification failed. |
 
 **示例：**
 
@@ -286,7 +321,7 @@ try {
 
 #### getEqualizerPreset21+
 
-getEqualizerPreset(): AudioLoopbackEqualizerPreset
+getEqualizerPreset(): [AudioLoopbackEqualizerPreset](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackequalizerpreset21)
 
 获取当前音频返听器的均衡器类型。
 
@@ -294,11 +329,9 @@ getEqualizerPreset(): AudioLoopbackEqualizerPreset
 
 **返回值：**
 
-类型说明[AudioLoopbackEqualizerPreset](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackequalizerpreset21)
-
-返回当前音频返听器的均衡器类型。
-
-在没有被修改的情况下，默认的均衡器类型是FULL。
+| 类型 | 说明 |
+| --- | --- |
+| [AudioLoopbackEqualizerPreset](../enums/Enums.md#ZH-CN_TOPIC_0000002529285695__audioloopbackequalizerpreset21) | 返回当前音频返听器的均衡器类型。 在没有被修改的情况下，默认的均衡器类型是FULL。 |
 
 **示例：**
 

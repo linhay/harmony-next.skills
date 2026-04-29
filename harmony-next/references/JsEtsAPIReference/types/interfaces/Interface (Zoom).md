@@ -25,17 +25,17 @@ setZoomRatio(zoomRatio: number): void
 
 **参数：**
 
-参数名类型必填说明zoomRationumber是
-
-可变焦距比，通过[getZoomRatioRange](Interface (ZoomQuery).md#ZH-CN_TOPIC_0000002529445757__getzoomratiorange11)获取支持的变焦范围，如果设置超过支持范围的值，则只保留精度范围内数值。
-
-设置可变焦距比到底层生效需要一定时间，获取正确设置的可变焦距比需要等待1~2帧的时间。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| zoomRatio | number | 是 | 可变焦距比，通过getZoomRatioRange获取支持的变焦范围，如果设置超过支持范围的值，则只保留精度范围内数值。 设置可变焦距比到底层生效需要一定时间，获取正确设置的可变焦距比需要等待1~2帧的时间。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码]([Camera错误码](../../errors/Camera错误码.md).md)。
 
-错误码ID错误信息7400103Session not config.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
 
 **示例：**
 
@@ -54,7 +54,6 @@ function setZoomRatio(photoSession: camera.PhotoSession, zoomRatioRange: Array<n
     let err = error as BusinessError;
     console.error(`The setZoomRatio call failed. error code: ${err.code}`);
   }
-}
 ```
 
 #### getZoomRatio11+
@@ -69,13 +68,18 @@ getZoomRatio(): number
 
 **返回值：**
 
-类型说明number获取当前的变焦比结果。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 类型 | 说明 |
+| --- | --- |
+| number | 获取当前的变焦比结果。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码](Camera错误码.md)。
 
-错误码ID错误信息7400103Session not config.7400201Camera service fatal error.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config. |
+| 7400201 | Camera service fatal error. |
 
 **示例：**
 
@@ -98,7 +102,7 @@ function getZoomRatio(photoSession: camera.PhotoSession): number {
 
 #### setSmoothZoom11+
 
-setSmoothZoom(targetRatio: number, mode?: SmoothZoomMode): void
+setSmoothZoom(targetRatio: number, mode?: [SmoothZoomMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__smoothzoommode11)): void
 
 触发平滑变焦。
 
@@ -108,7 +112,10 @@ setSmoothZoom(targetRatio: number, mode?: SmoothZoomMode): void
 
 **参数：**
 
-参数名类型必填说明targetRationumber是目标值。通过[getZoomRatioRange](Interface (ZoomQuery).md#ZH-CN_TOPIC_0000002529445757__getzoomratiorange11)获取支持的变焦范围，如果设置超过支持范围的值，则只保留精度范围内数值。mode[SmoothZoomMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__smoothzoommode11)否平滑变焦模式。默认为0。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| targetRatio | number | 是 | 目标值。通过getZoomRatioRange获取支持的变焦范围，如果设置超过支持范围的值，则只保留精度范围内数值。 |
+| mode | [SmoothZoomMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__smoothzoommode11) | 否 | 平滑变焦模式。默认为0。 |
 
 **示例：**
 

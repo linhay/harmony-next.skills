@@ -12,7 +12,7 @@
 
 -
 
-示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+示例效果请以真机运行为准。
 
 #### 导入模块
 
@@ -32,7 +32,9 @@ onBeforeDownload(callback: Callback<WebDownloadItem>): void
 
 **参数：**
 
-参数名类型必填说明callbackCallback<[WebDownloadItem](Class (WebDownloadItem).md)>是触发下载的回调。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<WebDownloadItem> | 是 | 触发下载的回调。 |
 
 **示例：**
 
@@ -118,8 +120,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### onDownloadUpdated11+
@@ -132,7 +132,9 @@ onDownloadUpdated(callback: Callback<WebDownloadItem>): void
 
 **参数：**
 
-参数名类型必填说明callbackCallback<[WebDownloadItem](Class (WebDownloadItem).md)>是下载的回调已更新。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<WebDownloadItem> | 是 | 下载的回调已更新。 |
 
 **示例：**
 
@@ -218,8 +220,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### onDownloadFinish11+
@@ -232,7 +232,9 @@ onDownloadFinish(callback: Callback<WebDownloadItem>): void
 
 **参数：**
 
-参数名类型必填说明callbackCallback<[WebDownloadItem](Class (WebDownloadItem).md)>是下载的回调已完成。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<WebDownloadItem> | 是 | 下载的回调已完成。 |
 
 **示例：**
 
@@ -318,8 +320,6 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```
 
 #### onDownloadFailed11+
@@ -332,7 +332,9 @@ onDownloadFailed(callback: Callback<WebDownloadItem>): void
 
 **参数：**
 
-参数名类型必填说明callbackCallback<[WebDownloadItem](Class (WebDownloadItem).md)>是下载回调失败。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<WebDownloadItem> | 是 | 下载回调失败。 |
 
 **示例：**
 
@@ -418,6 +420,4 @@ struct WebComponent {
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
-  }
-}
 ```

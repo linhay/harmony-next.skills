@@ -4,7 +4,7 @@
 
 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-从API Version 9开始，该接口不再维护，推荐使用新接口[@ohos.data.relationalStore#ResultSet](../../types/interfaces/Interface (ResultSet).md)。
+从API Version 9开始，该接口不再维护，推荐使用新接口[@ohos.data.relationalStore#ResultSet](Interface (ResultSet).md)。
 
 #### ResultSet
 
@@ -12,7 +12,7 @@
 
 #### 使用说明
 
-需要通过[RdbStore.query()](../../modules/ohos/@ohos.data.rdb (关系型数据库).md#ZH-CN_TOPIC_0000002529444657__query)获取resultSet对象。
+需要通过[RdbStore.query()](@ohos.data.rdb (关系型数据库).md#ZH-CN_TOPIC_0000002522080640__query)获取resultSet对象。
 
 ```ets
 import dataRdb from '@ohos.data.rdb';
@@ -29,7 +29,17 @@ promise.then((resultSet) => {
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
-名称类型只读可选说明columnNamesArray<string>是否获取结果集中所有列的名称。columnCountnumber是否获取结果集中的列数。rowCountnumber是否获取结果集中的行数。rowIndexnumber是否获取结果集当前行的索引。isAtFirstRowboolean是否检查结果集是否位于第一行。isAtLastRowboolean是否检查结果集是否位于最后一行。isEndedboolean是否检查结果集是否位于最后一行之后。isStartedboolean是否检查指针是否移动过。isClosedboolean是否检查当前结果集是否关闭。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| columnNames | Array<string> | 是 | 否 | 获取结果集中所有列的名称。 |
+| columnCount | number | 是 | 否 | 获取结果集中的列数。 |
+| rowCount | number | 是 | 否 | 获取结果集中的行数。 |
+| rowIndex | number | 是 | 否 | 获取结果集当前行的索引。 |
+| isAtFirstRow | boolean | 是 | 否 | 检查结果集是否位于第一行。 |
+| isAtLastRow | boolean | 是 | 否 | 检查结果集是否位于最后一行。 |
+| isEnded | boolean | 是 | 否 | 检查结果集是否位于最后一行之后。 |
+| isStarted | boolean | 是 | 否 | 检查指针是否移动过。 |
+| isClosed | boolean | 是 | 否 | 检查当前结果集是否关闭。 |
 
 #### getColumnIndex
 
@@ -41,11 +51,15 @@ getColumnIndex(columnName: string): number
 
 **参数：**
 
-参数名类型必填说明columnNamestring是表示结果集中指定列的名称。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnName | string | 是 | 表示结果集中指定列的名称。 |
 
 **返回值：**
 
-类型说明number返回指定列的索引。
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回指定列的索引。 |
 
 **示例：**
 
@@ -69,11 +83,15 @@ getColumnName(columnIndex: number): string
 
 **参数：**
 
-参数名类型必填说明columnIndexnumber是表示结果集中指定列的索引。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnIndex | number | 是 | 表示结果集中指定列的索引。 |
 
 **返回值：**
 
-类型说明string返回指定列的名称。
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回指定列的名称。 |
 
 **示例：**
 
@@ -87,17 +105,21 @@ const age = resultSet.getColumnName(2);
 
 goTo(offset:number): boolean
 
-向前或向后转至结果集的指定行，相对于其当前位置偏移。
+向前或向后移至结果集的指定行，相对于其当前位置偏移。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
 
-参数名类型必填说明offsetnumber是表示相对于当前位置的偏移量。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| offset | number | 是 | 表示相对于当前位置的偏移量。 |
 
 **返回值：**
 
-类型说明boolean如果成功移动结果集，则为true；否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果成功移动结果集，则为true；否则返回false。 |
 
 **示例：**
 
@@ -122,11 +144,15 @@ goToRow(position: number): boolean
 
 **参数：**
 
-参数名类型必填说明positionnumber是表示要移动到的指定位置。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| position | number | 是 | 表示要移动到的指定位置。 |
 
 **返回值：**
 
-类型说明boolean如果成功移动结果集，则为true；否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果成功移动结果集，则为true；否则返回false。 |
 
 **示例：**
 
@@ -151,7 +177,9 @@ goToFirstRow(): boolean
 
 **返回值：**
 
-类型说明boolean如果成功移动结果集，则为true；否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果成功移动结果集，则为true；否则返回false。 |
 
 **示例：**
 
@@ -176,7 +204,9 @@ goToLastRow(): boolean
 
 **返回值：**
 
-类型说明boolean如果成功移动结果集，则为true；否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果成功移动结果集，则为true；否则返回false。 |
 
 **示例：**
 
@@ -201,7 +231,9 @@ goToNextRow(): boolean
 
 **返回值：**
 
-类型说明boolean如果成功移动结果集，则为true；否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果成功移动结果集，则为true；否则返回false。 |
 
 **示例：**
 
@@ -226,7 +258,9 @@ goToPreviousRow(): boolean
 
 **返回值：**
 
-类型说明boolean如果成功移动结果集，则为true；否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果成功移动结果集，则为true；否则返回false。 |
 
 **示例：**
 
@@ -251,11 +285,15 @@ getBlob(columnIndex: number): Uint8Array
 
 **参数：**
 
-参数名类型必填说明columnIndexnumber是指定的列索引，从0开始。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 **返回值：**
 
-类型说明Uint8Array以字节数组的形式返回指定列的值。
+| 类型 | 说明 |
+| --- | --- |
+| Uint8Array | 以字节数组的形式返回指定列的值。 |
 
 **示例：**
 
@@ -273,11 +311,15 @@ getString(columnIndex: number): string
 
 **参数：**
 
-参数名类型必填说明columnIndexnumber是指定的列索引，从0开始。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 **返回值：**
 
-类型说明string以字符串形式返回指定列的值。
+| 类型 | 说明 |
+| --- | --- |
+| string | 以字符串形式返回指定列的值。 |
 
 **示例：**
 
@@ -295,15 +337,15 @@ getLong(columnIndex: number): number
 
 **参数：**
 
-参数名类型必填说明columnIndexnumber是指定的列索引，从0开始。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 **返回值：**
 
-类型说明number
-
-以Long形式返回指定列的值。
-
-该接口支持的数据范围是：Number.MIN_SAFE_INTEGER ~ Number.MAX_SAFE_INTEGER，若超出该范围，建议使用[getDouble](#ZH-CN_TOPIC_0000002529444659__getdouble)。
+| 类型 | 说明 |
+| --- | --- |
+| number | 以Long形式返回指定列的值。 该接口支持的数据范围是：Number.MIN_SAFE_INTEGER ~ Number.MAX_SAFE_INTEGER，若超出该范围，建议使用getDouble。 |
 
 **示例：**
 
@@ -321,11 +363,15 @@ getDouble(columnIndex: number): number
 
 **参数：**
 
-参数名类型必填说明columnIndexnumber是指定的列索引，从0开始。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 **返回值：**
 
-类型说明number以double形式返回指定列的值。
+| 类型 | 说明 |
+| --- | --- |
+| number | 以double形式返回指定列的值。 |
 
 **示例：**
 
@@ -343,11 +389,15 @@ isColumnNull(columnIndex: number): boolean
 
 **参数：**
 
-参数名类型必填说明columnIndexnumber是指定的列索引，从0开始。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 **返回值：**
 
-类型说明boolean如果当前行中指定列的值为null，则返回true，否则返回false。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果当前行中指定列的值为null，则返回true，否则返回false。 |
 
 **示例：**
 

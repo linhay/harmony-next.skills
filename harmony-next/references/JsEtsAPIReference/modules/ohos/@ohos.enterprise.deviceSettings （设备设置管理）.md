@@ -26,49 +26,26 @@ setValue(admin: Want, item: string, value: string): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。itemstring是
-
-设备设置策略类型。
-
-- screenOff：设备息屏策略，对于PC/2in1设备，仅支持设置电池供电下的息屏策略。
-
-- dateTime：设置系统时间。
-
-- powerPolicy：设备电源策略，对于PC/2in1设备，仅支持设置电池供电下的电源策略。
-
-valuestring是
-
-策略类型值。
-
-当item为screenOff时，value为设备息屏时间（单位：毫秒）。
-
-当item为dateTime时，value为要设置的系统时间（单位：毫秒）。
-
-当item为powerPolicy时，value为JSON字符串，格式：{"powerScene":xx,"powerPolicy":{"powerPolicyAction":xx,"delayTime":xx}}。powerScene为电源策略场景；delayTime为延迟时间（单位：毫秒），不支持设置为30000毫秒；powerPolicyAction为休眠策略。
-
-电源策略场景：
-
-- 0：超时场景。
-
-休眠策略：
-
-- 0：不执行动作。
-
-- 1：自动进入睡眠。
-
-- 2：强制进入睡眠。
-
-- 3：进入休眠，该策略暂不生效。
-
-- 4：关机。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| item | string | 是 | 设备设置策略类型。 - screenOff：设备息屏策略，对于PC/2in1设备，仅支持设置电池供电下的息屏策略。 - dateTime：设置系统时间。 - powerPolicy：设备电源策略，对于PC/2in1设备，仅支持设置电池供电下的电源策略。 - eyeComfort：从API version 23开始支持，设置护眼模式开关状态，仅支持全天开启和关闭护眼模式。 - defaultInputMethod：从API version 23开始支持，设置默认输入法。 |
+| value | string | 是 | 策略类型值。 当item为screenOff时，value为设备息屏时间（单位：毫秒）。 当item为dateTime时，value为要设置的系统时间（单位：毫秒）。 当item为powerPolicy时，value为JSON字符串，格式：{"powerScene":xx,"powerPolicy":{"powerPolicyAction":xx,"delayTime":xx}}。powerScene为电源策略场景；delayTime为延迟时间（单位：毫秒），不支持设置为30000毫秒；powerPolicyAction为休眠策略。 电源策略场景： - 0：超时场景。 休眠策略： - 0：不执行动作。 - 1：自动进入睡眠。 - 2：强制进入睡眠。 - 3：进入休眠，该策略暂不生效。 - 4：关机。 当item为eyeComfort时，value为护眼模式开关状态的字符串。 - on：全天开启护眼模式。 - off：关闭护眼模式。 当item为defaultInputMethod时，value为输入法应用包名字符串。 - 可以通过getCurrentInputMethod获取当前输入法应用包名。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码]([企业设备管理错误码](../../errors/企业设备管理错误码.md).md)和[通用错误码]([通用错误码](../../errors/通用错误码.md).md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -105,49 +82,27 @@ getValue(admin: Want, item: string): string
 
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。itemstring是
-
-设备设置策略类型。
-
-- screenOff：设备息屏策略，对于PC/2in1设备，仅支持查询电池供电下的息屏策略。
-
-- dateTime：设置系统时间。
-
-- powerPolicy：设备电源策略，对于PC/2in1设备，仅支持查询电池供电下的电源策略。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| item | string | 是 | 设备设置策略类型。 - screenOff：设备息屏策略，对于PC/2in1设备，仅支持查询电池供电下的息屏策略。 - powerPolicy：设备电源策略，对于PC/2in1设备，仅支持查询电池供电下的电源策略。 - eyeComfort：从API version 23开始支持，护眼模式开关状态。 |
 
 **返回值：**
 
-类型说明string
-
-策略类型值。
-
-当item为screenOff时，返回设备息屏时间（单位：毫秒），对于PC/2in1设备，返回设备电池供电下的息屏时间（单位：毫秒）。
-
-当item为dateTime时，返回设置的系统时间（单位：毫秒）。
-
-当item为powerPolicy时，返回电源策略，对于PC/2in1设备，返回设备电池供电下的电源策略，格式为JSON字符串:{"powerScene":xx,"powerPolicy":{"powerPolicyAction":xx,"delayTime":xx}}。powerScene为电源策略场景；delayTime为延迟时间（单位：毫秒）；powerPolicyAction为休眠策略。
-
-电源策略场景：
-
-- 0：超时场景。
-
-休眠策略：
-
-- 0：不执行动作。
-
-- 1：自动进入睡眠。
-
-- 2：强制进入睡眠。
-
-- 3：进入休眠，该策略暂不生效。
-
-- 4：关机。
+| 类型 | 说明 |
+| --- | --- |
+| string | 策略类型值。 当item为screenOff时，返回设备息屏时间（单位：毫秒），对于PC/2in1设备，返回设备电池供电下的息屏时间（单位：毫秒）。 当item为powerPolicy时，返回电源策略，对于PC/2in1设备，返回设备电池供电下的电源策略，格式为JSON字符串:{"powerScene":xx,"powerPolicy":{"powerPolicyAction":xx,"delayTime":xx}}。powerScene为电源策略场景；delayTime为延迟时间（单位：毫秒）；powerPolicyAction为休眠策略。 电源策略场景： - 0：超时场景。 休眠策略： - 0：不执行动作。 - 1：自动进入睡眠。 - 2：强制进入睡眠。 - 3：进入休眠，该策略暂不生效。 - 4：关机。 当item为eyeComfort时，value为护眼模式开关状态的字符串。 - on：全天开启护眼模式。 - off：关闭护眼模式。 - unknown：其他模式。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.201Permission verification failed. The application does not have the permission required to call the API.401Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -180,19 +135,31 @@ setHomeWallpaper(admin: Want, fd: number): Promise<void>
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
+冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。fdnumber是需要设置为桌面壁纸图片的文件描述符，可以通过file.fs的[openSync](@ohos.file.fs (文件管理).md#ZH-CN_TOPIC_0000002529445221__fsopensync)接口获取应用沙箱目录下的图片文件描述符。壁纸图片大小不能超过100MB。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| fd | number | 是 | 需要设置为桌面壁纸图片的文件描述符，可以通过file.fs的openSync接口获取应用沙箱目录下的图片文件描述符。壁纸图片大小不能超过100MB。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。当设置桌面壁纸失败后会抛出错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。当设置桌面壁纸失败后会抛出错误对象。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.9200012Parameter verification failed.201Permission verification failed. The application does not have the permission required to call the API.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 9200012 | Parameter verification failed. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 
 **示例：**
 
@@ -233,19 +200,31 @@ setUnlockWallpaper(admin: Want, fd: number): Promise<void>
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
+冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+
 **参数：**
 
-参数名类型必填说明admin[Want](@ohos.app.ability.Want (Want).md)是企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。fdnumber是需要设置为锁屏壁纸图片的文件描述符，可以通过file.fs的[openSync](@ohos.file.fs (文件管理).md#ZH-CN_TOPIC_0000002529445221__fsopensync)接口获取应用沙箱目录下的图片文件描述符。壁纸图片大小不能超过100MB。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| fd | number | 是 | 需要设置为锁屏壁纸图片的文件描述符，可以通过file.fs的openSync接口获取应用沙箱目录下的图片文件描述符。壁纸图片大小不能超过100MB。 |
 
 **返回值：**
 
-类型说明Promise<void>无返回结果的Promise对象。当设置锁屏壁纸失败后会抛出错误对象。
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。当设置锁屏壁纸失败后会抛出错误对象。 |
 
 **错误码**：
 
-以下错误码的详细介绍请参见[企业设备管理错误码](../../errors/企业设备管理错误码.md)和[通用错误码](../../errors/通用错误码.md)。
+以下错误码的详细介绍请参见[企业设备管理错误码](企业设备管理错误码.md)和[通用错误码](通用错误码.md)。
 
-错误码ID错误信息9200001The application is not an administrator application of the device.9200002The administrator application does not have permission to manage the device.9200012Parameter verification failed.201Permission verification failed. The application does not have the permission required to call the API.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 9200012 | Parameter verification failed. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 
 **示例：**
 

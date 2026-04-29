@@ -22,17 +22,17 @@ isLoggable(domain: number, tag: string, level: LogLevel) : boolean
 
 **参数：**
 
-参数名类型必填说明domainnumber是
-
-日志对应的领域标识，范围是0x0~0xFFFF，超出范围则日志无法打印。
-
-建议开发者在应用内根据需要自定义划分。
-
-tagstring是指定日志标识，可以为任意字符串，建议用于标识调用所在的类或者业务行为。tag最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。level[LogLevel](#ZH-CN_TOPIC_0000002497445680__loglevel)是日志级别。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| domain | number | 是 | 日志对应的领域标识，范围是0x0~0xFFFF，超出范围则日志无法打印。 建议开发者在应用内根据需要自定义划分。 |
+| tag | string | 是 | 指定日志标识，可以为任意字符串，建议用于标识调用所在的类或者业务行为。tag最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。 |
+| level | LogLevel | 是 | 日志级别。 |
 
 **返回值：**
 
-类型说明boolean如果返回true，则该领域标识、日志标识和级别的日志可以打印，否则不能打印。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果返回true，则该领域标识、日志标识和级别的日志可以打印，否则不能打印。 |
 
 **示例：**
 
@@ -48,15 +48,13 @@ hilog.isLoggable(0x0001, "testTag", hilog.LogLevel.INFO);
 
 **系统能力**：SystemCapability.HiviewDFX.HiLog
 
-名称值说明DEBUG3详细的流程记录，通过该级别的日志可以更详细地分析业务流程和定位分析问题。INFO4
-
-用于记录业务关键流程节点，可以还原业务的主要运行过程；
-
-用于记录可预料的非正常情况信息，如无网络信号、登录失败等。
-
-这些日志都应该由该业务内处于支配地位的模块来记录，避免在多个被调用的模块或低级函数中重复记录。
-
-WARN5用于记录较为严重的非预期情况，但是对用户影响不大，应用可以自动恢复或通过简单的操作就可以恢复的问题。ERROR6应用发生了错误，该错误会影响功能的正常运行或用户的正常使用，可以恢复但恢复代价较高，如重置数据等。FATAL7重大致命异常，表明应用即将崩溃，故障无法恢复。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DEBUG | 3 | 详细的流程记录，通过该级别的日志可以更详细地分析业务流程和定位分析问题。 |
+| INFO | 4 | 用于记录业务关键流程节点，可以还原业务的主要运行过程； 用于记录可预料的非正常情况信息，如无网络信号、登录失败等。 这些日志都应该由该业务内处于支配地位的模块来记录，避免在多个被调用的模块或低级函数中重复记录。 |
+| WARN | 5 | 用于记录较为严重的非预期情况，但是对用户影响不大，应用可以自动恢复或通过简单的操作就可以恢复的问题。 |
+| ERROR | 6 | 应用发生了错误，该错误会影响功能的正常运行或用户的正常使用，可以恢复但恢复代价较高，如重置数据等。 |
+| FATAL | 7 | 重大致命异常，表明应用即将崩溃，故障无法恢复。 |
 
 #### hilog.debug
 
@@ -72,18 +70,11 @@ DEBUG级别的日志在正式发布版本中默认不被打印，只有在调试
 
 **参数：**
 
-参数名类型必填说明domainnumber是
-
-日志对应的领域标识，范围是0x0~0xFFFF，超出范围则日志无法打印。
-
-建议开发者在应用内根据需要自定义划分。
-
-tagstring是指定日志标识，可以为任意字符串，建议用于标识调用所在的类或者业务行为。tag最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。formatstring是
-
-格式字符串，用于日志的格式化输出。格式字符串中可以设置多个参数，参数需要包含参数类型、隐私标识。
-
-隐私标识分为{public}和{private}，缺省为{private}。标识{public}的内容明文输出，标识{private}的内容以<private>过滤回显。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| domain | number | 是 | 日志对应的领域标识，范围是0x0~0xFFFF，超出范围则日志无法打印。 建议开发者在应用内根据需要自定义划分。 |
+| tag | string | 是 | 指定日志标识，可以为任意字符串，建议用于标识调用所在的类或者业务行为。tag最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。 |
+| format | string | 是 | 格式字符串，用于日志的格式化输出。格式字符串中可以设置多个参数，参数需要包含参数类型、隐私标识。 隐私标识分为{public}和{private}，缺省为{private}。标识{public}的内容明文输出，标识{private}的内容以<private>过滤回显。 |
 argsany[]否与格式字符串format对应的可变长度参数列表。参数数目、参数类型必须与格式字符串中的标识一一对应。
 
 **示例：**
@@ -112,18 +103,11 @@ info(domain: number, tag: string, format: string, ...args: any[]) : void
 
 **参数：**
 
-参数名类型必填说明domainnumber是
-
-日志对应的领域标识，范围是0x0~0xFFFF，超出范围则日志无法打印。
-
-建议开发者在应用内根据需要自定义划分。
-
-tagstring是指定日志标识，可以为任意字符串，建议用于标识调用所在的类或者业务行为。tag最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。formatstring是
-
-格式字符串，用于日志的格式化输出。格式字符串中可以设置多个参数，参数需要包含参数类型、隐私标识。
-
-隐私标识分为{public}和{private}，缺省为{private}。标识{public}的内容明文输出，标识{private}的内容以<private>过滤回显。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| domain | number | 是 | 日志对应的领域标识，范围是0x0~0xFFFF，超出范围则日志无法打印。 建议开发者在应用内根据需要自定义划分。 |
+| tag | string | 是 | 指定日志标识，可以为任意字符串，建议用于标识调用所在的类或者业务行为。tag最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。 |
+| format | string | 是 | 格式字符串，用于日志的格式化输出。格式字符串中可以设置多个参数，参数需要包含参数类型、隐私标识。 隐私标识分为{public}和{private}，缺省为{private}。标识{public}的内容明文输出，标识{private}的内容以<private>过滤回显。 |
 argsany[]否与格式字符串format对应的可变长度参数列表。参数数目、参数类型必须与格式字符串中的标识一一对应。
 
 **示例：**
@@ -152,18 +136,11 @@ warn(domain: number, tag: string, format: string, ...args: any[]) : void
 
 **参数：**
 
-参数名类型必填说明domainnumber是
-
-日志对应的领域标识，范围是0x0~0xFFFF，超出范围则日志无法打印。
-
-建议开发者在应用内根据需要自定义划分。
-
-tagstring是指定日志标识，可以为任意字符串，建议用于标识调用所在的类或者业务行为。tag最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。formatstring是
-
-格式字符串，用于日志的格式化输出。格式字符串中可以设置多个参数，参数需要包含参数类型、隐私标识。
-
-隐私标识分为{public}和{private}，缺省为{private}。标识{public}的内容明文输出，标识{private}的内容以<private>过滤回显。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| domain | number | 是 | 日志对应的领域标识，范围是0x0~0xFFFF，超出范围则日志无法打印。 建议开发者在应用内根据需要自定义划分。 |
+| tag | string | 是 | 指定日志标识，可以为任意字符串，建议用于标识调用所在的类或者业务行为。tag最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。 |
+| format | string | 是 | 格式字符串，用于日志的格式化输出。格式字符串中可以设置多个参数，参数需要包含参数类型、隐私标识。 隐私标识分为{public}和{private}，缺省为{private}。标识{public}的内容明文输出，标识{private}的内容以<private>过滤回显。 |
 argsany[]否与格式字符串format对应的可变长度参数列表。参数数目、参数类型必须与格式字符串中的标识一一对应。
 
 **示例：**
@@ -192,18 +169,11 @@ error(domain: number, tag: string, format: string, ...args: any[]) : void
 
 **参数：**
 
-参数名类型必填说明domainnumber是
-
-日志对应的领域标识，范围是0x0~0xFFFF，超出范围则日志无法打印。
-
-建议开发者在应用内根据需要自定义划分。
-
-tagstring是指定日志标识，可以为任意字符串，建议用于标识调用所在的类或者业务行为。 tag最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。formatstring是
-
-格式字符串，用于日志的格式化输出。格式字符串中可以设置多个参数，参数需要包含参数类型、隐私标识。
-
-隐私标识分为{public}和{private}，缺省为{private}。标识{public}的内容明文输出，标识{private}的内容以<private>过滤回显。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| domain | number | 是 | 日志对应的领域标识，范围是0x0~0xFFFF，超出范围则日志无法打印。 建议开发者在应用内根据需要自定义划分。 |
+| tag | string | 是 | 指定日志标识，可以为任意字符串，建议用于标识调用所在的类或者业务行为。 tag最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。 |
+| format | string | 是 | 格式字符串，用于日志的格式化输出。格式字符串中可以设置多个参数，参数需要包含参数类型、隐私标识。 隐私标识分为{public}和{private}，缺省为{private}。标识{public}的内容明文输出，标识{private}的内容以<private>过滤回显。 |
 argsany[]否与格式字符串format对应的可变长度参数列表。参数数目、参数类型必须与格式字符串中的标识一一对应。
 
 **示例：**
@@ -232,18 +202,11 @@ fatal(domain: number, tag: string, format: string, ...args: any[]) : void
 
 **参数：**
 
-参数名类型必填说明domainnumber是
-
-日志对应的领域标识，范围是0x0~0xFFFF，超出范围则日志无法打印。
-
-建议开发者在应用内根据需要自定义划分。
-
-tagstring是指定日志标识，可以为任意字符串，建议用于标识调用所在的类或者业务行为。tag最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。formatstring是
-
-格式字符串，用于日志的格式化输出。格式字符串中可以设置多个参数，参数需要包含参数类型、隐私标识。
-
-隐私标识分为{public}和{private}，缺省为{private}。标识{public}的内容明文输出，标识{private}的内容以<private>过滤回显。
-
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| domain | number | 是 | 日志对应的领域标识，范围是0x0~0xFFFF，超出范围则日志无法打印。 建议开发者在应用内根据需要自定义划分。 |
+| tag | string | 是 | 指定日志标识，可以为任意字符串，建议用于标识调用所在的类或者业务行为。tag最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。 |
+| format | string | 是 | 格式字符串，用于日志的格式化输出。格式字符串中可以设置多个参数，参数需要包含参数类型、隐私标识。 隐私标识分为{public}和{private}，缺省为{private}。标识{public}的内容明文输出，标识{private}的内容以<private>过滤回显。 |
 argsany[]否与格式字符串format对应的可变长度参数列表。参数数目、参数类型必须与格式字符串中的标识一一对应。
 
 **示例：**
@@ -276,7 +239,9 @@ debug版本应用下，此函数不生效。
 
 **参数：**
 
-参数名类型必填说明level[LogLevel](#ZH-CN_TOPIC_0000002497445680__loglevel)是日志级别。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| level | LogLevel | 是 | 日志级别。 |
 
 **示例：**
 
@@ -322,7 +287,10 @@ debug版本应用下，此函数不生效。
 
 **参数：**
 
-参数名类型必填说明level[LogLevel](#ZH-CN_TOPIC_0000002497445680__loglevel)是日志级别。prefer[PreferStrategy](#ZH-CN_TOPIC_0000002497445680__preferstrategy21)是偏好策略。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| level | LogLevel | 是 | 日志级别。 |
+| prefer | PreferStrategy | 是 | 偏好策略。 |
 
 #### PreferStrategy21+
 
@@ -332,7 +300,11 @@ debug版本应用下，此函数不生效。
 
 **系统能力**：SystemCapability.HiviewDFX.HiLog
 
-名称值说明UNSET_LOGLEVEL0清除设置, 实际生效的最低日志级别是系统控制的最低级别。PREFER_CLOSE_LOG1实际生效的最低日志级别是新设置的级别和系统控制的最低级别两个值的较大值。PREFER_OPEN_LOG2实际生效的最低日志级别是新设置的级别和系统控制的最低级别两个值的较小值。
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| UNSET_LOGLEVEL | 0 | 清除设置, 实际生效的最低日志级别是系统控制的最低级别。 |
+| PREFER_CLOSE_LOG | 1 | 实际生效的最低日志级别是新设置的级别和系统控制的最低级别两个值的较大值。 |
+| PREFER_OPEN_LOG | 2 | 实际生效的最低日志级别是新设置的级别和系统控制的最低级别两个值的较小值。 |
 
 **示例：**
 
@@ -369,13 +341,17 @@ hilog.info(0x0001, "testTag", 'this is an info level log, id: %{public}d', 5);
 
 %{[private flag]}specifier
 
-隐私标识符（private flag）说明无缺省值默认为private，不打印明文参数。private隐私参数类型，不打印明文参数。public明文显示参数。格式说明符（specifier）说明示例d/i支持打印number和bigint类型。123s支持打印string undefined bool 和null类型。"123"o/O
+| 隐私标识符（private flag） | 说明 |
+| --- | --- |
+| 无 | 缺省值默认为private，不打印明文参数。 |
+| private | 隐私参数类型，不打印明文参数。 |
+| public | 明文显示参数。 |
 
-支持打印object、undefined和null类型。
-
-从API version 20开始，支持该能力。
-
-{ 'name': "Jack", 'age': 22 }
+| 格式说明符（specifier） | 说明 | 示例 |
+| --- | --- | --- |
+| d/i | 支持打印number和bigint类型。 | 123 |
+| s | 支持打印string undefined bool 和null类型。 | "123" |
+| o/O | 支持打印object、undefined和null类型。 从API version 20开始，支持该能力。 | { 'name': "Jack", 'age': 22 } |
 
 **示例：**
 
@@ -398,7 +374,6 @@ hilog.info(0x0001, "jsHilogTest", "print boolean: %{public}s", isBol);
 **打印结果：**
 
 ```ets
-08-09 13:26:29.094  2266-2266  A00001/com.example.hilogDemo/jsHilogTest  com.example.hilogDemo  I  print object: {"name":"Jack","age":22}
 08-09 13:26:29.094  2266-2266  A00001/com.example.hilogDemo/jsHilogTest  com.example.hilogDemo  I  print object: {"name":"Jack","age":22}
 08-09 13:26:29.094  2266-2266  A00001/com.example.hilogDemo/jsHilogTest  com.example.hilogDemo  I  private flag: <private> <private>, print null: null
 08-09 13:26:29.094  2266-2266  A00001/com.example.hilogDemo/jsHilogTest  com.example.hilogDemo  I  print undefined: undefined

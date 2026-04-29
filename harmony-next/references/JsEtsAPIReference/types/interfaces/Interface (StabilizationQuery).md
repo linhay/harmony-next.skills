@@ -11,9 +11,9 @@
 import { camera } from '@kit.CameraKit';
 ```
 
-#### isVideoStabilizationModeSupported11+
+#### is[VideoStabilizationMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__videostabilizationmode)Supported11+
 
-isVideoStabilizationModeSupported(vsMode: VideoStabilizationMode): boolean
+is[VideoStabilizationMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__videostabilizationmode)Supported(vsMode: VideoStabilizationMode): boolean
 
 查询是否支持指定的视频防抖模式。
 
@@ -23,17 +23,23 @@ isVideoStabilizationModeSupported(vsMode: VideoStabilizationMode): boolean
 
 **参数：**
 
-参数名类型必填说明vsMode[VideoStabilizationMode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__videostabilizationmode)是视频防抖模式。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| vsMode | [VideoStabilizationMode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__videostabilizationmode) | 是 | 视频防抖模式。 |
 
 **返回值：**
 
-类型说明boolean返回视频防抖模式是否支持。true表示支持，false表示不支持。接口调用失败会抛出相应错误码并返回undefined，错误码类型[CameraErrorCode](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回视频防抖模式是否支持。true表示支持，false表示不支持。接口调用失败会抛出相应错误码并返回undefined，错误码类型[CameraErrorCode](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__cameraerrorcode)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Camera错误码](../../errors/Camera错误码.md)。
+以下错误码的详细介绍请参见[Camera错误码]([Camera错误码](../../errors/Camera错误码.md).md)。
 
-错误码ID错误信息7400103Session not config, only throw in session usage.
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config, only throw in session usage. |
 
 **示例：**
 

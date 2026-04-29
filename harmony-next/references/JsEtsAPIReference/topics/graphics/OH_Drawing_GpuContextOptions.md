@@ -14,10 +14,12 @@ typedef struct {...} OH_Drawing_GpuContextOptions
 
 **相关模块：**[Drawing](Drawing.md)
 
-**所在头文件：**[drawing_gpu_context.h](../../capi/headers/drawing_gpu_context.h.md)
+所在头文件： [drawing_gpu_context.h](drawing_gpu_context.h.md)
 
 #### 汇总
 
 #### 成员变量
 
-名称描述bool allowPathMaskCaching用于控制是否启用路径蒙版缓存，如果为true，则允许缓存路径蒙版纹理，如果为false，则不允许。
+| 名称 | 描述 |
+| --- | --- |
+| bool allowPathMaskCaching | 用于控制是否启用路径蒙版缓存，如果为true，则允许缓存路径蒙版纹理，如果为false，则不允许。 |

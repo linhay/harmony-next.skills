@@ -23,7 +23,9 @@ isControlCenterSupported(): boolean
 
 **返回值：**
 
-类型说明boolean返回是否支持相机控制器。true表示支持，false表示不支持。
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回是否支持相机控制器。true表示支持，false表示不支持。 |
 
 **示例：**
 
@@ -36,7 +38,7 @@ function isControlCenterSupported(videoSession: camera.VideoSession): boolean {
 
 #### getSupportedEffectTypes20+
 
-getSupportedEffectTypes(): Array<ControlCenterEffectType>
+getSupportedEffectTypes(): Array<[ControlCenterEffectType](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__controlcentereffecttype20)>
 
 查询相机控制器支持的效果类型。
 
@@ -46,7 +48,9 @@ getSupportedEffectTypes(): Array<ControlCenterEffectType>
 
 **返回值：**
 
-类型说明Array<[ControlCenterEffectType](../../topics/misc/Enums.md#ZH-CN_TOPIC_0000002497445814__controlcentereffecttype20)>支持的效果类型。
+| 类型 | 说明 |
+| --- | --- |
+| Array<[ControlCenterEffectType](../enums/Enums.md#ZH-CN_TOPIC_0000002497445814__controlcentereffecttype20)> | 支持的效果类型。 |
 
 **示例：**
 
