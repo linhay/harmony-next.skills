@@ -1,1 +1,4 @@
 harmony-next.skill
+inputs/
+**/__pycache__/
+harmony-next/references/JsEtsAPIReference/zh-cn_image_*.webp
