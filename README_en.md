@@ -1,9 +1,9 @@
 # HarmonyOS NEXT Reference Skill
 
 `harmony-next.skills` is a reference skill for coding agents.
-It provides a local source of truth for HarmonyOS NEXT (primarily API 12+, with extensive API 12-23 version notes/compatibility-change hints, and occasional references to earlier APIs for comparison), with 4,257 Markdown references across ArkTS, ArkUI, and NDK topics (4,232 under `JsEtsAPIReference/`).
+It provides a local source of truth for HarmonyOS NEXT (primarily API 12-23, with version notes, compatibility details, and change guidance across API 12-23, plus occasional references to earlier APIs for comparison), with 3,614 Markdown references across ArkTS, ArkUI, and NDK topics (3,589 under `JsEtsAPIReference/`).
 
-## Key Features (v1.1.0+)
+## Key Features (v1.2.0+)
 
 Beyond API references, this skill now includes **expert guides** for:
 - **Progressive Disclosure Retrieval**: `SKILL.md -> KITS.md/TASK_MAP.md -> INDEX.md`, resolve paths first and open only a few target docs.
@@ -99,9 +99,27 @@ npx skills add . --list
 
 ## What Is Included
 
-- `harmony-next/references/`: 4,257 markdown reference files (about 50 MB).
+- `harmony-next/references/`: 3,614 markdown reference files (about 50 MB).
 - `harmony-next/SKILL.md`: retrieval rules and answer policy for agents.
 - `harmony-next.skill`: packaged release artifact produced by GitHub Actions.
+
+## Reference Maintenance
+
+After syncing, migrating, or bulk-rewriting `references/JsEtsAPIReference/`, run the following in order:
+
+```bash
+python3 harmony-next/scripts/reference_compat.py generate
+python3 harmony-next/scripts/reference_compat.py check
+python3 harmony-next/scripts/reference_compat.py audit
+python3 -m unittest discover -s harmony-next/tests -p 'test_*.py' -v
+```
+
+Command roles:
+
+- `generate`: rewrite legacy `../../capi/headers/*.md` links to real `topics/**/<header>.h.md` targets, then rebuild `references/INDEX.md` and `references/JsEtsAPIReference/INDEX.md`
+- `check`: verify legacy `capi/headers/` pages are gone, indexes match the filesystem, and no body content still points at old header paths
+- `audit`: scan current uncommitted changes for internal Markdown links that used to exist but were flattened into plain text
+- `unittest`: verify the migration and audit tooling itself has not regressed
 
 ## Why This Exists
 
