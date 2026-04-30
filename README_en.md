@@ -1,107 +1,124 @@
 # HarmonyOS NEXT Reference Skill
 
-`harmony-next.skills` is a reference skill for coding agents.
-It provides a local source of truth for HarmonyOS NEXT (primarily API 12-23, with version notes, compatibility details, and change guidance across API 12-23, plus occasional references to earlier APIs for comparison), with 3,614 Markdown references across ArkTS, ArkUI, and NDK topics (3,589 under `JsEtsAPIReference/`).
+An offline HarmonyOS NEXT reference skill for coding agents such as Gemini CLI, Claude Code, and Codex.
 
-## Key Features (v1.2.0+)
+[![release](https://img.shields.io/badge/release-v1.2.0-1f6feb?style=flat-square)](https://github.com/linhay/harmony-next.skills/releases/tag/v1.2.0)
+[![readme](https://img.shields.io/badge/readme-%E4%B8%AD%E6%96%87-0f766e?style=flat-square)](./README.md)
+![docs](https://img.shields.io/badge/docs-3,614%20markdown%20files-7c3aed?style=flat-square)
+![js-ets](https://img.shields.io/badge/JsEtsAPIReference-3,589%20files-b45309?style=flat-square)
 
-Beyond API references, this skill now includes **expert guides** for:
-- **Progressive Disclosure Retrieval**: `SKILL.md -> KITS.md/TASK_MAP.md -> INDEX.md`, resolve paths first and open only a few target docs.
-- **IDE Operations**: Signing, Debugging, Emulator/Real Device setup, and AI assistance.
-- **Standalone Toolchain**: Standalone CLI download, env vars, and CI/CD configuration.
-- **Multi-device Adaptation**: Strategies for phone, foldable, and tablet (Adaptive/Responsive Layout).
-- **Continuation**: Cross-device migration and multi-device collaboration logic.
-- **NDK Development**: Node-API (napi) basics and ArkTS/C++ interoperability.
-- **App Publishing**: AGC configuration, certificates, and release process.
-- **Performance Tuning**: CPU, Memory, Frame Rate, and Launch analysis via DevEco Profiler.
-- **Architecture**: HAP/HAR/HSP structures and Stage Model concurrency.
-- **Automation Testing**: Unit and UI testing with Hypium, including CI integration.
+> A local knowledge source for API 12-23, covering ArkTS, ArkUI, NDK, toolchains, debugging, release workflows, and multi-device adaptation.
 
-## How It Works
+## What Problem It Solves
 
-When your agent needs HarmonyOS knowledge, it should use this repository as a retrieval layer instead of guessing from model memory.
+`harmony-next.skills` is not just a document mirror. It is a HarmonyOS NEXT retrieval layer designed for coding agents.
 
-Recommended lookup flow:
+It is meant to answer questions like:
 
-1. Read [`SKILL.md`](harmony-next/SKILL.md) for retrieval rules and answer constraints.
-2. Narrow scope via [`KITS.md`](harmony-next/references/KITS.md) (kit identification + keywords/module prefixes) or [`TASK_MAP.md`](harmony-next/references/TASK_MAP.md) (intent to keywords).
-3. Resolve exact files from [`INDEX.md`](harmony-next/references/INDEX.md) (full paths) and [`JsEtsAPIReference/INDEX.md`](harmony-next/references/JsEtsAPIReference/INDEX.md) (bucketed API paths).
-4. Open only the 1-3 matched Markdown files for API-level detail (avoid blind reads).
+- Which file contains a specific `@ohos.*` module
+- Whether an ArkUI component, interface, or NDK header actually exists
+- Whether API 23 additions are already included in the current knowledge base
+- Whether a legacy internal link has been migrated and still resolves correctly
 
-This keeps responses precise, traceable, and stable.
+The goal is to turn those questions into local file lookups that are traceable, linkable, and verifiable.
 
-## Quickstart
+## Core Features
 
-### User Integration Cheatsheet
+| Capability | Description |
+| --- | --- |
+| Offline retrieval | Resolve document paths first, then read the source instead of guessing from model memory |
+| Agent-oriented workflow | Organized as `SKILL.md -> KITS/TASK_MAP -> INDEX`, which fits progressive retrieval |
+| More than API docs | Includes IDE setup, signing, debugging, release, performance, multi-device, and NDK guidance |
 
-#### Gemini CLI
+## Repository Overview
+
+| Module | Description | Entry |
+| --- | --- | --- |
+| Skill rules | Tells the agent how to search, answer, and what to trust | [`harmony-next/SKILL.md`](./harmony-next/SKILL.md) |
+| Kit navigation | Narrow scope by AbilityKit, ArkUI, ArkData, MediaKit, Security, and more | [`references/KITS.md`](./harmony-next/references/KITS.md) |
+| Task navigation | Map UI, lifecycle, network, media, NDK, release, and other tasks to keywords | [`references/TASK_MAP.md`](./harmony-next/references/TASK_MAP.md) |
+| Global index | Full Markdown path index for the reference corpus | [`references/INDEX.md`](./harmony-next/references/INDEX.md) |
+| Bucketed API index | Focused index for `JsEtsAPIReference/`, covering modules, topics, types, errors, and guides | [`JsEtsAPIReference/INDEX.md`](./harmony-next/references/JsEtsAPIReference/INDEX.md) |
+| Reference corpus | `3,614` Markdown files total, with `3,589` under `JsEtsAPIReference/` | [`harmony-next/references/`](./harmony-next/references/) |
+
+## Recommended Retrieval Path
+
+```text
+SKILL.md
+  -> KITS.md / TASK_MAP.md
+  -> INDEX.md
+  -> target Markdown file
+```
+
+Why this layout works:
+
+1. Start with rules so the agent does not blind-read the entire corpus.
+2. Narrow the scope by kit or task to reduce false hits.
+3. Resolve real file paths from indexes instead of relying on name guesses.
+4. Open only 1-3 target files for API-level detail.
+
+The core principle is simple: find the path first, then read the content.
+
+## Typical Use Cases
+
+### ArkTS / ArkUI Development
+
+- Components, decorators, state management, navigation, UIAbility, and Want
+- API version differences, parameter signatures, and return values
+- Restoring working links inside component documentation
+
+### NDK / Node-API / C API
+
+- Mapping headers to real `topics/**/<header>.h.md` pages
+- ArkTS/C++ interoperability, CMake, and native capability access
+- Index and link validation after legacy path migration
+
+### IDE / Toolchain / Debugging
+
+- Signing, emulators, real devices, and breakpoints
+- Standalone CLI setup and CI/CD integration
+- Performance analysis and release workflows
+
+### Agent Engineering Integration
+
+- Gemini CLI, Claude Code, and Codex
+- Local knowledge base retrieval layer
+- Lower hallucination risk with higher traceability
+
+## Quick Start
+
+### Gemini CLI
 
 ```bash
 gemini skills install https://github.com/linhay/harmony-next.skills --path harmony-next --scope user
 ```
 
-#### Claude Code
+### Claude Code
 
-For actual skill installation, Anthropic's current distribution model is:
-
-1. Download the skill folder from this repository.
-2. Zip the skill folder if needed.
+1. Download the skill directory from this repository.
+2. Zip it if needed.
 3. Upload it in Claude.ai via `Settings > Capabilities > Skills`.
 4. Or place it in your Claude Code skills directory.
 
-If you only want to attach the repository as project context, use:
+If you only want to attach it as project context:
 
 ```bash
 git clone https://github.com/linhay/harmony-next.skills.git
 claude --add-dir /path/to/harmony-next.skills/harmony-next
 ```
 
-Or in `CLAUDE.md`:
+### Codex / Custom Agents
 
-```markdown
-## HarmonyOS NEXT Reference
-@/path/to/harmony-next.skills/harmony-next/SKILL.md
-```
-
-#### Codex / Custom Agents
-
-Use these two entry files:
+Use these two files as the primary entry points:
 
 1. [`harmony-next/SKILL.md`](https://github.com/linhay/harmony-next.skills/blob/master/harmony-next/SKILL.md)
 2. [`harmony-next/references/INDEX.md`](https://github.com/linhay/harmony-next.skills/blob/master/harmony-next/references/INDEX.md)
 
-#### skills.sh
+## What Matters in v1.2.0
 
-```bash
-# list skills in this repo
-npx skills add https://github.com/linhay/harmony-next.skills --list
-
-# install only harmony-next
-npx skills add https://github.com/linhay/harmony-next.skills --skill harmony-next
-
-# optional: install globally for all projects
-npx skills add https://github.com/linhay/harmony-next.skills --skill harmony-next -g
-```
-
-Use `--full-depth` only when the repository has deeply nested skill folders and default scanning misses them.
-
-## Provider Release
-
-`skills.sh` is the primary distribution channel for this repository.
-As the skill provider, you only need to keep this GitHub repository updated. Users install directly from the repo.
-
-Provider verification:
-
-```bash
-# run in this repository before release
-npx skills add . --list
-```
-
-## What Is Included
-
-- `harmony-next/references/`: 3,614 markdown reference files (about 50 MB).
-- `harmony-next/SKILL.md`: retrieval rules and answer policy for agents.
-- `harmony-next.skill`: packaged release artifact produced by GitHub Actions.
+| Version | Highlights |
+| --- | --- |
+| `v1.2.0` | API 23 content is included; `references/INDEX.md` and `JsEtsAPIReference/INDEX.md` were rebuilt; legacy `capi/headers/*.md` pages were removed and replaced with direct links to real targets; `reference_compat.py` and link-audit tooling were added; both Chinese and English README files were synchronized |
 
 ## Reference Maintenance
 
@@ -116,18 +133,30 @@ python3 -m unittest discover -s harmony-next/tests -p 'test_*.py' -v
 
 Command roles:
 
-- `generate`: rewrite legacy `../../capi/headers/*.md` links to real `topics/**/<header>.h.md` targets, then rebuild `references/INDEX.md` and `references/JsEtsAPIReference/INDEX.md`
-- `check`: verify legacy `capi/headers/` pages are gone, indexes match the filesystem, and no body content still points at old header paths
-- `audit`: scan current uncommitted changes for internal Markdown links that used to exist but were flattened into plain text
-- `unittest`: verify the migration and audit tooling itself has not regressed
+- `generate`
+  - Rewrite legacy `../../capi/headers/*.md` links to real `topics/**/<header>.h.md` targets
+  - Rebuild `references/INDEX.md` and `references/JsEtsAPIReference/INDEX.md`
+- `check`
+  - Verify legacy `capi/headers/` pages are gone
+  - Verify indexes match the filesystem
+  - Verify body content no longer points at old header paths
+- `audit`
+  - Scan current uncommitted changes
+  - Detect internal Markdown links that used to exist but were flattened into plain text
+- `unittest`
+  - Verify the migration and audit tooling itself has not regressed
 
-## Why This Exists
+## Why It Is Worth Integrating
 
-- Reduce hallucination in HarmonyOS implementation guidance.
-- Provide deterministic, file-addressable answers for agent workflows.
-- Keep API references usable in offline or constrained environments.
+| Value | Description |
+| --- | --- |
+| Fewer hallucinations | Answers come from real document paths instead of memory completion |
+| Better traceability | Every answer can point back to a concrete Markdown file |
+| Better automation fit | Indexes, rules, and validation make it suitable for long-term agent workflows |
 
 ## Source and License
 
-- Source: Huawei HarmonyOS official documentation.
-- This repository repackages those references for AI-assisted development workflows.
+- Source: Huawei HarmonyOS official documentation
+- This repository repackages those materials for AI-assisted development workflows
+
+Chinese documentation is available in [README.md](./README.md).
