@@ -107,12 +107,28 @@ git clone https://github.com/linhay/harmony-next.skills.git
 claude --add-dir /path/to/harmony-next.skills/harmony-next
 ```
 
-### Codex / Custom Agents
+### Codex
 
-Use these two files as the primary entry points:
+More precisely, this repository is a Codex skill / reference knowledge source, not a standalone plugin installed through a single `npm install` command.
 
-1. [`harmony-next/SKILL.md`](https://github.com/linhay/harmony-next.skills/blob/master/harmony-next/SKILL.md)
-2. [`harmony-next/references/INDEX.md`](https://github.com/linhay/harmony-next.skills/blob/master/harmony-next/references/INDEX.md)
+Recommended setup:
+
+1. Download or clone this repository:
+
+```bash
+git clone https://github.com/linhay/harmony-next.skills.git
+```
+
+2. Move the `harmony-next/` directory into a skill path that Codex reads.
+
+A common approach is to place it in your Codex skills directory. If you already maintain a project-level skills directory, you can place `harmony-next/` there directly.
+
+3. If you are not wiring it in as a formal skill directory and instead want to use it as an in-project reference source, make sure Codex prioritizes these two entry files:
+
+- [`harmony-next/SKILL.md`](https://github.com/linhay/harmony-next.skills/blob/master/harmony-next/SKILL.md)
+- [`harmony-next/references/INDEX.md`](https://github.com/linhay/harmony-next.skills/blob/master/harmony-next/references/INDEX.md)
+
+In short: for Codex, the key is not “install a package”, but “place this skill directory where Codex will read it”.
 
 ## What Matters in v1.2.0
 

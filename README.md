@@ -107,12 +107,28 @@ git clone https://github.com/linhay/harmony-next.skills.git
 claude --add-dir /path/to/harmony-next.skills/harmony-next
 ```
 
-### Codex / 自定义 Agent
+### Codex
 
-推荐把这两个入口文件直接加入检索链路：
+更准确地说，这个仓库对 Codex 来讲是“技能/参考知识源”，不是一条 `npm install` 就完成的插件安装命令。
 
-1. [`harmony-next/SKILL.md`](https://github.com/linhay/harmony-next.skills/blob/master/harmony-next/SKILL.md)
-2. [`harmony-next/references/INDEX.md`](https://github.com/linhay/harmony-next.skills/blob/master/harmony-next/references/INDEX.md)
+推荐接入方式：
+
+1. 下载或克隆本仓库：
+
+```bash
+git clone https://github.com/linhay/harmony-next.skills.git
+```
+
+2. 将 `harmony-next/` 目录放到 Codex 可读取的技能路径下。
+
+常见做法是放到你自己的 Codex 技能目录中，再让 Codex 从该目录加载；如果你已经有项目级技能目录，也可以直接把 `harmony-next/` 放进去。
+
+3. 如果你不是按“技能目录”接入，而是把它当项目内参考库使用，至少应让 Codex 优先读取这两个入口文件：
+
+- [`harmony-next/SKILL.md`](https://github.com/linhay/harmony-next.skills/blob/master/harmony-next/SKILL.md)
+- [`harmony-next/references/INDEX.md`](https://github.com/linhay/harmony-next.skills/blob/master/harmony-next/references/INDEX.md)
+
+一句话说清楚：对 Codex 来说，核心不是“安装一个包”，而是“把这份技能目录放到它会读取的位置”。
 
 ## v1.2.0 重点
 
