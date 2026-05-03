@@ -36,7 +36,7 @@ Swiper子组件的[visibility](显隐控制.md#ZH-CN_TOPIC_0000002522240774__vis
 
 -
 
-在走焦到用户定义的子节点时，导航点、箭头会由于[焦点样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-events-focus-event#焦点样式)修改zIndex的行为被遮挡。
+在走焦到用户定义的子节点时，导航点、箭头会由于[焦点样式](焦点事件.md)修改zIndex的行为被遮挡。
 
 -
 

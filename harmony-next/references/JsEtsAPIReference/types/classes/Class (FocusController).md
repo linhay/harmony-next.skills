@@ -158,7 +158,7 @@ struct RequestExample {
 
 activate(isActive: boolean, autoInactive?: boolean): void
 
-设置当前界面的[焦点激活态](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-events-focus-event)。
+设置当前界面的[焦点激活态](../../topics/components/焦点事件.md)。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
@@ -213,7 +213,7 @@ isActive(): boolean
 
 返回UI实例的焦点激活态。
 
-焦点激活态可参考[基础概念：焦点激活态](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-events-focus-event#基础概念)。
+焦点激活态可参考[基础概念：焦点激活态](../../topics/components/焦点事件.md)。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 

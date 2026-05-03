@@ -100,7 +100,7 @@ type(value: InputType)
 
 密码填充服务需要特定的输入框类型。如何使用密码填充服务参考[快速适配](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault-quick-adaptation)。
 
-设置[密码模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-text-input#密码模式)时，装饰线[decoration](#ZH-CN_TOPIC_0000002553200807__decoration12)、下划线[showUnderline](#ZH-CN_TOPIC_0000002553200807__showunderline10)不生效。
+设置[密码模式](TextInput.md)时，装饰线[decoration](#ZH-CN_TOPIC_0000002553200807__decoration12)、下划线[showUnderline](#ZH-CN_TOPIC_0000002553200807__showunderline10)不生效。
 
 **placeholderColor**
 
@@ -505,7 +505,7 @@ showUnderline(value: boolean)
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-设置[密码模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-text-input#密码模式)时，装饰线[decoration](#ZH-CN_TOPIC_0000002553200807__decoration12)、下划线[showUnderline](#ZH-CN_TOPIC_0000002553200807__showunderline10)不生效。
+设置[密码模式](TextInput.md)时，装饰线[decoration](#ZH-CN_TOPIC_0000002553200807__decoration12)、下划线[showUnderline](#ZH-CN_TOPIC_0000002553200807__showunderline10)不生效。
 
 **passwordIcon10+**
 
@@ -684,7 +684,7 @@ passwordRules(value: string)
 
 cancelButton(options: CancelButtonOptions)
 
-设置右侧清除按钮样式，仅支持图片类型的图标。不支持[内联模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-text-input#内联模式)。示例请参考[示例4（设置右侧清除按钮样式）](#ZH-CN_TOPIC_0000002553200807__示例4设置右侧清除按钮样式)。
+设置右侧清除按钮样式，仅支持图片类型的图标。不支持[内联模式](TextInput.md)。示例请参考[示例4（设置右侧清除按钮样式）](#ZH-CN_TOPIC_0000002553200807__示例4设置右侧清除按钮样式)。
 
 元服务API： 从API version 12开始，该接口支持在元服务中使用。
 
@@ -700,7 +700,7 @@ cancelButton(options: CancelButtonOptions)
 
 selectAll(value: boolean)
 
-设置初始状态时，是否全选文本。不支持[内联模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-text-input#内联模式)。
+设置初始状态时，是否全选文本。不支持[内联模式](TextInput.md)。
 
 元服务API： 从API version 12开始，该接口支持在元服务中使用。
 
@@ -722,7 +722,7 @@ showCounter(value: boolean, options?: InputCounterOptions)
 
 当输入字符数大于最大字符数乘百分比值时，显示字符计数器。如果用户设置计数器时不设置InputCounterOptions，那么当前输入字符数超过最大字符数时，边框和计数器下标将变为红色。用户同时设置参数value为true和[InputCounterOptions](输入框类组件通用接口.md#ZH-CN_TOPIC_0000002522240848__inputcounteroptions11对象说明)，当thresholdPercentage数值在有效区间内，且输入字符数超过最大字符数时，边框和计数器下标将变为红色，框体抖动。highlightBorder设置为false，则不显示红色边框，计数器默认显示红色，框体抖动。
 
-[内联模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-text-input#内联模式)、[密码模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-text-input#密码模式)下字符计数器不显示。
+[内联模式](TextInput.md)、[密码模式](TextInput.md)下字符计数器不显示。
 
 [示例5（设置计数器）](#ZH-CN_TOPIC_0000002553200807__示例5设置计数器)展示了设置showCounter的效果。
 
@@ -791,7 +791,7 @@ lineHeight(value: number | string | Resource)
 
 -
 
-设置[密码模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-text-input#密码模式)时，通过该接口设置行高[lineHeight](#ZH-CN_TOPIC_0000002553200807__lineheight12)不生效。
+设置[密码模式](TextInput.md)时，通过该接口设置行高[lineHeight](#ZH-CN_TOPIC_0000002553200807__lineheight12)不生效。
 
 元服务API： 从API version 12开始，该接口支持在元服务中使用。
 
@@ -825,7 +825,7 @@ decoration(value: TextDecorationOptions)
 
 当文本装饰线的颜色设置为Color.Transparent时，装饰线颜色设置为跟随每行第一个字的字体颜色。当文本装饰线的颜色设置为透明色16进制对应值“#00FFFFFF”时，装饰线颜色设置为透明色。
 
-设置[密码模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-text-input#密码模式)时，装饰线[decoration](#ZH-CN_TOPIC_0000002553200807__decoration12)、下划线[showUnderline](#ZH-CN_TOPIC_0000002553200807__showunderline10)不生效。
+设置[密码模式](TextInput.md)时，装饰线[decoration](#ZH-CN_TOPIC_0000002553200807__decoration12)、下划线[showUnderline](#ZH-CN_TOPIC_0000002553200807__showunderline10)不生效。
 
 **letterSpacing12+**
 
@@ -879,13 +879,13 @@ Font Feature当前支持的属性见[fontFeature属性列表](Text.md#ZH-CN_TOPI
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-设置[密码模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-text-input#密码模式)时，不支持通过fontFeature设置文本样式。
+设置[密码模式](TextInput.md)时，不支持通过fontFeature设置文本样式。
 
 **wordBreak12+**
 
 wordBreak(value: WordBreak)
 
-设置文本断行规则。该属性在组件设置[内联模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-text-input#内联模式)时样式生效，但对placeholder文本无效。
+设置文本断行规则。该属性在组件设置[内联模式](TextInput.md)时样式生效，但对placeholder文本无效。
 
 元服务API： 从API version 12开始，该接口支持在元服务中使用。
 
@@ -905,7 +905,7 @@ wordBreak(value: WordBreak)
 
 textOverflow(value: TextOverflow)
 
-设置文本超长时的显示方式。仅在[内联模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-text-input#内联模式)的编辑态、非编辑态下支持。
+设置文本超长时的显示方式。仅在[内联模式](TextInput.md)的编辑态、非编辑态下支持。
 
 文本截断是按字进行。例如，英文以单词为最小单位进行截断，若需要以字母为单位进行截断，可将wordBreak属性设置为WordBreak.BREAK_ALL。
 
@@ -923,7 +923,7 @@ textOverflow(value: TextOverflow)
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-TextInput组件不支持设置TextOverflow.MARQUEE模式，当设置为TextOverflow.MARQUEE模式时，[内联模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-text-input#内联模式)非编辑态下显示为TextOverflow.Ellipsis，内联模式编辑态下以及非内联模式下显示为TextOverflow.Clip。
+TextInput组件不支持设置TextOverflow.MARQUEE模式，当设置为TextOverflow.MARQUEE模式时，[内联模式](TextInput.md)非编辑态下显示为TextOverflow.Ellipsis，内联模式编辑态下以及非内联模式下显示为TextOverflow.Clip。
 
 未设置内联模式时，按照默认风格显示。若此时设置textOverflow，则不生效。
 
@@ -1023,7 +1023,7 @@ showPassword(visible: boolean)
 
 当[输入框的类型](#ZH-CN_TOPIC_0000002553200807__inputtype枚举说明)设置为Password、NEW_PASSWORD和NUMBER_PASSWORD模式时，密码保护功能才能生效。非密码输入模式则不会触发该功能。
 
-[密码模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-text-input#密码模式)时，由于输入框后端的状态和前端应用侧的状态管理变量会不一致，可能导致末尾图标的状态异常。建议在[onSecurityStateChange](#ZH-CN_TOPIC_0000002553200807__onsecuritystatechange12)上增加状态同步。参考[示例1（设置与获取光标位置）](#ZH-CN_TOPIC_0000002553200807__示例1设置与获取光标位置)。
+[密码模式](TextInput.md)时，由于输入框后端的状态和前端应用侧的状态管理变量会不一致，可能导致末尾图标的状态异常。建议在[onSecurityStateChange](#ZH-CN_TOPIC_0000002553200807__onsecuritystatechange12)上增加状态同步。参考[示例1（设置与获取光标位置）](#ZH-CN_TOPIC_0000002553200807__示例1设置与获取光标位置)。
 
 元服务API： 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1249,7 +1249,7 @@ maxFontScale(scale: Optional<number | Resource>)
 
 cancelButton(symbolOptions: CancelButtonSymbolOptions)
 
-设置右侧清除按钮样式，仅支持symbol图标。不支持[内联模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-text-input#内联模式)。示例请参考[示例15（设置symbol类型清除按钮)](#ZH-CN_TOPIC_0000002553200807__示例15设置symbol类型清除按钮)。
+设置右侧清除按钮样式，仅支持symbol图标。不支持[内联模式](TextInput.md)。示例请参考[示例15（设置symbol类型清除按钮)](#ZH-CN_TOPIC_0000002553200807__示例15设置symbol类型清除按钮)。
 
 元服务API： 从API version 18开始，该接口支持在元服务中使用。
 
@@ -1265,7 +1265,7 @@ cancelButton(symbolOptions: CancelButtonSymbolOptions)
 
 ellipsisMode(mode: Optional<EllipsisMode>)
 
-设置省略位置。ellipsisMode属性仅在[内联模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-text-input#内联模式)下生效，需要配合overflow设置为TextOverflow.Ellipsis使用，单独设置ellipsisMode属性不生效。
+设置省略位置。ellipsisMode属性仅在[内联模式](TextInput.md)下生效，需要配合overflow设置为TextOverflow.Ellipsis使用，单独设置ellipsisMode属性不生效。
 
 非编辑态时正常生效，编辑态时EllipsisMode.START和EllipsisMode.CENTER仅在maxLines设置为1时生效，EllipsisMode.END正常生效。
 

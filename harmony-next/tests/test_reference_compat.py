@@ -100,6 +100,12 @@ class ReferenceCompatTests(unittest.TestCase):
                 "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)\n"
                 "[命名路由开发指南]"
                 "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-routing#命名路由)\n"
+                "[TextInput开发指南]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-text-input#密码模式)\n"
+                "[支持焦点处理]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-events-focus-event#基础概念)\n"
+                "[使用粘贴控件]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)\n"
             ),
             encoding="utf-8",
         )
@@ -196,6 +202,18 @@ class ReferenceCompatTests(unittest.TestCase):
         )
         (self.js_root / "topics" / "components" / "自定义组件的生命周期.md").write_text(
             "# 自定义组件的生命周期\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "topics" / "components" / "TextInput.md").write_text(
+            "# TextInput\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "topics" / "components" / "焦点事件.md").write_text(
+            "# 焦点事件\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "topics" / "components" / "PasteButton.md").write_text(
+            "# PasteButton\n",
             encoding="utf-8",
         )
         (self.js_root / "topics" / "components" / "状态变量变化监听.md").write_text(
@@ -336,6 +354,18 @@ class ReferenceCompatTests(unittest.TestCase):
             (self.js_root / "modules" / "ohos" / "@ohos.state-guide.md").read_text(encoding="utf-8"),
         )
         self.assertIn(
+            "../../topics/components/TextInput.md",
+            (self.js_root / "modules" / "ohos" / "@ohos.state-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../topics/components/焦点事件.md",
+            (self.js_root / "modules" / "ohos" / "@ohos.state-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../topics/components/PasteButton.md",
+            (self.js_root / "modules" / "ohos" / "@ohos.state-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
             "../components/ForEach.md",
             (self.js_root / "topics" / "misc" / "rendering-guide.md").read_text(encoding="utf-8"),
         )
@@ -381,6 +411,14 @@ class ReferenceCompatTests(unittest.TestCase):
         )
         self.assertNotIn(
             "#命名路由",
+            (self.js_root / "modules" / "ohos" / "@ohos.state-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertNotIn(
+            "#密码模式",
+            (self.js_root / "modules" / "ohos" / "@ohos.state-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertNotIn(
+            "#基础概念",
             (self.js_root / "modules" / "ohos" / "@ohos.state-guide.md").read_text(encoding="utf-8"),
         )
 

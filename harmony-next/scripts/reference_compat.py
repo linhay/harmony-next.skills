@@ -109,6 +109,18 @@ TARGETED_GUIDE_MAPPING = {
         Path("types/classes/Class (Router).md"),
         preserve_source_anchor=False,
     ),
+    "arkts-common-components-text-input": TargetedGuideMapping(
+        Path("topics/components/TextInput.md"),
+        preserve_source_anchor=False,
+    ),
+    "arkts-common-events-focus-event": TargetedGuideMapping(
+        Path("topics/components/焦点事件.md"),
+        preserve_source_anchor=False,
+    ),
+    "pastebutton": TargetedGuideMapping(
+        Path("topics/components/PasteButton.md"),
+        preserve_source_anchor=False,
+    ),
 }
 
 
