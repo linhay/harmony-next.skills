@@ -6,7 +6,7 @@ ForEach接口基于数组类型数据来进行循环渲染。
 
 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-开发者指南见：[ForEach开发者指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)。
+开发者指南见：[ForEach开发者指南](ForEach.md)。
 
 **接口**
 

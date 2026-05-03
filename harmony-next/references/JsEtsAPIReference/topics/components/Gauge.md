@@ -14,7 +14,7 @@
 
 -
 
-支持的子组件类型：系统组件和自定义组件，支持条件渲染控制[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)，不支持循环渲染控制[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)和[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)。
+支持的子组件类型：系统组件和自定义组件，支持条件渲染控制[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)，不支持循环渲染控制[ForEach](ForEach.md)和[LazyForEach](LazyForEach.md)。
 
 -
 

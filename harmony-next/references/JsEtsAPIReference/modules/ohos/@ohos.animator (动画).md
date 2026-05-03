@@ -16,7 +16,7 @@
 
 -
 
-本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的地方使用，参见[UIContext](Class (UIContext).md)说明。
+本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](../../types/classes/Class (UIContext).md)的地方使用，参见[UIContext](Class (UIContext).md)说明。
 
 -
 

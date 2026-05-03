@@ -40,7 +40,7 @@ import {
 
 可以包含子组件。
 
-- 子组件类型：系统组件和自定义组件，支持渲染控制类型（[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)和[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)）。
+- 子组件类型：系统组件和自定义组件，支持渲染控制类型（[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](ForEach.md)和[LazyForEach](LazyForEach.md)）。
 - 不建议在执行翻页动画过程中增加或减少子组件，会导致未进行动画的子组件提前进入视窗，引起显示异常。
 
 #### 接口
@@ -475,7 +475,7 @@ onChange(handler: Optional<IndexChangedHandler>)
 
 当前显示子组件的索引变化时触发该事件，返回值为当前显示子组件的索引值。
 
-ArcSwiper组件结合[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)使用时，不能在onChange事件里触发子页面UI的刷新。
+ArcSwiper组件结合[LazyForEach](LazyForEach.md)使用时，不能在onChange事件里触发子页面UI的刷新。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 

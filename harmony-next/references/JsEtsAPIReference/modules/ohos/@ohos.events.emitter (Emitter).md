@@ -384,7 +384,7 @@ emit(event: InnerEvent, data?: EventData): void
 
 发送指定事件。
 
-该接口支持跨线程传输数据对象，需要遵循数据跨线程传输的规格约束，详见[线程间通信对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)。目前不支持使用[@State装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state)、[@Observed装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)等装饰器修饰的复杂类型数据。
+该接口支持跨线程传输数据对象，需要遵循数据跨线程传输的规格约束，详见[线程间通信对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)。目前不支持使用[@State装饰器](@ohos.arkui.StateManagement (状态管理).md)、[@Observed装饰器](../../guides/@Observed与@ObjectLink：V1数据对象观测.md)等装饰器修饰的复杂类型数据。
 
 该接口发布某个事件后，不保证该事件立刻执行，执行时间取决于事件队列里面的事件数量以及各事件的执行效率。
 
@@ -423,7 +423,7 @@ emit(eventId: string, data?: EventData): void
 
 发送指定事件。
 
-该接口支持跨线程传输数据对象，需要遵循数据跨线程传输的规格约束，详见[线程间通信对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)。目前不支持使用[@State装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state)、[@Observed装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)等装饰器修饰的复杂类型数据。
+该接口支持跨线程传输数据对象，需要遵循数据跨线程传输的规格约束，详见[线程间通信对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)。目前不支持使用[@State装饰器](@ohos.arkui.StateManagement (状态管理).md)、[@Observed装饰器](../../guides/@Observed与@ObjectLink：V1数据对象观测.md)等装饰器修饰的复杂类型数据。
 
 该接口发布某个事件后，不保证该事件立刻执行，执行时间取决于事件队列里面的事件数量以及各事件的执行效率。
 
@@ -457,7 +457,7 @@ emit<T>(eventId: string, data?: GenericEventData<T>): void
 
 发送指定事件。
 
-该接口支持跨线程传输数据对象，需要遵循数据跨线程传输的规格约束，详见[线程间通信对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)。目前不支持使用[@State装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state)、[@Observed装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)等装饰器修饰的复杂类型数据。
+该接口支持跨线程传输数据对象，需要遵循数据跨线程传输的规格约束，详见[线程间通信对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)。目前不支持使用[@State装饰器](@ohos.arkui.StateManagement (状态管理).md)、[@Observed装饰器](../../guides/@Observed与@ObjectLink：V1数据对象观测.md)等装饰器修饰的复杂类型数据。
 
 该接口发布某个事件后，不保证该事件立刻执行，执行时间取决于事件队列里面的事件数量以及各事件的执行效率。
 
@@ -498,7 +498,7 @@ emit(eventId: string, options: Options, data?: EventData): void
 
 发送指定优先级事件。
 
-该接口支持跨线程传输数据对象，需要遵循数据跨线程传输的规格约束，详见[线程间通信对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)。目前不支持使用[@State装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state)、[@Observed装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)等装饰器修饰的复杂类型数据。
+该接口支持跨线程传输数据对象，需要遵循数据跨线程传输的规格约束，详见[线程间通信对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)。目前不支持使用[@State装饰器](@ohos.arkui.StateManagement (状态管理).md)、[@Observed装饰器](../../guides/@Observed与@ObjectLink：V1数据对象观测.md)等装饰器修饰的复杂类型数据。
 
 该接口发布某个事件后，不保证该事件立刻执行，执行时间取决于事件队列里面的事件数量以及各事件的执行效率。
 
@@ -537,7 +537,7 @@ emit<T>(eventId: string, options: Options, data?: GenericEventData<T>): void
 
 发送指定优先级事件。
 
-该接口支持跨线程传输数据对象，需要遵循数据跨线程传输的规格约束，详见[线程间通信对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)。目前不支持使用[@State装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state)、[@Observed装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)等装饰器修饰的复杂类型数据。
+该接口支持跨线程传输数据对象，需要遵循数据跨线程传输的规格约束，详见[线程间通信对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)。目前不支持使用[@State装饰器](@ohos.arkui.StateManagement (状态管理).md)、[@Observed装饰器](../../guides/@Observed与@ObjectLink：V1数据对象观测.md)等装饰器修饰的复杂类型数据。
 
 该接口发布某个事件后，不保证该事件立刻执行，执行时间取决于事件队列里面的事件数量以及各事件的执行效率。
 
@@ -954,7 +954,7 @@ emit(eventId: string, data?: EventData): void
 
 发送指定事件到当前Emitter类实例。
 
-该接口支持跨线程传输数据对象，需要遵循数据跨线程传输的规格约束，详见[线程间通信对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)。目前不支持使用[@State装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state)、[@Observed装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)等装饰器修饰的复杂类型数据。
+该接口支持跨线程传输数据对象，需要遵循数据跨线程传输的规格约束，详见[线程间通信对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)。目前不支持使用[@State装饰器](@ohos.arkui.StateManagement (状态管理).md)、[@Observed装饰器](../../guides/@Observed与@ObjectLink：V1数据对象观测.md)等装饰器修饰的复杂类型数据。
 
 该接口发布某个事件后，不保证该事件立刻执行，执行时间取决于事件队列里面的事件数量以及各事件的执行效率。
 
@@ -989,7 +989,7 @@ emit<T>(eventId: string, data?: GenericEventData<T>): void
 
 发送指定事件到当前Emitter类实例。
 
-该接口支持跨线程传输数据对象，需要遵循数据跨线程传输的规格约束，详见[线程间通信对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)。目前不支持使用[@State装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state)、[@Observed装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)等装饰器修饰的复杂类型数据。
+该接口支持跨线程传输数据对象，需要遵循数据跨线程传输的规格约束，详见[线程间通信对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)。目前不支持使用[@State装饰器](@ohos.arkui.StateManagement (状态管理).md)、[@Observed装饰器](../../guides/@Observed与@ObjectLink：V1数据对象观测.md)等装饰器修饰的复杂类型数据。
 
 该接口发布某个事件后，不保证该事件立刻执行，执行时间取决于事件队列里面的事件数量以及各事件的执行效率。
 
@@ -1033,7 +1033,7 @@ emit(eventId: string, options: Options, data?: EventData): void
 
 发送指定事件到当前Emitter类实例。
 
-该接口支持跨线程传输数据对象，需要遵循数据跨线程传输的规格约束，详见[线程间通信对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)。目前不支持使用[@State装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state)、[@Observed装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)等装饰器修饰的复杂类型数据。
+该接口支持跨线程传输数据对象，需要遵循数据跨线程传输的规格约束，详见[线程间通信对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)。目前不支持使用[@State装饰器](@ohos.arkui.StateManagement (状态管理).md)、[@Observed装饰器](../../guides/@Observed与@ObjectLink：V1数据对象观测.md)等装饰器修饰的复杂类型数据。
 
 该接口发布某个事件后，不保证该事件立刻执行，执行时间取决于事件队列里面的事件数量以及各事件的执行效率。
 
@@ -1073,7 +1073,7 @@ emit<T>(eventId: string, options: Options, data?: GenericEventData<T>): void
 
 发送指定优先级事件到当前Emitter类实例。
 
-该接口支持跨线程传输数据对象，需要遵循数据跨线程传输的规格约束，详见[线程间通信对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)。目前不支持使用[@State装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state)、[@Observed装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)等装饰器修饰的复杂类型数据。
+该接口支持跨线程传输数据对象，需要遵循数据跨线程传输的规格约束，详见[线程间通信对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)。目前不支持使用[@State装饰器](@ohos.arkui.StateManagement (状态管理).md)、[@Observed装饰器](../../guides/@Observed与@ObjectLink：V1数据对象观测.md)等装饰器修饰的复杂类型数据。
 
 该接口发布某个事件后，不保证该事件立刻执行，执行时间取决于事件队列里面的事件数量以及各事件的执行效率。
 

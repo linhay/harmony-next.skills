@@ -32,4 +32,4 @@ description: HarmonyOS NEXT（以 API 12-23 为主）离线参考库导航：按
 - **不确定就查文档**：API 签名、入参、返回值以 `references/` 内文本为准，不凭经验补全。
 - **ArkUI 优先声明式**：示例优先使用 `@Entry` / `@Component` / `build()`（除非文档明确是 NDK 或系统服务）。
 
-<!-- version: 1.2.0 -->
+<!-- version: 1.3.0 -->

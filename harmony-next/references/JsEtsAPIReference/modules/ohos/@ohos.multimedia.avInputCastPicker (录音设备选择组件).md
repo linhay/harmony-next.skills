@@ -26,9 +26,9 @@ AVInputCastPicker({
 
 录音设备选择组件，可用于切换音频输入设备。
 
-该组件为自定义组件，开发者在使用前需要先了解[@Component](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#component)。
+该组件为自定义组件，开发者在使用前需要先了解[@Component](../../topics/components/自定义组件.md)。
 
-**装饰器类型：**[@Component](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#component)
+**装饰器类型：**[@Component](../../topics/components/自定义组件.md)
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 

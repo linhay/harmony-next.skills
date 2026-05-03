@@ -2,10 +2,10 @@
 
 An offline HarmonyOS NEXT reference skill for coding agents such as Gemini CLI, Claude Code, and Codex.
 
-[![release](https://img.shields.io/badge/release-v1.2.0-1f6feb?style=flat-square)](https://github.com/linhay/harmony-next.skills/releases/tag/v1.2.0)
+[![release](https://img.shields.io/badge/release-v1.3.0-1f6feb?style=flat-square)](https://github.com/linhay/harmony-next.skills/releases/tag/v1.3.0)
 [![readme](https://img.shields.io/badge/readme-%E4%B8%AD%E6%96%87-0f766e?style=flat-square)](./README.md)
-![docs](https://img.shields.io/badge/docs-3,614%20markdown%20files-7c3aed?style=flat-square)
-![js-ets](https://img.shields.io/badge/JsEtsAPIReference-3,589%20files-b45309?style=flat-square)
+![docs](https://img.shields.io/badge/docs-3,622%20markdown%20files-7c3aed?style=flat-square)
+![js-ets](https://img.shields.io/badge/JsEtsAPIReference-3,598%20files-b45309?style=flat-square)
 
 > A local knowledge source for API 12-23, covering ArkTS, ArkUI, NDK, toolchains, debugging, release workflows, and multi-device adaptation.
 
@@ -39,7 +39,7 @@ The goal is to turn those questions into local file lookups that are traceable, 
 | Task navigation | Map UI, lifecycle, network, media, NDK, release, and other tasks to keywords | [`references/TASK_MAP.md`](./harmony-next/references/TASK_MAP.md) |
 | Global index | Full Markdown path index for the reference corpus | [`references/INDEX.md`](./harmony-next/references/INDEX.md) |
 | Bucketed API index | Focused index for `JsEtsAPIReference/`, covering modules, topics, types, errors, and guides | [`JsEtsAPIReference/INDEX.md`](./harmony-next/references/JsEtsAPIReference/INDEX.md) |
-| Reference corpus | `3,614` Markdown files total, with `3,589` under `JsEtsAPIReference/` | [`harmony-next/references/`](./harmony-next/references/) |
+| Reference corpus | `3,622` Markdown files total, with `3,598` under `JsEtsAPIReference/` | [`harmony-next/references/`](./harmony-next/references/) |
 
 ## Recommended Retrieval Path
 

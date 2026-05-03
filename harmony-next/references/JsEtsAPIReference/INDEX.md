@@ -165,6 +165,16 @@ errors/附属节点错误码.md
 errors/页面路由错误码.md
 errors/驱动错误码.md
 errors/鼠标光标错误码.md
+guides/@ObservedV2与@Trace：类属性变化观测.md
+guides/@Observed与@ObjectLink：V1数据对象观测.md
+guides/AppStorageV2（应用全局的UI状态存储）.md
+guides/PersistenceV2（持久化存储UI状态）.md
+guides/addMonitor与clearMonitor开发指南.md
+guides/applySync与flushUpdates与flushUIUpdates接口：同步刷新.md
+guides/makeObserved接口：将非观察数据变为可观察数据.md
+guides/状态管理V1-V2迁移指导.md
+guides/状态管理V1和V2混用指导（API version 19及之后）.md
+guides/状态管理概述.md
 modules/ohos/@ohos.FusionConnectivity.PartnerAgentExtensionAbility (支持设备状态通知的ExtensionAbility组件).md
 modules/ohos/@ohos.FusionConnectivity.PartnerAgentExtensionContext (设备状态通知能力上下文).md
 modules/ohos/@ohos.FusionConnectivity.partnerAgent（设备状态通知模块）.md

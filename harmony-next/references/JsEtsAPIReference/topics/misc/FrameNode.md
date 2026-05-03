@@ -7970,7 +7970,7 @@ moveItem(from: number, to: number): void
 
 getAllAvailableItems(): Array<FrameNode>
 
-获取所有有效数据。有效节点数据包括显示在屏幕上的节点以及预加载的节点。其中预加载节点的数量可依照LazyForEach的[使用限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach#使用限制)，调整父容器的cachedCount属性进行设置。
+获取所有有效数据。有效节点数据包括显示在屏幕上的节点以及预加载的节点。其中预加载节点的数量可依照LazyForEach的[使用限制](../components/LazyForEach.md)，调整父容器的cachedCount属性进行设置。
 
 元服务API： 从API version 12开始，该接口支持在元服务中使用。
 

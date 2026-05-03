@@ -11,7 +11,105 @@ from pathlib import Path
 
 
 OLD_HEADER_LINK_PATTERN = re.compile(r"\]\((\.\./\.\./capi/headers/([^)#]+\.md))((?:#[^)]+)?)\)")
+TARGETED_GUIDE_LINK_PATTERN = re.compile(
+    r"\]\((https://developer\.huawei\.com/consumer/cn/doc/harmonyos-guides/([^)#]+))((?:#[^)]+)?)\)"
+)
 INTERNAL_MD_LINK_PATTERN = re.compile(r"\[([^\]]+)\]\(([^)]+\.md(?:#[^)]+)?)\)")
+
+@dataclass(frozen=True)
+class TargetedGuideMapping:
+    target: Path
+    default_anchor: str | None = None
+    preserve_source_anchor: bool = True
+
+
+# 仅覆盖仓库已经决定离线化的 guide，避免批量替换大量仍保留在线引用的文档。
+TARGETED_GUIDE_MAPPING = {
+    "arkts-v1-v2-guide": TargetedGuideMapping(Path("guides/状态管理V1-V2迁移指导.md")),
+    "arkts-v1-v2-migration": TargetedGuideMapping(Path("guides/状态管理V1-V2迁移指导.md")),
+    "arkts-state-management-v1-v2-migration-guide": TargetedGuideMapping(
+        Path("guides/状态管理V1-V2迁移指导.md"),
+        "#状态管理V1向V2迁移场景",
+    ),
+    "arkts-v1-v2-migration-inner-component": TargetedGuideMapping(
+        Path("guides/状态管理V1-V2迁移指导.md"),
+        "#组件内状态变量迁移",
+    ),
+    "arkts-v1-v2-migration-inner-class": TargetedGuideMapping(
+        Path("guides/状态管理V1-V2迁移指导.md"),
+        "#数据对象状态变量迁移",
+    ),
+    "arkts-v1-v2-migration-inner-object": TargetedGuideMapping(Path("guides/状态管理V1-V2迁移指导.md")),
+    "arkts-v1-v2-mixusage": TargetedGuideMapping(Path("guides/状态管理V1和V2混用指导（API version 19及之后）.md")),
+    "arkts-new-makeobserved": TargetedGuideMapping(Path("guides/makeObserved接口：将非观察数据变为可观察数据.md")),
+    "arkts-state-management-overview": TargetedGuideMapping(Path("guides/状态管理概述.md")),
+    "arkts-state-management-introduce": TargetedGuideMapping(
+        Path("guides/状态管理概述.md"),
+        preserve_source_anchor=False,
+    ),
+    "arkts-observed-and-objectlink": TargetedGuideMapping(Path("guides/@Observed与@ObjectLink：V1数据对象观测.md")),
+    "arkts-new-observedv2-and-trace": TargetedGuideMapping(Path("guides/@ObservedV2与@Trace：类属性变化观测.md")),
+    "arkts-new-addmonitor-clearmonitor": TargetedGuideMapping(Path("guides/addMonitor与clearMonitor开发指南.md")),
+    "arkts-new-applysync-flushupdates-flushuiupdates": TargetedGuideMapping(
+        Path("guides/applySync与flushUpdates与flushUIUpdates接口：同步刷新.md")
+    ),
+    "arkts-env-system-property": TargetedGuideMapping(Path("topics/components/@Env：环境变量.md")),
+    "arkts-new-appstoragev2": TargetedGuideMapping(Path("guides/AppStorageV2（应用全局的UI状态存储）.md")),
+    "arkts-new-persistencev2": TargetedGuideMapping(Path("guides/PersistenceV2（持久化存储UI状态）.md")),
+    "arkts-watch": TargetedGuideMapping(Path("topics/components/状态变量变化监听.md"), preserve_source_anchor=False),
+    "arkts-new-monitor": TargetedGuideMapping(Path("topics/components/状态变量变化监听.md"), preserve_source_anchor=False),
+    "arkts-appstorage": TargetedGuideMapping(Path("topics/components/应用级变量的状态管理.md"), preserve_source_anchor=False),
+    "arkts-localstorage": TargetedGuideMapping(Path("topics/components/应用级变量的状态管理.md"), preserve_source_anchor=False),
+    "arkts-persiststorage": TargetedGuideMapping(Path("topics/components/应用级变量的状态管理.md"), preserve_source_anchor=False),
+    "arkts-state": TargetedGuideMapping(
+        Path("modules/ohos/@ohos.arkui.StateManagement (状态管理).md"),
+        preserve_source_anchor=False,
+    ),
+    "arkts-state-management-glossary": TargetedGuideMapping(
+        Path("modules/ohos/@ohos.arkui.StateManagement (状态管理).md"),
+        preserve_source_anchor=False,
+    ),
+    "arkts-provide-and-consume": TargetedGuideMapping(
+        Path("modules/ohos/@ohos.arkui.StateManagement (状态管理).md"),
+        preserve_source_anchor=False,
+    ),
+    "arkts-rendering-control-foreach": TargetedGuideMapping(
+        Path("topics/components/ForEach.md"),
+        preserve_source_anchor=False,
+    ),
+    "arkts-rendering-control-lazyforeach": TargetedGuideMapping(
+        Path("topics/components/LazyForEach.md"),
+        preserve_source_anchor=False,
+    ),
+    "arkts-new-rendering-control-repeat": TargetedGuideMapping(
+        Path("topics/components/Repeat.md"),
+        preserve_source_anchor=False,
+    ),
+    "arkts-mutablebuilder": TargetedGuideMapping(
+        Path("topics/components/mutableBuilder.md"),
+        preserve_source_anchor=False,
+    ),
+    "arkts-user-defined-arktsnode-buildernode": TargetedGuideMapping(
+        Path("topics/misc/BuilderNode.md"),
+        preserve_source_anchor=False,
+    ),
+    "arkts-create-custom-components": TargetedGuideMapping(
+        Path("topics/components/自定义组件.md"),
+        preserve_source_anchor=False,
+    ),
+    "arkts-page-custom-components-lifecycle": TargetedGuideMapping(
+        Path("topics/components/自定义组件的生命周期.md"),
+        preserve_source_anchor=False,
+    ),
+    "arkts-global-interface": TargetedGuideMapping(
+        Path("types/classes/Class (UIContext).md"),
+        preserve_source_anchor=False,
+    ),
+    "arkts-routing": TargetedGuideMapping(
+        Path("types/classes/Class (Router).md"),
+        preserve_source_anchor=False,
+    ),
+}
 
 
 @dataclass(frozen=True)
@@ -114,6 +212,40 @@ def rewrite_header_links(paths: ReferencePaths) -> int:
             return f"](../../{target.as_posix()}{anchor})"
 
         updated = OLD_HEADER_LINK_PATTERN.sub(repl, original)
+        if updated != original:
+            path.write_text(updated, encoding="utf-8")
+            rewritten_files += 1
+
+    return rewritten_files
+
+
+def build_relative_link(source: Path, target: Path) -> str:
+    return Path(os.path.relpath(target, start=source.parent)).as_posix()
+
+
+def rewrite_targeted_guide_links(paths: ReferencePaths) -> int:
+    rewritten_files = 0
+
+    for path in paths.js_api_root.rglob("*.md"):
+        rel = path.relative_to(paths.js_api_root)
+        if rel.parts[:2] == ("capi", "headers"):
+            continue
+        original = path.read_text(encoding="utf-8")
+
+        def repl(match: re.Match[str]) -> str:
+            slug = match.group(2)
+            anchor = match.group(3)
+            mapping = TARGETED_GUIDE_MAPPING.get(slug)
+            if mapping is None:
+                return match.group(0)
+            if anchor and mapping.preserve_source_anchor:
+                resolved_anchor = anchor
+            else:
+                resolved_anchor = mapping.default_anchor or ""
+            relative = build_relative_link(path, paths.js_api_root / mapping.target)
+            return f"]({relative}{resolved_anchor})"
+
+        updated = TARGETED_GUIDE_LINK_PATTERN.sub(repl, original)
         if updated != original:
             path.write_text(updated, encoding="utf-8")
             rewritten_files += 1
@@ -237,6 +369,19 @@ def iter_old_header_links(paths: ReferencePaths) -> list[tuple[Path, str]]:
     return matches
 
 
+def iter_targeted_guide_links(paths: ReferencePaths) -> list[tuple[Path, str]]:
+    matches: list[tuple[Path, str]] = []
+    for path in paths.js_api_root.rglob("*.md"):
+        rel = path.relative_to(paths.js_api_root)
+        if rel.parts[:2] == ("capi", "headers"):
+            continue
+        text = path.read_text(encoding="utf-8")
+        for full_url, slug, anchor in TARGETED_GUIDE_LINK_PATTERN.findall(text):
+            if slug in TARGETED_GUIDE_MAPPING:
+                matches.append((path, f"{full_url}{anchor}"))
+    return matches
+
+
 def check(paths: ReferencePaths) -> int:
     errors: list[str] = []
 
@@ -280,13 +425,15 @@ def check(paths: ReferencePaths) -> int:
 
     for source, link in iter_old_header_links(paths):
         errors.append(f"残留旧路径引用: {source.relative_to(paths.repo_root)} -> {link}")
+    for source, link in iter_targeted_guide_links(paths):
+        errors.append(f"残留目标 guide 外链: {source.relative_to(paths.repo_root)} -> {link}")
 
     if errors:
         for error in errors:
             print(error, file=sys.stderr)
         return 1
 
-    print("OK: 索引存在，且无残留旧头文件页或旧路径引用。")
+    print("OK: 索引存在，且无残留旧头文件页、旧路径引用或目标 guide 外链。")
     return 0
 
 
@@ -294,15 +441,15 @@ def main() -> int:
     parser = argparse.ArgumentParser(
         description=(
             "维护 HarmonyOS NEXT 参考库迁移后的链接与索引。"
-            "generate 负责重写旧头文件引用并重建索引；"
-            "check 负责校验磁盘与索引一致；"
+            "generate 负责重写旧头文件引用、目标 guide 外链并重建索引；"
+            "check 负责校验索引与目标外链残留；"
             "audit 负责扫描当前改动里被抹掉的内部 Markdown 链接。"
         )
     )
     parser.add_argument(
         "command",
         choices=("generate", "check", "audit"),
-        help="generate: 重写旧链接并重建索引；check: 校验索引与旧路径残留；audit: 扫描当前改动里被移除的内部链接。",
+        help="generate: 重写旧链接并重建索引；check: 校验索引与残留旧路径或目标 guide 外链；audit: 扫描当前改动里被移除的内部链接。",
     )
     parser.add_argument(
         "--repo-root",
@@ -315,11 +462,13 @@ def main() -> int:
 
     if args.command == "generate":
         rewritten = rewrite_header_links(paths)
+        guide_rewritten = rewrite_targeted_guide_links(paths)
         generate_references_index(paths)
         generate_index(paths)
         print(
             f"Generated {paths.references_index.relative_to(paths.repo_root)} and "
-            f"{paths.js_index.relative_to(paths.repo_root)}; rewrote {rewritten} files"
+            f"{paths.js_index.relative_to(paths.repo_root)}; rewrote {rewritten} header-link files "
+            f"and {guide_rewritten} guide-link files"
         )
         return 0
     if args.command == "audit":

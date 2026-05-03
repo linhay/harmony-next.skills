@@ -2,10 +2,10 @@
 
 给 Gemini CLI、Claude Code、Codex 等 AI 编程助手使用的 HarmonyOS NEXT 离线参考技能库。
 
-[![release](https://img.shields.io/badge/release-v1.2.0-1f6feb?style=flat-square)](https://github.com/linhay/harmony-next.skills/releases/tag/v1.2.0)
+[![release](https://img.shields.io/badge/release-v1.3.0-1f6feb?style=flat-square)](https://github.com/linhay/harmony-next.skills/releases/tag/v1.3.0)
 [![readme](https://img.shields.io/badge/readme-English-0f766e?style=flat-square)](./README_en.md)
-![docs](https://img.shields.io/badge/docs-3,614%20markdown%20files-7c3aed?style=flat-square)
-![js-ets](https://img.shields.io/badge/JsEtsAPIReference-3,589%20files-b45309?style=flat-square)
+![docs](https://img.shields.io/badge/docs-3,622%20markdown%20files-7c3aed?style=flat-square)
+![js-ets](https://img.shields.io/badge/JsEtsAPIReference-3,598%20files-b45309?style=flat-square)
 
 > 面向 API 12-23 的本地知识源，覆盖 ArkTS、ArkUI、NDK、工具链、调试、发布与多端适配。
 
@@ -39,7 +39,7 @@
 | 任务导航 | 按 UI、生命周期、网络、媒体、NDK、发布等任务反查关键词 | [`references/TASK_MAP.md`](./harmony-next/references/TASK_MAP.md) |
 | 全库索引 | 收录整个参考库的 Markdown 路径，用于先命中路径再读正文 | [`references/INDEX.md`](./harmony-next/references/INDEX.md) |
 | API 分桶索引 | 聚焦 `JsEtsAPIReference/`，覆盖 modules、topics、types、errors、guides | [`JsEtsAPIReference/INDEX.md`](./harmony-next/references/JsEtsAPIReference/INDEX.md) |
-| 参考正文 | 共 `3,614` 份 Markdown，其中 `3,589` 份在 `JsEtsAPIReference/` | [`harmony-next/references/`](./harmony-next/references/) |
+| 参考正文 | 共 `3,622` 份 Markdown，其中 `3,598` 份在 `JsEtsAPIReference/` | [`harmony-next/references/`](./harmony-next/references/) |
 
 ## 推荐检索路径
 

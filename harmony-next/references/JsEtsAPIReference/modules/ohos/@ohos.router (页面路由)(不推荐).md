@@ -15,7 +15,7 @@
 
 -
 
-本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的地方使用，参见[UIContext](Class (UIContext).md)说明。
+本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](../../types/classes/Class (UIContext).md)的地方使用，参见[UIContext](Class (UIContext).md)说明。
 
 -
 
@@ -665,7 +665,7 @@ router.pushNamedRoute({
   })
 ```
 
-详细示例请参考：[UI开发-命名路由](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-routing#命名路由)
+详细示例请参考：[UI开发-命名路由](../../types/classes/Class (Router).md)
 
 #### router.pushNamedRoute(deprecated)
 
@@ -1592,7 +1592,7 @@ export default {
 #### 基于TS扩展的声明式开发范式
 
 
-直接使用router可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，建议使用getUIContext获取[UIContext](Class (UIContext).md)实例，并使用[getRouter](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getrouter)获取绑定实例的router。
+直接使用router可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题，建议使用getUIContext获取[UIContext](Class (UIContext).md)实例，并使用[getRouter](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getrouter)获取绑定实例的router。
 
 ```ets
 // 通过router.pushUrl跳转至目标页携带params参数

@@ -207,7 +207,7 @@ struct Index {
 
 reuse(param?: Object): void
 
-触发ComponentContent中的自定义组件的复用。组件复用请参见[@Reusable装饰器：V1组件复用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)。关于ComponentContent的解绑场景请参见[解除实体节点引用关系](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode#解除实体节点引用关系)。
+触发ComponentContent中的自定义组件的复用。组件复用请参见[@Reusable装饰器：V1组件复用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)。关于ComponentContent的解绑场景请参见[解除实体节点引用关系](BuilderNode.md)。
 
 元服务API： 从API version 12开始，该接口支持在元服务中使用。
 
@@ -225,7 +225,7 @@ recycle(): void
 
 - 触发ComponentContent中自定义组件的回收。自定义组件的回收是组件复用机制中的环节，具体信息请参见[@Reusable装饰器：V1组件复用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)。
 
-- ComponentContent通过reuse和recycle完成其内外自定义组件之间的复用事件传递，具体使用场景请参见[BuilderNode调用reuse和recycle接口实现节点复用能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode#buildernode调用reuse和recycle接口实现节点复用能力)。
+- ComponentContent通过reuse和recycle完成其内外自定义组件之间的复用事件传递，具体使用场景请参见[BuilderNode调用reuse和recycle接口实现节点复用能力](BuilderNode.md)。
 
 元服务API： 从API version 12开始，该接口支持在元服务中使用。
 
@@ -394,7 +394,7 @@ struct Index {
 
 dispose(): void
 
-立即释放当前ComponentContent对象对[基本概念：实体节点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-node#基本概念)的引用关系。关于ComponentContent的解绑场景请参见[解除实体节点引用关系](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode#解除实体节点引用关系)。
+立即释放当前ComponentContent对象对[基本概念：实体节点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-node#基本概念)的引用关系。关于ComponentContent的解绑场景请参见[解除实体节点引用关系](BuilderNode.md)。
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
@@ -942,9 +942,9 @@ struct Index {
 
 reuse(param?: Object): void
 
-触发ReactiveComponentContent中的自定义组件的复用。组件复用请参见[@Reusable装饰器：V1组件复用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)。关于ReactiveComponentContent的解绑场景请参见[解除实体节点引用关系](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode#解除实体节点引用关系)。
+触发ReactiveComponentContent中的自定义组件的复用。组件复用请参见[@Reusable装饰器：V1组件复用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)。关于ReactiveComponentContent的解绑场景请参见[解除实体节点引用关系](BuilderNode.md)。
 
-ReactiveComponentContent通过reuse和[recycle](#ZH-CN_TOPIC_0000002553360669__recycle)接口完成其内外自定义组件之间的复用事件传递，具体使用场景请参见[BuilderNode调用reuse和recycle接口实现节点复用能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode#buildernode调用reuse和recycle接口实现节点复用能力)。
+ReactiveComponentContent通过reuse和[recycle](#ZH-CN_TOPIC_0000002553360669__recycle)接口完成其内外自定义组件之间的复用事件传递，具体使用场景请参见[BuilderNode调用reuse和recycle接口实现节点复用能力](BuilderNode.md)。
 
 元服务API： 从API version 22开始，该接口支持在元服务中使用。
 
@@ -966,7 +966,7 @@ recycle(): void
 
 触发ReactiveComponentContent中自定义组件的回收。自定义组件的回收是组件复用机制中的环节，具体信息请参见[@Reusable装饰器：V1组件复用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)。
 
-ReactiveComponentContent通过[reuse](#ZH-CN_TOPIC_0000002553360669__reuse)和recycle完成其内外自定义组件之间的复用事件传递，具体使用场景请参见[BuilderNode调用reuse和recycle接口实现节点复用能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode#buildernode调用reuse和recycle接口实现节点复用能力)。
+ReactiveComponentContent通过[reuse](#ZH-CN_TOPIC_0000002553360669__reuse)和recycle完成其内外自定义组件之间的复用事件传递，具体使用场景请参见[BuilderNode调用reuse和recycle接口实现节点复用能力](BuilderNode.md)。
 
 元服务API： 从API version 22开始，该接口支持在元服务中使用。
 
@@ -1140,7 +1140,7 @@ struct Index {
 
 dispose(): void
 
-立即释放当前ReactiveComponentContent对象对[实体节点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-node#基本概念)的引用关系。关于ReactiveComponentContent的解绑场景请参见[解除实体节点引用关系](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode#解除实体节点引用关系)。
+立即释放当前ReactiveComponentContent对象对[实体节点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-node#基本概念)的引用关系。关于ReactiveComponentContent的解绑场景请参见[解除实体节点引用关系](BuilderNode.md)。
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 

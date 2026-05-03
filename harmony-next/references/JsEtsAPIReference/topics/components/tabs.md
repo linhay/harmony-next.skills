@@ -13,7 +13,7 @@
 
 #### 子组件
 
-仅支持子组件[TabContent](TabContent.md)，以及渲染控制类型[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)和[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)，不建议自定义组件作为子组件。并且if/else和ForEach下也仅支持TabContent作为子组件，不建议自定义组件作为子组件。
+仅支持子组件[TabContent](TabContent.md)，以及渲染控制类型[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)和[ForEach](ForEach.md)，不建议自定义组件作为子组件。并且if/else和ForEach下也仅支持TabContent作为子组件，不建议自定义组件作为子组件。
 
 Tabs子组件的visibility属性设置为None，或者visibility属性设置为Hidden时，对应子组件不显示，但依然会在视窗内占位。
 
@@ -583,7 +583,7 @@ Tab页签切换后触发的事件。
 
 2、通过[控制器](#ZH-CN_TOPIC_0000002522080834__tabscontroller)调用[changeIndex](#ZH-CN_TOPIC_0000002522080834__changeindex)接口，Tab页签切换后触发。
 
-3、动态修改[状态变量](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state)构造的index属性值，Tab页签切换后触发。
+3、动态修改[状态变量](../../modules/ohos/@ohos.arkui.StateManagement (状态管理).md)构造的index属性值，Tab页签切换后触发。
 
 4、点击TabBar页签，Tab页签切换后触发。
 
@@ -744,7 +744,7 @@ onSelected(event: [Callback](基础类型定义.md#ZH-CN_TOPIC_0000002497604974_
 
 1.
 
-动态修改[状态变量](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state)构造的index属性值后触发。
+动态修改[状态变量](../../modules/ohos/@ohos.arkui.StateManagement (状态管理).md)构造的index属性值后触发。
 
 1.
 
@@ -781,7 +781,7 @@ onUnselected(event: [Callback](基础类型定义.md#ZH-CN_TOPIC_000000249760497
 
 1.
 
-动态修改[状态变量](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state)构造的index属性值后触发。
+动态修改[状态变量](../../modules/ohos/@ohos.arkui.StateManagement (状态管理).md)构造的index属性值后触发。
 
 1.
 

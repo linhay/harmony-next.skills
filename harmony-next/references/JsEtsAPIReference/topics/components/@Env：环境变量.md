@@ -4,7 +4,7 @@
 
 本模块首批接口从API version 22开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-开发者指南见：[@Env开发者指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-env-system-property)。
+开发者指南见：[@Env开发者指南](@Env：环境变量.md)。
 
 **@Env**
 

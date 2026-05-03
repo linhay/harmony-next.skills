@@ -651,7 +651,7 @@ struct CustomDialogUser {
 
 #### 示例6（使用@Link和@Consume监听数据变化）
 
-该示例使用[@Link](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link)和[@Consume](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-provide-and-consume)实现页面与弹窗内数据的双向绑定。
+该示例使用[@Link](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link)和[@Consume](../../modules/ohos/@ohos.arkui.StateManagement (状态管理).md)实现页面与弹窗内数据的双向绑定。
 
 ```ets
 @CustomDialog

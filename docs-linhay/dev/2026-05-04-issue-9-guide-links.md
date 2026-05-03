@@ -1,0 +1,67 @@
+# issue 9 guide 离线化处理
+
+日期：2026-05-04
+
+## 背景
+
+issue 9 指出仓库内与状态管理 V1/V2 迁移相关的引导链接仍然指向华为在线文档，离线场景不可用；同时本地参考库缺少对应的迁移指导页。
+
+## 本次处理
+
+1. 在 `harmony-next/references/JsEtsAPIReference/guides/` 下新增 3 个最小可用 guide：
+   - `状态管理V1-V2迁移指导.md`
+   - `状态管理V1和V2混用指导（API version 19及之后）.md`
+   - `makeObserved接口：将非观察数据变为可观察数据.md`
+2. 扩展 `harmony-next/scripts/reference_compat.py`：
+   - 为明确收录的华为 guide slug 建立映射
+   - `generate` 时重写目标外链为本地相对路径
+   - `check` 时阻止这些目标外链残留
+3. 重建 `references/INDEX.md` 与 `references/JsEtsAPIReference/INDEX.md`
+4. 使用官方 `arkts-v1-v2-guide`、`arkts-state-management-v1-v2-migration-guide`、`arkts-v1-v2-migration-inner-component`、`arkts-v1-v2-migration-inner-class` 页面回校本地 guide 的目录结构与章节标题。
+5. 继续清理同类状态管理外链，新增并映射：
+   - `状态管理概述.md`
+   - `@Observed与@ObjectLink：V1数据对象观测.md`
+   - `@ObservedV2与@Trace：类属性变化观测.md`
+   - `addMonitor与clearMonitor开发指南.md`
+   - `applySync与flushUpdates与flushUIUpdates接口：同步刷新.md`
+   - `AppStorageV2（应用全局的UI状态存储）.md`
+   - `PersistenceV2（持久化存储UI状态）.md`
+6. 第三轮继续清理“已有明确离线落点”的状态管理 / ArkUI 基础语义外链：
+   - `arkts-state-management-introduce` -> `guides/状态管理概述.md`
+   - `arkts-watch`、`arkts-new-monitor` -> `topics/components/状态变量变化监听.md`
+   - `arkts-appstorage`、`arkts-localstorage`、`arkts-persiststorage` -> `topics/components/应用级变量的状态管理.md`
+   - `arkts-create-custom-components` -> `topics/components/自定义组件.md`
+   - `arkts-page-custom-components-lifecycle` -> `topics/components/自定义组件的生命周期.md`
+7. 第四轮补收状态管理装饰器基础语义：
+   - `arkts-state`
+   - `arkts-state-management-glossary`
+   - `arkts-provide-and-consume`
+   - 统一离线到 `modules/ohos/@ohos.arkui.StateManagement (状态管理).md`
+8. `reference_compat.py` 新增“可丢弃原在线锚点”的映射能力：
+   - 对于落到本地 API 总览页但不存在对应锚点的 slug，不再保留原始华为页面锚点
+   - 避免把在线链接重写成本地后留下无效锚点
+9. 第五轮继续清理“已有明确离线落点”的通用 ArkUI guide 外链：
+   - `arkts-global-interface` -> `types/classes/Class (UIContext).md`
+   - `arkts-routing` -> `types/classes/Class (Router).md`
+   - 两者统一丢弃原在线锚点，回落到本地总览页，避免保留无效锚点
+10. 重新执行 `generate` / `check` 后，`arkts-global-interface` 与 `arkts-routing` 已无正文残留；剩余高频在线 guide 主要集中在：
+   - `arkts-rendering-control-ifelse`
+   - `arkts-sendable`
+   - `arkts-two-way-sync`
+   - `arkts-new-binding`
+   - `arkts-builder`
+   - `arkts-reusable`
+11. 对上述剩余项的结论：
+   - `arkts-rendering-control-ifelse`：未找到独立 `IfElse` 离线页，仅存在各组件页内的引用描述
+   - `arkts-sendable`：本地只有 `@arkts.lang` 的 `ISendable` 定义与零散 API 引用，缺少覆盖“协议 / 装饰器 / 支持数据类型”的总览页
+   - `arkts-two-way-sync`、`arkts-new-binding`：本地有零散组件参数说明与 `Binding/MutableBinding` API，但语义不等价于“系统组件参数双向绑定”总览
+   - `arkts-builder`：本地存在大量 `@Builder` 用例与 `wrapBuilder` / `BuilderNode` 关联说明，但缺少独立总览页
+   - `arkts-reusable`：本地只有 `@ReusableV2` 相关页和 V1 语义的被引用说明，缺少 `@Reusable` V1 独立总览页
+
+## 约束
+
+- 仅重写已经决定离线化的目标 guide slug，避免误改仓库内其他仍保留在线引用的官方文档。
+- 若后续继续收录更多 guide，应先新增本地 Markdown，再把 slug 加入 `TARGETED_GUIDE_MAPPING`。
+- 当前 `TARGETED_GUIDE_MAPPING` 同时兼容旧 slug（如 `arkts-v1-v2-migration-inner-object`）与新 slug（如 `arkts-v1-v2-guide` 系列）。
+- 当前策略只清理“仓库已有明确离线落点”的状态管理 guide，不批量替换所有 HarmonyOS 外链。
+- 当前仍刻意未纳入批量替换的高频 slug 包括：`arkts-rendering-control-ifelse`、`arkts-sendable`、`arkts-two-way-sync`、`arkts-new-binding`、`arkts-builder`、`arkts-reusable`。这些链接虽然集中，但仓库内尚缺足够直接的一页式离线总览页，后续若要继续处理，应先补离线落点。

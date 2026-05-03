@@ -1,6 +1,6 @@
 # BuilderNode
 
-提供能够挂载系统组件的自定义节点BuilderNode。BuilderNode仅可作为叶子节点使用。使用方式参考[BuilderNode开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode)。最佳实践请参考[组件动态创建-组件动态添加、更新和删除](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-ui-dynamic-operations#section153921947151012)。
+提供能够挂载系统组件的自定义节点BuilderNode。BuilderNode仅可作为叶子节点使用。使用方式参考[BuilderNode开发指南](BuilderNode.md)。最佳实践请参考[组件动态创建-组件动态添加、更新和删除](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-ui-dynamic-operations#section153921947151012)。
 
 与BuilderNode相比，ReactiveBuilderNode能通过多参数的无状态UI方法@Builder生成组件树。
 
@@ -12,11 +12,11 @@
 
 -
 
-若传入的Builder的根节点为语法节点（[Ifelse](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)/[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)/[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)/[ContentSlot](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-contentslot)…）、[Span](Span.md)、[ContainerSpan](ContainerSpan.md)、[SymbolSpan](SymbolSpan.md)或自定义组件，将额外生成一个[FrameNode](FrameNode.md)，在节点树中显示为“BuilderProxyNode”，这会导致树结构变化，影响某些测试的传递过程。详情参见[BuilderNode内的BuilderProxyNode导致树结构发生变化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode#buildernode内的builderproxynode导致树结构发生变化)。
+若传入的Builder的根节点为语法节点（[Ifelse](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)/[ForEach](../components/ForEach.md)/[LazyForEach](../components/LazyForEach.md)/[ContentSlot](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-contentslot)…）、[Span](Span.md)、[ContainerSpan](ContainerSpan.md)、[SymbolSpan](SymbolSpan.md)或自定义组件，将额外生成一个[FrameNode](FrameNode.md)，在节点树中显示为“BuilderProxyNode”，这会导致树结构变化，影响某些测试的传递过程。详情参见[BuilderNode内的BuilderProxyNode导致树结构发生变化](BuilderNode.md)。
 
 -
 
-如果在跨页面复用BuilderNode时显示异常，可参考[跨页面复用注意事项](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode#跨页面复用注意事项)。
+如果在跨页面复用BuilderNode时显示异常，可参考[跨页面复用注意事项](BuilderNode.md)。
 
 -
 
@@ -28,15 +28,15 @@ BuilderNode下的自定义组件支持使用[@Prop装饰器](https://developer.h
 
 -
 
-如果BuilderNode的子节点是自定义组件，不支持该自定义组件使用[@Reusable装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)，详细内容参见[BuilderNode在子自定义组件中使用@Reusable装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode#buildernode在子自定义组件中使用reusable装饰器)。
+如果BuilderNode的子节点是自定义组件，不支持该自定义组件使用[@Reusable装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)，详细内容参见[BuilderNode在子自定义组件中使用@Reusable装饰器](BuilderNode.md)。
 
 -
 
-从API version 12开始，自定义组件支持接收[LocalStorage](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-localstorage)实例。可以通过[传递LocalStorage实例](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-localstorage#自定义组件接收localstorage实例)来使用LocalStorage相关的装饰器[@LocalStorageProp](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-localstorage#localstorageprop)、[@LocalStorageLink](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-localstorage#localstoragelink)。
+从API version 12开始，自定义组件支持接收[LocalStorage](../components/应用级变量的状态管理.md)实例。可以通过[传递LocalStorage实例](../components/应用级变量的状态管理.md)来使用LocalStorage相关的装饰器[@LocalStorageProp](../components/应用级变量的状态管理.md)、[@LocalStorageLink](../components/应用级变量的状态管理.md)。
 
 -
 
-从API version 20开始，通过配置[BuildOptions](#ZH-CN_TOPIC_0000002522080744__buildoptions12)，内部自定义组件的[@Consume](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-provide-and-consume)支持接收所在页面的[@Provide](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-provide-and-consume)数据。
+从API version 20开始，通过配置[BuildOptions](#ZH-CN_TOPIC_0000002522080744__buildoptions12)，内部自定义组件的[@Consume](../../modules/ohos/@ohos.arkui.StateManagement (状态管理).md)支持接收所在页面的[@Provide](../../modules/ohos/@ohos.arkui.StateManagement (状态管理).md)数据。
 
 -
 
@@ -44,7 +44,7 @@ BuilderNode下的自定义组件支持使用[@Prop装饰器](https://developer.h
 
 -
 
-仅支持在自定义组件中使用[Repeat](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-rendering-control-repeat)。
+仅支持在自定义组件中使用[Repeat](../components/Repeat.md)。
 
 **导入模块**
 
@@ -77,7 +77,7 @@ RENDER_TYPE_TEXTURE类型目前仅在[BuilderNode](#ZH-CN_TOPIC_0000002522080744
 
 -
 
-从API version 12开始，新增以下组件支持纹理导出：[DatePicker](DatePicker.md)、[ForEach](ForEach.md)、[Grid](Grid.md)、[IfElse](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[LazyForEach](LazyForEach.md)、[List](List.md)、[Scroll](Scroll.md)、[Swiper](Swiper.md)、[TimePicker](TimePicker.md)、[@Component](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#component)修饰的自定义组件、[NodeContainer](NodeContainer.md)以及[NodeContainer](NodeContainer.md)下挂载的[FrameNode](FrameNode.md)和[RenderNode](RenderNode.md)。
+从API version 12开始，新增以下组件支持纹理导出：[DatePicker](DatePicker.md)、[ForEach](ForEach.md)、[Grid](Grid.md)、[IfElse](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[LazyForEach](LazyForEach.md)、[List](List.md)、[Scroll](Scroll.md)、[Swiper](Swiper.md)、[TimePicker](TimePicker.md)、[@Component](../components/自定义组件.md)修饰的自定义组件、[NodeContainer](NodeContainer.md)以及[NodeContainer](NodeContainer.md)下挂载的[FrameNode](FrameNode.md)和[RenderNode](RenderNode.md)。
 
 -
 
@@ -737,7 +737,7 @@ struct MyComponent {
 
 dispose(): void
 
-立即释放当前BuilderNode对象对[实体节点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-node#基本概念)的引用关系。关于BuilderNode的解绑场景请参见[节点解绑](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode#解除实体节点引用关系)。
+立即释放当前BuilderNode对象对[实体节点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-node#基本概念)的引用关系。关于BuilderNode的解绑场景请参见[节点解绑](BuilderNode.md)。
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
@@ -829,7 +829,7 @@ struct Index {
 
 reuse(param?: Object): void
 
-触发BuilderNode中的自定义组件的复用。组件复用请参见[@Reusable装饰器：V1组件复用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)。关于BuilderNode的解绑场景请参见[节点解绑](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode#解除实体节点引用关系)。
+触发BuilderNode中的自定义组件的复用。组件复用请参见[@Reusable装饰器：V1组件复用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)。关于BuilderNode的解绑场景请参见[节点解绑](BuilderNode.md)。
 
 元服务API： 从API version 12开始，该接口支持在元服务中使用。
 
@@ -849,7 +849,7 @@ recycle(): void
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-BuilderNode通过reuse和recycle完成其内外自定义组件之间的复用事件传递，具体使用场景请参见[BuilderNode调用reuse和recycle接口实现节点复用能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode#buildernode调用reuse和recycle接口实现节点复用能力)。
+BuilderNode通过reuse和recycle完成其内外自定义组件之间的复用事件传递，具体使用场景请参见[BuilderNode调用reuse和recycle接口实现节点复用能力](BuilderNode.md)。
 
 元服务API： 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1923,7 +1923,7 @@ struct MyComponent {
 
 dispose(): void
 
-立即释放当前ReactiveBuilderNode对象对[实体节点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-node#基本概念)的引用关系。关于ReactiveBuilderNode的解绑场景请参见[节点解绑](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode#解除实体节点引用关系)。
+立即释放当前ReactiveBuilderNode对象对[实体节点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-node#基本概念)的引用关系。关于ReactiveBuilderNode的解绑场景请参见[节点解绑](BuilderNode.md)。
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
@@ -2031,9 +2031,9 @@ struct Index {
 
 reuse(param?: Object): void
 
-触发ReactiveBuilderNode中的自定义组件的复用。组件复用请参见[@Reusable装饰器：V1组件复用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)。关于ReactiveBuilderNode的解绑场景请参见[节点解绑](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode#解除实体节点引用关系)。
+触发ReactiveBuilderNode中的自定义组件的复用。组件复用请参见[@Reusable装饰器：V1组件复用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)。关于ReactiveBuilderNode的解绑场景请参见[节点解绑](BuilderNode.md)。
 
-ReactiveBuilderNode通过reuse和[recycle](#ZH-CN_TOPIC_0000002522080744__recycle22)完成其内外自定义组件之间的复用事件传递，具体使用场景请参见[BuilderNode调用reuse和recycle接口实现节点复用能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode#buildernode调用reuse和recycle接口实现节点复用能力)。
+ReactiveBuilderNode通过reuse和[recycle](#ZH-CN_TOPIC_0000002522080744__recycle22)完成其内外自定义组件之间的复用事件传递，具体使用场景请参见[BuilderNode调用reuse和recycle接口实现节点复用能力](BuilderNode.md)。
 
 元服务API： 从API version 22开始，该接口支持在元服务中使用。
 
@@ -2055,7 +2055,7 @@ recycle(): void
 
 触发ReactiveBuilderNode中自定义组件的回收。自定义组件的回收是组件复用机制中的环节，具体信息请参见[@Reusable装饰器：V1组件复用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)。
 
-ReactiveBuilderNode通过[reuse](#ZH-CN_TOPIC_0000002522080744__reuse22)和recycle完成其内外自定义组件之间的复用事件传递，具体使用场景请参见[BuilderNode调用reuse和recycle接口实现节点复用能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode#buildernode调用reuse和recycle接口实现节点复用能力)。
+ReactiveBuilderNode通过[reuse](#ZH-CN_TOPIC_0000002522080744__reuse22)和recycle完成其内外自定义组件之间的复用事件传递，具体使用场景请参见[BuilderNode调用reuse和recycle接口实现节点复用能力](BuilderNode.md)。
 
 元服务API： 从API version 22开始，该接口支持在元服务中使用。
 

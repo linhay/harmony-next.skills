@@ -906,7 +906,7 @@ onSelected(event: Callback<number>)
 
 1. 通过[TabsController控制器](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#tabscontroller)调用[changeIndex](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#changeindex)接口，开始切换动画时触发。
 
-1. 动态修改[状态变量](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state)构造的index属性值后触发。
+1. 动态修改[状态变量](../../modules/ohos/@ohos.arkui.StateManagement (状态管理).md)构造的index属性值后触发。
 
 1. 通过页签处点击触发。
 
@@ -936,7 +936,7 @@ onUnselected(event: Callback<number>)
 
 1. 通过[TabsController控制器](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#tabscontroller)调用[changeIndex](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#changeindex)接口，开始切换动画时触发。
 
-1. 动态修改[状态变量](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state)构造的index属性值后触发。
+1. 动态修改[状态变量](../../modules/ohos/@ohos.arkui.StateManagement (状态管理).md)构造的index属性值后触发。
 
 1. 通过页签处点击触发。
 

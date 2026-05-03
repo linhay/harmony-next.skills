@@ -27,7 +27,7 @@ AVVolumePanel({volumeLevel?: number, volumeParameter?: AVVolumePanelParameter})
 
 音量面板，可用于在当前应用内展示音量调节面板。
 
-装饰器类型： [@Component](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#component)
+装饰器类型： [@Component](../../topics/components/自定义组件.md)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 

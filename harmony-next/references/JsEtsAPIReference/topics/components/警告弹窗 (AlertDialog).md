@@ -4,7 +4,7 @@
 
 从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
-本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的地方使用，参见[UIContext](Class (UIContext).md)说明。
+本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](../../types/classes/Class (UIContext).md)的地方使用，参见[UIContext](Class (UIContext).md)说明。
 
 #### AlertDialogParam对象说明
 
@@ -262,7 +262,7 @@ static show(value: AlertDialogParamWithConfirm | AlertDialogParamWithButtons | A
 #### 示例
 
 
-直接使用AlertDialog可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，建议使用getUIContext()获取[UIContext](Class (UIContext).md)实例，并使用[showAlertDialog](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__showalertdialog)调用绑定实例的AlertDialog.show()。
+直接使用AlertDialog可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题，建议使用getUIContext()获取[UIContext](Class (UIContext).md)实例，并使用[showAlertDialog](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__showalertdialog)调用绑定实例的AlertDialog.show()。
 
 #### 示例1（弹出多个按钮的弹窗）
 

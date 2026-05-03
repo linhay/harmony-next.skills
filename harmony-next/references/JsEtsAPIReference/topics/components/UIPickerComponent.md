@@ -40,7 +40,7 @@ UIPickerComponent容器当前不支持智能手表设备。
 
 -
 
-支持渲染控制类型：[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)和[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)。
+支持渲染控制类型：[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)和[ForEach](ForEach.md)。
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 

@@ -139,7 +139,7 @@ struct Index {
 
 static getCallingScopeUI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808__context12)(): UIContext | undefined
 
-获取当前[调用作用域](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#基本概念)的UIContext，调用作用域不明确时返回undefined。
+获取当前[调用作用域](Class (UIContext).md)的UIContext，调用作用域不明确时返回undefined。
 
 
 返回的UIContext对象可能指向一个已销毁的UI实例，通常在由已销毁的实例抛出异步任务时出现。建议通过[isAvailable](#ZH-CN_TOPIC_0000002522240732__isavailable20)接口判断其有效性。
@@ -831,7 +831,7 @@ animateTo(value: AnimateParam, event: () => void): void
 
 - 组件内转场不支持的属性，可以参考[显式动画](显式动画 (animateTo).md)中的[示例2](显式动画 (animateTo).md#ZH-CN_TOPIC_0000002553360803__示例2动画执行结束后组件消失)，使用animateTo实现动画执行结束后组件消失的效果。
 
-- 某些场景下，在[状态管理V2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-overview#状态管理v2)中使用animateTo动画，会产生异常效果，具体可参考：[在状态管理V2中使用animateTo动画效果异常](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-local#在状态管理v2中使用animateto动画效果异常)。
+- 某些场景下，在[状态管理V2](../../guides/状态管理概述.md#状态管理v2)中使用animateTo动画，会产生异常效果，具体可参考：[在状态管理V2中使用animateTo动画效果异常](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-local#在状态管理v2中使用animateto动画效果异常)。
 
 - UIAbility从前台切换至后台时会立即结束仍在步进中的有限循环动画，从而触发[onFinish动画播放完成回调](显式动画 (animateTo).md#ZH-CN_TOPIC_0000002553360803__animateparam对象说明)。
 
@@ -2259,7 +2259,7 @@ getUIContext需在windowStage.[loadContent](Interface (WindowStage).md#ZH-CN_TOP
 
 1.
 
-UI实例未创建时，[像素单位]([像素单位](../../topics/components/像素单位.md).md)中的vp2px接口使用默认屏幕的虚拟像素比进行转换。在该场景下，开发者使用UIContext接口替换时，可参考[像素单位转换接口替换为UIContext接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#像素单位转换接口替换为uicontext接口)。
+UI实例未创建时，[像素单位]([像素单位](../../topics/components/像素单位.md).md)中的vp2px接口使用默认屏幕的虚拟像素比进行转换。在该场景下，开发者使用UIContext接口替换时，可参考[像素单位转换接口替换为UIContext接口](Class (UIContext).md)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2319,7 +2319,7 @@ getUIContext需在windowStage.[loadContent](Interface (WindowStage).md#ZH-CN_TOP
 
 1.
 
-UI实例未创建时，[像素单位](像素单位.md)中的px2vp接口使用默认屏幕的虚拟像素比进行转换。在该场景下，开发者使用UIContext接口替换时，可参考[像素单位转换接口替换为UIContext接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#像素单位转换接口替换为uicontext接口)。
+UI实例未创建时，[像素单位](像素单位.md)中的px2vp接口使用默认屏幕的虚拟像素比进行转换。在该场景下，开发者使用UIContext接口替换时，可参考[像素单位转换接口替换为UIContext接口](Class (UIContext).md)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 

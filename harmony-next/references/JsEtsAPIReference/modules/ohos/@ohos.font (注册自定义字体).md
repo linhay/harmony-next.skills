@@ -8,7 +8,7 @@
 
 -
 
-本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的地方使用，参见[UIContext](Class (UIContext).md)说明。
+本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](../../types/classes/Class (UIContext).md)的地方使用，参见[UIContext](Class (UIContext).md)说明。
 
 -
 
@@ -31,7 +31,7 @@ registerFont(options: FontOptions): void
 
 -
 
-从API version 9开始支持，从API version 18开始废弃，建议使用[registerFont](Class (Font).md#ZH-CN_TOPIC_0000002553200691__registerfont)替代。registerFont需要先通过[UIContext](Class (UIContext).md)中的[getFont](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfont)方法获取[Font](Class (Font).md)对象，然后通过该对象进行调用。且直接使用registerFont可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题。
+从API version 9开始支持，从API version 18开始废弃，建议使用[registerFont](Class (Font).md#ZH-CN_TOPIC_0000002553200691__registerfont)替代。registerFont需要先通过[UIContext](Class (UIContext).md)中的[getFont](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfont)方法获取[Font](Class (Font).md)对象，然后通过该对象进行调用。且直接使用registerFont可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题。
 
 -
 
@@ -61,7 +61,7 @@ registerFont(options: FontOptions): void
 | familySrc | string | [Resource](../../topics/components/基础类型定义.md#ZH-CN_TOPIC_0000002497604974__resource)10+ | 否 | 否 | 设置注册字体文件的路径。 说明： 读取系统沙箱路径内的资源时，建议使用file://路径前缀的字符串，需要确保沙箱目录路径下的文件存在并且有可读权限。 |
 
 
-直接使用font可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，推荐通过使用[UIContext](Class (UIContext).md)中的[getFont](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfont)方法获取当前UI上下文关联的[Font](Class (Font).md)对象。
+直接使用font可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题，推荐通过使用[UIContext](Class (UIContext).md)中的[getFont](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfont)方法获取当前UI上下文关联的[Font](Class (Font).md)对象。
 
 **示例：**
 
@@ -142,7 +142,7 @@ getSystemFontList(): Array<string>
 
 -
 
-从API version 10开始支持，从API version 18开始废弃，建议使用[getSystemFontList](Class (Font).md#ZH-CN_TOPIC_0000002553200691__getsystemfontlist)替代。getSystemFontList需要先通过[UIContext](Class (UIContext).md)中的[getFont](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfont)方法获取[Font](Class (Font).md)对象，然后通过该对象进行调用。且直接使用getSystemFontList可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题。
+从API version 10开始支持，从API version 18开始废弃，建议使用[getSystemFontList](Class (Font).md#ZH-CN_TOPIC_0000002553200691__getsystemfontlist)替代。getSystemFontList需要先通过[UIContext](Class (UIContext).md)中的[getFont](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfont)方法获取[Font](Class (Font).md)对象，然后通过该对象进行调用。且直接使用getSystemFontList可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题。
 
 -
 
@@ -159,7 +159,7 @@ getSystemFontList(): Array<string>
 | Array<string> | 系统的字体名列表。 |
 
 
-直接使用font可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，推荐通过使用[UIContext](Class (UIContext).md)中的[getFont](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfont)方法获取当前UI上下文关联的[Font](Class (Font).md)对象。
+直接使用font可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题，推荐通过使用[UIContext](Class (UIContext).md)中的[getFont](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfont)方法获取当前UI上下文关联的[Font](Class (Font).md)对象。
 
 **示例：**
 
@@ -193,7 +193,7 @@ getFontByName(fontName: string): FontInfo
 
 -
 
-从API version 10开始支持，从API version 18开始废弃，建议使用[getFontByName](Class (Font).md#ZH-CN_TOPIC_0000002553200691__getfontbyname)替代。getFontByName需要先通过[UIContext](Class (UIContext).md)中的[getFont](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfont)方法获取[Font](Class (Font).md)对象，然后通过该对象进行调用。且直接使用getFontByName可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题。
+从API version 10开始支持，从API version 18开始废弃，建议使用[getFontByName](Class (Font).md#ZH-CN_TOPIC_0000002553200691__getfontbyname)替代。getFontByName需要先通过[UIContext](Class (UIContext).md)中的[getFont](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getfont)方法获取[Font](Class (Font).md)对象，然后通过该对象进行调用。且直接使用getFontByName可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题。
 
 -
 

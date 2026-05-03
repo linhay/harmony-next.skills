@@ -178,7 +178,7 @@ MyTestMenu() {
 
 您需要实现[onState](#ZH-CN_TOPIC_0000002553361489__onstate)方法，并且在页面中定义这个组件，在业务开始后，此方法将被协同框架调用。
 
-该组件为自定义组件，开发者在使用前需要先了解[@Component](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#component)。
+该组件为自定义组件，开发者在使用前需要先了解[@Component](../components/自定义组件.md)。
 
 装饰器类型： @Component
 

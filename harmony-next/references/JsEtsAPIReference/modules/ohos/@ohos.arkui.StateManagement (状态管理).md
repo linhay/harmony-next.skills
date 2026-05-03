@@ -19,7 +19,7 @@ import { AppStorageV2, PersistenceV2, UIUtils } from '@kit.ArkUI';
 
 #### AppStorageV2
 
-AppStorageV2具体UI使用说明，详见[AppStorageV2(应用全局的UI状态存储)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-appstoragev2)。
+AppStorageV2具体UI使用说明，详见[AppStorageV2(应用全局的UI状态存储)](../../guides/AppStorageV2（应用全局的UI状态存储）.md)。
 
 #### connect
 
@@ -33,7 +33,7 @@ defaultCreator?: StorageDefaultCreator<T>
 
 ): T | undefined
 
-将键值对数据储存在应用内存中。如果给定的key已经存在于[AppStorageV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-appstoragev2)中，返回对应的值；否则，通过获取默认值的构造器构造默认值，并返回。
+将键值对数据储存在应用内存中。如果给定的key已经存在于[AppStorageV2](../../guides/AppStorageV2（应用全局的UI状态存储）.md)中，返回对应的值；否则，通过获取默认值的构造器构造默认值，并返回。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -86,7 +86,7 @@ const as3: SampleClass = AppStorageV2.connect(SampleClass) as SampleClass;
 
 static remove<T>(keyOrType: string | TypeConstructorWithArgs<T>): void
 
-将指定的键值对数据从[AppStorageV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-appstoragev2)里面删除。如果指定的键值不存在于AppStorageV2中，将删除失败。
+将指定的键值对数据从[AppStorageV2](../../guides/AppStorageV2（应用全局的UI状态存储）.md)里面删除。如果指定的键值不存在于AppStorageV2中，将删除失败。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -118,7 +118,7 @@ AppStorageV2.remove('key_as1');
 
 static keys(): Array<string>
 
-获取[AppStorageV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-appstoragev2)中的所有key。
+获取[AppStorageV2](../../guides/AppStorageV2（应用全局的UI状态存储）.md)中的所有key。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -142,13 +142,13 @@ const keys: Array<string> = AppStorageV2.keys();
 
 #### PersistenceV2
 
-继承自[AppStorageV2](#ZH-CN_TOPIC_0000002553200701__appstoragev2)，PersistenceV2具体UI使用说明，详见[PersistenceV2(持久化存储UI状态)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-persistencev2)。
+继承自[AppStorageV2](#ZH-CN_TOPIC_0000002553200701__appstoragev2)，PersistenceV2具体UI使用说明，详见[PersistenceV2(持久化存储UI状态)](../../guides/PersistenceV2（持久化存储UI状态）.md)。
 
 #### globalConnect18+
 
 static globalConnect<T extends object>(type: ConnectOptions<T>): T | undefined
 
-将键值对数据储存在应用磁盘中。如果给定的key已经存在于[PersistenceV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-persistencev2)中，返回对应的值；否则，会通过获取默认值的构造器构造默认值，并返回。如果globalConnect的是[@ObservedV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)对象，该对象[@Trace](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)属性的变化，会触发整个关联对象的自动刷新；非@Trace属性变化则不会，如有必要，可调用[PersistenceV2.save](#ZH-CN_TOPIC_0000002553200701__save)接口手动存储。
+将键值对数据储存在应用磁盘中。如果给定的key已经存在于[PersistenceV2](../../guides/PersistenceV2（持久化存储UI状态）.md)中，返回对应的值；否则，会通过获取默认值的构造器构造默认值，并返回。如果globalConnect的是[@ObservedV2](../../guides/@ObservedV2与@Trace：类属性变化观测.md)对象，该对象[@Trace](../../guides/@ObservedV2与@Trace：类属性变化观测.md)属性的变化，会触发整个关联对象的自动刷新；非@Trace属性变化则不会，如有必要，可调用[PersistenceV2.save](#ZH-CN_TOPIC_0000002553200701__save)接口手动存储。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -175,7 +175,7 @@ static globalConnect<T extends object>(type: ConnectOptions<T>): T | undefined
 
 4、key建议使用有意义的值，可由字母、数字、下划线组成，长度不超过255，使用非法字符或空字符的行为是未定义的。
 
-5、关联[@Observed](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)对象时，因为该类型的name属性未定义，需要指定key或者自定义name属性。
+5、关联[@Observed](../../guides/@Observed与@ObjectLink：V1数据对象观测.md)对象时，因为该类型的name属性未定义，需要指定key或者自定义name属性。
 
 6、数据的存储路径为应用级别，不同module使用相同的key和相同的加密分区进行globalConnect，存储的数据副本应用仅有一份。
 
@@ -237,7 +237,7 @@ type: ConnectOptionsCollections<T, S> | ConnectOptions<T>
 
 ): T | undefined
 
-将键值对数据储存在应用磁盘中。支持集合类型[Array，Map，Set，Date，collections.Array, collections.Map, collections.Set类型的持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-persistencev2#globalconnect支持集合的类型)。注意在持久化Array<ClassA>类型的数据时，需要调用[makeObserved](#ZH-CN_TOPIC_0000002553200701__makeobserved)使返回的对象被观察到。不支持多个嵌套集合，例如不支持Array<Array<ClassA>>的持久化。
+将键值对数据储存在应用磁盘中。支持集合类型[Array，Map，Set，Date，collections.Array, collections.Map, collections.Set类型的持久化](../../guides/PersistenceV2（持久化存储UI状态）.md#globalconnect支持集合的类型)。注意在持久化Array<ClassA>类型的数据时，需要调用[makeObserved](#ZH-CN_TOPIC_0000002553200701__makeobserved)使返回的对象被观察到。不支持多个嵌套集合，例如不支持Array<Array<ClassA>>的持久化。
 
 元服务API： 从API version 23开始，该接口支持在元服务中使用。
 
@@ -336,7 +336,7 @@ static save<T>(keyOrType: string | TypeConstructorWithArgs<T>): void
 | keyOrType | string | TypeConstructorWithArgs<T> | 是 | 需要持久化的key；如果指定的是type类型，持久化的key为type的name。 |
 
 
-由于非[@Trace](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)的数据改变不会触发[PersistenceV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-persistencev2)的自动持久化，如有必要，可调用该接口持久化对应key的数据。
+由于非[@Trace](../../guides/@ObservedV2与@Trace：类属性变化观测.md)的数据改变不会触发[PersistenceV2](../../guides/PersistenceV2（持久化存储UI状态）.md)的自动持久化，如有必要，可调用该接口持久化对应key的数据。
 
 手动持久化当前内存中不处于connect状态的key是无意义的。
 
@@ -790,7 +790,7 @@ export struct School {
 
 static makeObserved<T extends object>(source: T): T
 
-将普通不可观察数据变为可观察数据。详见[makeObserved接口：将非观察数据变为可观察数据](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-makeobserved)。
+将普通不可观察数据变为可观察数据。详见[makeObserved接口：将非观察数据变为可观察数据](../../guides/makeObserved接口：将非观察数据变为可观察数据.md)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -840,7 +840,7 @@ struct Index {
 
 static enableV2Compatibility<T extends object>(source: T): T
 
-使V1的状态变量能够在@ComponentV2中观察，主要应用于状态管理V1、V2混用场景。详见[状态管理V1和V2混用指导（API version 19及之后）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-mixusage)。
+使V1的状态变量能够在@ComponentV2中观察，主要应用于状态管理V1、V2混用场景。详见[状态管理V1和V2混用指导（API version 19及之后）](../../guides/状态管理V1和V2混用指导（API version 19及之后）.md)。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -902,7 +902,7 @@ static makeV1Observed<T extends object>(source: T): T
 
 将不可观察的对象包装成状态管理V1可观察的对象，其能力等同于@Observed，可初始化@ObjectLink。
 
-该接口可搭配[enableV2Compatibility](#ZH-CN_TOPIC_0000002553200701__enablev2compatibility19)应用于状态管理V1和V2混用场景，详见[状态管理V1和V2混用指导（API version 19及之后）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-mixusage)。
+该接口可搭配[enableV2Compatibility](#ZH-CN_TOPIC_0000002553200701__enablev2compatibility19)应用于状态管理V1和V2混用场景，详见[状态管理V1和V2混用指导（API version 19及之后）](../../guides/状态管理V1和V2混用指导（API version 19及之后）.md)。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -1097,7 +1097,7 @@ struct CompV2 {
 
 static addMonitor(target: object, path: string | string[], monitorCallback: MonitorCallback, options?: MonitorOptions): void
 
-给状态管理V2的状态变量动态添加监听方法，详见[addMonitor/clearMonitor](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-addmonitor-clearmonitor)。
+给状态管理V2的状态变量动态添加监听方法，详见[addMonitor/clearMonitor](../../guides/addMonitor与clearMonitor开发指南.md)。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -1172,7 +1172,7 @@ struct Index {
 
 static clearMonitor(target: object, path: string | string[], monitorCallback?: MonitorCallback): void
 
-删除通过[addMonitor](#ZH-CN_TOPIC_0000002553200701__addmonitor20)给状态管理V2的状态变量添加的监听方法，详见[addMonitor/clearMonitor](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-addmonitor-clearmonitor)。
+删除通过[addMonitor](#ZH-CN_TOPIC_0000002553200701__addmonitor20)给状态管理V2的状态变量添加的监听方法，详见[addMonitor/clearMonitor](../../guides/addMonitor与clearMonitor开发指南.md)。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -1253,7 +1253,7 @@ struct Index {
 
 static applySync<T>(task: TaskCallback): T
 
-同步刷新指定的状态变量，该接口接收一个闭包函数，仅刷新闭包函数内的修改，包括更新[@Computed计算](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-computed)、[@Monitor回调](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-monitor)以及重新渲染UI节点，详见[applySync/flushUpdates/flushUIUpdates接口：同步刷新](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-applysync-flushupdates-flushuiupdates)。
+同步刷新指定的状态变量，该接口接收一个闭包函数，仅刷新闭包函数内的修改，包括更新[@Computed计算](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-computed)、[@Monitor回调](../../topics/components/状态变量变化监听.md)以及重新渲染UI节点，详见[applySync/flushUpdates/flushUIUpdates接口：同步刷新](../../guides/applySync与flushUpdates与flushUIUpdates接口：同步刷新.md)。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -1327,7 +1327,7 @@ struct Index {
 
 static flushUpdates(): void
 
-同步刷新在调用该函数之前所有的状态变量修改，包括更新@Computed计算、@Monitor回调以及重新渲染UI节点，详见[applySync/flushUpdates/flushUIUpdates接口：同步刷新](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-applysync-flushupdates-flushuiupdates)。
+同步刷新在调用该函数之前所有的状态变量修改，包括更新@Computed计算、@Monitor回调以及重新渲染UI节点，详见[applySync/flushUpdates/flushUIUpdates接口：同步刷新](../../guides/applySync与flushUpdates与flushUIUpdates接口：同步刷新.md)。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -1389,7 +1389,7 @@ struct Index {
 
 static flushUIUpdates(): void
 
-立即处理在调用该函数之前所有的状态变量修改，同步[标脏](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-introduce#触发更新)对应的UI节点，但不会同步执行@Computed计算和@Monitor回调，详见[applySync/flushUpdates/flushUIUpdates接口：同步刷新](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-applysync-flushupdates-flushuiupdates)。
+立即处理在调用该函数之前所有的状态变量修改，同步[标脏](../../guides/状态管理概述.md)对应的UI节点，但不会同步执行@Computed计算和@Monitor回调，详见[applySync/flushUpdates/flushUIUpdates接口：同步刷新](../../guides/applySync与flushUpdates与flushUIUpdates接口：同步刷新.md)。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 

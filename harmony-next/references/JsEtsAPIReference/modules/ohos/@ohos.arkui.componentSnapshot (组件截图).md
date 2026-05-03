@@ -69,7 +69,7 @@ get(id: string, callback: AsyncCallback<image.PixelMap>, options?: SnapshotOptio
 | 100001 | Invalid ID. |
 
 
-直接使用componentSnapshot可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，建议使用getUIContext()获取[UIContext](Class (UIContext).md)实例，并使用[getComponentSnapshot](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getcomponentsnapshot12)获取绑定实例的componentSnapshot。
+直接使用componentSnapshot可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题，建议使用getUIContext()获取[UIContext](Class (UIContext).md)实例，并使用[getComponentSnapshot](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getcomponentsnapshot12)获取绑定实例的componentSnapshot。
 
 **示例：**
 
@@ -159,7 +159,7 @@ get(id: string, options?: SnapshotOptions): Promise<image.PixelMap>
 | 100001 | Invalid ID. |
 
 
-直接使用componentSnapshot可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，建议使用getUIContext()获取[UIContext](Class (UIContext).md)实例，并使用[getComponentSnapshot](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getcomponentsnapshot12)获取绑定实例的componentSnapshot。
+直接使用componentSnapshot可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题，建议使用getUIContext()获取[UIContext](Class (UIContext).md)实例，并使用[getComponentSnapshot](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getcomponentsnapshot12)获取绑定实例的componentSnapshot。
 
 **示例：**
 
@@ -254,7 +254,7 @@ builder中的组件不支持设置动画相关的属性，如[transition](组件
 | 160001 | An image component in builder is not ready for taking a snapshot. The check for the ready state is required when the check[Image](../../types/interfaces/Image.md)Status option is enabled. |
 
 
-直接使用componentSnapshot可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，建议使用getUIContext()获取[UIContext](Class (UIContext).md)实例，并使用[getComponentSnapshot](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getcomponentsnapshot12)获取绑定实例的componentSnapshot。
+直接使用componentSnapshot可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题，建议使用getUIContext()获取[UIContext](Class (UIContext).md)实例，并使用[getComponentSnapshot](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getcomponentsnapshot12)获取绑定实例的componentSnapshot。
 
 **示例：**
 
@@ -374,7 +374,7 @@ builder中的组件不支持设置动画相关的属性，如[transition](组件
 | 160001 | An image component in builder is not ready for taking a snapshot. The check for the ready state is required when the check[Image](../../types/interfaces/Image.md)Status option is enabled. |
 
 
-直接使用componentSnapshot可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，建议使用getUIContext()获取[UIContext](Class (UIContext).md)实例，并使用[getComponentSnapshot](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getcomponentsnapshot12)获取绑定实例的componentSnapshot。
+直接使用componentSnapshot可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题，建议使用getUIContext()获取[UIContext](Class (UIContext).md)实例，并使用[getComponentSnapshot](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getcomponentsnapshot12)获取绑定实例的componentSnapshot。
 
 **示例：**
 
@@ -472,7 +472,7 @@ getSync(id: string, options?: SnapshotOptions): image.PixelMap
 | 160003 | Unsupported color space or dynamic range mode in snapshot options. |
 
 
-直接使用componentSnapshot可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题。建议使用getUIContext()获取[UIContext](Class (UIContext).md)实例，并使用[getComponentSnapshot](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getcomponentsnapshot12)获取绑定实例的componentSnapshot。
+直接使用componentSnapshot可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题。建议使用getUIContext()获取[UIContext](Class (UIContext).md)实例，并使用[getComponentSnapshot](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getcomponentsnapshot12)获取绑定实例的componentSnapshot。
 
 **示例：**
 
@@ -692,7 +692,7 @@ type SnapshotRegionType = SnapshotRegion | LocalizedSnapshotRegion
 | bottom | number | 否 | 否 | 布局方向为LTR时表示截图区域矩形右下角的y轴坐标，布局方向为RTL时表示截图区域矩形左下角的y轴坐标。 单位：px 取值范围：[0, 组件高度] |
 
 
-直接使用componentSnapshot可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，建议使用getUIContext()获取[UIContext](Class (UIContext).md)实例，并使用[getComponentSnapshot](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getcomponentsnapshot12)获取绑定实例的componentSnapshot。
+直接使用componentSnapshot可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题，建议使用getUIContext()获取[UIContext](Class (UIContext).md)实例，并使用[getComponentSnapshot](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getcomponentsnapshot12)获取绑定实例的componentSnapshot。
 
 **示例：**
 

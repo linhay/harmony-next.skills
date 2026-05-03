@@ -32,9 +32,9 @@ AVCastPicker({
 
 投播组件，可用于将音视频资源投放到其它设备播放。
 
-该组件为自定义组件，开发者在使用前需要先了解[@Component](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#component)。
+该组件为自定义组件，开发者在使用前需要先了解[@Component](../../topics/components/自定义组件.md)。
 
-**装饰器类型：**[@Component](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components)
+**装饰器类型：**[@Component](../../topics/components/自定义组件.md)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 

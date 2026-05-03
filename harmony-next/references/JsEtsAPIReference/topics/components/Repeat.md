@@ -6,7 +6,7 @@
 
 Repeat基于数组类型数据来进行循环渲染，一般与滚动容器组件配合使用。
 
-本文档仅为API参数说明。组件描述和使用说明见[Repeat开发者指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-rendering-control-repeat)。
+本文档仅为API参数说明。组件描述和使用说明见[Repeat开发者指南](Repeat.md)。
 
 **接口**
 

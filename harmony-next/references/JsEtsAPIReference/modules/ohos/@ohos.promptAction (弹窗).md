@@ -12,7 +12,7 @@
 
 -
 
-本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的地方使用，参见[UIContext](Class (UIContext).md)说明。建议使用UIContext中的弹窗方法。
+本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](../../types/classes/Class (UIContext).md)的地方使用，参见[UIContext](Class (UIContext).md)说明。建议使用UIContext中的弹窗方法。
 
 #### 导入模块
 
@@ -33,7 +33,7 @@ openToast(options: ShowToastOptions): Promise<number>
 
 -
 
-直接使用openToast可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，建议使用UIContext中的getPromptAction方法获取到PromptAction对象，再通过该对象调用[openToast](Class (PromptAction).md#ZH-CN_TOPIC_0000002522240730__opentoast18)实现。
+直接使用openToast可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题，建议使用UIContext中的getPromptAction方法获取到PromptAction对象，再通过该对象调用[openToast](Class (PromptAction).md#ZH-CN_TOPIC_0000002522240730__opentoast18)实现。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -112,7 +112,7 @@ closeToast(toastId: number): void
 关闭即时反馈。
 
 
-直接使用closeToast可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，建议使用UIContext中的getPromptAction方法获取到PromptAction对象，再通过该对象调用[closeToast](Class (PromptAction).md#ZH-CN_TOPIC_0000002522240730__closetoast18)实现。
+直接使用closeToast可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题，建议使用UIContext中的getPromptAction方法获取到PromptAction对象，再通过该对象调用[closeToast](Class (PromptAction).md#ZH-CN_TOPIC_0000002522240730__closetoast18)实现。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -680,7 +680,7 @@ showToast(options: ShowToastOptions): void
 
 -
 
-从API version 9开始支持，从API version 18开始废弃，建议使用[showToast](Class (PromptAction).md#ZH-CN_TOPIC_0000002522240730__showtoast)替代。showToast需先通过[UIContext](Class (UIContext).md)中的[getPromptAction](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getpromptaction)方法获取[PromptAction](Class (PromptAction).md)对象，然后通过该对象进行调用。且直接使用showToast可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题。
+从API version 9开始支持，从API version 18开始废弃，建议使用[showToast](Class (PromptAction).md#ZH-CN_TOPIC_0000002522240730__showtoast)替代。showToast需先通过[UIContext](Class (UIContext).md)中的[getPromptAction](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getpromptaction)方法获取[PromptAction](Class (PromptAction).md)对象，然后通过该对象进行调用。且直接使用showToast可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题。
 
 -
 
@@ -705,7 +705,7 @@ Toast样式单一，不支持内容的自定义，具体支持能力请参考[Sh
 以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[接口调用异常错误码](接口调用异常错误码.md)。
 
 
-当返回100001错误码时，可能出现了UI上下文不明确的问题，对此可以使用UIContext中的接口进行替换，详细说明可参考[使用UI上下文接口操作界面](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface)。
+当返回100001错误码时，可能出现了UI上下文不明确的问题，对此可以使用UIContext中的接口进行替换，详细说明可参考[使用UI上下文接口操作界面](../../types/classes/Class (UIContext).md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -753,7 +753,7 @@ showDialog(options: ShowDialogOptions): Promise<ShowDialogSuccessResponse>
 
 -
 
-从API version 9开始支持，从API version 18开始废弃，建议使用[showDialog](Class (PromptAction).md#ZH-CN_TOPIC_0000002522240730__showdialog-1)替代。showDialog需先通过[UIContext](Class (UIContext).md)中的[getPromptAction](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getpromptaction)方法获取[PromptAction](Class (PromptAction).md)对象，然后通过该对象进行调用。且直接使用showDialog可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题。
+从API version 9开始支持，从API version 18开始废弃，建议使用[showDialog](Class (PromptAction).md#ZH-CN_TOPIC_0000002522240730__showdialog-1)替代。showDialog需先通过[UIContext](Class (UIContext).md)中的[getPromptAction](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getpromptaction)方法获取[PromptAction](Class (PromptAction).md)对象，然后通过该对象进行调用。且直接使用showDialog可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题。
 
 -
 
@@ -820,7 +820,7 @@ showDialog(options: ShowDialogOptions, callback: AsyncCallback<ShowDialogSuccess
 
 -
 
-从API version 9开始支持，从API version 18开始废弃，建议使用[showDialog](Class (PromptAction).md#ZH-CN_TOPIC_0000002522240730__showdialog)替代。showDialog需先通过[UIContext](Class (UIContext).md)中的[getPromptAction](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getpromptaction)方法获取[PromptAction](Class (PromptAction).md)对象，然后通过该对象进行调用。且直接使用showDialog可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题。
+从API version 9开始支持，从API version 18开始废弃，建议使用[showDialog](Class (PromptAction).md#ZH-CN_TOPIC_0000002522240730__showdialog)替代。showDialog需先通过[UIContext](Class (UIContext).md)中的[getPromptAction](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getpromptaction)方法获取[PromptAction](Class (PromptAction).md)对象，然后通过该对象进行调用。且直接使用showDialog可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题。
 
 -
 
@@ -986,7 +986,7 @@ showActionMenu(options: ActionMenuOptions, callback: AsyncCallback<ActionMenuSuc
 
 -
 
-从API version 9开始支持，从API version 18开始废弃，建议使用[showActionMenu](Class (PromptAction).md#ZH-CN_TOPIC_0000002522240730__showactionmenu11)替代。showActionMenu需先通过[UIContext](Class (UIContext).md)中的[getPromptAction](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getpromptaction)方法获取[PromptAction](Class (PromptAction).md)对象，然后通过该对象进行调用。且直接使用showActionMenu可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题。
+从API version 9开始支持，从API version 18开始废弃，建议使用[showActionMenu](Class (PromptAction).md#ZH-CN_TOPIC_0000002522240730__showactionmenu11)替代。showActionMenu需先通过[UIContext](Class (UIContext).md)中的[getPromptAction](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getpromptaction)方法获取[PromptAction](Class (PromptAction).md)对象，然后通过该对象进行调用。且直接使用showActionMenu可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题。
 
 -
 
@@ -1127,7 +1127,7 @@ showActionMenu(options: ActionMenuOptions): Promise<ActionMenuSuccessResponse>
 
 -
 
-从API version 9开始支持，从API version 18开始废弃，建议使用[showActionMenu](Class (PromptAction).md#ZH-CN_TOPIC_0000002522240730__showactionmenu)替代。showActionMenu需先通过[UIContext](Class (UIContext).md)中的[getPromptAction](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getpromptaction)方法获取[PromptAction](Class (PromptAction).md)对象，然后通过该对象进行调用。且直接使用showActionMenu可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题。
+从API version 9开始支持，从API version 18开始废弃，建议使用[showActionMenu](Class (PromptAction).md#ZH-CN_TOPIC_0000002522240730__showactionmenu)替代。showActionMenu需先通过[UIContext](Class (UIContext).md)中的[getPromptAction](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getpromptaction)方法获取[PromptAction](Class (PromptAction).md)对象，然后通过该对象进行调用。且直接使用showActionMenu可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题。
 
 -
 
@@ -1195,7 +1195,7 @@ openCustomDialog(options: CustomDialogOptions): Promise<number>
 
 -
 
-从API version 11开始支持，从API version 18开始废弃，建议使用[openCustomDialog](Class (PromptAction).md#ZH-CN_TOPIC_0000002522240730__opencustomdialog12-1)替代。openCustomDialog需先通过[UIContext](Class (UIContext).md)中的[getPromptAction](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getpromptaction)方法获取[PromptAction](Class (PromptAction).md)对象，然后通过该对象进行调用。且直接使用openCustomDialog可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题。
+从API version 11开始支持，从API version 18开始废弃，建议使用[openCustomDialog](Class (PromptAction).md#ZH-CN_TOPIC_0000002522240730__opencustomdialog12-1)替代。openCustomDialog需先通过[UIContext](Class (UIContext).md)中的[getPromptAction](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getpromptaction)方法获取[PromptAction](Class (PromptAction).md)对象，然后通过该对象进行调用。且直接使用openCustomDialog可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题。
 
 -
 
@@ -1465,7 +1465,7 @@ closeCustomDialog(dialogId: number): void
 
 -
 
-从API version 11开始支持，从API version 18开始废弃，建议使用[closeCustomDialog](Class (PromptAction).md#ZH-CN_TOPIC_0000002522240730__closecustomdialog12-1)替代。closeCustomDialog需先通过[UIContext](Class (UIContext).md)中的[getPromptAction](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getpromptaction)方法获取[PromptAction](Class (PromptAction).md)对象，然后通过该对象进行调用。且直接使用closeCustomDialog可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题。
+从API version 11开始支持，从API version 18开始废弃，建议使用[closeCustomDialog](Class (PromptAction).md#ZH-CN_TOPIC_0000002522240730__closecustomdialog12-1)替代。closeCustomDialog需先通过[UIContext](Class (UIContext).md)中的[getPromptAction](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__getpromptaction)方法获取[PromptAction](Class (PromptAction).md)对象，然后通过该对象进行调用。且直接使用closeCustomDialog可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题。
 
 -
 

@@ -6,7 +6,7 @@
 
 从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
-本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的地方使用，参见[UIContext](Class (UIContext).md)说明。
+本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](../../types/classes/Class (UIContext).md)的地方使用，参见[UIContext](Class (UIContext).md)说明。
 
 **AnimateParam对象说明**
 
@@ -113,7 +113,7 @@ animateTo(value: AnimateParam, event: () => void): void
 
 - 组件内转场不支持的属性，可以参考[示例2](#ZH-CN_TOPIC_0000002553360803__示例2动画执行结束后组件消失)，使用animateTo实现动画执行结束后组件消失的效果。
 
-- 某些场景下，在[状态管理V2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-overview#状态管理v2)中使用animateTo动画，会产生异常效果，具体可参考：[在状态管理V2中使用animateTo动画效果异常](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-local#在状态管理v2中使用animateto动画效果异常)。
+- 某些场景下，在[状态管理V2](../../guides/状态管理概述.md#状态管理v2)中使用animateTo动画，会产生异常效果，具体可参考：[在状态管理V2中使用animateTo动画效果异常](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-local#在状态管理v2中使用animateto动画效果异常)。
 
 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -134,7 +134,7 @@ animateTo(value: AnimateParam, event: () => void): void
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-直接使用animateTo可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，建议使用getUIContext()获取[UIContext](Class (UIContext).md)实例，并使用[animateTo](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__animateto)调用绑定实例的animateTo。
+直接使用animateTo可能导致[UI上下文不明确](../../types/classes/Class (UIContext).md)的问题，建议使用getUIContext()获取[UIContext](Class (UIContext).md)实例，并使用[animateTo](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__animateto)调用绑定实例的animateTo。
 
 该示例通过在onAppear方法中创建组件出现时的动画效果。
 

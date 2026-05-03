@@ -6,7 +6,7 @@
 
 - 该组件的父组件只能是[List]([List](list.md).md)或者[ListItemGroup](ListItemGroup.md)。
 
-- 当ListItem配合[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)使用时，ListItem子组件在ListItem创建时创建。配合[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)使用时，或父组件为List/ListItemGroup时，ListItem子组件在ListItem布局时创建。
+- 当ListItem配合[LazyForEach](LazyForEach.md)使用时，ListItem子组件在ListItem创建时创建。配合[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](ForEach.md)使用时，或父组件为List/ListItemGroup时，ListItem子组件在ListItem布局时创建。
 
 #### 子组件
 

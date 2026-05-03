@@ -214,7 +214,7 @@ rebuild(): void
 
 由于rebuild方法为应用主动调用的方法，且该操作与UI相关。需要开发者自行保证调用该接口时UI上下文有效，即与绑定的NodeContainer保持UI上下文一致。
 
-监听回调等[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)时，可以通过[UIContext](Class (UIContext).md)的[runScopedTask](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__runscopedtask)方法明确调用时的UI上下文。
+监听回调等[UI上下文不明确](../../types/classes/Class (UIContext).md)时，可以通过[UIContext](Class (UIContext).md)的[runScopedTask](Class (UIContext).md#ZH-CN_TOPIC_0000002522240732__runscopedtask)方法明确调用时的UI上下文。
 
 **示例**
 

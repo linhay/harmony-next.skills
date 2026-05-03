@@ -46,11 +46,11 @@ import { ArcList } from '@kit.ArkUI';
 
 -
 
-[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)/[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)语句中，会计算展开所有子节点索引值。
+[ForEach](ForEach.md)/[LazyForEach](LazyForEach.md)语句中，会计算展开所有子节点索引值。
 
 -
 
-[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)和[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)发生变化以后，会更新子节点索引值。
+[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](ForEach.md)和[LazyForEach](LazyForEach.md)发生变化以后，会更新子节点索引值。
 
 -
 

@@ -16,7 +16,7 @@ import { DocType, DocumentScanner, DocumentScannerConfig, SaveOption, FilterId, 
 
 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
-装饰器类型： [@Component](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#component)
+装饰器类型： [@Component](自定义组件.md)
 
 系统能力： SystemCapability.AI.Component.DocScan
 
