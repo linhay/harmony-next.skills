@@ -2,7 +2,7 @@
 
 An offline HarmonyOS NEXT reference skill for coding agents such as Gemini CLI, Claude Code, and Codex.
 
-[![release](https://img.shields.io/badge/release-v1.3.2-1f6feb?style=flat-square)](https://github.com/linhay/harmony-next.skills/releases/tag/v1.3.2)
+[![release](https://img.shields.io/badge/release-v1.3.3-1f6feb?style=flat-square)](https://github.com/linhay/harmony-next.skills/releases/tag/v1.3.3)
 [![readme](https://img.shields.io/badge/readme-%E4%B8%AD%E6%96%87-0f766e?style=flat-square)](./README.md)
 ![docs](https://img.shields.io/badge/docs-3,622%20markdown%20files-7c3aed?style=flat-square)
 ![js-ets](https://img.shields.io/badge/JsEtsAPIReference-3,598%20files-b45309?style=flat-square)
