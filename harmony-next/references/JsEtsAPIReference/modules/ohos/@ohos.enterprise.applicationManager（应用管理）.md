@@ -6,7 +6,7 @@
 
 本模块接口仅可在Stage模型下使用。
 
-本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-guide)。[applicationManager.isAppKioskAllowed](#ZH-CN_TOPIC_0000002522081688__applicationmanagerisappkioskallowed20)除外，该接口对所有应用开放。
+本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](../../guides/MDM Kit开发指南.md)。[applicationManager.isAppKioskAllowed](#ZH-CN_TOPIC_0000002522081688__applicationmanagerisappkioskallowed20)除外，该接口对所有应用开放。
 
 #### 导入模块
 
@@ -26,7 +26,7 @@ addDisallowedRunningBundlesSync(admin: Want, appIds: Array<string>, accountId?: 
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -82,7 +82,7 @@ removeDisallowedRunningBundlesSync(admin: Want, appIds: Array<string>, accountId
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -205,7 +205,7 @@ addAllowedRunningBundles(admin: Want, appIdentifiers: Array<string>, accountId: 
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -261,7 +261,7 @@ removeAllowedRunningBundles(admin: Want, appIdentifiers: Array<string>, accountI
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -373,7 +373,7 @@ addAutoStartApps(admin: Want, autoStartApps: Array<Want>): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -434,7 +434,7 @@ removeAutoStartApps(admin: Want, autoStartApps: Array<Want>): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -495,7 +495,7 @@ removeAutoStartApps(admin: Want, autoStartApps: Array<Want>, accountId: number):
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -616,7 +616,7 @@ addAutoStartApps(admin: Want, autoStartApps: Array<Want>, accountId: number, dis
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -800,7 +800,7 @@ addKeepAliveApps(admin: Want, bundleNames: Array<string>, accountId: number): vo
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -864,7 +864,7 @@ addKeepAliveApps(admin: Want, bundleNames: Array<string>, accountId: number, dis
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -925,7 +925,7 @@ removeKeepAliveApps(admin: Want, bundleNames: Array<string>, accountId: number):
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -1155,7 +1155,7 @@ Kiosk模式为系统层面提供的一种应用运行模式，该模式下会将
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 
@@ -1298,7 +1298,7 @@ setKioskFeatures(admin: Want, features: Array<KioskFeature>): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 设备行为差异： 该接口在PC/2in1设备上调用无效果，在Phone和Tablet设备上可正常调用。
 
@@ -1371,7 +1371,7 @@ addUserNonStopApps(admin: Want, applicationInstances: Array<[common.ApplicationI
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -1434,7 +1434,7 @@ removeUserNonStopApps(admin: Want, applicationInstances: Array<[common.Applicati
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -1555,7 +1555,7 @@ addFreezeExemptedApps(admin: Want, applicationInstances: Array<[common.Applicati
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -1618,7 +1618,7 @@ removeFreezeExemptedApps(admin: Want, applicationInstances: Array<[common.Applic
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -1735,7 +1735,7 @@ setAbilityDisabled(admin: Want, bundleName: string, accountId: number, abilityNa
 
 模型约束： 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 参数：
 

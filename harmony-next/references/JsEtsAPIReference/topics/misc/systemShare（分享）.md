@@ -50,7 +50,7 @@ import { systemShare } from '@kit.ShareKit';
 
 系统能力： SystemCapability.Collaboration.SystemShare
 
-需要权限： 如需使用appLaunchTrustInfo字段时，需申请权限ohos.permission.SET_SYSTEMSHARE_APPLAUNCHTRUSTLIST，该能力受限开放，仅支持企业应用限制内部数据分享到企业集团信任的应用。权限申请方式请参考[申请使用受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)。
+需要权限： 如需使用appLaunchTrustInfo字段时，需申请权限ohos.permission.SET_SYSTEMSHARE_APPLAUNCHTRUSTLIST，该能力受限开放，仅支持企业应用限制内部数据分享到企业集团信任的应用。权限申请方式请参考[申请使用受限权限](../../guides/申请受限权限.md)。
 
 起始版本： 4.1.0(11)
 

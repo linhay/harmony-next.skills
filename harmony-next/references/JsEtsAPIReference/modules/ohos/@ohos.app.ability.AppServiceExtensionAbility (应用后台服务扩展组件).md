@@ -10,7 +10,7 @@ AppServiceExtensionAbility模块提供后台服务相关扩展能力，包括后
 
 - 当前仅支持2in1设备。
 
-- 应用集成AppServiceExtensionAbility的组件需要申请ACL权限（ohos.permission.SUPPORT_APP_SERVICE_EXTENSION）。该ACL权限当前只对企业普通应用开放申请，申请方式参考[权限申请指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions)。
+- 应用集成AppServiceExtensionAbility的组件需要申请ACL权限（ohos.permission.SUPPORT_APP_SERVICE_EXTENSION）。该ACL权限当前只对企业普通应用开放申请，申请方式参考[权限申请指导](../../guides/声明权限.md)。
 
 #### 生命周期
 

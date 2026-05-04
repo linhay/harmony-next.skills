@@ -1,6 +1,6 @@
 # @ohos.bluetooth.constant (蓝牙constant模块)
 
-本模块提供了蓝牙[Profile](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#profile)、设备类型相关的常量定义。
+本模块提供了蓝牙[Profile](../../guides/Connectivity Kit术语.md#profile)、设备类型相关的常量定义。
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -12,7 +12,7 @@ import { constant } from '@kit.ConnectivityKit';
 
 #### ProfileId
 
-枚举，表示蓝牙[Profile](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#profile)协议的标识。
+枚举，表示蓝牙[Profile](../../guides/Connectivity Kit术语.md#profile)协议的标识。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
@@ -155,7 +155,7 @@ import { constant } from '@kit.ConnectivityKit';
 
 #### ProfileUuids12+
 
-枚举，由蓝牙技术联盟（[Bluetooth Special Interest Group](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#bluetooth-sig)）定义，使用通用唯一标识（Universally Unique Identifier，[UUID](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#uuid)）表示不同的蓝牙协议Profile。
+枚举，由蓝牙技术联盟（[Bluetooth Special Interest Group](../../guides/Connectivity Kit术语.md#bluetooth-sig)）定义，使用通用唯一标识（Universally Unique Identifier，[UUID](../../guides/Connectivity Kit术语.md#uuid)）表示不同的蓝牙协议Profile。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 

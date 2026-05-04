@@ -6,7 +6,7 @@
 
 本模块接口仅可在Stage模型下使用。
 
-本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-guide)。
+本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](../../guides/MDM Kit开发指南.md)。
 
 #### 导入模块
 
@@ -26,7 +26,7 @@ setValue(admin: Want, item: string, value: string): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 
@@ -135,7 +135,7 @@ setHomeWallpaper(admin: Want, fd: number): Promise<void>
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 
@@ -200,7 +200,7 @@ setUnlockWallpaper(admin: Want, fd: number): Promise<void>
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 

@@ -32,6 +32,6 @@ description: HarmonyOS NEXT（以 API 12-23 为主）离线参考库导航：按
 - **不要全量读取**：先在 `INDEX.md` 命中路径，再打开对应 `.md`。
 - **不确定就查文档**：API 签名、入参、返回值以 `references/` 内文本为准，不凭经验补全。
 - **ArkUI 优先声明式**：示例优先使用 `@Entry` / `@Component` / `build()`（除非文档明确是 NDK 或系统服务）。
-- **遇到高频在线 guide 外链**：先查 `references/JsEtsAPIReference/guides/` 是否已有离线页；没有时再考虑补本地 guide，而不是把链接硬改到不等价的 API 页。
+- **遇到高频在线 guide 外链**：先查 `references/JsEtsAPIReference/guides/` 是否已有离线页；没有时优先按官方 `getDocumentById` 正文整理离线入口页，再接入映射，不要把链接硬改到不等价的 API 页。
 
-<!-- version: 1.3.2 -->
+<!-- version: 1.3.3 -->

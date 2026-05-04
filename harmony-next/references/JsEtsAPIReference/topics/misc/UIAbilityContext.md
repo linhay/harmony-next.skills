@@ -1,6 +1,6 @@
 # UIAbilityContext
 
-UIAbilityContext是[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)组件的上下文，继承自[Context](Context (Stage模型的上下文基类).md)。各类Context之间的关联与差异详见[应用上下文Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage)。
+UIAbilityContext是[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)组件的上下文，继承自[Context](Context (Stage模型的上下文基类).md)。各类Context之间的关联与差异详见[应用上下文Context](../../guides/应用上下文Context.md)。
 
 每个UIAbility组件实例化时，系统都会自动创建对应的UIAbilityContext。开发者可以通过UIAbilityContext获取组件信息AbilityInfo、获取应用信息ApplicationInfo、拉起其他UIAbility、连接系统服务、销毁UIAbility等。
 
@@ -39,7 +39,7 @@ startAbility(want: Want, callback: AsyncCallback<void>): void
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 元服务API：从API version 11开始，该接口支持在元服务中使用。
 
@@ -125,7 +125,7 @@ startAbility(want: Want, options: StartOptions, callback: AsyncCallback<void>): 
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 元服务API：从API version 11开始，该接口支持在元服务中使用。
 
@@ -218,7 +218,7 @@ startAbility(want: Want, options?: StartOptions): Promise<void>
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 元服务API：从API version 11开始，该接口支持在元服务中使用。
 
@@ -325,7 +325,7 @@ UIAbility被启动后，有如下情况：
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 元服务API：从API version 11开始，该接口支持在元服务中使用。
 
@@ -420,7 +420,7 @@ UIAbility被启动后，有如下情况：
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 元服务API：从API version 11开始，该接口支持在元服务中使用。
 
@@ -517,7 +517,7 @@ UIAbility被启动后，有如下情况：
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 元服务API：从API version 11开始，该接口支持在元服务中使用。
 
@@ -910,7 +910,7 @@ connectServiceExtensionAbility(want: Want, options: ConnectOptions): number
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -1124,7 +1124,7 @@ startAbilityByCall(want: Want): Promise<Caller>
 
 -
 
-此外如果应用需要在后台调用该接口，需要具备ohos.permission.START_ABILITIES_FROM_BACKGROUND（该权限仅系统应用可申请）。更多的组件启动规则详见[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+此外如果应用需要在后台调用该接口，需要具备ohos.permission.START_ABILITIES_FROM_BACKGROUND（该权限仅系统应用可申请）。更多的组件启动规则详见[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 需要权限：ohos.permission.DISTRIBUTED_DATASYNC
 
@@ -1559,7 +1559,7 @@ requestDialogService(want: Want, result: AsyncCallback<dialogRequest.RequestResu
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -1634,7 +1634,7 @@ requestDialogService(want: Want): Promise<dialogRequest.RequestResult>
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -2162,7 +2162,7 @@ openAtomicService(appId: string, options?: AtomicServiceOptions): Promise<Abilit
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 元服务API：从API version 12开始，该接口支持在元服务中使用。
 
@@ -2249,7 +2249,7 @@ openLink(link: string, options?: OpenLinkOptions, callback?: AsyncCallback<Abili
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 元服务API：从API version 12开始，该接口支持在元服务中使用。
 
@@ -2538,7 +2538,7 @@ startUIServiceExtensionAbility(want: Want): Promise<void>
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 元服务API：从API version 14开始，该接口支持在元服务中使用。
 
@@ -2622,7 +2622,7 @@ connectUIServiceExtensionAbility(want: Want, callback: UIServiceExtensionConnect
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 元服务API：从API version 14开始，该接口支持在元服务中使用。
 
@@ -2734,7 +2734,7 @@ disconnectUIServiceExtensionAbility(proxy: UIServiceProxy): Promise<void>
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 元服务API：从API version 14开始，该接口支持在元服务中使用。
 

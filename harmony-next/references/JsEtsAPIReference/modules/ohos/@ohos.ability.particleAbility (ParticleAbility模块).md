@@ -22,7 +22,7 @@ startAbility(parameter: [StartAbilityParameter](../../topics/misc/StartAbilityPa
 
 启动指定的particleAbility。使用callback异步回调。
 
-组件启动规则详见：[组件启动规则（FA模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules-fa)。
+组件启动规则详见：[组件启动规则（FA模型）](../../guides/组件启动规则（FA模型）.md)。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
@@ -67,7 +67,7 @@ startAbility(parameter: [StartAbilityParameter](../../topics/misc/StartAbilityPa
 
 启动指定的particleAbility。使用Promise异步回调。
 
-组件启动规则详见：[组件启动规则（FA模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules-fa)。
+组件启动规则详见：[组件启动规则（FA模型）](../../guides/组件启动规则（FA模型）.md)。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
@@ -163,7 +163,7 @@ acquire[DataAbilityHelper](../../topics/misc/DataAbilityHelper.md)(uri: string):
 
 获取dataAbilityHelper对象。
 
-组件启动规则详见：[组件启动规则（FA模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules-fa)。
+组件启动规则详见：[组件启动规则（FA模型）](../../guides/组件启动规则（FA模型）.md)。
 
 跨应用访问dataAbility，对端应用需配置关联启动。
 
@@ -388,7 +388,7 @@ connectAbility(request: Want, options:[ConnectOptions](../../topics/misc/Connect
 
 将当前ability与指定的ServiceAbility进行连接。
 
-组件启动规则详见：[组件启动规则（FA模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules-fa)。
+组件启动规则详见：[组件启动规则（FA模型）](../../guides/组件启动规则（FA模型）.md)。
 
 跨应用连接serviceAbility，对端应用需配置关联启动。
 

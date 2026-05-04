@@ -78,7 +78,7 @@ type BaseContext = [_BaseContext.default](../../topics/misc/BaseContext.md)
 
 type Context = _Context.default
 
-[Stage模型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#stage模型)的上下文基类。
+[Stage模型](../../guides/Ability Kit术语.md#stage模型)的上下文基类。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 

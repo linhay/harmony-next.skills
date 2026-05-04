@@ -36,7 +36,7 @@ const char *SecurityAntivirus_Antivirus::bundleName
 
 **描述**
 
-防病毒应用包名，包名字段要求请参见[链接](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-configuration-file)。
+防病毒应用包名，包名字段要求请参见[链接](../../guides/app.json5配置文件.md)。
 
 #### metadata
 
@@ -46,7 +46,7 @@ const char *SecurityAntivirus_Antivirus::metadata
 
 **描述**
 
-防病毒应用信息（包含当前版本号、上次更新时间、病毒防护状态、用户ID的json字符串），其中版本号字段要求请参见[链接](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-configuration-file)，上次更新时间为10位秒级或13位毫秒级时间戳，病毒防护状态仅限on或off，user_id为用户ID。示例格式如下：
+防病毒应用信息（包含当前版本号、上次更新时间、病毒防护状态、用户ID的json字符串），其中版本号字段要求请参见[链接](../../guides/app.json5配置文件.md)，上次更新时间为10位秒级或13位毫秒级时间戳，病毒防护状态仅限on或off，user_id为用户ID。示例格式如下：
 
 ```ets
 {

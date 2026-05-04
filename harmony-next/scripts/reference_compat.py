@@ -130,6 +130,19 @@ TARGETED_GUIDE_MAPPING = {
     "arkts-two-way-sync": TargetedGuideMapping(Path("guides/$$语法：系统组件双向同步.md")),
     "arkts-new-binding": TargetedGuideMapping(Path("guides/!!语法：双向绑定.md")),
     "arkts-rendering-control-ifelse": TargetedGuideMapping(Path("guides/if-else：条件渲染.md")),
+    "data-backup-and-restore": TargetedGuideMapping(Path("guides/数据库备份与恢复.md")),
+    "mdm-kit-multi-mdm": TargetedGuideMapping(Path("guides/多应用管控.md")),
+    "terminology": TargetedGuideMapping(Path("guides/Connectivity Kit术语.md")),
+    "component-startup-rules": TargetedGuideMapping(Path("guides/组件启动规则（Stage模型）.md")),
+    "mdm-kit-guide": TargetedGuideMapping(Path("guides/MDM Kit开发指南.md")),
+    "declare-permissions-in-acl": TargetedGuideMapping(Path("guides/申请受限权限.md")),
+    "push-jwt-token": TargetedGuideMapping(Path("guides/基于服务账号生成鉴权令牌.md")),
+    "data-persistence-by-kv-store": TargetedGuideMapping(Path("guides/通过键值型数据库实现数据持久化.md")),
+    "declare-permissions": TargetedGuideMapping(Path("guides/声明权限.md")),
+    "ability-terminology": TargetedGuideMapping(Path("guides/Ability Kit术语.md")),
+    "application-context-stage": TargetedGuideMapping(Path("guides/应用上下文Context.md")),
+    "app-configuration-file": TargetedGuideMapping(Path("guides/app.json5配置文件.md")),
+    "component-startup-rules-fa": TargetedGuideMapping(Path("guides/组件启动规则（FA模型）.md")),
 }
 
 

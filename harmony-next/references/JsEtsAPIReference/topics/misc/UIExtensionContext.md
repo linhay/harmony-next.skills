@@ -26,7 +26,7 @@ startAbility(want: Want, callback: AsyncCallback<void>): void
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -114,7 +114,7 @@ startAbility(want: Want, options: StartOptions, callback: AsyncCallback<void>): 
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -204,7 +204,7 @@ startAbility(want: Want, options?: StartOptions): Promise<void>
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -306,7 +306,7 @@ startAbilityForResult(want: Want, callback: AsyncCallback<AbilityResult>): void
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -399,7 +399,7 @@ startAbilityForResult(want: Want, options: StartOptions, callback: AsyncCallback
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -495,7 +495,7 @@ startAbilityForResult(want: Want, options?: StartOptions): Promise<AbilityResult
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -593,7 +593,7 @@ ServiceExtensionAbility是一类特殊的[ExtensionAbility](https://developer.hu
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -1083,7 +1083,7 @@ openAtomicService(appId: string, options?: AtomicServiceOptions): Promise<Abilit
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -1168,7 +1168,7 @@ openLink(link: string, options?: OpenLinkOptions, callback?: AsyncCallback<Abili
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -1283,7 +1283,7 @@ startUIServiceExtensionAbility(want: Want): Promise<void>
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -1365,7 +1365,7 @@ connectUIServiceExtensionAbility(want: Want, callback: UIServiceExtensionConnect
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 

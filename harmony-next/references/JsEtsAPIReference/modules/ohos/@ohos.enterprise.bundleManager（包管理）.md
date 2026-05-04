@@ -6,7 +6,7 @@
 
 本模块接口仅可在Stage模型下使用。
 
-本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-guide)。
+本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](../../guides/MDM Kit开发指南.md)。
 
 #### 导入模块
 
@@ -26,7 +26,7 @@ addAllowedInstallBundlesSync(admin: Want, appIds: Array<string>, accountId?: num
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -81,7 +81,7 @@ removeAllowedInstallBundlesSync(admin: Want, appIds: Array<string>, accountId?: 
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -192,7 +192,7 @@ addDisallowedInstallBundlesSync(admin: Want, appIds: Array<string>, accountId?: 
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -247,7 +247,7 @@ removeDisallowedInstallBundlesSync(admin: Want, appIds: Array<string>, accountId
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -359,7 +359,7 @@ addDisallowedUninstallBundlesSync(admin: Want, appIds: Array<string>, accountId?
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -415,7 +415,7 @@ removeDisallowedUninstallBundlesSync(admin: Want, appIds: Array<string>, account
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -811,7 +811,7 @@ addInstallationAllowedAppDistributionTypes(admin: Want, appDistributionTypes: Ar
 
 模型约束： 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 参数：
 
@@ -865,7 +865,7 @@ removeInstallationAllowedAppDistributionTypes(admin: Want, appDistributionTypes:
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 

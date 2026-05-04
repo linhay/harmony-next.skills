@@ -1,6 +1,6 @@
 # @ohos.bluetooth.pan (蓝牙pan模块)
 
-本模块提供基于蓝牙个人局域网协议（Personal Area Networking，[PAN](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#pan)）的蓝牙共享网络能力，支持获取连接状态等方法。
+本模块提供基于蓝牙个人局域网协议（Personal Area Networking，[PAN](../../guides/Connectivity Kit术语.md#pan)）的蓝牙共享网络能力，支持获取连接状态等方法。
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -26,7 +26,7 @@ type BaseProfile = baseProfile.BaseProfile
 
 createPanProfile(): PanProfile
 
-创建蓝牙[NAP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#nap)实例。通过该实例可使用本端作为NAP设备的接口，如：获取和其他设备间的蓝牙个人局域网服务连接状态。
+创建蓝牙[NAP](../../guides/Connectivity Kit术语.md#nap)实例。通过该实例可使用本端作为NAP设备的接口，如：获取和其他设备间的蓝牙个人局域网服务连接状态。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 

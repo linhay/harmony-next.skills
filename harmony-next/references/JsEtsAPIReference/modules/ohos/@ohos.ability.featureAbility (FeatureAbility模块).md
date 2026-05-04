@@ -22,7 +22,7 @@ startAbility(parameter: [StartAbilityParameter](../../topics/misc/StartAbilityPa
 
 启动新的Ability。使用callback异步回调。
 
-组件启动规则详见：[组件启动规则（FA模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules-fa)。
+组件启动规则详见：[组件启动规则（FA模型）](../../guides/组件启动规则（FA模型）.md)。
 
 **模型约束**：此接口仅可在FA模型下使用。
 
@@ -69,7 +69,7 @@ startAbility(parameter: [StartAbilityParameter](../../topics/misc/StartAbilityPa
 
 启动新的Ability。使用Promise异步回调。
 
-组件启动规则详见：[组件启动规则（FA模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules-fa)。
+组件启动规则详见：[组件启动规则（FA模型）](../../guides/组件启动规则（FA模型）.md)。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
@@ -118,7 +118,7 @@ acquire[DataAbilityHelper](../../topics/misc/DataAbilityHelper.md)(uri: string):
 
 获取dataAbilityHelper对象。
 
-组件启动规则详见：[组件启动规则（FA模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules-fa)。
+组件启动规则详见：[组件启动规则（FA模型）](../../guides/组件启动规则（FA模型）.md)。
 
 跨应用访问dataAbility，对端应用需配置关联启动。
 
@@ -161,7 +161,7 @@ startAbilityForResult(parameter: [StartAbilityParameter](../../topics/misc/Start
 - 如果被启动的Ability模式是单实例模式, 不同应用多次调用该接口启动这个Ability，当这个Ability调用[terminateSelfWithResult](#ZH-CN_TOPIC_0000002522240548__featureabilityterminateselfwithresult7)接口使之终止时，只将正常结果返回给最后一个调用方, 其它调用方返回异常信息, 异常信息中resultCode为-1。
 
 
-组件启动规则详见：[组件启动规则（FA模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules-fa)。
+组件启动规则详见：[组件启动规则（FA模型）](../../guides/组件启动规则（FA模型）.md)。
 
 **模型约束**：此接口仅可在FA模型下使用。
 
@@ -215,7 +215,7 @@ startAbilityForResult(parameter: [StartAbilityParameter](../../topics/misc/Start
 - 如果被启动的Ability模式是单实例模式, 不同应用多次调用该接口启动这个Ability，当这个Ability调用[terminateSelfWithResult](#ZH-CN_TOPIC_0000002522240548__featureabilityterminateselfwithresult7)接口使之终止时，只将正常结果返回给最后一个调用方, 其它调用方返回异常信息, 异常信息中resultCode为-1。
 
 
-组件启动规则详见：[组件启动规则（FA模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules-fa)。
+组件启动规则详见：[组件启动规则（FA模型）](../../guides/组件启动规则（FA模型）.md)。
 
 **模型约束**：此接口仅可在FA模型下使用。
 
@@ -584,7 +584,7 @@ connectAbility(request: Want, options:[ConnectOptions](../../topics/misc/Connect
 
 将当前Ability与指定的ServiceAbility进行连接。
 
-组件启动规则详见：[组件启动规则（FA模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules-fa)。
+组件启动规则详见：[组件启动规则（FA模型）](../../guides/组件启动规则（FA模型）.md)。
 
 跨应用连接serviceAbility，对端应用需配置关联启动。
 

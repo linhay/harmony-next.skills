@@ -2517,7 +2517,7 @@ Input_Result OH_Input_AddKeyEventMonitor(Input_KeyEventCallback callback)
 
 需要权限： ohos.permission.INPUT_MONITORING
 
-该权限为受限权限，申请方式请参考[申请受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)
+该权限为受限权限，申请方式请参考[申请受限权限](../../guides/申请受限权限.md)
 
 起始版本： 12
 
@@ -2549,7 +2549,7 @@ Input_Result OH_Input_AddMouseEventMonitor(Input_MouseEventCallback callback)
 
 需要权限： ohos.permission.INPUT_MONITORING
 
-该权限为受限权限，申请方式请参考[申请受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)
+该权限为受限权限，申请方式请参考[申请受限权限](../../guides/申请受限权限.md)
 
 起始版本： 12
 
@@ -2579,7 +2579,7 @@ Input_Result OH_Input_AddTouchEventMonitor(Input_TouchEventCallback callback)
 
 需要权限： ohos.permission.INPUT_MONITORING
 
-该权限为受限权限，申请方式请参考[申请受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)
+该权限为受限权限，申请方式请参考[申请受限权限](../../guides/申请受限权限.md)
 
 起始版本： 12
 
@@ -2609,7 +2609,7 @@ Input_Result OH_Input_AddAxisEventMonitorForAll(Input_AxisEventCallback callback
 
 需要权限： ohos.permission.INPUT_MONITORING
 
-该权限为受限权限，申请方式请参考[申请受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)
+该权限为受限权限，申请方式请参考[申请受限权限](../../guides/申请受限权限.md)
 
 起始版本： 12
 
@@ -2639,7 +2639,7 @@ Input_Result OH_Input_AddAxisEventMonitor(InputEvent_AxisEventType axisEventType
 
 需要权限： ohos.permission.INPUT_MONITORING
 
-该权限为受限权限，申请方式请参考[申请受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)
+该权限为受限权限，申请方式请参考[申请受限权限](../../guides/申请受限权限.md)
 
 起始版本： 12
 
@@ -2670,7 +2670,7 @@ Input_Result OH_Input_RemoveKeyEventMonitor(Input_KeyEventCallback callback)
 
 需要权限： ohos.permission.INPUT_MONITORING
 
-该权限为受限权限，申请方式请参考[申请受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)
+该权限为受限权限，申请方式请参考[申请受限权限](../../guides/申请受限权限.md)
 
 起始版本： 12
 
@@ -2700,7 +2700,7 @@ Input_Result OH_Input_RemoveMouseEventMonitor(Input_MouseEventCallback callback)
 
 需要权限： ohos.permission.INPUT_MONITORING
 
-该权限为受限权限，申请方式请参考[申请受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)
+该权限为受限权限，申请方式请参考[申请受限权限](../../guides/申请受限权限.md)
 
 起始版本： 12
 
@@ -2730,7 +2730,7 @@ Input_Result OH_Input_RemoveTouchEventMonitor(Input_TouchEventCallback callback)
 
 需要权限： ohos.permission.INPUT_MONITORING
 
-该权限为受限权限，申请方式请参考[申请受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)
+该权限为受限权限，申请方式请参考[申请受限权限](../../guides/申请受限权限.md)
 
 起始版本： 12
 
@@ -2760,7 +2760,7 @@ Input_Result OH_Input_RemoveAxisEventMonitorForAll(Input_AxisEventCallback callb
 
 需要权限： ohos.permission.INPUT_MONITORING
 
-该权限为受限权限，申请方式请参考[申请受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)
+该权限为受限权限，申请方式请参考[申请受限权限](../../guides/申请受限权限.md)
 
 起始版本： 12
 
@@ -2790,7 +2790,7 @@ Input_Result OH_Input_RemoveAxisEventMonitor(InputEvent_AxisEventType axisEventT
 
 需要权限： ohos.permission.INPUT_MONITORING
 
-该权限为受限权限，申请方式请参考[申请受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)
+该权限为受限权限，申请方式请参考[申请受限权限](../../guides/申请受限权限.md)
 
 起始版本： 12
 
@@ -2821,7 +2821,7 @@ Input_Result OH_Input_AddKeyEventInterceptor(Input_KeyEventCallback callback, In
 
 需要权限： ohos.permission.INTERCEPT_INPUT_EVENT
 
-该权限为受限权限，申请方式请参考[申请受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)
+该权限为受限权限，申请方式请参考[申请受限权限](../../guides/申请受限权限.md)
 
 起始版本： 12
 
@@ -2852,7 +2852,7 @@ Input_Result OH_Input_AddInputEventInterceptor(Input_InterceptorEventCallback *c
 
 需要权限： ohos.permission.INTERCEPT_INPUT_EVENT
 
-该权限为受限权限，申请方式请参考[申请受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)
+该权限为受限权限，申请方式请参考[申请受限权限](../../guides/申请受限权限.md)
 
 起始版本： 12
 
@@ -2883,7 +2883,7 @@ Input_Result OH_Input_RemoveKeyEventInterceptor(void)
 
 需要权限： ohos.permission.INTERCEPT_INPUT_EVENT
 
-该权限为受限权限，申请方式请参考[申请受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)
+该权限为受限权限，申请方式请参考[申请受限权限](../../guides/申请受限权限.md)
 
 起始版本： 12
 
@@ -2907,7 +2907,7 @@ Input_Result OH_Input_RemoveInputEventInterceptor(void)
 
 需要权限： ohos.permission.INTERCEPT_INPUT_EVENT
 
-该权限为受限权限，申请方式请参考[申请受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)
+该权限为受限权限，申请方式请参考[申请受限权限](../../guides/申请受限权限.md)
 
 起始版本： 12
 

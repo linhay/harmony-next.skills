@@ -7053,7 +7053,7 @@ struct WebComponent {
 
 startCamera(): void
 
-开启当前网页摄像头捕获。使用摄像头功能前请在module.json5中添加权限: ohos.permission.CAMERA，具体权限的添加方法请参考[在配置文件中声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions#在配置文件中声明权限)。
+开启当前网页摄像头捕获。使用摄像头功能前请在module.json5中添加权限: ohos.permission.CAMERA，具体权限的添加方法请参考[在配置文件中声明权限](../../guides/声明权限.md#在配置文件中声明权限)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -9572,7 +9572,7 @@ getBlanklessInfoWithKey(key: string): BlanklessInfo
 
 - 调用本接口后，将启用页面加载快照检测及生成过渡帧计算，会产生一定的资源开销。
 - 启用无白屏加载的页面会带来一定的资源开销，开销的大小与Web组件的分辨率相关。假设分辨率的宽度和高度分别为：w, h。页面在打开阶段会增加峰值内存，增加约12wh B，页面打开后内存回收，不影响稳态内存。增加固态应用缓存的大小，每个页面增加的缓存约w*h/10 B，缓存位于应用缓存的位置。
-- 请在module.json5中添加权限: ohos.permission.INTERNET和ohos.permission.GET_NETWORK_INFO，具体权限的添加方法请参考[在配置文件中声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions#在配置文件中声明权限)。
+- 请在module.json5中添加权限: ohos.permission.INTERNET和ohos.permission.GET_NETWORK_INFO，具体权限的添加方法请参考[在配置文件中声明权限](../../guides/声明权限.md#在配置文件中声明权限)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -9644,7 +9644,7 @@ setBlanklessLoadingWithKey(key: string, is_start: boolean): [WebBlanklessErrorCo
 
 - 页面加载必须在调用本接口的组件中进行。
 - 当相似度较低时，系统将判定为跳变过大，启用插帧会失败。
-- 请在module.json5中添加权限: ohos.permission.INTERNET和ohos.permission.GET_NETWORK_INFO，具体权限的添加方法请参考[在配置文件中声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions#在配置文件中声明权限)。
+- 请在module.json5中添加权限: ohos.permission.INTERNET和ohos.permission.GET_NETWORK_INFO，具体权限的添加方法请参考[在配置文件中声明权限](../../guides/声明权限.md#在配置文件中声明权限)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -9717,7 +9717,7 @@ setBlanklessLoadingWithParams(key: string, param: BlanklessLoadingParam): [WebBl
 
 - 当相似度较低时，系统将判定为跳变过大，启用插帧会失败。
 
-- 请在module.json5中添加权限: ohos.permission.INTERNET和ohos.permission.GET_NETWORK_INFO，具体权限的添加方法请参考[在配置文件中声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions#在配置文件中声明权限)。
+- 请在module.json5中添加权限: ohos.permission.INTERNET和ohos.permission.GET_NETWORK_INFO，具体权限的添加方法请参考[在配置文件中声明权限](../../guides/声明权限.md#在配置文件中声明权限)。
 
 系统能力： SystemCapability.Web.Webview.Core
 
@@ -10318,7 +10318,7 @@ struct WebComponent {
 
 resumeMicrophone(): void
 
-恢复当前网页麦克风捕获。使用麦克风功能前请在module.json5中添加权限: ohos.permission.MICROPHONE，具体权限的添加方法请参考[在配置文件中声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions#在配置文件中声明权限)。
+恢复当前网页麦克风捕获。使用麦克风功能前请在module.json5中添加权限: ohos.permission.MICROPHONE，具体权限的添加方法请参考[在配置文件中声明权限](../../guides/声明权限.md#在配置文件中声明权限)。
 
 系统能力： SystemCapability.Web.Webview.Core
 

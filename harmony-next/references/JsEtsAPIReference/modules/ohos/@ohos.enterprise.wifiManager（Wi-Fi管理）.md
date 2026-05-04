@@ -6,7 +6,7 @@
 
 本模块接口仅可在Stage模型下使用。
 
-本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-guide)。
+本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](../../guides/MDM Kit开发指南.md)。
 
 全局通用限制类策略由restrictions统一提供，若要全局禁用Wi-Fi，请参考[@ohos.enterprise.restrictions（限制类策略）](@ohos.enterprise.restrictions （限制类策略）.md)。
 
@@ -82,7 +82,7 @@ setWifiProfileSync(admin: Want, profile: WifiProfile): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 
@@ -477,7 +477,7 @@ addAllowedWifiList(admin: Want, list: Array<WifiAccessInfo>): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -533,7 +533,7 @@ removeAllowedWifiList(admin: Want, list: Array<WifiAccessInfo>): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -647,7 +647,7 @@ addDisallowedWifiList(admin: Want, list: Array<WifiAccessInfo>): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -703,7 +703,7 @@ removeDisallowedWifiList(admin: Want, list: Array<WifiAccessInfo>): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 

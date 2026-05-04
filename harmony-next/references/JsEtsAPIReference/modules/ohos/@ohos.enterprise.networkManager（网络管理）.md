@@ -6,7 +6,7 @@
 
 本模块接口仅可在Stage模型下使用。
 
-本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-guide)。
+本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](../../guides/MDM Kit开发指南.md)。
 
 #### 导入模块
 
@@ -252,7 +252,7 @@ setNetworkInterfaceDisabledSync(admin: Want, networkInterface: string, isDisable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控)。
+冲突规则： [从严管控](../../guides/多应用管控.md#规则1从严管控)。
 
 **参数：**
 
@@ -306,7 +306,7 @@ setGlobalProxySync(admin: Want, httpProxy: connection.HttpProxy): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 
@@ -370,7 +370,7 @@ setGlobalProxyForAccount(admin: Want, httpProxy: connection.HttpProxy, accountId
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 
@@ -557,7 +557,7 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 
@@ -628,7 +628,7 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 
@@ -773,7 +773,7 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 
@@ -839,7 +839,7 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 
@@ -1067,7 +1067,7 @@ addApn(admin: Want, apnInfo: Record<string, string>): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 
@@ -1124,7 +1124,7 @@ deleteApn(admin: Want, apnId: string): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 
@@ -1175,7 +1175,7 @@ updateApn(admin: Want, apnInfo: Record<string, string>, apnId: string): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 
@@ -1234,7 +1234,7 @@ setPreferredApn(admin: Want, apnId: string): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 
@@ -1401,7 +1401,7 @@ setEthernetConfig(admin: Want, networkInterface: string, config: InterfaceConfig
 
 模型约束： 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 参数：
 

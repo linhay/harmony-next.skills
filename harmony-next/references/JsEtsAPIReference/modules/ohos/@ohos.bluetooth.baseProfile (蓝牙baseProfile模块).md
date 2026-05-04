@@ -12,7 +12,7 @@ import { baseProfile } from '@kit.ConnectivityKit';
 
 #### BaseProfile
 
-基础Profile接口定义，提供订阅和获取连接状态等公共能力。如：[A2dpSourceProfile](@ohos.bluetooth.a2dp (蓝牙a2dp模块).md#ZH-CN_TOPIC_0000002553361363__a2dpsourceprofile)、[HandsFreeAudioGatewayProfile](@ohos.bluetooth.hfp (蓝牙hfp模块).md#ZH-CN_TOPIC_0000002522081446__handsfreeaudiogatewayprofile)等[Profile](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#profile)类型都继承于该类。
+基础Profile接口定义，提供订阅和获取连接状态等公共能力。如：[A2dpSourceProfile](@ohos.bluetooth.a2dp (蓝牙a2dp模块).md#ZH-CN_TOPIC_0000002553361363__a2dpsourceprofile)、[HandsFreeAudioGatewayProfile](@ohos.bluetooth.hfp (蓝牙hfp模块).md#ZH-CN_TOPIC_0000002522081446__handsfreeaudiogatewayprofile)等[Profile](../../guides/Connectivity Kit术语.md#profile)类型都继承于该类。
 
 #### ProfileConnectionState
 

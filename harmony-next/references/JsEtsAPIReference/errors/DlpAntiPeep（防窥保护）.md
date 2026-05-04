@@ -16,7 +16,7 @@ Permission denied.
 
 处理步骤
 
-只允许清单内的应用申请该权限，申请方式请参考：[申请使用受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)。
+只允许清单内的应用申请该权限，申请方式请参考：[申请使用受限权限](../guides/申请受限权限.md)。
 
 **801 设备不支持该能力**
 

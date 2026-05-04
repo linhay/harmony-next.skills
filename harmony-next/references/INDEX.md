@@ -170,20 +170,33 @@ JsEtsAPIReference/guides/$$语法：系统组件双向同步.md
 JsEtsAPIReference/guides/@Builder装饰器：自定义构建函数.md
 JsEtsAPIReference/guides/@ObservedV2与@Trace：类属性变化观测.md
 JsEtsAPIReference/guides/@Observed与@ObjectLink：V1数据对象观测.md
+JsEtsAPIReference/guides/Ability Kit术语.md
 JsEtsAPIReference/guides/AppStorageV2（应用全局的UI状态存储）.md
+JsEtsAPIReference/guides/Connectivity Kit术语.md
+JsEtsAPIReference/guides/MDM Kit开发指南.md
 JsEtsAPIReference/guides/PersistenceV2（持久化存储UI状态）.md
 JsEtsAPIReference/guides/Sendable对象简介.md
 JsEtsAPIReference/guides/UIAbility组件基本用法.md
 JsEtsAPIReference/guides/addMonitor与clearMonitor开发指南.md
+JsEtsAPIReference/guides/app.json5配置文件.md
 JsEtsAPIReference/guides/applySync与flushUpdates与flushUIUpdates接口：同步刷新.md
 JsEtsAPIReference/guides/if-else：条件渲染.md
 JsEtsAPIReference/guides/makeObserved接口：将非观察数据变为可观察数据.md
 JsEtsAPIReference/guides/module.json5配置文件.md
+JsEtsAPIReference/guides/基于服务账号生成鉴权令牌.md
+JsEtsAPIReference/guides/声明权限.md
+JsEtsAPIReference/guides/多应用管控.md
+JsEtsAPIReference/guides/应用上下文Context.md
 JsEtsAPIReference/guides/应用启动框架AppStartup.md
+JsEtsAPIReference/guides/数据库备份与恢复.md
 JsEtsAPIReference/guides/状态管理V1-V2迁移指导.md
 JsEtsAPIReference/guides/状态管理V1和V2混用指导（API version 19及之后）.md
 JsEtsAPIReference/guides/状态管理概述.md
+JsEtsAPIReference/guides/申请受限权限.md
 JsEtsAPIReference/guides/窗口开发术语.md
+JsEtsAPIReference/guides/组件启动规则（FA模型）.md
+JsEtsAPIReference/guides/组件启动规则（Stage模型）.md
+JsEtsAPIReference/guides/通过键值型数据库实现数据持久化.md
 JsEtsAPIReference/modules/ohos/@ohos.FusionConnectivity.PartnerAgentExtensionAbility (支持设备状态通知的ExtensionAbility组件).md
 JsEtsAPIReference/modules/ohos/@ohos.FusionConnectivity.PartnerAgentExtensionContext (设备状态通知能力上下文).md
 JsEtsAPIReference/modules/ohos/@ohos.FusionConnectivity.partnerAgent（设备状态通知模块）.md

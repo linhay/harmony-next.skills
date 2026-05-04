@@ -16,7 +16,7 @@ Permission denied.
 
 处理步骤
 
-只允许符合使用场景的应用申请该权限。在举报诈骗消息场景下，使用诈骗消息选择器时，需要先申请权限：ohos.permission.USE_FRAUD_MESSAGES_PICKER。在举报诈骗通话记录场景下，在使用诈骗通话记录选择器时，需要申请权限：ohos.permission.USE_FRAUD_CALL_LOG_PICKER。申请方式请参考：[申请使用受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)。
+只允许符合使用场景的应用申请该权限。在举报诈骗消息场景下，使用诈骗消息选择器时，需要先申请权限：ohos.permission.USE_FRAUD_MESSAGES_PICKER。在举报诈骗通话记录场景下，在使用诈骗通话记录选择器时，需要申请权限：ohos.permission.USE_FRAUD_CALL_LOG_PICKER。申请方式请参考：[申请使用受限权限](../guides/申请受限权限.md)。
 
 **401 参数检查失败**
 

@@ -10,7 +10,7 @@ EnterpriseAdminExtensionContext是[EnterpriseAdminExtensionAbility](@ohos.enterp
 
 本模块接口仅可在Stage模型下使用。
 
-本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-guide)。
+本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](../../guides/MDM Kit开发指南.md)。
 
 **导入模块**
 
@@ -34,7 +34,7 @@ startAbilityByAdmin(admin: Want, want: Want): Promise<void>
 
 被启动的组件需要对外可见，即module.json5中的exported字段需要为true。
 
-不支持[隐式Want启动](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#隐式want启动)。
+不支持[隐式Want启动](../../guides/Ability Kit术语.md#隐式want启动)。
 
 如果被启动的UIAbility有权限保护，需要额外申请对应的权限。
 

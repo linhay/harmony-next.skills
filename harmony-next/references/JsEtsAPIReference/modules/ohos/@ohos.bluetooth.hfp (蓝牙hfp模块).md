@@ -1,6 +1,6 @@
 # @ohos.bluetooth.hfp (蓝牙hfp模块)
 
-本模块提供基于免提协议（Hands-Free Profile， [HFP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#hfp)）的蓝牙通话音频能力，支持获取连接状态等方法。
+本模块提供基于免提协议（Hands-Free Profile， [HFP](../../guides/Connectivity Kit术语.md#hfp)）的蓝牙通话音频能力，支持获取连接状态等方法。
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -26,7 +26,7 @@ type BaseProfile = baseProfile.BaseProfile
 
 createHfpAgProfile(): HandsFreeAudioGatewayProfile
 
-创建蓝牙通话音频中的[HFP AG](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#hfp-ag)实例。通过该实例可使用本端作为HFP AG设备的接口，如：获取和其他设备间的蓝牙通话音频连接状态。
+创建蓝牙通话音频中的[HFP AG](../../guides/Connectivity Kit术语.md#hfp-ag)实例。通过该实例可使用本端作为HFP AG设备的接口，如：获取和其他设备间的蓝牙通话音频连接状态。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
@@ -60,10 +60,10 @@ try {
 
 #### HandsFreeAudioGatewayProfile
 
-该实例表示蓝牙通话音频中的[HFP AG](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#hfp-ag)角色‌。
+该实例表示蓝牙通话音频中的[HFP AG](../../guides/Connectivity Kit术语.md#hfp-ag)角色‌。
 
 - 该类继承于[BaseProfile](#ZH-CN_TOPIC_0000002522081446__baseprofile)，因此可以使用其父类中的方法。
 
 - 使用该类的接口前，需通过[createHfpAgProfile](#ZH-CN_TOPIC_0000002522081446__hfpcreatehfpagprofile)接口构造该类的实例。
 
-- 和该实例角色相对应的是[HF](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#hf)角色。
+- 和该实例角色相对应的是[HF](../../guides/Connectivity Kit术语.md#hf)角色。

@@ -6,7 +6,7 @@
 
 本模块接口仅可在Stage模型下使用。
 
-本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-guide)。
+本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](../../guides/MDM Kit开发指南.md)。
 
 #### 导入模块
 
@@ -26,7 +26,7 @@ setLocationPolicy(admin: Want, policy: LocationPolicy): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [独占](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则2独占)。
+冲突规则： [独占](../../guides/多应用管控.md#规则2独占)。
 
 **参数：**
 

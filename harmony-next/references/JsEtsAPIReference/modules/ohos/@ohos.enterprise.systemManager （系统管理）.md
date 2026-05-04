@@ -6,7 +6,7 @@
 
 本模块接口仅可在Stage模型下使用。
 
-本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-guide)。
+本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](../../guides/MDM Kit开发指南.md)。
 
 #### 导入模块
 
@@ -26,7 +26,7 @@ setNTPServer(admin: Want, server: string): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 
@@ -133,7 +133,7 @@ setOtaUpdatePolicy(admin: Want, policy: OtaUpdatePolicy): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 
@@ -518,7 +518,7 @@ addDisallowedNearLinkProtocols(admin: Want, protocols: Array<NearLinkProtocol>, 
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -581,7 +581,7 @@ removeDisallowedNearLinkProtocols(admin: Want, protocols: Array<NearLinkProtocol
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -704,7 +704,7 @@ setInstallLocalEnterpriseAppEnabled(admin: Want, isEnable: boolean): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控)。任意一个MDM应用设置支持本地安装企业应用，则综合策略即为支持本地安装企业应用。
+冲突规则： [从严管控](../../guides/多应用管控.md#规则1从严管控)。任意一个MDM应用设置支持本地安装企业应用，则综合策略即为支持本地安装企业应用。
 
 **参数：**
 
@@ -815,7 +815,7 @@ setAutoUnlockAfterReboot(admin: Want, isAllowed: boolean): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控)，任意一个MDM应用设置设备重启自动解锁，则综合策略即为设备重启自动解锁。
+冲突规则： [从严管控](../../guides/多应用管控.md#规则1从严管控)，任意一个MDM应用设置设备重启自动解锁，则综合策略即为设备重启自动解锁。
 
 **参数：**
 

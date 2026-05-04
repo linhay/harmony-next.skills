@@ -4,7 +4,7 @@
 
 数据存储采用键值对形式，键为字符串类型，值可为数字、字符串、布尔类型及其对应的数组。
 
-用户首选项的持久化文件存储在[preferencesDir](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#获取应用文件路径)路径下，创建preferences对象前，需要保证preferencesDir路径可读写。持久化文件存储路径中的[加密等级](@ohos.app.ability.contextConstant (Context相关常量).md#ZH-CN_TOPIC_0000002553200497__areamode)会影响文件的可读写状态，路径访问限制详见[应用文件目录与应用文件路径](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-sandbox-directory#应用文件目录与应用文件路径)。
+用户首选项的持久化文件存储在[preferencesDir](../../guides/应用上下文Context.md#获取应用文件路径)路径下，创建preferences对象前，需要保证preferencesDir路径可读写。持久化文件存储路径中的[加密等级](@ohos.app.ability.contextConstant (Context相关常量).md#ZH-CN_TOPIC_0000002553200497__areamode)会影响文件的可读写状态，路径访问限制详见[应用文件目录与应用文件路径](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-sandbox-directory#应用文件目录与应用文件路径)。
 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。

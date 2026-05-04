@@ -6,7 +6,7 @@
 
 本模块接口仅可在Stage模型下使用。
 
-本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-guide)。
+本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](../../guides/MDM Kit开发指南.md)。
 
 全局通用限制类策略由restrictions统一提供，若要全局禁用蓝牙，请参考[@ohos.enterprise.restrictions（限制类策略）](@ohos.enterprise.restrictions （限制类策略）.md)。
 
@@ -89,7 +89,7 @@ addAllowedBluetoothDevices(admin: Want, deviceIds: Array<string>): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -143,7 +143,7 @@ removeAllowedBluetoothDevices(admin: Want, deviceIds: Array<string>): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -256,7 +256,7 @@ addDisallowedBluetoothDevices(admin: Want, deviceIds: Array<string>): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -309,7 +309,7 @@ removeDisallowedBluetoothDevices(admin: Want, deviceIds: Array<string>): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -428,7 +428,7 @@ turnOnBluetooth(admin: Want): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 
@@ -478,7 +478,7 @@ turnOffBluetooth(admin: Want): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 
@@ -528,7 +528,7 @@ addDisallowedBluetoothProtocols(admin: Want, accountId: number, protocols: Array
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -582,7 +582,7 @@ removeDisallowedBluetoothProtocols(admin: Want, accountId: number, protocols: Ar
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 

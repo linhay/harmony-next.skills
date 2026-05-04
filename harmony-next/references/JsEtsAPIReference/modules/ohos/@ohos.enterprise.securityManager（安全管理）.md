@@ -6,7 +6,7 @@
 
 本模块接口仅可在Stage模型下使用。
 
-本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-guide)。
+本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考[MDM Kit开发指南](../../guides/MDM Kit开发指南.md)。
 
 #### 导入模块
 
@@ -329,7 +329,7 @@ setPasswordPolicy(admin: Want, policy: PasswordPolicy): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
+冲突规则： [配置](../../guides/多应用管控.md#规则3配置)。
 
 **参数：**
 
@@ -441,7 +441,7 @@ setAppClipboardPolicy(admin: Want, tokenId: number, policy: ClipboardPolicy): vo
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控)。
+冲突规则： [从严管控](../../guides/多应用管控.md#规则1从严管控)。
 
 **参数：**
 
@@ -552,7 +552,7 @@ setAppClipboardPolicy(admin: Want, bundleName: string, accountId: number, policy
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控)。
+冲突规则： [从严管控](../../guides/多应用管控.md#规则1从严管控)。
 
 **参数：**
 
@@ -667,7 +667,7 @@ setWatermarkImage(admin: Want, bundleName: string, source: string | image.PixelM
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [独占](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则2独占), 同一个用户下的同一个应用的水印独占。不同用户、不同应用的水印[合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [独占](../../guides/多应用管控.md#规则2独占), 同一个用户下的同一个应用的水印独占。不同用户、不同应用的水印[合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -777,7 +777,7 @@ setPermissionManagedState(admin: Want, applicationInstance: ApplicationInstance,
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： 同一个应用实例的同一个权限[独占](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则2独占)，不同应用实例不同权限[合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： 同一个应用实例的同一个权限[独占](../../guides/多应用管控.md#规则2独占)，不同应用实例不同权限[合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -921,7 +921,7 @@ FORCE_OPEN：
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [独占](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则2独占)。
+冲突规则： [独占](../../guides/多应用管控.md#规则2独占)。
 
 **参数：**
 

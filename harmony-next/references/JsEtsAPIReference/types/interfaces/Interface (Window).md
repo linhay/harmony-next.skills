@@ -4567,7 +4567,7 @@ on(type: 'windowStatusChange', callback: Callback<[WindowStatusType](../enums/En
 使用当前接口开启监听后，在调用maximize、recover方法时会收到多次回调，如需获取去重后的回调，可使用[on('windowStatusDidChange')](#ZH-CN_TOPIC_0000002522080752__onwindowstatusdidchange20)。
 
 
-在[自由窗口](../../guides/窗口开发术语.md#自由窗口)状态下，应用的[targetAPIVersion](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-configuration-file#配置文件标签)设置小于14时，在窗口最大化状态（窗口铺满整个屏幕，2in1设备会有dock栏和状态栏，Tablet设备会有状态栏）时返回值对应为WindowStatusType::FULL_SCREEN。应用的[targetAPIVersion](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-configuration-file#配置文件标签)设置大于等于14时，在窗口最大化状态（窗口铺满整个屏幕，2in1设备会有dock栏和状态栏，Tablet设备会有状态栏）时返回值对应为WindowStatusType::MAXIMIZE。
+在[自由窗口](../../guides/窗口开发术语.md#自由窗口)状态下，应用的[targetAPIVersion](../../guides/app.json5配置文件.md#配置文件标签)设置小于14时，在窗口最大化状态（窗口铺满整个屏幕，2in1设备会有dock栏和状态栏，Tablet设备会有状态栏）时返回值对应为WindowStatusType::FULL_SCREEN。应用的[targetAPIVersion](../../guides/app.json5配置文件.md#配置文件标签)设置大于等于14时，在窗口最大化状态（窗口铺满整个屏幕，2in1设备会有dock栏和状态栏，Tablet设备会有状态栏）时返回值对应为WindowStatusType::MAXIMIZE。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -8438,7 +8438,7 @@ getWindowStatus(): [WindowStatusType](../enums/Enums.md#ZH-CN_TOPIC_000000252944
 
 获取当前应用窗口的模式。
 
-在[自由窗口](../../guides/窗口开发术语.md#自由窗口)状态下，应用的[targetAPIVersion](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-configuration-file#配置文件标签)设置小于14时，在窗口最大化状态（窗口铺满整个屏幕，2in1设备会有dock栏和状态栏，Tablet设备会有状态栏）时返回值对应为WindowStatusType::FULL_SCREEN。应用的[targetAPIVersion](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-configuration-file#配置文件标签)设置大于等于14时，在窗口最大化状态（窗口铺满整个屏幕，2in1设备会有dock栏和状态栏，Tablet设备会有状态栏）时返回值对应为WindowStatusType::MAXIMIZE。
+在[自由窗口](../../guides/窗口开发术语.md#自由窗口)状态下，应用的[targetAPIVersion](../../guides/app.json5配置文件.md#配置文件标签)设置小于14时，在窗口最大化状态（窗口铺满整个屏幕，2in1设备会有dock栏和状态栏，Tablet设备会有状态栏）时返回值对应为WindowStatusType::FULL_SCREEN。应用的[targetAPIVersion](../../guides/app.json5配置文件.md#配置文件标签)设置大于等于14时，在窗口最大化状态（窗口铺满整个屏幕，2in1设备会有dock栏和状态栏，Tablet设备会有状态栏）时返回值对应为WindowStatusType::MAXIMIZE。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 

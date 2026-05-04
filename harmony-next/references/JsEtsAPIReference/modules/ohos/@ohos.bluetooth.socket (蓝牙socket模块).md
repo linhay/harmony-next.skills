@@ -2,10 +2,10 @@
 
 本模块提供一种蓝牙套接字功能，可实现设备间连接和数据传输。当两个设备间进行蓝牙套接字通信交互时，依据设备功能的不同，可区分客户端与服务端。
 
-支持的套接字链路类型包括[RFCOMM](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#rfcomm)和[L2CAP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#l2cap)。
+支持的套接字链路类型包括[RFCOMM](../../guides/Connectivity Kit术语.md#rfcomm)和[L2CAP](../../guides/Connectivity Kit术语.md#l2cap)。
 
-- RFCOMM链路类型也称为串口通信协议（Serial Port Profile, [SPP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#spp)），适用于传统蓝牙（[BR](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#br)/[EDR](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#edr)）。
-- L2CAP链路类型适用于传统蓝牙（BR/EDR）和低功耗蓝牙（[BLE](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#ble)）。
+- RFCOMM链路类型也称为串口通信协议（Serial Port Profile, [SPP](../../guides/Connectivity Kit术语.md#spp)），适用于传统蓝牙（[BR](../../guides/Connectivity Kit术语.md#br)/[EDR](../../guides/Connectivity Kit术语.md#edr)）。
+- L2CAP链路类型适用于传统蓝牙（BR/EDR）和低功耗蓝牙（[BLE](../../guides/Connectivity Kit术语.md#ble)）。
 
 通过[socket.sppConnect](#ZH-CN_TOPIC_0000002553201409__socketsppconnect)创建客户端套接字并向服务端发起连接。
 
@@ -86,7 +86,7 @@ try {
 
 getL2capPsm(serverSocket: number): number
 
-获取服务端L2CAP链路类型套接字的协议/服务多路复用器值（Protocol/Service Multiplexer, [PSM](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#psm)），该值用于标识特定的服务数据传输通道。
+获取服务端L2CAP链路类型套接字的协议/服务多路复用器值（Protocol/Service Multiplexer, [PSM](../../guides/Connectivity Kit术语.md#psm)），该值用于标识特定的服务数据传输通道。
 
 
 需要在服务端调用完[socket.sppListen](#ZH-CN_TOPIC_0000002553201409__socketspplisten)后调用该接口，且传入的链路类型[SppType](#ZH-CN_TOPIC_0000002553201409__spptype)需是SPP_L2CAP或SPP_L2CAP_BLE。

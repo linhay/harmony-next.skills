@@ -132,6 +132,37 @@ class ReferenceCompatTests(unittest.TestCase):
             ),
             encoding="utf-8",
         )
+        (self.js_root / "modules" / "ohos" / "@ohos.final-guide.md").write_text(
+            (
+                "[数据库备份与恢复]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)\n"
+                "[多应用管控]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)\n"
+                "[Connectivity Kit术语]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#profile)\n"
+                "[组件启动规则（Stage模型）]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)\n"
+                "[MDM Kit开发指南]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-guide)\n"
+                "[申请受限权限]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)\n"
+                "[基于服务账号生成鉴权令牌]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-jwt-token#开发步骤)\n"
+                "[通过键值型数据库实现数据持久化]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-kv-store#开发步骤)\n"
+                "[声明权限]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions#在配置文件中声明权限)\n"
+                "[Ability Kit术语]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#masterprocess主控进程)\n"
+                "[应用上下文Context]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#context的获取方式)\n"
+                "[app.json5配置文件]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-configuration-file#multiappmode标签)\n"
+                "[组件启动规则（FA模型）]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules-fa)\n"
+            ),
+            encoding="utf-8",
+        )
         (self.js_root / "modules" / "ohos" / "@ohos.arkui.StateManagement (状态管理).md").write_text(
             "# @ohos.arkui.StateManagement (状态管理)\n",
             encoding="utf-8",
@@ -261,6 +292,58 @@ class ReferenceCompatTests(unittest.TestCase):
             "# if/else：条件渲染\n",
             encoding="utf-8",
         )
+        (self.js_root / "guides" / "数据库备份与恢复.md").write_text(
+            "# 数据库备份与恢复\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "多应用管控.md").write_text(
+            "# 多应用管控\n\n## 规则3：配置\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "Connectivity Kit术语.md").write_text(
+            "# Connectivity Kit术语\n\n## Profile\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "组件启动规则（Stage模型）.md").write_text(
+            "# 组件启动规则（Stage模型）\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "MDM Kit开发指南.md").write_text(
+            "# MDM Kit开发指南\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "申请受限权限.md").write_text(
+            "# 申请受限权限\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "基于服务账号生成鉴权令牌.md").write_text(
+            "# 基于服务账号生成鉴权令牌\n\n## 开发步骤\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "通过键值型数据库实现数据持久化.md").write_text(
+            "# 通过键值型数据库实现数据持久化\n\n## 开发步骤\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "声明权限.md").write_text(
+            "# 声明权限\n\n## 在配置文件中声明权限\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "Ability Kit术语.md").write_text(
+            "# Ability Kit术语\n\n## MasterProcess（主控进程）\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "应用上下文Context.md").write_text(
+            "# 应用上下文Context\n\n## Context的获取方式\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "app.json5配置文件.md").write_text(
+            "# app.json5配置文件\n\n## multiAppMode标签\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "组件启动规则（FA模型）.md").write_text(
+            "# 组件启动规则（FA模型）\n",
+            encoding="utf-8",
+        )
         (self.js_root / "topics" / "components" / "应用级变量的状态管理.md").write_text(
             "# 应用级变量的状态管理\n",
             encoding="utf-8",
@@ -325,7 +408,7 @@ class ReferenceCompatTests(unittest.TestCase):
         MODULE.generate_index(self.paths)
 
         self.assertEqual(rewritten, 1)
-        self.assertEqual(guide_rewritten, 7)
+        self.assertEqual(guide_rewritten, 8)
         self.assertIn(
             "../../topics/misc/native_handwrite_api.h.md",
             (self.js_root / "topics" / "misc" / "HandWrite.md").read_text(encoding="utf-8"),
@@ -471,6 +554,58 @@ class ReferenceCompatTests(unittest.TestCase):
             (self.js_root / "modules" / "ohos" / "@ohos.more-guide.md").read_text(encoding="utf-8"),
         )
         self.assertIn(
+            "../../guides/数据库备份与恢复.md",
+            (self.js_root / "modules" / "ohos" / "@ohos.final-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/多应用管控.md#规则3配置",
+            (self.js_root / "modules" / "ohos" / "@ohos.final-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/Connectivity Kit术语.md#profile",
+            (self.js_root / "modules" / "ohos" / "@ohos.final-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/组件启动规则（Stage模型）.md",
+            (self.js_root / "modules" / "ohos" / "@ohos.final-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/MDM Kit开发指南.md",
+            (self.js_root / "modules" / "ohos" / "@ohos.final-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/申请受限权限.md",
+            (self.js_root / "modules" / "ohos" / "@ohos.final-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/基于服务账号生成鉴权令牌.md#开发步骤",
+            (self.js_root / "modules" / "ohos" / "@ohos.final-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/通过键值型数据库实现数据持久化.md#开发步骤",
+            (self.js_root / "modules" / "ohos" / "@ohos.final-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/声明权限.md#在配置文件中声明权限",
+            (self.js_root / "modules" / "ohos" / "@ohos.final-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/Ability Kit术语.md#masterprocess主控进程",
+            (self.js_root / "modules" / "ohos" / "@ohos.final-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/应用上下文Context.md#context的获取方式",
+            (self.js_root / "modules" / "ohos" / "@ohos.final-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/app.json5配置文件.md#multiappmode标签",
+            (self.js_root / "modules" / "ohos" / "@ohos.final-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/组件启动规则（FA模型）.md",
+            (self.js_root / "modules" / "ohos" / "@ohos.final-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
             "../components/ForEach.md",
             (self.js_root / "topics" / "misc" / "rendering-guide.md").read_text(encoding="utf-8"),
         )
@@ -532,11 +667,13 @@ class ReferenceCompatTests(unittest.TestCase):
         self.assertIn("topics/misc/HandWrite.md", index_lines)
         self.assertIn("guides/状态管理V1-V2迁移指导.md", index_lines)
         self.assertIn("guides/窗口开发术语.md", index_lines)
+        self.assertIn("guides/数据库备份与恢复.md", index_lines)
         self.assertNotIn("capi/headers/native_handwrite_api.h.md", index_lines)
         references_index_lines = self.paths.references_index.read_text(encoding="utf-8").splitlines()
         self.assertIn("JsEtsAPIReference/topics/misc/native_handwrite_api.h.md", references_index_lines)
         self.assertIn("JsEtsAPIReference/guides/状态管理V1-V2迁移指导.md", references_index_lines)
         self.assertIn("JsEtsAPIReference/guides/窗口开发术语.md", references_index_lines)
+        self.assertIn("JsEtsAPIReference/guides/数据库备份与恢复.md", references_index_lines)
         self.assertIn("quickStart/intro.md", references_index_lines)
 
     def test_check_detects_index_drift(self) -> None:

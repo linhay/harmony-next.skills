@@ -49,7 +49,7 @@ showAd(ad: Advertisement, options: AdDisplayOptions, context?: common.UIAbilityC
 
 **示例：**
 
-其中context的获取方式参见[各类context的获取方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#context的获取方式)。
+其中context的获取方式参见[各类context的获取方式](../../guides/应用上下文Context.md#context的获取方式)。
 
 ```ets
 import { common } from '@kit.AbilityKit';
@@ -141,7 +141,7 @@ parseAdResponse(adResponse: string, listener: MultiSlotsAdLoadListener, context:
 
 **示例：**
 
-其中context的获取方式参见[各类context的获取方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#context的获取方式)。
+其中context的获取方式参见[各类context的获取方式](../../guides/应用上下文Context.md#context的获取方式)。
 
 ```ets
 import { common } from '@kit.AbilityKit';
@@ -352,7 +352,7 @@ constructor(context: common.Context)
 
 **示例：**
 
-其中context的获取方式参见[各类context的获取方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#context的获取方式)。
+其中context的获取方式参见[各类context的获取方式](../../guides/应用上下文Context.md#context的获取方式)。
 
 ```ets
 import { common } from '@kit.AbilityKit';
@@ -395,7 +395,7 @@ loadAd(adParam: AdRequestParams, adOptions: AdOptions, listener: AdLoadListener)
 
 **示例：**
 
-其中context的获取方式参见[各类context的获取方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#context的获取方式)。
+其中context的获取方式参见[各类context的获取方式](../../guides/应用上下文Context.md#context的获取方式)。
 
 ```ets
 import { common } from '@kit.AbilityKit';
@@ -455,7 +455,7 @@ loadAdWithMultiSlots(adParams: AdRequestParams[], adOptions: AdOptions, listener
 
 **示例：**
 
-其中context的获取方式参见[各类context的获取方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#context的获取方式)。
+其中context的获取方式参见[各类context的获取方式](../../guides/应用上下文Context.md#context的获取方式)。
 
 ```ets
 import { common } from '@kit.AbilityKit';

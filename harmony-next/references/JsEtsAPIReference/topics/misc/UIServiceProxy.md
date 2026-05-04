@@ -24,7 +24,7 @@ sendData(data: Record<string, Object>): void
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-组件启动规则详见：[组件启动规则（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules)。
+组件启动规则详见：[组件启动规则（Stage模型）](../../guides/组件启动规则（Stage模型）.md)。
 
 元服务API：从 API version 14开始，该接口支持在元服务中使用。
 

@@ -6,7 +6,7 @@
 
 本模块接口仅适用于Stage模型。
 
-本模块接口仅对设备管理应用开放，调用接口前需激活该应用，详情请参考[MDM Kit开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-guide)。
+本模块接口仅对设备管理应用开放，调用接口前需激活该应用，详情请参考[MDM Kit开发指南](../../guides/MDM Kit开发指南.md)。
 
 全局通用限制类策略由restrictions提供，若要全局禁用通话，请参考[@ohos.enterprise.restrictions（限制类策略）](@ohos.enterprise.restrictions （限制类策略）.md)。
 
@@ -28,7 +28,7 @@ setSimDisabled(admin: Want, slotId: number): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控)。
+冲突规则： [从严管控](../../guides/多应用管控.md#规则1从严管控)。
 
 **参数：**
 
@@ -79,7 +79,7 @@ setSimEnabled(admin: Want, slotId: number): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控)。
+冲突规则： [从严管控](../../guides/多应用管控.md#规则1从严管控)。
 
 **参数：**
 
@@ -195,7 +195,7 @@ addOutgoingCallPolicyNumbers(admin: Want, policy: [adminManager.Policy](@ohos.en
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -262,7 +262,7 @@ removeOutgoingCallPolicyNumbers(admin: Want, policy: [adminManager.Policy](@ohos
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -391,7 +391,7 @@ addIncomingCallPolicyNumbers(admin: Want, policy: [adminManager.Policy](@ohos.en
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 
@@ -458,7 +458,7 @@ removeIncomingCallPolicyNumbers(admin: Want, policy: [adminManager.Policy](@ohos
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-冲突规则： [合并](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则4合并)。
+冲突规则： [合并](../../guides/多应用管控.md#规则4合并)。
 
 **参数：**
 

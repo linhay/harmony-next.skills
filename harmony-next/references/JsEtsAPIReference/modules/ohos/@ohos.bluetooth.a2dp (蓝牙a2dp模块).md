@@ -1,6 +1,6 @@
 # @ohos.bluetooth.a2dp (蓝牙a2dp模块)
 
-本模块提供基于增强音频分发协议（Advanced Audio Distribution Profile，[A2DP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#a2dp)）的蓝牙媒体音频能力，支持获取媒体播放状态和连接状态等方法。
+本模块提供基于增强音频分发协议（Advanced Audio Distribution Profile，[A2DP](../../guides/Connectivity Kit术语.md#a2dp)）的蓝牙媒体音频能力，支持获取媒体播放状态和连接状态等方法。
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -26,7 +26,7 @@ type BaseProfile = baseProfile.BaseProfile
 
 createA2dpSrcProfile(): A2dpSourceProfile
 
-创建蓝牙媒体[A2DP Source](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#a2dp-source)实例。通过该实例可使用本端作为A2DP Source设备的方法，如：获取和其他设备间的蓝牙媒体音频播放状态。
+创建蓝牙媒体[A2DP Source](../../guides/Connectivity Kit术语.md#a2dp-source)实例。通过该实例可使用本端作为A2DP Source设备的方法，如：获取和其他设备间的蓝牙媒体音频播放状态。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
@@ -59,13 +59,13 @@ try {
 
 #### A2dpSourceProfile
 
-该实例表示蓝牙媒体音频中的[A2DP Source](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#a2dp-source)角色。
+该实例表示蓝牙媒体音频中的[A2DP Source](../../guides/Connectivity Kit术语.md#a2dp-source)角色。
 
 - 该类继承于[BaseProfile](#ZH-CN_TOPIC_0000002553361363__baseprofile)，因此可以使用其父类中的方法。
 
 - 使用该类的方法前，需通过[createA2dpSrcProfile](#ZH-CN_TOPIC_0000002553361363__a2dpcreatea2dpsrcprofile)方法构造该类的实例。
 
-- 和该实例角色相对应的是[A2DP Sink](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#a2dp-sink)。
+- 和该实例角色相对应的是[A2DP Sink](../../guides/Connectivity Kit术语.md#a2dp-sink)。
 
 #### getPlayingState
 

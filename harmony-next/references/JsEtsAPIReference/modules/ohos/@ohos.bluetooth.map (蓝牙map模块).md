@@ -1,6 +1,6 @@
 # @ohos.bluetooth.map (蓝牙map模块)
 
-本模块提供基于消息访问协议（Message Access Profile，[MAP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#map)）的蓝牙消息访问能力，支持获取连接状态等方法。
+本模块提供基于消息访问协议（Message Access Profile，[MAP](../../guides/Connectivity Kit术语.md#map)）的蓝牙消息访问能力，支持获取连接状态等方法。
 
 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -26,7 +26,7 @@ type BaseProfile = baseProfile.BaseProfile
 
 createMapMseProfile(): MapMseProfile
 
-创建蓝牙消息访问协议中的[MSE](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#mse)实例。通过该实例可使用本端作为MSE设备的接口，如：获取和其他设备间的蓝牙消息服务连接状态。
+创建蓝牙消息访问协议中的[MSE](../../guides/Connectivity Kit术语.md#mse)实例。通过该实例可使用本端作为MSE设备的接口，如：获取和其他设备间的蓝牙消息服务连接状态。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
@@ -60,10 +60,10 @@ try {
 
 #### MapMseProfile
 
-该实例表示蓝牙消息访问协议中的[MSE](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#mse)角色。
+该实例表示蓝牙消息访问协议中的[MSE](../../guides/Connectivity Kit术语.md#mse)角色。
 
 - 该类继承于[BaseProfile](#ZH-CN_TOPIC_0000002553361369__baseprofile)，因此可以使用其父类中的方法。
 
 - 使用该类的接口前，需通过[createMapMseProfile](#ZH-CN_TOPIC_0000002553361369__mapcreatemapmseprofile)接口构造该类的实例。
 
-- 和该实例角色相对应的是[MCE](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#mce)角色。
+- 和该实例角色相对应的是[MCE](../../guides/Connectivity Kit术语.md#mce)角色。

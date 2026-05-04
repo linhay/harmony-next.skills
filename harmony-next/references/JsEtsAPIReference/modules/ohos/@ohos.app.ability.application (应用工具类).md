@@ -1,6 +1,6 @@
 # @ohos.app.ability.application (应用工具类)
 
-开发者可以通过该模块管理和获取应用的上下文[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage)，以及控制应用进程的状态。
+开发者可以通过该模块管理和获取应用的上下文[Context](../../guides/应用上下文Context.md)，以及控制应用进程的状态。
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -224,9 +224,9 @@ export default class EntryAbility extends UIAbility {
 
 promoteCurrentToCandidateMasterProcess(insertToHead: boolean): Promise<void>
 
-开发者可以调用该接口将当前进程放入[备选主控进程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#candidatemasterprocess备选主控进程)链表。使用Promise异步回调。
+开发者可以调用该接口将当前进程放入[备选主控进程](../../guides/Ability Kit术语.md#candidatemasterprocess备选主控进程)链表。使用Promise异步回调。
 
-当[主控进程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#masterprocess主控进程)销毁后，再次启动配置了isolationProcess为true的UIAbility/UIExtensionAbility组件时，系统会根据是否存在备选主控进程执行相应操作。
+当[主控进程](../../guides/Ability Kit术语.md#masterprocess主控进程)销毁后，再次启动配置了isolationProcess为true的UIAbility/UIExtensionAbility组件时，系统会根据是否存在备选主控进程执行相应操作。
 
 - 如果存在备选主控进程，系统会将备选主控进程链表首节点的进程设置为主控进程，触发[onNewProcessRequest](@ohos.app.ability.AbilityStage (AbilityStage组件管理器).md#ZH-CN_TOPIC_0000002522080526__onnewprocessrequest11)回调。
 
@@ -235,7 +235,7 @@ promoteCurrentToCandidateMasterProcess(insertToHead: boolean): Promise<void>
   - 对于UIAbility组件，系统将创建新的空进程作为主控进程。
   - 对于UIExtensionAbility组件，系统会优先复用已有的UIExtensionAbility进程作为新的主控进程，无可用进程时则创建新的空进程作为主控进程。
 
-如果当前进程已经是[主控进程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#masterprocess主控进程)，调用该接口无效并且不会抛出错误码。
+如果当前进程已经是[主控进程](../../guides/Ability Kit术语.md#masterprocess主控进程)，调用该接口无效并且不会抛出错误码。
 
 当前进程只有运行了isolationProcess字段设为true的组件，或曾经成为过主控进程，开发者才可将其设置为备选主控进程。
 
@@ -340,7 +340,7 @@ export default class EntryAbility extends UIAbility {
 
 exitMasterProcessRole(): Promise<void>
 
-放弃当前进程的[主控进程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#masterprocess主控进程)身份。使用Promise异步回调。
+放弃当前进程的[主控进程](../../guides/Ability Kit术语.md#masterprocess主控进程)身份。使用Promise异步回调。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 

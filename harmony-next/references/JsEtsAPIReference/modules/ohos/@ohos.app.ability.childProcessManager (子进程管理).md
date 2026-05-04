@@ -43,7 +43,7 @@ import { childProcessManager } from '@kit.AbilityKit';
 
 startChildProcess(srcEntry: string, startMode: StartMode): Promise<number>
 
-启动[ArkTS子进程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#arkts子进程)。使用Promise异步回调。
+启动[ArkTS子进程](../../guides/Ability Kit术语.md#arkts子进程)。使用Promise异步回调。
 
 
 调用该接口创建子进程成功会返回子进程pid，然后执行子进程的[ChildProcess.onStart](@ohos.app.ability.ChildProcess (子进程基类).md#ZH-CN_TOPIC_0000002553200493__childprocessonstart)函数，[ChildProcess.onStart](@ohos.app.ability.ChildProcess (子进程基类).md#ZH-CN_TOPIC_0000002553200493__childprocessonstart)函数执行完后子进程会自动销毁。
@@ -115,7 +115,7 @@ try {
 
 startChildProcess(srcEntry: string, startMode: StartMode, callback: AsyncCallback<number>): void
 
-启动[ArkTS子进程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#arkts子进程)。使用callback异步回调。
+启动[ArkTS子进程](../../guides/Ability Kit术语.md#arkts子进程)。使用callback异步回调。
 
 
 调用该接口创建子进程成功会返回子进程pid，然后执行子进程的[ChildProcess.onStart](@ohos.app.ability.ChildProcess (子进程基类).md#ZH-CN_TOPIC_0000002553200493__childprocessonstart)函数，[ChildProcess.onStart](@ohos.app.ability.ChildProcess (子进程基类).md#ZH-CN_TOPIC_0000002553200493__childprocessonstart)函数执行完后子进程会自动销毁。
@@ -183,7 +183,7 @@ try {
 
 startArkChildProcess(srcEntry: string, args: ChildProcessArgs, options?: ChildProcessOptions): Promise<number>
 
-启动[ArkTS子进程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#arkts子进程)。使用Promise异步回调。
+启动[ArkTS子进程](../../guides/Ability Kit术语.md#arkts子进程)。使用Promise异步回调。
 
 
 调用该接口创建的子进程不会继承父进程资源，子进程创建成功会返回子进程pid，然后执行子进程的[ChildProcess.onStart](@ohos.app.ability.ChildProcess (子进程基类).md#ZH-CN_TOPIC_0000002553200493__childprocessonstart)函数。[ChildProcess.onStart](@ohos.app.ability.ChildProcess (子进程基类).md#ZH-CN_TOPIC_0000002553200493__childprocessonstart)函数执行完后子进程不会自动销毁，需要子进程调用[process.abort](@ohos.process (获取进程相关的信息).md#ZH-CN_TOPIC_0000002522240700__processabort)销毁。调用该接口的进程销毁后，所创建的子进程也会一并销毁。
@@ -292,7 +292,7 @@ struct Index {
 
 startNativeChildProcess(entryPoint: string, args: ChildProcessArgs, options?: ChildProcessOptions): Promise<number>
 
-启动[Native子进程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#native子进程)。使用Promise异步回调。
+启动[Native子进程](../../guides/Ability Kit术语.md#native子进程)。使用Promise异步回调。
 
 调用该接口创建的子进程不会继承父进程资源，子进程创建成功会返回子进程pid，然后加载参数中指定的动态链接库文件并执行子进程的入口函数，入口函数执行完后子进程会自动销毁。调用该接口的进程销毁后，所创建的子进程也会一并销毁。
 

@@ -79,7 +79,7 @@ commit(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[关系型数据库错误码]([关系型数据库错误码](../../errors/关系型数据库错误码.md).md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[关系型数据库错误码]([关系型数据库错误码](../../errors/关系型数据库错误码.md).md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -129,7 +129,7 @@ rollback(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -189,7 +189,7 @@ insert(table: string, values: [ValuesBucket](../../topics/misc/Types.md#ZH-CN_TO
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -263,7 +263,7 @@ insertSync(table: string, values: [ValuesBucket](../../topics/misc/Types.md#ZH-C
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -345,7 +345,7 @@ batchInsert(table: string, values: Array<[ValuesBucket](../../topics/misc/Types.
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -433,7 +433,7 @@ batchInsertSync(table: string, values: Array<[ValuesBucket](../../topics/misc/Ty
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -526,7 +526,7 @@ batchInsertWithConflictResolution(table: string, values: Array<[ValuesBucket](..
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -627,7 +627,7 @@ batchInsertWithConflictResolutionSync(table: string, values: Array<[ValuesBucket
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -867,7 +867,7 @@ update(values: [ValuesBucket](../../topics/misc/Types.md#ZH-CN_TOPIC_00000024974
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -941,7 +941,7 @@ updateSync(values: [ValuesBucket](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1153,7 +1153,7 @@ delete(predicates: RdbPredicates):Promise<number>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1219,7 +1219,7 @@ deleteSync(predicates: RdbPredicates): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1978,7 +1978,7 @@ execute(sql: string, args?: Array<[ValueType](../../topics/misc/Types.md#ZH-CN_T
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2053,7 +2053,7 @@ executeSync(sql: string, args?: Array<[ValueType](../../topics/misc/Types.md#ZH-
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |

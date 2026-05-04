@@ -18,7 +18,7 @@ import { resourceManager } from '@kit.LocalizationKit';
 
 FA模型仍需要先导入模块，再调用[getResourceManager](#ZH-CN_TOPIC_0000002553361213__resourcemanagergetresourcemanager)接口获取资源管理对象。
 
-Stage模型下Context的引用方法请参考[Stage模型的Context详细介绍](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage)。
+Stage模型下Context的引用方法请参考[Stage模型的Context详细介绍](../../guides/应用上下文Context.md)。
 
 ```ets
 import { UIAbility } from '@kit.AbilityKit';

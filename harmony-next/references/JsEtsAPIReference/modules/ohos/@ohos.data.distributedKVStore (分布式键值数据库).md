@@ -392,7 +392,7 @@ getKVStore<T>(storeId: string, options: Options, callback: AsyncCallback<T>): vo
 
 注意：
 
-在获取已有的分布式键值数据库时，如果数据库文件无法打开（例如文件头损坏），将触发自动重建逻辑，并返回新创建的分布式键值数据库实例。建议对重要且无法重新生成的数据使用备份恢复功能，以防止数据丢失。有关备份恢复的使用方法，请参阅[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+在获取已有的分布式键值数据库时，如果数据库文件无法打开（例如文件头损坏），将触发自动重建逻辑，并返回新创建的分布式键值数据库实例。建议对重要且无法重新生成的数据使用备份恢复功能，以防止数据丢失。有关备份恢复的使用方法，请参阅[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
@@ -455,7 +455,7 @@ getKVStore<T>(storeId: string, options: Options): Promise<T>
 
 注意：
 
-获取已有的分布式键值数据库时，如果数据库文件无法打开（如文件头损坏），将触发自动重建逻辑，并返回新创建的分布式键值数据库实例。建议对重要且无法重新生成的数据使用备份恢复功能，防止数据丢失。备份恢复的使用方法详见[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+获取已有的分布式键值数据库时，如果数据库文件无法打开（如文件头损坏），将触发自动重建逻辑，并返回新创建的分布式键值数据库实例。建议对重要且无法重新生成的数据使用备份恢复功能，防止数据丢失。备份恢复的使用方法详见[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
@@ -1506,7 +1506,7 @@ equalTo(field: string, value: number|string|boolean): Query
 
 使用equalTo时需要结合[Schema](#ZH-CN_TOPIC_0000002553360553__schema)使用。
 
-使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-kv-store#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
+使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](../../guides/通过键值型数据库实现数据持久化.md#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
 
 **参数：**
 
@@ -1558,7 +1558,7 @@ notEqualTo(field: string, value: number|string|boolean): Query
 
 使用notEqualTo时需要结合[Schema](#ZH-CN_TOPIC_0000002553360553__schema)使用。
 
-使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-kv-store#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
+使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](../../guides/通过键值型数据库实现数据持久化.md#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
 
 **参数：**
 
@@ -1610,7 +1610,7 @@ greaterThan(field: string, value: number|string|boolean): Query
 
 使用greaterThan时需要结合[Schema](#ZH-CN_TOPIC_0000002553360553__schema)使用。
 
-使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-kv-store#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
+使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](../../guides/通过键值型数据库实现数据持久化.md#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
 
 **参数：**
 
@@ -1662,7 +1662,7 @@ lessThan(field: string, value: number|string): Query
 
 使用lessThan时需要结合[Schema](#ZH-CN_TOPIC_0000002553360553__schema)使用。
 
-使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-kv-store#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
+使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](../../guides/通过键值型数据库实现数据持久化.md#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
 
 **参数：**
 
@@ -1714,7 +1714,7 @@ greaterThanOrEqualTo(field: string, value: number|string): Query
 
 使用greaterThanOrEqualTo时需要结合[Schema](#ZH-CN_TOPIC_0000002553360553__schema)使用。
 
-使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-kv-store#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
+使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](../../guides/通过键值型数据库实现数据持久化.md#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
 
 **参数：**
 
@@ -1766,7 +1766,7 @@ lessThanOrEqualTo(field: string, value: number|string): Query
 
 使用lessThanOrEqualTo时需要结合[Schema](#ZH-CN_TOPIC_0000002553360553__schema)使用。
 
-使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-kv-store#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
+使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](../../guides/通过键值型数据库实现数据持久化.md#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
 
 **参数：**
 
@@ -1818,7 +1818,7 @@ isNull(field: string): Query
 
 使用isNull时需要结合[Schema](#ZH-CN_TOPIC_0000002553360553__schema)使用。
 
-使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-kv-store#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
+使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](../../guides/通过键值型数据库实现数据持久化.md#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
 
 **参数：**
 
@@ -1869,7 +1869,7 @@ inNumber(field: string, valueList: number[]): Query
 
 使用inNumber时需要结合[Schema](#ZH-CN_TOPIC_0000002553360553__schema)使用。
 
-使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-kv-store#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
+使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](../../guides/通过键值型数据库实现数据持久化.md#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
 
 **参数：**
 
@@ -1921,7 +1921,7 @@ inString(field: string, valueList: string[]): Query
 
 使用inString时需要结合[Schema](#ZH-CN_TOPIC_0000002553360553__schema)使用。
 
-使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-kv-store#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
+使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](../../guides/通过键值型数据库实现数据持久化.md#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
 
 **参数：**
 
@@ -1973,7 +1973,7 @@ notInNumber(field: string, valueList: number[]): Query
 
 使用notInNumber时需要结合[Schema](#ZH-CN_TOPIC_0000002553360553__schema)使用。
 
-使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-kv-store#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
+使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](../../guides/通过键值型数据库实现数据持久化.md#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
 
 **参数：**
 
@@ -2025,7 +2025,7 @@ notInString(field: string, valueList: string[]): Query
 
 使用notInString时需要结合[Schema](#ZH-CN_TOPIC_0000002553360553__schema)使用。
 
-使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-kv-store#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
+使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](../../guides/通过键值型数据库实现数据持久化.md#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
 
 **参数：**
 
@@ -2077,7 +2077,7 @@ like(field: string, value: string): Query
 
 使用like时需要结合[Schema](#ZH-CN_TOPIC_0000002553360553__schema)使用。
 
-使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-kv-store#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
+使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](../../guides/通过键值型数据库实现数据持久化.md#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
 
 **参数：**
 
@@ -2129,7 +2129,7 @@ unlike(field: string, value: string): Query
 
 使用unlike时需要结合[Schema](#ZH-CN_TOPIC_0000002553360553__schema)使用。
 
-使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-kv-store#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
+使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](../../guides/通过键值型数据库实现数据持久化.md#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
 
 **参数：**
 
@@ -2247,7 +2247,7 @@ orderByAsc(field: string): Query
 
 使用orderByAsc时需要结合[Schema](#ZH-CN_TOPIC_0000002553360553__schema)使用。
 
-使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-kv-store#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
+使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](../../guides/通过键值型数据库实现数据持久化.md#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
 
 **参数：**
 
@@ -2299,7 +2299,7 @@ orderByDesc(field: string): Query
 
 使用orderByDesc时需要结合[Schema](#ZH-CN_TOPIC_0000002553360553__schema)使用。
 
-使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-kv-store#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
+使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](../../guides/通过键值型数据库实现数据持久化.md#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
 
 **参数：**
 
@@ -2401,7 +2401,7 @@ isNotNull(field: string): Query
 
 使用isNotNull时需要结合[Schema](#ZH-CN_TOPIC_0000002553360553__schema)使用。
 
-使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-kv-store#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
+使用Schema创建数据库请参见[通过键值型数据库实现数据持久化](../../guides/通过键值型数据库实现数据持久化.md#开发步骤)中使用getKVStore()方法创建并获取键值数据库示例。
 
 **参数：**
 

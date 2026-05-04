@@ -25,7 +25,7 @@ export default class EntryAbility extends UIAbility {
   }
 ```
 
-获取沙箱路径的方式及其接口用法也可参考：[应用上下文Context-获取应用文件路径](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#获取应用文件路径)。
+获取沙箱路径的方式及其接口用法也可参考：[应用上下文Context-获取应用文件路径](../../guides/应用上下文Context.md#获取应用文件路径)。
 
 将指向资源的字符串称为URI。对于只支持沙箱路径作为入参的接口，可以使用构造fileUri对象并获取其沙箱路径的属性的方式将URI转换为沙箱路径，然后使用文件接口。URI定义解及其转换方式请参考：[文件URI](@ohos.file.fileuri (文件URI).md)。
 

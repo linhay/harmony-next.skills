@@ -1,10 +1,10 @@
 # @ohos.bluetooth.ble (蓝牙ble模块)
 
-本模块提供了基于低功耗蓝牙（Bluetooth Low Energy，[BLE](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#ble)）技术的蓝牙能力，支持发起BLE扫描、发送BLE广播报文、以及基于通用属性协议（Generic Attribute Profile，[GATT](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#gatt)）的连接和传输数据。
+本模块提供了基于低功耗蓝牙（Bluetooth Low Energy，[BLE](../../guides/Connectivity Kit术语.md#ble)）技术的蓝牙能力，支持发起BLE扫描、发送BLE广播报文、以及基于通用属性协议（Generic Attribute Profile，[GATT](../../guides/Connectivity Kit术语.md#gatt)）的连接和传输数据。
 
 - 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-- 接口中涉及的[UUID](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#uuid)服务，可以通过工具函数[util.generateRandomUUID](@ohos.util (util工具函数).md#ZH-CN_TOPIC_0000002522240702__utilgeneraterandomuuid9)生成。
+- 接口中涉及的[UUID](../../guides/Connectivity Kit术语.md#uuid)服务，可以通过工具函数[util.generateRandomUUID](@ohos.util (util工具函数).md#ZH-CN_TOPIC_0000002522240702__utilgeneraterandomuuid9)生成。
 
 #### 导入模块
 
@@ -3807,7 +3807,7 @@ try {
 
 setBLEMtuSize(mtu: number): void
 
-client端同server端协商[MTU](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#mtu)（最大传输单元）大小。
+client端同server端协商[MTU](../../guides/Connectivity Kit术语.md#mtu)（最大传输单元）大小。
 
 -
 

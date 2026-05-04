@@ -8,13 +8,13 @@
 
 **导入模块**
 
-[Stage模型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#stage模型)下：
+[Stage模型](../../guides/Ability Kit术语.md#stage模型)下：
 
 ```ets
 import { common } from '@kit.AbilityKit';
 ```
 
-[FA模型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#fa模型)下：
+[FA模型](../../guides/Ability Kit术语.md#fa模型)下：
 
 ```ets
 import ability from '@ohos.ability.ability';

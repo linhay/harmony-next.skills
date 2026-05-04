@@ -1,6 +1,6 @@
 # @ohos.bluetooth.hid (蓝牙hid模块)
 
-本模块提供基于人机接口协议（Human Interface Device Profile，[HID](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#hid)）技术的蓝牙人机交互能力，支持获取连接状态等方法。
+本模块提供基于人机接口协议（Human Interface Device Profile，[HID](../../guides/Connectivity Kit术语.md#hid)）技术的蓝牙人机交互能力，支持获取连接状态等方法。
 
 当本端设备被注册为HID设备的角色时，可以使用[HidDeviceProfile](#ZH-CN_TOPIC_0000002553361367__hiddeviceprofile23)相关接口，且仅支持与传统蓝牙类型设备连接和交互。
 
@@ -43,7 +43,7 @@ type BluetoothAddress = common.BluetoothAddress
 
 createHidHostProfile(): HidHostProfile
 
-创建蓝牙[HID Host](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#hid-host)实例。通过该实例可使用本端作为HID Host的接口，如：获取和其他设备间的蓝牙HID连接状态。
+创建蓝牙[HID Host](../../guides/Connectivity Kit术语.md#hid-host)实例。通过该实例可使用本端作为HID Host的接口，如：获取和其他设备间的蓝牙HID连接状态。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
@@ -77,7 +77,7 @@ try {
 
 createHidDeviceProfile(): HidDeviceProfile
 
-创建蓝牙[HID Device](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#hid-device)实例。通过该实例可使用本端作为HID Device的接口，如：获取和其他设备间的蓝牙HID连接状态。
+创建蓝牙[HID Device](../../guides/Connectivity Kit术语.md#hid-device)实例。通过该实例可使用本端作为HID Device的接口，如：获取和其他设备间的蓝牙HID连接状态。
 
 系统能力：SystemCapability.Communication.Bluetooth.Core
 
@@ -110,7 +110,7 @@ try {
 
 **HidDeviceProfile23+**
 
-该实例表示蓝牙HID通信中的[HID Device](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#hid-device)角色。
+该实例表示蓝牙HID通信中的[HID Device](../../guides/Connectivity Kit术语.md#hid-device)角色。
 
 - 该类继承于[BaseProfile](#ZH-CN_TOPIC_0000002553361367__baseprofile)，因此可以使用其父类中的方法。
 
@@ -118,7 +118,7 @@ try {
 
 - 通过该实例可以操作设备端的行为，如注册HID设备([registerHidDevice](#ZH-CN_TOPIC_0000002553361367__registerhiddevice23))，发送报告([sendReport](#ZH-CN_TOPIC_0000002553361367__sendreport23))等。
 
-- 和该实例角色相对应的是[HID Host](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#hid-host)。
+- 和该实例角色相对应的是[HID Host](../../guides/Connectivity Kit术语.md#hid-host)。
 
 **registerHidDevice23+**
 
@@ -491,7 +491,7 @@ try {
 
 onGetReport(callback: Callback<GetReportData>): void
 
-订阅HID主机向HID设备发送的[GET_REPORT](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#hid)传输请求事件，使用callback异步回调。收到回调后可以通过调用接口[replyReport](#ZH-CN_TOPIC_0000002553361367__replyreport23)进行回复。当收到的数据不符合预期时，可以通过调用接口[reportError](#ZH-CN_TOPIC_0000002553361367__reporterror23)进行回复。
+订阅HID主机向HID设备发送的[GET_REPORT](../../guides/Connectivity Kit术语.md#hid)传输请求事件，使用callback异步回调。收到回调后可以通过调用接口[replyReport](#ZH-CN_TOPIC_0000002553361367__replyreport23)进行回复。当收到的数据不符合预期时，可以通过调用接口[reportError](#ZH-CN_TOPIC_0000002553361367__reporterror23)进行回复。
 
 需要权限：ohos.permission.ACCESS_BLUETOOTH
 
@@ -532,7 +532,7 @@ try {
 
 offGetReport(callback?: Callback<GetReportData>): void
 
-取消订阅主机向HID设备发出的[GET_REPORT](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#hid)传输请求事件的回调。使用callback异步回调。
+取消订阅主机向HID设备发出的[GET_REPORT](../../guides/Connectivity Kit术语.md#hid)传输请求事件的回调。使用callback异步回调。
 
 需要权限：ohos.permission.ACCESS_BLUETOOTH
 
@@ -574,7 +574,7 @@ try {
 
 onSetReport(callback: Callback<SetReportData>): void
 
-订阅HID主机向HID设备发送的[SET_REPORT](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#hid)传输请求事件，使用callback异步回调。当收到的数据不符合预期时，可以通过调用接口[reportError](#ZH-CN_TOPIC_0000002553361367__reporterror23)进行回复。
+订阅HID主机向HID设备发送的[SET_REPORT](../../guides/Connectivity Kit术语.md#hid)传输请求事件，使用callback异步回调。当收到的数据不符合预期时，可以通过调用接口[reportError](#ZH-CN_TOPIC_0000002553361367__reporterror23)进行回复。
 
 需要权限：ohos.permission.ACCESS_BLUETOOTH
 
@@ -740,7 +740,7 @@ try {
 
 onSetProtocol(callback: Callback<ProtocolData>): void
 
-订阅HID主机向HID设备发送的[SET_PROTOCOL](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#hid)请求事件，使用callback异步回调。
+订阅HID主机向HID设备发送的[SET_PROTOCOL](../../guides/Connectivity Kit术语.md#hid)请求事件，使用callback异步回调。
 
 需要权限：ohos.permission.ACCESS_BLUETOOTH
 
@@ -781,7 +781,7 @@ try {
 
 offSetProtocol(callback?: Callback<ProtocolData>): void
 
-取消订阅主机向HID设备发送的[SET_PROTOCOL](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#hid)请求事件的回调。使用callback异步回调。
+取消订阅主机向HID设备发送的[SET_PROTOCOL](../../guides/Connectivity Kit术语.md#hid)请求事件的回调。使用callback异步回调。
 
 需要权限：ohos.permission.ACCESS_BLUETOOTH
 
@@ -904,7 +904,7 @@ try {
 
 **HidDeviceSdp23+**
 
-描述HID设备在服务发现协议([SDP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#sdp))中的服务注册配置。该结构定义了HID设备的身份标识、能力描述和协议特征，是HID主机发现、识别和连接HID设备的关键参数。
+描述HID设备在服务发现协议([SDP](../../guides/Connectivity Kit术语.md#sdp))中的服务注册配置。该结构定义了HID设备的身份标识、能力描述和协议特征，是HID主机发现、识别和连接HID设备的关键参数。
 
 系统能力：SystemCapability.Communication.Bluetooth.Core
 
@@ -937,7 +937,7 @@ try {
 
 **GetReportData23+**
 
-描述HID主机向HID设备发送的[GET_REPORT](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#hid)传输请求事件的信息。
+描述HID主机向HID设备发送的[GET_REPORT](../../guides/Connectivity Kit术语.md#hid)传输请求事件的信息。
 
 系统能力：SystemCapability.Communication.Bluetooth.Core
 
@@ -951,7 +951,7 @@ try {
 
 **SetReportData23+**
 
-描述HID主机向HID设备发送的[SET_REPORT](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#hid)传输请求事件的信息。
+描述HID主机向HID设备发送的[SET_REPORT](../../guides/Connectivity Kit术语.md#hid)传输请求事件的信息。
 
 系统能力：SystemCapability.Communication.Bluetooth.Core
 

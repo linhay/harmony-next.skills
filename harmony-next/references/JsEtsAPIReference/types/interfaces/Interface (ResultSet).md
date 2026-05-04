@@ -51,7 +51,7 @@ getColumnNames(): Array<string>
 
 错误码：
 
-以下错误码的详细介绍请参见[关系型数据库错误码]([关系型数据库错误码](../../errors/关系型数据库错误码.md).md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[关系型数据库错误码]([关系型数据库错误码](../../errors/关系型数据库错误码.md).md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -100,7 +100,7 @@ getColumnIndex(columnName: string): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码]([通用错误码](../../errors/通用错误码.md).md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -158,7 +158,7 @@ getColumnName(columnIndex: number): string
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -215,7 +215,7 @@ get[ColumnType](../enums/Enums.md#ZH-CN_TOPIC_0000002497604686__columntype18)(co
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -279,7 +279,7 @@ get[ColumnType](../enums/Enums.md#ZH-CN_TOPIC_0000002497604686__columntype18)Syn
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -343,7 +343,7 @@ goTo(offset:number): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -398,7 +398,7 @@ goToRow(position: number): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -447,7 +447,7 @@ goToFirstRow(): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -495,7 +495,7 @@ goToLastRow(): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -543,7 +543,7 @@ goToNextRow(): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -591,7 +591,7 @@ goToPreviousRow(): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -645,7 +645,7 @@ getValue(columnIndex: number): [ValueType](../../topics/misc/Types.md#ZH-CN_TOPI
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -704,7 +704,7 @@ getBlob(columnIndex: number): Uint8Array
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -759,7 +759,7 @@ getString(columnIndex: number): string
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -814,7 +814,7 @@ getLong(columnIndex: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -873,7 +873,7 @@ getDouble(columnIndex: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -932,7 +932,7 @@ getAsset(columnIndex: number): Asset
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -987,7 +987,7 @@ get[Assets](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708__assets10)(c
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1036,7 +1036,7 @@ getRow(): [ValuesBucket](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444708
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1091,7 +1091,7 @@ getRows(maxCount: number, position?: number): Promise<Array<[ValuesBucket](../..
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1157,7 +1157,7 @@ getCurrentRowData(): RowData
 
 错误码：
 
-以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1211,7 +1211,7 @@ getRowsData(maxCount: number, position?: number): Promise<RowsData>
 
 错误码：
 
-以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1281,7 +1281,7 @@ getSendableRow(): sendableRelationalStore.[ValuesBucket](../../topics/misc/Types
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1371,7 +1371,7 @@ isColumnNull(columnIndex: number): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+以下错误码的详细介绍请参见[通用错误码](通用错误码.md)和[关系型数据库错误码](关系型数据库错误码.md)。其中，14800011错误码处理可参考[数据库备份与恢复](../../guides/数据库备份与恢复.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
