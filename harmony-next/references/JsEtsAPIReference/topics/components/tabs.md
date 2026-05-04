@@ -13,7 +13,7 @@
 
 #### 子组件
 
-仅支持子组件[TabContent](TabContent.md)，以及渲染控制类型[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)和[ForEach](ForEach.md)，不建议自定义组件作为子组件。并且if/else和ForEach下也仅支持TabContent作为子组件，不建议自定义组件作为子组件。
+仅支持子组件[TabContent](TabContent.md)，以及渲染控制类型[if/else](../../guides/if-else：条件渲染.md)和[ForEach](ForEach.md)，不建议自定义组件作为子组件。并且if/else和ForEach下也仅支持TabContent作为子组件，不建议自定义组件作为子组件。
 
 Tabs子组件的visibility属性设置为None，或者visibility属性设置为Hidden时，对应子组件不显示，但依然会在视窗内占位。
 

@@ -46,9 +46,9 @@ selected(value: number | Resource)
 
 设置下拉菜单初始选项的索引，第一项的索引为0。当不设置selected属性或设置为异常值时，默认选中值为-1，菜单项不选中；当设置为undefined、null时，选中第一项。
 
-从API version 10开始，该属性支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定变量。
+从API version 10开始，该属性支持[$$](../../guides/$$语法：系统组件双向同步.md)双向绑定变量。
 
-从API version 18开始，该属性支持[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding#系统组件参数双向绑定)双向绑定变量。
+从API version 18开始，该属性支持[!!](../../guides/!!语法：双向绑定.md#系统组件参数双向绑定)双向绑定变量。
 
 元服务API： 从API version 11开始，该接口支持在元服务中使用。
 
@@ -66,7 +66,7 @@ selected(numCount: Optional<number | Resource>)
 
 设置下拉菜单初始选项的索引，第一项的索引为0。当不设置selected属性或设置异常值时，默认选择值为-1，菜单项不选中；当设置为undefined、null时，选中第一项。
 
-该属性支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)、[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding#系统组件参数双向绑定)双向绑定变量。
+该属性支持[$$](../../guides/$$语法：系统组件双向同步.md)、[!!](../../guides/!!语法：双向绑定.md#系统组件参数双向绑定)双向绑定变量。
 
 元服务API： 从API version 18开始，该接口支持在元服务中使用。
 
@@ -84,9 +84,9 @@ value(value: ResourceStr)
 
 设置下拉按钮的文本内容。选中菜单项后，按钮文本将自动更新为选中的菜单项文本。
 
-从API version 10开始，该参数支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定变量。
+从API version 10开始，该参数支持[$$](../../guides/$$语法：系统组件双向同步.md)双向绑定变量。
 
-从API version 18开始，该参数支持[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding#系统组件参数双向绑定)双向绑定变量。
+从API version 18开始，该参数支持[!!](../../guides/!!语法：双向绑定.md#系统组件参数双向绑定)双向绑定变量。
 
 元服务API： 从API version 11开始，该接口支持在元服务中使用。
 
@@ -104,7 +104,7 @@ value(resStr: Optional<ResourceStr>)
 
 设置下拉按钮的文本内容。选中菜单项后，按钮文本将自动更新为选中的菜单项文本。与[value](#ZH-CN_TOPIC_0000002553200803__value)相比，resStr参数新增了对undefined类型的支持。
 
-该参数支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)、[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding#系统组件参数双向绑定)双向绑定变量。
+该参数支持[$$](../../guides/$$语法：系统组件双向同步.md)、[!!](../../guides/!!语法：双向绑定.md#系统组件参数双向绑定)双向绑定变量。
 
 元服务API： 从API version 18开始，该接口支持在元服务中使用。
 

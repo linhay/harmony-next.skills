@@ -308,7 +308,7 @@ Preferences实例配置选项。
 
 #### Preferences
 
-Preferences继承自[ISendable](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#isendable)，可以在ArkTS并发实例间（包括主线程、TaskPool&Worker工作线程）传递，传递的行为是引用传递，提供获取和修改存储数据的接口。
+Preferences继承自[ISendable](../../guides/Sendable对象简介.md#isendable)，可以在ArkTS并发实例间（包括主线程、TaskPool&Worker工作线程）传递，传递的行为是引用传递，提供获取和修改存储数据的接口。
 
 下列接口都需先使用[sendablePreferences.getPreferences](#ZH-CN_TOPIC_0000002553200593__sendablepreferencesgetpreferences)获取到Preferences实例，再通过此实例调用对应接口。
 

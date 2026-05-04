@@ -40,7 +40,7 @@ import { Want } from '@kit.AbilityKit';
 
 -
 
-基础用法：在UIAbility对象中调用，示例中的context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+基础用法：在UIAbility对象中调用，示例中的context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 ```ets
 import { UIAbility, Want } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
@@ -311,4 +311,4 @@ export default class EntryAbility extends UIAbility {
 
 parameters参数中获取拉起方的信息。
 
-详见[获取UIAbility拉起方的信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability拉起方的信息)。
+详见[获取UIAbility拉起方的信息](../../guides/UIAbility组件基本用法.md#获取uiability拉起方的信息)。

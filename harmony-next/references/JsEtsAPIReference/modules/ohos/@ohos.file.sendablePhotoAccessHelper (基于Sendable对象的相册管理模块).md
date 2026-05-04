@@ -1,6 +1,6 @@
 # @ohos.file.sendablePhotoAccessHelper (基于Sendable对象的相册管理模块)
 
-该模块基于[Sendable](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)对象，提供相册管理功能，包括创建相册和访问、修改相册中的媒体数据。
+该模块基于[Sendable](../../guides/Sendable对象简介.md)对象，提供相册管理功能，包括创建相册和访问、修改相册中的媒体数据。
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 

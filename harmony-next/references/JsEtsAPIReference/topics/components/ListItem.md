@@ -6,7 +6,7 @@
 
 - 该组件的父组件只能是[List]([List](list.md).md)或者[ListItemGroup](ListItemGroup.md)。
 
-- 当ListItem配合[LazyForEach](LazyForEach.md)使用时，ListItem子组件在ListItem创建时创建。配合[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](ForEach.md)使用时，或父组件为List/ListItemGroup时，ListItem子组件在ListItem布局时创建。
+- 当ListItem配合[LazyForEach](LazyForEach.md)使用时，ListItem子组件在ListItem创建时创建。配合[if/else](../../guides/if-else：条件渲染.md)、[ForEach](ForEach.md)使用时，或父组件为List/ListItemGroup时，ListItem子组件在ListItem布局时创建。
 
 #### 子组件
 
@@ -110,7 +110,7 @@ selectable(value: boolean)
 
 selected(value: boolean)
 
-设置当前ListItem选中状态。该属性支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定变量。该属性需要在设置[多态样式](多态样式.md)前使用才能生效[选中态样式](多态样式.md#ZH-CN_TOPIC_0000002497604846__statestyles)。
+设置当前ListItem选中状态。该属性支持[$$](../../guides/$$语法：系统组件双向同步.md)双向绑定变量。该属性需要在设置[多态样式](多态样式.md)前使用才能生效[选中态样式](多态样式.md#ZH-CN_TOPIC_0000002497604846__statestyles)。
 
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 

@@ -32,7 +32,7 @@ NavDestination未设置主副标题并且没有返回键时，不显示标题栏
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-- 子组件类型：系统组件和自定义组件，支持渲染控制类型（[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](ForEach.md)和[LazyForEach](LazyForEach.md)）。
+- 子组件类型：系统组件和自定义组件，支持渲染控制类型（[if/else](../../guides/if-else：条件渲染.md)、[ForEach](ForEach.md)和[LazyForEach](LazyForEach.md)）。
 
 - 子组件个数：多个。
 

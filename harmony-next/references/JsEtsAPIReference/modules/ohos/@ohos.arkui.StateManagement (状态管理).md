@@ -967,7 +967,7 @@ struct Child {
 
 static makeBinding<T>(getter: GetterCallback<T>): Binding<T>
 
-创建只读的单向数据绑定实例，用于构建[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder)函数中参数类型为Binding的对应实参。
+创建只读的单向数据绑定实例，用于构建[@Builder](../../guides/@Builder装饰器：自定义构建函数.md)函数中参数类型为Binding的对应实参。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 

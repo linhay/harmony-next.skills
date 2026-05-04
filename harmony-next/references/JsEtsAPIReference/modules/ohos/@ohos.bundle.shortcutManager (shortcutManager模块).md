@@ -58,7 +58,7 @@ shortcutManager.setShortcutVisibleForSelf("shortcut_id", false)
 
 getAll[ShortcutInfo](../../topics/misc/ShortcutInfo.md)ForSelf(): Promise<Array<ShortcutInfo>>
 
-查询当前应用[配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#shortcuts标签)中定义的所有快捷方式信息。使用Promise异步回调。
+查询当前应用[配置文件](../../guides/module.json5配置文件.md#shortcuts标签)中定义的所有快捷方式信息。使用Promise异步回调。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Launcher
 
@@ -86,7 +86,7 @@ shortcutManager.getAllShortcutInfoForSelf()
 
 type [ShortcutInfo](../../topics/misc/ShortcutInfo.md) = [_ShortcutInfo](../../topics/misc/ShortcutInfo.md#ZH-CN_TOPIC_0000002529284629__shortcutinfo-1)
 
-应用[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#shortcuts标签)中定义的快捷方式信息。
+应用[module.json5配置文件](../../guides/module.json5配置文件.md#shortcuts标签)中定义的快捷方式信息。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Launcher
 
@@ -98,7 +98,7 @@ type [ShortcutInfo](../../topics/misc/ShortcutInfo.md) = [_ShortcutInfo](../../t
 
 type ShortcutWant = [_ShortcutWant](../../topics/misc/ShortcutInfo.md#ZH-CN_TOPIC_0000002529284629__shortcutwant)
 
-快捷方式内定义的目标[wants](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#wants标签)信息集合。
+快捷方式内定义的目标[wants](../../guides/module.json5配置文件.md#wants标签)信息集合。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Launcher
 

@@ -325,7 +325,7 @@ try {
 
 getProfileByAbility(moduleName: string, abilityName: string, metadataName: string, callback: AsyncCallback<Array<string>>): void
 
-根据给定的moduleName、abilityName和metadataName（module.json5中[abilities标签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#abilities标签)下的metadata标签的name）获取自身相应配置文件的json格式字符串。使用callback异步回调。
+根据给定的moduleName、abilityName和metadataName（module.json5中[abilities标签](../../guides/module.json5配置文件.md#abilities标签)下的metadata标签的name）获取自身相应配置文件的json格式字符串。使用callback异步回调。
 
 说明：
 
@@ -385,7 +385,7 @@ try {
 
 getProfileByAbility(moduleName: string, abilityName: string, metadataName?: string): Promise<Array<string>>
 
-根据给定的moduleName、abilityName和metadataName（module.json5中[abilities标签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#abilities标签)下的metadata标签的name）获取自身相应配置文件的json格式字符串。使用Promise异步回调。
+根据给定的moduleName、abilityName和metadataName（module.json5中[abilities标签](../../guides/module.json5配置文件.md#abilities标签)下的metadata标签的name）获取自身相应配置文件的json格式字符串。使用Promise异步回调。
 
 说明：
 
@@ -470,7 +470,7 @@ try {
 
 getProfileByAbilitySync(moduleName: string, abilityName: string, metadataName?: string): Array<string>
 
-以同步方法根据给定的moduleName、abilityName和metadataName（module.json5中[metadata标签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#metadata标签)下的name）获取自身相应配置文件的json格式字符串，返回对象为string数组。
+以同步方法根据给定的moduleName、abilityName和metadataName（module.json5中[metadata标签](../../guides/module.json5配置文件.md#metadata标签)下的name）获取自身相应配置文件的json格式字符串，返回对象为string数组。
 
 如果配置文件信息采用了资源引用格式，则返回值将保持资源引用格式（例如 $string:res_id），开发者可以通过[资源管理模块](@ohos.resourceManager (资源管理).md)的相关接口，来获取引用的资源。
 
@@ -547,7 +547,7 @@ try {
 
 getProfileByExtensionAbility(moduleName: string, extensionAbilityName: string, metadataName: string, callback: AsyncCallback<Array<string>>): void
 
-根据给定的moduleName、extensionAbilityName和metadataName（module.json5中[metadata标签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#metadata标签)下的name）获取自身相应配置文件的json格式字符串。使用callback异步回调。
+根据给定的moduleName、extensionAbilityName和metadataName（module.json5中[metadata标签](../../guides/module.json5配置文件.md#metadata标签)下的name）获取自身相应配置文件的json格式字符串。使用callback异步回调。
 
 如果配置文件信息采用了资源引用格式，则返回值将保持资源引用格式（例如 $string:res_id），开发者可以通过[资源管理模块](@ohos.resourceManager (资源管理).md)的相关接口，来获取引用的资源。
 
@@ -604,7 +604,7 @@ try {
 
 getProfileByExtensionAbility(moduleName: string, extensionAbilityName: string, metadataName?: string): Promise<Array<string>>
 
-根据给定的moduleName、extensionAbilityName和metadataName（module.json5中[metadata标签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#metadata标签)下的name）获取自身相应配置文件的json格式字符串。使用Promise异步回调。
+根据给定的moduleName、extensionAbilityName和metadataName（module.json5中[metadata标签](../../guides/module.json5配置文件.md#metadata标签)下的name）获取自身相应配置文件的json格式字符串。使用Promise异步回调。
 
 如果配置文件信息采用了资源引用格式，则返回值将保持资源引用格式（例如 $string:res_id），开发者可以通过[资源管理模块](@ohos.resourceManager (资源管理).md)的相关接口，来获取引用的资源。
 
@@ -675,7 +675,7 @@ try {
 
 getProfileByExtensionAbilitySync(moduleName: string, extensionAbilityName: string, metadataName?: string): Array<string>
 
-以同步方法根据给定的moduleName、extensionAbilityName和metadataName（module.json5中[metadata标签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#metadata标签)下的name）获取自身相应配置文件的json格式字符串，返回对象为string数组。
+以同步方法根据给定的moduleName、extensionAbilityName和metadataName（module.json5中[metadata标签](../../guides/module.json5配置文件.md#metadata标签)下的name）获取自身相应配置文件的json格式字符串，返回对象为string数组。
 
 如果配置文件信息采用了资源引用格式，则返回值将保持资源引用格式（例如 $string:res_id），开发者可以通过[资源管理模块](@ohos.resourceManager (资源管理).md)的相关接口，来获取引用的资源。
 
@@ -790,7 +790,7 @@ try {
 
 canOpenLink(link: string): boolean
 
-根据给定的链接判断目标应用是否可访问，链接中的scheme需要在[module.json5文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)的querySchemes字段下配置。
+根据给定的链接判断目标应用是否可访问，链接中的scheme需要在[module.json5文件](../../guides/module.json5配置文件.md)的querySchemes字段下配置。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 

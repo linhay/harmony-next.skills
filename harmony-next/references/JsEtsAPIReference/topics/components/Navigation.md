@@ -288,7 +288,7 @@ navBarWidth(value: Length)
 
 设置导航页宽度。仅在[mode](#ZH-CN_TOPIC_0000002553360755__mode9)设置为NavigationMode.Auto或NavigationMode.Split时生效。
 
-从API version 18开始，该参数支持[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding)双向绑定变量。
+从API version 18开始，该参数支持[!!](../../guides/!!语法：双向绑定.md)双向绑定变量。
 
 元服务API： 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2440,7 +2440,7 @@ export struct PageTwo {
   }
 ```
 
-在src/main目录下的[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
+在src/main目录下的[module.json5配置文件](../../guides/module.json5配置文件.md)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
 
 ```ets
 {
@@ -2913,7 +2913,7 @@ export class CustomTransition {
   }
 ```
 
-在src/main目录下的[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
+在src/main目录下的[module.json5配置文件](../../guides/module.json5配置文件.md)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
 
 ```ets
 {
@@ -3201,7 +3201,7 @@ export struct PageTwo {
   }
 ```
 
-在src/main目录下的[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
+在src/main目录下的[module.json5配置文件](../../guides/module.json5配置文件.md)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
 
 ```ets
 {
@@ -3499,7 +3499,7 @@ export const EFFECT_OPTION_2: BackgroundEffectOptions = {
 };
 ```
 
-在src/main目录下的[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
+在src/main目录下的[module.json5配置文件](../../guides/module.json5配置文件.md)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
 
 ```ets
 {
@@ -3568,7 +3568,7 @@ export function PageOneBuilder(name: string) {
 }
 ```
 
-在src/main目录下的[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
+在src/main目录下的[module.json5配置文件](../../guides/module.json5配置文件.md)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
 
 ```ets
 {
@@ -3682,7 +3682,7 @@ struct NavigationExample2 {
   }
 ```
 
-在src/main目录下的[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
+在src/main目录下的[module.json5配置文件](../../guides/module.json5配置文件.md)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
 
 ```ets
 {
@@ -3800,7 +3800,7 @@ struct NavigationExample3 {
   }
 ```
 
-在src/main目录下的[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
+在src/main目录下的[module.json5配置文件](../../guides/module.json5配置文件.md)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
 
 ```ets
 {
@@ -4014,7 +4014,7 @@ export class NewParam {
   }
 ```
 
-在src/main目录下的[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
+在src/main目录下的[module.json5配置文件](../../guides/module.json5配置文件.md)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
 
 ```ets
 {
@@ -4160,7 +4160,7 @@ export struct NavigationMenu {
   }
 ```
 
-在src/main目录下的[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
+在src/main目录下的[module.json5配置文件](../../guides/module.json5配置文件.md)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
 
 ```ets
 {
@@ -4401,7 +4401,7 @@ export class SubTitleTextModifier extends TextModifier {
     }
 ```
 
-在src/main目录下的[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
+在src/main目录下的[module.json5配置文件](../../guides/module.json5配置文件.md)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
 
 ```ets
 {
@@ -4635,7 +4635,7 @@ export class CustomTransition {
   }
 ```
 
-在src/main目录下的[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
+在src/main目录下的[module.json5配置文件](../../guides/module.json5配置文件.md)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
 
 ```ets
 {
@@ -4663,7 +4663,7 @@ export class CustomTransition {
 
 该示例主要展示Navigation在双栏模式下，右侧显示默认占位页，并通过[navBarWidthRange](#ZH-CN_TOPIC_0000002553360755__navbarwidthrange10)设置Navigation导航页最小和最大宽度。
 
-此示例在运行前需要在工程配置文件[module.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中的abilities字段里配置"orientation": "auto_rotation"。
+此示例在运行前需要在工程配置文件[module.json5](../../guides/module.json5配置文件.md)中的abilities字段里配置"orientation": "auto_rotation"。
 
 ```ets
 import { ComponentContent } from '@kit.ArkUI';
@@ -4796,7 +4796,7 @@ struct NavigationExample {
 
 该示例主要展示Navigation工具栏的自适应能力的启用及关闭。
 
-在工程配置文件[module.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中的abilities字段里配置"orientation": "landscape"（该工程配置仅方便演示在横屏模式下的Navigation工具栏自适应能力，实际配置可自行设置为"auto_rotation"）。
+在工程配置文件[module.json5](../../guides/module.json5配置文件.md)中的abilities字段里配置"orientation": "landscape"（该工程配置仅方便演示在横屏模式下的Navigation工具栏自适应能力，实际配置可自行设置为"auto_rotation"）。
 
 ```ets
 import { SymbolGlyphModifier } from '@kit.ArkUI';
@@ -4914,7 +4914,7 @@ struct Index {
   }
 ```
 
-在src/main目录下的[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
+在src/main目录下的[module.json5配置文件](../../guides/module.json5配置文件.md)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json。router_map.json示例如下。
 
 ```ets
 {
@@ -5182,7 +5182,7 @@ export struct PageTwo {
   }
 ```
 
-在src/main目录下的工程配置文件[module.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中的module字段里配置"routerMap": "$profile:router_map"。
+在src/main目录下的工程配置文件[module.json5](../../guides/module.json5配置文件.md)中的module字段里配置"routerMap": "$profile:router_map"。
 
 ```ets
 // src/main/resources/base/profile/router_map.json
@@ -5343,7 +5343,7 @@ export struct NavigationMenu {
   }
 ```
 
-在src/main目录下[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json文件。示例如下：
+在src/main目录下[module.json5配置文件](../../guides/module.json5配置文件.md)中的module字段里配置"routerMap": "$profile:router_map"，并在src/main/resources/base/profile目录下新增router_map.json文件。示例如下：
 
 ```ets
 {

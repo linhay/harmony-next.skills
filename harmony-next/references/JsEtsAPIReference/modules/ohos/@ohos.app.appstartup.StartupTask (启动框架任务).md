@@ -1,6 +1,6 @@
 # @ohos.app.appstartup.StartupTask (启动框架任务)
 
-本模块提供[应用启动框架](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup)任务的相关能力。
+本模块提供[应用启动框架](../../guides/应用启动框架AppStartup.md)任务的相关能力。
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -14,7 +14,7 @@ import { StartupTask } from '@kit.AbilityKit';
 
 #### StartupTask
 
-该类提供启动任务的相关能力，使用[@Sendable装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#sendable装饰器)装饰。
+该类提供启动任务的相关能力，使用[@Sendable装饰器](../../guides/Sendable对象简介.md#sendable装饰器)装饰。
 
 **装饰器类型**：@Sendable
 

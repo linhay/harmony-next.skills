@@ -69,7 +69,7 @@ uploadFile(context: [BaseContext](../../topics/misc/BaseContext.md), config: Upl
 **系统能力**：SystemCapability.MiscServices.Upload
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -132,7 +132,7 @@ uploadFile(context: [BaseContext](../../topics/misc/BaseContext.md), config: Upl
 **系统能力**：SystemCapability.MiscServices.Upload
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -803,7 +803,7 @@ downloadFile(context: [BaseContext](../../topics/misc/BaseContext.md), config: D
 **系统能力**：SystemCapability.MiscServices.Download
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -861,7 +861,7 @@ downloadFile(context: [BaseContext](../../topics/misc/BaseContext.md), config: D
 **系统能力**：SystemCapability.MiscServices.Download
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -2712,7 +2712,7 @@ on(event: 'progress', callback: (progress: [Progress](#ZH-CN_TOPIC_0000002522241
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -2795,7 +2795,7 @@ on(event: 'completed', callback: (progress: [Progress](#ZH-CN_TOPIC_000000252224
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -2878,7 +2878,7 @@ on(event: 'failed', callback: (progress: [Progress](#ZH-CN_TOPIC_000000252224159
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -2959,7 +2959,7 @@ on(event: 'pause', callback: (progress: [Progress](#ZH-CN_TOPIC_0000002522241592
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -3045,7 +3045,7 @@ on(event: 'resume', callback: (progress: [Progress](#ZH-CN_TOPIC_000000252224159
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -3136,7 +3136,7 @@ on(event: 'remove', callback: (progress: [Progress](#ZH-CN_TOPIC_000000252224159
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -3224,7 +3224,7 @@ on(event: 'response', callback: Callback<HttpResponse>): void
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -3299,7 +3299,7 @@ on(event: 'faultOccur', callback: Callback<Faults>): void
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -3374,7 +3374,7 @@ on(event: 'wait', callback: Callback<WaitingReason>): void
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -3451,7 +3451,7 @@ off(event: 'progress', callback?: (progress: [Progress](#ZH-CN_TOPIC_00000025222
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -3542,7 +3542,7 @@ off(event: 'completed', callback?: (progress: [Progress](#ZH-CN_TOPIC_0000002522
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -3633,7 +3633,7 @@ off(event: 'failed', callback?: (progress: [Progress](#ZH-CN_TOPIC_0000002522241
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -3722,7 +3722,7 @@ off(event: 'pause', callback?: (progress: [Progress](#ZH-CN_TOPIC_00000025222415
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -3811,7 +3811,7 @@ off(event: 'resume', callback?: (progress: [Progress](#ZH-CN_TOPIC_0000002522241
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -3900,7 +3900,7 @@ off(event: 'remove', callback?: (progress: [Progress](#ZH-CN_TOPIC_0000002522241
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -3991,7 +3991,7 @@ off(event: 'response', callback?: Callback<HttpResponse>): void
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -4074,7 +4074,7 @@ off(event: 'faultOccur', callback?: Callback<Faults>): void
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -4157,7 +4157,7 @@ off(event: 'wait', callback?: Callback<WaitingReason>): void
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -4249,7 +4249,7 @@ start(callback: AsyncCallback<void>): void
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -4329,7 +4329,7 @@ start(): Promise<void>
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **返回值：**
 
@@ -4902,7 +4902,7 @@ create(context: [BaseContext](../../topics/misc/BaseContext.md), config: Config,
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 
@@ -4987,7 +4987,7 @@ create(context: [BaseContext](../../topics/misc/BaseContext.md), config: Config)
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 **参数：**
 

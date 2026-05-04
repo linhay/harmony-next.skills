@@ -76,7 +76,7 @@ struct MyApp {
 
 class MutableBuilder<Args extends Object[]> extends WrappedBuilder<Args> { }
 
-用于实现包装[全局@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder#全局自定义构建函数)的动态切换的类，MutableBuilder继承自[WrappedBuilder](wrapBuilder.md)，其模板参数Args extends Object[]应传入@Builder函数的参数类型列表。[mutableBuilder](mutableBuilder.md)函数返回MutableBuilder对象。
+用于实现包装[全局@Builder](../../guides/@Builder装饰器：自定义构建函数.md#全局自定义构建函数)的动态切换的类，MutableBuilder继承自[WrappedBuilder](wrapBuilder.md)，其模板参数Args extends Object[]应传入@Builder函数的参数类型列表。[mutableBuilder](mutableBuilder.md)函数返回MutableBuilder对象。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 

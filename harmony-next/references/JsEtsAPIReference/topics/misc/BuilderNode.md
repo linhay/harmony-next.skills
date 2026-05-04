@@ -12,7 +12,7 @@
 
 -
 
-若传入的Builder的根节点为语法节点（[Ifelse](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)/[ForEach](../components/ForEach.md)/[LazyForEach](../components/LazyForEach.md)/[ContentSlot](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-contentslot)…）、[Span](Span.md)、[ContainerSpan](ContainerSpan.md)、[SymbolSpan](SymbolSpan.md)或自定义组件，将额外生成一个[FrameNode](FrameNode.md)，在节点树中显示为“BuilderProxyNode”，这会导致树结构变化，影响某些测试的传递过程。详情参见[BuilderNode内的BuilderProxyNode导致树结构发生变化](BuilderNode.md)。
+若传入的Builder的根节点为语法节点（[Ifelse](../../guides/if-else：条件渲染.md)/[ForEach](../components/ForEach.md)/[LazyForEach](../components/LazyForEach.md)/[ContentSlot](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-contentslot)…）、[Span](Span.md)、[ContainerSpan](ContainerSpan.md)、[SymbolSpan](SymbolSpan.md)或自定义组件，将额外生成一个[FrameNode](FrameNode.md)，在节点树中显示为“BuilderProxyNode”，这会导致树结构变化，影响某些测试的传递过程。详情参见[BuilderNode内的BuilderProxyNode导致树结构发生变化](BuilderNode.md)。
 
 -
 
@@ -77,7 +77,7 @@ RENDER_TYPE_TEXTURE类型目前仅在[BuilderNode](#ZH-CN_TOPIC_0000002522080744
 
 -
 
-从API version 12开始，新增以下组件支持纹理导出：[DatePicker](DatePicker.md)、[ForEach](ForEach.md)、[Grid](Grid.md)、[IfElse](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[LazyForEach](LazyForEach.md)、[List](List.md)、[Scroll](Scroll.md)、[Swiper](Swiper.md)、[TimePicker](TimePicker.md)、[@Component](../components/自定义组件.md)修饰的自定义组件、[NodeContainer](NodeContainer.md)以及[NodeContainer](NodeContainer.md)下挂载的[FrameNode](FrameNode.md)和[RenderNode](RenderNode.md)。
+从API version 12开始，新增以下组件支持纹理导出：[DatePicker](DatePicker.md)、[ForEach](ForEach.md)、[Grid](Grid.md)、[IfElse](../../guides/if-else：条件渲染.md)、[LazyForEach](LazyForEach.md)、[List](List.md)、[Scroll](Scroll.md)、[Swiper](Swiper.md)、[TimePicker](TimePicker.md)、[@Component](../components/自定义组件.md)修饰的自定义组件、[NodeContainer](NodeContainer.md)以及[NodeContainer](NodeContainer.md)下挂载的[FrameNode](FrameNode.md)和[RenderNode](RenderNode.md)。
 
 -
 
@@ -129,7 +129,7 @@ type InputEventType = TouchEvent | MouseEvent | AxisEvent
 
 class BuilderNode<Args extends Object[]>
 
-BuilderNode支持通过无状态的UI方法[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder)生成组件树，并持有组件树的根节点。不支持定义为状态变量。BuilderNode中持有的FrameNode仅用于将该BuilderNode作为子节点挂载到其他FrameNode上。对BuilderNode持有的FrameNode进行属性设置与子节点操作可能会产生未定义行为，因此不建议通过BuilderNode的[getFrameNode](#ZH-CN_TOPIC_0000002522080744__getframenode)方法和[FrameNode](FrameNode.md)的[getRenderNode](FrameNode.md#ZH-CN_TOPIC_0000002522240744__getrendernode)方法获取RenderNode，并通过[RenderNode](RenderNode.md)的接口对其进行属性设置与子节点操作。
+BuilderNode支持通过无状态的UI方法[@Builder](../../guides/@Builder装饰器：自定义构建函数.md)生成组件树，并持有组件树的根节点。不支持定义为状态变量。BuilderNode中持有的FrameNode仅用于将该BuilderNode作为子节点挂载到其他FrameNode上。对BuilderNode持有的FrameNode进行属性设置与子节点操作可能会产生未定义行为，因此不建议通过BuilderNode的[getFrameNode](#ZH-CN_TOPIC_0000002522080744__getframenode)方法和[FrameNode](FrameNode.md)的[getRenderNode](FrameNode.md#ZH-CN_TOPIC_0000002522240744__getrendernode)方法获取RenderNode，并通过[RenderNode](RenderNode.md)的接口对其进行属性设置与子节点操作。
 
 元服务API： 从API version 12开始，该接口支持在元服务中使用。
 
@@ -160,7 +160,7 @@ uiContext的入参需要为一个有效的值，即UI上下文正确，如果传
 
 build(builder: WrappedBuilder<Args>, arg?: Object): void
 
-依照传入的对象创建组件树，并持有组件树的根节点。无状态的UI方法[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder)最多拥有一个根节点。
+依照传入的对象创建组件树，并持有组件树的根节点。无状态的UI方法[@Builder](../../guides/@Builder装饰器：自定义构建函数.md)最多拥有一个根节点。
 
 支持自定义组件。
 
@@ -201,7 +201,7 @@ BuilderNode对象会持有实体节点的引用。如果不需要使用BuilderNo
 
 build(builder: WrappedBuilder<Args>, arg: Object, options: BuildOptions): void
 
-依照传入的对象创建组件树，并持有组件树的根节点。无状态的UI方法[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder)最多拥有一个根节点。
+依照传入的对象创建组件树，并持有组件树的根节点。无状态的UI方法[@Builder](../../guides/@Builder装饰器：自定义构建函数.md)最多拥有一个根节点。
 
 支持自定义组件。相比[build(builder: WrappedBuilder<Args>, arg?: Object)](#ZH-CN_TOPIC_0000002522080744__build)接口，本接口支持builder的配置参数，用于判断是否支持@Builder中嵌套@Builder。
 
@@ -209,7 +209,7 @@ build(builder: WrappedBuilder<Args>, arg: Object, options: BuildOptions): void
 
 -
 
-@Builder进行创建和更新的规格参考[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder)。
+@Builder进行创建和更新的规格参考[@Builder](../../guides/@Builder装饰器：自定义构建函数.md)。
 
 -
 
@@ -1580,7 +1580,7 @@ struct TextBuilder {
 
 **ReactiveBuilderNode22+**
 
-ReactiveBuilderNode支持通过无状态的UI方法[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder)生成组件树，并持有该组件树的根节点，不支持定义为状态变量。ReactiveBuilderNode中持有的[FrameNode](FrameNode.md)仅用于将此ReactiveBuilderNode作为子节点挂载到其他FrameNode上。对ReactiveBuilderNode持有的FrameNode进行属性设置与子节点操作可能会导致未定义行为，因此不建议通过ReactiveBuilderNode的[getFrameNode](#ZH-CN_TOPIC_0000002522080744__getframenode)方法和[FrameNode](FrameNode.md)节点的[getRenderNode](FrameNode.md#ZH-CN_TOPIC_0000002522240744__getrendernode)方法获取RenderNode，并通过[RenderNode](RenderNode.md)的接口对其进行属性设置与子节点操作。
+ReactiveBuilderNode支持通过无状态的UI方法[@Builder](../../guides/@Builder装饰器：自定义构建函数.md)生成组件树，并持有该组件树的根节点，不支持定义为状态变量。ReactiveBuilderNode中持有的[FrameNode](FrameNode.md)仅用于将此ReactiveBuilderNode作为子节点挂载到其他FrameNode上。对ReactiveBuilderNode持有的FrameNode进行属性设置与子节点操作可能会导致未定义行为，因此不建议通过ReactiveBuilderNode的[getFrameNode](#ZH-CN_TOPIC_0000002522080744__getframenode)方法和[FrameNode](FrameNode.md)节点的[getRenderNode](FrameNode.md#ZH-CN_TOPIC_0000002522240744__getrendernode)方法获取RenderNode，并通过[RenderNode](RenderNode.md)的接口对其进行属性设置与子节点操作。
 
 元服务API： 从API version 22开始，该接口支持在元服务中使用。
 
@@ -1607,13 +1607,13 @@ constructor(uiContext: UIContext, options?: RenderOptions)
 
 build(builder: WrappedBuilder<Args>, config: BuildOptions, ...args: Args): void
 
-依照传入的对象创建组件树ReactiveBuilderNode，并持有组件树的根节点。无状态的UI方法[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder)最多拥有一个根节点。
+依照传入的对象创建组件树ReactiveBuilderNode，并持有组件树的根节点。无状态的UI方法[@Builder](../../guides/@Builder装饰器：自定义构建函数.md)最多拥有一个根节点。
 
 支持自定义组件。
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-@Builder进行创建和更新的规格参考[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder)。
+@Builder进行创建和更新的规格参考[@Builder](../../guides/@Builder装饰器：自定义构建函数.md)。
 
 元服务API： 从API version 22开始，该接口支持在元服务中使用。
 

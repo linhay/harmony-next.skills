@@ -20,7 +20,7 @@ createCollaborationCameraMenuItems(businessFilter?: Array<CollaborationCameraBus
 
 设备列表选择器，需要在[Menu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menu)组件内调用。用于显示组网内具有对应能力的设备列表。
 
-该方法为自定义构建函数，开发者在使用前需要先了解[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder)。
+该方法为自定义构建函数，开发者在使用前需要先了解[@Builder](../../guides/@Builder装饰器：自定义构建函数.md)。
 
 废弃说明： 从5.0.0(12) 开始废弃，建议使用[createCollaborationServiceMenuItems](CollaborationService (跨设备互通组件).md#ZH-CN_TOPIC_0000002553361489__createcollaborationservicemenuitems)替代。
 

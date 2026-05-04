@@ -2,7 +2,7 @@
 
 资源管理导入sendableResourceManager模块，通过调用[resourceToSendableResource](#ZH-CN_TOPIC_0000002522241286__sendableresourcemanagerresourcetosendableresource)和[sendableResourceToResource](#ZH-CN_TOPIC_0000002522241286__sendableresourcemanagersendableresourcetoresource)方法可以将[Resource](#ZH-CN_TOPIC_0000002522241286__resource)对象和[SendableResource](#ZH-CN_TOPIC_0000002522241286__sendableresource)对象进行互转。
 
-Resource对象通过转换为SendableResource对象后，可以被[Sendable类](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)持有。Sendable类在跨线程传输后，取出持有的SendableResource对象转为Resource对象，作为参数获取资源。
+Resource对象通过转换为SendableResource对象后，可以被[Sendable类](../../guides/Sendable对象简介.md)持有。Sendable类在跨线程传输后，取出持有的SendableResource对象转为Resource对象，作为参数获取资源。
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 

@@ -2480,7 +2480,7 @@ lpx2px(value : number) : number
 
 将lpx单位的数值转换为以px为单位的数值。
 
-转换公式为：px值 = lpx值 × 实际屏幕宽度与逻辑宽度（通过[designWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#pages标签)配置）的比值。
+转换公式为：px值 = lpx值 × 实际屏幕宽度与逻辑宽度（通过[designWidth](../../guides/module.json5配置文件.md#pages标签)配置）的比值。
 
 
 getUIContext需在windowStage.[loadContent](Interface (WindowStage).md#ZH-CN_TOPIC_0000002553360677__loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。
@@ -2532,7 +2532,7 @@ px2lpx(value : number) : number
 
 将px单位的数值转换为以lpx为单位的数值。
 
-转换公式为：lpx值 = px值 ÷ 实际屏幕宽度与逻辑宽度（通过[designWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#pages标签)配置）的比值。
+转换公式为：lpx值 = px值 ÷ 实际屏幕宽度与逻辑宽度（通过[designWidth](../../guides/module.json5配置文件.md#pages标签)配置）的比值。
 
 
 getUIContext需在windowStage.[loadContent](Interface (WindowStage).md#ZH-CN_TOPIC_0000002553360677__loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。

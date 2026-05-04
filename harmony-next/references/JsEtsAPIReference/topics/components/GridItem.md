@@ -4,7 +4,7 @@
 
 - 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 - 仅支持作为[Grid](Grid.md)组件的子组件使用。
-- 当GridItem配合[LazyForEach](LazyForEach.md)使用时，GridItem子组件在GridItem创建时创建。配合[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](ForEach.md)使用时，或父组件为Grid时，GridItem子组件在GridItem布局时创建。
+- 当GridItem配合[LazyForEach](LazyForEach.md)使用时，GridItem子组件在GridItem创建时创建。配合[if/else](../../guides/if-else：条件渲染.md)、[ForEach](ForEach.md)使用时，或父组件为Grid时，GridItem子组件在GridItem布局时创建。
 
 - 当Grid中存在大量GridItem时，使用[columnStart](#ZH-CN_TOPIC_0000002522080826__columnstart)/[columnEnd](#ZH-CN_TOPIC_0000002522080826__columnend)、[rowStart](#ZH-CN_TOPIC_0000002522080826__rowstart)/[rowEnd](#ZH-CN_TOPIC_0000002522080826__rowend)设置GridItem大小会导致在使用scrollToIndex滑动到指定Index时，依次遍历GridItem节点，耗时较长。建议使用[GridLayoutOptions](Grid.md#ZH-CN_TOPIC_0000002553200787__gridlayoutoptions10对象说明)布局，以提高查找GridItem位置的效率。最佳实践请参考[优化Grid组件加载慢丢帧问题](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-improve_grid_performance)。
 
@@ -175,7 +175,7 @@ selectable(value: boolean)
 
 selected(value: boolean)
 
-设置当前GridItem选中状态。该属性支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定变量。
+设置当前GridItem选中状态。该属性支持[$$](../../guides/$$语法：系统组件双向同步.md)双向绑定变量。
 
 该属性需要在设置[多态样式](多态样式.md)前使用才能生效[选中态样式](多态样式.md#ZH-CN_TOPIC_0000002497604846__statestyles)。
 

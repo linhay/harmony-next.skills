@@ -67,9 +67,9 @@ checked(value: boolean)
 
 设置单选框的选中状态。
 
-从API version 10开始，该属性支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定变量。
+从API version 10开始，该属性支持[$$](../../guides/$$语法：系统组件双向同步.md)双向绑定变量。
 
-从API version 18开始，该属性支持[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding#系统组件参数双向绑定)双向绑定变量。
+从API version 18开始，该属性支持[!!](../../guides/!!语法：双向绑定.md#系统组件参数双向绑定)双向绑定变量。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -89,7 +89,7 @@ checked(isChecked: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002529284
 
 设置单选框的选中状态。与[checked](#ZH-CN_TOPIC_0000002553360763__checked)相比，isChecked参数新增了对undefined类型的支持。
 
-该属性支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)、[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding#系统组件参数双向绑定)双向绑定变量。
+该属性支持[$$](../../guides/$$语法：系统组件双向同步.md)、[!!](../../guides/!!语法：双向绑定.md#系统组件参数双向绑定)双向绑定变量。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 

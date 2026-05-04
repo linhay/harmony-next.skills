@@ -165,16 +165,25 @@ JsEtsAPIReference/errors/附属节点错误码.md
 JsEtsAPIReference/errors/页面路由错误码.md
 JsEtsAPIReference/errors/驱动错误码.md
 JsEtsAPIReference/errors/鼠标光标错误码.md
+JsEtsAPIReference/guides/!!语法：双向绑定.md
+JsEtsAPIReference/guides/$$语法：系统组件双向同步.md
+JsEtsAPIReference/guides/@Builder装饰器：自定义构建函数.md
 JsEtsAPIReference/guides/@ObservedV2与@Trace：类属性变化观测.md
 JsEtsAPIReference/guides/@Observed与@ObjectLink：V1数据对象观测.md
 JsEtsAPIReference/guides/AppStorageV2（应用全局的UI状态存储）.md
 JsEtsAPIReference/guides/PersistenceV2（持久化存储UI状态）.md
+JsEtsAPIReference/guides/Sendable对象简介.md
+JsEtsAPIReference/guides/UIAbility组件基本用法.md
 JsEtsAPIReference/guides/addMonitor与clearMonitor开发指南.md
 JsEtsAPIReference/guides/applySync与flushUpdates与flushUIUpdates接口：同步刷新.md
+JsEtsAPIReference/guides/if-else：条件渲染.md
 JsEtsAPIReference/guides/makeObserved接口：将非观察数据变为可观察数据.md
+JsEtsAPIReference/guides/module.json5配置文件.md
+JsEtsAPIReference/guides/应用启动框架AppStartup.md
 JsEtsAPIReference/guides/状态管理V1-V2迁移指导.md
 JsEtsAPIReference/guides/状态管理V1和V2混用指导（API version 19及之后）.md
 JsEtsAPIReference/guides/状态管理概述.md
+JsEtsAPIReference/guides/窗口开发术语.md
 JsEtsAPIReference/modules/ohos/@ohos.FusionConnectivity.PartnerAgentExtensionAbility (支持设备状态通知的ExtensionAbility组件).md
 JsEtsAPIReference/modules/ohos/@ohos.FusionConnectivity.PartnerAgentExtensionContext (设备状态通知能力上下文).md
 JsEtsAPIReference/modules/ohos/@ohos.FusionConnectivity.partnerAgent（设备状态通知模块）.md

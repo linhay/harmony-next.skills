@@ -47,7 +47,7 @@ ListItemGroup的预加载是指除了加载显示区域可见区域外子组件�
 
 #### 子组件
 
-包含[ListItem](ListItem.md)子组件。支持通过渲染控制类型（[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](ForEach.md)、[LazyForEach](LazyForEach.md)和[Repeat](Repeat.md)）动态生成子组件，更推荐使用LazyForEach或Repeat以优化性能。
+包含[ListItem](ListItem.md)子组件。支持通过渲染控制类型（[if/else](../../guides/if-else：条件渲染.md)、[ForEach](ForEach.md)、[LazyForEach](LazyForEach.md)和[Repeat](Repeat.md)）动态生成子组件，更推荐使用LazyForEach或Repeat以优化性能。
 
 #### 接口
 

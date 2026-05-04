@@ -23,7 +23,7 @@ import { ChildProcessArgs } from '@kit.AbilityKit';
 
 **示例：**
 
-示例中的context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中的context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 ```ets
 // 主进程中:

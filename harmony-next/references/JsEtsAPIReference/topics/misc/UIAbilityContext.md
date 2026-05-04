@@ -612,7 +612,7 @@ terminateSelf(callback: AsyncCallback<void>): void
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-调用该接口后，任务中心的任务默认不会清理，如需清理，需要配置[removeMissionAfterTerminate](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#abilities标签)为true。
+调用该接口后，任务中心的任务默认不会清理，如需清理，需要配置[removeMissionAfterTerminate](../../guides/module.json5配置文件.md#abilities标签)为true。
 
 元服务API：从API version 11开始，该接口支持在元服务中使用。
 
@@ -666,7 +666,7 @@ export default class EntryAbility extends UIAbility {
 
 1.
 
-（可选）如果需要在停止UIAbility时，清理任务中心的相关任务（即不保留最近任务列表中的快照），需要在[module.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)配置文件中将removeMissionAfterTerminate字段取值配置为true。
+（可选）如果需要在停止UIAbility时，清理任务中心的相关任务（即不保留最近任务列表中的快照），需要在[module.json5](../../guides/module.json5配置文件.md)配置文件中将removeMissionAfterTerminate字段取值配置为true。
 ```ets
 {
   "module": {
@@ -688,7 +688,7 @@ terminateSelf(): Promise<void>
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-调用该接口后，任务中心的任务默认不会清理，如需清理，需要配置[removeMissionAfterTerminate](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#abilities标签)为true。
+调用该接口后，任务中心的任务默认不会清理，如需清理，需要配置[removeMissionAfterTerminate](../../guides/module.json5配置文件.md#abilities标签)为true。
 
 元服务API：从API version 11开始，该接口支持在元服务中使用。
 
@@ -741,7 +741,7 @@ export default class EntryAbility extends UIAbility {
 
 1.
 
-（可选）如果需要在停止UIAbility时，清理任务中心的相关任务（即不保留最近任务列表中的快照），需要在[module.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)配置文件中将removeMissionAfterTerminate字段取值配置为true。
+（可选）如果需要在停止UIAbility时，清理任务中心的相关任务（即不保留最近任务列表中的快照），需要在[module.json5](../../guides/module.json5配置文件.md)配置文件中将removeMissionAfterTerminate字段取值配置为true。
 ```ets
 {
   "module": {
@@ -765,7 +765,7 @@ terminateSelfWithResult(parameter: AbilityResult, callback: AsyncCallback<void>)
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-调用该接口后，任务中心的任务默认不会清理，如需清理，需要配置[removeMissionAfterTerminate](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#abilities标签)为true。
+调用该接口后，任务中心的任务默认不会清理，如需清理，需要配置[removeMissionAfterTerminate](../../guides/module.json5配置文件.md#abilities标签)为true。
 
 元服务API：从API version 11开始，该接口支持在元服务中使用。
 
@@ -836,7 +836,7 @@ terminateSelfWithResult(parameter: AbilityResult): Promise<void>
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-调用该接口后，任务中心的任务默认不会清理，如需清理，需要配置[removeMissionAfterTerminate](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#abilities标签)为true。
+调用该接口后，任务中心的任务默认不会清理，如需清理，需要配置[removeMissionAfterTerminate](../../guides/module.json5配置文件.md#abilities标签)为true。
 
 元服务API：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2933,11 +2933,11 @@ revokeDelegator(): Promise<void>
 
 设置DelegatorAbility。
 
-在[module.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)配置文件标签中配置abilitySrcEntryDelegator和abilityStageSrcEntryDelegator。当Module下首个UIAbility冷启动时，系统优先启动abilitySrcEntryDelegator指向的UIAbility。
+在[module.json5](../../guides/module.json5配置文件.md)配置文件标签中配置abilitySrcEntryDelegator和abilityStageSrcEntryDelegator。当Module下首个UIAbility冷启动时，系统优先启动abilitySrcEntryDelegator指向的UIAbility。
 
      ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-  - 当UIAbility是通过[startAbilityByCall](#ZH-CN_TOPIC_0000002553200541__startabilitybycall)启动时，系统会忽略在[module.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)配置文件标签中配置的abilitySrcEntryDelegator和abilityStageSrcEntryDelegator。
+  - 当UIAbility是通过[startAbilityByCall](#ZH-CN_TOPIC_0000002553200541__startabilitybycall)启动时，系统会忽略在[module.json5](../../guides/module.json5配置文件.md)配置文件标签中配置的abilitySrcEntryDelegator和abilityStageSrcEntryDelegator。
 
   - abilityStageSrcEntryDelegator指定的ModuleName不能与当前ModuleName相同。
 
@@ -3029,7 +3029,7 @@ startAppServiceExtensionAbility(want: Want): Promise<void>
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-该接口的调用方必须为[AppServiceExtensionAbility](@ohos.app.ability.AppServiceExtensionAbility (应用后台服务扩展组件).md)所属应用或者在AppServiceExtensionAbility支持的应用清单（即[extensionAbilities标签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#extensionabilities标签)的appIdentifierAllowList属性）中的应用。
+该接口的调用方必须为[AppServiceExtensionAbility](@ohos.app.ability.AppServiceExtensionAbility (应用后台服务扩展组件).md)所属应用或者在AppServiceExtensionAbility支持的应用清单（即[extensionAbilities标签](../../guides/module.json5配置文件.md#extensionabilities标签)的appIdentifierAllowList属性）中的应用。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -3107,7 +3107,7 @@ stopAppServiceExtensionAbility(want: Want): Promise<void>
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-该接口的调用方必须为[AppServiceExtensionAbility](@ohos.app.ability.AppServiceExtensionAbility (应用后台服务扩展组件).md)所属应用或者在AppServiceExtensionAbility支持的应用清单（即[extensionAbilities标签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#extensionabilities标签)的appIdentifierAllowList属性）中的应用。
+该接口的调用方必须为[AppServiceExtensionAbility](@ohos.app.ability.AppServiceExtensionAbility (应用后台服务扩展组件).md)所属应用或者在AppServiceExtensionAbility支持的应用清单（即[extensionAbilities标签](../../guides/module.json5配置文件.md#extensionabilities标签)的appIdentifierAllowList属性）中的应用。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -3181,7 +3181,7 @@ connectAppServiceExtensionAbility(want: Want, callback: ConnectOptions): number
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-如果[AppServiceExtensionAbility](@ohos.app.ability.AppServiceExtensionAbility (应用后台服务扩展组件).md)实例未启动，该接口的调用方必须为AppServiceExtensionAbility所属应用或者在AppServiceExtensionAbility支持的应用清单（即[extensionAbilities标签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#extensionabilities标签)的appIdentifierAllowList属性）中的应用。
+如果[AppServiceExtensionAbility](@ohos.app.ability.AppServiceExtensionAbility (应用后台服务扩展组件).md)实例未启动，该接口的调用方必须为AppServiceExtensionAbility所属应用或者在AppServiceExtensionAbility支持的应用清单（即[extensionAbilities标签](../../guides/module.json5配置文件.md#extensionabilities标签)的appIdentifierAllowList属性）中的应用。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -3393,7 +3393,7 @@ startSelfUIAbilityInCurrentProcess(want: Want, specifiedFlag: string, options?: 
 
 - 只能冷启动目标UIAbility，如果目标UIAbility实例已经启动过，则启动失败。
 
-- 通过该接口启动的UIAbility实例，将运行在调用方所在的进程中。其他关于目标UIAbility的进程相关的策略（例如在[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中通过isolationProcess或isolationMode字段来指定进程），均不会生效。
+- 通过该接口启动的UIAbility实例，将运行在调用方所在的进程中。其他关于目标UIAbility的进程相关的策略（例如在[module.json5配置文件](../../guides/module.json5配置文件.md)中通过isolationProcess或isolationMode字段来指定进程），均不会生效。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 

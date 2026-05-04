@@ -77,7 +77,7 @@ type [LauncherAbilityInfo](../../topics/misc/LauncherAbilityInfo.md) = [_Launche
 
 type ShortcutInfo = [_ShortcutInfo](../../topics/misc/ShortcutInfo.md#ZH-CN_TOPIC_0000002529284629__shortcutinfo-1)
 
-应用[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#shortcuts标签)中定义的快捷方式信息。
+应用[module.json5配置文件](../../guides/module.json5配置文件.md#shortcuts标签)中定义的快捷方式信息。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Launcher
 
@@ -89,7 +89,7 @@ type ShortcutInfo = [_ShortcutInfo](../../topics/misc/ShortcutInfo.md#ZH-CN_TOPI
 
 type ShortcutWant = [_ShortcutWant](../../topics/misc/ShortcutInfo.md#ZH-CN_TOPIC_0000002529284629__shortcutwant)
 
-快捷方式内定义的目标[wants](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#wants标签)信息集合。
+快捷方式内定义的目标[wants](../../guides/module.json5配置文件.md#wants标签)信息集合。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Launcher
 

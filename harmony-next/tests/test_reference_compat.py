@@ -109,6 +109,29 @@ class ReferenceCompatTests(unittest.TestCase):
             ),
             encoding="utf-8",
         )
+        (self.js_root / "modules" / "ohos" / "@ohos.more-guide.md").write_text(
+            (
+                "[窗口开发术语]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-terminology#自由窗口)\n"
+                "[UIAbility组件基本用法]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)\n"
+                "[module.json5配置文件]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#abilities标签)\n"
+                "[应用启动框架AppStartup]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup#设置启动参数)\n"
+                "[Sendable对象简介]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#sendable支持的数据类型)\n"
+                "[@Builder装饰器：自定义构建函数]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder#全局自定义构建函数)\n"
+                "[$$语法：系统组件双向同步]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)\n"
+                "[!!语法：双向绑定]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding#系统组件参数双向绑定)\n"
+                "[if/else：条件渲染]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)\n"
+            ),
+            encoding="utf-8",
+        )
         (self.js_root / "modules" / "ohos" / "@ohos.arkui.StateManagement (状态管理).md").write_text(
             "# @ohos.arkui.StateManagement (状态管理)\n",
             encoding="utf-8",
@@ -192,6 +215,52 @@ class ReferenceCompatTests(unittest.TestCase):
             "# PersistenceV2（持久化存储UI状态）\n\n## globalConnect支持集合的类型\n",
             encoding="utf-8",
         )
+        (self.js_root / "guides" / "窗口开发术语.md").write_text(
+            "# 窗口开发术语\n\n## 自由窗口\n\n## 自由多窗模式\n\n## 沉浸式布局\n\n## 全局坐标系\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "UIAbility组件基本用法.md").write_text(
+            "# UIAbility组件基本用法\n\n## 获取UIAbility的上下文信息\n\n## 获取UIAbility拉起方的信息\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "module.json5配置文件.md").write_text(
+            (
+                "# module.json5配置文件\n\n"
+                "## pages标签\n\n"
+                "## metadata标签\n\n"
+                "## abilities标签\n\n"
+                "## skills标签\n\n"
+                "## extensionAbilities标签\n\n"
+                "## shortcuts标签\n\n"
+                "## wants标签\n\n"
+                "## deviceTypes标签\n"
+            ),
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "应用启动框架AppStartup.md").write_text(
+            "# 应用启动框架AppStartup\n\n## 定义启动参数配置\n\n## 设置启动参数\n\n## 添加任务匹配规则\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "Sendable对象简介.md").write_text(
+            "# Sendable对象简介\n\n## Sendable协议\n\n## ISendable\n\n## Sendable支持的数据类型\n\n## @Sendable装饰器\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "@Builder装饰器：自定义构建函数.md").write_text(
+            "# @Builder装饰器：自定义构建函数\n\n## 全局自定义构建函数\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "$$语法：系统组件双向同步.md").write_text(
+            "# $$语法：系统组件双向同步\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "!!语法：双向绑定.md").write_text(
+            "# !!语法：双向绑定\n\n## 系统组件参数双向绑定\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "if-else：条件渲染.md").write_text(
+            "# if/else：条件渲染\n",
+            encoding="utf-8",
+        )
         (self.js_root / "topics" / "components" / "应用级变量的状态管理.md").write_text(
             "# 应用级变量的状态管理\n",
             encoding="utf-8",
@@ -256,7 +325,7 @@ class ReferenceCompatTests(unittest.TestCase):
         MODULE.generate_index(self.paths)
 
         self.assertEqual(rewritten, 1)
-        self.assertEqual(guide_rewritten, 6)
+        self.assertEqual(guide_rewritten, 7)
         self.assertIn(
             "../../topics/misc/native_handwrite_api.h.md",
             (self.js_root / "topics" / "misc" / "HandWrite.md").read_text(encoding="utf-8"),
@@ -366,6 +435,42 @@ class ReferenceCompatTests(unittest.TestCase):
             (self.js_root / "modules" / "ohos" / "@ohos.state-guide.md").read_text(encoding="utf-8"),
         )
         self.assertIn(
+            "../../guides/窗口开发术语.md#自由窗口",
+            (self.js_root / "modules" / "ohos" / "@ohos.more-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息",
+            (self.js_root / "modules" / "ohos" / "@ohos.more-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/module.json5配置文件.md#abilities标签",
+            (self.js_root / "modules" / "ohos" / "@ohos.more-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/应用启动框架AppStartup.md#设置启动参数",
+            (self.js_root / "modules" / "ohos" / "@ohos.more-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/Sendable对象简介.md#sendable支持的数据类型",
+            (self.js_root / "modules" / "ohos" / "@ohos.more-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/@Builder装饰器：自定义构建函数.md#全局自定义构建函数",
+            (self.js_root / "modules" / "ohos" / "@ohos.more-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/$$语法：系统组件双向同步.md",
+            (self.js_root / "modules" / "ohos" / "@ohos.more-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/!!语法：双向绑定.md#系统组件参数双向绑定",
+            (self.js_root / "modules" / "ohos" / "@ohos.more-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/if-else：条件渲染.md",
+            (self.js_root / "modules" / "ohos" / "@ohos.more-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
             "../components/ForEach.md",
             (self.js_root / "topics" / "misc" / "rendering-guide.md").read_text(encoding="utf-8"),
         )
@@ -426,10 +531,12 @@ class ReferenceCompatTests(unittest.TestCase):
         self.assertIn("topics/misc/native_handwrite_api.h.md", index_lines)
         self.assertIn("topics/misc/HandWrite.md", index_lines)
         self.assertIn("guides/状态管理V1-V2迁移指导.md", index_lines)
+        self.assertIn("guides/窗口开发术语.md", index_lines)
         self.assertNotIn("capi/headers/native_handwrite_api.h.md", index_lines)
         references_index_lines = self.paths.references_index.read_text(encoding="utf-8").splitlines()
         self.assertIn("JsEtsAPIReference/topics/misc/native_handwrite_api.h.md", references_index_lines)
         self.assertIn("JsEtsAPIReference/guides/状态管理V1-V2迁移指导.md", references_index_lines)
+        self.assertIn("JsEtsAPIReference/guides/窗口开发术语.md", references_index_lines)
         self.assertIn("quickStart/intro.md", references_index_lines)
 
     def test_check_detects_index_drift(self) -> None:

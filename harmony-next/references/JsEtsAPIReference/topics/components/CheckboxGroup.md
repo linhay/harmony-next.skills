@@ -54,9 +54,9 @@ selectAll(value: boolean)
 
 在与带有缓存功能的组件（如[List]([List](list.md).md)）配合使用时，未创建的Checkbox选中状态需由开发者控制。
 
-从API version 10开始，该属性支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定变量。
+从API version 10开始，该属性支持[$$](../../guides/$$语法：系统组件双向同步.md)双向绑定变量。
 
-从API version 18开始，该属性支持[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding#系统组件参数双向绑定)双向绑定变量。
+从API version 18开始，该属性支持[!!](../../guides/!!语法：双向绑定.md#系统组件参数双向绑定)双向绑定变量。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -78,7 +78,7 @@ selectAll(isAllSelected: [Optional](自定义属性设置.md#ZH-CN_TOPIC_0000002
 
 在与带有缓存功能的组件（如[List]([List](list.md).md)）配合使用时，未创建的Checkbox选中状态需由开发者控制。
 
-该属性支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)、[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding#系统组件参数双向绑定)双向绑定变量。
+该属性支持[$$](../../guides/$$语法：系统组件双向同步.md)、[!!](../../guides/!!语法：双向绑定.md#系统组件参数双向绑定)双向绑定变量。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 

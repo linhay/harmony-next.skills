@@ -121,6 +121,15 @@ TARGETED_GUIDE_MAPPING = {
         Path("topics/components/PasteButton.md"),
         preserve_source_anchor=False,
     ),
+    "window-terminology": TargetedGuideMapping(Path("guides/窗口开发术语.md")),
+    "uiability-usage": TargetedGuideMapping(Path("guides/UIAbility组件基本用法.md")),
+    "module-configuration-file": TargetedGuideMapping(Path("guides/module.json5配置文件.md")),
+    "app-startup": TargetedGuideMapping(Path("guides/应用启动框架AppStartup.md")),
+    "arkts-sendable": TargetedGuideMapping(Path("guides/Sendable对象简介.md")),
+    "arkts-builder": TargetedGuideMapping(Path("guides/@Builder装饰器：自定义构建函数.md")),
+    "arkts-two-way-sync": TargetedGuideMapping(Path("guides/$$语法：系统组件双向同步.md")),
+    "arkts-new-binding": TargetedGuideMapping(Path("guides/!!语法：双向绑定.md")),
+    "arkts-rendering-control-ifelse": TargetedGuideMapping(Path("guides/if-else：条件渲染.md")),
 }
 
 

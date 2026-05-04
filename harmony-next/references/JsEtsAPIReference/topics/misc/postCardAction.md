@@ -88,7 +88,7 @@ Button('URI跳转')
   })
 ```
 
-待跳转应用 [module.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#skills标签) uris 配置示例：
+待跳转应用 [module.json5](../../guides/module.json5配置文件.md#skills标签) uris 配置示例：
 
 ```ets
 "abilities": [

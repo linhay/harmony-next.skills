@@ -1,6 +1,6 @@
 # SendableContext
 
-SendableContext符合[Sendable协议](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#sendable协议)，继承自[lang.ISendable](@arkts.lang (ArkTS语言基础能力).md#ZH-CN_TOPIC_0000002553200659__langisendable)。
+SendableContext符合[Sendable协议](../../guides/Sendable对象简介.md#sendable协议)，继承自[lang.ISendable](@arkts.lang (ArkTS语言基础能力).md#ZH-CN_TOPIC_0000002553200659__langisendable)。
 
   ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
@@ -16,7 +16,7 @@ import { sendableContextManager } from '@kit.AbilityKit';
 
 **SendableContext**
 
-SendableContext符合[Sendable协议](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#sendable协议)，可以与Context对象相互转换，用于ArkTS并发实例间（包括主线程、TaskPool&Worker工作线程）的数据传递。
+SendableContext符合[Sendable协议](../../guides/Sendable对象简介.md#sendable协议)，可以与Context对象相互转换，用于ArkTS并发实例间（包括主线程、TaskPool&Worker工作线程）的数据传递。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 

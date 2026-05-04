@@ -18,7 +18,7 @@ on(type: 'prepareContinue', context: [Context](../../topics/misc/BaseContext.md)
 
 在应用快速拉起时，注册回调函数以获取快速拉起结果。使用callback异步回调。
 
-快速拉起功能支持在用户触发迁移、等待迁移数据返回的过程中，并行拉起应用，减小用户等待时间。在源端应用[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)的continueType标签的取值中添加“_ContinueQuickStart”后缀，可以开启快速拉起功能。
+快速拉起功能支持在用户触发迁移、等待迁移数据返回的过程中，并行拉起应用，减小用户等待时间。在源端应用[module.json5配置文件](../../guides/module.json5配置文件.md)的continueType标签的取值中添加“_ContinueQuickStart”后缀，可以开启快速拉起功能。
 
 模型约束：此接口仅可在Stage模型下使用。
 
@@ -81,7 +81,7 @@ off(type: 'prepareContinue', context: [Context](../../topics/misc/BaseContext.md
 
 在应用快速拉起时，注销回调函数，不再获取快速拉起结果。使用callback异步回调。
 
-快速拉起功能支持在用户触发迁移、等待迁移数据返回的过程中，并行拉起应用，减小用户等待时间。在源端应用[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)的continueType标签的取值中添加“_ContinueQuickStart”后缀，可以开启快速拉起功能。
+快速拉起功能支持在用户触发迁移、等待迁移数据返回的过程中，并行拉起应用，减小用户等待时间。在源端应用[module.json5配置文件](../../guides/module.json5配置文件.md)的continueType标签的取值中添加“_ContinueQuickStart”后缀，可以开启快速拉起功能。
 
 模型约束：此接口仅可在Stage模型下使用。
 

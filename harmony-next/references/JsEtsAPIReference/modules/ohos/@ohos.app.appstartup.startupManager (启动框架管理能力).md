@@ -1,6 +1,6 @@
 # @ohos.app.appstartup.startupManager (启动框架管理能力)
 
-本模块提供[应用启动框架](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup)管理启动任务的能力，只能在主线程调用。
+本模块提供[应用启动框架](../../guides/应用启动框架AppStartup.md)管理启动任务的能力，只能在主线程调用。
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 

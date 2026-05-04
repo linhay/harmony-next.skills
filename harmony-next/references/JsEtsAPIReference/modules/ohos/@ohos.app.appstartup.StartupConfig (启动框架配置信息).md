@@ -1,6 +1,6 @@
 # @ohos.app.appstartup.StartupConfig (启动框架配置信息)
 
-本模块提供[应用启动框架](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup)配置信息的定义。
+本模块提供[应用启动框架](../../guides/应用启动框架AppStartup.md)配置信息的定义。
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -14,7 +14,7 @@ import { StartupConfig } from '@kit.AbilityKit';
 
 #### StartupConfig
 
-用于配置任务超时时间和启动框架的监听器。详细使用方法可参考[设置启动参数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup#设置启动参数)章节。
+用于配置任务超时时间和启动框架的监听器。详细使用方法可参考[设置启动参数](../../guides/应用启动框架AppStartup.md#设置启动参数)章节。
 
 **系统能力**：SystemCapability.Ability.AppStartup
 

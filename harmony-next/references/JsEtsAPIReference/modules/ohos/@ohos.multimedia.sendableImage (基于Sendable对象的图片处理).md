@@ -1746,7 +1746,7 @@ async function Demo(pixelMap: sendableImage.PixelMap) {
 
 表示图片尺寸。
 
-继承自[lang.ISendable](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#isendable)。
+继承自[lang.ISendable](../../guides/Sendable对象简介.md#isendable)。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
@@ -1763,7 +1763,7 @@ async function Demo(pixelMap: sendableImage.PixelMap) {
 
 表示区域信息。
 
-继承自[lang.ISendable](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#isendable)。
+继承自[lang.ISendable](../../guides/Sendable对象简介.md#isendable)。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
@@ -2019,7 +2019,7 @@ async function Demo(context : Context) {
 
 #### Image
 
-提供基本的图像操作，包括获取图像信息、读写图像数据。调用[readNextImage](#ZH-CN_TOPIC_0000002553201941__readnextimage)和[readLatestImage](#ZH-CN_TOPIC_0000002553201941__readlatestimage)接口时会返回Image。继承自[ISendable](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#isendable)。
+提供基本的图像操作，包括获取图像信息、读写图像数据。调用[readNextImage](#ZH-CN_TOPIC_0000002553201941__readnextimage)和[readLatestImage](#ZH-CN_TOPIC_0000002553201941__readlatestimage)接口时会返回Image。继承自[ISendable](../../guides/Sendable对象简介.md#isendable)。
 
 由于图片占用内存较大，所以当Image实例使用完成后，应主动调用[release](#ZH-CN_TOPIC_0000002553201941__release-2)方法及时释放内存。释放时应确保该实例的所有异步方法均执行完成，且后续不再使用该实例。
 

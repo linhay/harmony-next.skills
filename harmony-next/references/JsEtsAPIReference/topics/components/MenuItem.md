@@ -48,9 +48,9 @@ selected(value: boolean)
 
 设置菜单项是否选中。
 
-从API version 10开始，该参数支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定变量。
+从API version 10开始，该参数支持[$$](../../guides/$$语法：系统组件双向同步.md)双向绑定变量。
 
-从API version 18开始，该参数支持[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding#系统组件参数双向绑定)双向绑定变量。
+从API version 18开始，该参数支持[!!](../../guides/!!语法：双向绑定.md#系统组件参数双向绑定)双向绑定变量。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 

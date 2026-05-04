@@ -18,7 +18,7 @@ createCollaborationServiceMenuItems(businessFilter?: Array<CollaborationServiceF
 
 设备列表选择器，需要在[Menu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menu)组件内调用。用于显示组网内具有对应能力的设备列表。
 
-该方法为自定义构建函数，开发者在使用前需要先了解[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder)。
+该方法为自定义构建函数，开发者在使用前需要先了解[@Builder](../../guides/@Builder装饰器：自定义构建函数.md)。
 
 装饰器类型： @Builder
 
@@ -50,7 +50,7 @@ createCollaborationServiceMenuItems(businessFilter: Array<CollaborationServiceFi
 
 设备列表选择器，需要在[Menu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menu)组件内调用。用于显示组网内具有对应能力的设备列表，此接口支持自定义对端图库能力图片选择的数量。
 
-该方法为自定义构建函数，开发者在使用前需要先了解[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder)。
+该方法为自定义构建函数，开发者在使用前需要先了解[@Builder](../../guides/@Builder装饰器：自定义构建函数.md)。
 
 装饰器类型： @Builder
 
@@ -85,7 +85,7 @@ createCollaborationServiceMenuItems(businessFilter: Array<CollaborationServiceFi
 
 具体调用策略：2in1设备可以调用平板和手机，平板可以调用手机，并且在6.1.0(23)及以上版本支持手机、平板或2in1设备调用支持拍照、扫描、选择图库能力的手机，支持拍照、扫描、选择图库能力的平板，以及支持选择图库能力的2in1设备
 
-该方法为自定义构建函数，开发者在使用前需要先了解[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder)。
+该方法为自定义构建函数，开发者在使用前需要先了解[@Builder](../../guides/@Builder装饰器：自定义构建函数.md)。
 
 模型约束： 此模块的接口仅可在Stage模型下使用。
 

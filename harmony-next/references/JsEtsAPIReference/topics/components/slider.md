@@ -476,7 +476,7 @@ enableHapticFeedback(enabled: boolean)
 
 设置是否开启触控反馈。
 
-开启触控反馈时，需要在工程的[module.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中配置requestPermissions字段开启振动权限，配置如下：
+开启触控反馈时，需要在工程的[module.json5](../../guides/module.json5配置文件.md)中配置requestPermissions字段开启振动权限，配置如下：
 
 ```ets
 "requestPermissions": [
@@ -1555,7 +1555,7 @@ struct SliderExample {
 
 #### 示例7（设置滑动条的双向绑定）
 
-从API version 11开始，通过将[SliderOptions](#ZH-CN_TOPIC_0000002522080842__slideroptions对象说明)的value属性设置为[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)绑定的变量，实现数据同步。
+从API version 11开始，通过将[SliderOptions](#ZH-CN_TOPIC_0000002522080842__slideroptions对象说明)的value属性设置为[$$](../../guides/$$语法：系统组件双向同步.md)绑定的变量，实现数据同步。
 
 ```ets
 // xxx.ets

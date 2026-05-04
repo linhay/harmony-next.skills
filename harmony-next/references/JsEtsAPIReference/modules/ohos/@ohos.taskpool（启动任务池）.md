@@ -1252,7 +1252,7 @@ setCloneList(cloneList: Object[] | ArrayBuffer[]): void
 
 设置任务的拷贝列表。在使用该方法前，需先构造Task对象。
 
-需搭配[@Sendable装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#sendable装饰器)使用，否则会抛异常。建议开发者使用该装饰器以避免异常。
+需搭配[@Sendable装饰器](../../guides/Sendable对象简介.md#sendable装饰器)使用，否则会抛异常。建议开发者使用该装饰器以避免异常。
 
 **系统能力：** SystemCapability.Utils.Lang
 

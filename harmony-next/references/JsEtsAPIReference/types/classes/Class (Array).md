@@ -10,7 +10,7 @@
 
 文档中存在泛型的使用，涉及以下泛型标记符：
 
-- T：Type，支持[Sendable支持的数据类型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#sendable支持的数据类型)。
+- T：Type，支持[Sendable支持的数据类型](../../guides/Sendable对象简介.md#sendable支持的数据类型)。
 
 **装饰器类型：**@Sendable
 

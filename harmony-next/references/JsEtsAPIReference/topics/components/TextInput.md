@@ -1097,7 +1097,7 @@ enableHapticFeedback(isEnabled: boolean)
 
 设置是否开启触控反馈。
 
-开启触控反馈时，需要在工程的[module.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中配置requestPermissions字段以开启振动权限，配置如下：
+开启触控反馈时，需要在工程的[module.json5](../../guides/module.json5配置文件.md)中配置requestPermissions字段以开启振动权限，配置如下：
 
 ```ets
 "requestPermissions": [

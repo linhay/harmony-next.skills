@@ -42,7 +42,7 @@ import { ArcList } from '@kit.ArkUI';
 
 -
 
-[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)语句中，只有条件成立的分支内的子组件会参与索引值计算，条件不成立的分支内子组件不计算索引值。
+[if/else](../../guides/if-else：条件渲染.md)语句中，只有条件成立的分支内的子组件会参与索引值计算，条件不成立的分支内子组件不计算索引值。
 
 -
 
@@ -50,7 +50,7 @@ import { ArcList } from '@kit.ArkUI';
 
 -
 
-[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](ForEach.md)和[LazyForEach](LazyForEach.md)发生变化以后，会更新子节点索引值。
+[if/else](../../guides/if-else：条件渲染.md)、[ForEach](ForEach.md)和[LazyForEach](LazyForEach.md)发生变化以后，会更新子节点索引值。
 
 -
 

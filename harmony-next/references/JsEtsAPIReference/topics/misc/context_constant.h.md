@@ -89,7 +89,7 @@ enum AbilityRuntime_SupportedWindowMode
 
 描述
 
-在应用内启动UIAbility时，指定窗口是否显示最大化/窗口化/分屏按键。如果未配置该字段，则默认采用该UIAbility对应的[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中[abilities标签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#abilities标签)的supportWindowMode字段取值。
+在应用内启动UIAbility时，指定窗口是否显示最大化/窗口化/分屏按键。如果未配置该字段，则默认采用该UIAbility对应的[module.json5配置文件](../../guides/module.json5配置文件.md)中[abilities标签](../../guides/module.json5配置文件.md#abilities标签)的supportWindowMode字段取值。
 
 起始版本： 17
 

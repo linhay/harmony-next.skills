@@ -833,7 +833,7 @@ HarmonyOS在result非空时创建强引用，标准库则创建弱引用。
 
 说明：
 
-有关Sendable特性的介绍，详见[Sendable开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)。
+有关Sendable特性的介绍，详见[Sendable开发指导](../../guides/Sendable对象简介.md)。
 
 **napi_qos_t**
 
@@ -2218,7 +2218,7 @@ napi_status napi_create_strong_sendable_reference(napi_env env,
 
 创建指向Sendable ArkTS对象的Sendable强引用。使用该接口需要注意以下几点：
 
-1. 只能为[Sendable对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#sendable支持的数据类型)创建napi_sendable_ref。
+1. 只能为[Sendable对象](../../guides/Sendable对象简介.md#sendable支持的数据类型)创建napi_sendable_ref。
 
 1. napi_sendable_ref可跨ArkTS线程使用，在多线程操作时，调用者需自己保证释放时机，防止出现释放后使用的问题。
 

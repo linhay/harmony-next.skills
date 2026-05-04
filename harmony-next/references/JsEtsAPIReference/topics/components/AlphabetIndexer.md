@@ -236,7 +236,7 @@ selected(index: number)
 
 设置选中项索引值。
 
-从API version 10开始，该参数支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定变量。
+从API version 10开始，该参数支持[$$](../../guides/$$语法：系统组件双向同步.md)双向绑定变量。
 
 元服务API： 从API version 11开始，该接口支持在元服务中使用。
 

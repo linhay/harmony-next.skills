@@ -6112,7 +6112,7 @@ async function demo() {
 
 once(type: 'windowChange', windowChangeType: WindowChangeType, options: WindowChangeOptions, callback: Callback<UIElementInfo>): void
 
-开始监听指定类型的窗口变化事件，支持设置事件监听的扩展配置，监听到指定窗口变化事件时触发callback回调。仅支持[自由多窗模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-terminology#自由多窗模式)的窗口监听。
+开始监听指定类型的窗口变化事件，支持设置事件监听的扩展配置，监听到指定窗口变化事件时触发callback回调。仅支持[自由多窗模式](../../guides/窗口开发术语.md#自由多窗模式)的窗口监听。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 

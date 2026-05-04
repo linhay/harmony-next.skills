@@ -1045,7 +1045,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsStartWindowBackgroundC
 
 描述
 
-设置启动Ability时的窗口背景颜色。启动UIAbility时，启动页所显示的背景颜色如果未设置该字段，则默认采用[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中[abilities标签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#abilities标签)的startWindowBackground字段的配置。
+设置启动Ability时的窗口背景颜色。启动UIAbility时，启动页所显示的背景颜色如果未设置该字段，则默认采用[module.json5配置文件](../../guides/module.json5配置文件.md)中[abilities标签](../../guides/module.json5配置文件.md#abilities标签)的startWindowBackground字段的配置。
 
 起始版本： 17
 

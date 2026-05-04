@@ -243,7 +243,7 @@ struct Index {
 
 postMessage(message: Object, options?: PostMessageOptions): void
 
-宿主线程可以通过转移对象所有权或拷贝数据的方式向Worker线程发送消息。在传递[Sendable对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)时，使用拷贝数据的方式。
+宿主线程可以通过转移对象所有权或拷贝数据的方式向Worker线程发送消息。在传递[Sendable对象](../../guides/Sendable对象简介.md)时，使用拷贝数据的方式。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -288,7 +288,7 @@ workerInstance.postMessage(buffer);
 
 postMessageWithSharedSendable(message: Object, transfer?: ArrayBuffer[]): void
 
-宿主线程向Worker线程发送消息，消息中的[Sendable对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)通过引用传递，非Sendable对象通过拷贝数据的方式传递。
+宿主线程向Worker线程发送消息，消息中的[Sendable对象](../../guides/Sendable对象简介.md)通过引用传递，非Sendable对象通过拷贝数据的方式传递。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -1054,7 +1054,7 @@ workerPort.onmessage = (e: MessageEvents): void => {
 
 postMessage(messageObject: Object, options?: PostMessageOptions): void
 
-Worker线程通过转移对象所有权或拷贝数据的方式向宿主线程发送消息。在传递[Sendable对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)时，使用拷贝数据的方式进行传递。
+Worker线程通过转移对象所有权或拷贝数据的方式向宿主线程发送消息。在传递[Sendable对象](../../guides/Sendable对象简介.md)时，使用拷贝数据的方式进行传递。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1104,7 +1104,7 @@ workerPort.onmessage = (e: MessageEvents): void => {
 
 postMessageWithSharedSendable(message: Object, transfer?: ArrayBuffer[]): void
 
-Worker线程向宿主线程发送消息，消息中的[Sendable对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)通过引用传递，非Sendable对象通过拷贝数据的方式传递。
+Worker线程向宿主线程发送消息，消息中的[Sendable对象](../../guides/Sendable对象简介.md)通过引用传递，非Sendable对象通过拷贝数据的方式传递。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 

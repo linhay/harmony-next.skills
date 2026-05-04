@@ -261,7 +261,7 @@ requestPermissionsFromUser(context: Context, permissionList: Array<Permissions>,
 
 **示例：**
 
-下述示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+下述示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 关于向用户申请授权的完整流程及示例，请参见[向用户申请授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-authorization)。
 
@@ -324,7 +324,7 @@ requestPermissionsFromUser(context: Context, permissionList: Array<Permissions>)
 
 **示例：**
 
-下述示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+下述示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 关于向用户申请授权的完整流程及示例，请参见[向用户申请授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-authorization)。
 
@@ -389,7 +389,7 @@ requestPermissionOnSetting(context: Context, permissionList: Array<Permissions>)
 
 **示例：**
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 ```ets
 import { abilityAccessCtrl, Context, common } from '@kit.AbilityKit';
@@ -447,7 +447,7 @@ requestGlobalSwitch(context: Context, type: SwitchType): Promise<boolean>
 
 **示例：**
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 ```ets
 import { abilityAccessCtrl, Context, common } from '@kit.AbilityKit';
@@ -544,7 +544,7 @@ openPermissionOnSetting(context: Context, permission: Permissions): Promise<Sele
 
 **示例：**
 
-示例中context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
+示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
 ```ets
 import { abilityAccessCtrl, Context, common } from '@kit.AbilityKit';

@@ -30,7 +30,7 @@ type AsyncLockCallback<T> = () => T | Promise<T>
 
 **AsyncLock**
 
-实现异步锁功能的类，允许在锁下执行异步操作。该类使用[@Sendable装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)装饰。
+实现异步锁功能的类，允许在锁下执行异步操作。该类使用[@Sendable装饰器](../../guides/Sendable对象简介.md)装饰。
 
 **属性**
 
@@ -465,7 +465,7 @@ let p = lock.lockAsync<void, string>(
 
 **ConditionVariable18+**
 
-实现异步等待功能的类，支持异步等待通知操作。该类使用[@Sendable装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)装饰。
+实现异步等待功能的类，支持异步等待通知操作。该类使用[@Sendable装饰器](../../guides/Sendable对象简介.md)装饰。
 
 元服务API：从API version 18 开始，该接口支持在元服务中使用。
 

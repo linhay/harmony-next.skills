@@ -10,7 +10,7 @@ sendableContextManager模块提供Context与[SendableContext](SendableContext.md
 
 本模块主要用于ArkTS并发实例间（包括主线程、TaskPool&Worker工作线程）的数据传递。
 
-例如，从主线程向子线程（如TaskPool或Worker工作线程）传递Sendable数据（符合[Sendable协议](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#sendable协议)的数据）时，需要通过Context与SendableContext之间的相互转换来实现。过程如下：
+例如，从主线程向子线程（如TaskPool或Worker工作线程）传递Sendable数据（符合[Sendable协议](../../guides/Sendable对象简介.md#sendable协议)的数据）时，需要通过Context与SendableContext之间的相互转换来实现。过程如下：
 
 - 主线程向子线程传递Sendable数据时，需要将Context转换为[SendableContext](../../topics/misc/SendableContext.md)。
 - 子线程使用Sendable数据时，需要将[SendableContext](../../topics/misc/SendableContext.md)转换为Context。
@@ -41,7 +41,7 @@ import { sendableContextManager } from '@kit.AbilityKit';
 
 type [SendableContext](../../topics/misc/SendableContext.md) = [_SendableContext](../../topics/misc/SendableContext.md)
 
-Sendable上下文，符合[Sendable协议](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#sendable协议)，继承自[lang.ISendable](@arkts.lang (ArkTS语言基础能力).md#ZH-CN_TOPIC_0000002553200659__langisendable)。
+Sendable上下文，符合[Sendable协议](../../guides/Sendable对象简介.md#sendable协议)，继承自[lang.ISendable](@arkts.lang (ArkTS语言基础能力).md#ZH-CN_TOPIC_0000002553200659__langisendable)。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 

@@ -8,7 +8,7 @@
 
 可以包含子组件。
 
-- 子组件类型：系统组件和自定义组件，不支持渲染控制类型（[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](ForEach.md)和[LazyForEach](LazyForEach.md)）。
+- 子组件类型：系统组件和自定义组件，不支持渲染控制类型（[if/else](../../guides/if-else：条件渲染.md)、[ForEach](ForEach.md)和[LazyForEach](LazyForEach.md)）。
 - 子组件个数：必须且仅包含2个子组件。
 - 子组件个数异常时：3个或以上子组件，显示第一个和第二个。1个子组件，显示侧边栏，内容区为空白。
 - SideBarContainer走焦时，先在内容区走焦，再在侧边栏走焦。
@@ -53,7 +53,7 @@ showSideBar(value: boolean)
 
 设置是否显示侧边栏。
 
-从API version 10开始，该属性支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定变量。
+从API version 10开始，该属性支持[$$](../../guides/$$语法：系统组件双向同步.md)双向绑定变量。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -106,7 +106,7 @@ sideBarWidth(value: number)
 
 设置侧边栏的宽度。设置为小于0的值时按默认值显示。受最小宽度和最大宽度限制，不在限制区域内取最近的点。
 
-从API version 18开始，该参数支持[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding)双向绑定变量。
+从API version 18开始，该参数支持[!!](../../guides/!!语法：双向绑定.md)双向绑定变量。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -124,7 +124,7 @@ sideBarWidth(value: [Length](基础类型定义.md#ZH-CN_TOPIC_0000002497604974_
 
 设置侧边栏的宽度。设置为小于0的值时按默认值显示。受最小宽度和最大宽度限制，不在限制区域内取最近的点。与[sideBarWidth](#ZH-CN_TOPIC_0000002522080822__sidebarwidth)相比，value参数新增了对百分比字符串和其他[像素单位](像素单位.md)的支持。
 
-从API version 18开始，该参数支持[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding)双向绑定变量。
+从API version 18开始，该参数支持[!!](../../guides/!!语法：双向绑定.md)双向绑定变量。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 

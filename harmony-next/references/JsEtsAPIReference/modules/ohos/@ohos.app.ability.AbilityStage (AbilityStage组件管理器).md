@@ -95,7 +95,7 @@ export default class MyAbilityStage extends AbilityStage {
 
 onNewProcessRequest(want: Want): string
 
-如果UIAbility配置了在独立进程中运行（即[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中UIAbility的isolationProcess字段取值为true），当该UIAbility被拉起时，会触发该回调，并返回一个string作为进程唯一标识。同步接口，不支持异步回调。
+如果UIAbility配置了在独立进程中运行（即[module.json5配置文件](../../guides/module.json5配置文件.md)中UIAbility的isolationProcess字段取值为true），当该UIAbility被拉起时，会触发该回调，并返回一个string作为进程唯一标识。同步接口，不支持异步回调。
 
 如果该应用已有相同标识的进程存在，则待启动的UIAbility运行在此进程中，否则创建新的进程。
 
@@ -347,7 +347,7 @@ class MyAbilityStage extends AbilityStage {
 
 onNewProcessRequestAsync(want: Want): Promise<string>
 
-如果UIAbility配置了在独立进程中运行（即[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中UIAbility的isolationProcess字段取值为true），当该UIAbility被拉起时，会触发该回调，并返回一个string作为进程唯一标识。使用Promise异步回调。
+如果UIAbility配置了在独立进程中运行（即[module.json5配置文件](../../guides/module.json5配置文件.md)中UIAbility的isolationProcess字段取值为true），当该UIAbility被拉起时，会触发该回调，并返回一个string作为进程唯一标识。使用Promise异步回调。
 
 如果该应用已有相同标识的进程存在，则待启动的UIAbility运行在此进程中，否则创建新的进程。
 
