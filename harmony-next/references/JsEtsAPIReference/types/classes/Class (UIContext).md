@@ -3602,7 +3602,7 @@ static createUI[Context](../../topics/misc/Types.md#ZH-CN_TOPIC_0000002497444808
 
 创建一个不依赖窗口的UI实例，并返回其UI上下文。该接口所创建的UI实例是单例。
 
-返回的UI上下文只可用于创建[自定义节点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-node)，不能执行其他UI操作。
+返回的UI上下文只可用于创建[自定义节点](../../guides/自定义节点概述.md)，不能执行其他UI操作。
 
 元服务API： 从API version 17 开始，该接口支持在元服务中使用。
 

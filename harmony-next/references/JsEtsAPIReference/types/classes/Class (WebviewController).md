@@ -2602,7 +2602,7 @@ getUserAgent(): string
 
 获取当前默认用户代理。
 
-默认User-Agent定义与使用场景请参考[User-Agent开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-default-useragent)
+默认User-Agent定义与使用场景请参考[User-Agent开发指导](../../guides/User-Agent开发指导.md)
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -4903,7 +4903,7 @@ setCustomUserAgent(userAgent: string): void
 
 当Web组件src设置为空字符串时，建议先调用setCustomUserAgent方法设置User-Agent，再通过loadUrl加载具体页面。
 
-默认User-Agent定义与使用场景请参考[User-Agent开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-default-useragent)
+默认User-Agent定义与使用场景请参考[User-Agent开发指导](../../guides/User-Agent开发指导.md)
 
 当Web组件src设置了url，且未在onControllerAttached回调事件中设置User-Agent。再调用setCustomUserAgent方法时，可能会出现加载的页面与实际设置User-Agent不符的异常现象。
 
@@ -5065,7 +5065,7 @@ getCustomUserAgent(): string
 
 获取自定义用户代理。
 
-默认User-Agent定义与使用场景请参考[User-Agent开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-default-useragent)
+默认User-Agent定义与使用场景请参考[User-Agent开发指导](../../guides/User-Agent开发指导.md)
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -5119,7 +5119,7 @@ static setAppCustomUserAgent(userAgent: string): void
 
 当需要设置应用级自定义用户代理时，建议在Web组件创建前调用setAppCustomUserAgent方法设置User-Agent，再创建指定src的Web组件或通过[loadUrl](#ZH-CN_TOPIC_0000002553201117__loadurl)加载具体页面。
 
-默认User-Agent定义与使用场景，及相关User-Agent接口定义优先级请参考[User-Agent开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-default-useragent)。
+默认User-Agent定义与使用场景，及相关User-Agent接口定义优先级请参考[User-Agent开发指导](../../guides/User-Agent开发指导.md)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -5165,7 +5165,7 @@ static setUserAgentForHosts(userAgent: string, hosts: Array<string>): void
 
 当需要对特定网站设置自定义用户代理时，建议在Web组件创建前调用setUserAgentForHosts方法设置User-Agent，再创建指定src的Web组件或通过[loadUrl](#ZH-CN_TOPIC_0000002553201117__loadurl)加载具体页面。
 
-默认User-Agent定义与使用场景，及相关User-Agent接口定义优先级请参考[User-Agent开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-default-useragent)。
+默认User-Agent定义与使用场景，及相关User-Agent接口定义优先级请参考[User-Agent开发指导](../../guides/User-Agent开发指导.md)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -5651,7 +5651,7 @@ static getDefaultUserAgent(): string
 
 此接口只允许在UI线程调用。
 
-默认User-Agent定义与使用场景请参考[User-Agent开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-default-useragent)
+默认User-Agent定义与使用场景请参考[User-Agent开发指导](../../guides/User-Agent开发指导.md)
 
 **系统能力：** SystemCapability.Web.Webview.Core
 

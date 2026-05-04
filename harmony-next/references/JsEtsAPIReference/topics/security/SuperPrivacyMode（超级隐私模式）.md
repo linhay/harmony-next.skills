@@ -18,7 +18,7 @@ import { superPrivacyMode } from '@kit.DeviceSecurityKit';
 
 起始版本： 6.0.2(22)
 
-设备行为差异： 该枚举在Wearable、TV中无效果，使用时请遵循[约束与限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-getsuperprivacymode#约束与限制)部分的相关说明。
+设备行为差异： 该枚举在Wearable、TV中无效果，使用时请遵循[约束与限制](../../guides/查询当前状态场景.md#约束与限制)部分的相关说明。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -36,7 +36,7 @@ getSuperPrivacyMode(): Promise<SuperPrivacyMode>
 
 起始版本： 6.0.2(22)
 
-设备行为差异： 该接口在TV、Wearable中无效果；在存在超级隐私模式选项的Phone、PC/2in1、Tablet中可正常调用，在不存在超级隐私模式选项的Phone、PC/2in1、Tablet中返回1006200005错误码，开发者使用时请遵循[约束与限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-getsuperprivacymode#约束与限制)部分的相关说明。
+设备行为差异： 该接口在TV、Wearable中无效果；在存在超级隐私模式选项的Phone、PC/2in1、Tablet中可正常调用，在不存在超级隐私模式选项的Phone、PC/2in1、Tablet中返回1006200005错误码，开发者使用时请遵循[约束与限制](../../guides/查询当前状态场景.md#约束与限制)部分的相关说明。
 
 返回值：
 
@@ -81,7 +81,7 @@ on(type: 'superPrivacyModeChange', callback: Callback<SuperPrivacyMode>): void
 
 起始版本： 6.0.2(22)
 
-设备行为差异： 该接口在TV、Wearable中无效果；在存在超级隐私模式选项的Phone、PC/2in1、Tablet中可正常调用，在不存在超级隐私模式选项的Phone、PC/2in1、Tablet中返回1006200005错误码，开发者使用时请遵循[约束与限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-getsuperprivacymode#约束与限制)部分的相关说明。
+设备行为差异： 该接口在TV、Wearable中无效果；在存在超级隐私模式选项的Phone、PC/2in1、Tablet中可正常调用，在不存在超级隐私模式选项的Phone、PC/2in1、Tablet中返回1006200005错误码，开发者使用时请遵循[约束与限制](../../guides/查询当前状态场景.md#约束与限制)部分的相关说明。
 
 参数：
 
@@ -132,7 +132,7 @@ off(type: 'superPrivacyModeChange', callback?: Callback<SuperPrivacyMode>): void
 
 起始版本： 6.0.2(22)
 
-设备行为差异： 该接口在TV、Wearable中无效果；在存在超级隐私模式选项的Phone、PC/2in1、Tablet中可正常调用，在不存在超级隐私模式选项的Phone、PC/2in1、Tablet中返回1006200005错误码，开发者使用时请遵循[约束与限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-getsuperprivacymode#约束与限制)部分的相关说明。
+设备行为差异： 该接口在TV、Wearable中无效果；在存在超级隐私模式选项的Phone、PC/2in1、Tablet中可正常调用，在不存在超级隐私模式选项的Phone、PC/2in1、Tablet中返回1006200005错误码，开发者使用时请遵循[约束与限制](../../guides/查询当前状态场景.md#约束与限制)部分的相关说明。
 
 参数：
 

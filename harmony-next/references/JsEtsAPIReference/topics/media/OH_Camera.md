@@ -10,7 +10,7 @@
 - [设备输入](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-device-input)
 - [会话管理](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-session-management)
 - [预览](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-preview)
-- [预览流二次处理](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-preview-imagereceiver)
+- [预览流二次处理](../../guides/预览流二次处理（C-C++）.md)
 - [拍照](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-shooting)
 - [分段式拍照](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-deferred-capture)
 - [录像](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-recording)

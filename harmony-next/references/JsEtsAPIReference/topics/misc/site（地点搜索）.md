@@ -1271,7 +1271,7 @@ string
 
 是
 
-返回结果的语言类型，参数的长度范围：[1, 16]。语种取值请参见[位置搜索支持语言](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-language#section1629711151663)列表。
+返回结果的语言类型，参数的长度范围：[1, 16]。语种取值请参见[位置搜索支持语言](../../guides/支持的语言.md#位置搜索支持语言)列表。
 
 如果不传，默认返回地点的当地语言。异常值按默认值处理。
 
@@ -1388,7 +1388,7 @@ string
 
 是
 
-输入语言，参数的长度范围：[1, 16]。语种取值请参见[位置搜索支持语言](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-language#section1629711151663)列表。
+输入语言，参数的长度范围：[1, 16]。语种取值请参见[位置搜索支持语言](../../guides/支持的语言.md#位置搜索支持语言)列表。
 
 如果不传，默认返回地点的当地语言。异常值按默认值处理。
 
@@ -1535,7 +1535,7 @@ string
 
 是
 
-输入语言，参数的长度范围：[1, 16]。语种取值请参见[位置搜索支持语言](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-language#section1629711151663)列表。
+输入语言，参数的长度范围：[1, 16]。语种取值请参见[位置搜索支持语言](../../guides/支持的语言.md#位置搜索支持语言)列表。
 
 如果不传，默认返回地点的当地语言。异常值按默认值处理。
 
@@ -1592,7 +1592,7 @@ string
 
 是
 
-输入语言，参数的长度范围：[1, 16]。语种取值请参见[位置搜索支持语言](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-language#section1629711151663)列表。
+输入语言，参数的长度范围：[1, 16]。语种取值请参见[位置搜索支持语言](../../guides/支持的语言.md#位置搜索支持语言)列表。
 
 如果不传，默认返回地点的当地语言。异常值按默认值处理。
 
@@ -1649,7 +1649,7 @@ string
 
 是
 
-输入语言，参数的长度范围：[1, 16]。语种取值请参见[位置搜索支持语言](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-language#section1629711151663)列表。
+输入语言，参数的长度范围：[1, 16]。语种取值请参见[位置搜索支持语言](../../guides/支持的语言.md#位置搜索支持语言)列表。
 
 如果不传，默认返回地点的当地语言。异常值按默认值处理。
 
@@ -1775,7 +1775,7 @@ string
 
 是
 
-输入语言，参数的长度范围：[1, 16]。语种取值请参见[位置搜索支持语言](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-language#section1629711151663)列表。
+输入语言，参数的长度范围：[1, 16]。语种取值请参见[位置搜索支持语言](../../guides/支持的语言.md#位置搜索支持语言)列表。
 
 如果不传，默认返回地点的当地语言。异常值按默认值处理。
 

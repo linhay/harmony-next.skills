@@ -1,6 +1,6 @@
 # 生成服务端请求的token
 
-服务端API请求的Authorization标头中必须包含JWT格式的token用于鉴权。JSON Web Token（JWT）是一个开放标准（RFC 7519），定义了一种安全传输信息的方法，具体请参见[jwt.io](https://jwt.io/)。可以使用从[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)下载的私钥签名生成JWT。密钥的生成和下载请参见[配置密钥](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-set-necessary-parameters#配置密钥)。创建JWT格式的token需要以下几步：
+服务端API请求的Authorization标头中必须包含JWT格式的token用于鉴权。JSON Web Token（JWT）是一个开放标准（RFC 7519），定义了一种安全传输信息的方法，具体请参见[jwt.io](https://jwt.io/)。可以使用从[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)下载的私钥签名生成JWT。密钥的生成和下载请参见[配置密钥](../../guides/（可选）配置应用内购买服务参数.md#配置密钥)。创建JWT格式的token需要以下几步：
 
 1.
 

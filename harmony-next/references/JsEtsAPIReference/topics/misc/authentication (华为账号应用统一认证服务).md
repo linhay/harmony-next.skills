@@ -183,7 +183,7 @@ getMobileNumberConsistency(request: ConsistencyRequest): Promise<ConsistencyResu
 
 获取手机号一致性状态，使用Promise异步回调。在应用需要校验华为账号绑定的手机号是否与本机SIM卡一致场景下使用。
 
-开发者在使用获取手机号一致性状态接口前，需要完成quickLoginMobilePhone（华为账号一键登录）的scope权限申请，详情参见[开发前提](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-phone-unionid-login#开发前提)。scope权限申请审批未完成或未通过，将报错[1001502014 应用未申请scopes或permissions权限](ArkTS错误码.md#ZH-CN_TOPIC_0000002553362211__1001502014-应用未申请scopes或permissions权限)。
+开发者在使用获取手机号一致性状态接口前，需要完成quickLoginMobilePhone（华为账号一键登录）的scope权限申请，详情参见[开发前提](../../guides/华为账号一键登录（获取手机号和UnionID-OpenID）.md#开发前提)。scope权限申请审批未完成或未通过，将报错[1001502014 应用未申请scopes或permissions权限](ArkTS错误码.md#ZH-CN_TOPIC_0000002553362211__1001502014-应用未申请scopes或permissions权限)。
 
 模型约束： 此接口仅可在Stage模型下使用。
 

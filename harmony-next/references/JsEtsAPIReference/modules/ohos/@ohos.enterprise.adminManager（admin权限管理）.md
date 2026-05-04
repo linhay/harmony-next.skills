@@ -455,7 +455,7 @@ try {
 
 enableDeviceAdmin(admin: Want): Promise<void>
 
-[超级设备管理应用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-term#sda)通过该接口可以激活其他[普通设备管理应用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-term#da)，使用Promise异步回调。该接口仅支持超级设备管理应用调用。
+[超级设备管理应用](../../guides/MDM Kit术语.md#sda)通过该接口可以激活其他[普通设备管理应用](../../guides/MDM Kit术语.md#da)，使用Promise异步回调。该接口仅支持超级设备管理应用调用。
 
 需要权限： ohos.permission.ENTERPRISE_MANAGE_DEVICE_ADMIN
 
@@ -512,7 +512,7 @@ adminManager.enableDeviceAdmin(wantTemp).catch((err: BusinessError) => {
 
 disableDeviceAdmin(admin: Want): Promise<void>
 
-[超级设备管理应用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-term#sda)通过该接口可以解除激活其他[普通设备管理应用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-term#da)，使用Promise异步回调。该接口仅支持超级设备管理应用调用。
+[超级设备管理应用](../../guides/MDM Kit术语.md#sda)通过该接口可以解除激活其他[普通设备管理应用](../../guides/MDM Kit术语.md#da)，使用Promise异步回调。该接口仅支持超级设备管理应用调用。
 
 需要权限： ohos.permission.ENTERPRISE_MANAGE_DEVICE_ADMIN
 

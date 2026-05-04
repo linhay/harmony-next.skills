@@ -204,7 +204,7 @@ createAsset(photoType: [PhotoType](../enums/Enums.md#ZH-CN_TOPIC_000000252944591
 
 指定文件类型、后缀和创建选项，创建图片或视频资源。使用callback方式返回结果。
 
-在未申请相册管理模块权限'ohos.permission.WRITE_IMAGEVIDEO'时，可以使用安全控件或授权弹窗的方式创建媒体资源，详情请参考[保存媒体库资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-savebutton)。
+在未申请相册管理模块权限'ohos.permission.WRITE_IMAGEVIDEO'时，可以使用安全控件或授权弹窗的方式创建媒体资源，详情请参考[保存媒体库资源](../../guides/保存媒体库资源.md)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -263,7 +263,7 @@ createAsset(photoType: [PhotoType](../enums/Enums.md#ZH-CN_TOPIC_000000252944591
 
 指定文件类型和后缀，创建图片或视频资源，使用callback方式返回结果。
 
-在未申请相册管理模块权限'ohos.permission.WRITE_IMAGEVIDEO'时，可以使用安全控件或授权弹窗的方式创建媒体资源，详情请参考[保存媒体库资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-savebutton)。
+在未申请相册管理模块权限'ohos.permission.WRITE_IMAGEVIDEO'时，可以使用安全控件或授权弹窗的方式创建媒体资源，详情请参考[保存媒体库资源](../../guides/保存媒体库资源.md)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -318,7 +318,7 @@ createAsset(photoType: [PhotoType](../enums/Enums.md#ZH-CN_TOPIC_000000252944591
 
 指定文件类型、后缀和创建选项，创建图片或视频资源，以Promise方式返回结果。
 
-在未申请相册管理模块权限'ohos.permission.WRITE_IMAGEVIDEO'时，可以使用安全控件或授权弹窗的方式创建媒体资源，详情请参考[保存媒体库资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-savebutton)。
+在未申请相册管理模块权限'ohos.permission.WRITE_IMAGEVIDEO'时，可以使用安全控件或授权弹窗的方式创建媒体资源，详情请参考[保存媒体库资源](../../guides/保存媒体库资源.md)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -380,7 +380,7 @@ createPhotoAsset(photoType: [PhotoType](../enums/Enums.md#ZH-CN_TOPIC_0000002529
 
 指定文件类型、后缀和标题，创建图片或视频资源。使用Promise异步回调。
 
-在未申请相册管理模块权限'ohos.permission.WRITE_IMAGEVIDEO'时，可以使用安全控件或授权弹窗的方式创建媒体资源，详情请参考[开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-savebutton)。
+在未申请相册管理模块权限'ohos.permission.WRITE_IMAGEVIDEO'时，可以使用安全控件或授权弹窗的方式创建媒体资源，详情请参考[开发指南](../../guides/保存媒体库资源.md)。
 
 模型约束：此接口仅可在Stage模型下使用。
 
@@ -760,7 +760,7 @@ applyChanges(mediaChangeRequest: MediaChangeRequest): Promise<void>
 
 **需要权限**：ohos.permission.WRITE_IMAGEVIDEO
 
-在未申请相册管理模块权限'ohos.permission.WRITE_IMAGEVIDEO'时，可以使用安全控件或授权弹窗的方式创建媒体资源，详情请参考[保存媒体库资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-savebutton)。
+在未申请相册管理模块权限'ohos.permission.WRITE_IMAGEVIDEO'时，可以使用安全控件或授权弹窗的方式创建媒体资源，详情请参考[保存媒体库资源](../../guides/保存媒体库资源.md)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 

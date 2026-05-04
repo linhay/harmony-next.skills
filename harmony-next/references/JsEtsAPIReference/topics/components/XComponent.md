@@ -1,6 +1,6 @@
 # [XComponent](XComponent.md)
 
-提供用于图形绘制和媒体数据写入的[Surface](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-xcomponent-guidelines#概述)，XComponent负责将其嵌入到视图中，支持应用自定义Surface位置和大小。具体指南请参考[自定义渲染 (XComponent)文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-xcomponent-guidelines)。
+提供用于图形绘制和媒体数据写入的[Surface](../../guides/自定义渲染（XComponent）.md#概述)，XComponent负责将其嵌入到视图中，支持应用自定义Surface位置和大小。具体指南请参考[自定义渲染 (XComponent)文档](../../guides/自定义渲染（XComponent）.md)。
 
 
 该组件从API version 8 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。

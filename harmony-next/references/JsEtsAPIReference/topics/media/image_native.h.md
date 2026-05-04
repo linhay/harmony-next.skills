@@ -53,7 +53,7 @@ Image_ErrorCode OH_ImageNative_GetImageSize(OH_ImageNative *image, Image_Size *s
 
 如果OH_ImageNative对象所存储的是相机预览流数据，即YUV图像数据，那么获取到的Image_Size中的宽高分别对应YUV图像的宽高；如果OH_ImageNative对象所存储的是相机拍照流数据，即JPEG图像，由于已经是编码后的数据，Image_Size中的宽等于JPEG数据大小，高等于1。
 
-OH_ImageNative对象所存储的数据是预览流还是拍照流，取决于应用将receiver中的surfaceId传给相机的previewOutput还是captureOutput。相机预览与拍照最佳实践请参考[预览流二次处理(C/C++)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-preview-imagereceiver)与[拍照(C/C++)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-shooting)。
+OH_ImageNative对象所存储的数据是预览流还是拍照流，取决于应用将receiver中的surfaceId传给相机的previewOutput还是captureOutput。相机预览与拍照最佳实践请参考[预览流二次处理(C/C++)](../../guides/预览流二次处理（C-C++）.md)与[拍照(C/C++)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-shooting)。
 
 起始版本： 12
 
@@ -158,7 +158,7 @@ Image_ErrorCode OH_ImageNative_GetRowStride(OH_ImageNative *image,uint32_t compo
 
 获取Native [OH_ImageNative](OH_ImageNative.md)对象中某个组件类型所对应的像素行宽。
 
-读取相机预览流数据时，需要考虑按stride进行读取，具体用法参考[预览流二次处理(C/C++)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-preview-imagereceiver)。
+读取相机预览流数据时，需要考虑按stride进行读取，具体用法参考[预览流二次处理(C/C++)](../../guides/预览流二次处理（C-C++）.md)。
 
 起始版本： 12
 

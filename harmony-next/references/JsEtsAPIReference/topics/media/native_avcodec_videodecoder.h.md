@@ -100,7 +100,7 @@ OH_AVCodec *OH_VideoDecoder_CreateByName(const char *name)
 
 根据视频解码器名称创建视频解码器实例。使用此接口的前提是知道解码器的确切名称，解码器的名称可以通过能力查询获取。
 
-详情请参见：[获取支持的编解码能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/obtain-supported-codecs#创建指定名称的编解码器)。
+详情请参见：[获取支持的编解码能力](../../guides/获取支持的编解码能力.md#创建指定名称的编解码器)。
 
 系统能力： SystemCapability.Multimedia.Media.VideoDecoder
 
@@ -243,7 +243,7 @@ OH_AVErrCode OH_VideoDecoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
 
 配置视频解码器，通常需要配置解码视频的描述信息，这些信息可以从[OH_AVSource](OH_AVSource.md)中提取。在调用OH_VideoDecoder_Prepare接口之前，必须调用此接口。
 
-以下参数的配置范围可通过[能力查询](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/obtain-supported-codecs)获取，OH_MD_KEY_ROTATION配置的参数都支持。
+以下参数的配置范围可通过[能力查询](../../guides/获取支持的编解码能力.md)获取，OH_MD_KEY_ROTATION配置的参数都支持。
 
 设置OH_MD_KEY_VIDEO_ENABLE_LOW_LATENCY接口时如果当前平台不支持，不报错，走正常解码流程。
 

@@ -16,7 +16,7 @@ SaveButton()
 
 默认创建带有图标、文本、背景的保存控件。
 
-为避免控件样式不合法导致授权失败，请开发者先了解安全控件样式的[约束与限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/security-component-overview#约束与限制)。
+为避免控件样式不合法导致授权失败，请开发者先了解安全控件样式的[约束与限制](../../guides/安全控件概述.md#约束与限制)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -28,7 +28,7 @@ SaveButton(options: SaveButtonOptions)
 
 创建包含指定元素的保存控件。
 
-为避免控件样式不合法导致授权失败，请开发者先了解安全控件样式的[约束与限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/security-component-overview#约束与限制)。
+为避免控件样式不合法导致授权失败，请开发者先了解安全控件样式的[约束与限制](../../guides/安全控件概述.md#约束与限制)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 

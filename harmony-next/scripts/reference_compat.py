@@ -166,6 +166,36 @@ TARGETED_GUIDE_MAPPING = {
     "arkts-internationalization": TargetedGuideMapping(Path("guides/UI国际化.md")),
     "request-user-authorization": TargetedGuideMapping(Path("guides/向用户申请授权.md")),
     "image-allocator-type": TargetedGuideMapping(Path("guides/图片解码内存优化.md")),
+    "ide-setup-hilog": TargetedGuideMapping(Path("guides/日志分析.md"), preserve_source_anchor=False),
+    "bm-tool": TargetedGuideMapping(Path("guides/bm工具.md")),
+    "unittest-guidelines": TargetedGuideMapping(Path("guides/单元测试框架使用指导.md")),
+    "map-language": TargetedGuideMapping(
+        Path("guides/支持的语言.md"),
+        "#位置搜索支持语言",
+        preserve_source_anchor=False,
+    ),
+    "photoaccesshelper-savebutton": TargetedGuideMapping(Path("guides/保存媒体库资源.md")),
+    "crypto-rsa-sign-sig-verify-pkcs1-by-segment": TargetedGuideMapping(
+        Path("guides/使用RSA密钥对分段签名验签（PKCS1模式）.md")
+    ),
+    "crypto-compute-hmac": TargetedGuideMapping(Path("guides/消息认证码计算HMAC.md")),
+    "l10n-singular-plural": TargetedGuideMapping(Path("guides/支持单复数.md")),
+    "web-default-useragent": TargetedGuideMapping(Path("guides/User-Agent开发指导.md")),
+    "devicesecurity-getsuperprivacymode": TargetedGuideMapping(Path("guides/查询当前状态场景.md")),
+    "account-phone-unionid-login": TargetedGuideMapping(
+        Path("guides/华为账号一键登录（获取手机号和UnionID-OpenID）.md")
+    ),
+    "arkts-user-defined-node": TargetedGuideMapping(Path("guides/自定义节点概述.md")),
+    "push-msg-receipt": TargetedGuideMapping(Path("guides/（可选）开发消息回执.md")),
+    "push-get-token": TargetedGuideMapping(Path("guides/获取Push Token.md")),
+    "napi-xcomponent-guidelines": TargetedGuideMapping(Path("guides/自定义渲染（XComponent）.md")),
+    "iap-set-necessary-parameters": TargetedGuideMapping(Path("guides/（可选）配置应用内购买服务参数.md")),
+    "security-component-overview": TargetedGuideMapping(Path("guides/安全控件概述.md")),
+    "native-camera-preview-imagereceiver": TargetedGuideMapping(Path("guides/预览流二次处理（C-C++）.md")),
+    "obtain-supported-codecs": TargetedGuideMapping(Path("guides/获取支持的编解码能力.md")),
+    "uiability-intra-device-interaction": TargetedGuideMapping(Path("guides/启动应用内的UIAbility组件.md")),
+    "mdm-kit-term": TargetedGuideMapping(Path("guides/MDM Kit术语.md")),
+    "web-file-upload": TargetedGuideMapping(Path("guides/使用Web组件上传文件.md")),
 }
 
 

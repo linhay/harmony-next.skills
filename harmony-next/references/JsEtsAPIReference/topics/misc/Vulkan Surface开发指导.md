@@ -4,7 +4,7 @@
 
 在HarmonyOS中，扩展VK_OHOS_surface相关的API创建出来的VkSurfaceKHR会对接到本机窗口（OHNativeWindow）模块，实现本机缓冲区（OHNativeBuffer）的轮转，用于屏幕显示。
 
-创建VkSurfaceKHR对象需要通过OHNativeWindow，而OHNativeWindow需要从XComponent中获取，所以此场景下需要配合XComponent模块和NativeWindow模块一起使用。XComponent模块的具体使用方法请参考[XComponent开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-xcomponent-guidelines)。
+创建VkSurfaceKHR对象需要通过OHNativeWindow，而OHNativeWindow需要从XComponent中获取，所以此场景下需要配合XComponent模块和NativeWindow模块一起使用。XComponent模块的具体使用方法请参考[XComponent开发指导](../../guides/自定义渲染（XComponent）.md)。
 
 **接口说明**
 
@@ -81,7 +81,7 @@ vkCreateInstance(&instanceCreateInfo, nullptr, &instance);
 
 获取OHNativeWindow。
 
-OHNativeWindow需要从XComponent组件中获取，下面提供一份从XComponent组件中获取OHNativeWindow的代码示例，XComponent模块的具体使用方法请参考[XComponent模块的介绍文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-xcomponent-guidelines)。
+OHNativeWindow需要从XComponent组件中获取，下面提供一份从XComponent组件中获取OHNativeWindow的代码示例，XComponent模块的具体使用方法请参考[XComponent模块的介绍文档](../../guides/自定义渲染（XComponent）.md)。
 
   1.
 

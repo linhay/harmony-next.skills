@@ -219,6 +219,55 @@ class ReferenceCompatTests(unittest.TestCase):
             ),
             encoding="utf-8",
         )
+        (self.js_root / "modules" / "ohos" / "@ohos.batch4-guide.md").write_text(
+            (
+                "[日志分析]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-setup-hilog#section2114542680)\n"
+                "[bm工具]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bm-tool#查询应用信息命令dump)\n"
+                "[单元测试框架使用指导]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/unittest-guidelines)\n"
+                "[支持的语言]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-language#section1629711151663)\n"
+                "[保存媒体库资源]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-savebutton)\n"
+                "[使用RSA密钥对分段签名验签]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1-by-segment)\n"
+                "[消息认证码计算HMAC]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-compute-hmac#分段hmac)\n"
+                "[支持单复数]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular-plural)\n"
+                "[User-Agent开发指导]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-default-useragent)\n"
+                "[查询当前状态场景]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-getsuperprivacymode#约束与限制)\n"
+                "[华为账号一键登录]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-phone-unionid-login#开发前提)\n"
+                "[自定义节点概述]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-node#基本概念)\n"
+                "[开发消息回执]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-msg-receipt#回执状态码)\n"
+                "[获取Push Token]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-get-token)\n"
+                "[自定义渲染]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-xcomponent-guidelines#概述)\n"
+                "[配置应用内购买服务参数]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-set-necessary-parameters#配置密钥)\n"
+                "[安全控件概述]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/security-component-overview#约束与限制)\n"
+                "[预览流二次处理]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-preview-imagereceiver)\n"
+                "[获取支持的编解码能力]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/obtain-supported-codecs#创建指定名称的编解码器)\n"
+                "[启动应用内的UIAbility组件]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-intra-device-interaction#目标uiability热启动)\n"
+                "[MDM Kit术语]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-term#sda)\n"
+                "[使用Web组件上传文件]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-file-upload#自定义处理js接口拉起的文件请求)\n"
+            ),
+            encoding="utf-8",
+        )
         (self.js_root / "modules" / "ohos" / "@ohos.arkui.StateManagement (状态管理).md").write_text(
             "# @ohos.arkui.StateManagement (状态管理)\n",
             encoding="utf-8",
@@ -492,6 +541,32 @@ class ReferenceCompatTests(unittest.TestCase):
             "# 图片解码内存优化\n\n## 系统默认的内存分配方式\n",
             encoding="utf-8",
         )
+        batch4_guides = {
+            "日志分析.md": "# 日志分析\n",
+            "bm工具.md": "# bm工具\n\n## 查询应用信息命令dump\n",
+            "单元测试框架使用指导.md": "# 单元测试框架使用指导\n",
+            "支持的语言.md": "# 支持的语言\n\n## 位置搜索支持语言\n",
+            "保存媒体库资源.md": "# 保存媒体库资源\n",
+            "使用RSA密钥对分段签名验签（PKCS1模式）.md": "# 使用RSA密钥对分段签名验签（PKCS1模式）\n",
+            "消息认证码计算HMAC.md": "# 消息认证码计算HMAC\n\n## 分段HMAC\n",
+            "支持单复数.md": "# 支持单复数\n",
+            "User-Agent开发指导.md": "# User-Agent开发指导\n",
+            "查询当前状态场景.md": "# 查询当前状态场景\n\n## 约束与限制\n",
+            "华为账号一键登录（获取手机号和UnionID-OpenID）.md": "# 华为账号一键登录（获取手机号和UnionID/OpenID）\n\n## 开发前提\n",
+            "自定义节点概述.md": "# 自定义节点概述\n\n## 基本概念\n",
+            "（可选）开发消息回执.md": "# （可选）开发消息回执\n\n## 回执状态码\n",
+            "获取Push Token.md": "# 获取Push Token\n",
+            "自定义渲染（XComponent）.md": "# 自定义渲染 (XComponent)\n\n## 概述\n",
+            "（可选）配置应用内购买服务参数.md": "# （可选）配置应用内购买服务参数\n\n## 配置密钥\n",
+            "安全控件概述.md": "# 安全控件概述\n\n## 约束与限制\n",
+            "预览流二次处理（C-C++）.md": "# 预览流二次处理(C/C++)\n",
+            "获取支持的编解码能力.md": "# 获取支持的编解码能力\n\n## 创建指定名称的编解码器\n",
+            "启动应用内的UIAbility组件.md": "# 启动应用内的UIAbility组件\n\n## 目标UIAbility热启动\n",
+            "MDM Kit术语.md": "# MDM Kit术语\n\n## SDA\n",
+            "使用Web组件上传文件.md": "# 使用Web组件上传文件\n\n## 自定义处理JS接口拉起的文件请求\n",
+        }
+        for name, content in batch4_guides.items():
+            (self.js_root / "guides" / name).write_text(content, encoding="utf-8")
         (self.js_root / "topics" / "components" / "应用级变量的状态管理.md").write_text(
             "# 应用级变量的状态管理\n",
             encoding="utf-8",
@@ -556,7 +631,7 @@ class ReferenceCompatTests(unittest.TestCase):
         MODULE.generate_index(self.paths)
 
         self.assertEqual(rewritten, 1)
-        self.assertEqual(guide_rewritten, 10)
+        self.assertEqual(guide_rewritten, 11)
         self.assertIn(
             "../../topics/misc/native_handwrite_api.h.md",
             (self.js_root / "topics" / "misc" / "HandWrite.md").read_text(encoding="utf-8"),
@@ -845,6 +920,32 @@ class ReferenceCompatTests(unittest.TestCase):
             "../../guides/图片解码内存优化.md#系统默认的内存分配方式",
             (self.js_root / "modules" / "ohos" / "@ohos.batch3-guide.md").read_text(encoding="utf-8"),
         )
+        batch4_text = (self.js_root / "modules" / "ohos" / "@ohos.batch4-guide.md").read_text(encoding="utf-8")
+        for expected in [
+            "../../guides/日志分析.md",
+            "../../guides/bm工具.md#查询应用信息命令dump",
+            "../../guides/单元测试框架使用指导.md",
+            "../../guides/支持的语言.md#位置搜索支持语言",
+            "../../guides/保存媒体库资源.md",
+            "../../guides/使用RSA密钥对分段签名验签（PKCS1模式）.md",
+            "../../guides/消息认证码计算HMAC.md#分段hmac",
+            "../../guides/支持单复数.md",
+            "../../guides/User-Agent开发指导.md",
+            "../../guides/查询当前状态场景.md#约束与限制",
+            "../../guides/华为账号一键登录（获取手机号和UnionID-OpenID）.md#开发前提",
+            "../../guides/自定义节点概述.md#基本概念",
+            "../../guides/（可选）开发消息回执.md#回执状态码",
+            "../../guides/获取Push Token.md",
+            "../../guides/自定义渲染（XComponent）.md#概述",
+            "../../guides/（可选）配置应用内购买服务参数.md#配置密钥",
+            "../../guides/安全控件概述.md#约束与限制",
+            "../../guides/预览流二次处理（C-C++）.md",
+            "../../guides/获取支持的编解码能力.md#创建指定名称的编解码器",
+            "../../guides/启动应用内的UIAbility组件.md#目标uiability热启动",
+            "../../guides/MDM Kit术语.md#sda",
+            "../../guides/使用Web组件上传文件.md#自定义处理js接口拉起的文件请求",
+        ]:
+            self.assertIn(expected, batch4_text)
         self.assertIn(
             "../components/ForEach.md",
             (self.js_root / "topics" / "misc" / "rendering-guide.md").read_text(encoding="utf-8"),
@@ -910,6 +1011,7 @@ class ReferenceCompatTests(unittest.TestCase):
         self.assertIn("guides/数据库备份与恢复.md", index_lines)
         self.assertIn("guides/NFC标签读写开发指南.md", index_lines)
         self.assertIn("guides/代理提醒（ArkTS）.md", index_lines)
+        self.assertIn("guides/日志分析.md", index_lines)
         self.assertNotIn("capi/headers/native_handwrite_api.h.md", index_lines)
         references_index_lines = self.paths.references_index.read_text(encoding="utf-8").splitlines()
         self.assertIn("JsEtsAPIReference/topics/misc/native_handwrite_api.h.md", references_index_lines)
@@ -918,6 +1020,7 @@ class ReferenceCompatTests(unittest.TestCase):
         self.assertIn("JsEtsAPIReference/guides/数据库备份与恢复.md", references_index_lines)
         self.assertIn("JsEtsAPIReference/guides/NFC标签读写开发指南.md", references_index_lines)
         self.assertIn("JsEtsAPIReference/guides/代理提醒（ArkTS）.md", references_index_lines)
+        self.assertIn("JsEtsAPIReference/guides/日志分析.md", references_index_lines)
         self.assertIn("quickStart/intro.md", references_index_lines)
 
     def test_check_detects_index_drift(self) -> None:

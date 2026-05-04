@@ -97,7 +97,7 @@ getMimeTypes(): Array<string>
 
 getSuggestedName(): string
 
-获取建议选择的文件名。对应HTML里[option](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-file-upload#自定义处理js接口拉起的文件请求)中的suggestedName。
+获取建议选择的文件名。对应HTML里[option](../../guides/使用Web组件上传文件.md#自定义处理js接口拉起的文件请求)中的suggestedName。
 
 系统能力： SystemCapability.Web.Webview.Core
 
@@ -111,7 +111,7 @@ getSuggestedName(): string
 
 getDefaultPath(): string
 
-获取文件选择器默认起始路径。对应HTML里[option](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-file-upload#自定义处理js接口拉起的文件请求)中的startIn。
+获取文件选择器默认起始路径。对应HTML里[option](../../guides/使用Web组件上传文件.md#自定义处理js接口拉起的文件请求)中的startIn。
 
 系统能力： SystemCapability.Web.Webview.Core
 
@@ -125,7 +125,7 @@ getDefaultPath(): string
 
 getDescriptions(): Array<string>
 
-获取各组文件类型的描述。为允许的文件类型类别的可选描述。对应HTML里[option](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-file-upload#自定义处理js接口拉起的文件请求)中的description。
+获取各组文件类型的描述。为允许的文件类型类别的可选描述。对应HTML里[option](../../guides/使用Web组件上传文件.md#自定义处理js接口拉起的文件请求)中的description。
 
 系统能力： SystemCapability.Web.Webview.Core
 
@@ -139,7 +139,7 @@ getDescriptions(): Array<string>
 
 isAcceptAllOptionExcluded(): boolean
 
-获取文件选择器是否支持选项（*/*），即所有文件。对应HTML里[option](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-file-upload#自定义处理js接口拉起的文件请求)中的excludeAcceptAllOption。
+获取文件选择器是否支持选项（*/*），即所有文件。对应HTML里[option](../../guides/使用Web组件上传文件.md#自定义处理js接口拉起的文件请求)中的excludeAcceptAllOption。
 
 系统能力： SystemCapability.Web.Webview.Core
 
@@ -153,7 +153,7 @@ isAcceptAllOptionExcluded(): boolean
 
 getAcceptableFileTypes(): Array<Array<AcceptableFileType>>
 
-获取文件types信息。对应HTML里[option](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-file-upload#自定义处理js接口拉起的文件请求)中的types。
+获取文件types信息。对应HTML里[option](../../guides/使用Web组件上传文件.md#自定义处理js接口拉起的文件请求)中的types。
 
 系统能力： SystemCapability.Web.Webview.Core
 

@@ -1308,7 +1308,7 @@ export default class EntryAbility extends UIAbility {
 
 getIntPluralStringValueSync(resId: number, num: number, ...args: Array<string | number>): string
 
-获取指定资源ID对应的[单复数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular-plural)字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
+获取指定资源ID对应的[单复数](../../guides/支持单复数.md)字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
 
 -
 
@@ -1394,7 +1394,7 @@ export default class EntryAbility extends UIAbility {
 
 getIntPluralStringByNameSync(resName: string, num: number, ...args: Array<string | number>): string
 
-获取指定资源名称对应的[单复数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular-plural)字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
+获取指定资源名称对应的[单复数](../../guides/支持单复数.md)字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
 
 -
 
@@ -1480,7 +1480,7 @@ export default class EntryAbility extends UIAbility {
 
 getDoublePluralStringValueSync(resId: number, num: number, ...args: Array<string | number>): string
 
-获取指定资源ID对应的[单复数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular-plural)字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
+获取指定资源ID对应的[单复数](../../guides/支持单复数.md)字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
 
 -
 
@@ -1566,7 +1566,7 @@ export default class EntryAbility extends UIAbility {
 
 getDoublePluralStringByNameSync(resName: string, num: number, ...args: Array<string | number>): string
 
-获取指定资源名称对应的[单复数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular-plural)字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
+获取指定资源名称对应的[单复数](../../guides/支持单复数.md)字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
 
 -
 
@@ -6340,7 +6340,7 @@ try {
 
 getIntPluralStringValueSync(resource: Resource, num: number, ...args: Array<string | number>): string
 
-获取指定resource对象对应的[单复数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular-plural)字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
+获取指定resource对象对应的[单复数](../../guides/支持单复数.md)字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
 
 
 -
@@ -6432,7 +6432,7 @@ try {
 
 getDoublePluralStringValueSync(resource: Resource, num: number, ...args: Array<string | number>): string
 
-获取指定resource对象对应的[单复数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular-plural)字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
+获取指定resource对象对应的[单复数](../../guides/支持单复数.md)字符串，并根据args参数对字符串进行格式化，使用同步方式返回。
 
 
 -

@@ -4732,7 +4732,7 @@ update(data: DataBlob, callback: AsyncCallback<void>): void
 
 算法库目前没有对update（单次或累计）的数据量设置大小限制，建议对于大数据量的签名操作，采用多次update的方式传入数据，避免一次性申请过大内存。
 
-签名使用多次update操作的示例代码详见[使用RSA密钥对分段签名验签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1-by-segment)，其余算法操作类似。
+签名使用多次update操作的示例代码详见[使用RSA密钥对分段签名验签](../../guides/使用RSA密钥对分段签名验签（PKCS1模式）.md)，其余算法操作类似。
 
 OnlySign模式下，不支持update操作，需要直接使用sign传入数据。
 
@@ -4775,7 +4775,7 @@ update(data: DataBlob): Promise<void>
 
 算法库不对单次或累计的update数据量设置大小限制。建议在处理大数据量的签名操作时，采用多次update方式传入数据，以避免一次性申请过多内存。
 
-签名使用多次update操作的示例代码详见[使用RSA密钥对分段签名验签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1-by-segment)，其余算法操作类似。
+签名使用多次update操作的示例代码详见[使用RSA密钥对分段签名验签](../../guides/使用RSA密钥对分段签名验签（PKCS1模式）.md)，其余算法操作类似。
 
 OnlySign模式下，不支持update操作，需要直接使用sign传入数据。
 
@@ -4823,7 +4823,7 @@ updateSync(data: DataBlob): void
 
 算法库目前没有对updateSync（单次或累计）的数据量设置大小限制，建议对于大数据量的签名操作，采用多次updateSync的方式传入数据，避免一次性申请过大内存。
 
-签名使用多次updateSync操作的示例代码详见[使用RSA密钥对分段签名验签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1-by-segment)，其余算法操作类似。
+签名使用多次updateSync操作的示例代码详见[使用RSA密钥对分段签名验签](../../guides/使用RSA密钥对分段签名验签（PKCS1模式）.md)，其余算法操作类似。
 
 OnlySign模式下，不支持updateSync操作，需要直接使用signSync传入数据。
 
@@ -5424,7 +5424,7 @@ update(data: DataBlob, callback: AsyncCallback<void>): void
 
 算法库目前没有对update（单次或累计）的数据量设置大小限制，建议对于大数据量的验签操作，采用多次update的方式传入数据，避免一次性申请过大内存。
 
-验签使用多次update操作的示例代码详见[使用RSA密钥对分段签名验签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1-by-segment)，其余算法操作类似。
+验签使用多次update操作的示例代码详见[使用RSA密钥对分段签名验签](../../guides/使用RSA密钥对分段签名验签（PKCS1模式）.md)，其余算法操作类似。
 
 当使用DSA算法进行验签，并设置了摘要算法为NoHash时，则不支持update操作，update接口会返回错误码ERR_CRYPTO_OPERATION。
 
@@ -5465,7 +5465,7 @@ update(data: DataBlob): Promise<void>
 
 算法库目前没有对update（单次或累计）的数据量设置大小限制，建议对于大数据量的验签操作，采用多次update的方式传入数据，避免一次性申请过大内存。
 
-验签使用多次update操作的示例代码详见[使用RSA密钥对分段签名验签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1-by-segment)，其余算法操作类似。
+验签使用多次update操作的示例代码详见[使用RSA密钥对分段签名验签](../../guides/使用RSA密钥对分段签名验签（PKCS1模式）.md)，其余算法操作类似。
 
 当使用DSA算法进行验签，并设置了摘要算法为NoHash时，则不支持update操作，update接口会返回错误码ERR_CRYPTO_OPERATION。
 
@@ -5511,7 +5511,7 @@ updateSync(data: DataBlob): void
 
 算法库目前没有对updateSync（单次或累计）的数据量设置大小限制，建议对于大数据量的验签操作，采用多次updateSync的方式传入数据，避免一次性申请过大内存。
 
-验签使用多次updateSync操作的示例代码详见[使用RSA密钥对分段签名验签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1-by-segment)，其余算法操作类似。
+验签使用多次updateSync操作的示例代码详见[使用RSA密钥对分段签名验签](../../guides/使用RSA密钥对分段签名验签（PKCS1模式）.md)，其余算法操作类似。
 
 当使用DSA算法进行验签，并设置了摘要算法为NoHash时，则不支持updateSync操作，updateSync接口会返回错误码ERR_CRYPTO_OPERATION。
 
@@ -6879,7 +6879,7 @@ update(input: DataBlob, callback: AsyncCallback<void>): void
 传入消息进行Mac更新消息认证码状态。使用callback异步回调。
 
 
-HMAC算法多次调用update更新的代码示例详见[消息认证码计算](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-compute-hmac#分段hmac)。
+HMAC算法多次调用update更新的代码示例详见[消息认证码计算](../../guides/消息认证码计算HMAC.md#分段hmac)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -6911,7 +6911,7 @@ update(input: DataBlob): Promise<void>
 传入消息进行Mac更新消息认证码状态。使用Promise异步回调。
 
 
-HMAC算法多次调用update更新的代码示例详见[消息认证码计算](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-compute-hmac#分段hmac)。
+HMAC算法多次调用update更新的代码示例详见[消息认证码计算](../../guides/消息认证码计算HMAC.md#分段hmac)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -6947,7 +6947,7 @@ updateSync(input: DataBlob): void
 
 传入消息进行Mac更新消息认证码状态，通过同步方式获取结果。
 
-HMAC算法多次调用updateSync更新的代码示例详见[消息认证码计算](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-compute-hmac#分段hmac)。
+HMAC算法多次调用updateSync更新的代码示例详见[消息认证码计算](../../guides/消息认证码计算HMAC.md#分段hmac)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -6998,7 +6998,7 @@ API version 9-11系统能力为SystemCapability.Security.CryptoFramework；从AP
 
 **示例：**
 
-此外，更多HMAC的完整示例可参考开发指导中[消息认证码计算](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-compute-hmac#分段hmac)。
+此外，更多HMAC的完整示例可参考开发指导中[消息认证码计算](../../guides/消息认证码计算HMAC.md#分段hmac)。
 
 ```ets
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
@@ -7047,7 +7047,7 @@ API version 9-11系统能力为SystemCapability.Security.CryptoFramework；从AP
 
 **示例：**
 
-此外，更多HMAC的完整示例可参考开发指导[消息认证码计算](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-compute-hmac#分段hmac)。
+此外，更多HMAC的完整示例可参考开发指导[消息认证码计算](../../guides/消息认证码计算HMAC.md#分段hmac)。
 
 ```ets
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
@@ -7095,7 +7095,7 @@ doFinalSync(): DataBlob
 
 **示例：**
 
-此外，更多HMAC的完整示例可参考开发指导[消息认证码计算](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-compute-hmac#分段hmac)。
+此外，更多HMAC的完整示例可参考开发指导[消息认证码计算](../../guides/消息认证码计算HMAC.md#分段hmac)。
 
 ```ets
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';

@@ -202,7 +202,7 @@ createAsset(photoType: PhotoType, extension: string, options?: photoAccessHelper
 
 指定文件类型、后缀和创建选项，创建图片或视频资源。使用Promise异步回调。
 
-此接口在未申请相册管理模块权限'ohos.permission.WRITE_IMAGEVIDEO'时，可以使用安全控件创建媒体资源，详情请参考[保存媒体库资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-savebutton)。
+此接口在未申请相册管理模块权限'ohos.permission.WRITE_IMAGEVIDEO'时，可以使用安全控件创建媒体资源，详情请参考[保存媒体库资源](../../guides/保存媒体库资源.md)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 

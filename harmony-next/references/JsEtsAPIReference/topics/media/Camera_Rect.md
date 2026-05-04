@@ -10,7 +10,7 @@ typedef struct Camera_Rect {...} Camera_Rect
 
 实际预览流的宽高指的是相机输出流的分辨率，请参考[profile](Interfaces (其他).md#ZH-CN_TOPIC_0000002522081922__profile)中的size。
 
-预览流的数据获取请参考[预览流二次处理(C/C++)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-preview-imagereceiver)。
+预览流的数据获取请参考[预览流二次处理(C/C++)](../../guides/预览流二次处理（C-C++）.md)。
 
 **起始版本：** 11
 

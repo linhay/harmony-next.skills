@@ -9,7 +9,7 @@
 
 #### 功能介绍
 
-[华为账号一键登录（获取手机号和UnionID/OpenID）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-phone-unionid-login)场景，应用服务端向华为账号服务器调用该接口获取UnionID，OpenID，华为账号绑定的手机号码及其相关信息。该服务仅对中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）用户提供。
+[华为账号一键登录（获取手机号和UnionID/OpenID）](../../guides/华为账号一键登录（获取手机号和UnionID-OpenID）.md)场景，应用服务端向华为账号服务器调用该接口获取UnionID，OpenID，华为账号绑定的手机号码及其相关信息。该服务仅对中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）用户提供。
 
 #### 场景描述
 
@@ -27,7 +27,7 @@
 
 -
 
-应用使用华为账号一键登录功能之前，需要完成quickLoginMobilePhone（华为账号一键登录）的scope权限申请，详见[开发前提](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-phone-unionid-login#开发前提)。
+应用使用华为账号一键登录功能之前，需要完成quickLoginMobilePhone（华为账号一键登录）的scope权限申请，详见[开发前提](../../guides/华为账号一键登录（获取手机号和UnionID-OpenID）.md#开发前提)。
 
 
 应用未申请quickLoginMobilePhone（华为账号一键登录）的scope权限，或获取Authorization Code时不携带quickLoginMobilePhone（华为账号一键登录）scope，调用成功后响应中将不包含华为账号绑定号码。

@@ -737,7 +737,7 @@ struct MyComponent {
 
 dispose(): void
 
-立即释放当前BuilderNode对象对[实体节点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-node#基本概念)的引用关系。关于BuilderNode的解绑场景请参见[节点解绑](BuilderNode.md)。
+立即释放当前BuilderNode对象对[实体节点](../../guides/自定义节点概述.md#基本概念)的引用关系。关于BuilderNode的解绑场景请参见[节点解绑](BuilderNode.md)。
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
@@ -1923,7 +1923,7 @@ struct MyComponent {
 
 dispose(): void
 
-立即释放当前ReactiveBuilderNode对象对[实体节点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-node#基本概念)的引用关系。关于ReactiveBuilderNode的解绑场景请参见[节点解绑](BuilderNode.md)。
+立即释放当前ReactiveBuilderNode对象对[实体节点](../../guides/自定义节点概述.md#基本概念)的引用关系。关于ReactiveBuilderNode的解绑场景请参见[节点解绑](BuilderNode.md)。
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 

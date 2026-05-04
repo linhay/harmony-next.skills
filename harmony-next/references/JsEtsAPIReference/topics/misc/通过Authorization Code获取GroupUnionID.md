@@ -12,7 +12,7 @@
 
 **场景描述**
 
-针对用户登录需要获取GroupUnionID场景时，可以在[华为账号一键登录（获取手机号和UnionID/OpenID）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-phone-unionid-login)、[华为账号登录（获取UnionID/OpenID）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-unionid-login-button)、[静默登录](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-silent-login)等场景获取到Authorization Code后，调用该接口获取GroupUnionID、Access Token、Refresh Token、ID Token等信息。
+针对用户登录需要获取GroupUnionID场景时，可以在[华为账号一键登录（获取手机号和UnionID/OpenID）](../../guides/华为账号一键登录（获取手机号和UnionID-OpenID）.md)、[华为账号登录（获取UnionID/OpenID）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-unionid-login-button)、[静默登录](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-silent-login)等场景获取到Authorization Code后，调用该接口获取GroupUnionID、Access Token、Refresh Token、ID Token等信息。
 
 **使用约束**
 

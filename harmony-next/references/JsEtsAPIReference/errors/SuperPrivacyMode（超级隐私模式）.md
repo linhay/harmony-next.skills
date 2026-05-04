@@ -52,4 +52,4 @@ not support super privacy.
 
 处理步骤
 
-在支持的设备上运行，具体支持情况请参见开发指南中的[约束与限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-getsuperprivacymode#约束与限制)。
+在支持的设备上运行，具体支持情况请参见开发指南中的[约束与限制](../guides/查询当前状态场景.md#约束与限制)。

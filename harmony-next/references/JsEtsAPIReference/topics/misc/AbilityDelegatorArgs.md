@@ -6,7 +6,7 @@ AbilityDelegatorArgs模块提供在应用程序执行测试用例期间，获取
 
 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-本模块接口仅可在[单元测试框架](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/unittest-guidelines)中使用。
+本模块接口仅可在[单元测试框架](../../guides/单元测试框架使用指导.md)中使用。
 
 **导入模块**
 

@@ -176,36 +176,51 @@ JsEtsAPIReference/guides/AppStorageV2（应用全局的UI状态存储）.md
 JsEtsAPIReference/guides/Connectivity Kit术语.md
 JsEtsAPIReference/guides/ExtensionAbility组件.md
 JsEtsAPIReference/guides/MDM Kit开发指南.md
+JsEtsAPIReference/guides/MDM Kit术语.md
 JsEtsAPIReference/guides/NFC标签读写开发指南.md
 JsEtsAPIReference/guides/PersistenceV2（持久化存储UI状态）.md
 JsEtsAPIReference/guides/Sendable对象简介.md
 JsEtsAPIReference/guides/UIAbility组件启动模式.md
 JsEtsAPIReference/guides/UIAbility组件基本用法.md
 JsEtsAPIReference/guides/UI国际化.md
+JsEtsAPIReference/guides/User-Agent开发指导.md
 JsEtsAPIReference/guides/Worker简介.md
 JsEtsAPIReference/guides/addMonitor与clearMonitor开发指南.md
 JsEtsAPIReference/guides/app.json5配置文件.md
 JsEtsAPIReference/guides/applySync与flushUpdates与flushUIUpdates接口：同步刷新.md
+JsEtsAPIReference/guides/bm工具.md
 JsEtsAPIReference/guides/if-else：条件渲染.md
 JsEtsAPIReference/guides/makeObserved接口：将非观察数据变为可观察数据.md
 JsEtsAPIReference/guides/module.json5配置文件.md
 JsEtsAPIReference/guides/交互基础机制说明.md
 JsEtsAPIReference/guides/代理提醒（ArkTS）.md
 JsEtsAPIReference/guides/使用Picker选择媒体库资源.md
+JsEtsAPIReference/guides/使用RSA密钥对分段签名验签（PKCS1模式）.md
 JsEtsAPIReference/guides/使用RSA密钥对（PKCS1模式）签名验签.md
+JsEtsAPIReference/guides/使用Web组件上传文件.md
+JsEtsAPIReference/guides/保存媒体库资源.md
+JsEtsAPIReference/guides/华为账号一键登录（获取手机号和UnionID-OpenID）.md
+JsEtsAPIReference/guides/单元测试框架使用指导.md
 JsEtsAPIReference/guides/受限开放权限.md
 JsEtsAPIReference/guides/向用户申请授权.md
+JsEtsAPIReference/guides/启动应用内的UIAbility组件.md
 JsEtsAPIReference/guides/图片解码内存优化.md
 JsEtsAPIReference/guides/基于服务账号生成鉴权令牌.md
 JsEtsAPIReference/guides/声明权限.md
 JsEtsAPIReference/guides/多应用管控.md
+JsEtsAPIReference/guides/安全控件概述.md
 JsEtsAPIReference/guides/应用上下文Context.md
 JsEtsAPIReference/guides/应用启动框架AppStartup.md
 JsEtsAPIReference/guides/应用沙箱目录.md
 JsEtsAPIReference/guides/开发准备（媒体库）.md
 JsEtsAPIReference/guides/开通Device Security服务.md
+JsEtsAPIReference/guides/支持单复数.md
+JsEtsAPIReference/guides/支持的语言.md
 JsEtsAPIReference/guides/数据库备份与恢复.md
+JsEtsAPIReference/guides/日志分析.md
+JsEtsAPIReference/guides/查询当前状态场景.md
 JsEtsAPIReference/guides/栅格布局 (GridRow-GridCol).md
+JsEtsAPIReference/guides/消息认证码计算HMAC.md
 JsEtsAPIReference/guides/状态管理V1-V2迁移指导.md
 JsEtsAPIReference/guides/状态管理V1和V2混用指导（API version 19及之后）.md
 JsEtsAPIReference/guides/状态管理概述.md
@@ -215,11 +230,18 @@ JsEtsAPIReference/guides/窗口开发术语.md
 JsEtsAPIReference/guides/线程间通信对象概述.md
 JsEtsAPIReference/guides/组件启动规则（FA模型）.md
 JsEtsAPIReference/guides/组件启动规则（Stage模型）.md
+JsEtsAPIReference/guides/自定义渲染（XComponent）.md
+JsEtsAPIReference/guides/自定义节点概述.md
+JsEtsAPIReference/guides/获取Push Token.md
+JsEtsAPIReference/guides/获取支持的编解码能力.md
 JsEtsAPIReference/guides/设置页签栏的悬浮样式.md
 JsEtsAPIReference/guides/资源分类与访问.md
 JsEtsAPIReference/guides/通过用户首选项实现数据持久化.md
 JsEtsAPIReference/guides/通过键值型数据库实现数据持久化.md
 JsEtsAPIReference/guides/配置ArkTS卡片的配置文件.md
+JsEtsAPIReference/guides/预览流二次处理（C-C++）.md
+JsEtsAPIReference/guides/（可选）开发消息回执.md
+JsEtsAPIReference/guides/（可选）配置应用内购买服务参数.md
 JsEtsAPIReference/modules/ohos/@ohos.FusionConnectivity.PartnerAgentExtensionAbility (支持设备状态通知的ExtensionAbility组件).md
 JsEtsAPIReference/modules/ohos/@ohos.FusionConnectivity.PartnerAgentExtensionContext (设备状态通知能力上下文).md
 JsEtsAPIReference/modules/ohos/@ohos.FusionConnectivity.partnerAgent（设备状态通知模块）.md

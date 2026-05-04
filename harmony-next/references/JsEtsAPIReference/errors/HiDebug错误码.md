@@ -38,7 +38,7 @@ The interface call failed due to a remote exception.
 
 **处理步骤**
 
-建议重启设备后重试。若重试后依然失败，请[导出日志信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-setup-hilog#section2114542680)请通过“华为开发者联盟官网”->“支持”，[在线提单](https://developer.huawei.com/consumer/cn/support/)方式获取支持。
+建议重启设备后重试。若重试后依然失败，请[导出日志信息](../guides/日志分析.md)请通过“华为开发者联盟官网”->“支持”，[在线提单](https://developer.huawei.com/consumer/cn/support/)方式获取支持。
 
 #### 11400107 dump子进程fork失败
 
@@ -56,7 +56,7 @@ dump子进程fork失败。
 
 **处理步骤**
 
-建议开发者重试。若重试后依然失败，请通过[日志分析](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-setup-hilog)过滤error级别日志辅助问题定位。若依然无法解决，请通过“华为开发者联盟官网”->“支持”，[在线提单](https://developer.huawei.com/consumer/cn/support/)方式获取支持。
+建议开发者重试。若重试后依然失败，请通过[日志分析](../guides/日志分析.md)过滤error级别日志辅助问题定位。若依然无法解决，请通过“华为开发者联盟官网”->“支持”，[在线提单](https://developer.huawei.com/consumer/cn/support/)方式获取支持。
 
 #### 11400108 等待dump子进程结束失败
 
@@ -74,7 +74,7 @@ Failed to wait for the child process to finish.
 
 **处理步骤**
 
-建议开发者重试。若重试后依然失败，请通过[日志分析](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-setup-hilog)过滤error级别日志辅助问题定位。若依然无法解决，请通过“华为开发者联盟官网”->“支持”，[在线提单](https://developer.huawei.com/consumer/cn/support/)方式获取支持。
+建议开发者重试。若重试后依然失败，请通过[日志分析](../guides/日志分析.md)过滤error级别日志辅助问题定位。若依然无法解决，请通过“华为开发者联盟官网”->“支持”，[在线提单](https://developer.huawei.com/consumer/cn/support/)方式获取支持。
 
 #### 11400109 等待dump子进程超时
 
@@ -92,7 +92,7 @@ dump过程耗时长，建议检查系统负载。
 
 **处理步骤**
 
-建议开发者重试。若重试后依然失败，请通过[日志分析](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-setup-hilog)过滤error级别日志辅助问题定位。若依然无法解决，请通过“华为开发者联盟官网”->“支持”，[在线提单](https://developer.huawei.com/consumer/cn/support/)方式获取支持。
+建议开发者重试。若重试后依然失败，请通过[日志分析](../guides/日志分析.md)过滤error级别日志辅助问题定位。若依然无法解决，请通过“华为开发者联盟官网”->“支持”，[在线提单](https://developer.huawei.com/consumer/cn/support/)方式获取支持。
 
 #### 11400110 磁盘空间不足
 
@@ -128,7 +128,7 @@ Napi接口调用时出现异常。
 
 **处理步骤**
 
-建议开发者重试。若重试后依然失败，请通过[日志分析](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-setup-hilog)过滤error级别日志辅助问题定位。若依然无法解决，请通过“华为开发者联盟官网”->“支持”，[在线提单](https://developer.huawei.com/consumer/cn/support/)方式获取支持。
+建议开发者重试。若重试后依然失败，请通过[日志分析](../guides/日志分析.md)过滤error级别日志辅助问题定位。若依然无法解决，请通过“华为开发者联盟官网”->“支持”，[在线提单](https://developer.huawei.com/consumer/cn/support/)方式获取支持。
 
 #### 11400112 重复dump采集
 
@@ -166,7 +166,7 @@ Failed to create dump file.
 
 **处理步骤**
 
-建议开发者重试。若重试后依然失败，请通过[日志分析](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-setup-hilog)过滤error级别日志辅助问题定位。若依然无法解决，请通过“华为开发者联盟官网”->“支持”，[在线提单](https://developer.huawei.com/consumer/cn/support/)方式获取支持。
+建议开发者重试。若重试后依然失败，请通过[日志分析](../guides/日志分析.md)过滤error级别日志辅助问题定位。若依然无法解决，请通过“华为开发者联盟官网”->“支持”，[在线提单](https://developer.huawei.com/consumer/cn/support/)方式获取支持。
 
 #### 11400114 使能GWP-ASan失败
 

@@ -394,7 +394,7 @@ struct Index {
 
 dispose(): void
 
-立即释放当前ComponentContent对象对[基本概念：实体节点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-node#基本概念)的引用关系。关于ComponentContent的解绑场景请参见[解除实体节点引用关系](BuilderNode.md)。
+立即释放当前ComponentContent对象对[基本概念：实体节点](../../guides/自定义节点概述.md#基本概念)的引用关系。关于ComponentContent的解绑场景请参见[解除实体节点引用关系](BuilderNode.md)。
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
@@ -1140,7 +1140,7 @@ struct Index {
 
 dispose(): void
 
-立即释放当前ReactiveComponentContent对象对[实体节点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-node#基本概念)的引用关系。关于ReactiveComponentContent的解绑场景请参见[解除实体节点引用关系](BuilderNode.md)。
+立即释放当前ReactiveComponentContent对象对[实体节点](../../guides/自定义节点概述.md#基本概念)的引用关系。关于ReactiveComponentContent的解绑场景请参见[解除实体节点引用关系](BuilderNode.md)。
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 

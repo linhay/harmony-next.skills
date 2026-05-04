@@ -2,7 +2,7 @@
 
 **概述**
 
-描述ArkUI XComponent持有的Surface和触摸事件，该事件可用于EGL/OpenGLES和媒体数据输入，并显示在ArkUI XComponent上，具体使用请参考[Native XComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-xcomponent-guidelines)。
+描述ArkUI XComponent持有的Surface和触摸事件，该事件可用于EGL/OpenGLES和媒体数据输入，并显示在ArkUI XComponent上，具体使用请参考[Native XComponent](../../guides/自定义渲染（XComponent）.md)。
 
 起始版本： 8
 
