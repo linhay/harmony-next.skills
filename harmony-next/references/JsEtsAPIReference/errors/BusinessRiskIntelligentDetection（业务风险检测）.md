@@ -74,7 +74,7 @@ Verify cloud capability fail.
 
 处理步骤
 
-参考[开通Device Security服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-deviceverify-activateservice)在AppGallery Connect开通Device Security服务，开通Device Security服务后重试。
+参考[开通Device Security服务](../guides/开通Device Security服务.md)在AppGallery Connect开通Device Security服务，开通Device Security服务后重试。
 
 **1012500005 API调用次数超过限制**
 

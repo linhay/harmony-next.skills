@@ -41,7 +41,7 @@ The number of reminders exceeds the limit.
 
 **处理步骤**
 
-1. 首先，确认是否[申请了代理提醒的使用权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-powered-reminder#约束与限制)。
+1. 首先，确认是否[申请了代理提醒的使用权限](../guides/代理提醒（ArkTS）.md#约束与限制)。
 1. 然后，在申请通过情况下，检查提醒数量是否超过规定数量，及时删除不必要的提醒。
 
 #### 1700003 提醒不存在

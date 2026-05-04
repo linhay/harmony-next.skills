@@ -229,7 +229,7 @@ try {
 
 requestPermissionsFromUser(context: Context, permissionList: Array<Permissions>, requestCallback: AsyncCallback<[PermissionRequestResult](../../topics/misc/PermissionRequestResult.md)>): void
 
-用于UIAbility/UIExtensionAbility拉起弹框请求[用户授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-authorization)。使用callback异步回调。
+用于UIAbility/UIExtensionAbility拉起弹框请求[用户授权](../../guides/向用户申请授权.md)。使用callback异步回调。
 
 如果用户拒绝授权，将无法再次拉起弹框，需要用户在系统应用“设置”的界面中，手动授予权限，或是调用[requestPermissionOnSetting](#ZH-CN_TOPIC_0000002553360477__requestpermissiononsetting12)，拉起权限设置弹框，引导用户授权。
 
@@ -263,7 +263,7 @@ requestPermissionsFromUser(context: Context, permissionList: Array<Permissions>,
 
 下述示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
-关于向用户申请授权的完整流程及示例，请参见[向用户申请授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-authorization)。
+关于向用户申请授权的完整流程及示例，请参见[向用户申请授权](../../guides/向用户申请授权.md)。
 
 ```ets
 import { abilityAccessCtrl, Context, PermissionRequestResult, common } from '@kit.AbilityKit';
@@ -289,7 +289,7 @@ atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA'], (err: 
 
 requestPermissionsFromUser(context: Context, permissionList: Array<Permissions>): Promise<[PermissionRequestResult](../../topics/misc/PermissionRequestResult.md)>
 
-用于UIAbility/UIExtensionAbility拉起弹框请求[用户授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-authorization)。使用Promise异步回调。
+用于UIAbility/UIExtensionAbility拉起弹框请求[用户授权](../../guides/向用户申请授权.md)。使用Promise异步回调。
 
 如果用户拒绝授权，将无法再次拉起弹框，需要用户在系统应用“设置”的界面中，手动授予权限，或是调用[requestPermissionOnSetting](#ZH-CN_TOPIC_0000002553360477__requestpermissiononsetting12)，拉起权限设置弹框，引导用户授权。
 
@@ -326,7 +326,7 @@ requestPermissionsFromUser(context: Context, permissionList: Array<Permissions>)
 
 下述示例中context的获取方式请参见[获取UIAbility的上下文信息](../../guides/UIAbility组件基本用法.md#获取uiability的上下文信息)。
 
-关于向用户申请授权的完整流程及示例，请参见[向用户申请授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-authorization)。
+关于向用户申请授权的完整流程及示例，请参见[向用户申请授权](../../guides/向用户申请授权.md)。
 
 ```ets
 import { abilityAccessCtrl, Context, PermissionRequestResult, common } from '@kit.AbilityKit';

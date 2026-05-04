@@ -1552,7 +1552,7 @@ bundleManager.cleanBundleCacheFilesForSelf().then(() => {
 
 getPluginBundlePathForSelf(pluginBundleName: string): string
 
-获取指定插件在当前[应用沙箱](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-sandbox-directory)内的安装路径。
+获取指定插件在当前[应用沙箱](../../guides/应用沙箱目录.md)内的安装路径。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 

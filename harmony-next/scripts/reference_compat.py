@@ -155,6 +155,17 @@ TARGETED_GUIDE_MAPPING = {
     "ui-design-hds-tabs-bar-floating": TargetedGuideMapping(Path("guides/设置页签栏的悬浮样式.md")),
     "photoaccesshelper-photoviewpicker": TargetedGuideMapping(Path("guides/使用Picker选择媒体库资源.md")),
     "photoaccesshelper-preparation": TargetedGuideMapping(Path("guides/开发准备（媒体库）.md")),
+    "agent-powered-reminder": TargetedGuideMapping(Path("guides/代理提醒（ArkTS）.md")),
+    "app-sandbox-directory": TargetedGuideMapping(Path("guides/应用沙箱目录.md")),
+    "arkts-interaction-basic-principles": TargetedGuideMapping(Path("guides/交互基础机制说明.md")),
+    "data-persistence-by-preferences": TargetedGuideMapping(Path("guides/通过用户首选项实现数据持久化.md")),
+    "crypto-rsa-sign-sig-verify-pkcs1": TargetedGuideMapping(Path("guides/使用RSA密钥对（PKCS1模式）签名验签.md")),
+    "devicesecurity-deviceverify-activateservice": TargetedGuideMapping(Path("guides/开通Device Security服务.md")),
+    "arkts-ui-widget-configuration": TargetedGuideMapping(Path("guides/配置ArkTS卡片的配置文件.md")),
+    "worker-introduction": TargetedGuideMapping(Path("guides/Worker简介.md")),
+    "arkts-internationalization": TargetedGuideMapping(Path("guides/UI国际化.md")),
+    "request-user-authorization": TargetedGuideMapping(Path("guides/向用户申请授权.md")),
+    "image-allocator-type": TargetedGuideMapping(Path("guides/图片解码内存优化.md")),
 }
 
 

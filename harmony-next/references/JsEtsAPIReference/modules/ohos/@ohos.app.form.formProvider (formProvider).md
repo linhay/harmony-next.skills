@@ -542,7 +542,7 @@ openFormManager(want: Want): void
 | want | Want | 是 | 打开卡片管理页面的请求中的want参数，需包含以下字段。 bundleName: 卡片所属应用的包名。 abilityName: 卡片所属的ability名称。 parameters: - ohos.extra.param.key.form_dimension: 卡片尺寸。 - ohos.extra.param.key.form_name: 卡片名称。 - ohos.extra.param.key.module_name: 卡片所属的模块名称。 |
 
 
-如果parameters参数没有填完整或者指定的卡片不存在，就会默认展示[form_config.json](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-configuration#卡片配置)中配置的默认卡片。
+如果parameters参数没有填完整或者指定的卡片不存在，就会默认展示[form_config.json](../../guides/配置ArkTS卡片的配置文件.md#卡片配置)中配置的默认卡片。
 
 **错误码：**
 
@@ -680,7 +680,7 @@ try {
 
 requestOverflow(formId: string, overflowInfo: formInfo.OverflowInfo): Promise<void>
 
-卡片提供方发起互动卡片动效请求，只针对[场景动效类型互动卡片](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-configuration#sceneanimationparams标签)生效，使用Promise异步回调。
+卡片提供方发起互动卡片动效请求，只针对[场景动效类型互动卡片](../../guides/配置ArkTS卡片的配置文件.md#sceneanimationparams标签)生效，使用Promise异步回调。
 
 
 1. 该接口在省电模式场景下不可使用，会报16501000错误码。
@@ -752,7 +752,7 @@ try {
 
 cancelOverflow(formId: string): Promise<void>
 
-卡片提供方发起取消互动卡片动效请求，只针对[场景动效类型互动卡片](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-configuration#sceneanimationparams标签)生效，使用Promise异步回调。
+卡片提供方发起取消互动卡片动效请求，只针对[场景动效类型互动卡片](../../guides/配置ArkTS卡片的配置文件.md#sceneanimationparams标签)生效，使用Promise异步回调。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 

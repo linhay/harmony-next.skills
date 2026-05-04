@@ -821,7 +821,7 @@ createPixelMap(options?: DecodingOptions): Promise<PixelMap>
 
 通过图片解码参数创建PixelMap对象。使用Promise异步回调。
 
-从API version 15开始，推荐使用[createPixelMapUsingAllocator](#ZH-CN_TOPIC_0000002522081974__createpixelmapusingallocator15)，该接口可以指定输出pixelMap的内存类型[AllocatorType](Enums.md#ZH-CN_TOPIC_0000002522081978__allocatortype15)，详情请参考[图片解码内存优化(ArkTS)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type)。
+从API version 15开始，推荐使用[createPixelMapUsingAllocator](#ZH-CN_TOPIC_0000002522081974__createpixelmapusingallocator15)，该接口可以指定输出pixelMap的内存类型[AllocatorType](Enums.md#ZH-CN_TOPIC_0000002522081978__allocatortype15)，详情请参考[图片解码内存优化(ArkTS)](../../guides/图片解码内存优化.md)。
 
 
 - 该方法为非线程安全的方法，不支持在同一个[ImageSource](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445805__imagecreateimagesource7)实例上并发调用。
@@ -868,7 +868,7 @@ createPixelMap(callback: AsyncCallback<PixelMap>): void
 
 通过默认参数创建PixelMap对象。使用callback异步回调。
 
-从API version 15开始，推荐使用[createPixelMapUsingAllocator](#ZH-CN_TOPIC_0000002522081974__createpixelmapusingallocator15)，该接口可以指定输出pixelMap的内存类型[AllocatorType](Enums.md#ZH-CN_TOPIC_0000002522081978__allocatortype15)，详情请参考[图片解码内存优化(ArkTS)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type)。
+从API version 15开始，推荐使用[createPixelMapUsingAllocator](#ZH-CN_TOPIC_0000002522081974__createpixelmapusingallocator15)，该接口可以指定输出pixelMap的内存类型[AllocatorType](Enums.md#ZH-CN_TOPIC_0000002522081978__allocatortype15)，详情请参考[图片解码内存优化(ArkTS)](../../guides/图片解码内存优化.md)。
 
 
 - 该方法为非线程安全的方法，不支持在同一个[ImageSource](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445805__imagecreateimagesource7)实例上并发调用。
@@ -911,7 +911,7 @@ createPixelMap(options: DecodingOptions, callback: AsyncCallback<PixelMap>): voi
 
 通过图片解码参数创建PixelMap对象。使用callback异步回调。
 
-从API version 15开始，推荐使用[createPixelMapUsingAllocator](#ZH-CN_TOPIC_0000002522081974__createpixelmapusingallocator15)，该接口可以指定输出pixelMap的内存类型[AllocatorType](Enums.md#ZH-CN_TOPIC_0000002522081978__allocatortype15)，详情请参考[图片解码内存优化(ArkTS)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type)。
+从API version 15开始，推荐使用[createPixelMapUsingAllocator](#ZH-CN_TOPIC_0000002522081974__createpixelmapusingallocator15)，该接口可以指定输出pixelMap的内存类型[AllocatorType](Enums.md#ZH-CN_TOPIC_0000002522081978__allocatortype15)，详情请参考[图片解码内存优化(ArkTS)](../../guides/图片解码内存优化.md)。
 
 
 - 该方法为非线程安全的方法，不支持在同一个[ImageSource](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445805__imagecreateimagesource7)实例上并发调用。
@@ -970,7 +970,7 @@ createPixelMapSync(options?: DecodingOptions): PixelMap
 
 释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
 
-从API version 15开始，推荐使用[createPixelMapUsingAllocatorSync](#ZH-CN_TOPIC_0000002522081974__createpixelmapusingallocatorsync15)，该接口可以指定输出pixelMap的内存类型[AllocatorType](Enums.md#ZH-CN_TOPIC_0000002522081978__allocatortype15)，详情请参考[图片解码内存优化(ArkTS)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type)。
+从API version 15开始，推荐使用[createPixelMapUsingAllocatorSync](#ZH-CN_TOPIC_0000002522081974__createpixelmapusingallocatorsync15)，该接口可以指定输出pixelMap的内存类型[AllocatorType](Enums.md#ZH-CN_TOPIC_0000002522081978__allocatortype15)，详情请参考[图片解码内存优化(ArkTS)](../../guides/图片解码内存优化.md)。
 
 
 该方法为同步方法，调用时会阻塞当前线程，不建议在主线程中调用，否则可能导致应用卡顿、掉帧或响应延迟。具体场景参考[耗时任务并发场景简介](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/time-consuming-task-overview)。
@@ -1223,7 +1223,7 @@ async function CreatePixelMapList(imageSourceObj : image.ImageSource) {
 
 createPixelMapUsingAllocator(options?: DecodingOptions, allocatorType?: [AllocatorType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285837__allocatortype15)): Promise<PixelMap>
 
-使用指定的分配器根据图像解码参数异步创建PixelMap对象。使用Promise异步回调。接口使用详情请参考[图片解码内存优化(ArkTS)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type)。
+使用指定的分配器根据图像解码参数异步创建PixelMap对象。使用Promise异步回调。接口使用详情请参考[图片解码内存优化(ArkTS)](../../guides/图片解码内存优化.md)。
 
 
 - 该方法为非线程安全的方法，不支持在同一个[ImageSource](../../topics/misc/Functions.md#ZH-CN_TOPIC_0000002529445805__imagecreateimagesource7)实例上并发调用。
@@ -1291,7 +1291,7 @@ async function CreatePixelMapUsingAllocator(context : Context) {
 
 createPixelMapUsingAllocatorSync(options?: DecodingOptions, allocatorType?: [AllocatorType](../enums/Enums.md#ZH-CN_TOPIC_0000002529285837__allocatortype15)): PixelMap
 
-根据指定的分配器同步创建一个基于图像解码参数的PixelMap对象。接口使用详情请参考[图片解码内存优化(ArkTS)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type)。
+根据指定的分配器同步创建一个基于图像解码参数的PixelMap对象。接口使用详情请参考[图片解码内存优化(ArkTS)](../../guides/图片解码内存优化.md)。
 
 由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用[release](Interface (PixelMap).md#ZH-CN_TOPIC_0000002522241972__release7)方法，及时释放内存。
 

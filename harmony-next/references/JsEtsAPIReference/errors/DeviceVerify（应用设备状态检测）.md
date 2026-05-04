@@ -22,7 +22,7 @@ has no permission.
 
 1.
 
-请参见[开通Device Security服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-deviceverify-activateservice)在AppGallery Connect开启“应用设备状态检测”开关。
+请参见[开通Device Security服务](../guides/开通Device Security服务.md)在AppGallery Connect开启“应用设备状态检测”开关。
 
 1.
 

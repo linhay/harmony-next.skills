@@ -16,7 +16,7 @@ permission denied.
 
 处理步骤
 
-只允许符合使用场景的应用申请该权限。开通数字盾服务，请参考“[开通Device Security服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-deviceverify-activateservice)”。
+只允许符合使用场景的应用申请该权限。开通数字盾服务，请参考“[开通Device Security服务](../guides/开通Device Security服务.md)”。
 
 **1019100002 参数检查失败**
 

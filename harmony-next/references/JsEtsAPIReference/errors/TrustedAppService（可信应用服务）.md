@@ -28,7 +28,7 @@ permission denied.
 
 1.
 
-开通可信应用服务，请参考“[开通Device Security服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-deviceverify-activateservice)”。
+开通可信应用服务，请参考“[开通Device Security服务](../guides/开通Device Security服务.md)”。
 
 1.
 
@@ -188,7 +188,7 @@ item not found.
 
 处理步骤
 
-创建证明密钥成功后再进行初始化证明会话，请参考“[开通Device Security服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-deviceverify-activateservice)”。
+创建证明密钥成功后再进行初始化证明会话，请参考“[开通Device Security服务](../guides/开通Device Security服务.md)”。
 
 **1011500008 证书校验失败**
 

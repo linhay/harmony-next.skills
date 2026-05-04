@@ -4,7 +4,7 @@
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-使用获取开放匿名设备标识符接口，需[向用户申请授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-authorization)（默认开启权限）：ohos.permission.APP_TRACKING_CONSENT。
+使用获取开放匿名设备标识符接口，需[向用户申请授权](../../guides/向用户申请授权.md)（默认开启权限）：ohos.permission.APP_TRACKING_CONSENT。
 
 #### 导入模块
 

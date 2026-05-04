@@ -422,7 +422,7 @@ EntryIntentDecoratorInfo继承自[IntentDecoratorInfo](#ZH-CN_TOPIC_000000252224
 使用该装饰器装饰[FormExtensionAbility](@ohos.app.form.FormExtensionAbility (FormExtensionAbility).md)并配置FormExtensionAbility绑定的卡片名称，便于AI入口通过意图添加卡片。该装饰器支持的参数参见[FormIntentDecoratorInfo](#ZH-CN_TOPIC_0000002522240536__formintentdecoratorinfo)。
 
 
-卡片名称定义的要求参见[卡片配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-configuration#卡片配置)。
+卡片名称定义的要求参见[卡片配置](../../guides/配置ArkTS卡片的配置文件.md#卡片配置)。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 

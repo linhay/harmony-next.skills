@@ -4595,7 +4595,7 @@ let signer5 = cryptoFramework.createSign('RSA1024|PKCS1|SHA256|OnlySign');
 
 #### Sign
 
-Sign类，使用Sign方法之前需要创建该类的实例进行操作，通过[createSign(algName: string): Sign](#ZH-CN_TOPIC_0000002553201293__cryptoframeworkcreatesign)方法构造此实例。按序调用本类中的init、update、sign方法完成签名操作。签名操作的示例代码详见[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1)。
+Sign类，使用Sign方法之前需要创建该类的实例进行操作，通过[createSign(algName: string): Sign](#ZH-CN_TOPIC_0000002553201293__cryptoframeworkcreatesign)方法构造此实例。按序调用本类中的init、update、sign方法完成签名操作。签名操作的示例代码详见[签名验签开发指导](../../guides/使用RSA密钥对（PKCS1模式）签名验签.md)。
 
 Sign类不支持重复初始化，当业务方需要使用新密钥签名时，需要重新创建新Sign对象并调用init初始化。
 
@@ -4956,7 +4956,7 @@ signSync(data: DataBlob | null): DataBlob
 
 **callback示例：**
 
-此外，更多签名验签的完整示例可参考[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1)。
+此外，更多签名验签的完整示例可参考[签名验签开发指导](../../guides/使用RSA密钥对（PKCS1模式）签名验签.md)。
 
 ```ets
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
@@ -5017,7 +5017,7 @@ function signByCallback() {
 
 **Promise示例：**
 
-此外，更多签名验签的完整示例可参考[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1)。
+此外，更多签名验签的完整示例可参考[签名验签开发指导](../../guides/使用RSA密钥对（PKCS1模式）签名验签.md)。
 
 ```ets
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
@@ -5083,7 +5083,7 @@ async function signByPromise() {
 
 **Sync示例：**
 
-此外，更多签名验签的完整示例可参考[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1)。
+此外，更多签名验签的完整示例可参考[签名验签开发指导](../../guides/使用RSA密钥对（PKCS1模式）签名验签.md)。
 
 ```ets
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
@@ -5289,7 +5289,7 @@ let verifier3 = cryptoFramework.createVerify('RSA1024|PKCS1|SHA256|Recover');
 
 #### Verify
 
-Verify类，使用Verify方法之前需要创建该类的实例进行操作，通过[createVerify(algName: string): Verify](#ZH-CN_TOPIC_0000002553201293__cryptoframeworkcreateverify)方法构造此实例。按序调用本类中的init、update、verify方法完成签名操作。验签操作的示例代码详见[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1)。
+Verify类，使用Verify方法之前需要创建该类的实例进行操作，通过[createVerify(algName: string): Verify](#ZH-CN_TOPIC_0000002553201293__cryptoframeworkcreateverify)方法构造此实例。按序调用本类中的init、update、verify方法完成签名操作。验签操作的示例代码详见[签名验签开发指导](../../guides/使用RSA密钥对（PKCS1模式）签名验签.md)。
 
 Verify类不支持重复初始化，当业务方需要使用新密钥验签时，需要重新创建新Verify对象并调用init初始化。
 
@@ -5645,7 +5645,7 @@ verifySync(data: DataBlob | null, signatureData: DataBlob): boolean
 
 **callback示例：**
 
-此外，更多签名验签的完整示例可参考[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1)。
+此外，更多签名验签的完整示例可参考[签名验签开发指导](../../guides/使用RSA密钥对（PKCS1模式）签名验签.md)。
 
 ```ets
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
@@ -5716,7 +5716,7 @@ function verifyByCallback() {
 
 **Promise示例：**
 
-更多示例请参见[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1)。
+更多示例请参见[签名验签开发指导](../../guides/使用RSA密钥对（PKCS1模式）签名验签.md)。
 
 ```ets
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
@@ -5792,7 +5792,7 @@ async function verifyByPromise() {
 
 **Sync示例：**
 
-此外，更多签名验签的完整示例可参考[签名验签开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1)。
+此外，更多签名验签的完整示例可参考[签名验签开发指导](../../guides/使用RSA密钥对（PKCS1模式）签名验签.md)。
 
 ```ets
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';

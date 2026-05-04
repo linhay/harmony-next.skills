@@ -4,7 +4,7 @@
 
 数据存储采用键值对形式，键为字符串类型，值可为数字、字符串、布尔类型及其对应的数组。
 
-用户首选项的持久化文件存储在[preferencesDir](../../guides/应用上下文Context.md#获取应用文件路径)路径下，创建preferences对象前，需要保证preferencesDir路径可读写。持久化文件存储路径中的[加密等级](@ohos.app.ability.contextConstant (Context相关常量).md#ZH-CN_TOPIC_0000002553200497__areamode)会影响文件的可读写状态，路径访问限制详见[应用文件目录与应用文件路径](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-sandbox-directory#应用文件目录与应用文件路径)。
+用户首选项的持久化文件存储在[preferencesDir](../../guides/应用上下文Context.md#获取应用文件路径)路径下，创建preferences对象前，需要保证preferencesDir路径可读写。持久化文件存储路径中的[加密等级](@ohos.app.ability.contextConstant (Context相关常量).md#ZH-CN_TOPIC_0000002553200497__areamode)会影响文件的可读写状态，路径访问限制详见[应用文件目录与应用文件路径](../../guides/应用沙箱目录.md#应用文件目录与应用文件路径)。
 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
@@ -702,7 +702,7 @@ removePreferencesFromCache(context: Context, name: string, callback: AsyncCallba
 
 调用该接口后，不建议再使用旧的Preferences实例进行数据操作，否则会导致数据一致性问题，应将Preferences实例置为null，系统会统一回收。
 
-若使用[GSKV存储模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-preferences#gskv存储)，推荐在进程退出时手动调用一次该接口。此操作会将数据缓存页写入磁盘，可一定程度上减少下一次调用getPreferences接口时的耗时。否则，下一次调用getPreferences接口时底层需要进行数据恢复，数据恢复的耗时取决于未写入磁盘的数据缓存页数量。
+若使用[GSKV存储模式](../../guides/通过用户首选项实现数据持久化.md#gskv存储)，推荐在进程退出时手动调用一次该接口。此操作会将数据缓存页写入磁盘，可一定程度上减少下一次调用getPreferences接口时的耗时。否则，下一次调用getPreferences接口时底层需要进行数据恢复，数据恢复的耗时取决于未写入磁盘的数据缓存页数量。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -773,7 +773,7 @@ removePreferencesFromCache(context: Context, name: string): Promise<void>
 
 调用该接口后，不建议再使用旧的Preferences实例进行数据操作，否则会导致数据一致性问题，应将Preferences实例置为null，系统会统一回收。
 
-若使用[GSKV存储模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-preferences#gskv存储)，推荐在进程退出时手动调用一次该接口。此操作会将数据缓存页写入磁盘，可一定程度上减少下一次调用getPreferences接口时的耗时。否则，下一次调用getPreferences接口时底层需要进行数据恢复，数据恢复的耗时取决于未写入磁盘的数据缓存页数量。
+若使用[GSKV存储模式](../../guides/通过用户首选项实现数据持久化.md#gskv存储)，推荐在进程退出时手动调用一次该接口。此操作会将数据缓存页写入磁盘，可一定程度上减少下一次调用getPreferences接口时的耗时。否则，下一次调用getPreferences接口时底层需要进行数据恢复，数据恢复的耗时取决于未写入磁盘的数据缓存页数量。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -847,7 +847,7 @@ removePreferencesFromCacheSync(context: Context, name: string): void
 
 调用该接口后，不建议再使用旧的Preferences实例进行数据操作，否则会导致数据一致性问题，应将Preferences实例置为null，系统会统一回收。
 
-若使用[GSKV存储模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-preferences#gskv存储)，推荐在进程退出时手动调用一次该接口。此操作会将数据缓存页写入磁盘，可一定程度上减少下一次调用getPreferences接口时的耗时。否则，下一次调用getPreferences接口时底层需要进行数据恢复，数据恢复的耗时取决于未写入磁盘的数据缓存页数量。
+若使用[GSKV存储模式](../../guides/通过用户首选项实现数据持久化.md#gskv存储)，推荐在进程退出时手动调用一次该接口。此操作会将数据缓存页写入磁盘，可一定程度上减少下一次调用getPreferences接口时的耗时。否则，下一次调用getPreferences接口时底层需要进行数据恢复，数据恢复的耗时取决于未写入磁盘的数据缓存页数量。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -902,7 +902,7 @@ removePreferencesFromCache(context: Context, options: Options, callback: AsyncCa
 
 调用该接口后，不建议再使用旧的Preferences实例进行数据操作，否则会导致数据一致性问题，应将Preferences实例置为null，系统会统一回收。
 
-若使用[GSKV存储模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-preferences#gskv存储)，推荐在进程退出时手动调用一次该接口。此操作会将数据缓存页写入磁盘，可一定程度上减少下一次调用getPreferences接口时的耗时。否则，下一次调用getPreferences接口时底层需要进行数据恢复，数据恢复的耗时取决于未写入磁盘的数据缓存页数量。
+若使用[GSKV存储模式](../../guides/通过用户首选项实现数据持久化.md#gskv存储)，推荐在进程退出时手动调用一次该接口。此操作会将数据缓存页写入磁盘，可一定程度上减少下一次调用getPreferences接口时的耗时。否则，下一次调用getPreferences接口时底层需要进行数据恢复，数据恢复的耗时取决于未写入磁盘的数据缓存页数量。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -978,7 +978,7 @@ removePreferencesFromCache(context: Context, options: Options): Promise<void>
 
 调用该接口后，不建议再使用旧的Preferences实例进行数据操作，否则会导致数据一致性问题，应将Preferences实例置为null，系统会统一回收。
 
-若使用[GSKV存储模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-preferences#gskv存储)，推荐在进程退出时手动调用一次该接口。此操作会将数据缓存页写入磁盘，可一定程度上减少下一次调用getPreferences接口时的耗时。否则，下一次调用getPreferences接口时底层需要进行数据恢复，数据恢复的耗时取决于未写入磁盘的数据缓存页数量。
+若使用[GSKV存储模式](../../guides/通过用户首选项实现数据持久化.md#gskv存储)，推荐在进程退出时手动调用一次该接口。此操作会将数据缓存页写入磁盘，可一定程度上减少下一次调用getPreferences接口时的耗时。否则，下一次调用getPreferences接口时底层需要进行数据恢复，数据恢复的耗时取决于未写入磁盘的数据缓存页数量。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1057,7 +1057,7 @@ removePreferencesFromCacheSync(context: Context, options: Options):void
 
 调用该接口后，不建议再使用旧的Preferences实例进行数据操作，否则会导致数据一致性问题，应将Preferences实例置为null，系统会统一回收。
 
-若使用[GSKV存储模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-preferences#gskv存储)，推荐在进程退出时手动调用一次该接口。此操作会将数据缓存页写入磁盘，可一定程度上减少下一次调用getPreferences接口时的耗时。否则，下一次调用getPreferences接口时底层需要进行数据恢复，数据恢复的耗时取决于未写入磁盘的数据缓存页数量。
+若使用[GSKV存储模式](../../guides/通过用户首选项实现数据持久化.md#gskv存储)，推荐在进程退出时手动调用一次该接口。此操作会将数据缓存页写入磁盘，可一定程度上减少下一次调用getPreferences接口时的耗时。否则，下一次调用getPreferences接口时底层需要进行数据恢复，数据恢复的耗时取决于未写入磁盘的数据缓存页数量。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1833,7 +1833,7 @@ flush(callback: AsyncCallback<void>): void
 
 当数据未修改或修改后的数据与缓存数据一致时，不会刷新持久化文件。
 
-只在XML存储模式下使用，在GSKV存储模式下无需调用，因为当选择该模式时首选项对数据的操作会实时落盘。Preferences存储模式可见[存储模式说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-preferences#存储模式说明)。
+只在XML存储模式下使用，在GSKV存储模式下无需调用，因为当选择该模式时首选项对数据的操作会实时落盘。Preferences存储模式可见[存储模式说明](../../guides/通过用户首选项实现数据持久化.md#存储模式说明)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1876,7 +1876,7 @@ flush(): Promise<void>
 
 当数据未修改或修改后的数据与缓存数据一致时，不会刷新持久化文件。
 
-只在XML存储模式下使用，在GSKV存储模式下无需调用，因为当选择该模式时首选项对数据的操作会实时落盘。Preferences存储模式可见[存储模式说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-preferences#存储模式说明)。
+只在XML存储模式下使用，在GSKV存储模式下无需调用，因为当选择该模式时首选项对数据的操作会实时落盘。Preferences存储模式可见[存储模式说明](../../guides/通过用户首选项实现数据持久化.md#存储模式说明)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 

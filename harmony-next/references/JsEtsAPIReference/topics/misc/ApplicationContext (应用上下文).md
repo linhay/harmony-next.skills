@@ -805,7 +805,7 @@ clearUpApplicationData(): Promise<void>
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-应用文件路径详见[应用文件目录信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-sandbox-directory#应用文件目录与应用文件路径)。图中仅标识了el1~el2目录下的应用文件路径，其他文件加密类型目录下的应用文件路径可以参考el1。
+应用文件路径详见[应用文件目录信息](../../guides/应用沙箱目录.md#应用文件目录与应用文件路径)。图中仅标识了el1~el2目录下的应用文件路径，其他文件加密类型目录下的应用文件路径可以参考el1。
 
 该接口会停止应用进程，应用进程停止后，后续的所有回调都不会再触发。
 
@@ -846,7 +846,7 @@ clearUpApplicationData(callback: AsyncCallback<void>): void
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-应用文件路径详见[应用文件目录信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-sandbox-directory#应用文件目录与应用文件路径)。图中仅标识了el1~el2目录下的应用文件路径，其他文件加密类型目录下的应用文件路径可以参考el1。
+应用文件路径详见[应用文件目录信息](../../guides/应用沙箱目录.md#应用文件目录与应用文件路径)。图中仅标识了el1~el2目录下的应用文件路径，其他文件加密类型目录下的应用文件路径可以参考el1。
 
 该接口会停止应用进程，应用进程停止后，后续的所有回调都不会再触发。
 

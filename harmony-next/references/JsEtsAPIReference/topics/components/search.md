@@ -136,7 +136,7 @@ textAlign(value: [TextAlign](枚举说明.md#ZH-CN_TOPIC_0000002529284967__texta
 | value | [TextAlign](枚举说明.md#ZH-CN_TOPIC_0000002529284967__textalign) | 是 | 文本在搜索框中的对齐方式。 默认值：TextAlign.Start |
 
 
-textAlign只能调整文本整体的布局，不影响字符的显示顺序。若需要调整字符的显示顺序，请参考[镜像状态字符对齐](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-internationalization#镜像状态字符对齐)。
+textAlign只能调整文本整体的布局，不影响字符的显示顺序。若需要调整字符的显示顺序，请参考[镜像状态字符对齐](../../guides/UI国际化.md#镜像状态字符对齐)。
 
 **textDirection23+**
 

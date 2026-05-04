@@ -192,6 +192,33 @@ class ReferenceCompatTests(unittest.TestCase):
             ),
             encoding="utf-8",
         )
+        (self.js_root / "modules" / "ohos" / "@ohos.batch3-guide.md").write_text(
+            (
+                "[代理提醒]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-powered-reminder#约束与限制)\n"
+                "[应用沙箱目录]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-sandbox-directory#应用文件目录与应用文件路径)\n"
+                "[交互基础机制说明]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interaction-basic-principles#触摸测试)\n"
+                "[通过用户首选项实现数据持久化]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-preferences#gskv存储)\n"
+                "[使用RSA密钥对签名验签]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-pkcs1)\n"
+                "[开通Device Security服务]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-deviceverify-activateservice)\n"
+                "[配置ArkTS卡片的配置文件]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-configuration#sceneanimationparams标签)\n"
+                "[Worker简介]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/worker-introduction#文件路径注意事项)\n"
+                "[UI国际化]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-internationalization#镜像状态字符对齐)\n"
+                "[向用户申请授权]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-authorization)\n"
+                "[图片解码内存优化]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type#系统默认的内存分配方式)\n"
+            ),
+            encoding="utf-8",
+        )
         (self.js_root / "modules" / "ohos" / "@ohos.arkui.StateManagement (状态管理).md").write_text(
             "# @ohos.arkui.StateManagement (状态管理)\n",
             encoding="utf-8",
@@ -421,6 +448,50 @@ class ReferenceCompatTests(unittest.TestCase):
             "# 开发准备\n",
             encoding="utf-8",
         )
+        (self.js_root / "guides" / "代理提醒（ArkTS）.md").write_text(
+            "# 代理提醒(ArkTS)\n\n## 约束与限制\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "应用沙箱目录.md").write_text(
+            "# 应用沙箱目录\n\n## 应用文件目录与应用文件路径\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "交互基础机制说明.md").write_text(
+            "# 交互基础机制说明\n\n## 触摸测试\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "通过用户首选项实现数据持久化.md").write_text(
+            "# 通过用户首选项实现数据持久化\n\n## GSKV存储\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "使用RSA密钥对（PKCS1模式）签名验签.md").write_text(
+            "# 使用RSA密钥对（PKCS1模式）签名验签\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "开通Device Security服务.md").write_text(
+            "# 开通Device Security服务\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "配置ArkTS卡片的配置文件.md").write_text(
+            "# 配置ArkTS卡片的配置文件\n\n## sceneAnimationParams标签\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "Worker简介.md").write_text(
+            "# Worker简介\n\n## 文件路径注意事项\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "UI国际化.md").write_text(
+            "# UI国际化\n\n## 镜像状态字符对齐\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "向用户申请授权.md").write_text(
+            "# 向用户申请授权\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "图片解码内存优化.md").write_text(
+            "# 图片解码内存优化\n\n## 系统默认的内存分配方式\n",
+            encoding="utf-8",
+        )
         (self.js_root / "topics" / "components" / "应用级变量的状态管理.md").write_text(
             "# 应用级变量的状态管理\n",
             encoding="utf-8",
@@ -485,7 +556,7 @@ class ReferenceCompatTests(unittest.TestCase):
         MODULE.generate_index(self.paths)
 
         self.assertEqual(rewritten, 1)
-        self.assertEqual(guide_rewritten, 9)
+        self.assertEqual(guide_rewritten, 10)
         self.assertIn(
             "../../topics/misc/native_handwrite_api.h.md",
             (self.js_root / "topics" / "misc" / "HandWrite.md").read_text(encoding="utf-8"),
@@ -731,6 +802,50 @@ class ReferenceCompatTests(unittest.TestCase):
             (self.js_root / "modules" / "ohos" / "@ohos.batch2-guide.md").read_text(encoding="utf-8"),
         )
         self.assertIn(
+            "../../guides/代理提醒（ArkTS）.md#约束与限制",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch3-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/应用沙箱目录.md#应用文件目录与应用文件路径",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch3-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/交互基础机制说明.md#触摸测试",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch3-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/通过用户首选项实现数据持久化.md#gskv存储",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch3-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/使用RSA密钥对（PKCS1模式）签名验签.md",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch3-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/开通Device Security服务.md",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch3-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/配置ArkTS卡片的配置文件.md#sceneanimationparams标签",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch3-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/Worker简介.md#文件路径注意事项",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch3-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/UI国际化.md#镜像状态字符对齐",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch3-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/向用户申请授权.md",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch3-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/图片解码内存优化.md#系统默认的内存分配方式",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch3-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
             "../components/ForEach.md",
             (self.js_root / "topics" / "misc" / "rendering-guide.md").read_text(encoding="utf-8"),
         )
@@ -794,6 +909,7 @@ class ReferenceCompatTests(unittest.TestCase):
         self.assertIn("guides/窗口开发术语.md", index_lines)
         self.assertIn("guides/数据库备份与恢复.md", index_lines)
         self.assertIn("guides/NFC标签读写开发指南.md", index_lines)
+        self.assertIn("guides/代理提醒（ArkTS）.md", index_lines)
         self.assertNotIn("capi/headers/native_handwrite_api.h.md", index_lines)
         references_index_lines = self.paths.references_index.read_text(encoding="utf-8").splitlines()
         self.assertIn("JsEtsAPIReference/topics/misc/native_handwrite_api.h.md", references_index_lines)
@@ -801,6 +917,7 @@ class ReferenceCompatTests(unittest.TestCase):
         self.assertIn("JsEtsAPIReference/guides/窗口开发术语.md", references_index_lines)
         self.assertIn("JsEtsAPIReference/guides/数据库备份与恢复.md", references_index_lines)
         self.assertIn("JsEtsAPIReference/guides/NFC标签读写开发指南.md", references_index_lines)
+        self.assertIn("JsEtsAPIReference/guides/代理提醒（ArkTS）.md", references_index_lines)
         self.assertIn("quickStart/intro.md", references_index_lines)
 
     def test_check_detects_index_drift(self) -> None:

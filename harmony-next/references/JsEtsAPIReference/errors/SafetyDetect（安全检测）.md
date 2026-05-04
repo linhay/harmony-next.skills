@@ -22,7 +22,7 @@ Permission denied.
 
 1.
 
-请参见[开通Device Security服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-deviceverify-activateservice)在AppGallery Connect开通“安全检测服务”。
+请参见[开通Device Security服务](../guides/开通Device Security服务.md)在AppGallery Connect开通“安全检测服务”。
 
 1.
 
@@ -102,7 +102,7 @@ Verify capability fail.
 
 1.
 
-参考[开通Device Security服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-deviceverify-activateservice)在AppGallery Connect开通“安全检测服务”。
+参考[开通Device Security服务](../guides/开通Device Security服务.md)在AppGallery Connect开通“安全检测服务”。
 
 1.
 

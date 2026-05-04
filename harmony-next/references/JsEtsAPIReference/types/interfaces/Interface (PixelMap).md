@@ -2351,7 +2351,7 @@ setMetadata(key: [HdrMetadataKey](../enums/Enums.md#ZH-CN_TOPIC_0000002529285837
 
 **示例：**
 
-创建DMA_ALLOC内存的PixelMap方法请参考: [系统默认的内存分配方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type#系统默认的内存分配方式)。
+创建DMA_ALLOC内存的PixelMap方法请参考: [系统默认的内存分配方式](../../guides/图片解码内存优化.md#系统默认的内存分配方式)。
 
 ```ets
 import { BusinessError } from '@kit.BasicServicesKit';

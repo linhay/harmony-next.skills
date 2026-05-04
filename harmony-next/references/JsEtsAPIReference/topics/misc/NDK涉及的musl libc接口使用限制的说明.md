@@ -151,7 +151,7 @@ Tid:13893, Name:e.myapplication
 
 **沙箱机制影响的musl接口**
 
-沙箱机制可参考 [应用沙箱目录](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-sandbox-directory)。
+沙箱机制可参考 [应用沙箱目录](../../guides/应用沙箱目录.md)。
 
 引入errno.h头文件，检查errno错误状态码，如果错误状态码是ENOENT，则接口报错可能是由沙箱机制引起的。
 

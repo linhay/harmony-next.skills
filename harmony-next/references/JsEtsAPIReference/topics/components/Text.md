@@ -1282,7 +1282,7 @@ Alignment.BottomStart、Alignment.Bottom、Alignment.BottomEnd：内容底部对
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
-textAlign只能调整文本整体的布局，不影响字符的显示顺序。若需要调整字符的显示顺序，请参考[镜像状态字符对齐](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-internationalization#镜像状态字符对齐)。
+textAlign只能调整文本整体的布局，不影响字符的显示顺序。若需要调整字符的显示顺序，请参考[镜像状态字符对齐](../../guides/UI国际化.md#镜像状态字符对齐)。
 
 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。
 

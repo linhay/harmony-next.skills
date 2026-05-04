@@ -34,7 +34,7 @@ import { proxyChannelManager } from '@kit.DistributedServiceKit';
 
 1.
 
-需要申请ohos.permission.ACCESS_BLUETOOTH权限。如何配置和申请权限，具体操作请参考[声明权限](../../guides/声明权限.md)和[向用户申请授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-authorization)。
+需要申请ohos.permission.ACCESS_BLUETOOTH权限。如何配置和申请权限，具体操作请参考[声明权限](../../guides/声明权限.md)和[向用户申请授权](../../guides/向用户申请授权.md)。
 
 1.
 

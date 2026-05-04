@@ -1,6 +1,6 @@
 # bookParser（书籍解析能力）
 
-本模块提供书籍解析的能力，支持对txt、epub、mobi、azw、azw3格式的书籍文件进行解析。通过提前导入到[应用沙箱目录](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-sandbox-directory)中的书籍文件，初始化[BookParserHandler](#ZH-CN_TOPIC_0000002553202491__bookparserhandler)。将书籍基本信息、[书脊](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-introduction#基本概念)内容列表、目录列表和章节内容解析出来。
+本模块提供书籍解析的能力，支持对txt、epub、mobi、azw、azw3格式的书籍文件进行解析。通过提前导入到[应用沙箱目录](../../guides/应用沙箱目录.md)中的书籍文件，初始化[BookParserHandler](#ZH-CN_TOPIC_0000002553202491__bookparserhandler)。将书籍基本信息、[书脊](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-introduction#基本概念)内容列表、目录列表和章节内容解析出来。
 
 起始版本： 5.0.4(16)
 

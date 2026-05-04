@@ -1083,7 +1083,7 @@ napi_status napi_create_ark_runtime(napi_env *env)
 
 描述：
 
-创建基础运行时环境，一个进程最多创建64个，并满足与[Worker](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/worker-introduction)创建的子线程总数不超过80个。
+创建基础运行时环境，一个进程最多创建64个，并满足与[Worker](../../guides/Worker简介.md)创建的子线程总数不超过80个。
 
 参数：
 

@@ -1,6 +1,6 @@
 # @ohos.reminderAgentManager (后台代理提醒)
 
-本模块提供后台代理提醒的能力，即当应用被冻结或应用退出时，定时提醒功能将被系统服务代理。开发者可以调用本模块接口创建定时提醒，提醒类型支持倒计时、日历、闹钟三种。开发指导请参考[代理提醒开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-powered-reminder)。
+本模块提供后台代理提醒的能力，即当应用被冻结或应用退出时，定时提醒功能将被系统服务代理。开发者可以调用本模块接口创建定时提醒，提醒类型支持倒计时、日历、闹钟三种。开发指导请参考[代理提醒开发指南](../../guides/代理提醒（ArkTS）.md)。
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -21,7 +21,7 @@ publishReminder(reminderReq: ReminderRequest, callback: AsyncCallback<number>): 
 
 该接口需要申请通知弹窗权限[notificationManager.requestEnableNotification](@ohos.notificationManager (NotificationManager模块).md#ZH-CN_TOPIC_0000002553202383__notificationmanagerrequestenablenotification10)后调用。
 
-为了防止代理提醒被滥用于广告、营销类提醒，影响用户体验，部分设备上代理提醒增加了管控机制。管控后的适配或申请权限的方法，请参考[约束与限制中的管控限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-powered-reminder#约束与限制)。
+为了防止代理提醒被滥用于广告、营销类提醒，影响用户体验，部分设备上代理提醒增加了管控机制。管控后的适配或申请权限的方法，请参考[约束与限制中的管控限制](../../guides/代理提醒（ArkTS）.md#约束与限制)。
 
 **需要权限**： ohos.permission.PUBLISH_AGENT_REMINDER
 
@@ -75,7 +75,7 @@ publishReminder(reminderReq: ReminderRequest): Promise<number>
 
 该接口需要申请通知弹窗权限[notificationManager.requestEnableNotification](@ohos.notificationManager (NotificationManager模块).md#ZH-CN_TOPIC_0000002553202383__notificationmanagerrequestenablenotification10)后调用。
 
-为了防止代理提醒被滥用于广告、营销类提醒，影响用户体验，部分设备上代理提醒增加了管控机制。管控后的适配或申请权限的方法，请参考[约束与限制中的管控限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-powered-reminder#约束与限制)。
+为了防止代理提醒被滥用于广告、营销类提醒，影响用户体验，部分设备上代理提醒增加了管控机制。管控后的适配或申请权限的方法，请参考[约束与限制中的管控限制](../../guides/代理提醒（ArkTS）.md#约束与限制)。
 
 **需要权限**： ohos.permission.PUBLISH_AGENT_REMINDER
 
@@ -210,7 +210,7 @@ reminderAgentManager.cancelReminder(reminderId).then(() => {
 
 getValidReminders(callback: AsyncCallback<Array<ReminderRequest>>): void
 
-获取当前应用设置的所有[有效（未过期）的代理提醒](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-powered-reminder#约束与限制)。使用callback异步回调。
+获取当前应用设置的所有[有效（未过期）的代理提醒](../../guides/代理提醒（ArkTS）.md#约束与限制)。使用callback异步回调。
 
 **系统能力**： SystemCapability.Notification.ReminderAgent
 
@@ -267,7 +267,7 @@ reminderAgentManager.getValidReminders((err: BusinessError, reminders: Array<rem
 
 getValidReminders(): Promise<Array<ReminderRequest>>
 
-获取当前应用设置的所有[有效（未过期）的代理提醒](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-powered-reminder#约束与限制)。使用Promise异步回调。
+获取当前应用设置的所有[有效（未过期）的代理提醒](../../guides/代理提醒（ArkTS）.md#约束与限制)。使用Promise异步回调。
 
 **系统能力**： SystemCapability.Notification.ReminderAgent
 
@@ -567,7 +567,7 @@ reminderAgentManager.removeNotificationSlot(notificationManager.SlotType.CONTENT
 
 getAllValidReminders(): Promise<Array<ReminderInfo>>
 
-获取当前应用设置的所有[有效（未过期）的代理提醒](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-powered-reminder#约束与限制)。使用Promise异步回调。该接口调用需要申请ohos.permission.PUBLISH_AGENT_REMINDER权限。
+获取当前应用设置的所有[有效（未过期）的代理提醒](../../guides/代理提醒（ArkTS）.md#约束与限制)。使用Promise异步回调。该接口调用需要申请ohos.permission.PUBLISH_AGENT_REMINDER权限。
 
 **系统能力**： SystemCapability.Notification.ReminderAgent
 
@@ -757,7 +757,7 @@ reminderAgentManager.getExcludeDates(reminderId).then((dates) => {
 
 updateReminder(reminderId: number, reminderReq: ReminderRequest): Promise<void>
 
-更新指定id的代理提醒，使用Promise异步回调。仅[有效（未过期）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-powered-reminder#约束与限制)、未显示在通知中心的代理提醒支持更新。
+更新指定id的代理提醒，使用Promise异步回调。仅[有效（未过期）](../../guides/代理提醒（ArkTS）.md#约束与限制)、未显示在通知中心的代理提醒支持更新。
 
 **需要权限**： ohos.permission.PUBLISH_AGENT_REMINDER
 
