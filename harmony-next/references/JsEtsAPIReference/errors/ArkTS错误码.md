@@ -196,7 +196,7 @@ schema.json文件中的存储对象和代码中创建的存储对象不一致，
 
 1.
 
-schema.json文件同时存在于AppScope目录和entry目录中。当开发者在entry目录下的schema.json文件中更新了存储对象，在编译构建过程中，这些更新会被AppScope目录下的 schema.json文件覆盖。详细信息请参见[资源分类](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-categories-and-access#资源分类)。
+schema.json文件同时存在于AppScope目录和entry目录中。当开发者在entry目录下的schema.json文件中更新了存储对象，在编译构建过程中，这些更新会被AppScope目录下的 schema.json文件覆盖。详细信息请参见[资源分类](../guides/资源分类与访问.md#资源分类)。
 
 **处理步骤**
 

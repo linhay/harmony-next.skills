@@ -316,7 +316,7 @@ startAdvertising(setting: AdvertiseSetting, advData: AdvertiseData, advResponse?
 
 需要权限：ohos.permission.ACCESS_BLUETOOTH 或 (ohos.permission.ACCESS_BLUETOOTH 和 ohos.permission.MANAGE_BLUETOOTH_ADVERTISER_NAME)
 
-- 当应用使用[AdvertiseData](#ZH-CN_TOPIC_0000002522081444__advertisedata)中的advertiseName字段时，需要申请[ohos.permission.MANAGE_BLUETOOTH_ADVERTISER_NAME](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-permissions#ohospermissionmanage_bluetooth_advertiser_name)。
+- 当应用使用[AdvertiseData](#ZH-CN_TOPIC_0000002522081444__advertisedata)中的advertiseName字段时，需要申请[ohos.permission.MANAGE_BLUETOOTH_ADVERTISER_NAME](../../guides/受限开放权限.md#ohospermissionmanage_bluetooth_advertiser_name)。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -449,7 +449,7 @@ startAdvertising(advertisingParams: AdvertisingParams, callback: AsyncCallback<n
 
 需要权限：ohos.permission.ACCESS_BLUETOOTH 或 (ohos.permission.ACCESS_BLUETOOTH 和 ohos.permission.MANAGE_BLUETOOTH_ADVERTISER_NAME)
 
-- 当使用[AdvertiseData](#ZH-CN_TOPIC_0000002522081444__advertisedata)中的advertiseName字段时，需要同步申请[ohos.permission.MANAGE_BLUETOOTH_ADVERTISER_NAME](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-permissions#ohospermissionmanage_bluetooth_advertiser_name)。
+- 当使用[AdvertiseData](#ZH-CN_TOPIC_0000002522081444__advertisedata)中的advertiseName字段时，需要同步申请[ohos.permission.MANAGE_BLUETOOTH_ADVERTISER_NAME](../../guides/受限开放权限.md#ohospermissionmanage_bluetooth_advertiser_name)。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
@@ -553,7 +553,7 @@ startAdvertising(advertisingParams: AdvertisingParams): Promise<number>
 
 需要权限：ohos.permission.ACCESS_BLUETOOTH 或 (ohos.permission.ACCESS_BLUETOOTH 和 ohos.permission.MANAGE_BLUETOOTH_ADVERTISER_NAME)
 
-- 当使用[AdvertiseData](#ZH-CN_TOPIC_0000002522081444__advertisedata)中的advertiseName字段时，需要同步申请[ohos.permission.MANAGE_BLUETOOTH_ADVERTISER_NAME](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-permissions#ohospermissionmanage_bluetooth_advertiser_name)。
+- 当使用[AdvertiseData](#ZH-CN_TOPIC_0000002522081444__advertisedata)中的advertiseName字段时，需要同步申请[ohos.permission.MANAGE_BLUETOOTH_ADVERTISER_NAME](../../guides/受限开放权限.md#ohospermissionmanage_bluetooth_advertiser_name)。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 

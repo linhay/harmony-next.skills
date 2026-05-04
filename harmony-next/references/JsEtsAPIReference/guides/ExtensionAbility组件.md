@@ -1,0 +1,31 @@
+# ExtensionAbility组件
+
+本文根据华为开发者官网 `extensionability-overview` 页面整理为离线版入口。
+来源：<https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/extensionability-overview>
+更新时间：2026-04-30 02:41:24
+
+## ExtensionAbility类型说明
+当前系统已定义的ExtensionAbility类型如下表所示。
+“是否允许三方应用实现”是指：三方应用能否继承该类型ExtensionAbility实现自己的业务逻辑。
+“是否有独立Extension沙箱”是指：该类型ExtensionAbility的沙箱是否与主应用沙箱相对独立、不可互相访问。
+ExtensionAbility类型
+功能描述
+是否允许三方应用实现
+是否有独立Extension沙箱
+FormExtensionAbility
+卡片扩展能力，用于提供服务卡片的相关能力。
+是
+否
+WorkSchedulerExtensionAbility
+
+## 访问指定类型的ExtensionAbility组件
+所有类型的ExtensionAbility组件均不能被应用直接启动，而是由相应的系统管理服务拉起，以确保其生命周期受系统管控，使用时拉起，使用完销毁。ExtensionAbility组件的调用方无需关心目标ExtensionAbility组件的生命周期。
+以InputMethodExtensionAbility组件为例进行说明，如下图所示，调用方应用发起对InputMethodExtensionAbility组件的调用，此时将先调用输入法管理服务，由输入法管理服务拉起InputMethodExtensionAbility组件，返回给调用方，同时开始管理其生命周期。
+图1 使用InputMethodExtensionAbility组件
+
+## 实现指定类型的ExtensionAbility组件
+以实现卡片FormExtensionAbility为例进行说明。卡片框架提供了FormExtensionAbility基类，开发者通过派生此基类（如MyFormExtensionAbility），实现回调（如创建卡片的onCreate()回调、更新卡片的onUpdateForm()回调等）来实现具体卡片功能，具体开发指导见服务卡片。
+卡片FormExtensionAbility实现方不用关心使用方何时去请求添加、删除卡片，FormExtensionAbility实例及其所在的ExtensionAbility进程的整个生命周期，都是由卡片管理系统服务FormManagerService进行调度管理。
+EmbeddedUIExtensionAbility
+使用AppServiceExtensionAbility组件实现后台服务
+使用AgentExtensionAbility组件实现智能体服务

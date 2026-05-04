@@ -7,3 +7,4 @@
 - 2026-05-04：`reference_compat.py` 支持对指定 slug 丢弃原在线锚点；仅在本地目标页没有等价锚点时启用，避免生成无效本地锚点。
 - 2026-05-04：当仓库内不存在语义等价页，但官方 guide 外链在参考库中高频出现时，允许直接基于华为官方 `getDocumentById` 接口抓取正文，整理为 `JsEtsAPIReference/guides/*.md` 后再纳入 `reference_compat.py` 映射。
 - 2026-05-04：第二批官方 guide 离线入口页已覆盖 `data-backup-and-restore`、`mdm-kit-multi-mdm`、`terminology`、`component-startup-rules`、`mdm-kit-guide`、`declare-permissions-in-acl`、`push-jwt-token`、`data-persistence-by-kv-store`、`declare-permissions`、`ability-terminology`、`application-context-stage`、`app-configuration-file`、`component-startup-rules-fa`。
+- 2026-05-04：第三批官方 guide 离线入口页已覆盖 `nfc-tag-access-guide`、`arkts-layout-development-grid-layout`、`serializable-overview`、`restricted-permissions`、`resource-categories-and-access`、`extensionability-overview`、`uiability-launch-type`、`get-pastedata-permission-guidelines`、`arkts-reusable`、`ui-design-hds-tabs-bar-floating`、`photoaccesshelper-photoviewpicker`、`photoaccesshelper-preparation`。

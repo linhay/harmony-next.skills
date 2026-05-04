@@ -56,7 +56,7 @@ export default class MyAbilityStage extends AbilityStage {
 
 onAcceptWant(want: Want): string
 
-当启动模式配置为[specified](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-launch-type#specified启动模式)的UIAbility被拉起时，会触发该回调，并返回一个string作为待启动的UIAbility实例的唯一标识。同步接口，不支持异步回调。
+当启动模式配置为[specified](../../guides/UIAbility组件启动模式.md#specified启动模式)的UIAbility被拉起时，会触发该回调，并返回一个string作为待启动的UIAbility实例的唯一标识。同步接口，不支持异步回调。
 
 如果系统中已经有相同标识的UIAbility实例存在，则复用已有实例，否则创建新的实例。
 
@@ -309,7 +309,7 @@ export default class MyAbilityStage extends AbilityStage {
 
 onAcceptWantAsync(want: Want): Promise<string>
 
-当启动模式配置为[specified](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-launch-type#specified启动模式)的UIAbility被拉起时，会触发该回调，并返回一个string作为待启动的UIAbility实例的唯一标识。使用Promise异步回调。
+当启动模式配置为[specified](../../guides/UIAbility组件启动模式.md#specified启动模式)的UIAbility被拉起时，会触发该回调，并返回一个string作为待启动的UIAbility实例的唯一标识。使用Promise异步回调。
 
 如果系统中已经有相同标识的UIAbility实例存在，则复用已有实例，否则创建新的实例。
 

@@ -2947,7 +2947,7 @@ enum ArkUI_ItemFillPolicy
 
 描述：
 
-为不同响应式[断点规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-grid-layout#栅格容器断点)指定列数。
+为不同响应式[断点规格](../../guides/栅格布局 (GridRow-GridCol).md#栅格容器断点)指定列数。
 
 起始版本： 22
 

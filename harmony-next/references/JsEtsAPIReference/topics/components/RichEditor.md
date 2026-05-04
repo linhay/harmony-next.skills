@@ -2491,7 +2491,7 @@ struct RichEditorExample {
 
 通过[bindSelectionMenu](#ZH-CN_TOPIC_0000002522080846__bindselectionmenu)给组件绑定自定义菜单。
 
-示例中的粘贴菜单项涉及读取剪贴板数据，因此需按规范[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。
+示例中的粘贴菜单项涉及读取剪贴板数据，因此需按规范[申请访问剪贴板权限](../../guides/申请访问剪贴板权限.md)。
 
 ```ets
 // xxx.ets

@@ -18,7 +18,7 @@ getAssets(options: FetchOptions, callback: AsyncCallback<FetchResult<PhotoAsset>
 
 **需要权限**：ohos.permission.READ_IMAGEVIDEO
 
-通过picker的方式调用该接口来查询指定URI对应的图片或视频资源，不需要申请'ohos.permission.READ_IMAGEVIDEO'权限，详情请参考[指定URI获取图片或视频资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker#指定uri获取图片或视频资源)。
+通过picker的方式调用该接口来查询指定URI对应的图片或视频资源，不需要申请'ohos.permission.READ_IMAGEVIDEO'权限，详情请参考[指定URI获取图片或视频资源](../../guides/使用Picker选择媒体库资源.md#指定uri获取图片或视频资源)。
 
 **参数：**
 
@@ -81,7 +81,7 @@ getAssets(options: FetchOptions): Promise<FetchResult<PhotoAsset>>
 
 **需要权限**：ohos.permission.READ_IMAGEVIDEO
 
-通过picker的方式调用该接口来查询指定URI对应的图片或视频资源，不需要申请'ohos.permission.READ_IMAGEVIDEO'权限，详情请参考[指定URI获取图片或视频资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker#指定uri获取图片或视频资源)。
+通过picker的方式调用该接口来查询指定URI对应的图片或视频资源，不需要申请'ohos.permission.READ_IMAGEVIDEO'权限，详情请参考[指定URI获取图片或视频资源](../../guides/使用Picker选择媒体库资源.md#指定uri获取图片或视频资源)。
 
 **参数：**
 
@@ -586,7 +586,7 @@ getAlbums(type: [AlbumType](../enums/Enums.md#ZH-CN_TOPIC_0000002529445919__albu
 
 接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码13900012，请参考[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-preparation)。
+错误码13900012，请参考[开发准备](../../guides/开发准备（媒体库）.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -646,7 +646,7 @@ registerChange(uri: string, forChildUris: boolean, callback: Callback<ChangeData
 
 接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码13900012，请参考[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-preparation)。
+错误码13900012，请参考[开发准备](../../guides/开发准备（媒体库）.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -709,7 +709,7 @@ unRegisterChange(uri: string, callback?: Callback<ChangeData>): void
 
 接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码13900012，请参考[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-preparation)。
+错误码13900012，请参考[开发准备](../../guides/开发准备（媒体库）.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1659,7 +1659,7 @@ createDeleteRequest(uriList: Array<string>, callback: AsyncCallback<void>): void
 
 接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码13900012，请参考[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-preparation)。
+错误码13900012，请参考[开发准备](../../guides/开发准备（媒体库）.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1730,7 +1730,7 @@ createDeleteRequest(uriList: Array<string>): Promise<void>
 
 接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码13900012，请参考[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-preparation)。
+错误码13900012，请参考[开发准备](../../guides/开发准备（媒体库）.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |

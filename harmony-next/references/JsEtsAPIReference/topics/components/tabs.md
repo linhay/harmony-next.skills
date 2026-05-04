@@ -375,7 +375,7 @@ barBackground[BlurStyle](背景设置.md#ZH-CN_TOPIC_0000002529444791__blurstyle
 
 barGridAlign(value: BarGridColumnOptions)
 
-以栅格化方式设置TabBar的可见区域。具体参见BarGridColumnOptions对象。仅水平模式下有效，[不适用于XS、XL和XXL设备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-grid-layout#栅格容器断点)。
+以栅格化方式设置TabBar的可见区域。具体参见BarGridColumnOptions对象。仅水平模式下有效，[不适用于XS、XL和XXL设备](../../guides/栅格布局 (GridRow-GridCol).md#栅格容器断点)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 

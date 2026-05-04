@@ -75,7 +75,7 @@ getAssets(options: photoAccessHelper.FetchOptions): Promise<FetchResult<PhotoAss
 
 **需要权限**：ohos.permission.READ_IMAGEVIDEO
 
-对于未申请'ohos.permission.READ_IMAGEVIDEO'权限的应用，可以通过picker的方式调用该接口来查询指定URI对应的图片或视频资源，详情请参考[指定URI获取图片或视频资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker#指定uri获取图片或视频资源)。
+对于未申请'ohos.permission.READ_IMAGEVIDEO'权限的应用，可以通过picker的方式调用该接口来查询指定URI对应的图片或视频资源，详情请参考[指定URI获取图片或视频资源](../../guides/使用Picker选择媒体库资源.md#指定uri获取图片或视频资源)。
 
 **参数：**
 

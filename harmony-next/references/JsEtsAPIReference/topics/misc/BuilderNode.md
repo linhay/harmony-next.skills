@@ -28,7 +28,7 @@ BuilderNode下的自定义组件支持使用[@Prop装饰器](https://developer.h
 
 -
 
-如果BuilderNode的子节点是自定义组件，不支持该自定义组件使用[@Reusable装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)，详细内容参见[BuilderNode在子自定义组件中使用@Reusable装饰器](BuilderNode.md)。
+如果BuilderNode的子节点是自定义组件，不支持该自定义组件使用[@Reusable装饰器](../../guides/@Reusable装饰器：V1组件复用.md)，详细内容参见[BuilderNode在子自定义组件中使用@Reusable装饰器](BuilderNode.md)。
 
 -
 
@@ -829,7 +829,7 @@ struct Index {
 
 reuse(param?: Object): void
 
-触发BuilderNode中的自定义组件的复用。组件复用请参见[@Reusable装饰器：V1组件复用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)。关于BuilderNode的解绑场景请参见[节点解绑](BuilderNode.md)。
+触发BuilderNode中的自定义组件的复用。组件复用请参见[@Reusable装饰器：V1组件复用](../../guides/@Reusable装饰器：V1组件复用.md)。关于BuilderNode的解绑场景请参见[节点解绑](BuilderNode.md)。
 
 元服务API： 从API version 12开始，该接口支持在元服务中使用。
 
@@ -845,7 +845,7 @@ reuse(param?: Object): void
 
 recycle(): void
 
-触发BuilderNode中自定义组件的回收。自定义组件的回收是组件复用机制中的环节，具体信息请参见[@Reusable装饰器：V1组件复用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)。
+触发BuilderNode中自定义组件的回收。自定义组件的回收是组件复用机制中的环节，具体信息请参见[@Reusable装饰器：V1组件复用](../../guides/@Reusable装饰器：V1组件复用.md)。
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
@@ -2031,7 +2031,7 @@ struct Index {
 
 reuse(param?: Object): void
 
-触发ReactiveBuilderNode中的自定义组件的复用。组件复用请参见[@Reusable装饰器：V1组件复用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)。关于ReactiveBuilderNode的解绑场景请参见[节点解绑](BuilderNode.md)。
+触发ReactiveBuilderNode中的自定义组件的复用。组件复用请参见[@Reusable装饰器：V1组件复用](../../guides/@Reusable装饰器：V1组件复用.md)。关于ReactiveBuilderNode的解绑场景请参见[节点解绑](BuilderNode.md)。
 
 ReactiveBuilderNode通过reuse和[recycle](#ZH-CN_TOPIC_0000002522080744__recycle22)完成其内外自定义组件之间的复用事件传递，具体使用场景请参见[BuilderNode调用reuse和recycle接口实现节点复用能力](BuilderNode.md)。
 
@@ -2053,7 +2053,7 @@ ReactiveBuilderNode通过reuse和[recycle](#ZH-CN_TOPIC_0000002522080744__recycl
 
 recycle(): void
 
-触发ReactiveBuilderNode中自定义组件的回收。自定义组件的回收是组件复用机制中的环节，具体信息请参见[@Reusable装饰器：V1组件复用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)。
+触发ReactiveBuilderNode中自定义组件的回收。自定义组件的回收是组件复用机制中的环节，具体信息请参见[@Reusable装饰器：V1组件复用](../../guides/@Reusable装饰器：V1组件复用.md)。
 
 ReactiveBuilderNode通过[reuse](#ZH-CN_TOPIC_0000002522080744__reuse22)和recycle完成其内外自定义组件之间的复用事件传递，具体使用场景请参见[BuilderNode调用reuse和recycle接口实现节点复用能力](BuilderNode.md)。
 

@@ -143,6 +143,18 @@ TARGETED_GUIDE_MAPPING = {
     "application-context-stage": TargetedGuideMapping(Path("guides/应用上下文Context.md")),
     "app-configuration-file": TargetedGuideMapping(Path("guides/app.json5配置文件.md")),
     "component-startup-rules-fa": TargetedGuideMapping(Path("guides/组件启动规则（FA模型）.md")),
+    "nfc-tag-access-guide": TargetedGuideMapping(Path("guides/NFC标签读写开发指南.md")),
+    "arkts-layout-development-grid-layout": TargetedGuideMapping(Path("guides/栅格布局 (GridRow-GridCol).md")),
+    "serializable-overview": TargetedGuideMapping(Path("guides/线程间通信对象概述.md")),
+    "restricted-permissions": TargetedGuideMapping(Path("guides/受限开放权限.md")),
+    "resource-categories-and-access": TargetedGuideMapping(Path("guides/资源分类与访问.md")),
+    "extensionability-overview": TargetedGuideMapping(Path("guides/ExtensionAbility组件.md")),
+    "uiability-launch-type": TargetedGuideMapping(Path("guides/UIAbility组件启动模式.md")),
+    "get-pastedata-permission-guidelines": TargetedGuideMapping(Path("guides/申请访问剪贴板权限.md")),
+    "arkts-reusable": TargetedGuideMapping(Path("guides/@Reusable装饰器：V1组件复用.md")),
+    "ui-design-hds-tabs-bar-floating": TargetedGuideMapping(Path("guides/设置页签栏的悬浮样式.md")),
+    "photoaccesshelper-photoviewpicker": TargetedGuideMapping(Path("guides/使用Picker选择媒体库资源.md")),
+    "photoaccesshelper-preparation": TargetedGuideMapping(Path("guides/开发准备（媒体库）.md")),
 }
 
 

@@ -278,7 +278,7 @@ columnsTemplate(value: string | ItemFillPolicy)
 
 当value设置为string类型时，使用方法参考[columnsTemplate(value: string)](#ZH-CN_TOPIC_0000002522080828__columnstemplate)。
 
-当value设置为ItemFillPolicy类型时，将根据WaterFlow组件宽度对应[断点类型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-grid-layout#栅格容器断点)确定列数。
+当value设置为ItemFillPolicy类型时，将根据WaterFlow组件宽度对应[断点类型](../../guides/栅格布局 (GridRow-GridCol).md#栅格容器断点)确定列数。
 
 例如，ItemFillPolicy.BREAKPOINT_DEFAULT在组件宽度属于sm及更小的断点区间时显示2列，属于md断点区间时显示3列，属于lg及更大的断点区间时显示5列，且每列均为1fr。
 

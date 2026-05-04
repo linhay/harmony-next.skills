@@ -1,6 +1,6 @@
 # @ohos.resourceManager (资源管理)
 
-本模块提供资源获取能力。根据当前的[Configuration](#ZH-CN_TOPIC_0000002553361213__configuration)配置，获取最匹配的应用资源或系统资源。具体匹配规则参考[资源匹配](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-categories-and-access#资源匹配)。
+本模块提供资源获取能力。根据当前的[Configuration](#ZH-CN_TOPIC_0000002553361213__configuration)配置，获取最匹配的应用资源或系统资源。具体匹配规则参考[资源匹配](../../guides/资源分类与访问.md#资源匹配)。
 
 Configuration配置包括语言、区域、横竖屏、Mcc（移动国家码）和Mnc（移动网络码）、Device capability（设备类型）、Density（分辨率）。
 
@@ -378,11 +378,11 @@ ResourceManager涉及到的方法，仅限基于TS扩展的声明式开发范式
 
 -
 
-单HAP包获取自身资源、跨HAP/HSP包获取资源，由于入参为Resource的接口相比于入参为resName、resId的接口耗时更长，因此更推荐使用参数为resName或resId的接口。跨HAP/HSP包获取资源，需要先使用[createModuleContext](@ohos.app.ability.application (应用工具类).md#ZH-CN_TOPIC_0000002522240526__applicationcreatemodulecontext12)创建对应module的context，再调用参数为resName或resId的接口。更多请参考[资源访问](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-categories-and-access#资源访问)。
+单HAP包获取自身资源、跨HAP/HSP包获取资源，由于入参为Resource的接口相比于入参为resName、resId的接口耗时更长，因此更推荐使用参数为resName或resId的接口。跨HAP/HSP包获取资源，需要先使用[createModuleContext](@ohos.app.ability.application (应用工具类).md#ZH-CN_TOPIC_0000002522240526__applicationcreatemodulecontext12)创建对应module的context，再调用参数为resName或resId的接口。更多请参考[资源访问](../../guides/资源分类与访问.md#资源访问)。
 
 -
 
-在API version 22及之前版本，中间码HAR、字节码HAR通过资源ID相关接口访问资源时，因ID无效会抛出异常；从API version 23开始，中间码HAR、字节码HAR通过资源ID相关接口可以正常访问资源，更多请参考[资源访问](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-categories-and-access#资源访问)。
+在API version 22及之前版本，中间码HAR、字节码HAR通过资源ID相关接口访问资源时，因ID无效会抛出异常；从API version 23开始，中间码HAR、字节码HAR通过资源ID相关接口可以正常访问资源，更多请参考[资源访问](../../guides/资源分类与访问.md#资源访问)。
 
 -
 

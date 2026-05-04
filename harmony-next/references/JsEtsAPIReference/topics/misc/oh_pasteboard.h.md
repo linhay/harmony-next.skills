@@ -517,7 +517,7 @@ OH_UdmfData* OH_Pasteboard_GetData(OH_Pasteboard* pasteboard, int* status)
 
 起始版本： 13
 
-需要权限：ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。[使用粘贴控件](../components/PasteButton.md)访问剪贴板内容的应用，可以无需申请权限。
+需要权限：ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](../../guides/申请访问剪贴板权限.md)。[使用粘贴控件](../components/PasteButton.md)访问剪贴板内容的应用，可以无需申请权限。
 
 参数：
 
@@ -773,7 +773,7 @@ OH_UdmfData* OH_Pasteboard_GetDataWithProgress(OH_Pasteboard* pasteboard, Pasteb
 
 起始版本： 15
 
-需要权限：ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。[使用粘贴控件](../components/PasteButton.md)访问剪贴板内容的应用，可以无需申请权限。
+需要权限：ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](../../guides/申请访问剪贴板权限.md)。[使用粘贴控件](../components/PasteButton.md)访问剪贴板内容的应用，可以无需申请权限。
 
 参数：
 

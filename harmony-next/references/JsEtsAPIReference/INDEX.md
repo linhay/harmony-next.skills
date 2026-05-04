@@ -170,12 +170,16 @@ guides/$$语法：系统组件双向同步.md
 guides/@Builder装饰器：自定义构建函数.md
 guides/@ObservedV2与@Trace：类属性变化观测.md
 guides/@Observed与@ObjectLink：V1数据对象观测.md
+guides/@Reusable装饰器：V1组件复用.md
 guides/Ability Kit术语.md
 guides/AppStorageV2（应用全局的UI状态存储）.md
 guides/Connectivity Kit术语.md
+guides/ExtensionAbility组件.md
 guides/MDM Kit开发指南.md
+guides/NFC标签读写开发指南.md
 guides/PersistenceV2（持久化存储UI状态）.md
 guides/Sendable对象简介.md
+guides/UIAbility组件启动模式.md
 guides/UIAbility组件基本用法.md
 guides/addMonitor与clearMonitor开发指南.md
 guides/app.json5配置文件.md
@@ -183,19 +187,27 @@ guides/applySync与flushUpdates与flushUIUpdates接口：同步刷新.md
 guides/if-else：条件渲染.md
 guides/makeObserved接口：将非观察数据变为可观察数据.md
 guides/module.json5配置文件.md
+guides/使用Picker选择媒体库资源.md
+guides/受限开放权限.md
 guides/基于服务账号生成鉴权令牌.md
 guides/声明权限.md
 guides/多应用管控.md
 guides/应用上下文Context.md
 guides/应用启动框架AppStartup.md
+guides/开发准备（媒体库）.md
 guides/数据库备份与恢复.md
+guides/栅格布局 (GridRow-GridCol).md
 guides/状态管理V1-V2迁移指导.md
 guides/状态管理V1和V2混用指导（API version 19及之后）.md
 guides/状态管理概述.md
 guides/申请受限权限.md
+guides/申请访问剪贴板权限.md
 guides/窗口开发术语.md
+guides/线程间通信对象概述.md
 guides/组件启动规则（FA模型）.md
 guides/组件启动规则（Stage模型）.md
+guides/设置页签栏的悬浮样式.md
+guides/资源分类与访问.md
 guides/通过键值型数据库实现数据持久化.md
 modules/ohos/@ohos.FusionConnectivity.PartnerAgentExtensionAbility (支持设备状态通知的ExtensionAbility组件).md
 modules/ohos/@ohos.FusionConnectivity.PartnerAgentExtensionContext (设备状态通知能力上下文).md

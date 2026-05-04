@@ -127,7 +127,7 @@ HdsTabs的控制器解除绑定内容区的滚动组件。
 
 applyMiniBarStyle(style: HdsBarStyle): void
 
-HdsTabs的控制器更新[迷你栏](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds-tabs-bar-floating#迷你栏)样式并伴随动效。
+HdsTabs的控制器更新[迷你栏](../../guides/设置页签栏的悬浮样式.md#迷你栏)样式并伴随动效。
 
 模型约束： 此接口仅可在Stage模型下使用。
 
@@ -147,7 +147,7 @@ HdsTabs的控制器更新[迷你栏](https://developer.huawei.com/consumer/cn/do
 
 applyHideAnimation(mode: HdsAnimationMode): void
 
-HdsTabs的控制器调用页签栏和[迷你栏](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds-tabs-bar-floating#迷你栏)的隐藏动效。
+HdsTabs的控制器调用页签栏和[迷你栏](../../guides/设置页签栏的悬浮样式.md#迷你栏)的隐藏动效。
 
 模型约束： 此接口仅可在Stage模型下使用。
 
@@ -167,7 +167,7 @@ HdsTabs的控制器调用页签栏和[迷你栏](https://developer.huawei.com/co
 
 applyShowAnimation(mode: HdsAnimationMode): void
 
-HdsTabs的控制器调用页签栏和[迷你栏](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds-tabs-bar-floating#迷你栏)的显示动效。
+HdsTabs的控制器调用页签栏和[迷你栏](../../guides/设置页签栏的悬浮样式.md#迷你栏)的显示动效。
 
 模型约束： 此接口仅可在Stage模型下使用。
 
@@ -555,7 +555,7 @@ barFloatingStyle(barFloatingStyle?: Optional<HdsTabsFloatingStyle>)
 
 **HdsBarWidthRangeOptions**
 
-设置页签栏或[迷你栏](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds-tabs-bar-floating#迷你栏)的分档宽度。
+设置页签栏或[迷你栏](../../guides/设置页签栏的悬浮样式.md#迷你栏)的分档宽度。
 
 模型约束： 此接口仅可在Stage模型下使用。
 
@@ -639,7 +639,7 @@ barFloatingStyle(barFloatingStyle?: Optional<HdsTabsFloatingStyle>)
 
 **HdsBarStyle**
 
-页签栏和[迷你栏](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds-tabs-bar-floating#迷你栏)样式类型枚举。
+页签栏和[迷你栏](../../guides/设置页签栏的悬浮样式.md#迷你栏)样式类型枚举。
 
 模型约束： 此接口仅可在Stage模型下使用。
 
@@ -658,7 +658,7 @@ barFloatingStyle(barFloatingStyle?: Optional<HdsTabsFloatingStyle>)
 
 **HdsTabsBarChangeMode**
 
-页签栏和[迷你栏](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds-tabs-bar-floating#迷你栏)更新模式。
+页签栏和[迷你栏](../../guides/设置页签栏的悬浮样式.md#迷你栏)更新模式。
 
 模型约束： 此接口仅可在Stage模型下使用。
 
@@ -680,7 +680,7 @@ barFloatingStyle(barFloatingStyle?: Optional<HdsTabsFloatingStyle>)
 
 BarStyleChangeCallback = (miniBarStyle: HdsBarStyle, tabBarStyle: HdsBarStyle, miniBarWidth: number, tabBarWidth: number, mode: HdsTabsBarChangeMode) => void
 
-[迷你栏](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds-tabs-bar-floating#迷你栏)或者页签栏样式更新时触发回调。
+[迷你栏](../../guides/设置页签栏的悬浮样式.md#迷你栏)或者页签栏样式更新时触发回调。
 
 模型约束： 此接口仅可在Stage模型下使用。
 
@@ -704,7 +704,7 @@ BarStyleChangeCallback = (miniBarStyle: HdsBarStyle, tabBarStyle: HdsBarStyle, m
 
 MiniBarAnimationStartCallback = (style: HdsBarStyle, width: number) => void
 
-[迷你栏](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds-tabs-bar-floating#迷你栏)折叠展开动效开始时回调。
+[迷你栏](../../guides/设置页签栏的悬浮样式.md#迷你栏)折叠展开动效开始时回调。
 
 模型约束： 此接口仅可在Stage模型下使用。
 
@@ -725,7 +725,7 @@ MiniBarAnimationStartCallback = (style: HdsBarStyle, width: number) => void
 
 MiniBarAnimationEndCallback = (style: HdsBarStyle) => void
 
-[迷你栏](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds-tabs-bar-floating#迷你栏)折叠展开动效结束时回调。
+[迷你栏](../../guides/设置页签栏的悬浮样式.md#迷你栏)折叠展开动效结束时回调。
 
 模型约束： 此接口仅可在Stage模型下使用。
 

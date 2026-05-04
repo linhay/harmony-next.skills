@@ -26,7 +26,7 @@ import { detectBarcode } from '@kit.ScanKit';
 
 示例：
 
-推荐使用[picker](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker)获取图片路径。
+推荐使用[picker](../../guides/使用Picker选择媒体库资源.md)获取图片路径。
 
 ```ets
 import { photoAccessHelper } from '@kit.MediaLibraryKit';

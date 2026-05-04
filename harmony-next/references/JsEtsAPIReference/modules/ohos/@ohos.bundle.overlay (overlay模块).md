@@ -2,11 +2,11 @@
 
 本模块提供overlay特征应用的[OverlayModuleInfo](OverlayModuleInfo.md)信息查询以及禁用使能的能力。
 
-overlay特征应用指应用中包含有overlay资源包，overlay资源包详见[overlay机制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-categories-and-access#overlay机制)。
+overlay特征应用指应用中包含有overlay资源包，overlay资源包详见[overlay机制](../../guides/资源分类与访问.md#overlay机制)。
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-本模块接口仅适用于stage模型，且仅适用于[静态overlay](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-categories-and-access#静态overlay配置方式)。
+本模块接口仅适用于stage模型，且仅适用于[静态overlay](../../guides/资源分类与访问.md#静态overlay配置方式)。
 
 #### 导入模块
 

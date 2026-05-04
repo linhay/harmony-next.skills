@@ -589,7 +589,7 @@ connectServiceExtensionAbility(want: Want, options: ConnectOptions): number
 
 将当前UIExtensionAbility连接到一个ServiceExtensionAbility，通过返回的proxy与ServiceExtensionAbility进行通信，以使用ServiceExtensionAbility对外提供的能力。
 
-ServiceExtensionAbility是一类特殊的[ExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/extensionability-overview)组件，这类组件由系统提供，通常用于提供指定场景后台服务能力，不支持开发者自定义。ServiceExtensionAbility可以被其他组件连接，并根据调用者的请求信息在后台处理相关事务。
+ServiceExtensionAbility是一类特殊的[ExtensionAbility](../../guides/ExtensionAbility组件.md)组件，这类组件由系统提供，通常用于提供指定场景后台服务能力，不支持开发者自定义。ServiceExtensionAbility可以被其他组件连接，并根据调用者的请求信息在后台处理相关事务。
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
@@ -675,7 +675,7 @@ disconnectServiceExtensionAbility(connection: number): Promise<void>
 
 断开与ServiceExtensionAbility的连接，断开连接之后开发者需要将连接成功时返回的remote对象置空。使用Promise异步回调。
 
-ServiceExtensionAbility是一类特殊的[ExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/extensionability-overview)组件，这类组件由系统提供，通常用于提供指定场景后台服务能力，不支持开发者自定义。ServiceExtensionAbility可以被其他组件连接，并根据调用者的请求信息在后台处理相关事务。
+ServiceExtensionAbility是一类特殊的[ExtensionAbility](../../guides/ExtensionAbility组件.md)组件，这类组件由系统提供，通常用于提供指定场景后台服务能力，不支持开发者自定义。ServiceExtensionAbility可以被其他组件连接，并根据调用者的请求信息在后台处理相关事务。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -739,7 +739,7 @@ disconnectServiceExtensionAbility(connection: number, callback: AsyncCallback<vo
 
 断开与ServiceExtensionAbility的连接，断开连接之后开发者需要将连接成功时返回的remote对象置空。使用callback异步回调。
 
-ServiceExtensionAbility是一类特殊的[ExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/extensionability-overview)组件，这类组件由系统提供，通常用于提供指定场景后台服务能力，不支持开发者自定义。ServiceExtensionAbility可以被其他组件连接，并根据调用者的请求信息在后台处理相关事务。
+ServiceExtensionAbility是一类特殊的[ExtensionAbility](../../guides/ExtensionAbility组件.md)组件，这类组件由系统提供，通常用于提供指定场景后台服务能力，不支持开发者自定义。ServiceExtensionAbility可以被其他组件连接，并根据调用者的请求信息在后台处理相关事务。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 

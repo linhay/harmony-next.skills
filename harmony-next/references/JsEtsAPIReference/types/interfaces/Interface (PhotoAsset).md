@@ -149,7 +149,7 @@ commitModify(callback: AsyncCallback<void>): void
 
 错误码14000001，请参考 [PhotoKeys](Enums.md#ZH-CN_TOPIC_0000002553362015__photokeys)获取有关文件名的格式和长度要求。
 
-错误码13900012，请参考[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-preparation)。
+错误码13900012，请参考[开发准备](../../guides/开发准备（媒体库）.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -397,7 +397,7 @@ getThumbnail(callback: AsyncCallback<image.PixelMap>): void
 
 接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码13900012，请参考[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-preparation)。
+错误码13900012，请参考[开发准备](../../guides/开发准备（媒体库）.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -456,7 +456,7 @@ getThumbnail(size: image.Size, callback: AsyncCallback<image.PixelMap>): void
 
 接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码13900012，请参考[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-preparation)。
+错误码13900012，请参考[开发准备](../../guides/开发准备（媒体库）.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -525,7 +525,7 @@ getThumbnail(size?: image.Size): Promise<image.PixelMap>
 
 接口抛出错误码的详细介绍请参见[通用错误码](通用错误码.md)和[文件管理错误码](文件管理错误码.md)。
 
-错误码13900012，请参考[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-preparation)。
+错误码13900012，请参考[开发准备](../../guides/开发准备（媒体库）.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |

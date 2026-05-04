@@ -2652,7 +2652,7 @@ function runningCancelError() {
 
 #### 序列化支持类型
 
-序列化支持类型参考[线程间通信对象概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)里的介绍。
+序列化支持类型参考[线程间通信对象概述](../../guides/线程间通信对象概述.md)里的介绍。
 
 #### 简单使用
 

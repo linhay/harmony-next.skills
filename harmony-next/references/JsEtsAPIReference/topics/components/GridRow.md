@@ -118,7 +118,7 @@ GridRow(option?: GridRowOptions)
 
 #### BreakPoints
 
-设置栅格容器组件的断点。更多断点的说明参考[栅格容器断点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-grid-layout#栅格容器断点)。
+设置栅格容器组件的断点。更多断点的说明参考[栅格容器断点](../../guides/栅格布局 (GridRow-GridCol).md#栅格容器断点)。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 

@@ -163,6 +163,35 @@ class ReferenceCompatTests(unittest.TestCase):
             ),
             encoding="utf-8",
         )
+        (self.js_root / "modules" / "ohos" / "@ohos.batch2-guide.md").write_text(
+            (
+                "[NFC标签读写开发指南]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nfc-tag-access-guide#后台读取标签)\n"
+                "[栅格布局]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-grid-layout#栅格容器断点)\n"
+                "[线程间通信对象概述]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)\n"
+                "[受限开放权限]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-permissions#ohospermissionmanage_apn_setting)\n"
+                "[资源分类与访问]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-categories-and-access#资源访问)\n"
+                "[ExtensionAbility组件]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/extensionability-overview)\n"
+                "[UIAbility组件启动模式]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-launch-type#specified启动模式)\n"
+                "[申请访问剪贴板权限]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)\n"
+                "[@Reusable装饰器：V1组件复用]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)\n"
+                "[设置页签栏的悬浮样式]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds-tabs-bar-floating#迷你栏)\n"
+                "[使用Picker选择媒体库资源]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker#指定uri获取图片或视频资源)\n"
+                "[开发准备]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-preparation)\n"
+            ),
+            encoding="utf-8",
+        )
         (self.js_root / "modules" / "ohos" / "@ohos.arkui.StateManagement (状态管理).md").write_text(
             "# @ohos.arkui.StateManagement (状态管理)\n",
             encoding="utf-8",
@@ -344,6 +373,54 @@ class ReferenceCompatTests(unittest.TestCase):
             "# 组件启动规则（FA模型）\n",
             encoding="utf-8",
         )
+        (self.js_root / "guides" / "NFC标签读写开发指南.md").write_text(
+            "# NFC标签读写开发指南\n\n## 后台读取标签\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "栅格布局 (GridRow-GridCol).md").write_text(
+            "# 栅格布局 (GridRow/GridCol)\n\n## 栅格容器断点\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "线程间通信对象概述.md").write_text(
+            "# 线程间通信对象概述\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "受限开放权限.md").write_text(
+            "# 受限开放权限\n\n## ohos.permission.MANAGE_APN_SETTING\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "资源分类与访问.md").write_text(
+            "# 资源分类与访问\n\n## 资源访问\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "ExtensionAbility组件.md").write_text(
+            "# ExtensionAbility组件\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "UIAbility组件启动模式.md").write_text(
+            "# UIAbility组件启动模式\n\n## specified启动模式\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "申请访问剪贴板权限.md").write_text(
+            "# 申请访问剪贴板权限\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "@Reusable装饰器：V1组件复用.md").write_text(
+            "# @Reusable装饰器：V1组件复用\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "设置页签栏的悬浮样式.md").write_text(
+            "# 设置页签栏的悬浮样式\n\n## 迷你栏\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "使用Picker选择媒体库资源.md").write_text(
+            "# 使用Picker选择媒体库资源\n\n## 指定URI获取图片或视频资源\n",
+            encoding="utf-8",
+        )
+        (self.js_root / "guides" / "开发准备（媒体库）.md").write_text(
+            "# 开发准备\n",
+            encoding="utf-8",
+        )
         (self.js_root / "topics" / "components" / "应用级变量的状态管理.md").write_text(
             "# 应用级变量的状态管理\n",
             encoding="utf-8",
@@ -408,7 +485,7 @@ class ReferenceCompatTests(unittest.TestCase):
         MODULE.generate_index(self.paths)
 
         self.assertEqual(rewritten, 1)
-        self.assertEqual(guide_rewritten, 8)
+        self.assertEqual(guide_rewritten, 9)
         self.assertIn(
             "../../topics/misc/native_handwrite_api.h.md",
             (self.js_root / "topics" / "misc" / "HandWrite.md").read_text(encoding="utf-8"),
@@ -606,6 +683,54 @@ class ReferenceCompatTests(unittest.TestCase):
             (self.js_root / "modules" / "ohos" / "@ohos.final-guide.md").read_text(encoding="utf-8"),
         )
         self.assertIn(
+            "../../guides/NFC标签读写开发指南.md#后台读取标签",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch2-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/栅格布局 (GridRow-GridCol).md#栅格容器断点",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch2-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/线程间通信对象概述.md",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch2-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/受限开放权限.md#ohospermissionmanage_apn_setting",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch2-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/资源分类与访问.md#资源访问",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch2-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/ExtensionAbility组件.md",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch2-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/UIAbility组件启动模式.md#specified启动模式",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch2-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/申请访问剪贴板权限.md",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch2-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/@Reusable装饰器：V1组件复用.md",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch2-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/设置页签栏的悬浮样式.md#迷你栏",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch2-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/使用Picker选择媒体库资源.md#指定uri获取图片或视频资源",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch2-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "../../guides/开发准备（媒体库）.md",
+            (self.js_root / "modules" / "ohos" / "@ohos.batch2-guide.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
             "../components/ForEach.md",
             (self.js_root / "topics" / "misc" / "rendering-guide.md").read_text(encoding="utf-8"),
         )
@@ -668,12 +793,14 @@ class ReferenceCompatTests(unittest.TestCase):
         self.assertIn("guides/状态管理V1-V2迁移指导.md", index_lines)
         self.assertIn("guides/窗口开发术语.md", index_lines)
         self.assertIn("guides/数据库备份与恢复.md", index_lines)
+        self.assertIn("guides/NFC标签读写开发指南.md", index_lines)
         self.assertNotIn("capi/headers/native_handwrite_api.h.md", index_lines)
         references_index_lines = self.paths.references_index.read_text(encoding="utf-8").splitlines()
         self.assertIn("JsEtsAPIReference/topics/misc/native_handwrite_api.h.md", references_index_lines)
         self.assertIn("JsEtsAPIReference/guides/状态管理V1-V2迁移指导.md", references_index_lines)
         self.assertIn("JsEtsAPIReference/guides/窗口开发术语.md", references_index_lines)
         self.assertIn("JsEtsAPIReference/guides/数据库备份与恢复.md", references_index_lines)
+        self.assertIn("JsEtsAPIReference/guides/NFC标签读写开发指南.md", references_index_lines)
         self.assertIn("quickStart/intro.md", references_index_lines)
 
     def test_check_detects_index_drift(self) -> None:

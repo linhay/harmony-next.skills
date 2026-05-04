@@ -95,7 +95,7 @@ import { bundleManager } from '@kit.AbilityKit';
 
 #### LaunchType
 
-标识组件的[启动模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-launch-type)。
+标识组件的[启动模式](../../guides/UIAbility组件启动模式.md)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 

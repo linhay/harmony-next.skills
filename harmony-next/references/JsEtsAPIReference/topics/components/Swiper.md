@@ -2980,11 +2980,11 @@ struct SwiperExample {
     }
 ```
 
-Swiper宽度属于[sm](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-grid-layout#栅格容器断点)及更小的断点区间时显示1列。
+Swiper宽度属于[sm](../../guides/栅格布局 (GridRow-GridCol).md#栅格容器断点)及更小的断点区间时显示1列。
 
 ![image](public_sys-resources/zh-cn_image_0000002522244906.webp)
 
-Swiper宽度属于[md](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-grid-layout#栅格容器断点)断点区间时显示2列。
+Swiper宽度属于[md](../../guides/栅格布局 (GridRow-GridCol).md#栅格容器断点)断点区间时显示2列。
 
 ![image](public_sys-resources/zh-cn_image_0000002553204867.webp)
 

@@ -124,7 +124,7 @@ Continuous task verification failed.
 1. 请检查合并通知时，长时任务通知是否存在。
 1. 请检查合并通知时，当前长时任务或者被合并的长时任务是否支持合并。
 1. 请检查合并通知时，长时任务类型是否一致。
-1. 请检查申请TASK_KEEPING长时任务时，是否申请了[ohos.permission.KEEP_BACKGROUND_RUNNING_SYSTEM](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-permissions#ohospermissionkeep_background_running_system)的ACL授权。
+1. 请检查申请TASK_KEEPING长时任务时，是否申请了[ohos.permission.KEEP_BACKGROUND_RUNNING_SYSTEM](../guides/受限开放权限.md#ohospermissionkeep_background_running_system)的ACL授权。
 1. 请检查更新长时任务时，原类型或者新增类型是否包含了数据传输类型。
 1. 请检查除了播音和已经在前台申请过的长时任务类型，是否在后台申请了其他长时任务类型。
 

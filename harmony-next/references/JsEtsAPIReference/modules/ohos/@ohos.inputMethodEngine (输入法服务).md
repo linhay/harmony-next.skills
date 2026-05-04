@@ -4033,7 +4033,7 @@ sendExtendAction(action: ExtendAction, callback: AsyncCallback<void>): void
 
 输入法应用调用该接口向编辑框发送扩展编辑操作，编辑框监听相应事件[on('handleExtendAction')](@ohos.inputMethod (输入法框架).md#ZH-CN_TOPIC_0000002522241258__onhandleextendaction10)，从而进一步做出处理。
 
-编辑框响应[ExtendAction](#ZH-CN_TOPIC_0000002553201227__extendaction10)的PASTE命令时，需要编辑框应用申请[ohos.permission.READ_PASTEBOARD](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-permissions#ohospermissionread_pasteboard)权限。
+编辑框响应[ExtendAction](#ZH-CN_TOPIC_0000002553201227__extendaction10)的PASTE命令时，需要编辑框应用申请[ohos.permission.READ_PASTEBOARD](../../guides/受限开放权限.md#ohospermissionread_pasteboard)权限。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -4077,7 +4077,7 @@ sendExtendAction(action: ExtendAction): Promise<void>
 
 输入法应用调用该接口向编辑框发送扩展编辑操作，编辑框监听相应事件[on('handleExtendAction')](@ohos.inputMethod (输入法框架).md#ZH-CN_TOPIC_0000002522241258__onhandleextendaction10)，从而进一步做出处理。
 
-编辑框响应[ExtendAction](#ZH-CN_TOPIC_0000002553201227__extendaction10)的PASTE命令时，需要编辑框应用申请[ohos.permission.READ_PASTEBOARD](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-permissions#ohospermissionread_pasteboard)权限。
+编辑框响应[ExtendAction](#ZH-CN_TOPIC_0000002553201227__extendaction10)的PASTE命令时，需要编辑框应用申请[ohos.permission.READ_PASTEBOARD](../../guides/受限开放权限.md#ohospermissionread_pasteboard)权限。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 

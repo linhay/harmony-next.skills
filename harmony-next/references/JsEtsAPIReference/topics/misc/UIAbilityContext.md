@@ -321,7 +321,7 @@ UIAbility被启动后，有如下情况：
 
 - 异常情况下比如杀死UIAbility会将异常结果返回给调用方，异常结果中resultCode为-1。
 
-- 如果被启动的UIAbility是[单实例模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-launch-type#singleton启动模式)，且这个UIAbility被不同应用多次调用该接口启动，当这个UIAbility调用[terminateSelfWithResult](#ZH-CN_TOPIC_0000002553200541__terminateselfwithresult)接口销毁自身时，只将正常结果返回给最后一个调用方，其它调用方返回异常结果，异常结果中resultCode为-1。
+- 如果被启动的UIAbility是[单实例模式](../../guides/UIAbility组件启动模式.md#singleton启动模式)，且这个UIAbility被不同应用多次调用该接口启动，当这个UIAbility调用[terminateSelfWithResult](#ZH-CN_TOPIC_0000002553200541__terminateselfwithresult)接口销毁自身时，只将正常结果返回给最后一个调用方，其它调用方返回异常结果，异常结果中resultCode为-1。
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
@@ -416,7 +416,7 @@ UIAbility被启动后，有如下情况：
 
 - 异常情况下比如杀死UIAbility会将异常结果返回给调用方，异常结果中resultCode为-1。
 
-- 如果被启动的UIAbility是[单实例模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-launch-type#singleton启动模式)，且这个UIAbility被不同应用多次调用该接口启动，当这个UIAbility调用[terminateSelfWithResult](#ZH-CN_TOPIC_0000002553200541__terminateselfwithresult)接口销毁自身时，只将正常结果返回给最后一个调用方，其它调用方返回异常结果，异常结果中resultCode为-1。
+- 如果被启动的UIAbility是[单实例模式](../../guides/UIAbility组件启动模式.md#singleton启动模式)，且这个UIAbility被不同应用多次调用该接口启动，当这个UIAbility调用[terminateSelfWithResult](#ZH-CN_TOPIC_0000002553200541__terminateselfwithresult)接口销毁自身时，只将正常结果返回给最后一个调用方，其它调用方返回异常结果，异常结果中resultCode为-1。
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
@@ -513,7 +513,7 @@ UIAbility被启动后，有如下情况：
 
 - 异常情况下比如杀死UIAbility会将异常结果返回给调用方，异常结果中resultCode为-1。
 
-- 如果被启动的UIAbility是[单实例模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-launch-type#singleton启动模式)，且这个UIAbility被不同应用多次调用该接口启动，当这个UIAbility调用[terminateSelfWithResult](#ZH-CN_TOPIC_0000002553200541__terminateselfwithresult)接口销毁自身时，只将正常结果返回给最后一个调用方，其它调用方返回异常结果，异常结果中resultCode为-1。
+- 如果被启动的UIAbility是[单实例模式](../../guides/UIAbility组件启动模式.md#singleton启动模式)，且这个UIAbility被不同应用多次调用该接口启动，当这个UIAbility调用[terminateSelfWithResult](#ZH-CN_TOPIC_0000002553200541__terminateselfwithresult)接口销毁自身时，只将正常结果返回给最后一个调用方，其它调用方返回异常结果，异常结果中resultCode为-1。
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
@@ -906,7 +906,7 @@ export default class EntryAbility extends UIAbility {
 
 connectServiceExtensionAbility(want: Want, options: ConnectOptions): number
 
-将当前UIAbility连接到一个[ServiceExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/extensionability-overview)，通过返回的proxy与ServiceExtensionAbility进行通信，以使用ServiceExtensionAbility对外提供的能力。仅支持在主线程调用。
+将当前UIAbility连接到一个[ServiceExtensionAbility](../../guides/ExtensionAbility组件.md)，通过返回的proxy与ServiceExtensionAbility进行通信，以使用ServiceExtensionAbility对外提供的能力。仅支持在主线程调用。
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 
@@ -989,7 +989,7 @@ export default class EntryAbility extends UIAbility {
 
 disconnectServiceExtensionAbility(connection: number): Promise<void>
 
-断开与[ServiceExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/extensionability-overview)的连接，断开连接之后开发者需要将连接成功时返回的remote对象置空。使用Promise异步回调。仅支持在主线程调用。
+断开与[ServiceExtensionAbility](../../guides/ExtensionAbility组件.md)的连接，断开连接之后开发者需要将连接成功时返回的remote对象置空。使用Promise异步回调。仅支持在主线程调用。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -1050,7 +1050,7 @@ export default class EntryAbility extends UIAbility {
 
 disconnectServiceExtensionAbility(connection: number, callback: AsyncCallback<void>): void
 
-断开与[ServiceExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/extensionability-overview)的连接，断开连接之后开发者需要将连接成功时返回的remote对象置空。使用callback异步回调。仅支持在主线程调用。
+断开与[ServiceExtensionAbility](../../guides/ExtensionAbility组件.md)的连接，断开连接之后开发者需要将连接成功时返回的remote对象置空。使用callback异步回调。仅支持在主线程调用。
 
 系统能力：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -1110,7 +1110,7 @@ startAbilityByCall(want: Want): Promise<Caller>
 
 该接口用于获取[Caller](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__caller)通信对象，以便于与[Callee](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__callee)进行通信。如果指定UIAbility未启动，则会将UIAbility启动至前台或后台。使用Promise异步回调。仅支持在主线程调用。
 
-该接口不支持拉起启动模式为[specified模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-launch-type#specified启动模式)的UIAbility。
+该接口不支持拉起启动模式为[specified模式](../../guides/UIAbility组件启动模式.md#specified启动模式)的UIAbility。
 
    ![image](public_sys-resources/note_3.0-zh-cn.webp)
 

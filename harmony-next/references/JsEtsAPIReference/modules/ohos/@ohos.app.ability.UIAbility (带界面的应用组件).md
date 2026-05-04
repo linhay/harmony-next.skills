@@ -879,7 +879,7 @@ onCollaborate(wantParam: Record<string, Object>): AbilityConstant.CollaborateRes
 
 UIAbility生命周期回调，在多设备协同场景下，协同方应用在被拉起的过程中返回是否接受协同。
 
-- 该生命周期回调不支持[specified启动模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-launch-type#specified启动模式)。
+- 该生命周期回调不支持[specified启动模式](../../guides/UIAbility组件启动模式.md#specified启动模式)。
 
 - 通过[startAbility](UIAbilityContext.md#ZH-CN_TOPIC_0000002553200541__startability)等方法拉起协同方应用时，需要在Want对象中设置协同标记[Flags](@ohos.app.ability.wantConstant (Want常量).md#ZH-CN_TOPIC_0000002553200525__flags)为FLAG_ABILITY_ON_COLLABORATE。
 
