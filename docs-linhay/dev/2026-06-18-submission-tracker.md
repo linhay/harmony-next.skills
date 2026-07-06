@@ -2,7 +2,7 @@
 
 本文件记录 `linhay/harmony-next.skills` 对外自荐、awesome 列表 PR 和周报投稿状态，便于后续追踪。
 
-状态更新时间：2026-06-18 23:18 Asia/Shanghai。
+状态更新时间：2026-07-06 10:43 Asia/Shanghai。
 
 ## 已收录 / 已处理
 
@@ -25,19 +25,31 @@
 
 | 渠道 | 类型 | 链接 | 当前状态 | Merge 状态 | Review | 评论 | 备注 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Gracker/awesome-android-ai-dev-sources | PR | https://github.com/Gracker/awesome-android-ai-dev-sources/pull/39 | OPEN | CLEAN | - | 0 | 添加到开发工具分类；已更新 `data/entries.json` 与 README。 |
+| Gracker/awesome-android-ai-dev-sources | PR | https://github.com/Gracker/awesome-android-ai-dev-sources/pull/39 | OPEN | CLEAN | - | 1 | 2026-07-06 已 rebase 到 upstream/master 并解决 README / `data/entries.json` 冲突；已留言说明。 |
 | Android Weekly | form | https://androidweekly.net/ | SUBMITTED | - | - | - | 2026-06-18 通过官网 Submit 表单提交项目链接；该渠道无公开追踪链接。 |
 
 ## 待处理：Codex / Claude / DevTools awesome PR
 
 | 渠道 | 类型 | 链接 | 当前状态 | Merge 状态 | Review | 评论 | 备注 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| ComposioHQ/awesome-codex-skills | PR | https://github.com/ComposioHQ/awesome-codex-skills/pull/117 | OPEN | CLEAN | - | 0 | 添加到 Development & Code Tools。 |
-| RoggeOhta/awesome-codex-cli | PR | https://github.com/RoggeOhta/awesome-codex-cli/pull/101 | OPEN | CLEAN | - | 0 | 添加到 Domain-Specific Skills。 |
-| LangGPT/awesome-claude-code | PR | https://github.com/LangGPT/awesome-claude-code/pull/100 | OPEN | CLEAN | - | 0 | 中英文 README 均添加到 Framework Extensions。 |
-| harmonyos-dev/awesome-harmonyos-next | PR | https://github.com/harmonyos-dev/awesome-harmonyos-next/pull/2 | OPEN | CLEAN | - | 0 | 新增“AI 开发辅助”分类。 |
-| helloianneo/awesome-claude-code-skills | PR | https://github.com/helloianneo/awesome-claude-code-skills/pull/42 | OPEN | CLEAN | - | 0 | 新增“移动端 / 客户端开发”分类，推荐等级“好用”。 |
-| devtoolsd/awesome-devtools | PR | https://github.com/devtoolsd/awesome-devtools/pull/272 | OPEN | CLEAN | - | 0 | 添加到 AI Coding Tools。 |
+| ComposioHQ/awesome-codex-skills | PR | https://github.com/ComposioHQ/awesome-codex-skills/pull/117 | OPEN | CLEAN | - | 1 | 添加到 Development & Code Tools；2026-07-06 已留言跟进。 |
+| RoggeOhta/awesome-codex-cli | PR | https://github.com/RoggeOhta/awesome-codex-cli/pull/101 | OPEN | CLEAN | - | 1 | 添加到 Domain-Specific Skills；2026-07-06 已留言跟进。 |
+| LangGPT/awesome-claude-code | PR | https://github.com/LangGPT/awesome-claude-code/pull/100 | OPEN | CLEAN | - | 1 | 中英文 README 均添加到 Framework Extensions；2026-07-06 已留言跟进。 |
+| harmonyos-dev/awesome-harmonyos-next | PR | https://github.com/harmonyos-dev/awesome-harmonyos-next/pull/2 | OPEN | CLEAN | - | 1 | 新增“AI 开发辅助”分类；2026-07-06 已留言跟进。 |
+| helloianneo/awesome-claude-code-skills | PR | https://github.com/helloianneo/awesome-claude-code-skills/pull/42 | OPEN | CLEAN | - | 1 | 新增“移动端 / 客户端开发”分类，推荐等级“好用”；2026-07-06 已留言跟进。 |
+| devtoolsd/awesome-devtools | PR | https://github.com/devtoolsd/awesome-devtools/pull/272 | OPEN | CLEAN | - | 1 | 添加到 AI Coding Tools；2026-07-06 已留言跟进。 |
+
+## 待处理：2026-07-06 Agent Skills / AI DevTools 新投稿
+
+| 渠道 | 类型 | 链接 | 当前状态 | Merge 状态 | Review | 评论 | 备注 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| VoltAgent/awesome-agent-skills | PR | https://github.com/VoltAgent/awesome-agent-skills/pull/759 | OPEN | CLEAN | - | 0 | 添加到 Community Skills / Development and Testing；按成熟 skill 口径说明 250+ stars / 20+ forks。 |
+| heilcheng/awesome-agent-skills | PR | https://github.com/heilcheng/awesome-agent-skills/pull/327 | OPEN | UNSTABLE | - | 1 | 2026-07-06 已处理 Copilot inline 建议，缩短条目描述；Vercel 预览检查需维护者授权但 GitHub 显示 MERGEABLE。 |
+| JackyST0/awesome-agent-skills | PR | https://github.com/JackyST0/awesome-agent-skills/pull/63 | OPEN | UNSTABLE | - | 0 | 2026-07-06 已处理 Copilot inline 建议，统一中文表格平台顺序；无检查项但 GitHub 显示 MERGEABLE。 |
+| ai-for-developers/awesome-ai-coding-tools | PR | https://github.com/ai-for-developers/awesome-ai-coding-tools/pull/509 | OPEN | CLEAN | - | 0 | 添加到 Developer Productivity Tools。 |
+| skillmatic-ai/awesome-agent-skills | PR | https://github.com/skillmatic-ai/awesome-agent-skills/pull/124 | OPEN | CLEAN | - | 0 | 添加到 Developer Tools，文案定位为 real-world SKILL.md package 示例。 |
+| HarmonyOS-Next/awesome-harmonyos | PR | https://github.com/HarmonyOS-Next/awesome-harmonyos/pull/5 | OPEN | CLEAN | - | 0 | 2026-07-06 已处理 Copilot inline 建议，将 AI 改成普通分组避免断开的 anchor。 |
+| itgoyo/awesome-claude-code-skills | PR | https://github.com/itgoyo/awesome-claude-code-skills/pull/8 | OPEN | CLEAN | - | 0 | 2026-07-06 已处理 Copilot inline 建议，更新 200/201 项目计数和 Official & Core 英文计数。 |
 
 ## 未自动提交
 
