@@ -55,6 +55,9 @@ class DeviceEvidenceBundleTests(unittest.TestCase):
                     elif mode == "multi":
                         print("127.0.0.1:10100 TCP Connected localhost")
                         print("127.0.0.1:10101 TCP Connected localhost")
+                    elif mode == "usb":
+                        print("127.0.0.1:10100 TCP Connected localhost")
+                        print("ABC123PRIVATE USB Connected localhost")
                     else:
                         print("127.0.0.1:10100 TCP Connected localhost")
                     sys.exit(0)
@@ -167,6 +170,54 @@ class DeviceEvidenceBundleTests(unittest.TestCase):
         self.assertEqual(payload["hdc"]["version"], "Ver: 3.1.0")
         self.assertEqual(payload["feedback"]["repository"], "linhay/harmony-next.skills")
         self.assertEqual(payload["feedback"]["issueTemplate"], "device-evidence-bundle.yml")
+
+    def test_doctor_keeps_usb_target_identifiers_by_default(self) -> None:
+        env = {**self.env, "FAKE_HDC_TARGETS": "usb"}
+        result = subprocess.run(
+            [
+                sys.executable,
+                str(SCRIPT_PATH),
+                "doctor",
+                "--hdc",
+                str(self.fake_hdc),
+                "--json",
+            ],
+            check=True,
+            capture_output=True,
+            text=True,
+            env=env,
+        )
+
+        payload = json.loads(result.stdout)
+        encoded = json.dumps(payload)
+        self.assertIn("ABC123PRIVATE", encoded)
+        self.assertEqual(payload["connectedTargets"][1]["target"], "ABC123PRIVATE")
+
+    def test_doctor_public_redacts_usb_target_identifiers(self) -> None:
+        env = {**self.env, "FAKE_HDC_TARGETS": "usb"}
+        result = subprocess.run(
+            [
+                sys.executable,
+                str(SCRIPT_PATH),
+                "doctor",
+                "--hdc",
+                str(self.fake_hdc),
+                "--public",
+                "--json",
+            ],
+            check=True,
+            capture_output=True,
+            text=True,
+            env=env,
+        )
+
+        payload = json.loads(result.stdout)
+        encoded = json.dumps(payload)
+        usb_target = payload["connectedTargets"][1]
+        self.assertNotIn("ABC123PRIVATE", encoded)
+        self.assertEqual(usb_target["transport"], "USB")
+        self.assertEqual(usb_target["target"][:12], "<usb-target:")
+        self.assertTrue(usb_target["sensitive"])
 
     def test_capture_writes_evidence_bundle(self) -> None:
         artifact_dir = self.root / "artifacts"

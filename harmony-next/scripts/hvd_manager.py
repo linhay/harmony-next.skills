@@ -793,10 +793,14 @@ def build_trace_timeout_diagnostics(
 
 def parse_connected_target(output: str, target_hint: str | None = None) -> str | None:
     for line in output.splitlines():
-        if "Connected" not in line:
+        parts = line.split()
+        if len(parts) < 3 or parts[2] != "Connected":
             continue
-        target = line.split()[0] if line.split() else ""
+        target = parts[0] if parts else ""
+        transport = parts[1].upper() if len(parts) > 1 else ""
         if target_hint and target_hint not in target:
+            continue
+        if not target_hint and transport != "TCP":
             continue
         return target
     return None

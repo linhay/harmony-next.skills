@@ -157,6 +157,27 @@ class HvdManagerTests(unittest.TestCase):
         self.assertEqual(candidates[0][1], "macos:default-app")
         self.assertIn((Path("/Users/test/Library/Android/sdk/emulator/Emulator"), "path:Emulator"), candidates)
 
+    def test_parse_connected_target_ignores_usb_for_emulator_launch_without_hint(self) -> None:
+        output = "\n".join(
+            [
+                "ABC123PRIVATE  USB  Connected  localhost",
+                "127.0.0.1:5555  TCP  Offline  localhost",
+            ]
+        )
+
+        self.assertIsNone(MODULE.parse_connected_target(output))
+        self.assertEqual(MODULE.parse_connected_target(output, ":5555"), None)
+
+    def test_parse_connected_target_prefers_tcp_for_emulator_launch_without_hint(self) -> None:
+        output = "\n".join(
+            [
+                "ABC123PRIVATE  USB  Connected  localhost",
+                "127.0.0.1:5555  TCP  Connected  localhost",
+            ]
+        )
+
+        self.assertEqual(MODULE.parse_connected_target(output), "127.0.0.1:5555")
+
     def test_create_hvd_clones_source_and_refreshes_identity(self) -> None:
         created = MODULE.create_hvd(
             root=self.root,
