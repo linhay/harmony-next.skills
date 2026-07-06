@@ -1,10 +1,13 @@
+<p align="right">
+  <a href="./README_en.md"><img src="https://img.shields.io/badge/Language-English-0f766e?style=for-the-badge" alt="English" /></a>
+</p>
+
 # 🧰 HarmonyOS NEXT 开发者专家技能包
 
 给 Gemini CLI、Claude Code、Codex 等 AI 编程助手使用的 HarmonyOS NEXT 离线参考技能库。
 
 [![release](https://img.shields.io/github/v/release/linhay/harmony-next.skills?style=flat-square)](https://github.com/linhay/harmony-next.skills/releases/latest)
 [![skills.sh](https://skills.sh/b/linhay/harmony-next.skills)](https://skills.sh/linhay/harmony-next.skills)
-[![readme](https://img.shields.io/badge/readme-English-0f766e?style=flat-square)](./README_en.md)
 ![docs](https://img.shields.io/badge/docs-3,693%20markdown%20files-7c3aed?style=flat-square)
 ![js-ets](https://img.shields.io/badge/JsEtsAPIReference-3,666%20files-b45309?style=flat-square)
 

@@ -1,10 +1,13 @@
+<p align="right">
+  <a href="./README.md"><img src="https://img.shields.io/badge/Language-中文-0f766e?style=for-the-badge" alt="中文" /></a>
+</p>
+
 # 🧰 HarmonyOS NEXT Developer Expert Skill Pack
 
 An offline HarmonyOS NEXT reference skill library for AI coding assistants such as Gemini CLI, Claude Code, and Codex.
 
 [![release](https://img.shields.io/github/v/release/linhay/harmony-next.skills?style=flat-square)](https://github.com/linhay/harmony-next.skills/releases/latest)
 [![skills.sh](https://skills.sh/b/linhay/harmony-next.skills)](https://skills.sh/linhay/harmony-next.skills)
-[![readme](https://img.shields.io/badge/readme-中文-0f766e?style=flat-square)](./README.md)
 ![docs](https://img.shields.io/badge/docs-3,693%20markdown%20files-7c3aed?style=flat-square)
 ![js-ets](https://img.shields.io/badge/JsEtsAPIReference-3,666%20files-b45309?style=flat-square)
 
