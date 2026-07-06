@@ -165,7 +165,8 @@ class HvdManagerTests(unittest.TestCase):
             ]
         )
 
-        self.assertIsNone(MODULE.parse_connected_target(output))
+        self.assertEqual(MODULE.parse_connected_target(output), "ABC123PRIVATE")
+        self.assertIsNone(MODULE.parse_connected_target(output, tcp_only=True))
         self.assertEqual(MODULE.parse_connected_target(output, ":5555"), None)
 
     def test_parse_connected_target_prefers_tcp_for_emulator_launch_without_hint(self) -> None:
@@ -176,7 +177,7 @@ class HvdManagerTests(unittest.TestCase):
             ]
         )
 
-        self.assertEqual(MODULE.parse_connected_target(output), "127.0.0.1:5555")
+        self.assertEqual(MODULE.parse_connected_target(output, tcp_only=True), "127.0.0.1:5555")
 
     def test_create_hvd_clones_source_and_refreshes_identity(self) -> None:
         created = MODULE.create_hvd(

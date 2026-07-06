@@ -861,6 +861,11 @@ def run_doctor(args: argparse.Namespace) -> tuple[int, dict[str, object]]:
         hdc_list_command = dict(list_command)
         hdc_list_command["stdoutSnippet"] = redact_hdc_list_output(str(hdc_list_command.get("stdoutSnippet", "")))
         hdc_list_command["stderrSnippet"] = redact_hdc_list_output(str(hdc_list_command.get("stderrSnippet", "")))
+    feedback = (
+        feedback_payload("doctor --public --json output", "hdcListOutput with private target labels redacted")
+        if public_output
+        else feedback_payload("doctor JSON output for local diagnosis", "rerun doctor --public --json before public filing")
+    )
 
     payload: dict[str, object] = {
         "decision": "allowed" if not missing_config else "blocked",
@@ -878,7 +883,7 @@ def run_doctor(args: argparse.Namespace) -> tuple[int, dict[str, object]]:
             "Do not share raw artifacts until screenshots, layout trees, bundle dumps, and logs have been reviewed or redacted.",
             *OFFICIAL_CLI_FALLBACK_RECOMMENDATIONS,
         ],
-        "feedback": feedback_payload("doctor --public --json output", "hdcListOutput with private target labels redacted"),
+        "feedback": feedback,
     }
     return (0 if not missing_config else 2), payload
 

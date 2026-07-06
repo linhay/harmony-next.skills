@@ -192,6 +192,7 @@ class DeviceEvidenceBundleTests(unittest.TestCase):
         encoded = json.dumps(payload)
         self.assertIn("ABC123PRIVATE", encoded)
         self.assertEqual(payload["connectedTargets"][1]["target"], "ABC123PRIVATE")
+        self.assertIn("rerun doctor --public --json before public filing", payload["feedback"]["include"])
 
     def test_doctor_public_redacts_usb_target_identifiers(self) -> None:
         env = {**self.env, "FAKE_HDC_TARGETS": "usb"}
@@ -218,6 +219,7 @@ class DeviceEvidenceBundleTests(unittest.TestCase):
         self.assertEqual(usb_target["transport"], "USB")
         self.assertEqual(usb_target["target"][:12], "<usb-target:")
         self.assertTrue(usb_target["sensitive"])
+        self.assertIn("doctor --public --json output", payload["feedback"]["include"])
 
     def test_capture_writes_evidence_bundle(self) -> None:
         artifact_dir = self.root / "artifacts"
