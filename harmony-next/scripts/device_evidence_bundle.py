@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import platform
@@ -253,6 +254,36 @@ def parse_connected_targets(output: str) -> list[dict[str, str]]:
     return targets
 
 
+def redact_target(target: str, transport: str) -> tuple[str, bool]:
+    if transport.upper() != "USB":
+        return target, False
+    digest = hashlib.sha256(target.encode("utf-8")).hexdigest()[:12]
+    return f"<usb-target:{digest}>", True
+
+
+def public_connected_targets(targets: list[dict[str, str]]) -> list[dict[str, object]]:
+    public_targets: list[dict[str, object]] = []
+    for item in targets:
+        target, sensitive = redact_target(item.get("target", ""), item.get("transport", ""))
+        public_item: dict[str, object] = dict(item)
+        public_item["target"] = target
+        public_item["sensitive"] = sensitive
+        public_targets.append(public_item)
+    return public_targets
+
+
+def redact_hdc_list_output(output: str) -> str:
+    lines: list[str] = []
+    for raw_line in output.splitlines():
+        parts = raw_line.split()
+        if len(parts) >= 2:
+            parts[0], sensitive = redact_target(parts[0], parts[1])
+            if sensitive:
+                raw_line = "\t".join(parts)
+        lines.append(raw_line)
+    return "\n".join(lines)
+
+
 def run_command(command: list[str], timeout: float) -> subprocess.CompletedProcess[str]:
     try:
         return subprocess.run(command, capture_output=True, text=True, timeout=timeout, check=False)
@@ -297,7 +328,12 @@ def choose_target(hdc: Path, requested_target: str | None, timeout: float) -> tu
     if len(targets) == 1:
         return targets[0]["target"], targets, command_info
     if not targets:
-        block("no connected HDC target found", missing_config=["target"], connectedTargets=[], hdcListOutput=output[:2000])
+        block(
+            "no connected HDC target found",
+            missing_config=["target"],
+            connectedTargets=[],
+            hdcListOutput=output[:2000],
+        )
     block(
         "multiple connected HDC targets found; pass --target explicitly",
         missing_config=["target"],
@@ -819,22 +855,30 @@ def run_doctor(args: argparse.Namespace) -> tuple[int, dict[str, object]]:
             missing_config.append("target")
             issues.append("no connected HDC target found")
 
+    public_output = getattr(args, "public", False)
+    hdc_list_command = list_command
+    if public_output and list_command:
+        hdc_list_command = dict(list_command)
+        hdc_list_command["stdoutSnippet"] = redact_hdc_list_output(str(hdc_list_command.get("stdoutSnippet", "")))
+        hdc_list_command["stderrSnippet"] = redact_hdc_list_output(str(hdc_list_command.get("stderrSnippet", "")))
+
     payload: dict[str, object] = {
         "decision": "allowed" if not missing_config else "blocked",
         "operation": "device.evidence.doctor",
         "hdc": probe.to_json(),
-        "connectedTargets": connected_targets,
-        "hdcListOutput": target_output[:2000],
-        "hdcListCommand": list_command,
+        "connectedTargets": public_connected_targets(connected_targets) if public_output else connected_targets,
+        "hdcListOutput": redact_hdc_list_output(target_output)[:2000] if public_output else target_output[:2000],
+        "hdcListCommand": hdc_list_command,
         "missingConfig": missing_config,
         "issues": issues,
         "recommendations": [
+            "Use doctor --public --json before sharing output in public issues.",
             "Pass --target when multiple HDC targets are connected.",
             "Use capture --artifact-dir <dir> to save real screenshots, layouts, and bounded logs.",
             "Do not share raw artifacts until screenshots, layout trees, bundle dumps, and logs have been reviewed or redacted.",
             *OFFICIAL_CLI_FALLBACK_RECOMMENDATIONS,
         ],
-        "feedback": feedback_payload("doctor JSON output", "hdcListOutput with private target labels redacted"),
+        "feedback": feedback_payload("doctor --public --json output", "hdcListOutput with private target labels redacted"),
     }
     return (0 if not missing_config else 2), payload
 
@@ -851,6 +895,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     doctor = subparsers.add_parser("doctor", help="Locate hdc and report connected targets")
     add_hdc_arguments(doctor)
+    doctor.add_argument("--public", action="store_true", help="Redact USB target identifiers for public issue reports")
     doctor.add_argument("--json", action="store_true", help="Print machine-readable JSON")
 
     capture = subparsers.add_parser("capture", help="Collect screenshot, layout, app state, and bounded logs")
