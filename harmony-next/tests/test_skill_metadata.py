@@ -33,6 +33,8 @@ def find_repo_root(skill_root: Path) -> Path | None:
 REPO_ROOT = find_repo_root(SKILL_ROOT)
 README_PATH = REPO_ROOT / "README.md" if REPO_ROOT else None
 README_EN_PATH = REPO_ROOT / "README_en.md" if REPO_ROOT else None
+PORTABILITY_PATH = REPO_ROOT / "docs" / "agent-portability.md" if REPO_ROOT else None
+PACKAGE_PATH = REPO_ROOT / "package.json" if REPO_ROOT else None
 
 
 class SkillMetadataTests(unittest.TestCase):
@@ -40,6 +42,8 @@ class SkillMetadataTests(unittest.TestCase):
         self.skill_text = SKILL_PATH.read_text(encoding="utf-8")
         self.readme_text = README_PATH.read_text(encoding="utf-8") if README_PATH else None
         self.readme_en_text = README_EN_PATH.read_text(encoding="utf-8") if README_EN_PATH else None
+        self.portability_text = PORTABILITY_PATH.read_text(encoding="utf-8") if PORTABILITY_PATH else None
+        self.package_text = PACKAGE_PATH.read_text(encoding="utf-8") if PACKAGE_PATH else None
         self.emulator_playbook_text = EMULATOR_PLAYBOOK_PATH.read_text(encoding="utf-8")
         self.webview_cdp_guide_text = WEBVIEW_CDP_GUIDE_PATH.read_text(encoding="utf-8")
         self.minimal_scaffold_text = MINIMAL_SCAFFOLD_DOC_PATH.read_text(encoding="utf-8")
@@ -53,6 +57,95 @@ class SkillMetadataTests(unittest.TestCase):
         if self.readme_text is None or self.readme_en_text is None:
             self.skipTest("repository-level README files are not available in this skill installation")
         return self.readme_text, self.readme_en_text
+
+    def require_portability(self) -> str:
+        if self.portability_text is None:
+            self.skipTest("repository-level portability documentation is not available in this skill installation")
+        return self.portability_text
+
+    def require_dsh_bundle(self) -> tuple[Path, str]:
+        if REPO_ROOT is None or self.package_text is None:
+            self.skipTest("repository-level DSH bundle files are not available in this skill installation")
+        return REPO_ROOT, self.package_text
+
+    def test_dsh_filesystem_skill_contract(self) -> None:
+        self.assertEqual(SKILL_ROOT.name, "harmony-next")
+        self.assertEqual(SKILL_PATH.relative_to(SKILL_ROOT.parent).as_posix(), "harmony-next/SKILL.md")
+        self.assertRegex(SKILL_ROOT.name, r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+
+        frontmatter = re.match(r"\A---\n(?P<body>.*?)\n---\n", self.skill_text, re.DOTALL)
+        self.assertIsNotNone(frontmatter)
+        assert frontmatter is not None
+        body = frontmatter.group("body")
+        name = re.search(r"(?m)^name:\s*([a-z0-9]+(?:-[a-z0-9]+)*)\s*$", body)
+        description = re.search(r"(?m)^description:\s*(\S.*)$", body)
+        self.assertIsNotNone(name)
+        self.assertIsNotNone(description)
+        assert name is not None
+        assert description is not None
+        self.assertEqual(name.group(1), SKILL_ROOT.name)
+        self.assertTrue(description.group(1).strip())
+
+    def test_readmes_document_dsh_filesystem_installation(self) -> None:
+        readme_text, readme_en_text = self.require_readmes()
+        portability_text = self.require_portability()
+        required_readme_fragments = [
+            "DeepSeek Harness",
+            "dsh plugin --profile demo add github:linhay/harmony-next.skills",
+            "dsh-harmony-next",
+            "DSH_SOURCE=/path/to/harmony-next.skills",
+            ".dsh/skills/harmony-next",
+            "filesystem skill",
+            "不安装 MCP、tools 或 apps",
+        ]
+        required_readme_en_fragments = [
+            "DeepSeek Harness (DSH)",
+            "dsh plugin --profile demo add github:linhay/harmony-next.skills",
+            "dsh-harmony-next",
+            "DSH_SOURCE=/path/to/harmony-next.skills",
+            ".dsh/skills/harmony-next",
+            "filesystem skill",
+            "does not install MCP servers, tools, or apps",
+        ]
+        required_portability_fragments = [
+            "dsh-skill-filesystem",
+            "$HOME/.dsh/skills/harmony-next",
+            "$DSH_HOME/skills/harmony-next",
+            "dsh.bundle.patch",
+            "Verified on 2026-08-15 with `@deepseek-ai/dsh@",
+        ]
+
+        for fragment in required_readme_fragments:
+            with self.subTest(readme_fragment=fragment):
+                self.assertIn(fragment, readme_text)
+        for fragment in required_readme_en_fragments:
+            with self.subTest(readme_en_fragment=fragment):
+                self.assertIn(fragment, readme_en_text)
+        for fragment in required_portability_fragments:
+            with self.subTest(portability_fragment=fragment):
+                self.assertIn(fragment, portability_text)
+
+    def test_dsh_bundle_manifest_contract(self) -> None:
+        repo_root, package_text = self.require_dsh_bundle()
+        manifest = json.loads(package_text)
+        skill_version = re.search(r'version:\s*"(\d+\.\d+\.\d+)"', self.skill_text)
+        self.assertIsNotNone(skill_version)
+        assert skill_version is not None
+
+        self.assertEqual(manifest["name"], "dsh-harmony-next")
+        self.assertEqual(manifest["version"], skill_version.group(1))
+        self.assertEqual(manifest["dsh"]["bundle"]["patch"], "./cordis.patch.yml")
+        for included in ["index.js", "cordis.patch.yml", "harmony-next/SKILL.md", "harmony-next/references/**"]:
+            with self.subTest(included=included):
+                self.assertIn(included, manifest["files"])
+
+        patch_text = (repo_root / "cordis.patch.yml").read_text(encoding="utf-8")
+        provider_text = (repo_root / "index.js").read_text(encoding="utf-8")
+        self.assertIn("id: harmony-next-skill", patch_text)
+        self.assertIn("name: dsh-harmony-next", patch_text)
+        self.assertIn("harmony-next/SKILL.md", provider_text)
+        self.assertIn("resourceBase", provider_text)
+        self.assertIn("ctx.skills.registerProvider", provider_text)
 
     def test_find_repo_root_supports_agents_skill_install_path(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -295,6 +388,8 @@ class SkillMetadataTests(unittest.TestCase):
 
         self.assertIn("harmony-next.skill.zip", workflow_text)
         self.assertIn("package_skill.py", workflow_text)
+        self.assertIn("node --check index.js", workflow_text)
+        self.assertIn("npm pack --dry-run --json", workflow_text)
         self.assertNotIn("harmony-next.skill\n", workflow_text)
 
     def test_package_skill_includes_build_info_and_issue_guide(self) -> None:
@@ -501,6 +596,8 @@ class SkillMetadataTests(unittest.TestCase):
             temp_root = Path(temp_dir)
             (temp_root / "harmony-next").mkdir()
             shutil.copy2(SKILL_PATH, temp_root / "harmony-next" / "SKILL.md")
+            assert PACKAGE_PATH is not None
+            shutil.copy2(PACKAGE_PATH, temp_root / "package.json")
             assert README_PATH is not None
             assert README_EN_PATH is not None
             shutil.copy2(README_PATH, temp_root / "README.md")
@@ -510,6 +607,7 @@ class SkillMetadataTests(unittest.TestCase):
 
             self.assertEqual(bare_version, "9.8.7")
             self.assertEqual(tag_version, "v9.8.7")
+            self.assertEqual(json.loads((temp_root / "package.json").read_text(encoding="utf-8"))["version"], "9.8.7")
             self.assertIn('version: "9.8.7"', (temp_root / "harmony-next" / "SKILL.md").read_text(encoding="utf-8"))
             self.assertIn("Current local skill version: `v9.8.7`.", (temp_root / "harmony-next" / "SKILL.md").read_text(encoding="utf-8"))
             self.assertIn("<!-- version: 9.8.7 -->", (temp_root / "harmony-next" / "SKILL.md").read_text(encoding="utf-8"))

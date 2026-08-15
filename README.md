@@ -114,6 +114,40 @@ npx skills add linhay/harmony-next.skills --skill harmony-next -a codex -g -y --
 
 也可手动放入官方路径（常用如 `$HOME/.agents/skills/harmony-next`；完整路径见 [`docs/agent-portability.md`](./docs/agent-portability.md)）。
 
+### DeepSeek Harness（DSH）
+
+本仓库提供官方 DSH profile bundle `dsh-harmony-next`。推荐通过 DSH profile 安装：
+
+```bash
+# 从 GitHub 安装
+dsh plugin --profile demo add github:linhay/harmony-next.skills
+
+# 或从本地 checkout 安装
+dsh plugin --profile demo add /path/to/harmony-next.skills
+
+# 检查 bundle layer
+dsh --profile demo --dump-config
+```
+
+Bundle 只注册 `harmony-next` skill 及其离线参考资源，不安装 MCP、tools 或 apps。DSH bundle 的 manifest 是根目录的 `package.json`，patch 是 `cordis.patch.yml`。
+
+如果只需要 filesystem skill，也可以手动安装到 DSH 的兼容根目录：
+
+```bash
+# DSH_SOURCE 指向本仓库的本地 checkout
+DSH_SOURCE=/path/to/harmony-next.skills
+
+# 项目级 skill
+mkdir -p .dsh/skills/harmony-next
+cp -R "$DSH_SOURCE/harmony-next/." .dsh/skills/harmony-next/
+
+# 或用户级 skill（默认 ~/.dsh/skills）
+mkdir -p "$HOME/.dsh/skills/harmony-next"
+cp -R "$DSH_SOURCE/harmony-next/." "$HOME/.dsh/skills/harmony-next/"
+```
+
+DSH 也支持 `.agents/skills`、`$DSH_AGENTS_HOME/skills` 等兼容根目录；发现优先级和更新方式见 [`docs/agent-portability.md`](./docs/agent-portability.md)。
+
 各 Host 只负责加载 skill；HarmonyOS 检索规则以 `harmony-next/SKILL.md` 为准。
 
 ## 🧭 推荐检索路径
@@ -162,6 +196,7 @@ SKILL.md → KITS.md / TASK_MAP.md → INDEX.md → 目标 Markdown
 
 | 版本 | 关键更新 |
 | --- | --- |
+| `v1.3.35` | 增加 DeepSeek Harness（DSH）官方 profile bundle 与 filesystem skill fallback 适配 |
 | `v1.3.30` | 模拟器应用沙箱速查与 HVD doctor 的 DevEco Emulator 优先级修正 |
 | `Unreleased` | 一键离线 UI/UX 体检 CLI（`ux_audit_pipeline.py`） |
 | `Unreleased` | 设备调试证据包 CLI（`device_evidence_bundle.py`） |

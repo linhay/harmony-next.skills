@@ -59,6 +59,9 @@ class PackagingDocsTests(unittest.TestCase):
         for relative in [
             "README.md",
             "README_en.md",
+            "package.json",
+            "cordis.patch.yml",
+            "index.js",
             "docs/agent-portability.md",
             "docs-linhay/spaces/20260706-ponytail-portability-plan/smoke-set.md",
             "harmony-next/SKILL.md",

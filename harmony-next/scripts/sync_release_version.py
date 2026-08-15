@@ -56,6 +56,17 @@ def sync_skill(skill_path: Path, bare_version: str, tag_version: str) -> None:
     skill_path.write_text(text, encoding="utf-8")
 
 
+def sync_dsh_bundle(package_path: Path, bare_version: str) -> None:
+    text = package_path.read_text(encoding="utf-8")
+    text = replace_once(
+        text,
+        r'(^  "version": ")(\d+\.\d+\.\d+)(",$)',
+        rf"\g<1>{bare_version}\3",
+        "package.json version",
+    )
+    package_path.write_text(text, encoding="utf-8")
+
+
 def sync_readme(readme_path: Path, tag_version: str) -> None:
     text = readme_path.read_text(encoding="utf-8")
     text = replace_once(
@@ -86,6 +97,7 @@ def sync_readme(readme_path: Path, tag_version: str) -> None:
 def sync_release_version(root: Path, raw_version: str) -> tuple[str, str]:
     bare_version, tag_version = normalize_version(raw_version)
     sync_skill(root / "harmony-next" / "SKILL.md", bare_version, tag_version)
+    sync_dsh_bundle(root / "package.json", bare_version)
     sync_readme(root / "README.md", tag_version)
     sync_readme(root / "README_en.md", tag_version)
     return bare_version, tag_version

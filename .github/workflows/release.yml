@@ -63,6 +63,11 @@ jobs:
       - name: Run Tests
         run: python3 -m unittest discover -s harmony-next/tests -p 'test_*.py' -v
 
+      - name: Validate DSH Bundle Package
+        run: |
+          node --check index.js
+          npm pack --dry-run --json
+
       - name: Package Skill
         run: python3 harmony-next/scripts/package_skill.py --output harmony-next.skill.zip --release-tag "${{ steps.release-version.outputs.tag }}" --json
 

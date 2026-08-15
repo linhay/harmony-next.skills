@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import sys
 from pathlib import Path
@@ -14,6 +15,10 @@ INSTALL_FRAGMENTS = [
     "npx skills add linhay/harmony-next.skills --skill harmony-next -a claude-code -g -y --copy",
     "npx skills add linhay/harmony-next.skills --skill harmony-next -a codex -g -y --copy",
     "$HOME/.agents/skills/harmony-next",
+    "DSH_SOURCE=/path/to/harmony-next.skills",
+    ".dsh/skills/harmony-next",
+    "dsh plugin --profile demo add github:linhay/harmony-next.skills",
+    "dsh-harmony-next",
 ]
 
 PORTABILITY_FRAGMENTS = [
@@ -22,6 +27,12 @@ PORTABILITY_FRAGMENTS = [
     "npx skills add linhay/harmony-next.skills --skill harmony-next -a codex -g -y --copy",
     "harmony-next.skill.zip",
     "not a Codex plugin",
+    "dsh-skill-filesystem",
+    "$HOME/.dsh/skills/harmony-next",
+    "dsh.bundle.patch",
+    "dsh.bundle",
+    "cordis.patch.yml",
+    "dsh plugin --profile demo add",
 ]
 
 SMOKE_CASES = [
@@ -147,6 +158,49 @@ def check_smoke_paths(root: Path, errors: list[str]) -> None:
                 errors.append(f"{label} path does not exist: {relative}")
 
 
+def check_dsh_bundle(root: Path, skill_version_value: str, errors: list[str]) -> None:
+    package_path = root / "package.json"
+    patch_path = root / "cordis.patch.yml"
+    provider_path = root / "index.js"
+    if not package_path.is_file():
+        errors.append("missing package.json for DSH bundle")
+        return
+    if not patch_path.is_file():
+        errors.append("missing cordis.patch.yml for DSH bundle")
+    if not provider_path.is_file():
+        errors.append("missing index.js for DSH bundle provider")
+
+    try:
+        manifest = json.loads(read(package_path))
+    except (json.JSONDecodeError, OSError) as exc:
+        errors.append(f"invalid package.json for DSH bundle: {exc}")
+        return
+
+    if manifest.get("name") != "dsh-harmony-next":
+        errors.append("package.json DSH bundle name must be dsh-harmony-next")
+    if manifest.get("version") != skill_version_value:
+        errors.append("package.json version must match SKILL.md metadata.version")
+    bundle_patch = manifest.get("dsh", {}).get("bundle", {}).get("patch")
+    if bundle_patch != "./cordis.patch.yml":
+        errors.append("package.json must declare dsh.bundle.patch as ./cordis.patch.yml")
+    package_files = set(manifest.get("files", []))
+    for required in ["index.js", "cordis.patch.yml", "harmony-next/SKILL.md", "harmony-next/references/**"]:
+        if required not in package_files:
+            errors.append(f"package.json files missing: {required}")
+
+    if patch_path.is_file():
+        patch_text = read(patch_path)
+        require_contains(errors, "cordis.patch.yml", patch_text, ["id: harmony-next-skill", "name: dsh-harmony-next"])
+    if provider_path.is_file():
+        provider_text = read(provider_path)
+        require_contains(
+            errors,
+            "index.js",
+            provider_text,
+            ["harmony-next/SKILL.md", "resourceBase", "ctx.skills.registerProvider"],
+        )
+
+
 def check(root: Path) -> list[str]:
     errors: list[str] = []
     try:
@@ -166,6 +220,7 @@ def check(root: Path) -> list[str]:
             errors.append(f"{label} missing docs/agent-portability.md link")
 
     require_contains(errors, "docs/agent-portability.md", portability_text, PORTABILITY_FRAGMENTS)
+    check_dsh_bundle(root, version, errors)
     check_smoke_paths(root, errors)
     return errors
 

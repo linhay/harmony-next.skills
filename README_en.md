@@ -114,6 +114,40 @@ npx skills add linhay/harmony-next.skills --skill harmony-next -a codex -g -y --
 
 You can also place it manually in an official path such as `$HOME/.agents/skills/harmony-next`; see [`docs/agent-portability.md`](./docs/agent-portability.md) for the full path list.
 
+### DeepSeek Harness (DSH)
+
+This repository provides the official DSH profile bundle `dsh-harmony-next`. The recommended installation is through a DSH profile:
+
+```bash
+# Install from GitHub
+dsh plugin --profile demo add github:linhay/harmony-next.skills
+
+# Or install from a local checkout
+dsh plugin --profile demo add /path/to/harmony-next.skills
+
+# Inspect the bundle layer
+dsh --profile demo --dump-config
+```
+
+The bundle registers only the `harmony-next` skill and its offline reference resources; it does not install MCP servers, tools, or apps. The DSH bundle manifest is the root `package.json`, and its patch is `cordis.patch.yml`.
+
+If you only need a filesystem skill, you can also install it manually into a DSH-compatible root:
+
+```bash
+# DSH_SOURCE points to a local checkout of this repository
+DSH_SOURCE=/path/to/harmony-next.skills
+
+# Project-local skill
+mkdir -p .dsh/skills/harmony-next
+cp -R "$DSH_SOURCE/harmony-next/." .dsh/skills/harmony-next/
+
+# Or user-level skill (default: ~/.dsh/skills)
+mkdir -p "$HOME/.dsh/skills/harmony-next"
+cp -R "$DSH_SOURCE/harmony-next/." "$HOME/.dsh/skills/harmony-next/"
+```
+
+DSH also supports `.agents/skills`, `$DSH_AGENTS_HOME/skills`, and other compatible roots; see [`docs/agent-portability.md`](./docs/agent-portability.md) for discovery priority and update guidance.
+
 Each host only loads the skill. HarmonyOS lookup behavior is governed by `harmony-next/SKILL.md`.
 
 ## 🧭 Recommended Lookup Path
@@ -162,6 +196,7 @@ Read the two documents above for full details.
 
 | Version | Key updates |
 | --- | --- |
+| `v1.3.35` | Add the official DeepSeek Harness (DSH) profile bundle and filesystem-skill fallback adapter |
 | `v1.3.30` | Emulator app sandbox quick reference and DevEco Emulator priority fix for HVD doctor |
 | `Unreleased` | One-click offline UI/UX audit CLI (`ux_audit_pipeline.py`) |
 | `Unreleased` | Device debugging evidence bundle CLI (`device_evidence_bundle.py`) |
