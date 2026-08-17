@@ -157,6 +157,43 @@ class SkillMetadataTests(unittest.TestCase):
 
             self.assertEqual(find_repo_root(skill_root), repo_root)
 
+    def test_skill_resolves_paths_from_loaded_skill_md(self) -> None:
+        required_fragments = [
+            "HARMONY_NEXT_SKILL_DIR",
+            'HARMONY_NEXT_SKILL_DIR="<skill-dir>"',
+            "$HARMONY_NEXT_SKILL_DIR/references/INDEX.md",
+            'python3 "$HARMONY_NEXT_SKILL_DIR/scripts/hvd_manager.py" doctor --json',
+            "$REPO_ROOT/.agents/skills/harmony-next",
+        ]
+        forbidden_fragments = [
+            "From the repository root, use `harmony-next/references/",
+            "python3 harmony-next/scripts/hvd_manager.py",
+            "python3 harmony-next/scripts/commandline_tools_manager.py",
+        ]
+
+        for fragment in required_fragments:
+            with self.subTest(required=fragment):
+                self.assertIn(fragment, self.skill_text)
+        for fragment in forbidden_fragments:
+            with self.subTest(forbidden=fragment):
+                self.assertNotIn(fragment, self.skill_text)
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            repo_root = Path(temp_dir)
+            skill_dir = repo_root / ".agents" / "skills" / "harmony-next"
+            (skill_dir / "references").mkdir(parents=True)
+            (skill_dir / "scripts").mkdir(parents=True)
+            shutil.copy2(SKILL_PATH, skill_dir / "SKILL.md")
+            shutil.copy2(SKILL_ROOT / "references" / "INDEX.md", skill_dir / "references" / "INDEX.md")
+            shutil.copy2(SKILL_ROOT / "scripts" / "hvd_manager.py", skill_dir / "scripts" / "hvd_manager.py")
+
+            env = {"HARMONY_NEXT_SKILL_DIR": str(skill_dir)}
+            self.assertFalse((repo_root / "harmony-next" / "references" / "INDEX.md").exists())
+            self.assertFalse((repo_root / "harmony-next" / "scripts" / "hvd_manager.py").exists())
+            self.assertTrue((Path(env["HARMONY_NEXT_SKILL_DIR"]) / "references" / "INDEX.md").is_file())
+            self.assertTrue((Path(env["HARMONY_NEXT_SKILL_DIR"]) / "scripts" / "hvd_manager.py").is_file())
+            self.assertTrue((Path(env["HARMONY_NEXT_SKILL_DIR"]) / "SKILL.md").is_file())
+
     def test_skill_exposes_current_version_for_agents(self) -> None:
         metadata_version = re.search(r"version:\s*\"(\d+\.\d+\.\d+)\"", self.skill_text)
         visible_version = re.search(r"Current local skill version:\s*`v\d+\.\d+\.\d+`", self.skill_text)

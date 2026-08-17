@@ -9,7 +9,14 @@ metadata:
 
 Use this skill to answer HarmonyOS NEXT questions with the bundled offline references. Keep context small: route the request first, then open only the specific Markdown files needed for the answer or action.
 
-Paths like `references/...` are relative to this skill directory (`harmony-next/`). If your current working directory is the repository root, either `cd harmony-next` first or prefix paths with `harmony-next/`.
+Paths like `references/...` and `scripts/...` are relative to this skill directory: the directory that contains this `SKILL.md`. Resolve that directory once as `HARMONY_NEXT_SKILL_DIR`. Do not assume `harmony-next/` exists at the current repository root. Official scan locations include `$REPO_ROOT/.agents/skills/harmony-next`, `$HOME/.agents/skills/harmony-next`, and `/etc/codex/skills/harmony-next`.
+
+```bash
+# Directory containing this SKILL.md (the file you loaded).
+HARMONY_NEXT_SKILL_DIR="<skill-dir>"
+```
+
+Use `$HARMONY_NEXT_SKILL_DIR` from any working directory, including a normal application repository root. If a later playbook still shows `harmony-next/references/...` or `python3 harmony-next/scripts/...`, rewrite that prefix to `$HARMONY_NEXT_SKILL_DIR`.
 
 ## Version
 
@@ -51,13 +58,11 @@ Install/update entrypoints:
 
 ## Lookup Commands
 
-From the skill directory:
+After resolving `HARMONY_NEXT_SKILL_DIR` from this `SKILL.md`:
 
-- 先按关键词命中路径：`rg -n "UIAbility|AbilityStage|Want" references/INDEX.md | head`
-- 查某个 `@ohos.*` 模块：`rg -n "@ohos\\.app\\.ability\\.|@ohos\\.ability\\." references/INDEX.md | rg "JsEtsAPIReference/" | head`
-- 查 NDK/C API 头文件：`rg -n "JsEtsAPIReference/topics/.*/.*\\.h\\.md$" references/INDEX.md | rg "(napi|arkui|window|ability)" | head`
-
-From the repository root, use `harmony-next/references/...` in the same commands.
+- 先按关键词命中路径：`rg -n "UIAbility|AbilityStage|Want" "$HARMONY_NEXT_SKILL_DIR/references/INDEX.md" | head`
+- 查某个 `@ohos.*` 模块：`rg -n "@ohos\\.app\\.ability\\.|@ohos\\.ability\\." "$HARMONY_NEXT_SKILL_DIR/references/INDEX.md" | rg "JsEtsAPIReference/" | head`
+- 查 NDK/C API 头文件：`rg -n "JsEtsAPIReference/topics/.*/.*\\.h\\.md$" "$HARMONY_NEXT_SKILL_DIR/references/INDEX.md" | rg "(napi|arkui|window|ability)" | head`
 
 ## Tooling Script Skills
 
@@ -65,12 +70,12 @@ Use these script-backed skill entries before hand-writing DevEco setup commands.
 
 | User intent | Script skill | Agent first command | User handoff |
 | --- | --- | --- | --- |
-| Download, install, configure, or validate HarmonyOS Command Line Tools | `commandline_tools_manager.py` | `python3 harmony-next/scripts/commandline_tools_manager.py doctor --tools-root <dir> --json` | If the user gives a Huawei download center page URL, return the script's blocked result and ask the user to log in, copy the direct archive URL, or provide a local archive. |
-| List, clone, delete, diagnose, or launch local DevEco HVD instances | `hvd_manager.py` | `python3 harmony-next/scripts/hvd_manager.py doctor --json` | If HVD root, Emulator, SDK/image root, or trace startup data is missing, report the `issues`, `recommendations`, and `missingConfig` fields and ask the user to pass `--root`, `--emulator`, `--sdk-root` / `--image-root`, or matching env vars. |
-| Collect bounded HDC device evidence or diagnose WebView DevTools forwarding | `device_evidence_bundle.py` | `python3 harmony-next/scripts/device_evidence_bundle.py doctor --deveco-app <DevEco-Studio.app> --json` | Use `capture ... --artifact-dir <dir>` only when raw local screenshots, layout trees, app state, and bounded logs may be stored locally. Use `webview-devtools ... --artifact-dir <dir>` for socket/fport/HTTP discovery classification. |
-| Perform one bounded UI action with before/after evidence | `device_ui_action.py` | `python3 harmony-next/scripts/device_ui_action.py tap --deveco-app <DevEco-Studio.app> --target <target> --artifact-dir .hvigor/outputs/<run> --text "<visible-text>" --json` | Require exactly one target selector or raw device coordinate. Treat returned screenshot dimensions as the coordinate space; never reuse scaled preview coordinates. |
-| Capture a running HarmonyOS page and run an offline UI/UX audit report | `ux_audit_pipeline.py` | `python3 harmony-next/scripts/ux_audit_pipeline.py doctor --deveco-app <DevEco-Studio.app> --python <python-with-ux-deps> --json` | Use `python3 harmony-next/scripts/ux_audit_pipeline.py capture-audit --deveco-app <DevEco-Studio.app> --python <python-with-ux-deps> --target <target> --artifact-dir .hvigor/outputs/<run> --json` for the one-shot path. If Python image-processing modules are missing, report `missingConfig=["uxPythonDependencies"]` instead of treating UxTestService as broken. |
-| Convert offline DevEco Profiler trace files into SQLite evidence summaries | `profiler_trace_audit.py` | `python3 harmony-next/scripts/profiler_trace_audit.py doctor --deveco-app <DevEco-Studio.app> --json` | If `trace_streamer` or the input trace is missing, report the machine-readable `blocked` payload. Use `audit --input <trace> --output-dir .hvigor/outputs/<run> --json` only for existing `.ftrace` / `.htrace` / bytrace / rawtrace artifacts. |
+| Download, install, configure, or validate HarmonyOS Command Line Tools | `commandline_tools_manager.py` | `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/commandline_tools_manager.py" doctor --tools-root <dir> --json` | If the user gives a Huawei download center page URL, return the script's blocked result and ask the user to log in, copy the direct archive URL, or provide a local archive. |
+| List, clone, delete, diagnose, or launch local DevEco HVD instances | `hvd_manager.py` | `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/hvd_manager.py" doctor --json` | If HVD root, Emulator, SDK/image root, or trace startup data is missing, report the `issues`, `recommendations`, and `missingConfig` fields and ask the user to pass `--root`, `--emulator`, `--sdk-root` / `--image-root`, or matching env vars. |
+| Collect bounded HDC device evidence or diagnose WebView DevTools forwarding | `device_evidence_bundle.py` | `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/device_evidence_bundle.py" doctor --deveco-app <DevEco-Studio.app> --json` | Use `capture ... --artifact-dir <dir>` only when raw local screenshots, layout trees, app state, and bounded logs may be stored locally. Use `webview-devtools ... --artifact-dir <dir>` for socket/fport/HTTP discovery classification. |
+| Perform one bounded UI action with before/after evidence | `device_ui_action.py` | `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/device_ui_action.py" tap --deveco-app <DevEco-Studio.app> --target <target> --artifact-dir .hvigor/outputs/<run> --text "<visible-text>" --json` | Require exactly one target selector or raw device coordinate. Treat returned screenshot dimensions as the coordinate space; never reuse scaled preview coordinates. |
+| Capture a running HarmonyOS page and run an offline UI/UX audit report | `ux_audit_pipeline.py` | `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/ux_audit_pipeline.py" doctor --deveco-app <DevEco-Studio.app> --python <python-with-ux-deps> --json` | Use `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/ux_audit_pipeline.py" capture-audit --deveco-app <DevEco-Studio.app> --python <python-with-ux-deps> --target <target> --artifact-dir .hvigor/outputs/<run> --json` for the one-shot path. If Python image-processing modules are missing, report `missingConfig=["uxPythonDependencies"]` instead of treating UxTestService as broken. |
+| Convert offline DevEco Profiler trace files into SQLite evidence summaries | `profiler_trace_audit.py` | `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/profiler_trace_audit.py" doctor --deveco-app <DevEco-Studio.app> --json` | If `trace_streamer` or the input trace is missing, report the machine-readable `blocked` payload. Use `audit --input <trace> --output-dir .hvigor/outputs/<run> --json` only for existing `.ftrace` / `.htrace` / bytrace / rawtrace artifacts. |
 
 Boundaries:
 
