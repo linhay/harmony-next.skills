@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -187,12 +189,66 @@ class SkillMetadataTests(unittest.TestCase):
             shutil.copy2(SKILL_ROOT / "references" / "INDEX.md", skill_dir / "references" / "INDEX.md")
             shutil.copy2(SKILL_ROOT / "scripts" / "hvd_manager.py", skill_dir / "scripts" / "hvd_manager.py")
 
-            env = {"HARMONY_NEXT_SKILL_DIR": str(skill_dir)}
+            env = {
+                **os.environ,
+                "HARMONY_NEXT_SKILL_DIR": str(skill_dir),
+                "HARMONY_NEXT_PYTHON": sys.executable,
+            }
             self.assertFalse((repo_root / "harmony-next" / "references" / "INDEX.md").exists())
             self.assertFalse((repo_root / "harmony-next" / "scripts" / "hvd_manager.py").exists())
             self.assertTrue((Path(env["HARMONY_NEXT_SKILL_DIR"]) / "references" / "INDEX.md").is_file())
             self.assertTrue((Path(env["HARMONY_NEXT_SKILL_DIR"]) / "scripts" / "hvd_manager.py").is_file())
             self.assertTrue((Path(env["HARMONY_NEXT_SKILL_DIR"]) / "SKILL.md").is_file())
+
+            shell = shutil.which("sh")
+            self.assertIsNotNone(shell)
+            assert shell is not None
+
+            help_result = subprocess.run(
+                [
+                    shell,
+                    "-c",
+                    '"$HARMONY_NEXT_PYTHON" "$HARMONY_NEXT_SKILL_DIR/scripts/hvd_manager.py" --help',
+                ],
+                cwd=repo_root,
+                env=env,
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            self.assertEqual(help_result.returncode, 0, help_result.stderr)
+            self.assertIn("Manage local DevEco HarmonyOS HVD instances", help_result.stdout)
+
+            rg = shutil.which("rg")
+            if rg:
+                env["HARMONY_NEXT_RG"] = rg
+                lookup_result = subprocess.run(
+                    [
+                        shell,
+                        "-c",
+                        '"$HARMONY_NEXT_RG" -n "UIAbility|AbilityStage|Want" '
+                        '"$HARMONY_NEXT_SKILL_DIR/references/INDEX.md"',
+                    ],
+                    cwd=repo_root,
+                    env=env,
+                    capture_output=True,
+                    text=True,
+                    check=False,
+                )
+                self.assertEqual(lookup_result.returncode, 0, lookup_result.stderr)
+                self.assertIn("UIAbility", lookup_result.stdout)
+
+    def test_bundled_playbooks_do_not_use_repo_root_skill_commands(self) -> None:
+        forbidden_fragments = [
+            "python3 harmony-next/scripts/",
+            "cp -R harmony-next/references/",
+        ]
+
+        for path in sorted((SKILL_ROOT / "references").rglob("*.md")):
+            text = path.read_text(encoding="utf-8")
+            for fragment in forbidden_fragments:
+                with self.subTest(path=path.relative_to(SKILL_ROOT), forbidden=fragment):
+                    self.assertNotIn(fragment, text)
 
     def test_skill_exposes_current_version_for_agents(self) -> None:
         metadata_version = re.search(r"version:\s*\"(\d+\.\d+\.\d+)\"", self.skill_text)

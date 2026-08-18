@@ -21,7 +21,7 @@
 ## 第一步：诊断 WebView DevTools 转发
 
 ```bash
-python3 harmony-next/scripts/device_evidence_bundle.py webview-devtools \
+python3 "$HARMONY_NEXT_SKILL_DIR/scripts/device_evidence_bundle.py" webview-devtools \
   --deveco-app /Applications/DevEco-Studio.app \
   --target <target> \
   --artifact-dir .hvigor/outputs/webview-devtools \
@@ -31,7 +31,7 @@ python3 harmony-next/scripts/device_evidence_bundle.py webview-devtools \
 多个 WebView socket 时必须显式选择：
 
 ```bash
-python3 harmony-next/scripts/device_evidence_bundle.py webview-devtools \
+python3 "$HARMONY_NEXT_SKILL_DIR/scripts/device_evidence_bundle.py" webview-devtools \
   --deveco-app /Applications/DevEco-Studio.app \
   --target <target> \
   --remote-socket webview_devtools_remote_<pid> \

@@ -32,7 +32,7 @@ Choose the issue form that matches the workflow under investigation:
    - `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/device_ui_action.py" tap --deveco-app <DevEco-Studio.app> --target <target> --artifact-dir <dir> --text "<text>" --json`
    - `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/ux_audit_pipeline.py" doctor --deveco-app <DevEco-Studio.app> --python <python-with-ux-deps> --json`
    - `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/reference_compat.py" check`
-   - `python3 -m unittest discover -s "$HARMONY_NEXT_SKILL_DIR/tests"`
+   - Source checkout only, when `$HARMONY_NEXT_SKILL_DIR/tests` exists: `python3 -m unittest discover -s "$HARMONY_NEXT_SKILL_DIR/tests"`
 3. Preserve structured fields in the issue instead of flattening them into prose:
    - `decision`
    - `operation`

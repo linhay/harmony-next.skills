@@ -198,7 +198,7 @@ wukong focus
 脚本化时先用仓库 helper 做 preflight。该命令只验证 HVD、Emulator、SDK 和 trace helper readiness，不负责创建私有 trace pipe，也不直接启动 Emulator：
 
 ```bash
-python3 harmony-next/scripts/hvd_manager.py \
+python3 "$HARMONY_NEXT_SKILL_DIR/scripts/hvd_manager.py" \
   --root "$HOME/.Huawei/Emulator/deployed" \
   --emulator "/Applications/DevEco-Studio.app/Contents/tools/emulator/Emulator" \
   --sdk-root "$HOME/Library/Huawei/Sdk" \
@@ -214,7 +214,7 @@ python3 harmony-next/scripts/hvd_manager.py \
 需要由仓库脚本直接执行启动时，使用 `launch`。当前实现会创建本轮启动用的有界 trace socket，detach Emulator 与 trace holder，启动 Emulator，并在默认路径下等待 HDC target；只想验证启动进程与 trace socket 连接时传 `--no-wait-target`：
 
 ```bash
-python3 harmony-next/scripts/hvd_manager.py \
+python3 "$HARMONY_NEXT_SKILL_DIR/scripts/hvd_manager.py" \
   --root "$HOME/.Huawei/Emulator/deployed" \
   --emulator "/Applications/DevEco-Studio.app/Contents/tools/emulator/Emulator" \
   launch \
@@ -284,13 +284,13 @@ cd "/Applications/DevEco-Studio.app/Contents/tools/emulator"
 仓库提供一个受控命令行封装：
 
 ```bash
-python3 harmony-next/scripts/hvd_manager.py list --json
-python3 harmony-next/scripts/hvd_manager.py doctor --json
-python3 harmony-next/scripts/hvd_manager.py create --from "<source-hvd>" --name "<new-hvd>" --hdc-port 10100
-python3 harmony-next/scripts/hvd_manager.py delete --name "<new-hvd>" --confirm-name "<new-hvd>"
-python3 harmony-next/scripts/hvd_manager.py launch-preflight --name "<hvd-name>" --trace-name "<trace-name>" --trace-helper-ready-file "<helper-ready-file>" --json
-python3 harmony-next/scripts/hvd_manager.py launch --name "<hvd-name>" --image-root "<sdk-image-root>" --trace-name "<trace-name>" --json
-python3 harmony-next/scripts/hvd_manager.py download-image --device-type phone --api-version 22
+python3 "$HARMONY_NEXT_SKILL_DIR/scripts/hvd_manager.py" list --json
+python3 "$HARMONY_NEXT_SKILL_DIR/scripts/hvd_manager.py" doctor --json
+python3 "$HARMONY_NEXT_SKILL_DIR/scripts/hvd_manager.py" create --from "<source-hvd>" --name "<new-hvd>" --hdc-port 10100
+python3 "$HARMONY_NEXT_SKILL_DIR/scripts/hvd_manager.py" delete --name "<new-hvd>" --confirm-name "<new-hvd>"
+python3 "$HARMONY_NEXT_SKILL_DIR/scripts/hvd_manager.py" launch-preflight --name "<hvd-name>" --trace-name "<trace-name>" --trace-helper-ready-file "<helper-ready-file>" --json
+python3 "$HARMONY_NEXT_SKILL_DIR/scripts/hvd_manager.py" launch --name "<hvd-name>" --image-root "<sdk-image-root>" --trace-name "<trace-name>" --json
+python3 "$HARMONY_NEXT_SKILL_DIR/scripts/hvd_manager.py" download-image --device-type phone --api-version 22
 ```
 
 边界：
@@ -386,7 +386,7 @@ python3 harmony-next/scripts/hvd_manager.py download-image --device-type phone -
 当目标是 ArkWeb/H5 bridge 字段到达证明时，先阅读 `ArkWeb WebView CDP调试与字段到达证明.md`。不要用项目私有转发脚本或全局 HDC 重启替代结构化诊断。
 
 ```bash
-python3 harmony-next/scripts/device_evidence_bundle.py webview-devtools \
+python3 "$HARMONY_NEXT_SKILL_DIR/scripts/device_evidence_bundle.py" webview-devtools \
   --deveco-app /Applications/DevEco-Studio.app \
   --target <target> \
   --artifact-dir .hvigor/outputs/webview-devtools \
