@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -156,6 +158,99 @@ class SkillMetadataTests(unittest.TestCase):
             (repo_root / "README_en.md").write_text("# en\n", encoding="utf-8")
 
             self.assertEqual(find_repo_root(skill_root), repo_root)
+
+    def test_skill_resolves_paths_from_loaded_skill_md(self) -> None:
+        required_fragments = [
+            "HARMONY_NEXT_SKILL_DIR",
+            'HARMONY_NEXT_SKILL_DIR="<skill-dir>"',
+            "$HARMONY_NEXT_SKILL_DIR/references/INDEX.md",
+            'python3 "$HARMONY_NEXT_SKILL_DIR/scripts/hvd_manager.py" doctor --json',
+            "$REPO_ROOT/.agents/skills/harmony-next",
+        ]
+        forbidden_fragments = [
+            "From the repository root, use `harmony-next/references/",
+            "python3 harmony-next/scripts/hvd_manager.py",
+            "python3 harmony-next/scripts/commandline_tools_manager.py",
+        ]
+
+        for fragment in required_fragments:
+            with self.subTest(required=fragment):
+                self.assertIn(fragment, self.skill_text)
+        for fragment in forbidden_fragments:
+            with self.subTest(forbidden=fragment):
+                self.assertNotIn(fragment, self.skill_text)
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            repo_root = Path(temp_dir)
+            skill_dir = repo_root / ".agents" / "skills" / "harmony-next"
+            (skill_dir / "references").mkdir(parents=True)
+            (skill_dir / "scripts").mkdir(parents=True)
+            shutil.copy2(SKILL_PATH, skill_dir / "SKILL.md")
+            shutil.copy2(SKILL_ROOT / "references" / "INDEX.md", skill_dir / "references" / "INDEX.md")
+            shutil.copy2(SKILL_ROOT / "scripts" / "hvd_manager.py", skill_dir / "scripts" / "hvd_manager.py")
+
+            env = {
+                **os.environ,
+                "HARMONY_NEXT_SKILL_DIR": str(skill_dir),
+                "HARMONY_NEXT_PYTHON": sys.executable,
+            }
+            self.assertFalse((repo_root / "harmony-next" / "references" / "INDEX.md").exists())
+            self.assertFalse((repo_root / "harmony-next" / "scripts" / "hvd_manager.py").exists())
+            self.assertTrue((Path(env["HARMONY_NEXT_SKILL_DIR"]) / "references" / "INDEX.md").is_file())
+            self.assertTrue((Path(env["HARMONY_NEXT_SKILL_DIR"]) / "scripts" / "hvd_manager.py").is_file())
+            self.assertTrue((Path(env["HARMONY_NEXT_SKILL_DIR"]) / "SKILL.md").is_file())
+
+            shell = shutil.which("sh")
+            self.assertIsNotNone(shell)
+            assert shell is not None
+
+            help_result = subprocess.run(
+                [
+                    shell,
+                    "-c",
+                    '"$HARMONY_NEXT_PYTHON" "$HARMONY_NEXT_SKILL_DIR/scripts/hvd_manager.py" --help',
+                ],
+                cwd=repo_root,
+                env=env,
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            self.assertEqual(help_result.returncode, 0, help_result.stderr)
+            self.assertIn("Manage local DevEco HarmonyOS HVD instances", help_result.stdout)
+
+            rg = shutil.which("rg")
+            if rg:
+                env["HARMONY_NEXT_RG"] = rg
+                lookup_result = subprocess.run(
+                    [
+                        shell,
+                        "-c",
+                        '"$HARMONY_NEXT_RG" -n "UIAbility|AbilityStage|Want" '
+                        '"$HARMONY_NEXT_SKILL_DIR/references/INDEX.md"',
+                    ],
+                    cwd=repo_root,
+                    env=env,
+                    capture_output=True,
+                    text=True,
+                    check=False,
+                )
+                self.assertEqual(lookup_result.returncode, 0, lookup_result.stderr)
+                self.assertIn("UIAbility", lookup_result.stdout)
+
+    def test_bundled_playbooks_do_not_use_repo_root_skill_commands(self) -> None:
+        forbidden_patterns = [
+            re.compile(r"(?<!\$HARMONY_NEXT_SKILL_DIR/)(?:\./)?harmony-next/scripts/"),
+            re.compile(r"(?:\./)?harmony-next/references/"),
+        ]
+
+        bundled_markdown = [SKILL_PATH, SKILL_ROOT / "ISSUE_GUIDE.md"]
+        bundled_markdown.extend(sorted((SKILL_ROOT / "references").rglob("*.md")))
+        for path in bundled_markdown:
+            text = path.read_text(encoding="utf-8")
+            for pattern in forbidden_patterns:
+                with self.subTest(path=path.relative_to(SKILL_ROOT), forbidden=pattern.pattern):
+                    self.assertIsNone(pattern.search(text))
 
     def test_skill_exposes_current_version_for_agents(self) -> None:
         metadata_version = re.search(r"version:\s*\"(\d+\.\d+\.\d+)\"", self.skill_text)

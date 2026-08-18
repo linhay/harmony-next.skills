@@ -380,7 +380,7 @@ class UxAuditPipelineTests(unittest.TestCase):
         self.assertIn("uxPythonDependencies", payload["missingConfig"])
         self.assertEqual(payload["missingModule"], "definitely_missing_ux_dependency")
         self.assertTrue(any("hdc list targets -v" in item for item in payload["recommendations"]))
-        self.assertIn("ISSUE_GUIDE.md", payload["feedback"]["issueGuide"])
+        self.assertEqual(payload["feedback"]["issueGuide"], "$HARMONY_NEXT_SKILL_DIR/ISSUE_GUIDE.md")
 
     def test_explicit_missing_ux_service_root_does_not_fall_back_to_default_app(self) -> None:
         evidence_summary = self.write_evidence_bundle(self.root / "evidence")

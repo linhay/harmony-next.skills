@@ -302,7 +302,7 @@ class DeviceEvidenceBundleTests(unittest.TestCase):
         self.assertIn("target", payload["missingConfig"])
         self.assertEqual(len(payload["connectedTargets"]), 2)
         self.assertTrue(any("hdc list targets -v" in item for item in payload["recommendations"]))
-        self.assertIn("ISSUE_GUIDE.md", payload["feedback"]["issueGuide"])
+        self.assertEqual(payload["feedback"]["issueGuide"], "$HARMONY_NEXT_SKILL_DIR/ISSUE_GUIDE.md")
 
     def test_capture_blocks_when_requested_target_has_no_connected_targets(self) -> None:
         artifact_dir = self.root / "artifacts"

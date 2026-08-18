@@ -21,18 +21,18 @@ Choose the issue form that matches the workflow under investigation:
 ## Workflow
 
 1. Clarify only the minimum missing detail needed to avoid filing a wrong issue.
-2. Reproduce or inspect locally when possible. Prefer machine-readable checks from this skill:
-   - `python3 harmony-next/scripts/hvd_manager.py doctor --json`
-   - `python3 harmony-next/scripts/hvd_manager.py list --json`
-   - `python3 harmony-next/scripts/hvd_manager.py launch-preflight ... --json`
-   - `python3 harmony-next/scripts/hvd_manager.py launch ... --json`
-   - `python3 harmony-next/scripts/commandline_tools_manager.py doctor --tools-root <dir> --json`
-   - `python3 harmony-next/scripts/device_evidence_bundle.py doctor --deveco-app <DevEco-Studio.app> --json`
-   - `python3 harmony-next/scripts/device_evidence_bundle.py webview-devtools --deveco-app <DevEco-Studio.app> --target <target> --artifact-dir <dir> --json`
-   - `python3 harmony-next/scripts/device_ui_action.py tap --deveco-app <DevEco-Studio.app> --target <target> --artifact-dir <dir> --text "<text>" --json`
-   - `python3 harmony-next/scripts/ux_audit_pipeline.py doctor --deveco-app <DevEco-Studio.app> --python <python-with-ux-deps> --json`
-   - `python3 harmony-next/scripts/reference_compat.py check`
-   - `python3 -m unittest discover -s harmony-next/tests`
+2. Reproduce or inspect locally when possible. Prefer machine-readable checks from this skill. Resolve `HARMONY_NEXT_SKILL_DIR` from the loaded `SKILL.md` first; do not assume `harmony-next/` exists at the current repository root:
+   - `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/hvd_manager.py" doctor --json`
+   - `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/hvd_manager.py" list --json`
+   - `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/hvd_manager.py" launch-preflight ... --json`
+   - `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/hvd_manager.py" launch ... --json`
+   - `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/commandline_tools_manager.py" doctor --tools-root <dir> --json`
+   - `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/device_evidence_bundle.py" doctor --deveco-app <DevEco-Studio.app> --json`
+   - `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/device_evidence_bundle.py" webview-devtools --deveco-app <DevEco-Studio.app> --target <target> --artifact-dir <dir> --json`
+   - `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/device_ui_action.py" tap --deveco-app <DevEco-Studio.app> --target <target> --artifact-dir <dir> --text "<text>" --json`
+   - `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/ux_audit_pipeline.py" doctor --deveco-app <DevEco-Studio.app> --python <python-with-ux-deps> --json`
+   - `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/reference_compat.py" check`
+   - Source checkout only, when `$HARMONY_NEXT_SKILL_DIR/tests` exists: `python3 -m unittest discover -s "$HARMONY_NEXT_SKILL_DIR/tests"`
 3. Preserve structured fields in the issue instead of flattening them into prose:
    - `decision`
    - `operation`

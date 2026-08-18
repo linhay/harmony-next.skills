@@ -888,6 +888,14 @@ class HvdManagerTests(unittest.TestCase):
         command_purposes = {item["purpose"] for item in diagnostics["nextDiagnosticCommands"]}
         self.assertIn("Inspect HVD runtime state", command_purposes)
         self.assertIn("Inspect HDC target state", command_purposes)
+        preflight_commands = [
+            item["command"]
+            for item in diagnostics["nextDiagnosticCommands"]
+            if item["purpose"] == "Validate launch inputs without starting Emulator"
+        ]
+        self.assertTrue(preflight_commands)
+        self.assertEqual(preflight_commands[0][1], str(SCRIPT_PATH))
+        self.assertNotIn("harmony-next/scripts/hvd_manager.py", preflight_commands[0])
 
     def test_launch_classifies_kernel_panic_after_hdc_timeout(self) -> None:
         emulator = Path(self.temp_dir.name) / "Emulator"

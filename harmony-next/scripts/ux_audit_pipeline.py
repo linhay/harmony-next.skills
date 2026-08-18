@@ -40,7 +40,7 @@ SYSTEM_BUNDLE_NAMES = {
 FEEDBACK_REPOSITORY = "linhay/harmony-next.skills"
 FEEDBACK_ISSUE_TEMPLATE = "offline-ux-audit.yml"
 FEEDBACK_ISSUE_URL = f"https://github.com/{FEEDBACK_REPOSITORY}/issues/new?template={FEEDBACK_ISSUE_TEMPLATE}"
-FEEDBACK_ISSUE_GUIDE = "harmony-next/ISSUE_GUIDE.md"
+FEEDBACK_ISSUE_GUIDE = "$HARMONY_NEXT_SKILL_DIR/ISSUE_GUIDE.md"
 OFFICIAL_CLI_FALLBACK_RECOMMENDATIONS = [
     "If this wrapper is blocked, agents should fall back to official HarmonyOS CLI commands first.",
     "Start with `hdc list targets -v`, then run `hdc -t <target> shell uitest dumpLayout -p /data/local/tmp/layout.json -a` and `hdc -t <target> shell uitest screenCap -p /data/local/tmp/screen.png`.",

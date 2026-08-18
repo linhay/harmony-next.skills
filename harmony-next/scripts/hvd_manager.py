@@ -867,7 +867,7 @@ def build_trace_timeout_diagnostics(
             "purpose": "Validate launch inputs without starting Emulator",
             "command": [
                 sys.executable,
-                "harmony-next/scripts/hvd_manager.py",
+                str(Path(__file__).resolve()),
                 "--root",
                 str(root),
                 "--emulator",

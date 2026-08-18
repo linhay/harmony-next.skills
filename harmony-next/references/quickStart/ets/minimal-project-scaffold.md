@@ -3,7 +3,7 @@
 当 agent 需要在任意仓库内生成 HarmonyOS NEXT 测试工程，但不能打开 DevEco Studio 向导时，优先复制本仓库模板：
 
 ```bash
-cp -R harmony-next/references/templates/empty-ability-app <target-repo>/harmony-empty-ability
+cp -R "$HARMONY_NEXT_SKILL_DIR/references/templates/empty-ability-app" <target-repo>/harmony-empty-ability
 ```
 
 模板入口：

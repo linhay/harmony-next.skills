@@ -26,7 +26,7 @@ REMOTE_TMP_ROOT = "/data/local/tmp"
 FEEDBACK_REPOSITORY = "linhay/harmony-next.skills"
 FEEDBACK_ISSUE_TEMPLATE = "device-evidence-bundle.yml"
 FEEDBACK_ISSUE_URL = f"https://github.com/{FEEDBACK_REPOSITORY}/issues/new?template={FEEDBACK_ISSUE_TEMPLATE}"
-FEEDBACK_ISSUE_GUIDE = "harmony-next/ISSUE_GUIDE.md"
+FEEDBACK_ISSUE_GUIDE = "$HARMONY_NEXT_SKILL_DIR/ISSUE_GUIDE.md"
 OFFICIAL_CLI_FALLBACK_RECOMMENDATIONS = [
     "If this wrapper is blocked, agents should fall back to official HarmonyOS CLI commands first.",
     "Run `hdc list targets -v` to select a target, then use `hdc -t <target> shell bm dump -g`, `hdc -t <target> shell aa dump -l`, and bounded `hdc -t <target> shell hilog -z <lines>` for state evidence.",
