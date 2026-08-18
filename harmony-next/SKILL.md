@@ -16,7 +16,7 @@ Paths like `references/...` and `scripts/...` are relative to this skill directo
 HARMONY_NEXT_SKILL_DIR="<skill-dir>"
 ```
 
-Use `$HARMONY_NEXT_SKILL_DIR` from any working directory, including a normal application repository root. Bundled playbooks must use this variable for executable paths; treat a literal `harmony-next/references/...` or `python3 harmony-next/scripts/...` command in a bundled playbook as a portability bug.
+Use `$HARMONY_NEXT_SKILL_DIR` from any working directory, including a normal application repository root. Bundled playbooks must use this variable for executable paths; treat any hard-coded repository-root skill prefix in a bundled playbook as a portability bug.
 
 ## Version
 

@@ -239,16 +239,18 @@ class SkillMetadataTests(unittest.TestCase):
                 self.assertIn("UIAbility", lookup_result.stdout)
 
     def test_bundled_playbooks_do_not_use_repo_root_skill_commands(self) -> None:
-        forbidden_fragments = [
-            "python3 harmony-next/scripts/",
-            "cp -R harmony-next/references/",
+        forbidden_patterns = [
+            re.compile(r"(?<!\$HARMONY_NEXT_SKILL_DIR/)(?:\./)?harmony-next/scripts/"),
+            re.compile(r"(?:\./)?harmony-next/references/"),
         ]
 
-        for path in sorted((SKILL_ROOT / "references").rglob("*.md")):
+        bundled_markdown = [SKILL_PATH, SKILL_ROOT / "ISSUE_GUIDE.md"]
+        bundled_markdown.extend(sorted((SKILL_ROOT / "references").rglob("*.md")))
+        for path in bundled_markdown:
             text = path.read_text(encoding="utf-8")
-            for fragment in forbidden_fragments:
-                with self.subTest(path=path.relative_to(SKILL_ROOT), forbidden=fragment):
-                    self.assertNotIn(fragment, text)
+            for pattern in forbidden_patterns:
+                with self.subTest(path=path.relative_to(SKILL_ROOT), forbidden=pattern.pattern):
+                    self.assertIsNone(pattern.search(text))
 
     def test_skill_exposes_current_version_for_agents(self) -> None:
         metadata_version = re.search(r"version:\s*\"(\d+\.\d+\.\d+)\"", self.skill_text)
