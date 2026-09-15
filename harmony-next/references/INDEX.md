@@ -3680,6 +3680,7 @@ TASK_MAP.md
 appBasics/应用基础与包结构.md
 appBasics/应用模型与并发.md
 continuation/自由流转与跨端协同指南.md
+harmonyos-releases/api-26-release.md
 ideGuides/AI辅助编程指南.md
 ideGuides/ArkWeb WebView CDP调试与字段到达证明.md
 ideGuides/DevEco Studio IDE私有接口与AI自动化.md

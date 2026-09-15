@@ -11,7 +11,7 @@ An offline HarmonyOS NEXT reference skill library for AI coding assistants such 
 ![docs](https://img.shields.io/badge/docs-3,708%20markdown%20files-7c3aed?style=flat-square)
 ![js-ets](https://img.shields.io/badge/JsEtsAPIReference-3,678%20files-b45309?style=flat-square)
 
-> A local knowledge source for API 12-23, covering ArkTS, ArkUI, NDK, tooling, debugging, release workflows, and multi-device adaptation.
+> A local knowledge source for API 12-23, covering ArkTS, ArkUI, NDK, tooling, debugging, release workflows, and multi-device adaptation. HarmonyOS SDK 26.0.0 is now released; this repository records the version change and adaptation entry, while the offline API 26 reference snapshot is scheduled for a subsequent sync.
 
 ## 🎯 Problems It Solves
 
@@ -208,6 +208,7 @@ Read the two documents above for full details.
 | `v1.3.6` | Non-interactive automation policy for emulator workflows |
 | `v1.3.5` | Private DevEco Studio IDE interface reference |
 | `v1.2.0` | API 23 content added, indexes rebuilt, and link compatibility auditing added |
+| `Unreleased` | Track the HarmonyOS SDK 26.0.0 (API 26) release, document versioning changes, and add an adaptation entry; offline API reference sync remains pending |
 
 ## 🔧 Maintenance and Contributions
 
