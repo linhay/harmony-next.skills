@@ -92,7 +92,9 @@ python3 -m unittest discover -s harmony-next/tests -p 'test_*.py' -v
 
 ## Version
 
-Current release:[`v1.3.37`](https://github.com/linhay/harmony-next.skills/releases/tag/v1.3.37)。The API 26.0.0 Release declarations are included; official guides, examples, and change notes continue to be added.
+| Current release | Notes |
+| --- | --- |
+| `v1.3.37` | [API 26.0.0 Release declaration snapshot](https://github.com/linhay/harmony-next.skills/releases/tag/v1.3.37) is included; official guides, examples, and change notes continue to be added |
 
 ## License
 
