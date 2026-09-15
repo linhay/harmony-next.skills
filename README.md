@@ -64,7 +64,7 @@ SKILL.md → KITS.md / TASK_MAP.md → INDEX.md → 目标文档
 - Codex：`npx skills add linhay/harmony-next.skills --skill harmony-next -a codex -g -y --copy`
 - DSH：`dsh plugin --profile demo add github:linhay/harmony-next.skills`
 
-DeepSeek Harness (DSH) 使用 filesystem skill；该 bundle 不安装 MCP、tools 或 apps。当前仓库还不是 Codex plugin。
+DeepSeek Harness (DSH) 使用 filesystem skill；该 bundle 不安装 MCP、tools 或 apps。本仓库当前还不是 Codex plugin。
 
 `empty-ability-app` smoke fixture：[`references/templates/empty-ability-app`](./harmony-next/references/templates/empty-ability-app/)。
 
