@@ -1,4 +1,4 @@
-<p align="right"><a href="./README_en.md">English</a></p>
+<p align="right">[English](./README_en.md) · <span title="readme-English">readme-English</span></p>
 
 # HarmonyOS NEXT Agent Skills
 
@@ -49,6 +49,8 @@ npx skills add linhay/harmony-next.skills --skill harmony-next
 | 最小工程 | Empty Ability、构建和 smoke 测试 | [`empty-ability-app`](./harmony-next/references/templates/empty-ability-app/) |
 | 自动化脚本 | 设备证据、UI/UX、Trace、命令行工具 | [`scripts/`](./harmony-next/scripts/) |
 
+关键词入口：**抓包诊断**、**DevEco 模拟器自动化**、**filesystem skill**、**Codex plugin**。
+
 ## 推荐检索路径
 
 ```text
@@ -61,6 +63,12 @@ SKILL.md → KITS.md / TASK_MAP.md → INDEX.md → 目标文档
 - Claude Code：`npx skills add linhay/harmony-next.skills --skill harmony-next -a claude-code -g -y --copy`
 - Codex：`npx skills add linhay/harmony-next.skills --skill harmony-next -a codex -g -y --copy`
 - DSH：`dsh plugin --profile demo add github:linhay/harmony-next.skills`
+
+DeepSeek Harness (DSH) 使用 filesystem skill；该 bundle 不安装 MCP、tools 或 apps。当前仓库还不是 Codex plugin。
+
+`empty-ability-app` smoke fixture：[`references/templates/empty-ability-app`](./harmony-next/references/templates/empty-ability-app/)。
+
+私有接口工作流必须先阅读对应的私有接口文档，并明确产物目录、脱敏边界和非交互模式。
 
 <details>
 <summary>高级说明、脚本与维护</summary>

@@ -1,4 +1,4 @@
-<p align="right"><a href="./README.md">简体中文</a></p>
+<p align="right">[简体中文](./README.md) · <span title="readme-中文">readme-中文</span></p>
 
 # HarmonyOS NEXT Agent Skills
 
@@ -49,6 +49,8 @@ After installation, ask your agent a HarmonyOS development question. It will fol
 | Minimal project | Empty Ability、构建和 smoke 测试 | [`empty-ability-app`](./harmony-next/references/templates/empty-ability-app/) |
 | Automation scripts | 设备证据、UI/UX、Trace、命令行工具 | [`scripts/`](./harmony-next/scripts/) |
 
+Keyword entry points: **proxy diagnostics**, **DevEco Emulator automation**, **filesystem skill**, and **Codex plugin**.
+
 ## Recommended lookup path
 
 ```text
@@ -61,6 +63,12 @@ SKILL.md → KITS.md / TASK_MAP.md → INDEX.md → 目标文档
 - Claude Code：`npx skills add linhay/harmony-next.skills --skill harmony-next -a claude-code -g -y --copy`
 - Codex：`npx skills add linhay/harmony-next.skills --skill harmony-next -a codex -g -y --copy`
 - DSH：`dsh plugin --profile demo add github:linhay/harmony-next.skills`
+
+DeepSeek Harness (DSH) uses a filesystem skill; the bundle does not install MCP servers, tools, or apps. This repository is not currently packaged as a Codex plugin.
+
+`empty-ability-app` smoke fixture: [`references/templates/empty-ability-app`](./harmony-next/references/templates/empty-ability-app/).
+
+Private-interface workflows must read the corresponding private-interface documents first and define artifact directories, redaction boundaries, and a non-interactive execution policy.
 
 <details>
 <summary>高级说明、脚本与维护</summary>
