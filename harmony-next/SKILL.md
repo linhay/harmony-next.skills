@@ -2,7 +2,7 @@
 name: harmony-next
 description: Use for HarmonyOS NEXT development help and local DevEco automation. Covers ArkTS/ArkUI/NDK API lookup, offline guide navigation, DevEco Studio and HarmonyOS Emulator tasks, hdc/uitest/aa/bm/hilog/hidumper diagnostics, ArkWeb/WebView DevTools and CDP evidence, and private DevEco interfaces such as CodeGenie, MCP, LanceDB, devecostudio://, ArkUI Inspector, Previewer, Profiler, Doctor, and UxTestService offline UI/UX audits.
 metadata:
-  version: "1.3.35"
+  version: "1.3.37"
 ---
 
 # HarmonyOS NEXT Agent Guide
@@ -20,11 +20,13 @@ Use `$HARMONY_NEXT_SKILL_DIR` from any working directory, including a normal app
 
 ## Version
 
-Current local skill version: `v1.3.35`.
+Current local skill version: `v1.3.37`.
 
-Reference snapshot: bundled `references/` are an offline HarmonyOS API 12-23 snapshot, not live web docs.
+Reference snapshot: bundled `references/` are an offline HarmonyOS API 12-23 snapshot, not live web docs. HarmonyOS SDK 26.0.0 (API 26.0.0) reached Release on 2026-08-29; API 26 declaration pages are bundled under `references/JsEtsAPIReference/api26/`; full guides and examples remain pending.
 
 For "latest", "current", new API, or online-doc parity questions, compare this local version with GitHub Releases or nightly, and verify API behavior against Huawei online docs when precision matters.
+
+API 26 release tracking and adaptation notes: `references/harmonyos-releases/api-26-release.md`.
 
 Install/update entrypoints:
 
@@ -92,6 +94,8 @@ Boundaries:
 - Lifecycle direction: prefer an attached terminal-scoped launch mode for future CLI work, where the foreground runner owns the trace socket, waits for readiness, and calls `Emulator -stop <hvd-name> -path <hvd-root>` when the terminal session ends; keep detached mode only as an explicit compatibility path.
 - `hvd_manager.py download-image` reports HVD image download as machine-readable `blocked`; current verified path is DevEco Studio SDK Manager UI, not a stable non-UI CLI.
 - For cross-machine support, prefer `doctor --json` output over hard-coded macOS paths in answers and docs.
+
+API 26 declaration snapshot sync: run `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/sync_api26_snapshot.py" --deveco-app <DevEco-Studio.app>`, then rebuild indexes with `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/reference_compat.py" generate`.
 
 ## Minimal Empty Ability Scaffold
 
@@ -240,4 +244,4 @@ Verified boundary:
 - **ArkUI 优先声明式**：示例优先使用 `@Entry` / `@Component` / `build()`（除非文档明确是 NDK 或系统服务）。
 - **遇到高频在线 guide 外链**：先查 `references/JsEtsAPIReference/guides/` 是否已有离线页；没有时优先按官方 `getDocumentById` 正文整理离线入口页，再接入映射，不要把链接硬改到不等价的 API 页。
 
-<!-- version: 1.3.35 -->
+<!-- version: 1.3.37 -->
