@@ -22,7 +22,7 @@ Use `$HARMONY_NEXT_SKILL_DIR` from any working directory, including a normal app
 
 Current local skill version: `v1.3.35`.
 
-Reference snapshot: bundled `references/` are an offline HarmonyOS API 12-23 snapshot, not live web docs. HarmonyOS SDK 26.0.0 (API 26.0.0) reached Release on 2026-08-29; API 26 reference pages are not yet bundled here.
+Reference snapshot: bundled `references/` are an offline HarmonyOS API 12-23 snapshot, not live web docs. HarmonyOS SDK 26.0.0 (API 26.0.0) reached Release on 2026-08-29; API 26 declaration pages are bundled under `references/JsEtsAPIReference/api26/`; full guides and examples remain pending.
 
 For "latest", "current", new API, or online-doc parity questions, compare this local version with GitHub Releases or nightly, and verify API behavior against Huawei online docs when precision matters.
 
