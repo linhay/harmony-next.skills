@@ -196,7 +196,7 @@ Read the two documents above for full details.
 
 | Version | Key updates |
 | --- | --- |
-| `v1.3.35` | Add the official DeepSeek Harness (DSH) profile bundle and filesystem-skill fallback adapter |
+| `v1.3.37` | Add the official DeepSeek Harness (DSH) profile bundle and filesystem-skill fallback adapter |
 | `v1.3.30` | Emulator app sandbox quick reference and DevEco Emulator priority fix for HVD doctor |
 | `Unreleased` | One-click offline UI/UX audit CLI (`ux_audit_pipeline.py`) |
 | `Unreleased` | Device debugging evidence bundle CLI (`device_evidence_bundle.py`) |

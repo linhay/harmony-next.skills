@@ -196,7 +196,7 @@ SKILL.md → KITS.md / TASK_MAP.md → INDEX.md → 目标 Markdown
 
 | 版本 | 关键更新 |
 | --- | --- |
-| `v1.3.35` | 增加 DeepSeek Harness（DSH）官方 profile bundle 与 filesystem skill fallback 适配 |
+| `v1.3.37` | 增加 DeepSeek Harness（DSH）官方 profile bundle 与 filesystem skill fallback 适配 |
 | `v1.3.30` | 模拟器应用沙箱速查与 HVD doctor 的 DevEco Emulator 优先级修正 |
 | `Unreleased` | 一键离线 UI/UX 体检 CLI（`ux_audit_pipeline.py`） |
 | `Unreleased` | 设备调试证据包 CLI（`device_evidence_bundle.py`） |
