@@ -2,11 +2,19 @@
 
 更新时间：2026-09-15
 
+本地验证对象：`inputs/DevEco-Studio.app/Contents/sdk/default/sdk-pkg.json`（随 issue 30 提供的 DevEco Studio 26.0.0 环境）。
+
 ## 当前结论
 
 华为开发者文档中心列出的 **HarmonyOS SDK 26.0.0 Release** 于 2026-08-29 发布，底座为 OpenHarmony SDK `Ohos_sdk_public 26.0.0.105`，对应 API Version `26.0.0 Release`。
 
 本仓库的 `references/` 仍是 API 12–23 的离线快照，因此本文件是版本追踪和适配入口，不代表 API 26 的接口正文已经随包提供。涉及 API 26 新增、变更或废弃接口时，应先查华为在线 API Change List，再回到本地索引确认是否存在对应页面。
+
+## 本地 SDK 取证
+
+提供的 SDK 清单确认：`apiVersion=26`、`platformVersion=26.0.0`、`releaseType=Release`、构建版本 `26.0.0.105`。该 SDK 包含 4,174 个 TypeScript 声明文件，其中 `openharmony/js/api/` 下有 470 个公共 JS/ETS 声明入口；这些声明可用于 API 存在性和签名比对，但不包含本仓库 Markdown 快照中的完整中文说明、示例和兼容性段落。
+
+因此本轮先完成版本证据和检索入口同步；API 26 正文仍需从官方文档包导入后，才能按本仓库格式生成页面并重建索引。
 
 ## 版本号注意事项
 
@@ -24,4 +32,3 @@
 1. 获取 API 26.0.0 Release 的官方 API 文档包并保留来源版本信息。
 2. 将新增或变更页面放入 `JsEtsAPIReference/`，同时重建 `INDEX.md`、`KITS.md` 和 `TASK_MAP.md`。
 3. 更新 README、`SKILL.md` 的覆盖范围，并运行 `check_packaging_docs.py`、`reference_compat.py` 和测试套件。
-
