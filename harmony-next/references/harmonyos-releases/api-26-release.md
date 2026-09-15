@@ -14,7 +14,7 @@
 
 提供的 SDK 清单确认：`apiVersion=26`、`platformVersion=26.0.0`、`releaseType=Release`、构建版本 `26.0.0.105`。该 SDK 包含 4,174 个 TypeScript 声明文件，其中 `openharmony/js/api/` 下有 470 个公共 JS/ETS 声明入口；这些声明可用于 API 存在性和签名比对，但不包含本仓库 Markdown 快照中的完整中文说明、示例和兼容性段落。
 
-因此本轮先完成版本证据和检索入口同步；API 26 正文仍需从官方文档包导入后，才能按本仓库格式生成页面并重建索引。
+因此本轮先完成版本证据和检索入口同步；API 26 声明快照已从本地 SDK 导入至 `JsEtsAPIReference/api26/`，可用于离线检索 API 名称、签名和类型；官方完整说明、示例和兼容性段落仍需后续补齐。
 
 ## 版本号注意事项
 
