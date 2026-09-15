@@ -8,8 +8,8 @@ An offline HarmonyOS NEXT reference skill library for AI coding assistants such 
 
 [![release](https://img.shields.io/github/v/release/linhay/harmony-next.skills?style=flat-square)](https://github.com/linhay/harmony-next.skills/releases/latest)
 [![skills.sh](https://skills.sh/b/linhay/harmony-next.skills)](https://skills.sh/linhay/harmony-next.skills)
-![docs](https://img.shields.io/badge/docs-3,708%20markdown%20files-7c3aed?style=flat-square)
-![js-ets](https://img.shields.io/badge/JsEtsAPIReference-3,678%20files-b45309?style=flat-square)
+![docs](https://img.shields.io/badge/docs-4,238%20markdown%20files-7c3aed?style=flat-square)
+![js-ets](https://img.shields.io/badge/JsEtsAPIReference-4,207%20files-b45309?style=flat-square)
 
 > A local knowledge source for API 12-23, covering ArkTS, ArkUI, NDK, tooling, debugging, release workflows, and multi-device adaptation. HarmonyOS SDK 26.0.0 is now released; this repository records the version change and adaptation entry, while the an API 26 declaration snapshot is included; full guides and examples remain to be added.
 
@@ -47,11 +47,11 @@ This repository turns those uncertainties into **local file lookups that are loc
 | [`SKILL.md`](./harmony-next/SKILL.md) | Single source of truth for skill rules: how agents should search and which sources to trust first |
 | [`references/KITS.md`](./harmony-next/references/KITS.md) | Navigate by Kit, such as AbilityKit, ArkUI, and ArkData |
 | [`references/TASK_MAP.md`](./harmony-next/references/TASK_MAP.md) | Navigate by task, such as UI, networking, media, and NDK |
-| [`references/INDEX.md`](./harmony-next/references/INDEX.md) | Full repository index with 3,708 Markdown paths |
+| [`references/INDEX.md`](./harmony-next/references/INDEX.md) | Full repository index with 4,238 Markdown paths |
 | [`JsEtsAPIReference/INDEX.md`](./harmony-next/references/JsEtsAPIReference/INDEX.md) | API bucket index for modules, topics, errors, and more |
 | [`references/templates/empty-ability-app`](./harmony-next/references/templates/empty-ability-app/) | Copyable HarmonyOS NEXT smoke fixture |
 | [`docs/agent-portability.md`](./docs/agent-portability.md) | Agent install and adapter path notes |
-| `harmony-next/references/` | All Markdown source documents, including 3,678 API documents |
+| `harmony-next/references/` | All Markdown source documents, including 4,207 API documents |
 
 **Automation and diagnostic scripts**:
 
@@ -208,7 +208,7 @@ Read the two documents above for full details.
 | `v1.3.6` | Non-interactive automation policy for emulator workflows |
 | `v1.3.5` | Private DevEco Studio IDE interface reference |
 | `v1.2.0` | API 23 content added, indexes rebuilt, and link compatibility auditing added |
-| `Unreleased` | Track the HarmonyOS SDK 26.0.0 (API 26) release, document versioning changes, and add an adaptation entry; offline API reference sync remains pending |
+| `Unreleased` | Track the HarmonyOS SDK 26.0.0 (API 26) release, include 529 SDK declaration snapshots, and document versioning changes; full guides and examples remain pending |
 
 ## 🔧 Maintenance and Contributions
 
