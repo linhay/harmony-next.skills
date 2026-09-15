@@ -11,7 +11,27 @@ An offline HarmonyOS NEXT reference skill library for AI coding assistants such 
 ![docs](https://img.shields.io/badge/docs-4238%20markdown%20files-7c3aed?style=flat-square)
 ![js-ets](https://img.shields.io/badge/JsEtsAPIReference-4207%20files-b45309?style=flat-square)
 
-> A local knowledge source for API 12-23, covering ArkTS, ArkUI, NDK, tooling, debugging, release workflows, and multi-device adaptation. HarmonyOS SDK 26.0.0 is now released; this repository records the version change and adaptation entry, while an API 26 declaration snapshot is included; full guides and examples remain to be added.
+## 🤖 Let an Agent Install It
+
+Send the prompt below to Gemini CLI, Claude Code, or Codex:
+
+<details>
+<summary>Show installation prompt</summary>
+
+```text
+Install the harmony-next skill from linhay/harmony-next.skills for the current environment.
+Detect the current agent first:
+- Gemini CLI: run gemini skills install https://github.com/linhay/harmony-next.skills --path harmony-next --scope user
+- Claude Code: run npx skills add linhay/harmony-next.skills --skill harmony-next -a claude-code -g -y --copy
+- Codex: run npx skills add linhay/harmony-next.skills --skill harmony-next -a codex -g -y --copy
+- Other agents supporting the Vercel skills CLI: run npx skills add linhay/harmony-next.skills --skill harmony-next
+
+After installation, verify that the skill is in a scanned directory and read harmony-next/SKILL.md to confirm its name and version. If the command is unavailable, report the missing CLI and provide the equivalent manual path; do not claim success without verification.
+```
+
+</details>
+
+> A local knowledge source for API 12-26, covering ArkTS, ArkUI, NDK, tooling, debugging, release workflows, and multi-device adaptation. API 26 SDK declarations are included, while the remaining official guides and examples continue to be synchronized.
 
 ## 🎯 Problems It Solves
 

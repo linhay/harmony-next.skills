@@ -11,7 +11,27 @@
 ![docs](https://img.shields.io/badge/docs-4238%20markdown%20files-7c3aed?style=flat-square)
 ![js-ets](https://img.shields.io/badge/JsEtsAPIReference-4207%20files-b45309?style=flat-square)
 
-> 面向 API 12-23 的本地知识源，覆盖 ArkTS、ArkUI、NDK、工具链、调试、发布与多端适配。API 26.0.0 正式版已发布，当前仓库已记录版本变化与适配入口，API 26 声明快照已纳入，完整说明与示例仍待后续补齐。
+## 🤖 让 Agent 自动安装
+
+把下面这段提示词直接发给 Gemini CLI、Claude Code 或 Codex：
+
+<details>
+<summary>展开安装提示词</summary>
+
+```text
+请为当前环境安装 linhay/harmony-next.skills 的 harmony-next skill。
+先判断当前 Agent 类型：
+- Gemini CLI：执行 gemini skills install https://github.com/linhay/harmony-next.skills --path harmony-next --scope user
+- Claude Code：执行 npx skills add linhay/harmony-next.skills --skill harmony-next -a claude-code -g -y --copy
+- Codex：执行 npx skills add linhay/harmony-next.skills --skill harmony-next -a codex -g -y --copy
+- 其他支持 Vercel skills CLI 的 Agent：执行 npx skills add linhay/harmony-next.skills --skill harmony-next
+
+安装后检查 skill 是否位于可扫描目录，并读取 harmony-next/SKILL.md 验证名称和版本；如果命令不可用，说明缺少的 CLI 和等价的手动安装路径，不要假设安装成功。
+```
+
+</details>
+
+> 面向 API 12-26 的本地知识源，覆盖 ArkTS、ArkUI、NDK、工具链、调试、发布与多端适配。API 26 已纳入 SDK 声明快照，完整官网 guide 与示例持续同步中。
 
 ## 🎯 解决的问题
 
