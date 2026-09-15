@@ -8,8 +8,8 @@
 
 [![release](https://img.shields.io/github/v/release/linhay/harmony-next.skills?style=flat-square)](https://github.com/linhay/harmony-next.skills/releases/latest)
 [![skills.sh](https://skills.sh/b/linhay/harmony-next.skills)](https://skills.sh/linhay/harmony-next.skills)
-![docs](https://img.shields.io/badge/docs-4,238%20markdown%20files-7c3aed?style=flat-square)
-![js-ets](https://img.shields.io/badge/JsEtsAPIReference-4,207%20files-b45309?style=flat-square)
+![docs](https://img.shields.io/badge/docs-4238%20markdown%20files-7c3aed?style=flat-square)
+![js-ets](https://img.shields.io/badge/JsEtsAPIReference-4207%20files-b45309?style=flat-square)
 
 > 面向 API 12-23 的本地知识源，覆盖 ArkTS、ArkUI、NDK、工具链、调试、发布与多端适配。API 26.0.0 正式版已发布，当前仓库已记录版本变化与适配入口，API 26 声明快照已纳入，完整说明与示例仍待后续补齐。
 
@@ -47,11 +47,11 @@ AI 编程助手在 HarmonyOS 开发中经常碰到的几类问题：
 | [`SKILL.md`](./harmony-next/SKILL.md) | 技能规则唯一来源：告诉 Agent 如何检索、哪些内容优先信文档 |
 | [`references/KITS.md`](./harmony-next/references/KITS.md) | 按 Kit 导航（AbilityKit、ArkUI、ArkData…） |
 | [`references/TASK_MAP.md`](./harmony-next/references/TASK_MAP.md) | 按任务反查（UI、网络、媒体、NDK…） |
-| [`references/INDEX.md`](./harmony-next/references/INDEX.md) | 全库文件索引（4,238 个 Markdown 路径） |
+| [`references/INDEX.md`](./harmony-next/references/INDEX.md) | 全库文件索引（4238 个 Markdown 路径） |
 | [`JsEtsAPIReference/INDEX.md`](./harmony-next/references/JsEtsAPIReference/INDEX.md) | API 分桶索引（modules、topics、errors…） |
 | [`references/templates/empty-ability-app`](./harmony-next/references/templates/empty-ability-app/) | 可复制的 HarmonyOS NEXT smoke fixture（最小工程） |
 | [`docs/agent-portability.md`](./docs/agent-portability.md) | Agent 安装与适配路径说明 |
-| `harmony-next/references/` | 所有 Markdown 正文（含 4,207 个 API 文档） |
+| `harmony-next/references/` | 所有 Markdown 正文（含 4207 个 API 文档） |
 
 **自动化与诊断脚本**（按需使用）：
 
