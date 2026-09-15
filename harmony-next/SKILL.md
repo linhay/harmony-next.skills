@@ -95,6 +95,8 @@ Boundaries:
 - `hvd_manager.py download-image` reports HVD image download as machine-readable `blocked`; current verified path is DevEco Studio SDK Manager UI, not a stable non-UI CLI.
 - For cross-machine support, prefer `doctor --json` output over hard-coded macOS paths in answers and docs.
 
+API 26 declaration snapshot sync: run `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/sync_api26_snapshot.py" --deveco-app <DevEco-Studio.app>`, then rebuild indexes with `python3 "$HARMONY_NEXT_SKILL_DIR/scripts/reference_compat.py" generate`.
+
 ## Minimal Empty Ability Scaffold
 
 Use when an agent needs a copyable HarmonyOS NEXT smoke fixture without opening DevEco Studio:
