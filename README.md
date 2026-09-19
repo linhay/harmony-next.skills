@@ -1,4 +1,4 @@
-<p align="right">[English](./README_en.md) · <span title="readme-English">readme-English</span></p>
+<p align="right">[<img src="https://img.shields.io/badge/Language-English-0f766e?style=for-the-badge" alt="readme-English" />](./README_en.md)</p>
 
 # HarmonyOS NEXT Agent Skills
 
