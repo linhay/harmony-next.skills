@@ -1,4 +1,4 @@
-<p align="right">[<img src="https://img.shields.io/badge/Language-%E4%B8%AD%E6%96%87-0f766e?style=for-the-badge" alt="readme-中文" />](./README.md)</p>
+<p align="right"><a href="./README.md"><!-- (./README.md) --><img src="https://img.shields.io/badge/Language-%E4%B8%AD%E6%96%87-0f766e?style=for-the-badge" alt="readme-中文" /></a></p>
 
 # HarmonyOS NEXT Agent Skills
 
