@@ -137,14 +137,37 @@ class SkillMetadataTests(unittest.TestCase):
         self.assertEqual(manifest["name"], "dsh-harmony-next")
         self.assertEqual(manifest["version"], skill_version.group(1))
         self.assertEqual(manifest["dsh"]["bundle"]["patch"], "./cordis.patch.yml")
-        for included in ["index.js", "cordis.patch.yml", "harmony-next/SKILL.md", "harmony-next/references/**"]:
+        for included in [
+            "index.js",
+            "cordis.patch.yml",
+            "locale/*.json",
+            "icon.svg",
+            "harmony-next/SKILL.md",
+            "harmony-next/references/**",
+        ]:
             with self.subTest(included=included):
                 self.assertIn(included, manifest["files"])
+
+        self.assertEqual(
+            manifest["exports"],
+            {
+                ".": "./index.js",
+                "./locale/*.json": "./locale/*.json",
+                "./icon": "./icon.svg",
+            },
+        )
+        for locale in ["en", "zh"]:
+            with self.subTest(locale=locale):
+                metadata = json.loads((repo_root / "locale" / f"{locale}.json").read_text(encoding="utf-8"))
+                self.assertTrue(metadata["meta"]["title"])
+                self.assertTrue(metadata["meta"]["description"])
+        self.assertTrue((repo_root / "icon.svg").read_text(encoding="utf-8").lstrip().startswith("<svg"))
 
         patch_text = (repo_root / "cordis.patch.yml").read_text(encoding="utf-8")
         provider_text = (repo_root / "index.js").read_text(encoding="utf-8")
         self.assertIn("id: harmony-next-skill", patch_text)
         self.assertIn("name: dsh-harmony-next", patch_text)
+        self.assertIn("config: {}", patch_text)
         self.assertIn("harmony-next/SKILL.md", provider_text)
         self.assertIn("resourceBase", provider_text)
         self.assertIn("ctx.skills.registerProvider", provider_text)

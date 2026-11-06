@@ -184,9 +184,19 @@ def check_dsh_bundle(root: Path, skill_version_value: str, errors: list[str]) ->
     if bundle_patch != "./cordis.patch.yml":
         errors.append("package.json must declare dsh.bundle.patch as ./cordis.patch.yml")
     package_files = set(manifest.get("files", []))
-    for required in ["index.js", "cordis.patch.yml", "harmony-next/SKILL.md", "harmony-next/references/**"]:
+    for required in [
+        "index.js",
+        "cordis.patch.yml",
+        "locale/*.json",
+        "icon.svg",
+        "harmony-next/SKILL.md",
+        "harmony-next/references/**",
+    ]:
         if required not in package_files:
             errors.append(f"package.json files missing: {required}")
+    for resource in [root / "locale" / "en.json", root / "locale" / "zh.json", root / "icon.svg"]:
+        if not resource.is_file():
+            errors.append(f"missing DSH bundle resource: {resource.relative_to(root)}")
 
     if patch_path.is_file():
         patch_text = read(patch_path)

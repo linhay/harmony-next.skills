@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="HarmonyOS NEXT">
+  <rect width="64" height="64" rx="14" fill="#0a6e6e"/>
+  <path d="M16 18h32v7H16zM16 29h22v7H16zM16 40h32v7H16z" fill="#f6fbfb"/>
+  <path d="M43 29h5v18h-5z" fill="#9be7d8"/>
+</svg>

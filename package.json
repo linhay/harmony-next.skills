@@ -4,9 +4,16 @@
   "description": "HarmonyOS NEXT skill bundle for DeepSeek Harness",
   "type": "module",
   "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
   "files": [
     "index.js",
     "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
     "harmony-next/SKILL.md",
     "harmony-next/ISSUE_GUIDE.md",
     "harmony-next/references/**",

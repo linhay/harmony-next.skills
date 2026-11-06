@@ -1,3 +1,4 @@
 - insert:
     - id: harmony-next-skill
       name: dsh-harmony-next
+      config: {}
