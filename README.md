@@ -24,6 +24,7 @@
 - Gemini CLI：gemini skills install https://github.com/linhay/harmony-next.skills --path harmony-next --scope user
 - Claude Code：npx skills add linhay/harmony-next.skills --skill harmony-next -a claude-code -g -y --copy
 - Codex：npx skills add linhay/harmony-next.skills --skill harmony-next -a codex -g -y --copy
+- DSH：dsh plugin --profile demo add github:linhay/harmony-next.skills
 - 其他支持 skills CLI 的 Agent：npx skills add linhay/harmony-next.skills --skill harmony-next
 安装后读取 harmony-next/SKILL.md，确认 skill 名称和版本，并报告实际安装路径；命令不可用时给出手动安装路径，不要假设成功。
 ```

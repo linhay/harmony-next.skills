@@ -683,30 +683,61 @@ def run_short_command(command: list[str], timeout: float = 5) -> dict[str, objec
         result = subprocess.run(command, capture_output=True, text=True, timeout=timeout, check=False)
     except (OSError, subprocess.TimeoutExpired) as error:
         return {"ok": False, "error": str(error), "command": command}
+    stdout = result.stdout or ""
+    stderr = result.stderr or ""
     return {
         "ok": result.returncode == 0,
         "exitCode": result.returncode,
-        "stdout": (result.stdout or "")[:4000],
-        "stderr": (result.stderr or "")[:4000],
+        # Keep the public diagnostics bounded while retaining complete command
+        # output for callers that need to parse a structured response.
+        "stdout": stdout[:4000],
+        "stderr": stderr[:4000],
+        "_stdoutFull": stdout,
+        "_stderrFull": stderr,
         "command": command,
     }
 
 
+def _parse_hvd_runtime_rows(output: str) -> list[dict[str, object]] | None:
+    try:
+        parsed = json.loads(output.strip())
+    except (TypeError, json.JSONDecodeError):
+        return None
+    if not isinstance(parsed, list) or not all(isinstance(row, dict) for row in parsed):
+        return None
+    return parsed
+
+
 def probe_emulator_runtime(emulator: Path | None, hvd_name: str) -> dict[str, object]:
     if emulator is None:
-        return {"ok": False, "error": "emulator path unavailable"}
+        return {"ok": False, "error": "emulator path unavailable", "hvdRuntimeStatus": "unknown"}
     result = run_short_command([str(emulator), "-list", "-details"], timeout=10)
-    output = f"{result.get('stdout', '')}\n{result.get('stderr', '')}"
-    details: dict[str, object] = {"ok": result.get("ok", False), "exitCode": result.get("exitCode"), "output": output[:4000]}
-    name_index = output.find(hvd_name)
-    if name_index >= 0:
-        window = output[max(0, name_index - 500) : name_index + 1000]
-        running_match = re.search(r"isRunning['\"]?\s*[:=]\s*['\"]?(true|false)", window, re.IGNORECASE)
-        port_match = re.search(r"hw\.hdc\.port['\"]?\s*[:=]\s*['\"]?([A-Za-z0-9_.:-]+)", window)
-        if running_match:
-            details["hvdIsRunning"] = running_match.group(1).lower() == "true"
-        if port_match:
-            details["hvdHdcPort"] = port_match.group(1)
+    stdout = result.get("_stdoutFull", result.get("stdout", ""))
+    stderr = result.get("_stderrFull", result.get("stderr", ""))
+    output = f"{stdout}\n{stderr}"
+    details: dict[str, object] = {
+        "ok": result.get("ok", False),
+        "exitCode": result.get("exitCode"),
+        "output": output[:4000],
+        "hvdRuntimeStatus": "unknown",
+    }
+    rows = _parse_hvd_runtime_rows(str(stdout))
+    if rows is None:
+        return details
+    matches = [row for row in rows if row.get("name") == hvd_name]
+    if len(matches) != 1:
+        details["hvdRuntimeStatus"] = "ambiguous" if len(matches) > 1 else "missing"
+        return details
+    row = matches[0]
+    details["hvdRuntimeStatus"] = "matched"
+    running = row.get("isRunning")
+    if isinstance(running, bool):
+        details["hvdIsRunning"] = running
+    elif isinstance(running, str) and running.lower() in {"true", "false"}:
+        details["hvdIsRunning"] = running.lower() == "true"
+    port = row.get("hw.hdc.port")
+    if isinstance(port, (str, int, float)) and not isinstance(port, bool):
+        details["hvdHdcPort"] = str(port)
     return details
 
 

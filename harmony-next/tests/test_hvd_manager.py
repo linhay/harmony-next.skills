@@ -79,6 +79,62 @@ class HvdManagerTests(unittest.TestCase):
     def tearDown(self) -> None:
         self.temp_dir.cleanup()
 
+    def test_probe_emulator_runtime_matches_exact_hvd_from_json(self) -> None:
+        rows = [
+            {"hw.hdc.port": "10104", "isRunning": "true", "name": "fixture-A"},
+            {"hw.hdc.port": "10106", "isRunning": "false", "name": "fixture-B"},
+        ]
+        output = json.dumps(list(reversed(rows)), indent=4)
+        with mock.patch.object(
+            MODULE,
+            "run_short_command",
+            return_value={"ok": True, "exitCode": 0, "stdout": output[:4000], "_stdoutFull": output},
+        ):
+            result = MODULE.probe_emulator_runtime(Path("/tmp/Emulator"), "fixture-B")
+        self.assertEqual(result["hvdRuntimeStatus"], "matched")
+        self.assertEqual(result["hvdHdcPort"], "10106")
+        self.assertFalse(result["hvdIsRunning"])
+
+    def test_probe_emulator_runtime_parses_complete_output_beyond_preview_limit(self) -> None:
+        rows = [
+            {"hw.hdc.port": "10104", "isRunning": "true", "name": f"fixture-{index}"}
+            for index in range(250)
+        ]
+        rows[-1] = {"hw.hdc.port": "10106", "isRunning": "false", "name": "target"}
+        output = json.dumps(rows, indent=4)
+        self.assertGreater(len(output), 4000)
+        with mock.patch.object(
+            MODULE,
+            "run_short_command",
+            return_value={"ok": True, "exitCode": 0, "stdout": output[:4000], "_stdoutFull": output},
+        ):
+            result = MODULE.probe_emulator_runtime(Path("/tmp/Emulator"), "target")
+        self.assertEqual(result["hvdRuntimeStatus"], "matched")
+        self.assertEqual(result["hvdHdcPort"], "10106")
+        self.assertFalse(result["hvdIsRunning"])
+
+    def test_probe_emulator_runtime_keeps_ambiguous_or_invalid_output_unknown(self) -> None:
+        duplicate = json.dumps([
+            {"hw.hdc.port": "10104", "isRunning": "true", "name": "target"},
+            {"hw.hdc.port": "10106", "isRunning": "false", "name": "target"},
+        ])
+        with mock.patch.object(
+            MODULE,
+            "run_short_command",
+            return_value={"ok": True, "exitCode": 0, "stdout": duplicate, "_stdoutFull": duplicate},
+        ):
+            duplicate_result = MODULE.probe_emulator_runtime(Path("/tmp/Emulator"), "target")
+        self.assertEqual(duplicate_result["hvdRuntimeStatus"], "ambiguous")
+        self.assertNotIn("hvdHdcPort", duplicate_result)
+        with mock.patch.object(
+            MODULE,
+            "run_short_command",
+            return_value={"ok": True, "exitCode": 0, "stdout": "{truncated", "_stdoutFull": "{truncated"},
+        ):
+            invalid_result = MODULE.probe_emulator_runtime(Path("/tmp/Emulator"), "target")
+        self.assertEqual(invalid_result["hvdRuntimeStatus"], "unknown")
+        self.assertNotIn("hvdHdcPort", invalid_result)
+
     def test_list_hvds_reads_registered_instances(self) -> None:
         hvds = MODULE.list_hvds(self.root)
 

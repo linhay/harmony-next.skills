@@ -24,6 +24,7 @@ Detect the current agent:
 - Gemini CLI：gemini skills install https://github.com/linhay/harmony-next.skills --path harmony-next --scope user
 - Claude Code：npx skills add linhay/harmony-next.skills --skill harmony-next -a claude-code -g -y --copy
 - Codex：npx skills add linhay/harmony-next.skills --skill harmony-next -a codex -g -y --copy
+- DSH：dsh plugin --profile demo add github:linhay/harmony-next.skills
 - Other agents supporting skills CLI:npx skills add linhay/harmony-next.skills --skill harmony-next
 After installation, read harmony-next/SKILL.md, verify the name and version, and report the actual path. If a command is unavailable, give the manual path and do not claim success.
 ```
